@@ -18,15 +18,16 @@
 """Module implementing the command line entry point for executing tests.
 
 This module can be executed from the command line using the following
-approaches::
+approaches:
 
     python -m robot.run
     python path/to/robot/run.py
 
-Instead of ``python`` it is possible to use also other Python interpreters.
-This module is also used by the installed ``robot`` start-up script.
+Instead of `python` it is possible to use also other Python interpreters.
+This module is also used by the installed `robot` start-up script.
 
-This module also provides :func:`run` and :func:`run_cli` functions
+This module also provides [robot.run][robot.run.run] and
+[robot.run_cli][robot.run.run_cli] functions
 that can be used programmatically. Other code is for internal usage.
 """
 
@@ -480,13 +481,14 @@ class RobotFramework(Application):
                     if value not in (None, []))
 
 
-def run_cli(arguments=None, exit=True):
+def run_cli(arguments: 'list[str]|None' = None, exit: bool = True):
     """Command line execution entry point for running tests.
 
-    :param arguments: Command line options and arguments as a list of strings.
-        Defaults to ``sys.argv[1:]`` if not given.
-    :param exit: If ``True``, call ``sys.exit`` with the return code denoting
-        execution status, otherwise just return the rc.
+    Parameters:
+        arguments: Command line options and arguments as a list of strings.
+            Defaults to `sys.argv[1:]` if not given.
+        exit: If `True`, call `sys.exit` with the return code denoting
+            execution status, otherwise just return the rc.
 
     Entry point used when running tests from the command line, but can also
     be used by custom scripts that execute tests. Especially useful if the
@@ -494,7 +496,7 @@ def run_cli(arguments=None, exit=True):
     because the script can just pass them forward directly along with the
     possible default values it sets itself.
 
-    Example::
+    Example:
 
         from robot import run_cli
 
@@ -504,8 +506,8 @@ def run_cli(arguments=None, exit=True):
         # Run tests and exit to the system automatically.
         run_cli(['--name', 'Example', 'tests.robot'])
 
-    See also the :func:`run` function that allows setting options as keyword
-    arguments like ``name="Example"`` and generally has a richer API for
+    See also the [robot.run][robot.run.run] function that allows setting options as keyword
+    arguments like `name="Example"` and generally has a richer API for
     programmatic test execution.
     """
     if arguments is None:
@@ -513,38 +515,39 @@ def run_cli(arguments=None, exit=True):
     return RobotFramework().execute_cli(arguments, exit=exit)
 
 
-def run(*tests, **options):
+def run(*sources: 'list[str|Path]', **options: 'dict[str, Any]'):
     """Programmatic entry point for running tests.
 
-    :param tests: Paths to test case files/directories to be executed similarly
-        as when running the ``robot`` command on the command line.
-    :param options: Options to configure and control execution. Accepted
-        options are mostly same as normal command line options to the ``robot``
-        command. Option names match command line option long names without
-        hyphens so that, for example, ``--name`` becomes ``name``.
+    Parameters:
+        sources: Paths to test case files/directories to be executed similarly
+            as when running the `robot` command on the command line.
+        options: Options to configure and control execution. Accepted
+            options are mostly same as normal command line options to the `robot`
+            command. Option names match command line option long names without
+            hyphens so that, for example, `--name` becomes `name`.
 
     Most options that can be given from the command line work. An exception
-    is that options ``--pythonpath``, ``--argumentfile``, ``--help`` and
-    ``--version`` are not supported.
+    is that options `--pythonpath`, `--argumentfile`, `--help` and
+    `--version` are not supported.
 
     Options that can be given on the command line multiple times can be
-    passed as lists. For example, ``include=['tag1', 'tag2']`` is equivalent
-    to ``--include tag1 --include tag2``. If such options are used only once,
-    they can be given also as a single string like ``include='tag'``.
+    passed as lists. For example, `include=['tag1', 'tag2']` is equivalent
+    to `--include tag1 --include tag2`. If such options are used only once,
+    they can be given also as a single string like `include='tag'`.
 
     Options that accept no value can be given as Booleans. For example,
-    ``dryrun=True`` is same as using the ``--dryrun`` option.
+    `dryrun=True` is same as using the `--dryrun` option.
 
-    Options that accept string ``NONE`` as a special value can also be used
-    with Python ``None``. For example, using ``log=None`` is equivalent to
-    ``--log NONE``.
+    Options that accept string `NONE` as a special value can also be used
+    with Python `None`. For example, using `log=None` is equivalent to
+    `--log NONE`.
 
-    ``listener``, ``prerunmodifier`` and ``prerebotmodifier`` options allow
+    `listener`, `prerunmodifier` and `prerebotmodifier` options allow
     passing values as Python objects in addition to module names these command
-    line options support. For example, ``run('tests', listener=MyListener())``.
+    line options support. For example, `#!py run('tests', listener=MyListener())`.
 
     To capture the standard output and error streams, pass an open file or
-    file-like object as special keyword arguments ``stdout`` and ``stderr``,
+    file-like object as special keyword arguments `stdout` and `stderr`,
     respectively.
 
     A return code is returned similarly as when running on the command line.
@@ -552,7 +555,7 @@ def run(*tests, **options):
     denote the number of failed tests, and values between 251-255 are for other
     statuses documented in the Robot Framework User Guide.
 
-    Example::
+    Example:
 
         from robot import run
 
@@ -561,13 +564,13 @@ def run(*tests, **options):
         with open('stdout.txt', 'w') as stdout:
             run('t1.robot', 't2.robot', name='Example', log=None, stdout=stdout)
 
-    Equivalent command line usage::
+    Equivalent command line usage:
 
         robot path/to/tests.robot
         robot --include tag1 --include tag2 --splitlog tests.robot
         robot --name Example --log NONE t1.robot t2.robot > stdout.txt
     """
-    return RobotFramework().execute(*tests, **options)
+    return RobotFramework().execute(*sources, **options)
 
 
 if __name__ == '__main__':

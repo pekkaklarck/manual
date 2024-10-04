@@ -18,23 +18,25 @@
 The command line entry points provided by the framework are exposed for
 programmatic usage as follows:
 
-  * :func:`~robot.run.run`: Function to run tests.
-  * :func:`~robot.run.run_cli`: Function to run tests
+  * [run][robot.run.run]: Function to run tests.
+  * [run_cli][robot.run.run_cli]: Function to run tests
     with command line argument processing.
-  * :func:`~robot.rebot.rebot`: Function to post-process outputs.
-  * :func:`~robot.rebot.rebot_cli`: Function to post-process outputs
+  * [rebot][robot.rebot.rebot]: Function to post-process outputs.
+  * [rebot_cli][robot.rebot.rebot_cli]: Function to post-process outputs
     with command line argument processing.
-  * :mod:`~robot.libdoc`: Module for library documentation generation.
-  * :mod:`~robot.testdoc`: Module for test case documentation generation.
+  * [libdoc][robot.libdoc]: Module for library documentation generation.
+  * [testdoc][robot.testdoc]: Module for test case documentation generation.
 
-All the functions above can be imported like ``from robot import run``.
-Functions and classes provided by the modules need to be imported like
-``from robot.libdoc import libdoc_cli``.
+All the functions above can be imported directly from the `robot` root module
+like `#!py from robot import run`. Functions and classes provided by the modules
+need to be imported like `#!py from robot.libdoc import libdoc_cli`.
 
 The functions and modules listed above are considered stable. Other modules in
-this package are for internal usage and may change without prior notice.
+this package are for internal usage and may change without a prior notice.
 
-.. tip:: More public APIs are exposed by the :mod:`robot.api` package.
+!!! tip
+
+    The stable public API is otherwise exposed via the [robot.api][] module.
 """
 
 import sys
