@@ -1,0 +1,2 @@
+# manual
+Robot Framework Manual
