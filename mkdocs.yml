@@ -6,6 +6,7 @@ edit_uri: https://github.com/pekkaklarck/manual/blob/main/docs
 copyright: |
   &copy; 2024- <a href="https://robotframework.org/foundation" target="_blank" rel="noopener">Robot Framework Foundation</a>
 watch:
+  - INSTALL.md
   - src/robot/
 
 nav:
@@ -128,8 +129,8 @@ markdown_extensions:
       default_lang: python
       linenums: true
       anchor_linenums: true
-      line_spans: __span
-      pygments_lang_class: true
+      line_anchors: example
+      line_spans: line
   - pymdownx.inlinehilite
   - pymdownx.magiclink:
       repo_url_shortener: true

@@ -29,7 +29,7 @@ Python version than the one provided by your distribution by default.
 To check what Python version you have installed, you can run `python --version`
 command in a terminal:
 
-```shell
+```text
 $ python --version
 Python 3.12.7
 ```
@@ -40,7 +40,7 @@ specific command like `python3.12`. You need to use these version specific varia
 also if you have multiple Python 3 versions installed and need to pinpoint which
 one to use:
 
-```shell
+```text
 $ python3.11 --version
 Python 3.11.10
 $ python3.12 --version
@@ -71,7 +71,7 @@ you just need to select the `Add Python 3.x to PATH` checkbox on the first dialo
 To make sure Python installation has been successful and Python has been
 added to `PATH`, you can open the command prompt and execute `python --version`:
 
-```shell
+```text
 C:\>python --version
 Python 3.11.9
 ```
@@ -81,7 +81,7 @@ when you execute `python` is the one first in `PATH`. If you need to use others,
 the easiest way is using the official
 [py launcher](https://docs.python.org/3/using/windows.html#launcher):
 
-```shell
+```text
 C:\>py --version
 Python 3.11.9
 C:\>py -3.12 --version
@@ -150,8 +150,8 @@ To manually modify `PATH` on Windows, follow these steps:
 
 These instructions cover installing Robot Framework using [pip][], the standard
 Python package manager. If you are using some other package manager like
-[Conda](https://conda.io), you can use it instead but need to study its
-documentation for instructions.
+[Poetry](https://python-poetry.org/) or [Conda](https://conda.io), you need
+to study its documentation for installation instructions.
 
 When installing Python, you typically get pip installed automatically. If
 that is not the case, you need to check the documentation of that Python
@@ -171,7 +171,7 @@ To make sure you have pip available, you can run `pip --version` or equivalent.
 
 Examples on Linux:
 
-```shell
+```text
 $ pip --version
 pip 23.2.1 from ... (python 3.11)
 $ python3.12 -m pip --version
@@ -180,7 +180,7 @@ pip 24.2 from ... (python 3.12)
 
 Examples on Windows:
 
-```shell
+```text
 C:\> pip --version
 pip 23.2.2 from ... (python 3.11)
 C:\> py -m 3.12 -m pip --version
@@ -197,7 +197,7 @@ installs from the [Python Package Index (PyPI)][PyPI], but it can also install
 packages downloaded from the PyPI separately. The most common usages are
 shown below and [pip][] documentation has more information and examples.
 
-```shell
+```text
 # Install the latest version (does not upgrade).
 pip install robotframework
 
@@ -233,7 +233,7 @@ checking out the appropriate release tag.
 
 Once you have the source code, you can install it with the following command:
 
-```shell
+```text
 python setup.py install
 ```
 
@@ -247,7 +247,7 @@ rights. It is also used for creating different distribution packages. Run
 To make sure that the correct Robot Framework version has been installed, run
 the following command:
 
-```shell
+```text
 $ robot --version
 Robot Framework 7.1 (Python 3.12.7 on linux)
 ```
@@ -259,7 +259,7 @@ If you have installed Robot Framework under multiple Python versions, running
 `robot` will execute the one first in [PATH][]. To select explicitly, you can
 run `python -m robot` and substitute `python` with the right Python version.
 
-```shell
+```text
 $ python3.12 -m robot --version
 Robot Framework 7.1 (Python 3.12.7 on linux)
 
@@ -270,7 +270,7 @@ Robot Framework 7.0.1 (Python 3.11.10 on win32)
 ## Virtual environments
 
 Python
-[virtual environments](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/#creating-a-virtual-environment)
+[virtual environments](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments)
 allow Python packages to be installed in an isolated location for a particular
 system or application, rather than installing all packages into the same global
 location. They have two main use cases:
