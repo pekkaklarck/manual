@@ -5,3 +5,5 @@ mkdocs-literate-nav
 mkdocs-section-index
 mkdocs-exclude
 mkdocs-ezglossary-plugin
+
+telnetlib-313-and-up; python_version >= '3.13'

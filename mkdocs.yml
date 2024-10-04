@@ -77,10 +77,13 @@ plugins:
   - exclude:
       glob:
         - api/generate.py
+        - install/generate.py
+        - libraries/generate.py
   - gen-files:
       scripts:
-        - docs/install/generate.py
         - docs/api/generate.py
+        - docs/install/generate.py
+        - docs/libraries/generate.py
   - literate-nav:
       nav_file: nav.md
   - section-index
