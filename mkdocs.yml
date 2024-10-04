@@ -10,7 +10,8 @@ watch:
 
 nav:
   - Manual: index.md
-# - Install: to be automated
+  - Install:
+      - install/index.md
   - Usage:
       - usage/index.md
       - Input data: usage/data.md
@@ -78,6 +79,7 @@ plugins:
         - api/generate.py
   - gen-files:
       scripts:
+        - docs/install/generate.py
         - docs/api/generate.py
   - literate-nav:
       nav_file: nav.md
