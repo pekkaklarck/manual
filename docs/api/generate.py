@@ -8,7 +8,7 @@ Based on a `mkdocstrings` [recipe][] and a [script][] they use themselves.
 [recipe]: https://mkdocstrings.github.io/recipes/#automatic-code-reference-pages
 [script]: https://github.com/mkdocstrings/mkdocstrings/blob/main/scripts/gen_ref_nav.py
 
-API doc generation can be disabled by setting the ``
+API doc generation can be disabled by setting the `DO_NOT_GENERATE_API_DOCS`
 environment variable to any non-empty value. Useful when making changes
 elsewhere to avoid the need to wait for doc generation before a preview is ready.
 """
