@@ -57,10 +57,7 @@ def generate_api_docs(root: Path):
 # Add a navigation entry to the static `docs/api/index.md`.
 nav['API'] = 'index.md'
 
-if os.getenv('DO_NOT_GENERATE_API_DOCS'):
-    print('Not generating API docs.')
-else:
-    print('Generating API docs.')
+if not os.getenv('DO_NOT_GENERATE_API_DOCS'):
     generate_api_docs(root)
 
 # Generate navigation file for `literal-nav`.
