@@ -107,10 +107,14 @@ plugins:
 
 extra:
   social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/robotframework/
     - icon: fontawesome/brands/slack
       link: https://slack.robotframework.org
-    - icon: fontawesome/brands/github-alt
-      link: https://github.com/robotframework/robotframework
+    - icon: fontawesome/brands/discourse
+      link: https://forum.robotframework.org
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/company/robot-framework-foundation
 
 markdown_extensions:
   - admonition
