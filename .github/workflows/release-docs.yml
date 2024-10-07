@@ -1,7 +1,7 @@
 name: Generate release docs
 on:
   push:
-    # Match stable version tags (e.g. 7.1, 7.1.1) but not preview releases (e.g. 7.2a1).
+    # Match stable version tags (e.g. v7.1, v7.1.1) but not pre-releases (e.g. v7.2a1).
     # Won't work properly if last version component is 10 or more. It would be safer to
     # initiate this workflow when a release is created on GitHub UI, but initiating
     # based on a tag is more convenient and happens automatically.
