@@ -1,4 +1,9 @@
 # Robot Framework Manual
 
-We probably want to start with a very quick Robot Framework intro and then
-briefly explain what's in this Manual. :blue_book:
+## What is Robot Framework?
+
+A quick Robot Framework :robot: intro would be great to have.
+
+## What is in this manual?
+
+Explaining what's in this Manual :blue_book: would be good too.
