@@ -1,0 +1,45 @@
+name: Generate release docs
+on:
+  push:
+    # Match stable version tags (e.g. 7.1, 7.1.1) but not preview releases (e.g. 7.2a1).
+    # Won't work properly if last version component is 10 or more. It would be safer to
+    # initiate this workflow when a release is created on GitHub UI, but initiating
+    # based on a tag is more convenient and happens automatically.
+    tags:
+      - 'v[0-9]*.[0-9]'
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0    # Fetch all commits/branches.
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.x
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Cache
+        uses: actions/cache@v4
+        with:
+          key: ${{ github.ref }}
+          path: .cache
+
+      - name: Get version
+        # Turn tag names like 'v7.1' and 'v7.1.1' into two component version numbers like '7.1'.
+        run: echo "VERSION=$(echo $GITHUB_REF_NAME | cut -c 2- | cut -d . -f 1,2 )" >> $GITHUB_ENV
+
+      - name: Deploy
+        run: |
+          git config user.name Documentation Bot
+          git config user.email doc-bot@robotframework.org
+          mike deploy --push --update-aliases ${{ env.VERSION }} latest

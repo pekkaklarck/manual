@@ -1,6 +1,6 @@
 site_name: Robot Framework
 site_description: Robot Framework is a generic open source automation framework.
-site_url: https://pekkaklarck.github.io/manual
+site_url: https://pekkaklarck.github.io/manual/    # The mike plugin requires the trailing slash.
 repo_url: https://github.com/robotframework/robotframework
 edit_uri: https://github.com/pekkaklarck/manual/blob/main/docs
 copyright: |
@@ -8,6 +8,7 @@ copyright: |
 watch:
   - INSTALL.md
   - src/robot/
+  - overrides
 
 nav:
   - Manual: index.md
@@ -33,6 +34,7 @@ theme:
   favicon: assets/logo.png
   icon:
     repo: fontawesome/brands/github
+  custom_dir: overrides
   features:
     - navigation.tabs
     - navigation.sections
@@ -98,6 +100,8 @@ plugins:
           options:
             inherited_members: true
             show_symbol_type_heading: true
+  - mike:
+      canonical_version: latest
   - ezglossary:
       use_default: true
       tooltip: full
@@ -115,6 +119,9 @@ extra:
       link: https://forum.robotframework.org
     - icon: fontawesome/brands/linkedin
       link: https://linkedin.com/company/robot-framework-foundation
+  version:
+    provider: mike
+    alias: true
 
 markdown_extensions:
   - admonition
