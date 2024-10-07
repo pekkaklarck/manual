@@ -109,6 +109,9 @@ plugins:
       # https://github.com/realtimeprojects/mkdocs-ezglossary/issues/19
       inline_refs: short
 
+hooks:
+  - hooks/fix_social_share_title.py
+
 extra:
   social:
     - icon: fontawesome/brands/github
