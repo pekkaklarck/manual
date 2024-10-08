@@ -4,7 +4,7 @@ site_description: |
   behavior-driven development (BDD) and robotic process automation (RPA).
 site_url: https://pekkaklarck.github.io/manual/    # The mike plugin requires the trailing slash.
 repo_url: https://github.com/robotframework/robotframework
-edit_uri: https://github.com/pekkaklarck/manual/blob/main/docs
+edit_uri: https://github.com/pekkaklarck/manual/blob/main/doc/manual/docs
 copyright: |
   &copy; 2024- <a href="https://robotframework.org/foundation" target="_blank" rel="noopener">Robot Framework Foundation</a>
 docs_dir: doc/manual/docs
