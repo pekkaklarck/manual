@@ -51,13 +51,17 @@ def generate_api_docs(root: Path):
             file.write(f'---\ntitle: {ident}\n---\n\n::: {ident}')
 
         # Set correct edit path.
-        mkdocs_gen_files.set_edit_path(full_doc_path, '..' / path.relative_to(root))
+        mkdocs_gen_files.set_edit_path(full_doc_path, '../../..' / path.relative_to(root))
 
 
 # Add a navigation entry to the static `docs/api/index.md`.
 nav['API'] = 'index.md'
 
-if not os.getenv('DO_NOT_GENERATE_API_DOCS'):
+if os.getenv('DO_NOT_GENERATE_API_DOCS'):
+    print('API doc generation disabled.')
+else:
+    print("API doc generation takes some time. It can be disabled by setting "
+          "the 'DO_NOT_GENERATE_API_DOCS' environment variable to a non-empty value.")
     generate_api_docs(root)
 
 # Generate navigation file for `literal-nav`.
