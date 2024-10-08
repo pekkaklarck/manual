@@ -7,10 +7,11 @@ repo_url: https://github.com/robotframework/robotframework
 edit_uri: https://github.com/pekkaklarck/manual/blob/main/docs
 copyright: |
   &copy; 2024- <a href="https://robotframework.org/foundation" target="_blank" rel="noopener">Robot Framework Foundation</a>
+docs_dir: doc/manual/docs
 watch:
   - INSTALL.md
   - src/robot/
-  - overrides
+  - doc/manual/overrides
 
 nav:
   - Manual: index.md
@@ -36,7 +37,7 @@ theme:
   favicon: assets/logo.png
   icon:
     repo: fontawesome/brands/github
-  custom_dir: overrides
+  custom_dir: doc/manual/overrides
   features:
     - navigation.tabs
     - navigation.sections
@@ -86,9 +87,9 @@ plugins:
         - libraries/generate.py
   - gen-files:
       scripts:
-        - docs/api/generate.py
-        - docs/install/generate.py
-        - docs/libraries/generate.py
+        - doc/manual/docs/api/generate.py
+        - doc/manual/docs/install/generate.py
+        - doc/manual/docs/libraries/generate.py
   - literate-nav:
       nav_file: nav.md
   - section-index
@@ -112,7 +113,7 @@ plugins:
       inline_refs: short
 
 hooks:
-  - hooks/fix_social_share_title.py
+  - doc/manual/hooks/fix_social_share_title.py
 
 extra:
   social:

@@ -7,13 +7,15 @@ from pathlib import Path
 
 import mkdocs_gen_files
 
-root = Path(__file__).parent.parent.parent
+
+root = Path(__file__).parent.parent.parent.parent.parent
 
 # Make sure `robot` is imported from right place and contains latest changes.
 sys.path.insert(0, str(root / 'src'))
 for name in sorted(sys.modules):
     if name == 'robot' or name.startswith('robot.'):
         sys.modules.pop(name)
+
 
 from robot.libdoc import libdoc
 

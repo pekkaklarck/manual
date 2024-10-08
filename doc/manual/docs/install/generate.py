@@ -8,7 +8,7 @@ from pathlib import Path
 import mkdocs_gen_files
 
 
-root = Path(__file__).parent.parent.parent
+root = Path(__file__).parent.parent.parent.parent.parent
 source = root / 'INSTALL.md'
 target = Path('install/index.md')
 
