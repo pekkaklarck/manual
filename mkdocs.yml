@@ -1,7 +1,5 @@
 site_name: Robot Framework
-site_description: |
-  Robot Framework is a generic open source automation framework for acceptance testing,
-  behavior-driven development (BDD) and robotic process automation (RPA).
+site_description: Robot Framework is a generic open source automation framework for acceptance testing, behavior-driven development (BDD) and robotic process automation (RPA).
 site_url: https://pekkaklarck.github.io/manual/    # The mike plugin requires the trailing slash.
 repo_url: https://github.com/robotframework/robotframework
 edit_uri: https://github.com/pekkaklarck/manual/blob/main/doc/manual/docs
