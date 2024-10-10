@@ -1,7 +1,7 @@
 # Glossary
 
-keyword
+Keyword
 :  Keywords are very important for us.
 
-library keyword
+Library keyword
 :  Ditto

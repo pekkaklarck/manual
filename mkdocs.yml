@@ -105,10 +105,9 @@ plugins:
       canonical_version: latest
   - ezglossary:
       use_default: true
+      ignore_case: true
       tooltip: full
-      # 'list' should give more information that 'short', but it doesn't work
-      # https://github.com/realtimeprojects/mkdocs-ezglossary/issues/19
-      inline_refs: short
+      inline_refs: list
 
 hooks:
   - doc/manual/hooks/set_homepage_share_title.py
