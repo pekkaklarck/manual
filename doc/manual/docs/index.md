@@ -1,6 +1,6 @@
 # Robot Framework Manual
 
-## What is Robot Framework?
+## What is Robot Framework?  :robot-logo:
 
 Robot Framework ® is a generic open source automation framework for acceptance testing,
 behavior-driven development (BDD) and robotic process automation (RPA). It has simple
@@ -13,7 +13,7 @@ a rich ecosystem around it consisting of various generic libraries and tools tha
 are developed as separate projects. For more information about Robot Framework and
 the ecosystem, see https://robotframework.org.
 
-## What is in this manual?
+## What is in this manual?  :blue_book:
 
 Robot Framework Manual contains indepth information about all Robot Framework features
 such as data syntax, how to execute tests and how to extend the framework.
