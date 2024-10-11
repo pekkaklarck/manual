@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="assets/logo.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.39">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.40">
     
     
       
@@ -7008,10 +7008,46 @@
 
 
 <h1 id="robot-framework-manual">Robot Framework Manual<a class="headerlink" href="#robot-framework-manual" title="Permanent link">&para;</a></h1>
-<h2 id="what-is-robot-framework">What is Robot Framework?<a class="headerlink" href="#what-is-robot-framework" title="Permanent link">&para;</a></h2>
-<p>A quick Robot Framework <img alt="🤖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f916.svg" title=":robot:" /> intro would be great to have.</p>
-<h2 id="what-is-in-this-manual">What is in this manual?<a class="headerlink" href="#what-is-in-this-manual" title="Permanent link">&para;</a></h2>
-<p>Explaining what's in this Manual <img alt="📘" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f4d8.svg" title=":blue_book:" /> would be good too.</p>
+<h2 id="what-is-robot-framework">What is Robot Framework?  <span class="twemoji"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 121.5 121.5"
+     height="121.5"
+     width="121.5"
+     version="1.1"
+     id="robot-logo">
+    <defs id="defs6">
+        <clipPath id="clipPath16" clipPathUnits="userSpaceOnUse">
+            <path id="path18" d="M 0,161.873 H 161.946 V 0 H 0 Z"/>
+        </clipPath>
+    </defs>
+    <g transform="matrix(1.25,0,0,-1.25,-40.468375,161.9185)" id="g10">
+        <g id="g12">
+            <g clip-path="url(#clipPath16)" id="g14">
+                <g transform="translate(52.4477,88.1268)" id="g20">
+                    <path id="path22" style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                          d="m 0,0 c 0,7.6 6.179,13.779 13.77,13.779 7.6,0 13.779,-6.179 13.779,-13.779 0,-2.769 -2.238,-5.007 -4.998,-5.007 -2.761,0 -4.999,2.238 -4.999,5.007 0,2.078 -1.695,3.765 -3.782,3.765 C 11.693,3.765 9.997,2.078 9.997,0 9.997,-2.769 7.76,-5.007 4.999,-5.007 2.238,-5.007 0,-2.769 0,0 m 57.05,-23.153 c 0,-2.771 -2.237,-5.007 -4.998,-5.007 H 5.674 c -2.761,0 -4.999,2.236 -4.999,5.007 0,2.769 2.238,5.007 4.999,5.007 h 46.378 c 2.761,0 4.998,-2.238 4.998,-5.007 M 35.379,-2.805 c -1.545,2.291 -0.941,5.398 1.35,6.943 l 11.594,7.83 c 2.273,1.58 5.398,0.941 6.943,-1.332 1.545,-2.29 0.941,-5.398 -1.35,-6.943 l -11.594,-7.83 c -0.852,-0.586 -1.829,-0.87 -2.788,-0.87 -1.607,0 -3.187,0.781 -4.155,2.202 m 31.748,-30.786 c 0,-0.945 -0.376,-1.852 -1.045,-2.522 l -8.617,-8.617 c -0.669,-0.668 -1.576,-1.045 -2.523,-1.045 H 2.109 c -0.947,0 -1.854,0.377 -2.523,1.045 l -8.617,8.617 c -0.669,0.67 -1.045,1.577 -1.045,2.522 v 52.799 c 0,0.947 0.376,1.854 1.045,2.522 l 8.617,8.619 c 0.669,0.668 1.576,1.044 2.523,1.044 h 52.833 c 0.947,0 1.854,-0.376 2.523,-1.044 l 8.617,-8.619 c 0.669,-0.668 1.045,-1.575 1.045,-2.522 z m 7.334,61.086 -11.25,11.25 c -1.705,1.705 -4.018,2.663 -6.428,2.663 H 0.26 c -2.412,0 -4.725,-0.959 -6.43,-2.665 L -17.412,27.494 c -1.704,-1.705 -2.661,-4.016 -2.661,-6.427 v -56.515 c 0,-2.411 0.958,-4.725 2.663,-6.428 l 11.25,-11.25 c 1.705,-1.705 4.017,-2.662 6.428,-2.662 h 56.515 c 2.41,0 4.723,0.957 6.428,2.662 l 11.25,11.25 c 1.705,1.703 2.663,4.017 2.663,6.428 v 56.514 c 0,2.412 -0.958,4.724 -2.663,6.429"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
+</span><a class="headerlink" href="#what-is-robot-framework" title="Permanent link">&para;</a></h2>
+<p>Robot Framework ® is a generic open source automation framework for acceptance testing,
+behavior-driven development (BDD) and robotic process automation (RPA). It has simple
+<a class="autorefs autorefs-internal" href="usage/data/#input-data">plain text syntax</a>, and it can be <a class="autorefs autorefs-internal" href="extend/#extending-robot-framework">extended</a>
+easily with generic and custom <a class="autorefs autorefs-internal" href="libraries/#libraries">libraries</a>.</p>
+<p>Robot Framework is operating system and application independent. It is implemented
+using Python which is also the primary language to extend it. The framework has
+a rich ecosystem around it consisting of various generic libraries and tools that
+are developed as separate projects. For more information about Robot Framework and
+the ecosystem, see <a href="https://robotframework.org">https://robotframework.org</a>.</p>
+<h2 id="what-is-in-this-manual">What is in this manual?  <img alt="📘" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f4d8.svg" title=":blue_book:" /><a class="headerlink" href="#what-is-in-this-manual" title="Permanent link">&para;</a></h2>
+<p>Robot Framework Manual contains indepth information about all Robot Framework features
+such as data syntax, how to execute tests and how to extend the framework.</p>
+<p>The manual concentrates only to Robot Framework core and is rather technical.
+If you are looking for more practical information related to getting started with
+Robot Framework or using it in a certain domain such as web automation, see
+the excellent <a href="https://docs.robotframework.org/docs">Robot Framework Guides</a> project.</p>
 
 
 
@@ -7145,8 +7181,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "navigation.sections", "navigation.footer", "navigation.top", "navigation.indexes", "toc.integrate", "search.suggest", "search.highlight", "content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link"], "search": "assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+    
+    <script id="__config" type="application/json">{"base": ".", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.top", "search.highlight", "search.suggest", "toc.integrate"], "search": "assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
       <script src="assets/javascripts/bundle.525ec568.min.js"></script>
