@@ -37,18 +37,20 @@ theme:
     repo: fontawesome/brands/github
   custom_dir: doc/manual/overrides
   features:
-    - navigation.tabs
-    - navigation.sections
-    - navigation.footer
-    - navigation.top
-    - navigation.indexes
-    - toc.integrate
-    - search.suggest
-    - search.highlight
     - content.action.edit
     - content.code.annotate
     - content.code.copy
     - content.tabs.link
+    - navigation.footer
+    - navigation.indexes
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.sections
+    - navigation.tabs
+    - navigation.top
+    - search.highlight
+    - search.suggest
+    - toc.integrate
   language: en
   palette:
     # Palette toggle for automatic mode
@@ -134,6 +136,7 @@ markdown_extensions:
   - footnotes
   - toc:
       permalink: true
+      toc_depth: 3
   # PyMdown Extensions we use (there are more)
   # https://facelessuser.github.io/pymdown-extensions/
   - pymdownx.details
