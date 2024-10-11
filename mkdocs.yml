@@ -106,6 +106,7 @@ plugins:
   - ezglossary:
       use_default: true
       ignore_case: true
+      plurals: en
       tooltip: full
       inline_refs: list
 
