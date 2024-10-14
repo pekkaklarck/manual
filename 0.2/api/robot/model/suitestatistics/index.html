@@ -2592,7 +2592,7 @@
         <li class="md-nav__item">
   <a href="#robot.model.suitestatistics" class="md-nav__link">
     <span class="md-ellipsis">
-      suitestatistics
+      <code class="doc-symbol doc-symbol-toc doc-symbol-module"></code>&nbsp;suitestatistics
     </span>
   </a>
   
@@ -2601,7 +2601,7 @@
         <li class="md-nav__item">
   <a href="#robot.model.suitestatistics.SuiteStatistics" class="md-nav__link">
     <span class="md-ellipsis">
-      SuiteStatistics
+      <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;SuiteStatistics
     </span>
   </a>
   
@@ -7028,6 +7028,11 @@
 
 
 
+
+
+
+
+
   <div class="doc doc-children">
 
 
@@ -7042,48 +7047,32 @@
 
 
 <h2 id="robot.model.suitestatistics.SuiteStatistics" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <code>SuiteStatistics</code>
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">SuiteStatistics</span>
 
 
 <a href="#robot.model.suitestatistics.SuiteStatistics" class="headerlink" title="Permanent link">&para;</a></h2>
-
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">SuiteStatistics</span><span class="p">(</span><span class="n">suite</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
 
 
         <p>Container for suite statistics.</p>
 
-              <details class="quote">
-                <summary>Source code in <code>src/robot/model/suitestatistics.py</code></summary>
-                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-21">21</a></span>
-<span class="normal"><a href="#example-0-22">22</a></span>
-<span class="normal"><a href="#example-0-23">23</a></span>
-<span class="normal"><a href="#example-0-24">24</a></span>
+
+
+
+
+
+                  <details class="quote">
+                    <summary>Source code in <code>src/robot/model/suitestatistics.py</code></summary>
+                    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-24">24</a></span>
 <span class="normal"><a href="#example-0-25">25</a></span>
-<span class="normal"><a href="#example-0-26">26</a></span>
-<span class="normal"><a href="#example-0-27">27</a></span>
-<span class="normal"><a href="#example-0-28">28</a></span>
-<span class="normal"><a href="#example-0-29">29</a></span>
-<span class="normal"><a href="#example-0-30">30</a></span>
-<span class="normal"><a href="#example-0-31">31</a></span>
-<span class="normal"><a href="#example-0-32">32</a></span>
-<span class="normal"><a href="#example-0-33">33</a></span>
-<span class="normal"><a href="#example-0-34">34</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-21"><a id="example-0-21" name="example-0-21"></a><span class="k">class</span> <span class="nc">SuiteStatistics</span><span class="p">:</span>
-</span><span id="line-0-22"><a id="example-0-22" name="example-0-22"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Container for suite statistics.&quot;&quot;&quot;</span>
-</span><span id="line-0-23"><a id="example-0-23" name="example-0-23"></a>
-</span><span id="line-0-24"><a id="example-0-24" name="example-0-24"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">suite</span><span class="p">):</span>
-</span><span id="line-0-25"><a id="example-0-25" name="example-0-25"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">stat</span> <span class="o">=</span> <span class="n">SuiteStat</span><span class="p">(</span><span class="n">suite</span><span class="p">)</span>
-</span><span id="line-0-26"><a id="example-0-26" name="example-0-26"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">suites</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">SuiteStatistics</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
-</span><span id="line-0-27"><a id="example-0-27" name="example-0-27"></a>
-</span><span id="line-0-28"><a id="example-0-28" name="example-0-28"></a>    <span class="k">def</span> <span class="nf">visit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">visitor</span><span class="p">):</span>
-</span><span id="line-0-29"><a id="example-0-29" name="example-0-29"></a>        <span class="n">visitor</span><span class="o">.</span><span class="n">visit_suite_statistics</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-</span><span id="line-0-30"><a id="example-0-30" name="example-0-30"></a>
-</span><span id="line-0-31"><a id="example-0-31" name="example-0-31"></a>    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterator</span><span class="p">[</span><span class="n">SuiteStat</span><span class="p">]:</span>
-</span><span id="line-0-32"><a id="example-0-32" name="example-0-32"></a>        <span class="k">yield</span> <span class="bp">self</span><span class="o">.</span><span class="n">stat</span>
-</span><span id="line-0-33"><a id="example-0-33" name="example-0-33"></a>        <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">suites</span><span class="p">:</span>
-</span><span id="line-0-34"><a id="example-0-34" name="example-0-34"></a>            <span class="k">yield from</span> <span class="n">child</span>
+<span class="normal"><a href="#example-0-26">26</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-24"><a id="example-0-24" name="example-0-24"></a><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">suite</span><span class="p">):</span>
+</span><span id="line-0-25"><a id="example-0-25" name="example-0-25"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">stat</span> <span class="o">=</span> <span class="n">SuiteStat</span><span class="p">(</span><span class="n">suite</span><span class="p">)</span>
+</span><span id="line-0-26"><a id="example-0-26" name="example-0-26"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">suites</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">SuiteStatistics</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
 </span></code></pre></div></td></tr></table></div>
-              </details>
+                  </details>
 
 
 

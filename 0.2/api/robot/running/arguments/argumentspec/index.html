@@ -4773,7 +4773,7 @@
         <li class="md-nav__item">
   <a href="#robot.running.arguments.argumentspec" class="md-nav__link">
     <span class="md-ellipsis">
-      argumentspec
+      <code class="doc-symbol doc-symbol-toc doc-symbol-module"></code>&nbsp;argumentspec
     </span>
   </a>
   
@@ -4782,7 +4782,7 @@
         <li class="md-nav__item">
   <a href="#robot.running.arguments.argumentspec.ArgInfo" class="md-nav__link">
     <span class="md-ellipsis">
-      ArgInfo
+      <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;ArgInfo
     </span>
   </a>
   
@@ -7030,6 +7030,11 @@
 
 
 
+
+
+
+
+
   <div class="doc doc-children">
 
 
@@ -7044,126 +7049,52 @@
 
 
 <h2 id="robot.running.arguments.argumentspec.ArgInfo" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <code>ArgInfo</code>
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">ArgInfo</span>
 
 
 <a href="#robot.running.arguments.argumentspec.ArgInfo" class="headerlink" title="Permanent link">&para;</a></h2>
-
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
+<span class="normal"><a href="#example-0-2">2</a></span>
+<span class="normal"><a href="#example-0-3">3</a></span>
+<span class="normal"><a href="#example-0-4">4</a></span>
+<span class="normal"><a href="#example-0-5">5</a></span>
+<span class="normal"><a href="#example-0-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">ArgInfo</span><span class="p">(</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">kind</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span><span class="p">,</span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a>    <span class="n">name</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+</span><span id="line-0-4"><a id="example-0-4" name="example-0-4"></a>    <span class="nb">type</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.running.arguments.typeinfo.TypeInfo" href="../typeinfo/#robot.running.arguments.typeinfo.TypeInfo">TypeInfo</a></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="line-0-5"><a id="example-0-5" name="example-0-5"></a>    <span class="n">default</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></span> <span class="o">=</span> <span class="n"><span title="robot.utils.NOT_SET">NOT_SET</span></span><span class="p">,</span>
+</span><span id="line-0-6"><a id="example-0-6" name="example-0-6"></a><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
 
 
         <p>Contains argument information. Only used by Libdoc.</p>
 
-              <details class="quote">
-                <summary>Source code in <code>src/robot/running/arguments/argumentspec.py</code></summary>
-                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-157">157</a></span>
-<span class="normal"><a href="#example-0-158">158</a></span>
-<span class="normal"><a href="#example-0-159">159</a></span>
-<span class="normal"><a href="#example-0-160">160</a></span>
-<span class="normal"><a href="#example-0-161">161</a></span>
-<span class="normal"><a href="#example-0-162">162</a></span>
-<span class="normal"><a href="#example-0-163">163</a></span>
-<span class="normal"><a href="#example-0-164">164</a></span>
-<span class="normal"><a href="#example-0-165">165</a></span>
-<span class="normal"><a href="#example-0-166">166</a></span>
-<span class="normal"><a href="#example-0-167">167</a></span>
+
+
+
+
+
+                  <details class="quote">
+                    <summary>Source code in <code>src/robot/running/arguments/argumentspec.py</code></summary>
+                    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-167">167</a></span>
 <span class="normal"><a href="#example-0-168">168</a></span>
 <span class="normal"><a href="#example-0-169">169</a></span>
 <span class="normal"><a href="#example-0-170">170</a></span>
 <span class="normal"><a href="#example-0-171">171</a></span>
 <span class="normal"><a href="#example-0-172">172</a></span>
 <span class="normal"><a href="#example-0-173">173</a></span>
-<span class="normal"><a href="#example-0-174">174</a></span>
-<span class="normal"><a href="#example-0-175">175</a></span>
-<span class="normal"><a href="#example-0-176">176</a></span>
-<span class="normal"><a href="#example-0-177">177</a></span>
-<span class="normal"><a href="#example-0-178">178</a></span>
-<span class="normal"><a href="#example-0-179">179</a></span>
-<span class="normal"><a href="#example-0-180">180</a></span>
-<span class="normal"><a href="#example-0-181">181</a></span>
-<span class="normal"><a href="#example-0-182">182</a></span>
-<span class="normal"><a href="#example-0-183">183</a></span>
-<span class="normal"><a href="#example-0-184">184</a></span>
-<span class="normal"><a href="#example-0-185">185</a></span>
-<span class="normal"><a href="#example-0-186">186</a></span>
-<span class="normal"><a href="#example-0-187">187</a></span>
-<span class="normal"><a href="#example-0-188">188</a></span>
-<span class="normal"><a href="#example-0-189">189</a></span>
-<span class="normal"><a href="#example-0-190">190</a></span>
-<span class="normal"><a href="#example-0-191">191</a></span>
-<span class="normal"><a href="#example-0-192">192</a></span>
-<span class="normal"><a href="#example-0-193">193</a></span>
-<span class="normal"><a href="#example-0-194">194</a></span>
-<span class="normal"><a href="#example-0-195">195</a></span>
-<span class="normal"><a href="#example-0-196">196</a></span>
-<span class="normal"><a href="#example-0-197">197</a></span>
-<span class="normal"><a href="#example-0-198">198</a></span>
-<span class="normal"><a href="#example-0-199">199</a></span>
-<span class="normal"><a href="#example-0-200">200</a></span>
-<span class="normal"><a href="#example-0-201">201</a></span>
-<span class="normal"><a href="#example-0-202">202</a></span>
-<span class="normal"><a href="#example-0-203">203</a></span>
-<span class="normal"><a href="#example-0-204">204</a></span>
-<span class="normal"><a href="#example-0-205">205</a></span>
-<span class="normal"><a href="#example-0-206">206</a></span>
-<span class="normal"><a href="#example-0-207">207</a></span>
-<span class="normal"><a href="#example-0-208">208</a></span>
-<span class="normal"><a href="#example-0-209">209</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-157"><a id="example-0-157" name="example-0-157"></a><span class="k">class</span> <span class="nc">ArgInfo</span><span class="p">:</span>
-</span><span id="line-0-158"><a id="example-0-158" name="example-0-158"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Contains argument information. Only used by Libdoc.&quot;&quot;&quot;</span>
-</span><span id="line-0-159"><a id="example-0-159" name="example-0-159"></a>    <span class="n">POSITIONAL_ONLY</span> <span class="o">=</span> <span class="s1">&#39;POSITIONAL_ONLY&#39;</span>
-</span><span id="line-0-160"><a id="example-0-160" name="example-0-160"></a>    <span class="n">POSITIONAL_ONLY_MARKER</span> <span class="o">=</span> <span class="s1">&#39;POSITIONAL_ONLY_MARKER&#39;</span>
-</span><span id="line-0-161"><a id="example-0-161" name="example-0-161"></a>    <span class="n">POSITIONAL_OR_NAMED</span> <span class="o">=</span> <span class="s1">&#39;POSITIONAL_OR_NAMED&#39;</span>
-</span><span id="line-0-162"><a id="example-0-162" name="example-0-162"></a>    <span class="n">VAR_POSITIONAL</span> <span class="o">=</span> <span class="s1">&#39;VAR_POSITIONAL&#39;</span>
-</span><span id="line-0-163"><a id="example-0-163" name="example-0-163"></a>    <span class="n">NAMED_ONLY_MARKER</span> <span class="o">=</span> <span class="s1">&#39;NAMED_ONLY_MARKER&#39;</span>
-</span><span id="line-0-164"><a id="example-0-164" name="example-0-164"></a>    <span class="n">NAMED_ONLY</span> <span class="o">=</span> <span class="s1">&#39;NAMED_ONLY&#39;</span>
-</span><span id="line-0-165"><a id="example-0-165" name="example-0-165"></a>    <span class="n">VAR_NAMED</span> <span class="o">=</span> <span class="s1">&#39;VAR_NAMED&#39;</span>
-</span><span id="line-0-166"><a id="example-0-166" name="example-0-166"></a>
-</span><span id="line-0-167"><a id="example-0-167" name="example-0-167"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kind</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
-</span><span id="line-0-168"><a id="example-0-168" name="example-0-168"></a>                 <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
-</span><span id="line-0-169"><a id="example-0-169" name="example-0-169"></a>                 <span class="nb">type</span><span class="p">:</span> <span class="s1">&#39;TypeInfo|None&#39;</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-</span><span id="line-0-170"><a id="example-0-170" name="example-0-170"></a>                 <span class="n">default</span><span class="p">:</span> <span class="n">Any</span> <span class="o">=</span> <span class="n">NOT_SET</span><span class="p">):</span>
-</span><span id="line-0-171"><a id="example-0-171" name="example-0-171"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">kind</span> <span class="o">=</span> <span class="n">kind</span>
-</span><span id="line-0-172"><a id="example-0-172" name="example-0-172"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-</span><span id="line-0-173"><a id="example-0-173" name="example-0-173"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="nb">type</span> <span class="ow">or</span> <span class="n">TypeInfo</span><span class="p">()</span>
-</span><span id="line-0-174"><a id="example-0-174" name="example-0-174"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">default</span> <span class="o">=</span> <span class="n">default</span>
-</span><span id="line-0-175"><a id="example-0-175" name="example-0-175"></a>
-</span><span id="line-0-176"><a id="example-0-176" name="example-0-176"></a>    <span class="nd">@property</span>
-</span><span id="line-0-177"><a id="example-0-177" name="example-0-177"></a>    <span class="k">def</span> <span class="nf">required</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-</span><span id="line-0-178"><a id="example-0-178" name="example-0-178"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">kind</span> <span class="ow">in</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">POSITIONAL_ONLY</span><span class="p">,</span>
-</span><span id="line-0-179"><a id="example-0-179" name="example-0-179"></a>                         <span class="bp">self</span><span class="o">.</span><span class="n">POSITIONAL_OR_NAMED</span><span class="p">,</span>
-</span><span id="line-0-180"><a id="example-0-180" name="example-0-180"></a>                         <span class="bp">self</span><span class="o">.</span><span class="n">NAMED_ONLY</span><span class="p">):</span>
-</span><span id="line-0-181"><a id="example-0-181" name="example-0-181"></a>            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">default</span> <span class="ow">is</span> <span class="n">NOT_SET</span>
-</span><span id="line-0-182"><a id="example-0-182" name="example-0-182"></a>        <span class="k">return</span> <span class="kc">False</span>
-</span><span id="line-0-183"><a id="example-0-183" name="example-0-183"></a>
-</span><span id="line-0-184"><a id="example-0-184" name="example-0-184"></a>    <span class="nd">@property</span>
-</span><span id="line-0-185"><a id="example-0-185" name="example-0-185"></a>    <span class="k">def</span> <span class="nf">default_repr</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;str|None&#39;</span><span class="p">:</span>
-</span><span id="line-0-186"><a id="example-0-186" name="example-0-186"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">default</span> <span class="ow">is</span> <span class="n">NOT_SET</span><span class="p">:</span>
-</span><span id="line-0-187"><a id="example-0-187" name="example-0-187"></a>            <span class="k">return</span> <span class="kc">None</span>
-</span><span id="line-0-188"><a id="example-0-188" name="example-0-188"></a>        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">default</span><span class="p">,</span> <span class="n">Enum</span><span class="p">):</span>
-</span><span id="line-0-189"><a id="example-0-189" name="example-0-189"></a>            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">default</span><span class="o">.</span><span class="n">name</span>
-</span><span id="line-0-190"><a id="example-0-190" name="example-0-190"></a>        <span class="k">return</span> <span class="n">safe_str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">default</span><span class="p">)</span>
-</span><span id="line-0-191"><a id="example-0-191" name="example-0-191"></a>
-</span><span id="line-0-192"><a id="example-0-192" name="example-0-192"></a>    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="line-0-193"><a id="example-0-193" name="example-0-193"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">kind</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">POSITIONAL_ONLY_MARKER</span><span class="p">:</span>
-</span><span id="line-0-194"><a id="example-0-194" name="example-0-194"></a>            <span class="k">return</span> <span class="s1">&#39;/&#39;</span>
-</span><span id="line-0-195"><a id="example-0-195" name="example-0-195"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">kind</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">NAMED_ONLY_MARKER</span><span class="p">:</span>
-</span><span id="line-0-196"><a id="example-0-196" name="example-0-196"></a>            <span class="k">return</span> <span class="s1">&#39;*&#39;</span>
-</span><span id="line-0-197"><a id="example-0-197" name="example-0-197"></a>        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
-</span><span id="line-0-198"><a id="example-0-198" name="example-0-198"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">kind</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">VAR_POSITIONAL</span><span class="p">:</span>
-</span><span id="line-0-199"><a id="example-0-199" name="example-0-199"></a>            <span class="n">ret</span> <span class="o">=</span> <span class="s1">&#39;*&#39;</span> <span class="o">+</span> <span class="n">ret</span>
-</span><span id="line-0-200"><a id="example-0-200" name="example-0-200"></a>        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">kind</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">VAR_NAMED</span><span class="p">:</span>
-</span><span id="line-0-201"><a id="example-0-201" name="example-0-201"></a>            <span class="n">ret</span> <span class="o">=</span> <span class="s1">&#39;**&#39;</span> <span class="o">+</span> <span class="n">ret</span>
-</span><span id="line-0-202"><a id="example-0-202" name="example-0-202"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">:</span>
-</span><span id="line-0-203"><a id="example-0-203" name="example-0-203"></a>            <span class="n">ret</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">ret</span><span class="si">}</span><span class="s1">: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="si">}</span><span class="s1">&#39;</span>
-</span><span id="line-0-204"><a id="example-0-204" name="example-0-204"></a>            <span class="n">default_sep</span> <span class="o">=</span> <span class="s1">&#39; = &#39;</span>
-</span><span id="line-0-205"><a id="example-0-205" name="example-0-205"></a>        <span class="k">else</span><span class="p">:</span>
-</span><span id="line-0-206"><a id="example-0-206" name="example-0-206"></a>            <span class="n">default_sep</span> <span class="o">=</span> <span class="s1">&#39;=&#39;</span>
-</span><span id="line-0-207"><a id="example-0-207" name="example-0-207"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">default</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">NOT_SET</span><span class="p">:</span>
-</span><span id="line-0-208"><a id="example-0-208" name="example-0-208"></a>            <span class="n">ret</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">ret</span><span class="si">}{</span><span class="n">default_sep</span><span class="si">}{</span><span class="bp">self</span><span class="o">.</span><span class="n">default_repr</span><span class="si">}</span><span class="s1">&#39;</span>
-</span><span id="line-0-209"><a id="example-0-209" name="example-0-209"></a>        <span class="k">return</span> <span class="n">ret</span>
+<span class="normal"><a href="#example-0-174">174</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-167"><a id="example-0-167" name="example-0-167"></a><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kind</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+</span><span id="line-0-168"><a id="example-0-168" name="example-0-168"></a>             <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+</span><span id="line-0-169"><a id="example-0-169" name="example-0-169"></a>             <span class="nb">type</span><span class="p">:</span> <span class="s1">&#39;TypeInfo|None&#39;</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="line-0-170"><a id="example-0-170" name="example-0-170"></a>             <span class="n">default</span><span class="p">:</span> <span class="n">Any</span> <span class="o">=</span> <span class="n">NOT_SET</span><span class="p">):</span>
+</span><span id="line-0-171"><a id="example-0-171" name="example-0-171"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">kind</span> <span class="o">=</span> <span class="n">kind</span>
+</span><span id="line-0-172"><a id="example-0-172" name="example-0-172"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+</span><span id="line-0-173"><a id="example-0-173" name="example-0-173"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="nb">type</span> <span class="ow">or</span> <span class="n">TypeInfo</span><span class="p">()</span>
+</span><span id="line-0-174"><a id="example-0-174" name="example-0-174"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">default</span> <span class="o">=</span> <span class="n">default</span>
 </span></code></pre></div></td></tr></table></div>
-              </details>
+                  </details>
 
 
 

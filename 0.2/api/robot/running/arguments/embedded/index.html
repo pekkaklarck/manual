@@ -4836,7 +4836,7 @@
         <li class="md-nav__item">
   <a href="#robot.running.arguments.embedded" class="md-nav__link">
     <span class="md-ellipsis">
-      embedded
+      <code class="doc-symbol doc-symbol-toc doc-symbol-module"></code>&nbsp;embedded
     </span>
   </a>
   
@@ -4845,17 +4845,17 @@
         <li class="md-nav__item">
   <a href="#robot.running.arguments.embedded.EmbeddedArguments" class="md-nav__link">
     <span class="md-ellipsis">
-      EmbeddedArguments
+      <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;EmbeddedArguments
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="EmbeddedArguments">
+    <nav class="md-nav" aria-label=" EmbeddedArguments">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#robot.running.arguments.embedded.EmbeddedArguments.validate" class="md-nav__link">
     <span class="md-ellipsis">
-      validate
+      <code class="doc-symbol doc-symbol-toc doc-symbol-method"></code>&nbsp;validate
     </span>
   </a>
   
@@ -7045,6 +7045,11 @@
 
 
 
+
+
+
+
+
   <div class="doc doc-children">
 
 
@@ -7059,102 +7064,44 @@
 
 
 <h2 id="robot.running.arguments.embedded.EmbeddedArguments" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <code>EmbeddedArguments</code>
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">EmbeddedArguments</span>
 
 
 <a href="#robot.running.arguments.embedded.EmbeddedArguments" class="headerlink" title="Permanent link">&para;</a></h2>
-
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
+<span class="normal"><a href="#example-0-2">2</a></span>
+<span class="normal"><a href="#example-0-3">3</a></span>
+<span class="normal"><a href="#example-0-4">4</a></span>
+<span class="normal"><a href="#example-0-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">EmbeddedArguments</span><span class="p">(</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">name</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" title="re.Pattern" href="https://docs.python.org/3/library/re.html#re.Pattern">Pattern</a></span><span class="p">,</span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a>    <span class="n">args</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" title="typing.Sequence" href="https://docs.python.org/3/library/typing.html#typing.Sequence">Sequence</a></span><span class="p">[</span><span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span><span class="p">]</span> <span class="o">=</span> <span class="p">(),</span>
+</span><span id="line-0-4"><a id="example-0-4" name="example-0-4"></a>    <span class="n">custom_patterns</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" title="typing.Mapping" href="https://docs.python.org/3/library/typing.html#typing.Mapping">Mapping</a></span><span class="p">[</span><span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span><span class="p">,</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="line-0-5"><a id="example-0-5" name="example-0-5"></a><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
 
 
-              <details class="quote">
-                <summary>Source code in <code>src/robot/running/arguments/embedded.py</code></summary>
-                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-26">26</a></span>
-<span class="normal"><a href="#example-0-27">27</a></span>
-<span class="normal"><a href="#example-0-28">28</a></span>
+
+
+
+
+
+                  <details class="quote">
+                    <summary>Source code in <code>src/robot/running/arguments/embedded.py</code></summary>
+                    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-28">28</a></span>
 <span class="normal"><a href="#example-0-29">29</a></span>
 <span class="normal"><a href="#example-0-30">30</a></span>
 <span class="normal"><a href="#example-0-31">31</a></span>
 <span class="normal"><a href="#example-0-32">32</a></span>
-<span class="normal"><a href="#example-0-33">33</a></span>
-<span class="normal"><a href="#example-0-34">34</a></span>
-<span class="normal"><a href="#example-0-35">35</a></span>
-<span class="normal"><a href="#example-0-36">36</a></span>
-<span class="normal"><a href="#example-0-37">37</a></span>
-<span class="normal"><a href="#example-0-38">38</a></span>
-<span class="normal"><a href="#example-0-39">39</a></span>
-<span class="normal"><a href="#example-0-40">40</a></span>
-<span class="normal"><a href="#example-0-41">41</a></span>
-<span class="normal"><a href="#example-0-42">42</a></span>
-<span class="normal"><a href="#example-0-43">43</a></span>
-<span class="normal"><a href="#example-0-44">44</a></span>
-<span class="normal"><a href="#example-0-45">45</a></span>
-<span class="normal"><a href="#example-0-46">46</a></span>
-<span class="normal"><a href="#example-0-47">47</a></span>
-<span class="normal"><a href="#example-0-48">48</a></span>
-<span class="normal"><a href="#example-0-49">49</a></span>
-<span class="normal"><a href="#example-0-50">50</a></span>
-<span class="normal"><a href="#example-0-51">51</a></span>
-<span class="normal"><a href="#example-0-52">52</a></span>
-<span class="normal"><a href="#example-0-53">53</a></span>
-<span class="normal"><a href="#example-0-54">54</a></span>
-<span class="normal"><a href="#example-0-55">55</a></span>
-<span class="normal"><a href="#example-0-56">56</a></span>
-<span class="normal"><a href="#example-0-57">57</a></span>
-<span class="normal"><a href="#example-0-58">58</a></span>
-<span class="normal"><a href="#example-0-59">59</a></span>
-<span class="normal"><a href="#example-0-60">60</a></span>
-<span class="normal"><a href="#example-0-61">61</a></span>
-<span class="normal"><a href="#example-0-62">62</a></span>
-<span class="normal"><a href="#example-0-63">63</a></span>
-<span class="normal"><a href="#example-0-64">64</a></span>
-<span class="normal"><a href="#example-0-65">65</a></span>
-<span class="normal"><a href="#example-0-66">66</a></span>
-<span class="normal"><a href="#example-0-67">67</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-26"><a id="example-0-26" name="example-0-26"></a><span class="k">class</span> <span class="nc">EmbeddedArguments</span><span class="p">:</span>
-</span><span id="line-0-27"><a id="example-0-27" name="example-0-27"></a>
-</span><span id="line-0-28"><a id="example-0-28" name="example-0-28"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="n">re</span><span class="o">.</span><span class="n">Pattern</span><span class="p">,</span>
-</span><span id="line-0-29"><a id="example-0-29" name="example-0-29"></a>                 <span class="n">args</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">(),</span>
-</span><span id="line-0-30"><a id="example-0-30" name="example-0-30"></a>                 <span class="n">custom_patterns</span><span class="p">:</span> <span class="s1">&#39;Mapping[str, str]|None&#39;</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
-</span><span id="line-0-31"><a id="example-0-31" name="example-0-31"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-</span><span id="line-0-32"><a id="example-0-32" name="example-0-32"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">args</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
-</span><span id="line-0-33"><a id="example-0-33" name="example-0-33"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">custom_patterns</span> <span class="o">=</span> <span class="n">custom_patterns</span> <span class="ow">or</span> <span class="kc">None</span>
-</span><span id="line-0-34"><a id="example-0-34" name="example-0-34"></a>
-</span><span id="line-0-35"><a id="example-0-35" name="example-0-35"></a>    <span class="nd">@classmethod</span>
-</span><span id="line-0-36"><a id="example-0-36" name="example-0-36"></a>    <span class="k">def</span> <span class="nf">from_name</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;EmbeddedArguments|None&#39;</span><span class="p">:</span>
-</span><span id="line-0-37"><a id="example-0-37" name="example-0-37"></a>        <span class="k">return</span> <span class="n">EmbeddedArgumentParser</span><span class="p">()</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="k">if</span> <span class="s1">&#39;${&#39;</span> <span class="ow">in</span> <span class="n">name</span> <span class="k">else</span> <span class="kc">None</span>
-</span><span id="line-0-38"><a id="example-0-38" name="example-0-38"></a>
-</span><span id="line-0-39"><a id="example-0-39" name="example-0-39"></a>    <span class="k">def</span> <span class="nf">match</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;re.Match|None&#39;</span><span class="p">:</span>
-</span><span id="line-0-40"><a id="example-0-40" name="example-0-40"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">fullmatch</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
-</span><span id="line-0-41"><a id="example-0-41" name="example-0-41"></a>
-</span><span id="line-0-42"><a id="example-0-42" name="example-0-42"></a>    <span class="k">def</span> <span class="nf">map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">args</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="s1">&#39;list[tuple[str, Any]]&#39;</span><span class="p">:</span>
-</span><span id="line-0-43"><a id="example-0-43" name="example-0-43"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
-</span><span id="line-0-44"><a id="example-0-44" name="example-0-44"></a>        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">,</span> <span class="n">args</span><span class="p">))</span>
-</span><span id="line-0-45"><a id="example-0-45" name="example-0-45"></a>
-</span><span id="line-0-46"><a id="example-0-46" name="example-0-46"></a>    <span class="k">def</span> <span class="nf">validate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">args</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">Any</span><span class="p">]):</span>
-</span><span id="line-0-47"><a id="example-0-47" name="example-0-47"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Validate that embedded args match custom regexps.</span>
-</span><span id="line-0-48"><a id="example-0-48" name="example-0-48"></a>
-</span><span id="line-0-49"><a id="example-0-49" name="example-0-49"></a><span class="sd">        Initial validation is done already when matching keywords, but this</span>
-</span><span id="line-0-50"><a id="example-0-50" name="example-0-50"></a><span class="sd">        validation makes sure arguments match also if they are given as variables.</span>
-</span><span id="line-0-51"><a id="example-0-51" name="example-0-51"></a>
-</span><span id="line-0-52"><a id="example-0-52" name="example-0-52"></a><span class="sd">        Currently, argument not matching only causes a deprecation warning, but</span>
-</span><span id="line-0-53"><a id="example-0-53" name="example-0-53"></a><span class="sd">        that will be changed to ``ValueError`` in RF 8.0:</span>
-</span><span id="line-0-54"><a id="example-0-54" name="example-0-54"></a><span class="sd">        https://github.com/robotframework/robotframework/issues/4069</span>
-</span><span id="line-0-55"><a id="example-0-55" name="example-0-55"></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="line-0-56"><a id="example-0-56" name="example-0-56"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">custom_patterns</span><span class="p">:</span>
-</span><span id="line-0-57"><a id="example-0-57" name="example-0-57"></a>            <span class="k">return</span>
-</span><span id="line-0-58"><a id="example-0-58" name="example-0-58"></a>        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
-</span><span id="line-0-59"><a id="example-0-59" name="example-0-59"></a>            <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">custom_patterns</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-</span><span id="line-0-60"><a id="example-0-60" name="example-0-60"></a>                <span class="n">pattern</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">custom_patterns</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
-</span><span id="line-0-61"><a id="example-0-61" name="example-0-61"></a>                <span class="k">if</span> <span class="ow">not</span> <span class="n">re</span><span class="o">.</span><span class="n">fullmatch</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
-</span><span id="line-0-62"><a id="example-0-62" name="example-0-62"></a>                    <span class="c1"># TODO: Change to `raise ValueError(...)` in RF 8.0.</span>
-</span><span id="line-0-63"><a id="example-0-63" name="example-0-63"></a>                    <span class="n">context</span> <span class="o">=</span> <span class="n">EXECUTION_CONTEXTS</span><span class="o">.</span><span class="n">current</span>
-</span><span id="line-0-64"><a id="example-0-64" name="example-0-64"></a>                    <span class="n">context</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Embedded argument &#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39; got value </span><span class="si">{</span><span class="n">value</span><span class="si">!r}</span><span class="s2"> &quot;</span>
-</span><span id="line-0-65"><a id="example-0-65" name="example-0-65"></a>                                 <span class="sa">f</span><span class="s2">&quot;that does not match custom pattern </span><span class="si">{</span><span class="n">pattern</span><span class="si">!r}</span><span class="s2">. &quot;</span>
-</span><span id="line-0-66"><a id="example-0-66" name="example-0-66"></a>                                 <span class="sa">f</span><span class="s2">&quot;The argument is still accepted, but this behavior &quot;</span>
-</span><span id="line-0-67"><a id="example-0-67" name="example-0-67"></a>                                 <span class="sa">f</span><span class="s2">&quot;will change in Robot Framework 8.0.&quot;</span><span class="p">)</span>
+<span class="normal"><a href="#example-0-33">33</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-28"><a id="example-0-28" name="example-0-28"></a><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="n">re</span><span class="o">.</span><span class="n">Pattern</span><span class="p">,</span>
+</span><span id="line-0-29"><a id="example-0-29" name="example-0-29"></a>             <span class="n">args</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">(),</span>
+</span><span id="line-0-30"><a id="example-0-30" name="example-0-30"></a>             <span class="n">custom_patterns</span><span class="p">:</span> <span class="s1">&#39;Mapping[str, str]|None&#39;</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+</span><span id="line-0-31"><a id="example-0-31" name="example-0-31"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+</span><span id="line-0-32"><a id="example-0-32" name="example-0-32"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">args</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+</span><span id="line-0-33"><a id="example-0-33" name="example-0-33"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">custom_patterns</span> <span class="o">=</span> <span class="n">custom_patterns</span> <span class="ow">or</span> <span class="kc">None</span>
 </span></code></pre></div></td></tr></table></div>
-              </details>
+                  </details>
 
 
 
@@ -7172,10 +7119,12 @@
 
 
 <h3 id="robot.running.arguments.embedded.EmbeddedArguments.validate" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <code class="highlight language-python"><span class="n">validate</span><span class="p">(</span><span class="n">args</span><span class="p">)</span></code>
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <span class="doc doc-object-name doc-function-name">validate</span>
+
 
 <a href="#robot.running.arguments.embedded.EmbeddedArguments.validate" class="headerlink" title="Permanent link">&para;</a></h3>
-
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">validate</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" title="typing.Sequence" href="https://docs.python.org/3/library/typing.html#typing.Sequence">Sequence</a></span><span class="p">[</span><span class="n"><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></span><span class="p">])</span>
+</span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
 

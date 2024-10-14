@@ -5328,7 +5328,7 @@
         <li class="md-nav__item">
   <a href="#robot.running.namespace" class="md-nav__link">
     <span class="md-ellipsis">
-      namespace
+      <code class="doc-symbol doc-symbol-toc doc-symbol-module"></code>&nbsp;namespace
     </span>
   </a>
   
@@ -5337,17 +5337,17 @@
         <li class="md-nav__item">
   <a href="#robot.running.namespace.KeywordRecommendationFinder" class="md-nav__link">
     <span class="md-ellipsis">
-      KeywordRecommendationFinder
+      <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;KeywordRecommendationFinder
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="KeywordRecommendationFinder">
+    <nav class="md-nav" aria-label=" KeywordRecommendationFinder">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#robot.running.namespace.KeywordRecommendationFinder.recommend_similar_keywords" class="md-nav__link">
     <span class="md-ellipsis">
-      recommend_similar_keywords
+      <code class="doc-symbol doc-symbol-toc doc-symbol-method"></code>&nbsp;recommend_similar_keywords
     </span>
   </a>
   
@@ -7043,6 +7043,11 @@
 
 
 
+
+
+
+
+
   <div class="doc doc-children">
 
 
@@ -7057,70 +7062,28 @@
 
 
 <h2 id="robot.running.namespace.KeywordRecommendationFinder" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <code>KeywordRecommendationFinder</code>
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">KeywordRecommendationFinder</span>
 
 
 <a href="#robot.running.namespace.KeywordRecommendationFinder" class="headerlink" title="Permanent link">&para;</a></h2>
-
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">KeywordRecommendationFinder</span><span class="p">(</span><span class="o">*</span><span class="n">owners</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
 
 
-              <details class="quote">
-                <summary>Source code in <code>src/robot/running/namespace.py</code></summary>
-                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-479">479</a></span>
-<span class="normal"><a href="#example-0-480">480</a></span>
-<span class="normal"><a href="#example-0-481">481</a></span>
-<span class="normal"><a href="#example-0-482">482</a></span>
-<span class="normal"><a href="#example-0-483">483</a></span>
-<span class="normal"><a href="#example-0-484">484</a></span>
-<span class="normal"><a href="#example-0-485">485</a></span>
-<span class="normal"><a href="#example-0-486">486</a></span>
-<span class="normal"><a href="#example-0-487">487</a></span>
-<span class="normal"><a href="#example-0-488">488</a></span>
-<span class="normal"><a href="#example-0-489">489</a></span>
-<span class="normal"><a href="#example-0-490">490</a></span>
-<span class="normal"><a href="#example-0-491">491</a></span>
-<span class="normal"><a href="#example-0-492">492</a></span>
-<span class="normal"><a href="#example-0-493">493</a></span>
-<span class="normal"><a href="#example-0-494">494</a></span>
-<span class="normal"><a href="#example-0-495">495</a></span>
-<span class="normal"><a href="#example-0-496">496</a></span>
-<span class="normal"><a href="#example-0-497">497</a></span>
-<span class="normal"><a href="#example-0-498">498</a></span>
-<span class="normal"><a href="#example-0-499">499</a></span>
-<span class="normal"><a href="#example-0-500">500</a></span>
-<span class="normal"><a href="#example-0-501">501</a></span>
-<span class="normal"><a href="#example-0-502">502</a></span>
-<span class="normal"><a href="#example-0-503">503</a></span>
-<span class="normal"><a href="#example-0-504">504</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-479"><a id="example-0-479" name="example-0-479"></a><span class="k">class</span> <span class="nc">KeywordRecommendationFinder</span><span class="p">:</span>
-</span><span id="line-0-480"><a id="example-0-480" name="example-0-480"></a>
-</span><span id="line-0-481"><a id="example-0-481" name="example-0-481"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">owners</span><span class="p">):</span>
-</span><span id="line-0-482"><a id="example-0-482" name="example-0-482"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">owners</span> <span class="o">=</span> <span class="n">owners</span>
-</span><span id="line-0-483"><a id="example-0-483" name="example-0-483"></a>
-</span><span id="line-0-484"><a id="example-0-484" name="example-0-484"></a>    <span class="k">def</span> <span class="nf">recommend_similar_keywords</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span>
-</span><span id="line-0-485"><a id="example-0-485" name="example-0-485"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Return keyword names similar to `name`.&quot;&quot;&quot;</span>
-</span><span id="line-0-486"><a id="example-0-486" name="example-0-486"></a>        <span class="n">candidates</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_candidates</span><span class="p">(</span><span class="n">use_full_name</span><span class="o">=</span><span class="s1">&#39;.&#39;</span> <span class="ow">in</span> <span class="n">name</span><span class="p">)</span>
-</span><span id="line-0-487"><a id="example-0-487" name="example-0-487"></a>        <span class="n">finder</span> <span class="o">=</span> <span class="n">RecommendationFinder</span><span class="p">(</span>
-</span><span id="line-0-488"><a id="example-0-488" name="example-0-488"></a>            <span class="k">lambda</span> <span class="n">name</span><span class="p">:</span> <span class="n">normalize</span><span class="p">(</span><span class="n">candidates</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">name</span><span class="p">),</span> <span class="n">ignore</span><span class="o">=</span><span class="s1">&#39;_&#39;</span><span class="p">)</span>
-</span><span id="line-0-489"><a id="example-0-489" name="example-0-489"></a>        <span class="p">)</span>
-</span><span id="line-0-490"><a id="example-0-490" name="example-0-490"></a>        <span class="k">return</span> <span class="n">finder</span><span class="o">.</span><span class="n">find_and_format</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">candidates</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span>
-</span><span id="line-0-491"><a id="example-0-491" name="example-0-491"></a>                                      <span class="n">check_missing_argument_separator</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</span><span id="line-0-492"><a id="example-0-492" name="example-0-492"></a>
-</span><span id="line-0-493"><a id="example-0-493" name="example-0-493"></a>    <span class="nd">@staticmethod</span>
-</span><span id="line-0-494"><a id="example-0-494" name="example-0-494"></a>    <span class="k">def</span> <span class="nf">format_recommendations</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">recommendations</span><span class="p">):</span>
-</span><span id="line-0-495"><a id="example-0-495" name="example-0-495"></a>        <span class="k">return</span> <span class="n">RecommendationFinder</span><span class="p">()</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">recommendations</span><span class="p">)</span>
-</span><span id="line-0-496"><a id="example-0-496" name="example-0-496"></a>
-</span><span id="line-0-497"><a id="example-0-497" name="example-0-497"></a>    <span class="k">def</span> <span class="nf">_get_candidates</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">use_full_name</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-</span><span id="line-0-498"><a id="example-0-498" name="example-0-498"></a>        <span class="n">candidates</span> <span class="o">=</span> <span class="p">{}</span>
-</span><span id="line-0-499"><a id="example-0-499" name="example-0-499"></a>        <span class="n">names</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">((</span><span class="n">owner</span><span class="o">.</span><span class="n">name</span> <span class="ow">or</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">kw</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
-</span><span id="line-0-500"><a id="example-0-500" name="example-0-500"></a>                       <span class="k">for</span> <span class="n">owner</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">owners</span> <span class="k">for</span> <span class="n">kw</span> <span class="ow">in</span> <span class="n">owner</span><span class="o">.</span><span class="n">keywords</span><span class="p">)</span>
-</span><span id="line-0-501"><a id="example-0-501" name="example-0-501"></a>        <span class="k">for</span> <span class="n">owner</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
-</span><span id="line-0-502"><a id="example-0-502" name="example-0-502"></a>            <span class="n">full_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">owner</span><span class="si">}</span><span class="s1">.</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">&#39;</span> <span class="k">if</span> <span class="n">owner</span> <span class="k">else</span> <span class="n">name</span>
-</span><span id="line-0-503"><a id="example-0-503" name="example-0-503"></a>            <span class="n">candidates</span><span class="p">[</span><span class="n">full_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">full_name</span> <span class="k">if</span> <span class="n">use_full_name</span> <span class="k">else</span> <span class="n">name</span>
-</span><span id="line-0-504"><a id="example-0-504" name="example-0-504"></a>        <span class="k">return</span> <span class="n">candidates</span>
+
+
+
+
+
+                  <details class="quote">
+                    <summary>Source code in <code>src/robot/running/namespace.py</code></summary>
+                    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-481">481</a></span>
+<span class="normal"><a href="#example-0-482">482</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-481"><a id="example-0-481" name="example-0-481"></a><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">owners</span><span class="p">):</span>
+</span><span id="line-0-482"><a id="example-0-482" name="example-0-482"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">owners</span> <span class="o">=</span> <span class="n">owners</span>
 </span></code></pre></div></td></tr></table></div>
-              </details>
+                  </details>
 
 
 
@@ -7138,10 +7101,12 @@
 
 
 <h3 id="robot.running.namespace.KeywordRecommendationFinder.recommend_similar_keywords" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <code class="highlight language-python"><span class="n">recommend_similar_keywords</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span></code>
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <span class="doc doc-object-name doc-function-name">recommend_similar_keywords</span>
+
 
 <a href="#robot.running.namespace.KeywordRecommendationFinder.recommend_similar_keywords" class="headerlink" title="Permanent link">&para;</a></h3>
-
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">recommend_similar_keywords</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
 

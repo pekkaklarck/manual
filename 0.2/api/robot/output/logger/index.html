@@ -3078,7 +3078,7 @@
         <li class="md-nav__item">
   <a href="#robot.output.logger" class="md-nav__link">
     <span class="md-ellipsis">
-      logger
+      <code class="doc-symbol doc-symbol-toc doc-symbol-module"></code>&nbsp;logger
     </span>
   </a>
   
@@ -3087,17 +3087,17 @@
         <li class="md-nav__item">
   <a href="#robot.output.logger.Logger" class="md-nav__link">
     <span class="md-ellipsis">
-      Logger
+      <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;Logger
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Logger">
+    <nav class="md-nav" aria-label=" Logger">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#robot.output.logger.Logger.message" class="md-nav__link">
     <span class="md-ellipsis">
-      message
+      <code class="doc-symbol doc-symbol-toc doc-symbol-method"></code>&nbsp;message
     </span>
   </a>
   
@@ -7043,6 +7043,11 @@
 
 
 
+
+
+
+
+
   <div class="doc doc-children">
 
 
@@ -7057,11 +7062,12 @@
 
 
 <h2 id="robot.output.logger.Logger" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <code>Logger</code>
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">Logger</span>
 
 
 <a href="#robot.output.logger.Logger" class="headerlink" title="Permanent link">&para;</a></h2>
-
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">Logger</span><span class="p">(</span><span class="n">register_console_logger</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
             <p class="doc doc-class-bases">
@@ -7074,817 +7080,48 @@ notified.  Messages are also cached and cached messages written to new
 loggers when they are registered.</p>
 <p>NOTE: This API is likely to change in future versions.</p>
 
-              <details class="quote">
-                <summary>Source code in <code>src/robot/output/logger.py</code></summary>
-                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-45"> 45</a></span>
-<span class="normal"><a href="#example-0-46"> 46</a></span>
-<span class="normal"><a href="#example-0-47"> 47</a></span>
-<span class="normal"><a href="#example-0-48"> 48</a></span>
-<span class="normal"><a href="#example-0-49"> 49</a></span>
-<span class="normal"><a href="#example-0-50"> 50</a></span>
-<span class="normal"><a href="#example-0-51"> 51</a></span>
-<span class="normal"><a href="#example-0-52"> 52</a></span>
-<span class="normal"><a href="#example-0-53"> 53</a></span>
-<span class="normal"><a href="#example-0-54"> 54</a></span>
-<span class="normal"><a href="#example-0-55"> 55</a></span>
-<span class="normal"><a href="#example-0-56"> 56</a></span>
-<span class="normal"><a href="#example-0-57"> 57</a></span>
-<span class="normal"><a href="#example-0-58"> 58</a></span>
-<span class="normal"><a href="#example-0-59"> 59</a></span>
-<span class="normal"><a href="#example-0-60"> 60</a></span>
-<span class="normal"><a href="#example-0-61"> 61</a></span>
-<span class="normal"><a href="#example-0-62"> 62</a></span>
-<span class="normal"><a href="#example-0-63"> 63</a></span>
-<span class="normal"><a href="#example-0-64"> 64</a></span>
-<span class="normal"><a href="#example-0-65"> 65</a></span>
-<span class="normal"><a href="#example-0-66"> 66</a></span>
-<span class="normal"><a href="#example-0-67"> 67</a></span>
-<span class="normal"><a href="#example-0-68"> 68</a></span>
-<span class="normal"><a href="#example-0-69"> 69</a></span>
-<span class="normal"><a href="#example-0-70"> 70</a></span>
-<span class="normal"><a href="#example-0-71"> 71</a></span>
-<span class="normal"><a href="#example-0-72"> 72</a></span>
-<span class="normal"><a href="#example-0-73"> 73</a></span>
-<span class="normal"><a href="#example-0-74"> 74</a></span>
-<span class="normal"><a href="#example-0-75"> 75</a></span>
-<span class="normal"><a href="#example-0-76"> 76</a></span>
-<span class="normal"><a href="#example-0-77"> 77</a></span>
-<span class="normal"><a href="#example-0-78"> 78</a></span>
-<span class="normal"><a href="#example-0-79"> 79</a></span>
-<span class="normal"><a href="#example-0-80"> 80</a></span>
-<span class="normal"><a href="#example-0-81"> 81</a></span>
-<span class="normal"><a href="#example-0-82"> 82</a></span>
-<span class="normal"><a href="#example-0-83"> 83</a></span>
-<span class="normal"><a href="#example-0-84"> 84</a></span>
-<span class="normal"><a href="#example-0-85"> 85</a></span>
-<span class="normal"><a href="#example-0-86"> 86</a></span>
-<span class="normal"><a href="#example-0-87"> 87</a></span>
-<span class="normal"><a href="#example-0-88"> 88</a></span>
-<span class="normal"><a href="#example-0-89"> 89</a></span>
-<span class="normal"><a href="#example-0-90"> 90</a></span>
-<span class="normal"><a href="#example-0-91"> 91</a></span>
-<span class="normal"><a href="#example-0-92"> 92</a></span>
-<span class="normal"><a href="#example-0-93"> 93</a></span>
-<span class="normal"><a href="#example-0-94"> 94</a></span>
-<span class="normal"><a href="#example-0-95"> 95</a></span>
-<span class="normal"><a href="#example-0-96"> 96</a></span>
-<span class="normal"><a href="#example-0-97"> 97</a></span>
-<span class="normal"><a href="#example-0-98"> 98</a></span>
-<span class="normal"><a href="#example-0-99"> 99</a></span>
-<span class="normal"><a href="#example-0-100">100</a></span>
-<span class="normal"><a href="#example-0-101">101</a></span>
-<span class="normal"><a href="#example-0-102">102</a></span>
-<span class="normal"><a href="#example-0-103">103</a></span>
-<span class="normal"><a href="#example-0-104">104</a></span>
-<span class="normal"><a href="#example-0-105">105</a></span>
-<span class="normal"><a href="#example-0-106">106</a></span>
-<span class="normal"><a href="#example-0-107">107</a></span>
-<span class="normal"><a href="#example-0-108">108</a></span>
-<span class="normal"><a href="#example-0-109">109</a></span>
-<span class="normal"><a href="#example-0-110">110</a></span>
-<span class="normal"><a href="#example-0-111">111</a></span>
-<span class="normal"><a href="#example-0-112">112</a></span>
-<span class="normal"><a href="#example-0-113">113</a></span>
-<span class="normal"><a href="#example-0-114">114</a></span>
-<span class="normal"><a href="#example-0-115">115</a></span>
-<span class="normal"><a href="#example-0-116">116</a></span>
-<span class="normal"><a href="#example-0-117">117</a></span>
-<span class="normal"><a href="#example-0-118">118</a></span>
-<span class="normal"><a href="#example-0-119">119</a></span>
-<span class="normal"><a href="#example-0-120">120</a></span>
-<span class="normal"><a href="#example-0-121">121</a></span>
-<span class="normal"><a href="#example-0-122">122</a></span>
-<span class="normal"><a href="#example-0-123">123</a></span>
-<span class="normal"><a href="#example-0-124">124</a></span>
-<span class="normal"><a href="#example-0-125">125</a></span>
-<span class="normal"><a href="#example-0-126">126</a></span>
-<span class="normal"><a href="#example-0-127">127</a></span>
-<span class="normal"><a href="#example-0-128">128</a></span>
-<span class="normal"><a href="#example-0-129">129</a></span>
-<span class="normal"><a href="#example-0-130">130</a></span>
-<span class="normal"><a href="#example-0-131">131</a></span>
-<span class="normal"><a href="#example-0-132">132</a></span>
-<span class="normal"><a href="#example-0-133">133</a></span>
-<span class="normal"><a href="#example-0-134">134</a></span>
-<span class="normal"><a href="#example-0-135">135</a></span>
-<span class="normal"><a href="#example-0-136">136</a></span>
-<span class="normal"><a href="#example-0-137">137</a></span>
-<span class="normal"><a href="#example-0-138">138</a></span>
-<span class="normal"><a href="#example-0-139">139</a></span>
-<span class="normal"><a href="#example-0-140">140</a></span>
-<span class="normal"><a href="#example-0-141">141</a></span>
-<span class="normal"><a href="#example-0-142">142</a></span>
-<span class="normal"><a href="#example-0-143">143</a></span>
-<span class="normal"><a href="#example-0-144">144</a></span>
-<span class="normal"><a href="#example-0-145">145</a></span>
-<span class="normal"><a href="#example-0-146">146</a></span>
-<span class="normal"><a href="#example-0-147">147</a></span>
-<span class="normal"><a href="#example-0-148">148</a></span>
-<span class="normal"><a href="#example-0-149">149</a></span>
-<span class="normal"><a href="#example-0-150">150</a></span>
-<span class="normal"><a href="#example-0-151">151</a></span>
-<span class="normal"><a href="#example-0-152">152</a></span>
-<span class="normal"><a href="#example-0-153">153</a></span>
-<span class="normal"><a href="#example-0-154">154</a></span>
-<span class="normal"><a href="#example-0-155">155</a></span>
-<span class="normal"><a href="#example-0-156">156</a></span>
-<span class="normal"><a href="#example-0-157">157</a></span>
-<span class="normal"><a href="#example-0-158">158</a></span>
-<span class="normal"><a href="#example-0-159">159</a></span>
-<span class="normal"><a href="#example-0-160">160</a></span>
-<span class="normal"><a href="#example-0-161">161</a></span>
-<span class="normal"><a href="#example-0-162">162</a></span>
-<span class="normal"><a href="#example-0-163">163</a></span>
-<span class="normal"><a href="#example-0-164">164</a></span>
-<span class="normal"><a href="#example-0-165">165</a></span>
-<span class="normal"><a href="#example-0-166">166</a></span>
-<span class="normal"><a href="#example-0-167">167</a></span>
-<span class="normal"><a href="#example-0-168">168</a></span>
-<span class="normal"><a href="#example-0-169">169</a></span>
-<span class="normal"><a href="#example-0-170">170</a></span>
-<span class="normal"><a href="#example-0-171">171</a></span>
-<span class="normal"><a href="#example-0-172">172</a></span>
-<span class="normal"><a href="#example-0-173">173</a></span>
-<span class="normal"><a href="#example-0-174">174</a></span>
-<span class="normal"><a href="#example-0-175">175</a></span>
-<span class="normal"><a href="#example-0-176">176</a></span>
-<span class="normal"><a href="#example-0-177">177</a></span>
-<span class="normal"><a href="#example-0-178">178</a></span>
-<span class="normal"><a href="#example-0-179">179</a></span>
-<span class="normal"><a href="#example-0-180">180</a></span>
-<span class="normal"><a href="#example-0-181">181</a></span>
-<span class="normal"><a href="#example-0-182">182</a></span>
-<span class="normal"><a href="#example-0-183">183</a></span>
-<span class="normal"><a href="#example-0-184">184</a></span>
-<span class="normal"><a href="#example-0-185">185</a></span>
-<span class="normal"><a href="#example-0-186">186</a></span>
-<span class="normal"><a href="#example-0-187">187</a></span>
-<span class="normal"><a href="#example-0-188">188</a></span>
-<span class="normal"><a href="#example-0-189">189</a></span>
-<span class="normal"><a href="#example-0-190">190</a></span>
-<span class="normal"><a href="#example-0-191">191</a></span>
-<span class="normal"><a href="#example-0-192">192</a></span>
-<span class="normal"><a href="#example-0-193">193</a></span>
-<span class="normal"><a href="#example-0-194">194</a></span>
-<span class="normal"><a href="#example-0-195">195</a></span>
-<span class="normal"><a href="#example-0-196">196</a></span>
-<span class="normal"><a href="#example-0-197">197</a></span>
-<span class="normal"><a href="#example-0-198">198</a></span>
-<span class="normal"><a href="#example-0-199">199</a></span>
-<span class="normal"><a href="#example-0-200">200</a></span>
-<span class="normal"><a href="#example-0-201">201</a></span>
-<span class="normal"><a href="#example-0-202">202</a></span>
-<span class="normal"><a href="#example-0-203">203</a></span>
-<span class="normal"><a href="#example-0-204">204</a></span>
-<span class="normal"><a href="#example-0-205">205</a></span>
-<span class="normal"><a href="#example-0-206">206</a></span>
-<span class="normal"><a href="#example-0-207">207</a></span>
-<span class="normal"><a href="#example-0-208">208</a></span>
-<span class="normal"><a href="#example-0-209">209</a></span>
-<span class="normal"><a href="#example-0-210">210</a></span>
-<span class="normal"><a href="#example-0-211">211</a></span>
-<span class="normal"><a href="#example-0-212">212</a></span>
-<span class="normal"><a href="#example-0-213">213</a></span>
-<span class="normal"><a href="#example-0-214">214</a></span>
-<span class="normal"><a href="#example-0-215">215</a></span>
-<span class="normal"><a href="#example-0-216">216</a></span>
-<span class="normal"><a href="#example-0-217">217</a></span>
-<span class="normal"><a href="#example-0-218">218</a></span>
-<span class="normal"><a href="#example-0-219">219</a></span>
-<span class="normal"><a href="#example-0-220">220</a></span>
-<span class="normal"><a href="#example-0-221">221</a></span>
-<span class="normal"><a href="#example-0-222">222</a></span>
-<span class="normal"><a href="#example-0-223">223</a></span>
-<span class="normal"><a href="#example-0-224">224</a></span>
-<span class="normal"><a href="#example-0-225">225</a></span>
-<span class="normal"><a href="#example-0-226">226</a></span>
-<span class="normal"><a href="#example-0-227">227</a></span>
-<span class="normal"><a href="#example-0-228">228</a></span>
-<span class="normal"><a href="#example-0-229">229</a></span>
-<span class="normal"><a href="#example-0-230">230</a></span>
-<span class="normal"><a href="#example-0-231">231</a></span>
-<span class="normal"><a href="#example-0-232">232</a></span>
-<span class="normal"><a href="#example-0-233">233</a></span>
-<span class="normal"><a href="#example-0-234">234</a></span>
-<span class="normal"><a href="#example-0-235">235</a></span>
-<span class="normal"><a href="#example-0-236">236</a></span>
-<span class="normal"><a href="#example-0-237">237</a></span>
-<span class="normal"><a href="#example-0-238">238</a></span>
-<span class="normal"><a href="#example-0-239">239</a></span>
-<span class="normal"><a href="#example-0-240">240</a></span>
-<span class="normal"><a href="#example-0-241">241</a></span>
-<span class="normal"><a href="#example-0-242">242</a></span>
-<span class="normal"><a href="#example-0-243">243</a></span>
-<span class="normal"><a href="#example-0-244">244</a></span>
-<span class="normal"><a href="#example-0-245">245</a></span>
-<span class="normal"><a href="#example-0-246">246</a></span>
-<span class="normal"><a href="#example-0-247">247</a></span>
-<span class="normal"><a href="#example-0-248">248</a></span>
-<span class="normal"><a href="#example-0-249">249</a></span>
-<span class="normal"><a href="#example-0-250">250</a></span>
-<span class="normal"><a href="#example-0-251">251</a></span>
-<span class="normal"><a href="#example-0-252">252</a></span>
-<span class="normal"><a href="#example-0-253">253</a></span>
-<span class="normal"><a href="#example-0-254">254</a></span>
-<span class="normal"><a href="#example-0-255">255</a></span>
-<span class="normal"><a href="#example-0-256">256</a></span>
-<span class="normal"><a href="#example-0-257">257</a></span>
-<span class="normal"><a href="#example-0-258">258</a></span>
-<span class="normal"><a href="#example-0-259">259</a></span>
-<span class="normal"><a href="#example-0-260">260</a></span>
-<span class="normal"><a href="#example-0-261">261</a></span>
-<span class="normal"><a href="#example-0-262">262</a></span>
-<span class="normal"><a href="#example-0-263">263</a></span>
-<span class="normal"><a href="#example-0-264">264</a></span>
-<span class="normal"><a href="#example-0-265">265</a></span>
-<span class="normal"><a href="#example-0-266">266</a></span>
-<span class="normal"><a href="#example-0-267">267</a></span>
-<span class="normal"><a href="#example-0-268">268</a></span>
-<span class="normal"><a href="#example-0-269">269</a></span>
-<span class="normal"><a href="#example-0-270">270</a></span>
-<span class="normal"><a href="#example-0-271">271</a></span>
-<span class="normal"><a href="#example-0-272">272</a></span>
-<span class="normal"><a href="#example-0-273">273</a></span>
-<span class="normal"><a href="#example-0-274">274</a></span>
-<span class="normal"><a href="#example-0-275">275</a></span>
-<span class="normal"><a href="#example-0-276">276</a></span>
-<span class="normal"><a href="#example-0-277">277</a></span>
-<span class="normal"><a href="#example-0-278">278</a></span>
-<span class="normal"><a href="#example-0-279">279</a></span>
-<span class="normal"><a href="#example-0-280">280</a></span>
-<span class="normal"><a href="#example-0-281">281</a></span>
-<span class="normal"><a href="#example-0-282">282</a></span>
-<span class="normal"><a href="#example-0-283">283</a></span>
-<span class="normal"><a href="#example-0-284">284</a></span>
-<span class="normal"><a href="#example-0-285">285</a></span>
-<span class="normal"><a href="#example-0-286">286</a></span>
-<span class="normal"><a href="#example-0-287">287</a></span>
-<span class="normal"><a href="#example-0-288">288</a></span>
-<span class="normal"><a href="#example-0-289">289</a></span>
-<span class="normal"><a href="#example-0-290">290</a></span>
-<span class="normal"><a href="#example-0-291">291</a></span>
-<span class="normal"><a href="#example-0-292">292</a></span>
-<span class="normal"><a href="#example-0-293">293</a></span>
-<span class="normal"><a href="#example-0-294">294</a></span>
-<span class="normal"><a href="#example-0-295">295</a></span>
-<span class="normal"><a href="#example-0-296">296</a></span>
-<span class="normal"><a href="#example-0-297">297</a></span>
-<span class="normal"><a href="#example-0-298">298</a></span>
-<span class="normal"><a href="#example-0-299">299</a></span>
-<span class="normal"><a href="#example-0-300">300</a></span>
-<span class="normal"><a href="#example-0-301">301</a></span>
-<span class="normal"><a href="#example-0-302">302</a></span>
-<span class="normal"><a href="#example-0-303">303</a></span>
-<span class="normal"><a href="#example-0-304">304</a></span>
-<span class="normal"><a href="#example-0-305">305</a></span>
-<span class="normal"><a href="#example-0-306">306</a></span>
-<span class="normal"><a href="#example-0-307">307</a></span>
-<span class="normal"><a href="#example-0-308">308</a></span>
-<span class="normal"><a href="#example-0-309">309</a></span>
-<span class="normal"><a href="#example-0-310">310</a></span>
-<span class="normal"><a href="#example-0-311">311</a></span>
-<span class="normal"><a href="#example-0-312">312</a></span>
-<span class="normal"><a href="#example-0-313">313</a></span>
-<span class="normal"><a href="#example-0-314">314</a></span>
-<span class="normal"><a href="#example-0-315">315</a></span>
-<span class="normal"><a href="#example-0-316">316</a></span>
-<span class="normal"><a href="#example-0-317">317</a></span>
-<span class="normal"><a href="#example-0-318">318</a></span>
-<span class="normal"><a href="#example-0-319">319</a></span>
-<span class="normal"><a href="#example-0-320">320</a></span>
-<span class="normal"><a href="#example-0-321">321</a></span>
-<span class="normal"><a href="#example-0-322">322</a></span>
-<span class="normal"><a href="#example-0-323">323</a></span>
-<span class="normal"><a href="#example-0-324">324</a></span>
-<span class="normal"><a href="#example-0-325">325</a></span>
-<span class="normal"><a href="#example-0-326">326</a></span>
-<span class="normal"><a href="#example-0-327">327</a></span>
-<span class="normal"><a href="#example-0-328">328</a></span>
-<span class="normal"><a href="#example-0-329">329</a></span>
-<span class="normal"><a href="#example-0-330">330</a></span>
-<span class="normal"><a href="#example-0-331">331</a></span>
-<span class="normal"><a href="#example-0-332">332</a></span>
-<span class="normal"><a href="#example-0-333">333</a></span>
-<span class="normal"><a href="#example-0-334">334</a></span>
-<span class="normal"><a href="#example-0-335">335</a></span>
-<span class="normal"><a href="#example-0-336">336</a></span>
-<span class="normal"><a href="#example-0-337">337</a></span>
-<span class="normal"><a href="#example-0-338">338</a></span>
-<span class="normal"><a href="#example-0-339">339</a></span>
-<span class="normal"><a href="#example-0-340">340</a></span>
-<span class="normal"><a href="#example-0-341">341</a></span>
-<span class="normal"><a href="#example-0-342">342</a></span>
-<span class="normal"><a href="#example-0-343">343</a></span>
-<span class="normal"><a href="#example-0-344">344</a></span>
-<span class="normal"><a href="#example-0-345">345</a></span>
-<span class="normal"><a href="#example-0-346">346</a></span>
-<span class="normal"><a href="#example-0-347">347</a></span>
-<span class="normal"><a href="#example-0-348">348</a></span>
-<span class="normal"><a href="#example-0-349">349</a></span>
-<span class="normal"><a href="#example-0-350">350</a></span>
-<span class="normal"><a href="#example-0-351">351</a></span>
-<span class="normal"><a href="#example-0-352">352</a></span>
-<span class="normal"><a href="#example-0-353">353</a></span>
-<span class="normal"><a href="#example-0-354">354</a></span>
-<span class="normal"><a href="#example-0-355">355</a></span>
-<span class="normal"><a href="#example-0-356">356</a></span>
-<span class="normal"><a href="#example-0-357">357</a></span>
-<span class="normal"><a href="#example-0-358">358</a></span>
-<span class="normal"><a href="#example-0-359">359</a></span>
-<span class="normal"><a href="#example-0-360">360</a></span>
-<span class="normal"><a href="#example-0-361">361</a></span>
-<span class="normal"><a href="#example-0-362">362</a></span>
-<span class="normal"><a href="#example-0-363">363</a></span>
-<span class="normal"><a href="#example-0-364">364</a></span>
-<span class="normal"><a href="#example-0-365">365</a></span>
-<span class="normal"><a href="#example-0-366">366</a></span>
-<span class="normal"><a href="#example-0-367">367</a></span>
-<span class="normal"><a href="#example-0-368">368</a></span>
-<span class="normal"><a href="#example-0-369">369</a></span>
-<span class="normal"><a href="#example-0-370">370</a></span>
-<span class="normal"><a href="#example-0-371">371</a></span>
-<span class="normal"><a href="#example-0-372">372</a></span>
-<span class="normal"><a href="#example-0-373">373</a></span>
-<span class="normal"><a href="#example-0-374">374</a></span>
-<span class="normal"><a href="#example-0-375">375</a></span>
-<span class="normal"><a href="#example-0-376">376</a></span>
-<span class="normal"><a href="#example-0-377">377</a></span>
-<span class="normal"><a href="#example-0-378">378</a></span>
-<span class="normal"><a href="#example-0-379">379</a></span>
-<span class="normal"><a href="#example-0-380">380</a></span>
-<span class="normal"><a href="#example-0-381">381</a></span>
-<span class="normal"><a href="#example-0-382">382</a></span>
-<span class="normal"><a href="#example-0-383">383</a></span>
-<span class="normal"><a href="#example-0-384">384</a></span>
-<span class="normal"><a href="#example-0-385">385</a></span>
-<span class="normal"><a href="#example-0-386">386</a></span>
-<span class="normal"><a href="#example-0-387">387</a></span>
-<span class="normal"><a href="#example-0-388">388</a></span>
-<span class="normal"><a href="#example-0-389">389</a></span>
-<span class="normal"><a href="#example-0-390">390</a></span>
-<span class="normal"><a href="#example-0-391">391</a></span>
-<span class="normal"><a href="#example-0-392">392</a></span>
-<span class="normal"><a href="#example-0-393">393</a></span>
-<span class="normal"><a href="#example-0-394">394</a></span>
-<span class="normal"><a href="#example-0-395">395</a></span>
-<span class="normal"><a href="#example-0-396">396</a></span>
-<span class="normal"><a href="#example-0-397">397</a></span>
-<span class="normal"><a href="#example-0-398">398</a></span>
-<span class="normal"><a href="#example-0-399">399</a></span>
-<span class="normal"><a href="#example-0-400">400</a></span>
-<span class="normal"><a href="#example-0-401">401</a></span>
-<span class="normal"><a href="#example-0-402">402</a></span>
-<span class="normal"><a href="#example-0-403">403</a></span>
-<span class="normal"><a href="#example-0-404">404</a></span>
-<span class="normal"><a href="#example-0-405">405</a></span>
-<span class="normal"><a href="#example-0-406">406</a></span>
-<span class="normal"><a href="#example-0-407">407</a></span>
-<span class="normal"><a href="#example-0-408">408</a></span>
-<span class="normal"><a href="#example-0-409">409</a></span>
-<span class="normal"><a href="#example-0-410">410</a></span>
-<span class="normal"><a href="#example-0-411">411</a></span>
-<span class="normal"><a href="#example-0-412">412</a></span>
-<span class="normal"><a href="#example-0-413">413</a></span>
-<span class="normal"><a href="#example-0-414">414</a></span>
-<span class="normal"><a href="#example-0-415">415</a></span>
-<span class="normal"><a href="#example-0-416">416</a></span>
-<span class="normal"><a href="#example-0-417">417</a></span>
-<span class="normal"><a href="#example-0-418">418</a></span>
-<span class="normal"><a href="#example-0-419">419</a></span>
-<span class="normal"><a href="#example-0-420">420</a></span>
-<span class="normal"><a href="#example-0-421">421</a></span>
-<span class="normal"><a href="#example-0-422">422</a></span>
-<span class="normal"><a href="#example-0-423">423</a></span>
-<span class="normal"><a href="#example-0-424">424</a></span>
-<span class="normal"><a href="#example-0-425">425</a></span>
-<span class="normal"><a href="#example-0-426">426</a></span>
-<span class="normal"><a href="#example-0-427">427</a></span>
-<span class="normal"><a href="#example-0-428">428</a></span>
-<span class="normal"><a href="#example-0-429">429</a></span>
-<span class="normal"><a href="#example-0-430">430</a></span>
-<span class="normal"><a href="#example-0-431">431</a></span>
-<span class="normal"><a href="#example-0-432">432</a></span>
-<span class="normal"><a href="#example-0-433">433</a></span>
-<span class="normal"><a href="#example-0-434">434</a></span>
-<span class="normal"><a href="#example-0-435">435</a></span>
-<span class="normal"><a href="#example-0-436">436</a></span>
-<span class="normal"><a href="#example-0-437">437</a></span>
-<span class="normal"><a href="#example-0-438">438</a></span>
-<span class="normal"><a href="#example-0-439">439</a></span>
-<span class="normal"><a href="#example-0-440">440</a></span>
-<span class="normal"><a href="#example-0-441">441</a></span>
-<span class="normal"><a href="#example-0-442">442</a></span>
-<span class="normal"><a href="#example-0-443">443</a></span>
-<span class="normal"><a href="#example-0-444">444</a></span>
-<span class="normal"><a href="#example-0-445">445</a></span>
-<span class="normal"><a href="#example-0-446">446</a></span>
-<span class="normal"><a href="#example-0-447">447</a></span>
-<span class="normal"><a href="#example-0-448">448</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-45"><a id="example-0-45" name="example-0-45"></a><span class="k">class</span> <span class="nc">Logger</span><span class="p">(</span><span class="n">AbstractLogger</span><span class="p">):</span>
-</span><span id="line-0-46"><a id="example-0-46" name="example-0-46"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;A global logger proxy to delegating messages to registered loggers.</span>
-</span><span id="line-0-47"><a id="example-0-47" name="example-0-47"></a>
-</span><span id="line-0-48"><a id="example-0-48" name="example-0-48"></a><span class="sd">    Whenever something is written to LOGGER in code, all registered loggers are</span>
-</span><span id="line-0-49"><a id="example-0-49" name="example-0-49"></a><span class="sd">    notified.  Messages are also cached and cached messages written to new</span>
-</span><span id="line-0-50"><a id="example-0-50" name="example-0-50"></a><span class="sd">    loggers when they are registered.</span>
-</span><span id="line-0-51"><a id="example-0-51" name="example-0-51"></a>
-</span><span id="line-0-52"><a id="example-0-52" name="example-0-52"></a><span class="sd">    NOTE: This API is likely to change in future versions.</span>
-</span><span id="line-0-53"><a id="example-0-53" name="example-0-53"></a><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-0-54"><a id="example-0-54" name="example-0-54"></a>
-</span><span id="line-0-55"><a id="example-0-55" name="example-0-55"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">register_console_logger</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-</span><span id="line-0-56"><a id="example-0-56" name="example-0-56"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_console_logger</span> <span class="o">=</span> <span class="kc">None</span>
-</span><span id="line-0-57"><a id="example-0-57" name="example-0-57"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_syslog</span> <span class="o">=</span> <span class="kc">None</span>
-</span><span id="line-0-58"><a id="example-0-58" name="example-0-58"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_xml_logger</span> <span class="o">=</span> <span class="kc">None</span>
-</span><span id="line-0-59"><a id="example-0-59" name="example-0-59"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_cli_listeners</span> <span class="o">=</span> <span class="kc">None</span>
-</span><span id="line-0-60"><a id="example-0-60" name="example-0-60"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_lib_listeners</span> <span class="o">=</span> <span class="kc">None</span>
-</span><span id="line-0-61"><a id="example-0-61" name="example-0-61"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_other_loggers</span> <span class="o">=</span> <span class="p">[]</span>
-</span><span id="line-0-62"><a id="example-0-62" name="example-0-62"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_message_cache</span> <span class="o">=</span> <span class="p">[]</span>
-</span><span id="line-0-63"><a id="example-0-63" name="example-0-63"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_log_message_cache</span> <span class="o">=</span> <span class="kc">None</span>
-</span><span id="line-0-64"><a id="example-0-64" name="example-0-64"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_started_keywords</span> <span class="o">=</span> <span class="mi">0</span>
-</span><span id="line-0-65"><a id="example-0-65" name="example-0-65"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_error_occurred</span> <span class="o">=</span> <span class="kc">False</span>
-</span><span id="line-0-66"><a id="example-0-66" name="example-0-66"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_error_listener</span> <span class="o">=</span> <span class="kc">None</span>
-</span><span id="line-0-67"><a id="example-0-67" name="example-0-67"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_prev_log_message_handlers</span> <span class="o">=</span> <span class="p">[]</span>
-</span><span id="line-0-68"><a id="example-0-68" name="example-0-68"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_enabled</span> <span class="o">=</span> <span class="mi">0</span>
-</span><span id="line-0-69"><a id="example-0-69" name="example-0-69"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_cache_only</span> <span class="o">=</span> <span class="kc">False</span>
-</span><span id="line-0-70"><a id="example-0-70" name="example-0-70"></a>        <span class="k">if</span> <span class="n">register_console_logger</span><span class="p">:</span>
-</span><span id="line-0-71"><a id="example-0-71" name="example-0-71"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">register_console_logger</span><span class="p">()</span>
-</span><span id="line-0-72"><a id="example-0-72" name="example-0-72"></a>
-</span><span id="line-0-73"><a id="example-0-73" name="example-0-73"></a>    <span class="nd">@property</span>
-</span><span id="line-0-74"><a id="example-0-74" name="example-0-74"></a>    <span class="k">def</span> <span class="nf">_listeners</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="line-0-75"><a id="example-0-75" name="example-0-75"></a>        <span class="n">cli_listeners</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_cli_listeners</span> <span class="ow">or</span> <span class="p">[])</span>
-</span><span id="line-0-76"><a id="example-0-76" name="example-0-76"></a>        <span class="n">lib_listeners</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_lib_listeners</span> <span class="ow">or</span> <span class="p">[])</span>
-</span><span id="line-0-77"><a id="example-0-77" name="example-0-77"></a>        <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">cli_listeners</span> <span class="o">+</span> <span class="n">lib_listeners</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">li</span><span class="p">:</span> <span class="o">-</span><span class="n">li</span><span class="o">.</span><span class="n">priority</span><span class="p">)</span>
-</span><span id="line-0-78"><a id="example-0-78" name="example-0-78"></a>
-</span><span id="line-0-79"><a id="example-0-79" name="example-0-79"></a>    <span class="nd">@property</span>
-</span><span id="line-0-80"><a id="example-0-80" name="example-0-80"></a>    <span class="k">def</span> <span class="nf">start_loggers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="line-0-81"><a id="example-0-81" name="example-0-81"></a>        <span class="n">loggers</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_other_loggers</span>
-</span><span id="line-0-82"><a id="example-0-82" name="example-0-82"></a>                   <span class="o">+</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_console_logger</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_syslog</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_xml_logger</span><span class="p">]</span>
-</span><span id="line-0-83"><a id="example-0-83" name="example-0-83"></a>                   <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_listeners</span><span class="p">)</span>
-</span><span id="line-0-84"><a id="example-0-84" name="example-0-84"></a>        <span class="k">return</span> <span class="p">[</span><span class="n">logger</span> <span class="k">for</span> <span class="n">logger</span> <span class="ow">in</span> <span class="n">loggers</span> <span class="k">if</span> <span class="n">logger</span><span class="p">]</span>
-</span><span id="line-0-85"><a id="example-0-85" name="example-0-85"></a>
-</span><span id="line-0-86"><a id="example-0-86" name="example-0-86"></a>    <span class="nd">@property</span>
-</span><span id="line-0-87"><a id="example-0-87" name="example-0-87"></a>    <span class="k">def</span> <span class="nf">end_loggers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="line-0-88"><a id="example-0-88" name="example-0-88"></a>        <span class="n">loggers</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_listeners</span>
-</span><span id="line-0-89"><a id="example-0-89" name="example-0-89"></a>                   <span class="o">+</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_console_logger</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_syslog</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_xml_logger</span><span class="p">]</span>
-</span><span id="line-0-90"><a id="example-0-90" name="example-0-90"></a>                   <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_other_loggers</span><span class="p">)</span>
-</span><span id="line-0-91"><a id="example-0-91" name="example-0-91"></a>        <span class="k">return</span> <span class="p">[</span><span class="n">logger</span> <span class="k">for</span> <span class="n">logger</span> <span class="ow">in</span> <span class="n">loggers</span> <span class="k">if</span> <span class="n">logger</span><span class="p">]</span>
-</span><span id="line-0-92"><a id="example-0-92" name="example-0-92"></a>
-</span><span id="line-0-93"><a id="example-0-93" name="example-0-93"></a>    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="line-0-94"><a id="example-0-94" name="example-0-94"></a>        <span class="k">return</span> <span class="nb">iter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">end_loggers</span><span class="p">)</span>
-</span><span id="line-0-95"><a id="example-0-95" name="example-0-95"></a>
-</span><span id="line-0-96"><a id="example-0-96" name="example-0-96"></a>    <span class="k">def</span> <span class="fm">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="line-0-97"><a id="example-0-97" name="example-0-97"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_enabled</span><span class="p">:</span>
-</span><span id="line-0-98"><a id="example-0-98" name="example-0-98"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">register_syslog</span><span class="p">()</span>
-</span><span id="line-0-99"><a id="example-0-99" name="example-0-99"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_enabled</span> <span class="o">+=</span> <span class="mi">1</span>
-</span><span id="line-0-100"><a id="example-0-100" name="example-0-100"></a>
-</span><span id="line-0-101"><a id="example-0-101" name="example-0-101"></a>    <span class="k">def</span> <span class="fm">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">exc_info</span><span class="p">):</span>
-</span><span id="line-0-102"><a id="example-0-102" name="example-0-102"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_enabled</span> <span class="o">-=</span> <span class="mi">1</span>
-</span><span id="line-0-103"><a id="example-0-103" name="example-0-103"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_enabled</span><span class="p">:</span>
-</span><span id="line-0-104"><a id="example-0-104" name="example-0-104"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</span><span id="line-0-105"><a id="example-0-105" name="example-0-105"></a>
-</span><span id="line-0-106"><a id="example-0-106" name="example-0-106"></a>    <span class="k">def</span> <span class="nf">register_console_logger</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;verbose&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">78</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="s1">&#39;AUTO&#39;</span><span class="p">,</span>
-</span><span id="line-0-107"><a id="example-0-107" name="example-0-107"></a>                                <span class="n">links</span><span class="o">=</span><span class="s1">&#39;AUTO&#39;</span><span class="p">,</span> <span class="n">markers</span><span class="o">=</span><span class="s1">&#39;AUTO&#39;</span><span class="p">,</span> <span class="n">stdout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">stderr</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-</span><span id="line-0-108"><a id="example-0-108" name="example-0-108"></a>        <span class="n">logger</span> <span class="o">=</span> <span class="n">ConsoleOutput</span><span class="p">(</span><span class="nb">type</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">colors</span><span class="p">,</span> <span class="n">links</span><span class="p">,</span> <span class="n">markers</span><span class="p">,</span> <span class="n">stdout</span><span class="p">,</span> <span class="n">stderr</span><span class="p">)</span>
-</span><span id="line-0-109"><a id="example-0-109" name="example-0-109"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_console_logger</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wrap_and_relay</span><span class="p">(</span><span class="n">logger</span><span class="p">)</span>
-</span><span id="line-0-110"><a id="example-0-110" name="example-0-110"></a>
-</span><span id="line-0-111"><a id="example-0-111" name="example-0-111"></a>    <span class="k">def</span> <span class="nf">_wrap_and_relay</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">logger</span><span class="p">):</span>
-</span><span id="line-0-112"><a id="example-0-112" name="example-0-112"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_relay_cached_messages</span><span class="p">(</span><span class="n">logger</span><span class="p">)</span>
-</span><span id="line-0-113"><a id="example-0-113" name="example-0-113"></a>        <span class="k">return</span> <span class="n">logger</span>
-</span><span id="line-0-114"><a id="example-0-114" name="example-0-114"></a>
-</span><span id="line-0-115"><a id="example-0-115" name="example-0-115"></a>    <span class="k">def</span> <span class="nf">_relay_cached_messages</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">logger</span><span class="p">):</span>
-</span><span id="line-0-116"><a id="example-0-116" name="example-0-116"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_message_cache</span><span class="p">:</span>
-</span><span id="line-0-117"><a id="example-0-117" name="example-0-117"></a>            <span class="k">for</span> <span class="n">msg</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_message_cache</span><span class="p">[:]:</span>
-</span><span id="line-0-118"><a id="example-0-118" name="example-0-118"></a>                <span class="n">logger</span><span class="o">.</span><span class="n">message</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
-</span><span id="line-0-119"><a id="example-0-119" name="example-0-119"></a>
-</span><span id="line-0-120"><a id="example-0-120" name="example-0-120"></a>    <span class="k">def</span> <span class="nf">unregister_console_logger</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="line-0-121"><a id="example-0-121" name="example-0-121"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_console_logger</span> <span class="o">=</span> <span class="kc">None</span>
-</span><span id="line-0-122"><a id="example-0-122" name="example-0-122"></a>
-</span><span id="line-0-123"><a id="example-0-123" name="example-0-123"></a>    <span class="k">def</span> <span class="nf">register_syslog</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="s1">&#39;INFO&#39;</span><span class="p">):</span>
-</span><span id="line-0-124"><a id="example-0-124" name="example-0-124"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="n">path</span><span class="p">:</span>
-</span><span id="line-0-125"><a id="example-0-125" name="example-0-125"></a>            <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;ROBOT_SYSLOG_FILE&#39;</span><span class="p">,</span> <span class="s1">&#39;NONE&#39;</span><span class="p">)</span>
-</span><span id="line-0-126"><a id="example-0-126" name="example-0-126"></a>            <span class="n">level</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;ROBOT_SYSLOG_LEVEL&#39;</span><span class="p">,</span> <span class="n">level</span><span class="p">)</span>
-</span><span id="line-0-127"><a id="example-0-127" name="example-0-127"></a>        <span class="k">if</span> <span class="n">path</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;NONE&#39;</span><span class="p">:</span>
-</span><span id="line-0-128"><a id="example-0-128" name="example-0-128"></a>            <span class="k">return</span>
-</span><span id="line-0-129"><a id="example-0-129" name="example-0-129"></a>        <span class="k">try</span><span class="p">:</span>
-</span><span id="line-0-130"><a id="example-0-130" name="example-0-130"></a>            <span class="n">syslog</span> <span class="o">=</span> <span class="n">FileLogger</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">level</span><span class="p">)</span>
-</span><span id="line-0-131"><a id="example-0-131" name="example-0-131"></a>        <span class="k">except</span> <span class="n">DataError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
-</span><span id="line-0-132"><a id="example-0-132" name="example-0-132"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;Opening syslog file &#39;</span><span class="si">%s</span><span class="s2">&#39; failed: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">err</span><span class="o">.</span><span class="n">message</span><span class="p">))</span>
-</span><span id="line-0-133"><a id="example-0-133" name="example-0-133"></a>        <span class="k">else</span><span class="p">:</span>
-</span><span id="line-0-134"><a id="example-0-134" name="example-0-134"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">_syslog</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wrap_and_relay</span><span class="p">(</span><span class="n">syslog</span><span class="p">)</span>
-</span><span id="line-0-135"><a id="example-0-135" name="example-0-135"></a>
-</span><span id="line-0-136"><a id="example-0-136" name="example-0-136"></a>    <span class="k">def</span> <span class="nf">register_xml_logger</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">logger</span><span class="p">):</span>
-</span><span id="line-0-137"><a id="example-0-137" name="example-0-137"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_xml_logger</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wrap_and_relay</span><span class="p">(</span><span class="n">logger</span><span class="p">)</span>
-</span><span id="line-0-138"><a id="example-0-138" name="example-0-138"></a>
-</span><span id="line-0-139"><a id="example-0-139" name="example-0-139"></a>    <span class="k">def</span> <span class="nf">unregister_xml_logger</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="line-0-140"><a id="example-0-140" name="example-0-140"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_xml_logger</span> <span class="o">=</span> <span class="kc">None</span>
-</span><span id="line-0-141"><a id="example-0-141" name="example-0-141"></a>
-</span><span id="line-0-142"><a id="example-0-142" name="example-0-142"></a>    <span class="k">def</span> <span class="nf">register_listeners</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">listeners</span><span class="p">,</span> <span class="n">library_listeners</span><span class="p">):</span>
-</span><span id="line-0-143"><a id="example-0-143" name="example-0-143"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_cli_listeners</span> <span class="o">=</span> <span class="n">listeners</span>
-</span><span id="line-0-144"><a id="example-0-144" name="example-0-144"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_lib_listeners</span> <span class="o">=</span> <span class="n">library_listeners</span>
-</span><span id="line-0-145"><a id="example-0-145" name="example-0-145"></a>        <span class="k">for</span> <span class="n">listener</span> <span class="ow">in</span> <span class="n">listeners</span> <span class="ow">or</span> <span class="p">():</span>
-</span><span id="line-0-146"><a id="example-0-146" name="example-0-146"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">_relay_cached_messages</span><span class="p">(</span><span class="n">listener</span><span class="p">)</span>
-</span><span id="line-0-147"><a id="example-0-147" name="example-0-147"></a>
-</span><span id="line-0-148"><a id="example-0-148" name="example-0-148"></a>    <span class="k">def</span> <span class="nf">register_logger</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">loggers</span><span class="p">):</span>
-</span><span id="line-0-149"><a id="example-0-149" name="example-0-149"></a>        <span class="k">for</span> <span class="n">logger</span> <span class="ow">in</span> <span class="n">loggers</span><span class="p">:</span>
-</span><span id="line-0-150"><a id="example-0-150" name="example-0-150"></a>            <span class="n">logger</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wrap_and_relay</span><span class="p">(</span><span class="n">logger</span><span class="p">)</span>
-</span><span id="line-0-151"><a id="example-0-151" name="example-0-151"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">_other_loggers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">logger</span><span class="p">)</span>
-</span><span id="line-0-152"><a id="example-0-152" name="example-0-152"></a>
-</span><span id="line-0-153"><a id="example-0-153" name="example-0-153"></a>    <span class="k">def</span> <span class="nf">unregister_logger</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">loggers</span><span class="p">):</span>
-</span><span id="line-0-154"><a id="example-0-154" name="example-0-154"></a>        <span class="k">for</span> <span class="n">logger</span> <span class="ow">in</span> <span class="n">loggers</span><span class="p">:</span>
-</span><span id="line-0-155"><a id="example-0-155" name="example-0-155"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">_other_loggers</span> <span class="o">=</span> <span class="p">[</span><span class="n">l</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_other_loggers</span> <span class="k">if</span> <span class="n">l</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">logger</span><span class="p">]</span>
-</span><span id="line-0-156"><a id="example-0-156" name="example-0-156"></a>
-</span><span id="line-0-157"><a id="example-0-157" name="example-0-157"></a>    <span class="k">def</span> <span class="nf">disable_message_cache</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="line-0-158"><a id="example-0-158" name="example-0-158"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_message_cache</span> <span class="o">=</span> <span class="kc">None</span>
-</span><span id="line-0-159"><a id="example-0-159" name="example-0-159"></a>
-</span><span id="line-0-160"><a id="example-0-160" name="example-0-160"></a>    <span class="k">def</span> <span class="nf">register_error_listener</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">listener</span><span class="p">):</span>
-</span><span id="line-0-161"><a id="example-0-161" name="example-0-161"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_error_listener</span> <span class="o">=</span> <span class="n">listener</span>
-</span><span id="line-0-162"><a id="example-0-162" name="example-0-162"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_error_occurred</span><span class="p">:</span>
-</span><span id="line-0-163"><a id="example-0-163" name="example-0-163"></a>            <span class="n">listener</span><span class="p">()</span>
-</span><span id="line-0-164"><a id="example-0-164" name="example-0-164"></a>
-</span><span id="line-0-165"><a id="example-0-165" name="example-0-165"></a>    <span class="k">def</span> <span class="nf">message</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
-</span><span id="line-0-166"><a id="example-0-166" name="example-0-166"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Messages about what the framework is doing, warnings, errors, ...&quot;&quot;&quot;</span>
-</span><span id="line-0-167"><a id="example-0-167" name="example-0-167"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cache_only</span><span class="p">:</span>
-</span><span id="line-0-168"><a id="example-0-168" name="example-0-168"></a>            <span class="k">for</span> <span class="n">logger</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
-</span><span id="line-0-169"><a id="example-0-169" name="example-0-169"></a>                <span class="n">logger</span><span class="o">.</span><span class="n">message</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
-</span><span id="line-0-170"><a id="example-0-170" name="example-0-170"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_message_cache</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-0-171"><a id="example-0-171" name="example-0-171"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">_message_cache</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
-</span><span id="line-0-172"><a id="example-0-172" name="example-0-172"></a>        <span class="k">if</span> <span class="n">msg</span><span class="o">.</span><span class="n">level</span> <span class="o">==</span> <span class="s1">&#39;ERROR&#39;</span><span class="p">:</span>
-</span><span id="line-0-173"><a id="example-0-173" name="example-0-173"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">_error_occurred</span> <span class="o">=</span> <span class="kc">True</span>
-</span><span id="line-0-174"><a id="example-0-174" name="example-0-174"></a>            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_error_listener</span><span class="p">:</span>
-</span><span id="line-0-175"><a id="example-0-175" name="example-0-175"></a>                <span class="bp">self</span><span class="o">.</span><span class="n">_error_listener</span><span class="p">()</span>
-</span><span id="line-0-176"><a id="example-0-176" name="example-0-176"></a>
-</span><span id="line-0-177"><a id="example-0-177" name="example-0-177"></a>    <span class="nd">@property</span>
-</span><span id="line-0-178"><a id="example-0-178" name="example-0-178"></a>    <span class="nd">@contextmanager</span>
-</span><span id="line-0-179"><a id="example-0-179" name="example-0-179"></a>    <span class="k">def</span> <span class="nf">cache_only</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="line-0-180"><a id="example-0-180" name="example-0-180"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_cache_only</span> <span class="o">=</span> <span class="kc">True</span>
-</span><span id="line-0-181"><a id="example-0-181" name="example-0-181"></a>        <span class="k">try</span><span class="p">:</span>
-</span><span id="line-0-182"><a id="example-0-182" name="example-0-182"></a>            <span class="k">yield</span>
-</span><span id="line-0-183"><a id="example-0-183" name="example-0-183"></a>        <span class="k">finally</span><span class="p">:</span>
-</span><span id="line-0-184"><a id="example-0-184" name="example-0-184"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">_cache_only</span> <span class="o">=</span> <span class="kc">False</span>
-</span><span id="line-0-185"><a id="example-0-185" name="example-0-185"></a>
-</span><span id="line-0-186"><a id="example-0-186" name="example-0-186"></a>    <span class="nd">@property</span>
-</span><span id="line-0-187"><a id="example-0-187" name="example-0-187"></a>    <span class="nd">@contextmanager</span>
-</span><span id="line-0-188"><a id="example-0-188" name="example-0-188"></a>    <span class="k">def</span> <span class="nf">delayed_logging</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="line-0-189"><a id="example-0-189" name="example-0-189"></a>        <span class="n">prev_cache</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_log_message_cache</span>
-</span><span id="line-0-190"><a id="example-0-190" name="example-0-190"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_log_message_cache</span> <span class="o">=</span> <span class="p">[]</span>
-</span><span id="line-0-191"><a id="example-0-191" name="example-0-191"></a>        <span class="k">try</span><span class="p">:</span>
-</span><span id="line-0-192"><a id="example-0-192" name="example-0-192"></a>            <span class="k">yield</span>
-</span><span id="line-0-193"><a id="example-0-193" name="example-0-193"></a>        <span class="k">finally</span><span class="p">:</span>
-</span><span id="line-0-194"><a id="example-0-194" name="example-0-194"></a>            <span class="n">messages</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_log_message_cache</span>
-</span><span id="line-0-195"><a id="example-0-195" name="example-0-195"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">_log_message_cache</span> <span class="o">=</span> <span class="n">prev_cache</span>
-</span><span id="line-0-196"><a id="example-0-196" name="example-0-196"></a>            <span class="k">for</span> <span class="n">msg</span> <span class="ow">in</span> <span class="n">messages</span> <span class="ow">or</span> <span class="p">():</span>
-</span><span id="line-0-197"><a id="example-0-197" name="example-0-197"></a>                <span class="bp">self</span><span class="o">.</span><span class="n">_log_message</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">no_cache</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</span><span id="line-0-198"><a id="example-0-198" name="example-0-198"></a>
-</span><span id="line-0-199"><a id="example-0-199" name="example-0-199"></a>    <span class="k">def</span> <span class="nf">_log_message</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">msg</span><span class="p">,</span> <span class="n">no_cache</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-</span><span id="line-0-200"><a id="example-0-200" name="example-0-200"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Log messages written (mainly) by libraries.&quot;&quot;&quot;</span>
-</span><span id="line-0-201"><a id="example-0-201" name="example-0-201"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_log_message_cache</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">no_cache</span><span class="p">:</span>
-</span><span id="line-0-202"><a id="example-0-202" name="example-0-202"></a>            <span class="n">msg</span><span class="o">.</span><span class="n">resolve_delayed_message</span><span class="p">()</span>
-</span><span id="line-0-203"><a id="example-0-203" name="example-0-203"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">_log_message_cache</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
-</span><span id="line-0-204"><a id="example-0-204" name="example-0-204"></a>            <span class="k">return</span>
-</span><span id="line-0-205"><a id="example-0-205" name="example-0-205"></a>        <span class="k">for</span> <span class="n">logger</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
-</span><span id="line-0-206"><a id="example-0-206" name="example-0-206"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">log_message</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
-</span><span id="line-0-207"><a id="example-0-207" name="example-0-207"></a>        <span class="k">if</span> <span class="n">msg</span><span class="o">.</span><span class="n">level</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;WARN&#39;</span><span class="p">,</span> <span class="s1">&#39;ERROR&#39;</span><span class="p">):</span>
-</span><span id="line-0-208"><a id="example-0-208" name="example-0-208"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">message</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
-</span><span id="line-0-209"><a id="example-0-209" name="example-0-209"></a>
-</span><span id="line-0-210"><a id="example-0-210" name="example-0-210"></a>    <span class="n">log_message</span> <span class="o">=</span> <span class="n">message</span>
-</span><span id="line-0-211"><a id="example-0-211" name="example-0-211"></a>
-</span><span id="line-0-212"><a id="example-0-212" name="example-0-212"></a>    <span class="k">def</span> <span class="nf">log_output</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">output</span><span class="p">):</span>
-</span><span id="line-0-213"><a id="example-0-213" name="example-0-213"></a>        <span class="k">for</span> <span class="n">msg</span> <span class="ow">in</span> <span class="n">StdoutLogSplitter</span><span class="p">(</span><span class="n">output</span><span class="p">):</span>
-</span><span id="line-0-214"><a id="example-0-214" name="example-0-214"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">log_message</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
-</span><span id="line-0-215"><a id="example-0-215" name="example-0-215"></a>
-</span><span id="line-0-216"><a id="example-0-216" name="example-0-216"></a>    <span class="k">def</span> <span class="nf">enable_library_import_logging</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="line-0-217"><a id="example-0-217" name="example-0-217"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_prev_log_message_handlers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">log_message</span><span class="p">)</span>
-</span><span id="line-0-218"><a id="example-0-218" name="example-0-218"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">log_message</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">message</span>
-</span><span id="line-0-219"><a id="example-0-219" name="example-0-219"></a>
-</span><span id="line-0-220"><a id="example-0-220" name="example-0-220"></a>    <span class="k">def</span> <span class="nf">disable_library_import_logging</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="line-0-221"><a id="example-0-221" name="example-0-221"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">log_message</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_prev_log_message_handlers</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
-</span><span id="line-0-222"><a id="example-0-222" name="example-0-222"></a>
-</span><span id="line-0-223"><a id="example-0-223" name="example-0-223"></a>    <span class="k">def</span> <span class="nf">start_suite</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
-</span><span id="line-0-224"><a id="example-0-224" name="example-0-224"></a>        <span class="k">for</span> <span class="n">logger</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_loggers</span><span class="p">:</span>
-</span><span id="line-0-225"><a id="example-0-225" name="example-0-225"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">start_suite</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
-</span><span id="line-0-226"><a id="example-0-226" name="example-0-226"></a>
-</span><span id="line-0-227"><a id="example-0-227" name="example-0-227"></a>    <span class="k">def</span> <span class="nf">end_suite</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
-</span><span id="line-0-228"><a id="example-0-228" name="example-0-228"></a>        <span class="k">for</span> <span class="n">logger</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">end_loggers</span><span class="p">:</span>
-</span><span id="line-0-229"><a id="example-0-229" name="example-0-229"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">end_suite</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
-</span><span id="line-0-230"><a id="example-0-230" name="example-0-230"></a>
-</span><span id="line-0-231"><a id="example-0-231" name="example-0-231"></a>    <span class="k">def</span> <span class="nf">start_test</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
-</span><span id="line-0-232"><a id="example-0-232" name="example-0-232"></a>        <span class="k">for</span> <span class="n">logger</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_loggers</span><span class="p">:</span>
-</span><span id="line-0-233"><a id="example-0-233" name="example-0-233"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">start_test</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
-</span><span id="line-0-234"><a id="example-0-234" name="example-0-234"></a>
-</span><span id="line-0-235"><a id="example-0-235" name="example-0-235"></a>    <span class="k">def</span> <span class="nf">end_test</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
-</span><span id="line-0-236"><a id="example-0-236" name="example-0-236"></a>        <span class="k">for</span> <span class="n">logger</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">end_loggers</span><span class="p">:</span>
-</span><span id="line-0-237"><a id="example-0-237" name="example-0-237"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">end_test</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
-</span><span id="line-0-238"><a id="example-0-238" name="example-0-238"></a>
-</span><span id="line-0-239"><a id="example-0-239" name="example-0-239"></a>    <span class="nd">@start_body_item</span>
-</span><span id="line-0-240"><a id="example-0-240" name="example-0-240"></a>    <span class="k">def</span> <span class="nf">start_keyword</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
-</span><span id="line-0-241"><a id="example-0-241" name="example-0-241"></a>        <span class="k">for</span> <span class="n">logger</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_loggers</span><span class="p">:</span>
-</span><span id="line-0-242"><a id="example-0-242" name="example-0-242"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">start_keyword</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
-</span><span id="line-0-243"><a id="example-0-243" name="example-0-243"></a>
-</span><span id="line-0-244"><a id="example-0-244" name="example-0-244"></a>    <span class="nd">@end_body_item</span>
-</span><span id="line-0-245"><a id="example-0-245" name="example-0-245"></a>    <span class="k">def</span> <span class="nf">end_keyword</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
-</span><span id="line-0-246"><a id="example-0-246" name="example-0-246"></a>        <span class="k">for</span> <span class="n">logger</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">end_loggers</span><span class="p">:</span>
-</span><span id="line-0-247"><a id="example-0-247" name="example-0-247"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">end_keyword</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
-</span><span id="line-0-248"><a id="example-0-248" name="example-0-248"></a>
-</span><span id="line-0-249"><a id="example-0-249" name="example-0-249"></a>    <span class="nd">@start_body_item</span>
-</span><span id="line-0-250"><a id="example-0-250" name="example-0-250"></a>    <span class="k">def</span> <span class="nf">start_user_keyword</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">implementation</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
-</span><span id="line-0-251"><a id="example-0-251" name="example-0-251"></a>        <span class="k">for</span> <span class="n">logger</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_loggers</span><span class="p">:</span>
-</span><span id="line-0-252"><a id="example-0-252" name="example-0-252"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">start_user_keyword</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">implementation</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
-</span><span id="line-0-253"><a id="example-0-253" name="example-0-253"></a>
-</span><span id="line-0-254"><a id="example-0-254" name="example-0-254"></a>    <span class="nd">@end_body_item</span>
-</span><span id="line-0-255"><a id="example-0-255" name="example-0-255"></a>    <span class="k">def</span> <span class="nf">end_user_keyword</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">implementation</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
-</span><span id="line-0-256"><a id="example-0-256" name="example-0-256"></a>        <span class="k">for</span> <span class="n">logger</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">end_loggers</span><span class="p">:</span>
-</span><span id="line-0-257"><a id="example-0-257" name="example-0-257"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">end_user_keyword</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">implementation</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
-</span><span id="line-0-258"><a id="example-0-258" name="example-0-258"></a>
-</span><span id="line-0-259"><a id="example-0-259" name="example-0-259"></a>    <span class="nd">@start_body_item</span>
-</span><span id="line-0-260"><a id="example-0-260" name="example-0-260"></a>    <span class="k">def</span> <span class="nf">start_library_keyword</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">implementation</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
-</span><span id="line-0-261"><a id="example-0-261" name="example-0-261"></a>        <span class="k">for</span> <span class="n">logger</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_loggers</span><span class="p">:</span>
-</span><span id="line-0-262"><a id="example-0-262" name="example-0-262"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">start_library_keyword</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">implementation</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
-</span><span id="line-0-263"><a id="example-0-263" name="example-0-263"></a>
-</span><span id="line-0-264"><a id="example-0-264" name="example-0-264"></a>    <span class="nd">@end_body_item</span>
-</span><span id="line-0-265"><a id="example-0-265" name="example-0-265"></a>    <span class="k">def</span> <span class="nf">end_library_keyword</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">implementation</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
-</span><span id="line-0-266"><a id="example-0-266" name="example-0-266"></a>        <span class="k">for</span> <span class="n">logger</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">end_loggers</span><span class="p">:</span>
-</span><span id="line-0-267"><a id="example-0-267" name="example-0-267"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">end_library_keyword</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">implementation</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
-</span><span id="line-0-268"><a id="example-0-268" name="example-0-268"></a>
-</span><span id="line-0-269"><a id="example-0-269" name="example-0-269"></a>    <span class="nd">@start_body_item</span>
-</span><span id="line-0-270"><a id="example-0-270" name="example-0-270"></a>    <span class="k">def</span> <span class="nf">start_invalid_keyword</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">implementation</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
-</span><span id="line-0-271"><a id="example-0-271" name="example-0-271"></a>        <span class="k">for</span> <span class="n">logger</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_loggers</span><span class="p">:</span>
-</span><span id="line-0-272"><a id="example-0-272" name="example-0-272"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">start_invalid_keyword</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">implementation</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
-</span><span id="line-0-273"><a id="example-0-273" name="example-0-273"></a>
-</span><span id="line-0-274"><a id="example-0-274" name="example-0-274"></a>    <span class="nd">@end_body_item</span>
-</span><span id="line-0-275"><a id="example-0-275" name="example-0-275"></a>    <span class="k">def</span> <span class="nf">end_invalid_keyword</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">implementation</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
-</span><span id="line-0-276"><a id="example-0-276" name="example-0-276"></a>        <span class="k">for</span> <span class="n">logger</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">end_loggers</span><span class="p">:</span>
-</span><span id="line-0-277"><a id="example-0-277" name="example-0-277"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">end_invalid_keyword</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">implementation</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
-</span><span id="line-0-278"><a id="example-0-278" name="example-0-278"></a>
-</span><span id="line-0-279"><a id="example-0-279" name="example-0-279"></a>    <span class="nd">@start_body_item</span>
-</span><span id="line-0-280"><a id="example-0-280" name="example-0-280"></a>    <span class="k">def</span> <span class="nf">start_for</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
-</span><span id="line-0-281"><a id="example-0-281" name="example-0-281"></a>        <span class="k">for</span> <span class="n">logger</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_loggers</span><span class="p">:</span>
-</span><span id="line-0-282"><a id="example-0-282" name="example-0-282"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">start_for</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
-</span><span id="line-0-283"><a id="example-0-283" name="example-0-283"></a>
-</span><span id="line-0-284"><a id="example-0-284" name="example-0-284"></a>    <span class="nd">@end_body_item</span>
-</span><span id="line-0-285"><a id="example-0-285" name="example-0-285"></a>    <span class="k">def</span> <span class="nf">end_for</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
-</span><span id="line-0-286"><a id="example-0-286" name="example-0-286"></a>        <span class="k">for</span> <span class="n">logger</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">end_loggers</span><span class="p">:</span>
-</span><span id="line-0-287"><a id="example-0-287" name="example-0-287"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">end_for</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
-</span><span id="line-0-288"><a id="example-0-288" name="example-0-288"></a>
-</span><span id="line-0-289"><a id="example-0-289" name="example-0-289"></a>    <span class="nd">@start_body_item</span>
-</span><span id="line-0-290"><a id="example-0-290" name="example-0-290"></a>    <span class="k">def</span> <span class="nf">start_for_iteration</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
-</span><span id="line-0-291"><a id="example-0-291" name="example-0-291"></a>        <span class="k">for</span> <span class="n">logger</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_loggers</span><span class="p">:</span>
-</span><span id="line-0-292"><a id="example-0-292" name="example-0-292"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">start_for_iteration</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
-</span><span id="line-0-293"><a id="example-0-293" name="example-0-293"></a>
-</span><span id="line-0-294"><a id="example-0-294" name="example-0-294"></a>    <span class="nd">@end_body_item</span>
-</span><span id="line-0-295"><a id="example-0-295" name="example-0-295"></a>    <span class="k">def</span> <span class="nf">end_for_iteration</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
-</span><span id="line-0-296"><a id="example-0-296" name="example-0-296"></a>        <span class="k">for</span> <span class="n">logger</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">end_loggers</span><span class="p">:</span>
-</span><span id="line-0-297"><a id="example-0-297" name="example-0-297"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">end_for_iteration</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
-</span><span id="line-0-298"><a id="example-0-298" name="example-0-298"></a>
-</span><span id="line-0-299"><a id="example-0-299" name="example-0-299"></a>    <span class="nd">@start_body_item</span>
-</span><span id="line-0-300"><a id="example-0-300" name="example-0-300"></a>    <span class="k">def</span> <span class="nf">start_while</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
-</span><span id="line-0-301"><a id="example-0-301" name="example-0-301"></a>        <span class="k">for</span> <span class="n">logger</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_loggers</span><span class="p">:</span>
-</span><span id="line-0-302"><a id="example-0-302" name="example-0-302"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">start_while</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
-</span><span id="line-0-303"><a id="example-0-303" name="example-0-303"></a>
-</span><span id="line-0-304"><a id="example-0-304" name="example-0-304"></a>    <span class="nd">@end_body_item</span>
-</span><span id="line-0-305"><a id="example-0-305" name="example-0-305"></a>    <span class="k">def</span> <span class="nf">end_while</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
-</span><span id="line-0-306"><a id="example-0-306" name="example-0-306"></a>        <span class="k">for</span> <span class="n">logger</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">end_loggers</span><span class="p">:</span>
-</span><span id="line-0-307"><a id="example-0-307" name="example-0-307"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">end_while</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
-</span><span id="line-0-308"><a id="example-0-308" name="example-0-308"></a>
-</span><span id="line-0-309"><a id="example-0-309" name="example-0-309"></a>    <span class="nd">@start_body_item</span>
-</span><span id="line-0-310"><a id="example-0-310" name="example-0-310"></a>    <span class="k">def</span> <span class="nf">start_while_iteration</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
-</span><span id="line-0-311"><a id="example-0-311" name="example-0-311"></a>        <span class="k">for</span> <span class="n">logger</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_loggers</span><span class="p">:</span>
-</span><span id="line-0-312"><a id="example-0-312" name="example-0-312"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">start_while_iteration</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
-</span><span id="line-0-313"><a id="example-0-313" name="example-0-313"></a>
-</span><span id="line-0-314"><a id="example-0-314" name="example-0-314"></a>    <span class="nd">@end_body_item</span>
-</span><span id="line-0-315"><a id="example-0-315" name="example-0-315"></a>    <span class="k">def</span> <span class="nf">end_while_iteration</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
-</span><span id="line-0-316"><a id="example-0-316" name="example-0-316"></a>        <span class="k">for</span> <span class="n">logger</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">end_loggers</span><span class="p">:</span>
-</span><span id="line-0-317"><a id="example-0-317" name="example-0-317"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">end_while_iteration</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
-</span><span id="line-0-318"><a id="example-0-318" name="example-0-318"></a>
-</span><span id="line-0-319"><a id="example-0-319" name="example-0-319"></a>    <span class="nd">@start_body_item</span>
-</span><span id="line-0-320"><a id="example-0-320" name="example-0-320"></a>    <span class="k">def</span> <span class="nf">start_if</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
-</span><span id="line-0-321"><a id="example-0-321" name="example-0-321"></a>        <span class="k">for</span> <span class="n">logger</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_loggers</span><span class="p">:</span>
-</span><span id="line-0-322"><a id="example-0-322" name="example-0-322"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">start_if</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
-</span><span id="line-0-323"><a id="example-0-323" name="example-0-323"></a>
-</span><span id="line-0-324"><a id="example-0-324" name="example-0-324"></a>    <span class="nd">@end_body_item</span>
-</span><span id="line-0-325"><a id="example-0-325" name="example-0-325"></a>    <span class="k">def</span> <span class="nf">end_if</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
-</span><span id="line-0-326"><a id="example-0-326" name="example-0-326"></a>        <span class="k">for</span> <span class="n">logger</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">end_loggers</span><span class="p">:</span>
-</span><span id="line-0-327"><a id="example-0-327" name="example-0-327"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">end_if</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
-</span><span id="line-0-328"><a id="example-0-328" name="example-0-328"></a>
-</span><span id="line-0-329"><a id="example-0-329" name="example-0-329"></a>    <span class="nd">@start_body_item</span>
-</span><span id="line-0-330"><a id="example-0-330" name="example-0-330"></a>    <span class="k">def</span> <span class="nf">start_if_branch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
-</span><span id="line-0-331"><a id="example-0-331" name="example-0-331"></a>        <span class="k">for</span> <span class="n">logger</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_loggers</span><span class="p">:</span>
-</span><span id="line-0-332"><a id="example-0-332" name="example-0-332"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">start_if_branch</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
-</span><span id="line-0-333"><a id="example-0-333" name="example-0-333"></a>
-</span><span id="line-0-334"><a id="example-0-334" name="example-0-334"></a>    <span class="nd">@end_body_item</span>
-</span><span id="line-0-335"><a id="example-0-335" name="example-0-335"></a>    <span class="k">def</span> <span class="nf">end_if_branch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
-</span><span id="line-0-336"><a id="example-0-336" name="example-0-336"></a>        <span class="k">for</span> <span class="n">logger</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">end_loggers</span><span class="p">:</span>
-</span><span id="line-0-337"><a id="example-0-337" name="example-0-337"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">end_if_branch</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
-</span><span id="line-0-338"><a id="example-0-338" name="example-0-338"></a>
-</span><span id="line-0-339"><a id="example-0-339" name="example-0-339"></a>    <span class="nd">@start_body_item</span>
-</span><span id="line-0-340"><a id="example-0-340" name="example-0-340"></a>    <span class="k">def</span> <span class="nf">start_try</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
-</span><span id="line-0-341"><a id="example-0-341" name="example-0-341"></a>        <span class="k">for</span> <span class="n">logger</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_loggers</span><span class="p">:</span>
-</span><span id="line-0-342"><a id="example-0-342" name="example-0-342"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">start_try</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
-</span><span id="line-0-343"><a id="example-0-343" name="example-0-343"></a>
-</span><span id="line-0-344"><a id="example-0-344" name="example-0-344"></a>    <span class="nd">@end_body_item</span>
-</span><span id="line-0-345"><a id="example-0-345" name="example-0-345"></a>    <span class="k">def</span> <span class="nf">end_try</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
-</span><span id="line-0-346"><a id="example-0-346" name="example-0-346"></a>        <span class="k">for</span> <span class="n">logger</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">end_loggers</span><span class="p">:</span>
-</span><span id="line-0-347"><a id="example-0-347" name="example-0-347"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">end_try</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
-</span><span id="line-0-348"><a id="example-0-348" name="example-0-348"></a>
-</span><span id="line-0-349"><a id="example-0-349" name="example-0-349"></a>    <span class="nd">@start_body_item</span>
-</span><span id="line-0-350"><a id="example-0-350" name="example-0-350"></a>    <span class="k">def</span> <span class="nf">start_try_branch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
-</span><span id="line-0-351"><a id="example-0-351" name="example-0-351"></a>        <span class="k">for</span> <span class="n">logger</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_loggers</span><span class="p">:</span>
-</span><span id="line-0-352"><a id="example-0-352" name="example-0-352"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">start_try_branch</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
-</span><span id="line-0-353"><a id="example-0-353" name="example-0-353"></a>
-</span><span id="line-0-354"><a id="example-0-354" name="example-0-354"></a>    <span class="nd">@end_body_item</span>
-</span><span id="line-0-355"><a id="example-0-355" name="example-0-355"></a>    <span class="k">def</span> <span class="nf">end_try_branch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
-</span><span id="line-0-356"><a id="example-0-356" name="example-0-356"></a>        <span class="k">for</span> <span class="n">logger</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">end_loggers</span><span class="p">:</span>
-</span><span id="line-0-357"><a id="example-0-357" name="example-0-357"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">end_try_branch</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
-</span><span id="line-0-358"><a id="example-0-358" name="example-0-358"></a>
-</span><span id="line-0-359"><a id="example-0-359" name="example-0-359"></a>    <span class="nd">@start_body_item</span>
-</span><span id="line-0-360"><a id="example-0-360" name="example-0-360"></a>    <span class="k">def</span> <span class="nf">start_var</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
-</span><span id="line-0-361"><a id="example-0-361" name="example-0-361"></a>        <span class="k">for</span> <span class="n">logger</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_loggers</span><span class="p">:</span>
-</span><span id="line-0-362"><a id="example-0-362" name="example-0-362"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">start_var</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
-</span><span id="line-0-363"><a id="example-0-363" name="example-0-363"></a>
-</span><span id="line-0-364"><a id="example-0-364" name="example-0-364"></a>    <span class="nd">@end_body_item</span>
-</span><span id="line-0-365"><a id="example-0-365" name="example-0-365"></a>    <span class="k">def</span> <span class="nf">end_var</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
-</span><span id="line-0-366"><a id="example-0-366" name="example-0-366"></a>        <span class="k">for</span> <span class="n">logger</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">end_loggers</span><span class="p">:</span>
-</span><span id="line-0-367"><a id="example-0-367" name="example-0-367"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">end_var</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
-</span><span id="line-0-368"><a id="example-0-368" name="example-0-368"></a>
-</span><span id="line-0-369"><a id="example-0-369" name="example-0-369"></a>    <span class="nd">@start_body_item</span>
-</span><span id="line-0-370"><a id="example-0-370" name="example-0-370"></a>    <span class="k">def</span> <span class="nf">start_break</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
-</span><span id="line-0-371"><a id="example-0-371" name="example-0-371"></a>        <span class="k">for</span> <span class="n">logger</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_loggers</span><span class="p">:</span>
-</span><span id="line-0-372"><a id="example-0-372" name="example-0-372"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">start_break</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
-</span><span id="line-0-373"><a id="example-0-373" name="example-0-373"></a>
-</span><span id="line-0-374"><a id="example-0-374" name="example-0-374"></a>    <span class="nd">@end_body_item</span>
-</span><span id="line-0-375"><a id="example-0-375" name="example-0-375"></a>    <span class="k">def</span> <span class="nf">end_break</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
-</span><span id="line-0-376"><a id="example-0-376" name="example-0-376"></a>        <span class="k">for</span> <span class="n">logger</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">end_loggers</span><span class="p">:</span>
-</span><span id="line-0-377"><a id="example-0-377" name="example-0-377"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">end_break</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
-</span><span id="line-0-378"><a id="example-0-378" name="example-0-378"></a>
-</span><span id="line-0-379"><a id="example-0-379" name="example-0-379"></a>    <span class="nd">@start_body_item</span>
-</span><span id="line-0-380"><a id="example-0-380" name="example-0-380"></a>    <span class="k">def</span> <span class="nf">start_continue</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
-</span><span id="line-0-381"><a id="example-0-381" name="example-0-381"></a>        <span class="k">for</span> <span class="n">logger</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_loggers</span><span class="p">:</span>
-</span><span id="line-0-382"><a id="example-0-382" name="example-0-382"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">start_continue</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
-</span><span id="line-0-383"><a id="example-0-383" name="example-0-383"></a>
-</span><span id="line-0-384"><a id="example-0-384" name="example-0-384"></a>    <span class="nd">@end_body_item</span>
-</span><span id="line-0-385"><a id="example-0-385" name="example-0-385"></a>    <span class="k">def</span> <span class="nf">end_continue</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
-</span><span id="line-0-386"><a id="example-0-386" name="example-0-386"></a>        <span class="k">for</span> <span class="n">logger</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">end_loggers</span><span class="p">:</span>
-</span><span id="line-0-387"><a id="example-0-387" name="example-0-387"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">end_continue</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
-</span><span id="line-0-388"><a id="example-0-388" name="example-0-388"></a>
-</span><span id="line-0-389"><a id="example-0-389" name="example-0-389"></a>    <span class="nd">@start_body_item</span>
-</span><span id="line-0-390"><a id="example-0-390" name="example-0-390"></a>    <span class="k">def</span> <span class="nf">start_return</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
-</span><span id="line-0-391"><a id="example-0-391" name="example-0-391"></a>        <span class="k">for</span> <span class="n">logger</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_loggers</span><span class="p">:</span>
-</span><span id="line-0-392"><a id="example-0-392" name="example-0-392"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">start_return</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
-</span><span id="line-0-393"><a id="example-0-393" name="example-0-393"></a>
-</span><span id="line-0-394"><a id="example-0-394" name="example-0-394"></a>    <span class="nd">@end_body_item</span>
-</span><span id="line-0-395"><a id="example-0-395" name="example-0-395"></a>    <span class="k">def</span> <span class="nf">end_return</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
-</span><span id="line-0-396"><a id="example-0-396" name="example-0-396"></a>        <span class="k">for</span> <span class="n">logger</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">end_loggers</span><span class="p">:</span>
-</span><span id="line-0-397"><a id="example-0-397" name="example-0-397"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">end_return</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
-</span><span id="line-0-398"><a id="example-0-398" name="example-0-398"></a>
-</span><span id="line-0-399"><a id="example-0-399" name="example-0-399"></a>    <span class="nd">@start_body_item</span>
-</span><span id="line-0-400"><a id="example-0-400" name="example-0-400"></a>    <span class="k">def</span> <span class="nf">start_error</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
-</span><span id="line-0-401"><a id="example-0-401" name="example-0-401"></a>        <span class="k">for</span> <span class="n">logger</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_loggers</span><span class="p">:</span>
-</span><span id="line-0-402"><a id="example-0-402" name="example-0-402"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">start_error</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
-</span><span id="line-0-403"><a id="example-0-403" name="example-0-403"></a>
-</span><span id="line-0-404"><a id="example-0-404" name="example-0-404"></a>    <span class="nd">@end_body_item</span>
-</span><span id="line-0-405"><a id="example-0-405" name="example-0-405"></a>    <span class="k">def</span> <span class="nf">end_error</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
-</span><span id="line-0-406"><a id="example-0-406" name="example-0-406"></a>        <span class="k">for</span> <span class="n">logger</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">end_loggers</span><span class="p">:</span>
-</span><span id="line-0-407"><a id="example-0-407" name="example-0-407"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">end_error</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
-</span><span id="line-0-408"><a id="example-0-408" name="example-0-408"></a>
-</span><span id="line-0-409"><a id="example-0-409" name="example-0-409"></a>    <span class="k">def</span> <span class="nf">library_import</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">library</span><span class="p">,</span> <span class="n">importer</span><span class="p">):</span>
-</span><span id="line-0-410"><a id="example-0-410" name="example-0-410"></a>        <span class="k">for</span> <span class="n">logger</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
-</span><span id="line-0-411"><a id="example-0-411" name="example-0-411"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">library_import</span><span class="p">(</span><span class="n">library</span><span class="p">,</span> <span class="n">importer</span><span class="p">)</span>
-</span><span id="line-0-412"><a id="example-0-412" name="example-0-412"></a>
-</span><span id="line-0-413"><a id="example-0-413" name="example-0-413"></a>    <span class="k">def</span> <span class="nf">resource_import</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">resource</span><span class="p">,</span> <span class="n">importer</span><span class="p">):</span>
-</span><span id="line-0-414"><a id="example-0-414" name="example-0-414"></a>        <span class="k">for</span> <span class="n">logger</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
-</span><span id="line-0-415"><a id="example-0-415" name="example-0-415"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">resource_import</span><span class="p">(</span><span class="n">resource</span><span class="p">,</span> <span class="n">importer</span><span class="p">)</span>
-</span><span id="line-0-416"><a id="example-0-416" name="example-0-416"></a>
-</span><span id="line-0-417"><a id="example-0-417" name="example-0-417"></a>    <span class="k">def</span> <span class="nf">variables_import</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">variables</span><span class="p">,</span> <span class="n">importer</span><span class="p">):</span>
-</span><span id="line-0-418"><a id="example-0-418" name="example-0-418"></a>        <span class="k">for</span> <span class="n">logger</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
-</span><span id="line-0-419"><a id="example-0-419" name="example-0-419"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">variables_import</span><span class="p">(</span><span class="n">variables</span><span class="p">,</span> <span class="n">importer</span><span class="p">)</span>
-</span><span id="line-0-420"><a id="example-0-420" name="example-0-420"></a>
-</span><span id="line-0-421"><a id="example-0-421" name="example-0-421"></a>    <span class="k">def</span> <span class="nf">output_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
-</span><span id="line-0-422"><a id="example-0-422" name="example-0-422"></a>        <span class="k">for</span> <span class="n">logger</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
-</span><span id="line-0-423"><a id="example-0-423" name="example-0-423"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">output_file</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
-</span><span id="line-0-424"><a id="example-0-424" name="example-0-424"></a>
-</span><span id="line-0-425"><a id="example-0-425" name="example-0-425"></a>    <span class="k">def</span> <span class="nf">report_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
-</span><span id="line-0-426"><a id="example-0-426" name="example-0-426"></a>        <span class="k">for</span> <span class="n">logger</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
-</span><span id="line-0-427"><a id="example-0-427" name="example-0-427"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">report_file</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
-</span><span id="line-0-428"><a id="example-0-428" name="example-0-428"></a>
-</span><span id="line-0-429"><a id="example-0-429" name="example-0-429"></a>    <span class="k">def</span> <span class="nf">log_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
-</span><span id="line-0-430"><a id="example-0-430" name="example-0-430"></a>        <span class="k">for</span> <span class="n">logger</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
-</span><span id="line-0-431"><a id="example-0-431" name="example-0-431"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">log_file</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
-</span><span id="line-0-432"><a id="example-0-432" name="example-0-432"></a>
-</span><span id="line-0-433"><a id="example-0-433" name="example-0-433"></a>    <span class="k">def</span> <span class="nf">xunit_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
-</span><span id="line-0-434"><a id="example-0-434" name="example-0-434"></a>        <span class="k">for</span> <span class="n">logger</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
-</span><span id="line-0-435"><a id="example-0-435" name="example-0-435"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">xunit_file</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
-</span><span id="line-0-436"><a id="example-0-436" name="example-0-436"></a>
-</span><span id="line-0-437"><a id="example-0-437" name="example-0-437"></a>    <span class="k">def</span> <span class="nf">debug_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
-</span><span id="line-0-438"><a id="example-0-438" name="example-0-438"></a>        <span class="k">for</span> <span class="n">logger</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
-</span><span id="line-0-439"><a id="example-0-439" name="example-0-439"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">debug_file</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
-</span><span id="line-0-440"><a id="example-0-440" name="example-0-440"></a>
-</span><span id="line-0-441"><a id="example-0-441" name="example-0-441"></a>    <span class="k">def</span> <span class="nf">result_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kind</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
-</span><span id="line-0-442"><a id="example-0-442" name="example-0-442"></a>        <span class="n">kind_file</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">kind</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="si">}</span><span class="s1">_file&#39;</span><span class="p">)</span>
-</span><span id="line-0-443"><a id="example-0-443" name="example-0-443"></a>        <span class="n">kind_file</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
-</span><span id="line-0-444"><a id="example-0-444" name="example-0-444"></a>
-</span><span id="line-0-445"><a id="example-0-445" name="example-0-445"></a>    <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="line-0-446"><a id="example-0-446" name="example-0-446"></a>        <span class="k">for</span> <span class="n">logger</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
-</span><span id="line-0-447"><a id="example-0-447" name="example-0-447"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</span><span id="line-0-448"><a id="example-0-448" name="example-0-448"></a>        <span class="bp">self</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">register_console_logger</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+
+
+
+
+                  <details class="quote">
+                    <summary>Source code in <code>src/robot/output/logger.py</code></summary>
+                    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-55">55</a></span>
+<span class="normal"><a href="#example-0-56">56</a></span>
+<span class="normal"><a href="#example-0-57">57</a></span>
+<span class="normal"><a href="#example-0-58">58</a></span>
+<span class="normal"><a href="#example-0-59">59</a></span>
+<span class="normal"><a href="#example-0-60">60</a></span>
+<span class="normal"><a href="#example-0-61">61</a></span>
+<span class="normal"><a href="#example-0-62">62</a></span>
+<span class="normal"><a href="#example-0-63">63</a></span>
+<span class="normal"><a href="#example-0-64">64</a></span>
+<span class="normal"><a href="#example-0-65">65</a></span>
+<span class="normal"><a href="#example-0-66">66</a></span>
+<span class="normal"><a href="#example-0-67">67</a></span>
+<span class="normal"><a href="#example-0-68">68</a></span>
+<span class="normal"><a href="#example-0-69">69</a></span>
+<span class="normal"><a href="#example-0-70">70</a></span>
+<span class="normal"><a href="#example-0-71">71</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-55"><a id="example-0-55" name="example-0-55"></a><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">register_console_logger</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+</span><span id="line-0-56"><a id="example-0-56" name="example-0-56"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_console_logger</span> <span class="o">=</span> <span class="kc">None</span>
+</span><span id="line-0-57"><a id="example-0-57" name="example-0-57"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_syslog</span> <span class="o">=</span> <span class="kc">None</span>
+</span><span id="line-0-58"><a id="example-0-58" name="example-0-58"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_xml_logger</span> <span class="o">=</span> <span class="kc">None</span>
+</span><span id="line-0-59"><a id="example-0-59" name="example-0-59"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_cli_listeners</span> <span class="o">=</span> <span class="kc">None</span>
+</span><span id="line-0-60"><a id="example-0-60" name="example-0-60"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_lib_listeners</span> <span class="o">=</span> <span class="kc">None</span>
+</span><span id="line-0-61"><a id="example-0-61" name="example-0-61"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_other_loggers</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="line-0-62"><a id="example-0-62" name="example-0-62"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_message_cache</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="line-0-63"><a id="example-0-63" name="example-0-63"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_log_message_cache</span> <span class="o">=</span> <span class="kc">None</span>
+</span><span id="line-0-64"><a id="example-0-64" name="example-0-64"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_started_keywords</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="line-0-65"><a id="example-0-65" name="example-0-65"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_error_occurred</span> <span class="o">=</span> <span class="kc">False</span>
+</span><span id="line-0-66"><a id="example-0-66" name="example-0-66"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_error_listener</span> <span class="o">=</span> <span class="kc">None</span>
+</span><span id="line-0-67"><a id="example-0-67" name="example-0-67"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_prev_log_message_handlers</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="line-0-68"><a id="example-0-68" name="example-0-68"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_enabled</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="line-0-69"><a id="example-0-69" name="example-0-69"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_cache_only</span> <span class="o">=</span> <span class="kc">False</span>
+</span><span id="line-0-70"><a id="example-0-70" name="example-0-70"></a>    <span class="k">if</span> <span class="n">register_console_logger</span><span class="p">:</span>
+</span><span id="line-0-71"><a id="example-0-71" name="example-0-71"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">register_console_logger</span><span class="p">()</span>
 </span></code></pre></div></td></tr></table></div>
-              </details>
+                  </details>
 
 
 
@@ -7902,10 +7139,12 @@ loggers when they are registered.</p>
 
 
 <h3 id="robot.output.logger.Logger.message" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <code class="highlight language-python"><span class="n">message</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span></code>
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <span class="doc doc-object-name doc-function-name">message</span>
+
 
 <a href="#robot.output.logger.Logger.message" class="headerlink" title="Permanent link">&para;</a></h3>
-
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">message</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
 

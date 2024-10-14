@@ -3574,7 +3574,7 @@
         <li class="md-nav__item">
   <a href="#robot.parsing.model.blocks" class="md-nav__link">
     <span class="md-ellipsis">
-      blocks
+      <code class="doc-symbol doc-symbol-toc doc-symbol-module"></code>&nbsp;blocks
     </span>
   </a>
   
@@ -3583,17 +3583,17 @@
         <li class="md-nav__item">
   <a href="#robot.parsing.model.blocks.File" class="md-nav__link">
     <span class="md-ellipsis">
-      File
+      <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;File
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="File">
+    <nav class="md-nav" aria-label=" File">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#robot.parsing.model.blocks.File.save" class="md-nav__link">
     <span class="md-ellipsis">
-      save
+      <code class="doc-symbol doc-symbol-toc doc-symbol-method"></code>&nbsp;save
     </span>
   </a>
   
@@ -3607,7 +3607,7 @@
         <li class="md-nav__item">
   <a href="#robot.parsing.model.blocks.If" class="md-nav__link">
     <span class="md-ellipsis">
-      If
+      <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;If
     </span>
   </a>
   
@@ -7054,6 +7054,11 @@
 
 
 
+
+
+
+
+
   <div class="doc doc-children">
 
 
@@ -7068,66 +7073,46 @@
 
 
 <h2 id="robot.parsing.model.blocks.File" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <code>File</code>
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">File</span>
 
 
 <a href="#robot.parsing.model.blocks.File" class="headerlink" title="Permanent link">&para;</a></h2>
-
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
+<span class="normal"><a href="#example-0-2">2</a></span>
+<span class="normal"><a href="#example-0-3">3</a></span>
+<span class="normal"><a href="#example-0-4">4</a></span>
+<span class="normal"><a href="#example-0-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">File</span><span class="p">(</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">sections</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" title="typing.Sequence" href="https://docs.python.org/3/library/typing.html#typing.Sequence">Sequence</a></span><span class="p">[</span><span class="n"><span title="robot.parsing.model.blocks.Section">Section</span></span><span class="p">]</span> <span class="o">=</span> <span class="p">(),</span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a>    <span class="n">source</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" title="pathlib.Path" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path">Path</a></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="line-0-4"><a id="example-0-4" name="example-0-4"></a>    <span class="n">languages</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" title="typing.Sequence" href="https://docs.python.org/3/library/typing.html#typing.Sequence">Sequence</a></span><span class="p">[</span><span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span><span class="p">]</span> <span class="o">=</span> <span class="p">(),</span>
+</span><span id="line-0-5"><a id="example-0-5" name="example-0-5"></a><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
             <p class="doc doc-class-bases">
               Bases: <code><span title="robot.parsing.model.blocks.Container">Container</span></code></p>
 
 
-              <details class="quote">
-                <summary>Source code in <code>src/robot/parsing/model/blocks.py</code></summary>
-                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-66">66</a></span>
-<span class="normal"><a href="#example-0-67">67</a></span>
-<span class="normal"><a href="#example-0-68">68</a></span>
-<span class="normal"><a href="#example-0-69">69</a></span>
-<span class="normal"><a href="#example-0-70">70</a></span>
+
+
+
+
+
+                  <details class="quote">
+                    <summary>Source code in <code>src/robot/parsing/model/blocks.py</code></summary>
+                    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-70">70</a></span>
 <span class="normal"><a href="#example-0-71">71</a></span>
 <span class="normal"><a href="#example-0-72">72</a></span>
 <span class="normal"><a href="#example-0-73">73</a></span>
 <span class="normal"><a href="#example-0-74">74</a></span>
-<span class="normal"><a href="#example-0-75">75</a></span>
-<span class="normal"><a href="#example-0-76">76</a></span>
-<span class="normal"><a href="#example-0-77">77</a></span>
-<span class="normal"><a href="#example-0-78">78</a></span>
-<span class="normal"><a href="#example-0-79">79</a></span>
-<span class="normal"><a href="#example-0-80">80</a></span>
-<span class="normal"><a href="#example-0-81">81</a></span>
-<span class="normal"><a href="#example-0-82">82</a></span>
-<span class="normal"><a href="#example-0-83">83</a></span>
-<span class="normal"><a href="#example-0-84">84</a></span>
-<span class="normal"><a href="#example-0-85">85</a></span>
-<span class="normal"><a href="#example-0-86">86</a></span>
-<span class="normal"><a href="#example-0-87">87</a></span>
-<span class="normal"><a href="#example-0-88">88</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-66"><a id="example-0-66" name="example-0-66"></a><span class="k">class</span> <span class="nc">File</span><span class="p">(</span><span class="n">Container</span><span class="p">):</span>
-</span><span id="line-0-67"><a id="example-0-67" name="example-0-67"></a>    <span class="n">_fields</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;sections&#39;</span><span class="p">,)</span>
-</span><span id="line-0-68"><a id="example-0-68" name="example-0-68"></a>    <span class="n">_attributes</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;source&#39;</span><span class="p">,</span> <span class="s1">&#39;languages&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="n">Container</span><span class="o">.</span><span class="n">_attributes</span>
-</span><span id="line-0-69"><a id="example-0-69" name="example-0-69"></a>
-</span><span id="line-0-70"><a id="example-0-70" name="example-0-70"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sections</span><span class="p">:</span> <span class="s1">&#39;Sequence[Section]&#39;</span> <span class="o">=</span> <span class="p">(),</span> <span class="n">source</span><span class="p">:</span> <span class="s1">&#39;Path|None&#39;</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-</span><span id="line-0-71"><a id="example-0-71" name="example-0-71"></a>                 <span class="n">languages</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">()):</span>
-</span><span id="line-0-72"><a id="example-0-72" name="example-0-72"></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
-</span><span id="line-0-73"><a id="example-0-73" name="example-0-73"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">sections</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">sections</span><span class="p">)</span>
-</span><span id="line-0-74"><a id="example-0-74" name="example-0-74"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">source</span> <span class="o">=</span> <span class="n">source</span>
-</span><span id="line-0-75"><a id="example-0-75" name="example-0-75"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">languages</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">languages</span><span class="p">)</span>
-</span><span id="line-0-76"><a id="example-0-76" name="example-0-76"></a>
-</span><span id="line-0-77"><a id="example-0-77" name="example-0-77"></a>    <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">output</span><span class="p">:</span> <span class="s1">&#39;Path|str|TextIO|None&#39;</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
-</span><span id="line-0-78"><a id="example-0-78" name="example-0-78"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Save model to the given ``output`` or to the original source file.</span>
-</span><span id="line-0-79"><a id="example-0-79" name="example-0-79"></a>
-</span><span id="line-0-80"><a id="example-0-80" name="example-0-80"></a><span class="sd">        The ``output`` can be a path to a file or an already opened file</span>
-</span><span id="line-0-81"><a id="example-0-81" name="example-0-81"></a><span class="sd">        object. If ``output`` is not given, the original source file will</span>
-</span><span id="line-0-82"><a id="example-0-82" name="example-0-82"></a><span class="sd">        be overwritten.</span>
-</span><span id="line-0-83"><a id="example-0-83" name="example-0-83"></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="line-0-84"><a id="example-0-84" name="example-0-84"></a>        <span class="n">output</span> <span class="o">=</span> <span class="n">output</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">source</span>
-</span><span id="line-0-85"><a id="example-0-85" name="example-0-85"></a>        <span class="k">if</span> <span class="n">output</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-0-86"><a id="example-0-86" name="example-0-86"></a>            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s1">&#39;Saving model requires explicit output &#39;</span>
-</span><span id="line-0-87"><a id="example-0-87" name="example-0-87"></a>                            <span class="s1">&#39;when original source is not path.&#39;</span><span class="p">)</span>
-</span><span id="line-0-88"><a id="example-0-88" name="example-0-88"></a>        <span class="n">ModelWriter</span><span class="p">(</span><span class="n">output</span><span class="p">)</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+<span class="normal"><a href="#example-0-75">75</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-70"><a id="example-0-70" name="example-0-70"></a><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sections</span><span class="p">:</span> <span class="s1">&#39;Sequence[Section]&#39;</span> <span class="o">=</span> <span class="p">(),</span> <span class="n">source</span><span class="p">:</span> <span class="s1">&#39;Path|None&#39;</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="line-0-71"><a id="example-0-71" name="example-0-71"></a>             <span class="n">languages</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">()):</span>
+</span><span id="line-0-72"><a id="example-0-72" name="example-0-72"></a>    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+</span><span id="line-0-73"><a id="example-0-73" name="example-0-73"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">sections</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">sections</span><span class="p">)</span>
+</span><span id="line-0-74"><a id="example-0-74" name="example-0-74"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">source</span> <span class="o">=</span> <span class="n">source</span>
+</span><span id="line-0-75"><a id="example-0-75" name="example-0-75"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">languages</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">languages</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
-              </details>
+                  </details>
 
 
 
@@ -7145,10 +7130,12 @@
 
 
 <h3 id="robot.parsing.model.blocks.File.save" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <code class="highlight language-python"><span class="n">save</span><span class="p">(</span><span class="n">output</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <span class="doc doc-object-name doc-function-name">save</span>
+
 
 <a href="#robot.parsing.model.blocks.File.save" class="headerlink" title="Permanent link">&para;</a></h3>
-
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">save</span><span class="p">(</span><span class="n">output</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" title="pathlib.Path" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path">Path</a></span> <span class="o">|</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span> <span class="o">|</span> <span class="n"><a class="autorefs autorefs-external" title="typing.TextIO" href="https://docs.python.org/3/library/typing.html#typing.TextIO">TextIO</a></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
 
@@ -7201,11 +7188,24 @@ be overwritten.</p>
 
 
 <h2 id="robot.parsing.model.blocks.If" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <code>If</code>
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">If</span>
 
 
 <a href="#robot.parsing.model.blocks.If" class="headerlink" title="Permanent link">&para;</a></h2>
-
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
+<span class="normal"><a href="#example-0-2">2</a></span>
+<span class="normal"><a href="#example-0-3">3</a></span>
+<span class="normal"><a href="#example-0-4">4</a></span>
+<span class="normal"><a href="#example-0-5">5</a></span>
+<span class="normal"><a href="#example-0-6">6</a></span>
+<span class="normal"><a href="#example-0-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">If</span><span class="p">(</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">header</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.parsing.model.statements.Statement" href="../statements/#robot.parsing.model.statements.Statement">Statement</a></span><span class="p">,</span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a>    <span class="n">body</span><span class="p">:</span> <span class="n"><span title="robot.parsing.model.blocks.Body">Body</span></span> <span class="o">=</span> <span class="p">(),</span>
+</span><span id="line-0-4"><a id="example-0-4" name="example-0-4"></a>    <span class="n">orelse</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.parsing.model.blocks.If" href="#robot.parsing.model.blocks.If">If</a></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="line-0-5"><a id="example-0-5" name="example-0-5"></a>    <span class="n">end</span><span class="p">:</span> <span class="n"><span title="robot.parsing.model.statements.End">End</span></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="line-0-6"><a id="example-0-6" name="example-0-6"></a>    <span class="n">errors</span><span class="p">:</span> <span class="n"><span title="robot.parsing.model.blocks.Errors">Errors</span></span> <span class="o">=</span> <span class="p">(),</span>
+</span><span id="line-0-7"><a id="example-0-7" name="example-0-7"></a><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
             <p class="doc doc-class-bases">
@@ -7216,153 +7216,22 @@ be overwritten.</p>
 <p>Used with IF, Inline IF, ELSE IF and ELSE nodes. The :attr:<code>type</code> attribute
 specifies the type.</p>
 
-              <details class="quote">
-                <summary>Source code in <code>src/robot/parsing/model/blocks.py</code></summary>
-                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-181">181</a></span>
-<span class="normal"><a href="#example-0-182">182</a></span>
-<span class="normal"><a href="#example-0-183">183</a></span>
-<span class="normal"><a href="#example-0-184">184</a></span>
-<span class="normal"><a href="#example-0-185">185</a></span>
-<span class="normal"><a href="#example-0-186">186</a></span>
-<span class="normal"><a href="#example-0-187">187</a></span>
-<span class="normal"><a href="#example-0-188">188</a></span>
-<span class="normal"><a href="#example-0-189">189</a></span>
-<span class="normal"><a href="#example-0-190">190</a></span>
+
+
+
+
+
+                  <details class="quote">
+                    <summary>Source code in <code>src/robot/parsing/model/blocks.py</code></summary>
+                    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-190">190</a></span>
 <span class="normal"><a href="#example-0-191">191</a></span>
 <span class="normal"><a href="#example-0-192">192</a></span>
-<span class="normal"><a href="#example-0-193">193</a></span>
-<span class="normal"><a href="#example-0-194">194</a></span>
-<span class="normal"><a href="#example-0-195">195</a></span>
-<span class="normal"><a href="#example-0-196">196</a></span>
-<span class="normal"><a href="#example-0-197">197</a></span>
-<span class="normal"><a href="#example-0-198">198</a></span>
-<span class="normal"><a href="#example-0-199">199</a></span>
-<span class="normal"><a href="#example-0-200">200</a></span>
-<span class="normal"><a href="#example-0-201">201</a></span>
-<span class="normal"><a href="#example-0-202">202</a></span>
-<span class="normal"><a href="#example-0-203">203</a></span>
-<span class="normal"><a href="#example-0-204">204</a></span>
-<span class="normal"><a href="#example-0-205">205</a></span>
-<span class="normal"><a href="#example-0-206">206</a></span>
-<span class="normal"><a href="#example-0-207">207</a></span>
-<span class="normal"><a href="#example-0-208">208</a></span>
-<span class="normal"><a href="#example-0-209">209</a></span>
-<span class="normal"><a href="#example-0-210">210</a></span>
-<span class="normal"><a href="#example-0-211">211</a></span>
-<span class="normal"><a href="#example-0-212">212</a></span>
-<span class="normal"><a href="#example-0-213">213</a></span>
-<span class="normal"><a href="#example-0-214">214</a></span>
-<span class="normal"><a href="#example-0-215">215</a></span>
-<span class="normal"><a href="#example-0-216">216</a></span>
-<span class="normal"><a href="#example-0-217">217</a></span>
-<span class="normal"><a href="#example-0-218">218</a></span>
-<span class="normal"><a href="#example-0-219">219</a></span>
-<span class="normal"><a href="#example-0-220">220</a></span>
-<span class="normal"><a href="#example-0-221">221</a></span>
-<span class="normal"><a href="#example-0-222">222</a></span>
-<span class="normal"><a href="#example-0-223">223</a></span>
-<span class="normal"><a href="#example-0-224">224</a></span>
-<span class="normal"><a href="#example-0-225">225</a></span>
-<span class="normal"><a href="#example-0-226">226</a></span>
-<span class="normal"><a href="#example-0-227">227</a></span>
-<span class="normal"><a href="#example-0-228">228</a></span>
-<span class="normal"><a href="#example-0-229">229</a></span>
-<span class="normal"><a href="#example-0-230">230</a></span>
-<span class="normal"><a href="#example-0-231">231</a></span>
-<span class="normal"><a href="#example-0-232">232</a></span>
-<span class="normal"><a href="#example-0-233">233</a></span>
-<span class="normal"><a href="#example-0-234">234</a></span>
-<span class="normal"><a href="#example-0-235">235</a></span>
-<span class="normal"><a href="#example-0-236">236</a></span>
-<span class="normal"><a href="#example-0-237">237</a></span>
-<span class="normal"><a href="#example-0-238">238</a></span>
-<span class="normal"><a href="#example-0-239">239</a></span>
-<span class="normal"><a href="#example-0-240">240</a></span>
-<span class="normal"><a href="#example-0-241">241</a></span>
-<span class="normal"><a href="#example-0-242">242</a></span>
-<span class="normal"><a href="#example-0-243">243</a></span>
-<span class="normal"><a href="#example-0-244">244</a></span>
-<span class="normal"><a href="#example-0-245">245</a></span>
-<span class="normal"><a href="#example-0-246">246</a></span>
-<span class="normal"><a href="#example-0-247">247</a></span>
-<span class="normal"><a href="#example-0-248">248</a></span>
-<span class="normal"><a href="#example-0-249">249</a></span>
-<span class="normal"><a href="#example-0-250">250</a></span>
-<span class="normal"><a href="#example-0-251">251</a></span>
-<span class="normal"><a href="#example-0-252">252</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-181"><a id="example-0-181" name="example-0-181"></a><span class="k">class</span> <span class="nc">If</span><span class="p">(</span><span class="n">NestedBlock</span><span class="p">):</span>
-</span><span id="line-0-182"><a id="example-0-182" name="example-0-182"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Represents IF structures in the model.</span>
-</span><span id="line-0-183"><a id="example-0-183" name="example-0-183"></a>
-</span><span id="line-0-184"><a id="example-0-184" name="example-0-184"></a><span class="sd">    Used with IF, Inline IF, ELSE IF and ELSE nodes. The :attr:`type` attribute</span>
-</span><span id="line-0-185"><a id="example-0-185" name="example-0-185"></a><span class="sd">    specifies the type.</span>
-</span><span id="line-0-186"><a id="example-0-186" name="example-0-186"></a><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-0-187"><a id="example-0-187" name="example-0-187"></a>    <span class="n">_fields</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;header&#39;</span><span class="p">,</span> <span class="s1">&#39;body&#39;</span><span class="p">,</span> <span class="s1">&#39;orelse&#39;</span><span class="p">,</span> <span class="s1">&#39;end&#39;</span><span class="p">)</span>
-</span><span id="line-0-188"><a id="example-0-188" name="example-0-188"></a>    <span class="n">header</span><span class="p">:</span> <span class="s1">&#39;IfHeader|ElseIfHeader|ElseHeader&#39;</span>
-</span><span id="line-0-189"><a id="example-0-189" name="example-0-189"></a>
-</span><span id="line-0-190"><a id="example-0-190" name="example-0-190"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">header</span><span class="p">:</span> <span class="n">Statement</span><span class="p">,</span> <span class="n">body</span><span class="p">:</span> <span class="n">Body</span> <span class="o">=</span> <span class="p">(),</span> <span class="n">orelse</span><span class="p">:</span> <span class="s1">&#39;If|None&#39;</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-</span><span id="line-0-191"><a id="example-0-191" name="example-0-191"></a>                 <span class="n">end</span><span class="p">:</span> <span class="s1">&#39;End|None&#39;</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">errors</span><span class="p">:</span> <span class="n">Errors</span> <span class="o">=</span> <span class="p">()):</span>
-</span><span id="line-0-192"><a id="example-0-192" name="example-0-192"></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">header</span><span class="p">,</span> <span class="n">body</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">errors</span><span class="p">)</span>
-</span><span id="line-0-193"><a id="example-0-193" name="example-0-193"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">orelse</span> <span class="o">=</span> <span class="n">orelse</span>
-</span><span id="line-0-194"><a id="example-0-194" name="example-0-194"></a>
-</span><span id="line-0-195"><a id="example-0-195" name="example-0-195"></a>    <span class="nd">@property</span>
-</span><span id="line-0-196"><a id="example-0-196" name="example-0-196"></a>    <span class="k">def</span> <span class="nf">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-</span><span id="line-0-197"><a id="example-0-197" name="example-0-197"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">type</span>
-</span><span id="line-0-198"><a id="example-0-198" name="example-0-198"></a>
-</span><span id="line-0-199"><a id="example-0-199" name="example-0-199"></a>    <span class="nd">@property</span>
-</span><span id="line-0-200"><a id="example-0-200" name="example-0-200"></a>    <span class="k">def</span> <span class="nf">condition</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;str|None&#39;</span><span class="p">:</span>
-</span><span id="line-0-201"><a id="example-0-201" name="example-0-201"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">condition</span>
-</span><span id="line-0-202"><a id="example-0-202" name="example-0-202"></a>
-</span><span id="line-0-203"><a id="example-0-203" name="example-0-203"></a>    <span class="nd">@property</span>
-</span><span id="line-0-204"><a id="example-0-204" name="example-0-204"></a>    <span class="k">def</span> <span class="nf">assign</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;tuple[str, ...]&#39;</span><span class="p">:</span>
-</span><span id="line-0-205"><a id="example-0-205" name="example-0-205"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">assign</span>
-</span><span id="line-0-206"><a id="example-0-206" name="example-0-206"></a>
-</span><span id="line-0-207"><a id="example-0-207" name="example-0-207"></a>    <span class="k">def</span> <span class="nf">validate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctx</span><span class="p">:</span> <span class="s1">&#39;ValidationContext&#39;</span><span class="p">):</span>
-</span><span id="line-0-208"><a id="example-0-208" name="example-0-208"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_validate_body</span><span class="p">()</span>
-</span><span id="line-0-209"><a id="example-0-209" name="example-0-209"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">Token</span><span class="o">.</span><span class="n">IF</span><span class="p">:</span>
-</span><span id="line-0-210"><a id="example-0-210" name="example-0-210"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">_validate_structure</span><span class="p">()</span>
-</span><span id="line-0-211"><a id="example-0-211" name="example-0-211"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">_validate_end</span><span class="p">()</span>
-</span><span id="line-0-212"><a id="example-0-212" name="example-0-212"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">Token</span><span class="o">.</span><span class="n">INLINE_IF</span><span class="p">:</span>
-</span><span id="line-0-213"><a id="example-0-213" name="example-0-213"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">_validate_structure</span><span class="p">()</span>
-</span><span id="line-0-214"><a id="example-0-214" name="example-0-214"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">_validate_inline_if</span><span class="p">()</span>
-</span><span id="line-0-215"><a id="example-0-215" name="example-0-215"></a>
-</span><span id="line-0-216"><a id="example-0-216" name="example-0-216"></a>    <span class="k">def</span> <span class="nf">_validate_body</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="line-0-217"><a id="example-0-217" name="example-0-217"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_body_is_empty</span><span class="p">():</span>
-</span><span id="line-0-218"><a id="example-0-218" name="example-0-218"></a>            <span class="nb">type</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">!=</span> <span class="n">Token</span><span class="o">.</span><span class="n">INLINE_IF</span> <span class="k">else</span> <span class="s1">&#39;IF&#39;</span>
-</span><span id="line-0-219"><a id="example-0-219" name="example-0-219"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">errors</span> <span class="o">+=</span> <span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="nb">type</span><span class="si">}</span><span class="s1"> branch cannot be empty.&#39;</span><span class="p">,)</span>
-</span><span id="line-0-220"><a id="example-0-220" name="example-0-220"></a>
-</span><span id="line-0-221"><a id="example-0-221" name="example-0-221"></a>    <span class="k">def</span> <span class="nf">_validate_structure</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="line-0-222"><a id="example-0-222" name="example-0-222"></a>        <span class="n">orelse</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">orelse</span>
-</span><span id="line-0-223"><a id="example-0-223" name="example-0-223"></a>        <span class="n">else_seen</span> <span class="o">=</span> <span class="kc">False</span>
-</span><span id="line-0-224"><a id="example-0-224" name="example-0-224"></a>        <span class="k">while</span> <span class="n">orelse</span><span class="p">:</span>
-</span><span id="line-0-225"><a id="example-0-225" name="example-0-225"></a>            <span class="k">if</span> <span class="n">else_seen</span><span class="p">:</span>
-</span><span id="line-0-226"><a id="example-0-226" name="example-0-226"></a>                <span class="k">if</span> <span class="n">orelse</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">Token</span><span class="o">.</span><span class="n">ELSE</span><span class="p">:</span>
-</span><span id="line-0-227"><a id="example-0-227" name="example-0-227"></a>                    <span class="n">error</span> <span class="o">=</span> <span class="s1">&#39;Only one ELSE allowed.&#39;</span>
-</span><span id="line-0-228"><a id="example-0-228" name="example-0-228"></a>                <span class="k">else</span><span class="p">:</span>
-</span><span id="line-0-229"><a id="example-0-229" name="example-0-229"></a>                    <span class="n">error</span> <span class="o">=</span> <span class="s1">&#39;ELSE IF not allowed after ELSE.&#39;</span>
-</span><span id="line-0-230"><a id="example-0-230" name="example-0-230"></a>                <span class="k">if</span> <span class="n">error</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">errors</span><span class="p">:</span>
-</span><span id="line-0-231"><a id="example-0-231" name="example-0-231"></a>                    <span class="bp">self</span><span class="o">.</span><span class="n">errors</span> <span class="o">+=</span> <span class="p">(</span><span class="n">error</span><span class="p">,)</span>
-</span><span id="line-0-232"><a id="example-0-232" name="example-0-232"></a>            <span class="n">else_seen</span> <span class="o">=</span> <span class="n">else_seen</span> <span class="ow">or</span> <span class="n">orelse</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">Token</span><span class="o">.</span><span class="n">ELSE</span>
-</span><span id="line-0-233"><a id="example-0-233" name="example-0-233"></a>            <span class="n">orelse</span> <span class="o">=</span> <span class="n">orelse</span><span class="o">.</span><span class="n">orelse</span>
-</span><span id="line-0-234"><a id="example-0-234" name="example-0-234"></a>
-</span><span id="line-0-235"><a id="example-0-235" name="example-0-235"></a>    <span class="k">def</span> <span class="nf">_validate_end</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="line-0-236"><a id="example-0-236" name="example-0-236"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">end</span><span class="p">:</span>
-</span><span id="line-0-237"><a id="example-0-237" name="example-0-237"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">errors</span> <span class="o">+=</span> <span class="p">(</span><span class="s1">&#39;IF must have closing END.&#39;</span><span class="p">,)</span>
-</span><span id="line-0-238"><a id="example-0-238" name="example-0-238"></a>
-</span><span id="line-0-239"><a id="example-0-239" name="example-0-239"></a>    <span class="k">def</span> <span class="nf">_validate_inline_if</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="line-0-240"><a id="example-0-240" name="example-0-240"></a>        <span class="n">branch</span> <span class="o">=</span> <span class="bp">self</span>
-</span><span id="line-0-241"><a id="example-0-241" name="example-0-241"></a>        <span class="n">assign</span> <span class="o">=</span> <span class="n">branch</span><span class="o">.</span><span class="n">assign</span>
-</span><span id="line-0-242"><a id="example-0-242" name="example-0-242"></a>        <span class="k">while</span> <span class="n">branch</span><span class="p">:</span>
-</span><span id="line-0-243"><a id="example-0-243" name="example-0-243"></a>            <span class="k">if</span> <span class="n">branch</span><span class="o">.</span><span class="n">body</span><span class="p">:</span>
-</span><span id="line-0-244"><a id="example-0-244" name="example-0-244"></a>                <span class="n">item</span> <span class="o">=</span> <span class="n">cast</span><span class="p">(</span><span class="n">Statement</span><span class="p">,</span> <span class="n">branch</span><span class="o">.</span><span class="n">body</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-</span><span id="line-0-245"><a id="example-0-245" name="example-0-245"></a>                <span class="k">if</span> <span class="n">assign</span> <span class="ow">and</span> <span class="n">item</span><span class="o">.</span><span class="n">type</span> <span class="o">!=</span> <span class="n">Token</span><span class="o">.</span><span class="n">KEYWORD</span><span class="p">:</span>
-</span><span id="line-0-246"><a id="example-0-246" name="example-0-246"></a>                    <span class="bp">self</span><span class="o">.</span><span class="n">errors</span> <span class="o">+=</span> <span class="p">(</span><span class="s1">&#39;Inline IF with assignment can only contain &#39;</span>
-</span><span id="line-0-247"><a id="example-0-247" name="example-0-247"></a>                                    <span class="s1">&#39;keyword calls.&#39;</span><span class="p">,)</span>
-</span><span id="line-0-248"><a id="example-0-248" name="example-0-248"></a>                <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="s1">&#39;assign&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">):</span>
-</span><span id="line-0-249"><a id="example-0-249" name="example-0-249"></a>                    <span class="bp">self</span><span class="o">.</span><span class="n">errors</span> <span class="o">+=</span> <span class="p">(</span><span class="s1">&#39;Inline IF branches cannot contain assignments.&#39;</span><span class="p">,)</span>
-</span><span id="line-0-250"><a id="example-0-250" name="example-0-250"></a>                <span class="k">if</span> <span class="n">item</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">Token</span><span class="o">.</span><span class="n">INLINE_IF</span><span class="p">:</span>
-</span><span id="line-0-251"><a id="example-0-251" name="example-0-251"></a>                    <span class="bp">self</span><span class="o">.</span><span class="n">errors</span> <span class="o">+=</span> <span class="p">(</span><span class="s1">&#39;Inline IF cannot be nested.&#39;</span><span class="p">,)</span>
-</span><span id="line-0-252"><a id="example-0-252" name="example-0-252"></a>            <span class="n">branch</span> <span class="o">=</span> <span class="n">branch</span><span class="o">.</span><span class="n">orelse</span>
+<span class="normal"><a href="#example-0-193">193</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-190"><a id="example-0-190" name="example-0-190"></a><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">header</span><span class="p">:</span> <span class="n">Statement</span><span class="p">,</span> <span class="n">body</span><span class="p">:</span> <span class="n">Body</span> <span class="o">=</span> <span class="p">(),</span> <span class="n">orelse</span><span class="p">:</span> <span class="s1">&#39;If|None&#39;</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="line-0-191"><a id="example-0-191" name="example-0-191"></a>             <span class="n">end</span><span class="p">:</span> <span class="s1">&#39;End|None&#39;</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">errors</span><span class="p">:</span> <span class="n">Errors</span> <span class="o">=</span> <span class="p">()):</span>
+</span><span id="line-0-192"><a id="example-0-192" name="example-0-192"></a>    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">header</span><span class="p">,</span> <span class="n">body</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">errors</span><span class="p">)</span>
+</span><span id="line-0-193"><a id="example-0-193" name="example-0-193"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">orelse</span> <span class="o">=</span> <span class="n">orelse</span>
 </span></code></pre></div></td></tr></table></div>
-              </details>
+                  </details>
 
 
 
