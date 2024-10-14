@@ -48,7 +48,7 @@ def generate_api_docs(root: Path):
         # Generate page with a reference.
         with mkdocs_gen_files.open(full_doc_path, 'w') as file:
             ident = '.'.join(module)
-            file.write(f'---\ntitle: {ident}\n---\n\n::: {ident}')
+            file.write(f'---\ntitle: {ident}\n---\n\n# ::: {ident}')
 
         # Set correct edit path.
         mkdocs_gen_files.set_edit_path(full_doc_path, '../../..' / path.relative_to(root))
