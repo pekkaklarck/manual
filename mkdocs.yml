@@ -102,7 +102,13 @@ plugins:
             - https://docs.python.org/3/objects.inv
           options:
             inherited_members: true
+            merge_init_into_class: true
             show_symbol_type_heading: true
+            show_symbol_type_toc: true
+            show_signature_annotations: true
+            signature_crossrefs: true
+            separate_signature: true
+
   - mike:
       canonical_version: latest
   - ezglossary:
