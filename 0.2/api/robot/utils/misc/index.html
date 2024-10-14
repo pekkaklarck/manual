@@ -6243,15 +6243,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#robot.utils.misc.classproperty" class="md-nav__link">
-    <span class="md-ellipsis">
-      <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;classproperty
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#robot.utils.misc.printable_name" class="md-nav__link">
     <span class="md-ellipsis">
       <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;printable_name
@@ -6282,6 +6273,15 @@
   <a href="#robot.utils.misc.test_or_task" class="md-nav__link">
     <span class="md-ellipsis">
       <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;test_or_task
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#robot.utils.misc.classproperty" class="md-nav__link">
+    <span class="md-ellipsis">
+      <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;classproperty
     </span>
   </a>
   
@@ -7077,75 +7077,6 @@
 
 
 
-
-<div class="doc doc-object doc-class">
-
-
-
-<h2 id="robot.utils.misc.classproperty" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">classproperty</span>
-
-
-<a href="#robot.utils.misc.classproperty" class="headerlink" title="Permanent link">&para;</a></h2>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">classproperty</span><span class="p">(</span><span class="n">fget</span><span class="p">,</span> <span class="n">fset</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fdel</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-</span></code></pre></div></td></tr></table></div>
-
-    <div class="doc doc-contents ">
-            <p class="doc doc-class-bases">
-              Bases: <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#property">property</a></code></p>
-
-
-        <p>Property that works with classes in addition to instances.</p>
-<p>Only supports getters. Setters and deleters cannot work with classes due
-to how the descriptor protocol works, and they are thus explicitly disabled.
-Metaclasses must be used if they are needed.</p>
-
-
-
-
-
-
-                  <details class="quote">
-                    <summary>Source code in <code>src/robot/utils/misc.py</code></summary>
-                    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-152">152</a></span>
-<span class="normal"><a href="#example-0-153">153</a></span>
-<span class="normal"><a href="#example-0-154">154</a></span>
-<span class="normal"><a href="#example-0-155">155</a></span>
-<span class="normal"><a href="#example-0-156">156</a></span>
-<span class="normal"><a href="#example-0-157">157</a></span>
-<span class="normal"><a href="#example-0-158">158</a></span>
-<span class="normal"><a href="#example-0-159">159</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-152"><a id="example-0-152" name="example-0-152"></a><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fget</span><span class="p">,</span> <span class="n">fset</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fdel</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-</span><span id="line-0-153"><a id="example-0-153" name="example-0-153"></a>    <span class="k">if</span> <span class="n">fset</span><span class="p">:</span>
-</span><span id="line-0-154"><a id="example-0-154" name="example-0-154"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">setter</span><span class="p">(</span><span class="n">fset</span><span class="p">)</span>
-</span><span id="line-0-155"><a id="example-0-155" name="example-0-155"></a>    <span class="k">if</span> <span class="n">fdel</span><span class="p">:</span>
-</span><span id="line-0-156"><a id="example-0-156" name="example-0-156"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">deleter</span><span class="p">(</span><span class="n">fset</span><span class="p">)</span>
-</span><span id="line-0-157"><a id="example-0-157" name="example-0-157"></a>    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">fget</span><span class="p">)</span>
-</span><span id="line-0-158"><a id="example-0-158" name="example-0-158"></a>    <span class="k">if</span> <span class="n">doc</span><span class="p">:</span>
-</span><span id="line-0-159"><a id="example-0-159" name="example-0-159"></a>        <span class="bp">self</span><span class="o">.</span><span class="vm">__doc__</span> <span class="o">=</span> <span class="n">doc</span>
-</span></code></pre></div></td></tr></table></div>
-                  </details>
-
-
-
-  <div class="doc doc-children">
-
-
-
-
-
-
-
-
-
-
-
-  </div>
-
-    </div>
-
-</div>
-
-
 <div class="doc doc-object doc-function">
 
 
@@ -7233,6 +7164,11 @@ Metaclasses must be used if they are needed.</p>
 
 </div>
 
+
+
+
+
+
 <div class="doc doc-object doc-function">
 
 
@@ -7273,6 +7209,11 @@ Metaclasses must be used if they are needed.</p>
 
 </div>
 
+
+
+
+
+
 <div class="doc doc-object doc-function">
 
 
@@ -7304,6 +7245,11 @@ Metaclasses must be used if they are needed.</p>
     </div>
 
 </div>
+
+
+
+
+
 
 <div class="doc doc-object doc-function">
 
@@ -7367,6 +7313,73 @@ pattern <code>{test}</code> is searched from the text and occurrences replaced w
     </div>
 
 </div>
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="robot.utils.misc.classproperty" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">classproperty</span>
+
+
+<a href="#robot.utils.misc.classproperty" class="headerlink" title="Permanent link">&para;</a></h2>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">classproperty</span><span class="p">(</span><span class="n">fget</span><span class="p">,</span> <span class="n">fset</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fdel</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#property">property</a></code></p>
+
+
+        <p>Property that works with classes in addition to instances.</p>
+<p>Only supports getters. Setters and deleters cannot work with classes due
+to how the descriptor protocol works, and they are thus explicitly disabled.
+Metaclasses must be used if they are needed.</p>
+
+
+
+
+
+
+                  <details class="quote">
+                    <summary>Source code in <code>src/robot/utils/misc.py</code></summary>
+                    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-152">152</a></span>
+<span class="normal"><a href="#example-0-153">153</a></span>
+<span class="normal"><a href="#example-0-154">154</a></span>
+<span class="normal"><a href="#example-0-155">155</a></span>
+<span class="normal"><a href="#example-0-156">156</a></span>
+<span class="normal"><a href="#example-0-157">157</a></span>
+<span class="normal"><a href="#example-0-158">158</a></span>
+<span class="normal"><a href="#example-0-159">159</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-152"><a id="example-0-152" name="example-0-152"></a><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fget</span><span class="p">,</span> <span class="n">fset</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fdel</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+</span><span id="line-0-153"><a id="example-0-153" name="example-0-153"></a>    <span class="k">if</span> <span class="n">fset</span><span class="p">:</span>
+</span><span id="line-0-154"><a id="example-0-154" name="example-0-154"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">setter</span><span class="p">(</span><span class="n">fset</span><span class="p">)</span>
+</span><span id="line-0-155"><a id="example-0-155" name="example-0-155"></a>    <span class="k">if</span> <span class="n">fdel</span><span class="p">:</span>
+</span><span id="line-0-156"><a id="example-0-156" name="example-0-156"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">deleter</span><span class="p">(</span><span class="n">fset</span><span class="p">)</span>
+</span><span id="line-0-157"><a id="example-0-157" name="example-0-157"></a>    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">fget</span><span class="p">)</span>
+</span><span id="line-0-158"><a id="example-0-158" name="example-0-158"></a>    <span class="k">if</span> <span class="n">doc</span><span class="p">:</span>
+</span><span id="line-0-159"><a id="example-0-159" name="example-0-159"></a>        <span class="bp">self</span><span class="o">.</span><span class="vm">__doc__</span> <span class="o">=</span> <span class="n">doc</span>
+</span></code></pre></div></td></tr></table></div>
+                  </details>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
 
 
 

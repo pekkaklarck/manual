@@ -1993,9 +1993,27 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#robot.libraries.Dialogs.pause_execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;pause_execution
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#robot.libraries.Dialogs.execute_manual_step" class="md-nav__link">
     <span class="md-ellipsis">
       <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;execute_manual_step
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#robot.libraries.Dialogs.get_value_from_user" class="md-nav__link">
+    <span class="md-ellipsis">
+      <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;get_value_from_user
     </span>
   </a>
   
@@ -2014,24 +2032,6 @@
   <a href="#robot.libraries.Dialogs.get_selections_from_user" class="md-nav__link">
     <span class="md-ellipsis">
       <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;get_selections_from_user
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#robot.libraries.Dialogs.get_value_from_user" class="md-nav__link">
-    <span class="md-ellipsis">
-      <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;get_value_from_user
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#robot.libraries.Dialogs.pause_execution" class="md-nav__link">
-    <span class="md-ellipsis">
-      <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;pause_execution
     </span>
   </a>
   
@@ -7087,6 +7087,52 @@ sequence.</p>
 
 
 
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="robot.libraries.Dialogs.pause_execution" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-function"></code>            <span class="doc doc-object-name doc-function-name">pause_execution</span>
+
+
+<a href="#robot.libraries.Dialogs.pause_execution" class="headerlink" title="Permanent link">&para;</a></h2>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
+<span class="normal"><a href="#example-0-2">2</a></span>
+<span class="normal"><a href="#example-0-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">pause_execution</span><span class="p">(</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">message</span><span class="o">=</span><span class="s2">&quot;Execution paused. Press OK to continue.&quot;</span><span class="p">,</span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Pauses execution until user clicks <code>Ok</code> button.</p>
+<p><code>message</code> is the message shown in the dialog.</p>
+
+            <details class="quote">
+              <summary>Source code in <code>src/robot/libraries/Dialogs.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-40">40</a></span>
+<span class="normal"><a href="#example-0-41">41</a></span>
+<span class="normal"><a href="#example-0-42">42</a></span>
+<span class="normal"><a href="#example-0-43">43</a></span>
+<span class="normal"><a href="#example-0-44">44</a></span>
+<span class="normal"><a href="#example-0-45">45</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-40"><a id="example-0-40" name="example-0-40"></a><span class="k">def</span> <span class="nf">pause_execution</span><span class="p">(</span><span class="n">message</span><span class="o">=</span><span class="s1">&#39;Execution paused. Press OK to continue.&#39;</span><span class="p">):</span>
+</span><span id="line-0-41"><a id="example-0-41" name="example-0-41"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Pauses execution until user clicks ``Ok`` button.</span>
+</span><span id="line-0-42"><a id="example-0-42" name="example-0-42"></a>
+</span><span id="line-0-43"><a id="example-0-43" name="example-0-43"></a><span class="sd">    ``message`` is the message shown in the dialog.</span>
+</span><span id="line-0-44"><a id="example-0-44" name="example-0-44"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-45"><a id="example-0-45" name="example-0-45"></a>    <span class="n">MessageDialog</span><span class="p">(</span><span class="n">message</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</span></code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+
+
+
 <div class="doc doc-object doc-function">
 
 
@@ -7140,135 +7186,10 @@ dialog.</p>
 
 </div>
 
-<div class="doc doc-object doc-function">
 
 
-<h2 id="robot.libraries.Dialogs.get_selection_from_user" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-function"></code>            <span class="doc doc-object-name doc-function-name">get_selection_from_user</span>
 
 
-<a href="#robot.libraries.Dialogs.get_selection_from_user" class="headerlink" title="Permanent link">&para;</a></h2>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">get_selection_from_user</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="o">*</span><span class="n">values</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-</span></code></pre></div></td></tr></table></div>
-
-    <div class="doc doc-contents ">
-
-        <p>Pauses execution and asks user to select a value.</p>
-<p>The selected value is returned. Pressing <code>Cancel</code> fails the keyword.</p>
-<p><code>message</code> is the instruction shown in the dialog, <code>values</code> are
-the options given to the user and <code>default</code> is the optional default value.</p>
-<p>The default value can either be one of the specified values or the index of
-the value starting from <code>1</code>. For example, <code>default=user1</code> and <code>default=1</code>
-in the examples below have the exact same effect.</p>
-<p>Example:
-| ${user} = | Get Selection From User | Select user | user1 | user2 | admin |
-| ${user} = | Get Selection From User | Select user | user1 | user2 | admin | default=user1 |
-| ${user} = | Get Selection From User | Select user | user1 | user2 | admin | default=1 |</p>
-<p><code>default</code> is new in Robot Framework 7.1.</p>
-
-            <details class="quote">
-              <summary>Source code in <code>src/robot/libraries/Dialogs.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-86"> 86</a></span>
-<span class="normal"><a href="#example-0-87"> 87</a></span>
-<span class="normal"><a href="#example-0-88"> 88</a></span>
-<span class="normal"><a href="#example-0-89"> 89</a></span>
-<span class="normal"><a href="#example-0-90"> 90</a></span>
-<span class="normal"><a href="#example-0-91"> 91</a></span>
-<span class="normal"><a href="#example-0-92"> 92</a></span>
-<span class="normal"><a href="#example-0-93"> 93</a></span>
-<span class="normal"><a href="#example-0-94"> 94</a></span>
-<span class="normal"><a href="#example-0-95"> 95</a></span>
-<span class="normal"><a href="#example-0-96"> 96</a></span>
-<span class="normal"><a href="#example-0-97"> 97</a></span>
-<span class="normal"><a href="#example-0-98"> 98</a></span>
-<span class="normal"><a href="#example-0-99"> 99</a></span>
-<span class="normal"><a href="#example-0-100">100</a></span>
-<span class="normal"><a href="#example-0-101">101</a></span>
-<span class="normal"><a href="#example-0-102">102</a></span>
-<span class="normal"><a href="#example-0-103">103</a></span>
-<span class="normal"><a href="#example-0-104">104</a></span>
-<span class="normal"><a href="#example-0-105">105</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-86"><a id="example-0-86" name="example-0-86"></a><span class="k">def</span> <span class="nf">get_selection_from_user</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="o">*</span><span class="n">values</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-</span><span id="line-0-87"><a id="example-0-87" name="example-0-87"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Pauses execution and asks user to select a value.</span>
-</span><span id="line-0-88"><a id="example-0-88" name="example-0-88"></a>
-</span><span id="line-0-89"><a id="example-0-89" name="example-0-89"></a><span class="sd">    The selected value is returned. Pressing ``Cancel`` fails the keyword.</span>
-</span><span id="line-0-90"><a id="example-0-90" name="example-0-90"></a>
-</span><span id="line-0-91"><a id="example-0-91" name="example-0-91"></a><span class="sd">    ``message`` is the instruction shown in the dialog, ``values`` are</span>
-</span><span id="line-0-92"><a id="example-0-92" name="example-0-92"></a><span class="sd">    the options given to the user and ``default`` is the optional default value.</span>
-</span><span id="line-0-93"><a id="example-0-93" name="example-0-93"></a>
-</span><span id="line-0-94"><a id="example-0-94" name="example-0-94"></a><span class="sd">    The default value can either be one of the specified values or the index of</span>
-</span><span id="line-0-95"><a id="example-0-95" name="example-0-95"></a><span class="sd">    the value starting from ``1``. For example, ``default=user1`` and ``default=1``</span>
-</span><span id="line-0-96"><a id="example-0-96" name="example-0-96"></a><span class="sd">    in the examples below have the exact same effect.</span>
-</span><span id="line-0-97"><a id="example-0-97" name="example-0-97"></a>
-</span><span id="line-0-98"><a id="example-0-98" name="example-0-98"></a><span class="sd">    Example:</span>
-</span><span id="line-0-99"><a id="example-0-99" name="example-0-99"></a><span class="sd">    | ${user} = | Get Selection From User | Select user | user1 | user2 | admin |</span>
-</span><span id="line-0-100"><a id="example-0-100" name="example-0-100"></a><span class="sd">    | ${user} = | Get Selection From User | Select user | user1 | user2 | admin | default=user1 |</span>
-</span><span id="line-0-101"><a id="example-0-101" name="example-0-101"></a><span class="sd">    | ${user} = | Get Selection From User | Select user | user1 | user2 | admin | default=1 |</span>
-</span><span id="line-0-102"><a id="example-0-102" name="example-0-102"></a>
-</span><span id="line-0-103"><a id="example-0-103" name="example-0-103"></a><span class="sd">    ``default`` is new in Robot Framework 7.1.</span>
-</span><span id="line-0-104"><a id="example-0-104" name="example-0-104"></a><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-0-105"><a id="example-0-105" name="example-0-105"></a>    <span class="k">return</span> <span class="n">_validate_user_input</span><span class="p">(</span><span class="n">SelectionDialog</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="n">default</span><span class="p">))</span>
-</span></code></pre></div></td></tr></table></div>
-            </details>
-    </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-<h2 id="robot.libraries.Dialogs.get_selections_from_user" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-function"></code>            <span class="doc doc-object-name doc-function-name">get_selections_from_user</span>
-
-
-<a href="#robot.libraries.Dialogs.get_selections_from_user" class="headerlink" title="Permanent link">&para;</a></h2>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">get_selections_from_user</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="o">*</span><span class="n">values</span><span class="p">)</span>
-</span></code></pre></div></td></tr></table></div>
-
-    <div class="doc doc-contents ">
-
-        <p>Pauses execution and asks user to select multiple values.</p>
-<p>The selected values are returned as a list. Selecting no values is OK
-and in that case the returned list is empty. Pressing <code>Cancel</code> fails
-the keyword.</p>
-<p><code>message</code> is the instruction shown in the dialog and <code>values</code> are
-the options given to the user.</p>
-<p>Example:
-| ${users} = | Get Selections From User | Select users | user1 | user2 | admin |</p>
-
-            <details class="quote">
-              <summary>Source code in <code>src/robot/libraries/Dialogs.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-108">108</a></span>
-<span class="normal"><a href="#example-0-109">109</a></span>
-<span class="normal"><a href="#example-0-110">110</a></span>
-<span class="normal"><a href="#example-0-111">111</a></span>
-<span class="normal"><a href="#example-0-112">112</a></span>
-<span class="normal"><a href="#example-0-113">113</a></span>
-<span class="normal"><a href="#example-0-114">114</a></span>
-<span class="normal"><a href="#example-0-115">115</a></span>
-<span class="normal"><a href="#example-0-116">116</a></span>
-<span class="normal"><a href="#example-0-117">117</a></span>
-<span class="normal"><a href="#example-0-118">118</a></span>
-<span class="normal"><a href="#example-0-119">119</a></span>
-<span class="normal"><a href="#example-0-120">120</a></span>
-<span class="normal"><a href="#example-0-121">121</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-108"><a id="example-0-108" name="example-0-108"></a><span class="k">def</span> <span class="nf">get_selections_from_user</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="o">*</span><span class="n">values</span><span class="p">):</span>
-</span><span id="line-0-109"><a id="example-0-109" name="example-0-109"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Pauses execution and asks user to select multiple values.</span>
-</span><span id="line-0-110"><a id="example-0-110" name="example-0-110"></a>
-</span><span id="line-0-111"><a id="example-0-111" name="example-0-111"></a><span class="sd">    The selected values are returned as a list. Selecting no values is OK</span>
-</span><span id="line-0-112"><a id="example-0-112" name="example-0-112"></a><span class="sd">    and in that case the returned list is empty. Pressing ``Cancel`` fails</span>
-</span><span id="line-0-113"><a id="example-0-113" name="example-0-113"></a><span class="sd">    the keyword.</span>
-</span><span id="line-0-114"><a id="example-0-114" name="example-0-114"></a>
-</span><span id="line-0-115"><a id="example-0-115" name="example-0-115"></a><span class="sd">    ``message`` is the instruction shown in the dialog and ``values`` are</span>
-</span><span id="line-0-116"><a id="example-0-116" name="example-0-116"></a><span class="sd">    the options given to the user.</span>
-</span><span id="line-0-117"><a id="example-0-117" name="example-0-117"></a>
-</span><span id="line-0-118"><a id="example-0-118" name="example-0-118"></a><span class="sd">    Example:</span>
-</span><span id="line-0-119"><a id="example-0-119" name="example-0-119"></a><span class="sd">    | ${users} = | Get Selections From User | Select users | user1 | user2 | admin |</span>
-</span><span id="line-0-120"><a id="example-0-120" name="example-0-120"></a><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-0-121"><a id="example-0-121" name="example-0-121"></a>    <span class="k">return</span> <span class="n">_validate_user_input</span><span class="p">(</span><span class="n">MultipleSelectionDialog</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">values</span><span class="p">))</span>
-</span></code></pre></div></td></tr></table></div>
-            </details>
-    </div>
-
-</div>
 
 <div class="doc doc-object doc-function">
 
@@ -7350,44 +7271,146 @@ its truth value is got directly using same
 
 </div>
 
+
+
+
+
+
 <div class="doc doc-object doc-function">
 
 
-<h2 id="robot.libraries.Dialogs.pause_execution" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-function"></code>            <span class="doc doc-object-name doc-function-name">pause_execution</span>
+<h2 id="robot.libraries.Dialogs.get_selection_from_user" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-function"></code>            <span class="doc doc-object-name doc-function-name">get_selection_from_user</span>
 
 
-<a href="#robot.libraries.Dialogs.pause_execution" class="headerlink" title="Permanent link">&para;</a></h2>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
-<span class="normal"><a href="#example-0-2">2</a></span>
-<span class="normal"><a href="#example-0-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">pause_execution</span><span class="p">(</span>
-</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">message</span><span class="o">=</span><span class="s2">&quot;Execution paused. Press OK to continue.&quot;</span><span class="p">,</span>
-</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a><span class="p">)</span>
+<a href="#robot.libraries.Dialogs.get_selection_from_user" class="headerlink" title="Permanent link">&para;</a></h2>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">get_selection_from_user</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="o">*</span><span class="n">values</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
 
-        <p>Pauses execution until user clicks <code>Ok</code> button.</p>
-<p><code>message</code> is the message shown in the dialog.</p>
+        <p>Pauses execution and asks user to select a value.</p>
+<p>The selected value is returned. Pressing <code>Cancel</code> fails the keyword.</p>
+<p><code>message</code> is the instruction shown in the dialog, <code>values</code> are
+the options given to the user and <code>default</code> is the optional default value.</p>
+<p>The default value can either be one of the specified values or the index of
+the value starting from <code>1</code>. For example, <code>default=user1</code> and <code>default=1</code>
+in the examples below have the exact same effect.</p>
+<p>Example:
+| ${user} = | Get Selection From User | Select user | user1 | user2 | admin |
+| ${user} = | Get Selection From User | Select user | user1 | user2 | admin | default=user1 |
+| ${user} = | Get Selection From User | Select user | user1 | user2 | admin | default=1 |</p>
+<p><code>default</code> is new in Robot Framework 7.1.</p>
 
             <details class="quote">
               <summary>Source code in <code>src/robot/libraries/Dialogs.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-40">40</a></span>
-<span class="normal"><a href="#example-0-41">41</a></span>
-<span class="normal"><a href="#example-0-42">42</a></span>
-<span class="normal"><a href="#example-0-43">43</a></span>
-<span class="normal"><a href="#example-0-44">44</a></span>
-<span class="normal"><a href="#example-0-45">45</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-40"><a id="example-0-40" name="example-0-40"></a><span class="k">def</span> <span class="nf">pause_execution</span><span class="p">(</span><span class="n">message</span><span class="o">=</span><span class="s1">&#39;Execution paused. Press OK to continue.&#39;</span><span class="p">):</span>
-</span><span id="line-0-41"><a id="example-0-41" name="example-0-41"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Pauses execution until user clicks ``Ok`` button.</span>
-</span><span id="line-0-42"><a id="example-0-42" name="example-0-42"></a>
-</span><span id="line-0-43"><a id="example-0-43" name="example-0-43"></a><span class="sd">    ``message`` is the message shown in the dialog.</span>
-</span><span id="line-0-44"><a id="example-0-44" name="example-0-44"></a><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-0-45"><a id="example-0-45" name="example-0-45"></a>    <span class="n">MessageDialog</span><span class="p">(</span><span class="n">message</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-86"> 86</a></span>
+<span class="normal"><a href="#example-0-87"> 87</a></span>
+<span class="normal"><a href="#example-0-88"> 88</a></span>
+<span class="normal"><a href="#example-0-89"> 89</a></span>
+<span class="normal"><a href="#example-0-90"> 90</a></span>
+<span class="normal"><a href="#example-0-91"> 91</a></span>
+<span class="normal"><a href="#example-0-92"> 92</a></span>
+<span class="normal"><a href="#example-0-93"> 93</a></span>
+<span class="normal"><a href="#example-0-94"> 94</a></span>
+<span class="normal"><a href="#example-0-95"> 95</a></span>
+<span class="normal"><a href="#example-0-96"> 96</a></span>
+<span class="normal"><a href="#example-0-97"> 97</a></span>
+<span class="normal"><a href="#example-0-98"> 98</a></span>
+<span class="normal"><a href="#example-0-99"> 99</a></span>
+<span class="normal"><a href="#example-0-100">100</a></span>
+<span class="normal"><a href="#example-0-101">101</a></span>
+<span class="normal"><a href="#example-0-102">102</a></span>
+<span class="normal"><a href="#example-0-103">103</a></span>
+<span class="normal"><a href="#example-0-104">104</a></span>
+<span class="normal"><a href="#example-0-105">105</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-86"><a id="example-0-86" name="example-0-86"></a><span class="k">def</span> <span class="nf">get_selection_from_user</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="o">*</span><span class="n">values</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+</span><span id="line-0-87"><a id="example-0-87" name="example-0-87"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Pauses execution and asks user to select a value.</span>
+</span><span id="line-0-88"><a id="example-0-88" name="example-0-88"></a>
+</span><span id="line-0-89"><a id="example-0-89" name="example-0-89"></a><span class="sd">    The selected value is returned. Pressing ``Cancel`` fails the keyword.</span>
+</span><span id="line-0-90"><a id="example-0-90" name="example-0-90"></a>
+</span><span id="line-0-91"><a id="example-0-91" name="example-0-91"></a><span class="sd">    ``message`` is the instruction shown in the dialog, ``values`` are</span>
+</span><span id="line-0-92"><a id="example-0-92" name="example-0-92"></a><span class="sd">    the options given to the user and ``default`` is the optional default value.</span>
+</span><span id="line-0-93"><a id="example-0-93" name="example-0-93"></a>
+</span><span id="line-0-94"><a id="example-0-94" name="example-0-94"></a><span class="sd">    The default value can either be one of the specified values or the index of</span>
+</span><span id="line-0-95"><a id="example-0-95" name="example-0-95"></a><span class="sd">    the value starting from ``1``. For example, ``default=user1`` and ``default=1``</span>
+</span><span id="line-0-96"><a id="example-0-96" name="example-0-96"></a><span class="sd">    in the examples below have the exact same effect.</span>
+</span><span id="line-0-97"><a id="example-0-97" name="example-0-97"></a>
+</span><span id="line-0-98"><a id="example-0-98" name="example-0-98"></a><span class="sd">    Example:</span>
+</span><span id="line-0-99"><a id="example-0-99" name="example-0-99"></a><span class="sd">    | ${user} = | Get Selection From User | Select user | user1 | user2 | admin |</span>
+</span><span id="line-0-100"><a id="example-0-100" name="example-0-100"></a><span class="sd">    | ${user} = | Get Selection From User | Select user | user1 | user2 | admin | default=user1 |</span>
+</span><span id="line-0-101"><a id="example-0-101" name="example-0-101"></a><span class="sd">    | ${user} = | Get Selection From User | Select user | user1 | user2 | admin | default=1 |</span>
+</span><span id="line-0-102"><a id="example-0-102" name="example-0-102"></a>
+</span><span id="line-0-103"><a id="example-0-103" name="example-0-103"></a><span class="sd">    ``default`` is new in Robot Framework 7.1.</span>
+</span><span id="line-0-104"><a id="example-0-104" name="example-0-104"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-105"><a id="example-0-105" name="example-0-105"></a>    <span class="k">return</span> <span class="n">_validate_user_input</span><span class="p">(</span><span class="n">SelectionDialog</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="n">default</span><span class="p">))</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
 
 </div>
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="robot.libraries.Dialogs.get_selections_from_user" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-function"></code>            <span class="doc doc-object-name doc-function-name">get_selections_from_user</span>
+
+
+<a href="#robot.libraries.Dialogs.get_selections_from_user" class="headerlink" title="Permanent link">&para;</a></h2>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">get_selections_from_user</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="o">*</span><span class="n">values</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Pauses execution and asks user to select multiple values.</p>
+<p>The selected values are returned as a list. Selecting no values is OK
+and in that case the returned list is empty. Pressing <code>Cancel</code> fails
+the keyword.</p>
+<p><code>message</code> is the instruction shown in the dialog and <code>values</code> are
+the options given to the user.</p>
+<p>Example:
+| ${users} = | Get Selections From User | Select users | user1 | user2 | admin |</p>
+
+            <details class="quote">
+              <summary>Source code in <code>src/robot/libraries/Dialogs.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-108">108</a></span>
+<span class="normal"><a href="#example-0-109">109</a></span>
+<span class="normal"><a href="#example-0-110">110</a></span>
+<span class="normal"><a href="#example-0-111">111</a></span>
+<span class="normal"><a href="#example-0-112">112</a></span>
+<span class="normal"><a href="#example-0-113">113</a></span>
+<span class="normal"><a href="#example-0-114">114</a></span>
+<span class="normal"><a href="#example-0-115">115</a></span>
+<span class="normal"><a href="#example-0-116">116</a></span>
+<span class="normal"><a href="#example-0-117">117</a></span>
+<span class="normal"><a href="#example-0-118">118</a></span>
+<span class="normal"><a href="#example-0-119">119</a></span>
+<span class="normal"><a href="#example-0-120">120</a></span>
+<span class="normal"><a href="#example-0-121">121</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-108"><a id="example-0-108" name="example-0-108"></a><span class="k">def</span> <span class="nf">get_selections_from_user</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="o">*</span><span class="n">values</span><span class="p">):</span>
+</span><span id="line-0-109"><a id="example-0-109" name="example-0-109"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Pauses execution and asks user to select multiple values.</span>
+</span><span id="line-0-110"><a id="example-0-110" name="example-0-110"></a>
+</span><span id="line-0-111"><a id="example-0-111" name="example-0-111"></a><span class="sd">    The selected values are returned as a list. Selecting no values is OK</span>
+</span><span id="line-0-112"><a id="example-0-112" name="example-0-112"></a><span class="sd">    and in that case the returned list is empty. Pressing ``Cancel`` fails</span>
+</span><span id="line-0-113"><a id="example-0-113" name="example-0-113"></a><span class="sd">    the keyword.</span>
+</span><span id="line-0-114"><a id="example-0-114" name="example-0-114"></a>
+</span><span id="line-0-115"><a id="example-0-115" name="example-0-115"></a><span class="sd">    ``message`` is the instruction shown in the dialog and ``values`` are</span>
+</span><span id="line-0-116"><a id="example-0-116" name="example-0-116"></a><span class="sd">    the options given to the user.</span>
+</span><span id="line-0-117"><a id="example-0-117" name="example-0-117"></a>
+</span><span id="line-0-118"><a id="example-0-118" name="example-0-118"></a><span class="sd">    Example:</span>
+</span><span id="line-0-119"><a id="example-0-119" name="example-0-119"></a><span class="sd">    | ${users} = | Get Selections From User | Select users | user1 | user2 | admin |</span>
+</span><span id="line-0-120"><a id="example-0-120" name="example-0-120"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-121"><a id="example-0-121" name="example-0-121"></a>    <span class="k">return</span> <span class="n">_validate_user_input</span><span class="p">(</span><span class="n">MultipleSelectionDialog</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">values</span><span class="p">))</span>
+</span></code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
 
 
 

@@ -986,6 +986,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#robot.api.exceptions.Failure" class="md-nav__link">
+    <span class="md-ellipsis">
+      <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;Failure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#robot.api.exceptions.ContinuableFailure" class="md-nav__link">
     <span class="md-ellipsis">
       <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;ContinuableFailure
@@ -998,15 +1007,6 @@
   <a href="#robot.api.exceptions.Error" class="md-nav__link">
     <span class="md-ellipsis">
       <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;Error
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#robot.api.exceptions.Failure" class="md-nav__link">
-    <span class="md-ellipsis">
-      <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;Failure
     </span>
   </a>
   
@@ -7082,6 +7082,72 @@
 
 
 
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="robot.api.exceptions.Failure" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">Failure</span>
+
+
+<a href="#robot.api.exceptions.Failure" class="headerlink" title="Permanent link">&para;</a></h2>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">Failure</span><span class="p">(</span><span class="n">message</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span><span class="p">,</span> <span class="n">html</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/exceptions.html#AssertionError">AssertionError</a></code></p>
+
+
+        <p>Report failed validation.</p>
+<p>There is no practical difference in using this exception compared to using
+the standard <code>AssertionError</code>. The main benefits are HTML support and that
+the name of this exception is consistent with other exceptions in this module.</p>
+
+        <p>:param message: Exception message.
+:param html: When <code>True</code>, message is considered to be HTML and not escaped.</p>
+
+
+
+
+
+
+                  <details class="quote">
+                    <summary>Source code in <code>src/robot/api/exceptions.py</code></summary>
+                    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-34">34</a></span>
+<span class="normal"><a href="#example-0-35">35</a></span>
+<span class="normal"><a href="#example-0-36">36</a></span>
+<span class="normal"><a href="#example-0-37">37</a></span>
+<span class="normal"><a href="#example-0-38">38</a></span>
+<span class="normal"><a href="#example-0-39">39</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-34"><a id="example-0-34" name="example-0-34"></a><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">html</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+</span><span id="line-0-35"><a id="example-0-35" name="example-0-35"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-0-36"><a id="example-0-36" name="example-0-36"></a><span class="sd">    :param message: Exception message.</span>
+</span><span id="line-0-37"><a id="example-0-37" name="example-0-37"></a><span class="sd">    :param html: When ``True``, message is considered to be HTML and not escaped.</span>
+</span><span id="line-0-38"><a id="example-0-38" name="example-0-38"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-39"><a id="example-0-39" name="example-0-39"></a>    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">message</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">html</span> <span class="k">else</span> <span class="s1">&#39;*HTML* &#39;</span> <span class="o">+</span> <span class="n">message</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+                  </details>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+
 
 <div class="doc doc-object doc-class">
 
@@ -7136,15 +7202,16 @@
 
 
 
-
-
-
-
   </div>
 
     </div>
 
 </div>
+
+
+
+
+
 
 <div class="doc doc-object doc-class">
 
@@ -7205,81 +7272,16 @@ the name of this exception is consistent with other exceptions in this module.</
 
 
 
-
-
-
-
   </div>
 
     </div>
 
 </div>
 
-<div class="doc doc-object doc-class">
-
-
-
-<h2 id="robot.api.exceptions.Failure" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">Failure</span>
-
-
-<a href="#robot.api.exceptions.Failure" class="headerlink" title="Permanent link">&para;</a></h2>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">Failure</span><span class="p">(</span><span class="n">message</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span><span class="p">,</span> <span class="n">html</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
-</span></code></pre></div></td></tr></table></div>
-
-    <div class="doc doc-contents ">
-            <p class="doc doc-class-bases">
-              Bases: <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/exceptions.html#AssertionError">AssertionError</a></code></p>
-
-
-        <p>Report failed validation.</p>
-<p>There is no practical difference in using this exception compared to using
-the standard <code>AssertionError</code>. The main benefits are HTML support and that
-the name of this exception is consistent with other exceptions in this module.</p>
-
-        <p>:param message: Exception message.
-:param html: When <code>True</code>, message is considered to be HTML and not escaped.</p>
 
 
 
 
-
-
-                  <details class="quote">
-                    <summary>Source code in <code>src/robot/api/exceptions.py</code></summary>
-                    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-34">34</a></span>
-<span class="normal"><a href="#example-0-35">35</a></span>
-<span class="normal"><a href="#example-0-36">36</a></span>
-<span class="normal"><a href="#example-0-37">37</a></span>
-<span class="normal"><a href="#example-0-38">38</a></span>
-<span class="normal"><a href="#example-0-39">39</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-34"><a id="example-0-34" name="example-0-34"></a><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">html</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
-</span><span id="line-0-35"><a id="example-0-35" name="example-0-35"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-0-36"><a id="example-0-36" name="example-0-36"></a><span class="sd">    :param message: Exception message.</span>
-</span><span id="line-0-37"><a id="example-0-37" name="example-0-37"></a><span class="sd">    :param html: When ``True``, message is considered to be HTML and not escaped.</span>
-</span><span id="line-0-38"><a id="example-0-38" name="example-0-38"></a><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-0-39"><a id="example-0-39" name="example-0-39"></a>    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">message</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">html</span> <span class="k">else</span> <span class="s1">&#39;*HTML* &#39;</span> <span class="o">+</span> <span class="n">message</span><span class="p">)</span>
-</span></code></pre></div></td></tr></table></div>
-                  </details>
-
-
-
-  <div class="doc doc-children">
-
-
-
-
-
-
-
-
-
-
-
-  </div>
-
-    </div>
-
-</div>
 
 <div class="doc doc-object doc-class">
 
@@ -7334,15 +7336,16 @@ the name of this exception is consistent with other exceptions in this module.</
 
 
 
-
-
-
-
   </div>
 
     </div>
 
 </div>
+
+
+
+
+
 
 <div class="doc doc-object doc-class">
 
@@ -7390,10 +7393,6 @@ the name of this exception is consistent with other exceptions in this module.</
 
 
   <div class="doc doc-children">
-
-
-
-
 
 
 

@@ -5699,18 +5699,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#robot.testdoc.testdoc" class="md-nav__link">
+  <a href="#robot.testdoc.testdoc_cli" class="md-nav__link">
     <span class="md-ellipsis">
-      <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;testdoc
+      <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;testdoc_cli
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#robot.testdoc.testdoc_cli" class="md-nav__link">
+  <a href="#robot.testdoc.testdoc" class="md-nav__link">
     <span class="md-ellipsis">
-      <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;testdoc_cli
+      <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;testdoc
     </span>
   </a>
   
@@ -7061,62 +7061,31 @@ that can be used programmatically. Other code is for internal usage.</p>
 
 
 
-<div class="doc doc-object doc-function">
 
 
-<h2 id="robot.testdoc.testdoc" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-function"></code>            <span class="doc doc-object-name doc-function-name">testdoc</span>
 
 
-<a href="#robot.testdoc.testdoc" class="headerlink" title="Permanent link">&para;</a></h2>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">testdoc</span><span class="p">(</span><span class="o">*</span><span class="n">arguments</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">)</span>
-</span></code></pre></div></td></tr></table></div>
 
-    <div class="doc doc-contents ">
 
-        <p>Executes <code>Testdoc</code> programmatically.</p>
-<p>Arguments and options have same semantics, and options have same names,
-as arguments and options to Testdoc.</p>
-<p>Example::</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">robot.testdoc</span> <span class="kn">import</span> <span class="n">testdoc</span>
 
-<span class="n">testdoc</span><span class="p">(</span><span class="s1">&#39;mytests&#39;</span><span class="p">,</span> <span class="s1">&#39;plan.html&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Test Plan&#39;</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
 
-            <details class="quote">
-              <summary>Source code in <code>src/robot/testdoc.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-304">304</a></span>
-<span class="normal"><a href="#example-0-305">305</a></span>
-<span class="normal"><a href="#example-0-306">306</a></span>
-<span class="normal"><a href="#example-0-307">307</a></span>
-<span class="normal"><a href="#example-0-308">308</a></span>
-<span class="normal"><a href="#example-0-309">309</a></span>
-<span class="normal"><a href="#example-0-310">310</a></span>
-<span class="normal"><a href="#example-0-311">311</a></span>
-<span class="normal"><a href="#example-0-312">312</a></span>
-<span class="normal"><a href="#example-0-313">313</a></span>
-<span class="normal"><a href="#example-0-314">314</a></span>
-<span class="normal"><a href="#example-0-315">315</a></span>
-<span class="normal"><a href="#example-0-316">316</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-304"><a id="example-0-304" name="example-0-304"></a><span class="k">def</span> <span class="nf">testdoc</span><span class="p">(</span><span class="o">*</span><span class="n">arguments</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">):</span>
-</span><span id="line-0-305"><a id="example-0-305" name="example-0-305"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Executes `Testdoc` programmatically.</span>
-</span><span id="line-0-306"><a id="example-0-306" name="example-0-306"></a>
-</span><span id="line-0-307"><a id="example-0-307" name="example-0-307"></a><span class="sd">    Arguments and options have same semantics, and options have same names,</span>
-</span><span id="line-0-308"><a id="example-0-308" name="example-0-308"></a><span class="sd">    as arguments and options to Testdoc.</span>
-</span><span id="line-0-309"><a id="example-0-309" name="example-0-309"></a>
-</span><span id="line-0-310"><a id="example-0-310" name="example-0-310"></a><span class="sd">    Example::</span>
-</span><span id="line-0-311"><a id="example-0-311" name="example-0-311"></a>
-</span><span id="line-0-312"><a id="example-0-312" name="example-0-312"></a><span class="sd">        from robot.testdoc import testdoc</span>
-</span><span id="line-0-313"><a id="example-0-313" name="example-0-313"></a>
-</span><span id="line-0-314"><a id="example-0-314" name="example-0-314"></a><span class="sd">        testdoc(&#39;mytests&#39;, &#39;plan.html&#39;, title=&#39;Test Plan&#39;)</span>
-</span><span id="line-0-315"><a id="example-0-315" name="example-0-315"></a><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-0-316"><a id="example-0-316" name="example-0-316"></a>    <span class="n">TestDoc</span><span class="p">()</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="o">*</span><span class="n">arguments</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">)</span>
-</span></code></pre></div></td></tr></table></div>
-            </details>
-    </div>
 
-</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <div class="doc doc-object doc-function">
 
@@ -7182,6 +7151,69 @@ this function.</p>
     </div>
 
 </div>
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="robot.testdoc.testdoc" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-function"></code>            <span class="doc doc-object-name doc-function-name">testdoc</span>
+
+
+<a href="#robot.testdoc.testdoc" class="headerlink" title="Permanent link">&para;</a></h2>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">testdoc</span><span class="p">(</span><span class="o">*</span><span class="n">arguments</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Executes <code>Testdoc</code> programmatically.</p>
+<p>Arguments and options have same semantics, and options have same names,
+as arguments and options to Testdoc.</p>
+<p>Example::</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">robot.testdoc</span> <span class="kn">import</span> <span class="n">testdoc</span>
+
+<span class="n">testdoc</span><span class="p">(</span><span class="s1">&#39;mytests&#39;</span><span class="p">,</span> <span class="s1">&#39;plan.html&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Test Plan&#39;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+
+            <details class="quote">
+              <summary>Source code in <code>src/robot/testdoc.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-304">304</a></span>
+<span class="normal"><a href="#example-0-305">305</a></span>
+<span class="normal"><a href="#example-0-306">306</a></span>
+<span class="normal"><a href="#example-0-307">307</a></span>
+<span class="normal"><a href="#example-0-308">308</a></span>
+<span class="normal"><a href="#example-0-309">309</a></span>
+<span class="normal"><a href="#example-0-310">310</a></span>
+<span class="normal"><a href="#example-0-311">311</a></span>
+<span class="normal"><a href="#example-0-312">312</a></span>
+<span class="normal"><a href="#example-0-313">313</a></span>
+<span class="normal"><a href="#example-0-314">314</a></span>
+<span class="normal"><a href="#example-0-315">315</a></span>
+<span class="normal"><a href="#example-0-316">316</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-304"><a id="example-0-304" name="example-0-304"></a><span class="k">def</span> <span class="nf">testdoc</span><span class="p">(</span><span class="o">*</span><span class="n">arguments</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">):</span>
+</span><span id="line-0-305"><a id="example-0-305" name="example-0-305"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Executes `Testdoc` programmatically.</span>
+</span><span id="line-0-306"><a id="example-0-306" name="example-0-306"></a>
+</span><span id="line-0-307"><a id="example-0-307" name="example-0-307"></a><span class="sd">    Arguments and options have same semantics, and options have same names,</span>
+</span><span id="line-0-308"><a id="example-0-308" name="example-0-308"></a><span class="sd">    as arguments and options to Testdoc.</span>
+</span><span id="line-0-309"><a id="example-0-309" name="example-0-309"></a>
+</span><span id="line-0-310"><a id="example-0-310" name="example-0-310"></a><span class="sd">    Example::</span>
+</span><span id="line-0-311"><a id="example-0-311" name="example-0-311"></a>
+</span><span id="line-0-312"><a id="example-0-312" name="example-0-312"></a><span class="sd">        from robot.testdoc import testdoc</span>
+</span><span id="line-0-313"><a id="example-0-313" name="example-0-313"></a>
+</span><span id="line-0-314"><a id="example-0-314" name="example-0-314"></a><span class="sd">        testdoc(&#39;mytests&#39;, &#39;plan.html&#39;, title=&#39;Test Plan&#39;)</span>
+</span><span id="line-0-315"><a id="example-0-315" name="example-0-315"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-316"><a id="example-0-316" name="example-0-316"></a>    <span class="n">TestDoc</span><span class="p">()</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="o">*</span><span class="n">arguments</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
 
 
 

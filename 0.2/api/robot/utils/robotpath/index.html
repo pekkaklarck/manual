@@ -6432,6 +6432,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#robot.utils.robotpath.normpath" class="md-nav__link">
+    <span class="md-ellipsis">
+      <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;normpath
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#robot.utils.robotpath.abspath" class="md-nav__link">
     <span class="md-ellipsis">
       <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;abspath
@@ -6444,15 +6453,6 @@
   <a href="#robot.utils.robotpath.get_link_path" class="md-nav__link">
     <span class="md-ellipsis">
       <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;get_link_path
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#robot.utils.robotpath.normpath" class="md-nav__link">
-    <span class="md-ellipsis">
-      <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;normpath
     </span>
   </a>
   
@@ -7061,107 +7061,7 @@
 
 
 
-<div class="doc doc-object doc-function">
 
-
-<h2 id="robot.utils.robotpath.abspath" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-function"></code>            <span class="doc doc-object-name doc-function-name">abspath</span>
-
-
-<a href="#robot.utils.robotpath.abspath" class="headerlink" title="Permanent link">&para;</a></h2>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">abspath</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">case_normalize</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-</span></code></pre></div></td></tr></table></div>
-
-    <div class="doc doc-contents ">
-
-        <p>Replacement for os.path.abspath with some enhancements and bug fixes.</p>
-<ol>
-<li>Non-Unicode paths are converted to Unicode using file system encoding.</li>
-<li>Optionally lower-case paths on case-insensitive file systems.
-   That includes Windows and also OSX in default configuration.</li>
-<li>Turn <code>c:</code> into <code>c:\</code> on Windows instead of <code>c:\current\path</code>.</li>
-</ol>
-
-            <details class="quote">
-              <summary>Source code in <code>src/robot/utils/robotpath.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-59">59</a></span>
-<span class="normal"><a href="#example-0-60">60</a></span>
-<span class="normal"><a href="#example-0-61">61</a></span>
-<span class="normal"><a href="#example-0-62">62</a></span>
-<span class="normal"><a href="#example-0-63">63</a></span>
-<span class="normal"><a href="#example-0-64">64</a></span>
-<span class="normal"><a href="#example-0-65">65</a></span>
-<span class="normal"><a href="#example-0-66">66</a></span>
-<span class="normal"><a href="#example-0-67">67</a></span>
-<span class="normal"><a href="#example-0-68">68</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-59"><a id="example-0-59" name="example-0-59"></a><span class="k">def</span> <span class="nf">abspath</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">case_normalize</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-</span><span id="line-0-60"><a id="example-0-60" name="example-0-60"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Replacement for os.path.abspath with some enhancements and bug fixes.</span>
-</span><span id="line-0-61"><a id="example-0-61" name="example-0-61"></a>
-</span><span id="line-0-62"><a id="example-0-62" name="example-0-62"></a><span class="sd">    1. Non-Unicode paths are converted to Unicode using file system encoding.</span>
-</span><span id="line-0-63"><a id="example-0-63" name="example-0-63"></a><span class="sd">    2. Optionally lower-case paths on case-insensitive file systems.</span>
-</span><span id="line-0-64"><a id="example-0-64" name="example-0-64"></a><span class="sd">       That includes Windows and also OSX in default configuration.</span>
-</span><span id="line-0-65"><a id="example-0-65" name="example-0-65"></a><span class="sd">    3. Turn ``c:`` into ``c:\\`` on Windows instead of ``c:\\current\\path``.</span>
-</span><span id="line-0-66"><a id="example-0-66" name="example-0-66"></a><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-0-67"><a id="example-0-67" name="example-0-67"></a>    <span class="n">path</span> <span class="o">=</span> <span class="n">normpath</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">case_normalize</span><span class="p">)</span>
-</span><span id="line-0-68"><a id="example-0-68" name="example-0-68"></a>    <span class="k">return</span> <span class="n">normpath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">path</span><span class="p">),</span> <span class="n">case_normalize</span><span class="p">)</span>
-</span></code></pre></div></td></tr></table></div>
-            </details>
-    </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-<h2 id="robot.utils.robotpath.get_link_path" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-function"></code>            <span class="doc doc-object-name doc-function-name">get_link_path</span>
-
-
-<a href="#robot.utils.robotpath.get_link_path" class="headerlink" title="Permanent link">&para;</a></h2>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">get_link_path</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="n">base</span><span class="p">)</span>
-</span></code></pre></div></td></tr></table></div>
-
-    <div class="doc doc-contents ">
-
-        <p>Returns a relative path to <code>target</code> from <code>base</code>.</p>
-<p>If <code>base</code> is an existing file, then its parent directory is considered to
-be the base. Otherwise <code>base</code> is assumed to be a directory.</p>
-<p>The returned path is URL encoded. On Windows returns an absolute path with
-<code>file:</code> prefix if the target is on a different drive.</p>
-
-            <details class="quote">
-              <summary>Source code in <code>src/robot/utils/robotpath.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-71">71</a></span>
-<span class="normal"><a href="#example-0-72">72</a></span>
-<span class="normal"><a href="#example-0-73">73</a></span>
-<span class="normal"><a href="#example-0-74">74</a></span>
-<span class="normal"><a href="#example-0-75">75</a></span>
-<span class="normal"><a href="#example-0-76">76</a></span>
-<span class="normal"><a href="#example-0-77">77</a></span>
-<span class="normal"><a href="#example-0-78">78</a></span>
-<span class="normal"><a href="#example-0-79">79</a></span>
-<span class="normal"><a href="#example-0-80">80</a></span>
-<span class="normal"><a href="#example-0-81">81</a></span>
-<span class="normal"><a href="#example-0-82">82</a></span>
-<span class="normal"><a href="#example-0-83">83</a></span>
-<span class="normal"><a href="#example-0-84">84</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-71"><a id="example-0-71" name="example-0-71"></a><span class="k">def</span> <span class="nf">get_link_path</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="n">base</span><span class="p">):</span>
-</span><span id="line-0-72"><a id="example-0-72" name="example-0-72"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns a relative path to ``target`` from ``base``.</span>
-</span><span id="line-0-73"><a id="example-0-73" name="example-0-73"></a>
-</span><span id="line-0-74"><a id="example-0-74" name="example-0-74"></a><span class="sd">    If ``base`` is an existing file, then its parent directory is considered to</span>
-</span><span id="line-0-75"><a id="example-0-75" name="example-0-75"></a><span class="sd">    be the base. Otherwise ``base`` is assumed to be a directory.</span>
-</span><span id="line-0-76"><a id="example-0-76" name="example-0-76"></a>
-</span><span id="line-0-77"><a id="example-0-77" name="example-0-77"></a><span class="sd">    The returned path is URL encoded. On Windows returns an absolute path with</span>
-</span><span id="line-0-78"><a id="example-0-78" name="example-0-78"></a><span class="sd">    ``file:`` prefix if the target is on a different drive.</span>
-</span><span id="line-0-79"><a id="example-0-79" name="example-0-79"></a><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-0-80"><a id="example-0-80" name="example-0-80"></a>    <span class="n">path</span> <span class="o">=</span> <span class="n">_get_link_path</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="n">base</span><span class="p">)</span>
-</span><span id="line-0-81"><a id="example-0-81" name="example-0-81"></a>    <span class="n">url</span> <span class="o">=</span> <span class="n">path_to_url</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
-</span><span id="line-0-82"><a id="example-0-82" name="example-0-82"></a>    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isabs</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
-</span><span id="line-0-83"><a id="example-0-83" name="example-0-83"></a>        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;file:&#39;</span> <span class="o">+</span> <span class="n">url</span>
-</span><span id="line-0-84"><a id="example-0-84" name="example-0-84"></a>    <span class="k">return</span> <span class="n">url</span>
-</span></code></pre></div></td></tr></table></div>
-            </details>
-    </div>
-
-</div>
 
 <div class="doc doc-object doc-function">
 
@@ -7229,6 +7129,119 @@ be the base. Otherwise <code>base</code> is assumed to be a directory.</p>
     </div>
 
 </div>
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="robot.utils.robotpath.abspath" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-function"></code>            <span class="doc doc-object-name doc-function-name">abspath</span>
+
+
+<a href="#robot.utils.robotpath.abspath" class="headerlink" title="Permanent link">&para;</a></h2>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">abspath</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">case_normalize</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Replacement for os.path.abspath with some enhancements and bug fixes.</p>
+<ol>
+<li>Non-Unicode paths are converted to Unicode using file system encoding.</li>
+<li>Optionally lower-case paths on case-insensitive file systems.
+   That includes Windows and also OSX in default configuration.</li>
+<li>Turn <code>c:</code> into <code>c:\</code> on Windows instead of <code>c:\current\path</code>.</li>
+</ol>
+
+            <details class="quote">
+              <summary>Source code in <code>src/robot/utils/robotpath.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-59">59</a></span>
+<span class="normal"><a href="#example-0-60">60</a></span>
+<span class="normal"><a href="#example-0-61">61</a></span>
+<span class="normal"><a href="#example-0-62">62</a></span>
+<span class="normal"><a href="#example-0-63">63</a></span>
+<span class="normal"><a href="#example-0-64">64</a></span>
+<span class="normal"><a href="#example-0-65">65</a></span>
+<span class="normal"><a href="#example-0-66">66</a></span>
+<span class="normal"><a href="#example-0-67">67</a></span>
+<span class="normal"><a href="#example-0-68">68</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-59"><a id="example-0-59" name="example-0-59"></a><span class="k">def</span> <span class="nf">abspath</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">case_normalize</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+</span><span id="line-0-60"><a id="example-0-60" name="example-0-60"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Replacement for os.path.abspath with some enhancements and bug fixes.</span>
+</span><span id="line-0-61"><a id="example-0-61" name="example-0-61"></a>
+</span><span id="line-0-62"><a id="example-0-62" name="example-0-62"></a><span class="sd">    1. Non-Unicode paths are converted to Unicode using file system encoding.</span>
+</span><span id="line-0-63"><a id="example-0-63" name="example-0-63"></a><span class="sd">    2. Optionally lower-case paths on case-insensitive file systems.</span>
+</span><span id="line-0-64"><a id="example-0-64" name="example-0-64"></a><span class="sd">       That includes Windows and also OSX in default configuration.</span>
+</span><span id="line-0-65"><a id="example-0-65" name="example-0-65"></a><span class="sd">    3. Turn ``c:`` into ``c:\\`` on Windows instead of ``c:\\current\\path``.</span>
+</span><span id="line-0-66"><a id="example-0-66" name="example-0-66"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-67"><a id="example-0-67" name="example-0-67"></a>    <span class="n">path</span> <span class="o">=</span> <span class="n">normpath</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">case_normalize</span><span class="p">)</span>
+</span><span id="line-0-68"><a id="example-0-68" name="example-0-68"></a>    <span class="k">return</span> <span class="n">normpath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">path</span><span class="p">),</span> <span class="n">case_normalize</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="robot.utils.robotpath.get_link_path" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-function"></code>            <span class="doc doc-object-name doc-function-name">get_link_path</span>
+
+
+<a href="#robot.utils.robotpath.get_link_path" class="headerlink" title="Permanent link">&para;</a></h2>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">get_link_path</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="n">base</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Returns a relative path to <code>target</code> from <code>base</code>.</p>
+<p>If <code>base</code> is an existing file, then its parent directory is considered to
+be the base. Otherwise <code>base</code> is assumed to be a directory.</p>
+<p>The returned path is URL encoded. On Windows returns an absolute path with
+<code>file:</code> prefix if the target is on a different drive.</p>
+
+            <details class="quote">
+              <summary>Source code in <code>src/robot/utils/robotpath.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-71">71</a></span>
+<span class="normal"><a href="#example-0-72">72</a></span>
+<span class="normal"><a href="#example-0-73">73</a></span>
+<span class="normal"><a href="#example-0-74">74</a></span>
+<span class="normal"><a href="#example-0-75">75</a></span>
+<span class="normal"><a href="#example-0-76">76</a></span>
+<span class="normal"><a href="#example-0-77">77</a></span>
+<span class="normal"><a href="#example-0-78">78</a></span>
+<span class="normal"><a href="#example-0-79">79</a></span>
+<span class="normal"><a href="#example-0-80">80</a></span>
+<span class="normal"><a href="#example-0-81">81</a></span>
+<span class="normal"><a href="#example-0-82">82</a></span>
+<span class="normal"><a href="#example-0-83">83</a></span>
+<span class="normal"><a href="#example-0-84">84</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-71"><a id="example-0-71" name="example-0-71"></a><span class="k">def</span> <span class="nf">get_link_path</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="n">base</span><span class="p">):</span>
+</span><span id="line-0-72"><a id="example-0-72" name="example-0-72"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns a relative path to ``target`` from ``base``.</span>
+</span><span id="line-0-73"><a id="example-0-73" name="example-0-73"></a>
+</span><span id="line-0-74"><a id="example-0-74" name="example-0-74"></a><span class="sd">    If ``base`` is an existing file, then its parent directory is considered to</span>
+</span><span id="line-0-75"><a id="example-0-75" name="example-0-75"></a><span class="sd">    be the base. Otherwise ``base`` is assumed to be a directory.</span>
+</span><span id="line-0-76"><a id="example-0-76" name="example-0-76"></a>
+</span><span id="line-0-77"><a id="example-0-77" name="example-0-77"></a><span class="sd">    The returned path is URL encoded. On Windows returns an absolute path with</span>
+</span><span id="line-0-78"><a id="example-0-78" name="example-0-78"></a><span class="sd">    ``file:`` prefix if the target is on a different drive.</span>
+</span><span id="line-0-79"><a id="example-0-79" name="example-0-79"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-80"><a id="example-0-80" name="example-0-80"></a>    <span class="n">path</span> <span class="o">=</span> <span class="n">_get_link_path</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="n">base</span><span class="p">)</span>
+</span><span id="line-0-81"><a id="example-0-81" name="example-0-81"></a>    <span class="n">url</span> <span class="o">=</span> <span class="n">path_to_url</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+</span><span id="line-0-82"><a id="example-0-82" name="example-0-82"></a>    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isabs</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+</span><span id="line-0-83"><a id="example-0-83" name="example-0-83"></a>        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;file:&#39;</span> <span class="o">+</span> <span class="n">url</span>
+</span><span id="line-0-84"><a id="example-0-84" name="example-0-84"></a>    <span class="k">return</span> <span class="n">url</span>
+</span></code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
 
 
 

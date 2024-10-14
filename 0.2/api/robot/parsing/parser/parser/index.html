@@ -3750,15 +3750,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#robot.parsing.parser.parser.get_init_model" class="md-nav__link">
-    <span class="md-ellipsis">
-      <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;get_init_model
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#robot.parsing.parser.parser.get_model" class="md-nav__link">
     <span class="md-ellipsis">
       <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;get_model
@@ -3771,6 +3762,15 @@
   <a href="#robot.parsing.parser.parser.get_resource_model" class="md-nav__link">
     <span class="md-ellipsis">
       <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;get_resource_model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#robot.parsing.parser.parser.get_init_model" class="md-nav__link">
+    <span class="md-ellipsis">
+      <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;get_init_model
     </span>
   </a>
   
@@ -7063,58 +7063,31 @@
 
 
 
-<div class="doc doc-object doc-function">
 
 
-<h2 id="robot.parsing.parser.parser.get_init_model" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-function"></code>            <span class="doc doc-object-name doc-function-name">get_init_model</span>
 
 
-<a href="#robot.parsing.parser.parser.get_init_model" class="headerlink" title="Permanent link">&para;</a></h2>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
-<span class="normal"><a href="#example-0-2">2</a></span>
-<span class="normal"><a href="#example-0-3">3</a></span>
-<span class="normal"><a href="#example-0-4">4</a></span>
-<span class="normal"><a href="#example-0-5">5</a></span>
-<span class="normal"><a href="#example-0-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">get_init_model</span><span class="p">(</span>
-</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">source</span><span class="p">:</span> <span class="n"><span title="robot.utils.Source">Source</span></span><span class="p">,</span>
-</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a>    <span class="n">data_only</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-</span><span id="line-0-4"><a id="example-0-4" name="example-0-4"></a>    <span class="n">curdir</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-</span><span id="line-0-5"><a id="example-0-5" name="example-0-5"></a>    <span class="n">lang</span><span class="p">:</span> <span class="n"><span title="robot.conf.LanguagesLike">LanguagesLike</span></span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-</span><span id="line-0-6"><a id="example-0-6" name="example-0-6"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.parsing.model.File" href="../../model/blocks/#robot.parsing.model.blocks.File">File</a></span>
-</span></code></pre></div></td></tr></table></div>
 
-    <div class="doc doc-contents ">
 
-        <p>Parses the given source into an init file model.</p>
-<p>Same as :func:<code>get_model</code> otherwise, but the source is considered to be
-a suite initialization file. This affects, for example, what settings are
-valid.</p>
 
-            <details class="quote">
-              <summary>Source code in <code>src/robot/parsing/parser/parser.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-70">70</a></span>
-<span class="normal"><a href="#example-0-71">71</a></span>
-<span class="normal"><a href="#example-0-72">72</a></span>
-<span class="normal"><a href="#example-0-73">73</a></span>
-<span class="normal"><a href="#example-0-74">74</a></span>
-<span class="normal"><a href="#example-0-75">75</a></span>
-<span class="normal"><a href="#example-0-76">76</a></span>
-<span class="normal"><a href="#example-0-77">77</a></span>
-<span class="normal"><a href="#example-0-78">78</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-70"><a id="example-0-70" name="example-0-70"></a><span class="k">def</span> <span class="nf">get_init_model</span><span class="p">(</span><span class="n">source</span><span class="p">:</span> <span class="n">Source</span><span class="p">,</span> <span class="n">data_only</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">curdir</span><span class="p">:</span> <span class="s1">&#39;str|None&#39;</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-</span><span id="line-0-71"><a id="example-0-71" name="example-0-71"></a>                   <span class="n">lang</span><span class="p">:</span> <span class="n">LanguagesLike</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">File</span><span class="p">:</span>
-</span><span id="line-0-72"><a id="example-0-72" name="example-0-72"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Parses the given source into an init file model.</span>
-</span><span id="line-0-73"><a id="example-0-73" name="example-0-73"></a>
-</span><span id="line-0-74"><a id="example-0-74" name="example-0-74"></a><span class="sd">    Same as :func:`get_model` otherwise, but the source is considered to be</span>
-</span><span id="line-0-75"><a id="example-0-75" name="example-0-75"></a><span class="sd">    a suite initialization file. This affects, for example, what settings are</span>
-</span><span id="line-0-76"><a id="example-0-76" name="example-0-76"></a><span class="sd">    valid.</span>
-</span><span id="line-0-77"><a id="example-0-77" name="example-0-77"></a><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-0-78"><a id="example-0-78" name="example-0-78"></a>    <span class="k">return</span> <span class="n">_get_model</span><span class="p">(</span><span class="n">get_init_tokens</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">data_only</span><span class="p">,</span> <span class="n">curdir</span><span class="p">,</span> <span class="n">lang</span><span class="p">)</span>
-</span></code></pre></div></td></tr></table></div>
-            </details>
-    </div>
 
-</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <div class="doc doc-object doc-function">
 
@@ -7230,6 +7203,11 @@ resource or suite initialization files, respectively.</p>
 
 </div>
 
+
+
+
+
+
 <div class="doc doc-object doc-function">
 
 
@@ -7279,6 +7257,65 @@ a resource file. This affects, for example, what settings are valid.</p>
     </div>
 
 </div>
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="robot.parsing.parser.parser.get_init_model" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-function"></code>            <span class="doc doc-object-name doc-function-name">get_init_model</span>
+
+
+<a href="#robot.parsing.parser.parser.get_init_model" class="headerlink" title="Permanent link">&para;</a></h2>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
+<span class="normal"><a href="#example-0-2">2</a></span>
+<span class="normal"><a href="#example-0-3">3</a></span>
+<span class="normal"><a href="#example-0-4">4</a></span>
+<span class="normal"><a href="#example-0-5">5</a></span>
+<span class="normal"><a href="#example-0-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">get_init_model</span><span class="p">(</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">source</span><span class="p">:</span> <span class="n"><span title="robot.utils.Source">Source</span></span><span class="p">,</span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a>    <span class="n">data_only</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+</span><span id="line-0-4"><a id="example-0-4" name="example-0-4"></a>    <span class="n">curdir</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="line-0-5"><a id="example-0-5" name="example-0-5"></a>    <span class="n">lang</span><span class="p">:</span> <span class="n"><span title="robot.conf.LanguagesLike">LanguagesLike</span></span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="line-0-6"><a id="example-0-6" name="example-0-6"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.parsing.model.File" href="../../model/blocks/#robot.parsing.model.blocks.File">File</a></span>
+</span></code></pre></div></td></tr></table></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Parses the given source into an init file model.</p>
+<p>Same as :func:<code>get_model</code> otherwise, but the source is considered to be
+a suite initialization file. This affects, for example, what settings are
+valid.</p>
+
+            <details class="quote">
+              <summary>Source code in <code>src/robot/parsing/parser/parser.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-70">70</a></span>
+<span class="normal"><a href="#example-0-71">71</a></span>
+<span class="normal"><a href="#example-0-72">72</a></span>
+<span class="normal"><a href="#example-0-73">73</a></span>
+<span class="normal"><a href="#example-0-74">74</a></span>
+<span class="normal"><a href="#example-0-75">75</a></span>
+<span class="normal"><a href="#example-0-76">76</a></span>
+<span class="normal"><a href="#example-0-77">77</a></span>
+<span class="normal"><a href="#example-0-78">78</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-70"><a id="example-0-70" name="example-0-70"></a><span class="k">def</span> <span class="nf">get_init_model</span><span class="p">(</span><span class="n">source</span><span class="p">:</span> <span class="n">Source</span><span class="p">,</span> <span class="n">data_only</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">curdir</span><span class="p">:</span> <span class="s1">&#39;str|None&#39;</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="line-0-71"><a id="example-0-71" name="example-0-71"></a>                   <span class="n">lang</span><span class="p">:</span> <span class="n">LanguagesLike</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">File</span><span class="p">:</span>
+</span><span id="line-0-72"><a id="example-0-72" name="example-0-72"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Parses the given source into an init file model.</span>
+</span><span id="line-0-73"><a id="example-0-73" name="example-0-73"></a>
+</span><span id="line-0-74"><a id="example-0-74" name="example-0-74"></a><span class="sd">    Same as :func:`get_model` otherwise, but the source is considered to be</span>
+</span><span id="line-0-75"><a id="example-0-75" name="example-0-75"></a><span class="sd">    a suite initialization file. This affects, for example, what settings are</span>
+</span><span id="line-0-76"><a id="example-0-76" name="example-0-76"></a><span class="sd">    valid.</span>
+</span><span id="line-0-77"><a id="example-0-77" name="example-0-77"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-78"><a id="example-0-78" name="example-0-78"></a>    <span class="k">return</span> <span class="n">_get_model</span><span class="p">(</span><span class="n">get_init_tokens</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">data_only</span><span class="p">,</span> <span class="n">curdir</span><span class="p">,</span> <span class="n">lang</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
 
 
 
