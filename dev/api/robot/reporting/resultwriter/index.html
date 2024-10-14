@@ -4058,7 +4058,7 @@
         <li class="md-nav__item">
   <a href="#robot.reporting.resultwriter" class="md-nav__link">
     <span class="md-ellipsis">
-      resultwriter
+      <code class="doc-symbol doc-symbol-toc doc-symbol-module"></code>&nbsp;resultwriter
     </span>
   </a>
   
@@ -4067,17 +4067,17 @@
         <li class="md-nav__item">
   <a href="#robot.reporting.resultwriter.ResultWriter" class="md-nav__link">
     <span class="md-ellipsis">
-      ResultWriter
+      <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;ResultWriter
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="ResultWriter">
+    <nav class="md-nav" aria-label=" ResultWriter">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#robot.reporting.resultwriter.ResultWriter.write_results" class="md-nav__link">
     <span class="md-ellipsis">
-      write_results
+      <code class="doc-symbol doc-symbol-toc doc-symbol-method"></code>&nbsp;write_results
     </span>
   </a>
   
@@ -7043,6 +7043,11 @@
 
 
 
+
+
+
+
+
   <div class="doc doc-children">
 
 
@@ -7057,11 +7062,12 @@
 
 
 <h2 id="robot.reporting.resultwriter.ResultWriter" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <code>ResultWriter</code>
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">ResultWriter</span>
 
 
 <a href="#robot.reporting.resultwriter.ResultWriter" class="headerlink" title="Permanent link">&para;</a></h2>
-
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">ResultWriter</span><span class="p">(</span><span class="o">*</span><span class="n">sources</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
 
@@ -7078,133 +7084,18 @@ or enabled using <code>settings</code> or <code>options</code> passed to the
 <span class="n">writer</span><span class="o">.</span><span class="n">write_results</span><span class="p">(</span><span class="n">report</span><span class="o">=</span><span class="s1">&#39;custom.html&#39;</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">xunit</span><span class="o">=</span><span class="s1">&#39;xunit.xml&#39;</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 
-              <details class="quote">
-                <summary>Source code in <code>src/robot/reporting/resultwriter.py</code></summary>
-                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-27">27</a></span>
-<span class="normal"><a href="#example-0-28">28</a></span>
-<span class="normal"><a href="#example-0-29">29</a></span>
-<span class="normal"><a href="#example-0-30">30</a></span>
-<span class="normal"><a href="#example-0-31">31</a></span>
-<span class="normal"><a href="#example-0-32">32</a></span>
-<span class="normal"><a href="#example-0-33">33</a></span>
-<span class="normal"><a href="#example-0-34">34</a></span>
-<span class="normal"><a href="#example-0-35">35</a></span>
-<span class="normal"><a href="#example-0-36">36</a></span>
-<span class="normal"><a href="#example-0-37">37</a></span>
-<span class="normal"><a href="#example-0-38">38</a></span>
-<span class="normal"><a href="#example-0-39">39</a></span>
-<span class="normal"><a href="#example-0-40">40</a></span>
-<span class="normal"><a href="#example-0-41">41</a></span>
-<span class="normal"><a href="#example-0-42">42</a></span>
-<span class="normal"><a href="#example-0-43">43</a></span>
-<span class="normal"><a href="#example-0-44">44</a></span>
-<span class="normal"><a href="#example-0-45">45</a></span>
-<span class="normal"><a href="#example-0-46">46</a></span>
-<span class="normal"><a href="#example-0-47">47</a></span>
-<span class="normal"><a href="#example-0-48">48</a></span>
-<span class="normal"><a href="#example-0-49">49</a></span>
-<span class="normal"><a href="#example-0-50">50</a></span>
-<span class="normal"><a href="#example-0-51">51</a></span>
-<span class="normal"><a href="#example-0-52">52</a></span>
-<span class="normal"><a href="#example-0-53">53</a></span>
-<span class="normal"><a href="#example-0-54">54</a></span>
-<span class="normal"><a href="#example-0-55">55</a></span>
-<span class="normal"><a href="#example-0-56">56</a></span>
-<span class="normal"><a href="#example-0-57">57</a></span>
-<span class="normal"><a href="#example-0-58">58</a></span>
-<span class="normal"><a href="#example-0-59">59</a></span>
-<span class="normal"><a href="#example-0-60">60</a></span>
-<span class="normal"><a href="#example-0-61">61</a></span>
-<span class="normal"><a href="#example-0-62">62</a></span>
-<span class="normal"><a href="#example-0-63">63</a></span>
-<span class="normal"><a href="#example-0-64">64</a></span>
-<span class="normal"><a href="#example-0-65">65</a></span>
-<span class="normal"><a href="#example-0-66">66</a></span>
-<span class="normal"><a href="#example-0-67">67</a></span>
-<span class="normal"><a href="#example-0-68">68</a></span>
-<span class="normal"><a href="#example-0-69">69</a></span>
-<span class="normal"><a href="#example-0-70">70</a></span>
-<span class="normal"><a href="#example-0-71">71</a></span>
-<span class="normal"><a href="#example-0-72">72</a></span>
-<span class="normal"><a href="#example-0-73">73</a></span>
-<span class="normal"><a href="#example-0-74">74</a></span>
-<span class="normal"><a href="#example-0-75">75</a></span>
-<span class="normal"><a href="#example-0-76">76</a></span>
-<span class="normal"><a href="#example-0-77">77</a></span>
-<span class="normal"><a href="#example-0-78">78</a></span>
-<span class="normal"><a href="#example-0-79">79</a></span>
-<span class="normal"><a href="#example-0-80">80</a></span>
-<span class="normal"><a href="#example-0-81">81</a></span>
-<span class="normal"><a href="#example-0-82">82</a></span>
-<span class="normal"><a href="#example-0-83">83</a></span>
-<span class="normal"><a href="#example-0-84">84</a></span>
-<span class="normal"><a href="#example-0-85">85</a></span>
-<span class="normal"><a href="#example-0-86">86</a></span>
-<span class="normal"><a href="#example-0-87">87</a></span>
-<span class="normal"><a href="#example-0-88">88</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-27"><a id="example-0-27" name="example-0-27"></a><span class="k">class</span> <span class="nc">ResultWriter</span><span class="p">:</span>
-</span><span id="line-0-28"><a id="example-0-28" name="example-0-28"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;A class to create log, report, output XML and xUnit files.</span>
-</span><span id="line-0-29"><a id="example-0-29" name="example-0-29"></a>
-</span><span id="line-0-30"><a id="example-0-30" name="example-0-30"></a><span class="sd">    :param sources: Either one :class:`~robot.result.executionresult.Result`</span>
-</span><span id="line-0-31"><a id="example-0-31" name="example-0-31"></a><span class="sd">        object, or one or more paths to existing output XML files.</span>
-</span><span id="line-0-32"><a id="example-0-32" name="example-0-32"></a>
-</span><span id="line-0-33"><a id="example-0-33" name="example-0-33"></a><span class="sd">    By default writes ``report.html`` and ``log.html``, but no output XML</span>
-</span><span id="line-0-34"><a id="example-0-34" name="example-0-34"></a><span class="sd">    or xUnit files. Custom file names can be given and results disabled</span>
-</span><span id="line-0-35"><a id="example-0-35" name="example-0-35"></a><span class="sd">    or enabled using ``settings`` or ``options`` passed to the</span>
-</span><span id="line-0-36"><a id="example-0-36" name="example-0-36"></a><span class="sd">    :meth:`write_results` method. The latter is typically more convenient::</span>
-</span><span id="line-0-37"><a id="example-0-37" name="example-0-37"></a>
-</span><span id="line-0-38"><a id="example-0-38" name="example-0-38"></a><span class="sd">        writer = ResultWriter(result)</span>
-</span><span id="line-0-39"><a id="example-0-39" name="example-0-39"></a><span class="sd">        writer.write_results(report=&#39;custom.html&#39;, log=None, xunit=&#39;xunit.xml&#39;)</span>
-</span><span id="line-0-40"><a id="example-0-40" name="example-0-40"></a><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-0-41"><a id="example-0-41" name="example-0-41"></a>
-</span><span id="line-0-42"><a id="example-0-42" name="example-0-42"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">sources</span><span class="p">):</span>
-</span><span id="line-0-43"><a id="example-0-43" name="example-0-43"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_sources</span> <span class="o">=</span> <span class="n">sources</span>
-</span><span id="line-0-44"><a id="example-0-44" name="example-0-44"></a>
-</span><span id="line-0-45"><a id="example-0-45" name="example-0-45"></a>    <span class="k">def</span> <span class="nf">write_results</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">settings</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">):</span>
-</span><span id="line-0-46"><a id="example-0-46" name="example-0-46"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Writes results based on the given ``settings``  or ``options``.</span>
-</span><span id="line-0-47"><a id="example-0-47" name="example-0-47"></a>
-</span><span id="line-0-48"><a id="example-0-48" name="example-0-48"></a><span class="sd">        :param settings: :class:`~robot.conf.settings.RebotSettings` object</span>
-</span><span id="line-0-49"><a id="example-0-49" name="example-0-49"></a><span class="sd">            to configure result writing.</span>
-</span><span id="line-0-50"><a id="example-0-50" name="example-0-50"></a><span class="sd">        :param options: Used to construct new</span>
-</span><span id="line-0-51"><a id="example-0-51" name="example-0-51"></a><span class="sd">            :class:`~robot.conf.settings.RebotSettings` object if ``settings``</span>
-</span><span id="line-0-52"><a id="example-0-52" name="example-0-52"></a><span class="sd">            are not given.</span>
-</span><span id="line-0-53"><a id="example-0-53" name="example-0-53"></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="line-0-54"><a id="example-0-54" name="example-0-54"></a>        <span class="n">settings</span> <span class="o">=</span> <span class="n">settings</span> <span class="ow">or</span> <span class="n">RebotSettings</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
-</span><span id="line-0-55"><a id="example-0-55" name="example-0-55"></a>        <span class="n">results</span> <span class="o">=</span> <span class="n">Results</span><span class="p">(</span><span class="n">settings</span><span class="p">,</span> <span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">_sources</span><span class="p">)</span>
-</span><span id="line-0-56"><a id="example-0-56" name="example-0-56"></a>        <span class="k">if</span> <span class="n">settings</span><span class="o">.</span><span class="n">output</span><span class="p">:</span>
-</span><span id="line-0-57"><a id="example-0-57" name="example-0-57"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">_write_output</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">result</span><span class="p">,</span> <span class="n">settings</span><span class="o">.</span><span class="n">output</span><span class="p">,</span> <span class="n">settings</span><span class="o">.</span><span class="n">legacy_output</span><span class="p">)</span>
-</span><span id="line-0-58"><a id="example-0-58" name="example-0-58"></a>        <span class="k">if</span> <span class="n">settings</span><span class="o">.</span><span class="n">xunit</span><span class="p">:</span>
-</span><span id="line-0-59"><a id="example-0-59" name="example-0-59"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">_write_xunit</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">result</span><span class="p">,</span> <span class="n">settings</span><span class="o">.</span><span class="n">xunit</span><span class="p">)</span>
-</span><span id="line-0-60"><a id="example-0-60" name="example-0-60"></a>        <span class="k">if</span> <span class="n">settings</span><span class="o">.</span><span class="n">log</span><span class="p">:</span>
-</span><span id="line-0-61"><a id="example-0-61" name="example-0-61"></a>            <span class="n">config</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">settings</span><span class="o">.</span><span class="n">log_config</span><span class="p">,</span>
-</span><span id="line-0-62"><a id="example-0-62" name="example-0-62"></a>                          <span class="n">minLevel</span><span class="o">=</span><span class="n">results</span><span class="o">.</span><span class="n">js_result</span><span class="o">.</span><span class="n">min_level</span><span class="p">)</span>
-</span><span id="line-0-63"><a id="example-0-63" name="example-0-63"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">_write_log</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">js_result</span><span class="p">,</span> <span class="n">settings</span><span class="o">.</span><span class="n">log</span><span class="p">,</span> <span class="n">config</span><span class="p">)</span>
-</span><span id="line-0-64"><a id="example-0-64" name="example-0-64"></a>        <span class="k">if</span> <span class="n">settings</span><span class="o">.</span><span class="n">report</span><span class="p">:</span>
-</span><span id="line-0-65"><a id="example-0-65" name="example-0-65"></a>            <span class="n">results</span><span class="o">.</span><span class="n">js_result</span><span class="o">.</span><span class="n">remove_data_not_needed_in_report</span><span class="p">()</span>
-</span><span id="line-0-66"><a id="example-0-66" name="example-0-66"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">_write_report</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">js_result</span><span class="p">,</span> <span class="n">settings</span><span class="o">.</span><span class="n">report</span><span class="p">,</span>
-</span><span id="line-0-67"><a id="example-0-67" name="example-0-67"></a>                               <span class="n">settings</span><span class="o">.</span><span class="n">report_config</span><span class="p">)</span>
-</span><span id="line-0-68"><a id="example-0-68" name="example-0-68"></a>        <span class="k">return</span> <span class="n">results</span><span class="o">.</span><span class="n">return_code</span>
-</span><span id="line-0-69"><a id="example-0-69" name="example-0-69"></a>
-</span><span id="line-0-70"><a id="example-0-70" name="example-0-70"></a>    <span class="k">def</span> <span class="nf">_write_output</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">legacy_output</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-</span><span id="line-0-71"><a id="example-0-71" name="example-0-71"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_write</span><span class="p">(</span><span class="s1">&#39;Output&#39;</span><span class="p">,</span> <span class="n">result</span><span class="o">.</span><span class="n">save</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">legacy_output</span><span class="p">)</span>
-</span><span id="line-0-72"><a id="example-0-72" name="example-0-72"></a>
-</span><span id="line-0-73"><a id="example-0-73" name="example-0-73"></a>    <span class="k">def</span> <span class="nf">_write_xunit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
-</span><span id="line-0-74"><a id="example-0-74" name="example-0-74"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_write</span><span class="p">(</span><span class="s1">&#39;XUnit&#39;</span><span class="p">,</span> <span class="n">XUnitWriter</span><span class="p">(</span><span class="n">result</span><span class="p">)</span><span class="o">.</span><span class="n">write</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
-</span><span id="line-0-75"><a id="example-0-75" name="example-0-75"></a>
-</span><span id="line-0-76"><a id="example-0-76" name="example-0-76"></a>    <span class="k">def</span> <span class="nf">_write_log</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">js_result</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">config</span><span class="p">):</span>
-</span><span id="line-0-77"><a id="example-0-77" name="example-0-77"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_write</span><span class="p">(</span><span class="s1">&#39;Log&#39;</span><span class="p">,</span> <span class="n">LogWriter</span><span class="p">(</span><span class="n">js_result</span><span class="p">)</span><span class="o">.</span><span class="n">write</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">config</span><span class="p">)</span>
-</span><span id="line-0-78"><a id="example-0-78" name="example-0-78"></a>
-</span><span id="line-0-79"><a id="example-0-79" name="example-0-79"></a>    <span class="k">def</span> <span class="nf">_write_report</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">js_result</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">config</span><span class="p">):</span>
-</span><span id="line-0-80"><a id="example-0-80" name="example-0-80"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_write</span><span class="p">(</span><span class="s1">&#39;Report&#39;</span><span class="p">,</span> <span class="n">ReportWriter</span><span class="p">(</span><span class="n">js_result</span><span class="p">)</span><span class="o">.</span><span class="n">write</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">config</span><span class="p">)</span>
-</span><span id="line-0-81"><a id="example-0-81" name="example-0-81"></a>
-</span><span id="line-0-82"><a id="example-0-82" name="example-0-82"></a>    <span class="k">def</span> <span class="nf">_write</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">writer</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
-</span><span id="line-0-83"><a id="example-0-83" name="example-0-83"></a>        <span class="k">try</span><span class="p">:</span>
-</span><span id="line-0-84"><a id="example-0-84" name="example-0-84"></a>            <span class="n">writer</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">)</span>
-</span><span id="line-0-85"><a id="example-0-85" name="example-0-85"></a>        <span class="k">except</span> <span class="n">DataError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
-</span><span id="line-0-86"><a id="example-0-86" name="example-0-86"></a>            <span class="n">LOGGER</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">err</span><span class="o">.</span><span class="n">message</span><span class="p">)</span>
-</span><span id="line-0-87"><a id="example-0-87" name="example-0-87"></a>        <span class="k">else</span><span class="p">:</span>
-</span><span id="line-0-88"><a id="example-0-88" name="example-0-88"></a>            <span class="n">LOGGER</span><span class="o">.</span><span class="n">result_file</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
+
+
+
+
+
+                  <details class="quote">
+                    <summary>Source code in <code>src/robot/reporting/resultwriter.py</code></summary>
+                    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-42">42</a></span>
+<span class="normal"><a href="#example-0-43">43</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-42"><a id="example-0-42" name="example-0-42"></a><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">sources</span><span class="p">):</span>
+</span><span id="line-0-43"><a id="example-0-43" name="example-0-43"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_sources</span> <span class="o">=</span> <span class="n">sources</span>
 </span></code></pre></div></td></tr></table></div>
-              </details>
+                  </details>
 
 
 
@@ -7222,10 +7113,12 @@ or enabled using <code>settings</code> or <code>options</code> passed to the
 
 
 <h3 id="robot.reporting.resultwriter.ResultWriter.write_results" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <code class="highlight language-python"><span class="n">write_results</span><span class="p">(</span><span class="n">settings</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">)</span></code>
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <span class="doc doc-object-name doc-function-name">write_results</span>
+
 
 <a href="#robot.reporting.resultwriter.ResultWriter.write_results" class="headerlink" title="Permanent link">&para;</a></h3>
-
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">write_results</span><span class="p">(</span><span class="n">settings</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
 

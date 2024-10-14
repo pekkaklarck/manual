@@ -3616,7 +3616,7 @@
         <li class="md-nav__item">
   <a href="#robot.parsing.model.visitor" class="md-nav__link">
     <span class="md-ellipsis">
-      visitor
+      <code class="doc-symbol doc-symbol-toc doc-symbol-module"></code>&nbsp;visitor
     </span>
   </a>
   
@@ -3625,7 +3625,7 @@
         <li class="md-nav__item">
   <a href="#robot.parsing.model.visitor.ModelTransformer" class="md-nav__link">
     <span class="md-ellipsis">
-      ModelTransformer
+      <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;ModelTransformer
     </span>
   </a>
   
@@ -3634,7 +3634,7 @@
         <li class="md-nav__item">
   <a href="#robot.parsing.model.visitor.ModelVisitor" class="md-nav__link">
     <span class="md-ellipsis">
-      ModelVisitor
+      <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;ModelVisitor
     </span>
   </a>
   
@@ -7039,6 +7039,11 @@
 
 
 
+
+
+
+
+
   <div class="doc doc-children">
 
 
@@ -7053,7 +7058,7 @@
 
 
 <h2 id="robot.parsing.model.visitor.ModelTransformer" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <code>ModelTransformer</code>
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">ModelTransformer</span>
 
 
 <a href="#robot.parsing.model.visitor.ModelTransformer" class="headerlink" title="Permanent link">&para;</a></h2>
@@ -7069,31 +7074,11 @@
 to the standard <code>ast.NodeTransformer
 &lt;https://docs.python.org/library/ast.html#ast.NodeTransformer&gt;</code>__.</p>
 
-              <details class="quote">
-                <summary>Source code in <code>src/robot/parsing/model/visitor.py</code></summary>
-                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-90"> 90</a></span>
-<span class="normal"><a href="#example-0-91"> 91</a></span>
-<span class="normal"><a href="#example-0-92"> 92</a></span>
-<span class="normal"><a href="#example-0-93"> 93</a></span>
-<span class="normal"><a href="#example-0-94"> 94</a></span>
-<span class="normal"><a href="#example-0-95"> 95</a></span>
-<span class="normal"><a href="#example-0-96"> 96</a></span>
-<span class="normal"><a href="#example-0-97"> 97</a></span>
-<span class="normal"><a href="#example-0-98"> 98</a></span>
-<span class="normal"><a href="#example-0-99"> 99</a></span>
-<span class="normal"><a href="#example-0-100">100</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-90"><a id="example-0-90" name="example-0-90"></a><span class="k">class</span> <span class="nc">ModelTransformer</span><span class="p">(</span><span class="n">NodeTransformer</span><span class="p">,</span> <span class="n">VisitorFinder</span><span class="p">):</span>
-</span><span id="line-0-91"><a id="example-0-91" name="example-0-91"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;NodeTransformer that supports matching nodes based on their base classes.</span>
-</span><span id="line-0-92"><a id="example-0-92" name="example-0-92"></a>
-</span><span id="line-0-93"><a id="example-0-93" name="example-0-93"></a><span class="sd">    See :class:`ModelVisitor` for explanation how this is different compared</span>
-</span><span id="line-0-94"><a id="example-0-94" name="example-0-94"></a><span class="sd">    to the standard `ast.NodeTransformer</span>
-</span><span id="line-0-95"><a id="example-0-95" name="example-0-95"></a><span class="sd">    &lt;https://docs.python.org/library/ast.html#ast.NodeTransformer&gt;`__.</span>
-</span><span id="line-0-96"><a id="example-0-96" name="example-0-96"></a><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-0-97"><a id="example-0-97" name="example-0-97"></a>
-</span><span id="line-0-98"><a id="example-0-98" name="example-0-98"></a>    <span class="k">def</span> <span class="nf">visit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">:</span> <span class="n">Node</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;None|Node|list[Node]&#39;</span><span class="p">:</span>
-</span><span id="line-0-99"><a id="example-0-99" name="example-0-99"></a>        <span class="n">visitor_method</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_find_visitor</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">node</span><span class="p">))</span>
-</span><span id="line-0-100"><a id="example-0-100" name="example-0-100"></a>        <span class="k">return</span> <span class="n">visitor_method</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">)</span>
-</span></code></pre></div></td></tr></table></div>
-              </details>
+
+
+
+
+
 
 
 
@@ -7120,7 +7105,7 @@ to the standard <code>ast.NodeTransformer
 
 
 <h2 id="robot.parsing.model.visitor.ModelVisitor" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <code>ModelVisitor</code>
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">ModelVisitor</span>
 
 
 <a href="#robot.parsing.model.visitor.ModelVisitor" class="headerlink" title="Permanent link">&para;</a></h2>
@@ -7146,51 +7131,11 @@ the following visitor method matches all node classes that extend
 reasons. This means that dynamically adding <code>visit_Something</code> methods
 does not work.</p>
 
-              <details class="quote">
-                <summary>Source code in <code>src/robot/parsing/model/visitor.py</code></summary>
-                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-67">67</a></span>
-<span class="normal"><a href="#example-0-68">68</a></span>
-<span class="normal"><a href="#example-0-69">69</a></span>
-<span class="normal"><a href="#example-0-70">70</a></span>
-<span class="normal"><a href="#example-0-71">71</a></span>
-<span class="normal"><a href="#example-0-72">72</a></span>
-<span class="normal"><a href="#example-0-73">73</a></span>
-<span class="normal"><a href="#example-0-74">74</a></span>
-<span class="normal"><a href="#example-0-75">75</a></span>
-<span class="normal"><a href="#example-0-76">76</a></span>
-<span class="normal"><a href="#example-0-77">77</a></span>
-<span class="normal"><a href="#example-0-78">78</a></span>
-<span class="normal"><a href="#example-0-79">79</a></span>
-<span class="normal"><a href="#example-0-80">80</a></span>
-<span class="normal"><a href="#example-0-81">81</a></span>
-<span class="normal"><a href="#example-0-82">82</a></span>
-<span class="normal"><a href="#example-0-83">83</a></span>
-<span class="normal"><a href="#example-0-84">84</a></span>
-<span class="normal"><a href="#example-0-85">85</a></span>
-<span class="normal"><a href="#example-0-86">86</a></span>
-<span class="normal"><a href="#example-0-87">87</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-67"><a id="example-0-67" name="example-0-67"></a><span class="k">class</span> <span class="nc">ModelVisitor</span><span class="p">(</span><span class="n">NodeVisitor</span><span class="p">,</span> <span class="n">VisitorFinder</span><span class="p">):</span>
-</span><span id="line-0-68"><a id="example-0-68" name="example-0-68"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;NodeVisitor that supports matching nodes based on their base classes.</span>
-</span><span id="line-0-69"><a id="example-0-69" name="example-0-69"></a>
-</span><span id="line-0-70"><a id="example-0-70" name="example-0-70"></a><span class="sd">    The biggest difference compared to the standard `ast.NodeVisitor</span>
-</span><span id="line-0-71"><a id="example-0-71" name="example-0-71"></a><span class="sd">    &lt;https://docs.python.org/library/ast.html#ast.NodeVisitor&gt;`__,</span>
-</span><span id="line-0-72"><a id="example-0-72" name="example-0-72"></a><span class="sd">    is that this class allows creating ``visit_ClassName`` methods so that</span>
-</span><span id="line-0-73"><a id="example-0-73" name="example-0-73"></a><span class="sd">    the ``ClassName`` is one of the base classes of the node. For example,</span>
-</span><span id="line-0-74"><a id="example-0-74" name="example-0-74"></a><span class="sd">    the following visitor method matches all node classes that extend</span>
-</span><span id="line-0-75"><a id="example-0-75" name="example-0-75"></a><span class="sd">    ``Statement``::</span>
-</span><span id="line-0-76"><a id="example-0-76" name="example-0-76"></a>
-</span><span id="line-0-77"><a id="example-0-77" name="example-0-77"></a><span class="sd">        def visit_Statement(self, node):</span>
-</span><span id="line-0-78"><a id="example-0-78" name="example-0-78"></a><span class="sd">            ...</span>
-</span><span id="line-0-79"><a id="example-0-79" name="example-0-79"></a>
-</span><span id="line-0-80"><a id="example-0-80" name="example-0-80"></a><span class="sd">    Another difference is that visitor methods are cached for performance</span>
-</span><span id="line-0-81"><a id="example-0-81" name="example-0-81"></a><span class="sd">    reasons. This means that dynamically adding ``visit_Something`` methods</span>
-</span><span id="line-0-82"><a id="example-0-82" name="example-0-82"></a><span class="sd">    does not work.</span>
-</span><span id="line-0-83"><a id="example-0-83" name="example-0-83"></a><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-0-84"><a id="example-0-84" name="example-0-84"></a>
-</span><span id="line-0-85"><a id="example-0-85" name="example-0-85"></a>    <span class="k">def</span> <span class="nf">visit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">:</span> <span class="n">Node</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-0-86"><a id="example-0-86" name="example-0-86"></a>        <span class="n">visitor_method</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_find_visitor</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">node</span><span class="p">))</span>
-</span><span id="line-0-87"><a id="example-0-87" name="example-0-87"></a>        <span class="n">visitor_method</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">)</span>
-</span></code></pre></div></td></tr></table></div>
-              </details>
+
+
+
+
+
 
 
 

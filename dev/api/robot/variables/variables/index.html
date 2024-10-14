@@ -6906,7 +6906,7 @@
         <li class="md-nav__item">
   <a href="#robot.variables.variables" class="md-nav__link">
     <span class="md-ellipsis">
-      variables
+      <code class="doc-symbol doc-symbol-toc doc-symbol-module"></code>&nbsp;variables
     </span>
   </a>
   
@@ -6915,7 +6915,7 @@
         <li class="md-nav__item">
   <a href="#robot.variables.variables.Variables" class="md-nav__link">
     <span class="md-ellipsis">
-      Variables
+      <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;Variables
     </span>
   </a>
   
@@ -7028,6 +7028,11 @@
 
 
 
+
+
+
+
+
   <div class="doc doc-children">
 
 
@@ -7042,11 +7047,12 @@
 
 
 <h2 id="robot.variables.variables.Variables" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <code>Variables</code>
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">Variables</span>
 
 
 <a href="#robot.variables.variables.Variables" class="headerlink" title="Permanent link">&para;</a></h2>
-
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">Variables</span><span class="p">()</span>
+</span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
 
@@ -7056,123 +7062,20 @@
 On top of ${scalar}, @{list} and &amp;{dict} variables, these methods handle
 also %{environment} variables.</p>
 
-              <details class="quote">
-                <summary>Source code in <code>src/robot/variables/variables.py</code></summary>
-                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-24">24</a></span>
-<span class="normal"><a href="#example-0-25">25</a></span>
-<span class="normal"><a href="#example-0-26">26</a></span>
-<span class="normal"><a href="#example-0-27">27</a></span>
-<span class="normal"><a href="#example-0-28">28</a></span>
-<span class="normal"><a href="#example-0-29">29</a></span>
-<span class="normal"><a href="#example-0-30">30</a></span>
-<span class="normal"><a href="#example-0-31">31</a></span>
-<span class="normal"><a href="#example-0-32">32</a></span>
+
+
+
+
+
+                  <details class="quote">
+                    <summary>Source code in <code>src/robot/variables/variables.py</code></summary>
+                    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-32">32</a></span>
 <span class="normal"><a href="#example-0-33">33</a></span>
-<span class="normal"><a href="#example-0-34">34</a></span>
-<span class="normal"><a href="#example-0-35">35</a></span>
-<span class="normal"><a href="#example-0-36">36</a></span>
-<span class="normal"><a href="#example-0-37">37</a></span>
-<span class="normal"><a href="#example-0-38">38</a></span>
-<span class="normal"><a href="#example-0-39">39</a></span>
-<span class="normal"><a href="#example-0-40">40</a></span>
-<span class="normal"><a href="#example-0-41">41</a></span>
-<span class="normal"><a href="#example-0-42">42</a></span>
-<span class="normal"><a href="#example-0-43">43</a></span>
-<span class="normal"><a href="#example-0-44">44</a></span>
-<span class="normal"><a href="#example-0-45">45</a></span>
-<span class="normal"><a href="#example-0-46">46</a></span>
-<span class="normal"><a href="#example-0-47">47</a></span>
-<span class="normal"><a href="#example-0-48">48</a></span>
-<span class="normal"><a href="#example-0-49">49</a></span>
-<span class="normal"><a href="#example-0-50">50</a></span>
-<span class="normal"><a href="#example-0-51">51</a></span>
-<span class="normal"><a href="#example-0-52">52</a></span>
-<span class="normal"><a href="#example-0-53">53</a></span>
-<span class="normal"><a href="#example-0-54">54</a></span>
-<span class="normal"><a href="#example-0-55">55</a></span>
-<span class="normal"><a href="#example-0-56">56</a></span>
-<span class="normal"><a href="#example-0-57">57</a></span>
-<span class="normal"><a href="#example-0-58">58</a></span>
-<span class="normal"><a href="#example-0-59">59</a></span>
-<span class="normal"><a href="#example-0-60">60</a></span>
-<span class="normal"><a href="#example-0-61">61</a></span>
-<span class="normal"><a href="#example-0-62">62</a></span>
-<span class="normal"><a href="#example-0-63">63</a></span>
-<span class="normal"><a href="#example-0-64">64</a></span>
-<span class="normal"><a href="#example-0-65">65</a></span>
-<span class="normal"><a href="#example-0-66">66</a></span>
-<span class="normal"><a href="#example-0-67">67</a></span>
-<span class="normal"><a href="#example-0-68">68</a></span>
-<span class="normal"><a href="#example-0-69">69</a></span>
-<span class="normal"><a href="#example-0-70">70</a></span>
-<span class="normal"><a href="#example-0-71">71</a></span>
-<span class="normal"><a href="#example-0-72">72</a></span>
-<span class="normal"><a href="#example-0-73">73</a></span>
-<span class="normal"><a href="#example-0-74">74</a></span>
-<span class="normal"><a href="#example-0-75">75</a></span>
-<span class="normal"><a href="#example-0-76">76</a></span>
-<span class="normal"><a href="#example-0-77">77</a></span>
-<span class="normal"><a href="#example-0-78">78</a></span>
-<span class="normal"><a href="#example-0-79">79</a></span>
-<span class="normal"><a href="#example-0-80">80</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-24"><a id="example-0-24" name="example-0-24"></a><span class="k">class</span> <span class="nc">Variables</span><span class="p">:</span>
-</span><span id="line-0-25"><a id="example-0-25" name="example-0-25"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Represents a set of variables.</span>
-</span><span id="line-0-26"><a id="example-0-26" name="example-0-26"></a>
-</span><span id="line-0-27"><a id="example-0-27" name="example-0-27"></a><span class="sd">    Contains methods for replacing variables from list, scalars, and strings.</span>
-</span><span id="line-0-28"><a id="example-0-28" name="example-0-28"></a><span class="sd">    On top of ${scalar}, @{list} and &amp;{dict} variables, these methods handle</span>
-</span><span id="line-0-29"><a id="example-0-29" name="example-0-29"></a><span class="sd">    also %{environment} variables.</span>
-</span><span id="line-0-30"><a id="example-0-30" name="example-0-30"></a><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-0-31"><a id="example-0-31" name="example-0-31"></a>
-</span><span id="line-0-32"><a id="example-0-32" name="example-0-32"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="line-0-33"><a id="example-0-33" name="example-0-33"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">store</span> <span class="o">=</span> <span class="n">VariableStore</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-</span><span id="line-0-34"><a id="example-0-34" name="example-0-34"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_replacer</span> <span class="o">=</span> <span class="n">VariableReplacer</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-</span><span id="line-0-35"><a id="example-0-35" name="example-0-35"></a>
-</span><span id="line-0-36"><a id="example-0-36" name="example-0-36"></a>    <span class="k">def</span> <span class="fm">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
-</span><span id="line-0-37"><a id="example-0-37" name="example-0-37"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">store</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
-</span><span id="line-0-38"><a id="example-0-38" name="example-0-38"></a>
-</span><span id="line-0-39"><a id="example-0-39" name="example-0-39"></a>    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-</span><span id="line-0-40"><a id="example-0-40" name="example-0-40"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">store</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
-</span><span id="line-0-41"><a id="example-0-41" name="example-0-41"></a>
-</span><span id="line-0-42"><a id="example-0-42" name="example-0-42"></a>    <span class="k">def</span> <span class="fm">__contains__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-</span><span id="line-0-43"><a id="example-0-43" name="example-0-43"></a>        <span class="k">return</span> <span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">store</span>
-</span><span id="line-0-44"><a id="example-0-44" name="example-0-44"></a>
-</span><span id="line-0-45"><a id="example-0-45" name="example-0-45"></a>    <span class="k">def</span> <span class="nf">resolve_delayed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="line-0-46"><a id="example-0-46" name="example-0-46"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">store</span><span class="o">.</span><span class="n">resolve_delayed</span><span class="p">()</span>
-</span><span id="line-0-47"><a id="example-0-47" name="example-0-47"></a>
-</span><span id="line-0-48"><a id="example-0-48" name="example-0-48"></a>    <span class="k">def</span> <span class="nf">replace_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">items</span><span class="p">,</span> <span class="n">replace_until</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ignore_errors</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-</span><span id="line-0-49"><a id="example-0-49" name="example-0-49"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="n">is_list_like</span><span class="p">(</span><span class="n">items</span><span class="p">):</span>
-</span><span id="line-0-50"><a id="example-0-50" name="example-0-50"></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;&#39;replace_list&#39; requires list-like input, &quot;</span>
-</span><span id="line-0-51"><a id="example-0-51" name="example-0-51"></a>                             <span class="s2">&quot;got </span><span class="si">%s</span><span class="s2">.&quot;</span> <span class="o">%</span> <span class="n">type_name</span><span class="p">(</span><span class="n">items</span><span class="p">))</span>
-</span><span id="line-0-52"><a id="example-0-52" name="example-0-52"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_replacer</span><span class="o">.</span><span class="n">replace_list</span><span class="p">(</span><span class="n">items</span><span class="p">,</span> <span class="n">replace_until</span><span class="p">,</span> <span class="n">ignore_errors</span><span class="p">)</span>
-</span><span id="line-0-53"><a id="example-0-53" name="example-0-53"></a>
-</span><span id="line-0-54"><a id="example-0-54" name="example-0-54"></a>    <span class="k">def</span> <span class="nf">replace_scalar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">ignore_errors</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-</span><span id="line-0-55"><a id="example-0-55" name="example-0-55"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_replacer</span><span class="o">.</span><span class="n">replace_scalar</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">ignore_errors</span><span class="p">)</span>
-</span><span id="line-0-56"><a id="example-0-56" name="example-0-56"></a>
-</span><span id="line-0-57"><a id="example-0-57" name="example-0-57"></a>    <span class="k">def</span> <span class="nf">replace_string</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">custom_unescaper</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ignore_errors</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-</span><span id="line-0-58"><a id="example-0-58" name="example-0-58"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_replacer</span><span class="o">.</span><span class="n">replace_string</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">custom_unescaper</span><span class="p">,</span> <span class="n">ignore_errors</span><span class="p">)</span>
-</span><span id="line-0-59"><a id="example-0-59" name="example-0-59"></a>
-</span><span id="line-0-60"><a id="example-0-60" name="example-0-60"></a>    <span class="k">def</span> <span class="nf">set_from_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path_or_variables</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-</span><span id="line-0-61"><a id="example-0-61" name="example-0-61"></a>        <span class="n">setter</span> <span class="o">=</span> <span class="n">VariableFileSetter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">store</span><span class="p">)</span>
-</span><span id="line-0-62"><a id="example-0-62" name="example-0-62"></a>        <span class="k">return</span> <span class="n">setter</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">path_or_variables</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">overwrite</span><span class="p">)</span>
-</span><span id="line-0-63"><a id="example-0-63" name="example-0-63"></a>
-</span><span id="line-0-64"><a id="example-0-64" name="example-0-64"></a>    <span class="k">def</span> <span class="nf">set_from_variable_section</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">variables</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-</span><span id="line-0-65"><a id="example-0-65" name="example-0-65"></a>        <span class="n">setter</span> <span class="o">=</span> <span class="n">VariableTableSetter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">store</span><span class="p">)</span>
-</span><span id="line-0-66"><a id="example-0-66" name="example-0-66"></a>        <span class="n">setter</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">variables</span><span class="p">,</span> <span class="n">overwrite</span><span class="p">)</span>
-</span><span id="line-0-67"><a id="example-0-67" name="example-0-67"></a>
-</span><span id="line-0-68"><a id="example-0-68" name="example-0-68"></a>    <span class="k">def</span> <span class="nf">clear</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="line-0-69"><a id="example-0-69" name="example-0-69"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">store</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
-</span><span id="line-0-70"><a id="example-0-70" name="example-0-70"></a>
-</span><span id="line-0-71"><a id="example-0-71" name="example-0-71"></a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="line-0-72"><a id="example-0-72" name="example-0-72"></a>        <span class="n">variables</span> <span class="o">=</span> <span class="n">Variables</span><span class="p">()</span>
-</span><span id="line-0-73"><a id="example-0-73" name="example-0-73"></a>        <span class="n">variables</span><span class="o">.</span><span class="n">store</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">store</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-</span><span id="line-0-74"><a id="example-0-74" name="example-0-74"></a>        <span class="k">return</span> <span class="n">variables</span>
-</span><span id="line-0-75"><a id="example-0-75" name="example-0-75"></a>
-</span><span id="line-0-76"><a id="example-0-76" name="example-0-76"></a>    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">variables</span><span class="p">):</span>
-</span><span id="line-0-77"><a id="example-0-77" name="example-0-77"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">store</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">variables</span><span class="o">.</span><span class="n">store</span><span class="p">)</span>
-</span><span id="line-0-78"><a id="example-0-78" name="example-0-78"></a>
-</span><span id="line-0-79"><a id="example-0-79" name="example-0-79"></a>    <span class="k">def</span> <span class="nf">as_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">decoration</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-</span><span id="line-0-80"><a id="example-0-80" name="example-0-80"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">store</span><span class="o">.</span><span class="n">as_dict</span><span class="p">(</span><span class="n">decoration</span><span class="o">=</span><span class="n">decoration</span><span class="p">)</span>
+<span class="normal"><a href="#example-0-34">34</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-32"><a id="example-0-32" name="example-0-32"></a><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="line-0-33"><a id="example-0-33" name="example-0-33"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">store</span> <span class="o">=</span> <span class="n">VariableStore</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+</span><span id="line-0-34"><a id="example-0-34" name="example-0-34"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_replacer</span> <span class="o">=</span> <span class="n">VariableReplacer</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
-              </details>
+                  </details>
 
 
 

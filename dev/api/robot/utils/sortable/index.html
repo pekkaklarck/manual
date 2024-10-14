@@ -6509,7 +6509,7 @@
         <li class="md-nav__item">
   <a href="#robot.utils.sortable" class="md-nav__link">
     <span class="md-ellipsis">
-      sortable
+      <code class="doc-symbol doc-symbol-toc doc-symbol-module"></code>&nbsp;sortable
     </span>
   </a>
   
@@ -6518,7 +6518,7 @@
         <li class="md-nav__item">
   <a href="#robot.utils.sortable.Sortable" class="md-nav__link">
     <span class="md-ellipsis">
-      Sortable
+      <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;Sortable
     </span>
   </a>
   
@@ -7028,6 +7028,11 @@
 
 
 
+
+
+
+
+
   <div class="doc doc-children">
 
 
@@ -7042,7 +7047,7 @@
 
 
 <h2 id="robot.utils.sortable.Sortable" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <code>Sortable</code>
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">Sortable</span>
 
 
 <a href="#robot.utils.sortable.Sortable" class="headerlink" title="Permanent link">&para;</a></h2>
@@ -7053,69 +7058,11 @@
 
         <p>Base class for sorting based self._sort_key</p>
 
-              <details class="quote">
-                <summary>Source code in <code>src/robot/utils/sortable.py</code></summary>
-                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-21">21</a></span>
-<span class="normal"><a href="#example-0-22">22</a></span>
-<span class="normal"><a href="#example-0-23">23</a></span>
-<span class="normal"><a href="#example-0-24">24</a></span>
-<span class="normal"><a href="#example-0-25">25</a></span>
-<span class="normal"><a href="#example-0-26">26</a></span>
-<span class="normal"><a href="#example-0-27">27</a></span>
-<span class="normal"><a href="#example-0-28">28</a></span>
-<span class="normal"><a href="#example-0-29">29</a></span>
-<span class="normal"><a href="#example-0-30">30</a></span>
-<span class="normal"><a href="#example-0-31">31</a></span>
-<span class="normal"><a href="#example-0-32">32</a></span>
-<span class="normal"><a href="#example-0-33">33</a></span>
-<span class="normal"><a href="#example-0-34">34</a></span>
-<span class="normal"><a href="#example-0-35">35</a></span>
-<span class="normal"><a href="#example-0-36">36</a></span>
-<span class="normal"><a href="#example-0-37">37</a></span>
-<span class="normal"><a href="#example-0-38">38</a></span>
-<span class="normal"><a href="#example-0-39">39</a></span>
-<span class="normal"><a href="#example-0-40">40</a></span>
-<span class="normal"><a href="#example-0-41">41</a></span>
-<span class="normal"><a href="#example-0-42">42</a></span>
-<span class="normal"><a href="#example-0-43">43</a></span>
-<span class="normal"><a href="#example-0-44">44</a></span>
-<span class="normal"><a href="#example-0-45">45</a></span>
-<span class="normal"><a href="#example-0-46">46</a></span>
-<span class="normal"><a href="#example-0-47">47</a></span>
-<span class="normal"><a href="#example-0-48">48</a></span>
-<span class="normal"><a href="#example-0-49">49</a></span>
-<span class="normal"><a href="#example-0-50">50</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-21"><a id="example-0-21" name="example-0-21"></a><span class="k">class</span> <span class="nc">Sortable</span><span class="p">:</span>
-</span><span id="line-0-22"><a id="example-0-22" name="example-0-22"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Base class for sorting based self._sort_key&quot;&quot;&quot;</span>
-</span><span id="line-0-23"><a id="example-0-23" name="example-0-23"></a>
-</span><span id="line-0-24"><a id="example-0-24" name="example-0-24"></a>    <span class="n">_sort_key</span> <span class="o">=</span> <span class="bp">NotImplemented</span>
-</span><span id="line-0-25"><a id="example-0-25" name="example-0-25"></a>
-</span><span id="line-0-26"><a id="example-0-26" name="example-0-26"></a>    <span class="k">def</span> <span class="nf">__test</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">operator</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">require_sortable</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-</span><span id="line-0-27"><a id="example-0-27" name="example-0-27"></a>        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Sortable</span><span class="p">):</span>
-</span><span id="line-0-28"><a id="example-0-28" name="example-0-28"></a>            <span class="k">return</span> <span class="n">operator</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_sort_key</span><span class="p">,</span> <span class="n">other</span><span class="o">.</span><span class="n">_sort_key</span><span class="p">)</span>
-</span><span id="line-0-29"><a id="example-0-29" name="example-0-29"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="n">require_sortable</span><span class="p">:</span>
-</span><span id="line-0-30"><a id="example-0-30" name="example-0-30"></a>            <span class="k">return</span> <span class="kc">False</span>
-</span><span id="line-0-31"><a id="example-0-31" name="example-0-31"></a>        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Cannot sort &#39;</span><span class="si">%s</span><span class="s2">&#39; and &#39;</span><span class="si">%s</span><span class="s2">&#39;.&quot;</span>
-</span><span id="line-0-32"><a id="example-0-32" name="example-0-32"></a>                        <span class="o">%</span> <span class="p">(</span><span class="n">type_name</span><span class="p">(</span><span class="bp">self</span><span class="p">),</span> <span class="n">type_name</span><span class="p">(</span><span class="n">other</span><span class="p">)))</span>
-</span><span id="line-0-33"><a id="example-0-33" name="example-0-33"></a>
-</span><span id="line-0-34"><a id="example-0-34" name="example-0-34"></a>    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
-</span><span id="line-0-35"><a id="example-0-35" name="example-0-35"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__test</span><span class="p">(</span><span class="n">eq</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">require_sortable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-</span><span id="line-0-36"><a id="example-0-36" name="example-0-36"></a>
-</span><span id="line-0-37"><a id="example-0-37" name="example-0-37"></a>    <span class="k">def</span> <span class="fm">__lt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
-</span><span id="line-0-38"><a id="example-0-38" name="example-0-38"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__test</span><span class="p">(</span><span class="n">lt</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span>
-</span><span id="line-0-39"><a id="example-0-39" name="example-0-39"></a>
-</span><span id="line-0-40"><a id="example-0-40" name="example-0-40"></a>    <span class="k">def</span> <span class="fm">__le__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
-</span><span id="line-0-41"><a id="example-0-41" name="example-0-41"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__test</span><span class="p">(</span><span class="n">le</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span>
-</span><span id="line-0-42"><a id="example-0-42" name="example-0-42"></a>
-</span><span id="line-0-43"><a id="example-0-43" name="example-0-43"></a>    <span class="k">def</span> <span class="fm">__gt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
-</span><span id="line-0-44"><a id="example-0-44" name="example-0-44"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__test</span><span class="p">(</span><span class="n">gt</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span>
-</span><span id="line-0-45"><a id="example-0-45" name="example-0-45"></a>
-</span><span id="line-0-46"><a id="example-0-46" name="example-0-46"></a>    <span class="k">def</span> <span class="fm">__ge__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
-</span><span id="line-0-47"><a id="example-0-47" name="example-0-47"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__test</span><span class="p">(</span><span class="n">ge</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span>
-</span><span id="line-0-48"><a id="example-0-48" name="example-0-48"></a>
-</span><span id="line-0-49"><a id="example-0-49" name="example-0-49"></a>    <span class="k">def</span> <span class="fm">__hash__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="line-0-50"><a id="example-0-50" name="example-0-50"></a>        <span class="k">return</span> <span class="nb">hash</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_sort_key</span><span class="p">)</span>
-</span></code></pre></div></td></tr></table></div>
-              </details>
+
+
+
+
+
 
 
 

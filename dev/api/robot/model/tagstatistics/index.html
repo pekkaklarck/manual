@@ -2655,7 +2655,7 @@
         <li class="md-nav__item">
   <a href="#robot.model.tagstatistics" class="md-nav__link">
     <span class="md-ellipsis">
-      tagstatistics
+      <code class="doc-symbol doc-symbol-toc doc-symbol-module"></code>&nbsp;tagstatistics
     </span>
   </a>
   
@@ -2664,7 +2664,7 @@
         <li class="md-nav__item">
   <a href="#robot.model.tagstatistics.TagStatistics" class="md-nav__link">
     <span class="md-ellipsis">
-      TagStatistics
+      <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;TagStatistics
     </span>
   </a>
   
@@ -7028,6 +7028,11 @@
 
 
 
+
+
+
+
+
   <div class="doc doc-children">
 
 
@@ -7042,50 +7047,38 @@
 
 
 <h2 id="robot.model.tagstatistics.TagStatistics" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <code>TagStatistics</code>
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">TagStatistics</span>
 
 
 <a href="#robot.model.tagstatistics.TagStatistics" class="headerlink" title="Permanent link">&para;</a></h2>
-
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">TagStatistics</span><span class="p">(</span><span class="n">combined_stats</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
 
 
         <p>Container for tag statistics.</p>
 
-              <details class="quote">
-                <summary>Source code in <code>src/robot/model/tagstatistics.py</code></summary>
-                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-25">25</a></span>
-<span class="normal"><a href="#example-0-26">26</a></span>
-<span class="normal"><a href="#example-0-27">27</a></span>
-<span class="normal"><a href="#example-0-28">28</a></span>
+
+
+
+
+
+                  <details class="quote">
+                    <summary>Source code in <code>src/robot/model/tagstatistics.py</code></summary>
+                    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-28">28</a></span>
 <span class="normal"><a href="#example-0-29">29</a></span>
 <span class="normal"><a href="#example-0-30">30</a></span>
 <span class="normal"><a href="#example-0-31">31</a></span>
 <span class="normal"><a href="#example-0-32">32</a></span>
-<span class="normal"><a href="#example-0-33">33</a></span>
-<span class="normal"><a href="#example-0-34">34</a></span>
-<span class="normal"><a href="#example-0-35">35</a></span>
-<span class="normal"><a href="#example-0-36">36</a></span>
-<span class="normal"><a href="#example-0-37">37</a></span>
-<span class="normal"><a href="#example-0-38">38</a></span>
-<span class="normal"><a href="#example-0-39">39</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-25"><a id="example-0-25" name="example-0-25"></a><span class="k">class</span> <span class="nc">TagStatistics</span><span class="p">:</span>
-</span><span id="line-0-26"><a id="example-0-26" name="example-0-26"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Container for tag statistics.&quot;&quot;&quot;</span>
-</span><span id="line-0-27"><a id="example-0-27" name="example-0-27"></a>
-</span><span id="line-0-28"><a id="example-0-28" name="example-0-28"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">combined_stats</span><span class="p">):</span>
-</span><span id="line-0-29"><a id="example-0-29" name="example-0-29"></a>        <span class="c1">#: Dictionary, where key is the name of the tag as a string and value</span>
-</span><span id="line-0-30"><a id="example-0-30" name="example-0-30"></a>        <span class="c1">#: is an instance of :class:`~robot.model.stats.TagStat`.</span>
-</span><span id="line-0-31"><a id="example-0-31" name="example-0-31"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">tags</span> <span class="o">=</span> <span class="n">NormalizedDict</span><span class="p">(</span><span class="n">ignore</span><span class="o">=</span><span class="s1">&#39;_&#39;</span><span class="p">)</span>
-</span><span id="line-0-32"><a id="example-0-32" name="example-0-32"></a>        <span class="c1">#: List of :class:`~robot.model.stats.CombinedTagStat` objects.</span>
-</span><span id="line-0-33"><a id="example-0-33" name="example-0-33"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">combined</span> <span class="o">=</span> <span class="n">combined_stats</span>
-</span><span id="line-0-34"><a id="example-0-34" name="example-0-34"></a>
-</span><span id="line-0-35"><a id="example-0-35" name="example-0-35"></a>    <span class="k">def</span> <span class="nf">visit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">visitor</span><span class="p">):</span>
-</span><span id="line-0-36"><a id="example-0-36" name="example-0-36"></a>        <span class="n">visitor</span><span class="o">.</span><span class="n">visit_tag_statistics</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-</span><span id="line-0-37"><a id="example-0-37" name="example-0-37"></a>
-</span><span id="line-0-38"><a id="example-0-38" name="example-0-38"></a>    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="line-0-39"><a id="example-0-39" name="example-0-39"></a>        <span class="k">return</span> <span class="nb">iter</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">chain</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">combined</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">tags</span><span class="o">.</span><span class="n">values</span><span class="p">())))</span>
+<span class="normal"><a href="#example-0-33">33</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-28"><a id="example-0-28" name="example-0-28"></a><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">combined_stats</span><span class="p">):</span>
+</span><span id="line-0-29"><a id="example-0-29" name="example-0-29"></a>    <span class="c1">#: Dictionary, where key is the name of the tag as a string and value</span>
+</span><span id="line-0-30"><a id="example-0-30" name="example-0-30"></a>    <span class="c1">#: is an instance of :class:`~robot.model.stats.TagStat`.</span>
+</span><span id="line-0-31"><a id="example-0-31" name="example-0-31"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">tags</span> <span class="o">=</span> <span class="n">NormalizedDict</span><span class="p">(</span><span class="n">ignore</span><span class="o">=</span><span class="s1">&#39;_&#39;</span><span class="p">)</span>
+</span><span id="line-0-32"><a id="example-0-32" name="example-0-32"></a>    <span class="c1">#: List of :class:`~robot.model.stats.CombinedTagStat` objects.</span>
+</span><span id="line-0-33"><a id="example-0-33" name="example-0-33"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">combined</span> <span class="o">=</span> <span class="n">combined_stats</span>
 </span></code></pre></div></td></tr></table></div>
-              </details>
+                  </details>
 
 
 

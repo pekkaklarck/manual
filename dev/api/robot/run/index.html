@@ -4484,7 +4484,7 @@
         <li class="md-nav__item">
   <a href="#robot.run" class="md-nav__link">
     <span class="md-ellipsis">
-      run
+      <code class="doc-symbol doc-symbol-toc doc-symbol-module"></code>&nbsp;run
     </span>
   </a>
   
@@ -4493,7 +4493,7 @@
         <li class="md-nav__item">
   <a href="#robot.run.run" class="md-nav__link">
     <span class="md-ellipsis">
-      run
+      <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;run
     </span>
   </a>
   
@@ -4502,7 +4502,7 @@
         <li class="md-nav__item">
   <a href="#robot.run.run_cli" class="md-nav__link">
     <span class="md-ellipsis">
-      run_cli
+      <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;run_cli
     </span>
   </a>
   
@@ -7048,6 +7048,11 @@ that can be used programmatically. Other code is for internal usage.</p>
 
 
 
+
+
+
+
+
   <div class="doc doc-children">
 
 
@@ -7062,10 +7067,12 @@ that can be used programmatically. Other code is for internal usage.</p>
 
 
 <h2 id="robot.run.run" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-function"></code>            <code class="highlight language-python"><span class="n">run</span><span class="p">(</span><span class="o">*</span><span class="n">sources</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">)</span></code>
+<code class="doc-symbol doc-symbol-heading doc-symbol-function"></code>            <span class="doc doc-object-name doc-function-name">run</span>
+
 
 <a href="#robot.run.run" class="headerlink" title="Permanent link">&para;</a></h2>
-
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">run</span><span class="p">(</span><span class="o">*</span><span class="n">sources</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#list">list</a></span><span class="p">[</span><span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span> <span class="o">|</span> <span class="n"><a class="autorefs autorefs-external" title="pathlib.Path" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path">Path</a></span><span class="p">],</span> <span class="o">**</span><span class="n">options</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></span><span class="p">[</span><span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span><span class="p">,</span> <span class="n"><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></span><span class="p">])</span>
+</span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
 
@@ -7084,9 +7091,11 @@ that can be used programmatically. Other code is for internal usage.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>sources</code></td>
             <td>
-                  <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#list">list</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | Path]</code>
+                <code>sources</code>
+            </td>
+            <td>
+                  <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#list">list</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | <a class="autorefs autorefs-external" title="pathlib.Path" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path">Path</a>]</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -7099,9 +7108,11 @@ as when running the <code>robot</code> command on the command line.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>options</code></td>
             <td>
-                  <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, Any]</code>
+                <code>options</code>
+            </td>
+            <td>
+                  <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>, <a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a>]</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -7162,9 +7173,7 @@ statuses documented in the Robot Framework User Guide.</p>
 
             <details class="quote">
               <summary>Source code in <code>src/robot/run.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-518">518</a></span>
-<span class="normal"><a href="#example-0-519">519</a></span>
-<span class="normal"><a href="#example-0-520">520</a></span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-520">520</a></span>
 <span class="normal"><a href="#example-0-521">521</a></span>
 <span class="normal"><a href="#example-0-522">522</a></span>
 <span class="normal"><a href="#example-0-523">523</a></span>
@@ -7217,62 +7226,64 @@ statuses documented in the Robot Framework User Guide.</p>
 <span class="normal"><a href="#example-0-570">570</a></span>
 <span class="normal"><a href="#example-0-571">571</a></span>
 <span class="normal"><a href="#example-0-572">572</a></span>
-<span class="normal"><a href="#example-0-573">573</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-518"><a id="example-0-518" name="example-0-518"></a><span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="o">*</span><span class="n">sources</span><span class="p">:</span> <span class="s1">&#39;list[str|Path]&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">:</span> <span class="s1">&#39;dict[str, Any]&#39;</span><span class="p">):</span>
-</span><span id="line-0-519"><a id="example-0-519" name="example-0-519"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Programmatic entry point for running tests.</span>
-</span><span id="line-0-520"><a id="example-0-520" name="example-0-520"></a>
-</span><span id="line-0-521"><a id="example-0-521" name="example-0-521"></a><span class="sd">    Parameters:</span>
-</span><span id="line-0-522"><a id="example-0-522" name="example-0-522"></a><span class="sd">        sources: Paths to test case files/directories to be executed similarly</span>
-</span><span id="line-0-523"><a id="example-0-523" name="example-0-523"></a><span class="sd">            as when running the `robot` command on the command line.</span>
-</span><span id="line-0-524"><a id="example-0-524" name="example-0-524"></a><span class="sd">        options: Options to configure and control execution. Accepted</span>
-</span><span id="line-0-525"><a id="example-0-525" name="example-0-525"></a><span class="sd">            options are mostly same as normal command line options to the `robot`</span>
-</span><span id="line-0-526"><a id="example-0-526" name="example-0-526"></a><span class="sd">            command. Option names match command line option long names without</span>
-</span><span id="line-0-527"><a id="example-0-527" name="example-0-527"></a><span class="sd">            hyphens so that, for example, `--name` becomes `name`.</span>
-</span><span id="line-0-528"><a id="example-0-528" name="example-0-528"></a>
-</span><span id="line-0-529"><a id="example-0-529" name="example-0-529"></a><span class="sd">    Most options that can be given from the command line work. An exception</span>
-</span><span id="line-0-530"><a id="example-0-530" name="example-0-530"></a><span class="sd">    is that options `--pythonpath`, `--argumentfile`, `--help` and</span>
-</span><span id="line-0-531"><a id="example-0-531" name="example-0-531"></a><span class="sd">    `--version` are not supported.</span>
-</span><span id="line-0-532"><a id="example-0-532" name="example-0-532"></a>
-</span><span id="line-0-533"><a id="example-0-533" name="example-0-533"></a><span class="sd">    Options that can be given on the command line multiple times can be</span>
-</span><span id="line-0-534"><a id="example-0-534" name="example-0-534"></a><span class="sd">    passed as lists. For example, `include=[&#39;tag1&#39;, &#39;tag2&#39;]` is equivalent</span>
-</span><span id="line-0-535"><a id="example-0-535" name="example-0-535"></a><span class="sd">    to `--include tag1 --include tag2`. If such options are used only once,</span>
-</span><span id="line-0-536"><a id="example-0-536" name="example-0-536"></a><span class="sd">    they can be given also as a single string like `include=&#39;tag&#39;`.</span>
-</span><span id="line-0-537"><a id="example-0-537" name="example-0-537"></a>
-</span><span id="line-0-538"><a id="example-0-538" name="example-0-538"></a><span class="sd">    Options that accept no value can be given as Booleans. For example,</span>
-</span><span id="line-0-539"><a id="example-0-539" name="example-0-539"></a><span class="sd">    `dryrun=True` is same as using the `--dryrun` option.</span>
-</span><span id="line-0-540"><a id="example-0-540" name="example-0-540"></a>
-</span><span id="line-0-541"><a id="example-0-541" name="example-0-541"></a><span class="sd">    Options that accept string `NONE` as a special value can also be used</span>
-</span><span id="line-0-542"><a id="example-0-542" name="example-0-542"></a><span class="sd">    with Python `None`. For example, using `log=None` is equivalent to</span>
-</span><span id="line-0-543"><a id="example-0-543" name="example-0-543"></a><span class="sd">    `--log NONE`.</span>
-</span><span id="line-0-544"><a id="example-0-544" name="example-0-544"></a>
-</span><span id="line-0-545"><a id="example-0-545" name="example-0-545"></a><span class="sd">    `listener`, `prerunmodifier` and `prerebotmodifier` options allow</span>
-</span><span id="line-0-546"><a id="example-0-546" name="example-0-546"></a><span class="sd">    passing values as Python objects in addition to module names these command</span>
-</span><span id="line-0-547"><a id="example-0-547" name="example-0-547"></a><span class="sd">    line options support. For example, `#!py run(&#39;tests&#39;, listener=MyListener())`.</span>
-</span><span id="line-0-548"><a id="example-0-548" name="example-0-548"></a>
-</span><span id="line-0-549"><a id="example-0-549" name="example-0-549"></a><span class="sd">    To capture the standard output and error streams, pass an open file or</span>
-</span><span id="line-0-550"><a id="example-0-550" name="example-0-550"></a><span class="sd">    file-like object as special keyword arguments `stdout` and `stderr`,</span>
-</span><span id="line-0-551"><a id="example-0-551" name="example-0-551"></a><span class="sd">    respectively.</span>
-</span><span id="line-0-552"><a id="example-0-552" name="example-0-552"></a>
-</span><span id="line-0-553"><a id="example-0-553" name="example-0-553"></a><span class="sd">    A return code is returned similarly as when running on the command line.</span>
-</span><span id="line-0-554"><a id="example-0-554" name="example-0-554"></a><span class="sd">    Zero means that tests were executed and no test failed, values up to 250</span>
-</span><span id="line-0-555"><a id="example-0-555" name="example-0-555"></a><span class="sd">    denote the number of failed tests, and values between 251-255 are for other</span>
-</span><span id="line-0-556"><a id="example-0-556" name="example-0-556"></a><span class="sd">    statuses documented in the Robot Framework User Guide.</span>
-</span><span id="line-0-557"><a id="example-0-557" name="example-0-557"></a>
-</span><span id="line-0-558"><a id="example-0-558" name="example-0-558"></a><span class="sd">    Example:</span>
+<span class="normal"><a href="#example-0-573">573</a></span>
+<span class="normal"><a href="#example-0-574">574</a></span>
+<span class="normal"><a href="#example-0-575">575</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-520"><a id="example-0-520" name="example-0-520"></a><span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="o">*</span><span class="n">sources</span><span class="p">:</span> <span class="s1">&#39;list[str|Path]&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">:</span> <span class="s1">&#39;dict[str, Any]&#39;</span><span class="p">):</span>
+</span><span id="line-0-521"><a id="example-0-521" name="example-0-521"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Programmatic entry point for running tests.</span>
+</span><span id="line-0-522"><a id="example-0-522" name="example-0-522"></a>
+</span><span id="line-0-523"><a id="example-0-523" name="example-0-523"></a><span class="sd">    Parameters:</span>
+</span><span id="line-0-524"><a id="example-0-524" name="example-0-524"></a><span class="sd">        sources: Paths to test case files/directories to be executed similarly</span>
+</span><span id="line-0-525"><a id="example-0-525" name="example-0-525"></a><span class="sd">            as when running the `robot` command on the command line.</span>
+</span><span id="line-0-526"><a id="example-0-526" name="example-0-526"></a><span class="sd">        options: Options to configure and control execution. Accepted</span>
+</span><span id="line-0-527"><a id="example-0-527" name="example-0-527"></a><span class="sd">            options are mostly same as normal command line options to the `robot`</span>
+</span><span id="line-0-528"><a id="example-0-528" name="example-0-528"></a><span class="sd">            command. Option names match command line option long names without</span>
+</span><span id="line-0-529"><a id="example-0-529" name="example-0-529"></a><span class="sd">            hyphens so that, for example, `--name` becomes `name`.</span>
+</span><span id="line-0-530"><a id="example-0-530" name="example-0-530"></a>
+</span><span id="line-0-531"><a id="example-0-531" name="example-0-531"></a><span class="sd">    Most options that can be given from the command line work. An exception</span>
+</span><span id="line-0-532"><a id="example-0-532" name="example-0-532"></a><span class="sd">    is that options `--pythonpath`, `--argumentfile`, `--help` and</span>
+</span><span id="line-0-533"><a id="example-0-533" name="example-0-533"></a><span class="sd">    `--version` are not supported.</span>
+</span><span id="line-0-534"><a id="example-0-534" name="example-0-534"></a>
+</span><span id="line-0-535"><a id="example-0-535" name="example-0-535"></a><span class="sd">    Options that can be given on the command line multiple times can be</span>
+</span><span id="line-0-536"><a id="example-0-536" name="example-0-536"></a><span class="sd">    passed as lists. For example, `include=[&#39;tag1&#39;, &#39;tag2&#39;]` is equivalent</span>
+</span><span id="line-0-537"><a id="example-0-537" name="example-0-537"></a><span class="sd">    to `--include tag1 --include tag2`. If such options are used only once,</span>
+</span><span id="line-0-538"><a id="example-0-538" name="example-0-538"></a><span class="sd">    they can be given also as a single string like `include=&#39;tag&#39;`.</span>
+</span><span id="line-0-539"><a id="example-0-539" name="example-0-539"></a>
+</span><span id="line-0-540"><a id="example-0-540" name="example-0-540"></a><span class="sd">    Options that accept no value can be given as Booleans. For example,</span>
+</span><span id="line-0-541"><a id="example-0-541" name="example-0-541"></a><span class="sd">    `dryrun=True` is same as using the `--dryrun` option.</span>
+</span><span id="line-0-542"><a id="example-0-542" name="example-0-542"></a>
+</span><span id="line-0-543"><a id="example-0-543" name="example-0-543"></a><span class="sd">    Options that accept string `NONE` as a special value can also be used</span>
+</span><span id="line-0-544"><a id="example-0-544" name="example-0-544"></a><span class="sd">    with Python `None`. For example, using `log=None` is equivalent to</span>
+</span><span id="line-0-545"><a id="example-0-545" name="example-0-545"></a><span class="sd">    `--log NONE`.</span>
+</span><span id="line-0-546"><a id="example-0-546" name="example-0-546"></a>
+</span><span id="line-0-547"><a id="example-0-547" name="example-0-547"></a><span class="sd">    `listener`, `prerunmodifier` and `prerebotmodifier` options allow</span>
+</span><span id="line-0-548"><a id="example-0-548" name="example-0-548"></a><span class="sd">    passing values as Python objects in addition to module names these command</span>
+</span><span id="line-0-549"><a id="example-0-549" name="example-0-549"></a><span class="sd">    line options support. For example, `#!py run(&#39;tests&#39;, listener=MyListener())`.</span>
+</span><span id="line-0-550"><a id="example-0-550" name="example-0-550"></a>
+</span><span id="line-0-551"><a id="example-0-551" name="example-0-551"></a><span class="sd">    To capture the standard output and error streams, pass an open file or</span>
+</span><span id="line-0-552"><a id="example-0-552" name="example-0-552"></a><span class="sd">    file-like object as special keyword arguments `stdout` and `stderr`,</span>
+</span><span id="line-0-553"><a id="example-0-553" name="example-0-553"></a><span class="sd">    respectively.</span>
+</span><span id="line-0-554"><a id="example-0-554" name="example-0-554"></a>
+</span><span id="line-0-555"><a id="example-0-555" name="example-0-555"></a><span class="sd">    A return code is returned similarly as when running on the command line.</span>
+</span><span id="line-0-556"><a id="example-0-556" name="example-0-556"></a><span class="sd">    Zero means that tests were executed and no test failed, values up to 250</span>
+</span><span id="line-0-557"><a id="example-0-557" name="example-0-557"></a><span class="sd">    denote the number of failed tests, and values between 251-255 are for other</span>
+</span><span id="line-0-558"><a id="example-0-558" name="example-0-558"></a><span class="sd">    statuses documented in the Robot Framework User Guide.</span>
 </span><span id="line-0-559"><a id="example-0-559" name="example-0-559"></a>
-</span><span id="line-0-560"><a id="example-0-560" name="example-0-560"></a><span class="sd">        from robot import run</span>
+</span><span id="line-0-560"><a id="example-0-560" name="example-0-560"></a><span class="sd">    Example:</span>
 </span><span id="line-0-561"><a id="example-0-561" name="example-0-561"></a>
-</span><span id="line-0-562"><a id="example-0-562" name="example-0-562"></a><span class="sd">        run(&#39;path/to/tests.robot&#39;)</span>
-</span><span id="line-0-563"><a id="example-0-563" name="example-0-563"></a><span class="sd">        run(&#39;tests.robot&#39;, include=[&#39;tag1&#39;, &#39;tag2&#39;], splitlog=True)</span>
-</span><span id="line-0-564"><a id="example-0-564" name="example-0-564"></a><span class="sd">        with open(&#39;stdout.txt&#39;, &#39;w&#39;) as stdout:</span>
-</span><span id="line-0-565"><a id="example-0-565" name="example-0-565"></a><span class="sd">            run(&#39;t1.robot&#39;, &#39;t2.robot&#39;, name=&#39;Example&#39;, log=None, stdout=stdout)</span>
-</span><span id="line-0-566"><a id="example-0-566" name="example-0-566"></a>
-</span><span id="line-0-567"><a id="example-0-567" name="example-0-567"></a><span class="sd">    Equivalent command line usage:</span>
+</span><span id="line-0-562"><a id="example-0-562" name="example-0-562"></a><span class="sd">        from robot import run</span>
+</span><span id="line-0-563"><a id="example-0-563" name="example-0-563"></a>
+</span><span id="line-0-564"><a id="example-0-564" name="example-0-564"></a><span class="sd">        run(&#39;path/to/tests.robot&#39;)</span>
+</span><span id="line-0-565"><a id="example-0-565" name="example-0-565"></a><span class="sd">        run(&#39;tests.robot&#39;, include=[&#39;tag1&#39;, &#39;tag2&#39;], splitlog=True)</span>
+</span><span id="line-0-566"><a id="example-0-566" name="example-0-566"></a><span class="sd">        with open(&#39;stdout.txt&#39;, &#39;w&#39;) as stdout:</span>
+</span><span id="line-0-567"><a id="example-0-567" name="example-0-567"></a><span class="sd">            run(&#39;t1.robot&#39;, &#39;t2.robot&#39;, name=&#39;Example&#39;, log=None, stdout=stdout)</span>
 </span><span id="line-0-568"><a id="example-0-568" name="example-0-568"></a>
-</span><span id="line-0-569"><a id="example-0-569" name="example-0-569"></a><span class="sd">        robot path/to/tests.robot</span>
-</span><span id="line-0-570"><a id="example-0-570" name="example-0-570"></a><span class="sd">        robot --include tag1 --include tag2 --splitlog tests.robot</span>
-</span><span id="line-0-571"><a id="example-0-571" name="example-0-571"></a><span class="sd">        robot --name Example --log NONE t1.robot t2.robot &gt; stdout.txt</span>
-</span><span id="line-0-572"><a id="example-0-572" name="example-0-572"></a><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-0-573"><a id="example-0-573" name="example-0-573"></a>    <span class="k">return</span> <span class="n">RobotFramework</span><span class="p">()</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="o">*</span><span class="n">sources</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">)</span>
+</span><span id="line-0-569"><a id="example-0-569" name="example-0-569"></a><span class="sd">    Equivalent command line usage:</span>
+</span><span id="line-0-570"><a id="example-0-570" name="example-0-570"></a>
+</span><span id="line-0-571"><a id="example-0-571" name="example-0-571"></a><span class="sd">        robot path/to/tests.robot</span>
+</span><span id="line-0-572"><a id="example-0-572" name="example-0-572"></a><span class="sd">        robot --include tag1 --include tag2 --splitlog tests.robot</span>
+</span><span id="line-0-573"><a id="example-0-573" name="example-0-573"></a><span class="sd">        robot --name Example --log NONE t1.robot t2.robot &gt; stdout.txt</span>
+</span><span id="line-0-574"><a id="example-0-574" name="example-0-574"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-575"><a id="example-0-575" name="example-0-575"></a>    <span class="k">return</span> <span class="n">RobotFramework</span><span class="p">()</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="o">*</span><span class="n">sources</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -7283,10 +7294,12 @@ statuses documented in the Robot Framework User Guide.</p>
 
 
 <h2 id="robot.run.run_cli" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-function"></code>            <code class="highlight language-python"><span class="n">run_cli</span><span class="p">(</span><span class="n">arguments</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">exit</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+<code class="doc-symbol doc-symbol-heading doc-symbol-function"></code>            <span class="doc doc-object-name doc-function-name">run_cli</span>
+
 
 <a href="#robot.run.run_cli" class="headerlink" title="Permanent link">&para;</a></h2>
-
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">run_cli</span><span class="p">(</span><span class="n">arguments</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#list">list</a></span><span class="p">[</span><span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">exit</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
 
@@ -7305,7 +7318,9 @@ statuses documented in the Robot Framework User Guide.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>arguments</code></td>
+            <td>
+                <code>arguments</code>
+            </td>
             <td>
                   <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#list">list</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>] | None</code>
             </td>
@@ -7320,7 +7335,9 @@ Defaults to <code>sys.argv[1:]</code> if not given.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>exit</code></td>
+            <td>
+                <code>exit</code>
+            </td>
             <td>
                   <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
             </td>
@@ -7362,9 +7379,7 @@ programmatic test execution.</p>
 
             <details class="quote">
               <summary>Source code in <code>src/robot/run.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-484">484</a></span>
-<span class="normal"><a href="#example-0-485">485</a></span>
-<span class="normal"><a href="#example-0-486">486</a></span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-486">486</a></span>
 <span class="normal"><a href="#example-0-487">487</a></span>
 <span class="normal"><a href="#example-0-488">488</a></span>
 <span class="normal"><a href="#example-0-489">489</a></span>
@@ -7393,38 +7408,40 @@ programmatic test execution.</p>
 <span class="normal"><a href="#example-0-512">512</a></span>
 <span class="normal"><a href="#example-0-513">513</a></span>
 <span class="normal"><a href="#example-0-514">514</a></span>
-<span class="normal"><a href="#example-0-515">515</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-484"><a id="example-0-484" name="example-0-484"></a><span class="k">def</span> <span class="nf">run_cli</span><span class="p">(</span><span class="n">arguments</span><span class="p">:</span> <span class="s1">&#39;list[str]|None&#39;</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">exit</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
-</span><span id="line-0-485"><a id="example-0-485" name="example-0-485"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Command line execution entry point for running tests.</span>
-</span><span id="line-0-486"><a id="example-0-486" name="example-0-486"></a>
-</span><span id="line-0-487"><a id="example-0-487" name="example-0-487"></a><span class="sd">    Parameters:</span>
-</span><span id="line-0-488"><a id="example-0-488" name="example-0-488"></a><span class="sd">        arguments: Command line options and arguments as a list of strings.</span>
-</span><span id="line-0-489"><a id="example-0-489" name="example-0-489"></a><span class="sd">            Defaults to `sys.argv[1:]` if not given.</span>
-</span><span id="line-0-490"><a id="example-0-490" name="example-0-490"></a><span class="sd">        exit: If `True`, call `sys.exit` with the return code denoting</span>
-</span><span id="line-0-491"><a id="example-0-491" name="example-0-491"></a><span class="sd">            execution status, otherwise just return the rc.</span>
-</span><span id="line-0-492"><a id="example-0-492" name="example-0-492"></a>
-</span><span id="line-0-493"><a id="example-0-493" name="example-0-493"></a><span class="sd">    Entry point used when running tests from the command line, but can also</span>
-</span><span id="line-0-494"><a id="example-0-494" name="example-0-494"></a><span class="sd">    be used by custom scripts that execute tests. Especially useful if the</span>
-</span><span id="line-0-495"><a id="example-0-495" name="example-0-495"></a><span class="sd">    script itself needs to accept same arguments as accepted by Robot Framework,</span>
-</span><span id="line-0-496"><a id="example-0-496" name="example-0-496"></a><span class="sd">    because the script can just pass them forward directly along with the</span>
-</span><span id="line-0-497"><a id="example-0-497" name="example-0-497"></a><span class="sd">    possible default values it sets itself.</span>
-</span><span id="line-0-498"><a id="example-0-498" name="example-0-498"></a>
-</span><span id="line-0-499"><a id="example-0-499" name="example-0-499"></a><span class="sd">    Example:</span>
+<span class="normal"><a href="#example-0-515">515</a></span>
+<span class="normal"><a href="#example-0-516">516</a></span>
+<span class="normal"><a href="#example-0-517">517</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-486"><a id="example-0-486" name="example-0-486"></a><span class="k">def</span> <span class="nf">run_cli</span><span class="p">(</span><span class="n">arguments</span><span class="p">:</span> <span class="s1">&#39;list[str]|None&#39;</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">exit</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
+</span><span id="line-0-487"><a id="example-0-487" name="example-0-487"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Command line execution entry point for running tests.</span>
+</span><span id="line-0-488"><a id="example-0-488" name="example-0-488"></a>
+</span><span id="line-0-489"><a id="example-0-489" name="example-0-489"></a><span class="sd">    Parameters:</span>
+</span><span id="line-0-490"><a id="example-0-490" name="example-0-490"></a><span class="sd">        arguments: Command line options and arguments as a list of strings.</span>
+</span><span id="line-0-491"><a id="example-0-491" name="example-0-491"></a><span class="sd">            Defaults to `sys.argv[1:]` if not given.</span>
+</span><span id="line-0-492"><a id="example-0-492" name="example-0-492"></a><span class="sd">        exit: If `True`, call `sys.exit` with the return code denoting</span>
+</span><span id="line-0-493"><a id="example-0-493" name="example-0-493"></a><span class="sd">            execution status, otherwise just return the rc.</span>
+</span><span id="line-0-494"><a id="example-0-494" name="example-0-494"></a>
+</span><span id="line-0-495"><a id="example-0-495" name="example-0-495"></a><span class="sd">    Entry point used when running tests from the command line, but can also</span>
+</span><span id="line-0-496"><a id="example-0-496" name="example-0-496"></a><span class="sd">    be used by custom scripts that execute tests. Especially useful if the</span>
+</span><span id="line-0-497"><a id="example-0-497" name="example-0-497"></a><span class="sd">    script itself needs to accept same arguments as accepted by Robot Framework,</span>
+</span><span id="line-0-498"><a id="example-0-498" name="example-0-498"></a><span class="sd">    because the script can just pass them forward directly along with the</span>
+</span><span id="line-0-499"><a id="example-0-499" name="example-0-499"></a><span class="sd">    possible default values it sets itself.</span>
 </span><span id="line-0-500"><a id="example-0-500" name="example-0-500"></a>
-</span><span id="line-0-501"><a id="example-0-501" name="example-0-501"></a><span class="sd">        from robot import run_cli</span>
+</span><span id="line-0-501"><a id="example-0-501" name="example-0-501"></a><span class="sd">    Example:</span>
 </span><span id="line-0-502"><a id="example-0-502" name="example-0-502"></a>
-</span><span id="line-0-503"><a id="example-0-503" name="example-0-503"></a><span class="sd">        # Run tests and return the return code.</span>
-</span><span id="line-0-504"><a id="example-0-504" name="example-0-504"></a><span class="sd">        rc = run_cli([&#39;--name&#39;, &#39;Example&#39;, &#39;tests.robot&#39;], exit=False)</span>
-</span><span id="line-0-505"><a id="example-0-505" name="example-0-505"></a>
-</span><span id="line-0-506"><a id="example-0-506" name="example-0-506"></a><span class="sd">        # Run tests and exit to the system automatically.</span>
-</span><span id="line-0-507"><a id="example-0-507" name="example-0-507"></a><span class="sd">        run_cli([&#39;--name&#39;, &#39;Example&#39;, &#39;tests.robot&#39;])</span>
-</span><span id="line-0-508"><a id="example-0-508" name="example-0-508"></a>
-</span><span id="line-0-509"><a id="example-0-509" name="example-0-509"></a><span class="sd">    See also the [robot.run][robot.run.run] function that allows setting options as keyword</span>
-</span><span id="line-0-510"><a id="example-0-510" name="example-0-510"></a><span class="sd">    arguments like `name=&quot;Example&quot;` and generally has a richer API for</span>
-</span><span id="line-0-511"><a id="example-0-511" name="example-0-511"></a><span class="sd">    programmatic test execution.</span>
-</span><span id="line-0-512"><a id="example-0-512" name="example-0-512"></a><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-0-513"><a id="example-0-513" name="example-0-513"></a>    <span class="k">if</span> <span class="n">arguments</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-0-514"><a id="example-0-514" name="example-0-514"></a>        <span class="n">arguments</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
-</span><span id="line-0-515"><a id="example-0-515" name="example-0-515"></a>    <span class="k">return</span> <span class="n">RobotFramework</span><span class="p">()</span><span class="o">.</span><span class="n">execute_cli</span><span class="p">(</span><span class="n">arguments</span><span class="p">,</span> <span class="n">exit</span><span class="o">=</span><span class="n">exit</span><span class="p">)</span>
+</span><span id="line-0-503"><a id="example-0-503" name="example-0-503"></a><span class="sd">        from robot import run_cli</span>
+</span><span id="line-0-504"><a id="example-0-504" name="example-0-504"></a>
+</span><span id="line-0-505"><a id="example-0-505" name="example-0-505"></a><span class="sd">        # Run tests and return the return code.</span>
+</span><span id="line-0-506"><a id="example-0-506" name="example-0-506"></a><span class="sd">        rc = run_cli([&#39;--name&#39;, &#39;Example&#39;, &#39;tests.robot&#39;], exit=False)</span>
+</span><span id="line-0-507"><a id="example-0-507" name="example-0-507"></a>
+</span><span id="line-0-508"><a id="example-0-508" name="example-0-508"></a><span class="sd">        # Run tests and exit to the system automatically.</span>
+</span><span id="line-0-509"><a id="example-0-509" name="example-0-509"></a><span class="sd">        run_cli([&#39;--name&#39;, &#39;Example&#39;, &#39;tests.robot&#39;])</span>
+</span><span id="line-0-510"><a id="example-0-510" name="example-0-510"></a>
+</span><span id="line-0-511"><a id="example-0-511" name="example-0-511"></a><span class="sd">    See also the [robot.run][robot.run.run] function that allows setting options as keyword</span>
+</span><span id="line-0-512"><a id="example-0-512" name="example-0-512"></a><span class="sd">    arguments like `name=&quot;Example&quot;` and generally has a richer API for</span>
+</span><span id="line-0-513"><a id="example-0-513" name="example-0-513"></a><span class="sd">    programmatic test execution.</span>
+</span><span id="line-0-514"><a id="example-0-514" name="example-0-514"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-515"><a id="example-0-515" name="example-0-515"></a>    <span class="k">if</span> <span class="n">arguments</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-0-516"><a id="example-0-516" name="example-0-516"></a>        <span class="n">arguments</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+</span><span id="line-0-517"><a id="example-0-517" name="example-0-517"></a>    <span class="k">return</span> <span class="n">RobotFramework</span><span class="p">()</span><span class="o">.</span><span class="n">execute_cli</span><span class="p">(</span><span class="n">arguments</span><span class="p">,</span> <span class="n">exit</span><span class="o">=</span><span class="n">exit</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>

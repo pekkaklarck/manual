@@ -2718,7 +2718,7 @@
         <li class="md-nav__item">
   <a href="#robot.model.totalstatistics" class="md-nav__link">
     <span class="md-ellipsis">
-      totalstatistics
+      <code class="doc-symbol doc-symbol-toc doc-symbol-module"></code>&nbsp;totalstatistics
     </span>
   </a>
   
@@ -2727,17 +2727,17 @@
         <li class="md-nav__item">
   <a href="#robot.model.totalstatistics.TotalStatistics" class="md-nav__link">
     <span class="md-ellipsis">
-      TotalStatistics
+      <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;TotalStatistics
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="TotalStatistics">
+    <nav class="md-nav" aria-label=" TotalStatistics">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#robot.model.totalstatistics.TotalStatistics.message" class="md-nav__link">
     <span class="md-ellipsis">
-      message
+      <code class="doc-symbol doc-symbol-toc doc-symbol-attribute"></code>&nbsp;message
     </span>
   </a>
   
@@ -7043,6 +7043,11 @@
 
 
 
+
+
+
+
+
   <div class="doc doc-children">
 
 
@@ -7057,110 +7062,34 @@
 
 
 <h2 id="robot.model.totalstatistics.TotalStatistics" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <code>TotalStatistics</code>
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">TotalStatistics</span>
 
 
 <a href="#robot.model.totalstatistics.TotalStatistics" class="headerlink" title="Permanent link">&para;</a></h2>
-
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">TotalStatistics</span><span class="p">(</span><span class="n">rpa</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
 
 
         <p>Container for total statistics.</p>
 
-              <details class="quote">
-                <summary>Source code in <code>src/robot/model/totalstatistics.py</code></summary>
-                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-24">24</a></span>
-<span class="normal"><a href="#example-0-25">25</a></span>
-<span class="normal"><a href="#example-0-26">26</a></span>
-<span class="normal"><a href="#example-0-27">27</a></span>
+
+
+
+
+
+                  <details class="quote">
+                    <summary>Source code in <code>src/robot/model/totalstatistics.py</code></summary>
+                    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-27">27</a></span>
 <span class="normal"><a href="#example-0-28">28</a></span>
 <span class="normal"><a href="#example-0-29">29</a></span>
-<span class="normal"><a href="#example-0-30">30</a></span>
-<span class="normal"><a href="#example-0-31">31</a></span>
-<span class="normal"><a href="#example-0-32">32</a></span>
-<span class="normal"><a href="#example-0-33">33</a></span>
-<span class="normal"><a href="#example-0-34">34</a></span>
-<span class="normal"><a href="#example-0-35">35</a></span>
-<span class="normal"><a href="#example-0-36">36</a></span>
-<span class="normal"><a href="#example-0-37">37</a></span>
-<span class="normal"><a href="#example-0-38">38</a></span>
-<span class="normal"><a href="#example-0-39">39</a></span>
-<span class="normal"><a href="#example-0-40">40</a></span>
-<span class="normal"><a href="#example-0-41">41</a></span>
-<span class="normal"><a href="#example-0-42">42</a></span>
-<span class="normal"><a href="#example-0-43">43</a></span>
-<span class="normal"><a href="#example-0-44">44</a></span>
-<span class="normal"><a href="#example-0-45">45</a></span>
-<span class="normal"><a href="#example-0-46">46</a></span>
-<span class="normal"><a href="#example-0-47">47</a></span>
-<span class="normal"><a href="#example-0-48">48</a></span>
-<span class="normal"><a href="#example-0-49">49</a></span>
-<span class="normal"><a href="#example-0-50">50</a></span>
-<span class="normal"><a href="#example-0-51">51</a></span>
-<span class="normal"><a href="#example-0-52">52</a></span>
-<span class="normal"><a href="#example-0-53">53</a></span>
-<span class="normal"><a href="#example-0-54">54</a></span>
-<span class="normal"><a href="#example-0-55">55</a></span>
-<span class="normal"><a href="#example-0-56">56</a></span>
-<span class="normal"><a href="#example-0-57">57</a></span>
-<span class="normal"><a href="#example-0-58">58</a></span>
-<span class="normal"><a href="#example-0-59">59</a></span>
-<span class="normal"><a href="#example-0-60">60</a></span>
-<span class="normal"><a href="#example-0-61">61</a></span>
-<span class="normal"><a href="#example-0-62">62</a></span>
-<span class="normal"><a href="#example-0-63">63</a></span>
-<span class="normal"><a href="#example-0-64">64</a></span>
-<span class="normal"><a href="#example-0-65">65</a></span>
-<span class="normal"><a href="#example-0-66">66</a></span>
-<span class="normal"><a href="#example-0-67">67</a></span>
-<span class="normal"><a href="#example-0-68">68</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-24"><a id="example-0-24" name="example-0-24"></a><span class="k">class</span> <span class="nc">TotalStatistics</span><span class="p">:</span>
-</span><span id="line-0-25"><a id="example-0-25" name="example-0-25"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Container for total statistics.&quot;&quot;&quot;</span>
-</span><span id="line-0-26"><a id="example-0-26" name="example-0-26"></a>
-</span><span id="line-0-27"><a id="example-0-27" name="example-0-27"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rpa</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
-</span><span id="line-0-28"><a id="example-0-28" name="example-0-28"></a>        <span class="c1">#: Instance of :class:`~robot.model.stats.TotalStat` for all the tests.</span>
-</span><span id="line-0-29"><a id="example-0-29" name="example-0-29"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">stat</span> <span class="o">=</span> <span class="n">TotalStat</span><span class="p">(</span><span class="n">test_or_task</span><span class="p">(</span><span class="s1">&#39;All </span><span class="si">{Test}</span><span class="s1">s&#39;</span><span class="p">,</span> <span class="n">rpa</span><span class="p">))</span>
-</span><span id="line-0-30"><a id="example-0-30" name="example-0-30"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_rpa</span> <span class="o">=</span> <span class="n">rpa</span>
-</span><span id="line-0-31"><a id="example-0-31" name="example-0-31"></a>
-</span><span id="line-0-32"><a id="example-0-32" name="example-0-32"></a>    <span class="k">def</span> <span class="nf">visit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">visitor</span><span class="p">):</span>
-</span><span id="line-0-33"><a id="example-0-33" name="example-0-33"></a>        <span class="n">visitor</span><span class="o">.</span><span class="n">visit_total_statistics</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">stat</span><span class="p">)</span>
-</span><span id="line-0-34"><a id="example-0-34" name="example-0-34"></a>
-</span><span id="line-0-35"><a id="example-0-35" name="example-0-35"></a>    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;Iterator[TotalStat]&#39;</span><span class="p">:</span>
-</span><span id="line-0-36"><a id="example-0-36" name="example-0-36"></a>        <span class="k">yield</span> <span class="bp">self</span><span class="o">.</span><span class="n">stat</span>
-</span><span id="line-0-37"><a id="example-0-37" name="example-0-37"></a>
-</span><span id="line-0-38"><a id="example-0-38" name="example-0-38"></a>    <span class="nd">@property</span>
-</span><span id="line-0-39"><a id="example-0-39" name="example-0-39"></a>    <span class="k">def</span> <span class="nf">total</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-</span><span id="line-0-40"><a id="example-0-40" name="example-0-40"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">stat</span><span class="o">.</span><span class="n">total</span>
-</span><span id="line-0-41"><a id="example-0-41" name="example-0-41"></a>
-</span><span id="line-0-42"><a id="example-0-42" name="example-0-42"></a>    <span class="nd">@property</span>
-</span><span id="line-0-43"><a id="example-0-43" name="example-0-43"></a>    <span class="k">def</span> <span class="nf">passed</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-</span><span id="line-0-44"><a id="example-0-44" name="example-0-44"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">stat</span><span class="o">.</span><span class="n">passed</span>
-</span><span id="line-0-45"><a id="example-0-45" name="example-0-45"></a>
-</span><span id="line-0-46"><a id="example-0-46" name="example-0-46"></a>    <span class="nd">@property</span>
-</span><span id="line-0-47"><a id="example-0-47" name="example-0-47"></a>    <span class="k">def</span> <span class="nf">skipped</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-</span><span id="line-0-48"><a id="example-0-48" name="example-0-48"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">stat</span><span class="o">.</span><span class="n">skipped</span>
-</span><span id="line-0-49"><a id="example-0-49" name="example-0-49"></a>
-</span><span id="line-0-50"><a id="example-0-50" name="example-0-50"></a>    <span class="nd">@property</span>
-</span><span id="line-0-51"><a id="example-0-51" name="example-0-51"></a>    <span class="k">def</span> <span class="nf">failed</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-</span><span id="line-0-52"><a id="example-0-52" name="example-0-52"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">stat</span><span class="o">.</span><span class="n">failed</span>
-</span><span id="line-0-53"><a id="example-0-53" name="example-0-53"></a>
-</span><span id="line-0-54"><a id="example-0-54" name="example-0-54"></a>    <span class="k">def</span> <span class="nf">add_test</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">test</span><span class="p">):</span>
-</span><span id="line-0-55"><a id="example-0-55" name="example-0-55"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">stat</span><span class="o">.</span><span class="n">add_test</span><span class="p">(</span><span class="n">test</span><span class="p">)</span>
-</span><span id="line-0-56"><a id="example-0-56" name="example-0-56"></a>
-</span><span id="line-0-57"><a id="example-0-57" name="example-0-57"></a>    <span class="nd">@property</span>
-</span><span id="line-0-58"><a id="example-0-58" name="example-0-58"></a>    <span class="k">def</span> <span class="nf">message</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-</span><span id="line-0-59"><a id="example-0-59" name="example-0-59"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;String representation of the statistics.</span>
-</span><span id="line-0-60"><a id="example-0-60" name="example-0-60"></a>
-</span><span id="line-0-61"><a id="example-0-61" name="example-0-61"></a><span class="sd">        For example::</span>
-</span><span id="line-0-62"><a id="example-0-62" name="example-0-62"></a><span class="sd">            2 tests, 1 passed, 1 failed</span>
-</span><span id="line-0-63"><a id="example-0-63" name="example-0-63"></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="line-0-64"><a id="example-0-64" name="example-0-64"></a>        <span class="n">kind</span> <span class="o">=</span> <span class="n">test_or_task</span><span class="p">(</span><span class="s1">&#39;test&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_rpa</span><span class="p">)</span> <span class="o">+</span> <span class="n">plural_or_not</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">total</span><span class="p">)</span>
-</span><span id="line-0-65"><a id="example-0-65" name="example-0-65"></a>        <span class="n">msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">total</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">kind</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">passed</span><span class="si">}</span><span class="s1"> passed, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">failed</span><span class="si">}</span><span class="s1"> failed&#39;</span>
-</span><span id="line-0-66"><a id="example-0-66" name="example-0-66"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">skipped</span><span class="p">:</span>
-</span><span id="line-0-67"><a id="example-0-67" name="example-0-67"></a>            <span class="n">msg</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">skipped</span><span class="si">}</span><span class="s1"> skipped&#39;</span>
-</span><span id="line-0-68"><a id="example-0-68" name="example-0-68"></a>        <span class="k">return</span> <span class="n">msg</span>
+<span class="normal"><a href="#example-0-30">30</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-27"><a id="example-0-27" name="example-0-27"></a><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rpa</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+</span><span id="line-0-28"><a id="example-0-28" name="example-0-28"></a>    <span class="c1">#: Instance of :class:`~robot.model.stats.TotalStat` for all the tests.</span>
+</span><span id="line-0-29"><a id="example-0-29" name="example-0-29"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">stat</span> <span class="o">=</span> <span class="n">TotalStat</span><span class="p">(</span><span class="n">test_or_task</span><span class="p">(</span><span class="s1">&#39;All </span><span class="si">{Test}</span><span class="s1">s&#39;</span><span class="p">,</span> <span class="n">rpa</span><span class="p">))</span>
+</span><span id="line-0-30"><a id="example-0-30" name="example-0-30"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_rpa</span> <span class="o">=</span> <span class="n">rpa</span>
 </span></code></pre></div></td></tr></table></div>
-              </details>
+                  </details>
 
 
 
@@ -7177,14 +7106,16 @@
 
 
 <h3 id="robot.model.totalstatistics.TotalStatistics.message" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <code class="highlight language-python"><span class="n">message</span><span class="p">:</span> <span class="nb">str</span></code>
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">message</span>
+
 
   <span class="doc doc-labels">
       <small class="doc doc-label doc-label-property"><code>property</code></small>
   </span>
 
 <a href="#robot.model.totalstatistics.TotalStatistics.message" class="headerlink" title="Permanent link">&para;</a></h3>
-
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="n">message</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span>
+</span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
 

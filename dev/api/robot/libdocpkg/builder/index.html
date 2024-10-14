@@ -1545,7 +1545,7 @@
         <li class="md-nav__item">
   <a href="#robot.libdocpkg.builder" class="md-nav__link">
     <span class="md-ellipsis">
-      builder
+      <code class="doc-symbol doc-symbol-toc doc-symbol-module"></code>&nbsp;builder
     </span>
   </a>
   
@@ -1554,7 +1554,7 @@
         <li class="md-nav__item">
   <a href="#robot.libdocpkg.builder.DocumentationBuilder" class="md-nav__link">
     <span class="md-ellipsis">
-      DocumentationBuilder
+      <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;DocumentationBuilder
     </span>
   </a>
   
@@ -1563,7 +1563,7 @@
         <li class="md-nav__item">
   <a href="#robot.libdocpkg.builder.LibraryDocumentation" class="md-nav__link">
     <span class="md-ellipsis">
-      LibraryDocumentation
+      <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;LibraryDocumentation
     </span>
   </a>
   
@@ -7037,6 +7037,11 @@
 
 
 
+
+
+
+
+
   <div class="doc doc-children">
 
 
@@ -7051,7 +7056,7 @@
 
 
 <h2 id="robot.libdocpkg.builder.DocumentationBuilder" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <code>DocumentationBuilder</code>
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">DocumentationBuilder</span>
 
 
 <a href="#robot.libdocpkg.builder.DocumentationBuilder" class="headerlink" title="Permanent link">&para;</a></h2>
@@ -7064,109 +7069,11 @@
 <p>This is not part of Libdoc's public API. Use :func:<code>LibraryDocumentation</code>
 instead.</p>
 
-              <details class="quote">
-                <summary>Source code in <code>src/robot/libdocpkg/builder.py</code></summary>
-                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-67"> 67</a></span>
-<span class="normal"><a href="#example-0-68"> 68</a></span>
-<span class="normal"><a href="#example-0-69"> 69</a></span>
-<span class="normal"><a href="#example-0-70"> 70</a></span>
-<span class="normal"><a href="#example-0-71"> 71</a></span>
-<span class="normal"><a href="#example-0-72"> 72</a></span>
-<span class="normal"><a href="#example-0-73"> 73</a></span>
-<span class="normal"><a href="#example-0-74"> 74</a></span>
-<span class="normal"><a href="#example-0-75"> 75</a></span>
-<span class="normal"><a href="#example-0-76"> 76</a></span>
-<span class="normal"><a href="#example-0-77"> 77</a></span>
-<span class="normal"><a href="#example-0-78"> 78</a></span>
-<span class="normal"><a href="#example-0-79"> 79</a></span>
-<span class="normal"><a href="#example-0-80"> 80</a></span>
-<span class="normal"><a href="#example-0-81"> 81</a></span>
-<span class="normal"><a href="#example-0-82"> 82</a></span>
-<span class="normal"><a href="#example-0-83"> 83</a></span>
-<span class="normal"><a href="#example-0-84"> 84</a></span>
-<span class="normal"><a href="#example-0-85"> 85</a></span>
-<span class="normal"><a href="#example-0-86"> 86</a></span>
-<span class="normal"><a href="#example-0-87"> 87</a></span>
-<span class="normal"><a href="#example-0-88"> 88</a></span>
-<span class="normal"><a href="#example-0-89"> 89</a></span>
-<span class="normal"><a href="#example-0-90"> 90</a></span>
-<span class="normal"><a href="#example-0-91"> 91</a></span>
-<span class="normal"><a href="#example-0-92"> 92</a></span>
-<span class="normal"><a href="#example-0-93"> 93</a></span>
-<span class="normal"><a href="#example-0-94"> 94</a></span>
-<span class="normal"><a href="#example-0-95"> 95</a></span>
-<span class="normal"><a href="#example-0-96"> 96</a></span>
-<span class="normal"><a href="#example-0-97"> 97</a></span>
-<span class="normal"><a href="#example-0-98"> 98</a></span>
-<span class="normal"><a href="#example-0-99"> 99</a></span>
-<span class="normal"><a href="#example-0-100">100</a></span>
-<span class="normal"><a href="#example-0-101">101</a></span>
-<span class="normal"><a href="#example-0-102">102</a></span>
-<span class="normal"><a href="#example-0-103">103</a></span>
-<span class="normal"><a href="#example-0-104">104</a></span>
-<span class="normal"><a href="#example-0-105">105</a></span>
-<span class="normal"><a href="#example-0-106">106</a></span>
-<span class="normal"><a href="#example-0-107">107</a></span>
-<span class="normal"><a href="#example-0-108">108</a></span>
-<span class="normal"><a href="#example-0-109">109</a></span>
-<span class="normal"><a href="#example-0-110">110</a></span>
-<span class="normal"><a href="#example-0-111">111</a></span>
-<span class="normal"><a href="#example-0-112">112</a></span>
-<span class="normal"><a href="#example-0-113">113</a></span>
-<span class="normal"><a href="#example-0-114">114</a></span>
-<span class="normal"><a href="#example-0-115">115</a></span>
-<span class="normal"><a href="#example-0-116">116</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-67"><a id="example-0-67" name="example-0-67"></a><span class="k">class</span> <span class="nc">DocumentationBuilder</span><span class="p">:</span>
-</span><span id="line-0-68"><a id="example-0-68" name="example-0-68"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Keyword documentation builder.</span>
-</span><span id="line-0-69"><a id="example-0-69" name="example-0-69"></a>
-</span><span id="line-0-70"><a id="example-0-70" name="example-0-70"></a><span class="sd">    This is not part of Libdoc&#39;s public API. Use :func:`LibraryDocumentation`</span>
-</span><span id="line-0-71"><a id="example-0-71" name="example-0-71"></a><span class="sd">    instead.</span>
-</span><span id="line-0-72"><a id="example-0-72" name="example-0-72"></a><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-0-73"><a id="example-0-73" name="example-0-73"></a>
-</span><span id="line-0-74"><a id="example-0-74" name="example-0-74"></a>    <span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">):</span>
-</span><span id="line-0-75"><a id="example-0-75" name="example-0-75"></a>        <span class="c1"># Source can contain arguments separated with `::` so we cannot convert</span>
-</span><span id="line-0-76"><a id="example-0-76" name="example-0-76"></a>        <span class="c1"># it to Path and instead need to make sure it&#39;s a string. It would be</span>
-</span><span id="line-0-77"><a id="example-0-77" name="example-0-77"></a>        <span class="c1"># better to separate arguments earlier, or latest here, and use Path.</span>
-</span><span id="line-0-78"><a id="example-0-78" name="example-0-78"></a>        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">Path</span><span class="p">):</span>
-</span><span id="line-0-79"><a id="example-0-79" name="example-0-79"></a>            <span class="n">source</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>
-</span><span id="line-0-80"><a id="example-0-80" name="example-0-80"></a>        <span class="n">builder</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_builder</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>
-</span><span id="line-0-81"><a id="example-0-81" name="example-0-81"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_build</span><span class="p">(</span><span class="n">builder</span><span class="p">,</span> <span class="n">source</span><span class="p">)</span>
-</span><span id="line-0-82"><a id="example-0-82" name="example-0-82"></a>
-</span><span id="line-0-83"><a id="example-0-83" name="example-0-83"></a>    <span class="k">def</span> <span class="nf">_get_builder</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">):</span>
-</span><span id="line-0-84"><a id="example-0-84" name="example-0-84"></a>        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">source</span><span class="p">):</span>
-</span><span id="line-0-85"><a id="example-0-85" name="example-0-85"></a>            <span class="n">extension</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_extension</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>
-</span><span id="line-0-86"><a id="example-0-86" name="example-0-86"></a>            <span class="k">if</span> <span class="n">extension</span> <span class="o">==</span> <span class="s1">&#39;resource&#39;</span><span class="p">:</span>
-</span><span id="line-0-87"><a id="example-0-87" name="example-0-87"></a>                <span class="k">return</span> <span class="n">ResourceDocBuilder</span><span class="p">()</span>
-</span><span id="line-0-88"><a id="example-0-88" name="example-0-88"></a>            <span class="k">if</span> <span class="n">extension</span> <span class="ow">in</span> <span class="n">RESOURCE_EXTENSIONS</span><span class="p">:</span>
-</span><span id="line-0-89"><a id="example-0-89" name="example-0-89"></a>                <span class="k">return</span> <span class="n">SuiteDocBuilder</span><span class="p">()</span>
-</span><span id="line-0-90"><a id="example-0-90" name="example-0-90"></a>            <span class="k">if</span> <span class="n">extension</span> <span class="ow">in</span> <span class="n">XML_EXTENSIONS</span><span class="p">:</span>
-</span><span id="line-0-91"><a id="example-0-91" name="example-0-91"></a>                <span class="k">return</span> <span class="n">XmlDocBuilder</span><span class="p">()</span>
-</span><span id="line-0-92"><a id="example-0-92" name="example-0-92"></a>            <span class="k">if</span> <span class="n">extension</span> <span class="o">==</span> <span class="s1">&#39;json&#39;</span><span class="p">:</span>
-</span><span id="line-0-93"><a id="example-0-93" name="example-0-93"></a>                <span class="k">return</span> <span class="n">JsonDocBuilder</span><span class="p">()</span>
-</span><span id="line-0-94"><a id="example-0-94" name="example-0-94"></a>        <span class="k">return</span> <span class="n">LibraryDocBuilder</span><span class="p">()</span>
-</span><span id="line-0-95"><a id="example-0-95" name="example-0-95"></a>
-</span><span id="line-0-96"><a id="example-0-96" name="example-0-96"></a>    <span class="k">def</span> <span class="nf">_get_extension</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">):</span>
-</span><span id="line-0-97"><a id="example-0-97" name="example-0-97"></a>        <span class="n">path</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span> <span class="o">=</span> <span class="n">source</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;::&#39;</span><span class="p">)</span>
-</span><span id="line-0-98"><a id="example-0-98" name="example-0-98"></a>        <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">path</span><span class="p">)[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">:]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
-</span><span id="line-0-99"><a id="example-0-99" name="example-0-99"></a>
-</span><span id="line-0-100"><a id="example-0-100" name="example-0-100"></a>    <span class="k">def</span> <span class="nf">_build</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">builder</span><span class="p">,</span> <span class="n">source</span><span class="p">):</span>
-</span><span id="line-0-101"><a id="example-0-101" name="example-0-101"></a>        <span class="k">try</span><span class="p">:</span>
-</span><span id="line-0-102"><a id="example-0-102" name="example-0-102"></a>            <span class="k">return</span> <span class="n">builder</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>
-</span><span id="line-0-103"><a id="example-0-103" name="example-0-103"></a>        <span class="k">except</span> <span class="n">DataError</span><span class="p">:</span>
-</span><span id="line-0-104"><a id="example-0-104" name="example-0-104"></a>            <span class="c1"># Possible resource file in PYTHONPATH. Something like `xxx.resource` that</span>
-</span><span id="line-0-105"><a id="example-0-105" name="example-0-105"></a>            <span class="c1"># did not exist has been considered to be a library earlier, now we try to</span>
-</span><span id="line-0-106"><a id="example-0-106" name="example-0-106"></a>            <span class="c1"># parse it as a resource file.</span>
-</span><span id="line-0-107"><a id="example-0-107" name="example-0-107"></a>            <span class="k">if</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">builder</span><span class="p">,</span> <span class="n">LibraryDocBuilder</span><span class="p">)</span>
-</span><span id="line-0-108"><a id="example-0-108" name="example-0-108"></a>                    <span class="ow">and</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>
-</span><span id="line-0-109"><a id="example-0-109" name="example-0-109"></a>                    <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_extension</span><span class="p">(</span><span class="n">source</span><span class="p">)</span> <span class="ow">in</span> <span class="n">RESOURCE_EXTENSIONS</span><span class="p">):</span>
-</span><span id="line-0-110"><a id="example-0-110" name="example-0-110"></a>                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_build</span><span class="p">(</span><span class="n">ResourceDocBuilder</span><span class="p">(),</span> <span class="n">source</span><span class="p">)</span>
-</span><span id="line-0-111"><a id="example-0-111" name="example-0-111"></a>            <span class="c1"># Resource file with other extension than &#39;.resource&#39; parsed as a suite file.</span>
-</span><span id="line-0-112"><a id="example-0-112" name="example-0-112"></a>            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">builder</span><span class="p">,</span> <span class="n">SuiteDocBuilder</span><span class="p">):</span>
-</span><span id="line-0-113"><a id="example-0-113" name="example-0-113"></a>                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_build</span><span class="p">(</span><span class="n">ResourceDocBuilder</span><span class="p">(),</span> <span class="n">source</span><span class="p">)</span>
-</span><span id="line-0-114"><a id="example-0-114" name="example-0-114"></a>            <span class="k">raise</span>
-</span><span id="line-0-115"><a id="example-0-115" name="example-0-115"></a>        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
-</span><span id="line-0-116"><a id="example-0-116" name="example-0-116"></a>            <span class="k">raise</span> <span class="n">DataError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Building library &#39;</span><span class="si">{</span><span class="n">source</span><span class="si">}</span><span class="s2">&#39; failed: </span><span class="si">{</span><span class="n">get_error_message</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</span></code></pre></div></td></tr></table></div>
-              </details>
+
+
+
+
+
 
 
 
@@ -7193,10 +7100,12 @@ instead.</p>
 
 
 <h2 id="robot.libdocpkg.builder.LibraryDocumentation" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-function"></code>            <code class="highlight language-python"><span class="n">LibraryDocumentation</span><span class="p">(</span><span class="n">library_or_resource</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">doc_format</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+<code class="doc-symbol doc-symbol-heading doc-symbol-function"></code>            <span class="doc doc-object-name doc-function-name">LibraryDocumentation</span>
+
 
 <a href="#robot.libdocpkg.builder.LibraryDocumentation" class="headerlink" title="Permanent link">&para;</a></h2>
-
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">LibraryDocumentation</span><span class="p">(</span><span class="n">library_or_resource</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">doc_format</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
 

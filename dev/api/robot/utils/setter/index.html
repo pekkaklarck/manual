@@ -6488,7 +6488,7 @@
         <li class="md-nav__item">
   <a href="#robot.utils.setter" class="md-nav__link">
     <span class="md-ellipsis">
-      setter
+      <code class="doc-symbol doc-symbol-toc doc-symbol-module"></code>&nbsp;setter
     </span>
   </a>
   
@@ -6497,7 +6497,7 @@
         <li class="md-nav__item">
   <a href="#robot.utils.setter.SetterAwareType" class="md-nav__link">
     <span class="md-ellipsis">
-      SetterAwareType
+      <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;SetterAwareType
     </span>
   </a>
   
@@ -6506,7 +6506,7 @@
         <li class="md-nav__item">
   <a href="#robot.utils.setter.setter" class="md-nav__link">
     <span class="md-ellipsis">
-      setter
+      <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;setter
     </span>
   </a>
   
@@ -7037,6 +7037,11 @@
 
 
 
+
+
+
+
+
   <div class="doc doc-children">
 
 
@@ -7051,7 +7056,7 @@
 
 
 <h2 id="robot.utils.setter.SetterAwareType" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <code>SetterAwareType</code>
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">SetterAwareType</span>
 
 
 <a href="#robot.utils.setter.SetterAwareType" class="headerlink" title="Permanent link">&para;</a></h2>
@@ -7064,31 +7069,11 @@
 
         <p>Metaclass for adding attributes used by :class:<code>setter</code> to <code>__slots__</code>.</p>
 
-              <details class="quote">
-                <summary>Source code in <code>src/robot/utils/setter.py</code></summary>
-                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-84">84</a></span>
-<span class="normal"><a href="#example-0-85">85</a></span>
-<span class="normal"><a href="#example-0-86">86</a></span>
-<span class="normal"><a href="#example-0-87">87</a></span>
-<span class="normal"><a href="#example-0-88">88</a></span>
-<span class="normal"><a href="#example-0-89">89</a></span>
-<span class="normal"><a href="#example-0-90">90</a></span>
-<span class="normal"><a href="#example-0-91">91</a></span>
-<span class="normal"><a href="#example-0-92">92</a></span>
-<span class="normal"><a href="#example-0-93">93</a></span>
-<span class="normal"><a href="#example-0-94">94</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-84"><a id="example-0-84" name="example-0-84"></a><span class="k">class</span> <span class="nc">SetterAwareType</span><span class="p">(</span><span class="nb">type</span><span class="p">):</span>
-</span><span id="line-0-85"><a id="example-0-85" name="example-0-85"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Metaclass for adding attributes used by :class:`setter` to ``__slots__``.&quot;&quot;&quot;</span>
-</span><span id="line-0-86"><a id="example-0-86" name="example-0-86"></a>
-</span><span id="line-0-87"><a id="example-0-87" name="example-0-87"></a>    <span class="k">def</span> <span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">bases</span><span class="p">,</span> <span class="n">dct</span><span class="p">):</span>
-</span><span id="line-0-88"><a id="example-0-88" name="example-0-88"></a>        <span class="k">if</span> <span class="s1">&#39;__slots__&#39;</span> <span class="ow">in</span> <span class="n">dct</span><span class="p">:</span>
-</span><span id="line-0-89"><a id="example-0-89" name="example-0-89"></a>            <span class="n">slots</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">dct</span><span class="p">[</span><span class="s1">&#39;__slots__&#39;</span><span class="p">])</span>
-</span><span id="line-0-90"><a id="example-0-90" name="example-0-90"></a>            <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">dct</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
-</span><span id="line-0-91"><a id="example-0-91" name="example-0-91"></a>                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">setter</span><span class="p">):</span>
-</span><span id="line-0-92"><a id="example-0-92" name="example-0-92"></a>                    <span class="n">slots</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">attr_name</span><span class="p">)</span>
-</span><span id="line-0-93"><a id="example-0-93" name="example-0-93"></a>            <span class="n">dct</span><span class="p">[</span><span class="s1">&#39;__slots__&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">slots</span>
-</span><span id="line-0-94"><a id="example-0-94" name="example-0-94"></a>        <span class="k">return</span> <span class="nb">type</span><span class="o">.</span><span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">bases</span><span class="p">,</span> <span class="n">dct</span><span class="p">)</span>
-</span></code></pre></div></td></tr></table></div>
-              </details>
+
+
+
+
+
 
 
 
@@ -7115,11 +7100,12 @@
 
 
 <h2 id="robot.utils.setter.setter" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <code>setter</code>
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">setter</span>
 
 
 <a href="#robot.utils.setter.setter" class="headerlink" title="Permanent link">&para;</a></h2>
-
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">setter</span><span class="p">(</span><span class="n">method</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a></span><span class="p">[[</span><span class="n"><span title="robot.utils.setter.T">T</span></span><span class="p">,</span> <span class="n"><span title="robot.utils.setter.V">V</span></span><span class="p">],</span> <span class="n"><span title="robot.utils.setter.A">A</span></span><span class="p">])</span>
+</span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
             <p class="doc doc-class-bases">
@@ -7161,125 +7147,22 @@ getter method::</p>
 attributes needs to be added to <code>__slots__</code> as well. The provided
 :class:<code>SetterAwareType</code> metaclass can take care of that automatically.</p>
 
-              <details class="quote">
-                <summary>Source code in <code>src/robot/utils/setter.py</code></summary>
-                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-24">24</a></span>
-<span class="normal"><a href="#example-0-25">25</a></span>
-<span class="normal"><a href="#example-0-26">26</a></span>
-<span class="normal"><a href="#example-0-27">27</a></span>
-<span class="normal"><a href="#example-0-28">28</a></span>
-<span class="normal"><a href="#example-0-29">29</a></span>
-<span class="normal"><a href="#example-0-30">30</a></span>
-<span class="normal"><a href="#example-0-31">31</a></span>
-<span class="normal"><a href="#example-0-32">32</a></span>
-<span class="normal"><a href="#example-0-33">33</a></span>
-<span class="normal"><a href="#example-0-34">34</a></span>
-<span class="normal"><a href="#example-0-35">35</a></span>
-<span class="normal"><a href="#example-0-36">36</a></span>
-<span class="normal"><a href="#example-0-37">37</a></span>
-<span class="normal"><a href="#example-0-38">38</a></span>
-<span class="normal"><a href="#example-0-39">39</a></span>
-<span class="normal"><a href="#example-0-40">40</a></span>
-<span class="normal"><a href="#example-0-41">41</a></span>
-<span class="normal"><a href="#example-0-42">42</a></span>
-<span class="normal"><a href="#example-0-43">43</a></span>
-<span class="normal"><a href="#example-0-44">44</a></span>
-<span class="normal"><a href="#example-0-45">45</a></span>
-<span class="normal"><a href="#example-0-46">46</a></span>
-<span class="normal"><a href="#example-0-47">47</a></span>
-<span class="normal"><a href="#example-0-48">48</a></span>
-<span class="normal"><a href="#example-0-49">49</a></span>
-<span class="normal"><a href="#example-0-50">50</a></span>
-<span class="normal"><a href="#example-0-51">51</a></span>
-<span class="normal"><a href="#example-0-52">52</a></span>
-<span class="normal"><a href="#example-0-53">53</a></span>
-<span class="normal"><a href="#example-0-54">54</a></span>
-<span class="normal"><a href="#example-0-55">55</a></span>
-<span class="normal"><a href="#example-0-56">56</a></span>
-<span class="normal"><a href="#example-0-57">57</a></span>
-<span class="normal"><a href="#example-0-58">58</a></span>
+
+
+
+
+
+                  <details class="quote">
+                    <summary>Source code in <code>src/robot/utils/setter.py</code></summary>
+                    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-58">58</a></span>
 <span class="normal"><a href="#example-0-59">59</a></span>
 <span class="normal"><a href="#example-0-60">60</a></span>
-<span class="normal"><a href="#example-0-61">61</a></span>
-<span class="normal"><a href="#example-0-62">62</a></span>
-<span class="normal"><a href="#example-0-63">63</a></span>
-<span class="normal"><a href="#example-0-64">64</a></span>
-<span class="normal"><a href="#example-0-65">65</a></span>
-<span class="normal"><a href="#example-0-66">66</a></span>
-<span class="normal"><a href="#example-0-67">67</a></span>
-<span class="normal"><a href="#example-0-68">68</a></span>
-<span class="normal"><a href="#example-0-69">69</a></span>
-<span class="normal"><a href="#example-0-70">70</a></span>
-<span class="normal"><a href="#example-0-71">71</a></span>
-<span class="normal"><a href="#example-0-72">72</a></span>
-<span class="normal"><a href="#example-0-73">73</a></span>
-<span class="normal"><a href="#example-0-74">74</a></span>
-<span class="normal"><a href="#example-0-75">75</a></span>
-<span class="normal"><a href="#example-0-76">76</a></span>
-<span class="normal"><a href="#example-0-77">77</a></span>
-<span class="normal"><a href="#example-0-78">78</a></span>
-<span class="normal"><a href="#example-0-79">79</a></span>
-<span class="normal"><a href="#example-0-80">80</a></span>
-<span class="normal"><a href="#example-0-81">81</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-24"><a id="example-0-24" name="example-0-24"></a><span class="k">class</span> <span class="nc">setter</span><span class="p">(</span><span class="n">Generic</span><span class="p">[</span><span class="n">T</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">A</span><span class="p">]):</span>
-</span><span id="line-0-25"><a id="example-0-25" name="example-0-25"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Modify instance attributes only when they are set, not when they are get.</span>
-</span><span id="line-0-26"><a id="example-0-26" name="example-0-26"></a>
-</span><span id="line-0-27"><a id="example-0-27" name="example-0-27"></a><span class="sd">    Usage::</span>
-</span><span id="line-0-28"><a id="example-0-28" name="example-0-28"></a>
-</span><span id="line-0-29"><a id="example-0-29" name="example-0-29"></a><span class="sd">        @setter</span>
-</span><span id="line-0-30"><a id="example-0-30" name="example-0-30"></a><span class="sd">        def source(self, source: str|Path) -&gt; Path:</span>
-</span><span id="line-0-31"><a id="example-0-31" name="example-0-31"></a><span class="sd">            return source if isinstance(source, Path) else Path(source)</span>
-</span><span id="line-0-32"><a id="example-0-32" name="example-0-32"></a>
-</span><span id="line-0-33"><a id="example-0-33" name="example-0-33"></a><span class="sd">    The setter method is called when the attribute is assigned like::</span>
-</span><span id="line-0-34"><a id="example-0-34" name="example-0-34"></a>
-</span><span id="line-0-35"><a id="example-0-35" name="example-0-35"></a><span class="sd">        instance.source = &#39;example.txt&#39;</span>
-</span><span id="line-0-36"><a id="example-0-36" name="example-0-36"></a>
-</span><span id="line-0-37"><a id="example-0-37" name="example-0-37"></a><span class="sd">    and the returned value is stored in the instance in an attribute like</span>
-</span><span id="line-0-38"><a id="example-0-38" name="example-0-38"></a><span class="sd">    ``_setter__source``. When the attribute is accessed, the stored value is</span>
-</span><span id="line-0-39"><a id="example-0-39" name="example-0-39"></a><span class="sd">    returned.</span>
-</span><span id="line-0-40"><a id="example-0-40" name="example-0-40"></a>
-</span><span id="line-0-41"><a id="example-0-41" name="example-0-41"></a><span class="sd">    The above example is equivalent to using the standard ``property`` as</span>
-</span><span id="line-0-42"><a id="example-0-42" name="example-0-42"></a><span class="sd">    follows. The main benefit of using ``setter`` is that it avoids a dummy</span>
-</span><span id="line-0-43"><a id="example-0-43" name="example-0-43"></a><span class="sd">    getter method::</span>
-</span><span id="line-0-44"><a id="example-0-44" name="example-0-44"></a>
-</span><span id="line-0-45"><a id="example-0-45" name="example-0-45"></a><span class="sd">        @property</span>
-</span><span id="line-0-46"><a id="example-0-46" name="example-0-46"></a><span class="sd">        def source(self) -&gt; Path:</span>
-</span><span id="line-0-47"><a id="example-0-47" name="example-0-47"></a><span class="sd">            return self._source</span>
-</span><span id="line-0-48"><a id="example-0-48" name="example-0-48"></a>
-</span><span id="line-0-49"><a id="example-0-49" name="example-0-49"></a><span class="sd">        @source.setter</span>
-</span><span id="line-0-50"><a id="example-0-50" name="example-0-50"></a><span class="sd">        def source(self, source: src|Path):</span>
-</span><span id="line-0-51"><a id="example-0-51" name="example-0-51"></a><span class="sd">            self._source = source if isinstance(source, Path) else Path(source)</span>
-</span><span id="line-0-52"><a id="example-0-52" name="example-0-52"></a>
-</span><span id="line-0-53"><a id="example-0-53" name="example-0-53"></a><span class="sd">    When using ``setter`` with ``__slots__``, the special ``_setter__xxx``</span>
-</span><span id="line-0-54"><a id="example-0-54" name="example-0-54"></a><span class="sd">    attributes needs to be added to ``__slots__`` as well. The provided</span>
-</span><span id="line-0-55"><a id="example-0-55" name="example-0-55"></a><span class="sd">    :class:`SetterAwareType` metaclass can take care of that automatically.</span>
-</span><span id="line-0-56"><a id="example-0-56" name="example-0-56"></a><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-0-57"><a id="example-0-57" name="example-0-57"></a>
-</span><span id="line-0-58"><a id="example-0-58" name="example-0-58"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">method</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">T</span><span class="p">,</span> <span class="n">V</span><span class="p">],</span> <span class="n">A</span><span class="p">]):</span>
-</span><span id="line-0-59"><a id="example-0-59" name="example-0-59"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">method</span> <span class="o">=</span> <span class="n">method</span>
-</span><span id="line-0-60"><a id="example-0-60" name="example-0-60"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">attr_name</span> <span class="o">=</span> <span class="s1">&#39;_setter__&#39;</span> <span class="o">+</span> <span class="n">method</span><span class="o">.</span><span class="vm">__name__</span>
-</span><span id="line-0-61"><a id="example-0-61" name="example-0-61"></a>        <span class="bp">self</span><span class="o">.</span><span class="vm">__doc__</span> <span class="o">=</span> <span class="n">method</span><span class="o">.</span><span class="vm">__doc__</span>
-</span><span id="line-0-62"><a id="example-0-62" name="example-0-62"></a>
-</span><span id="line-0-63"><a id="example-0-63" name="example-0-63"></a>    <span class="nd">@overload</span>
-</span><span id="line-0-64"><a id="example-0-64" name="example-0-64"></a>    <span class="k">def</span> <span class="fm">__get__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="n">owner</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">T</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="s1">&#39;setter&#39;</span><span class="p">:</span>
-</span><span id="line-0-65"><a id="example-0-65" name="example-0-65"></a>        <span class="o">...</span>
-</span><span id="line-0-66"><a id="example-0-66" name="example-0-66"></a>
-</span><span id="line-0-67"><a id="example-0-67" name="example-0-67"></a>    <span class="nd">@overload</span>
-</span><span id="line-0-68"><a id="example-0-68" name="example-0-68"></a>    <span class="k">def</span> <span class="fm">__get__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">:</span> <span class="n">T</span><span class="p">,</span> <span class="n">owner</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">T</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">A</span><span class="p">:</span>
-</span><span id="line-0-69"><a id="example-0-69" name="example-0-69"></a>        <span class="o">...</span>
-</span><span id="line-0-70"><a id="example-0-70" name="example-0-70"></a>
-</span><span id="line-0-71"><a id="example-0-71" name="example-0-71"></a>    <span class="k">def</span> <span class="fm">__get__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">T</span><span class="p">,</span> <span class="kc">None</span><span class="p">],</span> <span class="n">owner</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">T</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">A</span><span class="p">,</span> <span class="s1">&#39;setter&#39;</span><span class="p">]:</span>
-</span><span id="line-0-72"><a id="example-0-72" name="example-0-72"></a>        <span class="k">if</span> <span class="n">instance</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-0-73"><a id="example-0-73" name="example-0-73"></a>            <span class="k">return</span> <span class="bp">self</span>
-</span><span id="line-0-74"><a id="example-0-74" name="example-0-74"></a>        <span class="k">try</span><span class="p">:</span>
-</span><span id="line-0-75"><a id="example-0-75" name="example-0-75"></a>            <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">instance</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">attr_name</span><span class="p">)</span>
-</span><span id="line-0-76"><a id="example-0-76" name="example-0-76"></a>        <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
-</span><span id="line-0-77"><a id="example-0-77" name="example-0-77"></a>            <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">method</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
-</span><span id="line-0-78"><a id="example-0-78" name="example-0-78"></a>
-</span><span id="line-0-79"><a id="example-0-79" name="example-0-79"></a>    <span class="k">def</span> <span class="fm">__set__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">:</span> <span class="n">T</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">V</span><span class="p">):</span>
-</span><span id="line-0-80"><a id="example-0-80" name="example-0-80"></a>        <span class="k">if</span> <span class="n">instance</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-0-81"><a id="example-0-81" name="example-0-81"></a>            <span class="nb">setattr</span><span class="p">(</span><span class="n">instance</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">attr_name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">method</span><span class="p">(</span><span class="n">instance</span><span class="p">,</span> <span class="n">value</span><span class="p">))</span>
+<span class="normal"><a href="#example-0-61">61</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-58"><a id="example-0-58" name="example-0-58"></a><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">method</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">T</span><span class="p">,</span> <span class="n">V</span><span class="p">],</span> <span class="n">A</span><span class="p">]):</span>
+</span><span id="line-0-59"><a id="example-0-59" name="example-0-59"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">method</span> <span class="o">=</span> <span class="n">method</span>
+</span><span id="line-0-60"><a id="example-0-60" name="example-0-60"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">attr_name</span> <span class="o">=</span> <span class="s1">&#39;_setter__&#39;</span> <span class="o">+</span> <span class="n">method</span><span class="o">.</span><span class="vm">__name__</span>
+</span><span id="line-0-61"><a id="example-0-61" name="example-0-61"></a>    <span class="bp">self</span><span class="o">.</span><span class="vm">__doc__</span> <span class="o">=</span> <span class="n">method</span><span class="o">.</span><span class="vm">__doc__</span>
 </span></code></pre></div></td></tr></table></div>
-              </details>
+                  </details>
 
 
 

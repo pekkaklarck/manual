@@ -2550,7 +2550,7 @@
         <li class="md-nav__item">
   <a href="#robot.model.statistics" class="md-nav__link">
     <span class="md-ellipsis">
-      statistics
+      <code class="doc-symbol doc-symbol-toc doc-symbol-module"></code>&nbsp;statistics
     </span>
   </a>
   
@@ -2559,7 +2559,7 @@
         <li class="md-nav__item">
   <a href="#robot.model.statistics.Statistics" class="md-nav__link">
     <span class="md-ellipsis">
-      Statistics
+      <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;Statistics
     </span>
   </a>
   
@@ -7028,6 +7028,11 @@
 
 
 
+
+
+
+
+
   <div class="doc doc-children">
 
 
@@ -7042,11 +7047,12 @@
 
 
 <h2 id="robot.model.statistics.Statistics" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <code>Statistics</code>
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">Statistics</span>
 
 
 <a href="#robot.model.statistics.Statistics" class="headerlink" title="Permanent link">&para;</a></h2>
-
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">Statistics</span><span class="p">(</span><span class="n">suite</span><span class="p">,</span> <span class="n">suite_stat_level</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">tag_stat_include</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tag_stat_exclude</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tag_stat_combine</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tag_doc</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tag_stat_link</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">rpa</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
 
@@ -7055,15 +7061,14 @@
 <p>Accepted parameters have the same semantics as the matching command line
 options.</p>
 
-              <details class="quote">
-                <summary>Source code in <code>src/robot/model/statistics.py</code></summary>
-                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-22">22</a></span>
-<span class="normal"><a href="#example-0-23">23</a></span>
-<span class="normal"><a href="#example-0-24">24</a></span>
-<span class="normal"><a href="#example-0-25">25</a></span>
-<span class="normal"><a href="#example-0-26">26</a></span>
-<span class="normal"><a href="#example-0-27">27</a></span>
-<span class="normal"><a href="#example-0-28">28</a></span>
+
+
+
+
+
+                  <details class="quote">
+                    <summary>Source code in <code>src/robot/model/statistics.py</code></summary>
+                    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-28">28</a></span>
 <span class="normal"><a href="#example-0-29">29</a></span>
 <span class="normal"><a href="#example-0-30">30</a></span>
 <span class="normal"><a href="#example-0-31">31</a></span>
@@ -7074,46 +7079,20 @@ options.</p>
 <span class="normal"><a href="#example-0-36">36</a></span>
 <span class="normal"><a href="#example-0-37">37</a></span>
 <span class="normal"><a href="#example-0-38">38</a></span>
-<span class="normal"><a href="#example-0-39">39</a></span>
-<span class="normal"><a href="#example-0-40">40</a></span>
-<span class="normal"><a href="#example-0-41">41</a></span>
-<span class="normal"><a href="#example-0-42">42</a></span>
-<span class="normal"><a href="#example-0-43">43</a></span>
-<span class="normal"><a href="#example-0-44">44</a></span>
-<span class="normal"><a href="#example-0-45">45</a></span>
-<span class="normal"><a href="#example-0-46">46</a></span>
-<span class="normal"><a href="#example-0-47">47</a></span>
-<span class="normal"><a href="#example-0-48">48</a></span>
-<span class="normal"><a href="#example-0-49">49</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-22"><a id="example-0-22" name="example-0-22"></a><span class="k">class</span> <span class="nc">Statistics</span><span class="p">:</span>
-</span><span id="line-0-23"><a id="example-0-23" name="example-0-23"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Container for total, suite and tag statistics.</span>
-</span><span id="line-0-24"><a id="example-0-24" name="example-0-24"></a>
-</span><span id="line-0-25"><a id="example-0-25" name="example-0-25"></a><span class="sd">    Accepted parameters have the same semantics as the matching command line</span>
-</span><span id="line-0-26"><a id="example-0-26" name="example-0-26"></a><span class="sd">    options.</span>
-</span><span id="line-0-27"><a id="example-0-27" name="example-0-27"></a><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-0-28"><a id="example-0-28" name="example-0-28"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">suite</span><span class="p">,</span> <span class="n">suite_stat_level</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">tag_stat_include</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-</span><span id="line-0-29"><a id="example-0-29" name="example-0-29"></a>                 <span class="n">tag_stat_exclude</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tag_stat_combine</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tag_doc</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-</span><span id="line-0-30"><a id="example-0-30" name="example-0-30"></a>                 <span class="n">tag_stat_link</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">rpa</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-</span><span id="line-0-31"><a id="example-0-31" name="example-0-31"></a>        <span class="n">total_builder</span> <span class="o">=</span> <span class="n">TotalStatisticsBuilder</span><span class="p">(</span><span class="n">rpa</span><span class="o">=</span><span class="n">rpa</span><span class="p">)</span>
-</span><span id="line-0-32"><a id="example-0-32" name="example-0-32"></a>        <span class="n">suite_builder</span> <span class="o">=</span> <span class="n">SuiteStatisticsBuilder</span><span class="p">(</span><span class="n">suite_stat_level</span><span class="p">)</span>
-</span><span id="line-0-33"><a id="example-0-33" name="example-0-33"></a>        <span class="n">tag_builder</span> <span class="o">=</span> <span class="n">TagStatisticsBuilder</span><span class="p">(</span><span class="n">tag_stat_include</span><span class="p">,</span>
-</span><span id="line-0-34"><a id="example-0-34" name="example-0-34"></a>                                           <span class="n">tag_stat_exclude</span><span class="p">,</span> <span class="n">tag_stat_combine</span><span class="p">,</span>
-</span><span id="line-0-35"><a id="example-0-35" name="example-0-35"></a>                                           <span class="n">tag_doc</span><span class="p">,</span> <span class="n">tag_stat_link</span><span class="p">)</span>
-</span><span id="line-0-36"><a id="example-0-36" name="example-0-36"></a>        <span class="n">suite</span><span class="o">.</span><span class="n">visit</span><span class="p">(</span><span class="n">StatisticsBuilder</span><span class="p">(</span><span class="n">total_builder</span><span class="p">,</span> <span class="n">suite_builder</span><span class="p">,</span> <span class="n">tag_builder</span><span class="p">))</span>
-</span><span id="line-0-37"><a id="example-0-37" name="example-0-37"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">total</span><span class="p">:</span> <span class="n">TotalStatistics</span> <span class="o">=</span> <span class="n">total_builder</span><span class="o">.</span><span class="n">stats</span>
-</span><span id="line-0-38"><a id="example-0-38" name="example-0-38"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">suite</span><span class="p">:</span> <span class="n">SuiteStatistics</span> <span class="o">=</span> <span class="n">suite_builder</span><span class="o">.</span><span class="n">stats</span>
-</span><span id="line-0-39"><a id="example-0-39" name="example-0-39"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">tags</span><span class="p">:</span> <span class="n">TagStatistics</span> <span class="o">=</span> <span class="n">tag_builder</span><span class="o">.</span><span class="n">stats</span>
-</span><span id="line-0-40"><a id="example-0-40" name="example-0-40"></a>
-</span><span id="line-0-41"><a id="example-0-41" name="example-0-41"></a>    <span class="k">def</span> <span class="nf">to_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="line-0-42"><a id="example-0-42" name="example-0-42"></a>        <span class="k">return</span> <span class="p">{</span>
-</span><span id="line-0-43"><a id="example-0-43" name="example-0-43"></a>            <span class="s1">&#39;total&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">total</span><span class="o">.</span><span class="n">stat</span><span class="o">.</span><span class="n">get_attributes</span><span class="p">(</span><span class="n">include_label</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
-</span><span id="line-0-44"><a id="example-0-44" name="example-0-44"></a>            <span class="s1">&#39;suites&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">s</span><span class="o">.</span><span class="n">get_attributes</span><span class="p">(</span><span class="n">include_label</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">suite</span><span class="p">],</span>
-</span><span id="line-0-45"><a id="example-0-45" name="example-0-45"></a>            <span class="s1">&#39;tags&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">t</span><span class="o">.</span><span class="n">get_attributes</span><span class="p">(</span><span class="n">include_label</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">tags</span><span class="p">],</span>
-</span><span id="line-0-46"><a id="example-0-46" name="example-0-46"></a>        <span class="p">}</span>
-</span><span id="line-0-47"><a id="example-0-47" name="example-0-47"></a>
-</span><span id="line-0-48"><a id="example-0-48" name="example-0-48"></a>    <span class="k">def</span> <span class="nf">visit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">visitor</span><span class="p">):</span>
-</span><span id="line-0-49"><a id="example-0-49" name="example-0-49"></a>        <span class="n">visitor</span><span class="o">.</span><span class="n">visit_statistics</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+<span class="normal"><a href="#example-0-39">39</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-28"><a id="example-0-28" name="example-0-28"></a><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">suite</span><span class="p">,</span> <span class="n">suite_stat_level</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">tag_stat_include</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+</span><span id="line-0-29"><a id="example-0-29" name="example-0-29"></a>             <span class="n">tag_stat_exclude</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tag_stat_combine</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tag_doc</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+</span><span id="line-0-30"><a id="example-0-30" name="example-0-30"></a>             <span class="n">tag_stat_link</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">rpa</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+</span><span id="line-0-31"><a id="example-0-31" name="example-0-31"></a>    <span class="n">total_builder</span> <span class="o">=</span> <span class="n">TotalStatisticsBuilder</span><span class="p">(</span><span class="n">rpa</span><span class="o">=</span><span class="n">rpa</span><span class="p">)</span>
+</span><span id="line-0-32"><a id="example-0-32" name="example-0-32"></a>    <span class="n">suite_builder</span> <span class="o">=</span> <span class="n">SuiteStatisticsBuilder</span><span class="p">(</span><span class="n">suite_stat_level</span><span class="p">)</span>
+</span><span id="line-0-33"><a id="example-0-33" name="example-0-33"></a>    <span class="n">tag_builder</span> <span class="o">=</span> <span class="n">TagStatisticsBuilder</span><span class="p">(</span><span class="n">tag_stat_include</span><span class="p">,</span>
+</span><span id="line-0-34"><a id="example-0-34" name="example-0-34"></a>                                       <span class="n">tag_stat_exclude</span><span class="p">,</span> <span class="n">tag_stat_combine</span><span class="p">,</span>
+</span><span id="line-0-35"><a id="example-0-35" name="example-0-35"></a>                                       <span class="n">tag_doc</span><span class="p">,</span> <span class="n">tag_stat_link</span><span class="p">)</span>
+</span><span id="line-0-36"><a id="example-0-36" name="example-0-36"></a>    <span class="n">suite</span><span class="o">.</span><span class="n">visit</span><span class="p">(</span><span class="n">StatisticsBuilder</span><span class="p">(</span><span class="n">total_builder</span><span class="p">,</span> <span class="n">suite_builder</span><span class="p">,</span> <span class="n">tag_builder</span><span class="p">))</span>
+</span><span id="line-0-37"><a id="example-0-37" name="example-0-37"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">total</span><span class="p">:</span> <span class="n">TotalStatistics</span> <span class="o">=</span> <span class="n">total_builder</span><span class="o">.</span><span class="n">stats</span>
+</span><span id="line-0-38"><a id="example-0-38" name="example-0-38"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">suite</span><span class="p">:</span> <span class="n">SuiteStatistics</span> <span class="o">=</span> <span class="n">suite_builder</span><span class="o">.</span><span class="n">stats</span>
+</span><span id="line-0-39"><a id="example-0-39" name="example-0-39"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">tags</span><span class="p">:</span> <span class="n">TagStatistics</span> <span class="o">=</span> <span class="n">tag_builder</span><span class="o">.</span><span class="n">stats</span>
 </span></code></pre></div></td></tr></table></div>
-              </details>
+                  </details>
 
 
 
