@@ -32,6 +32,8 @@ that can be used programmatically. Other code is for internal usage.
 """
 
 import sys
+from pathlib import Path
+from typing import Any
 
 if __name__ == '__main__' and 'robot' not in sys.modules:
     import pythonpathsetter
