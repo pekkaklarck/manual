@@ -6,5 +6,6 @@ mkdocs-section-index
 mkdocs-exclude
 mkdocs-ezglossary-plugin
 mike
+black  # Needed by mkdocstrings for formatting signatures
 
 telnetlib-313-and-up; python_version >= '3.13'
