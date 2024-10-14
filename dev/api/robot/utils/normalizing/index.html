@@ -6264,18 +6264,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#robot.utils.normalizing.NormalizedDict" class="md-nav__link">
+  <a href="#robot.utils.normalizing.normalize" class="md-nav__link">
     <span class="md-ellipsis">
-      <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;NormalizedDict
+      <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;normalize
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#robot.utils.normalizing.normalize" class="md-nav__link">
+  <a href="#robot.utils.normalizing.NormalizedDict" class="md-nav__link">
     <span class="md-ellipsis">
-      <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;normalize
+      <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;NormalizedDict
     </span>
   </a>
   
@@ -7050,6 +7050,83 @@
 
 
 
+<div class="doc doc-object doc-function">
+
+
+<h2 id="robot.utils.normalizing.normalize" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-function"></code>            <span class="doc doc-object-name doc-function-name">normalize</span>
+
+
+<a href="#robot.utils.normalizing.normalize" class="headerlink" title="Permanent link">&para;</a></h2>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
+<span class="normal"><a href="#example-0-2">2</a></span>
+<span class="normal"><a href="#example-0-3">3</a></span>
+<span class="normal"><a href="#example-0-4">4</a></span>
+<span class="normal"><a href="#example-0-5">5</a></span>
+<span class="normal"><a href="#example-0-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">normalize</span><span class="p">(</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">string</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span><span class="p">,</span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a>    <span class="n">ignore</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" title="collections.abc.Sequence" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence">Sequence</a></span><span class="p">[</span><span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span><span class="p">]</span> <span class="o">=</span> <span class="p">(),</span>
+</span><span id="line-0-4"><a id="example-0-4" name="example-0-4"></a>    <span class="n">caseless</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+</span><span id="line-0-5"><a id="example-0-5" name="example-0-5"></a>    <span class="n">spaceless</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+</span><span id="line-0-6"><a id="example-0-6" name="example-0-6"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span>
+</span></code></pre></div></td></tr></table></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Normalize the <code>string</code> according to the given spec.</p>
+<p>By default, string is turned to lower case (actually case-folded) and all
+whitespace is removed. Additional characters can be removed by giving them
+in <code>ignore</code> list.</p>
+
+            <details class="quote">
+              <summary>Source code in <code>src/robot/utils/normalizing.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-25">25</a></span>
+<span class="normal"><a href="#example-0-26">26</a></span>
+<span class="normal"><a href="#example-0-27">27</a></span>
+<span class="normal"><a href="#example-0-28">28</a></span>
+<span class="normal"><a href="#example-0-29">29</a></span>
+<span class="normal"><a href="#example-0-30">30</a></span>
+<span class="normal"><a href="#example-0-31">31</a></span>
+<span class="normal"><a href="#example-0-32">32</a></span>
+<span class="normal"><a href="#example-0-33">33</a></span>
+<span class="normal"><a href="#example-0-34">34</a></span>
+<span class="normal"><a href="#example-0-35">35</a></span>
+<span class="normal"><a href="#example-0-36">36</a></span>
+<span class="normal"><a href="#example-0-37">37</a></span>
+<span class="normal"><a href="#example-0-38">38</a></span>
+<span class="normal"><a href="#example-0-39">39</a></span>
+<span class="normal"><a href="#example-0-40">40</a></span>
+<span class="normal"><a href="#example-0-41">41</a></span>
+<span class="normal"><a href="#example-0-42">42</a></span>
+<span class="normal"><a href="#example-0-43">43</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-25"><a id="example-0-25" name="example-0-25"></a><span class="k">def</span> <span class="nf">normalize</span><span class="p">(</span><span class="n">string</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">ignore</span><span class="p">:</span> <span class="s1">&#39;Sequence[str]&#39;</span> <span class="o">=</span> <span class="p">(),</span> <span class="n">caseless</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+</span><span id="line-0-26"><a id="example-0-26" name="example-0-26"></a>              <span class="n">spaceless</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+</span><span id="line-0-27"><a id="example-0-27" name="example-0-27"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Normalize the ``string`` according to the given spec.</span>
+</span><span id="line-0-28"><a id="example-0-28" name="example-0-28"></a>
+</span><span id="line-0-29"><a id="example-0-29" name="example-0-29"></a><span class="sd">    By default, string is turned to lower case (actually case-folded) and all</span>
+</span><span id="line-0-30"><a id="example-0-30" name="example-0-30"></a><span class="sd">    whitespace is removed. Additional characters can be removed by giving them</span>
+</span><span id="line-0-31"><a id="example-0-31" name="example-0-31"></a><span class="sd">    in ``ignore`` list.</span>
+</span><span id="line-0-32"><a id="example-0-32" name="example-0-32"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-33"><a id="example-0-33" name="example-0-33"></a>    <span class="k">if</span> <span class="n">spaceless</span><span class="p">:</span>
+</span><span id="line-0-34"><a id="example-0-34" name="example-0-34"></a>        <span class="n">string</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+</span><span id="line-0-35"><a id="example-0-35" name="example-0-35"></a>    <span class="k">if</span> <span class="n">caseless</span><span class="p">:</span>
+</span><span id="line-0-36"><a id="example-0-36" name="example-0-36"></a>        <span class="n">string</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">casefold</span><span class="p">()</span>
+</span><span id="line-0-37"><a id="example-0-37" name="example-0-37"></a>        <span class="n">ignore</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">.</span><span class="n">casefold</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">ignore</span><span class="p">]</span>
+</span><span id="line-0-38"><a id="example-0-38" name="example-0-38"></a>    <span class="c1"># both if statements below enhance performance a little</span>
+</span><span id="line-0-39"><a id="example-0-39" name="example-0-39"></a>    <span class="k">if</span> <span class="n">ignore</span><span class="p">:</span>
+</span><span id="line-0-40"><a id="example-0-40" name="example-0-40"></a>        <span class="k">for</span> <span class="n">ign</span> <span class="ow">in</span> <span class="n">ignore</span><span class="p">:</span>
+</span><span id="line-0-41"><a id="example-0-41" name="example-0-41"></a>            <span class="k">if</span> <span class="n">ign</span> <span class="ow">in</span> <span class="n">string</span><span class="p">:</span>
+</span><span id="line-0-42"><a id="example-0-42" name="example-0-42"></a>                <span class="n">string</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">ign</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+</span><span id="line-0-43"><a id="example-0-43" name="example-0-43"></a>    <span class="k">return</span> <span class="n">string</span>
+</span></code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+
+
 
 <div class="doc doc-object doc-class">
 
@@ -7141,89 +7218,12 @@ function.</p>
 
 
 
-
-
-
-
   </div>
 
     </div>
 
 </div>
 
-
-<div class="doc doc-object doc-function">
-
-
-<h2 id="robot.utils.normalizing.normalize" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-function"></code>            <span class="doc doc-object-name doc-function-name">normalize</span>
-
-
-<a href="#robot.utils.normalizing.normalize" class="headerlink" title="Permanent link">&para;</a></h2>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
-<span class="normal"><a href="#example-0-2">2</a></span>
-<span class="normal"><a href="#example-0-3">3</a></span>
-<span class="normal"><a href="#example-0-4">4</a></span>
-<span class="normal"><a href="#example-0-5">5</a></span>
-<span class="normal"><a href="#example-0-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">normalize</span><span class="p">(</span>
-</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">string</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span><span class="p">,</span>
-</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a>    <span class="n">ignore</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" title="collections.abc.Sequence" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence">Sequence</a></span><span class="p">[</span><span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span><span class="p">]</span> <span class="o">=</span> <span class="p">(),</span>
-</span><span id="line-0-4"><a id="example-0-4" name="example-0-4"></a>    <span class="n">caseless</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
-</span><span id="line-0-5"><a id="example-0-5" name="example-0-5"></a>    <span class="n">spaceless</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
-</span><span id="line-0-6"><a id="example-0-6" name="example-0-6"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span>
-</span></code></pre></div></td></tr></table></div>
-
-    <div class="doc doc-contents ">
-
-        <p>Normalize the <code>string</code> according to the given spec.</p>
-<p>By default, string is turned to lower case (actually case-folded) and all
-whitespace is removed. Additional characters can be removed by giving them
-in <code>ignore</code> list.</p>
-
-            <details class="quote">
-              <summary>Source code in <code>src/robot/utils/normalizing.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-25">25</a></span>
-<span class="normal"><a href="#example-0-26">26</a></span>
-<span class="normal"><a href="#example-0-27">27</a></span>
-<span class="normal"><a href="#example-0-28">28</a></span>
-<span class="normal"><a href="#example-0-29">29</a></span>
-<span class="normal"><a href="#example-0-30">30</a></span>
-<span class="normal"><a href="#example-0-31">31</a></span>
-<span class="normal"><a href="#example-0-32">32</a></span>
-<span class="normal"><a href="#example-0-33">33</a></span>
-<span class="normal"><a href="#example-0-34">34</a></span>
-<span class="normal"><a href="#example-0-35">35</a></span>
-<span class="normal"><a href="#example-0-36">36</a></span>
-<span class="normal"><a href="#example-0-37">37</a></span>
-<span class="normal"><a href="#example-0-38">38</a></span>
-<span class="normal"><a href="#example-0-39">39</a></span>
-<span class="normal"><a href="#example-0-40">40</a></span>
-<span class="normal"><a href="#example-0-41">41</a></span>
-<span class="normal"><a href="#example-0-42">42</a></span>
-<span class="normal"><a href="#example-0-43">43</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-25"><a id="example-0-25" name="example-0-25"></a><span class="k">def</span> <span class="nf">normalize</span><span class="p">(</span><span class="n">string</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">ignore</span><span class="p">:</span> <span class="s1">&#39;Sequence[str]&#39;</span> <span class="o">=</span> <span class="p">(),</span> <span class="n">caseless</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
-</span><span id="line-0-26"><a id="example-0-26" name="example-0-26"></a>              <span class="n">spaceless</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-</span><span id="line-0-27"><a id="example-0-27" name="example-0-27"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Normalize the ``string`` according to the given spec.</span>
-</span><span id="line-0-28"><a id="example-0-28" name="example-0-28"></a>
-</span><span id="line-0-29"><a id="example-0-29" name="example-0-29"></a><span class="sd">    By default, string is turned to lower case (actually case-folded) and all</span>
-</span><span id="line-0-30"><a id="example-0-30" name="example-0-30"></a><span class="sd">    whitespace is removed. Additional characters can be removed by giving them</span>
-</span><span id="line-0-31"><a id="example-0-31" name="example-0-31"></a><span class="sd">    in ``ignore`` list.</span>
-</span><span id="line-0-32"><a id="example-0-32" name="example-0-32"></a><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-0-33"><a id="example-0-33" name="example-0-33"></a>    <span class="k">if</span> <span class="n">spaceless</span><span class="p">:</span>
-</span><span id="line-0-34"><a id="example-0-34" name="example-0-34"></a>        <span class="n">string</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
-</span><span id="line-0-35"><a id="example-0-35" name="example-0-35"></a>    <span class="k">if</span> <span class="n">caseless</span><span class="p">:</span>
-</span><span id="line-0-36"><a id="example-0-36" name="example-0-36"></a>        <span class="n">string</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">casefold</span><span class="p">()</span>
-</span><span id="line-0-37"><a id="example-0-37" name="example-0-37"></a>        <span class="n">ignore</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">.</span><span class="n">casefold</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">ignore</span><span class="p">]</span>
-</span><span id="line-0-38"><a id="example-0-38" name="example-0-38"></a>    <span class="c1"># both if statements below enhance performance a little</span>
-</span><span id="line-0-39"><a id="example-0-39" name="example-0-39"></a>    <span class="k">if</span> <span class="n">ignore</span><span class="p">:</span>
-</span><span id="line-0-40"><a id="example-0-40" name="example-0-40"></a>        <span class="k">for</span> <span class="n">ign</span> <span class="ow">in</span> <span class="n">ignore</span><span class="p">:</span>
-</span><span id="line-0-41"><a id="example-0-41" name="example-0-41"></a>            <span class="k">if</span> <span class="n">ign</span> <span class="ow">in</span> <span class="n">string</span><span class="p">:</span>
-</span><span id="line-0-42"><a id="example-0-42" name="example-0-42"></a>                <span class="n">string</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">ign</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
-</span><span id="line-0-43"><a id="example-0-43" name="example-0-43"></a>    <span class="k">return</span> <span class="n">string</span>
-</span></code></pre></div></td></tr></table></div>
-            </details>
-    </div>
-
-</div>
 
 
 

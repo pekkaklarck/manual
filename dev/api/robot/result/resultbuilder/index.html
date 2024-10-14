@@ -4401,18 +4401,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#robot.result.resultbuilder.ExecutionResultBuilder" class="md-nav__link">
+  <a href="#robot.result.resultbuilder.ExecutionResult" class="md-nav__link">
     <span class="md-ellipsis">
-      <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;ExecutionResultBuilder
+      <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;ExecutionResult
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#robot.result.resultbuilder.ExecutionResult" class="md-nav__link">
+  <a href="#robot.result.resultbuilder.ExecutionResultBuilder" class="md-nav__link">
     <span class="md-ellipsis">
-      <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;ExecutionResult
+      <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;ExecutionResultBuilder
     </span>
   </a>
   
@@ -7051,80 +7051,6 @@
 
 
 
-<div class="doc doc-object doc-class">
-
-
-
-<h2 id="robot.result.resultbuilder.ExecutionResultBuilder" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">ExecutionResultBuilder</span>
-
-
-<a href="#robot.result.resultbuilder.ExecutionResultBuilder" class="headerlink" title="Permanent link">&para;</a></h2>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
-<span class="normal"><a href="#example-0-2">2</a></span>
-<span class="normal"><a href="#example-0-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">ExecutionResultBuilder</span><span class="p">(</span>
-</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">source</span><span class="p">,</span> <span class="n">include_keywords</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">flattened_keywords</span><span class="o">=</span><span class="kc">None</span>
-</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a><span class="p">)</span>
-</span></code></pre></div></td></tr></table></div>
-
-    <div class="doc doc-contents ">
-
-
-        <p>Builds :class:<code>~.executionresult.Result</code> objects based on XML output files.</p>
-<p>Instead of using this builder directly, it is recommended to use the
-:func:<code>ExecutionResult</code> factory method.</p>
-
-        <p>:param source: Path to the XML output file to build
-    :class:<code>~.executionresult.Result</code> objects from.
-:param include_keywords: Controls whether to include keywords and control
-    structures like FOR and IF in the result or not. They are not needed
-    when generating only a report.
-:param flattened_keywords: List of patterns controlling what keywords
-    and control structures to flatten. See the documentation of
-    the <code>--flattenkeywords</code> option for more details.</p>
-
-
-
-
-
-
-                  <details class="quote">
-                    <summary>Source code in <code>src/robot/result/resultbuilder.py</code></summary>
-                    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-112">112</a></span>
-<span class="normal"><a href="#example-0-113">113</a></span>
-<span class="normal"><a href="#example-0-114">114</a></span>
-<span class="normal"><a href="#example-0-115">115</a></span>
-<span class="normal"><a href="#example-0-116">116</a></span>
-<span class="normal"><a href="#example-0-117">117</a></span>
-<span class="normal"><a href="#example-0-118">118</a></span>
-<span class="normal"><a href="#example-0-119">119</a></span>
-<span class="normal"><a href="#example-0-120">120</a></span>
-<span class="normal"><a href="#example-0-121">121</a></span>
-<span class="normal"><a href="#example-0-122">122</a></span>
-<span class="normal"><a href="#example-0-123">123</a></span>
-<span class="normal"><a href="#example-0-124">124</a></span>
-<span class="normal"><a href="#example-0-125">125</a></span>
-<span class="normal"><a href="#example-0-126">126</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-112"><a id="example-0-112" name="example-0-112"></a><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">include_keywords</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">flattened_keywords</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-</span><span id="line-0-113"><a id="example-0-113" name="example-0-113"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-0-114"><a id="example-0-114" name="example-0-114"></a><span class="sd">    :param source: Path to the XML output file to build</span>
-</span><span id="line-0-115"><a id="example-0-115" name="example-0-115"></a><span class="sd">        :class:`~.executionresult.Result` objects from.</span>
-</span><span id="line-0-116"><a id="example-0-116" name="example-0-116"></a><span class="sd">    :param include_keywords: Controls whether to include keywords and control</span>
-</span><span id="line-0-117"><a id="example-0-117" name="example-0-117"></a><span class="sd">        structures like FOR and IF in the result or not. They are not needed</span>
-</span><span id="line-0-118"><a id="example-0-118" name="example-0-118"></a><span class="sd">        when generating only a report.</span>
-</span><span id="line-0-119"><a id="example-0-119" name="example-0-119"></a><span class="sd">    :param flattened_keywords: List of patterns controlling what keywords</span>
-</span><span id="line-0-120"><a id="example-0-120" name="example-0-120"></a><span class="sd">        and control structures to flatten. See the documentation of</span>
-</span><span id="line-0-121"><a id="example-0-121" name="example-0-121"></a><span class="sd">        the ``--flattenkeywords`` option for more details.</span>
-</span><span id="line-0-122"><a id="example-0-122" name="example-0-122"></a><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-0-123"><a id="example-0-123" name="example-0-123"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_source</span> <span class="o">=</span> <span class="n">source</span> \
-</span><span id="line-0-124"><a id="example-0-124" name="example-0-124"></a>        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">ETSource</span><span class="p">)</span> <span class="k">else</span> <span class="n">ETSource</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>
-</span><span id="line-0-125"><a id="example-0-125" name="example-0-125"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_include_keywords</span> <span class="o">=</span> <span class="n">include_keywords</span>
-</span><span id="line-0-126"><a id="example-0-126" name="example-0-126"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_flattened_keywords</span> <span class="o">=</span> <span class="n">flattened_keywords</span>
-</span></code></pre></div></td></tr></table></div>
-                  </details>
-
-
-
-  <div class="doc doc-children">
 
 
 
@@ -7136,11 +7062,12 @@
 
 
 
-  </div>
 
-    </div>
 
-</div>
+
+
+
+
 
 
 <div class="doc doc-object doc-function">
@@ -7244,6 +7171,99 @@ package. See the :mod:<code>robot.result</code> package for a usage example.</p>
     </div>
 
 </div>
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="robot.result.resultbuilder.ExecutionResultBuilder" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">ExecutionResultBuilder</span>
+
+
+<a href="#robot.result.resultbuilder.ExecutionResultBuilder" class="headerlink" title="Permanent link">&para;</a></h2>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
+<span class="normal"><a href="#example-0-2">2</a></span>
+<span class="normal"><a href="#example-0-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">ExecutionResultBuilder</span><span class="p">(</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">source</span><span class="p">,</span> <span class="n">include_keywords</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">flattened_keywords</span><span class="o">=</span><span class="kc">None</span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+
+    <div class="doc doc-contents ">
+
+
+        <p>Builds :class:<code>~.executionresult.Result</code> objects based on XML output files.</p>
+<p>Instead of using this builder directly, it is recommended to use the
+:func:<code>ExecutionResult</code> factory method.</p>
+
+        <p>:param source: Path to the XML output file to build
+    :class:<code>~.executionresult.Result</code> objects from.
+:param include_keywords: Controls whether to include keywords and control
+    structures like FOR and IF in the result or not. They are not needed
+    when generating only a report.
+:param flattened_keywords: List of patterns controlling what keywords
+    and control structures to flatten. See the documentation of
+    the <code>--flattenkeywords</code> option for more details.</p>
+
+
+
+
+
+
+                  <details class="quote">
+                    <summary>Source code in <code>src/robot/result/resultbuilder.py</code></summary>
+                    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-112">112</a></span>
+<span class="normal"><a href="#example-0-113">113</a></span>
+<span class="normal"><a href="#example-0-114">114</a></span>
+<span class="normal"><a href="#example-0-115">115</a></span>
+<span class="normal"><a href="#example-0-116">116</a></span>
+<span class="normal"><a href="#example-0-117">117</a></span>
+<span class="normal"><a href="#example-0-118">118</a></span>
+<span class="normal"><a href="#example-0-119">119</a></span>
+<span class="normal"><a href="#example-0-120">120</a></span>
+<span class="normal"><a href="#example-0-121">121</a></span>
+<span class="normal"><a href="#example-0-122">122</a></span>
+<span class="normal"><a href="#example-0-123">123</a></span>
+<span class="normal"><a href="#example-0-124">124</a></span>
+<span class="normal"><a href="#example-0-125">125</a></span>
+<span class="normal"><a href="#example-0-126">126</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-112"><a id="example-0-112" name="example-0-112"></a><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">include_keywords</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">flattened_keywords</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+</span><span id="line-0-113"><a id="example-0-113" name="example-0-113"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-0-114"><a id="example-0-114" name="example-0-114"></a><span class="sd">    :param source: Path to the XML output file to build</span>
+</span><span id="line-0-115"><a id="example-0-115" name="example-0-115"></a><span class="sd">        :class:`~.executionresult.Result` objects from.</span>
+</span><span id="line-0-116"><a id="example-0-116" name="example-0-116"></a><span class="sd">    :param include_keywords: Controls whether to include keywords and control</span>
+</span><span id="line-0-117"><a id="example-0-117" name="example-0-117"></a><span class="sd">        structures like FOR and IF in the result or not. They are not needed</span>
+</span><span id="line-0-118"><a id="example-0-118" name="example-0-118"></a><span class="sd">        when generating only a report.</span>
+</span><span id="line-0-119"><a id="example-0-119" name="example-0-119"></a><span class="sd">    :param flattened_keywords: List of patterns controlling what keywords</span>
+</span><span id="line-0-120"><a id="example-0-120" name="example-0-120"></a><span class="sd">        and control structures to flatten. See the documentation of</span>
+</span><span id="line-0-121"><a id="example-0-121" name="example-0-121"></a><span class="sd">        the ``--flattenkeywords`` option for more details.</span>
+</span><span id="line-0-122"><a id="example-0-122" name="example-0-122"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-123"><a id="example-0-123" name="example-0-123"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_source</span> <span class="o">=</span> <span class="n">source</span> \
+</span><span id="line-0-124"><a id="example-0-124" name="example-0-124"></a>        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">ETSource</span><span class="p">)</span> <span class="k">else</span> <span class="n">ETSource</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>
+</span><span id="line-0-125"><a id="example-0-125" name="example-0-125"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_include_keywords</span> <span class="o">=</span> <span class="n">include_keywords</span>
+</span><span id="line-0-126"><a id="example-0-126" name="example-0-126"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_flattened_keywords</span> <span class="o">=</span> <span class="n">flattened_keywords</span>
+</span></code></pre></div></td></tr></table></div>
+                  </details>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
 
 
 

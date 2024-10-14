@@ -2587,6 +2587,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#robot.model.stats.TotalStat" class="md-nav__link">
+    <span class="md-ellipsis">
+      <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;TotalStat
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#robot.model.stats.SuiteStat" class="md-nav__link">
     <span class="md-ellipsis">
       <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;SuiteStat
@@ -2616,15 +2625,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#robot.model.stats.TotalStat" class="md-nav__link">
-    <span class="md-ellipsis">
-      <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;TotalStat
-    </span>
-  </a>
   
 </li>
       
@@ -7084,6 +7084,17 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 <div class="doc doc-object doc-class">
 
 
@@ -7148,7 +7159,76 @@
 
 
 
+  </div>
 
+    </div>
+
+</div>
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="robot.model.stats.TotalStat" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">TotalStat</span>
+
+
+<a href="#robot.model.stats.TotalStat" class="headerlink" title="Permanent link">&para;</a></h2>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">TotalStat</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><a class="autorefs autorefs-internal" title="robot.model.stats.Stat" href="#robot.model.stats.Stat">Stat</a></code></p>
+
+
+        <p>Stores statistic values for a test run.</p>
+
+
+
+
+
+
+                  <details class="quote">
+                    <summary>Source code in <code>src/robot/model/stats.py</code></summary>
+                    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-27">27</a></span>
+<span class="normal"><a href="#example-0-28">28</a></span>
+<span class="normal"><a href="#example-0-29">29</a></span>
+<span class="normal"><a href="#example-0-30">30</a></span>
+<span class="normal"><a href="#example-0-31">31</a></span>
+<span class="normal"><a href="#example-0-32">32</a></span>
+<span class="normal"><a href="#example-0-33">33</a></span>
+<span class="normal"><a href="#example-0-34">34</a></span>
+<span class="normal"><a href="#example-0-35">35</a></span>
+<span class="normal"><a href="#example-0-36">36</a></span>
+<span class="normal"><a href="#example-0-37">37</a></span>
+<span class="normal"><a href="#example-0-38">38</a></span>
+<span class="normal"><a href="#example-0-39">39</a></span>
+<span class="normal"><a href="#example-0-40">40</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-27"><a id="example-0-27" name="example-0-27"></a><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+</span><span id="line-0-28"><a id="example-0-28" name="example-0-28"></a>    <span class="c1">#: Human readable identifier of the object these statistics</span>
+</span><span id="line-0-29"><a id="example-0-29" name="example-0-29"></a>    <span class="c1">#: belong to. `All Tests` for</span>
+</span><span id="line-0-30"><a id="example-0-30" name="example-0-30"></a>    <span class="c1">#: :class:`~robot.model.totalstatistics.TotalStatistics`,</span>
+</span><span id="line-0-31"><a id="example-0-31" name="example-0-31"></a>    <span class="c1">#: long name of the suite for</span>
+</span><span id="line-0-32"><a id="example-0-32" name="example-0-32"></a>    <span class="c1">#: :class:`~robot.model.suitestatistics.SuiteStatistics`</span>
+</span><span id="line-0-33"><a id="example-0-33" name="example-0-33"></a>    <span class="c1">#: or name of the tag for</span>
+</span><span id="line-0-34"><a id="example-0-34" name="example-0-34"></a>    <span class="c1">#: :class:`~robot.model.tagstatistics.TagStatistics`</span>
+</span><span id="line-0-35"><a id="example-0-35" name="example-0-35"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+</span><span id="line-0-36"><a id="example-0-36" name="example-0-36"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">passed</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="line-0-37"><a id="example-0-37" name="example-0-37"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">failed</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="line-0-38"><a id="example-0-38" name="example-0-38"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">skipped</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="line-0-39"><a id="example-0-39" name="example-0-39"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">elapsed</span> <span class="o">=</span> <span class="n">timedelta</span><span class="p">()</span>
+</span><span id="line-0-40"><a id="example-0-40" name="example-0-40"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_norm_name</span> <span class="o">=</span> <span class="n">normalize</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">ignore</span><span class="o">=</span><span class="s1">&#39;_&#39;</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+                  </details>
+
+
+
+  <div class="doc doc-children">
 
 
 
@@ -7159,6 +7239,11 @@
     </div>
 
 </div>
+
+
+
+
+
 
 <div class="doc doc-object doc-class">
 
@@ -7206,17 +7291,16 @@
 
 
 
-
-
-
-
-
-
   </div>
 
     </div>
 
 </div>
+
+
+
+
+
 
 <div class="doc doc-object doc-class">
 
@@ -7297,83 +7381,6 @@ are about. Either <code>combined</code> or an empty string.</p>
     </div>
 
 </div>
-
-
-
-
-
-  </div>
-
-    </div>
-
-</div>
-
-<div class="doc doc-object doc-class">
-
-
-
-<h2 id="robot.model.stats.TotalStat" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">TotalStat</span>
-
-
-<a href="#robot.model.stats.TotalStat" class="headerlink" title="Permanent link">&para;</a></h2>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">TotalStat</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
-</span></code></pre></div></td></tr></table></div>
-
-    <div class="doc doc-contents ">
-            <p class="doc doc-class-bases">
-              Bases: <code><a class="autorefs autorefs-internal" title="robot.model.stats.Stat" href="#robot.model.stats.Stat">Stat</a></code></p>
-
-
-        <p>Stores statistic values for a test run.</p>
-
-
-
-
-
-
-                  <details class="quote">
-                    <summary>Source code in <code>src/robot/model/stats.py</code></summary>
-                    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-27">27</a></span>
-<span class="normal"><a href="#example-0-28">28</a></span>
-<span class="normal"><a href="#example-0-29">29</a></span>
-<span class="normal"><a href="#example-0-30">30</a></span>
-<span class="normal"><a href="#example-0-31">31</a></span>
-<span class="normal"><a href="#example-0-32">32</a></span>
-<span class="normal"><a href="#example-0-33">33</a></span>
-<span class="normal"><a href="#example-0-34">34</a></span>
-<span class="normal"><a href="#example-0-35">35</a></span>
-<span class="normal"><a href="#example-0-36">36</a></span>
-<span class="normal"><a href="#example-0-37">37</a></span>
-<span class="normal"><a href="#example-0-38">38</a></span>
-<span class="normal"><a href="#example-0-39">39</a></span>
-<span class="normal"><a href="#example-0-40">40</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-27"><a id="example-0-27" name="example-0-27"></a><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-</span><span id="line-0-28"><a id="example-0-28" name="example-0-28"></a>    <span class="c1">#: Human readable identifier of the object these statistics</span>
-</span><span id="line-0-29"><a id="example-0-29" name="example-0-29"></a>    <span class="c1">#: belong to. `All Tests` for</span>
-</span><span id="line-0-30"><a id="example-0-30" name="example-0-30"></a>    <span class="c1">#: :class:`~robot.model.totalstatistics.TotalStatistics`,</span>
-</span><span id="line-0-31"><a id="example-0-31" name="example-0-31"></a>    <span class="c1">#: long name of the suite for</span>
-</span><span id="line-0-32"><a id="example-0-32" name="example-0-32"></a>    <span class="c1">#: :class:`~robot.model.suitestatistics.SuiteStatistics`</span>
-</span><span id="line-0-33"><a id="example-0-33" name="example-0-33"></a>    <span class="c1">#: or name of the tag for</span>
-</span><span id="line-0-34"><a id="example-0-34" name="example-0-34"></a>    <span class="c1">#: :class:`~robot.model.tagstatistics.TagStatistics`</span>
-</span><span id="line-0-35"><a id="example-0-35" name="example-0-35"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-</span><span id="line-0-36"><a id="example-0-36" name="example-0-36"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">passed</span> <span class="o">=</span> <span class="mi">0</span>
-</span><span id="line-0-37"><a id="example-0-37" name="example-0-37"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">failed</span> <span class="o">=</span> <span class="mi">0</span>
-</span><span id="line-0-38"><a id="example-0-38" name="example-0-38"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">skipped</span> <span class="o">=</span> <span class="mi">0</span>
-</span><span id="line-0-39"><a id="example-0-39" name="example-0-39"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">elapsed</span> <span class="o">=</span> <span class="n">timedelta</span><span class="p">()</span>
-</span><span id="line-0-40"><a id="example-0-40" name="example-0-40"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_norm_name</span> <span class="o">=</span> <span class="n">normalize</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">ignore</span><span class="o">=</span><span class="s1">&#39;_&#39;</span><span class="p">)</span>
-</span></code></pre></div></td></tr></table></div>
-                  </details>
-
-
-
-  <div class="doc doc-children">
-
-
-
-
-
-
-
 
 
 

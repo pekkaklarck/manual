@@ -3825,18 +3825,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#robot.rebot.rebot" class="md-nav__link">
+  <a href="#robot.rebot.rebot_cli" class="md-nav__link">
     <span class="md-ellipsis">
-      <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;rebot
+      <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;rebot_cli
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#robot.rebot.rebot_cli" class="md-nav__link">
+  <a href="#robot.rebot.rebot" class="md-nav__link">
     <span class="md-ellipsis">
-      <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;rebot_cli
+      <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;rebot
     </span>
   </a>
   
@@ -7062,6 +7062,116 @@ that can be used programmatically. Other code is for internal usage.</p>
 
 
 
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="robot.rebot.rebot_cli" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-function"></code>            <span class="doc doc-object-name doc-function-name">rebot_cli</span>
+
+
+<a href="#robot.rebot.rebot_cli" class="headerlink" title="Permanent link">&para;</a></h2>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">rebot_cli</span><span class="p">(</span><span class="n">arguments</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">exit</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Command line execution entry point for post-processing outputs.</p>
+<p>:param arguments: Command line options and arguments as a list of strings.
+    Defaults to <code>sys.argv[1:]</code> if not given.
+:param exit: If <code>True</code>, call <code>sys.exit</code> with the return code denoting
+    execution status, otherwise just return the rc.</p>
+<p>Entry point used when post-processing outputs from the command line, but
+can also be used by custom scripts. Especially useful if the script itself
+needs to accept same arguments as accepted by Rebot, because the script can
+just pass them forward directly along with the possible default values it
+sets itself.</p>
+<p>Example::</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">robot</span> <span class="kn">import</span> <span class="n">rebot_cli</span>
+
+<span class="n">rebot_cli</span><span class="p">([</span><span class="s1">&#39;--name&#39;</span><span class="p">,</span> <span class="s1">&#39;Example&#39;</span><span class="p">,</span> <span class="s1">&#39;--log&#39;</span><span class="p">,</span> <span class="s1">&#39;NONE&#39;</span><span class="p">,</span> <span class="s1">&#39;o1.xml&#39;</span><span class="p">,</span> <span class="s1">&#39;o2.xml&#39;</span><span class="p">])</span>
+</code></pre></div></td></tr></table></div>
+<p>See also the :func:<code>rebot</code> function that allows setting options as keyword
+arguments like <code>name="Example"</code> and generally has a richer API for
+programmatic Rebot execution.</p>
+
+            <details class="quote">
+              <summary>Source code in <code>src/robot/rebot.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-349">349</a></span>
+<span class="normal"><a href="#example-0-350">350</a></span>
+<span class="normal"><a href="#example-0-351">351</a></span>
+<span class="normal"><a href="#example-0-352">352</a></span>
+<span class="normal"><a href="#example-0-353">353</a></span>
+<span class="normal"><a href="#example-0-354">354</a></span>
+<span class="normal"><a href="#example-0-355">355</a></span>
+<span class="normal"><a href="#example-0-356">356</a></span>
+<span class="normal"><a href="#example-0-357">357</a></span>
+<span class="normal"><a href="#example-0-358">358</a></span>
+<span class="normal"><a href="#example-0-359">359</a></span>
+<span class="normal"><a href="#example-0-360">360</a></span>
+<span class="normal"><a href="#example-0-361">361</a></span>
+<span class="normal"><a href="#example-0-362">362</a></span>
+<span class="normal"><a href="#example-0-363">363</a></span>
+<span class="normal"><a href="#example-0-364">364</a></span>
+<span class="normal"><a href="#example-0-365">365</a></span>
+<span class="normal"><a href="#example-0-366">366</a></span>
+<span class="normal"><a href="#example-0-367">367</a></span>
+<span class="normal"><a href="#example-0-368">368</a></span>
+<span class="normal"><a href="#example-0-369">369</a></span>
+<span class="normal"><a href="#example-0-370">370</a></span>
+<span class="normal"><a href="#example-0-371">371</a></span>
+<span class="normal"><a href="#example-0-372">372</a></span>
+<span class="normal"><a href="#example-0-373">373</a></span>
+<span class="normal"><a href="#example-0-374">374</a></span>
+<span class="normal"><a href="#example-0-375">375</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-349"><a id="example-0-349" name="example-0-349"></a><span class="k">def</span> <span class="nf">rebot_cli</span><span class="p">(</span><span class="n">arguments</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">exit</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+</span><span id="line-0-350"><a id="example-0-350" name="example-0-350"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Command line execution entry point for post-processing outputs.</span>
+</span><span id="line-0-351"><a id="example-0-351" name="example-0-351"></a>
+</span><span id="line-0-352"><a id="example-0-352" name="example-0-352"></a><span class="sd">    :param arguments: Command line options and arguments as a list of strings.</span>
+</span><span id="line-0-353"><a id="example-0-353" name="example-0-353"></a><span class="sd">        Defaults to ``sys.argv[1:]`` if not given.</span>
+</span><span id="line-0-354"><a id="example-0-354" name="example-0-354"></a><span class="sd">    :param exit: If ``True``, call ``sys.exit`` with the return code denoting</span>
+</span><span id="line-0-355"><a id="example-0-355" name="example-0-355"></a><span class="sd">        execution status, otherwise just return the rc.</span>
+</span><span id="line-0-356"><a id="example-0-356" name="example-0-356"></a>
+</span><span id="line-0-357"><a id="example-0-357" name="example-0-357"></a><span class="sd">    Entry point used when post-processing outputs from the command line, but</span>
+</span><span id="line-0-358"><a id="example-0-358" name="example-0-358"></a><span class="sd">    can also be used by custom scripts. Especially useful if the script itself</span>
+</span><span id="line-0-359"><a id="example-0-359" name="example-0-359"></a><span class="sd">    needs to accept same arguments as accepted by Rebot, because the script can</span>
+</span><span id="line-0-360"><a id="example-0-360" name="example-0-360"></a><span class="sd">    just pass them forward directly along with the possible default values it</span>
+</span><span id="line-0-361"><a id="example-0-361" name="example-0-361"></a><span class="sd">    sets itself.</span>
+</span><span id="line-0-362"><a id="example-0-362" name="example-0-362"></a>
+</span><span id="line-0-363"><a id="example-0-363" name="example-0-363"></a><span class="sd">    Example::</span>
+</span><span id="line-0-364"><a id="example-0-364" name="example-0-364"></a>
+</span><span id="line-0-365"><a id="example-0-365" name="example-0-365"></a><span class="sd">        from robot import rebot_cli</span>
+</span><span id="line-0-366"><a id="example-0-366" name="example-0-366"></a>
+</span><span id="line-0-367"><a id="example-0-367" name="example-0-367"></a><span class="sd">        rebot_cli([&#39;--name&#39;, &#39;Example&#39;, &#39;--log&#39;, &#39;NONE&#39;, &#39;o1.xml&#39;, &#39;o2.xml&#39;])</span>
+</span><span id="line-0-368"><a id="example-0-368" name="example-0-368"></a>
+</span><span id="line-0-369"><a id="example-0-369" name="example-0-369"></a><span class="sd">    See also the :func:`rebot` function that allows setting options as keyword</span>
+</span><span id="line-0-370"><a id="example-0-370" name="example-0-370"></a><span class="sd">    arguments like ``name=&quot;Example&quot;`` and generally has a richer API for</span>
+</span><span id="line-0-371"><a id="example-0-371" name="example-0-371"></a><span class="sd">    programmatic Rebot execution.</span>
+</span><span id="line-0-372"><a id="example-0-372" name="example-0-372"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-373"><a id="example-0-373" name="example-0-373"></a>    <span class="k">if</span> <span class="n">arguments</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-0-374"><a id="example-0-374" name="example-0-374"></a>        <span class="n">arguments</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+</span><span id="line-0-375"><a id="example-0-375" name="example-0-375"></a>    <span class="k">return</span> <span class="n">Rebot</span><span class="p">()</span><span class="o">.</span><span class="n">execute_cli</span><span class="p">(</span><span class="n">arguments</span><span class="p">,</span> <span class="n">exit</span><span class="o">=</span><span class="n">exit</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+
+
+
 <div class="doc doc-object doc-function">
 
 
@@ -7162,100 +7272,6 @@ that can be used programmatically. Other code is for internal usage.</p>
 
 </div>
 
-<div class="doc doc-object doc-function">
-
-
-<h2 id="robot.rebot.rebot_cli" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-function"></code>            <span class="doc doc-object-name doc-function-name">rebot_cli</span>
-
-
-<a href="#robot.rebot.rebot_cli" class="headerlink" title="Permanent link">&para;</a></h2>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">rebot_cli</span><span class="p">(</span><span class="n">arguments</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">exit</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</span></code></pre></div></td></tr></table></div>
-
-    <div class="doc doc-contents ">
-
-        <p>Command line execution entry point for post-processing outputs.</p>
-<p>:param arguments: Command line options and arguments as a list of strings.
-    Defaults to <code>sys.argv[1:]</code> if not given.
-:param exit: If <code>True</code>, call <code>sys.exit</code> with the return code denoting
-    execution status, otherwise just return the rc.</p>
-<p>Entry point used when post-processing outputs from the command line, but
-can also be used by custom scripts. Especially useful if the script itself
-needs to accept same arguments as accepted by Rebot, because the script can
-just pass them forward directly along with the possible default values it
-sets itself.</p>
-<p>Example::</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">robot</span> <span class="kn">import</span> <span class="n">rebot_cli</span>
-
-<span class="n">rebot_cli</span><span class="p">([</span><span class="s1">&#39;--name&#39;</span><span class="p">,</span> <span class="s1">&#39;Example&#39;</span><span class="p">,</span> <span class="s1">&#39;--log&#39;</span><span class="p">,</span> <span class="s1">&#39;NONE&#39;</span><span class="p">,</span> <span class="s1">&#39;o1.xml&#39;</span><span class="p">,</span> <span class="s1">&#39;o2.xml&#39;</span><span class="p">])</span>
-</code></pre></div></td></tr></table></div>
-<p>See also the :func:<code>rebot</code> function that allows setting options as keyword
-arguments like <code>name="Example"</code> and generally has a richer API for
-programmatic Rebot execution.</p>
-
-            <details class="quote">
-              <summary>Source code in <code>src/robot/rebot.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-349">349</a></span>
-<span class="normal"><a href="#example-0-350">350</a></span>
-<span class="normal"><a href="#example-0-351">351</a></span>
-<span class="normal"><a href="#example-0-352">352</a></span>
-<span class="normal"><a href="#example-0-353">353</a></span>
-<span class="normal"><a href="#example-0-354">354</a></span>
-<span class="normal"><a href="#example-0-355">355</a></span>
-<span class="normal"><a href="#example-0-356">356</a></span>
-<span class="normal"><a href="#example-0-357">357</a></span>
-<span class="normal"><a href="#example-0-358">358</a></span>
-<span class="normal"><a href="#example-0-359">359</a></span>
-<span class="normal"><a href="#example-0-360">360</a></span>
-<span class="normal"><a href="#example-0-361">361</a></span>
-<span class="normal"><a href="#example-0-362">362</a></span>
-<span class="normal"><a href="#example-0-363">363</a></span>
-<span class="normal"><a href="#example-0-364">364</a></span>
-<span class="normal"><a href="#example-0-365">365</a></span>
-<span class="normal"><a href="#example-0-366">366</a></span>
-<span class="normal"><a href="#example-0-367">367</a></span>
-<span class="normal"><a href="#example-0-368">368</a></span>
-<span class="normal"><a href="#example-0-369">369</a></span>
-<span class="normal"><a href="#example-0-370">370</a></span>
-<span class="normal"><a href="#example-0-371">371</a></span>
-<span class="normal"><a href="#example-0-372">372</a></span>
-<span class="normal"><a href="#example-0-373">373</a></span>
-<span class="normal"><a href="#example-0-374">374</a></span>
-<span class="normal"><a href="#example-0-375">375</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-349"><a id="example-0-349" name="example-0-349"></a><span class="k">def</span> <span class="nf">rebot_cli</span><span class="p">(</span><span class="n">arguments</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">exit</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-</span><span id="line-0-350"><a id="example-0-350" name="example-0-350"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Command line execution entry point for post-processing outputs.</span>
-</span><span id="line-0-351"><a id="example-0-351" name="example-0-351"></a>
-</span><span id="line-0-352"><a id="example-0-352" name="example-0-352"></a><span class="sd">    :param arguments: Command line options and arguments as a list of strings.</span>
-</span><span id="line-0-353"><a id="example-0-353" name="example-0-353"></a><span class="sd">        Defaults to ``sys.argv[1:]`` if not given.</span>
-</span><span id="line-0-354"><a id="example-0-354" name="example-0-354"></a><span class="sd">    :param exit: If ``True``, call ``sys.exit`` with the return code denoting</span>
-</span><span id="line-0-355"><a id="example-0-355" name="example-0-355"></a><span class="sd">        execution status, otherwise just return the rc.</span>
-</span><span id="line-0-356"><a id="example-0-356" name="example-0-356"></a>
-</span><span id="line-0-357"><a id="example-0-357" name="example-0-357"></a><span class="sd">    Entry point used when post-processing outputs from the command line, but</span>
-</span><span id="line-0-358"><a id="example-0-358" name="example-0-358"></a><span class="sd">    can also be used by custom scripts. Especially useful if the script itself</span>
-</span><span id="line-0-359"><a id="example-0-359" name="example-0-359"></a><span class="sd">    needs to accept same arguments as accepted by Rebot, because the script can</span>
-</span><span id="line-0-360"><a id="example-0-360" name="example-0-360"></a><span class="sd">    just pass them forward directly along with the possible default values it</span>
-</span><span id="line-0-361"><a id="example-0-361" name="example-0-361"></a><span class="sd">    sets itself.</span>
-</span><span id="line-0-362"><a id="example-0-362" name="example-0-362"></a>
-</span><span id="line-0-363"><a id="example-0-363" name="example-0-363"></a><span class="sd">    Example::</span>
-</span><span id="line-0-364"><a id="example-0-364" name="example-0-364"></a>
-</span><span id="line-0-365"><a id="example-0-365" name="example-0-365"></a><span class="sd">        from robot import rebot_cli</span>
-</span><span id="line-0-366"><a id="example-0-366" name="example-0-366"></a>
-</span><span id="line-0-367"><a id="example-0-367" name="example-0-367"></a><span class="sd">        rebot_cli([&#39;--name&#39;, &#39;Example&#39;, &#39;--log&#39;, &#39;NONE&#39;, &#39;o1.xml&#39;, &#39;o2.xml&#39;])</span>
-</span><span id="line-0-368"><a id="example-0-368" name="example-0-368"></a>
-</span><span id="line-0-369"><a id="example-0-369" name="example-0-369"></a><span class="sd">    See also the :func:`rebot` function that allows setting options as keyword</span>
-</span><span id="line-0-370"><a id="example-0-370" name="example-0-370"></a><span class="sd">    arguments like ``name=&quot;Example&quot;`` and generally has a richer API for</span>
-</span><span id="line-0-371"><a id="example-0-371" name="example-0-371"></a><span class="sd">    programmatic Rebot execution.</span>
-</span><span id="line-0-372"><a id="example-0-372" name="example-0-372"></a><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-0-373"><a id="example-0-373" name="example-0-373"></a>    <span class="k">if</span> <span class="n">arguments</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-0-374"><a id="example-0-374" name="example-0-374"></a>        <span class="n">arguments</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
-</span><span id="line-0-375"><a id="example-0-375" name="example-0-375"></a>    <span class="k">return</span> <span class="n">Rebot</span><span class="p">()</span><span class="o">.</span><span class="n">execute_cli</span><span class="p">(</span><span class="n">arguments</span><span class="p">,</span> <span class="n">exit</span><span class="o">=</span><span class="n">exit</span><span class="p">)</span>
-</span></code></pre></div></td></tr></table></div>
-            </details>
-    </div>
-
-</div>
 
 
 

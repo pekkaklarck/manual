@@ -3412,9 +3412,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#robot.parsing.lexer.lexer.get_init_tokens" class="md-nav__link">
+  <a href="#robot.parsing.lexer.lexer.get_tokens" class="md-nav__link">
     <span class="md-ellipsis">
-      <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;get_init_tokens
+      <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;get_tokens
     </span>
   </a>
   
@@ -3430,9 +3430,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#robot.parsing.lexer.lexer.get_tokens" class="md-nav__link">
+  <a href="#robot.parsing.lexer.lexer.get_init_tokens" class="md-nav__link">
     <span class="md-ellipsis">
-      <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;get_tokens
+      <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;get_init_tokens
     </span>
   </a>
   
@@ -7063,120 +7063,27 @@
 
 
 
-<div class="doc doc-object doc-function">
 
 
-<h2 id="robot.parsing.lexer.lexer.get_init_tokens" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-function"></code>            <span class="doc doc-object-name doc-function-name">get_init_tokens</span>
 
 
-<a href="#robot.parsing.lexer.lexer.get_init_tokens" class="headerlink" title="Permanent link">&para;</a></h2>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
-<span class="normal"><a href="#example-0-2">2</a></span>
-<span class="normal"><a href="#example-0-3">3</a></span>
-<span class="normal"><a href="#example-0-4">4</a></span>
-<span class="normal"><a href="#example-0-5">5</a></span>
-<span class="normal"><a href="#example-0-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">get_init_tokens</span><span class="p">(</span>
-</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">source</span><span class="p">:</span> <span class="n"><span title="robot.utils.Source">Source</span></span><span class="p">,</span>
-</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a>    <span class="n">data_only</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-</span><span id="line-0-4"><a id="example-0-4" name="example-0-4"></a>    <span class="n">tokenize_variables</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-</span><span id="line-0-5"><a id="example-0-5" name="example-0-5"></a>    <span class="n">lang</span><span class="p">:</span> <span class="n"><span title="robot.conf.LanguagesLike">LanguagesLike</span></span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-</span><span id="line-0-6"><a id="example-0-6" name="example-0-6"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="n"><a class="autorefs autorefs-external" title="collections.abc.Iterator" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterator">Iterator</a></span><span class="p">[</span><span class="n"><a class="autorefs autorefs-internal" title="robot.parsing.lexer.tokens.Token" href="../tokens/#robot.parsing.lexer.tokens.Token">Token</a></span><span class="p">]</span>
-</span></code></pre></div></td></tr></table></div>
-
-    <div class="doc doc-contents ">
-
-        <p>Parses the given source to init file tokens.</p>
-<p>Same as :func:<code>get_tokens</code> otherwise, but the source is considered to be
-a suite initialization file. This affects, for example, what settings are
-valid.</p>
-
-            <details class="quote">
-              <summary>Source code in <code>src/robot/parsing/lexer/lexer.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-73">73</a></span>
-<span class="normal"><a href="#example-0-74">74</a></span>
-<span class="normal"><a href="#example-0-75">75</a></span>
-<span class="normal"><a href="#example-0-76">76</a></span>
-<span class="normal"><a href="#example-0-77">77</a></span>
-<span class="normal"><a href="#example-0-78">78</a></span>
-<span class="normal"><a href="#example-0-79">79</a></span>
-<span class="normal"><a href="#example-0-80">80</a></span>
-<span class="normal"><a href="#example-0-81">81</a></span>
-<span class="normal"><a href="#example-0-82">82</a></span>
-<span class="normal"><a href="#example-0-83">83</a></span>
-<span class="normal"><a href="#example-0-84">84</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-73"><a id="example-0-73" name="example-0-73"></a><span class="k">def</span> <span class="nf">get_init_tokens</span><span class="p">(</span><span class="n">source</span><span class="p">:</span> <span class="n">Source</span><span class="p">,</span> <span class="n">data_only</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-</span><span id="line-0-74"><a id="example-0-74" name="example-0-74"></a>                    <span class="n">tokenize_variables</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-</span><span id="line-0-75"><a id="example-0-75" name="example-0-75"></a>                    <span class="n">lang</span><span class="p">:</span> <span class="n">LanguagesLike</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;Iterator[Token]&#39;</span><span class="p">:</span>
-</span><span id="line-0-76"><a id="example-0-76" name="example-0-76"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Parses the given source to init file tokens.</span>
-</span><span id="line-0-77"><a id="example-0-77" name="example-0-77"></a>
-</span><span id="line-0-78"><a id="example-0-78" name="example-0-78"></a><span class="sd">    Same as :func:`get_tokens` otherwise, but the source is considered to be</span>
-</span><span id="line-0-79"><a id="example-0-79" name="example-0-79"></a><span class="sd">    a suite initialization file. This affects, for example, what settings are</span>
-</span><span id="line-0-80"><a id="example-0-80" name="example-0-80"></a><span class="sd">    valid.</span>
-</span><span id="line-0-81"><a id="example-0-81" name="example-0-81"></a><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-0-82"><a id="example-0-82" name="example-0-82"></a>    <span class="n">lexer</span> <span class="o">=</span> <span class="n">Lexer</span><span class="p">(</span><span class="n">InitFileContext</span><span class="p">(</span><span class="n">lang</span><span class="o">=</span><span class="n">lang</span><span class="p">),</span> <span class="n">data_only</span><span class="p">,</span> <span class="n">tokenize_variables</span><span class="p">)</span>
-</span><span id="line-0-83"><a id="example-0-83" name="example-0-83"></a>    <span class="n">lexer</span><span class="o">.</span><span class="n">input</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>
-</span><span id="line-0-84"><a id="example-0-84" name="example-0-84"></a>    <span class="k">return</span> <span class="n">lexer</span><span class="o">.</span><span class="n">get_tokens</span><span class="p">()</span>
-</span></code></pre></div></td></tr></table></div>
-            </details>
-    </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
 
 
-<h2 id="robot.parsing.lexer.lexer.get_resource_tokens" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-function"></code>            <span class="doc doc-object-name doc-function-name">get_resource_tokens</span>
 
 
-<a href="#robot.parsing.lexer.lexer.get_resource_tokens" class="headerlink" title="Permanent link">&para;</a></h2>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
-<span class="normal"><a href="#example-0-2">2</a></span>
-<span class="normal"><a href="#example-0-3">3</a></span>
-<span class="normal"><a href="#example-0-4">4</a></span>
-<span class="normal"><a href="#example-0-5">5</a></span>
-<span class="normal"><a href="#example-0-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">get_resource_tokens</span><span class="p">(</span>
-</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">source</span><span class="p">:</span> <span class="n"><span title="robot.utils.Source">Source</span></span><span class="p">,</span>
-</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a>    <span class="n">data_only</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-</span><span id="line-0-4"><a id="example-0-4" name="example-0-4"></a>    <span class="n">tokenize_variables</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-</span><span id="line-0-5"><a id="example-0-5" name="example-0-5"></a>    <span class="n">lang</span><span class="p">:</span> <span class="n"><span title="robot.conf.LanguagesLike">LanguagesLike</span></span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-</span><span id="line-0-6"><a id="example-0-6" name="example-0-6"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="n"><a class="autorefs autorefs-external" title="collections.abc.Iterator" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterator">Iterator</a></span><span class="p">[</span><span class="n"><a class="autorefs autorefs-internal" title="robot.parsing.lexer.tokens.Token" href="../tokens/#robot.parsing.lexer.tokens.Token">Token</a></span><span class="p">]</span>
-</span></code></pre></div></td></tr></table></div>
 
-    <div class="doc doc-contents ">
 
-        <p>Parses the given source to resource file tokens.</p>
-<p>Same as :func:<code>get_tokens</code> otherwise, but the source is considered to be
-a resource file. This affects, for example, what settings are valid.</p>
 
-            <details class="quote">
-              <summary>Source code in <code>src/robot/parsing/lexer/lexer.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-60">60</a></span>
-<span class="normal"><a href="#example-0-61">61</a></span>
-<span class="normal"><a href="#example-0-62">62</a></span>
-<span class="normal"><a href="#example-0-63">63</a></span>
-<span class="normal"><a href="#example-0-64">64</a></span>
-<span class="normal"><a href="#example-0-65">65</a></span>
-<span class="normal"><a href="#example-0-66">66</a></span>
-<span class="normal"><a href="#example-0-67">67</a></span>
-<span class="normal"><a href="#example-0-68">68</a></span>
-<span class="normal"><a href="#example-0-69">69</a></span>
-<span class="normal"><a href="#example-0-70">70</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-60"><a id="example-0-60" name="example-0-60"></a><span class="k">def</span> <span class="nf">get_resource_tokens</span><span class="p">(</span><span class="n">source</span><span class="p">:</span> <span class="n">Source</span><span class="p">,</span> <span class="n">data_only</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-</span><span id="line-0-61"><a id="example-0-61" name="example-0-61"></a>                        <span class="n">tokenize_variables</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-</span><span id="line-0-62"><a id="example-0-62" name="example-0-62"></a>                        <span class="n">lang</span><span class="p">:</span> <span class="n">LanguagesLike</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;Iterator[Token]&#39;</span><span class="p">:</span>
-</span><span id="line-0-63"><a id="example-0-63" name="example-0-63"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Parses the given source to resource file tokens.</span>
-</span><span id="line-0-64"><a id="example-0-64" name="example-0-64"></a>
-</span><span id="line-0-65"><a id="example-0-65" name="example-0-65"></a><span class="sd">    Same as :func:`get_tokens` otherwise, but the source is considered to be</span>
-</span><span id="line-0-66"><a id="example-0-66" name="example-0-66"></a><span class="sd">    a resource file. This affects, for example, what settings are valid.</span>
-</span><span id="line-0-67"><a id="example-0-67" name="example-0-67"></a><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-0-68"><a id="example-0-68" name="example-0-68"></a>    <span class="n">lexer</span> <span class="o">=</span> <span class="n">Lexer</span><span class="p">(</span><span class="n">ResourceFileContext</span><span class="p">(</span><span class="n">lang</span><span class="o">=</span><span class="n">lang</span><span class="p">),</span> <span class="n">data_only</span><span class="p">,</span> <span class="n">tokenize_variables</span><span class="p">)</span>
-</span><span id="line-0-69"><a id="example-0-69" name="example-0-69"></a>    <span class="n">lexer</span><span class="o">.</span><span class="n">input</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>
-</span><span id="line-0-70"><a id="example-0-70" name="example-0-70"></a>    <span class="k">return</span> <span class="n">lexer</span><span class="o">.</span><span class="n">get_tokens</span><span class="p">()</span>
-</span></code></pre></div></td></tr></table></div>
-            </details>
-    </div>
 
-</div>
+
+
+
+
+
+
+
+
+
 
 <div class="doc doc-object doc-function">
 
@@ -7283,6 +7190,132 @@ instances.</p>
     </div>
 
 </div>
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="robot.parsing.lexer.lexer.get_resource_tokens" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-function"></code>            <span class="doc doc-object-name doc-function-name">get_resource_tokens</span>
+
+
+<a href="#robot.parsing.lexer.lexer.get_resource_tokens" class="headerlink" title="Permanent link">&para;</a></h2>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
+<span class="normal"><a href="#example-0-2">2</a></span>
+<span class="normal"><a href="#example-0-3">3</a></span>
+<span class="normal"><a href="#example-0-4">4</a></span>
+<span class="normal"><a href="#example-0-5">5</a></span>
+<span class="normal"><a href="#example-0-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">get_resource_tokens</span><span class="p">(</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">source</span><span class="p">:</span> <span class="n"><span title="robot.utils.Source">Source</span></span><span class="p">,</span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a>    <span class="n">data_only</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+</span><span id="line-0-4"><a id="example-0-4" name="example-0-4"></a>    <span class="n">tokenize_variables</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+</span><span id="line-0-5"><a id="example-0-5" name="example-0-5"></a>    <span class="n">lang</span><span class="p">:</span> <span class="n"><span title="robot.conf.LanguagesLike">LanguagesLike</span></span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="line-0-6"><a id="example-0-6" name="example-0-6"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="n"><a class="autorefs autorefs-external" title="collections.abc.Iterator" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterator">Iterator</a></span><span class="p">[</span><span class="n"><a class="autorefs autorefs-internal" title="robot.parsing.lexer.tokens.Token" href="../tokens/#robot.parsing.lexer.tokens.Token">Token</a></span><span class="p">]</span>
+</span></code></pre></div></td></tr></table></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Parses the given source to resource file tokens.</p>
+<p>Same as :func:<code>get_tokens</code> otherwise, but the source is considered to be
+a resource file. This affects, for example, what settings are valid.</p>
+
+            <details class="quote">
+              <summary>Source code in <code>src/robot/parsing/lexer/lexer.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-60">60</a></span>
+<span class="normal"><a href="#example-0-61">61</a></span>
+<span class="normal"><a href="#example-0-62">62</a></span>
+<span class="normal"><a href="#example-0-63">63</a></span>
+<span class="normal"><a href="#example-0-64">64</a></span>
+<span class="normal"><a href="#example-0-65">65</a></span>
+<span class="normal"><a href="#example-0-66">66</a></span>
+<span class="normal"><a href="#example-0-67">67</a></span>
+<span class="normal"><a href="#example-0-68">68</a></span>
+<span class="normal"><a href="#example-0-69">69</a></span>
+<span class="normal"><a href="#example-0-70">70</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-60"><a id="example-0-60" name="example-0-60"></a><span class="k">def</span> <span class="nf">get_resource_tokens</span><span class="p">(</span><span class="n">source</span><span class="p">:</span> <span class="n">Source</span><span class="p">,</span> <span class="n">data_only</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+</span><span id="line-0-61"><a id="example-0-61" name="example-0-61"></a>                        <span class="n">tokenize_variables</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+</span><span id="line-0-62"><a id="example-0-62" name="example-0-62"></a>                        <span class="n">lang</span><span class="p">:</span> <span class="n">LanguagesLike</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;Iterator[Token]&#39;</span><span class="p">:</span>
+</span><span id="line-0-63"><a id="example-0-63" name="example-0-63"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Parses the given source to resource file tokens.</span>
+</span><span id="line-0-64"><a id="example-0-64" name="example-0-64"></a>
+</span><span id="line-0-65"><a id="example-0-65" name="example-0-65"></a><span class="sd">    Same as :func:`get_tokens` otherwise, but the source is considered to be</span>
+</span><span id="line-0-66"><a id="example-0-66" name="example-0-66"></a><span class="sd">    a resource file. This affects, for example, what settings are valid.</span>
+</span><span id="line-0-67"><a id="example-0-67" name="example-0-67"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-68"><a id="example-0-68" name="example-0-68"></a>    <span class="n">lexer</span> <span class="o">=</span> <span class="n">Lexer</span><span class="p">(</span><span class="n">ResourceFileContext</span><span class="p">(</span><span class="n">lang</span><span class="o">=</span><span class="n">lang</span><span class="p">),</span> <span class="n">data_only</span><span class="p">,</span> <span class="n">tokenize_variables</span><span class="p">)</span>
+</span><span id="line-0-69"><a id="example-0-69" name="example-0-69"></a>    <span class="n">lexer</span><span class="o">.</span><span class="n">input</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>
+</span><span id="line-0-70"><a id="example-0-70" name="example-0-70"></a>    <span class="k">return</span> <span class="n">lexer</span><span class="o">.</span><span class="n">get_tokens</span><span class="p">()</span>
+</span></code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="robot.parsing.lexer.lexer.get_init_tokens" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-function"></code>            <span class="doc doc-object-name doc-function-name">get_init_tokens</span>
+
+
+<a href="#robot.parsing.lexer.lexer.get_init_tokens" class="headerlink" title="Permanent link">&para;</a></h2>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
+<span class="normal"><a href="#example-0-2">2</a></span>
+<span class="normal"><a href="#example-0-3">3</a></span>
+<span class="normal"><a href="#example-0-4">4</a></span>
+<span class="normal"><a href="#example-0-5">5</a></span>
+<span class="normal"><a href="#example-0-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">get_init_tokens</span><span class="p">(</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">source</span><span class="p">:</span> <span class="n"><span title="robot.utils.Source">Source</span></span><span class="p">,</span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a>    <span class="n">data_only</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+</span><span id="line-0-4"><a id="example-0-4" name="example-0-4"></a>    <span class="n">tokenize_variables</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+</span><span id="line-0-5"><a id="example-0-5" name="example-0-5"></a>    <span class="n">lang</span><span class="p">:</span> <span class="n"><span title="robot.conf.LanguagesLike">LanguagesLike</span></span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="line-0-6"><a id="example-0-6" name="example-0-6"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="n"><a class="autorefs autorefs-external" title="collections.abc.Iterator" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterator">Iterator</a></span><span class="p">[</span><span class="n"><a class="autorefs autorefs-internal" title="robot.parsing.lexer.tokens.Token" href="../tokens/#robot.parsing.lexer.tokens.Token">Token</a></span><span class="p">]</span>
+</span></code></pre></div></td></tr></table></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Parses the given source to init file tokens.</p>
+<p>Same as :func:<code>get_tokens</code> otherwise, but the source is considered to be
+a suite initialization file. This affects, for example, what settings are
+valid.</p>
+
+            <details class="quote">
+              <summary>Source code in <code>src/robot/parsing/lexer/lexer.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-73">73</a></span>
+<span class="normal"><a href="#example-0-74">74</a></span>
+<span class="normal"><a href="#example-0-75">75</a></span>
+<span class="normal"><a href="#example-0-76">76</a></span>
+<span class="normal"><a href="#example-0-77">77</a></span>
+<span class="normal"><a href="#example-0-78">78</a></span>
+<span class="normal"><a href="#example-0-79">79</a></span>
+<span class="normal"><a href="#example-0-80">80</a></span>
+<span class="normal"><a href="#example-0-81">81</a></span>
+<span class="normal"><a href="#example-0-82">82</a></span>
+<span class="normal"><a href="#example-0-83">83</a></span>
+<span class="normal"><a href="#example-0-84">84</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-73"><a id="example-0-73" name="example-0-73"></a><span class="k">def</span> <span class="nf">get_init_tokens</span><span class="p">(</span><span class="n">source</span><span class="p">:</span> <span class="n">Source</span><span class="p">,</span> <span class="n">data_only</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+</span><span id="line-0-74"><a id="example-0-74" name="example-0-74"></a>                    <span class="n">tokenize_variables</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+</span><span id="line-0-75"><a id="example-0-75" name="example-0-75"></a>                    <span class="n">lang</span><span class="p">:</span> <span class="n">LanguagesLike</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;Iterator[Token]&#39;</span><span class="p">:</span>
+</span><span id="line-0-76"><a id="example-0-76" name="example-0-76"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Parses the given source to init file tokens.</span>
+</span><span id="line-0-77"><a id="example-0-77" name="example-0-77"></a>
+</span><span id="line-0-78"><a id="example-0-78" name="example-0-78"></a><span class="sd">    Same as :func:`get_tokens` otherwise, but the source is considered to be</span>
+</span><span id="line-0-79"><a id="example-0-79" name="example-0-79"></a><span class="sd">    a suite initialization file. This affects, for example, what settings are</span>
+</span><span id="line-0-80"><a id="example-0-80" name="example-0-80"></a><span class="sd">    valid.</span>
+</span><span id="line-0-81"><a id="example-0-81" name="example-0-81"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-82"><a id="example-0-82" name="example-0-82"></a>    <span class="n">lexer</span> <span class="o">=</span> <span class="n">Lexer</span><span class="p">(</span><span class="n">InitFileContext</span><span class="p">(</span><span class="n">lang</span><span class="o">=</span><span class="n">lang</span><span class="p">),</span> <span class="n">data_only</span><span class="p">,</span> <span class="n">tokenize_variables</span><span class="p">)</span>
+</span><span id="line-0-83"><a id="example-0-83" name="example-0-83"></a>    <span class="n">lexer</span><span class="o">.</span><span class="n">input</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>
+</span><span id="line-0-84"><a id="example-0-84" name="example-0-84"></a>    <span class="k">return</span> <span class="n">lexer</span><span class="o">.</span><span class="n">get_tokens</span><span class="p">()</span>
+</span></code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
 
 
 

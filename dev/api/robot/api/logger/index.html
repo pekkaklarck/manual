@@ -1061,36 +1061,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#robot.api.logger.console" class="md-nav__link">
+  <a href="#robot.api.logger.write" class="md-nav__link">
     <span class="md-ellipsis">
-      <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;console
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#robot.api.logger.debug" class="md-nav__link">
-    <span class="md-ellipsis">
-      <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;debug
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#robot.api.logger.error" class="md-nav__link">
-    <span class="md-ellipsis">
-      <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;error
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#robot.api.logger.info" class="md-nav__link">
-    <span class="md-ellipsis">
-      <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;info
+      <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;write
     </span>
   </a>
   
@@ -1106,6 +1079,24 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#robot.api.logger.debug" class="md-nav__link">
+    <span class="md-ellipsis">
+      <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;debug
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#robot.api.logger.info" class="md-nav__link">
+    <span class="md-ellipsis">
+      <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;info
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#robot.api.logger.warn" class="md-nav__link">
     <span class="md-ellipsis">
       <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;warn
@@ -1115,9 +1106,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#robot.api.logger.write" class="md-nav__link">
+  <a href="#robot.api.logger.error" class="md-nav__link">
     <span class="md-ellipsis">
-      <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;write
+      <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;error
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#robot.api.logger.console" class="md-nav__link">
+    <span class="md-ellipsis">
+      <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;console
     </span>
   </a>
   
@@ -7172,224 +7172,7 @@ shown as HTML, this argument should be set to <code>True</code>. Alternatively,
 
 
 
-<div class="doc doc-object doc-function">
 
-
-<h2 id="robot.api.logger.console" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-function"></code>            <span class="doc doc-object-name doc-function-name">console</span>
-
-
-<a href="#robot.api.logger.console" class="headerlink" title="Permanent link">&para;</a></h2>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
-<span class="normal"><a href="#example-0-2">2</a></span>
-<span class="normal"><a href="#example-0-3">3</a></span>
-<span class="normal"><a href="#example-0-4">4</a></span>
-<span class="normal"><a href="#example-0-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">console</span><span class="p">(</span>
-</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">msg</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span><span class="p">,</span>
-</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a>    <span class="n">newline</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
-</span><span id="line-0-4"><a id="example-0-4" name="example-0-4"></a>    <span class="n">stream</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" title="typing.Literal" href="https://docs.python.org/3/library/typing.html#typing.Literal">Literal</a></span><span class="p">[</span><span class="s2">&quot;stdout&quot;</span><span class="p">,</span> <span class="s2">&quot;stderr&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;stdout&quot;</span><span class="p">,</span>
-</span><span id="line-0-5"><a id="example-0-5" name="example-0-5"></a><span class="p">)</span>
-</span></code></pre></div></td></tr></table></div>
-
-    <div class="doc doc-contents ">
-
-        <p>Writes the message to the console.</p>
-<p>If the <code>newline</code> argument is <code>True</code>, a newline character is
-automatically added to the message.</p>
-<p>The message is written to the standard output stream by default.
-Using the standard error stream is possibly by giving the <code>stream</code>
-argument value <code>'stderr'</code>.</p>
-
-            <details class="quote">
-              <summary>Source code in <code>src/robot/api/logger.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-140">140</a></span>
-<span class="normal"><a href="#example-0-141">141</a></span>
-<span class="normal"><a href="#example-0-142">142</a></span>
-<span class="normal"><a href="#example-0-143">143</a></span>
-<span class="normal"><a href="#example-0-144">144</a></span>
-<span class="normal"><a href="#example-0-145">145</a></span>
-<span class="normal"><a href="#example-0-146">146</a></span>
-<span class="normal"><a href="#example-0-147">147</a></span>
-<span class="normal"><a href="#example-0-148">148</a></span>
-<span class="normal"><a href="#example-0-149">149</a></span>
-<span class="normal"><a href="#example-0-150">150</a></span>
-<span class="normal"><a href="#example-0-151">151</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-140"><a id="example-0-140" name="example-0-140"></a><span class="k">def</span> <span class="nf">console</span><span class="p">(</span><span class="n">msg</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">newline</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
-</span><span id="line-0-141"><a id="example-0-141" name="example-0-141"></a>            <span class="n">stream</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;stdout&#39;</span><span class="p">,</span> <span class="s1">&#39;stderr&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;stdout&#39;</span><span class="p">):</span>
-</span><span id="line-0-142"><a id="example-0-142" name="example-0-142"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Writes the message to the console.</span>
-</span><span id="line-0-143"><a id="example-0-143" name="example-0-143"></a>
-</span><span id="line-0-144"><a id="example-0-144" name="example-0-144"></a><span class="sd">    If the ``newline`` argument is ``True``, a newline character is</span>
-</span><span id="line-0-145"><a id="example-0-145" name="example-0-145"></a><span class="sd">    automatically added to the message.</span>
-</span><span id="line-0-146"><a id="example-0-146" name="example-0-146"></a>
-</span><span id="line-0-147"><a id="example-0-147" name="example-0-147"></a><span class="sd">    The message is written to the standard output stream by default.</span>
-</span><span id="line-0-148"><a id="example-0-148" name="example-0-148"></a><span class="sd">    Using the standard error stream is possibly by giving the ``stream``</span>
-</span><span id="line-0-149"><a id="example-0-149" name="example-0-149"></a><span class="sd">    argument value ``&#39;stderr&#39;``.</span>
-</span><span id="line-0-150"><a id="example-0-150" name="example-0-150"></a><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-0-151"><a id="example-0-151" name="example-0-151"></a>    <span class="n">librarylogger</span><span class="o">.</span><span class="n">console</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">newline</span><span class="p">,</span> <span class="n">stream</span><span class="p">)</span>
-</span></code></pre></div></td></tr></table></div>
-            </details>
-    </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-<h2 id="robot.api.logger.debug" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-function"></code>            <span class="doc doc-object-name doc-function-name">debug</span>
-
-
-<a href="#robot.api.logger.debug" class="headerlink" title="Permanent link">&para;</a></h2>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">debug</span><span class="p">(</span><span class="n">msg</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span><span class="p">,</span> <span class="n">html</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
-</span></code></pre></div></td></tr></table></div>
-
-    <div class="doc doc-contents ">
-
-        <p>Writes the message to the log file using the <code>DEBUG</code> level.</p>
-
-            <details class="quote">
-              <summary>Source code in <code>src/robot/api/logger.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-113">113</a></span>
-<span class="normal"><a href="#example-0-114">114</a></span>
-<span class="normal"><a href="#example-0-115">115</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-113"><a id="example-0-113" name="example-0-113"></a><span class="k">def</span> <span class="nf">debug</span><span class="p">(</span><span class="n">msg</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">html</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
-</span><span id="line-0-114"><a id="example-0-114" name="example-0-114"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Writes the message to the log file using the ``DEBUG`` level.&quot;&quot;&quot;</span>
-</span><span id="line-0-115"><a id="example-0-115" name="example-0-115"></a>    <span class="n">write</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="s1">&#39;DEBUG&#39;</span><span class="p">,</span> <span class="n">html</span><span class="p">)</span>
-</span></code></pre></div></td></tr></table></div>
-            </details>
-    </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-<h2 id="robot.api.logger.error" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-function"></code>            <span class="doc doc-object-name doc-function-name">error</span>
-
-
-<a href="#robot.api.logger.error" class="headerlink" title="Permanent link">&para;</a></h2>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">error</span><span class="p">(</span><span class="n">msg</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span><span class="p">,</span> <span class="n">html</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
-</span></code></pre></div></td></tr></table></div>
-
-    <div class="doc doc-contents ">
-
-        <p>Writes the message to the log file using the <code>ERROR</code> level.</p>
-
-            <details class="quote">
-              <summary>Source code in <code>src/robot/api/logger.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-134">134</a></span>
-<span class="normal"><a href="#example-0-135">135</a></span>
-<span class="normal"><a href="#example-0-136">136</a></span>
-<span class="normal"><a href="#example-0-137">137</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-134"><a id="example-0-134" name="example-0-134"></a><span class="k">def</span> <span class="nf">error</span><span class="p">(</span><span class="n">msg</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">html</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
-</span><span id="line-0-135"><a id="example-0-135" name="example-0-135"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Writes the message to the log file using the ``ERROR`` level.</span>
-</span><span id="line-0-136"><a id="example-0-136" name="example-0-136"></a><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-0-137"><a id="example-0-137" name="example-0-137"></a>    <span class="n">write</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="s1">&#39;ERROR&#39;</span><span class="p">,</span> <span class="n">html</span><span class="p">)</span>
-</span></code></pre></div></td></tr></table></div>
-            </details>
-    </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-<h2 id="robot.api.logger.info" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-function"></code>            <span class="doc doc-object-name doc-function-name">info</span>
-
-
-<a href="#robot.api.logger.info" class="headerlink" title="Permanent link">&para;</a></h2>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
-<span class="normal"><a href="#example-0-2">2</a></span>
-<span class="normal"><a href="#example-0-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">info</span><span class="p">(</span>
-</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">msg</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span><span class="p">,</span> <span class="n">html</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">also_console</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></span> <span class="o">=</span> <span class="kc">False</span>
-</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a><span class="p">)</span>
-</span></code></pre></div></td></tr></table></div>
-
-    <div class="doc doc-contents ">
-
-        <p>Writes the message to the log file using the <code>INFO</code> level.</p>
-<p>If <code>also_console</code> argument is set to <code>True</code>, the message is
-written both to the log file and to the console.</p>
-
-            <details class="quote">
-              <summary>Source code in <code>src/robot/api/logger.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-118">118</a></span>
-<span class="normal"><a href="#example-0-119">119</a></span>
-<span class="normal"><a href="#example-0-120">120</a></span>
-<span class="normal"><a href="#example-0-121">121</a></span>
-<span class="normal"><a href="#example-0-122">122</a></span>
-<span class="normal"><a href="#example-0-123">123</a></span>
-<span class="normal"><a href="#example-0-124">124</a></span>
-<span class="normal"><a href="#example-0-125">125</a></span>
-<span class="normal"><a href="#example-0-126">126</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-118"><a id="example-0-118" name="example-0-118"></a><span class="k">def</span> <span class="nf">info</span><span class="p">(</span><span class="n">msg</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">html</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">also_console</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
-</span><span id="line-0-119"><a id="example-0-119" name="example-0-119"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Writes the message to the log file using the ``INFO`` level.</span>
-</span><span id="line-0-120"><a id="example-0-120" name="example-0-120"></a>
-</span><span id="line-0-121"><a id="example-0-121" name="example-0-121"></a><span class="sd">    If ``also_console`` argument is set to ``True``, the message is</span>
-</span><span id="line-0-122"><a id="example-0-122" name="example-0-122"></a><span class="sd">    written both to the log file and to the console.</span>
-</span><span id="line-0-123"><a id="example-0-123" name="example-0-123"></a><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-0-124"><a id="example-0-124" name="example-0-124"></a>    <span class="n">write</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="s1">&#39;INFO&#39;</span><span class="p">,</span> <span class="n">html</span><span class="p">)</span>
-</span><span id="line-0-125"><a id="example-0-125" name="example-0-125"></a>    <span class="k">if</span> <span class="n">also_console</span><span class="p">:</span>
-</span><span id="line-0-126"><a id="example-0-126" name="example-0-126"></a>        <span class="n">console</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
-</span></code></pre></div></td></tr></table></div>
-            </details>
-    </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-<h2 id="robot.api.logger.trace" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-function"></code>            <span class="doc doc-object-name doc-function-name">trace</span>
-
-
-<a href="#robot.api.logger.trace" class="headerlink" title="Permanent link">&para;</a></h2>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">trace</span><span class="p">(</span><span class="n">msg</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span><span class="p">,</span> <span class="n">html</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
-</span></code></pre></div></td></tr></table></div>
-
-    <div class="doc doc-contents ">
-
-        <p>Writes the message to the log file using the <code>TRACE</code> level.</p>
-
-            <details class="quote">
-              <summary>Source code in <code>src/robot/api/logger.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-108">108</a></span>
-<span class="normal"><a href="#example-0-109">109</a></span>
-<span class="normal"><a href="#example-0-110">110</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-108"><a id="example-0-108" name="example-0-108"></a><span class="k">def</span> <span class="nf">trace</span><span class="p">(</span><span class="n">msg</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">html</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
-</span><span id="line-0-109"><a id="example-0-109" name="example-0-109"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Writes the message to the log file using the ``TRACE`` level.&quot;&quot;&quot;</span>
-</span><span id="line-0-110"><a id="example-0-110" name="example-0-110"></a>    <span class="n">write</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="s1">&#39;TRACE&#39;</span><span class="p">,</span> <span class="n">html</span><span class="p">)</span>
-</span></code></pre></div></td></tr></table></div>
-            </details>
-    </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-<h2 id="robot.api.logger.warn" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-function"></code>            <span class="doc doc-object-name doc-function-name">warn</span>
-
-
-<a href="#robot.api.logger.warn" class="headerlink" title="Permanent link">&para;</a></h2>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">warn</span><span class="p">(</span><span class="n">msg</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span><span class="p">,</span> <span class="n">html</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
-</span></code></pre></div></td></tr></table></div>
-
-    <div class="doc doc-contents ">
-
-        <p>Writes the message to the log file using the <code>WARN</code> level.</p>
-
-            <details class="quote">
-              <summary>Source code in <code>src/robot/api/logger.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-129">129</a></span>
-<span class="normal"><a href="#example-0-130">130</a></span>
-<span class="normal"><a href="#example-0-131">131</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-129"><a id="example-0-129" name="example-0-129"></a><span class="k">def</span> <span class="nf">warn</span><span class="p">(</span><span class="n">msg</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">html</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
-</span><span id="line-0-130"><a id="example-0-130" name="example-0-130"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Writes the message to the log file using the ``WARN`` level.&quot;&quot;&quot;</span>
-</span><span id="line-0-131"><a id="example-0-131" name="example-0-131"></a>    <span class="n">write</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="s1">&#39;WARN&#39;</span><span class="p">,</span> <span class="n">html</span><span class="p">)</span>
-</span></code></pre></div></td></tr></table></div>
-            </details>
-    </div>
-
-</div>
 
 <div class="doc doc-object doc-function">
 
@@ -7481,6 +7264,256 @@ specific methods such as <code>info</code> and <code>debug</code> that have sepa
     </div>
 
 </div>
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="robot.api.logger.trace" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-function"></code>            <span class="doc doc-object-name doc-function-name">trace</span>
+
+
+<a href="#robot.api.logger.trace" class="headerlink" title="Permanent link">&para;</a></h2>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">trace</span><span class="p">(</span><span class="n">msg</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span><span class="p">,</span> <span class="n">html</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Writes the message to the log file using the <code>TRACE</code> level.</p>
+
+            <details class="quote">
+              <summary>Source code in <code>src/robot/api/logger.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-108">108</a></span>
+<span class="normal"><a href="#example-0-109">109</a></span>
+<span class="normal"><a href="#example-0-110">110</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-108"><a id="example-0-108" name="example-0-108"></a><span class="k">def</span> <span class="nf">trace</span><span class="p">(</span><span class="n">msg</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">html</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+</span><span id="line-0-109"><a id="example-0-109" name="example-0-109"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Writes the message to the log file using the ``TRACE`` level.&quot;&quot;&quot;</span>
+</span><span id="line-0-110"><a id="example-0-110" name="example-0-110"></a>    <span class="n">write</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="s1">&#39;TRACE&#39;</span><span class="p">,</span> <span class="n">html</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="robot.api.logger.debug" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-function"></code>            <span class="doc doc-object-name doc-function-name">debug</span>
+
+
+<a href="#robot.api.logger.debug" class="headerlink" title="Permanent link">&para;</a></h2>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">debug</span><span class="p">(</span><span class="n">msg</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span><span class="p">,</span> <span class="n">html</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Writes the message to the log file using the <code>DEBUG</code> level.</p>
+
+            <details class="quote">
+              <summary>Source code in <code>src/robot/api/logger.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-113">113</a></span>
+<span class="normal"><a href="#example-0-114">114</a></span>
+<span class="normal"><a href="#example-0-115">115</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-113"><a id="example-0-113" name="example-0-113"></a><span class="k">def</span> <span class="nf">debug</span><span class="p">(</span><span class="n">msg</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">html</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+</span><span id="line-0-114"><a id="example-0-114" name="example-0-114"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Writes the message to the log file using the ``DEBUG`` level.&quot;&quot;&quot;</span>
+</span><span id="line-0-115"><a id="example-0-115" name="example-0-115"></a>    <span class="n">write</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="s1">&#39;DEBUG&#39;</span><span class="p">,</span> <span class="n">html</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="robot.api.logger.info" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-function"></code>            <span class="doc doc-object-name doc-function-name">info</span>
+
+
+<a href="#robot.api.logger.info" class="headerlink" title="Permanent link">&para;</a></h2>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
+<span class="normal"><a href="#example-0-2">2</a></span>
+<span class="normal"><a href="#example-0-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">info</span><span class="p">(</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">msg</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span><span class="p">,</span> <span class="n">html</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">also_console</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></span> <span class="o">=</span> <span class="kc">False</span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Writes the message to the log file using the <code>INFO</code> level.</p>
+<p>If <code>also_console</code> argument is set to <code>True</code>, the message is
+written both to the log file and to the console.</p>
+
+            <details class="quote">
+              <summary>Source code in <code>src/robot/api/logger.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-118">118</a></span>
+<span class="normal"><a href="#example-0-119">119</a></span>
+<span class="normal"><a href="#example-0-120">120</a></span>
+<span class="normal"><a href="#example-0-121">121</a></span>
+<span class="normal"><a href="#example-0-122">122</a></span>
+<span class="normal"><a href="#example-0-123">123</a></span>
+<span class="normal"><a href="#example-0-124">124</a></span>
+<span class="normal"><a href="#example-0-125">125</a></span>
+<span class="normal"><a href="#example-0-126">126</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-118"><a id="example-0-118" name="example-0-118"></a><span class="k">def</span> <span class="nf">info</span><span class="p">(</span><span class="n">msg</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">html</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">also_console</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+</span><span id="line-0-119"><a id="example-0-119" name="example-0-119"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Writes the message to the log file using the ``INFO`` level.</span>
+</span><span id="line-0-120"><a id="example-0-120" name="example-0-120"></a>
+</span><span id="line-0-121"><a id="example-0-121" name="example-0-121"></a><span class="sd">    If ``also_console`` argument is set to ``True``, the message is</span>
+</span><span id="line-0-122"><a id="example-0-122" name="example-0-122"></a><span class="sd">    written both to the log file and to the console.</span>
+</span><span id="line-0-123"><a id="example-0-123" name="example-0-123"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-124"><a id="example-0-124" name="example-0-124"></a>    <span class="n">write</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="s1">&#39;INFO&#39;</span><span class="p">,</span> <span class="n">html</span><span class="p">)</span>
+</span><span id="line-0-125"><a id="example-0-125" name="example-0-125"></a>    <span class="k">if</span> <span class="n">also_console</span><span class="p">:</span>
+</span><span id="line-0-126"><a id="example-0-126" name="example-0-126"></a>        <span class="n">console</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="robot.api.logger.warn" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-function"></code>            <span class="doc doc-object-name doc-function-name">warn</span>
+
+
+<a href="#robot.api.logger.warn" class="headerlink" title="Permanent link">&para;</a></h2>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">warn</span><span class="p">(</span><span class="n">msg</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span><span class="p">,</span> <span class="n">html</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Writes the message to the log file using the <code>WARN</code> level.</p>
+
+            <details class="quote">
+              <summary>Source code in <code>src/robot/api/logger.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-129">129</a></span>
+<span class="normal"><a href="#example-0-130">130</a></span>
+<span class="normal"><a href="#example-0-131">131</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-129"><a id="example-0-129" name="example-0-129"></a><span class="k">def</span> <span class="nf">warn</span><span class="p">(</span><span class="n">msg</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">html</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+</span><span id="line-0-130"><a id="example-0-130" name="example-0-130"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Writes the message to the log file using the ``WARN`` level.&quot;&quot;&quot;</span>
+</span><span id="line-0-131"><a id="example-0-131" name="example-0-131"></a>    <span class="n">write</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="s1">&#39;WARN&#39;</span><span class="p">,</span> <span class="n">html</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="robot.api.logger.error" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-function"></code>            <span class="doc doc-object-name doc-function-name">error</span>
+
+
+<a href="#robot.api.logger.error" class="headerlink" title="Permanent link">&para;</a></h2>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">error</span><span class="p">(</span><span class="n">msg</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span><span class="p">,</span> <span class="n">html</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Writes the message to the log file using the <code>ERROR</code> level.</p>
+
+            <details class="quote">
+              <summary>Source code in <code>src/robot/api/logger.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-134">134</a></span>
+<span class="normal"><a href="#example-0-135">135</a></span>
+<span class="normal"><a href="#example-0-136">136</a></span>
+<span class="normal"><a href="#example-0-137">137</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-134"><a id="example-0-134" name="example-0-134"></a><span class="k">def</span> <span class="nf">error</span><span class="p">(</span><span class="n">msg</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">html</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+</span><span id="line-0-135"><a id="example-0-135" name="example-0-135"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Writes the message to the log file using the ``ERROR`` level.</span>
+</span><span id="line-0-136"><a id="example-0-136" name="example-0-136"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-137"><a id="example-0-137" name="example-0-137"></a>    <span class="n">write</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="s1">&#39;ERROR&#39;</span><span class="p">,</span> <span class="n">html</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="robot.api.logger.console" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-function"></code>            <span class="doc doc-object-name doc-function-name">console</span>
+
+
+<a href="#robot.api.logger.console" class="headerlink" title="Permanent link">&para;</a></h2>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
+<span class="normal"><a href="#example-0-2">2</a></span>
+<span class="normal"><a href="#example-0-3">3</a></span>
+<span class="normal"><a href="#example-0-4">4</a></span>
+<span class="normal"><a href="#example-0-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">console</span><span class="p">(</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">msg</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span><span class="p">,</span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a>    <span class="n">newline</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+</span><span id="line-0-4"><a id="example-0-4" name="example-0-4"></a>    <span class="n">stream</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" title="typing.Literal" href="https://docs.python.org/3/library/typing.html#typing.Literal">Literal</a></span><span class="p">[</span><span class="s2">&quot;stdout&quot;</span><span class="p">,</span> <span class="s2">&quot;stderr&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;stdout&quot;</span><span class="p">,</span>
+</span><span id="line-0-5"><a id="example-0-5" name="example-0-5"></a><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Writes the message to the console.</p>
+<p>If the <code>newline</code> argument is <code>True</code>, a newline character is
+automatically added to the message.</p>
+<p>The message is written to the standard output stream by default.
+Using the standard error stream is possibly by giving the <code>stream</code>
+argument value <code>'stderr'</code>.</p>
+
+            <details class="quote">
+              <summary>Source code in <code>src/robot/api/logger.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-140">140</a></span>
+<span class="normal"><a href="#example-0-141">141</a></span>
+<span class="normal"><a href="#example-0-142">142</a></span>
+<span class="normal"><a href="#example-0-143">143</a></span>
+<span class="normal"><a href="#example-0-144">144</a></span>
+<span class="normal"><a href="#example-0-145">145</a></span>
+<span class="normal"><a href="#example-0-146">146</a></span>
+<span class="normal"><a href="#example-0-147">147</a></span>
+<span class="normal"><a href="#example-0-148">148</a></span>
+<span class="normal"><a href="#example-0-149">149</a></span>
+<span class="normal"><a href="#example-0-150">150</a></span>
+<span class="normal"><a href="#example-0-151">151</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-140"><a id="example-0-140" name="example-0-140"></a><span class="k">def</span> <span class="nf">console</span><span class="p">(</span><span class="n">msg</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">newline</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+</span><span id="line-0-141"><a id="example-0-141" name="example-0-141"></a>            <span class="n">stream</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;stdout&#39;</span><span class="p">,</span> <span class="s1">&#39;stderr&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;stdout&#39;</span><span class="p">):</span>
+</span><span id="line-0-142"><a id="example-0-142" name="example-0-142"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Writes the message to the console.</span>
+</span><span id="line-0-143"><a id="example-0-143" name="example-0-143"></a>
+</span><span id="line-0-144"><a id="example-0-144" name="example-0-144"></a><span class="sd">    If the ``newline`` argument is ``True``, a newline character is</span>
+</span><span id="line-0-145"><a id="example-0-145" name="example-0-145"></a><span class="sd">    automatically added to the message.</span>
+</span><span id="line-0-146"><a id="example-0-146" name="example-0-146"></a>
+</span><span id="line-0-147"><a id="example-0-147" name="example-0-147"></a><span class="sd">    The message is written to the standard output stream by default.</span>
+</span><span id="line-0-148"><a id="example-0-148" name="example-0-148"></a><span class="sd">    Using the standard error stream is possibly by giving the ``stream``</span>
+</span><span id="line-0-149"><a id="example-0-149" name="example-0-149"></a><span class="sd">    argument value ``&#39;stderr&#39;``.</span>
+</span><span id="line-0-150"><a id="example-0-150" name="example-0-150"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-151"><a id="example-0-151" name="example-0-151"></a>    <span class="n">librarylogger</span><span class="o">.</span><span class="n">console</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">newline</span><span class="p">,</span> <span class="n">stream</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
 
 
 

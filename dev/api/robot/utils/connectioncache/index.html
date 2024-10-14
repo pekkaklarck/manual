@@ -5959,18 +5959,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#robot.utils.connectioncache.ConnectionCache.close_all" class="md-nav__link">
+  <a href="#robot.utils.connectioncache.ConnectionCache.register" class="md-nav__link">
     <span class="md-ellipsis">
-      <code class="doc-symbol doc-symbol-toc doc-symbol-method"></code>&nbsp;close_all
+      <code class="doc-symbol doc-symbol-toc doc-symbol-method"></code>&nbsp;register
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#robot.utils.connectioncache.ConnectionCache.empty_cache" class="md-nav__link">
+  <a href="#robot.utils.connectioncache.ConnectionCache.switch" class="md-nav__link">
     <span class="md-ellipsis">
-      <code class="doc-symbol doc-symbol-toc doc-symbol-method"></code>&nbsp;empty_cache
+      <code class="doc-symbol doc-symbol-toc doc-symbol-method"></code>&nbsp;switch
     </span>
   </a>
   
@@ -5995,15 +5995,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#robot.utils.connectioncache.ConnectionCache.register" class="md-nav__link">
-    <span class="md-ellipsis">
-      <code class="doc-symbol doc-symbol-toc doc-symbol-method"></code>&nbsp;register
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#robot.utils.connectioncache.ConnectionCache.resolve_alias_or_index" class="md-nav__link">
     <span class="md-ellipsis">
       <code class="doc-symbol doc-symbol-toc doc-symbol-method"></code>&nbsp;resolve_alias_or_index
@@ -6013,9 +6004,18 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#robot.utils.connectioncache.ConnectionCache.switch" class="md-nav__link">
+  <a href="#robot.utils.connectioncache.ConnectionCache.close_all" class="md-nav__link">
     <span class="md-ellipsis">
-      <code class="doc-symbol doc-symbol-toc doc-symbol-method"></code>&nbsp;switch
+      <code class="doc-symbol doc-symbol-toc doc-symbol-method"></code>&nbsp;close_all
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#robot.utils.connectioncache.ConnectionCache.empty_cache" class="md-nav__link">
+    <span class="md-ellipsis">
+      <code class="doc-symbol doc-symbol-toc doc-symbol-method"></code>&nbsp;empty_cache
     </span>
   </a>
   
@@ -7111,6 +7111,9 @@
 
 
 
+
+
+
 <div class="doc doc-object doc-class">
 
 
@@ -7163,93 +7166,121 @@ SSHLibrary, etc. Backwards compatibility is thus important when doing changes.</
 
 
 
-
-
 <div class="doc doc-object doc-function">
 
 
-<h3 id="robot.utils.connectioncache.ConnectionCache.close_all" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <span class="doc doc-object-name doc-function-name">close_all</span>
+<h3 id="robot.utils.connectioncache.ConnectionCache.register" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <span class="doc doc-object-name doc-function-name">register</span>
 
 
-<a href="#robot.utils.connectioncache.ConnectionCache.close_all" class="headerlink" title="Permanent link">&para;</a></h3>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">close_all</span><span class="p">(</span><span class="n">closer_method</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span> <span class="o">=</span> <span class="s1">&#39;close&#39;</span><span class="p">)</span>
+<a href="#robot.utils.connectioncache.ConnectionCache.register" class="headerlink" title="Permanent link">&para;</a></h3>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">register</span><span class="p">(</span><span class="n">connection</span><span class="p">:</span> <span class="n"><span title="robot.utils.connectioncache.Connection">Connection</span></span><span class="p">,</span> <span class="n">alias</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
 
-        <p>Closes connections using the specified closer method and empties cache.</p>
-<p>If simply calling the closer method is not adequate for closing
-connections, clients should close connections themselves and use
-:meth:<code>empty_cache</code> afterward.</p>
+        <p>Registers given connection with optional alias and returns its index.</p>
+<p>Given connection is set to be the :attr:<code>current</code> connection.</p>
+<p>If alias is given, it must be a string. Aliases are case and space
+insensitive.</p>
+<p>The index of the first connection after initialization, and after
+:meth:<code>close_all</code> or :meth:<code>empty_cache</code>, is 1, second is 2, etc.</p>
 
             <details class="quote">
               <summary>Source code in <code>src/robot/utils/connectioncache.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-133">133</a></span>
-<span class="normal"><a href="#example-0-134">134</a></span>
-<span class="normal"><a href="#example-0-135">135</a></span>
-<span class="normal"><a href="#example-0-136">136</a></span>
-<span class="normal"><a href="#example-0-137">137</a></span>
-<span class="normal"><a href="#example-0-138">138</a></span>
-<span class="normal"><a href="#example-0-139">139</a></span>
-<span class="normal"><a href="#example-0-140">140</a></span>
-<span class="normal"><a href="#example-0-141">141</a></span>
-<span class="normal"><a href="#example-0-142">142</a></span>
-<span class="normal"><a href="#example-0-143">143</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-133"><a id="example-0-133" name="example-0-133"></a><span class="k">def</span> <span class="nf">close_all</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">closer_method</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;close&#39;</span><span class="p">):</span>
-</span><span id="line-0-134"><a id="example-0-134" name="example-0-134"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Closes connections using the specified closer method and empties cache.</span>
-</span><span id="line-0-135"><a id="example-0-135" name="example-0-135"></a>
-</span><span id="line-0-136"><a id="example-0-136" name="example-0-136"></a><span class="sd">    If simply calling the closer method is not adequate for closing</span>
-</span><span id="line-0-137"><a id="example-0-137" name="example-0-137"></a><span class="sd">    connections, clients should close connections themselves and use</span>
-</span><span id="line-0-138"><a id="example-0-138" name="example-0-138"></a><span class="sd">    :meth:`empty_cache` afterward.</span>
-</span><span id="line-0-139"><a id="example-0-139" name="example-0-139"></a><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-0-140"><a id="example-0-140" name="example-0-140"></a>    <span class="k">for</span> <span class="n">conn</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_connections</span><span class="p">:</span>
-</span><span id="line-0-141"><a id="example-0-141" name="example-0-141"></a>        <span class="nb">getattr</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span> <span class="n">closer_method</span><span class="p">)()</span>
-</span><span id="line-0-142"><a id="example-0-142" name="example-0-142"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">empty_cache</span><span class="p">()</span>
-</span><span id="line-0-143"><a id="example-0-143" name="example-0-143"></a>    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">current</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-57">57</a></span>
+<span class="normal"><a href="#example-0-58">58</a></span>
+<span class="normal"><a href="#example-0-59">59</a></span>
+<span class="normal"><a href="#example-0-60">60</a></span>
+<span class="normal"><a href="#example-0-61">61</a></span>
+<span class="normal"><a href="#example-0-62">62</a></span>
+<span class="normal"><a href="#example-0-63">63</a></span>
+<span class="normal"><a href="#example-0-64">64</a></span>
+<span class="normal"><a href="#example-0-65">65</a></span>
+<span class="normal"><a href="#example-0-66">66</a></span>
+<span class="normal"><a href="#example-0-67">67</a></span>
+<span class="normal"><a href="#example-0-68">68</a></span>
+<span class="normal"><a href="#example-0-69">69</a></span>
+<span class="normal"><a href="#example-0-70">70</a></span>
+<span class="normal"><a href="#example-0-71">71</a></span>
+<span class="normal"><a href="#example-0-72">72</a></span>
+<span class="normal"><a href="#example-0-73">73</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-57"><a id="example-0-57" name="example-0-57"></a><span class="k">def</span> <span class="nf">register</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">connection</span><span class="p">:</span> <span class="n">Connection</span><span class="p">,</span> <span class="n">alias</span><span class="p">:</span> <span class="s1">&#39;str|None&#39;</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+</span><span id="line-0-58"><a id="example-0-58" name="example-0-58"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Registers given connection with optional alias and returns its index.</span>
+</span><span id="line-0-59"><a id="example-0-59" name="example-0-59"></a>
+</span><span id="line-0-60"><a id="example-0-60" name="example-0-60"></a><span class="sd">    Given connection is set to be the :attr:`current` connection.</span>
+</span><span id="line-0-61"><a id="example-0-61" name="example-0-61"></a>
+</span><span id="line-0-62"><a id="example-0-62" name="example-0-62"></a><span class="sd">    If alias is given, it must be a string. Aliases are case and space</span>
+</span><span id="line-0-63"><a id="example-0-63" name="example-0-63"></a><span class="sd">    insensitive.</span>
+</span><span id="line-0-64"><a id="example-0-64" name="example-0-64"></a>
+</span><span id="line-0-65"><a id="example-0-65" name="example-0-65"></a><span class="sd">    The index of the first connection after initialization, and after</span>
+</span><span id="line-0-66"><a id="example-0-66" name="example-0-66"></a><span class="sd">    :meth:`close_all` or :meth:`empty_cache`, is 1, second is 2, etc.</span>
+</span><span id="line-0-67"><a id="example-0-67" name="example-0-67"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-68"><a id="example-0-68" name="example-0-68"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">current</span> <span class="o">=</span> <span class="n">connection</span>
+</span><span id="line-0-69"><a id="example-0-69" name="example-0-69"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_connections</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">connection</span><span class="p">)</span>
+</span><span id="line-0-70"><a id="example-0-70" name="example-0-70"></a>    <span class="n">index</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_connections</span><span class="p">)</span>
+</span><span id="line-0-71"><a id="example-0-71" name="example-0-71"></a>    <span class="k">if</span> <span class="n">alias</span><span class="p">:</span>
+</span><span id="line-0-72"><a id="example-0-72" name="example-0-72"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_aliases</span><span class="p">[</span><span class="n">alias</span><span class="p">]</span> <span class="o">=</span> <span class="n">index</span>
+</span><span id="line-0-73"><a id="example-0-73" name="example-0-73"></a>    <span class="k">return</span> <span class="n">index</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
 
 </div>
 
+
+
+
+
+
 <div class="doc doc-object doc-function">
 
 
-<h3 id="robot.utils.connectioncache.ConnectionCache.empty_cache" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <span class="doc doc-object-name doc-function-name">empty_cache</span>
+<h3 id="robot.utils.connectioncache.ConnectionCache.switch" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <span class="doc doc-object-name doc-function-name">switch</span>
 
 
-<a href="#robot.utils.connectioncache.ConnectionCache.empty_cache" class="headerlink" title="Permanent link">&para;</a></h3>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">empty_cache</span><span class="p">()</span>
+<a href="#robot.utils.connectioncache.ConnectionCache.switch" class="headerlink" title="Permanent link">&para;</a></h3>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">switch</span><span class="p">(</span><span class="n">identifier</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></span> <span class="o">|</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span> <span class="o">|</span> <span class="n"><span title="robot.utils.connectioncache.Connection">Connection</span></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n"><span title="robot.utils.connectioncache.Connection">Connection</span></span>
 </span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
 
-        <p>Empties the connection cache.</p>
-<p>Indexes of the new connections starts from 1 after this.</p>
+        <p>Switches to the connection specified using the <code>identifier</code>.</p>
+<p>Identifier can be an index, an alias, or a registered connection.
+Raises an error if no matching connection is found.</p>
+<p>Updates :attr:<code>current</code> and also returns its new value.</p>
 
             <details class="quote">
               <summary>Source code in <code>src/robot/utils/connectioncache.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-145">145</a></span>
-<span class="normal"><a href="#example-0-146">146</a></span>
-<span class="normal"><a href="#example-0-147">147</a></span>
-<span class="normal"><a href="#example-0-148">148</a></span>
-<span class="normal"><a href="#example-0-149">149</a></span>
-<span class="normal"><a href="#example-0-150">150</a></span>
-<span class="normal"><a href="#example-0-151">151</a></span>
-<span class="normal"><a href="#example-0-152">152</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-145"><a id="example-0-145" name="example-0-145"></a><span class="k">def</span> <span class="nf">empty_cache</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="line-0-146"><a id="example-0-146" name="example-0-146"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Empties the connection cache.</span>
-</span><span id="line-0-147"><a id="example-0-147" name="example-0-147"></a>
-</span><span id="line-0-148"><a id="example-0-148" name="example-0-148"></a><span class="sd">    Indexes of the new connections starts from 1 after this.</span>
-</span><span id="line-0-149"><a id="example-0-149" name="example-0-149"></a><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-0-150"><a id="example-0-150" name="example-0-150"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">current</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_no_current</span>
-</span><span id="line-0-151"><a id="example-0-151" name="example-0-151"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_connections</span> <span class="o">=</span> <span class="p">[]</span>
-</span><span id="line-0-152"><a id="example-0-152" name="example-0-152"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_aliases</span> <span class="o">=</span> <span class="n">NormalizedDict</span><span class="p">()</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-75">75</a></span>
+<span class="normal"><a href="#example-0-76">76</a></span>
+<span class="normal"><a href="#example-0-77">77</a></span>
+<span class="normal"><a href="#example-0-78">78</a></span>
+<span class="normal"><a href="#example-0-79">79</a></span>
+<span class="normal"><a href="#example-0-80">80</a></span>
+<span class="normal"><a href="#example-0-81">81</a></span>
+<span class="normal"><a href="#example-0-82">82</a></span>
+<span class="normal"><a href="#example-0-83">83</a></span>
+<span class="normal"><a href="#example-0-84">84</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-75"><a id="example-0-75" name="example-0-75"></a><span class="k">def</span> <span class="nf">switch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">identifier</span><span class="p">:</span> <span class="s1">&#39;int|str|Connection&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Connection</span><span class="p">:</span>
+</span><span id="line-0-76"><a id="example-0-76" name="example-0-76"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Switches to the connection specified using the ``identifier``.</span>
+</span><span id="line-0-77"><a id="example-0-77" name="example-0-77"></a>
+</span><span id="line-0-78"><a id="example-0-78" name="example-0-78"></a><span class="sd">    Identifier can be an index, an alias, or a registered connection.</span>
+</span><span id="line-0-79"><a id="example-0-79" name="example-0-79"></a><span class="sd">    Raises an error if no matching connection is found.</span>
+</span><span id="line-0-80"><a id="example-0-80" name="example-0-80"></a>
+</span><span id="line-0-81"><a id="example-0-81" name="example-0-81"></a><span class="sd">    Updates :attr:`current` and also returns its new value.</span>
+</span><span id="line-0-82"><a id="example-0-82" name="example-0-82"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-83"><a id="example-0-83" name="example-0-83"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">current</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_connection</span><span class="p">(</span><span class="n">identifier</span><span class="p">)</span>
+</span><span id="line-0-84"><a id="example-0-84" name="example-0-84"></a>    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">current</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
 
 </div>
+
+
+
+
+
 
 <div class="doc doc-object doc-function">
 
@@ -7314,6 +7345,11 @@ Raises an error also if no matching connection is found.</p>
     </div>
 
 </div>
+
+
+
+
+
 
 <div class="doc doc-object doc-function">
 
@@ -7385,66 +7421,10 @@ with earlier versions.</p>
 
 </div>
 
-<div class="doc doc-object doc-function">
 
 
-<h3 id="robot.utils.connectioncache.ConnectionCache.register" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <span class="doc doc-object-name doc-function-name">register</span>
 
 
-<a href="#robot.utils.connectioncache.ConnectionCache.register" class="headerlink" title="Permanent link">&para;</a></h3>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">register</span><span class="p">(</span><span class="n">connection</span><span class="p">:</span> <span class="n"><span title="robot.utils.connectioncache.Connection">Connection</span></span><span class="p">,</span> <span class="n">alias</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span>
-</span></code></pre></div></td></tr></table></div>
-
-    <div class="doc doc-contents ">
-
-        <p>Registers given connection with optional alias and returns its index.</p>
-<p>Given connection is set to be the :attr:<code>current</code> connection.</p>
-<p>If alias is given, it must be a string. Aliases are case and space
-insensitive.</p>
-<p>The index of the first connection after initialization, and after
-:meth:<code>close_all</code> or :meth:<code>empty_cache</code>, is 1, second is 2, etc.</p>
-
-            <details class="quote">
-              <summary>Source code in <code>src/robot/utils/connectioncache.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-57">57</a></span>
-<span class="normal"><a href="#example-0-58">58</a></span>
-<span class="normal"><a href="#example-0-59">59</a></span>
-<span class="normal"><a href="#example-0-60">60</a></span>
-<span class="normal"><a href="#example-0-61">61</a></span>
-<span class="normal"><a href="#example-0-62">62</a></span>
-<span class="normal"><a href="#example-0-63">63</a></span>
-<span class="normal"><a href="#example-0-64">64</a></span>
-<span class="normal"><a href="#example-0-65">65</a></span>
-<span class="normal"><a href="#example-0-66">66</a></span>
-<span class="normal"><a href="#example-0-67">67</a></span>
-<span class="normal"><a href="#example-0-68">68</a></span>
-<span class="normal"><a href="#example-0-69">69</a></span>
-<span class="normal"><a href="#example-0-70">70</a></span>
-<span class="normal"><a href="#example-0-71">71</a></span>
-<span class="normal"><a href="#example-0-72">72</a></span>
-<span class="normal"><a href="#example-0-73">73</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-57"><a id="example-0-57" name="example-0-57"></a><span class="k">def</span> <span class="nf">register</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">connection</span><span class="p">:</span> <span class="n">Connection</span><span class="p">,</span> <span class="n">alias</span><span class="p">:</span> <span class="s1">&#39;str|None&#39;</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
-</span><span id="line-0-58"><a id="example-0-58" name="example-0-58"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Registers given connection with optional alias and returns its index.</span>
-</span><span id="line-0-59"><a id="example-0-59" name="example-0-59"></a>
-</span><span id="line-0-60"><a id="example-0-60" name="example-0-60"></a><span class="sd">    Given connection is set to be the :attr:`current` connection.</span>
-</span><span id="line-0-61"><a id="example-0-61" name="example-0-61"></a>
-</span><span id="line-0-62"><a id="example-0-62" name="example-0-62"></a><span class="sd">    If alias is given, it must be a string. Aliases are case and space</span>
-</span><span id="line-0-63"><a id="example-0-63" name="example-0-63"></a><span class="sd">    insensitive.</span>
-</span><span id="line-0-64"><a id="example-0-64" name="example-0-64"></a>
-</span><span id="line-0-65"><a id="example-0-65" name="example-0-65"></a><span class="sd">    The index of the first connection after initialization, and after</span>
-</span><span id="line-0-66"><a id="example-0-66" name="example-0-66"></a><span class="sd">    :meth:`close_all` or :meth:`empty_cache`, is 1, second is 2, etc.</span>
-</span><span id="line-0-67"><a id="example-0-67" name="example-0-67"></a><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-0-68"><a id="example-0-68" name="example-0-68"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">current</span> <span class="o">=</span> <span class="n">connection</span>
-</span><span id="line-0-69"><a id="example-0-69" name="example-0-69"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_connections</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">connection</span><span class="p">)</span>
-</span><span id="line-0-70"><a id="example-0-70" name="example-0-70"></a>    <span class="n">index</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_connections</span><span class="p">)</span>
-</span><span id="line-0-71"><a id="example-0-71" name="example-0-71"></a>    <span class="k">if</span> <span class="n">alias</span><span class="p">:</span>
-</span><span id="line-0-72"><a id="example-0-72" name="example-0-72"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_aliases</span><span class="p">[</span><span class="n">alias</span><span class="p">]</span> <span class="o">=</span> <span class="n">index</span>
-</span><span id="line-0-73"><a id="example-0-73" name="example-0-73"></a>    <span class="k">return</span> <span class="n">index</span>
-</span></code></pre></div></td></tr></table></div>
-            </details>
-    </div>
-
-</div>
 
 <div class="doc doc-object doc-function">
 
@@ -7482,50 +7462,102 @@ insensitive.</p>
 
 </div>
 
+
+
+
+
+
 <div class="doc doc-object doc-function">
 
 
-<h3 id="robot.utils.connectioncache.ConnectionCache.switch" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <span class="doc doc-object-name doc-function-name">switch</span>
+<h3 id="robot.utils.connectioncache.ConnectionCache.close_all" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <span class="doc doc-object-name doc-function-name">close_all</span>
 
 
-<a href="#robot.utils.connectioncache.ConnectionCache.switch" class="headerlink" title="Permanent link">&para;</a></h3>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">switch</span><span class="p">(</span><span class="n">identifier</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></span> <span class="o">|</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span> <span class="o">|</span> <span class="n"><span title="robot.utils.connectioncache.Connection">Connection</span></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n"><span title="robot.utils.connectioncache.Connection">Connection</span></span>
+<a href="#robot.utils.connectioncache.ConnectionCache.close_all" class="headerlink" title="Permanent link">&para;</a></h3>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">close_all</span><span class="p">(</span><span class="n">closer_method</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span> <span class="o">=</span> <span class="s1">&#39;close&#39;</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
 
-        <p>Switches to the connection specified using the <code>identifier</code>.</p>
-<p>Identifier can be an index, an alias, or a registered connection.
-Raises an error if no matching connection is found.</p>
-<p>Updates :attr:<code>current</code> and also returns its new value.</p>
+        <p>Closes connections using the specified closer method and empties cache.</p>
+<p>If simply calling the closer method is not adequate for closing
+connections, clients should close connections themselves and use
+:meth:<code>empty_cache</code> afterward.</p>
 
             <details class="quote">
               <summary>Source code in <code>src/robot/utils/connectioncache.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-75">75</a></span>
-<span class="normal"><a href="#example-0-76">76</a></span>
-<span class="normal"><a href="#example-0-77">77</a></span>
-<span class="normal"><a href="#example-0-78">78</a></span>
-<span class="normal"><a href="#example-0-79">79</a></span>
-<span class="normal"><a href="#example-0-80">80</a></span>
-<span class="normal"><a href="#example-0-81">81</a></span>
-<span class="normal"><a href="#example-0-82">82</a></span>
-<span class="normal"><a href="#example-0-83">83</a></span>
-<span class="normal"><a href="#example-0-84">84</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-75"><a id="example-0-75" name="example-0-75"></a><span class="k">def</span> <span class="nf">switch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">identifier</span><span class="p">:</span> <span class="s1">&#39;int|str|Connection&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Connection</span><span class="p">:</span>
-</span><span id="line-0-76"><a id="example-0-76" name="example-0-76"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Switches to the connection specified using the ``identifier``.</span>
-</span><span id="line-0-77"><a id="example-0-77" name="example-0-77"></a>
-</span><span id="line-0-78"><a id="example-0-78" name="example-0-78"></a><span class="sd">    Identifier can be an index, an alias, or a registered connection.</span>
-</span><span id="line-0-79"><a id="example-0-79" name="example-0-79"></a><span class="sd">    Raises an error if no matching connection is found.</span>
-</span><span id="line-0-80"><a id="example-0-80" name="example-0-80"></a>
-</span><span id="line-0-81"><a id="example-0-81" name="example-0-81"></a><span class="sd">    Updates :attr:`current` and also returns its new value.</span>
-</span><span id="line-0-82"><a id="example-0-82" name="example-0-82"></a><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-0-83"><a id="example-0-83" name="example-0-83"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">current</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_connection</span><span class="p">(</span><span class="n">identifier</span><span class="p">)</span>
-</span><span id="line-0-84"><a id="example-0-84" name="example-0-84"></a>    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">current</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-133">133</a></span>
+<span class="normal"><a href="#example-0-134">134</a></span>
+<span class="normal"><a href="#example-0-135">135</a></span>
+<span class="normal"><a href="#example-0-136">136</a></span>
+<span class="normal"><a href="#example-0-137">137</a></span>
+<span class="normal"><a href="#example-0-138">138</a></span>
+<span class="normal"><a href="#example-0-139">139</a></span>
+<span class="normal"><a href="#example-0-140">140</a></span>
+<span class="normal"><a href="#example-0-141">141</a></span>
+<span class="normal"><a href="#example-0-142">142</a></span>
+<span class="normal"><a href="#example-0-143">143</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-133"><a id="example-0-133" name="example-0-133"></a><span class="k">def</span> <span class="nf">close_all</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">closer_method</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;close&#39;</span><span class="p">):</span>
+</span><span id="line-0-134"><a id="example-0-134" name="example-0-134"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Closes connections using the specified closer method and empties cache.</span>
+</span><span id="line-0-135"><a id="example-0-135" name="example-0-135"></a>
+</span><span id="line-0-136"><a id="example-0-136" name="example-0-136"></a><span class="sd">    If simply calling the closer method is not adequate for closing</span>
+</span><span id="line-0-137"><a id="example-0-137" name="example-0-137"></a><span class="sd">    connections, clients should close connections themselves and use</span>
+</span><span id="line-0-138"><a id="example-0-138" name="example-0-138"></a><span class="sd">    :meth:`empty_cache` afterward.</span>
+</span><span id="line-0-139"><a id="example-0-139" name="example-0-139"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-140"><a id="example-0-140" name="example-0-140"></a>    <span class="k">for</span> <span class="n">conn</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_connections</span><span class="p">:</span>
+</span><span id="line-0-141"><a id="example-0-141" name="example-0-141"></a>        <span class="nb">getattr</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span> <span class="n">closer_method</span><span class="p">)()</span>
+</span><span id="line-0-142"><a id="example-0-142" name="example-0-142"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">empty_cache</span><span class="p">()</span>
+</span><span id="line-0-143"><a id="example-0-143" name="example-0-143"></a>    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">current</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
 
 </div>
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="robot.utils.connectioncache.ConnectionCache.empty_cache" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <span class="doc doc-object-name doc-function-name">empty_cache</span>
+
+
+<a href="#robot.utils.connectioncache.ConnectionCache.empty_cache" class="headerlink" title="Permanent link">&para;</a></h3>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">empty_cache</span><span class="p">()</span>
+</span></code></pre></div></td></tr></table></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Empties the connection cache.</p>
+<p>Indexes of the new connections starts from 1 after this.</p>
+
+            <details class="quote">
+              <summary>Source code in <code>src/robot/utils/connectioncache.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-145">145</a></span>
+<span class="normal"><a href="#example-0-146">146</a></span>
+<span class="normal"><a href="#example-0-147">147</a></span>
+<span class="normal"><a href="#example-0-148">148</a></span>
+<span class="normal"><a href="#example-0-149">149</a></span>
+<span class="normal"><a href="#example-0-150">150</a></span>
+<span class="normal"><a href="#example-0-151">151</a></span>
+<span class="normal"><a href="#example-0-152">152</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-145"><a id="example-0-145" name="example-0-145"></a><span class="k">def</span> <span class="nf">empty_cache</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="line-0-146"><a id="example-0-146" name="example-0-146"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Empties the connection cache.</span>
+</span><span id="line-0-147"><a id="example-0-147" name="example-0-147"></a>
+</span><span id="line-0-148"><a id="example-0-148" name="example-0-148"></a><span class="sd">    Indexes of the new connections starts from 1 after this.</span>
+</span><span id="line-0-149"><a id="example-0-149" name="example-0-149"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-150"><a id="example-0-150" name="example-0-150"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">current</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_no_current</span>
+</span><span id="line-0-151"><a id="example-0-151" name="example-0-151"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_connections</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="line-0-152"><a id="example-0-152" name="example-0-152"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_aliases</span> <span class="o">=</span> <span class="n">NormalizedDict</span><span class="p">()</span>
+</span></code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
 
 
 

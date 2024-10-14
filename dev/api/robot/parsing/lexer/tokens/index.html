@@ -3496,17 +3496,17 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#robot.parsing.lexer.tokens.END" class="md-nav__link">
+  <a href="#robot.parsing.lexer.tokens.Token" class="md-nav__link">
     <span class="md-ellipsis">
-      <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;END
+      <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;Token
     </span>
   </a>
   
-    <nav class="md-nav" aria-label=" END">
+    <nav class="md-nav" aria-label=" Token">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#robot.parsing.lexer.tokens.END.tokenize_variables" class="md-nav__link">
+  <a href="#robot.parsing.lexer.tokens.Token.tokenize_variables" class="md-nav__link">
     <span class="md-ellipsis">
       <code class="doc-symbol doc-symbol-toc doc-symbol-method"></code>&nbsp;tokenize_variables
     </span>
@@ -3544,17 +3544,17 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#robot.parsing.lexer.tokens.Token" class="md-nav__link">
+  <a href="#robot.parsing.lexer.tokens.END" class="md-nav__link">
     <span class="md-ellipsis">
-      <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;Token
+      <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;END
     </span>
   </a>
   
-    <nav class="md-nav" aria-label=" Token">
+    <nav class="md-nav" aria-label=" END">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#robot.parsing.lexer.tokens.Token.tokenize_variables" class="md-nav__link">
+  <a href="#robot.parsing.lexer.tokens.END.tokenize_variables" class="md-nav__link">
     <span class="md-ellipsis">
       <code class="doc-symbol doc-symbol-toc doc-symbol-method"></code>&nbsp;tokenize_variables
     </span>
@@ -7106,237 +7106,6 @@
 
 
 
-
-<div class="doc doc-object doc-class">
-
-
-
-<h2 id="robot.parsing.lexer.tokens.END" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">END</span>
-
-
-<a href="#robot.parsing.lexer.tokens.END" class="headerlink" title="Permanent link">&para;</a></h2>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
-<span class="normal"><a href="#example-0-2">2</a></span>
-<span class="normal"><a href="#example-0-3">3</a></span>
-<span class="normal"><a href="#example-0-4">4</a></span>
-<span class="normal"><a href="#example-0-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">END</span><span class="p">(</span>
-</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">lineno</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a>    <span class="n">col_offset</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
-</span><span id="line-0-4"><a id="example-0-4" name="example-0-4"></a>    <span class="n">virtual</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-</span><span id="line-0-5"><a id="example-0-5" name="example-0-5"></a><span class="p">)</span>
-</span></code></pre></div></td></tr></table></div>
-
-    <div class="doc doc-contents ">
-            <p class="doc doc-class-bases">
-              Bases: <code><a class="autorefs autorefs-internal" title="robot.parsing.lexer.tokens.Token" href="#robot.parsing.lexer.tokens.Token">Token</a></code></p>
-
-
-        <p>Token representing END token used to signify block ending.</p>
-<p>Virtual END tokens have '' as their value, with "real" END tokens the
-value is 'END'.</p>
-
-
-
-
-
-
-                  <details class="quote">
-                    <summary>Source code in <code>src/robot/parsing/lexer/tokens.py</code></summary>
-                    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-265">265</a></span>
-<span class="normal"><a href="#example-0-266">266</a></span>
-<span class="normal"><a href="#example-0-267">267</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-265"><a id="example-0-265" name="example-0-265"></a><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lineno</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">col_offset</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">virtual</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
-</span><span id="line-0-266"><a id="example-0-266" name="example-0-266"></a>    <span class="n">value</span> <span class="o">=</span> <span class="s1">&#39;END&#39;</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">virtual</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span>
-</span><span id="line-0-267"><a id="example-0-267" name="example-0-267"></a>    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">Token</span><span class="o">.</span><span class="n">END</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">lineno</span><span class="p">,</span> <span class="n">col_offset</span><span class="p">)</span>
-</span></code></pre></div></td></tr></table></div>
-                  </details>
-
-
-
-  <div class="doc doc-children">
-
-
-
-
-
-
-
-
-
-<div class="doc doc-object doc-function">
-
-
-<h3 id="robot.parsing.lexer.tokens.END.tokenize_variables" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <span class="doc doc-object-name doc-function-name">tokenize_variables</span>
-
-
-<a href="#robot.parsing.lexer.tokens.END.tokenize_variables" class="headerlink" title="Permanent link">&para;</a></h3>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">tokenize_variables</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n"><a class="autorefs autorefs-external" title="collections.abc.Iterator" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterator">Iterator</a></span><span class="p">[</span><span class="n"><a class="autorefs autorefs-internal" title="robot.parsing.lexer.tokens.Token" href="#robot.parsing.lexer.tokens.Token">Token</a></span><span class="p">]</span>
-</span></code></pre></div></td></tr></table></div>
-
-    <div class="doc doc-contents ">
-
-        <p>Tokenizes possible variables in token value.</p>
-<p>Yields the token itself if the token does not allow variables (see
-:attr:<code>Token.ALLOW_VARIABLES</code>) or its value does not contain
-variables. Otherwise, yields variable tokens as well as tokens
-before, after, or between variables so that they have the same
-type as the original token.</p>
-
-            <details class="quote">
-              <summary>Source code in <code>src/robot/parsing/lexer/tokens.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-195">195</a></span>
-<span class="normal"><a href="#example-0-196">196</a></span>
-<span class="normal"><a href="#example-0-197">197</a></span>
-<span class="normal"><a href="#example-0-198">198</a></span>
-<span class="normal"><a href="#example-0-199">199</a></span>
-<span class="normal"><a href="#example-0-200">200</a></span>
-<span class="normal"><a href="#example-0-201">201</a></span>
-<span class="normal"><a href="#example-0-202">202</a></span>
-<span class="normal"><a href="#example-0-203">203</a></span>
-<span class="normal"><a href="#example-0-204">204</a></span>
-<span class="normal"><a href="#example-0-205">205</a></span>
-<span class="normal"><a href="#example-0-206">206</a></span>
-<span class="normal"><a href="#example-0-207">207</a></span>
-<span class="normal"><a href="#example-0-208">208</a></span>
-<span class="normal"><a href="#example-0-209">209</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-195"><a id="example-0-195" name="example-0-195"></a><span class="k">def</span> <span class="nf">tokenize_variables</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;Iterator[Token]&#39;</span><span class="p">:</span>
-</span><span id="line-0-196"><a id="example-0-196" name="example-0-196"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Tokenizes possible variables in token value.</span>
-</span><span id="line-0-197"><a id="example-0-197" name="example-0-197"></a>
-</span><span id="line-0-198"><a id="example-0-198" name="example-0-198"></a><span class="sd">    Yields the token itself if the token does not allow variables (see</span>
-</span><span id="line-0-199"><a id="example-0-199" name="example-0-199"></a><span class="sd">    :attr:`Token.ALLOW_VARIABLES`) or its value does not contain</span>
-</span><span id="line-0-200"><a id="example-0-200" name="example-0-200"></a><span class="sd">    variables. Otherwise, yields variable tokens as well as tokens</span>
-</span><span id="line-0-201"><a id="example-0-201" name="example-0-201"></a><span class="sd">    before, after, or between variables so that they have the same</span>
-</span><span id="line-0-202"><a id="example-0-202" name="example-0-202"></a><span class="sd">    type as the original token.</span>
-</span><span id="line-0-203"><a id="example-0-203" name="example-0-203"></a><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-0-204"><a id="example-0-204" name="example-0-204"></a>    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">Token</span><span class="o">.</span><span class="n">ALLOW_VARIABLES</span><span class="p">:</span>
-</span><span id="line-0-205"><a id="example-0-205" name="example-0-205"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tokenize_no_variables</span><span class="p">()</span>
-</span><span id="line-0-206"><a id="example-0-206" name="example-0-206"></a>    <span class="n">matches</span> <span class="o">=</span> <span class="n">VariableMatches</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
-</span><span id="line-0-207"><a id="example-0-207" name="example-0-207"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">matches</span><span class="p">:</span>
-</span><span id="line-0-208"><a id="example-0-208" name="example-0-208"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tokenize_no_variables</span><span class="p">()</span>
-</span><span id="line-0-209"><a id="example-0-209" name="example-0-209"></a>    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tokenize_variables</span><span class="p">(</span><span class="n">matches</span><span class="p">)</span>
-</span></code></pre></div></td></tr></table></div>
-            </details>
-    </div>
-
-</div>
-
-
-
-  </div>
-
-    </div>
-
-</div>
-
-<div class="doc doc-object doc-class">
-
-
-
-<h2 id="robot.parsing.lexer.tokens.EOS" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">EOS</span>
-
-
-<a href="#robot.parsing.lexer.tokens.EOS" class="headerlink" title="Permanent link">&para;</a></h2>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">EOS</span><span class="p">(</span><span class="n">lineno</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">col_offset</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-</span></code></pre></div></td></tr></table></div>
-
-    <div class="doc doc-contents ">
-            <p class="doc doc-class-bases">
-              Bases: <code><a class="autorefs autorefs-internal" title="robot.parsing.lexer.tokens.Token" href="#robot.parsing.lexer.tokens.Token">Token</a></code></p>
-
-
-        <p>Token representing end of a statement.</p>
-
-
-
-
-
-
-                  <details class="quote">
-                    <summary>Source code in <code>src/robot/parsing/lexer/tokens.py</code></summary>
-                    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-248">248</a></span>
-<span class="normal"><a href="#example-0-249">249</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-248"><a id="example-0-248" name="example-0-248"></a><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lineno</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">col_offset</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
-</span><span id="line-0-249"><a id="example-0-249" name="example-0-249"></a>    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">Token</span><span class="o">.</span><span class="n">EOS</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">lineno</span><span class="p">,</span> <span class="n">col_offset</span><span class="p">)</span>
-</span></code></pre></div></td></tr></table></div>
-                  </details>
-
-
-
-  <div class="doc doc-children">
-
-
-
-
-
-
-
-
-
-<div class="doc doc-object doc-function">
-
-
-<h3 id="robot.parsing.lexer.tokens.EOS.tokenize_variables" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <span class="doc doc-object-name doc-function-name">tokenize_variables</span>
-
-
-<a href="#robot.parsing.lexer.tokens.EOS.tokenize_variables" class="headerlink" title="Permanent link">&para;</a></h3>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">tokenize_variables</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n"><a class="autorefs autorefs-external" title="collections.abc.Iterator" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterator">Iterator</a></span><span class="p">[</span><span class="n"><a class="autorefs autorefs-internal" title="robot.parsing.lexer.tokens.Token" href="#robot.parsing.lexer.tokens.Token">Token</a></span><span class="p">]</span>
-</span></code></pre></div></td></tr></table></div>
-
-    <div class="doc doc-contents ">
-
-        <p>Tokenizes possible variables in token value.</p>
-<p>Yields the token itself if the token does not allow variables (see
-:attr:<code>Token.ALLOW_VARIABLES</code>) or its value does not contain
-variables. Otherwise, yields variable tokens as well as tokens
-before, after, or between variables so that they have the same
-type as the original token.</p>
-
-            <details class="quote">
-              <summary>Source code in <code>src/robot/parsing/lexer/tokens.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-195">195</a></span>
-<span class="normal"><a href="#example-0-196">196</a></span>
-<span class="normal"><a href="#example-0-197">197</a></span>
-<span class="normal"><a href="#example-0-198">198</a></span>
-<span class="normal"><a href="#example-0-199">199</a></span>
-<span class="normal"><a href="#example-0-200">200</a></span>
-<span class="normal"><a href="#example-0-201">201</a></span>
-<span class="normal"><a href="#example-0-202">202</a></span>
-<span class="normal"><a href="#example-0-203">203</a></span>
-<span class="normal"><a href="#example-0-204">204</a></span>
-<span class="normal"><a href="#example-0-205">205</a></span>
-<span class="normal"><a href="#example-0-206">206</a></span>
-<span class="normal"><a href="#example-0-207">207</a></span>
-<span class="normal"><a href="#example-0-208">208</a></span>
-<span class="normal"><a href="#example-0-209">209</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-195"><a id="example-0-195" name="example-0-195"></a><span class="k">def</span> <span class="nf">tokenize_variables</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;Iterator[Token]&#39;</span><span class="p">:</span>
-</span><span id="line-0-196"><a id="example-0-196" name="example-0-196"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Tokenizes possible variables in token value.</span>
-</span><span id="line-0-197"><a id="example-0-197" name="example-0-197"></a>
-</span><span id="line-0-198"><a id="example-0-198" name="example-0-198"></a><span class="sd">    Yields the token itself if the token does not allow variables (see</span>
-</span><span id="line-0-199"><a id="example-0-199" name="example-0-199"></a><span class="sd">    :attr:`Token.ALLOW_VARIABLES`) or its value does not contain</span>
-</span><span id="line-0-200"><a id="example-0-200" name="example-0-200"></a><span class="sd">    variables. Otherwise, yields variable tokens as well as tokens</span>
-</span><span id="line-0-201"><a id="example-0-201" name="example-0-201"></a><span class="sd">    before, after, or between variables so that they have the same</span>
-</span><span id="line-0-202"><a id="example-0-202" name="example-0-202"></a><span class="sd">    type as the original token.</span>
-</span><span id="line-0-203"><a id="example-0-203" name="example-0-203"></a><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-0-204"><a id="example-0-204" name="example-0-204"></a>    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">Token</span><span class="o">.</span><span class="n">ALLOW_VARIABLES</span><span class="p">:</span>
-</span><span id="line-0-205"><a id="example-0-205" name="example-0-205"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tokenize_no_variables</span><span class="p">()</span>
-</span><span id="line-0-206"><a id="example-0-206" name="example-0-206"></a>    <span class="n">matches</span> <span class="o">=</span> <span class="n">VariableMatches</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
-</span><span id="line-0-207"><a id="example-0-207" name="example-0-207"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">matches</span><span class="p">:</span>
-</span><span id="line-0-208"><a id="example-0-208" name="example-0-208"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tokenize_no_variables</span><span class="p">()</span>
-</span><span id="line-0-209"><a id="example-0-209" name="example-0-209"></a>    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tokenize_variables</span><span class="p">(</span><span class="n">matches</span><span class="p">)</span>
-</span></code></pre></div></td></tr></table></div>
-            </details>
-    </div>
-
-</div>
-
-
-
-  </div>
-
-    </div>
-
-</div>
-
 <div class="doc doc-object doc-class">
 
 
@@ -7437,8 +7206,6 @@ use <code>Token(Token.EOL)</code> instead of <code>Token('EOL')</code> and
 
 
 
-
-
 <div class="doc doc-object doc-function">
 
 
@@ -7495,6 +7262,245 @@ type as the original token.</p>
     </div>
 
 </div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="robot.parsing.lexer.tokens.EOS" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">EOS</span>
+
+
+<a href="#robot.parsing.lexer.tokens.EOS" class="headerlink" title="Permanent link">&para;</a></h2>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">EOS</span><span class="p">(</span><span class="n">lineno</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">col_offset</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><a class="autorefs autorefs-internal" title="robot.parsing.lexer.tokens.Token" href="#robot.parsing.lexer.tokens.Token">Token</a></code></p>
+
+
+        <p>Token representing end of a statement.</p>
+
+
+
+
+
+
+                  <details class="quote">
+                    <summary>Source code in <code>src/robot/parsing/lexer/tokens.py</code></summary>
+                    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-248">248</a></span>
+<span class="normal"><a href="#example-0-249">249</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-248"><a id="example-0-248" name="example-0-248"></a><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lineno</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">col_offset</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+</span><span id="line-0-249"><a id="example-0-249" name="example-0-249"></a>    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">Token</span><span class="o">.</span><span class="n">EOS</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">lineno</span><span class="p">,</span> <span class="n">col_offset</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+                  </details>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="robot.parsing.lexer.tokens.EOS.tokenize_variables" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <span class="doc doc-object-name doc-function-name">tokenize_variables</span>
+
+
+<a href="#robot.parsing.lexer.tokens.EOS.tokenize_variables" class="headerlink" title="Permanent link">&para;</a></h3>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">tokenize_variables</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n"><a class="autorefs autorefs-external" title="collections.abc.Iterator" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterator">Iterator</a></span><span class="p">[</span><span class="n"><a class="autorefs autorefs-internal" title="robot.parsing.lexer.tokens.Token" href="#robot.parsing.lexer.tokens.Token">Token</a></span><span class="p">]</span>
+</span></code></pre></div></td></tr></table></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Tokenizes possible variables in token value.</p>
+<p>Yields the token itself if the token does not allow variables (see
+:attr:<code>Token.ALLOW_VARIABLES</code>) or its value does not contain
+variables. Otherwise, yields variable tokens as well as tokens
+before, after, or between variables so that they have the same
+type as the original token.</p>
+
+            <details class="quote">
+              <summary>Source code in <code>src/robot/parsing/lexer/tokens.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-195">195</a></span>
+<span class="normal"><a href="#example-0-196">196</a></span>
+<span class="normal"><a href="#example-0-197">197</a></span>
+<span class="normal"><a href="#example-0-198">198</a></span>
+<span class="normal"><a href="#example-0-199">199</a></span>
+<span class="normal"><a href="#example-0-200">200</a></span>
+<span class="normal"><a href="#example-0-201">201</a></span>
+<span class="normal"><a href="#example-0-202">202</a></span>
+<span class="normal"><a href="#example-0-203">203</a></span>
+<span class="normal"><a href="#example-0-204">204</a></span>
+<span class="normal"><a href="#example-0-205">205</a></span>
+<span class="normal"><a href="#example-0-206">206</a></span>
+<span class="normal"><a href="#example-0-207">207</a></span>
+<span class="normal"><a href="#example-0-208">208</a></span>
+<span class="normal"><a href="#example-0-209">209</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-195"><a id="example-0-195" name="example-0-195"></a><span class="k">def</span> <span class="nf">tokenize_variables</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;Iterator[Token]&#39;</span><span class="p">:</span>
+</span><span id="line-0-196"><a id="example-0-196" name="example-0-196"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Tokenizes possible variables in token value.</span>
+</span><span id="line-0-197"><a id="example-0-197" name="example-0-197"></a>
+</span><span id="line-0-198"><a id="example-0-198" name="example-0-198"></a><span class="sd">    Yields the token itself if the token does not allow variables (see</span>
+</span><span id="line-0-199"><a id="example-0-199" name="example-0-199"></a><span class="sd">    :attr:`Token.ALLOW_VARIABLES`) or its value does not contain</span>
+</span><span id="line-0-200"><a id="example-0-200" name="example-0-200"></a><span class="sd">    variables. Otherwise, yields variable tokens as well as tokens</span>
+</span><span id="line-0-201"><a id="example-0-201" name="example-0-201"></a><span class="sd">    before, after, or between variables so that they have the same</span>
+</span><span id="line-0-202"><a id="example-0-202" name="example-0-202"></a><span class="sd">    type as the original token.</span>
+</span><span id="line-0-203"><a id="example-0-203" name="example-0-203"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-204"><a id="example-0-204" name="example-0-204"></a>    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">Token</span><span class="o">.</span><span class="n">ALLOW_VARIABLES</span><span class="p">:</span>
+</span><span id="line-0-205"><a id="example-0-205" name="example-0-205"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tokenize_no_variables</span><span class="p">()</span>
+</span><span id="line-0-206"><a id="example-0-206" name="example-0-206"></a>    <span class="n">matches</span> <span class="o">=</span> <span class="n">VariableMatches</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+</span><span id="line-0-207"><a id="example-0-207" name="example-0-207"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">matches</span><span class="p">:</span>
+</span><span id="line-0-208"><a id="example-0-208" name="example-0-208"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tokenize_no_variables</span><span class="p">()</span>
+</span><span id="line-0-209"><a id="example-0-209" name="example-0-209"></a>    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tokenize_variables</span><span class="p">(</span><span class="n">matches</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="robot.parsing.lexer.tokens.END" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">END</span>
+
+
+<a href="#robot.parsing.lexer.tokens.END" class="headerlink" title="Permanent link">&para;</a></h2>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
+<span class="normal"><a href="#example-0-2">2</a></span>
+<span class="normal"><a href="#example-0-3">3</a></span>
+<span class="normal"><a href="#example-0-4">4</a></span>
+<span class="normal"><a href="#example-0-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">END</span><span class="p">(</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">lineno</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a>    <span class="n">col_offset</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#int">int</a></span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+</span><span id="line-0-4"><a id="example-0-4" name="example-0-4"></a>    <span class="n">virtual</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+</span><span id="line-0-5"><a id="example-0-5" name="example-0-5"></a><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><a class="autorefs autorefs-internal" title="robot.parsing.lexer.tokens.Token" href="#robot.parsing.lexer.tokens.Token">Token</a></code></p>
+
+
+        <p>Token representing END token used to signify block ending.</p>
+<p>Virtual END tokens have '' as their value, with "real" END tokens the
+value is 'END'.</p>
+
+
+
+
+
+
+                  <details class="quote">
+                    <summary>Source code in <code>src/robot/parsing/lexer/tokens.py</code></summary>
+                    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-265">265</a></span>
+<span class="normal"><a href="#example-0-266">266</a></span>
+<span class="normal"><a href="#example-0-267">267</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-265"><a id="example-0-265" name="example-0-265"></a><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lineno</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">col_offset</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">virtual</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+</span><span id="line-0-266"><a id="example-0-266" name="example-0-266"></a>    <span class="n">value</span> <span class="o">=</span> <span class="s1">&#39;END&#39;</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">virtual</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span>
+</span><span id="line-0-267"><a id="example-0-267" name="example-0-267"></a>    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">Token</span><span class="o">.</span><span class="n">END</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">lineno</span><span class="p">,</span> <span class="n">col_offset</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+                  </details>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="robot.parsing.lexer.tokens.END.tokenize_variables" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <span class="doc doc-object-name doc-function-name">tokenize_variables</span>
+
+
+<a href="#robot.parsing.lexer.tokens.END.tokenize_variables" class="headerlink" title="Permanent link">&para;</a></h3>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">tokenize_variables</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n"><a class="autorefs autorefs-external" title="collections.abc.Iterator" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterator">Iterator</a></span><span class="p">[</span><span class="n"><a class="autorefs autorefs-internal" title="robot.parsing.lexer.tokens.Token" href="#robot.parsing.lexer.tokens.Token">Token</a></span><span class="p">]</span>
+</span></code></pre></div></td></tr></table></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Tokenizes possible variables in token value.</p>
+<p>Yields the token itself if the token does not allow variables (see
+:attr:<code>Token.ALLOW_VARIABLES</code>) or its value does not contain
+variables. Otherwise, yields variable tokens as well as tokens
+before, after, or between variables so that they have the same
+type as the original token.</p>
+
+            <details class="quote">
+              <summary>Source code in <code>src/robot/parsing/lexer/tokens.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-195">195</a></span>
+<span class="normal"><a href="#example-0-196">196</a></span>
+<span class="normal"><a href="#example-0-197">197</a></span>
+<span class="normal"><a href="#example-0-198">198</a></span>
+<span class="normal"><a href="#example-0-199">199</a></span>
+<span class="normal"><a href="#example-0-200">200</a></span>
+<span class="normal"><a href="#example-0-201">201</a></span>
+<span class="normal"><a href="#example-0-202">202</a></span>
+<span class="normal"><a href="#example-0-203">203</a></span>
+<span class="normal"><a href="#example-0-204">204</a></span>
+<span class="normal"><a href="#example-0-205">205</a></span>
+<span class="normal"><a href="#example-0-206">206</a></span>
+<span class="normal"><a href="#example-0-207">207</a></span>
+<span class="normal"><a href="#example-0-208">208</a></span>
+<span class="normal"><a href="#example-0-209">209</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-195"><a id="example-0-195" name="example-0-195"></a><span class="k">def</span> <span class="nf">tokenize_variables</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;Iterator[Token]&#39;</span><span class="p">:</span>
+</span><span id="line-0-196"><a id="example-0-196" name="example-0-196"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Tokenizes possible variables in token value.</span>
+</span><span id="line-0-197"><a id="example-0-197" name="example-0-197"></a>
+</span><span id="line-0-198"><a id="example-0-198" name="example-0-198"></a><span class="sd">    Yields the token itself if the token does not allow variables (see</span>
+</span><span id="line-0-199"><a id="example-0-199" name="example-0-199"></a><span class="sd">    :attr:`Token.ALLOW_VARIABLES`) or its value does not contain</span>
+</span><span id="line-0-200"><a id="example-0-200" name="example-0-200"></a><span class="sd">    variables. Otherwise, yields variable tokens as well as tokens</span>
+</span><span id="line-0-201"><a id="example-0-201" name="example-0-201"></a><span class="sd">    before, after, or between variables so that they have the same</span>
+</span><span id="line-0-202"><a id="example-0-202" name="example-0-202"></a><span class="sd">    type as the original token.</span>
+</span><span id="line-0-203"><a id="example-0-203" name="example-0-203"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-204"><a id="example-0-204" name="example-0-204"></a>    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">Token</span><span class="o">.</span><span class="n">ALLOW_VARIABLES</span><span class="p">:</span>
+</span><span id="line-0-205"><a id="example-0-205" name="example-0-205"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tokenize_no_variables</span><span class="p">()</span>
+</span><span id="line-0-206"><a id="example-0-206" name="example-0-206"></a>    <span class="n">matches</span> <span class="o">=</span> <span class="n">VariableMatches</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+</span><span id="line-0-207"><a id="example-0-207" name="example-0-207"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">matches</span><span class="p">:</span>
+</span><span id="line-0-208"><a id="example-0-208" name="example-0-208"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tokenize_no_variables</span><span class="p">()</span>
+</span><span id="line-0-209"><a id="example-0-209" name="example-0-209"></a>    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tokenize_variables</span><span class="p">(</span><span class="n">matches</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
 
 
 

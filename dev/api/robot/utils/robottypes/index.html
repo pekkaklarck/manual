@@ -6474,18 +6474,27 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#robot.utils.robottypes.has_args" class="md-nav__link">
+  <a href="#robot.utils.robottypes.type_name" class="md-nav__link">
     <span class="md-ellipsis">
-      <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;has_args
+      <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;type_name
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#robot.utils.robottypes.is_falsy" class="md-nav__link">
+  <a href="#robot.utils.robottypes.type_repr" class="md-nav__link">
     <span class="md-ellipsis">
-      <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;is_falsy
+      <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;type_repr
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#robot.utils.robottypes.has_args" class="md-nav__link">
+    <span class="md-ellipsis">
+      <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;has_args
     </span>
   </a>
   
@@ -6501,18 +6510,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#robot.utils.robottypes.type_name" class="md-nav__link">
+  <a href="#robot.utils.robottypes.is_falsy" class="md-nav__link">
     <span class="md-ellipsis">
-      <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;type_name
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#robot.utils.robottypes.type_repr" class="md-nav__link">
-    <span class="md-ellipsis">
-      <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;type_repr
+      <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;is_falsy
     </span>
   </a>
   
@@ -7077,153 +7077,6 @@
 
 
 
-
-
-<div class="doc doc-object doc-function">
-
-
-<h2 id="robot.utils.robottypes.has_args" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-function"></code>            <span class="doc doc-object-name doc-function-name">has_args</span>
-
-
-<a href="#robot.utils.robottypes.has_args" class="headerlink" title="Permanent link">&para;</a></h2>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">has_args</span><span class="p">(</span><span class="nb">type</span><span class="p">)</span>
-</span></code></pre></div></td></tr></table></div>
-
-    <div class="doc doc-contents ">
-
-        <p>Helper to check has type valid <code>__args__</code>.</p>
-<p><code>__args__</code> contains TypeVars when accessed directly from <code>typing.List</code> and
-other such types with Python 3.8. Python 3.9+ don't have <code>__args__</code> at all.
-Parameterize usages like <code>List[int].__args__</code> always work the same way.</p>
-<p>This helper can be removed in favor of using <code>hasattr(type, '__args__')</code>
- when we support only Python 3.9 and newer.</p>
-
-            <details class="quote">
-              <summary>Source code in <code>src/robot/utils/robottypes.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-131">131</a></span>
-<span class="normal"><a href="#example-0-132">132</a></span>
-<span class="normal"><a href="#example-0-133">133</a></span>
-<span class="normal"><a href="#example-0-134">134</a></span>
-<span class="normal"><a href="#example-0-135">135</a></span>
-<span class="normal"><a href="#example-0-136">136</a></span>
-<span class="normal"><a href="#example-0-137">137</a></span>
-<span class="normal"><a href="#example-0-138">138</a></span>
-<span class="normal"><a href="#example-0-139">139</a></span>
-<span class="normal"><a href="#example-0-140">140</a></span>
-<span class="normal"><a href="#example-0-141">141</a></span>
-<span class="normal"><a href="#example-0-142">142</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-131"><a id="example-0-131" name="example-0-131"></a><span class="k">def</span> <span class="nf">has_args</span><span class="p">(</span><span class="nb">type</span><span class="p">):</span>
-</span><span id="line-0-132"><a id="example-0-132" name="example-0-132"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Helper to check has type valid ``__args__``.</span>
-</span><span id="line-0-133"><a id="example-0-133" name="example-0-133"></a>
-</span><span id="line-0-134"><a id="example-0-134" name="example-0-134"></a><span class="sd">   ``__args__`` contains TypeVars when accessed directly from ``typing.List`` and</span>
-</span><span id="line-0-135"><a id="example-0-135" name="example-0-135"></a><span class="sd">   other such types with Python 3.8. Python 3.9+ don&#39;t have ``__args__`` at all.</span>
-</span><span id="line-0-136"><a id="example-0-136" name="example-0-136"></a><span class="sd">   Parameterize usages like ``List[int].__args__`` always work the same way.</span>
-</span><span id="line-0-137"><a id="example-0-137" name="example-0-137"></a>
-</span><span id="line-0-138"><a id="example-0-138" name="example-0-138"></a><span class="sd">    This helper can be removed in favor of using ``hasattr(type, &#39;__args__&#39;)``</span>
-</span><span id="line-0-139"><a id="example-0-139" name="example-0-139"></a><span class="sd">    when we support only Python 3.9 and newer.</span>
-</span><span id="line-0-140"><a id="example-0-140" name="example-0-140"></a><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-0-141"><a id="example-0-141" name="example-0-141"></a>    <span class="n">args</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="nb">type</span><span class="p">,</span> <span class="s1">&#39;__args__&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-</span><span id="line-0-142"><a id="example-0-142" name="example-0-142"></a>    <span class="k">return</span> <span class="nb">bool</span><span class="p">(</span><span class="n">args</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">TypeVar</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">args</span><span class="p">))</span>
-</span></code></pre></div></td></tr></table></div>
-            </details>
-    </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-<h2 id="robot.utils.robottypes.is_falsy" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-function"></code>            <span class="doc doc-object-name doc-function-name">is_falsy</span>
-
-
-<a href="#robot.utils.robottypes.is_falsy" class="headerlink" title="Permanent link">&para;</a></h2>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">is_falsy</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
-</span></code></pre></div></td></tr></table></div>
-
-    <div class="doc doc-contents ">
-
-        <p>Opposite of :func:<code>is_truthy</code>.</p>
-
-            <details class="quote">
-              <summary>Source code in <code>src/robot/utils/robottypes.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-164">164</a></span>
-<span class="normal"><a href="#example-0-165">165</a></span>
-<span class="normal"><a href="#example-0-166">166</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-164"><a id="example-0-164" name="example-0-164"></a><span class="k">def</span> <span class="nf">is_falsy</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
-</span><span id="line-0-165"><a id="example-0-165" name="example-0-165"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Opposite of :func:`is_truthy`.&quot;&quot;&quot;</span>
-</span><span id="line-0-166"><a id="example-0-166" name="example-0-166"></a>    <span class="k">return</span> <span class="ow">not</span> <span class="n">is_truthy</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
-</span></code></pre></div></td></tr></table></div>
-            </details>
-    </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-<h2 id="robot.utils.robottypes.is_truthy" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-function"></code>            <span class="doc doc-object-name doc-function-name">is_truthy</span>
-
-
-<a href="#robot.utils.robottypes.is_truthy" class="headerlink" title="Permanent link">&para;</a></h2>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">is_truthy</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
-</span></code></pre></div></td></tr></table></div>
-
-    <div class="doc doc-contents ">
-
-        <p>Returns <code>True</code> or <code>False</code> depending on is the item considered true or not.</p>
-<p>Validation rules:</p>
-<ul>
-<li>If the value is a string, it is considered false if it is <code>'FALSE'</code>,
-  <code>'NO'</code>, <code>'OFF'</code>, <code>'0'</code>, <code>'NONE'</code> or <code>''</code>, case-insensitively.</li>
-<li>Other strings are considered true.</li>
-<li>Other values are handled by using the standard <code>bool()</code> function.</li>
-</ul>
-<p>Designed to be used also by external test libraries that want to handle
-Boolean values similarly as Robot Framework itself. See also
-:func:<code>is_falsy</code>.</p>
-
-            <details class="quote">
-              <summary>Source code in <code>src/robot/utils/robottypes.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-145">145</a></span>
-<span class="normal"><a href="#example-0-146">146</a></span>
-<span class="normal"><a href="#example-0-147">147</a></span>
-<span class="normal"><a href="#example-0-148">148</a></span>
-<span class="normal"><a href="#example-0-149">149</a></span>
-<span class="normal"><a href="#example-0-150">150</a></span>
-<span class="normal"><a href="#example-0-151">151</a></span>
-<span class="normal"><a href="#example-0-152">152</a></span>
-<span class="normal"><a href="#example-0-153">153</a></span>
-<span class="normal"><a href="#example-0-154">154</a></span>
-<span class="normal"><a href="#example-0-155">155</a></span>
-<span class="normal"><a href="#example-0-156">156</a></span>
-<span class="normal"><a href="#example-0-157">157</a></span>
-<span class="normal"><a href="#example-0-158">158</a></span>
-<span class="normal"><a href="#example-0-159">159</a></span>
-<span class="normal"><a href="#example-0-160">160</a></span>
-<span class="normal"><a href="#example-0-161">161</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-145"><a id="example-0-145" name="example-0-145"></a><span class="k">def</span> <span class="nf">is_truthy</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
-</span><span id="line-0-146"><a id="example-0-146" name="example-0-146"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns `True` or `False` depending on is the item considered true or not.</span>
-</span><span id="line-0-147"><a id="example-0-147" name="example-0-147"></a>
-</span><span id="line-0-148"><a id="example-0-148" name="example-0-148"></a><span class="sd">    Validation rules:</span>
-</span><span id="line-0-149"><a id="example-0-149" name="example-0-149"></a>
-</span><span id="line-0-150"><a id="example-0-150" name="example-0-150"></a><span class="sd">    - If the value is a string, it is considered false if it is `&#39;FALSE&#39;`,</span>
-</span><span id="line-0-151"><a id="example-0-151" name="example-0-151"></a><span class="sd">      `&#39;NO&#39;`, `&#39;OFF&#39;`, `&#39;0&#39;`, `&#39;NONE&#39;` or `&#39;&#39;`, case-insensitively.</span>
-</span><span id="line-0-152"><a id="example-0-152" name="example-0-152"></a><span class="sd">    - Other strings are considered true.</span>
-</span><span id="line-0-153"><a id="example-0-153" name="example-0-153"></a><span class="sd">    - Other values are handled by using the standard `bool()` function.</span>
-</span><span id="line-0-154"><a id="example-0-154" name="example-0-154"></a>
-</span><span id="line-0-155"><a id="example-0-155" name="example-0-155"></a><span class="sd">    Designed to be used also by external test libraries that want to handle</span>
-</span><span id="line-0-156"><a id="example-0-156" name="example-0-156"></a><span class="sd">    Boolean values similarly as Robot Framework itself. See also</span>
-</span><span id="line-0-157"><a id="example-0-157" name="example-0-157"></a><span class="sd">    :func:`is_falsy`.</span>
-</span><span id="line-0-158"><a id="example-0-158" name="example-0-158"></a><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-0-159"><a id="example-0-159" name="example-0-159"></a>    <span class="k">if</span> <span class="n">is_string</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
-</span><span id="line-0-160"><a id="example-0-160" name="example-0-160"></a>        <span class="k">return</span> <span class="n">item</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">FALSE_STRINGS</span>
-</span><span id="line-0-161"><a id="example-0-161" name="example-0-161"></a>    <span class="k">return</span> <span class="nb">bool</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
-</span></code></pre></div></td></tr></table></div>
-            </details>
-    </div>
-
-</div>
-
 <div class="doc doc-object doc-function">
 
 
@@ -7290,6 +7143,11 @@ Boolean values similarly as Robot Framework itself. See also
     </div>
 
 </div>
+
+
+
+
+
 
 <div class="doc doc-object doc-function">
 
@@ -7358,6 +7216,167 @@ instead of 'typing.List[typing.Any]'.</p>
     </div>
 
 </div>
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="robot.utils.robottypes.has_args" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-function"></code>            <span class="doc doc-object-name doc-function-name">has_args</span>
+
+
+<a href="#robot.utils.robottypes.has_args" class="headerlink" title="Permanent link">&para;</a></h2>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">has_args</span><span class="p">(</span><span class="nb">type</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Helper to check has type valid <code>__args__</code>.</p>
+<p><code>__args__</code> contains TypeVars when accessed directly from <code>typing.List</code> and
+other such types with Python 3.8. Python 3.9+ don't have <code>__args__</code> at all.
+Parameterize usages like <code>List[int].__args__</code> always work the same way.</p>
+<p>This helper can be removed in favor of using <code>hasattr(type, '__args__')</code>
+ when we support only Python 3.9 and newer.</p>
+
+            <details class="quote">
+              <summary>Source code in <code>src/robot/utils/robottypes.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-131">131</a></span>
+<span class="normal"><a href="#example-0-132">132</a></span>
+<span class="normal"><a href="#example-0-133">133</a></span>
+<span class="normal"><a href="#example-0-134">134</a></span>
+<span class="normal"><a href="#example-0-135">135</a></span>
+<span class="normal"><a href="#example-0-136">136</a></span>
+<span class="normal"><a href="#example-0-137">137</a></span>
+<span class="normal"><a href="#example-0-138">138</a></span>
+<span class="normal"><a href="#example-0-139">139</a></span>
+<span class="normal"><a href="#example-0-140">140</a></span>
+<span class="normal"><a href="#example-0-141">141</a></span>
+<span class="normal"><a href="#example-0-142">142</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-131"><a id="example-0-131" name="example-0-131"></a><span class="k">def</span> <span class="nf">has_args</span><span class="p">(</span><span class="nb">type</span><span class="p">):</span>
+</span><span id="line-0-132"><a id="example-0-132" name="example-0-132"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Helper to check has type valid ``__args__``.</span>
+</span><span id="line-0-133"><a id="example-0-133" name="example-0-133"></a>
+</span><span id="line-0-134"><a id="example-0-134" name="example-0-134"></a><span class="sd">   ``__args__`` contains TypeVars when accessed directly from ``typing.List`` and</span>
+</span><span id="line-0-135"><a id="example-0-135" name="example-0-135"></a><span class="sd">   other such types with Python 3.8. Python 3.9+ don&#39;t have ``__args__`` at all.</span>
+</span><span id="line-0-136"><a id="example-0-136" name="example-0-136"></a><span class="sd">   Parameterize usages like ``List[int].__args__`` always work the same way.</span>
+</span><span id="line-0-137"><a id="example-0-137" name="example-0-137"></a>
+</span><span id="line-0-138"><a id="example-0-138" name="example-0-138"></a><span class="sd">    This helper can be removed in favor of using ``hasattr(type, &#39;__args__&#39;)``</span>
+</span><span id="line-0-139"><a id="example-0-139" name="example-0-139"></a><span class="sd">    when we support only Python 3.9 and newer.</span>
+</span><span id="line-0-140"><a id="example-0-140" name="example-0-140"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-141"><a id="example-0-141" name="example-0-141"></a>    <span class="n">args</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="nb">type</span><span class="p">,</span> <span class="s1">&#39;__args__&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+</span><span id="line-0-142"><a id="example-0-142" name="example-0-142"></a>    <span class="k">return</span> <span class="nb">bool</span><span class="p">(</span><span class="n">args</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">TypeVar</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">args</span><span class="p">))</span>
+</span></code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="robot.utils.robottypes.is_truthy" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-function"></code>            <span class="doc doc-object-name doc-function-name">is_truthy</span>
+
+
+<a href="#robot.utils.robottypes.is_truthy" class="headerlink" title="Permanent link">&para;</a></h2>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">is_truthy</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Returns <code>True</code> or <code>False</code> depending on is the item considered true or not.</p>
+<p>Validation rules:</p>
+<ul>
+<li>If the value is a string, it is considered false if it is <code>'FALSE'</code>,
+  <code>'NO'</code>, <code>'OFF'</code>, <code>'0'</code>, <code>'NONE'</code> or <code>''</code>, case-insensitively.</li>
+<li>Other strings are considered true.</li>
+<li>Other values are handled by using the standard <code>bool()</code> function.</li>
+</ul>
+<p>Designed to be used also by external test libraries that want to handle
+Boolean values similarly as Robot Framework itself. See also
+:func:<code>is_falsy</code>.</p>
+
+            <details class="quote">
+              <summary>Source code in <code>src/robot/utils/robottypes.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-145">145</a></span>
+<span class="normal"><a href="#example-0-146">146</a></span>
+<span class="normal"><a href="#example-0-147">147</a></span>
+<span class="normal"><a href="#example-0-148">148</a></span>
+<span class="normal"><a href="#example-0-149">149</a></span>
+<span class="normal"><a href="#example-0-150">150</a></span>
+<span class="normal"><a href="#example-0-151">151</a></span>
+<span class="normal"><a href="#example-0-152">152</a></span>
+<span class="normal"><a href="#example-0-153">153</a></span>
+<span class="normal"><a href="#example-0-154">154</a></span>
+<span class="normal"><a href="#example-0-155">155</a></span>
+<span class="normal"><a href="#example-0-156">156</a></span>
+<span class="normal"><a href="#example-0-157">157</a></span>
+<span class="normal"><a href="#example-0-158">158</a></span>
+<span class="normal"><a href="#example-0-159">159</a></span>
+<span class="normal"><a href="#example-0-160">160</a></span>
+<span class="normal"><a href="#example-0-161">161</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-145"><a id="example-0-145" name="example-0-145"></a><span class="k">def</span> <span class="nf">is_truthy</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
+</span><span id="line-0-146"><a id="example-0-146" name="example-0-146"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns `True` or `False` depending on is the item considered true or not.</span>
+</span><span id="line-0-147"><a id="example-0-147" name="example-0-147"></a>
+</span><span id="line-0-148"><a id="example-0-148" name="example-0-148"></a><span class="sd">    Validation rules:</span>
+</span><span id="line-0-149"><a id="example-0-149" name="example-0-149"></a>
+</span><span id="line-0-150"><a id="example-0-150" name="example-0-150"></a><span class="sd">    - If the value is a string, it is considered false if it is `&#39;FALSE&#39;`,</span>
+</span><span id="line-0-151"><a id="example-0-151" name="example-0-151"></a><span class="sd">      `&#39;NO&#39;`, `&#39;OFF&#39;`, `&#39;0&#39;`, `&#39;NONE&#39;` or `&#39;&#39;`, case-insensitively.</span>
+</span><span id="line-0-152"><a id="example-0-152" name="example-0-152"></a><span class="sd">    - Other strings are considered true.</span>
+</span><span id="line-0-153"><a id="example-0-153" name="example-0-153"></a><span class="sd">    - Other values are handled by using the standard `bool()` function.</span>
+</span><span id="line-0-154"><a id="example-0-154" name="example-0-154"></a>
+</span><span id="line-0-155"><a id="example-0-155" name="example-0-155"></a><span class="sd">    Designed to be used also by external test libraries that want to handle</span>
+</span><span id="line-0-156"><a id="example-0-156" name="example-0-156"></a><span class="sd">    Boolean values similarly as Robot Framework itself. See also</span>
+</span><span id="line-0-157"><a id="example-0-157" name="example-0-157"></a><span class="sd">    :func:`is_falsy`.</span>
+</span><span id="line-0-158"><a id="example-0-158" name="example-0-158"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-159"><a id="example-0-159" name="example-0-159"></a>    <span class="k">if</span> <span class="n">is_string</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
+</span><span id="line-0-160"><a id="example-0-160" name="example-0-160"></a>        <span class="k">return</span> <span class="n">item</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">FALSE_STRINGS</span>
+</span><span id="line-0-161"><a id="example-0-161" name="example-0-161"></a>    <span class="k">return</span> <span class="nb">bool</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="robot.utils.robottypes.is_falsy" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-function"></code>            <span class="doc doc-object-name doc-function-name">is_falsy</span>
+
+
+<a href="#robot.utils.robottypes.is_falsy" class="headerlink" title="Permanent link">&para;</a></h2>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">is_falsy</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Opposite of :func:<code>is_truthy</code>.</p>
+
+            <details class="quote">
+              <summary>Source code in <code>src/robot/utils/robottypes.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-164">164</a></span>
+<span class="normal"><a href="#example-0-165">165</a></span>
+<span class="normal"><a href="#example-0-166">166</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-164"><a id="example-0-164" name="example-0-164"></a><span class="k">def</span> <span class="nf">is_falsy</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
+</span><span id="line-0-165"><a id="example-0-165" name="example-0-165"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Opposite of :func:`is_truthy`.&quot;&quot;&quot;</span>
+</span><span id="line-0-166"><a id="example-0-166" name="example-0-166"></a>    <span class="k">return</span> <span class="ow">not</span> <span class="n">is_truthy</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
 
 
 
