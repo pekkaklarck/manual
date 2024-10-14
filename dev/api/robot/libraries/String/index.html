@@ -8034,7 +8034,11 @@ be escaped with a backslash like <code>`x\={}</code>.</p>
 
 
 <a href="#robot.libraries.String.String.generate_random_string" class="headerlink" title="Permanent link">&para;</a></h3>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">generate_random_string</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">chars</span><span class="o">=</span><span class="s1">&#39;[LETTERS][NUMBERS]&#39;</span><span class="p">)</span>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
+<span class="normal"><a href="#example-0-2">2</a></span>
+<span class="normal"><a href="#example-0-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">generate_random_string</span><span class="p">(</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">length</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">chars</span><span class="o">=</span><span class="s2">&quot;[LETTERS][NUMBERS]&quot;</span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
@@ -8250,7 +8254,17 @@ returned without the newline character.</p>
 
 
 <a href="#robot.libraries.String.String.get_lines_containing_string" class="headerlink" title="Permanent link">&para;</a></h3>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">get_lines_containing_string</span><span class="p">(</span><span class="n">string</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span><span class="p">,</span> <span class="n">pattern</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span><span class="p">,</span> <span class="n">case_insensitive</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">ignore_case</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
+<span class="normal"><a href="#example-0-2">2</a></span>
+<span class="normal"><a href="#example-0-3">3</a></span>
+<span class="normal"><a href="#example-0-4">4</a></span>
+<span class="normal"><a href="#example-0-5">5</a></span>
+<span class="normal"><a href="#example-0-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">get_lines_containing_string</span><span class="p">(</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">string</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span><span class="p">,</span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a>    <span class="n">pattern</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span><span class="p">,</span>
+</span><span id="line-0-4"><a id="example-0-4" name="example-0-4"></a>    <span class="n">case_insensitive</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="line-0-5"><a id="example-0-5" name="example-0-5"></a>    <span class="n">ignore_case</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+</span><span id="line-0-6"><a id="example-0-6" name="example-0-6"></a><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
@@ -8353,7 +8367,17 @@ if you need more complex pattern matching.</p>
 
 
 <a href="#robot.libraries.String.String.get_lines_matching_pattern" class="headerlink" title="Permanent link">&para;</a></h3>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">get_lines_matching_pattern</span><span class="p">(</span><span class="n">string</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span><span class="p">,</span> <span class="n">pattern</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span><span class="p">,</span> <span class="n">case_insensitive</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">ignore_case</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
+<span class="normal"><a href="#example-0-2">2</a></span>
+<span class="normal"><a href="#example-0-3">3</a></span>
+<span class="normal"><a href="#example-0-4">4</a></span>
+<span class="normal"><a href="#example-0-5">5</a></span>
+<span class="normal"><a href="#example-0-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">get_lines_matching_pattern</span><span class="p">(</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">string</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span><span class="p">,</span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a>    <span class="n">pattern</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span><span class="p">,</span>
+</span><span id="line-0-4"><a id="example-0-4" name="example-0-4"></a>    <span class="n">case_insensitive</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="line-0-5"><a id="example-0-5" name="example-0-5"></a>    <span class="n">ignore_case</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+</span><span id="line-0-6"><a id="example-0-6" name="example-0-6"></a><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
@@ -8470,7 +8494,11 @@ literal strings is enough.</p>
 
 
 <a href="#robot.libraries.String.String.get_lines_matching_regexp" class="headerlink" title="Permanent link">&para;</a></h3>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">get_lines_matching_regexp</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="n">pattern</span><span class="p">,</span> <span class="n">partial_match</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
+<span class="normal"><a href="#example-0-2">2</a></span>
+<span class="normal"><a href="#example-0-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">get_lines_matching_regexp</span><span class="p">(</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">string</span><span class="p">,</span> <span class="n">pattern</span><span class="p">,</span> <span class="n">partial_match</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="kc">None</span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
@@ -9015,7 +9043,11 @@ string is not altered.</p>
 
 
 <a href="#robot.libraries.String.String.replace_string_using_regexp" class="headerlink" title="Permanent link">&para;</a></h3>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">replace_string_using_regexp</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="n">pattern</span><span class="p">,</span> <span class="n">replace_with</span><span class="p">,</span> <span class="n">count</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
+<span class="normal"><a href="#example-0-2">2</a></span>
+<span class="normal"><a href="#example-0-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">replace_string_using_regexp</span><span class="p">(</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">string</span><span class="p">,</span> <span class="n">pattern</span><span class="p">,</span> <span class="n">replace_with</span><span class="p">,</span> <span class="n">count</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="kc">None</span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
@@ -9555,7 +9587,11 @@ you only want to get first/last part of the string.</p>
 
 
 <a href="#robot.libraries.String.String.split_string_from_right" class="headerlink" title="Permanent link">&para;</a></h3>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">split_string_from_right</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="n">separator</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">max_split</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
+<span class="normal"><a href="#example-0-2">2</a></span>
+<span class="normal"><a href="#example-0-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">split_string_from_right</span><span class="p">(</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">string</span><span class="p">,</span> <span class="n">separator</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">max_split</span><span class="o">=-</span><span class="mi">1</span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">

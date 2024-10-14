@@ -8125,7 +8125,11 @@ Accepted arguments are returned as a list using these rules:</p>
 
 
 <a href="#robot.api.interfaces.DynamicLibrary.get_keyword_documentation" class="headerlink" title="Permanent link">&para;</a></h3>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">get_keyword_documentation</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="n"><span title="robot.api.interfaces.Name">Name</span></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n"><span title="robot.api.interfaces.Documentation">Documentation</span></span> <span class="o">|</span> <span class="kc">None</span>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
+<span class="normal"><a href="#example-0-2">2</a></span>
+<span class="normal"><a href="#example-0-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">get_keyword_documentation</span><span class="p">(</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">name</span><span class="p">:</span> <span class="n"><span title="robot.api.interfaces.Name">Name</span></span><span class="p">,</span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="n"><span title="robot.api.interfaces.Documentation">Documentation</span></span> <span class="o">|</span> <span class="kc">None</span>
 </span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
@@ -8475,7 +8479,11 @@ the User Guide.</p>
   </span>
 
 <a href="#robot.api.interfaces.DynamicLibrary.run_keyword" class="headerlink" title="Permanent link">&para;</a></h3>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">run_keyword</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="n"><span title="robot.api.interfaces.Name">Name</span></span><span class="p">,</span> <span class="n">args</span><span class="p">:</span> <span class="n"><span title="robot.api.interfaces.PositArgs">PositArgs</span></span><span class="p">,</span> <span class="n">named</span><span class="p">:</span> <span class="n"><span title="robot.api.interfaces.NamedArgs">NamedArgs</span></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n"><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></span>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
+<span class="normal"><a href="#example-0-2">2</a></span>
+<span class="normal"><a href="#example-0-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">run_keyword</span><span class="p">(</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">name</span><span class="p">:</span> <span class="n"><span title="robot.api.interfaces.Name">Name</span></span><span class="p">,</span> <span class="n">args</span><span class="p">:</span> <span class="n"><span title="robot.api.interfaces.PositArgs">PositArgs</span></span><span class="p">,</span> <span class="n">named</span><span class="p">:</span> <span class="n"><span title="robot.api.interfaces.NamedArgs">NamedArgs</span></span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="n"><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></span>
 </span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
@@ -9240,7 +9248,11 @@ Not called if creating the report file is disabled.</p>
 
 
 <a href="#robot.api.interfaces.ListenerV2.start_keyword" class="headerlink" title="Permanent link">&para;</a></h3>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">start_keyword</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span><span class="p">,</span> <span class="n">attributes</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.api.interfaces.StartKeywordAttributes" href="#robot.api.interfaces.StartKeywordAttributes">StartKeywordAttributes</a></span><span class="p">)</span>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
+<span class="normal"><a href="#example-0-2">2</a></span>
+<span class="normal"><a href="#example-0-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">start_keyword</span><span class="p">(</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">name</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span><span class="p">,</span> <span class="n">attributes</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.api.interfaces.StartKeywordAttributes" href="#robot.api.interfaces.StartKeywordAttributes">StartKeywordAttributes</a></span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
@@ -9328,7 +9340,11 @@ structures can contain extra attributes that are only relevant to them.</p>
 
 
 <a href="#robot.api.interfaces.ListenerV2.variables_import" class="headerlink" title="Permanent link">&para;</a></h3>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">variables_import</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span><span class="p">,</span> <span class="n">attributes</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.api.interfaces.VariablesAttributes" href="#robot.api.interfaces.VariablesAttributes">VariablesAttributes</a></span><span class="p">)</span>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
+<span class="normal"><a href="#example-0-2">2</a></span>
+<span class="normal"><a href="#example-0-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">variables_import</span><span class="p">(</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">name</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span><span class="p">,</span> <span class="n">attributes</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.api.interfaces.VariablesAttributes" href="#robot.api.interfaces.VariablesAttributes">VariablesAttributes</a></span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
@@ -9818,7 +9834,15 @@ Only called if creating the debug file is enabled.</p>
 
 
 <a href="#robot.api.interfaces.ListenerV3.end_invalid_keyword" class="headerlink" title="Permanent link">&para;</a></h3>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">end_invalid_keyword</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.running.Keyword" href="../../running/model/#robot.running.model.Keyword">Keyword</a></span><span class="p">,</span> <span class="n">implementation</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.running.KeywordImplementation" href="../../running/keywordimplementation/#robot.running.keywordimplementation.KeywordImplementation">KeywordImplementation</a></span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.result.Keyword" href="../../result/model/#robot.result.model.Keyword">Keyword</a></span><span class="p">)</span>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
+<span class="normal"><a href="#example-0-2">2</a></span>
+<span class="normal"><a href="#example-0-3">3</a></span>
+<span class="normal"><a href="#example-0-4">4</a></span>
+<span class="normal"><a href="#example-0-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">end_invalid_keyword</span><span class="p">(</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">data</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.running.Keyword" href="../../running/model/#robot.running.model.Keyword">Keyword</a></span><span class="p">,</span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a>    <span class="n">implementation</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.running.KeywordImplementation" href="../../running/keywordimplementation/#robot.running.keywordimplementation.KeywordImplementation">KeywordImplementation</a></span><span class="p">,</span>
+</span><span id="line-0-4"><a id="example-0-4" name="example-0-4"></a>    <span class="n">result</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.result.Keyword" href="../../result/model/#robot.result.model.Keyword">Keyword</a></span><span class="p">,</span>
+</span><span id="line-0-5"><a id="example-0-5" name="example-0-5"></a><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
@@ -9924,7 +9948,15 @@ specific :meth:<code>end_user_keyword</code>, :meth:<code>end_library_keyword</c
 
 
 <a href="#robot.api.interfaces.ListenerV3.end_library_keyword" class="headerlink" title="Permanent link">&para;</a></h3>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">end_library_keyword</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.running.Keyword" href="../../running/model/#robot.running.model.Keyword">Keyword</a></span><span class="p">,</span> <span class="n">implementation</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.running.LibraryKeyword" href="../../running/librarykeyword/#robot.running.librarykeyword.LibraryKeyword">LibraryKeyword</a></span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.result.Keyword" href="../../result/model/#robot.result.model.Keyword">Keyword</a></span><span class="p">)</span>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
+<span class="normal"><a href="#example-0-2">2</a></span>
+<span class="normal"><a href="#example-0-3">3</a></span>
+<span class="normal"><a href="#example-0-4">4</a></span>
+<span class="normal"><a href="#example-0-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">end_library_keyword</span><span class="p">(</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">data</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.running.Keyword" href="../../running/model/#robot.running.model.Keyword">Keyword</a></span><span class="p">,</span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a>    <span class="n">implementation</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.running.LibraryKeyword" href="../../running/librarykeyword/#robot.running.librarykeyword.LibraryKeyword">LibraryKeyword</a></span><span class="p">,</span>
+</span><span id="line-0-4"><a id="example-0-4" name="example-0-4"></a>    <span class="n">result</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.result.Keyword" href="../../result/model/#robot.result.model.Keyword">Keyword</a></span><span class="p">,</span>
+</span><span id="line-0-5"><a id="example-0-5" name="example-0-5"></a><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
@@ -10140,7 +10172,15 @@ specific :meth:<code>end_user_keyword</code>, :meth:<code>end_library_keyword</c
 
 
 <a href="#robot.api.interfaces.ListenerV3.end_user_keyword" class="headerlink" title="Permanent link">&para;</a></h3>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">end_user_keyword</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.running.Keyword" href="../../running/model/#robot.running.model.Keyword">Keyword</a></span><span class="p">,</span> <span class="n">implementation</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.running.UserKeyword" href="../../running/resourcemodel/#robot.running.resourcemodel.UserKeyword">UserKeyword</a></span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.result.Keyword" href="../../result/model/#robot.result.model.Keyword">Keyword</a></span><span class="p">)</span>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
+<span class="normal"><a href="#example-0-2">2</a></span>
+<span class="normal"><a href="#example-0-3">3</a></span>
+<span class="normal"><a href="#example-0-4">4</a></span>
+<span class="normal"><a href="#example-0-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">end_user_keyword</span><span class="p">(</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">data</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.running.Keyword" href="../../running/model/#robot.running.model.Keyword">Keyword</a></span><span class="p">,</span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a>    <span class="n">implementation</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.running.UserKeyword" href="../../running/resourcemodel/#robot.running.resourcemodel.UserKeyword">UserKeyword</a></span><span class="p">,</span>
+</span><span id="line-0-4"><a id="example-0-4" name="example-0-4"></a>    <span class="n">result</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.result.Keyword" href="../../result/model/#robot.result.model.Keyword">Keyword</a></span><span class="p">,</span>
+</span><span id="line-0-5"><a id="example-0-5" name="example-0-5"></a><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
@@ -10264,7 +10304,11 @@ specific :meth:<code>end_user_keyword</code>, :meth:<code>end_library_keyword</c
 
 
 <a href="#robot.api.interfaces.ListenerV3.end_while_iteration" class="headerlink" title="Permanent link">&para;</a></h3>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">end_while_iteration</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n"><span title="robot.running.WhileIteration">WhileIteration</span></span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n"><span title="robot.result.WhileIteration">WhileIteration</span></span><span class="p">)</span>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
+<span class="normal"><a href="#example-0-2">2</a></span>
+<span class="normal"><a href="#example-0-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">end_while_iteration</span><span class="p">(</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">data</span><span class="p">:</span> <span class="n"><span title="robot.running.WhileIteration">WhileIteration</span></span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n"><span title="robot.result.WhileIteration">WhileIteration</span></span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
@@ -10772,7 +10816,11 @@ the resource was imported.</p>
 
 
 <a href="#robot.api.interfaces.ListenerV3.start_for_iteration" class="headerlink" title="Permanent link">&para;</a></h3>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">start_for_iteration</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n"><span title="robot.running.ForIteration">ForIteration</span></span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n"><span title="robot.result.ForIteration">ForIteration</span></span><span class="p">)</span>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
+<span class="normal"><a href="#example-0-2">2</a></span>
+<span class="normal"><a href="#example-0-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">start_for_iteration</span><span class="p">(</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">data</span><span class="p">:</span> <span class="n"><span title="robot.running.ForIteration">ForIteration</span></span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n"><span title="robot.result.ForIteration">ForIteration</span></span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
@@ -10894,7 +10942,15 @@ the resource was imported.</p>
 
 
 <a href="#robot.api.interfaces.ListenerV3.start_invalid_keyword" class="headerlink" title="Permanent link">&para;</a></h3>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">start_invalid_keyword</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.running.Keyword" href="../../running/model/#robot.running.model.Keyword">Keyword</a></span><span class="p">,</span> <span class="n">implementation</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.running.KeywordImplementation" href="../../running/keywordimplementation/#robot.running.keywordimplementation.KeywordImplementation">KeywordImplementation</a></span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.result.Keyword" href="../../result/model/#robot.result.model.Keyword">Keyword</a></span><span class="p">)</span>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
+<span class="normal"><a href="#example-0-2">2</a></span>
+<span class="normal"><a href="#example-0-3">3</a></span>
+<span class="normal"><a href="#example-0-4">4</a></span>
+<span class="normal"><a href="#example-0-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">start_invalid_keyword</span><span class="p">(</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">data</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.running.Keyword" href="../../running/model/#robot.running.model.Keyword">Keyword</a></span><span class="p">,</span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a>    <span class="n">implementation</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.running.KeywordImplementation" href="../../running/keywordimplementation/#robot.running.keywordimplementation.KeywordImplementation">KeywordImplementation</a></span><span class="p">,</span>
+</span><span id="line-0-4"><a id="example-0-4" name="example-0-4"></a>    <span class="n">result</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.result.Keyword" href="../../result/model/#robot.result.model.Keyword">Keyword</a></span><span class="p">,</span>
+</span><span id="line-0-5"><a id="example-0-5" name="example-0-5"></a><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
@@ -11000,7 +11056,15 @@ specific :meth:<code>start_user_keyword</code>, :meth:<code>start_library_keywor
 
 
 <a href="#robot.api.interfaces.ListenerV3.start_library_keyword" class="headerlink" title="Permanent link">&para;</a></h3>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">start_library_keyword</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.running.Keyword" href="../../running/model/#robot.running.model.Keyword">Keyword</a></span><span class="p">,</span> <span class="n">implementation</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.running.LibraryKeyword" href="../../running/librarykeyword/#robot.running.librarykeyword.LibraryKeyword">LibraryKeyword</a></span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.result.Keyword" href="../../result/model/#robot.result.model.Keyword">Keyword</a></span><span class="p">)</span>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
+<span class="normal"><a href="#example-0-2">2</a></span>
+<span class="normal"><a href="#example-0-3">3</a></span>
+<span class="normal"><a href="#example-0-4">4</a></span>
+<span class="normal"><a href="#example-0-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">start_library_keyword</span><span class="p">(</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">data</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.running.Keyword" href="../../running/model/#robot.running.model.Keyword">Keyword</a></span><span class="p">,</span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a>    <span class="n">implementation</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.running.LibraryKeyword" href="../../running/librarykeyword/#robot.running.librarykeyword.LibraryKeyword">LibraryKeyword</a></span><span class="p">,</span>
+</span><span id="line-0-4"><a id="example-0-4" name="example-0-4"></a>    <span class="n">result</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.result.Keyword" href="../../result/model/#robot.result.model.Keyword">Keyword</a></span><span class="p">,</span>
+</span><span id="line-0-5"><a id="example-0-5" name="example-0-5"></a><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
@@ -11216,7 +11280,15 @@ specific :meth:<code>start_user_keyword</code>, :meth:<code>start_library_keywor
 
 
 <a href="#robot.api.interfaces.ListenerV3.start_user_keyword" class="headerlink" title="Permanent link">&para;</a></h3>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">start_user_keyword</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.running.Keyword" href="../../running/model/#robot.running.model.Keyword">Keyword</a></span><span class="p">,</span> <span class="n">implementation</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.running.UserKeyword" href="../../running/resourcemodel/#robot.running.resourcemodel.UserKeyword">UserKeyword</a></span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.result.Keyword" href="../../result/model/#robot.result.model.Keyword">Keyword</a></span><span class="p">)</span>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
+<span class="normal"><a href="#example-0-2">2</a></span>
+<span class="normal"><a href="#example-0-3">3</a></span>
+<span class="normal"><a href="#example-0-4">4</a></span>
+<span class="normal"><a href="#example-0-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">start_user_keyword</span><span class="p">(</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">data</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.running.Keyword" href="../../running/model/#robot.running.model.Keyword">Keyword</a></span><span class="p">,</span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a>    <span class="n">implementation</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.running.UserKeyword" href="../../running/resourcemodel/#robot.running.resourcemodel.UserKeyword">UserKeyword</a></span><span class="p">,</span>
+</span><span id="line-0-4"><a id="example-0-4" name="example-0-4"></a>    <span class="n">result</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.result.Keyword" href="../../result/model/#robot.result.model.Keyword">Keyword</a></span><span class="p">,</span>
+</span><span id="line-0-5"><a id="example-0-5" name="example-0-5"></a><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
@@ -11340,7 +11412,11 @@ specific :meth:<code>start_user_keyword</code>, :meth:<code>start_library_keywor
 
 
 <a href="#robot.api.interfaces.ListenerV3.start_while_iteration" class="headerlink" title="Permanent link">&para;</a></h3>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">start_while_iteration</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n"><span title="robot.running.WhileIteration">WhileIteration</span></span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n"><span title="robot.result.WhileIteration">WhileIteration</span></span><span class="p">)</span>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
+<span class="normal"><a href="#example-0-2">2</a></span>
+<span class="normal"><a href="#example-0-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">start_while_iteration</span><span class="p">(</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">data</span><span class="p">:</span> <span class="n"><span title="robot.running.WhileIteration">WhileIteration</span></span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n"><span title="robot.result.WhileIteration">WhileIteration</span></span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
@@ -11691,7 +11767,11 @@ this method also so that it accepts only <code>source</code>.</p>
 
 
 <a href="#robot.api.interfaces.Parser.parse_init" class="headerlink" title="Permanent link">&para;</a></h3>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">parse_init</span><span class="p">(</span><span class="n">source</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" title="pathlib.Path" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path">Path</a></span><span class="p">,</span> <span class="n">defaults</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.running.TestDefaults" href="../../running/builder/settings/#robot.running.builder.settings.TestDefaults">TestDefaults</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.running.TestSuite" href="../../running/model/#robot.running.model.TestSuite">TestSuite</a></span>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
+<span class="normal"><a href="#example-0-2">2</a></span>
+<span class="normal"><a href="#example-0-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">parse_init</span><span class="p">(</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">source</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" title="pathlib.Path" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path">Path</a></span><span class="p">,</span> <span class="n">defaults</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.running.TestDefaults" href="../../running/builder/settings/#robot.running.builder.settings.TestDefaults">TestDefaults</a></span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.running.TestSuite" href="../../running/model/#robot.running.model.TestSuite">TestSuite</a></span>
 </span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">

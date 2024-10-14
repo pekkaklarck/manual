@@ -8810,7 +8810,11 @@ semantics as with <code>Should Be True</code> keyword.</p>
 
 
 <a href="#robot.libraries.BuiltIn.BuiltIn.convert_to_binary" class="headerlink" title="Permanent link">&para;</a></h3>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">convert_to_binary</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">prefix</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
+<span class="normal"><a href="#example-0-2">2</a></span>
+<span class="normal"><a href="#example-0-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">convert_to_binary</span><span class="p">(</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">item</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">prefix</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="kc">None</span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
@@ -9115,7 +9119,19 @@ convert text to bytes using a certain encoding.</p>
 
 
 <a href="#robot.libraries.BuiltIn.BuiltIn.convert_to_hex" class="headerlink" title="Permanent link">&para;</a></h3>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">convert_to_hex</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">prefix</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">lowercase</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
+<span class="normal"><a href="#example-0-2">2</a></span>
+<span class="normal"><a href="#example-0-3">3</a></span>
+<span class="normal"><a href="#example-0-4">4</a></span>
+<span class="normal"><a href="#example-0-5">5</a></span>
+<span class="normal"><a href="#example-0-6">6</a></span>
+<span class="normal"><a href="#example-0-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">convert_to_hex</span><span class="p">(</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">item</span><span class="p">,</span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a>    <span class="n">base</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+</span><span id="line-0-4"><a id="example-0-4" name="example-0-4"></a>    <span class="n">prefix</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+</span><span id="line-0-5"><a id="example-0-5" name="example-0-5"></a>    <span class="n">length</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+</span><span id="line-0-6"><a id="example-0-6" name="example-0-6"></a>    <span class="n">lowercase</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="line-0-7"><a id="example-0-7" name="example-0-7"></a><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
@@ -11310,7 +11326,21 @@ default error message can be overridden with the <code>msg</code> argument.</p>
 
 
 <a href="#robot.libraries.BuiltIn.BuiltIn.log" class="headerlink" title="Permanent link">&para;</a></h3>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">log</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="s1">&#39;INFO&#39;</span><span class="p">,</span> <span class="n">html</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">console</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="nb">repr</span><span class="o">=</span><span class="s1">&#39;DEPRECATED&#39;</span><span class="p">,</span> <span class="n">formatter</span><span class="o">=</span><span class="s1">&#39;str&#39;</span><span class="p">)</span>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
+<span class="normal"><a href="#example-0-2">2</a></span>
+<span class="normal"><a href="#example-0-3">3</a></span>
+<span class="normal"><a href="#example-0-4">4</a></span>
+<span class="normal"><a href="#example-0-5">5</a></span>
+<span class="normal"><a href="#example-0-6">6</a></span>
+<span class="normal"><a href="#example-0-7">7</a></span>
+<span class="normal"><a href="#example-0-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">log</span><span class="p">(</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">message</span><span class="p">,</span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a>    <span class="n">level</span><span class="o">=</span><span class="s2">&quot;INFO&quot;</span><span class="p">,</span>
+</span><span id="line-0-4"><a id="example-0-4" name="example-0-4"></a>    <span class="n">html</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="line-0-5"><a id="example-0-5" name="example-0-5"></a>    <span class="n">console</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="line-0-6"><a id="example-0-6" name="example-0-6"></a>    <span class="nb">repr</span><span class="o">=</span><span class="s2">&quot;DEPRECATED&quot;</span><span class="p">,</span>
+</span><span id="line-0-7"><a id="example-0-7" name="example-0-7"></a>    <span class="n">formatter</span><span class="o">=</span><span class="s2">&quot;str&quot;</span><span class="p">,</span>
+</span><span id="line-0-8"><a id="example-0-8" name="example-0-8"></a><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
@@ -11572,7 +11602,11 @@ log levels, use HTML, or log to the console.</p>
 
 
 <a href="#robot.libraries.BuiltIn.BuiltIn.log_to_console" class="headerlink" title="Permanent link">&para;</a></h3>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">log_to_console</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="s1">&#39;STDOUT&#39;</span><span class="p">,</span> <span class="n">no_newline</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
+<span class="normal"><a href="#example-0-2">2</a></span>
+<span class="normal"><a href="#example-0-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">log_to_console</span><span class="p">(</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">message</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="s2">&quot;STDOUT&quot;</span><span class="p">,</span> <span class="n">no_newline</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
@@ -15445,7 +15479,25 @@ default error message can be overridden with the <code>msg</code> argument.</p>
 
 
 <a href="#robot.libraries.BuiltIn.BuiltIn.should_be_equal" class="headerlink" title="Permanent link">&para;</a></h3>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">should_be_equal</span><span class="p">(</span><span class="n">first</span><span class="p">,</span> <span class="n">second</span><span class="p">,</span> <span class="n">msg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ignore_case</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">formatter</span><span class="o">=</span><span class="s1">&#39;str&#39;</span><span class="p">,</span> <span class="n">strip_spaces</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">collapse_spaces</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1"> 1</a></span>
+<span class="normal"><a href="#example-0-2"> 2</a></span>
+<span class="normal"><a href="#example-0-3"> 3</a></span>
+<span class="normal"><a href="#example-0-4"> 4</a></span>
+<span class="normal"><a href="#example-0-5"> 5</a></span>
+<span class="normal"><a href="#example-0-6"> 6</a></span>
+<span class="normal"><a href="#example-0-7"> 7</a></span>
+<span class="normal"><a href="#example-0-8"> 8</a></span>
+<span class="normal"><a href="#example-0-9"> 9</a></span>
+<span class="normal"><a href="#example-0-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">should_be_equal</span><span class="p">(</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">first</span><span class="p">,</span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a>    <span class="n">second</span><span class="p">,</span>
+</span><span id="line-0-4"><a id="example-0-4" name="example-0-4"></a>    <span class="n">msg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+</span><span id="line-0-5"><a id="example-0-5" name="example-0-5"></a>    <span class="n">values</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="line-0-6"><a id="example-0-6" name="example-0-6"></a>    <span class="n">ignore_case</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="line-0-7"><a id="example-0-7" name="example-0-7"></a>    <span class="n">formatter</span><span class="o">=</span><span class="s2">&quot;str&quot;</span><span class="p">,</span>
+</span><span id="line-0-8"><a id="example-0-8" name="example-0-8"></a>    <span class="n">strip_spaces</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="line-0-9"><a id="example-0-9" name="example-0-9"></a>    <span class="n">collapse_spaces</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="line-0-10"><a id="example-0-10" name="example-0-10"></a><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
@@ -15607,7 +15659,11 @@ a single space character.</p>
 
 
 <a href="#robot.libraries.BuiltIn.BuiltIn.should_be_equal_as_integers" class="headerlink" title="Permanent link">&para;</a></h3>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">should_be_equal_as_integers</span><span class="p">(</span><span class="n">first</span><span class="p">,</span> <span class="n">second</span><span class="p">,</span> <span class="n">msg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
+<span class="normal"><a href="#example-0-2">2</a></span>
+<span class="normal"><a href="#example-0-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">should_be_equal_as_integers</span><span class="p">(</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">first</span><span class="p">,</span> <span class="n">second</span><span class="p">,</span> <span class="n">msg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="kc">None</span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
@@ -15675,7 +15731,11 @@ error message with <code>msg</code> and <code>values</code>.</p>
 
 
 <a href="#robot.libraries.BuiltIn.BuiltIn.should_be_equal_as_numbers" class="headerlink" title="Permanent link">&para;</a></h3>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">should_be_equal_as_numbers</span><span class="p">(</span><span class="n">first</span><span class="p">,</span> <span class="n">second</span><span class="p">,</span> <span class="n">msg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">precision</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
+<span class="normal"><a href="#example-0-2">2</a></span>
+<span class="normal"><a href="#example-0-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">should_be_equal_as_numbers</span><span class="p">(</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">first</span><span class="p">,</span> <span class="n">second</span><span class="p">,</span> <span class="n">msg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">precision</span><span class="o">=</span><span class="mi">6</span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
@@ -15795,7 +15855,25 @@ the default error message with <code>msg</code> and <code>values</code>.</p>
 
 
 <a href="#robot.libraries.BuiltIn.BuiltIn.should_be_equal_as_strings" class="headerlink" title="Permanent link">&para;</a></h3>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">should_be_equal_as_strings</span><span class="p">(</span><span class="n">first</span><span class="p">,</span> <span class="n">second</span><span class="p">,</span> <span class="n">msg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ignore_case</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">strip_spaces</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">formatter</span><span class="o">=</span><span class="s1">&#39;str&#39;</span><span class="p">,</span> <span class="n">collapse_spaces</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1"> 1</a></span>
+<span class="normal"><a href="#example-0-2"> 2</a></span>
+<span class="normal"><a href="#example-0-3"> 3</a></span>
+<span class="normal"><a href="#example-0-4"> 4</a></span>
+<span class="normal"><a href="#example-0-5"> 5</a></span>
+<span class="normal"><a href="#example-0-6"> 6</a></span>
+<span class="normal"><a href="#example-0-7"> 7</a></span>
+<span class="normal"><a href="#example-0-8"> 8</a></span>
+<span class="normal"><a href="#example-0-9"> 9</a></span>
+<span class="normal"><a href="#example-0-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">should_be_equal_as_strings</span><span class="p">(</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">first</span><span class="p">,</span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a>    <span class="n">second</span><span class="p">,</span>
+</span><span id="line-0-4"><a id="example-0-4" name="example-0-4"></a>    <span class="n">msg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+</span><span id="line-0-5"><a id="example-0-5" name="example-0-5"></a>    <span class="n">values</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="line-0-6"><a id="example-0-6" name="example-0-6"></a>    <span class="n">ignore_case</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="line-0-7"><a id="example-0-7" name="example-0-7"></a>    <span class="n">strip_spaces</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="line-0-8"><a id="example-0-8" name="example-0-8"></a>    <span class="n">formatter</span><span class="o">=</span><span class="s2">&quot;str&quot;</span><span class="p">,</span>
+</span><span id="line-0-9"><a id="example-0-9" name="example-0-9"></a>    <span class="n">collapse_spaces</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="line-0-10"><a id="example-0-10" name="example-0-10"></a><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
@@ -16015,7 +16093,23 @@ expressions</code> section.</p>
 
 
 <a href="#robot.libraries.BuiltIn.BuiltIn.should_contain" class="headerlink" title="Permanent link">&para;</a></h3>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">should_contain</span><span class="p">(</span><span class="n">container</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">msg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ignore_case</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">strip_spaces</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">collapse_spaces</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
+<span class="normal"><a href="#example-0-2">2</a></span>
+<span class="normal"><a href="#example-0-3">3</a></span>
+<span class="normal"><a href="#example-0-4">4</a></span>
+<span class="normal"><a href="#example-0-5">5</a></span>
+<span class="normal"><a href="#example-0-6">6</a></span>
+<span class="normal"><a href="#example-0-7">7</a></span>
+<span class="normal"><a href="#example-0-8">8</a></span>
+<span class="normal"><a href="#example-0-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">should_contain</span><span class="p">(</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">container</span><span class="p">,</span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a>    <span class="n">item</span><span class="p">,</span>
+</span><span id="line-0-4"><a id="example-0-4" name="example-0-4"></a>    <span class="n">msg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+</span><span id="line-0-5"><a id="example-0-5" name="example-0-5"></a>    <span class="n">values</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="line-0-6"><a id="example-0-6" name="example-0-6"></a>    <span class="n">ignore_case</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="line-0-7"><a id="example-0-7" name="example-0-7"></a>    <span class="n">strip_spaces</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="line-0-8"><a id="example-0-8" name="example-0-8"></a>    <span class="n">collapse_spaces</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="line-0-9"><a id="example-0-9" name="example-0-9"></a><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
@@ -16352,7 +16446,23 @@ as <code>**configuration</code>.</p>
 
 
 <a href="#robot.libraries.BuiltIn.BuiltIn.should_contain_x_times" class="headerlink" title="Permanent link">&para;</a></h3>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">should_contain_x_times</span><span class="p">(</span><span class="n">container</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">count</span><span class="p">,</span> <span class="n">msg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ignore_case</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">strip_spaces</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">collapse_spaces</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
+<span class="normal"><a href="#example-0-2">2</a></span>
+<span class="normal"><a href="#example-0-3">3</a></span>
+<span class="normal"><a href="#example-0-4">4</a></span>
+<span class="normal"><a href="#example-0-5">5</a></span>
+<span class="normal"><a href="#example-0-6">6</a></span>
+<span class="normal"><a href="#example-0-7">7</a></span>
+<span class="normal"><a href="#example-0-8">8</a></span>
+<span class="normal"><a href="#example-0-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">should_contain_x_times</span><span class="p">(</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">container</span><span class="p">,</span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a>    <span class="n">item</span><span class="p">,</span>
+</span><span id="line-0-4"><a id="example-0-4" name="example-0-4"></a>    <span class="n">count</span><span class="p">,</span>
+</span><span id="line-0-5"><a id="example-0-5" name="example-0-5"></a>    <span class="n">msg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+</span><span id="line-0-6"><a id="example-0-6" name="example-0-6"></a>    <span class="n">ignore_case</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="line-0-7"><a id="example-0-7" name="example-0-7"></a>    <span class="n">strip_spaces</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="line-0-8"><a id="example-0-8" name="example-0-8"></a>    <span class="n">collapse_spaces</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="line-0-9"><a id="example-0-9" name="example-0-9"></a><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
@@ -16508,7 +16618,23 @@ in Robot Framework 4.1.</p>
 
 
 <a href="#robot.libraries.BuiltIn.BuiltIn.should_end_with" class="headerlink" title="Permanent link">&para;</a></h3>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">should_end_with</span><span class="p">(</span><span class="n">str1</span><span class="p">,</span> <span class="n">str2</span><span class="p">,</span> <span class="n">msg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ignore_case</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">strip_spaces</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">collapse_spaces</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
+<span class="normal"><a href="#example-0-2">2</a></span>
+<span class="normal"><a href="#example-0-3">3</a></span>
+<span class="normal"><a href="#example-0-4">4</a></span>
+<span class="normal"><a href="#example-0-5">5</a></span>
+<span class="normal"><a href="#example-0-6">6</a></span>
+<span class="normal"><a href="#example-0-7">7</a></span>
+<span class="normal"><a href="#example-0-8">8</a></span>
+<span class="normal"><a href="#example-0-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">should_end_with</span><span class="p">(</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">str1</span><span class="p">,</span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a>    <span class="n">str2</span><span class="p">,</span>
+</span><span id="line-0-4"><a id="example-0-4" name="example-0-4"></a>    <span class="n">msg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+</span><span id="line-0-5"><a id="example-0-5" name="example-0-5"></a>    <span class="n">values</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="line-0-6"><a id="example-0-6" name="example-0-6"></a>    <span class="n">ignore_case</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="line-0-7"><a id="example-0-7" name="example-0-7"></a>    <span class="n">strip_spaces</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="line-0-8"><a id="example-0-8" name="example-0-8"></a>    <span class="n">collapse_spaces</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="line-0-9"><a id="example-0-9" name="example-0-9"></a><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
@@ -16573,7 +16699,19 @@ of the <code>ignore_case</code>, <code>strip_spaces</code>, and <code>collapse_s
 
 
 <a href="#robot.libraries.BuiltIn.BuiltIn.should_match" class="headerlink" title="Permanent link">&para;</a></h3>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">should_match</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="n">pattern</span><span class="p">,</span> <span class="n">msg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ignore_case</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
+<span class="normal"><a href="#example-0-2">2</a></span>
+<span class="normal"><a href="#example-0-3">3</a></span>
+<span class="normal"><a href="#example-0-4">4</a></span>
+<span class="normal"><a href="#example-0-5">5</a></span>
+<span class="normal"><a href="#example-0-6">6</a></span>
+<span class="normal"><a href="#example-0-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">should_match</span><span class="p">(</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">string</span><span class="p">,</span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a>    <span class="n">pattern</span><span class="p">,</span>
+</span><span id="line-0-4"><a id="example-0-4" name="example-0-4"></a>    <span class="n">msg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+</span><span id="line-0-5"><a id="example-0-5" name="example-0-5"></a>    <span class="n">values</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="line-0-6"><a id="example-0-6" name="example-0-6"></a>    <span class="n">ignore_case</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="line-0-7"><a id="example-0-7" name="example-0-7"></a><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
@@ -16639,7 +16777,11 @@ error message with <code>msg</code> and <code>values</code>.</p>
 
 
 <a href="#robot.libraries.BuiltIn.BuiltIn.should_match_regexp" class="headerlink" title="Permanent link">&para;</a></h3>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">should_match_regexp</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="n">pattern</span><span class="p">,</span> <span class="n">msg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
+<span class="normal"><a href="#example-0-2">2</a></span>
+<span class="normal"><a href="#example-0-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">should_match_regexp</span><span class="p">(</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">string</span><span class="p">,</span> <span class="n">pattern</span><span class="p">,</span> <span class="n">msg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="kc">None</span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
@@ -16826,7 +16968,23 @@ default error message can be overridden with the <code>msg</code> argument.</p>
 
 
 <a href="#robot.libraries.BuiltIn.BuiltIn.should_not_be_equal" class="headerlink" title="Permanent link">&para;</a></h3>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">should_not_be_equal</span><span class="p">(</span><span class="n">first</span><span class="p">,</span> <span class="n">second</span><span class="p">,</span> <span class="n">msg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ignore_case</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">strip_spaces</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">collapse_spaces</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
+<span class="normal"><a href="#example-0-2">2</a></span>
+<span class="normal"><a href="#example-0-3">3</a></span>
+<span class="normal"><a href="#example-0-4">4</a></span>
+<span class="normal"><a href="#example-0-5">5</a></span>
+<span class="normal"><a href="#example-0-6">6</a></span>
+<span class="normal"><a href="#example-0-7">7</a></span>
+<span class="normal"><a href="#example-0-8">8</a></span>
+<span class="normal"><a href="#example-0-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">should_not_be_equal</span><span class="p">(</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">first</span><span class="p">,</span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a>    <span class="n">second</span><span class="p">,</span>
+</span><span id="line-0-4"><a id="example-0-4" name="example-0-4"></a>    <span class="n">msg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+</span><span id="line-0-5"><a id="example-0-5" name="example-0-5"></a>    <span class="n">values</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="line-0-6"><a id="example-0-6" name="example-0-6"></a>    <span class="n">ignore_case</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="line-0-7"><a id="example-0-7" name="example-0-7"></a>    <span class="n">strip_spaces</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="line-0-8"><a id="example-0-8" name="example-0-8"></a>    <span class="n">collapse_spaces</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="line-0-9"><a id="example-0-9" name="example-0-9"></a><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
@@ -16934,7 +17092,11 @@ in Robot Framework 4.1.</p>
 
 
 <a href="#robot.libraries.BuiltIn.BuiltIn.should_not_be_equal_as_integers" class="headerlink" title="Permanent link">&para;</a></h3>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">should_not_be_equal_as_integers</span><span class="p">(</span><span class="n">first</span><span class="p">,</span> <span class="n">second</span><span class="p">,</span> <span class="n">msg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
+<span class="normal"><a href="#example-0-2">2</a></span>
+<span class="normal"><a href="#example-0-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">should_not_be_equal_as_integers</span><span class="p">(</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">first</span><span class="p">,</span> <span class="n">second</span><span class="p">,</span> <span class="n">msg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="kc">None</span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
@@ -16993,7 +17155,11 @@ error message with <code>msg</code> and <code>values</code>.</p>
 
 
 <a href="#robot.libraries.BuiltIn.BuiltIn.should_not_be_equal_as_numbers" class="headerlink" title="Permanent link">&para;</a></h3>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">should_not_be_equal_as_numbers</span><span class="p">(</span><span class="n">first</span><span class="p">,</span> <span class="n">second</span><span class="p">,</span> <span class="n">msg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">precision</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
+<span class="normal"><a href="#example-0-2">2</a></span>
+<span class="normal"><a href="#example-0-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">should_not_be_equal_as_numbers</span><span class="p">(</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">first</span><span class="p">,</span> <span class="n">second</span><span class="p">,</span> <span class="n">msg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">precision</span><span class="o">=</span><span class="mi">6</span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
@@ -17053,7 +17219,23 @@ error message with <code>msg</code> and <code>values</code>.</p>
 
 
 <a href="#robot.libraries.BuiltIn.BuiltIn.should_not_be_equal_as_strings" class="headerlink" title="Permanent link">&para;</a></h3>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">should_not_be_equal_as_strings</span><span class="p">(</span><span class="n">first</span><span class="p">,</span> <span class="n">second</span><span class="p">,</span> <span class="n">msg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ignore_case</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">strip_spaces</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">collapse_spaces</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
+<span class="normal"><a href="#example-0-2">2</a></span>
+<span class="normal"><a href="#example-0-3">3</a></span>
+<span class="normal"><a href="#example-0-4">4</a></span>
+<span class="normal"><a href="#example-0-5">5</a></span>
+<span class="normal"><a href="#example-0-6">6</a></span>
+<span class="normal"><a href="#example-0-7">7</a></span>
+<span class="normal"><a href="#example-0-8">8</a></span>
+<span class="normal"><a href="#example-0-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">should_not_be_equal_as_strings</span><span class="p">(</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">first</span><span class="p">,</span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a>    <span class="n">second</span><span class="p">,</span>
+</span><span id="line-0-4"><a id="example-0-4" name="example-0-4"></a>    <span class="n">msg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+</span><span id="line-0-5"><a id="example-0-5" name="example-0-5"></a>    <span class="n">values</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="line-0-6"><a id="example-0-6" name="example-0-6"></a>    <span class="n">ignore_case</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="line-0-7"><a id="example-0-7" name="example-0-7"></a>    <span class="n">strip_spaces</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="line-0-8"><a id="example-0-8" name="example-0-8"></a>    <span class="n">collapse_spaces</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="line-0-9"><a id="example-0-9" name="example-0-9"></a><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
@@ -17211,7 +17393,23 @@ and how <code>msg</code> can be used to override the default error message.</p>
 
 
 <a href="#robot.libraries.BuiltIn.BuiltIn.should_not_contain" class="headerlink" title="Permanent link">&para;</a></h3>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">should_not_contain</span><span class="p">(</span><span class="n">container</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">msg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ignore_case</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">strip_spaces</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">collapse_spaces</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
+<span class="normal"><a href="#example-0-2">2</a></span>
+<span class="normal"><a href="#example-0-3">3</a></span>
+<span class="normal"><a href="#example-0-4">4</a></span>
+<span class="normal"><a href="#example-0-5">5</a></span>
+<span class="normal"><a href="#example-0-6">6</a></span>
+<span class="normal"><a href="#example-0-7">7</a></span>
+<span class="normal"><a href="#example-0-8">8</a></span>
+<span class="normal"><a href="#example-0-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">should_not_contain</span><span class="p">(</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">container</span><span class="p">,</span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a>    <span class="n">item</span><span class="p">,</span>
+</span><span id="line-0-4"><a id="example-0-4" name="example-0-4"></a>    <span class="n">msg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+</span><span id="line-0-5"><a id="example-0-5" name="example-0-5"></a>    <span class="n">values</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="line-0-6"><a id="example-0-6" name="example-0-6"></a>    <span class="n">ignore_case</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="line-0-7"><a id="example-0-7" name="example-0-7"></a>    <span class="n">strip_spaces</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="line-0-8"><a id="example-0-8" name="example-0-8"></a>    <span class="n">collapse_spaces</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="line-0-9"><a id="example-0-9" name="example-0-9"></a><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
@@ -17513,7 +17711,23 @@ as <code>**configuration</code>.</p>
 
 
 <a href="#robot.libraries.BuiltIn.BuiltIn.should_not_end_with" class="headerlink" title="Permanent link">&para;</a></h3>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">should_not_end_with</span><span class="p">(</span><span class="n">str1</span><span class="p">,</span> <span class="n">str2</span><span class="p">,</span> <span class="n">msg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ignore_case</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">strip_spaces</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">collapse_spaces</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
+<span class="normal"><a href="#example-0-2">2</a></span>
+<span class="normal"><a href="#example-0-3">3</a></span>
+<span class="normal"><a href="#example-0-4">4</a></span>
+<span class="normal"><a href="#example-0-5">5</a></span>
+<span class="normal"><a href="#example-0-6">6</a></span>
+<span class="normal"><a href="#example-0-7">7</a></span>
+<span class="normal"><a href="#example-0-8">8</a></span>
+<span class="normal"><a href="#example-0-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">should_not_end_with</span><span class="p">(</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">str1</span><span class="p">,</span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a>    <span class="n">str2</span><span class="p">,</span>
+</span><span id="line-0-4"><a id="example-0-4" name="example-0-4"></a>    <span class="n">msg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+</span><span id="line-0-5"><a id="example-0-5" name="example-0-5"></a>    <span class="n">values</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="line-0-6"><a id="example-0-6" name="example-0-6"></a>    <span class="n">ignore_case</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="line-0-7"><a id="example-0-7" name="example-0-7"></a>    <span class="n">strip_spaces</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="line-0-8"><a id="example-0-8" name="example-0-8"></a>    <span class="n">collapse_spaces</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="line-0-9"><a id="example-0-9" name="example-0-9"></a><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
@@ -17580,7 +17794,19 @@ of the <code>ignore_case</code>, <code>strip_spaces</code>, and <code>collapse_s
 
 
 <a href="#robot.libraries.BuiltIn.BuiltIn.should_not_match" class="headerlink" title="Permanent link">&para;</a></h3>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">should_not_match</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="n">pattern</span><span class="p">,</span> <span class="n">msg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ignore_case</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
+<span class="normal"><a href="#example-0-2">2</a></span>
+<span class="normal"><a href="#example-0-3">3</a></span>
+<span class="normal"><a href="#example-0-4">4</a></span>
+<span class="normal"><a href="#example-0-5">5</a></span>
+<span class="normal"><a href="#example-0-6">6</a></span>
+<span class="normal"><a href="#example-0-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">should_not_match</span><span class="p">(</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">string</span><span class="p">,</span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a>    <span class="n">pattern</span><span class="p">,</span>
+</span><span id="line-0-4"><a id="example-0-4" name="example-0-4"></a>    <span class="n">msg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+</span><span id="line-0-5"><a id="example-0-5" name="example-0-5"></a>    <span class="n">values</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="line-0-6"><a id="example-0-6" name="example-0-6"></a>    <span class="n">ignore_case</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="line-0-7"><a id="example-0-7" name="example-0-7"></a><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
@@ -17643,7 +17869,11 @@ error message with <code>msg</code> and <code>`values</code>.</p>
 
 
 <a href="#robot.libraries.BuiltIn.BuiltIn.should_not_match_regexp" class="headerlink" title="Permanent link">&para;</a></h3>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">should_not_match_regexp</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="n">pattern</span><span class="p">,</span> <span class="n">msg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
+<span class="normal"><a href="#example-0-2">2</a></span>
+<span class="normal"><a href="#example-0-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">should_not_match_regexp</span><span class="p">(</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">string</span><span class="p">,</span> <span class="n">pattern</span><span class="p">,</span> <span class="n">msg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="kc">None</span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
@@ -17682,7 +17912,23 @@ error message with <code>msg</code> and <code>`values</code>.</p>
 
 
 <a href="#robot.libraries.BuiltIn.BuiltIn.should_not_start_with" class="headerlink" title="Permanent link">&para;</a></h3>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">should_not_start_with</span><span class="p">(</span><span class="n">str1</span><span class="p">,</span> <span class="n">str2</span><span class="p">,</span> <span class="n">msg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ignore_case</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">strip_spaces</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">collapse_spaces</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
+<span class="normal"><a href="#example-0-2">2</a></span>
+<span class="normal"><a href="#example-0-3">3</a></span>
+<span class="normal"><a href="#example-0-4">4</a></span>
+<span class="normal"><a href="#example-0-5">5</a></span>
+<span class="normal"><a href="#example-0-6">6</a></span>
+<span class="normal"><a href="#example-0-7">7</a></span>
+<span class="normal"><a href="#example-0-8">8</a></span>
+<span class="normal"><a href="#example-0-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">should_not_start_with</span><span class="p">(</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">str1</span><span class="p">,</span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a>    <span class="n">str2</span><span class="p">,</span>
+</span><span id="line-0-4"><a id="example-0-4" name="example-0-4"></a>    <span class="n">msg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+</span><span id="line-0-5"><a id="example-0-5" name="example-0-5"></a>    <span class="n">values</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="line-0-6"><a id="example-0-6" name="example-0-6"></a>    <span class="n">ignore_case</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="line-0-7"><a id="example-0-7" name="example-0-7"></a>    <span class="n">strip_spaces</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="line-0-8"><a id="example-0-8" name="example-0-8"></a>    <span class="n">collapse_spaces</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="line-0-9"><a id="example-0-9" name="example-0-9"></a><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
@@ -17749,7 +17995,23 @@ of the <code>ignore_case</code>, <code>strip_spaces</code>, and <code>collapse_s
 
 
 <a href="#robot.libraries.BuiltIn.BuiltIn.should_start_with" class="headerlink" title="Permanent link">&para;</a></h3>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">should_start_with</span><span class="p">(</span><span class="n">str1</span><span class="p">,</span> <span class="n">str2</span><span class="p">,</span> <span class="n">msg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ignore_case</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">strip_spaces</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">collapse_spaces</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
+<span class="normal"><a href="#example-0-2">2</a></span>
+<span class="normal"><a href="#example-0-3">3</a></span>
+<span class="normal"><a href="#example-0-4">4</a></span>
+<span class="normal"><a href="#example-0-5">5</a></span>
+<span class="normal"><a href="#example-0-6">6</a></span>
+<span class="normal"><a href="#example-0-7">7</a></span>
+<span class="normal"><a href="#example-0-8">8</a></span>
+<span class="normal"><a href="#example-0-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">should_start_with</span><span class="p">(</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">str1</span><span class="p">,</span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a>    <span class="n">str2</span><span class="p">,</span>
+</span><span id="line-0-4"><a id="example-0-4" name="example-0-4"></a>    <span class="n">msg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+</span><span id="line-0-5"><a id="example-0-5" name="example-0-5"></a>    <span class="n">values</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="line-0-6"><a id="example-0-6" name="example-0-6"></a>    <span class="n">ignore_case</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="line-0-7"><a id="example-0-7" name="example-0-7"></a>    <span class="n">strip_spaces</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="line-0-8"><a id="example-0-8" name="example-0-8"></a>    <span class="n">collapse_spaces</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="line-0-9"><a id="example-0-9" name="example-0-9"></a><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
@@ -18120,7 +18382,11 @@ or accessing variables</code> section, using the escaped format is recommended.<
 
 
 <a href="#robot.libraries.BuiltIn.BuiltIn.wait_until_keyword_succeeds" class="headerlink" title="Permanent link">&para;</a></h3>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">wait_until_keyword_succeeds</span><span class="p">(</span><span class="n">retry</span><span class="p">,</span> <span class="n">retry_interval</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">)</span>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
+<span class="normal"><a href="#example-0-2">2</a></span>
+<span class="normal"><a href="#example-0-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">wait_until_keyword_succeeds</span><span class="p">(</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">retry</span><span class="p">,</span> <span class="n">retry_interval</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
@@ -18382,7 +18648,17 @@ this exception explicitly.</p>
 
 
 <a href="#robot.libraries.BuiltIn.register_run_keyword" class="headerlink" title="Permanent link">&para;</a></h2>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">register_run_keyword</span><span class="p">(</span><span class="n">library</span><span class="p">,</span> <span class="n">keyword</span><span class="p">,</span> <span class="n">args_to_process</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">deprecation_warning</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
+<span class="normal"><a href="#example-0-2">2</a></span>
+<span class="normal"><a href="#example-0-3">3</a></span>
+<span class="normal"><a href="#example-0-4">4</a></span>
+<span class="normal"><a href="#example-0-5">5</a></span>
+<span class="normal"><a href="#example-0-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">register_run_keyword</span><span class="p">(</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">library</span><span class="p">,</span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a>    <span class="n">keyword</span><span class="p">,</span>
+</span><span id="line-0-4"><a id="example-0-4" name="example-0-4"></a>    <span class="n">args_to_process</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+</span><span id="line-0-5"><a id="example-0-5" name="example-0-5"></a>    <span class="n">deprecation_warning</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span><span id="line-0-6"><a id="example-0-6" name="example-0-6"></a><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
