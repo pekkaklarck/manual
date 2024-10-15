@@ -1,12 +1,11 @@
 name: Generate release docs
 on:
   push:
-    # Match stable version tags (e.g. v7.1, v7.1.1) but not pre-releases (e.g. v7.2a1).
-    # Won't work properly if last version component is 10 or more. It would be safer to
-    # initiate this workflow when a release is created on GitHub UI, but initiating
-    # based on a tag is more convenient and happens automatically.
+    # Match stable versions (e.g. v7.1, v7.1.1) but not pre-releases (e.g. v7.2rc1).
+    # https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions#filter-pattern-cheat-sheet
     tags:
-      - 'v[0-9]*.[0-9]'
+      - 'v[0-9]*.*[0-9]'
+      - '!v*[abc]*'
 
 permissions:
   contents: write
