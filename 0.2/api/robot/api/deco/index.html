@@ -920,6 +920,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -948,6 +950,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -956,9 +960,72 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#robot.api.deco" class="md-nav__link">
+  <a href="#robot.api.deco.F" class="md-nav__link">
     <span class="md-ellipsis">
-      <code class="doc-symbol doc-symbol-toc doc-symbol-module"></code>&nbsp;deco
+      <code class="doc-symbol doc-symbol-toc doc-symbol-attribute"></code>&nbsp;F
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#robot.api.deco.K" class="md-nav__link">
+    <span class="md-ellipsis">
+      <code class="doc-symbol doc-symbol-toc doc-symbol-attribute"></code>&nbsp;K
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#robot.api.deco.L" class="md-nav__link">
+    <span class="md-ellipsis">
+      <code class="doc-symbol doc-symbol-toc doc-symbol-attribute"></code>&nbsp;L
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#robot.api.deco.KeywordDecorator" class="md-nav__link">
+    <span class="md-ellipsis">
+      <code class="doc-symbol doc-symbol-toc doc-symbol-attribute"></code>&nbsp;KeywordDecorator
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#robot.api.deco.LibraryDecorator" class="md-nav__link">
+    <span class="md-ellipsis">
+      <code class="doc-symbol doc-symbol-toc doc-symbol-attribute"></code>&nbsp;LibraryDecorator
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#robot.api.deco.Scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      <code class="doc-symbol doc-symbol-toc doc-symbol-attribute"></code>&nbsp;Scope
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#robot.api.deco.Converter" class="md-nav__link">
+    <span class="md-ellipsis">
+      <code class="doc-symbol doc-symbol-toc doc-symbol-attribute"></code>&nbsp;Converter
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#robot.api.deco.DocFormat" class="md-nav__link">
+    <span class="md-ellipsis">
+      <code class="doc-symbol doc-symbol-toc doc-symbol-attribute"></code>&nbsp;DocFormat
     </span>
   </a>
   
@@ -7035,14 +7102,27 @@
   
 
 
-  <h1><code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> deco</h1>
-
 <div class="doc doc-object doc-module">
 
 
 
-<a id="robot.api.deco"></a>
+<h1 id="robot.api.deco" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-module"></code>            <span class="doc doc-object-name doc-module-name">robot.api.deco</span>
+
+
+<a href="#robot.api.deco" class="headerlink" title="Permanent link">&para;</a></h1>
+
     <div class="doc doc-contents first">
+
+        <p>Module defining decorators libraries can use.</p>
+<ul>
+<li><a class="autorefs autorefs-internal" href="#robot.api.deco.library">library</a>: for marking and configuring library classes.</li>
+<li><a class="autorefs autorefs-internal" href="#robot.api.deco.keyword">keyword</a>: for marking and configuring keyword functions
+  and methods.</li>
+<li><a class="autorefs autorefs-internal" href="#robot.api.deco.not_keyword">not_keyword</a>: for marking functions and method not
+  to be keywords.</li>
+</ul>
+<p>Attributes in this module are used only in type hints of the aforementioned decorators.</p>
 
 
 
@@ -7059,6 +7139,222 @@
 
 
 
+<div class="doc doc-object doc-attribute">
+
+
+
+<h2 id="robot.api.deco.F" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">F</span>
+
+
+<a href="#robot.api.deco.F" class="headerlink" title="Permanent link">&para;</a></h2>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="n">F</span> <span class="o">=</span> <span class="n"><a class="autorefs autorefs-external" title="typing.TypeVar" href="https://docs.python.org/3/library/typing.html#typing.TypeVar">TypeVar</a></span><span class="p">(</span><span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="n"><span title="typing.TypeVar(bound)">bound</span></span><span class="o">=</span><span class="n"><a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a></span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n"><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></span><span class="p">])</span>
+</span></code></pre></div></td></tr></table></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Type variable representing any function.</p>
+    </div>
+
+</div>
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h2 id="robot.api.deco.K" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">K</span>
+
+
+<a href="#robot.api.deco.K" class="headerlink" title="Permanent link">&para;</a></h2>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="n">K</span> <span class="o">=</span> <span class="n"><a class="autorefs autorefs-external" title="typing.TypeVar" href="https://docs.python.org/3/library/typing.html#typing.TypeVar">TypeVar</a></span><span class="p">(</span><span class="s1">&#39;K&#39;</span><span class="p">,</span> <span class="n"><span title="typing.TypeVar(bound)">bound</span></span><span class="o">=</span><span class="n"><a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a></span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n"><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></span><span class="p">])</span>
+</span></code></pre></div></td></tr></table></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Type variable representing a keyword function.</p>
+    </div>
+
+</div>
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h2 id="robot.api.deco.L" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">L</span>
+
+
+<a href="#robot.api.deco.L" class="headerlink" title="Permanent link">&para;</a></h2>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="n">L</span> <span class="o">=</span> <span class="n"><a class="autorefs autorefs-external" title="typing.TypeVar" href="https://docs.python.org/3/library/typing.html#typing.TypeVar">TypeVar</a></span><span class="p">(</span><span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="n"><span title="typing.TypeVar(bound)">bound</span></span><span class="o">=</span><span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#type">type</a></span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Type variable representing a library class.</p>
+    </div>
+
+</div>
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h2 id="robot.api.deco.KeywordDecorator" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">KeywordDecorator</span>
+
+
+<a href="#robot.api.deco.KeywordDecorator" class="headerlink" title="Permanent link">&para;</a></h2>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="n">KeywordDecorator</span> <span class="o">=</span> <span class="n"><a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a></span><span class="p">[[</span><span class="n"><a class="autorefs autorefs-internal" title="robot.api.deco.K" href="#robot.api.deco.K">K</a></span><span class="p">],</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.api.deco.K" href="#robot.api.deco.K">K</a></span><span class="p">]</span>
+</span></code></pre></div></td></tr></table></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Keyword decorator. Sets attributes to the given keyword function and returns it.</p>
+    </div>
+
+</div>
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h2 id="robot.api.deco.LibraryDecorator" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">LibraryDecorator</span>
+
+
+<a href="#robot.api.deco.LibraryDecorator" class="headerlink" title="Permanent link">&para;</a></h2>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="n">LibraryDecorator</span> <span class="o">=</span> <span class="n"><a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a></span><span class="p">[[</span><span class="n"><a class="autorefs autorefs-internal" title="robot.api.deco.L" href="#robot.api.deco.L">L</a></span><span class="p">],</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.api.deco.L" href="#robot.api.deco.L">L</a></span><span class="p">]</span>
+</span></code></pre></div></td></tr></table></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Library decorator. Sets attributes to the given library class and returns it.</p>
+    </div>
+
+</div>
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h2 id="robot.api.deco.Scope" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">Scope</span>
+
+
+<a href="#robot.api.deco.Scope" class="headerlink" title="Permanent link">&para;</a></h2>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="n">Scope</span> <span class="o">=</span> <span class="n"><a class="autorefs autorefs-external" title="typing.Literal" href="https://docs.python.org/3/library/typing.html#typing.Literal">Literal</a></span><span class="p">[</span><span class="s1">&#39;GLOBAL&#39;</span><span class="p">,</span> <span class="s1">&#39;SUITE&#39;</span><span class="p">,</span> <span class="s1">&#39;TEST&#39;</span><span class="p">,</span> <span class="s1">&#39;TASK&#39;</span><span class="p">]</span>
+</span></code></pre></div></td></tr></table></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Library scope.</p>
+<ul>
+<li><code>GLOBAL</code>: Library has a global scope.</li>
+<li><code>SUITE</code>: Library has a suite level scope.</li>
+<li><code>TEST</code>: Library has a test level scope. The default if scope is not specified.</li>
+<li><code>TASK</code>: An alias for <code>TEST</code>.</li>
+</ul>
+    </div>
+
+</div>
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h2 id="robot.api.deco.Converter" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">Converter</span>
+
+
+<a href="#robot.api.deco.Converter" class="headerlink" title="Permanent link">&para;</a></h2>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
+<span class="normal"><a href="#example-0-2">2</a></span>
+<span class="normal"><a href="#example-0-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="n">Converter</span> <span class="o">=</span> <span class="n"><a class="autorefs autorefs-external" title="typing.Union" href="https://docs.python.org/3/library/typing.html#typing.Union">Union</a></span><span class="p">[</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n"><a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a></span><span class="p">[[</span><span class="n"><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></span><span class="p">],</span> <span class="n"><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></span><span class="p">],</span> <span class="n"><a class="autorefs autorefs-external" title="typing.Callable" href="https://docs.python.org/3/library/typing.html#typing.Callable">Callable</a></span><span class="p">[[</span><span class="n"><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></span><span class="p">,</span> <span class="n"><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></span><span class="p">],</span> <span class="n"><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></span><span class="p">]</span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a><span class="p">]</span>
+</span></code></pre></div></td></tr></table></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Custom argument converter.</p>
+<p>A callable accepting one or two arguments. If it accepts one, it only gets
+the value to be converted. If it accepts two, it gets the value and also
+the library the used keyword belongs to. The latter approach allows making
+conversion based on the library state.</p>
+<p>The converted value is returned. If the value is invalid, a <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/exceptions.html#ValueError">ValueError</a>
+should be raised.</p>
+    </div>
+
+</div>
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h2 id="robot.api.deco.DocFormat" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">DocFormat</span>
+
+
+<a href="#robot.api.deco.DocFormat" class="headerlink" title="Permanent link">&para;</a></h2>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="n">DocFormat</span> <span class="o">=</span> <span class="n"><a class="autorefs autorefs-external" title="typing.Literal" href="https://docs.python.org/3/library/typing.html#typing.Literal">Literal</a></span><span class="p">[</span><span class="s1">&#39;ROBOT&#39;</span><span class="p">,</span> <span class="s1">&#39;HTML&#39;</span><span class="p">,</span> <span class="s1">&#39;TEXT&#39;</span><span class="p">,</span> <span class="s1">&#39;REST&#39;</span><span class="p">]</span>
+</span></code></pre></div></td></tr></table></div>
+
+    <div class="doc doc-contents ">
+
+        <p>Library documentation format.</p>
+<ul>
+<li><code>ROBOT</code>: Use Robot Framework's own custom markup syntax. The default if format
+  is not specified.</li>
+<li><code>HTML</code>: Use documentation as HTML directly.</li>
+<li><code>TEXT</code>: Consider documentation to be plain text.</li>
+<li><code>REST</code>: Use <a href="https://docutils.sourceforge.io/rst.html">reStructuredText</a>
+   markup language.</li>
+</ul>
+    </div>
+
+</div>
+
+
+
+
+
+
 <div class="doc doc-object doc-function">
 
 
@@ -7067,7 +7363,7 @@
 
 
 <a href="#robot.api.deco.not_keyword" class="headerlink" title="Permanent link">&para;</a></h2>
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">not_keyword</span><span class="p">(</span><span class="n">func</span><span class="p">:</span> <span class="n"><span title="robot.api.deco.F">F</span></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n"><span title="robot.api.deco.F">F</span></span>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">not_keyword</span><span class="p">(</span><span class="n">func</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.api.deco.F" href="#robot.api.deco.F">F</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.api.deco.F" href="#robot.api.deco.F">F</a></span>
 </span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
@@ -7092,41 +7388,41 @@ the <code>ROBOT_AUTO_KEYWORDS</code> attribute to a false value.</p>
 
             <details class="quote">
               <summary>Source code in <code>src/robot/api/deco.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-34">34</a></span>
-<span class="normal"><a href="#example-0-35">35</a></span>
-<span class="normal"><a href="#example-0-36">36</a></span>
-<span class="normal"><a href="#example-0-37">37</a></span>
-<span class="normal"><a href="#example-0-38">38</a></span>
-<span class="normal"><a href="#example-0-39">39</a></span>
-<span class="normal"><a href="#example-0-40">40</a></span>
-<span class="normal"><a href="#example-0-41">41</a></span>
-<span class="normal"><a href="#example-0-42">42</a></span>
-<span class="normal"><a href="#example-0-43">43</a></span>
-<span class="normal"><a href="#example-0-44">44</a></span>
-<span class="normal"><a href="#example-0-45">45</a></span>
-<span class="normal"><a href="#example-0-46">46</a></span>
-<span class="normal"><a href="#example-0-47">47</a></span>
-<span class="normal"><a href="#example-0-48">48</a></span>
-<span class="normal"><a href="#example-0-49">49</a></span>
-<span class="normal"><a href="#example-0-50">50</a></span>
-<span class="normal"><a href="#example-0-51">51</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-34"><a id="example-0-34" name="example-0-34"></a><span class="k">def</span> <span class="nf">not_keyword</span><span class="p">(</span><span class="n">func</span><span class="p">:</span> <span class="n">F</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">F</span><span class="p">:</span>
-</span><span id="line-0-35"><a id="example-0-35" name="example-0-35"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Decorator to disable exposing functions or methods as keywords.</span>
-</span><span id="line-0-36"><a id="example-0-36" name="example-0-36"></a>
-</span><span id="line-0-37"><a id="example-0-37" name="example-0-37"></a><span class="sd">    Examples:</span>
-</span><span id="line-0-38"><a id="example-0-38" name="example-0-38"></a>
-</span><span id="line-0-39"><a id="example-0-39" name="example-0-39"></a><span class="sd">        @not_keyword</span>
-</span><span id="line-0-40"><a id="example-0-40" name="example-0-40"></a><span class="sd">        def not_exposed_as_keyword():</span>
-</span><span id="line-0-41"><a id="example-0-41" name="example-0-41"></a><span class="sd">            ...</span>
-</span><span id="line-0-42"><a id="example-0-42" name="example-0-42"></a>
-</span><span id="line-0-43"><a id="example-0-43" name="example-0-43"></a><span class="sd">        def exposed_as_keyword():</span>
-</span><span id="line-0-44"><a id="example-0-44" name="example-0-44"></a><span class="sd">            ...</span>
-</span><span id="line-0-45"><a id="example-0-45" name="example-0-45"></a>
-</span><span id="line-0-46"><a id="example-0-46" name="example-0-46"></a><span class="sd">    Alternatively, the automatic keyword discovery can be disabled with</span>
-</span><span id="line-0-47"><a id="example-0-47" name="example-0-47"></a><span class="sd">    the [library][robot.api.deco.library] decorator or by setting</span>
-</span><span id="line-0-48"><a id="example-0-48" name="example-0-48"></a><span class="sd">    the `ROBOT_AUTO_KEYWORDS` attribute to a false value.</span>
-</span><span id="line-0-49"><a id="example-0-49" name="example-0-49"></a><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-0-50"><a id="example-0-50" name="example-0-50"></a>    <span class="n">func</span><span class="o">.</span><span class="n">robot_not_keyword</span> <span class="o">=</span> <span class="kc">True</span>
-</span><span id="line-0-51"><a id="example-0-51" name="example-0-51"></a>    <span class="k">return</span> <span class="n">func</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-76">76</a></span>
+<span class="normal"><a href="#example-0-77">77</a></span>
+<span class="normal"><a href="#example-0-78">78</a></span>
+<span class="normal"><a href="#example-0-79">79</a></span>
+<span class="normal"><a href="#example-0-80">80</a></span>
+<span class="normal"><a href="#example-0-81">81</a></span>
+<span class="normal"><a href="#example-0-82">82</a></span>
+<span class="normal"><a href="#example-0-83">83</a></span>
+<span class="normal"><a href="#example-0-84">84</a></span>
+<span class="normal"><a href="#example-0-85">85</a></span>
+<span class="normal"><a href="#example-0-86">86</a></span>
+<span class="normal"><a href="#example-0-87">87</a></span>
+<span class="normal"><a href="#example-0-88">88</a></span>
+<span class="normal"><a href="#example-0-89">89</a></span>
+<span class="normal"><a href="#example-0-90">90</a></span>
+<span class="normal"><a href="#example-0-91">91</a></span>
+<span class="normal"><a href="#example-0-92">92</a></span>
+<span class="normal"><a href="#example-0-93">93</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-76"><a id="example-0-76" name="example-0-76"></a><span class="k">def</span> <span class="nf">not_keyword</span><span class="p">(</span><span class="n">func</span><span class="p">:</span> <span class="n">F</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">F</span><span class="p">:</span>
+</span><span id="line-0-77"><a id="example-0-77" name="example-0-77"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Decorator to disable exposing functions or methods as keywords.</span>
+</span><span id="line-0-78"><a id="example-0-78" name="example-0-78"></a>
+</span><span id="line-0-79"><a id="example-0-79" name="example-0-79"></a><span class="sd">    Examples:</span>
+</span><span id="line-0-80"><a id="example-0-80" name="example-0-80"></a>
+</span><span id="line-0-81"><a id="example-0-81" name="example-0-81"></a><span class="sd">        @not_keyword</span>
+</span><span id="line-0-82"><a id="example-0-82" name="example-0-82"></a><span class="sd">        def not_exposed_as_keyword():</span>
+</span><span id="line-0-83"><a id="example-0-83" name="example-0-83"></a><span class="sd">            ...</span>
+</span><span id="line-0-84"><a id="example-0-84" name="example-0-84"></a>
+</span><span id="line-0-85"><a id="example-0-85" name="example-0-85"></a><span class="sd">        def exposed_as_keyword():</span>
+</span><span id="line-0-86"><a id="example-0-86" name="example-0-86"></a><span class="sd">            ...</span>
+</span><span id="line-0-87"><a id="example-0-87" name="example-0-87"></a>
+</span><span id="line-0-88"><a id="example-0-88" name="example-0-88"></a><span class="sd">    Alternatively, the automatic keyword discovery can be disabled with</span>
+</span><span id="line-0-89"><a id="example-0-89" name="example-0-89"></a><span class="sd">    the [library][robot.api.deco.library] decorator or by setting</span>
+</span><span id="line-0-90"><a id="example-0-90" name="example-0-90"></a><span class="sd">    the `ROBOT_AUTO_KEYWORDS` attribute to a false value.</span>
+</span><span id="line-0-91"><a id="example-0-91" name="example-0-91"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-92"><a id="example-0-92" name="example-0-92"></a>    <span class="n">func</span><span class="o">.</span><span class="n">robot_not_keyword</span> <span class="o">=</span> <span class="kc">True</span>
+</span><span id="line-0-93"><a id="example-0-93" name="example-0-93"></a>    <span class="k">return</span> <span class="n">func</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -7147,7 +7443,7 @@ the <code>ROBOT_AUTO_KEYWORDS</code> attribute to a false value.</p>
 
 <a href="#robot.api.deco.keyword" class="headerlink" title="Permanent link">&para;</a></h2>
           <div class="doc-overloads">
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">keyword</span><span class="p">(</span><span class="n">func</span><span class="p">:</span> <span class="n"><span title="robot.api.deco.K">K</span></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n"><span title="robot.api.deco.K">K</span></span>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">keyword</span><span class="p">(</span><span class="n">func</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.api.deco.K" href="#robot.api.deco.K">K</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.api.deco.K" href="#robot.api.deco.K">K</a></span>
 </span></code></pre></div></td></tr></table></div><div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
 <span class="normal"><a href="#example-0-2">2</a></span>
 <span class="normal"><a href="#example-0-3">3</a></span>
@@ -7156,17 +7452,17 @@ the <code>ROBOT_AUTO_KEYWORDS</code> attribute to a false value.</p>
 </span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">name</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 </span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a>    <span class="n">tags</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" title="typing.Sequence" href="https://docs.python.org/3/library/typing.html#typing.Sequence">Sequence</a></span><span class="p">[</span><span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span><span class="p">]</span> <span class="o">=</span> <span class="p">(),</span>
 </span><span id="line-0-4"><a id="example-0-4" name="example-0-4"></a>    <span class="n">types</span><span class="p">:</span> <span class="n"><span title="robot.api.interfaces.TypeHints">TypeHints</span></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="p">(),</span>
-</span><span id="line-0-5"><a id="example-0-5" name="example-0-5"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="n"><span title="robot.api.deco.KeywordDecorator">KeywordDecorator</span></span>
+</span><span id="line-0-5"><a id="example-0-5" name="example-0-5"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.api.deco.KeywordDecorator" href="#robot.api.deco.KeywordDecorator">KeywordDecorator</a></span>
 </span></code></pre></div></td></tr></table></div>          </div>
 <div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
 <span class="normal"><a href="#example-0-2">2</a></span>
 <span class="normal"><a href="#example-0-3">3</a></span>
 <span class="normal"><a href="#example-0-4">4</a></span>
 <span class="normal"><a href="#example-0-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">keyword</span><span class="p">(</span>
-</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">name</span><span class="p">:</span> <span class="n"><span title="robot.api.deco.K">K</span></span> <span class="o">|</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">name</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.api.deco.K" href="#robot.api.deco.K">K</a></span> <span class="o">|</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 </span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a>    <span class="n">tags</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" title="typing.Sequence" href="https://docs.python.org/3/library/typing.html#typing.Sequence">Sequence</a></span><span class="p">[</span><span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span><span class="p">]</span> <span class="o">=</span> <span class="p">(),</span>
 </span><span id="line-0-4"><a id="example-0-4" name="example-0-4"></a>    <span class="n">types</span><span class="p">:</span> <span class="n"><span title="robot.api.interfaces.TypeHints">TypeHints</span></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="p">(),</span>
-</span><span id="line-0-5"><a id="example-0-5" name="example-0-5"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="n"><span title="robot.api.deco.K">K</span></span> <span class="o">|</span> <span class="n"><span title="robot.api.deco.KeywordDecorator">KeywordDecorator</span></span>
+</span><span id="line-0-5"><a id="example-0-5" name="example-0-5"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.api.deco.K" href="#robot.api.deco.K">K</a></span> <span class="o">|</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.api.deco.KeywordDecorator" href="#robot.api.deco.KeywordDecorator">KeywordDecorator</a></span>
 </span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
@@ -7190,7 +7486,7 @@ the <code>ROBOT_AUTO_KEYWORDS</code> attribute to a false value.</p>
                 <code>name</code>
             </td>
             <td>
-                  <code><span title="robot.api.deco.K">K</span> | <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
+                  <code><a class="autorefs autorefs-internal" title="robot.api.deco.K" href="#robot.api.deco.K">K</a> | <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -7303,49 +7599,7 @@ is typically used without any arguments like <code>@keyword</code>.</p>
 
             <details class="quote">
               <summary>Source code in <code>src/robot/api/deco.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-69"> 69</a></span>
-<span class="normal"><a href="#example-0-70"> 70</a></span>
-<span class="normal"><a href="#example-0-71"> 71</a></span>
-<span class="normal"><a href="#example-0-72"> 72</a></span>
-<span class="normal"><a href="#example-0-73"> 73</a></span>
-<span class="normal"><a href="#example-0-74"> 74</a></span>
-<span class="normal"><a href="#example-0-75"> 75</a></span>
-<span class="normal"><a href="#example-0-76"> 76</a></span>
-<span class="normal"><a href="#example-0-77"> 77</a></span>
-<span class="normal"><a href="#example-0-78"> 78</a></span>
-<span class="normal"><a href="#example-0-79"> 79</a></span>
-<span class="normal"><a href="#example-0-80"> 80</a></span>
-<span class="normal"><a href="#example-0-81"> 81</a></span>
-<span class="normal"><a href="#example-0-82"> 82</a></span>
-<span class="normal"><a href="#example-0-83"> 83</a></span>
-<span class="normal"><a href="#example-0-84"> 84</a></span>
-<span class="normal"><a href="#example-0-85"> 85</a></span>
-<span class="normal"><a href="#example-0-86"> 86</a></span>
-<span class="normal"><a href="#example-0-87"> 87</a></span>
-<span class="normal"><a href="#example-0-88"> 88</a></span>
-<span class="normal"><a href="#example-0-89"> 89</a></span>
-<span class="normal"><a href="#example-0-90"> 90</a></span>
-<span class="normal"><a href="#example-0-91"> 91</a></span>
-<span class="normal"><a href="#example-0-92"> 92</a></span>
-<span class="normal"><a href="#example-0-93"> 93</a></span>
-<span class="normal"><a href="#example-0-94"> 94</a></span>
-<span class="normal"><a href="#example-0-95"> 95</a></span>
-<span class="normal"><a href="#example-0-96"> 96</a></span>
-<span class="normal"><a href="#example-0-97"> 97</a></span>
-<span class="normal"><a href="#example-0-98"> 98</a></span>
-<span class="normal"><a href="#example-0-99"> 99</a></span>
-<span class="normal"><a href="#example-0-100">100</a></span>
-<span class="normal"><a href="#example-0-101">101</a></span>
-<span class="normal"><a href="#example-0-102">102</a></span>
-<span class="normal"><a href="#example-0-103">103</a></span>
-<span class="normal"><a href="#example-0-104">104</a></span>
-<span class="normal"><a href="#example-0-105">105</a></span>
-<span class="normal"><a href="#example-0-106">106</a></span>
-<span class="normal"><a href="#example-0-107">107</a></span>
-<span class="normal"><a href="#example-0-108">108</a></span>
-<span class="normal"><a href="#example-0-109">109</a></span>
-<span class="normal"><a href="#example-0-110">110</a></span>
-<span class="normal"><a href="#example-0-111">111</a></span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-111">111</a></span>
 <span class="normal"><a href="#example-0-112">112</a></span>
 <span class="normal"><a href="#example-0-113">113</a></span>
 <span class="normal"><a href="#example-0-114">114</a></span>
@@ -7368,72 +7622,114 @@ is typically used without any arguments like <code>@keyword</code>.</p>
 <span class="normal"><a href="#example-0-131">131</a></span>
 <span class="normal"><a href="#example-0-132">132</a></span>
 <span class="normal"><a href="#example-0-133">133</a></span>
-<span class="normal"><a href="#example-0-134">134</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-69"><a id="example-0-69" name="example-0-69"></a><span class="nd">@not_keyword</span>
-</span><span id="line-0-70"><a id="example-0-70" name="example-0-70"></a><span class="k">def</span> <span class="nf">keyword</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="s1">&#39;K | str | None&#39;</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-</span><span id="line-0-71"><a id="example-0-71" name="example-0-71"></a>            <span class="n">tags</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">(),</span>
-</span><span id="line-0-72"><a id="example-0-72" name="example-0-72"></a>            <span class="n">types</span><span class="p">:</span> <span class="s1">&#39;TypeHints | None&#39;</span> <span class="o">=</span> <span class="p">())</span> <span class="o">-&gt;</span> <span class="s1">&#39;K | KeywordDecorator&#39;</span><span class="p">:</span>
-</span><span id="line-0-73"><a id="example-0-73" name="example-0-73"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Decorator to set custom name, tags and argument types to keywords.</span>
-</span><span id="line-0-74"><a id="example-0-74" name="example-0-74"></a>
-</span><span id="line-0-75"><a id="example-0-75" name="example-0-75"></a><span class="sd">    Parameters:</span>
-</span><span id="line-0-76"><a id="example-0-76" name="example-0-76"></a><span class="sd">        name: Custom keyword name. Required if keyword accepts embedded</span>
-</span><span id="line-0-77"><a id="example-0-77" name="example-0-77"></a><span class="sd">            arguments. Keyword name is generated based on function/method</span>
-</span><span id="line-0-78"><a id="example-0-78" name="example-0-78"></a><span class="sd">            name by default. Sets `robot_name` attribute to the decorated</span>
-</span><span id="line-0-79"><a id="example-0-79" name="example-0-79"></a><span class="sd">            method of function.</span>
-</span><span id="line-0-80"><a id="example-0-80" name="example-0-80"></a><span class="sd">        tags: Keyword tags. Sets `robot_tags` attribute.</span>
-</span><span id="line-0-81"><a id="example-0-81" name="example-0-81"></a><span class="sd">        types: Argument types. Sets `robot_types` attribute.</span>
-</span><span id="line-0-82"><a id="example-0-82" name="example-0-82"></a>
-</span><span id="line-0-83"><a id="example-0-83" name="example-0-83"></a><span class="sd">            Value can be:</span>
-</span><span id="line-0-84"><a id="example-0-84" name="example-0-84"></a>
-</span><span id="line-0-85"><a id="example-0-85" name="example-0-85"></a><span class="sd">            - a dictionary mapping argument names to types,</span>
-</span><span id="line-0-86"><a id="example-0-86" name="example-0-86"></a><span class="sd">            - a list of types mapped to arguments based on position, or</span>
-</span><span id="line-0-87"><a id="example-0-87" name="example-0-87"></a><span class="sd">            - `None` to disable argument conversion altogether.</span>
-</span><span id="line-0-88"><a id="example-0-88" name="example-0-88"></a>
-</span><span id="line-0-89"><a id="example-0-89" name="example-0-89"></a><span class="sd">            It is OK to specify types only to some arguments. In normal usage</span>
-</span><span id="line-0-90"><a id="example-0-90" name="example-0-90"></a><span class="sd">            it is recommended to specify types using type hints.</span>
-</span><span id="line-0-91"><a id="example-0-91" name="example-0-91"></a>
-</span><span id="line-0-92"><a id="example-0-92" name="example-0-92"></a><span class="sd">    If the automatic keyword discovery has been disabled with the</span>
-</span><span id="line-0-93"><a id="example-0-93" name="example-0-93"></a><span class="sd">    [library][robot.api.deco.library] decorator or by setting the</span>
-</span><span id="line-0-94"><a id="example-0-94" name="example-0-94"></a><span class="sd">    `ROBOT_AUTO_KEYWORDS` attribute to a false value, this decorator is</span>
-</span><span id="line-0-95"><a id="example-0-95" name="example-0-95"></a><span class="sd">    needed to mark functions or methods keywords. In such usage this decorator</span>
-</span><span id="line-0-96"><a id="example-0-96" name="example-0-96"></a><span class="sd">    is typically used without any arguments like `@keyword`.</span>
-</span><span id="line-0-97"><a id="example-0-97" name="example-0-97"></a>
-</span><span id="line-0-98"><a id="example-0-98" name="example-0-98"></a><span class="sd">    Examples:</span>
-</span><span id="line-0-99"><a id="example-0-99" name="example-0-99"></a>
-</span><span id="line-0-100"><a id="example-0-100" name="example-0-100"></a><span class="sd">        @keyword</span>
-</span><span id="line-0-101"><a id="example-0-101" name="example-0-101"></a><span class="sd">        def example():</span>
-</span><span id="line-0-102"><a id="example-0-102" name="example-0-102"></a><span class="sd">            ...</span>
-</span><span id="line-0-103"><a id="example-0-103" name="example-0-103"></a>
-</span><span id="line-0-104"><a id="example-0-104" name="example-0-104"></a><span class="sd">        @keyword(&#39;Login as user &quot;${user}&quot; with password &quot;${password}&quot;&#39;,</span>
-</span><span id="line-0-105"><a id="example-0-105" name="example-0-105"></a><span class="sd">                 tags=[&#39;custom name&#39;, &#39;embedded arguments&#39;, &#39;tags&#39;])</span>
-</span><span id="line-0-106"><a id="example-0-106" name="example-0-106"></a><span class="sd">        def login(user, password):</span>
-</span><span id="line-0-107"><a id="example-0-107" name="example-0-107"></a><span class="sd">            ...</span>
-</span><span id="line-0-108"><a id="example-0-108" name="example-0-108"></a>
-</span><span id="line-0-109"><a id="example-0-109" name="example-0-109"></a><span class="sd">        @keyword(types={&#39;length&#39;: int, &#39;case_insensitive&#39;: bool})</span>
-</span><span id="line-0-110"><a id="example-0-110" name="example-0-110"></a><span class="sd">        def types_as_dict(length, case_insensitive):</span>
-</span><span id="line-0-111"><a id="example-0-111" name="example-0-111"></a><span class="sd">            ...</span>
-</span><span id="line-0-112"><a id="example-0-112" name="example-0-112"></a>
-</span><span id="line-0-113"><a id="example-0-113" name="example-0-113"></a><span class="sd">        @keyword(types=[int, bool])</span>
-</span><span id="line-0-114"><a id="example-0-114" name="example-0-114"></a><span class="sd">        def types_as_list(length, case_insensitive):</span>
-</span><span id="line-0-115"><a id="example-0-115" name="example-0-115"></a><span class="sd">            ...</span>
+<span class="normal"><a href="#example-0-134">134</a></span>
+<span class="normal"><a href="#example-0-135">135</a></span>
+<span class="normal"><a href="#example-0-136">136</a></span>
+<span class="normal"><a href="#example-0-137">137</a></span>
+<span class="normal"><a href="#example-0-138">138</a></span>
+<span class="normal"><a href="#example-0-139">139</a></span>
+<span class="normal"><a href="#example-0-140">140</a></span>
+<span class="normal"><a href="#example-0-141">141</a></span>
+<span class="normal"><a href="#example-0-142">142</a></span>
+<span class="normal"><a href="#example-0-143">143</a></span>
+<span class="normal"><a href="#example-0-144">144</a></span>
+<span class="normal"><a href="#example-0-145">145</a></span>
+<span class="normal"><a href="#example-0-146">146</a></span>
+<span class="normal"><a href="#example-0-147">147</a></span>
+<span class="normal"><a href="#example-0-148">148</a></span>
+<span class="normal"><a href="#example-0-149">149</a></span>
+<span class="normal"><a href="#example-0-150">150</a></span>
+<span class="normal"><a href="#example-0-151">151</a></span>
+<span class="normal"><a href="#example-0-152">152</a></span>
+<span class="normal"><a href="#example-0-153">153</a></span>
+<span class="normal"><a href="#example-0-154">154</a></span>
+<span class="normal"><a href="#example-0-155">155</a></span>
+<span class="normal"><a href="#example-0-156">156</a></span>
+<span class="normal"><a href="#example-0-157">157</a></span>
+<span class="normal"><a href="#example-0-158">158</a></span>
+<span class="normal"><a href="#example-0-159">159</a></span>
+<span class="normal"><a href="#example-0-160">160</a></span>
+<span class="normal"><a href="#example-0-161">161</a></span>
+<span class="normal"><a href="#example-0-162">162</a></span>
+<span class="normal"><a href="#example-0-163">163</a></span>
+<span class="normal"><a href="#example-0-164">164</a></span>
+<span class="normal"><a href="#example-0-165">165</a></span>
+<span class="normal"><a href="#example-0-166">166</a></span>
+<span class="normal"><a href="#example-0-167">167</a></span>
+<span class="normal"><a href="#example-0-168">168</a></span>
+<span class="normal"><a href="#example-0-169">169</a></span>
+<span class="normal"><a href="#example-0-170">170</a></span>
+<span class="normal"><a href="#example-0-171">171</a></span>
+<span class="normal"><a href="#example-0-172">172</a></span>
+<span class="normal"><a href="#example-0-173">173</a></span>
+<span class="normal"><a href="#example-0-174">174</a></span>
+<span class="normal"><a href="#example-0-175">175</a></span>
+<span class="normal"><a href="#example-0-176">176</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-111"><a id="example-0-111" name="example-0-111"></a><span class="nd">@not_keyword</span>
+</span><span id="line-0-112"><a id="example-0-112" name="example-0-112"></a><span class="k">def</span> <span class="nf">keyword</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="s1">&#39;K | str | None&#39;</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="line-0-113"><a id="example-0-113" name="example-0-113"></a>            <span class="n">tags</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">(),</span>
+</span><span id="line-0-114"><a id="example-0-114" name="example-0-114"></a>            <span class="n">types</span><span class="p">:</span> <span class="s1">&#39;TypeHints | None&#39;</span> <span class="o">=</span> <span class="p">())</span> <span class="o">-&gt;</span> <span class="s1">&#39;K | KeywordDecorator&#39;</span><span class="p">:</span>
+</span><span id="line-0-115"><a id="example-0-115" name="example-0-115"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Decorator to set custom name, tags and argument types to keywords.</span>
 </span><span id="line-0-116"><a id="example-0-116" name="example-0-116"></a>
-</span><span id="line-0-117"><a id="example-0-117" name="example-0-117"></a><span class="sd">        @keyword</span>
-</span><span id="line-0-118"><a id="example-0-118" name="example-0-118"></a><span class="sd">        def types_using_type_hints(length: int, case_insensitive: bool):</span>
-</span><span id="line-0-119"><a id="example-0-119" name="example-0-119"></a><span class="sd">            ...</span>
-</span><span id="line-0-120"><a id="example-0-120" name="example-0-120"></a>
-</span><span id="line-0-121"><a id="example-0-121" name="example-0-121"></a><span class="sd">        @keyword(types=None)</span>
-</span><span id="line-0-122"><a id="example-0-122" name="example-0-122"></a><span class="sd">        def no_conversion(length, case_insensitive=False):</span>
-</span><span id="line-0-123"><a id="example-0-123" name="example-0-123"></a><span class="sd">            ...</span>
-</span><span id="line-0-124"><a id="example-0-124" name="example-0-124"></a><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-0-125"><a id="example-0-125" name="example-0-125"></a>    <span class="k">if</span> <span class="nb">callable</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
-</span><span id="line-0-126"><a id="example-0-126" name="example-0-126"></a>        <span class="k">return</span> <span class="n">keyword</span><span class="p">()(</span><span class="n">name</span><span class="p">)</span>
-</span><span id="line-0-127"><a id="example-0-127" name="example-0-127"></a>
-</span><span id="line-0-128"><a id="example-0-128" name="example-0-128"></a>    <span class="k">def</span> <span class="nf">decorator</span><span class="p">(</span><span class="n">func</span><span class="p">:</span> <span class="n">F</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">F</span><span class="p">:</span>
-</span><span id="line-0-129"><a id="example-0-129" name="example-0-129"></a>        <span class="n">func</span><span class="o">.</span><span class="n">robot_name</span> <span class="o">=</span> <span class="n">name</span>
-</span><span id="line-0-130"><a id="example-0-130" name="example-0-130"></a>        <span class="n">func</span><span class="o">.</span><span class="n">robot_tags</span> <span class="o">=</span> <span class="n">tags</span>
-</span><span id="line-0-131"><a id="example-0-131" name="example-0-131"></a>        <span class="n">func</span><span class="o">.</span><span class="n">robot_types</span> <span class="o">=</span> <span class="n">types</span>
-</span><span id="line-0-132"><a id="example-0-132" name="example-0-132"></a>        <span class="k">return</span> <span class="n">func</span>
+</span><span id="line-0-117"><a id="example-0-117" name="example-0-117"></a><span class="sd">    Parameters:</span>
+</span><span id="line-0-118"><a id="example-0-118" name="example-0-118"></a><span class="sd">        name: Custom keyword name. Required if keyword accepts embedded</span>
+</span><span id="line-0-119"><a id="example-0-119" name="example-0-119"></a><span class="sd">            arguments. Keyword name is generated based on function/method</span>
+</span><span id="line-0-120"><a id="example-0-120" name="example-0-120"></a><span class="sd">            name by default. Sets `robot_name` attribute to the decorated</span>
+</span><span id="line-0-121"><a id="example-0-121" name="example-0-121"></a><span class="sd">            method of function.</span>
+</span><span id="line-0-122"><a id="example-0-122" name="example-0-122"></a><span class="sd">        tags: Keyword tags. Sets `robot_tags` attribute.</span>
+</span><span id="line-0-123"><a id="example-0-123" name="example-0-123"></a><span class="sd">        types: Argument types. Sets `robot_types` attribute.</span>
+</span><span id="line-0-124"><a id="example-0-124" name="example-0-124"></a>
+</span><span id="line-0-125"><a id="example-0-125" name="example-0-125"></a><span class="sd">            Value can be:</span>
+</span><span id="line-0-126"><a id="example-0-126" name="example-0-126"></a>
+</span><span id="line-0-127"><a id="example-0-127" name="example-0-127"></a><span class="sd">            - a dictionary mapping argument names to types,</span>
+</span><span id="line-0-128"><a id="example-0-128" name="example-0-128"></a><span class="sd">            - a list of types mapped to arguments based on position, or</span>
+</span><span id="line-0-129"><a id="example-0-129" name="example-0-129"></a><span class="sd">            - `None` to disable argument conversion altogether.</span>
+</span><span id="line-0-130"><a id="example-0-130" name="example-0-130"></a>
+</span><span id="line-0-131"><a id="example-0-131" name="example-0-131"></a><span class="sd">            It is OK to specify types only to some arguments. In normal usage</span>
+</span><span id="line-0-132"><a id="example-0-132" name="example-0-132"></a><span class="sd">            it is recommended to specify types using type hints.</span>
 </span><span id="line-0-133"><a id="example-0-133" name="example-0-133"></a>
-</span><span id="line-0-134"><a id="example-0-134" name="example-0-134"></a>    <span class="k">return</span> <span class="n">decorator</span>
+</span><span id="line-0-134"><a id="example-0-134" name="example-0-134"></a><span class="sd">    If the automatic keyword discovery has been disabled with the</span>
+</span><span id="line-0-135"><a id="example-0-135" name="example-0-135"></a><span class="sd">    [library][robot.api.deco.library] decorator or by setting the</span>
+</span><span id="line-0-136"><a id="example-0-136" name="example-0-136"></a><span class="sd">    `ROBOT_AUTO_KEYWORDS` attribute to a false value, this decorator is</span>
+</span><span id="line-0-137"><a id="example-0-137" name="example-0-137"></a><span class="sd">    needed to mark functions or methods keywords. In such usage this decorator</span>
+</span><span id="line-0-138"><a id="example-0-138" name="example-0-138"></a><span class="sd">    is typically used without any arguments like `@keyword`.</span>
+</span><span id="line-0-139"><a id="example-0-139" name="example-0-139"></a>
+</span><span id="line-0-140"><a id="example-0-140" name="example-0-140"></a><span class="sd">    Examples:</span>
+</span><span id="line-0-141"><a id="example-0-141" name="example-0-141"></a>
+</span><span id="line-0-142"><a id="example-0-142" name="example-0-142"></a><span class="sd">        @keyword</span>
+</span><span id="line-0-143"><a id="example-0-143" name="example-0-143"></a><span class="sd">        def example():</span>
+</span><span id="line-0-144"><a id="example-0-144" name="example-0-144"></a><span class="sd">            ...</span>
+</span><span id="line-0-145"><a id="example-0-145" name="example-0-145"></a>
+</span><span id="line-0-146"><a id="example-0-146" name="example-0-146"></a><span class="sd">        @keyword(&#39;Login as user &quot;${user}&quot; with password &quot;${password}&quot;&#39;,</span>
+</span><span id="line-0-147"><a id="example-0-147" name="example-0-147"></a><span class="sd">                 tags=[&#39;custom name&#39;, &#39;embedded arguments&#39;, &#39;tags&#39;])</span>
+</span><span id="line-0-148"><a id="example-0-148" name="example-0-148"></a><span class="sd">        def login(user, password):</span>
+</span><span id="line-0-149"><a id="example-0-149" name="example-0-149"></a><span class="sd">            ...</span>
+</span><span id="line-0-150"><a id="example-0-150" name="example-0-150"></a>
+</span><span id="line-0-151"><a id="example-0-151" name="example-0-151"></a><span class="sd">        @keyword(types={&#39;length&#39;: int, &#39;case_insensitive&#39;: bool})</span>
+</span><span id="line-0-152"><a id="example-0-152" name="example-0-152"></a><span class="sd">        def types_as_dict(length, case_insensitive):</span>
+</span><span id="line-0-153"><a id="example-0-153" name="example-0-153"></a><span class="sd">            ...</span>
+</span><span id="line-0-154"><a id="example-0-154" name="example-0-154"></a>
+</span><span id="line-0-155"><a id="example-0-155" name="example-0-155"></a><span class="sd">        @keyword(types=[int, bool])</span>
+</span><span id="line-0-156"><a id="example-0-156" name="example-0-156"></a><span class="sd">        def types_as_list(length, case_insensitive):</span>
+</span><span id="line-0-157"><a id="example-0-157" name="example-0-157"></a><span class="sd">            ...</span>
+</span><span id="line-0-158"><a id="example-0-158" name="example-0-158"></a>
+</span><span id="line-0-159"><a id="example-0-159" name="example-0-159"></a><span class="sd">        @keyword</span>
+</span><span id="line-0-160"><a id="example-0-160" name="example-0-160"></a><span class="sd">        def types_using_type_hints(length: int, case_insensitive: bool):</span>
+</span><span id="line-0-161"><a id="example-0-161" name="example-0-161"></a><span class="sd">            ...</span>
+</span><span id="line-0-162"><a id="example-0-162" name="example-0-162"></a>
+</span><span id="line-0-163"><a id="example-0-163" name="example-0-163"></a><span class="sd">        @keyword(types=None)</span>
+</span><span id="line-0-164"><a id="example-0-164" name="example-0-164"></a><span class="sd">        def no_conversion(length, case_insensitive=False):</span>
+</span><span id="line-0-165"><a id="example-0-165" name="example-0-165"></a><span class="sd">            ...</span>
+</span><span id="line-0-166"><a id="example-0-166" name="example-0-166"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-167"><a id="example-0-167" name="example-0-167"></a>    <span class="k">if</span> <span class="nb">callable</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+</span><span id="line-0-168"><a id="example-0-168" name="example-0-168"></a>        <span class="k">return</span> <span class="n">keyword</span><span class="p">()(</span><span class="n">name</span><span class="p">)</span>
+</span><span id="line-0-169"><a id="example-0-169" name="example-0-169"></a>
+</span><span id="line-0-170"><a id="example-0-170" name="example-0-170"></a>    <span class="k">def</span> <span class="nf">decorator</span><span class="p">(</span><span class="n">func</span><span class="p">:</span> <span class="n">F</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">F</span><span class="p">:</span>
+</span><span id="line-0-171"><a id="example-0-171" name="example-0-171"></a>        <span class="n">func</span><span class="o">.</span><span class="n">robot_name</span> <span class="o">=</span> <span class="n">name</span>
+</span><span id="line-0-172"><a id="example-0-172" name="example-0-172"></a>        <span class="n">func</span><span class="o">.</span><span class="n">robot_tags</span> <span class="o">=</span> <span class="n">tags</span>
+</span><span id="line-0-173"><a id="example-0-173" name="example-0-173"></a>        <span class="n">func</span><span class="o">.</span><span class="n">robot_types</span> <span class="o">=</span> <span class="n">types</span>
+</span><span id="line-0-174"><a id="example-0-174" name="example-0-174"></a>        <span class="k">return</span> <span class="n">func</span>
+</span><span id="line-0-175"><a id="example-0-175" name="example-0-175"></a>
+</span><span id="line-0-176"><a id="example-0-176" name="example-0-176"></a>    <span class="k">return</span> <span class="n">decorator</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -7454,7 +7750,7 @@ is typically used without any arguments like <code>@keyword</code>.</p>
 
 <a href="#robot.api.deco.library" class="headerlink" title="Permanent link">&para;</a></h2>
           <div class="doc-overloads">
-<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">library</span><span class="p">(</span><span class="bp">cls</span><span class="p">:</span> <span class="n"><span title="robot.api.deco.L">L</span></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n"><span title="robot.api.deco.L">L</span></span>
+<div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">library</span><span class="p">(</span><span class="bp">cls</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.api.deco.L" href="#robot.api.deco.L">L</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.api.deco.L" href="#robot.api.deco.L">L</a></span>
 </span></code></pre></div></td></tr></table></div><div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
 <span class="normal"><a href="#example-0-2">2</a></span>
 <span class="normal"><a href="#example-0-3">3</a></span>
@@ -7463,13 +7759,13 @@ is typically used without any arguments like <code>@keyword</code>.</p>
 <span class="normal"><a href="#example-0-6">6</a></span>
 <span class="normal"><a href="#example-0-7">7</a></span>
 <span class="normal"><a href="#example-0-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">library</span><span class="p">(</span>
-</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">scope</span><span class="p">:</span> <span class="n"><span title="robot.api.deco.Scope">Scope</span></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">scope</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.api.deco.Scope" href="#robot.api.deco.Scope">Scope</a></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 </span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a>    <span class="n">version</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-</span><span id="line-0-4"><a id="example-0-4" name="example-0-4"></a>    <span class="n">converters</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></span><span class="p">[</span><span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#type">type</a></span><span class="p">,</span> <span class="n"><span title="robot.api.deco.Converter">Converter</span></span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-</span><span id="line-0-5"><a id="example-0-5" name="example-0-5"></a>    <span class="n">doc_format</span><span class="p">:</span> <span class="n"><span title="robot.api.deco.DocFormat">DocFormat</span></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="line-0-4"><a id="example-0-4" name="example-0-4"></a>    <span class="n">converters</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></span><span class="p">[</span><span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#type">type</a></span><span class="p">,</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.api.deco.Converter" href="#robot.api.deco.Converter">Converter</a></span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="line-0-5"><a id="example-0-5" name="example-0-5"></a>    <span class="n">doc_format</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.api.deco.DocFormat" href="#robot.api.deco.DocFormat">DocFormat</a></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 </span><span id="line-0-6"><a id="example-0-6" name="example-0-6"></a>    <span class="n">listener</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 </span><span id="line-0-7"><a id="example-0-7" name="example-0-7"></a>    <span class="n">auto_keywords</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-</span><span id="line-0-8"><a id="example-0-8" name="example-0-8"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="n"><span title="robot.api.deco.LibraryDecorator">LibraryDecorator</span></span>
+</span><span id="line-0-8"><a id="example-0-8" name="example-0-8"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.api.deco.LibraryDecorator" href="#robot.api.deco.LibraryDecorator">LibraryDecorator</a></span>
 </span></code></pre></div></td></tr></table></div>          </div>
 <div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
 <span class="normal"><a href="#example-0-2">2</a></span>
@@ -7479,13 +7775,13 @@ is typically used without any arguments like <code>@keyword</code>.</p>
 <span class="normal"><a href="#example-0-6">6</a></span>
 <span class="normal"><a href="#example-0-7">7</a></span>
 <span class="normal"><a href="#example-0-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">library</span><span class="p">(</span>
-</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">scope</span><span class="p">:</span> <span class="n"><span title="robot.api.deco.L">L</span></span> <span class="o">|</span> <span class="n"><span title="robot.api.deco.Scope">Scope</span></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>    <span class="n">scope</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.api.deco.L" href="#robot.api.deco.L">L</a></span> <span class="o">|</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.api.deco.Scope" href="#robot.api.deco.Scope">Scope</a></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 </span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a>    <span class="n">version</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-</span><span id="line-0-4"><a id="example-0-4" name="example-0-4"></a>    <span class="n">converters</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></span><span class="p">[</span><span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#type">type</a></span><span class="p">,</span> <span class="n"><span title="robot.api.deco.Converter">Converter</span></span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-</span><span id="line-0-5"><a id="example-0-5" name="example-0-5"></a>    <span class="n">doc_format</span><span class="p">:</span> <span class="n"><span title="robot.api.deco.DocFormat">DocFormat</span></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="line-0-4"><a id="example-0-4" name="example-0-4"></a>    <span class="n">converters</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></span><span class="p">[</span><span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#type">type</a></span><span class="p">,</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.api.deco.Converter" href="#robot.api.deco.Converter">Converter</a></span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="line-0-5"><a id="example-0-5" name="example-0-5"></a>    <span class="n">doc_format</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.api.deco.DocFormat" href="#robot.api.deco.DocFormat">DocFormat</a></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 </span><span id="line-0-6"><a id="example-0-6" name="example-0-6"></a>    <span class="n">listener</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 </span><span id="line-0-7"><a id="example-0-7" name="example-0-7"></a>    <span class="n">auto_keywords</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-</span><span id="line-0-8"><a id="example-0-8" name="example-0-8"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="n"><span title="robot.api.deco.L">L</span></span> <span class="o">|</span> <span class="n"><span title="robot.api.deco.LibraryDecorator">LibraryDecorator</span></span>
+</span><span id="line-0-8"><a id="example-0-8" name="example-0-8"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.api.deco.L" href="#robot.api.deco.L">L</a></span> <span class="o">|</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.api.deco.LibraryDecorator" href="#robot.api.deco.LibraryDecorator">LibraryDecorator</a></span>
 </span></code></pre></div></td></tr></table></div>
 
     <div class="doc doc-contents ">
@@ -7509,7 +7805,7 @@ is typically used without any arguments like <code>@keyword</code>.</p>
                 <code>scope</code>
             </td>
             <td>
-                  <code><span title="robot.api.deco.L">L</span> | <span title="robot.api.deco.Scope">Scope</span> | None</code>
+                  <code><a class="autorefs autorefs-internal" title="robot.api.deco.L" href="#robot.api.deco.L">L</a> | <a class="autorefs autorefs-internal" title="robot.api.deco.Scope" href="#robot.api.deco.Scope">Scope</a> | None</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -7543,7 +7839,7 @@ Sets class attribute <code>ROBOT_LIBRARY_VERSION</code>.</p>
                 <code>converters</code>
             </td>
             <td>
-                  <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#type">type</a>, <span title="robot.api.deco.Converter">Converter</span>] | None</code>
+                  <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#type">type</a>, <a class="autorefs autorefs-internal" title="robot.api.deco.Converter" href="#robot.api.deco.Converter">Converter</a>] | None</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -7560,7 +7856,7 @@ Sets class attribute <code>ROBOT_LIBRARY_CONVERTERS</code>.</p>
                 <code>doc_format</code>
             </td>
             <td>
-                  <code><span title="robot.api.deco.DocFormat">DocFormat</span> | None</code>
+                  <code><a class="autorefs autorefs-internal" title="robot.api.deco.DocFormat" href="#robot.api.deco.DocFormat">DocFormat</a> | None</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -7648,49 +7944,7 @@ if there is no need to use any parameters.</p>
 
             <details class="quote">
               <summary>Source code in <code>src/robot/api/deco.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-152">152</a></span>
-<span class="normal"><a href="#example-0-153">153</a></span>
-<span class="normal"><a href="#example-0-154">154</a></span>
-<span class="normal"><a href="#example-0-155">155</a></span>
-<span class="normal"><a href="#example-0-156">156</a></span>
-<span class="normal"><a href="#example-0-157">157</a></span>
-<span class="normal"><a href="#example-0-158">158</a></span>
-<span class="normal"><a href="#example-0-159">159</a></span>
-<span class="normal"><a href="#example-0-160">160</a></span>
-<span class="normal"><a href="#example-0-161">161</a></span>
-<span class="normal"><a href="#example-0-162">162</a></span>
-<span class="normal"><a href="#example-0-163">163</a></span>
-<span class="normal"><a href="#example-0-164">164</a></span>
-<span class="normal"><a href="#example-0-165">165</a></span>
-<span class="normal"><a href="#example-0-166">166</a></span>
-<span class="normal"><a href="#example-0-167">167</a></span>
-<span class="normal"><a href="#example-0-168">168</a></span>
-<span class="normal"><a href="#example-0-169">169</a></span>
-<span class="normal"><a href="#example-0-170">170</a></span>
-<span class="normal"><a href="#example-0-171">171</a></span>
-<span class="normal"><a href="#example-0-172">172</a></span>
-<span class="normal"><a href="#example-0-173">173</a></span>
-<span class="normal"><a href="#example-0-174">174</a></span>
-<span class="normal"><a href="#example-0-175">175</a></span>
-<span class="normal"><a href="#example-0-176">176</a></span>
-<span class="normal"><a href="#example-0-177">177</a></span>
-<span class="normal"><a href="#example-0-178">178</a></span>
-<span class="normal"><a href="#example-0-179">179</a></span>
-<span class="normal"><a href="#example-0-180">180</a></span>
-<span class="normal"><a href="#example-0-181">181</a></span>
-<span class="normal"><a href="#example-0-182">182</a></span>
-<span class="normal"><a href="#example-0-183">183</a></span>
-<span class="normal"><a href="#example-0-184">184</a></span>
-<span class="normal"><a href="#example-0-185">185</a></span>
-<span class="normal"><a href="#example-0-186">186</a></span>
-<span class="normal"><a href="#example-0-187">187</a></span>
-<span class="normal"><a href="#example-0-188">188</a></span>
-<span class="normal"><a href="#example-0-189">189</a></span>
-<span class="normal"><a href="#example-0-190">190</a></span>
-<span class="normal"><a href="#example-0-191">191</a></span>
-<span class="normal"><a href="#example-0-192">192</a></span>
-<span class="normal"><a href="#example-0-193">193</a></span>
-<span class="normal"><a href="#example-0-194">194</a></span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-194">194</a></span>
 <span class="normal"><a href="#example-0-195">195</a></span>
 <span class="normal"><a href="#example-0-196">196</a></span>
 <span class="normal"><a href="#example-0-197">197</a></span>
@@ -7716,75 +7970,117 @@ if there is no need to use any parameters.</p>
 <span class="normal"><a href="#example-0-217">217</a></span>
 <span class="normal"><a href="#example-0-218">218</a></span>
 <span class="normal"><a href="#example-0-219">219</a></span>
-<span class="normal"><a href="#example-0-220">220</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-152"><a id="example-0-152" name="example-0-152"></a><span class="nd">@not_keyword</span>
-</span><span id="line-0-153"><a id="example-0-153" name="example-0-153"></a><span class="k">def</span> <span class="nf">library</span><span class="p">(</span><span class="n">scope</span><span class="p">:</span> <span class="s1">&#39;L | Scope | None&#39;</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-</span><span id="line-0-154"><a id="example-0-154" name="example-0-154"></a>            <span class="n">version</span><span class="p">:</span> <span class="s1">&#39;str | None&#39;</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-</span><span id="line-0-155"><a id="example-0-155" name="example-0-155"></a>            <span class="n">converters</span><span class="p">:</span> <span class="s1">&#39;dict[type, Converter] | None&#39;</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-</span><span id="line-0-156"><a id="example-0-156" name="example-0-156"></a>            <span class="n">doc_format</span><span class="p">:</span> <span class="s1">&#39;DocFormat | None&#39;</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-</span><span id="line-0-157"><a id="example-0-157" name="example-0-157"></a>            <span class="n">listener</span><span class="p">:</span> <span class="s1">&#39;Any | None&#39;</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-</span><span id="line-0-158"><a id="example-0-158" name="example-0-158"></a>            <span class="n">auto_keywords</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;L | LibraryDecorator&#39;</span><span class="p">:</span>
-</span><span id="line-0-159"><a id="example-0-159" name="example-0-159"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Class decorator to control keyword discovery and other library settings.</span>
-</span><span id="line-0-160"><a id="example-0-160" name="example-0-160"></a>
-</span><span id="line-0-161"><a id="example-0-161" name="example-0-161"></a><span class="sd">    Parameters:</span>
-</span><span id="line-0-162"><a id="example-0-162" name="example-0-162"></a><span class="sd">        scope: Library scope.</span>
-</span><span id="line-0-163"><a id="example-0-163" name="example-0-163"></a><span class="sd">            Sets class attribute `ROBOT_LIBRARY_SCOPE`.</span>
-</span><span id="line-0-164"><a id="example-0-164" name="example-0-164"></a><span class="sd">        version: Library version.</span>
-</span><span id="line-0-165"><a id="example-0-165" name="example-0-165"></a><span class="sd">            Sets class attribute `ROBOT_LIBRARY_VERSION`.</span>
-</span><span id="line-0-166"><a id="example-0-166" name="example-0-166"></a><span class="sd">        converters: Custom argument converters.</span>
-</span><span id="line-0-167"><a id="example-0-167" name="example-0-167"></a><span class="sd">            Sets class attribute `ROBOT_LIBRARY_CONVERTERS`.</span>
-</span><span id="line-0-168"><a id="example-0-168" name="example-0-168"></a><span class="sd">        doc_format: Library documentation format.</span>
-</span><span id="line-0-169"><a id="example-0-169" name="example-0-169"></a><span class="sd">            Sets class attribute `ROBOT_LIBRARY_DOC_FORMAT`.</span>
-</span><span id="line-0-170"><a id="example-0-170" name="example-0-170"></a><span class="sd">        listener: Library listener or listeners.</span>
-</span><span id="line-0-171"><a id="example-0-171" name="example-0-171"></a><span class="sd">            Sets class attribute `ROBOT_LIBRARY_LISTENER`.</span>
-</span><span id="line-0-172"><a id="example-0-172" name="example-0-172"></a><span class="sd">        auto_keywords: Controls keyword discovery. When `False` (default), keywords</span>
-</span><span id="line-0-173"><a id="example-0-173" name="example-0-173"></a><span class="sd">            need to be explicitly decorated with the [keyword][robot.api.deco.keyword]</span>
-</span><span id="line-0-174"><a id="example-0-174" name="example-0-174"></a><span class="sd">            decorator. When `True`, all public methods become keywords.</span>
-</span><span id="line-0-175"><a id="example-0-175" name="example-0-175"></a><span class="sd">            Sets class attribute `ROBOT_AUTO_KEYWORDS`.</span>
-</span><span id="line-0-176"><a id="example-0-176" name="example-0-176"></a>
-</span><span id="line-0-177"><a id="example-0-177" name="example-0-177"></a><span class="sd">    The `ROBOT_AUTO_KEYWORDS` class attribute is always set, but other class</span>
-</span><span id="line-0-178"><a id="example-0-178" name="example-0-178"></a><span class="sd">    attributes are set only if parameters controlling them are used. All</span>
-</span><span id="line-0-179"><a id="example-0-179" name="example-0-179"></a><span class="sd">    class attributes that are set override possible existing class attributes.</span>
-</span><span id="line-0-180"><a id="example-0-180" name="example-0-180"></a>
-</span><span id="line-0-181"><a id="example-0-181" name="example-0-181"></a><span class="sd">    This decorator can be used simply like `@library` to enable keyword discovery</span>
-</span><span id="line-0-182"><a id="example-0-182" name="example-0-182"></a><span class="sd">    if there is no need to use any parameters.</span>
-</span><span id="line-0-183"><a id="example-0-183" name="example-0-183"></a>
-</span><span id="line-0-184"><a id="example-0-184" name="example-0-184"></a><span class="sd">    Examples:</span>
-</span><span id="line-0-185"><a id="example-0-185" name="example-0-185"></a>
-</span><span id="line-0-186"><a id="example-0-186" name="example-0-186"></a><span class="sd">        @library</span>
-</span><span id="line-0-187"><a id="example-0-187" name="example-0-187"></a><span class="sd">        class KeywordDiscovery:</span>
-</span><span id="line-0-188"><a id="example-0-188" name="example-0-188"></a>
-</span><span id="line-0-189"><a id="example-0-189" name="example-0-189"></a><span class="sd">            @keyword</span>
-</span><span id="line-0-190"><a id="example-0-190" name="example-0-190"></a><span class="sd">            def do_something(self):</span>
-</span><span id="line-0-191"><a id="example-0-191" name="example-0-191"></a><span class="sd">                ...</span>
-</span><span id="line-0-192"><a id="example-0-192" name="example-0-192"></a>
-</span><span id="line-0-193"><a id="example-0-193" name="example-0-193"></a><span class="sd">            def not_keyword(self):</span>
-</span><span id="line-0-194"><a id="example-0-194" name="example-0-194"></a><span class="sd">                ...</span>
-</span><span id="line-0-195"><a id="example-0-195" name="example-0-195"></a>
-</span><span id="line-0-196"><a id="example-0-196" name="example-0-196"></a>
-</span><span id="line-0-197"><a id="example-0-197" name="example-0-197"></a><span class="sd">        @library(scope=&#39;GLOBAL&#39;, version=&#39;3.2&#39;, auto_keywords=True)</span>
-</span><span id="line-0-198"><a id="example-0-198" name="example-0-198"></a><span class="sd">        class LibraryConfiguration:</span>
-</span><span id="line-0-199"><a id="example-0-199" name="example-0-199"></a><span class="sd">            ...</span>
-</span><span id="line-0-200"><a id="example-0-200" name="example-0-200"></a>
-</span><span id="line-0-201"><a id="example-0-201" name="example-0-201"></a><span class="sd">    The `converters` argument is new in Robot Framework 5.0.</span>
-</span><span id="line-0-202"><a id="example-0-202" name="example-0-202"></a><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-0-203"><a id="example-0-203" name="example-0-203"></a>    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">scope</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
-</span><span id="line-0-204"><a id="example-0-204" name="example-0-204"></a>        <span class="k">return</span> <span class="n">library</span><span class="p">()(</span><span class="n">scope</span><span class="p">)</span>
-</span><span id="line-0-205"><a id="example-0-205" name="example-0-205"></a>
-</span><span id="line-0-206"><a id="example-0-206" name="example-0-206"></a>    <span class="k">def</span> <span class="nf">decorator</span><span class="p">(</span><span class="bp">cls</span><span class="p">:</span> <span class="n">L</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">L</span><span class="p">:</span>
-</span><span id="line-0-207"><a id="example-0-207" name="example-0-207"></a>        <span class="k">if</span> <span class="n">scope</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-0-208"><a id="example-0-208" name="example-0-208"></a>            <span class="bp">cls</span><span class="o">.</span><span class="n">ROBOT_LIBRARY_SCOPE</span> <span class="o">=</span> <span class="n">scope</span>
-</span><span id="line-0-209"><a id="example-0-209" name="example-0-209"></a>        <span class="k">if</span> <span class="n">version</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-0-210"><a id="example-0-210" name="example-0-210"></a>            <span class="bp">cls</span><span class="o">.</span><span class="n">ROBOT_LIBRARY_VERSION</span> <span class="o">=</span> <span class="n">version</span>
-</span><span id="line-0-211"><a id="example-0-211" name="example-0-211"></a>        <span class="k">if</span> <span class="n">converters</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-0-212"><a id="example-0-212" name="example-0-212"></a>            <span class="bp">cls</span><span class="o">.</span><span class="n">ROBOT_LIBRARY_CONVERTERS</span> <span class="o">=</span> <span class="n">converters</span>
-</span><span id="line-0-213"><a id="example-0-213" name="example-0-213"></a>        <span class="k">if</span> <span class="n">doc_format</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-0-214"><a id="example-0-214" name="example-0-214"></a>            <span class="bp">cls</span><span class="o">.</span><span class="n">ROBOT_LIBRARY_DOC_FORMAT</span> <span class="o">=</span> <span class="n">doc_format</span>
-</span><span id="line-0-215"><a id="example-0-215" name="example-0-215"></a>        <span class="k">if</span> <span class="n">listener</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-0-216"><a id="example-0-216" name="example-0-216"></a>            <span class="bp">cls</span><span class="o">.</span><span class="n">ROBOT_LIBRARY_LISTENER</span> <span class="o">=</span> <span class="n">listener</span>
-</span><span id="line-0-217"><a id="example-0-217" name="example-0-217"></a>        <span class="bp">cls</span><span class="o">.</span><span class="n">ROBOT_AUTO_KEYWORDS</span> <span class="o">=</span> <span class="n">auto_keywords</span>
-</span><span id="line-0-218"><a id="example-0-218" name="example-0-218"></a>        <span class="k">return</span> <span class="bp">cls</span>
-</span><span id="line-0-219"><a id="example-0-219" name="example-0-219"></a>
-</span><span id="line-0-220"><a id="example-0-220" name="example-0-220"></a>    <span class="k">return</span> <span class="n">decorator</span>
+<span class="normal"><a href="#example-0-220">220</a></span>
+<span class="normal"><a href="#example-0-221">221</a></span>
+<span class="normal"><a href="#example-0-222">222</a></span>
+<span class="normal"><a href="#example-0-223">223</a></span>
+<span class="normal"><a href="#example-0-224">224</a></span>
+<span class="normal"><a href="#example-0-225">225</a></span>
+<span class="normal"><a href="#example-0-226">226</a></span>
+<span class="normal"><a href="#example-0-227">227</a></span>
+<span class="normal"><a href="#example-0-228">228</a></span>
+<span class="normal"><a href="#example-0-229">229</a></span>
+<span class="normal"><a href="#example-0-230">230</a></span>
+<span class="normal"><a href="#example-0-231">231</a></span>
+<span class="normal"><a href="#example-0-232">232</a></span>
+<span class="normal"><a href="#example-0-233">233</a></span>
+<span class="normal"><a href="#example-0-234">234</a></span>
+<span class="normal"><a href="#example-0-235">235</a></span>
+<span class="normal"><a href="#example-0-236">236</a></span>
+<span class="normal"><a href="#example-0-237">237</a></span>
+<span class="normal"><a href="#example-0-238">238</a></span>
+<span class="normal"><a href="#example-0-239">239</a></span>
+<span class="normal"><a href="#example-0-240">240</a></span>
+<span class="normal"><a href="#example-0-241">241</a></span>
+<span class="normal"><a href="#example-0-242">242</a></span>
+<span class="normal"><a href="#example-0-243">243</a></span>
+<span class="normal"><a href="#example-0-244">244</a></span>
+<span class="normal"><a href="#example-0-245">245</a></span>
+<span class="normal"><a href="#example-0-246">246</a></span>
+<span class="normal"><a href="#example-0-247">247</a></span>
+<span class="normal"><a href="#example-0-248">248</a></span>
+<span class="normal"><a href="#example-0-249">249</a></span>
+<span class="normal"><a href="#example-0-250">250</a></span>
+<span class="normal"><a href="#example-0-251">251</a></span>
+<span class="normal"><a href="#example-0-252">252</a></span>
+<span class="normal"><a href="#example-0-253">253</a></span>
+<span class="normal"><a href="#example-0-254">254</a></span>
+<span class="normal"><a href="#example-0-255">255</a></span>
+<span class="normal"><a href="#example-0-256">256</a></span>
+<span class="normal"><a href="#example-0-257">257</a></span>
+<span class="normal"><a href="#example-0-258">258</a></span>
+<span class="normal"><a href="#example-0-259">259</a></span>
+<span class="normal"><a href="#example-0-260">260</a></span>
+<span class="normal"><a href="#example-0-261">261</a></span>
+<span class="normal"><a href="#example-0-262">262</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-194"><a id="example-0-194" name="example-0-194"></a><span class="nd">@not_keyword</span>
+</span><span id="line-0-195"><a id="example-0-195" name="example-0-195"></a><span class="k">def</span> <span class="nf">library</span><span class="p">(</span><span class="n">scope</span><span class="p">:</span> <span class="s1">&#39;L | Scope | None&#39;</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="line-0-196"><a id="example-0-196" name="example-0-196"></a>            <span class="n">version</span><span class="p">:</span> <span class="s1">&#39;str | None&#39;</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="line-0-197"><a id="example-0-197" name="example-0-197"></a>            <span class="n">converters</span><span class="p">:</span> <span class="s1">&#39;dict[type, Converter] | None&#39;</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="line-0-198"><a id="example-0-198" name="example-0-198"></a>            <span class="n">doc_format</span><span class="p">:</span> <span class="s1">&#39;DocFormat | None&#39;</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="line-0-199"><a id="example-0-199" name="example-0-199"></a>            <span class="n">listener</span><span class="p">:</span> <span class="s1">&#39;Any | None&#39;</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="line-0-200"><a id="example-0-200" name="example-0-200"></a>            <span class="n">auto_keywords</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;L | LibraryDecorator&#39;</span><span class="p">:</span>
+</span><span id="line-0-201"><a id="example-0-201" name="example-0-201"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Class decorator to control keyword discovery and other library settings.</span>
+</span><span id="line-0-202"><a id="example-0-202" name="example-0-202"></a>
+</span><span id="line-0-203"><a id="example-0-203" name="example-0-203"></a><span class="sd">    Parameters:</span>
+</span><span id="line-0-204"><a id="example-0-204" name="example-0-204"></a><span class="sd">        scope: Library scope.</span>
+</span><span id="line-0-205"><a id="example-0-205" name="example-0-205"></a><span class="sd">            Sets class attribute `ROBOT_LIBRARY_SCOPE`.</span>
+</span><span id="line-0-206"><a id="example-0-206" name="example-0-206"></a><span class="sd">        version: Library version.</span>
+</span><span id="line-0-207"><a id="example-0-207" name="example-0-207"></a><span class="sd">            Sets class attribute `ROBOT_LIBRARY_VERSION`.</span>
+</span><span id="line-0-208"><a id="example-0-208" name="example-0-208"></a><span class="sd">        converters: Custom argument converters.</span>
+</span><span id="line-0-209"><a id="example-0-209" name="example-0-209"></a><span class="sd">            Sets class attribute `ROBOT_LIBRARY_CONVERTERS`.</span>
+</span><span id="line-0-210"><a id="example-0-210" name="example-0-210"></a><span class="sd">        doc_format: Library documentation format.</span>
+</span><span id="line-0-211"><a id="example-0-211" name="example-0-211"></a><span class="sd">            Sets class attribute `ROBOT_LIBRARY_DOC_FORMAT`.</span>
+</span><span id="line-0-212"><a id="example-0-212" name="example-0-212"></a><span class="sd">        listener: Library listener or listeners.</span>
+</span><span id="line-0-213"><a id="example-0-213" name="example-0-213"></a><span class="sd">            Sets class attribute `ROBOT_LIBRARY_LISTENER`.</span>
+</span><span id="line-0-214"><a id="example-0-214" name="example-0-214"></a><span class="sd">        auto_keywords: Controls keyword discovery. When `False` (default), keywords</span>
+</span><span id="line-0-215"><a id="example-0-215" name="example-0-215"></a><span class="sd">            need to be explicitly decorated with the [keyword][robot.api.deco.keyword]</span>
+</span><span id="line-0-216"><a id="example-0-216" name="example-0-216"></a><span class="sd">            decorator. When `True`, all public methods become keywords.</span>
+</span><span id="line-0-217"><a id="example-0-217" name="example-0-217"></a><span class="sd">            Sets class attribute `ROBOT_AUTO_KEYWORDS`.</span>
+</span><span id="line-0-218"><a id="example-0-218" name="example-0-218"></a>
+</span><span id="line-0-219"><a id="example-0-219" name="example-0-219"></a><span class="sd">    The `ROBOT_AUTO_KEYWORDS` class attribute is always set, but other class</span>
+</span><span id="line-0-220"><a id="example-0-220" name="example-0-220"></a><span class="sd">    attributes are set only if parameters controlling them are used. All</span>
+</span><span id="line-0-221"><a id="example-0-221" name="example-0-221"></a><span class="sd">    class attributes that are set override possible existing class attributes.</span>
+</span><span id="line-0-222"><a id="example-0-222" name="example-0-222"></a>
+</span><span id="line-0-223"><a id="example-0-223" name="example-0-223"></a><span class="sd">    This decorator can be used simply like `@library` to enable keyword discovery</span>
+</span><span id="line-0-224"><a id="example-0-224" name="example-0-224"></a><span class="sd">    if there is no need to use any parameters.</span>
+</span><span id="line-0-225"><a id="example-0-225" name="example-0-225"></a>
+</span><span id="line-0-226"><a id="example-0-226" name="example-0-226"></a><span class="sd">    Examples:</span>
+</span><span id="line-0-227"><a id="example-0-227" name="example-0-227"></a>
+</span><span id="line-0-228"><a id="example-0-228" name="example-0-228"></a><span class="sd">        @library</span>
+</span><span id="line-0-229"><a id="example-0-229" name="example-0-229"></a><span class="sd">        class KeywordDiscovery:</span>
+</span><span id="line-0-230"><a id="example-0-230" name="example-0-230"></a>
+</span><span id="line-0-231"><a id="example-0-231" name="example-0-231"></a><span class="sd">            @keyword</span>
+</span><span id="line-0-232"><a id="example-0-232" name="example-0-232"></a><span class="sd">            def do_something(self):</span>
+</span><span id="line-0-233"><a id="example-0-233" name="example-0-233"></a><span class="sd">                ...</span>
+</span><span id="line-0-234"><a id="example-0-234" name="example-0-234"></a>
+</span><span id="line-0-235"><a id="example-0-235" name="example-0-235"></a><span class="sd">            def not_keyword(self):</span>
+</span><span id="line-0-236"><a id="example-0-236" name="example-0-236"></a><span class="sd">                ...</span>
+</span><span id="line-0-237"><a id="example-0-237" name="example-0-237"></a>
+</span><span id="line-0-238"><a id="example-0-238" name="example-0-238"></a>
+</span><span id="line-0-239"><a id="example-0-239" name="example-0-239"></a><span class="sd">        @library(scope=&#39;GLOBAL&#39;, version=&#39;3.2&#39;, auto_keywords=True)</span>
+</span><span id="line-0-240"><a id="example-0-240" name="example-0-240"></a><span class="sd">        class LibraryConfiguration:</span>
+</span><span id="line-0-241"><a id="example-0-241" name="example-0-241"></a><span class="sd">            ...</span>
+</span><span id="line-0-242"><a id="example-0-242" name="example-0-242"></a>
+</span><span id="line-0-243"><a id="example-0-243" name="example-0-243"></a><span class="sd">    The `converters` argument is new in Robot Framework 5.0.</span>
+</span><span id="line-0-244"><a id="example-0-244" name="example-0-244"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-245"><a id="example-0-245" name="example-0-245"></a>    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">scope</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
+</span><span id="line-0-246"><a id="example-0-246" name="example-0-246"></a>        <span class="k">return</span> <span class="n">library</span><span class="p">()(</span><span class="n">scope</span><span class="p">)</span>
+</span><span id="line-0-247"><a id="example-0-247" name="example-0-247"></a>
+</span><span id="line-0-248"><a id="example-0-248" name="example-0-248"></a>    <span class="k">def</span> <span class="nf">decorator</span><span class="p">(</span><span class="bp">cls</span><span class="p">:</span> <span class="n">L</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">L</span><span class="p">:</span>
+</span><span id="line-0-249"><a id="example-0-249" name="example-0-249"></a>        <span class="k">if</span> <span class="n">scope</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-0-250"><a id="example-0-250" name="example-0-250"></a>            <span class="bp">cls</span><span class="o">.</span><span class="n">ROBOT_LIBRARY_SCOPE</span> <span class="o">=</span> <span class="n">scope</span>
+</span><span id="line-0-251"><a id="example-0-251" name="example-0-251"></a>        <span class="k">if</span> <span class="n">version</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-0-252"><a id="example-0-252" name="example-0-252"></a>            <span class="bp">cls</span><span class="o">.</span><span class="n">ROBOT_LIBRARY_VERSION</span> <span class="o">=</span> <span class="n">version</span>
+</span><span id="line-0-253"><a id="example-0-253" name="example-0-253"></a>        <span class="k">if</span> <span class="n">converters</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-0-254"><a id="example-0-254" name="example-0-254"></a>            <span class="bp">cls</span><span class="o">.</span><span class="n">ROBOT_LIBRARY_CONVERTERS</span> <span class="o">=</span> <span class="n">converters</span>
+</span><span id="line-0-255"><a id="example-0-255" name="example-0-255"></a>        <span class="k">if</span> <span class="n">doc_format</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-0-256"><a id="example-0-256" name="example-0-256"></a>            <span class="bp">cls</span><span class="o">.</span><span class="n">ROBOT_LIBRARY_DOC_FORMAT</span> <span class="o">=</span> <span class="n">doc_format</span>
+</span><span id="line-0-257"><a id="example-0-257" name="example-0-257"></a>        <span class="k">if</span> <span class="n">listener</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="line-0-258"><a id="example-0-258" name="example-0-258"></a>            <span class="bp">cls</span><span class="o">.</span><span class="n">ROBOT_LIBRARY_LISTENER</span> <span class="o">=</span> <span class="n">listener</span>
+</span><span id="line-0-259"><a id="example-0-259" name="example-0-259"></a>        <span class="bp">cls</span><span class="o">.</span><span class="n">ROBOT_AUTO_KEYWORDS</span> <span class="o">=</span> <span class="n">auto_keywords</span>
+</span><span id="line-0-260"><a id="example-0-260" name="example-0-260"></a>        <span class="k">return</span> <span class="bp">cls</span>
+</span><span id="line-0-261"><a id="example-0-261" name="example-0-261"></a>
+</span><span id="line-0-262"><a id="example-0-262" name="example-0-262"></a>    <span class="k">return</span> <span class="n">decorator</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>

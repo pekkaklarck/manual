@@ -962,6 +962,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -990,21 +992,14 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#robot.api.interfaces" class="md-nav__link">
-    <span class="md-ellipsis">
-      <code class="doc-symbol doc-symbol-toc doc-symbol-module"></code>&nbsp;interfaces
-    </span>
-  </a>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#robot.api.interfaces.DynamicLibrary" class="md-nav__link">
@@ -7884,13 +7879,16 @@
   
 
 
-  <h1><code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> interfaces</h1>
-
 <div class="doc doc-object doc-module">
 
 
 
-<a id="robot.api.interfaces"></a>
+<h1 id="robot.api.interfaces" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-module"></code>            <span class="doc doc-object-name doc-module-name">robot.api.interfaces</span>
+
+
+<a href="#robot.api.interfaces" class="headerlink" title="Permanent link">&para;</a></h1>
+
     <div class="doc doc-contents first">
 
         <p>Optional base classes for libraries and other extensions.</p>
@@ -7999,10 +7997,6 @@ information about the implemented keywords to Robot Framework.</p>
 <code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <span class="doc doc-object-name doc-function-name">get_keyword_names</span>
 
 
-  <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
-  </span>
-
 <a href="#robot.api.interfaces.DynamicLibrary.get_keyword_names" class="headerlink" title="Permanent link">&para;</a></h3>
 <div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">get_keyword_names</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n"><a class="autorefs autorefs-external" title="typing.Sequence" href="https://docs.python.org/3/library/typing.html#typing.Sequence">Sequence</a></span><span class="p">[</span><span class="n"><span title="robot.api.interfaces.Name">Name</span></span><span class="p">]</span>
 </span></code></pre></div></td></tr></table></div>
@@ -8052,10 +8046,6 @@ returned by this method.</p>
 <h3 id="robot.api.interfaces.DynamicLibrary.run_keyword" class="doc doc-heading">
 <code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <span class="doc doc-object-name doc-function-name">run_keyword</span>
 
-
-  <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
-  </span>
 
 <a href="#robot.api.interfaces.DynamicLibrary.run_keyword" class="headerlink" title="Permanent link">&para;</a></h3>
 <div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
@@ -8642,10 +8632,6 @@ returns desired keyword methods.</p>
 <h3 id="robot.api.interfaces.HybridLibrary.get_keyword_names" class="doc doc-heading">
 <code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <span class="doc doc-object-name doc-function-name">get_keyword_names</span>
 
-
-  <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
-  </span>
 
 <a href="#robot.api.interfaces.HybridLibrary.get_keyword_names" class="headerlink" title="Permanent link">&para;</a></h3>
 <div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">get_keyword_names</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n"><a class="autorefs autorefs-external" title="typing.Sequence" href="https://docs.python.org/3/library/typing.html#typing.Sequence">Sequence</a></span><span class="p">[</span><span class="n"><span title="robot.api.interfaces.Name">Name</span></span><span class="p">]</span>
@@ -12320,10 +12306,6 @@ when a parser is implemented as a module.</p>
 <h3 id="robot.api.interfaces.Parser.parse" class="doc doc-heading">
 <code class="doc-symbol doc-symbol-heading doc-symbol-method"></code>            <span class="doc doc-object-name doc-function-name">parse</span>
 
-
-  <span class="doc doc-labels">
-      <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
-  </span>
 
 <a href="#robot.api.interfaces.Parser.parse" class="headerlink" title="Permanent link">&para;</a></h3>
 <div class="doc-signature highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="nf">parse</span><span class="p">(</span><span class="n">source</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" title="pathlib.Path" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path">Path</a></span><span class="p">,</span> <span class="n">defaults</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.running.TestDefaults" href="../../running/builder/settings/#robot.running.builder.settings.TestDefaults">TestDefaults</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n"><a class="autorefs autorefs-internal" title="robot.running.TestSuite" href="../../running/model/#robot.running.model.TestSuite">TestSuite</a></span>
