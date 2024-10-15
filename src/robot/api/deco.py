@@ -13,6 +13,17 @@
 #  See the License for the specific language governing permissions and
 #  limitations under the License.
 
+"""Module defining decorators libraries can use.
+
+- [library][robot.api.deco.library]: for marking and configuring library classes.
+- [keyword][robot.api.deco.keyword]: for marking and configuring keyword functions
+  and methods.
+- [not_keyword][robot.api.deco.not_keyword]: for marking functions and method not
+  to be keywords.
+
+Attributes in this module are used only in type hints of the aforementioned decorators.
+"""
+
 from typing import Any, Callable, Literal, Sequence, TypeVar, Union, overload
 
 from .interfaces import TypeHints
@@ -21,14 +32,45 @@ from .interfaces import TypeHints
 # Current annotations report `attr-defined` errors. This can be solved once Python 3.10
 # becomes the minimum version (error-free conditional typing proved too complex).
 # See: https://discuss.python.org/t/questions-related-to-typing-overload-style/38130
-F = TypeVar('F', bound=Callable[..., Any])    # Any function.
-K = TypeVar('K', bound=Callable[..., Any])    # Keyword function.
-L = TypeVar('L', bound=type)                  # Library class.
+F = TypeVar('F', bound=Callable[..., Any])
+"""Type variable representing any function."""
+K = TypeVar('K', bound=Callable[..., Any])
+"""Type variable representing a keyword function."""
+L = TypeVar('L', bound=type)
+"""Type variable representing a library class."""
 KeywordDecorator = Callable[[K], K]
+"""Keyword decorator. Sets attributes to the given keyword function and returns it."""
 LibraryDecorator = Callable[[L], L]
+"""Library decorator. Sets attributes to the given library class and returns it."""
 Scope = Literal['GLOBAL', 'SUITE', 'TEST', 'TASK']
+"""Library scope.
+
+- `GLOBAL`: Library has a global scope.
+- `SUITE`: Library has a suite level scope.
+- `TEST`: Library has a test level scope. The default if scope is not specified.
+- `TASK`: An alias for `TEST`.
+"""
 Converter = Union[Callable[[Any], Any], Callable[[Any, Any], Any]]
+"""Custom argument converter.
+
+A callable accepting one or two arguments. If it accepts one, it only gets
+the value to be converted. If it accepts two, it gets the value and also
+the library the used keyword belongs to. The latter approach allows making
+conversion based on the library state.
+
+The converted value is returned. If the value is invalid, a [ValueError][]
+should be raised.
+"""
 DocFormat = Literal['ROBOT', 'HTML', 'TEXT', 'REST']
+"""Library documentation format.
+
+- `ROBOT`: Use Robot Framework's own custom markup syntax. The default if format
+  is not specified.
+- `HTML`: Use documentation as HTML directly.
+- `TEXT`: Consider documentation to be plain text.
+- `REST`: Use [reStructuredText](https://docutils.sourceforge.io/rst.html)
+   markup language.
+"""
 
 
 def not_keyword(func: F) -> F:
