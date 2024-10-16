@@ -121,7 +121,7 @@ plugins:
       inline_refs: list
 
 hooks:
-  - doc/manual/hooks/set_homepage_share_title.py
+  - doc/manual/hooks/fix_social_share_preview.py
 
 extra:
   social:
