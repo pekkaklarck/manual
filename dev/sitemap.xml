@@ -949,6 +949,18 @@
          <lastmod>2024-10-16</lastmod>
     </url>
     <url>
+         <loc>https://pekkaklarck.github.io/manual/latest/data/</loc>
+         <lastmod>2024-10-16</lastmod>
+    </url>
+    <url>
+         <loc>https://pekkaklarck.github.io/manual/latest/data/syntax/</loc>
+         <lastmod>2024-10-16</lastmod>
+    </url>
+    <url>
+         <loc>https://pekkaklarck.github.io/manual/latest/execution/</loc>
+         <lastmod>2024-10-16</lastmod>
+    </url>
+    <url>
          <loc>https://pekkaklarck.github.io/manual/latest/extend/</loc>
          <lastmod>2024-10-16</lastmod>
     </url>
@@ -962,14 +974,6 @@
     </url>
     <url>
          <loc>https://pekkaklarck.github.io/manual/latest/libraries/</loc>
-         <lastmod>2024-10-16</lastmod>
-    </url>
-    <url>
-         <loc>https://pekkaklarck.github.io/manual/latest/usage/</loc>
-         <lastmod>2024-10-16</lastmod>
-    </url>
-    <url>
-         <loc>https://pekkaklarck.github.io/manual/latest/usage/data/</loc>
          <lastmod>2024-10-16</lastmod>
     </url>
 </urlset>
