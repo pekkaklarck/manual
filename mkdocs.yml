@@ -15,9 +15,11 @@ nav:
   - Manual: index.md
   - Install:
       - install/index.md
-  - Usage:
-      - usage/index.md
-      - Input data: usage/data.md
+  - Data:
+      - data/index.md
+      - Syntax: data/syntax.md
+  - Execution:
+      - execution/index.md
   - Libraries:
       - libraries/index.md
   - Extend:

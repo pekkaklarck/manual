@@ -4,7 +4,7 @@
 
 Robot Framework® is a generic open source automation framework for acceptance testing,
 behavior-driven development (BDD) and robotic process automation (RPA). It has simple
-[plain text syntax][input-data], and it can be [extended][extending-robot-framework]
+[plain text syntax][data], and it can be [extended][extending-robot-framework]
 easily with generic and custom [libraries][].
 
 Robot Framework is operating system and application independent. It is implemented
