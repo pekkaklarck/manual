@@ -1,5 +1,5 @@
 # Execution
 
-This section will cover both execution and results.
+This section will cover test/task execution.
 
 :construction:

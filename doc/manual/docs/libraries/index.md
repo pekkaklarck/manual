@@ -56,4 +56,4 @@ is [https://robotframework.org](https://robotframework.org/#resources).
 ## Custom libraries
 
 You can also easily create your own libraries for your specific needs.
-See the [creating libraries][creating-libraries] section for more information.
+See the [creating libraries][library-interface] section for more information.
