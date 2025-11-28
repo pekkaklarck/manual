@@ -1,10 +1,10 @@
 site_name: Robot Framework
-site_description: Robot Framework is a generic open source framework for acceptance testing, behavior-driven development (BDD) and robotic process automation (RPA).
+site_description: Robot Framework is a generic open source automation framework. This reference manual covers all its features in detail.
 site_url: https://pekkaklarck.github.io/manual/    # The mike plugin requires the trailing slash.
 repo_url: https://github.com/robotframework/robotframework
 edit_uri: https://github.com/pekkaklarck/manual/blob/main/doc/manual/docs
 copyright: |
-  &copy; 2024- <a href="https://robotframework.org/foundation" target="_blank" rel="noopener">Robot Framework Foundation</a>
+  &copy; 2026- <a href="https://robotframework.org/foundation" target="_blank" rel="noopener">Robot Framework Foundation</a>
 docs_dir: doc/manual/docs
 watch:
   - INSTALL.md
@@ -136,7 +136,7 @@ plugins:
         python:
           paths:
             - src
-          import:
+          inventories:
             - https://docs.python.org/3/objects.inv
           options:
             inherited_members: true
@@ -157,9 +157,6 @@ plugins:
       plurals: en
       tooltip: full
       inline_refs: list
-
-hooks:
-  - doc/manual/hooks/fix_social_share_preview.py
 
 extra:
   social:
