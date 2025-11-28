@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Robot Framework is a generic open source framework for acceptance testing, behavior-driven development (BDD) and robotic process automation (RPA).">
+        <meta name="description" content="Robot Framework is a generic open source automation framework. This reference manual covers all its features in detail.">
       
       
       
@@ -19,8 +19,11 @@
         <link rel="next" href="../tools/">
       
       
+        
+      
+      
       <link rel="icon" href="../assets/logo.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.41">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
     
     
       
@@ -28,10 +31,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.0253249f.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -60,34 +63,20 @@
 
     
     
-      
-        <meta  property="og:type"  content="website" >
-      
-        <meta  property="og:title"  content="Libraries - Robot Framework" >
-      
-        <meta  property="og:description"  content="Robot Framework is a generic open source framework for acceptance testing, behavior-driven development (BDD) and robotic process automation (RPA)." >
-      
-        <meta  property="og:image"  content="https://pekkaklarck.github.io/manual/latest/assets/images/social/libraries/index.png" >
-      
-        <meta  property="og:image:type"  content="image/png" >
-      
-        <meta  property="og:image:width"  content="1200" >
-      
-        <meta  property="og:image:height"  content="630" >
-      
-        <meta  property="og:url"  content="https://pekkaklarck.github.io/manual/latest/libraries/" >
-      
-        <meta  name="twitter:card"  content="summary_large_image" >
-      
-        <meta  name="twitter:title"  content="Libraries - Robot Framework" >
-      
-        <meta  name="twitter:description"  content="Robot Framework is a generic open source framework for acceptance testing, behavior-driven development (BDD) and robotic process automation (RPA)." >
-      
-        <meta  name="twitter:image"  content="https://pekkaklarck.github.io/manual/latest/assets/images/social/libraries/index.png" >
-      
-    
-    
-  </head>
+  
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Libraries - Robot Framework" />
+<meta property="og:description" content="Robot Framework is a generic open source automation framework. This reference manual covers all its features in detail." />
+<meta property="og:image" content="https://pekkaklarck.github.io/manual/latest/assets/images/social/libraries/index.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:url" content="https://pekkaklarck.github.io/manual/latest/libraries/" />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Libraries - Robot Framework" />
+<meta property="twitter:description" content="Robot Framework is a generic open source automation framework. This reference manual covers all its features in detail." />
+<meta property="twitter:image" content="https://pekkaklarck.github.io/manual/latest/assets/images/social/libraries/index.png" />
+</head>
   
   
     
@@ -126,7 +115,7 @@
   </a>
 
             </div>
-            <script>var el=document.querySelector("[data-md-component=outdated]"),outdated=__md_get("__outdated",sessionStorage);!0===outdated&&el&&(el.hidden=!1)</script>
+            <script>var el=document.querySelector("[data-md-component=outdated]"),base=new URL(".."),outdated=__md_get("__outdated",sessionStorage,base);!0===outdated&&el&&(el.hidden=!1)</script>
           </aside>
         
       </div>
@@ -203,11 +192,13 @@
     
     
     
-      <label class="md-header__button md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
@@ -241,13 +232,14 @@
     </div>
   </div>
 </div>
+      
     
     
       <div class="md-header__source">
         <a href="https://github.com/robotframework/robotframework" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -273,9 +265,11 @@
   
   
   
+  
     <li class="md-tabs__item">
       <a href=".." class="md-tabs__link">
         
+  
   
     
   
@@ -290,9 +284,11 @@
   
   
   
+  
     <li class="md-tabs__item">
       <a href="../install/" class="md-tabs__link">
         
+  
   
     
   
@@ -307,9 +303,11 @@
   
   
   
+  
     <li class="md-tabs__item">
       <a href="../data/" class="md-tabs__link">
         
+  
   
     
   
@@ -324,9 +322,11 @@
   
   
   
+  
     <li class="md-tabs__item">
       <a href="../execution/" class="md-tabs__link">
         
+  
   
     
   
@@ -340,12 +340,14 @@
         
   
   
+  
     
   
   
     <li class="md-tabs__item md-tabs__item--active">
       <a href="./" class="md-tabs__link">
         
+  
   
     
   
@@ -360,9 +362,11 @@
   
   
   
+  
     <li class="md-tabs__item">
       <a href="../tools/" class="md-tabs__link">
         
+  
   
     
   
@@ -377,9 +381,11 @@
   
   
   
+  
     <li class="md-tabs__item">
       <a href="../extend/" class="md-tabs__link">
         
+  
   
     
   
@@ -394,11 +400,13 @@
   
   
   
+  
     
     
       <li class="md-tabs__item">
         <a href="../api/" class="md-tabs__link">
           
+  
   
     
   
@@ -414,9 +422,11 @@
   
   
   
+  
     <li class="md-tabs__item">
       <a href="../appendix/" class="md-tabs__link">
         
+  
   
     
   
@@ -431,9 +441,11 @@
   
   
   
+  
     <li class="md-tabs__item">
       <a href="../glossary/" class="md-tabs__link">
         
+  
   
     
   
@@ -480,7 +492,7 @@
       <a href="https://github.com/robotframework/robotframework" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -500,9 +512,16 @@
       <a href=".." class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Manual
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -520,9 +539,16 @@
       <a href="../install/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Install
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -563,6 +589,7 @@
       
     
     
+    
       
       
         
@@ -576,14 +603,20 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          
           <div class="md-nav__link md-nav__container">
             <a href="../data/" class="md-nav__link ">
               
   
+  
   <span class="md-ellipsis">
+    
+  
     Data
+  
+
+    
   </span>
+  
   
 
             </a>
@@ -598,7 +631,11 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
-            Data
+            
+  
+    Data
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -612,9 +649,16 @@
       <a href="../data/syntax/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Syntax
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -633,9 +677,16 @@
       <a href="../data/tests/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Creating tests
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -654,9 +705,16 @@
       <a href="../data/tasks/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Creating tasks
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -675,9 +733,16 @@
       <a href="../data/suites/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Creating suites
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -696,9 +761,16 @@
       <a href="../data/libraries/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Using libraries
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -717,9 +789,16 @@
       <a href="../data/variables/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Variables
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -738,9 +817,16 @@
       <a href="../data/user-keywords/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     User keywords
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -759,9 +845,16 @@
       <a href="../data/resource-files/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Resource files
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -780,9 +873,16 @@
       <a href="../data/variable-files/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Variable files
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -801,9 +901,16 @@
       <a href="../data/control/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Control structures
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -822,9 +929,16 @@
       <a href="../data/advanced/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Advanced features
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -861,6 +975,7 @@
       
     
     
+    
       
       
         
@@ -874,14 +989,20 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
-          
           <div class="md-nav__link md-nav__container">
             <a href="../execution/" class="md-nav__link ">
               
   
+  
   <span class="md-ellipsis">
+    
+  
     Execution
+  
+
+    
   </span>
+  
   
 
             </a>
@@ -896,7 +1017,11 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            Execution
+            
+  
+    Execution
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -910,9 +1035,16 @@
       <a href="../execution/basics/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Basic usage
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -931,9 +1063,16 @@
       <a href="../execution/tests/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Test execution
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -952,9 +1091,16 @@
       <a href="../execution/tasks/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Task execution
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -973,9 +1119,16 @@
       <a href="../execution/configuration/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Configuring execution
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -994,9 +1147,16 @@
       <a href="../execution/results/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Results
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1031,9 +1191,16 @@
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
   
+  
   <span class="md-ellipsis">
+    
+  
     Libraries
+  
+
+    
   </span>
+  
   
 
           <span class="md-nav__icon md-icon"></span>
@@ -1042,9 +1209,16 @@
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Libraries
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1067,7 +1241,9 @@
         <li class="md-nav__item">
   <a href="#standard-libraries" class="md-nav__link">
     <span class="md-ellipsis">
-      Standard libraries
+      
+        Standard libraries
+      
     </span>
   </a>
   
@@ -1077,7 +1253,9 @@
           <li class="md-nav__item">
   <a href="#spec-files" class="md-nav__link">
     <span class="md-ellipsis">
-      Spec files
+      
+        Spec files
+      
     </span>
   </a>
   
@@ -1091,7 +1269,9 @@
         <li class="md-nav__item">
   <a href="#external-libraries" class="md-nav__link">
     <span class="md-ellipsis">
-      External libraries
+      
+        External libraries
+      
     </span>
   </a>
   
@@ -1100,7 +1280,9 @@
         <li class="md-nav__item">
   <a href="#custom-libraries" class="md-nav__link">
     <span class="md-ellipsis">
-      Custom libraries
+      
+        Custom libraries
+      
     </span>
   </a>
   
@@ -1131,6 +1313,7 @@
       
     
     
+    
       
       
         
@@ -1144,14 +1327,20 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
-          
           <div class="md-nav__link md-nav__container">
             <a href="../tools/" class="md-nav__link ">
               
   
+  
   <span class="md-ellipsis">
+    
+  
     Tools
+  
+
+    
   </span>
+  
   
 
             </a>
@@ -1166,7 +1355,11 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
-            Tools
+            
+  
+    Tools
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1180,9 +1373,16 @@
       <a href="../tools/rebot/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Rebot
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1201,9 +1401,16 @@
       <a href="../tools/libdoc/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Libdoc
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1222,9 +1429,16 @@
       <a href="../tools/testdoc/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Testdoc
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1267,6 +1481,7 @@
       
     
     
+    
       
       
         
@@ -1280,14 +1495,20 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
         
           
-          
           <div class="md-nav__link md-nav__container">
             <a href="../extend/" class="md-nav__link ">
               
   
+  
   <span class="md-ellipsis">
+    
+  
     Extend
+  
+
+    
   </span>
+  
   
 
             </a>
@@ -1302,7 +1523,11 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
-            Extend
+            
+  
+    Extend
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1316,9 +1541,16 @@
       <a href="../extend/libraries/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Library interface
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1337,9 +1569,16 @@
       <a href="../extend/dynamic/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Dynamic library interface
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1358,9 +1597,16 @@
       <a href="../extend/remote/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Remote library interface
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1379,9 +1625,16 @@
       <a href="../extend/listeners/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Listener interface
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1400,9 +1653,16 @@
       <a href="../extend/parsing/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Parser interface
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1421,9 +1681,16 @@
       <a href="../extend/models/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Execution and result models
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1442,9 +1709,16 @@
       <a href="../extend/json/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     JSON models
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1463,9 +1737,16 @@
       <a href="../extend/xml/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     XML output
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1495,9 +1776,8 @@
         
       
         
-          
-        
       
+    
     
     
       
@@ -1513,14 +1793,20 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
         
           
-          
           <div class="md-nav__link md-nav__container">
             <a href="../api/" class="md-nav__link ">
               
   
+  
   <span class="md-ellipsis">
+    
+  
     API
+  
+
+    
   </span>
+  
   
 
             </a>
@@ -1535,7 +1821,11 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
-            API
+            
+  
+    API
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1551,39 +1841,11 @@
     
       
         
-          
-        
-      
-        
-          
-        
       
         
       
         
-          
-        
       
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
         
       
         
@@ -1591,31 +1853,34 @@
         
       
         
-          
-        
       
-        
-          
         
       
         
       
         
-          
+      
+        
+      
         
       
         
       
         
-          
-        
       
-        
-          
         
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
+    
     
     
       
@@ -1631,14 +1896,20 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2" >
         
           
-          
           <div class="md-nav__link md-nav__container">
             <a href="../api/robot/" class="md-nav__link ">
               
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> robot
+  
+
+    
   </span>
+  
   
 
             </a>
@@ -1653,7 +1924,11 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_8_2">
             <span class="md-nav__icon md-icon"></span>
-            <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> robot
+            
+  
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> robot
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1676,6 +1951,7 @@
       
         
       
+    
     
     
       
@@ -1691,14 +1967,20 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2_1" >
         
           
-          
           <div class="md-nav__link md-nav__container">
             <a href="../api/robot/api/" class="md-nav__link ">
               
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> api
+  
+
+    
   </span>
+  
   
 
             </a>
@@ -1713,7 +1995,11 @@
         <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_2_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_8_2_1">
             <span class="md-nav__icon md-icon"></span>
-            <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> api
+            
+  
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> api
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1727,9 +2013,16 @@
       <a href="../api/robot/api/deco/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> deco
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1748,9 +2041,16 @@
       <a href="../api/robot/api/exceptions/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> exceptions
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1769,9 +2069,16 @@
       <a href="../api/robot/api/interfaces/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> interfaces
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1790,9 +2097,16 @@
       <a href="../api/robot/api/logger/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> logger
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1811,9 +2125,16 @@
       <a href="../api/robot/api/parsing/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> parsing
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1847,6 +2168,7 @@
       
     
     
+    
       
       
         
@@ -1860,14 +2182,20 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2_2" >
         
           
-          
           <div class="md-nav__link md-nav__container">
             <a href="../api/robot/conf/" class="md-nav__link ">
               
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> conf
+  
+
+    
   </span>
+  
   
 
             </a>
@@ -1882,7 +2210,11 @@
         <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_2_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_8_2_2">
             <span class="md-nav__icon md-icon"></span>
-            <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> conf
+            
+  
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> conf
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1896,9 +2228,16 @@
       <a href="../api/robot/conf/gatherfailed/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> gatherfailed
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1917,9 +2256,16 @@
       <a href="../api/robot/conf/languages/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> languages
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1938,9 +2284,16 @@
       <a href="../api/robot/conf/settings/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> settings
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1967,9 +2320,16 @@
       <a href="../api/robot/errors/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> errors
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -1988,7 +2348,11 @@
     
       
         
-          
+      
+        
+      
+        
+      
         
       
         
@@ -1996,19 +2360,8 @@
         
       
         
-          
-        
       
-        
-          
-        
-      
-        
-      
-        
-          
-        
-      
+    
     
     
       
@@ -2024,14 +2377,20 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2_4" >
         
           
-          
           <div class="md-nav__link md-nav__container">
             <a href="../api/robot/htmldata/" class="md-nav__link ">
               
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> htmldata
+  
+
+    
   </span>
+  
   
 
             </a>
@@ -2046,7 +2405,11 @@
         <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_2_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_8_2_4">
             <span class="md-nav__icon md-icon"></span>
-            <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> htmldata
+            
+  
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> htmldata
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -2060,9 +2423,16 @@
       <a href="../api/robot/htmldata/common/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> common
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -2081,9 +2451,16 @@
       <a href="../api/robot/htmldata/htmlfilewriter/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> htmlfilewriter
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -2102,9 +2479,16 @@
       <a href="../api/robot/htmldata/jsonwriter/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> jsonwriter
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -2123,9 +2507,16 @@
       <a href="../api/robot/htmldata/libdoc/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> libdoc
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -2144,9 +2535,16 @@
       <a href="../api/robot/htmldata/rebot/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> rebot
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -2165,9 +2563,16 @@
       <a href="../api/robot/htmldata/template/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> template
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -2186,9 +2591,16 @@
       <a href="../api/robot/htmldata/testdoc/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> testdoc
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -2215,9 +2627,16 @@
       <a href="../api/robot/libdoc/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> libdoc
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -2265,6 +2684,7 @@
       
     
     
+    
       
       
         
@@ -2278,14 +2698,20 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2_6" >
         
           
-          
           <div class="md-nav__link md-nav__container">
             <a href="../api/robot/libdocpkg/" class="md-nav__link ">
               
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> libdocpkg
+  
+
+    
   </span>
+  
   
 
             </a>
@@ -2300,7 +2726,11 @@
         <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_2_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_8_2_6">
             <span class="md-nav__icon md-icon"></span>
-            <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> libdocpkg
+            
+  
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> libdocpkg
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -2314,9 +2744,16 @@
       <a href="../api/robot/libdocpkg/builder/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> builder
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -2335,9 +2772,16 @@
       <a href="../api/robot/libdocpkg/consoleviewer/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> consoleviewer
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -2356,9 +2800,16 @@
       <a href="../api/robot/libdocpkg/datatypes/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> datatypes
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -2377,9 +2828,16 @@
       <a href="../api/robot/libdocpkg/htmlutils/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> htmlutils
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -2398,9 +2856,16 @@
       <a href="../api/robot/libdocpkg/htmlwriter/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> htmlwriter
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -2419,9 +2884,16 @@
       <a href="../api/robot/libdocpkg/jsonbuilder/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> jsonbuilder
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -2440,9 +2912,16 @@
       <a href="../api/robot/libdocpkg/jsonwriter/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> jsonwriter
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -2461,9 +2940,16 @@
       <a href="../api/robot/libdocpkg/model/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> model
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -2482,9 +2968,16 @@
       <a href="../api/robot/libdocpkg/output/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> output
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -2503,9 +2996,16 @@
       <a href="../api/robot/libdocpkg/robotbuilder/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> robotbuilder
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -2524,9 +3024,16 @@
       <a href="../api/robot/libdocpkg/standardtypes/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> standardtypes
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -2545,9 +3052,16 @@
       <a href="../api/robot/libdocpkg/writer/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> writer
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -2566,9 +3080,16 @@
       <a href="../api/robot/libdocpkg/xmlbuilder/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> xmlbuilder
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -2587,9 +3108,16 @@
       <a href="../api/robot/libdocpkg/xmlwriter/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> xmlwriter
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -2643,6 +3171,7 @@
       
     
     
+    
       
       
         
@@ -2656,14 +3185,20 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2_7" >
         
           
-          
           <div class="md-nav__link md-nav__container">
             <a href="../api/robot/libraries/" class="md-nav__link ">
               
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> libraries
+  
+
+    
   </span>
+  
   
 
             </a>
@@ -2678,7 +3213,11 @@
         <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_2_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_8_2_7">
             <span class="md-nav__icon md-icon"></span>
-            <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> libraries
+            
+  
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> libraries
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -2692,9 +3231,16 @@
       <a href="../api/robot/libraries/BuiltIn/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> BuiltIn
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -2713,9 +3259,16 @@
       <a href="../api/robot/libraries/Collections/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> Collections
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -2734,9 +3287,16 @@
       <a href="../api/robot/libraries/DateTime/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> DateTime
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -2755,9 +3315,16 @@
       <a href="../api/robot/libraries/Dialogs/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> Dialogs
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -2776,9 +3343,16 @@
       <a href="../api/robot/libraries/Easter/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> Easter
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -2797,9 +3371,16 @@
       <a href="../api/robot/libraries/OperatingSystem/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> OperatingSystem
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -2818,9 +3399,16 @@
       <a href="../api/robot/libraries/Process/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> Process
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -2839,9 +3427,16 @@
       <a href="../api/robot/libraries/Remote/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> Remote
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -2860,9 +3455,16 @@
       <a href="../api/robot/libraries/Screenshot/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> Screenshot
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -2881,9 +3483,16 @@
       <a href="../api/robot/libraries/String/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> String
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -2902,9 +3511,16 @@
       <a href="../api/robot/libraries/Telnet/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> Telnet
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -2923,9 +3539,16 @@
       <a href="../api/robot/libraries/XML/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> XML
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -2944,9 +3567,16 @@
       <a href="../api/robot/libraries/dialogs_py/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> dialogs_py
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -3018,6 +3648,7 @@
       
     
     
+    
       
       
         
@@ -3031,14 +3662,20 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2_8" >
         
           
-          
           <div class="md-nav__link md-nav__container">
             <a href="../api/robot/model/" class="md-nav__link ">
               
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> model
+  
+
+    
   </span>
+  
   
 
             </a>
@@ -3053,7 +3690,11 @@
         <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_2_8_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_8_2_8">
             <span class="md-nav__icon md-icon"></span>
-            <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> model
+            
+  
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> model
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -3067,9 +3708,16 @@
       <a href="../api/robot/model/body/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> body
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -3088,9 +3736,16 @@
       <a href="../api/robot/model/configurer/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> configurer
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -3109,9 +3764,16 @@
       <a href="../api/robot/model/control/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> control
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -3130,9 +3792,16 @@
       <a href="../api/robot/model/filter/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> filter
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -3151,9 +3820,16 @@
       <a href="../api/robot/model/fixture/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> fixture
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -3172,9 +3848,16 @@
       <a href="../api/robot/model/itemlist/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> itemlist
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -3193,9 +3876,16 @@
       <a href="../api/robot/model/keyword/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> keyword
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -3214,9 +3904,16 @@
       <a href="../api/robot/model/message/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> message
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -3235,9 +3932,16 @@
       <a href="../api/robot/model/metadata/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> metadata
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -3256,9 +3960,16 @@
       <a href="../api/robot/model/modelobject/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> modelobject
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -3277,9 +3988,16 @@
       <a href="../api/robot/model/modifier/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> modifier
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -3298,9 +4016,16 @@
       <a href="../api/robot/model/namepatterns/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> namepatterns
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -3319,9 +4044,16 @@
       <a href="../api/robot/model/statistics/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> statistics
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -3340,9 +4072,16 @@
       <a href="../api/robot/model/stats/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> stats
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -3361,9 +4100,16 @@
       <a href="../api/robot/model/suitestatistics/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> suitestatistics
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -3382,9 +4128,16 @@
       <a href="../api/robot/model/tags/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> tags
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -3403,9 +4156,16 @@
       <a href="../api/robot/model/tagsetter/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> tagsetter
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -3424,9 +4184,16 @@
       <a href="../api/robot/model/tagstatistics/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> tagstatistics
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -3445,9 +4212,16 @@
       <a href="../api/robot/model/testcase/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> testcase
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -3466,9 +4240,16 @@
       <a href="../api/robot/model/testsuite/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> testsuite
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -3487,9 +4268,16 @@
       <a href="../api/robot/model/totalstatistics/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> totalstatistics
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -3508,9 +4296,16 @@
       <a href="../api/robot/model/visitor/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> visitor
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -3537,8 +4332,6 @@
     
       
         
-          
-        
       
         
       
@@ -3562,6 +4355,7 @@
       
         
       
+    
     
     
       
@@ -3577,14 +4371,20 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2_9" >
         
           
-          
           <div class="md-nav__link md-nav__container">
             <a href="../api/robot/output/" class="md-nav__link ">
               
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> output
+  
+
+    
   </span>
+  
   
 
             </a>
@@ -3599,7 +4399,11 @@
         <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_2_9_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_8_2_9">
             <span class="md-nav__icon md-icon"></span>
-            <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> output
+            
+  
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> output
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -3620,6 +4424,7 @@
       
         
       
+    
     
     
       
@@ -3635,14 +4440,20 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2_9_1" >
         
           
-          
           <div class="md-nav__link md-nav__container">
             <a href="../api/robot/output/console/" class="md-nav__link ">
               
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> console
+  
+
+    
   </span>
+  
   
 
             </a>
@@ -3657,7 +4468,11 @@
         <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_8_2_9_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_8_2_9_1">
             <span class="md-nav__icon md-icon"></span>
-            <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> console
+            
+  
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> console
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -3671,9 +4486,16 @@
       <a href="../api/robot/output/console/dotted/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> dotted
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -3692,9 +4514,16 @@
       <a href="../api/robot/output/console/highlighting/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> highlighting
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -3713,9 +4542,16 @@
       <a href="../api/robot/output/console/quiet/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> quiet
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -3734,9 +4570,16 @@
       <a href="../api/robot/output/console/verbose/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> verbose
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -3763,9 +4606,16 @@
       <a href="../api/robot/output/debugfile/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> debugfile
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -3784,9 +4634,16 @@
       <a href="../api/robot/output/filelogger/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> filelogger
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -3805,9 +4662,16 @@
       <a href="../api/robot/output/librarylogger/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> librarylogger
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -3826,9 +4690,16 @@
       <a href="../api/robot/output/listeners/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> listeners
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -3847,9 +4718,16 @@
       <a href="../api/robot/output/logger/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> logger
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -3868,9 +4746,16 @@
       <a href="../api/robot/output/loggerapi/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> loggerapi
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -3889,9 +4774,16 @@
       <a href="../api/robot/output/loggerhelper/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> loggerhelper
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -3910,9 +4802,16 @@
       <a href="../api/robot/output/output/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> output
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -3931,9 +4830,16 @@
       <a href="../api/robot/output/pyloggingconf/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> pyloggingconf
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -3952,9 +4858,16 @@
       <a href="../api/robot/output/stdoutlogsplitter/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> stdoutlogsplitter
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -3973,9 +4886,16 @@
       <a href="../api/robot/output/xmllogger/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> xmllogger
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -4002,19 +4922,14 @@
     
       
         
-          
-        
       
         
-          
-        
       
-        
-          
         
       
         
       
+    
     
     
       
@@ -4030,14 +4945,20 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2_10" >
         
           
-          
           <div class="md-nav__link md-nav__container">
             <a href="../api/robot/parsing/" class="md-nav__link ">
               
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> parsing
+  
+
+    
   </span>
+  
   
 
             </a>
@@ -4052,7 +4973,11 @@
         <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_2_10_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_8_2_10">
             <span class="md-nav__icon md-icon"></span>
-            <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> parsing
+            
+  
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> parsing
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -4079,6 +5004,7 @@
       
         
       
+    
     
     
       
@@ -4094,14 +5020,20 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2_10_1" >
         
           
-          
           <div class="md-nav__link md-nav__container">
             <a href="../api/robot/parsing/lexer/" class="md-nav__link ">
               
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> lexer
+  
+
+    
   </span>
+  
   
 
             </a>
@@ -4116,7 +5048,11 @@
         <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_8_2_10_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_8_2_10_1">
             <span class="md-nav__icon md-icon"></span>
-            <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> lexer
+            
+  
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> lexer
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -4130,9 +5066,16 @@
       <a href="../api/robot/parsing/lexer/blocklexers/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> blocklexers
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -4151,9 +5094,16 @@
       <a href="../api/robot/parsing/lexer/context/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> context
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -4172,9 +5122,16 @@
       <a href="../api/robot/parsing/lexer/lexer/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> lexer
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -4193,9 +5150,16 @@
       <a href="../api/robot/parsing/lexer/settings/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> settings
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -4214,9 +5178,16 @@
       <a href="../api/robot/parsing/lexer/statementlexers/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> statementlexers
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -4235,9 +5206,16 @@
       <a href="../api/robot/parsing/lexer/tokenizer/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> tokenizer
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -4256,9 +5234,16 @@
       <a href="../api/robot/parsing/lexer/tokens/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> tokens
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -4292,6 +5277,7 @@
       
     
     
+    
       
       
         
@@ -4305,14 +5291,20 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2_10_2" >
         
           
-          
           <div class="md-nav__link md-nav__container">
             <a href="../api/robot/parsing/model/" class="md-nav__link ">
               
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> model
+  
+
+    
   </span>
+  
   
 
             </a>
@@ -4327,7 +5319,11 @@
         <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_8_2_10_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_8_2_10_2">
             <span class="md-nav__icon md-icon"></span>
-            <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> model
+            
+  
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> model
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -4341,9 +5337,16 @@
       <a href="../api/robot/parsing/model/blocks/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> blocks
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -4362,9 +5365,16 @@
       <a href="../api/robot/parsing/model/statements/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> statements
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -4383,9 +5393,16 @@
       <a href="../api/robot/parsing/model/visitor/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> visitor
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -4419,6 +5436,7 @@
       
     
     
+    
       
       
         
@@ -4432,14 +5450,20 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2_10_3" >
         
           
-          
           <div class="md-nav__link md-nav__container">
             <a href="../api/robot/parsing/parser/" class="md-nav__link ">
               
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> parser
+  
+
+    
   </span>
+  
   
 
             </a>
@@ -4454,7 +5478,11 @@
         <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_8_2_10_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_8_2_10_3">
             <span class="md-nav__icon md-icon"></span>
-            <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> parser
+            
+  
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> parser
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -4468,9 +5496,16 @@
       <a href="../api/robot/parsing/parser/blockparsers/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> blockparsers
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -4489,9 +5524,16 @@
       <a href="../api/robot/parsing/parser/fileparser/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> fileparser
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -4510,9 +5552,16 @@
       <a href="../api/robot/parsing/parser/parser/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> parser
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -4539,9 +5588,16 @@
       <a href="../api/robot/parsing/suitestructure/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> suitestructure
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -4568,9 +5624,16 @@
       <a href="../api/robot/pythonpathsetter/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> pythonpathsetter
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -4589,9 +5652,16 @@
       <a href="../api/robot/rebot/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> rebot
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -4631,6 +5701,7 @@
       
     
     
+    
       
       
         
@@ -4644,14 +5715,20 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2_13" >
         
           
-          
           <div class="md-nav__link md-nav__container">
             <a href="../api/robot/reporting/" class="md-nav__link ">
               
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> reporting
+  
+
+    
   </span>
+  
   
 
             </a>
@@ -4666,7 +5743,11 @@
         <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_2_13_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_8_2_13">
             <span class="md-nav__icon md-icon"></span>
-            <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> reporting
+            
+  
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> reporting
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -4680,9 +5761,16 @@
       <a href="../api/robot/reporting/expandkeywordmatcher/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> expandkeywordmatcher
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -4701,9 +5789,16 @@
       <a href="../api/robot/reporting/jsbuildingcontext/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> jsbuildingcontext
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -4722,9 +5817,16 @@
       <a href="../api/robot/reporting/jsexecutionresult/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> jsexecutionresult
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -4743,9 +5845,16 @@
       <a href="../api/robot/reporting/jsmodelbuilders/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> jsmodelbuilders
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -4764,9 +5873,16 @@
       <a href="../api/robot/reporting/jswriter/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> jswriter
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -4785,9 +5901,16 @@
       <a href="../api/robot/reporting/logreportwriters/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> logreportwriters
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -4806,9 +5929,16 @@
       <a href="../api/robot/reporting/outputwriter/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> outputwriter
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -4827,9 +5957,16 @@
       <a href="../api/robot/reporting/resultwriter/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> resultwriter
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -4848,9 +5985,16 @@
       <a href="../api/robot/reporting/stringcache/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> stringcache
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -4869,9 +6013,16 @@
       <a href="../api/robot/reporting/xunitwriter/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> xunitwriter
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -4925,6 +6076,7 @@
       
     
     
+    
       
       
         
@@ -4938,14 +6090,20 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2_14" >
         
           
-          
           <div class="md-nav__link md-nav__container">
             <a href="../api/robot/result/" class="md-nav__link ">
               
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> result
+  
+
+    
   </span>
+  
   
 
             </a>
@@ -4960,7 +6118,11 @@
         <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_2_14_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_8_2_14">
             <span class="md-nav__icon md-icon"></span>
-            <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> result
+            
+  
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> result
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -4974,9 +6136,16 @@
       <a href="../api/robot/result/configurer/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> configurer
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -4995,9 +6164,16 @@
       <a href="../api/robot/result/executionerrors/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> executionerrors
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -5016,9 +6192,16 @@
       <a href="../api/robot/result/executionresult/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> executionresult
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -5037,9 +6220,16 @@
       <a href="../api/robot/result/flattenkeywordmatcher/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> flattenkeywordmatcher
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -5058,9 +6248,16 @@
       <a href="../api/robot/result/keywordremover/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> keywordremover
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -5079,9 +6276,16 @@
       <a href="../api/robot/result/merger/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> merger
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -5100,9 +6304,16 @@
       <a href="../api/robot/result/messagefilter/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> messagefilter
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -5121,9 +6332,16 @@
       <a href="../api/robot/result/model/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> model
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -5142,9 +6360,16 @@
       <a href="../api/robot/result/modeldeprecation/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> modeldeprecation
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -5163,9 +6388,16 @@
       <a href="../api/robot/result/resultbuilder/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> resultbuilder
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -5184,9 +6416,16 @@
       <a href="../api/robot/result/suiteteardownfailed/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> suiteteardownfailed
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -5205,9 +6444,16 @@
       <a href="../api/robot/result/visitor/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> visitor
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -5226,9 +6472,16 @@
       <a href="../api/robot/result/xmlelementhandlers/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> xmlelementhandlers
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -5255,9 +6508,16 @@
       <a href="../api/robot/run/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> run
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -5276,13 +6536,7 @@
     
       
         
-          
-        
       
-        
-      
-        
-          
         
       
         
@@ -5326,11 +6580,12 @@
         
       
         
-          
-        
       
         
       
+        
+      
+    
     
     
       
@@ -5346,14 +6601,20 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2_16" >
         
           
-          
           <div class="md-nav__link md-nav__container">
             <a href="../api/robot/running/" class="md-nav__link ">
               
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> running
+  
+
+    
   </span>
+  
   
 
             </a>
@@ -5368,7 +6629,11 @@
         <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_2_16_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_8_2_16">
             <span class="md-nav__icon md-icon"></span>
-            <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> running
+            
+  
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> running
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -5405,6 +6670,7 @@
       
         
       
+    
     
     
       
@@ -5420,14 +6686,20 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2_16_1" >
         
           
-          
           <div class="md-nav__link md-nav__container">
             <a href="../api/robot/running/arguments/" class="md-nav__link ">
               
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> arguments
+  
+
+    
   </span>
+  
   
 
             </a>
@@ -5442,7 +6714,11 @@
         <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_8_2_16_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_8_2_16_1">
             <span class="md-nav__icon md-icon"></span>
-            <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> arguments
+            
+  
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> arguments
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -5456,9 +6732,16 @@
       <a href="../api/robot/running/arguments/argumentconverter/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> argumentconverter
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -5477,9 +6760,16 @@
       <a href="../api/robot/running/arguments/argumentmapper/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> argumentmapper
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -5498,9 +6788,16 @@
       <a href="../api/robot/running/arguments/argumentparser/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> argumentparser
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -5519,9 +6816,16 @@
       <a href="../api/robot/running/arguments/argumentresolver/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> argumentresolver
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -5540,9 +6844,16 @@
       <a href="../api/robot/running/arguments/argumentspec/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> argumentspec
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -5561,9 +6872,16 @@
       <a href="../api/robot/running/arguments/argumentvalidator/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> argumentvalidator
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -5582,9 +6900,16 @@
       <a href="../api/robot/running/arguments/customconverters/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> customconverters
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -5603,9 +6928,16 @@
       <a href="../api/robot/running/arguments/embedded/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> embedded
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -5624,9 +6956,16 @@
       <a href="../api/robot/running/arguments/typeconverters/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> typeconverters
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -5645,9 +6984,16 @@
       <a href="../api/robot/running/arguments/typeinfo/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> typeinfo
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -5666,9 +7012,16 @@
       <a href="../api/robot/running/arguments/typeinfoparser/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> typeinfoparser
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -5687,9 +7040,16 @@
       <a href="../api/robot/running/arguments/typevalidator/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> typevalidator
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -5716,9 +7076,16 @@
       <a href="../api/robot/running/bodyrunner/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> bodyrunner
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -5746,6 +7113,7 @@
       
     
     
+    
       
       
         
@@ -5759,14 +7127,20 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2_16_3" >
         
           
-          
           <div class="md-nav__link md-nav__container">
             <a href="../api/robot/running/builder/" class="md-nav__link ">
               
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> builder
+  
+
+    
   </span>
+  
   
 
             </a>
@@ -5781,7 +7155,11 @@
         <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_8_2_16_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_8_2_16_3">
             <span class="md-nav__icon md-icon"></span>
-            <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> builder
+            
+  
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> builder
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -5795,9 +7173,16 @@
       <a href="../api/robot/running/builder/builders/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> builders
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -5816,9 +7201,16 @@
       <a href="../api/robot/running/builder/parsers/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> parsers
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -5837,9 +7229,16 @@
       <a href="../api/robot/running/builder/settings/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> settings
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -5858,9 +7257,16 @@
       <a href="../api/robot/running/builder/transformers/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> transformers
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -5887,9 +7293,16 @@
       <a href="../api/robot/running/context/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> context
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -5908,9 +7321,16 @@
       <a href="../api/robot/running/dynamicmethods/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> dynamicmethods
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -5929,9 +7349,16 @@
       <a href="../api/robot/running/importer/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> importer
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -5950,9 +7377,16 @@
       <a href="../api/robot/running/invalidkeyword/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> invalidkeyword
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -5971,9 +7405,16 @@
       <a href="../api/robot/running/keywordfinder/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> keywordfinder
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -5992,9 +7433,16 @@
       <a href="../api/robot/running/keywordimplementation/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> keywordimplementation
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -6013,9 +7461,16 @@
       <a href="../api/robot/running/librarykeyword/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> librarykeyword
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -6034,9 +7489,16 @@
       <a href="../api/robot/running/librarykeywordrunner/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> librarykeywordrunner
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -6055,9 +7517,16 @@
       <a href="../api/robot/running/libraryscopes/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> libraryscopes
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -6076,9 +7545,16 @@
       <a href="../api/robot/running/model/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> model
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -6097,9 +7573,16 @@
       <a href="../api/robot/running/namespace/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> namespace
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -6118,9 +7601,16 @@
       <a href="../api/robot/running/outputcapture/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> outputcapture
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -6139,9 +7629,16 @@
       <a href="../api/robot/running/randomizer/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> randomizer
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -6160,9 +7657,16 @@
       <a href="../api/robot/running/resourcemodel/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> resourcemodel
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -6181,9 +7685,16 @@
       <a href="../api/robot/running/runkwregister/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> runkwregister
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -6202,9 +7713,16 @@
       <a href="../api/robot/running/signalhandler/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> signalhandler
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -6223,9 +7741,16 @@
       <a href="../api/robot/running/status/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> status
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -6244,9 +7769,16 @@
       <a href="../api/robot/running/statusreporter/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> statusreporter
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -6265,9 +7797,16 @@
       <a href="../api/robot/running/suiterunner/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> suiterunner
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -6286,9 +7825,16 @@
       <a href="../api/robot/running/testlibraries/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> testlibraries
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -6314,6 +7860,7 @@
       
     
     
+    
       
       
         
@@ -6327,14 +7874,20 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2_16_24" >
         
           
-          
           <div class="md-nav__link md-nav__container">
             <a href="../api/robot/running/timeouts/" class="md-nav__link ">
               
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> timeouts
+  
+
+    
   </span>
+  
   
 
             </a>
@@ -6349,7 +7902,11 @@
         <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_8_2_16_24_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_8_2_16_24">
             <span class="md-nav__icon md-icon"></span>
-            <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> timeouts
+            
+  
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> timeouts
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -6363,9 +7920,16 @@
       <a href="../api/robot/running/timeouts/nosupport/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> nosupport
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -6384,9 +7948,16 @@
       <a href="../api/robot/running/timeouts/posix/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> posix
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -6405,9 +7976,16 @@
       <a href="../api/robot/running/timeouts/windows/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> windows
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -6434,9 +8012,16 @@
       <a href="../api/robot/running/userkeywordrunner/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> userkeywordrunner
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -6463,9 +8048,16 @@
       <a href="../api/robot/testdoc/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> testdoc
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -6557,6 +8149,7 @@
       
     
     
+    
       
       
         
@@ -6570,14 +8163,20 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2_18" >
         
           
-          
           <div class="md-nav__link md-nav__container">
             <a href="../api/robot/utils/" class="md-nav__link ">
               
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> utils
+  
+
+    
   </span>
+  
   
 
             </a>
@@ -6592,7 +8191,11 @@
         <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_2_18_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_8_2_18">
             <span class="md-nav__icon md-icon"></span>
-            <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> utils
+            
+  
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> utils
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -6606,9 +8209,16 @@
       <a href="../api/robot/utils/application/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> application
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -6627,9 +8237,16 @@
       <a href="../api/robot/utils/argumentparser/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> argumentparser
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -6648,9 +8265,16 @@
       <a href="../api/robot/utils/asserts/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> asserts
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -6669,9 +8293,16 @@
       <a href="../api/robot/utils/charwidth/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> charwidth
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -6690,9 +8321,16 @@
       <a href="../api/robot/utils/compress/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> compress
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -6711,9 +8349,16 @@
       <a href="../api/robot/utils/connectioncache/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> connectioncache
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -6732,9 +8377,16 @@
       <a href="../api/robot/utils/dotdict/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> dotdict
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -6753,9 +8405,16 @@
       <a href="../api/robot/utils/encoding/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> encoding
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -6774,9 +8433,16 @@
       <a href="../api/robot/utils/encodingsniffer/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> encodingsniffer
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -6795,9 +8461,16 @@
       <a href="../api/robot/utils/error/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> error
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -6816,9 +8489,16 @@
       <a href="../api/robot/utils/escaping/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> escaping
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -6837,9 +8517,16 @@
       <a href="../api/robot/utils/etreewrapper/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> etreewrapper
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -6858,9 +8545,16 @@
       <a href="../api/robot/utils/filereader/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> filereader
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -6879,9 +8573,16 @@
       <a href="../api/robot/utils/frange/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> frange
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -6900,9 +8601,16 @@
       <a href="../api/robot/utils/htmlformatters/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> htmlformatters
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -6921,9 +8629,16 @@
       <a href="../api/robot/utils/importer/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> importer
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -6942,9 +8657,16 @@
       <a href="../api/robot/utils/markuputils/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> markuputils
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -6963,9 +8685,16 @@
       <a href="../api/robot/utils/markupwriters/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> markupwriters
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -6984,9 +8713,16 @@
       <a href="../api/robot/utils/match/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> match
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -7005,9 +8741,16 @@
       <a href="../api/robot/utils/misc/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> misc
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -7026,9 +8769,16 @@
       <a href="../api/robot/utils/normalizing/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> normalizing
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -7047,9 +8797,16 @@
       <a href="../api/robot/utils/notset/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> notset
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -7068,9 +8825,16 @@
       <a href="../api/robot/utils/platform/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> platform
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -7089,9 +8853,16 @@
       <a href="../api/robot/utils/recommendations/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> recommendations
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -7110,9 +8881,16 @@
       <a href="../api/robot/utils/restreader/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> restreader
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -7131,9 +8909,16 @@
       <a href="../api/robot/utils/robotenv/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> robotenv
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -7152,9 +8937,16 @@
       <a href="../api/robot/utils/robotinspect/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> robotinspect
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -7173,9 +8965,16 @@
       <a href="../api/robot/utils/robotio/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> robotio
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -7194,9 +8993,16 @@
       <a href="../api/robot/utils/robotpath/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> robotpath
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -7215,9 +9021,16 @@
       <a href="../api/robot/utils/robottime/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> robottime
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -7236,9 +9049,16 @@
       <a href="../api/robot/utils/robottypes/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> robottypes
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -7257,9 +9077,16 @@
       <a href="../api/robot/utils/setter/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> setter
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -7278,9 +9105,16 @@
       <a href="../api/robot/utils/sortable/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> sortable
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -7299,9 +9133,16 @@
       <a href="../api/robot/utils/text/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> text
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -7320,9 +9161,16 @@
       <a href="../api/robot/utils/typehints/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> typehints
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -7341,9 +9189,16 @@
       <a href="../api/robot/utils/unic/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> unic
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -7395,6 +9250,7 @@
       
     
     
+    
       
       
         
@@ -7408,14 +9264,20 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2_19" >
         
           
-          
           <div class="md-nav__link md-nav__container">
             <a href="../api/robot/variables/" class="md-nav__link ">
               
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> variables
+  
+
+    
   </span>
+  
   
 
             </a>
@@ -7430,7 +9292,11 @@
         <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_2_19_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_8_2_19">
             <span class="md-nav__icon md-icon"></span>
-            <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> variables
+            
+  
+    <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> variables
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -7444,9 +9310,16 @@
       <a href="../api/robot/variables/assigner/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> assigner
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -7465,9 +9338,16 @@
       <a href="../api/robot/variables/evaluation/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> evaluation
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -7486,9 +9366,16 @@
       <a href="../api/robot/variables/filesetter/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> filesetter
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -7507,9 +9394,16 @@
       <a href="../api/robot/variables/finders/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> finders
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -7528,9 +9422,16 @@
       <a href="../api/robot/variables/notfound/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> notfound
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -7549,9 +9450,16 @@
       <a href="../api/robot/variables/replacer/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> replacer
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -7570,9 +9478,16 @@
       <a href="../api/robot/variables/resolvable/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> resolvable
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -7591,9 +9506,16 @@
       <a href="../api/robot/variables/scopes/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> scopes
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -7612,9 +9534,16 @@
       <a href="../api/robot/variables/search/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> search
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -7633,9 +9562,16 @@
       <a href="../api/robot/variables/store/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> store
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -7654,9 +9590,16 @@
       <a href="../api/robot/variables/tablesetter/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> tablesetter
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -7675,9 +9618,16 @@
       <a href="../api/robot/variables/variables/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> variables
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -7704,9 +9654,16 @@
       <a href="../api/robot/version/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     <code class="doc-symbol doc-symbol-nav doc-symbol-module"></code> version
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -7755,6 +9712,7 @@
       
     
     
+    
       
       
         
@@ -7768,14 +9726,20 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
         
           
-          
           <div class="md-nav__link md-nav__container">
             <a href="../appendix/" class="md-nav__link ">
               
   
+  
   <span class="md-ellipsis">
+    
+  
     Appendix
+  
+
+    
   </span>
+  
   
 
             </a>
@@ -7790,7 +9754,11 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_9">
             <span class="md-nav__icon md-icon"></span>
-            Appendix
+            
+  
+    Appendix
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -7804,9 +9772,16 @@
       <a href="../appendix/settings/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Settings
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -7825,9 +9800,16 @@
       <a href="../appendix/cli/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Command line options
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -7846,9 +9828,16 @@
       <a href="../appendix/translations/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Translations
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -7867,9 +9856,16 @@
       <a href="../appendix/expressions/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Evaluating expressions
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -7888,9 +9884,16 @@
       <a href="../appendix/doc-format/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Documentation format
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -7909,9 +9912,16 @@
       <a href="../appendix/time-format/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Time format
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -7930,9 +9940,16 @@
       <a href="../appendix/registrations/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Registrations
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -7958,9 +9975,16 @@
       <a href="../glossary/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Glossary
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -7978,12 +10002,14 @@
           
           
             <div class="md-content" data-md-component="content">
+              
               <article class="md-content__inner md-typeset">
                 
                   
 
+
   
-    <a href="https://github.com/pekkaklarck/manual/blob/main/doc/manual/docs/libraries/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/pekkaklarck/manual/blob/main/doc/manual/docs/libraries/index.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -7993,10 +10019,10 @@
 
 <h1 id="libraries">Libraries<a class="headerlink" href="#libraries" title="Permanent link">&para;</a></h1>
 <p>Robot Framework cannot do anything without libraries. Some generally useful libraries
-are distributed with it as <a class="autorefs autorefs-internal" href="#standard-libraries">standard libraries</a>, but the real
-strength of the framework is the huge amount of <a class="autorefs autorefs-internal" href="#external-libraries">external libraries</a>
+are distributed with it as <a class="autorefs autorefs-internal" title="Standard libraries" href="#standard-libraries">standard libraries</a>, but the real
+strength of the framework is the huge amount of <a class="autorefs autorefs-internal" title="External libraries" href="#external-libraries">external libraries</a>
 provided by the community. If they are not enough, you can also easily create your
-own <a class="autorefs autorefs-internal" href="#custom-libraries">custom libraries</a>.</p>
+own <a class="autorefs autorefs-internal" title="Custom libraries" href="#custom-libraries">custom libraries</a>.</p>
 <h2 id="standard-libraries">Standard libraries<a class="headerlink" href="#standard-libraries" title="Permanent link">&para;</a></h2>
 <p>Standard libraries are distributed with Robot Framework as part of a normal installation.</p>
 <table>
@@ -8079,16 +10105,13 @@ and even mainframes. The best place to start looking for different libraries
 is <a href="https://robotframework.org/#resources">https://robotframework.org</a>.</p>
 <h2 id="custom-libraries">Custom libraries<a class="headerlink" href="#custom-libraries" title="Permanent link">&para;</a></h2>
 <p>You can also easily create your own libraries for your specific needs.
-See the <a class="autorefs autorefs-internal" href="../extend/libraries/#library-interface">creating libraries</a> section for more information.</p>
+See the <a class="autorefs autorefs-internal" title="Library interface" href="../extend/libraries/#library-interface">creating libraries</a> section for more information.</p>
 
 
 
 
 
 
-
-  
-  
 
 
 
@@ -8160,7 +10183,7 @@ See the <a class="autorefs autorefs-internal" href="../extend/libraries/#library
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      &copy; 2024- <a href="https://robotframework.org/foundation" target="_blank" rel="noopener">Robot Framework Foundation</a>
+      &copy; 2026- <a href="https://robotframework.org/foundation" target="_blank" rel="noopener">Robot Framework Foundation</a>
 
     </div>
   
@@ -8172,7 +10195,8 @@ See the <a class="autorefs autorefs-internal" href="../extend/libraries/#library
   
 </div>
       
-        <div class="md-social">
+        
+<div class="md-social">
   
     
     
@@ -8182,7 +10206,7 @@ See the <a class="autorefs autorefs-internal" href="../extend/libraries/#library
       
     
     <a href="https://github.com/robotframework/" target="_blank" rel="noopener" title="github.com" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
     </a>
   
     
@@ -8193,7 +10217,7 @@ See the <a class="autorefs autorefs-internal" href="../extend/libraries/#library
       
     
     <a href="https://slack.robotframework.org" target="_blank" rel="noopener" title="slack.robotframework.org" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M94.12 315.1c0 25.9-21.16 47.06-47.06 47.06S0 341 0 315.1s21.16-47.06 47.06-47.06h47.06zm23.72 0c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06v117.84c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06zm47.06-188.98c-25.9 0-47.06-21.16-47.06-47.06S139 32 164.9 32s47.06 21.16 47.06 47.06v47.06zm0 23.72c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06H47.06C21.16 243.96 0 222.8 0 196.9s21.16-47.06 47.06-47.06zm188.98 47.06c0-25.9 21.16-47.06 47.06-47.06S448 171 448 196.9s-21.16 47.06-47.06 47.06h-47.06zm-23.72 0c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06V79.06c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06zM283.1 385.88c25.9 0 47.06 21.16 47.06 47.06S309 480 283.1 480s-47.06-21.16-47.06-47.06v-47.06zm0-23.72c-25.9 0-47.06-21.16-47.06-47.06s21.16-47.06 47.06-47.06h117.84c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M94.1 315.1c0 25.9-21.2 47.1-47.1 47.1S0 341 0 315.1 21.2 268 47.1 268h47.1v47.1zm23.7 0c0-25.9 21.2-47.1 47.1-47.1s47.1 21.2 47.1 47.1v117.8c0 25.9-21.2 47.1-47.1 47.1s-47.1-21.2-47.1-47.1zm47.1-189c-25.9 0-47.1-21.2-47.1-47.1s21.2-47 47.1-47S212 53.2 212 79.1v47.1h-47.1zm0 23.7c25.9 0 47.1 21.2 47.1 47.1S190.8 244 164.9 244H47.1C21.2 244 0 222.8 0 196.9s21.2-47.1 47.1-47.1zm189 47.1c0-25.9 21.2-47.1 47.1-47.1s47 21.2 47 47.1-21.2 47.1-47.1 47.1h-47.1v-47.1zm-23.7 0c0 25.9-21.2 47.1-47.1 47.1S236 222.8 236 196.9V79.1c0-25.9 21.2-47.1 47.1-47.1s47.1 21.2 47.1 47.1zm-47.1 189c25.9 0 47.1 21.2 47.1 47.1s-21.2 47-47.1 47-47.1-21.2-47.1-47.1v-47.1h47.1zm0-23.7c-25.9 0-47.1-21.2-47.1-47.1s21.2-47.1 47.1-47.1h117.8c25.9 0 47.1 21.2 47.1 47.1s-21.2 47.1-47.1 47.1z"/></svg>
     </a>
   
     
@@ -8204,7 +10228,7 @@ See the <a class="autorefs autorefs-internal" href="../extend/libraries/#library
       
     
     <a href="https://forum.robotframework.org" target="_blank" rel="noopener" title="forum.robotframework.org" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M225.9 32C103.3 32 0 130.5 0 252.1 0 256 .1 480 .1 480l225.8-.2c122.7 0 222.1-102.3 222.1-223.9S348.6 32 225.9 32M224 384c-19.4 0-37.9-4.3-54.4-12.1L88.5 392l22.9-75c-9.8-18.1-15.4-38.9-15.4-61 0-70.7 57.3-128 128-128s128 57.3 128 128-57.3 128-128 128"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M225.9 32C103.3 32 0 130.5 0 252.1 0 256 .1 480 .1 480l225.8-.2c122.7 0 222.1-102.3 222.1-223.9S348.6 32 225.9 32M224 384c-19.4 0-37.9-4.3-54.4-12.1L88.5 392l22.9-75c-9.8-18.1-15.4-38.9-15.4-61 0-70.7 57.3-128 128-128s128 57.3 128 128-57.3 128-128 128"/></svg>
     </a>
   
     
@@ -8215,7 +10239,7 @@ See the <a class="autorefs autorefs-internal" href="../extend/libraries/#library
       
     
     <a href="https://linkedin.com/company/robot-framework-foundation" target="_blank" rel="noopener" title="linkedin.com" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5m282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
     </a>
   
 </div>
@@ -8232,10 +10256,13 @@ See the <a class="autorefs autorefs-internal" href="../extend/libraries/#library
       <div class="md-progress" data-md-component="progress" role="progressbar"></div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.top", "search.highlight", "search.suggest", "toc.integrate"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.top", "search.highlight", "search.suggest", "toc.integrate"], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
       
     
   </body>
