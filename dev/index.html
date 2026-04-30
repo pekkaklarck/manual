@@ -569,6 +569,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -9858,6 +9869,39 @@ such as data syntax, how to execute tests and how to extend the framework.</p>
 If you are looking for more practical information related to getting started with
 Robot Framework or using it in a certain domain such as web automation, see
 the excellent <a href="https://docs.robotframework.org/docs">Robot Framework Guides</a> project.</p>
+<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
+<p>These examples were added for testing syntax highlighting and can be removed.
+Having some examples on the front page could be a good idea, though.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1"> 1</a></span>
+<span class="normal"><a href="#example-0-2"> 2</a></span>
+<span class="normal"><a href="#example-0-3"> 3</a></span>
+<span class="normal"><a href="#example-0-4"> 4</a></span>
+<span class="normal"><a href="#example-0-5"> 5</a></span>
+<span class="normal"><a href="#example-0-6"> 6</a></span>
+<span class="normal"><a href="#example-0-7"> 7</a></span>
+<span class="normal"><a href="#example-0-8"> 8</a></span>
+<span class="normal"><a href="#example-0-9"> 9</a></span>
+<span class="normal"><a href="#example-0-10">10</a></span>
+<span class="normal"><a href="#example-0-11">11</a></span>
+<span class="normal"><a href="#example-0-12">12</a></span>
+<span class="normal"><a href="#example-0-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="gh">*** Settings ***</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a><span class="kn">Documentation</span><span class="p">        </span><span class="s">Is this an interesting example?</span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a><span class="kn">Library</span><span class="p">              </span><span class="nn">Example.py</span>
+</span><span id="line-0-4"><a id="example-0-4" name="example-0-4"></a>
+</span><span id="line-0-5"><a id="example-0-5" name="example-0-5"></a><span class="gh">*** Test Cases ***</span>
+</span><span id="line-0-6"><a id="example-0-6" name="example-0-6"></a><span class="gu">Example</span>
+</span><span id="line-0-7"><a id="example-0-7" name="example-0-7"></a><span class="p">    [</span><span class="kn">Documentation</span><span class="p">]    </span><span class="s">No, this this isn&#39;t.</span>
+</span><span id="line-0-8"><a id="example-0-8" name="example-0-8"></a><span class="p">    </span><span class="nf">Greeting</span><span class="p">    </span><span class="s">Robot</span>
+</span><span id="line-0-9"><a id="example-0-9" name="example-0-9"></a>
+</span><span id="line-0-10"><a id="example-0-10" name="example-0-10"></a><span class="gh">*** Keyword ***</span>
+</span><span id="line-0-11"><a id="example-0-11" name="example-0-11"></a><span class="gu">Greeting</span>
+</span><span id="line-0-12"><a id="example-0-12" name="example-0-12"></a><span class="p">    [</span><span class="kn">Arguments</span><span class="p">]    ${</span><span class="nv">name</span><span class="p">}</span>
+</span><span id="line-0-13"><a id="example-0-13" name="example-0-13"></a><span class="p">    </span><span class="nf">Log</span><span class="p">    </span><span class="s">Hello, </span><span class="p">${</span><span class="nv">name</span><span class="p">}</span><span class="s">!</span>
+</span></code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-1-1">1</a></span>
+<span class="normal"><a href="#example-1-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-1-1"><a id="example-1-1" name="example-1-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">greeting</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+</span><span id="line-1-2"><a id="example-1-2" name="example-1-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hello, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">!&quot;</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
 
 
 
