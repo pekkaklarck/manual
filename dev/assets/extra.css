@@ -12,9 +12,14 @@
   right: .3rem;
   display: block;
   padding: .1rem .4rem;
-  color: var(--md-default-bg-color);
   font-size: .8rem;
-  border: .05rem solid var(--md-default-bg-color--lighter);
+  /* Colors are hard-coded to avoid them switching based on the color scheme.
+     `#ffffffb3` is `var(--md-default-bg-color-light)` and
+     `#ffffff4d` is `var(--md-default-bg-color--lighter)`
+     when using the light theme.
+   */
+  color: #ffffffb3;
+  border: .05rem solid #ffffff4d;
   border-radius: .1rem;
   content: "s";
 }
