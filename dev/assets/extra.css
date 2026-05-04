@@ -1,5 +1,5 @@
 .md-typeset h1, header .md-ellipsis {
-    font-family: OCRA;
+  font-family: OCRA;
 }
 :root {
   --md-primary-fg-color:        #00c0b5;
@@ -23,12 +23,4 @@
   border: .05rem solid #ffffff4d;
   border-radius: .1rem;
   content: "s";
-}
-/* Custom highlighting styles */
-.highlight .gh {
-  color: red;
-  font-weight: bold;
-}
-.highlight .gu {
-  color: #ffa657;
 }
