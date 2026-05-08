@@ -9888,7 +9888,11 @@ Having some examples on the front page could be a good idea, though.</p>
 <span class="normal"><a href="#example-0-10">10</a></span>
 <span class="normal"><a href="#example-0-11">11</a></span>
 <span class="normal"><a href="#example-0-12">12</a></span>
-<span class="normal"><a href="#example-0-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="gh">*** Settings ***</span>
+<span class="normal"><a href="#example-0-13">13</a></span>
+<span class="normal"><a href="#example-0-14">14</a></span>
+<span class="normal"><a href="#example-0-15">15</a></span>
+<span class="normal"><a href="#example-0-16">16</a></span>
+<span class="normal"><a href="#example-0-17">17</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="gh">*** Settings ***</span>
 </span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a><span class="kn">Documentation</span><span class="p">        </span><span class="s">Is this an interesting example?</span>
 </span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a><span class="kn">Library</span><span class="p">              </span><span class="nn">Example.py</span>
 </span><span id="line-0-4"><a id="example-0-4" name="example-0-4"></a>
@@ -9900,11 +9904,21 @@ Having some examples on the front page could be a good idea, though.</p>
 </span><span id="line-0-10"><a id="example-0-10" name="example-0-10"></a><span class="gh">*** Keyword ***</span>
 </span><span id="line-0-11"><a id="example-0-11" name="example-0-11"></a><span class="gu">Greeting</span>
 </span><span id="line-0-12"><a id="example-0-12" name="example-0-12"></a><span class="p">    [</span><span class="kn">Arguments</span><span class="p">]    ${</span><span class="nv">name</span><span class="p">}</span>
-</span><span id="line-0-13"><a id="example-0-13" name="example-0-13"></a><span class="p">    </span><span class="nf">Log</span><span class="p">    </span><span class="s">Hello, </span><span class="p">${</span><span class="nv">name</span><span class="p">}</span><span class="s">!</span>
+</span><span id="line-0-13"><a id="example-0-13" name="example-0-13"></a><span class="p">    </span><span class="nf">IF</span><span class="p">    </span><span class="s">$name == &quot;Robot&quot;</span>
+</span><span id="line-0-14"><a id="example-0-14" name="example-0-14"></a><span class="p">        </span><span class="nf">Log</span><span class="p">    </span><span class="s">Hello, good sir!</span>
+</span><span id="line-0-15"><a id="example-0-15" name="example-0-15"></a><span class="p">    </span><span class="nf">ELSE</span><span class="p">  </span><span class="c"># Not Robot!</span>
+</span><span id="line-0-16"><a id="example-0-16" name="example-0-16"></a><span class="p">        </span><span class="nf">Log</span><span class="p">    </span><span class="s">Hello, </span><span class="p">${</span><span class="nv">name</span><span class="p">}</span><span class="s">!</span>
+</span><span id="line-0-17"><a id="example-0-17" name="example-0-17"></a><span class="p">    </span><span class="nf">END</span>
 </span></code></pre></div></td></tr></table></div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-1-1">1</a></span>
-<span class="normal"><a href="#example-1-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-1-1"><a id="example-1-1" name="example-1-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">greeting</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
-</span><span id="line-1-2"><a id="example-1-2" name="example-1-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hello, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">!&quot;</span><span class="p">)</span>
+<span class="normal"><a href="#example-1-2">2</a></span>
+<span class="normal"><a href="#example-1-3">3</a></span>
+<span class="normal"><a href="#example-1-4">4</a></span>
+<span class="normal"><a href="#example-1-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-1-1"><a id="example-1-1" name="example-1-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">greeting</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+</span><span id="line-1-2"><a id="example-1-2" name="example-1-2"></a>    <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;Robot&quot;</span><span class="p">:</span>
+</span><span id="line-1-3"><a id="example-1-3" name="example-1-3"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, good sir!&quot;</span><span class="p">)</span>
+</span><span id="line-1-4"><a id="example-1-4" name="example-1-4"></a>    <span class="k">else</span><span class="p">:</span>  <span class="c1"># Not Robot!</span>
+</span><span id="line-1-5"><a id="example-1-5" name="example-1-5"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hello, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">!&quot;</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 
 

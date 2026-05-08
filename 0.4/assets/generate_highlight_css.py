@@ -6,8 +6,8 @@ Usage: {name} <mode> <style>
 
 Parameters:
   mode:   Either 'dark' or 'light'.
-  style:  Any style name recognized by Pygments. Run 'pygmentize -L styles'
-          to see available styles.
+  style:  Any style name recognized by Pygments. See https://pygments.org/styles
+          for alternatives. Using high contrast styles on top is recommended!
 """
 
 import sys
