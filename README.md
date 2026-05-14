@@ -28,24 +28,13 @@ Common practice for submitting contributions is via
 
 ### Installing dependencies
 
-#### Create Python virtual environment
-
-    python3 -m venv .venv
-
-#### Activate the virtual environment
-
-Linux
-
-    source .venv/bin/activate
-
-Windows (Command Prompt)
-
-    .venv\Scripts\activate
+It’s recommended to create a Python virtual environment (with `venv`, `uv`, or another tool of your choice)
+and run the commands below within it.
 
 #### Install dependencies
 
-    pip3 install --upgrade pip
-    pip3 install -r requirements.txt
+    pip install --upgrade pip
+    pip install -r requirements.txt
 
 #### Verify the installation
 
@@ -89,10 +78,6 @@ Windows (Command Prompt)
 To stop the development server, use the key combination:
 
     Ctrl + C
-
-To exit the Python virtual environment, type the command:
-
-    deactivate
 
 ## Getting help
 
