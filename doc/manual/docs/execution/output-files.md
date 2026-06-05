@@ -1,49 +1,53 @@
 
-<a id="result-file"></a>
-# Result files
+<a id="xml-output-files"></a>
+# Output files
 
-Several result files are created when tests are executed, and all of
-them are somehow related to execution results. This section discusses what
-files are created, how to configure where they are created, and how
+Several output files are created when tests are executed, and all of
+them are somehow related to test results. This section discusses what
+outputs are created, how to configure where they are created, and how
 to fine-tune their contents.
 
-## Different result files
+## Different output files
 
-This section explains what different result files can be created and
-how to configure where they are created. Result files are configured
-using command line options, which get the path to the result file in
-question as an argument. A special value `NONE` (case-insensitive)
-can be used to disable creating a certain result file.
+This section explains what different output files can be created and
+how to configure where they are created. Output files are configured
+using command line options, which get the path to the output file in
+question as an argument. A special value `NONE`
+(case-insensitive) can be used to disable creating a certain output
+file.
 
 ### Output directory
 
-All result files can be set using an absolute path, in which case they
+All output files can be set using an absolute path, in which case they
 are created to the specified place, but in other cases, the path is
 considered relative to the output directory. The default output
 directory is the directory where the execution is started from, but it
 can be altered with the `--outputdir (-d)` option. The path
 set with this option is, again, relative to the execution directory,
 but can naturally be given also as an absolute path. Regardless of how
-a path to an individual result file is obtained, its parent directory
+a path to an individual output file is obtained, its parent directory
 is created automatically, if it does not exist already.
 
 <a id="outputxml"></a>
 
-<a id="output-files"></a>
-
+<a id="output.xml"></a>
+<a id="Outputfile"></a>
 <a id="output"></a>
+<a id="outputs"></a>
+<a id="output files"></a>
+<a id="XML output files"></a>
 ### Output file
 
 Output files contain all execution results in machine readable XML or JSON
-format. [Log](#log), [report](#report) and [xUnit](#xunit) files are typically generated based on them,
+format. [Log](result-files.md#log), [report](result-files.md#report) and [xUnit](#xunit) files are typically generated based on them,
 and they can also be combined and otherwise post-processed with [Rebot](post-processing.md#rebot).
 Various external tools also process output files to be able to show detailed
 execution information.
 
 !!! tip
-    Generating [report](#report) and [xUnit](#xunit) files as part of test execution
+    Generating [report](result-files.md#report) and [xUnit](#xunit) files as part of test execution
     does not require processing output files after execution. Disabling
-    [log](#log) generation when running tests can thus save memory.
+    [log](result-files.md#log) generation when running tests can thus save memory.
 
 The command line option `--output (-o)` determines the path where
 the output file is created. The path is relative to the [output directory](#output-directory)
@@ -84,7 +88,12 @@ We hope that external tools are updated soon, but we plan to support this
 option at least until Robot Framework 8.0. If you encounter tools that are
 not compatible, please inform the tool developers about changes.
 
+
+<a id="Logfile"></a>
 <a id="log"></a>
+<a id="logs"></a>
+<a id="log files"></a>
+<a id="test logs"></a>
 ### Log file
 
 Log files contain details about the executed test cases in HTML
@@ -111,7 +120,12 @@ log files are always created and their default name is
 
 *An example of a log file with skipped and passed tests*
 
+
+<a id="Reportfile"></a>
 <a id="report"></a>
+<a id="reports"></a>
+<a id="report files"></a>
+<a id="test reports"></a>
 ### Report file
 
 Report files contain an overview of the test execution results in HTML
@@ -138,6 +152,10 @@ name is *report.html*.
 
 <a id="xunit"></a>
 <a id="xunit-file"></a>
+
+<a id="xunit"></a>
+<a id="xunit file"></a>
+<a id="XUnitcompatibleresultfile"></a>
 ### XUnit compatible result file
 
 XUnit result files contain the test execution summary in [xUnit](http://en.wikipedia.org/wiki/XUnit) compatible
@@ -158,7 +176,9 @@ They nowadays contain separate `<testsuite>` elements for each suite,
 `<testsuite>` elements have `timestamp` attribute, and [suite documentation](../creating-test-data/creating-test-suites.md#suite-documentation)
 and [metadata](configuring-execution.md#setting-metadata) is stored as `<property>` elements.
 
-<a id="debug-files"></a>
+
+<a id="Debugfile"></a>
+<a id="debug files"></a>
 ### Debug file
 
 Debug files are plain text files that are written during the test
@@ -172,13 +192,13 @@ tool, or in UNIX-like systems, simply with the `tail -f` command.
 Debug files are not created unless the command line option
 `--debugfile (-b)` is used explicitly.
 
-### Timestamping result files
+### Timestamping output files
 
-All result files generated by Robot Framework itself can be automatically timestamped
+All output files generated by Robot Framework itself can be automatically timestamped
 with the option `--timestampoutputs (-T)`. When this option is used,
 a timestamp in the format `YYYYMMDD-hhmmss` is placed between
 the extension and the base name of each file. The example below would,
-for example, create result files like
+for example, create output files like
 *output-20080604-163225.xml* and *mylog-20080604-163225.html*:
 
 ```
@@ -187,7 +207,7 @@ robot --timestampoutputs --log mylog.html --report NONE tests.robot
 
 ### Setting titles
 
-The default titles for [logs](../creating-test-data/using-test-libraries.md#dialogs) and [reports](post-processing.md#creating-reports-logs-and-output-files) are generated by prefixing
+The default titles for [logs](result-files.md#log) and [reports](result-files.md#report) are generated by prefixing
 the name of the top-level test suite with *Test Log* or
 *Test Report*. Custom titles can be given from the command line
 using the options `--logtitle` and `--reporttitle`,
@@ -235,12 +255,14 @@ can be a HTML color name (e.g. `red`), a hexadecimal value
 specified using hexadecimal values `#9e9`, `#f66` and `#fed84f`,
 respectively.
 
-<a id="log-level"></a>
+
+<a id="Loglevels"></a>
+<a id="log level"></a>
 ## Log levels
 
 ### Available log levels
 
-Messages in [log files](output-files.md#log-file) can have different log levels. Some of the
+Messages in [log files](result-files.md#log) can have different log levels. Some of the
 messages are written by Robot Framework itself, but also executed
 keywords can [log information](https://github.com/robotframework/robotframework/blob/master/doc/releasenotes/rf-7.0.rst#changes-to-output-xml) using different levels. The available
 log levels are:
@@ -473,7 +495,7 @@ Examples:
 
 ## Removing and flattening keywords
 
-Most of the content of [output files](output-files.md#output-files) comes from keywords and their
+Most of the content of [output files](#output-files) comes from keywords and their
 log messages. When creating higher level reports, log files are not necessarily
 needed at all, and in that case keywords and their messages just take space
 unnecessarily. Log files themselves can also grow overly large, especially if
@@ -628,7 +650,7 @@ rebot --expandkeywords tag:example --expandkeywords tag:another output.xml
 
 ## Setting start and end time of execution
 
-When [combining results](post-processing.md#combining-results) using Rebot, it is possible to set the start
+When [combining outputs](result-files.md#output) using Rebot, it is possible to set the start
 and end time of the combined test suite using the options `--starttime`
 and `--endtime`, respectively. This is convenient, because by default,
 combined suites do not have these values. When both the start and end time are
@@ -656,13 +678,13 @@ rebot --starttime 20110302-1317 --endtime 20110302-11418 myoutput.xml
 ## Limiting error message length in reports
 
 If a test case fails and has a long error message, the message shown in
-[reports](post-processing.md#creating-reports-logs-and-output-files) is automatically cut from the middle to keep reports easier to
+[reports](result-files.md#report) is automatically cut from the middle to keep reports easier to
 read. By default messages longer than 40 lines are cut, but that can be
 configured by using the `--maxerrorlines` command line option.
 The minimum value for this option is 10, and it is also possible to use
 a special value `NONE` to show the full message.
 
-Full error messages are always visible in [log files](output-files.md#log-file) as messages of
+Full error messages are always visible in [log files](result-files.md#log) as messages of
 the failed keywords.
 
 !!! note
@@ -712,6 +734,8 @@ the `--prerebotmodifier` option multiple times. When executing tests,
 it is possible to use `--prerunmodifier` and
 `--prerebotmodifier` options together.
 
+
+<a id="Systemlog"></a>
 <a id="syslog"></a>
 ## System log
 
