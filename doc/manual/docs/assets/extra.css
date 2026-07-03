@@ -24,3 +24,26 @@
   border-radius: .1rem;
   content: "s";
 }
+
+/* Definition list spacing — reduce Material theme's 1em margins so that each
+   term sits tight against its definition, with a small gap between entries. */
+.md-typeset dl dt {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.md-typeset dl dd {
+  margin-top: 0.1rem;
+  margin-bottom: 0.6rem;
+}
+/* ezglossary injects a back-reference list into every definition; collapse it
+   (and any wrapping paragraph) when it has no entries, so it does not add
+   blank space between a term and the next one. */
+.md-typeset dl dd .mkdocs-ezglossary-refs:not(:has(li)) {
+  display: none;
+}
+.md-typeset dl dd > p:empty {
+  display: none;
+}
+.md-typeset dl dd p:has(> .mkdocs-ezglossary-refs:not(:has(li))) {
+  display: none;
+}
