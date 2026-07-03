@@ -1,8 +1,8 @@
 site_name: Robot Framework
 site_description: Robot Framework is a generic open source automation framework. This reference manual covers all its features in detail.
-site_url: https://manykarim.github.io/manual/    # The mike plugin requires the trailing slash.
+site_url: https://pekkaklarck.github.io/manual/    # The mike plugin requires the trailing slash.
 repo_url: https://github.com/robotframework/robotframework
-edit_uri: https://github.com/manykarim/manual/blob/main/doc/manual/docs
+edit_uri: https://github.com/pekkaklarck/manual/blob/main/doc/manual/docs
 copyright: |
   &copy; 2026- <a href="https://robotframework.org/foundation" target="_blank" rel="noopener">Robot Framework Foundation</a>
 docs_dir: doc/manual/docs
