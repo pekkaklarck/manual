@@ -9653,7 +9653,7 @@
   <span class="md-ellipsis">
     
   
-    Documentation format
+    Doc format
   
 
     
@@ -9711,6 +9711,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Registrations
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -9727,6 +9745,69 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#suite-file-extensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Suite file extensions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resource-file-extensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resource file extensions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#media-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Media type
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remote-server-port" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Remote server port
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -9793,6 +9874,36 @@
 
 
 <h1 id="registrations">Registrations<a class="headerlink" href="#registrations" title="Permanent link">&para;</a></h1>
+<p>This appendix lists file extensions, media types, and so on, that are
+associated with Robot Framework.</p>
+<h2 id="suite-file-extensions">Suite file extensions<a class="headerlink" href="#suite-file-extensions" title="Permanent link">&para;</a></h2>
+<p><a href="../../syntax/suites/#suite-files">Suite files</a> with the following extensions are parsed automatically:</p>
+<p><em>.robot</em>
+    Suite file using the <a href="../../syntax/data/#plain-text-format">plain text format</a>.</p>
+<p><em>.robot.rst</em>
+    Suite file using the <a href="../../syntax/data/#restructuredtext-format">reStructuredText format</a>.</p>
+<p><em>.robot.md</em>
+    Suite file using the <a href="../../syntax/data/#markdown-format">Markdown format</a>.</p>
+<p><em>.rbt</em>
+    Suite file using the <a href="../../syntax/data/#json-format">JSON format</a>.</p>
+<p>Using other extensions is possible, but it requires <a href="https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml?search=8270">separate configuration</a>.</p>
+<h2 id="resource-file-extensions">Resource file extensions<a class="headerlink" href="#resource-file-extensions" title="Permanent link">&para;</a></h2>
+<p><a href="../../syntax/resource-files/#resource-files">Resource files</a> can use the following extensions:</p>
+<p><em>.resource</em>
+    Recommended when using the plain text format.</p>
+<p><em>.robot</em>, <em>.txt</em> and <em>.tsv</em>
+    Supported with the plain text format for backwards compatibility reasons.
+    <em>.resource</em> is recommended and may be mandated in the future.</p>
+<p><em>.rst</em> and <em>.rest</em>
+    Resource file using the <a href="../../syntax/data/#restructuredtext-format">reStructuredText format</a>.</p>
+<p><em>.md</em> and <em>.markdown</em>
+    Resource file using the <a href="../../syntax/data/#markdown-format">Markdown format</a>.</p>
+<p><em>.rsrc</em> and <em>.json</em>
+    Resource file using the <a href="../../syntax/data/#json-format">JSON format</a>.</p>
+<h2 id="media-type">Media type<a class="headerlink" href="#media-type" title="Permanent link">&para;</a></h2>
+<p>The media type to use with Robot Framework data is <code>text/robotframework</code>.</p>
+<h2 id="remote-server-port">Remote server port<a class="headerlink" href="#remote-server-port" title="Permanent link">&para;</a></h2>
+<p>The default <a href="../../extend/remote/#remote-library-interface">remote server</a> port is 8270. The port has been <a href="https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml?search=8270">registered by IANA</a>.</p>
 
 
 

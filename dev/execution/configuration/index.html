@@ -99,7 +99,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#configuration" class="md-skip">
+        <a href="#configuring-execution" class="md-skip">
           Skip to content
         </a>
       
@@ -1115,6 +1115,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuring execution
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1131,6 +1149,468 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#selecting-files-to-parse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Selecting files to parse
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Selecting files to parse">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#executing-individual-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Executing individual files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#included-and-excluded-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Included and excluded files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selecting-files-by-name-or-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Selecting files by name or path
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selecting-files-by-extension" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Selecting files by extension
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-custom-parsers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using custom parsers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#selecting-test-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Selecting test cases
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Selecting test cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#by-test-names" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        By test names
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#by-suite-names" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        By suite names
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#by-tag-names" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        By tag names
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#re-executing-failed-test-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Re-executing failed test cases
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#re-executing-failed-test-suites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Re-executing failed test suites
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-no-tests-match-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When no tests match selection
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setting metadata
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting metadata">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setting-suite-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setting suite name
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-suite-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setting suite documentation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-free-suite-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setting free suite metadata
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-test-tags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setting test tags
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuring-where-to-search-libraries-and-other-extensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuring where to search libraries and other extensions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuring where to search libraries and other extensions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#locations-automatically-in-module-search-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Locations automatically in module search path
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pythonpath" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PYTHONPATH
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-pythonpath-option" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using --pythonpath option
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuring-syspath-programmatically" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuring sys.path programmatically
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setting variables
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dry-run" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dry run
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#randomizing-execution-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Randomizing execution order
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#programmatic-modification-of-test-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Programmatic modification of test data
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Programmatic modification of test data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-select-every-xth-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Select every Xth test
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-exclude-tests-by-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Exclude tests by name
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-disable-setups-and-teardowns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Disable setups and teardowns
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controlling-console-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Controlling console output
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Controlling console output">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#console-output-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Console output type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#console-width" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Console width
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#console-colors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Console colors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#console-links" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Console links
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#console-markers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Console markers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-listeners" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setting listeners
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -9663,7 +10143,7 @@
   <span class="md-ellipsis">
     
   
-    Documentation format
+    Doc format
   
 
     
@@ -9792,7 +10272,955 @@
   
 
 
-<h1 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h1>
+<h1 id="configuring-execution">Configuring execution<a class="headerlink" href="#configuring-execution" title="Permanent link">&para;</a></h1>
+<p>This section explains different command line options that can be used
+for configuring the <a href="../tests/#test-execution">test execution</a> or <a href="../post-processing/#post-processing-outputs">post-processing
+outputs</a>. Options related to generated <a href="../results/#result-files">result files</a> are discussed in
+the next section.</p>
+<h2 id="selecting-files-to-parse">Selecting files to parse<a class="headerlink" href="#selecting-files-to-parse" title="Permanent link">&para;</a></h2>
+<h3 id="executing-individual-files">Executing individual files<a class="headerlink" href="#executing-individual-files" title="Permanent link">&para;</a></h3>
+<p>When executing individual files, Robot Framework tries to parse and run them
+regardless the name or the file extension. What parser to use depends
+on the extension:</p>
+<ul>
+<li><em>.robot</em> files and files that are not recognized are parsed using
+  the normal <a href="https://github.com/robotframework/robotframework/issues/5023">Robot Framework parser</a>.</li>
+<li><em>.rst</em> and <em>.rest</em> files are parsed using the <a href="https://en.wikipedia.org/wiki/Glob_(programming)">reStructuredText parser</a>.</li>
+<li><em>.md</em> and <em>.markdown</em> files are parsed using the <a href="http://docs.python.org/library/sys.html#sys.path">Markdown parser</a>.</li>
+<li><em>.rbt</em> and <em>.json</em> files are parsed using the <a href="http://en.wikipedia.org/wiki/ANSI_escape_code">JSON parser</a>.</li>
+<li>Files supported by <a href="https://github.com/Alhadis/OSC8-Adoption">custom parsers</a> are parsed by a matching parser.</li>
+</ul>
+<p>Examples:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
+<span class="normal"><a href="#example-0-2">2</a></span>
+<span class="normal"><a href="#example-0-3">3</a></span>
+<span class="normal"><a href="#example-0-4">4</a></span>
+<span class="normal"><a href="#example-0-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="n">robot</span> <span class="n">example</span><span class="o">.</span><span class="n">robot</span>    <span class="c1"># Standard Robot Framework parser.</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a><span class="n">robot</span> <span class="n">example</span><span class="o">.</span><span class="n">tsv</span>      <span class="c1"># Must be compatible with the standard parser.</span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a><span class="n">robot</span> <span class="n">example</span><span class="o">.</span><span class="n">rst</span>      <span class="c1"># reStructuredText parser.</span>
+</span><span id="line-0-4"><a id="example-0-4" name="example-0-4"></a><span class="n">robot</span> <span class="n">example</span><span class="o">.</span><span class="n">md</span>       <span class="c1"># Markdown parser.</span>
+</span><span id="line-0-5"><a id="example-0-5" name="example-0-5"></a><span class="n">robot</span> <span class="n">x</span><span class="o">.</span><span class="n">robot</span> <span class="n">y</span><span class="o">.</span><span class="n">rst</span>    <span class="c1"># Parse both files using an appropriate parser.</span>
+</span></code></pre></div></td></tr></table></div>
+<h3 id="included-and-excluded-files">Included and excluded files<a class="headerlink" href="#included-and-excluded-files" title="Permanent link">&para;</a></h3>
+<p>When executing a <a href="https://github.com/robotframework/robotframework/issues/5023">directory</a>, files and directories are parsed using
+the following rules:</p>
+<ul>
+<li>All files and directories starting with a dot (<em>.</em>) or an underscore
+  (<em>_</em>) are ignored.</li>
+<li><em>.robot</em> files are parsed using the normal <a href="https://en.wikipedia.org/wiki/Glob_(programming)">Robot Framework parser</a>.</li>
+<li><em>.robot.rst</em> files are parsed using the <a href="http://docs.python.org/library/sys.html#sys.path">reStructuredText parser</a>.</li>
+<li><em>.robot.md</em> files are parsed using the <a href="http://en.wikipedia.org/wiki/ANSI_escape_code">Markdown parser</a>.</li>
+<li><em>.rbt</em> files are parsed using the <a href="https://github.com/Alhadis/OSC8-Adoption">JSON parser</a>.</li>
+<li>Files supported by <a href="https://en.wikipedia.org/wiki/Windows_Console">custom parsers</a> are parsed by a matching parser.</li>
+<li>Other files are ignored unless parsing them has been enabled by using
+  the <code>--parseinclude</code> or <code>--extension</code> options discussed
+  in the subsequent sections.</li>
+</ul>
+<h3 id="selecting-files-by-name-or-path">Selecting files by name or path<a class="headerlink" href="#selecting-files-by-name-or-path" title="Permanent link">&para;</a></h3>
+<p>When executing a directory, it is possible to parse only certain files based on
+their name or path by using the <code>--parseinclude (-I)</code> option. This option
+has slightly different semantics depending on the value it is used with:</p>
+<ul>
+<li>
+<p>If the value is just a file name like <code>example.robot</code>, files matching
+  the name in all directories will be parsed.</p>
+</li>
+<li>
+<p>To match only a certain file in a certain directory, files can be given
+  as relative or absolute paths like <code>path/to/tests.robot</code>.</p>
+</li>
+<li>
+<p>If the value is a path to a directory, all files inside that directory are parsed,
+  recursively.</p>
+</li>
+</ul>
+<p>Examples:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-1-1">1</a></span>
+<span class="normal"><a href="#example-1-2">2</a></span>
+<span class="normal"><a href="#example-1-3">3</a></span>
+<span class="normal"><a href="#example-1-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-1-1"><a id="example-1-1" name="example-1-1"></a><span class="n">robot</span> <span class="o">--</span><span class="n">parseinclude</span> <span class="n">example</span><span class="o">.</span><span class="n">robot</span> <span class="n">tests</span>       <span class="c1"># Parse `example.robot` files anywhere under `tests`.</span>
+</span><span id="line-1-2"><a id="example-1-2" name="example-1-2"></a><span class="n">robot</span> <span class="o">-</span><span class="n">I</span> <span class="n">example_</span><span class="o">*.</span><span class="n">robot</span> <span class="o">-</span><span class="n">I</span> <span class="err">???</span><span class="o">.</span><span class="n">robot</span> <span class="n">tests</span>    <span class="c1"># Parse files matching `example_*.robot` or `???.robot` under `tests`.</span>
+</span><span id="line-1-3"><a id="example-1-3" name="example-1-3"></a><span class="n">robot</span> <span class="o">-</span><span class="n">I</span> <span class="n">tests</span><span class="o">/</span><span class="n">example</span><span class="o">.</span><span class="n">robot</span> <span class="n">tests</span>             <span class="c1"># Parse only `tests/example.robot`.</span>
+</span><span id="line-1-4"><a id="example-1-4" name="example-1-4"></a><span class="n">robot</span> <span class="o">--</span><span class="n">parseinclude</span> <span class="n">tests</span><span class="o">/</span><span class="n">example</span> <span class="n">tests</span>       <span class="c1"># Parse files under `tests/example` directory, recursively.</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Values used with <code>--parseinclude</code> are case-insensitive and support
+<a href="../basics/#simple-patterns">glob patterns</a>_ like <code>example_*.robot</code>. There are, however,
+two small differences compared to how patterns typically work with Robot Framework:</p>
+<ul>
+<li>
+<p><code>*</code> matches only a single path segment. For example, <code>path/*/tests.robot</code>
+  matches <em>path/to/tests.robot</em> but not <em>path/to/nested/tests.robot</em>.</p>
+</li>
+<li>
+<p><code>**</code> can be used to enable recursive matching. For example, <code>path/**/tests.robot</code>
+  matches both <em>path/to/tests.robot</em> and <em>path/to/nested/tests.robot</em>.</p>
+</li>
+</ul>
+<p>If the pattern contains an extension, files with that extension are parsed
+even if they by <a href="https://github.com/robotframework/robotframework/issues/5023">default would not be</a>. What parser to use depends on
+the used extension:</p>
+<ul>
+<li><em>.rst</em> and <em>.rest</em> files are parsed using the <a href="https://en.wikipedia.org/wiki/Glob_(programming)">reStructuredText parser</a>.</li>
+<li><em>.md</em> and <em>.markdown</em> files are parsed using the <a href="http://docs.python.org/library/sys.html#sys.path">Markdown parser</a>.</li>
+<li><em>.json</em> files are parsed using the <a href="http://en.wikipedia.org/wiki/ANSI_escape_code">JSON parser</a>.</li>
+<li>Other files are parsed using the normal <a href="https://github.com/Alhadis/OSC8-Adoption">Robot Framework parser</a>.</li>
+</ul>
+<p>Notice that when you use a pattern like <code>*.robot</code> and there exists a file that
+matches the pattern in the execution directory, the shell may resolve
+the pattern before Robot Framework is called and the value passed to
+it is the file name, not the original pattern. In such cases you need
+to quote or escape the pattern like <code>'*.robot'</code> or <code>\*.robot</code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code>--parseinclude</code> is new in Robot Framework 6.1.</p>
+</div>
+<h3 id="selecting-files-by-extension">Selecting files by extension<a class="headerlink" href="#selecting-files-by-extension" title="Permanent link">&para;</a></h3>
+<p>In addition to using the <code>--parseinclude</code> option discussed in the
+previous section, it is also possible to enable parsing files that are <a href="https://en.wikipedia.org/wiki/Windows_Console">not
+parsed by default</a> by using the <code>--extension (-F)</code> option.
+Matching extensions is case insensitive and the leading dot can be omitted.
+If there is a need to parse more than one kind of files, it is possible to
+use a colon <code>:</code> to separate extensions:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-2-1">1</a></span>
+<span class="normal"><a href="#example-2-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-2-1"><a id="example-2-1" name="example-2-1"></a><span class="n">robot</span> <span class="o">--</span><span class="n">extension</span> <span class="n">rst</span> <span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">tests</span>    <span class="c1"># Parse only *.rst files.</span>
+</span><span id="line-2-2"><a id="example-2-2" name="example-2-2"></a><span class="n">robot</span> <span class="o">-</span><span class="n">F</span> <span class="n">robot</span><span class="p">:</span><span class="n">rst</span> <span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">tests</span>       <span class="c1"># Parse *.robot and *.rst files.</span>
+</span></code></pre></div></td></tr></table></div>
+<p>The above is equivalent to the following <code>--parseinclude</code> usage:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-3-1">1</a></span>
+<span class="normal"><a href="#example-3-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-3-1"><a id="example-3-1" name="example-3-1"></a><span class="n">robot</span> <span class="o">--</span><span class="n">parseinclude</span> <span class="o">*.</span><span class="n">rst</span> <span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">tests</span>
+</span><span id="line-3-2"><a id="example-3-2" name="example-3-2"></a><span class="n">robot</span> <span class="o">-</span><span class="n">I</span> <span class="o">*.</span><span class="n">robot</span> <span class="o">-</span><span class="n">I</span> <span class="o">*.</span><span class="n">rst</span> <span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">tests</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Because the <code>--parseinclude</code> option is more powerful and covers all
+same use cases as the <code>--extension</code> option, the latter is likely to be
+deprecated in the future. Users are recommended to use <code>--parseinclude</code>
+already now.</p>
+<h3 id="using-custom-parsers">Using custom parsers<a class="headerlink" href="#using-custom-parsers" title="Permanent link">&para;</a></h3>
+<p>External parsers can parse files that Robot Framework does not recognize
+otherwise. For more information about creating and using such parsers see
+the <a href="../../extend/parsing/#parser-interface">Parser interface</a> section.</p>
+<h2 id="selecting-test-cases">Selecting test cases<a class="headerlink" href="#selecting-test-cases" title="Permanent link">&para;</a></h2>
+<p>Robot Framework offers several command line options for selecting
+which test cases to execute. The same options work also when <a href="../tasks/#executing-tasks">executing
+tasks</a> and when post-processing outputs with <a href="../post-processing/#rebot">Rebot</a>.</p>
+<h3 id="by-test-names">By test names<a class="headerlink" href="#by-test-names" title="Permanent link">&para;</a></h3>
+<p>The easiest way to select only some tests to be run is using the
+<code>--test (-t)</code> option. As the name implies, it can be used for
+selecting tests by their names. Given names are case, space and underscore
+insensitive and they also support <a href="../basics/#simple-patterns">simple patterns</a>. The option can be
+used multiple times to match multiple tests:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-4-1">1</a></span>
+<span class="normal"><a href="#example-4-2">2</a></span>
+<span class="normal"><a href="#example-4-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-4-1"><a id="example-4-1" name="example-4-1"></a><span class="o">--</span><span class="n">test</span> <span class="n">Example</span>                   <span class="c1"># Match only tests with name &#39;Example&#39;.</span>
+</span><span id="line-4-2"><a id="example-4-2" name="example-4-2"></a><span class="o">--</span><span class="n">test</span> <span class="n">example</span><span class="o">*</span>                  <span class="c1"># Match tests starting with &#39;example&#39;.</span>
+</span><span id="line-4-3"><a id="example-4-3" name="example-4-3"></a><span class="o">--</span><span class="n">test</span> <span class="n">first</span> <span class="o">--</span><span class="n">test</span> <span class="n">second</span>       <span class="c1"># Match tests with name &#39;first&#39; or &#39;second&#39;.</span>
+</span></code></pre></div></td></tr></table></div>
+<p>To pinpoint a test more precisely, it is possible to prefix the test name
+with a suite name:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-5-1">1</a></span>
+<span class="normal"><a href="#example-5-2">2</a></span>
+<span class="normal"><a href="#example-5-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-5-1"><a id="example-5-1" name="example-5-1"></a><span class="o">--</span><span class="n">test</span> <span class="n">mysuite</span><span class="o">.</span><span class="n">mytest</span>            <span class="c1"># Match test &#39;mytest&#39; in suite &#39;mysuite&#39;.</span>
+</span><span id="line-5-2"><a id="example-5-2" name="example-5-2"></a><span class="o">--</span><span class="n">test</span> <span class="n">root</span><span class="o">.</span><span class="n">sub</span><span class="o">.</span><span class="n">test</span>             <span class="c1"># Match test &#39;test&#39; in suite &#39;sub&#39; in suite &#39;root&#39;.</span>
+</span><span id="line-5-3"><a id="example-5-3" name="example-5-3"></a><span class="o">--</span><span class="n">test</span> <span class="o">*.</span><span class="n">sub</span><span class="o">.</span><span class="n">test</span>                <span class="c1"># Match test &#39;test&#39; in suite &#39;sub&#39; anywhere.</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Notice that when the given name includes a suite name, it must match the whole
+suite name starting from the root suite. Using a wildcard as in the last example
+above allows matching tests with a parent suite anywhere.</p>
+<p>Using the <code>--test</code> option is convenient when only a few tests needs
+to be selected. A common use case is running just the test that is currently
+being worked on. If a bigger number of tests needs to be selected,
+it is typically easier to select them <a href="#by-suite-names">by suite names</a> or <a href="#by-tag-names">by tag names</a>.</p>
+<p>When <a href="../tasks/#executing-tasks">executing tasks</a>, it is possible to use the <code>--task</code> option
+as an alias for <code>--test</code>.</p>
+<h3 id="by-suite-names">By suite names<a class="headerlink" href="#by-suite-names" title="Permanent link">&para;</a></h3>
+<p>Tests can be selected also by suite names with the <code>--suite (-s)</code>
+option that selects all tests in matching suites. Similarly
+as with <code>--test</code>, given names are case, space and underscore
+insensitive and support <a href="../basics/#simple-patterns">simple patterns</a>. To pinpoint a suite
+more precisely, it is possible to prefix the name with the parent suite
+name:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-6-1">1</a></span>
+<span class="normal"><a href="#example-6-2">2</a></span>
+<span class="normal"><a href="#example-6-3">3</a></span>
+<span class="normal"><a href="#example-6-4">4</a></span>
+<span class="normal"><a href="#example-6-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-6-1"><a id="example-6-1" name="example-6-1"></a><span class="o">--</span><span class="n">suite</span> <span class="n">Example</span>                  <span class="c1"># Match only suites with name &#39;Example&#39;.</span>
+</span><span id="line-6-2"><a id="example-6-2" name="example-6-2"></a><span class="o">--</span><span class="n">suite</span> <span class="n">example</span><span class="o">*</span>                 <span class="c1"># Match suites starting with &#39;example&#39;.</span>
+</span><span id="line-6-3"><a id="example-6-3" name="example-6-3"></a><span class="o">--</span><span class="n">suite</span> <span class="n">first</span> <span class="o">--</span><span class="n">suite</span> <span class="n">second</span>     <span class="c1"># Match suites with name &#39;first&#39; or &#39;second&#39;.</span>
+</span><span id="line-6-4"><a id="example-6-4" name="example-6-4"></a><span class="o">--</span><span class="n">suite</span> <span class="n">root</span><span class="o">.</span><span class="n">child</span>               <span class="c1"># Match suite &#39;child&#39; in root suite &#39;root&#39;.</span>
+</span><span id="line-6-5"><a id="example-6-5" name="example-6-5"></a><span class="o">--</span><span class="n">suite</span> <span class="o">*.</span><span class="n">parent</span><span class="o">.</span><span class="n">child</span>           <span class="c1"># Match suite &#39;child&#39; with parent &#39;parent&#39; anywhere.</span>
+</span></code></pre></div></td></tr></table></div>
+<p>If the name contains a parent suite name, it must match the whole suite name
+the same way as with <code>--test</code>. Using a wildcard as in the last example
+above allows matching suites with a parent suite anywhere.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Prior to Robot Framework 7.0, <code>--suite</code> with a parent suite
+did not need to match the whole suite name. For example, <code>parent.child</code>
+would match suite <code>child</code> with parent <code>parent</code> anywhere. The name must
+be prefixed with a wildcard if this behavior is desired nowadays.</p>
+</div>
+<p>If both <code>--suite</code> and <code>--test</code> options are used, only the
+specified tests in specified suites are selected:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-7-1"><a id="example-7-1" name="example-7-1"></a><span class="o">--</span><span class="n">suite</span> <span class="n">mysuite</span> <span class="o">--</span><span class="n">test</span> <span class="n">mytest</span>    <span class="c1"># Match test &#39;mytest&#39; if its inside suite &#39;mysuite&#39;.</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Using the <code>--suite</code> option is more or less the same as executing
+the appropriate suite file or directory directly. The main difference is
+that if a file or directory is run directly, possible higher level
+<a href="../../syntax/suites/#suite-initialization-files">suite initialization files</a> are ignored:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-8-1">1</a></span>
+<span class="normal"><a href="#example-8-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-8-1"><a id="example-8-1" name="example-8-1"></a><span class="c1"># Root suite is &#39;Tests&#39; and its possible initialization file is used.</span>
+</span><span id="line-8-2"><a id="example-8-2" name="example-8-2"></a><span class="n">robot</span> <span class="o">--</span><span class="n">suite</span> <span class="n">example</span> <span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">tests</span>
+</span></code></pre></div></td></tr></table></div>
+<p># Root suite is 'Example' and higher level initialization files are ignored.
+  robot path/to/tests/example.robot</p>
+<p>Prior to Robot Framework 6.1, files not matching the <code>--suite</code> option
+were not parsed at all for performance reasons. This optimization was not
+possible anymore after suites got a new <code>Name</code> setting that can override
+the default suite name that is got from the file or directory name. New
+<code>--parseinclude</code> option has been added to <a href="https://github.com/robotframework/robotframework/issues/5023">explicitly select which
+files are parsed</a> if this kind of parsing optimization is needed.</p>
+<h3 id="by-tag-names">By tag names<a class="headerlink" href="#by-tag-names" title="Permanent link">&para;</a></h3>
+<p>It is possible to include and exclude test cases by <a href="../../syntax/tests/#tag">tag</a> names with the
+<code>--include (-i)</code> and <code>--exclude (-e)</code> options, respectively.
+If the <code>--include</code> option is used, only test cases having a matching
+tag are selected, and with the <code>--exclude</code> option test cases having a
+matching tag are not. If both are used, only tests with a tag
+matching the former option, and not with a tag matching the latter,
+are selected:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-9-1">1</a></span>
+<span class="normal"><a href="#example-9-2">2</a></span>
+<span class="normal"><a href="#example-9-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-9-1"><a id="example-9-1" name="example-9-1"></a><span class="o">--</span><span class="n">include</span> <span class="n">example</span>
+</span><span id="line-9-2"><a id="example-9-2" name="example-9-2"></a><span class="o">--</span><span class="n">exclude</span> <span class="n">not_ready</span>
+</span><span id="line-9-3"><a id="example-9-3" name="example-9-3"></a><span class="o">--</span><span class="n">include</span> <span class="n">regression</span> <span class="o">--</span><span class="n">exclude</span> <span class="n">long_lasting</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Both <code>--include</code> and <code>--exclude</code> can be used several
+times to match multiple tags. In that case a test is selected
+if it has a tag that matches any included tags, and also has no tag
+that matches any excluded tags.</p>
+<p>In addition to specifying a tag to match fully, it is possible to use
+<a href="../basics/#tag-patterns">tag patterns</a> where <code>*</code> and <code>?</code> are wildcards and
+<code>AND</code>, <code>OR</code>, and <code>NOT</code> operators can be used for
+combining individual tags or patterns together:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-10-1">1</a></span>
+<span class="normal"><a href="#example-10-2">2</a></span>
+<span class="normal"><a href="#example-10-3">3</a></span>
+<span class="normal"><a href="#example-10-4">4</a></span>
+<span class="normal"><a href="#example-10-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-10-1"><a id="example-10-1" name="example-10-1"></a><span class="o">--</span><span class="n">include</span> <span class="n">feature</span><span class="o">-</span><span class="mi">4</span><span class="err">?</span>
+</span><span id="line-10-2"><a id="example-10-2" name="example-10-2"></a><span class="o">--</span><span class="n">exclude</span> <span class="n">bug</span><span class="o">*</span>
+</span><span id="line-10-3"><a id="example-10-3" name="example-10-3"></a><span class="o">--</span><span class="n">include</span> <span class="n">fooANDbar</span>
+</span><span id="line-10-4"><a id="example-10-4" name="example-10-4"></a><span class="o">--</span><span class="n">exclude</span> <span class="n">xxORyyORzz</span>
+</span><span id="line-10-5"><a id="example-10-5" name="example-10-5"></a><span class="o">--</span><span class="n">include</span> <span class="n">fooNOTbar</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Another way to exclude tests by tags is using the <code>robot:exclude</code> <a href="https://github.com/robotframework/robotframework/issues/5023">reserved tag</a>.
+This tag can also be set using a variable, which allows excluding test
+dynamically during execution.</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-11-1"> 1</a></span>
+<span class="normal"><a href="#example-11-2"> 2</a></span>
+<span class="normal"><a href="#example-11-3"> 3</a></span>
+<span class="normal"><a href="#example-11-4"> 4</a></span>
+<span class="normal"><a href="#example-11-5"> 5</a></span>
+<span class="normal"><a href="#example-11-6"> 6</a></span>
+<span class="normal"><a href="#example-11-7"> 7</a></span>
+<span class="normal"><a href="#example-11-8"> 8</a></span>
+<span class="normal"><a href="#example-11-9"> 9</a></span>
+<span class="normal"><a href="#example-11-10">10</a></span>
+<span class="normal"><a href="#example-11-11">11</a></span>
+<span class="normal"><a href="#example-11-12">12</a></span>
+<span class="normal"><a href="#example-11-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-11-1"><a id="example-11-1" name="example-11-1"></a><span class="gh">*** Variables ***</span>
+</span><span id="line-11-2"><a id="example-11-2" name="example-11-2"></a><span class="p">${</span><span class="nv">EXCLUDE</span><span class="p">}        </span><span class="s">robot:exclude</span>
+</span><span id="line-11-3"><a id="example-11-3" name="example-11-3"></a>
+</span><span id="line-11-4"><a id="example-11-4" name="example-11-4"></a><span class="gh">*** Test Cases ***</span>
+</span><span id="line-11-5"><a id="example-11-5" name="example-11-5"></a><span class="gu">Literal</span>
+</span><span id="line-11-6"><a id="example-11-6" name="example-11-6"></a><span class="p">   [</span><span class="kn">Documentation</span><span class="p">]    </span><span class="s">Unconditionally excluded.</span>
+</span><span id="line-11-7"><a id="example-11-7" name="example-11-7"></a><span class="p">   [</span><span class="kn">Tags</span><span class="p">]    </span><span class="s">robot:exclude</span>
+</span><span id="line-11-8"><a id="example-11-8" name="example-11-8"></a><span class="p">   </span><span class="nf">Log</span><span class="p">    </span><span class="s">This is not executed</span>
+</span><span id="line-11-9"><a id="example-11-9" name="example-11-9"></a>
+</span><span id="line-11-10"><a id="example-11-10" name="example-11-10"></a><span class="gu">As variable</span>
+</span><span id="line-11-11"><a id="example-11-11" name="example-11-11"></a><span class="p">   [</span><span class="kn">Documentation</span><span class="p">]    </span><span class="s">Excluded unless </span><span class="p">${</span><span class="nv">EXCLUDE</span><span class="p">}</span><span class="s"> is set to a different value.</span>
+</span><span id="line-11-12"><a id="example-11-12" name="example-11-12"></a><span class="p">   [</span><span class="kn">Tags</span><span class="p">]    ${</span><span class="nv">EXCLUDE</span><span class="p">}</span>
+</span><span id="line-11-13"><a id="example-11-13" name="example-11-13"></a><span class="p">   </span><span class="nf">Log</span><span class="p">    </span><span class="s">This is not executed by default</span>
+</span></code></pre></div></td></tr></table></div>
+Selecting test cases by tags is a very flexible mechanism and allows
+many interesting possibilities:</p>
+<ul>
+<li>
+<p>A subset of tests to be executed before other tests, often called smoke
+  tests, can be tagged with <code>smoke</code> and executed with <code>--include smoke</code>.</p>
+</li>
+<li>
+<p>Unfinished test can be committed to version control with a tag such as
+  <code>not_ready</code> and excluded from the test execution with
+  <code>--exclude not_ready</code>.</p>
+</li>
+<li>
+<p>Tests can be tagged with <code>sprint-&lt;num&gt;</code>, where
+  <code>&lt;num&gt;</code> specifies the number of the current sprint, and
+  after executing all test cases, a separate report containing only
+  the tests for a certain sprint can be generated (for example, <code>rebot
+  --include sprint-42 output.xml</code>).</p>
+</li>
+</ul>
+<p>Options <code>--include</code> and <code>--exclude</code> can be used in combination
+with <code>--suite</code> and <code>--test</code> discussed in the previous section.
+In that case tests that are selected must match all selection criteria:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-12-1">1</a></span>
+<span class="normal"><a href="#example-12-2">2</a></span>
+<span class="normal"><a href="#example-12-3">3</a></span>
+<span class="normal"><a href="#example-12-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-12-1"><a id="example-12-1" name="example-12-1"></a><span class="o">--</span><span class="n">suite</span> <span class="n">example</span> <span class="o">--</span><span class="n">include</span> <span class="n">tag</span>    <span class="c1"># Match test if it is in suite &#39;example&#39; and has tag &#39;tag&#39;.</span>
+</span><span id="line-12-2"><a id="example-12-2" name="example-12-2"></a><span class="o">--</span><span class="n">suite</span> <span class="n">example</span> <span class="o">--</span><span class="n">exclude</span> <span class="n">tag</span>    <span class="c1"># Match test if it is in suite &#39;example&#39; and does not have tag &#39;tag&#39;.</span>
+</span><span id="line-12-3"><a id="example-12-3" name="example-12-3"></a><span class="o">--</span><span class="n">test</span> <span class="n">ex</span><span class="o">*</span> <span class="o">--</span><span class="n">include</span> <span class="n">tag</span>         <span class="c1"># Match test if its name starts with &#39;ex&#39; and it has tag &#39;tag&#39;.</span>
+</span><span id="line-12-4"><a id="example-12-4" name="example-12-4"></a><span class="o">--</span><span class="n">test</span> <span class="n">ex</span><span class="o">*</span> <span class="o">--</span><span class="n">exclude</span> <span class="n">tag</span>         <span class="c1"># Match test if its name starts with &#39;ex&#39; and it does not have tag &#39;tag&#39;.</span>
+</span></code></pre></div></td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code>robot:exclude</code> is new in Robot Framework 5.0.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Using variables with <code>robot:exclude</code> is new in Robot Framework 7.2.
+Using variables with tags matched against <code>--include</code> and
+<code>--exclude</code> is not supported.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In Robot Framework 7.0 <code>--include</code> and <code>--test</code> were cumulative
+and selected tests needed to match only either of these options. That behavior
+caused <a href="https://github.com/robotframework/robotframework/issues/5023">backwards incompatibility problems</a> and it was reverted already in
+Robot Framework 7.0.1.</p>
+</div>
+<h3 id="re-executing-failed-test-cases">Re-executing failed test cases<a class="headerlink" href="#re-executing-failed-test-cases" title="Permanent link">&para;</a></h3>
+<p>Command line option <code>--rerunfailed (-R)</code> can be used to select all failed
+tests from an earlier <a href="../results/#output-file">output file</a> for re-execution. This option is useful,
+for example, if running all tests takes a lot of time and one wants to
+iteratively fix failing test cases.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-13-1">1</a></span>
+<span class="normal"><a href="#example-13-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-13-1"><a id="example-13-1" name="example-13-1"></a><span class="n">robot</span> <span class="n">tests</span>                             <span class="c1"># first execute all tests</span>
+</span><span id="line-13-2"><a id="example-13-2" name="example-13-2"></a><span class="n">robot</span> <span class="o">--</span><span class="n">rerunfailed</span> <span class="n">output</span><span class="o">.</span><span class="n">xml</span> <span class="n">tests</span>    <span class="c1"># then re-execute failing</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Behind the scenes this option selects the failed tests as they would have been
+selected individually using the <code>--test</code> option. It is possible to further
+fine-tune the list of selected tests by using <code>--test</code>, <code>--suite</code>,
+<code>--include</code> and <code>--exclude</code> options.</p>
+<p>It is an error if the output contains no failed tests, but this behavior can be
+changed by using the <code>--runemptysuite</code> option <a href="https://github.com/robotframework/robotframework/issues/5023">discussed below</a>.
+Using an output not originating from executing the same tests that are run
+now causes undefined results. Using a special value <code>NONE</code> as the output is
+same as not specifying this option at all.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Re-execution results and original results can be <a href="https://en.wikipedia.org/wiki/Glob_(programming)">merged together</a>
+using the <code>--merge</code> command line option.</p>
+</div>
+<h3 id="re-executing-failed-test-suites">Re-executing failed test suites<a class="headerlink" href="#re-executing-failed-test-suites" title="Permanent link">&para;</a></h3>
+<p>Command line option <code>--rerunfailedsuites (-S)</code> can be used to select all
+failed suites from an earlier <a href="../results/#output-file">output file</a> for re-execution. Like
+<code>--rerunfailed (-R)</code>, this option is useful when full test execution
+takes a lot of time. Note that all tests from a failed test suite will be
+re-executed, even passing ones. This option is useful when the tests in
+a test suite depends on each other.</p>
+<p>Behind the scenes this option selects the failed suites as they would have been
+selected individually with the <code>--suite</code> option. It is possible to further
+fine-tune the list of selected tests by using <code>--test</code>, <code>--suite</code>,
+<code>--include</code> and <code>--exclude</code> options.</p>
+<h3 id="when-no-tests-match-selection">When no tests match selection<a class="headerlink" href="#when-no-tests-match-selection" title="Permanent link">&para;</a></h3>
+<p>By default when no tests match the selection criteria test execution fails
+with an error like:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-14-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-14-1"><a id="example-14-1" name="example-14-1"></a><span class="p">[</span> <span class="n">ERROR</span> <span class="p">]</span> <span class="n">Suite</span> <span class="s1">&#39;Example&#39;</span> <span class="n">contains</span> <span class="n">no</span> <span class="n">tests</span> <span class="n">matching</span> <span class="n">tag</span> <span class="s1">&#39;xxx&#39;</span><span class="o">.</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Because no outputs are generated, this behavior can be problematic if tests
+are executed and results processed automatically. Luckily a command line
+option <code>--RunEmptySuite</code> (case-insensitive) can be used to force
+the suite to be executed also in this case. As a result normal outputs are
+created but show zero executed tests. The same option can be used also to
+alter the behavior when an empty directory or a test case file containing
+no tests is executed.</p>
+<p>Similar situation can occur also when processing output files with <a href="../post-processing/#rebot">Rebot</a>.
+It is possible that no test match the used filtering criteria or that
+the output file contained no tests to begin with. By default executing
+Rebot fails in these cases, but it has a separate
+<code>--ProcessEmptySuite</code> option that can be used to alter the behavior.
+In practice this option works the same way as <code>--RunEmptySuite</code> when
+running tests.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Using <code>--RunEmptySuite</code> with <code>--ReRunFailed</code>
+or <code>--ReRunFailedSuites</code> requires Robot Framework 5.0.1
+or newer.</p>
+</div>
+<h2 id="setting-metadata">Setting metadata<a class="headerlink" href="#setting-metadata" title="Permanent link">&para;</a></h2>
+<h3 id="setting-suite-name">Setting suite name<a class="headerlink" href="#setting-suite-name" title="Permanent link">&para;</a></h3>
+<p>When Robot Framework parses test data, <a href="https://github.com/robotframework/robotframework/issues/5023">suite names</a> are created
+from file and directory names. The name of the top-level test suite
+can, however, be overridden with the command line option
+<code>--name (-N)</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-15-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-15-1"><a id="example-15-1" name="example-15-1"></a><span class="n">robot</span> <span class="o">--</span><span class="n">name</span> <span class="s2">&quot;Custom name&quot;</span> <span class="n">tests</span><span class="o">.</span><span class="n">robot</span>
+</span></code></pre></div></td></tr></table></div>
+<h3 id="setting-suite-documentation">Setting suite documentation<a class="headerlink" href="#setting-suite-documentation" title="Permanent link">&para;</a></h3>
+<p>In addition to <a href="https://github.com/robotframework/robotframework/issues/5023">defining documentation in the test data</a>, documentation
+of the top-level suite can be given from the command line with the
+option <code>--doc (-D)</code>. The value can contain simple <a href="../../appendix/doc-format/#html-formatting">HTML formatting</a>
+and must be quoted if it contains spaces.</p>
+<p>If the given documentation is a relative or absolute path pointing to an existing
+file, the actual documentation will be read from that file. This is especially
+convenient if the externally specified documentation is long or contains multiple
+lines.</p>
+<p>Examples:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-16-1">1</a></span>
+<span class="normal"><a href="#example-16-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-16-1"><a id="example-16-1" name="example-16-1"></a><span class="n">robot</span> <span class="o">--</span><span class="n">doc</span> <span class="s2">&quot;Example documentation&quot;</span> <span class="n">tests</span><span class="o">.</span><span class="n">robot</span>
+</span><span id="line-16-2"><a id="example-16-2" name="example-16-2"></a><span class="n">robot</span> <span class="o">--</span><span class="n">doc</span> <span class="n">doc</span><span class="o">.</span><span class="n">txt</span> <span class="n">tests</span><span class="o">.</span><span class="n">robot</span>    <span class="c1"># Documentation read from doc.txt if it exits.</span>
+</span></code></pre></div></td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Reading documentation from an external file is new in Robot Framework 4.1.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>  <span class="n">Prior</span> <span class="n">to</span> <span class="n">Robot</span> <span class="n">Framework</span> <span class="mf">3.1</span><span class="p">,</span> <span class="n">underscores</span> <span class="ow">in</span> <span class="n">documentation</span> <span class="n">were</span>
+  <span class="n">converted</span> <span class="n">to</span> <span class="n">spaces</span> <span class="n">same</span> <span class="n">way</span> <span class="k">as</span> <span class="k">with</span> <span class="n">the</span> <span class="err">`</span><span class="o">--</span><span class="n">name</span><span class="err">`</span> <span class="n">option</span><span class="o">.</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<h3 id="setting-free-suite-metadata">Setting free suite metadata<a class="headerlink" href="#setting-free-suite-metadata" title="Permanent link">&para;</a></h3>
+<p><a href="../../syntax/suites/#free-suite-metadata">Free suite metadata</a> may also be given from the command line with the
+option <code>--metadata (-M)</code>. The argument must be in the format
+<code>name:value</code>, where <code>name</code> the name of the metadata to set and
+<code>value</code> is its value. The value can contain simple <a href="../../appendix/doc-format/#html-formatting">HTML formatting</a> and
+the whole argument must be quoted if it contains spaces.
+This option may be used several times to set multiple metadata values.</p>
+<p>If the given value is a relative or absolute path pointing to an existing
+file, the actual value will be read from that file. This is especially
+convenient if the value is long or contains multiple lines.
+If the value should be a path to an existing file, not read from that file,
+the value must be separated with a space from the <code>name:</code> part.</p>
+<p>Examples:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-17-1">1</a></span>
+<span class="normal"><a href="#example-17-2">2</a></span>
+<span class="normal"><a href="#example-17-3">3</a></span>
+<span class="normal"><a href="#example-17-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-17-1"><a id="example-17-1" name="example-17-1"></a><span class="n">robot</span> <span class="o">--</span><span class="n">metadata</span> <span class="n">Name</span><span class="p">:</span><span class="n">Value</span> <span class="n">tests</span><span class="o">.</span><span class="n">robot</span>
+</span><span id="line-17-2"><a id="example-17-2" name="example-17-2"></a><span class="n">robot</span> <span class="o">--</span><span class="n">metadata</span> <span class="s2">&quot;Another Name:Another value, now with spaces&quot;</span> <span class="n">tests</span><span class="o">.</span><span class="n">robot</span>
+</span><span id="line-17-3"><a id="example-17-3" name="example-17-3"></a><span class="n">robot</span> <span class="o">--</span><span class="n">metadata</span> <span class="s2">&quot;Read From File:meta.txt&quot;</span> <span class="n">tests</span><span class="o">.</span><span class="n">robot</span>    <span class="c1"># Value read from meta.txt if it exists.</span>
+</span><span id="line-17-4"><a id="example-17-4" name="example-17-4"></a><span class="n">robot</span> <span class="o">--</span><span class="n">metadata</span> <span class="s2">&quot;Path As Value: meta.txt&quot;</span> <span class="n">tests</span><span class="o">.</span><span class="n">robot</span>    <span class="c1"># Value always used as-is.</span>
+</span></code></pre></div></td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Reading metadata value from an external file is new in Robot Framework 4.1.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>  <span class="n">Prior</span> <span class="n">to</span> <span class="n">Robot</span> <span class="n">Framework</span> <span class="mf">3.1</span><span class="p">,</span> <span class="n">underscores</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">value</span> <span class="n">were</span>
+  <span class="n">converted</span> <span class="n">to</span> <span class="n">spaces</span> <span class="n">same</span> <span class="n">way</span> <span class="k">as</span> <span class="k">with</span> <span class="n">the</span> <span class="err">`</span><span class="o">--</span><span class="n">name</span><span class="err">`</span> <span class="n">option</span><span class="o">.</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<h3 id="setting-test-tags">Setting test tags<a class="headerlink" href="#setting-test-tags" title="Permanent link">&para;</a></h3>
+<p>The command line option <code>--settag (-G)</code> can be used to set
+the given tag to all executed test cases. This option may be used
+several times to set multiple tags.</p>
+<p><a id="module-search-path"></a></p>
+<h2 id="configuring-where-to-search-libraries-and-other-extensions">Configuring where to search libraries and other extensions<a class="headerlink" href="#configuring-where-to-search-libraries-and-other-extensions" title="Permanent link">&para;</a></h2>
+<p>When Robot Framework imports a <a href="https://github.com/robotframework/robotframework/issues/5023">test library</a>, <a href="https://en.wikipedia.org/wiki/Glob_(programming)">listener</a>, or some other
+Python based extension, it uses the Python interpreter to import the module
+containing the extension from the system. The list of locations where modules
+are looked for is called <em>the module search path</em>, and its contents can be
+configured using different approaches explained in this section.</p>
+<p>Robot Framework uses Python's module search path also when importing <a href="../../syntax/variables/#variable">resource
+and variable files</a> if the specified path does not match any file directly.</p>
+<p>The module search path being set correctly so that libraries and other
+extensions are found is a requirement for successful test execution. If
+you need to customize it using approaches explained below, it is often
+a good idea to create a custom <a href="../basics/#start-up-script">start-up script</a>.</p>
+<h3 id="locations-automatically-in-module-search-path">Locations automatically in module search path<a class="headerlink" href="#locations-automatically-in-module-search-path" title="Permanent link">&para;</a></h3>
+<p>Python interpreters have their own standard library as well as a directory
+where third party modules are installed automatically in the module search
+path. This means that test libraries <a href="http://docs.python.org/library/sys.html#sys.path">packaged using Python's own packaging
+system</a> are automatically installed so that they can be imported without
+any additional configuration.</p>
+<h3 id="pythonpath"><code>PYTHONPATH</code><a class="headerlink" href="#pythonpath" title="Permanent link">&para;</a></h3>
+<p>Python reads additional locations to be added to
+the module search path from <code>PYTHONPATH</code> environment variables.
+If you want to specify more than one location in any of them, you
+need to separate the locations with a colon on UNIX-like machines (e.g.
+<code>/opt/libs:$HOME/testlibs</code>) and with a semicolon on Windows (e.g.
+<code>D:\libs;%HOMEPATH%\testlibs</code>).</p>
+<p>Environment variables can be configured permanently system wide or so that
+they affect only a certain user. Alternatively they can be set temporarily
+before running a command, something that works extremely well in custom
+<a href="../basics/#start-up-scripts">start-up scripts</a>.</p>
+<h3 id="using-pythonpath-option">Using <code>--pythonpath</code> option<a class="headerlink" href="#using-pythonpath-option" title="Permanent link">&para;</a></h3>
+<p>Robot Framework has a separate command line option <code>--pythonpath (-P)</code>
+for adding locations to the module search path.</p>
+<p>Multiple locations can be given by separating them with a colon (<code>:</code>) or
+a semicolon (<code>;</code>) or by using this option multiple times. If the value
+contains both colons and semicolons, it is split from semicolons. Paths
+can also be <a href="http://en.wikipedia.org/wiki/ANSI_escape_code">glob patterns</a> matching multiple paths, but they typically
+need to be escaped when used on the console.</p>
+<p>Examples:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-18-1">1</a></span>
+<span class="normal"><a href="#example-18-2">2</a></span>
+<span class="normal"><a href="#example-18-3">3</a></span>
+<span class="normal"><a href="#example-18-4">4</a></span>
+<span class="normal"><a href="#example-18-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-18-1"><a id="example-18-1" name="example-18-1"></a><span class="o">--</span><span class="n">pythonpath</span> <span class="n">libs</span>
+</span><span id="line-18-2"><a id="example-18-2" name="example-18-2"></a><span class="o">--</span><span class="n">pythonpath</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">testlibs</span><span class="p">:</span><span class="n">mylibs</span><span class="o">.</span><span class="n">zip</span><span class="p">:</span><span class="n">yourlibs</span>
+</span><span id="line-18-3"><a id="example-18-3" name="example-18-3"></a><span class="o">--</span><span class="n">pythonpath</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">testlibs</span> <span class="o">--</span><span class="n">pythonpath</span> <span class="n">mylibs</span><span class="o">.</span><span class="n">zip</span> <span class="o">--</span><span class="n">pythonpath</span> <span class="n">yourlibs</span>
+</span><span id="line-18-4"><a id="example-18-4" name="example-18-4"></a><span class="o">--</span><span class="n">pythonpath</span> <span class="n">c</span><span class="p">:</span>\<span class="n">temp</span><span class="p">;</span><span class="n">d</span><span class="p">:</span>\<span class="n">resources</span>
+</span><span id="line-18-5"><a id="example-18-5" name="example-18-5"></a><span class="o">--</span><span class="n">pythonpath</span>  <span class="n">lib</span><span class="o">/</span>\<span class="o">*.</span><span class="n">zip</span>    <span class="c1"># &#39;*&#39; is escaped</span>
+</span></code></pre></div></td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Both colon and semicolon work regardless the operating system.
+Using semicolon is new in Robot Framework 5.0.</p>
+</div>
+<h3 id="configuring-syspath-programmatically">Configuring <code>sys.path</code> programmatically<a class="headerlink" href="#configuring-syspath-programmatically" title="Permanent link">&para;</a></h3>
+<p>Python interpreters store the module search path they use as a list of strings
+in <a href="https://github.com/robotframework/robotframework/issues/5023">sys.path</a>
+attribute. This list can be updated dynamically during execution, and changes
+are taken into account next time when something is imported.</p>
+<h2 id="setting-variables">Setting variables<a class="headerlink" href="#setting-variables" title="Permanent link">&para;</a></h2>
+<p><a href="../../syntax/variables/#variables">Variables</a> can be set from the command line either <a href="https://en.wikipedia.org/wiki/Glob_(programming)">individually</a>
+using the <code>--variable (-v)</code> option or through <a href="../../syntax/variable-files/#variable-files">variable files</a>
+with the <code>--variablefile (-V)</code> option. Variables and variable
+files are explained in separate chapters, but the following examples
+illustrate how to use these options:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-19-1">1</a></span>
+<span class="normal"><a href="#example-19-2">2</a></span>
+<span class="normal"><a href="#example-19-3">3</a></span>
+<span class="normal"><a href="#example-19-4">4</a></span>
+<span class="normal"><a href="#example-19-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-19-1"><a id="example-19-1" name="example-19-1"></a><span class="o">--</span><span class="n">variable</span> <span class="n">name</span><span class="p">:</span><span class="n">value</span>
+</span><span id="line-19-2"><a id="example-19-2" name="example-19-2"></a><span class="o">--</span><span class="n">variable</span> <span class="n">OS</span><span class="p">:</span><span class="n">Linux</span> <span class="o">--</span><span class="n">variable</span> <span class="n">IP</span><span class="p">:</span><span class="mf">10.0.0.42</span>
+</span><span id="line-19-3"><a id="example-19-3" name="example-19-3"></a><span class="o">--</span><span class="n">variablefile</span> <span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">variables</span><span class="o">.</span><span class="n">py</span>
+</span><span id="line-19-4"><a id="example-19-4" name="example-19-4"></a><span class="o">--</span><span class="n">variablefile</span> <span class="n">myvars</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="n">possible</span><span class="p">:</span><span class="n">arguments</span><span class="p">:</span><span class="n">here</span>
+</span><span id="line-19-5"><a id="example-19-5" name="example-19-5"></a><span class="o">--</span><span class="n">variable</span> <span class="n">ENVIRONMENT</span><span class="p">:</span><span class="n">Windows</span> <span class="o">--</span><span class="n">variablefile</span> <span class="n">c</span><span class="p">:</span>\<span class="n">resources</span>\<span class="n">windows</span><span class="o">.</span><span class="n">py</span>
+</span></code></pre></div></td></tr></table></div>
+<h2 id="dry-run">Dry run<a class="headerlink" href="#dry-run" title="Permanent link">&para;</a></h2>
+<p>Robot Framework supports so called <em>dry run</em> mode where the tests are
+run normally otherwise, but the keywords coming from the test libraries
+are not executed at all. The dry run mode can be used to validate the
+test data; if the dry run passes, the data should be syntactically
+correct. This mode is triggered using option <code>--dryrun</code>.</p>
+<p>The dry run execution may fail for following reasons:</p>
+<ul>
+<li>Using keywords that are not found.</li>
+<li>Using keywords with wrong number of arguments.</li>
+<li>Using user keywords that have invalid syntax.</li>
+</ul>
+<p>In addition to these failures, normal <a href="https://github.com/robotframework/robotframework/issues/5023">execution errors</a> are shown,
+for example, when test library or resource file imports cannot be
+resolved.</p>
+<p>It is possible to disable dry run validation of specific <a href="../../syntax/user-keywords/#user-keyword">user keywords</a>
+by adding a special <code>robot:no-dry-run</code> <a href="https://en.wikipedia.org/wiki/Glob_(programming)">keyword tag</a> to them. This is useful
+if a keyword fails in the dry run mode for some reason, but work fine when
+executed normally.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The dry run mode does not validate variables.</p>
+</div>
+<h2 id="randomizing-execution-order">Randomizing execution order<a class="headerlink" href="#randomizing-execution-order" title="Permanent link">&para;</a></h2>
+<p>The test execution order can be randomized using option
+<code>--randomize &lt;what&gt;[:&lt;seed&gt;]</code>, where <code>&lt;what&gt;</code> is one of the following:</p>
+<dl>
+<dt>
+	<code><a id="14353e52a74367e1195b35bfcf34a26f">tests</a> </code>
+</dt>
+<dd>Test cases inside each test suite are executed in random order.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="996feaac0368f880384bb3cb1b27fca3">suites</a> </code>
+</dt>
+<dd>All test suites are executed in a random order, but test cases inside
+suites are run in the order they are defined.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="7bccbd40f0fdc1cfbdf2c73dbb83dd1d">all</a> </code>
+</dt>
+<dd>Both test cases and test suites are executed in a random order.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="695fd0a3820c106f7c347c5a7d560249">none</a> </code>
+</dt>
+<dd>Neither execution order of test nor suites is randomized.
+This value can be used to override the earlier value set with
+<code>--randomize</code>.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+</dl>
+<p>It is possible to give a custom seed
+to initialize the random generator. This is useful if you want to re-run tests
+using the same order as earlier. The seed is given as part of the value for
+<code>--randomize</code> in format <code>&lt;what&gt;:&lt;seed&gt;</code> and it must be an integer.
+If no seed is given, it is generated randomly. The executed top level test
+suite automatically gets <a href="http://docs.python.org/library/sys.html#sys.path">metadata</a> named <em>Randomized</em> that tells both
+what was randomized and what seed was used.</p>
+<p>Examples:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-20-1">1</a></span>
+<span class="normal"><a href="#example-20-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-20-1"><a id="example-20-1" name="example-20-1"></a><span class="n">robot</span> <span class="o">--</span><span class="n">randomize</span> <span class="n">tests</span> <span class="n">my_test</span><span class="o">.</span><span class="n">robot</span>
+</span><span id="line-20-2"><a id="example-20-2" name="example-20-2"></a><span class="n">robot</span> <span class="o">--</span><span class="n">randomize</span> <span class="nb">all</span><span class="p">:</span><span class="mi">12345</span> <span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">tests</span>
+</span></code></pre></div></td></tr></table></div>
+<p><a id="pre-run-modifier"></a>
+<a id="pre-run-modifiers"></a></p>
+<h2 id="programmatic-modification-of-test-data">Programmatic modification of test data<a class="headerlink" href="#programmatic-modification-of-test-data" title="Permanent link">&para;</a></h2>
+<p>If the provided built-in features to modify test data before execution
+are not enough, Robot Framework makes it possible to do
+custom modifications programmatically. This is accomplished by creating
+a so called <em>pre-run modifier</em> and activating it using the
+<code>--prerunmodifier</code> option.</p>
+<p>Pre-run modifiers should be implemented as visitors that can traverse through
+the executable test suite structure and modify it as needed. The visitor
+interface is explained as part of the <a href="#visitor-interface">Robot Framework API documentation</a>, and it possible to modify executed <a href="#runningtestsuite">test suites</a>, <a href="#runningtestcase">test cases</a> and <a href="#runningkeyword">keywords</a> using it. The examples below ought to give an idea of
+how pre-run modifiers can be used and how powerful this functionality is.</p>
+<p>When a pre-run modifier is taken into use on the command line using the
+<code>--prerunmodifier</code> option, it can be specified either as a name of
+the modifier class or a path to the modifier file. If the modifier is given
+as a class name, the module containing the class must be in the <a href="#module-search-path">module search
+path</a>, and if the module name is different than the class name, the given
+name must include both like <code>module.ModifierClass</code>. If the modifier is given
+as a path, the class name must be same as the file name. For most parts this
+works exactly like when <a href="https://github.com/robotframework/robotframework/issues/5023">importing a test library</a>.</p>
+<p>If a modifier requires arguments, like the examples below do, they can be
+specified after the modifier name or path using either a colon (<code>:</code>) or a
+semicolon (<code>;</code>) as a separator. If both are used in the value, the one used
+first is considered to be the actual separator. Starting from Robot Framework
+4.0, arguments also support the <a href="../../syntax/tests/#named-argument-syntax">named argument syntax</a> as well as <a href="https://en.wikipedia.org/wiki/Glob_(programming)">argument
+conversion</a> based on <a href="http://docs.python.org/library/sys.html#sys.path">type hints</a> and <a href="http://en.wikipedia.org/wiki/ANSI_escape_code">default values</a> the same way
+as keywords do.</p>
+<p>If more than one pre-run modifier is needed, they can be specified by using
+the <code>--prerunmodifier</code> option multiple times. If similar modifying
+is needed before creating logs and reports, <a href="../results/#programmatic-modification-of-results">programmatic modification of
+results</a> can be enabled using the <code>--prerebotmodifier</code> option.</p>
+<p>Pre-run modifiers are executed before other configuration affecting the
+executed test suite and test cases. Most importantly, options related to
+<a href="#selecting-test-cases">selecting test cases</a> are processed after modifiers, making it possible to
+use options like <code>--include</code> also with possible dynamically added
+tests.</p>
+<p>Another way to modify tests is using the <a href="../../extend/listeners/#listener-version-3">listener version 3</a> interface.
+Modifying the <code>data</code> argument passed to the <code>start_suite</code> listener method
+when it is called for the first time has in practice the same effect as using
+a pre-run modifier. The main difference is that <code>--include/--exclude</code> and other
+such options do not have an effect to the added tests. The main benefit of using
+listeners is that they allow making modifications dynamically based on what
+happens during the execution.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Modifiers are taken into use from the command line exactly the same
+way as <a href="../../extend/listeners/#listeners">listeners</a>. See the <a href="../../extend/listeners/#registering-listeners-from-command-line">Registering listeners from command line</a>
+section for more information and examples.</p>
+</div>
+<h3 id="example-select-every-xth-test">Example: Select every Xth test<a class="headerlink" href="#example-select-every-xth-test" title="Permanent link">&para;</a></h3>
+<p>The first example shows how a pre-run modifier can remove tests from the
+executed test suite structure. In this example only every Xth tests is
+preserved, and the X is given from the command line along with an optional
+start index.</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-21-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-21-1"><a id="example-21-1" name="example-21-1"></a><span class="o">../</span><span class="n">api</span><span class="o">/</span><span class="n">code_examples</span><span class="o">/</span><span class="n">SelectEveryXthTest</span><span class="o">.</span><span class="n">py</span>
+</span></code></pre></div></td></tr></table></div>
+If the above pre-run modifier is in a file <em>SelectEveryXthTest.py</em> and
+the file is in the <a href="#module-search-path">module search path</a>, it could be used like this:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-22-1">1</a></span>
+<span class="normal"><a href="#example-22-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-22-1"><a id="example-22-1" name="example-22-1"></a><span class="c1"># Specify the modifier as a path. Run every second test.</span>
+</span><span id="line-22-2"><a id="example-22-2" name="example-22-2"></a><span class="n">robot</span> <span class="o">--</span><span class="n">prerunmodifier</span> <span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">SelectEveryXthTest</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">2</span> <span class="n">tests</span><span class="o">.</span><span class="n">robot</span>
+</span></code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Specify the modifier as a name. Run every third test, starting from the second.</span>
+<span class="n">robot</span> <span class="o">--</span><span class="n">prerunmodifier</span> <span class="n">SelectEveryXthTest</span><span class="p">:</span><span class="mi">3</span><span class="p">:</span><span class="mi">1</span> <span class="n">tests</span><span class="o">.</span><span class="n">robot</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="example-exclude-tests-by-name">Example: Exclude tests by name<a class="headerlink" href="#example-exclude-tests-by-name" title="Permanent link">&para;</a></h3>
+<p>Also the second example removes tests, this time based on a given name pattern.
+In practice it works like a negative version of the built-in <code>--test</code>
+option.</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-23-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-23-1"><a id="example-23-1" name="example-23-1"></a><span class="o">../</span><span class="n">api</span><span class="o">/</span><span class="n">code_examples</span><span class="o">/</span><span class="n">ExcludeTests</span><span class="o">.</span><span class="n">py</span>
+</span></code></pre></div></td></tr></table></div>
+Assuming the above modifier is in a file named <em>ExcludeTests.py</em>, it
+could be used like this:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-24-1">1</a></span>
+<span class="normal"><a href="#example-24-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-24-1"><a id="example-24-1" name="example-24-1"></a><span class="c1"># Exclude test named &#39;Example&#39;.</span>
+</span><span id="line-24-2"><a id="example-24-2" name="example-24-2"></a><span class="n">robot</span> <span class="o">--</span><span class="n">prerunmodifier</span> <span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">ExcludeTests</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="n">Example</span> <span class="n">tests</span><span class="o">.</span><span class="n">robot</span>
+</span></code></pre></div></td></tr></table></div>
+<p># Exclude all tests ending with 'something'.
+  robot --prerunmodifier path/to/ExcludeTests.py:*something tests.robot</p>
+<h3 id="example-disable-setups-and-teardowns">Example: Disable setups and teardowns<a class="headerlink" href="#example-disable-setups-and-teardowns" title="Permanent link">&para;</a></h3>
+<p>Sometimes when debugging tests it can be useful to disable setups or teardowns.
+This can be accomplished by editing the test data, but pre-run modifiers make
+it easy to do that temporarily for a single run:</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-25-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-25-1"><a id="example-25-1" name="example-25-1"></a><span class="o">../</span><span class="n">api</span><span class="o">/</span><span class="n">code_examples</span><span class="o">/</span><span class="n">disable</span><span class="o">.</span><span class="n">py</span>
+</span></code></pre></div></td></tr></table></div>
+Assuming that the above modifiers are all in a file named <em>disable.py</em>
+and this file is in the <a href="#module-search-path">module search path</a>, setups and teardowns could be
+disabled, for example, as follows:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-26-1">1</a></span>
+<span class="normal"><a href="#example-26-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-26-1"><a id="example-26-1" name="example-26-1"></a><span class="c1"># Disable suite teardowns.</span>
+</span><span id="line-26-2"><a id="example-26-2" name="example-26-2"></a><span class="n">robot</span> <span class="o">--</span><span class="n">prerunmodifier</span> <span class="n">disable</span><span class="o">.</span><span class="n">SuiteTeardown</span> <span class="n">tests</span><span class="o">.</span><span class="n">robot</span>
+</span></code></pre></div></td></tr></table></div>
+<p># Disable both test setups and teardowns by using '--prerunmodifier' twice.
+  robot --prerunmodifier disable.TestSetup --prerunmodifier disable.TestTeardown tests.robot</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Prior to Robot Framework 4.0 <code>setup</code> and <code>teardown</code> were accessed via
+the intermediate <code>keywords</code> attribute and, for example, suite setup
+was disabled like <code>suite.keywords.setup = None</code>.</p>
+</div>
+<h2 id="controlling-console-output">Controlling console output<a class="headerlink" href="#controlling-console-output" title="Permanent link">&para;</a></h2>
+<p>There are various command line options to control how test execution is
+reported on the console.</p>
+<h3 id="console-output-type">Console output type<a class="headerlink" href="#console-output-type" title="Permanent link">&para;</a></h3>
+<p>The overall console output type is set with the <code>--console</code> option.
+It supports the following case-insensitive values:</p>
+<dl>
+<dt>
+	<code><a id="1024e32cff7efa7eac0e3969cc835758">verbose</a> </code>
+</dt>
+<dd>Every test suite and test case is reported individually. This is
+the default.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="faf9dc48490b5bdd32904ab09a6ebdae">dotted</a> </code>
+</dt>
+<dd>Only show <code>.</code> for passed test, <code>F</code> for failed tests, <code>s</code> for skipped
+tests and <code>x</code> for tests which are skipped because
+<a href="https://github.com/robotframework/robotframework/issues/5023">test execution exit</a>. Failed tests are listed separately
+after execution. This output type makes it easy to see are there any
+failures during execution even if there would be a lot of tests.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="b901d96988fca6aaf65b0500e121f133">quiet</a> </code>
+</dt>
+<dd>No output except for <a href="../../extend/libraries/#errors-and-warnings">errors and warnings</a>.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="695fd0a3820c106f7c347c5a7d560249">none</a> </code>
+</dt>
+<dd>No output whatsoever. Useful when creating a custom output using,
+for example, <a href="../../extend/listeners/#listeners">listeners</a>.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+</dl>
+<p>Separate convenience options <code>--dotted (-.)</code> and <code>--quiet</code>
+are shortcuts for <code>--console dotted</code> and <code>--console quiet</code>, respectively.</p>
+<p>Examples:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-27-1">1</a></span>
+<span class="normal"><a href="#example-27-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-27-1"><a id="example-27-1" name="example-27-1"></a><span class="n">robot</span> <span class="o">--</span><span class="n">console</span> <span class="n">quiet</span> <span class="n">tests</span><span class="o">.</span><span class="n">robot</span>
+</span><span id="line-27-2"><a id="example-27-2" name="example-27-2"></a><span class="n">robot</span> <span class="o">--</span><span class="n">dotted</span> <span class="n">tests</span><span class="o">.</span><span class="n">robot</span>
+</span></code></pre></div></td></tr></table></div>
+<h3 id="console-width">Console width<a class="headerlink" href="#console-width" title="Permanent link">&para;</a></h3>
+<p>The width of the test execution output in the console can be set using
+the option <code>--consolewidth (-W)</code>. The default width is 78 characters.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>On many UNIX-like machines you can use handy <code>$COLUMNS</code>
+environment variable like <code>--consolewidth $COLUMNS</code>.</p>
+</div>
+<h3 id="console-colors">Console colors<a class="headerlink" href="#console-colors" title="Permanent link">&para;</a></h3>
+<p>The <code>--consolecolors (-C)</code> option is used to control whether
+colors should be used in the console output. Colors are implemented
+using <a href="https://github.com/robotframework/robotframework/issues/5023">ANSI escape codes</a> with a backup mechanism for older Windows
+versions that do not support ANSI codes.</p>
+<p>This option supports the following case-insensitive values:</p>
+<dl>
+<dt>
+	<code><a id="209a5f8aade4c2f62dd54a8001fe5571">auto</a> </code>
+</dt>
+<dd>Colors are enabled when outputs are written into the console, but not
+when they are redirected into a file or elsewhere. This is the default.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="c226e7b08471aa831ad03c8d1d861870">on</a> </code>
+</dt>
+<dd>Colors are used also when outputs are redirected. Does not work on Windows.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="3fe9aecfe0184047966104dd2a9f2ef7">ansi</a> </code>
+</dt>
+<dd>Same as <code>on</code> but forces ANSI codes to be used unconditionally on Windows.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="02b81ff9725eae4628db8045729da54d">off</a> </code>
+</dt>
+<dd>Colors are disabled.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Using ANSI codes on Windows by default is new in Robot Framework 7.1.</p>
+</div>
+<h3 id="console-links">Console links<a class="headerlink" href="#console-links" title="Permanent link">&para;</a></h3>
+<p>Result file paths written to the console at the end of the execution are, by default,
+hyperlinks. This behavior can be controlled with the <code>--consolelinks</code> option
+that accepts the following case-insensitive values:</p>
+<dl>
+<dt>
+	<code><a id="209a5f8aade4c2f62dd54a8001fe5571">auto</a> </code>
+</dt>
+<dd>Paths are converted to links when <a href="#console-colors">console colors</a> are enabled. This is the default.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="02b81ff9725eae4628db8045729da54d">off</a> </code>
+</dt>
+<dd>Links are unconditionally disabled.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+</dl>
+<p>The hyperlink support depends also on the console that is used, but nowadays
+the <a href="https://en.wikipedia.org/wiki/Glob_(programming)">support is pretty good</a>. The commonly used <a href="http://docs.python.org/library/sys.html#sys.path">Windows Console</a> does not
+support links, though, but the newer <a href="http://en.wikipedia.org/wiki/ANSI_escape_code">Windows Terminal</a> does.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Hyperlink support is new in Robot Framework 7.1.</p>
+</div>
+<h3 id="console-markers">Console markers<a class="headerlink" href="#console-markers" title="Permanent link">&para;</a></h3>
+<p>Special markers <code>.</code> (success) and
+<code>F</code> (failure) are shown on the console when using the <a href="https://github.com/Alhadis/OSC8-Adoption">verbose output</a>
+and top level keywords in test cases end. The markers allow following
+the test execution in high level, and they are erased when test cases end.</p>
+<p>It is possible to configure when markers
+are used with <code>--consolemarkers (-K)</code> option. It supports the following
+case-insensitive values:</p>
+<dl>
+<dt>
+	<code><a id="209a5f8aade4c2f62dd54a8001fe5571">auto</a> </code>
+</dt>
+<dd>Markers are enabled when the standard output is written into the console,
+but not when it is redirected into a file or elsewhere. This is the default.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="c226e7b08471aa831ad03c8d1d861870">on</a> </code>
+</dt>
+<dd>Markers are always used.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="02b81ff9725eae4628db8045729da54d">off</a> </code>
+</dt>
+<dd>Markers are disabled.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+</dl>
+<h2 id="setting-listeners">Setting listeners<a class="headerlink" href="#setting-listeners" title="Permanent link">&para;</a></h2>
+<p><a href="../../extend/listeners/#listeners">Listeners</a> can be used to monitor the test execution. When they are taken into
+use from the command line, they are specified using the <code>--listener</code>
+command line option. The value can either be a path to a listener or
+a listener name. See the <a href="../../extend/listeners/#listener-interface">Listener interface</a> section for more details
+about importing listeners and using them in general.</p>
 
 
 

@@ -1396,6 +1396,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Listener interface
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1412,6 +1430,175 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#listener-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Listener structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#listener-interface-versions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Listener interface versions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Listener interface versions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#listener-version-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Listener version 2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listener-version-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Listener version 3
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#taking-listeners-into-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Taking listeners into use
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Taking listeners into use">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#registering-listeners-from-command-line" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Registering listeners from command line
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#libraries-as-listeners" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Libraries as listeners
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#listener-calling-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Listener calling order
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#listener-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Listener examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Listener examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getting-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting information
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modifying-data-and-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modifying data and results
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#more-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        More examples
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -9663,7 +9850,7 @@
   <span class="md-ellipsis">
     
   
-    Documentation format
+    Doc format
   
 
     
@@ -9792,7 +9979,879 @@
   
 
 
+<p><a id="listener"></a></p>
+<p><a id="listeners"></a></p>
 <h1 id="listener-interface">Listener interface<a class="headerlink" href="#listener-interface" title="Permanent link">&para;</a></h1>
+<p>Robot Framework's listener interface provides a powerful mechanism for getting
+notifications and for inspecting and modifying data and results during execution.
+Listeners are called, for example, when suites, tests and keywords start and end,
+when result files are ready, and finally when the whole execution ends.
+Example usages include communicating with external test management systems,
+sending a message when a test fails, and modifying tests during execution.</p>
+<p>Listeners are implemented as classes or modules with certain special methods.
+They can be <a href="https://github.com/robotframework/robotframework/tree/master/atest/testdata/output/listener_interface/body_items_v3">taken into use from the command line</a> and be <a href="#libraries-as-listeners">registered
+by libraries</a>. The former listeners are active during the whole execution
+while the latter are active only when executing suites where libraries registering
+them are imported.</p>
+<p>There are two supported listener interface versions, <a href="#listener-version-2">listener version 2</a> and
+<a href="#listener-version-3">listener version 3</a>. They have mostly the same methods, but these methods are
+called with different arguments. The newer listener version 3 is more powerful
+and generally recommended.</p>
+<h2 id="listener-structure">Listener structure<a class="headerlink" href="#listener-structure" title="Permanent link">&para;</a></h2>
+<p>Listeners are implement as modules or classes <a href="../libraries/#creating-test-library-class-or-module">similarly as libraries</a>.
+They can implement certain named hook methods depending on what events they
+are interested in. For example, if a listener wants to get a notification when
+a test starts, it can implement the <code>start_test</code> method. As discussed in the
+subsequent sections, different listener versions have slightly different set of
+available methods and they also are called with different arguments.</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
+<span class="normal"><a href="#example-0-2">2</a></span>
+<span class="normal"><a href="#example-0-3">3</a></span>
+<span class="normal"><a href="#example-0-4">4</a></span>
+<span class="normal"><a href="#example-0-5">5</a></span>
+<span class="normal"><a href="#example-0-6">6</a></span>
+<span class="normal"><a href="#example-0-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="c1"># Listener implemented as a module using the listener API version 3.</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a><span class="k">def</span><span class="w"> </span><span class="nf">start_suite</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
+</span><span id="line-0-4"><a id="example-0-4" name="example-0-4"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Suite &#39;</span><span class="si">{</span><span class="n">data</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39; starting.&quot;</span><span class="p">)</span>
+</span><span id="line-0-5"><a id="example-0-5" name="example-0-5"></a>
+</span><span id="line-0-6"><a id="example-0-6" name="example-0-6"></a><span class="k">def</span><span class="w"> </span><span class="nf">end_test</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
+</span><span id="line-0-7"><a id="example-0-7" name="example-0-7"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Test &#39;</span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39; ended with status </span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">status</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+Listeners do not need to implement any explicit interface, it is enough to
+simply implement needed methods and they will be recognized automatically.
+There are, however, base classes <a href="#listenerv2">robot.api.interfaces.ListenerV2</a><em>
+and <a href="#listenerv3">robot.api.interfaces.ListenerV3</a></em> that can be used to get
+method name completion in editors, type hints, and so on.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-1-1"> 1</a></span>
+<span class="normal"><a href="#example-1-2"> 2</a></span>
+<span class="normal"><a href="#example-1-3"> 3</a></span>
+<span class="normal"><a href="#example-1-4"> 4</a></span>
+<span class="normal"><a href="#example-1-5"> 5</a></span>
+<span class="normal"><a href="#example-1-6"> 6</a></span>
+<span class="normal"><a href="#example-1-7"> 7</a></span>
+<span class="normal"><a href="#example-1-8"> 8</a></span>
+<span class="normal"><a href="#example-1-9"> 9</a></span>
+<span class="normal"><a href="#example-1-10">10</a></span>
+<span class="normal"><a href="#example-1-11">11</a></span>
+<span class="normal"><a href="#example-1-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-1-1"><a id="example-1-1" name="example-1-1"></a><span class="c1"># Same as the above example, but uses an optional base class and type hints.</span>
+</span><span id="line-1-2"><a id="example-1-2" name="example-1-2"></a>
+</span><span id="line-1-3"><a id="example-1-3" name="example-1-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">robot</span><span class="w"> </span><span class="kn">import</span> <span class="n">result</span><span class="p">,</span> <span class="n">running</span>
+</span><span id="line-1-4"><a id="example-1-4" name="example-1-4"></a><span class="kn">from</span><span class="w"> </span><span class="nn">robot.api.interfaces</span><span class="w"> </span><span class="kn">import</span> <span class="n">ListenerV3</span>
+</span><span id="line-1-5"><a id="example-1-5" name="example-1-5"></a>
+</span><span id="line-1-6"><a id="example-1-6" name="example-1-6"></a><span class="k">class</span><span class="w"> </span><span class="nc">Example</span><span class="p">(</span><span class="n">ListenerV3</span><span class="p">):</span>
+</span><span id="line-1-7"><a id="example-1-7" name="example-1-7"></a>
+</span><span id="line-1-8"><a id="example-1-8" name="example-1-8"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">start_suite</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">running</span><span class="o">.</span><span class="n">TestSuite</span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n">result</span><span class="o">.</span><span class="n">TestSuite</span><span class="p">):</span>
+</span><span id="line-1-9"><a id="example-1-9" name="example-1-9"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Suite &#39;</span><span class="si">{</span><span class="n">data</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39; starting.&quot;</span><span class="p">)</span>
+</span><span id="line-1-10"><a id="example-1-10" name="example-1-10"></a>
+</span><span id="line-1-11"><a id="example-1-11" name="example-1-11"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">end_test</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">running</span><span class="o">.</span><span class="n">TestCase</span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n">result</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+</span><span id="line-1-12"><a id="example-1-12" name="example-1-12"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Test &#39;</span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39; ended with status </span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">status</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Optional listener base classes are new in Robot Framework 6.1.</p>
+</div>
+<p>In addition to using "snake case" like <code>start_test</code> with listener method names,
+it is possible to use "camel case" like <code>startTest</code>. This support was added
+when it was possible to run Robot Framework on Jython and implement listeners
+using Java. It is preserved for backwards compatibility reasons, but not
+recommended with new listeners.</p>
+<h2 id="listener-interface-versions">Listener interface versions<a class="headerlink" href="#listener-interface-versions" title="Permanent link">&para;</a></h2>
+<p>There are two supported listener interface versions with version numbers 2 and 3.
+A listener can specify which version to use by having a <code>ROBOT_LISTENER_API_VERSION</code>
+attribute with value 2 or 3, respectively. Starting from Robot Framework 7.0,
+the listener version 3 is used by default if the version is not specified.</p>
+<p><a href="#listener-version-2">Listener version 2</a> and <a href="#listener-version-3">listener version 3</a> have mostly the same methods,
+but arguments passed to these methods are different. Arguments given to listener 2
+methods are strings and dictionaries containing information about execution. This
+information can be inspected and sent further, but it is not possible to
+modify it directly. Listener 3 methods get the same model objects that Robot Framework
+itself uses, and these model objects can be both inspected and modified.</p>
+<p>Listener version 3 is more powerful than the older listener version 2
+and generally recommended.</p>
+<h3 id="listener-version-2">Listener version 2<a class="headerlink" href="#listener-version-2" title="Permanent link">&para;</a></h3>
+<p>Listeners using the listener API version 2 get notifications about various events
+during execution, but they do not have access to actually executed tests and thus
+cannot directly affect the execution or created results.</p>
+<p>Listener methods in the API version 2 are listed in the following table
+and in the API docs of the optional <a href="https://robot-framework.readthedocs.io/en/master/autodoc/robot.api.html#robot.api.interfaces.ListenerV2">ListenerV2</a> base class.
+All methods related to test execution progress have the same signature
+<code>method(name, attributes)</code>, where <code>attributes</code> is a dictionary containing
+details of the event. Listener methods are free to do whatever they want
+to do with the information they receive, but they cannot directly change
+it. If that is needed, <a href="#listener-version-3">listener version 3</a> can be used instead.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Arguments</th>
+<th>Documentation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>start_suite</td>
+<td>name, attributes</td>
+<td>Called when a test suite starts.<br>Contents of the attribute dictionary:<br><ul><li><code>id</code>: Suite id. <code>s1</code> for the top level suite, <code>s1-s1</code> for its first child suite, <code>s1-s2</code> for the second child, and so on.</li><li><code>longname</code>: Suite name including parent suites.</li><li><code>doc</code>: Suite documentation.</li><li><code>metadata</code>: <a href="../../syntax/suites/#free-suite-metadata">Free suite metadata</a> as a dictionary.</li><li><code>source</code>: An absolute path of the file/directory the suite was created from.</li><li><code>suites</code>: Names of the direct child suites this suite has as a list.</li><li><code>tests</code>: Names of the tests this suite has as a list. Does not include tests of the possible child suites.</li><li><code>totaltests</code>: The total number of tests in this suite. and all its sub-suites as an integer.</li><li><code>starttime</code>: Suite execution start time.</li></ul></td>
+</tr>
+<tr>
+<td>end_suite</td>
+<td>name, attributes</td>
+<td>Called when a test suite ends.<br>Contents of the attribute dictionary:<br><ul><li><code>id</code>: Same as in <code>start_suite</code>.</li><li><code>longname</code>: Same as in <code>start_suite</code>.</li><li><code>doc</code>: Same as in <code>start_suite</code>.</li><li><code>metadata</code>: Same as in <code>start_suite</code>.</li><li><code>source</code>: Same as in <code>start_suite</code>.</li><li><code>starttime</code>: Same as in <code>start_suite</code>.</li><li><code>endtime</code>: Suite execution end time.</li><li><code>elapsedtime</code>: Total execution time in milliseconds as an integer</li><li><code>status</code>: Suite status as string <code>PASS</code>, <code>FAIL</code> or <code>SKIP</code>.</li><li><code>statistics</code>: Suite statistics (number of passed and failed tests in the suite) as a string.</li><li><code>message</code>: Error message if suite setup or teardown has failed, empty otherwise.</li></ul></td>
+</tr>
+<tr>
+<td>start_test</td>
+<td>name, attributes</td>
+<td>Called when a test case starts.<br>Contents of the attribute dictionary:<br><ul><li><code>id</code>: Test id in format like <code>s1-s2-t2</code>, where the beginning is the parent suite id and the last part shows test index in that suite.</li><li><code>longname</code>: Test name including parent suites.</li><li><code>originalname</code>: Test name with possible variables unresolved. New in RF 3.2.</li><li><code>doc</code>: Test documentation.</li><li><code>tags</code>: Test tags as a list of strings.</li><li><code>template</code>: The name of the template used for the test. An empty string if the test not templated.</li><li><code>source</code>: An absolute path of the test case source file. New in RF 4.0.</li><li><code>lineno</code>: Line number where the test starts in the source file. New in RF 3.2.</li><li><code>starttime</code>: Test execution execution start time.</li></ul></td>
+</tr>
+<tr>
+<td>end_test</td>
+<td>name, attributes</td>
+<td>Called when a test case ends.<br>Contents of the attribute dictionary:<br><ul><li><code>id</code>: Same as in <code>start_test</code>.</li><li><code>longname</code>: Same as in <code>start_test</code>.</li><li><code>originalname</code>: Same as in <code>start_test</code>.</li><li><code>doc</code>: Same as in <code>start_test</code>.</li><li><code>tags</code>: Same as in <code>start_test</code>.</li><li><code>template</code>: Same as in <code>start_test</code>.</li><li><code>source</code>: Same as in <code>start_test</code>.</li><li><code>lineno</code>: Same as in <code>start_test</code>.</li><li><code>starttime</code>: Same as in <code>start_test</code>.</li><li><code>endtime</code>: Test execution execution end time.</li><li><code>elapsedtime</code>: Total execution time in milliseconds as an integer</li><li><code>status</code>: Test status as string <code>PASS</code>, <code>FAIL</code> or <code>SKIP</code>.</li><li><code>message</code>: Status message. Normally an error message or an empty string.</li></ul></td>
+</tr>
+<tr>
+<td>start_keyword</td>
+<td>name, attributes</td>
+<td>Called when a keyword or a control structure such as <code>IF/ELSE</code> or <code>TRY/EXCEPT</code> starts.<br>With keywords <code>name</code> is the full keyword name containing possible library or resource name as a prefix like <code>MyLibrary.Example Keyword</code>. With control structures <code>name</code> contains string representation of parameters.<br>Keywords and control structures share most of attributes, but control structures can have additional attributes depending on their <code>type</code>.<br>Shared attributes:<br><ul><li><code>type</code>: String specifying type of the started item. Possible values are: <code>KEYWORD</code>, <code>SETUP</code>, <code>TEARDOWN</code>, <code>FOR</code>, <code>WHILE</code>, <code>ITERATION</code>, <code>IF</code>, <code>ELSE IF</code>, <code>ELSE</code>, <code>TRY</code>, <code>EXCEPT</code>, <code>FINALLY</code>, <code>VAR</code>, <code>RETURN</code>, <code>BREAK</code>, <code>CONTINUE</code> and <code>ERROR</code>. All type values were changed in RF 4.0 and in RF 5.0 <code>FOR ITERATION</code> was changed to <code>ITERATION</code>.</li><li><code>kwname</code>: Name of the keyword without library or resource prefix. String representation of parameters with control structures.</li><li><code>libname</code>: Name of the library or resource file the keyword belongs to. An empty string with user keywords in a test case file and with control structures.</li><li><code>doc</code>: Keyword documentation.</li><li><code>args</code>: Keyword's arguments as a list of strings.</li><li><code>assign</code>: A list of variable names that keyword's return value is assigned to.</li><li><code>tags</code>: <a href="../libraries/#keyword-tags">Keyword tags</a> as a list of strings.</li><li><code>source</code>: An absolute path of the file where the keyword was used. New in RF 4.0.</li><li><code>lineno</code>: Line where the keyword was used. Typically an integer, but can be <code>None</code> if a keyword has been executed by a listener. New in RF 4.0.</li><li><code>status</code>: Initial keyword status. <code>NOT RUN</code> if keyword is not executed (e.g. due to an earlier failure), <code>NOT SET</code> otherwise. New in RF 4.0.</li><li><code>starttime</code>: Keyword execution start time.</li></ul><br>Additional attributes for <code>FOR</code> types:<br><ul><li><code>variables</code>: Assigned variables for each loop iteration as a list or strings.</li><li><code>flavor</code>: Type of loop (e.g. <code>IN RANGE</code>).</li><li><code>values</code>: List of values being looped over as a list or strings.</li><li><code>start</code>: Start configuration. Only used with <code>IN ENUMERATE</code> loops. New in RF 6.1.</li><li><code>mode</code>: Mode configuration. Only used with <code>IN ZIP</code> loops. New in RF 6.1.</li><li><code>fill</code>: Fill value configuration. Only used with <code>IN ZIP</code> loops. New in RF 6.1.</li></ul><br>Additional attributes for <code>ITERATION</code> types with <code>FOR</code> loops:<br><ul><li><code>variables</code>: Variables and string representations of their contents for one <code>FOR</code> loop iteration as a dictionary.</li></ul><br>Additional attributes for <code>WHILE</code> types:<br><ul><li><code>condition</code>: The looping condition.</li><li><code>limit</code>: The maximum iteration limit.</li><li><code>on_limit</code>: What to do if the limit is exceeded. Valid values are <code>pass</code> and <code>fail</code>. New in RF 7.0.</li><li><code>on_limit_message</code>: The custom error raised when the limit of the WHILE loop is reached. New in RF 6.1.</li></ul><br>Additional attributes for <code>IF</code> and <code>ELSE IF</code> types:<br><ul><li><code>condition</code>: The conditional expression being evaluated. With <code>ELSE IF</code> new in RF 6.1.</li></ul><br>Additional attributes for <code>EXCEPT</code> types:<br><ul><li><code>patterns</code>: The exception patterns being matched as a list or strings.</li><li><code>pattern_type</code>: The type of pattern match (e.g. <code>GLOB</code>).</li><li><code>variable</code>: The variable containing the captured exception.</li></ul><br>Additional attributes for <code>RETURN</code> types:<br><ul><li><code>values</code>: Return values from a keyword as a list or strings.</li></ul><br>Additional attributes for <code>VAR</code> types:<br><ul><li><code>name</code>: Variable name.</li><li><code>value</code>: Variable value. A string with scalar variables and a list otherwise.</li><li><code>scope</code>: Variable scope (e.g. <code>GLOBAL</code>) as a string.</li></ul><br>Additional attributes for control structures are in general new in RF 6.0. <code>VAR</code> is new in RF 7.0.</td>
+</tr>
+<tr>
+<td>end_keyword</td>
+<td>name, attributes</td>
+<td>Called when a keyword or a control structure ends.<br><code>name</code> is the full keyword name containing possible library or resource name as a prefix. For example, <code>MyLibrary.Example Keyword</code>.<br>Control structures have additional attributes, which change based on the <code>type</code> attribute. For descriptions of all possible attributes, see the <code>start_keyword</code> section.<br>Contents of the attribute dictionary:<br><ul><li><code>type</code>: Same as with <code>start_keyword</code>.</li><li><code>kwname</code>: Same as with <code>start_keyword</code>.</li><li><code>libname</code>: Same as with <code>start_keyword</code>.</li><li><code>doc</code>: Same as with <code>start_keyword</code>.</li><li><code>args</code>: Same as with <code>start_keyword</code>.</li><li><code>assign</code>: Same as with <code>start_keyword</code>.</li><li><code>tags</code>: Same as with <code>start_keyword</code>.</li><li><code>source</code>: Same as with <code>start_keyword</code>.</li><li><code>lineno</code>: Same as with <code>start_keyword</code>.</li><li><code>starttime</code>: Same as with <code>start_keyword</code>.</li><li><code>endtime</code>: Keyword execution end time.</li><li><code>elapsedtime</code>: Total execution time in milliseconds as an integer</li><li><code>status</code>: Keyword status as string <code>PASS</code>, <code>FAIL</code>, <code>SKIP</code> or <code>NOT RUN</code>. <code>SKIP</code> and <code>NOT RUN</code> are new in RF 4.0.</li></ul></td>
+</tr>
+<tr>
+<td>log_message</td>
+<td>message</td>
+<td>Called when an executed keyword writes a log message.<br><code>message</code> is a dictionary with the following contents:<br><ul><li><code>message</code>: The content of the message.</li><li><code>level</code>: <a href="../../execution/results/#log-level">Log level</a> used in logging the message.</li><li><code>timestamp</code>: Message creation time in format <code>YYYY-MM-DD hh:mm:ss.mil</code>.</li><li><code>html</code>: String <code>yes</code> or <code>no</code> denoting whether the message should be interpreted as HTML or not.</li></ul><br>Not called if the message level is below the current <a href="../../execution/results/#log-levels">threshold level</a>_.</td>
+</tr>
+<tr>
+<td>message</td>
+<td>message</td>
+<td>Called when the framework itself writes a <a href="../../execution/results/#syslog">syslog</a> message.<br><code>message</code> is a dictionary with the same contents as with <code>log_message</code> method.</td>
+</tr>
+<tr>
+<td>library_import</td>
+<td>name, attributes</td>
+<td>Called when a library has been imported.<br><code>name</code> is the name of the imported library. If the library has been given a custom name when imported it using <code>AS</code>, <code>name</code> is the specified alias.<br>Contents of the attribute dictionary:<br><ul><li><code>args</code>: Arguments passed to the library as a list.</li><li><code>originalname</code>: The original library name if the library has been given an alias using <code>AS</code>, otherwise same as <code>name</code>.</li><li><code>source</code>: An absolute path to the library source. An empty string if getting the source of the library failed for some reason.</li><li><code>importer</code>: An absolute path to the file importing the library. <code>None</code> when <a href="../../syntax/libraries/#builtin">BuiltIn</a> is imported as well as when</li></ul></td>
+</tr>
+<tr>
+<td>resource_import</td>
+<td>name, attributes</td>
+<td>Called when a resource file has been imported.<br><code>name</code> is the name of the imported resource file without the file extension.<br>Contents of the attribute dictionary:<br><ul><li><code>source</code>: An absolute path to the imported resource file.</li><li><code>importer</code>: An absolute path to the file importing the keyword.</li></ul></td>
+</tr>
+<tr>
+<td>variables_import</td>
+<td>name, attributes</td>
+<td>Called when a variable file has been imported.<br><code>name</code> is the name of the imported variable file with the file extension.<br>Contents of the attribute dictionary:<br><ul><li><code>args</code>: Arguments passed to the variable file as a list.</li><li><code>source</code>: An absolute path to the imported variable file.</li><li><code>importer</code>: An absolute path to the file importing the Variables* keyword.</li></ul></td>
+</tr>
+<tr>
+<td>output_file</td>
+<td>path</td>
+<td>Called when the <a href="../../execution/results/#output-file">output file</a> is ready.<br><code>path</code> is an absolute path to the file as a string or a string <code>None</code> if creating the output file is disabled.</td>
+</tr>
+<tr>
+<td>log_file</td>
+<td>path</td>
+<td>Called when the <a href="../../execution/results/#log-file">log file</a> is ready.<br><code>path</code> is an absolute path to the file as a string.<br>Not called if creating the log file is disabled.</td>
+</tr>
+<tr>
+<td>report_file</td>
+<td>path</td>
+<td>Called when the <a href="../../execution/results/#report-file">report file</a> is ready.<br><code>path</code> is an absolute path to the file as a string.<br>Not called if creating the report file is disabled.</td>
+</tr>
+<tr>
+<td>xunit_file</td>
+<td>path</td>
+<td>Called when the <a href="../../execution/output-files/#xunit-file">xunit file</a> is ready.<br><code>path</code> is an absolute path to the file as a string.<br>Only called if creating the xunit file is enabled.</td>
+</tr>
+<tr>
+<td>debug_file</td>
+<td>path</td>
+<td>Called when the <a href="../../execution/results/#debug-file">debug file</a> is ready.<br><code>path</code> is an absolute path to the file as a string.<br>Only called if creating the debug file is enabled.</td>
+</tr>
+<tr>
+<td>close</td>
+<td></td>
+<td>Called when the whole test execution ends.<br>With <a href="./">library listeners</a> called when the library goes out of scope.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="listener-version-3">Listener version 3<a class="headerlink" href="#listener-version-3" title="Permanent link">&para;</a></h3>
+<p>Listener version 3 has mostly the same methods as <a href="#listener-version-2">listener version 2</a>,
+but arguments of the methods related to test execution are different.
+These methods get actual running and result model objects that used by Robot
+Framework itself, and listeners can both query information they need and
+change the model objects on the fly.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Modifications to the data can also be done using <a href="../../execution/configuration/#pre-run-modifiers">pre-run modifiers</a>.
+The main benefit of using listeners is that changes can be done
+dynamically based on what happens during the execution. Another
+difference is that command like options related to <a href="../../execution/configuration/#selecting-test-cases">selecting test cases</a>
+affect tests added by pre-run modifiers but not tests added by listeners.</p>
+</div>
+<p>Listener version 3 was enhanced heavily in Robot Framework 7.0 when it got
+methods related to keywords and control structures. It was enhanced further
+in Robot Framework 7.1 when it got methods related to library, resource file
+and variable file imports.</p>
+<p>Listener version 3 has separate methods for library keywords, user keywords and
+all control structures. If there is a need to listen to all keyword related
+events, it is possible to implement <code>start_keyword</code> and <code>end_keyword</code>. In addition
+to that, <code>start_body_item</code> and <code>end_body_item</code> can be implemented to get
+notifications related to all keywords and control structures. These higher level
+listener methods are not called if more specific methods like <code>start_library_keyword</code>
+or <code>end_if</code> are implemented.</p>
+<p>Listener methods in the API version 3 are listed in the following table
+and in the API docs of the optional <a href="https://robot-framework.readthedocs.io/en/master/autodoc/robot.api.html#robot.api.interfaces.ListenerV3">ListenerV3</a> base class.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Arguments</th>
+<th>Documentation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>start_suite</td>
+<td>data, result</td>
+<td>Called when a test suite starts.<br><code>data</code> and <code>result</code> are model objects representing the <a href="#runningtestsuite">executed test suite</a><em> and <a href="#resulttestsuite">its execution results</a></em>, respectively.</td>
+</tr>
+<tr>
+<td>end_suite</td>
+<td>data, result</td>
+<td>Called when a test suite ends.<br>Same arguments as with <code>start_suite</code>.</td>
+</tr>
+<tr>
+<td>start_test</td>
+<td>data, result</td>
+<td>Called when a test case starts.<br><code>data</code> and <code>result</code> are model objects representing the <a href="#runningtestcase">executed test case</a><em> and <a href="#resulttestcase">its execution results</a></em>, respectively.</td>
+</tr>
+<tr>
+<td>end_test</td>
+<td>data, result</td>
+<td>Called when a test case ends.<br>Same arguments as with <code>start_test</code>.</td>
+</tr>
+<tr>
+<td>start_keyword</td>
+<td>data, result</td>
+<td>Called when a keyword starts.<br><code>data</code> and <code>result</code> are model objects representing the <a href="#runningkeyword">executed keyword call</a><em> and <a href="#resultkeyword">its execution results</a></em>, respectively.<br>This method is called, by default, with user keywords, library keywords and when a keyword call is invalid. It is not called if a more specific <code>start_user_keyword</code>, <code>start_library_keyword</code> or <code>start_invalid_keyword</code> method is implemented.</td>
+</tr>
+<tr>
+<td>end_keyword</td>
+<td>data, result</td>
+<td>Called when a keyword ends.<br>Same arguments and other semantics as with <code>start_keyword</code>.</td>
+</tr>
+<tr>
+<td>start_user_keyword</td>
+<td>data, implementation, result</td>
+<td>Called when a user keyword starts.<br><code>data</code> and <code>result</code> are the same as with <code>start_keyword</code> and <code>implementation</code> is the actually executed <a href="#runninguserkeyword">user keyword</a>_.<br>If this method is implemented, <code>start_keyword</code> is not called with user keywords.</td>
+</tr>
+<tr>
+<td>end_user_keyword</td>
+<td>data, implementation, result</td>
+<td>Called when a user keyword ends.<br>Same arguments and other semantics as with <code>start_user_keyword</code>.</td>
+</tr>
+<tr>
+<td>start_library_keyword</td>
+<td>data implementation, result</td>
+<td>Called when a library keyword starts.<br><code>data</code> and <code>result</code> are the same as with <code>start_keyword</code> and <code>implementation</code> represents the executed <a href="#runninglibrarykeyword">library keyword</a>_.<br>If this method is implemented, <code>start_keyword</code> is not called with library keywords.</td>
+</tr>
+<tr>
+<td>end_library_keyword</td>
+<td>data, implementation, result</td>
+<td>Called when a library keyword ends.<br>Same arguments and other semantics as with <code>start_library_keyword</code>.</td>
+</tr>
+<tr>
+<td>start_invalid_keyword</td>
+<td>data implementation, result</td>
+<td>Called when an invalid keyword call starts.<br><code>data</code> and <code>result</code> are the same as with <code>start_keyword</code> and <code>implementation</code> represents the <a href="#runninginvalidkeyword">invalid keyword call</a>_. Keyword may not have been found, there could have been multiple matches, or the keyword call itself could have been invalid.<br>If this method is implemented, <code>start_keyword</code> is not called with invalid keyword calls.</td>
+</tr>
+<tr>
+<td>end_invalid_keyword</td>
+<td>data, implementation, result</td>
+<td>Called when an invalid keyword call ends.<br>Same arguments and other semantics as with <code>start_invalid_keyword</code>.</td>
+</tr>
+<tr>
+<td>start_for, start_for_iteration, start_while, start_while_iteration, start_if, start_if_branch, start_try, start_try_branch, start_group, start_var, start_continue, start_break, start_return</td>
+<td>data, result</td>
+<td>Called when control structures start.<br>See the documentation and type hints of the optional <a href="https://robot-framework.readthedocs.io/en/master/autodoc/robot.api.html#robot.api.interfaces.ListenerV3">ListenerV3</a> base class for more information.</td>
+</tr>
+<tr>
+<td>end_for, end_for_iteration, end_while, end_while_iteration, end_if, end_if_branch, end_try, end_try_branch, end_group, end_var, end_continue, end_break, end_return</td>
+<td>data, result</td>
+<td>Called when control structures end.<br>See the documentation and type hints of the optional <a href="https://robot-framework.readthedocs.io/en/master/autodoc/robot.api.html#robot.api.interfaces.ListenerV3">ListenerV3</a> base class for more information.</td>
+</tr>
+<tr>
+<td>start_error</td>
+<td>data, result</td>
+<td>Called when invalid syntax starts.</td>
+</tr>
+<tr>
+<td>end_error</td>
+<td>data, result</td>
+<td>Called when invalid syntax ends.</td>
+</tr>
+<tr>
+<td>start_body_item</td>
+<td>data, result</td>
+<td>Called when a keyword or a control structure starts, unless a more specific method such as <code>start_keyword</code> or <code>start_if</code> is implemented.</td>
+</tr>
+<tr>
+<td>end_body_item</td>
+<td>data, result</td>
+<td>Called when a keyword or a control structure ends, unless a more specific method such as <code>end_keyword</code> or <code>end_if</code> is implemented.</td>
+</tr>
+<tr>
+<td>log_message</td>
+<td>message</td>
+<td>Called when an executed keyword writes a log message. <code>message</code> is a model object representing the <a href="#resultmessage">logged message</a><em>.<br>This method is not called if the message has level below the current <a href="../../execution/results/#log-levels">threshold level</a></em>.</td>
+</tr>
+<tr>
+<td>message</td>
+<td>message</td>
+<td>Called when the framework itself writes a <a href="../../execution/results/#syslog">syslog</a> message.<br><code>message</code> is same object as with <code>log_message</code>.</td>
+</tr>
+<tr>
+<td>library_import</td>
+<td>library, importer</td>
+<td>Called after a library has been imported.<br><a href="#runningtestlibrary">library</a><em> represents the imported library. It can be inspected and also modified. <a href="#runningimport">importer</a></em> contains information about the location where the library was imported.</td>
+</tr>
+<tr>
+<td>resource_import</td>
+<td>resource, importer</td>
+<td>Called after a resource file has been imported.<br><a href="#runningresourcefile">resource</a><em> represents the imported resource file. It can be inspected and also modified. <a href="#runningimport">importer</a></em> contains information about the location where the resource was imported.</td>
+</tr>
+<tr>
+<td>variables_import</td>
+<td>attrs, importer</td>
+<td>Called after a variable file has been imported.<br><code>attrs</code> contains information about the imported variable file as a dictionary. It can be inspected, but modifications to it have no effect. <a href="#runningimport">importer</a>_ contains information about the location where the variable file was imported.<br>This method will be changed in the future so that the <code>attrs</code> dictionary is replaced with an object representing the imported variable file.</td>
+</tr>
+<tr>
+<td>result_file</td>
+<td>kind, path</td>
+<td>Called, by default, when a <a href="../../execution/results/#result-file">result file</a> like output or log is ready.<br><code>kind</code> is a string <code>OUTPUT</code>, <code>REPORT</code>, <code>LOG</code>, <code>XUNIT</code> or <code>DEBUG</code>. <code>path</code> is an absolute path to the file as a <code>pathlib.Path</code> object.<br>Not called if a more specific result file related method like <code>output_file</code> or <code>log_file</code> is implemented or when creating a result file is disabled.<br>New in Robot Framework 7.5.</td>
+</tr>
+<tr>
+<td>output_file</td>
+<td>path</td>
+<td>Called when the <a href="../../execution/results/#output-file">output file</a> is ready.<br><code>path</code> is an absolute path to the file as a <code>pathlib.Path</code> object or the <code>None</code> object if creating the output file is disabled.<br>Starting from Robot Framework 7.5, the generic <code>result_file</code> method is called if this method is not implemented and creating the output file is not disabled.</td>
+</tr>
+<tr>
+<td>log_file</td>
+<td>path</td>
+<td>Called when <a href="../../execution/results/#log-file">log file</a> is ready.<br><code>path</code> is an absolute path to the file as a <code>pathlib.Path</code> object.<br>Not called if creating the log file is disabled.<br>Starting from Robot Framework 7.5, the generic <code>result_file</code> method is called if this method is not implemented.</td>
+</tr>
+<tr>
+<td>report_file</td>
+<td>path</td>
+<td>Called when <a href="../../execution/results/#report-file">report file</a> is ready.<br><code>path</code> is an absolute path to the file as a <code>pathlib.Path</code> object.<br>Not called if creating the report file is disabled.<br>Starting from Robot Framework 7.5, the generic <code>result_file</code> method is called if this method is not implemented.</td>
+</tr>
+<tr>
+<td>xunit_file</td>
+<td>path</td>
+<td>Called when <a href="../../execution/output-files/#xunit-file">xunit file</a> is ready.<br><code>path</code> is an absolute path to the file as a <code>pathlib.Path</code> object.<br>Only called if creating the xunit file is enabled.<br>Starting from Robot Framework 7.5, the generic <code>result_file</code> method is called if this method is not implemented.</td>
+</tr>
+<tr>
+<td>debug_file</td>
+<td>path</td>
+<td>Called when <a href="../../execution/results/#debug-file">debug file</a> is ready.<br><code>path</code> is an absolute path to the file as a <code>pathlib.Path</code> object.<br>Only called if creating the debug file is enabled.<br>Starting from Robot Framework 7.5, the generic <code>result_file</code> method is called if this method is not implemented.</td>
+</tr>
+<tr>
+<td>close</td>
+<td></td>
+<td>Called when the whole test execution ends.<br>With <a href="./">library listeners</a> called when the library goes out of scope.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Methods related to keywords and control structures are new in
+Robot Framework 7.0.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Methods related to library, resource file and variable file imports
+are new in Robot Framework 7.1.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Prior to Robot Framework 7.0, paths passed to result file related listener
+version 3 methods were strings.</p>
+</div>
+<h2 id="taking-listeners-into-use">Taking listeners into use<a class="headerlink" href="#taking-listeners-into-use" title="Permanent link">&para;</a></h2>
+<h3 id="registering-listeners-from-command-line">Registering listeners from command line<a class="headerlink" href="#registering-listeners-from-command-line" title="Permanent link">&para;</a></h3>
+<p>Listeners that need to be active during the whole execution must be taken into
+use from the command line. That is done using the <code>--listener</code> option
+so that the name of the listener is given to it as an argument. The listener
+name is got from the name of the class or module implementing the
+listener, similarly as <a href="../libraries/#library-name">library name</a> is got from the class or module
+implementing the library. The specified listeners must be in the same <a href="../../execution/configuration/#module-search-path">module
+search path</a> where test libraries are searched from when they are imported.
+In addition to registering a listener by using a name, it is possible to give
+an absolute or a relative path to the listener file <a href="https://github.com/robotframework/robotframework/tree/master/atest/testdata/output/listener_interface/body_items_v3">similarly as with test
+libraries</a>. It is possible to take multiple listeners
+into use by using this option several times:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-2-1">1</a></span>
+<span class="normal"><a href="#example-2-2">2</a></span>
+<span class="normal"><a href="#example-2-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-2-1"><a id="example-2-1" name="example-2-1"></a><span class="n">robot</span> <span class="o">--</span><span class="n">listener</span> <span class="n">MyListener</span> <span class="n">tests</span><span class="o">.</span><span class="n">robot</span>
+</span><span id="line-2-2"><a id="example-2-2" name="example-2-2"></a><span class="n">robot</span> <span class="o">--</span><span class="n">listener</span> <span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">MyListener</span><span class="o">.</span><span class="n">py</span> <span class="n">tests</span><span class="o">.</span><span class="n">robot</span>
+</span><span id="line-2-3"><a id="example-2-3" name="example-2-3"></a><span class="n">robot</span> <span class="o">--</span><span class="n">listener</span> <span class="n">module</span><span class="o">.</span><span class="n">Listener</span> <span class="o">--</span><span class="n">listener</span> <span class="n">AnotherListener</span> <span class="n">tests</span><span class="o">.</span><span class="n">robot</span>
+</span></code></pre></div></td></tr></table></div>
+<p>It is also possible to give arguments to listener classes from the command
+line. Arguments are specified after the listener name (or path) using a colon
+(<code>:</code>) as a separator. If a listener is given as an absolute Windows path,
+the colon after the drive letter is not considered a separator.
+Additionally, it is possible to use a semicolon (<code>;</code>) as an
+alternative argument separator. This is useful if listener arguments
+themselves contain colons, but requires surrounding the whole value with
+quotes on UNIX-like operating systems:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-3-1">1</a></span>
+<span class="normal"><a href="#example-3-2">2</a></span>
+<span class="normal"><a href="#example-3-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-3-1"><a id="example-3-1" name="example-3-1"></a><span class="n">robot</span> <span class="o">--</span><span class="n">listener</span> <span class="n">listener</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="n">arg1</span><span class="p">:</span><span class="n">arg2</span> <span class="n">tests</span><span class="o">.</span><span class="n">robot</span>
+</span><span id="line-3-2"><a id="example-3-2" name="example-3-2"></a><span class="n">robot</span> <span class="o">--</span><span class="n">listener</span> <span class="s2">&quot;listener.py;arg:with:colons&quot;</span> <span class="n">tests</span><span class="o">.</span><span class="n">robot</span>
+</span><span id="line-3-3"><a id="example-3-3" name="example-3-3"></a><span class="n">robot</span> <span class="o">--</span><span class="n">listener</span> <span class="n">c</span><span class="p">:</span>\<span class="n">path</span>\<span class="n">listener</span><span class="o">.</span><span class="n">py</span><span class="p">;</span><span class="n">d</span><span class="p">:</span>\<span class="n">first</span>\<span class="n">arg</span><span class="p">;</span><span class="n">e</span><span class="p">:</span>\<span class="n">second</span>\<span class="n">arg</span> <span class="n">tests</span><span class="o">.</span><span class="n">robot</span>
+</span></code></pre></div></td></tr></table></div>
+<p>In addition to passing arguments one-by-one as positional arguments, it is
+possible to pass them using the <a href="../../syntax/tests/#named-argument-syntax">named argument syntax</a> similarly as when using
+keywords:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-4-1">1</a></span>
+<span class="normal"><a href="#example-4-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-4-1"><a id="example-4-1" name="example-4-1"></a><span class="n">robot</span> <span class="o">--</span><span class="n">listener</span> <span class="n">listener</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="n">name</span><span class="o">=</span><span class="n">value</span> <span class="n">tests</span><span class="o">.</span><span class="n">robot</span>
+</span><span id="line-4-2"><a id="example-4-2" name="example-4-2"></a><span class="n">robot</span> <span class="o">--</span><span class="n">listener</span> <span class="s2">&quot;listener.py;name=value:with:colons;second=argument&quot;</span> <span class="n">tests</span><span class="o">.</span><span class="n">robot</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Listener arguments are automatically converted using <a href="https://github.com/robotframework/robotframework/tree/master/atest/testdata/output/listener_interface/body_items_v3">same rules as with
+keywords</a> based on <a href="#type-hints">type hints</a> and <a href="../../syntax/tests/#default-values">default values</a>. For example,
+this listener</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-5-1">1</a></span>
+<span class="normal"><a href="#example-5-2">2</a></span>
+<span class="normal"><a href="#example-5-3">3</a></span>
+<span class="normal"><a href="#example-5-4">4</a></span>
+<span class="normal"><a href="#example-5-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-5-1"><a id="example-5-1" name="example-5-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Listener</span><span class="p">:</span>
+</span><span id="line-5-2"><a id="example-5-2" name="example-5-2"></a>
+</span><span id="line-5-3"><a id="example-5-3" name="example-5-3"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">port</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+</span><span id="line-5-4"><a id="example-5-4" name="example-5-4"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">port</span> <span class="o">=</span> <span class="n">post</span>
+</span><span id="line-5-5"><a id="example-5-5" name="example-5-5"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">log</span> <span class="o">=</span> <span class="n">log</span>
+</span></code></pre></div></td></tr></table></div>
+could be used like</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-6-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-6-1"><a id="example-6-1" name="example-6-1"></a><span class="n">robot</span> <span class="o">--</span><span class="n">listener</span> <span class="n">Listener</span><span class="p">:</span><span class="mi">8270</span><span class="p">:</span><span class="n">false</span>
+</span></code></pre></div></td></tr></table></div>
+<p>and the first argument would be converted to an integer based on the type hint
+and the second to a Boolean based on the default value.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Both the named argument syntax and argument conversion are new in
+Robot Framework 4.0.</p>
+</div>
+<p><a id="library-listeners"></a></p>
+<p><a id="library listeners"></a>
+<a id="Librariesaslisteners"></a></p>
+<h3 id="libraries-as-listeners">Libraries as listeners<a class="headerlink" href="#libraries-as-listeners" title="Permanent link">&para;</a></h3>
+<p>Sometimes it is useful also for <a href="../../syntax/libraries/#test-libraries">test libraries</a> to get notifications about
+test execution. This allows them, for example, to perform certain clean-up
+activities automatically when a test suite or the whole test execution ends.</p>
+<h4 id="registering-listener">Registering listener<a class="headerlink" href="#registering-listener" title="Permanent link">&para;</a></h4>
+<p>A test library can register a listener by using the <code>ROBOT_LIBRARY_LISTENER</code>
+attribute. The value of this attribute should be an instance of the listener
+to use. It may be a totally independent listener or the library itself can
+act as a listener. To avoid listener methods to be exposed as keywords in
+the latter case, it is possible to prefix them with an underscore.
+For example, instead of using <code>end_suite[it is possible to use](#it-is-possible-to-use)end_suite</code>.</p>
+<p>Following examples illustrates using an external listener as well as a library
+acting as a listener itself:</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-7-1">1</a></span>
+<span class="normal"><a href="#example-7-2">2</a></span>
+<span class="normal"><a href="#example-7-3">3</a></span>
+<span class="normal"><a href="#example-7-4">4</a></span>
+<span class="normal"><a href="#example-7-5">5</a></span>
+<span class="normal"><a href="#example-7-6">6</a></span>
+<span class="normal"><a href="#example-7-7">7</a></span>
+<span class="normal"><a href="#example-7-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-7-1"><a id="example-7-1" name="example-7-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">listener</span><span class="w"> </span><span class="kn">import</span> <span class="n">Listener</span>
+</span><span id="line-7-2"><a id="example-7-2" name="example-7-2"></a>
+</span><span id="line-7-3"><a id="example-7-3" name="example-7-3"></a><span class="k">class</span><span class="w"> </span><span class="nc">LibraryWithExternalListener</span><span class="p">:</span>
+</span><span id="line-7-4"><a id="example-7-4" name="example-7-4"></a>    <span class="n">ROBOT_LIBRARY_SCOPE</span> <span class="o">=</span> <span class="s1">&#39;GLOBAL&#39;</span>
+</span><span id="line-7-5"><a id="example-7-5" name="example-7-5"></a>    <span class="n">ROBOT_LIBRARY_LISTENER</span> <span class="o">=</span> <span class="n">Listener</span><span class="p">()</span>
+</span><span id="line-7-6"><a id="example-7-6" name="example-7-6"></a>
+</span><span id="line-7-7"><a id="example-7-7" name="example-7-7"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">example_keyword</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="line-7-8"><a id="example-7-8" name="example-7-8"></a>         <span class="o">...</span>
+</span></code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-8-1"> 1</a></span>
+<span class="normal"><a href="#example-8-2"> 2</a></span>
+<span class="normal"><a href="#example-8-3"> 3</a></span>
+<span class="normal"><a href="#example-8-4"> 4</a></span>
+<span class="normal"><a href="#example-8-5"> 5</a></span>
+<span class="normal"><a href="#example-8-6"> 6</a></span>
+<span class="normal"><a href="#example-8-7"> 7</a></span>
+<span class="normal"><a href="#example-8-8"> 8</a></span>
+<span class="normal"><a href="#example-8-9"> 9</a></span>
+<span class="normal"><a href="#example-8-10">10</a></span>
+<span class="normal"><a href="#example-8-11">11</a></span>
+<span class="normal"><a href="#example-8-12">12</a></span>
+<span class="normal"><a href="#example-8-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-8-1"><a id="example-8-1" name="example-8-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">LibraryItselfAsListener</span><span class="p">:</span>
+</span><span id="line-8-2"><a id="example-8-2" name="example-8-2"></a>    <span class="n">ROBOT_LIBRARY_SCOPE</span> <span class="o">=</span> <span class="s1">&#39;SUITE&#39;</span>
+</span><span id="line-8-3"><a id="example-8-3" name="example-8-3"></a>    <span class="n">ROBOT_LISTENER_API_VERSION</span> <span class="o">=</span> <span class="mi">2</span>
+</span><span id="line-8-4"><a id="example-8-4" name="example-8-4"></a>
+</span><span id="line-8-5"><a id="example-8-5" name="example-8-5"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="line-8-6"><a id="example-8-6" name="example-8-6"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">ROBOT_LIBRARY_LISTENER</span> <span class="o">=</span> <span class="bp">self</span>
+</span><span id="line-8-7"><a id="example-8-7" name="example-8-7"></a>
+</span><span id="line-8-8"><a id="example-8-8" name="example-8-8"></a>    <span class="c1"># Use the &#39;_&#39; prefix to avoid listener method becoming a keyword.</span>
+</span><span id="line-8-9"><a id="example-8-9" name="example-8-9"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">_end_suite</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">attrs</span><span class="p">):</span>
+</span><span id="line-8-10"><a id="example-8-10" name="example-8-10"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Suite &#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39; ending with status </span><span class="si">{</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+</span><span id="line-8-11"><a id="example-8-11" name="example-8-11"></a>
+</span><span id="line-8-12"><a id="example-8-12" name="example-8-12"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">example_keyword</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="line-8-13"><a id="example-8-13" name="example-8-13"></a>         <span class="o">...</span>
+</span></code></pre></div></td></tr></table></div>
+As the second example above already demonstrated, library listeners can
+specify <a href="#listener-interface-versions">listener interface versions</a> using the <code>ROBOT_LISTENER_API_VERSION</code>
+attribute exactly like any other listener.</p>
+<p>Starting from Robot Framework 7.0, a listener can register itself to be a listener
+also by using a string <code>SELF</code> (case-insensitive) as a listener. This is especially
+convenient when using the <a href="../libraries/#library-decorator">@library decorator</a>:</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-9-1"> 1</a></span>
+<span class="normal"><a href="#example-9-2"> 2</a></span>
+<span class="normal"><a href="#example-9-3"> 3</a></span>
+<span class="normal"><a href="#example-9-4"> 4</a></span>
+<span class="normal"><a href="#example-9-5"> 5</a></span>
+<span class="normal"><a href="#example-9-6"> 6</a></span>
+<span class="normal"><a href="#example-9-7"> 7</a></span>
+<span class="normal"><a href="#example-9-8"> 8</a></span>
+<span class="normal"><a href="#example-9-9"> 9</a></span>
+<span class="normal"><a href="#example-9-10">10</a></span>
+<span class="normal"><a href="#example-9-11">11</a></span>
+<span class="normal"><a href="#example-9-12">12</a></span>
+<span class="normal"><a href="#example-9-13">13</a></span>
+<span class="normal"><a href="#example-9-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-9-1"><a id="example-9-1" name="example-9-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">robot.api.deco</span><span class="w"> </span><span class="kn">import</span> <span class="n">keyword</span><span class="p">,</span> <span class="n">library</span>
+</span><span id="line-9-2"><a id="example-9-2" name="example-9-2"></a>
+</span><span id="line-9-3"><a id="example-9-3" name="example-9-3"></a><span class="nd">@library</span><span class="p">(</span><span class="n">scope</span><span class="o">=</span><span class="s1">&#39;SUITE&#39;</span><span class="p">,</span> <span class="n">listener</span><span class="o">=</span><span class="s1">&#39;SELF&#39;</span><span class="p">)</span>
+</span><span id="line-9-4"><a id="example-9-4" name="example-9-4"></a><span class="k">class</span><span class="w"> </span><span class="nc">LibraryItselfAsListener</span><span class="p">:</span>
+</span><span id="line-9-5"><a id="example-9-5" name="example-9-5"></a>
+</span><span id="line-9-6"><a id="example-9-6" name="example-9-6"></a>    <span class="c1"># Listener version is not specified, so uses the listener version 3 by default.</span>
+</span><span id="line-9-7"><a id="example-9-7" name="example-9-7"></a>    <span class="c1"># When using the @library decorator, keywords must use the @keyword decorator,</span>
+</span><span id="line-9-8"><a id="example-9-8" name="example-9-8"></a>    <span class="c1"># so there is no need to use the &#39;_&#39; prefix here.</span>
+</span><span id="line-9-9"><a id="example-9-9" name="example-9-9"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">end_suite</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
+</span><span id="line-9-10"><a id="example-9-10" name="example-9-10"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Suite &#39;</span><span class="si">{</span><span class="n">data</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39; ending with status </span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">status</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+</span><span id="line-9-11"><a id="example-9-11" name="example-9-11"></a>
+</span><span id="line-9-12"><a id="example-9-12" name="example-9-12"></a>    <span class="nd">@keyword</span>
+</span><span id="line-9-13"><a id="example-9-13" name="example-9-13"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">example_keyword</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="line-9-14"><a id="example-9-14" name="example-9-14"></a>         <span class="o">...</span>
+</span></code></pre></div></td></tr></table></div>
+It is also possible to specify multiple listeners for a single library by
+giving <code>ROBOT_LIBRARY_LISTENER</code> a value as a list:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-10-1">1</a></span>
+<span class="normal"><a href="#example-10-2">2</a></span>
+<span class="normal"><a href="#example-10-3">3</a></span>
+<span class="normal"><a href="#example-10-4">4</a></span>
+<span class="normal"><a href="#example-10-5">5</a></span>
+<span class="normal"><a href="#example-10-6">6</a></span>
+<span class="normal"><a href="#example-10-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-10-1"><a id="example-10-1" name="example-10-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">listeners</span><span class="w"> </span><span class="kn">import</span> <span class="n">Listener1</span><span class="p">,</span> <span class="n">Listener2</span><span class="p">,</span> <span class="n">Listener3</span>
+</span><span id="line-10-2"><a id="example-10-2" name="example-10-2"></a>
+</span><span id="line-10-3"><a id="example-10-3" name="example-10-3"></a><span class="k">class</span><span class="w"> </span><span class="nc">LibraryWithMultipleListeners</span><span class="p">:</span>
+</span><span id="line-10-4"><a id="example-10-4" name="example-10-4"></a>    <span class="n">ROBOT_LIBRARY_LISTENER</span> <span class="o">=</span> <span class="p">[</span><span class="n">Listener1</span><span class="p">(),</span> <span class="n">Listener2</span><span class="p">(),</span> <span class="n">Listener3</span><span class="p">()]</span>
+</span><span id="line-10-5"><a id="example-10-5" name="example-10-5"></a>
+</span><span id="line-10-6"><a id="example-10-6" name="example-10-6"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">example_keyword</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="line-10-7"><a id="example-10-7" name="example-10-7"></a>         <span class="o">...</span>
+</span></code></pre></div></td></tr></table></div>
+<h4 id="called-listener-methods">Called listener methods<a class="headerlink" href="#called-listener-methods" title="Permanent link">&para;</a></h4>
+<p>Library listeners get notifications about all events in suites where
+libraries using them are imported. In practice this means that suite,
+test, keyword, control structure and log message related methods are
+called. In addition to them, the <code>close</code> method is called when the library
+goes out of the scope.</p>
+<p>If library creates a new listener instance every time when the library
+itself is instantiated, the actual listener instance to use will change
+according to the <a href="../libraries/#library-scope">library scope</a>.</p>
+<h2 id="listener-calling-order">Listener calling order<a class="headerlink" href="#listener-calling-order" title="Permanent link">&para;</a></h2>
+<p>By default, listeners are called in the order they are taken into use so that
+listeners registered from the command line are called before library listeners.
+It is, however, possible to control the calling order by setting the special
+<code>ROBOT_LISTENER_PRIORITY</code> attribute to an integer or a floating point value.
+The bigger the number, the higher precedence the listener has and the earlier
+it is called. The number can be positive or negative and it is zero by default.</p>
+<p>The custom order does not affect the <code>close</code> method of library listeners, though.
+That method is always called when the library goes out of its scope.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Controlling listener calling order is new in Robot Framework 7.1.</p>
+</div>
+<h2 id="listener-examples">Listener examples<a class="headerlink" href="#listener-examples" title="Permanent link">&para;</a></h2>
+<p>This section contains examples using the listener interface. First examples
+illustrate getting notifications during execution and latter examples modify
+executed tests and created results.</p>
+<h3 id="getting-information">Getting information<a class="headerlink" href="#getting-information" title="Permanent link">&para;</a></h3>
+<p>The first example is implemented as a Python module. It uses the <a href="#listener-version-2">listener
+version 2</a>, but could equally well be implemented by using the <a href="#listener-version-3">listener
+version 3</a>.</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-11-1">1</a></span>
+<span class="normal"><a href="#example-11-2">2</a></span>
+<span class="normal"><a href="#example-11-3">3</a></span>
+<span class="normal"><a href="#example-11-4">4</a></span>
+<span class="normal"><a href="#example-11-5">5</a></span>
+<span class="normal"><a href="#example-11-6">6</a></span>
+<span class="normal"><a href="#example-11-7">7</a></span>
+<span class="normal"><a href="#example-11-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-11-1"><a id="example-11-1" name="example-11-1"></a><span class="sd">&quot;&quot;&quot;Listener that stops execution if a test fails.&quot;&quot;&quot;</span>
+</span><span id="line-11-2"><a id="example-11-2" name="example-11-2"></a>
+</span><span id="line-11-3"><a id="example-11-3" name="example-11-3"></a><span class="n">ROBOT_LISTENER_API_VERSION</span> <span class="o">=</span> <span class="mi">2</span>
+</span><span id="line-11-4"><a id="example-11-4" name="example-11-4"></a>
+</span><span id="line-11-5"><a id="example-11-5" name="example-11-5"></a><span class="k">def</span><span class="w"> </span><span class="nf">end_test</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">attrs</span><span class="p">):</span>
+</span><span id="line-11-6"><a id="example-11-6" name="example-11-6"></a>    <span class="k">if</span> <span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;status&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;FAIL&#39;</span><span class="p">:</span>
+</span><span id="line-11-7"><a id="example-11-7" name="example-11-7"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Test &#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;&quot;</span> <span class="n">failed</span><span class="p">:</span> <span class="p">{</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;message&#39;</span><span class="p">]}</span><span class="s2">&quot;)</span>
+</span><span id="line-11-8"><a id="example-11-8" name="example-11-8"></a>        <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Press enter to continue.&quot;</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+If the above example would be saved to, for example, <em>PauseExecution.py</em>
+file, it could be used from the command line like this:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-12-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-12-1"><a id="example-12-1" name="example-12-1"></a><span class="n">robot</span> <span class="o">--</span><span class="n">listener</span> <span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">PauseExecution</span><span class="o">.</span><span class="n">py</span> <span class="n">tests</span><span class="o">.</span><span class="n">robot</span>
+</span></code></pre></div></td></tr></table></div>
+<p>The next example, which still uses the listener version 2, is slightly more
+complicated. It writes all the information it gets into a text file in
+a temporary directory without much formatting. The filename may be given
+from the command line, but it also has a default value. Note that in real usage,
+the <a href="../../execution/results/#debug-file">debug file</a> functionality available through the command line option
+<code>--debugfile</code> is probably more useful than this example.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-13-1"> 1</a></span>
+<span class="normal"><a href="#example-13-2"> 2</a></span>
+<span class="normal"><a href="#example-13-3"> 3</a></span>
+<span class="normal"><a href="#example-13-4"> 4</a></span>
+<span class="normal"><a href="#example-13-5"> 5</a></span>
+<span class="normal"><a href="#example-13-6"> 6</a></span>
+<span class="normal"><a href="#example-13-7"> 7</a></span>
+<span class="normal"><a href="#example-13-8"> 8</a></span>
+<span class="normal"><a href="#example-13-9"> 9</a></span>
+<span class="normal"><a href="#example-13-10">10</a></span>
+<span class="normal"><a href="#example-13-11">11</a></span>
+<span class="normal"><a href="#example-13-12">12</a></span>
+<span class="normal"><a href="#example-13-13">13</a></span>
+<span class="normal"><a href="#example-13-14">14</a></span>
+<span class="normal"><a href="#example-13-15">15</a></span>
+<span class="normal"><a href="#example-13-16">16</a></span>
+<span class="normal"><a href="#example-13-17">17</a></span>
+<span class="normal"><a href="#example-13-18">18</a></span>
+<span class="normal"><a href="#example-13-19">19</a></span>
+<span class="normal"><a href="#example-13-20">20</a></span>
+<span class="normal"><a href="#example-13-21">21</a></span>
+<span class="normal"><a href="#example-13-22">22</a></span>
+<span class="normal"><a href="#example-13-23">23</a></span>
+<span class="normal"><a href="#example-13-24">24</a></span>
+<span class="normal"><a href="#example-13-25">25</a></span>
+<span class="normal"><a href="#example-13-26">26</a></span>
+<span class="normal"><a href="#example-13-27">27</a></span>
+<span class="normal"><a href="#example-13-28">28</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-13-1"><a id="example-13-1" name="example-13-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">os.path</span>
+</span><span id="line-13-2"><a id="example-13-2" name="example-13-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">tempfile</span>
+</span><span id="line-13-3"><a id="example-13-3" name="example-13-3"></a>
+</span><span id="line-13-4"><a id="example-13-4" name="example-13-4"></a><span class="k">class</span><span class="w"> </span><span class="nc">Example</span><span class="p">:</span>
+</span><span id="line-13-5"><a id="example-13-5" name="example-13-5"></a>    <span class="n">ROBOT_LISTENER_API_VERSION</span> <span class="o">=</span> <span class="mi">2</span>
+</span><span id="line-13-6"><a id="example-13-6" name="example-13-6"></a>
+</span><span id="line-13-7"><a id="example-13-7" name="example-13-7"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;listen.txt&#39;</span><span class="p">):</span>
+</span><span id="line-13-8"><a id="example-13-8" name="example-13-8"></a>        <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tempfile</span><span class="o">.</span><span class="n">gettempdir</span><span class="p">(),</span> <span class="n">file_name</span><span class="p">)</span>
+</span><span id="line-13-9"><a id="example-13-9" name="example-13-9"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+</span><span id="line-13-10"><a id="example-13-10" name="example-13-10"></a>
+</span><span id="line-13-11"><a id="example-13-11" name="example-13-11"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">start_suite</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">attrs</span><span class="p">):</span>
+</span><span id="line-13-12"><a id="example-13-12" name="example-13-12"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> &#39;</span><span class="si">%s</span><span class="s2">&#39;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;doc&#39;</span><span class="p">]))</span>
+</span><span id="line-13-13"><a id="example-13-13" name="example-13-13"></a>
+</span><span id="line-13-14"><a id="example-13-14" name="example-13-14"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">start_test</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">attrs</span><span class="p">):</span>
+</span><span id="line-13-15"><a id="example-13-15" name="example-13-15"></a>        <span class="n">tags</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;tags&#39;</span><span class="p">])</span>
+</span><span id="line-13-16"><a id="example-13-16" name="example-13-16"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;- </span><span class="si">%s</span><span class="s2"> &#39;</span><span class="si">%s</span><span class="s2">&#39; [ </span><span class="si">%s</span><span class="s2"> ] :: &quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;doc&#39;</span><span class="p">],</span> <span class="n">tags</span><span class="p">))</span>
+</span><span id="line-13-17"><a id="example-13-17" name="example-13-17"></a>
+</span><span id="line-13-18"><a id="example-13-18" name="example-13-18"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">end_test</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">attrs</span><span class="p">):</span>
+</span><span id="line-13-19"><a id="example-13-19" name="example-13-19"></a>        <span class="k">if</span> <span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;status&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;PASS&#39;</span><span class="p">:</span>
+</span><span id="line-13-20"><a id="example-13-20" name="example-13-20"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;PASS</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</span><span id="line-13-21"><a id="example-13-21" name="example-13-21"></a>        <span class="k">else</span><span class="p">:</span>
+</span><span id="line-13-22"><a id="example-13-22" name="example-13-22"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;FAIL: </span><span class="si">%s</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;message&#39;</span><span class="p">])</span>
+</span><span id="line-13-23"><a id="example-13-23" name="example-13-23"></a>
+</span><span id="line-13-24"><a id="example-13-24" name="example-13-24"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">end_suite</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">attrs</span><span class="p">):</span>
+</span><span id="line-13-25"><a id="example-13-25" name="example-13-25"></a>         <span class="bp">self</span><span class="o">.</span><span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="se">\n</span><span class="si">%s</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;status&#39;</span><span class="p">],</span> <span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;message&#39;</span><span class="p">]))</span>
+</span><span id="line-13-26"><a id="example-13-26" name="example-13-26"></a>
+</span><span id="line-13-27"><a id="example-13-27" name="example-13-27"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="line-13-28"><a id="example-13-28" name="example-13-28"></a>         <span class="bp">self</span><span class="o">.</span><span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></code></pre></div></td></tr></table></div>
+<h3 id="modifying-data-and-results">Modifying data and results<a class="headerlink" href="#modifying-data-and-results" title="Permanent link">&para;</a></h3>
+<p>The following examples illustrate how to modify the executed tests and suites
+as well as the execution results. All these examples require using
+the <a href="#listener-version-3">listener version 3</a>.</p>
+<h4 id="modifying-executed-suites-and-tests">Modifying executed suites and tests<a class="headerlink" href="#modifying-executed-suites-and-tests" title="Permanent link">&para;</a></h4>
+<p>Changing what is executed is as easy as modifying the model objects representing
+executed data passed to listener methods. This is illustrated by the example below that
+adds a new test to each executed suite and a new keyword call to each test.</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-14-1">1</a></span>
+<span class="normal"><a href="#example-14-2">2</a></span>
+<span class="normal"><a href="#example-14-3">3</a></span>
+<span class="normal"><a href="#example-14-4">4</a></span>
+<span class="normal"><a href="#example-14-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-14-1"><a id="example-14-1" name="example-14-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">start_suite</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
+</span><span id="line-14-2"><a id="example-14-2" name="example-14-2"></a>    <span class="n">data</span><span class="o">.</span><span class="n">tests</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;New test&#39;</span><span class="p">)</span>
+</span><span id="line-14-3"><a id="example-14-3" name="example-14-3"></a>
+</span><span id="line-14-4"><a id="example-14-4" name="example-14-4"></a><span class="k">def</span><span class="w"> </span><span class="nf">start_test</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
+</span><span id="line-14-5"><a id="example-14-5" name="example-14-5"></a>    <span class="n">data</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">create_keyword</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Log&#39;</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Keyword added by listener!&#39;</span><span class="p">])</span>
+</span></code></pre></div></td></tr></table></div>
+This API is very similar to the <a href="../../execution/configuration/#pre-run-modifier">pre-run modifier</a> API that can be used
+to modify suites and tests before the whole test execution starts. The main
+benefit of using the listener API is that modifications can be done
+dynamically based on execution results or otherwise. This allows, for example,
+interesting possibilities for model based testing.</p>
+<p>Although the listener interface is not built on top of Robot Framework's
+internal <a href="http://robot-framework.readthedocs.org/en/master/autodoc/robot.model.html#module-robot.model.visitor">visitor interface</a> similarly as the pre-run modifier API,
+listeners can still use the visitors interface themselves. For example,
+the <code>SelectEveryXthTest</code> visitor used in <a href="../../execution/configuration/#pre-run-modifier">pre-run modifier</a> examples could
+be used like this:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-15-1">1</a></span>
+<span class="normal"><a href="#example-15-2">2</a></span>
+<span class="normal"><a href="#example-15-3">3</a></span>
+<span class="normal"><a href="#example-15-4">4</a></span>
+<span class="normal"><a href="#example-15-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-15-1"><a id="example-15-1" name="example-15-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">SelectEveryXthTest</span><span class="w"> </span><span class="kn">import</span> <span class="n">SelectEveryXthTest</span>
+</span><span id="line-15-2"><a id="example-15-2" name="example-15-2"></a>
+</span><span id="line-15-3"><a id="example-15-3" name="example-15-3"></a><span class="k">def</span><span class="w"> </span><span class="nf">start_suite</span><span class="p">(</span><span class="n">suite</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
+</span><span id="line-15-4"><a id="example-15-4" name="example-15-4"></a>    <span class="n">selector</span> <span class="o">=</span> <span class="n">SelectEveryXthTest</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</span><span id="line-15-5"><a id="example-15-5" name="example-15-5"></a>    <span class="n">suite</span><span class="o">.</span><span class="n">visit</span><span class="p">(</span><span class="n">selector</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<h4 id="accessing-library-or-resource-file">Accessing library or resource file<a class="headerlink" href="#accessing-library-or-resource-file" title="Permanent link">&para;</a></h4>
+<p>It is possible to get more information about the actually executed keyword and
+the library or resource file it belongs to:</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-16-1"> 1</a></span>
+<span class="normal"><a href="#example-16-2"> 2</a></span>
+<span class="normal"><a href="#example-16-3"> 3</a></span>
+<span class="normal"><a href="#example-16-4"> 4</a></span>
+<span class="normal"><a href="#example-16-5"> 5</a></span>
+<span class="normal"><a href="#example-16-6"> 6</a></span>
+<span class="normal"><a href="#example-16-7"> 7</a></span>
+<span class="normal"><a href="#example-16-8"> 8</a></span>
+<span class="normal"><a href="#example-16-9"> 9</a></span>
+<span class="normal"><a href="#example-16-10">10</a></span>
+<span class="normal"><a href="#example-16-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-16-1"><a id="example-16-1" name="example-16-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">robot.running</span><span class="w"> </span><span class="kn">import</span> <span class="n">Keyword</span> <span class="k">as</span> <span class="n">KeywordData</span><span class="p">,</span> <span class="n">LibraryKeyword</span>
+</span><span id="line-16-2"><a id="example-16-2" name="example-16-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">robot.result</span><span class="w"> </span><span class="kn">import</span> <span class="n">Keyword</span> <span class="k">as</span> <span class="n">KeywordResult</span>
+</span><span id="line-16-3"><a id="example-16-3" name="example-16-3"></a>
+</span><span id="line-16-4"><a id="example-16-4" name="example-16-4"></a><span class="k">def</span><span class="w"> </span><span class="nf">start_library_keyword</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">KeywordData</span><span class="p">,</span>
+</span><span id="line-16-5"><a id="example-16-5" name="example-16-5"></a>                          <span class="n">implementation</span><span class="p">:</span> <span class="n">LibraryKeyword</span><span class="p">,</span>
+</span><span id="line-16-6"><a id="example-16-6" name="example-16-6"></a>                          <span class="n">result</span><span class="p">:</span> <span class="n">KeywordResult</span><span class="p">):</span>
+</span><span id="line-16-7"><a id="example-16-7" name="example-16-7"></a>    <span class="n">library</span> <span class="o">=</span> <span class="n">implementation</span><span class="o">.</span><span class="n">owner</span>
+</span><span id="line-16-8"><a id="example-16-8" name="example-16-8"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Keyword &#39;</span><span class="si">{</span><span class="n">implementation</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39; is implemented in library &quot;</span>
+</span><span id="line-16-9"><a id="example-16-9" name="example-16-9"></a>          <span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="n">library</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39; at &#39;</span><span class="si">{</span><span class="n">implementation</span><span class="o">.</span><span class="n">source</span><span class="si">}</span><span class="s2">&#39; on line &quot;</span>
+</span><span id="line-16-10"><a id="example-16-10" name="example-16-10"></a>          <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">implementation</span><span class="o">.</span><span class="n">lineno</span><span class="si">}</span><span class="s2">. The library has </span><span class="si">{</span><span class="n">library</span><span class="o">.</span><span class="n">scope</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> &quot;</span>
+</span><span id="line-16-11"><a id="example-16-11" name="example-16-11"></a>          <span class="sa">f</span><span class="s2">&quot;scope and the current instance is </span><span class="si">{</span><span class="n">library</span><span class="o">.</span><span class="n">instance</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+As the above example illustrates, it is possible to get an access to the actual
+library instance. This means that listeners can inspect the library state and also
+modify it. With user keywords it is even possible to modify the keyword itself or,
+via the <code>owner</code> resource file, any other keyword in the resource file.</p>
+<h4 id="modifying-results">Modifying results<a class="headerlink" href="#modifying-results" title="Permanent link">&para;</a></h4>
+<p>Test execution results can be altered by modifying the result objects passed to
+listener methods. This is demonstrated by the following listener that is implemented
+as a class and also uses type hints:</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-17-1"> 1</a></span>
+<span class="normal"><a href="#example-17-2"> 2</a></span>
+<span class="normal"><a href="#example-17-3"> 3</a></span>
+<span class="normal"><a href="#example-17-4"> 4</a></span>
+<span class="normal"><a href="#example-17-5"> 5</a></span>
+<span class="normal"><a href="#example-17-6"> 6</a></span>
+<span class="normal"><a href="#example-17-7"> 7</a></span>
+<span class="normal"><a href="#example-17-8"> 8</a></span>
+<span class="normal"><a href="#example-17-9"> 9</a></span>
+<span class="normal"><a href="#example-17-10">10</a></span>
+<span class="normal"><a href="#example-17-11">11</a></span>
+<span class="normal"><a href="#example-17-12">12</a></span>
+<span class="normal"><a href="#example-17-13">13</a></span>
+<span class="normal"><a href="#example-17-14">14</a></span>
+<span class="normal"><a href="#example-17-15">15</a></span>
+<span class="normal"><a href="#example-17-16">16</a></span>
+<span class="normal"><a href="#example-17-17">17</a></span>
+<span class="normal"><a href="#example-17-18">18</a></span>
+<span class="normal"><a href="#example-17-19">19</a></span>
+<span class="normal"><a href="#example-17-20">20</a></span>
+<span class="normal"><a href="#example-17-21">21</a></span>
+<span class="normal"><a href="#example-17-22">22</a></span>
+<span class="normal"><a href="#example-17-23">23</a></span>
+<span class="normal"><a href="#example-17-24">24</a></span>
+<span class="normal"><a href="#example-17-25">25</a></span>
+<span class="normal"><a href="#example-17-26">26</a></span>
+<span class="normal"><a href="#example-17-27">27</a></span>
+<span class="normal"><a href="#example-17-28">28</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-17-1"><a id="example-17-1" name="example-17-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">robot</span><span class="w"> </span><span class="kn">import</span> <span class="n">result</span><span class="p">,</span> <span class="n">running</span>
+</span><span id="line-17-2"><a id="example-17-2" name="example-17-2"></a>
+</span><span id="line-17-3"><a id="example-17-3" name="example-17-3"></a><span class="k">class</span><span class="w"> </span><span class="nc">ResultModifier</span><span class="p">:</span>
+</span><span id="line-17-4"><a id="example-17-4" name="example-17-4"></a>
+</span><span id="line-17-5"><a id="example-17-5" name="example-17-5"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">max_seconds</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">10.0</span><span class="p">):</span>
+</span><span id="line-17-6"><a id="example-17-6" name="example-17-6"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">max_seconds</span> <span class="o">=</span> <span class="n">max_seconds</span>
+</span><span id="line-17-7"><a id="example-17-7" name="example-17-7"></a>
+</span><span id="line-17-8"><a id="example-17-8" name="example-17-8"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">start_suite</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">running</span><span class="o">.</span><span class="n">TestSuite</span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n">result</span><span class="o">.</span><span class="n">TestSuite</span><span class="p">):</span>
+</span><span id="line-17-9"><a id="example-17-9" name="example-17-9"></a>        <span class="n">result</span><span class="o">.</span><span class="n">doc</span> <span class="o">=</span> <span class="s1">&#39;Documentation set by listener.&#39;</span>
+</span><span id="line-17-10"><a id="example-17-10" name="example-17-10"></a>        <span class="c1"># Information about tests only available via data at this point.</span>
+</span><span id="line-17-11"><a id="example-17-11" name="example-17-11"></a>        <span class="n">smoke_tests</span> <span class="o">=</span> <span class="p">[</span><span class="n">test</span> <span class="k">for</span> <span class="n">test</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">tests</span> <span class="k">if</span> <span class="s1">&#39;smoke&#39;</span> <span class="ow">in</span> <span class="n">test</span><span class="o">.</span><span class="n">tags</span><span class="p">]</span>
+</span><span id="line-17-12"><a id="example-17-12" name="example-17-12"></a>        <span class="n">result</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s1">&#39;Smoke tests&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">smoke_tests</span><span class="p">)</span>
+</span><span id="line-17-13"><a id="example-17-13" name="example-17-13"></a>
+</span><span id="line-17-14"><a id="example-17-14" name="example-17-14"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">end_test</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">running</span><span class="o">.</span><span class="n">TestCase</span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n">result</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+</span><span id="line-17-15"><a id="example-17-15" name="example-17-15"></a>        <span class="n">elapsed_seconds</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">elapsed_time</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span>
+</span><span id="line-17-16"><a id="example-17-16" name="example-17-16"></a>        <span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="s1">&#39;PASS&#39;</span> <span class="ow">and</span> <span class="n">elapsed_seconds</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_seconds</span><span class="p">:</span>
+</span><span id="line-17-17"><a id="example-17-17" name="example-17-17"></a>            <span class="n">result</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="s1">&#39;FAIL&#39;</span>
+</span><span id="line-17-18"><a id="example-17-18" name="example-17-18"></a>            <span class="n">result</span><span class="o">.</span><span class="n">message</span> <span class="o">=</span> <span class="s1">&#39;Test execution took too long.&#39;</span>
+</span><span id="line-17-19"><a id="example-17-19" name="example-17-19"></a>
+</span><span id="line-17-20"><a id="example-17-20" name="example-17-20"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">log_message</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">msg</span><span class="p">:</span> <span class="n">result</span><span class="o">.</span><span class="n">Message</span><span class="p">):</span>
+</span><span id="line-17-21"><a id="example-17-21" name="example-17-21"></a>        <span class="k">if</span> <span class="n">msg</span><span class="o">.</span><span class="n">level</span> <span class="o">==</span> <span class="s1">&#39;WARN&#39;</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">msg</span><span class="o">.</span><span class="n">html</span><span class="p">:</span>
+</span><span id="line-17-22"><a id="example-17-22" name="example-17-22"></a>            <span class="n">msg</span><span class="o">.</span><span class="n">message</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;&lt;b style=&quot;font-size: 1.5em&quot;&gt;</span><span class="si">{</span><span class="n">msg</span><span class="o">.</span><span class="n">message</span><span class="si">}</span><span class="s1">&lt;/b&gt;&#39;</span>
+</span><span id="line-17-23"><a id="example-17-23" name="example-17-23"></a>            <span class="n">msg</span><span class="o">.</span><span class="n">html</span> <span class="o">=</span> <span class="kc">True</span>
+</span><span id="line-17-24"><a id="example-17-24" name="example-17-24"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_message_is_not_relevant</span><span class="p">(</span><span class="n">msg</span><span class="o">.</span><span class="n">message</span><span class="p">):</span>
+</span><span id="line-17-25"><a id="example-17-25" name="example-17-25"></a>            <span class="n">msg</span><span class="o">.</span><span class="n">message</span> <span class="o">=</span> <span class="kc">None</span>
+</span><span id="line-17-26"><a id="example-17-26" name="example-17-26"></a>
+</span><span id="line-17-27"><a id="example-17-27" name="example-17-27"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">_message_is_not_relevant</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+</span><span id="line-17-28"><a id="example-17-28" name="example-17-28"></a>        <span class="o">...</span>
+</span></code></pre></div></td></tr></table></div>
+A limitation is that modifying the name of the current test suite or test
+case is not possible because it has already been written to the <a href="../../execution/output-files/#outputxml">output.xml</a>
+file when listeners are called. Due to the same reason modifying already
+finished tests in the <code>end_suite</code> method has no effect either.</p>
+<p>When modifying logged messages, it is possible to remove a message altogether
+by setting <code>message</code> to <code>None</code> as the above example demonstrates. This can be
+used for removing sensitive or non-relevant messages so that there is nothing
+visible in the log file.</p>
+<p>This API is very similar to the <a href="../../execution/output-files/#pre-rebot-modifier">pre-Rebot modifier</a> API that can be used
+to modify results before report and log are generated. The main difference is
+that listeners modify also the created <em>output.xml</em> file.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Removing messages altogether by setting them to <code>None</code> is new in
+Robot Framework 7.2.</p>
+</div>
+<h4 id="changing-keyword-and-control-structure-status">Changing keyword and control structure status<a class="headerlink" href="#changing-keyword-and-control-structure-status" title="Permanent link">&para;</a></h4>
+<p>Listeners can also affect the execution flow by changing statuses of the executed
+keywords and control structures. For example, if a listener changes the status of
+a passed keyword to FAIL, the keyword is considered failed exactly as if it had
+failed normally. Similarly, it is possible to change the status of a passed or
+failed keyword to SKIP to get the keyword and the whole test skipped. It is
+also possible to silence failures by changing the status to PASS, but this
+should be done only in special cases and with great care to avoid hiding real
+failures.</p>
+<p>The following example demonstrates changing the status by failing keywords
+that take too long time to execute. The previous example had similar logic
+with tests, but this listener also stops the execution immediately if there
+is a keyword that is too slow. As the example shows, listeners can also change
+the error message, not only the status.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-18-1"> 1</a></span>
+<span class="normal"><a href="#example-18-2"> 2</a></span>
+<span class="normal"><a href="#example-18-3"> 3</a></span>
+<span class="normal"><a href="#example-18-4"> 4</a></span>
+<span class="normal"><a href="#example-18-5"> 5</a></span>
+<span class="normal"><a href="#example-18-6"> 6</a></span>
+<span class="normal"><a href="#example-18-7"> 7</a></span>
+<span class="normal"><a href="#example-18-8"> 8</a></span>
+<span class="normal"><a href="#example-18-9"> 9</a></span>
+<span class="normal"><a href="#example-18-10">10</a></span>
+<span class="normal"><a href="#example-18-11">11</a></span>
+<span class="normal"><a href="#example-18-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-18-1"><a id="example-18-1" name="example-18-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">robot</span><span class="w"> </span><span class="kn">import</span> <span class="n">result</span><span class="p">,</span> <span class="n">running</span>
+</span><span id="line-18-2"><a id="example-18-2" name="example-18-2"></a>
+</span><span id="line-18-3"><a id="example-18-3" name="example-18-3"></a><span class="k">class</span><span class="w"> </span><span class="nc">KeywordPerformanceMonitor</span><span class="p">:</span>
+</span><span id="line-18-4"><a id="example-18-4" name="example-18-4"></a>
+</span><span id="line-18-5"><a id="example-18-5" name="example-18-5"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">max_seconds</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">):</span>
+</span><span id="line-18-6"><a id="example-18-6" name="example-18-6"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">max_seconds</span> <span class="o">=</span> <span class="n">max_seconds</span>
+</span><span id="line-18-7"><a id="example-18-7" name="example-18-7"></a>
+</span><span id="line-18-8"><a id="example-18-8" name="example-18-8"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">end_keyword</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">running</span><span class="o">.</span><span class="n">Keyword</span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n">result</span><span class="o">.</span><span class="n">Keyword</span><span class="p">):</span>
+</span><span id="line-18-9"><a id="example-18-9" name="example-18-9"></a>        <span class="n">elapsed_seconds</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">elapsed_time</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span>
+</span><span id="line-18-10"><a id="example-18-10" name="example-18-10"></a>        <span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="s1">&#39;PASS&#39;</span> <span class="ow">and</span> <span class="n">elapsed_seconds</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_seconds</span><span class="p">:</span>
+</span><span id="line-18-11"><a id="example-18-11" name="example-18-11"></a>            <span class="n">result</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="s1">&#39;FAIL&#39;</span>
+</span><span id="line-18-12"><a id="example-18-12" name="example-18-12"></a>            <span class="n">result</span><span class="o">.</span><span class="n">message</span> <span class="o">=</span> <span class="s1">&#39;Keyword execution took too long.&#39;</span>
+</span></code></pre></div></td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Changes to status only affect the execution flow starting from
+Robot Framework 7.1.</p>
+</div>
+<h3 id="more-examples">More examples<a class="headerlink" href="#more-examples" title="Permanent link">&para;</a></h3>
+<p>Keyword and control structure related listener version 3 methods are so versatile
+that covering them fully here in the User Guide is not possible. For more examples,
+you can see the <a href="https://github.com/robotframework/robotframework/tree/master/atest/testdata/output/listener_interface/body_items_v3">acceptance tests</a> using theses methods in various ways.</p>
 
 
 

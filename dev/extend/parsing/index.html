@@ -1424,6 +1424,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parser interface
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1440,6 +1458,158 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#taking-parsers-into-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Taking parsers into use
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parser-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parser API
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Parser API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#extension-or-extension-attribute" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EXTENSION or extension attribute
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parse-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        parse method
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parse_init-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        parse_init method
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optional-base-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optional base class
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parser-implemented-as-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parser implemented as module
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parser-implemented-as-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parser implemented as class
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parser-extending-optional-base-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parser extending optional base class
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parser-as-preprocessor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parser as preprocessor
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -9663,7 +9833,7 @@
   <span class="md-ellipsis">
     
   
-    Documentation format
+    Doc format
   
 
     
@@ -9793,9 +9963,208 @@
 
 
 <h1 id="parser-interface">Parser interface<a class="headerlink" href="#parser-interface" title="Permanent link">&para;</a></h1>
-<p>Plan is to cover both Robot's parsing API and how to create custom parsers.
-The latter don't need to use the former, so possibly these topics should be
-separated.</p>
+<p>Robot Framework supports external parsers that can handle custom data formats or
+even override Robot Framework's own parser.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Custom parsers are new in Robot Framework 6.1.</p>
+</div>
+<h2 id="taking-parsers-into-use">Taking parsers into use<a class="headerlink" href="#taking-parsers-into-use" title="Permanent link">&para;</a></h2>
+<p>Parsers are taken into use from the command line with the <code>--parser</code>
+option using exactly the same semantics as with <a href="https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.TestSuite.from_string">listeners</a>. This includes
+specifying parsers as names or paths, giving arguments to parser classes, and
+so on:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
+<span class="normal"><a href="#example-0-2">2</a></span>
+<span class="normal"><a href="#example-0-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="n">robot</span> <span class="o">--</span><span class="n">parser</span> <span class="n">MyParser</span> <span class="n">tests</span><span class="o">.</span><span class="n">custom</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a><span class="n">robot</span> <span class="o">--</span><span class="n">parser</span> <span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">MyParser</span><span class="o">.</span><span class="n">py</span> <span class="n">tests</span><span class="o">.</span><span class="n">custom</span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a><span class="n">robot</span> <span class="o">--</span><span class="n">parser</span> <span class="n">Parser1</span><span class="p">:</span><span class="n">arg</span> <span class="o">--</span><span class="n">parser</span> <span class="n">Parser2</span><span class="p">:</span><span class="n">a1</span><span class="p">:</span><span class="n">a2</span> <span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">tests</span>
+</span></code></pre></div></td></tr></table></div>
+<h2 id="parser-api">Parser API<a class="headerlink" href="#parser-api" title="Permanent link">&para;</a></h2>
+<p>Parsers can be implemented both as modules and classes. This section explains
+what attributes and methods they must contain.</p>
+<h3 id="extension-or-extension-attribute"><code>EXTENSION</code> or <code>extension</code> attribute<a class="headerlink" href="#extension-or-extension-attribute" title="Permanent link">&para;</a></h3>
+<p>This attribute specifies what file extension or extensions the parser supports.
+Both <code>EXTENSION</code> and <code>extension</code> names are accepted, and the former has precedence
+if both exist. The attribute can be either a string or a sequence of strings.
+Extensions are case-insensitive and can be specified with or without the leading
+dot. If a parser is implemented as a class, it is possible to set this attribute
+either as a class attribute or as an instance attribute.</p>
+<p>Also extensions containing multiple parts like <em>.example.ext</em> or
+<em>.robot.zip</em> are supported.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If a parser supports the <em>.robot</em> extension, it will be used
+for parsing these files instead of the standard parser.</p>
+</div>
+<h3 id="parse-method"><code>parse</code> method<a class="headerlink" href="#parse-method" title="Permanent link">&para;</a></h3>
+<p>The mandatory <code>parse</code> method is responsible for parsing <a href="../../syntax/suites/#suite-files">suite files</a>. It is
+called with each parsed file that has an extension that the parser supports.
+The method must return a <a href="#runningtestsuite">TestSuite</a>_ object.</p>
+<p>In simple cases <code>parse</code> can be implemented so that it accepts just a single
+argument that is a <a href="#pathlib">pathlib.Path</a>_ object pointing to the file to
+parse. If the parser is interested in defaults for <code>Test Setup</code>,
+<code>Test Teardown</code>, <code>Test Tags</code> and <code>Test Timeout</code>
+set in higher level <a href="../../syntax/suites/#suite-initialization-files">suite initialization files</a>, the <code>parse</code> method must
+accept two arguments. In that case the second argument is a <a href="https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.builder.html#robot.running.builder.settings.TestDefaults">TestDefaults</a> object.</p>
+<h3 id="parse_init-method"><code>parse_init</code> method<a class="headerlink" href="#parse_init-method" title="Permanent link">&para;</a></h3>
+<p>The optional <code>parse_init</code> method is responsible for parsing <a href="../../syntax/suites/#suite-initialization-files">suite initialization
+files</a> i.e. files in format <code>__init__.ext</code> where <code>.ext</code> is an extension
+supported by the parser. The method must return a <a href="#runningtestsuite">TestSuite</a>_
+object representing the whole directory. Suites created from child suite files
+and directories will be added to its child suites.</p>
+<p>Also <code>parse_init</code> can be implemented so that it accepts one or two arguments,
+depending on is it interested in test related default values or not. If it
+accepts defaults, it can manipulate the passed <a href="https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.builder.html#robot.running.builder.settings.TestDefaults">TestDefaults</a> object and changes
+are seen when parsing child suite files.</p>
+<p>This method is only needed if a parser needs to support suite initialization files.</p>
+<h3 id="optional-base-class">Optional base class<a class="headerlink" href="#optional-base-class" title="Permanent link">&para;</a></h3>
+<p>Parsers do not need to implement any explicit interface, but it may be helpful
+to extend the optional <a href="https://robot-framework.readthedocs.io/en/master/autodoc/robot.api.html#robot.api.interfaces.Parser">Parser</a> base class. The main benefit is that the base
+class has documentation and type hints. It also works as a bit more formal API
+specification.</p>
+<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
+<h3 id="parser-implemented-as-module">Parser implemented as module<a class="headerlink" href="#parser-implemented-as-module" title="Permanent link">&para;</a></h3>
+<p>The first example demonstrates a simple parser implemented as a module and
+supporting one hard-coded extension. It just creates a dummy suite and does not
+actually parse anything.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-1-1">1</a></span>
+<span class="normal"><a href="#example-1-2">2</a></span>
+<span class="normal"><a href="#example-1-3">3</a></span>
+<span class="normal"><a href="#example-1-4">4</a></span>
+<span class="normal"><a href="#example-1-5">5</a></span>
+<span class="normal"><a href="#example-1-6">6</a></span>
+<span class="normal"><a href="#example-1-7">7</a></span>
+<span class="normal"><a href="#example-1-8">8</a></span>
+<span class="normal"><a href="#example-1-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-1-1"><a id="example-1-1" name="example-1-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">robot.api</span><span class="w"> </span><span class="kn">import</span> <span class="n">TestSuite</span>
+</span><span id="line-1-2"><a id="example-1-2" name="example-1-2"></a>
+</span><span id="line-1-3"><a id="example-1-3" name="example-1-3"></a><span class="n">EXTENSION</span> <span class="o">=</span> <span class="s1">&#39;.example&#39;</span>
+</span><span id="line-1-4"><a id="example-1-4" name="example-1-4"></a>
+</span><span id="line-1-5"><a id="example-1-5" name="example-1-5"></a><span class="k">def</span><span class="w"> </span><span class="nf">parse</span><span class="p">(</span><span class="n">source</span><span class="p">):</span>
+</span><span id="line-1-6"><a id="example-1-6" name="example-1-6"></a>    <span class="n">suite</span> <span class="o">=</span> <span class="n">TestSuite</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Example&#39;</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="n">source</span><span class="p">)</span>
+</span><span id="line-1-7"><a id="example-1-7" name="example-1-7"></a>    <span class="n">test</span> <span class="o">=</span> <span class="n">suite</span><span class="o">.</span><span class="n">tests</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Test&#39;</span><span class="p">)</span>
+</span><span id="line-1-8"><a id="example-1-8" name="example-1-8"></a>    <span class="n">test</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">create_keyword</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Log&#39;</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Hello!&#39;</span><span class="p">])</span>
+</span><span id="line-1-9"><a id="example-1-9" name="example-1-9"></a>    <span class="k">return</span> <span class="n">suite</span>
+</span></code></pre></div></td></tr></table></div>
+<h3 id="parser-implemented-as-class">Parser implemented as class<a class="headerlink" href="#parser-implemented-as-class" title="Permanent link">&para;</a></h3>
+<p>The second parser is implemented as a class that accepts the extension to use
+as an argument. The parser reads the given source file and creates dummy tests
+from each line it contains.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-2-1"> 1</a></span>
+<span class="normal"><a href="#example-2-2"> 2</a></span>
+<span class="normal"><a href="#example-2-3"> 3</a></span>
+<span class="normal"><a href="#example-2-4"> 4</a></span>
+<span class="normal"><a href="#example-2-5"> 5</a></span>
+<span class="normal"><a href="#example-2-6"> 6</a></span>
+<span class="normal"><a href="#example-2-7"> 7</a></span>
+<span class="normal"><a href="#example-2-8"> 8</a></span>
+<span class="normal"><a href="#example-2-9"> 9</a></span>
+<span class="normal"><a href="#example-2-10">10</a></span>
+<span class="normal"><a href="#example-2-11">11</a></span>
+<span class="normal"><a href="#example-2-12">12</a></span>
+<span class="normal"><a href="#example-2-13">13</a></span>
+<span class="normal"><a href="#example-2-14">14</a></span>
+<span class="normal"><a href="#example-2-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-2-1"><a id="example-2-1" name="example-2-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+</span><span id="line-2-2"><a id="example-2-2" name="example-2-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">robot.api</span><span class="w"> </span><span class="kn">import</span> <span class="n">TestSuite</span>
+</span><span id="line-2-3"><a id="example-2-3" name="example-2-3"></a>
+</span><span id="line-2-4"><a id="example-2-4" name="example-2-4"></a><span class="k">class</span><span class="w"> </span><span class="nc">ExampleParser</span><span class="p">:</span>
+</span><span id="line-2-5"><a id="example-2-5" name="example-2-5"></a>
+</span><span id="line-2-6"><a id="example-2-6" name="example-2-6"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">extension</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+</span><span id="line-2-7"><a id="example-2-7" name="example-2-7"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">extension</span> <span class="o">=</span> <span class="n">extension</span>
+</span><span id="line-2-8"><a id="example-2-8" name="example-2-8"></a>
+</span><span id="line-2-9"><a id="example-2-9" name="example-2-9"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">parse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">:</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TestSuite</span><span class="p">:</span>
+</span><span id="line-2-10"><a id="example-2-10" name="example-2-10"></a>        <span class="n">name</span> <span class="o">=</span> <span class="n">TestSuite</span><span class="o">.</span><span class="n">name_from_source</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">extension</span><span class="p">)</span>
+</span><span id="line-2-11"><a id="example-2-11" name="example-2-11"></a>        <span class="n">suite</span> <span class="o">=</span> <span class="n">TestSuite</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="n">source</span><span class="p">)</span>
+</span><span id="line-2-12"><a id="example-2-12" name="example-2-12"></a>        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">source</span><span class="o">.</span><span class="n">read_text</span><span class="p">()</span><span class="o">.</span><span class="n">splitlines</span><span class="p">():</span>
+</span><span id="line-2-13"><a id="example-2-13" name="example-2-13"></a>            <span class="n">test</span> <span class="o">=</span> <span class="n">suite</span><span class="o">.</span><span class="n">tests</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">line</span><span class="p">)</span>
+</span><span id="line-2-14"><a id="example-2-14" name="example-2-14"></a>            <span class="n">test</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">create_keyword</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Log&#39;</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Hello!&#39;</span><span class="p">])</span>
+</span><span id="line-2-15"><a id="example-2-15" name="example-2-15"></a>        <span class="k">return</span> <span class="n">suite</span>
+</span></code></pre></div></td></tr></table></div>
+<h3 id="parser-extending-optional-base-class">Parser extending optional base class<a class="headerlink" href="#parser-extending-optional-base-class" title="Permanent link">&para;</a></h3>
+<p>This parser extends the optional <a href="https://robot-framework.readthedocs.io/en/master/autodoc/robot.api.html#robot.api.interfaces.Parser">Parser</a> base class. It supports parsing suite
+initialization files, uses <a href="https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.builder.html#robot.running.builder.settings.TestDefaults">TestDefaults</a> and registers multiple extensions.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-3-1"> 1</a></span>
+<span class="normal"><a href="#example-3-2"> 2</a></span>
+<span class="normal"><a href="#example-3-3"> 3</a></span>
+<span class="normal"><a href="#example-3-4"> 4</a></span>
+<span class="normal"><a href="#example-3-5"> 5</a></span>
+<span class="normal"><a href="#example-3-6"> 6</a></span>
+<span class="normal"><a href="#example-3-7"> 7</a></span>
+<span class="normal"><a href="#example-3-8"> 8</a></span>
+<span class="normal"><a href="#example-3-9"> 9</a></span>
+<span class="normal"><a href="#example-3-10">10</a></span>
+<span class="normal"><a href="#example-3-11">11</a></span>
+<span class="normal"><a href="#example-3-12">12</a></span>
+<span class="normal"><a href="#example-3-13">13</a></span>
+<span class="normal"><a href="#example-3-14">14</a></span>
+<span class="normal"><a href="#example-3-15">15</a></span>
+<span class="normal"><a href="#example-3-16">16</a></span>
+<span class="normal"><a href="#example-3-17">17</a></span>
+<span class="normal"><a href="#example-3-18">18</a></span>
+<span class="normal"><a href="#example-3-19">19</a></span>
+<span class="normal"><a href="#example-3-20">20</a></span>
+<span class="normal"><a href="#example-3-21">21</a></span>
+<span class="normal"><a href="#example-3-22">22</a></span>
+<span class="normal"><a href="#example-3-23">23</a></span>
+<span class="normal"><a href="#example-3-24">24</a></span>
+<span class="normal"><a href="#example-3-25">25</a></span>
+<span class="normal"><a href="#example-3-26">26</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-3-1"><a id="example-3-1" name="example-3-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+</span><span id="line-3-2"><a id="example-3-2" name="example-3-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">robot.api</span><span class="w"> </span><span class="kn">import</span> <span class="n">TestSuite</span>
+</span><span id="line-3-3"><a id="example-3-3" name="example-3-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">robot.api.interfaces</span><span class="w"> </span><span class="kn">import</span> <span class="n">Parser</span><span class="p">,</span> <span class="n">TestDefaults</span>
+</span><span id="line-3-4"><a id="example-3-4" name="example-3-4"></a>
+</span><span id="line-3-5"><a id="example-3-5" name="example-3-5"></a><span class="k">class</span><span class="w"> </span><span class="nc">ExampleParser</span><span class="p">(</span><span class="n">Parser</span><span class="p">):</span>
+</span><span id="line-3-6"><a id="example-3-6" name="example-3-6"></a>    <span class="n">extension</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;example&#39;</span><span class="p">,</span> <span class="s1">&#39;another&#39;</span><span class="p">)</span>
+</span><span id="line-3-7"><a id="example-3-7" name="example-3-7"></a>
+</span><span id="line-3-8"><a id="example-3-8" name="example-3-8"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">parse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">defaults</span><span class="p">:</span> <span class="n">TestDefaults</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TestSuite</span><span class="p">:</span>
+</span><span id="line-3-9"><a id="example-3-9" name="example-3-9"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Create a suite and set possible defaults from init files to tests.&quot;&quot;&quot;</span>
+</span><span id="line-3-10"><a id="example-3-10" name="example-3-10"></a>        <span class="n">suite</span> <span class="o">=</span> <span class="n">TestSuite</span><span class="p">(</span><span class="n">TestSuite</span><span class="o">.</span><span class="n">name_from_source</span><span class="p">(</span><span class="n">source</span><span class="p">),</span> <span class="n">source</span><span class="o">=</span><span class="n">source</span><span class="p">)</span>
+</span><span id="line-3-11"><a id="example-3-11" name="example-3-11"></a>        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">source</span><span class="o">.</span><span class="n">read_text</span><span class="p">()</span><span class="o">.</span><span class="n">splitlines</span><span class="p">():</span>
+</span><span id="line-3-12"><a id="example-3-12" name="example-3-12"></a>            <span class="n">test</span> <span class="o">=</span> <span class="n">suite</span><span class="o">.</span><span class="n">tests</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">line</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s1">&#39;Example&#39;</span><span class="p">)</span>
+</span><span id="line-3-13"><a id="example-3-13" name="example-3-13"></a>            <span class="n">test</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">create_keyword</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Log&#39;</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Hello!&#39;</span><span class="p">])</span>
+</span><span id="line-3-14"><a id="example-3-14" name="example-3-14"></a>            <span class="n">defaults</span><span class="o">.</span><span class="n">set_to</span><span class="p">(</span><span class="n">test</span><span class="p">)</span>
+</span><span id="line-3-15"><a id="example-3-15" name="example-3-15"></a>        <span class="k">return</span> <span class="n">suite</span>
+</span><span id="line-3-16"><a id="example-3-16" name="example-3-16"></a>
+</span><span id="line-3-17"><a id="example-3-17" name="example-3-17"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">parse_init</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">defaults</span><span class="p">:</span> <span class="n">TestDefaults</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TestSuite</span><span class="p">:</span>
+</span><span id="line-3-18"><a id="example-3-18" name="example-3-18"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Create a dummy suite and set some defaults.</span>
+</span><span id="line-3-19"><a id="example-3-19" name="example-3-19"></a>
+</span><span id="line-3-20"><a id="example-3-20" name="example-3-20"></a><span class="sd">        This method is called only if there is an initialization file with</span>
+</span><span id="line-3-21"><a id="example-3-21" name="example-3-21"></a><span class="sd">        a supported extension.</span>
+</span><span id="line-3-22"><a id="example-3-22" name="example-3-22"></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="line-3-23"><a id="example-3-23" name="example-3-23"></a>        <span class="n">defaults</span><span class="o">.</span><span class="n">tags</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;tags&#39;</span><span class="p">,</span> <span class="s1">&#39;from init&#39;</span><span class="p">)</span>
+</span><span id="line-3-24"><a id="example-3-24" name="example-3-24"></a>        <span class="n">defaults</span><span class="o">.</span><span class="n">setup</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Log&#39;</span><span class="p">,</span> <span class="s1">&#39;args&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Hello from init!&#39;</span><span class="p">]}</span>
+</span><span id="line-3-25"><a id="example-3-25" name="example-3-25"></a>        <span class="k">return</span> <span class="n">TestSuite</span><span class="p">(</span><span class="n">TestSuite</span><span class="o">.</span><span class="n">name_from_source</span><span class="p">(</span><span class="n">source</span><span class="o">.</span><span class="n">parent</span><span class="p">),</span> <span class="n">doc</span><span class="o">=</span><span class="s1">&#39;Example&#39;</span><span class="p">,</span>
+</span><span id="line-3-26"><a id="example-3-26" name="example-3-26"></a>                         <span class="n">source</span><span class="o">=</span><span class="n">source</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Example&#39;</span><span class="p">:</span> <span class="s1">&#39;Value&#39;</span><span class="p">})</span>
+</span></code></pre></div></td></tr></table></div>
+<h3 id="parser-as-preprocessor">Parser as preprocessor<a class="headerlink" href="#parser-as-preprocessor" title="Permanent link">&para;</a></h3>
+<p>The final example parser acts as a preprocessor for Robot Framework data files
+that supports headers in format <code>=== Test Cases ===</code> in addition to
+<code>*** Test Cases ***</code>. In this kind of usage it is convenient to use
+<a href="https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.TestSuite.from_string">TestSuite.from_string</a>, <a href="https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.TestSuite.from_model">TestSuite.from_model</a> and
+<a href="https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.TestSuite.from_file_system">TestSuite.from_file_system</a> factory methods for constructing the returned suite.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-4-1"> 1</a></span>
+<span class="normal"><a href="#example-4-2"> 2</a></span>
+<span class="normal"><a href="#example-4-3"> 3</a></span>
+<span class="normal"><a href="#example-4-4"> 4</a></span>
+<span class="normal"><a href="#example-4-5"> 5</a></span>
+<span class="normal"><a href="#example-4-6"> 6</a></span>
+<span class="normal"><a href="#example-4-7"> 7</a></span>
+<span class="normal"><a href="#example-4-8"> 8</a></span>
+<span class="normal"><a href="#example-4-9"> 9</a></span>
+<span class="normal"><a href="#example-4-10">10</a></span>
+<span class="normal"><a href="#example-4-11">11</a></span>
+<span class="normal"><a href="#example-4-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-4-1"><a id="example-4-1" name="example-4-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+</span><span id="line-4-2"><a id="example-4-2" name="example-4-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">robot.running</span><span class="w"> </span><span class="kn">import</span> <span class="n">TestDefaults</span><span class="p">,</span> <span class="n">TestSuite</span>
+</span><span id="line-4-3"><a id="example-4-3" name="example-4-3"></a>
+</span><span id="line-4-4"><a id="example-4-4" name="example-4-4"></a><span class="k">class</span><span class="w"> </span><span class="nc">RobotPreprocessor</span><span class="p">:</span>
+</span><span id="line-4-5"><a id="example-4-5" name="example-4-5"></a>    <span class="n">extension</span> <span class="o">=</span> <span class="s1">&#39;.robot&#39;</span>
+</span><span id="line-4-6"><a id="example-4-6" name="example-4-6"></a>
+</span><span id="line-4-7"><a id="example-4-7" name="example-4-7"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">parse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">defaults</span><span class="p">:</span> <span class="n">TestDefaults</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TestSuite</span><span class="p">:</span>
+</span><span id="line-4-8"><a id="example-4-8" name="example-4-8"></a>        <span class="n">data</span> <span class="o">=</span> <span class="n">source</span><span class="o">.</span><span class="n">read_text</span><span class="p">()</span>
+</span><span id="line-4-9"><a id="example-4-9" name="example-4-9"></a>        <span class="k">for</span> <span class="n">header</span> <span class="ow">in</span> <span class="s1">&#39;Settings&#39;</span><span class="p">,</span> <span class="s1">&#39;Variables&#39;</span><span class="p">,</span> <span class="s1">&#39;Test Cases&#39;</span><span class="p">,</span> <span class="s1">&#39;Keywords&#39;</span><span class="p">:</span>
+</span><span id="line-4-10"><a id="example-4-10" name="example-4-10"></a>            <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;=== </span><span class="si">{</span><span class="n">header</span><span class="si">}</span><span class="s1"> ===&#39;</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;*** </span><span class="si">{</span><span class="n">header</span><span class="si">}</span><span class="s1"> ***&#39;</span><span class="p">)</span>
+</span><span id="line-4-11"><a id="example-4-11" name="example-4-11"></a>        <span class="n">suite</span> <span class="o">=</span> <span class="n">TestSuite</span><span class="o">.</span><span class="n">from_string</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">defaults</span><span class="o">=</span><span class="n">defaults</span><span class="p">)</span>
+</span><span id="line-4-12"><a id="example-4-12" name="example-4-12"></a>        <span class="k">return</span> <span class="n">suite</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">TestSuite</span><span class="o">.</span><span class="n">name_from_source</span><span class="p">(</span><span class="n">source</span><span class="p">),</span> <span class="n">source</span><span class="o">=</span><span class="n">source</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
 
 
 

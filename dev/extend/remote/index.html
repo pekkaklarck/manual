@@ -1340,6 +1340,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Remote library interface
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1356,6 +1374,158 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#putting-remote-library-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Putting Remote library to use
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Putting Remote library to use">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#importing-remote-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Importing Remote library
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#starting-and-stopping-remote-servers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Starting and stopping remote servers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supported-argument-and-return-value-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supported argument and return value types
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remote-protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Remote protocol
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Remote protocol">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#required-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Required methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-get_keyword_names-and-keyword-specific-getters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using get_keyword_names and keyword specific getters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-get_library_information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using get_library_information
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#executing-remote-keywords" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Executing remote keywords
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#different-argument-syntaxes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Different argument syntaxes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -9663,7 +9833,7 @@
   <span class="md-ellipsis">
     
   
-    Documentation format
+    Doc format
   
 
     
@@ -9793,6 +9963,792 @@
 
 
 <h1 id="remote-library-interface">Remote library interface<a class="headerlink" href="#remote-library-interface" title="Permanent link">&para;</a></h1>
+<p>The remote library interface provides means for having test libraries
+on different machines than where Robot Framework itself is running,
+and also for implementing libraries using other languages than the
+natively supported Python. For a test library, user remote
+libraries look pretty much the same as any other test library, and
+developing test libraries using the remote library interface is also
+very close to creating <a href="http://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml?search=8270">normal test libraries</a>.</p>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<p>There are two main reasons for using the remote library API:</p>
+<ul>
+<li>
+<p>It is possible to have actual libraries on different machines than
+  where Robot Framework is running. This allows interesting
+  possibilities for distributed testing.</p>
+</li>
+<li>
+<p>Test libraries can be implemented using any language that supports
+  <a href="http://www.xmlrpc.com/">XML-RPC</a> protocol. There exists ready-made <a href="https://github.com/robotframework/RemoteInterface#available-remote-servers">generic remote servers</a>
+  for various languages like Python, Java, Ruby, .NET, and so on.</p>
+</li>
+</ul>
+<p>The remote library interface is provided by the Remote library that is
+one of the <a href="../../syntax/libraries/#standard-libraries">standard libraries</a>.
+This library does not have any keywords of its own, but it works
+as a proxy between the core framework and keywords implemented
+elsewhere. The Remote library interacts with actual library
+implementations through remote servers, and the Remote library and
+servers communicate using a simple <a href="#remote-protocol">remote protocol</a> on top of an
+XML-RPC channel.  The high level architecture of all this is
+illustrated in the picture below:</p>
+<p><img alt="Robot Framework architecture with Remote library" src="../remote.png" /></p>
+<p><em>Robot Framework architecture with Remote library</em></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The remote client uses Python's standard <a href="https://docs.python.org/library/xmlrpc.client.html">XML-RPC module</a>. It does
+not support custom XML-RPC extensions implemented by some XML-RPC
+servers.</p>
+</div>
+<h2 id="putting-remote-library-to-use">Putting Remote library to use<a class="headerlink" href="#putting-remote-library-to-use" title="Permanent link">&para;</a></h2>
+<h3 id="importing-remote-library">Importing Remote library<a class="headerlink" href="#importing-remote-library" title="Permanent link">&para;</a></h3>
+<p>The Remote library needs to know the address of the remote server but
+otherwise importing it and using keywords that it provides is no
+different to how other libraries are used. If you need to use the Remote
+library multiple times in a suite, or just want to give it a more
+descriptive name, you can give it an <a href="http://stackoverflow.com/questions/14504450/pythons-xmlrpc-extremely-slow-one-second-per-call">alias when importing it</a>.</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
+<span class="normal"><a href="#example-0-2">2</a></span>
+<span class="normal"><a href="#example-0-3">3</a></span>
+<span class="normal"><a href="#example-0-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="gh">*** Settings ***</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a><span class="kn">Library</span><span class="p">    </span><span class="nn">Remote</span><span class="p">    </span><span class="s">http://127.0.0.1:8270</span><span class="p">       </span><span class="s">AS</span><span class="p">    </span><span class="s">Example1</span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a><span class="kn">Library</span><span class="p">    </span><span class="nn">Remote</span><span class="p">    </span><span class="s">http://example.com:8080/</span><span class="p">    </span><span class="s">AS</span><span class="p">    </span><span class="s">Example2</span>
+</span><span id="line-0-4"><a id="example-0-4" name="example-0-4"></a><span class="kn">Library</span><span class="p">    </span><span class="nn">Remote</span><span class="p">    </span><span class="s">http://10.0.0.2/example</span><span class="p">    </span><span class="s">1 minute</span><span class="p">    </span><span class="s">AS</span><span class="p">    </span><span class="s">Example3</span>
+</span></code></pre></div></td></tr></table></div>
+The URL used by the first example above is also the default address
+that the Remote library uses if no address is given.</p>
+<p>The last example above shows how to give a custom timeout to the Remote library
+as an optional second argument. The timeout is used when initially connecting
+to the server and if a connection accidentally closes. Timeout can be
+given in Robot Framework <a href="../../appendix/time-format/#time-format">time format</a> like <code>60s</code> or <code>2 minutes 10 seconds</code>.
+The default timeout is typically several minutes, but it depends on the
+operating system and its configuration. Notice that setting a timeout that
+is shorter than keyword execution time will interrupt the keyword.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Port <code>8270</code> is the default port that remote servers are expected
+to use and it has been <a href="http://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml?search=8270">registered by IANA</a> for this purpose.
+This port number was selected because 82 and 70 are the ASCII codes
+of letters <code>R</code> and <code>F</code>, respectively.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When connecting to the local machine, it is recommended to use
+IP address <code>127.0.0.1</code> instead of machine name <code>localhost</code>. This
+avoids address resolution that can be extremely slow <a href="http://stackoverflow.com/questions/14504450/pythons-xmlrpc-extremely-slow-one-second-per-call">at least on
+Windows</a>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the URI contains no path after the server address, the <a href="../../syntax/libraries/#xml">XML-RPC
+module</a> used by the Remote library will use <code>/RPC2</code> path by
+default. In practice using <code>http://127.0.0.1:8270</code> is thus identical
+to using <code>http://127.0.0.1:8270/RPC2</code>. Depending on the remote server
+this may or may not be a problem. No extra path is appended if the
+address has a path even if the path is just <code>/</code>. For example, neither
+<code>http://127.0.0.1:8270/</code> nor <code>http://127.0.0.1:8270/my/path</code> will be
+modified.</p>
+</div>
+<h3 id="starting-and-stopping-remote-servers">Starting and stopping remote servers<a class="headerlink" href="#starting-and-stopping-remote-servers" title="Permanent link">&para;</a></h3>
+<p>Before the Remote library can be imported, the remote server providing
+the actual keywords must be started.  If the server is started before
+launching the test execution, it is possible to use the normal
+<code>Library</code> setting like in the above example. Alternatively other
+keywords, for example from <a href="../../syntax/libraries/#process">Process</a> or <a href="https://github.com/robotframework/SSHLibrary">SSH</a> libraries, can start
+the server up, but then you may need to use <a href="http://docs.python.org/library/xmlrpc.client.html#binary-objects">Import Library keyword</a>
+because the library is not available when the test execution starts.</p>
+<p>How a remote server can be stopped depends on how it is
+implemented. Typically servers support the following methods:</p>
+<ul>
+<li>Regardless of the library used, remote servers should provide <em>Stop
+  Remote Server</em> keyword that can be easily used by executed tests.</li>
+<li>Remote servers should have <code>stop_remote_server</code> method in their
+  XML-RPC interface.</li>
+<li>Hitting <code>Ctrl-C</code> on the console where the server is running should
+  stop the server.</li>
+<li>The server process can be terminated using tools provided by the
+  operating system (e.g. <code>kill</code>).</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Servers may be configured so that users cannot stop it with
+<em>Stop Remote Server</em> keyword or <code>stop_remote_server</code>
+method.</p>
+</div>
+<h2 id="supported-argument-and-return-value-types">Supported argument and return value types<a class="headerlink" href="#supported-argument-and-return-value-types" title="Permanent link">&para;</a></h2>
+<p>Because the XML-RPC protocol does not support all possible object
+types, the values transferred between the Remote library and remote
+servers must be converted to compatible types. This applies to the
+keyword arguments the Remote library passes to remote servers and to
+the return values servers give back to the Remote library.</p>
+<p>Both the Remote library and the Python remote server handle Python values
+according to the following rules. Other remote servers should behave similarly.</p>
+<ul>
+<li>
+<p>Strings, numbers and Boolean values are passed without modifications.</p>
+</li>
+<li>
+<p>Python <code>None</code> is converted to an empty string.</p>
+</li>
+<li>
+<p>All lists, tuples, and other iterable objects (except strings and
+  dictionaries) are passed as lists so that their contents are converted
+  recursively.</p>
+</li>
+<li>
+<p>Dictionaries and other mappings are passed as dicts so that their keys are
+  converted to strings and values converted to supported types recursively.</p>
+</li>
+<li>
+<p>Returned dictionaries are converted to so called <em>dot-accessible dicts</em>
+  that allow accessing keys as attributes using the <a href="../../syntax/variables/#extended-variable-syntax">extended variable syntax</a>
+  like <code>${result.key}</code>. This works also with nested dictionaries like
+  <code>${root.child.leaf}</code>.</p>
+</li>
+<li>
+<p>Strings containing bytes in the ASCII range that cannot be represented in
+  XML (e.g. the null byte) are sent as <a href="https://github.com/robotframework/PythonRemoteServer">Binary objects</a> that internally use
+  XML-RPC base64 data type. Received Binary objects are automatically converted
+  to byte strings.</p>
+</li>
+<li>
+<p>Other types are converted to strings.</p>
+</li>
+</ul>
+<h2 id="remote-protocol">Remote protocol<a class="headerlink" href="#remote-protocol" title="Permanent link">&para;</a></h2>
+<p>This section explains the protocol that is used between the Remote
+library and remote servers. This information is mainly targeted for
+people who want to create new remote servers.</p>
+<p>The remote protocol is implemented on top of <a href="http://www.xmlrpc.com/">XML-RPC</a>, which is a
+simple remote procedure call protocol using XML over HTTP. Most
+mainstream languages (Python, Java, C, Ruby, Perl, Javascript, PHP,
+...) have a support for XML-RPC either built-in or as an extension.</p>
+<p>The <a href="http://docs.python.org/library/xmlrpc.client.html#binary-objects">Python remote server</a> can be used as a reference implementation.</p>
+<h3 id="required-methods">Required methods<a class="headerlink" href="#required-methods" title="Permanent link">&para;</a></h3>
+<p>There are two possibilities how remote servers can provide information about
+the keywords they contain. They are briefly explained below and documented
+more thoroughly in the subsequent sections.</p>
+<ol>
+<li>
+<p>Remote servers can implement the same methods as the <a href="../dynamic/#dynamic-library-api">dynamic library API</a>
+   has. This means <code>get_keyword_names</code> method and optional <code>get_keyword_arguments</code>,
+   <code>get_keyword_types</code>, <code>get_keyword_tags</code> and <code>get_keyword_documentation</code> methods.
+   Notice that using "camel-case names" like <code>getKeywordNames</code> is not
+   possible similarly as in the normal dynamic API.</p>
+</li>
+<li>
+<p>Starting from Robot Framework 4.0, remote servers can have a single
+   <code>get_library_information</code> method that returns all library and keyword
+   information as a single dictionary. If a remote server has this method,
+   the other getter methods like <code>get_keyword_names</code> are not used at all.
+   This approach has the benefit that there is only one XML-RPC call to get
+   information while the approach explained above requires several calls per
+   keyword. With bigger libraries the difference can be significant.</p>
+</li>
+</ol>
+<p>Regardless how remote servers provide information about their keywords, they
+must have <code>run_keyword</code> method that is used when keywords are executed.
+How the actual keywords are implemented is not relevant for the Remote
+library. Remote servers can either act as wrappers for the real test
+libraries, like the available <a href="https://github.com/robotframework/RemoteInterface#available-remote-servers">generic remote servers</a> do, or they can
+implement keywords themselves.</p>
+<p>Remote servers should additionally have <code>stop_remote_server</code>
+method in their public interface to ease stopping them. They should
+also automatically expose this method as <em>Stop Remote Server</em>
+keyword to allow using it in the test data regardless of the test
+library. Allowing users to stop the server is not always desirable,
+and servers may support disabling this functionality somehow.
+The method, and also the exposed keyword, should return <code>True</code>
+or <code>False</code> depending on whether stopping is allowed or not. That makes it
+possible for external tools to know if stopping the server succeeded.</p>
+<h3 id="using-get_keyword_names-and-keyword-specific-getters">Using <code>get_keyword_names</code> and keyword specific getters<a class="headerlink" href="#using-get_keyword_names-and-keyword-specific-getters" title="Permanent link">&para;</a></h3>
+<p>This section explains how the Remote library gets keyword names and other
+information when the server implements <code>get_keyword_names</code>. The next sections
+covers using the newer <code>get_library_info</code> method.</p>
+<p>The <code>get_keyword_names</code> method must return names of the keyword the server
+contains as a list of strings. Remote servers can, and should, also implement
+<code>get_keyword_arguments</code>, <code>get_keyword_types</code>, <code>get_keyword_tags</code> and
+<code>get_keyword_documentation</code> methods to provide more information about
+the keywords. All these methods take the name of the keyword as an argument
+and what they must return is explained in the table below.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Return value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>get_keyword_arguments</code></td>
+<td>Arguments as a list of strings in the <a href="https://github.com/robotframework/PythonRemoteServer">same format as with dynamic libraries</a>.</td>
+</tr>
+<tr>
+<td><code>get_keyword_types</code></td>
+<td>Type information as a list or dictionary of strings. See below for details.</td>
+</tr>
+<tr>
+<td><code>get_keyword_documentation</code></td>
+<td>Documentation as a string.</td>
+</tr>
+<tr>
+<td><code>get_keyword_tags</code></td>
+<td>Tags as a list of strings.</td>
+</tr>
+</tbody>
+</table>
+<p>Type information used for <a href="../libraries/#argument-conversion">argument conversion</a> can be returned either as
+a list mapping type names to arguments based on position or as a dictionary
+mapping argument names to type names directly. In practice this works the same
+way as when <a href="../dynamic/#getting-keyword-arguments">specifying types using the @keyword decorator</a> with normal
+libraries. The difference is that because the XML-RPC protocol does not support
+arbitrary values, type information needs to be specified using type names
+or aliases like <code>'int'</code> or <code>'integer'</code>, not using actual types like <code>int</code>.
+Additionally <code>None</code> or <code>null</code> values may not be allowed by the XML-RPC server,
+but an empty string can be used to indicate that certain argument does not
+have type information instead.</p>
+<p>Argument conversion is supported also based on default values using the
+<a href="../libraries/#specifying-argument-types-using-keyword-decorator">same logic as with normal libraries</a>. For this to work, arguments with
+default values must be returned as tuples, not as strings, the <a href="../libraries/#implicit-argument-types-based-on-default-values">same way
+as with dynamic libraries</a>. For example, argument conversion works if
+argument information is returned like <code>[('count', 1), ('caseless', True)]</code>
+but not if it is <code>['count=1', 'caseless=True']</code>.</p>
+<p>Remote servers can also provide <a href="../dynamic/#getting-keyword-arguments">general library documentation</a> to
+be used when generating documentation with the <a href="../libdoc/#libdoc">Libdoc</a> tool. This information
+is got by calling <code>get_keyword_documentation[ with special values ](#-with-special-values-)intro__</code>
+and <code>__init__</code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code>get_keyword_types</code> is new in Robot Framework 3.1 and support for
+argument conversion based on defaults is new in Robot Framework 4.0.</p>
+</div>
+<h3 id="using-get_library_information">Using <code>get_library_information</code><a class="headerlink" href="#using-get_library_information" title="Permanent link">&para;</a></h3>
+<p>The <code>get_library_information</code> method allows returning information about the whole
+library in one XML-RPC call. The information must be returned as a dictionary where
+keys are keyword names and values are nested dictionaries containing keyword information.
+The dictionary can also contain separate entries for generic library information.</p>
+<p>The keyword information dictionary can contain keyword arguments, documentation,
+tags and types, and the respective keys are <code>args</code>, <code>doc</code>, <code>tags</code> and <code>types</code>.
+Information must be provided using same semantics as when <code>get_keyword_arguments</code>,
+<code>get_keyword_documentation</code>, <code>get_keyword_tags</code> and <code>get_keyword_types</code> discussed
+in the previous section. If some information is not available, it can be omitted
+from the info dictionary altogether.</p>
+<p><code>get_library_information</code> supports also returning general library documentation
+to be used with <a href="../libdoc/#libdoc">Libdoc</a>. It is done by including special <code>__intro__[ and ](libraries.md#errors-and-warnings)init__</code>
+entries into the returned library information dictionary.</p>
+<p>For example, a Python library like</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-1-1"> 1</a></span>
+<span class="normal"><a href="#example-1-2"> 2</a></span>
+<span class="normal"><a href="#example-1-3"> 3</a></span>
+<span class="normal"><a href="#example-1-4"> 4</a></span>
+<span class="normal"><a href="#example-1-5"> 5</a></span>
+<span class="normal"><a href="#example-1-6"> 6</a></span>
+<span class="normal"><a href="#example-1-7"> 7</a></span>
+<span class="normal"><a href="#example-1-8"> 8</a></span>
+<span class="normal"><a href="#example-1-9"> 9</a></span>
+<span class="normal"><a href="#example-1-10">10</a></span>
+<span class="normal"><a href="#example-1-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-1-1"><a id="example-1-1" name="example-1-1"></a><span class="sd">&quot;&quot;&quot;Library documentation.&quot;&quot;&quot;</span>
+</span><span id="line-1-2"><a id="example-1-2" name="example-1-2"></a>
+</span><span id="line-1-3"><a id="example-1-3" name="example-1-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">robot.api.deco</span><span class="w"> </span><span class="kn">import</span> <span class="n">keyword</span>
+</span><span id="line-1-4"><a id="example-1-4" name="example-1-4"></a>
+</span><span id="line-1-5"><a id="example-1-5" name="example-1-5"></a><span class="nd">@keyword</span><span class="p">(</span><span class="n">tags</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">])</span>
+</span><span id="line-1-6"><a id="example-1-6" name="example-1-6"></a><span class="k">def</span><span class="w"> </span><span class="nf">example</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+</span><span id="line-1-7"><a id="example-1-7" name="example-1-7"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Keyword documentation.&quot;&quot;&quot;</span>
+</span><span id="line-1-8"><a id="example-1-8" name="example-1-8"></a>    <span class="k">pass</span>
+</span><span id="line-1-9"><a id="example-1-9" name="example-1-9"></a>
+</span><span id="line-1-10"><a id="example-1-10" name="example-1-10"></a><span class="k">def</span><span class="w"> </span><span class="nf">another</span><span class="p">():</span>
+</span><span id="line-1-11"><a id="example-1-11" name="example-1-11"></a>    <span class="k">pass</span>
+</span></code></pre></div></td></tr></table></div>
+could be mapped into this kind of library information dictionary:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-2-1">1</a></span>
+<span class="normal"><a href="#example-2-2">2</a></span>
+<span class="normal"><a href="#example-2-3">3</a></span>
+<span class="normal"><a href="#example-2-4">4</a></span>
+<span class="normal"><a href="#example-2-5">5</a></span>
+<span class="normal"><a href="#example-2-6">6</a></span>
+<span class="normal"><a href="#example-2-7">7</a></span>
+<span class="normal"><a href="#example-2-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-2-1"><a id="example-2-1" name="example-2-1"></a><span class="p">{</span>
+</span><span id="line-2-2"><a id="example-2-2" name="example-2-2"></a>    <span class="s1">&#39;__intro__&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;doc&#39;</span><span class="p">:</span> <span class="s1">&#39;Library documentation&#39;</span><span class="p">}</span>
+</span><span id="line-2-3"><a id="example-2-3" name="example-2-3"></a>    <span class="s1">&#39;example&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;args&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b=True&#39;</span><span class="p">],</span>
+</span><span id="line-2-4"><a id="example-2-4" name="example-2-4"></a>                <span class="s1">&#39;types&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;int&#39;</span><span class="p">],</span>
+</span><span id="line-2-5"><a id="example-2-5" name="example-2-5"></a>                <span class="s1">&#39;doc&#39;</span><span class="p">:</span> <span class="s1">&#39;Keyword documentation.&#39;</span><span class="p">,</span>
+</span><span id="line-2-6"><a id="example-2-6" name="example-2-6"></a>                <span class="s1">&#39;tags&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">]}</span>
+</span><span id="line-2-7"><a id="example-2-7" name="example-2-7"></a>    <span class="s1">&#39;another: {&#39;</span><span class="n">args</span><span class="s1">&#39;: []}</span>
+</span><span id="line-2-8"><a id="example-2-8" name="example-2-8"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code>get_library_information</code> is new in Robot Framework 4.0.</p>
+</div>
+<h3 id="executing-remote-keywords">Executing remote keywords<a class="headerlink" href="#executing-remote-keywords" title="Permanent link">&para;</a></h3>
+<p>When the Remote library wants the server to execute some keyword, it
+calls the remote server's <code>run_keyword</code> method and passes it the
+keyword name, a list of arguments, and possibly a dictionary of
+<a href="http://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml?search=8270">free named arguments</a>. Base types can be used as
+arguments directly, but more complex types are <a href="http://stackoverflow.com/questions/14504450/pythons-xmlrpc-extremely-slow-one-second-per-call">converted to supported
+types</a>.</p>
+<p>The server must return results of the execution in a result dictionary
+(or map, depending on terminology) containing items explained in the
+following table. Notice that only the <code>status</code> entry is mandatory,
+others can be omitted if they are not applicable.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>status</td>
+<td>Mandatory execution status. Either PASS or FAIL.</td>
+</tr>
+<tr>
+<td>output</td>
+<td>Possible output to write into the log file. Must be given as a single string but can contain multiple messages and different <a href="https://github.com/robotframework/SSHLibrary">log levels</a> in format <code>*INFO* First message\n*HTML* &lt;b&gt;2nd&lt;/b&gt;\n*WARN* Another message</code>. It is also possible to embed <a href="../libraries/#timestamps">timestamps</a> to the log messages like <code>*INFO:1308435758660* Message with timestamp</code>.</td>
+</tr>
+<tr>
+<td>return</td>
+<td>Possible return value. Must be one of the <a href="http://docs.python.org/library/xmlrpc.client.html#binary-objects">supported types</a>.</td>
+</tr>
+<tr>
+<td>error</td>
+<td>Possible error message. Used only when the execution fails.</td>
+</tr>
+<tr>
+<td>traceback</td>
+<td>Possible stack trace to <a href="https://github.com/robotframework/PythonRemoteServer">write into the log file</a> using DEBUG level when the execution fails.</td>
+</tr>
+<tr>
+<td>continuable</td>
+<td>When set to <code>True</code>, or any value considered <code>True</code> in Python, the occurred failure is considered <a href="../libraries/#continuable-failures">continuable</a>.</td>
+</tr>
+<tr>
+<td>fatal</td>
+<td>Like <code>continuable</code>, but denotes that the occurred failure is <a href="#fatal">fatal</a>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="different-argument-syntaxes">Different argument syntaxes<a class="headerlink" href="#different-argument-syntaxes" title="Permanent link">&para;</a></h3>
+<p>The Remote library is a <a href="../dynamic/#dynamic-library">dynamic library</a>, and in general it handles
+different argument syntaxes <a href="../dynamic/#named-argument-syntax-with-dynamic-libraries">according to the same rules</a> as any other
+dynamic library.
+This includes mandatory arguments, default values, varargs, as well
+as <a href="../dynamic/#free-named-arguments-with-dynamic-libraries">named argument syntax</a>.</p>
+<p>Also free named arguments (<code>**kwargs</code>) works mostly the <a href="../#libraries">same way
+as with other dynamic libraries</a>. First of all, the
+<code>get_keyword_arguments</code> must return an argument specification that
+contains <code>**kwargs</code> exactly like with any other dynamic library.
+The main difference is that
+remote servers' <code>run_keyword</code> method must have an <strong>optional</strong> third argument
+that gets the kwargs specified by the user. The third argument must be optional
+because, for backwards-compatibility reasons, the Remote library passes kwargs
+to the <code>run_keyword</code> method only when they have been used in the test data.</p>
+<p>In practice <code>run_keyword</code> should look something like the following
+Python and Java examples, depending on how the language handles optional
+arguments.</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-3-1">1</a></span>
+<span class="normal"><a href="#example-3-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-3-1"><a id="example-3-1" name="example-3-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">run_keyword</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+</span><span id="line-3-2"><a id="example-3-2" name="example-3-2"></a>    <span class="c1"># ...</span>
+</span></code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-4-1">  1</a></span>
+<span class="normal"><a href="#example-4-2">  2</a></span>
+<span class="normal"><a href="#example-4-3">  3</a></span>
+<span class="normal"><a href="#example-4-4">  4</a></span>
+<span class="normal"><a href="#example-4-5">  5</a></span>
+<span class="normal"><a href="#example-4-6">  6</a></span>
+<span class="normal"><a href="#example-4-7">  7</a></span>
+<span class="normal"><a href="#example-4-8">  8</a></span>
+<span class="normal"><a href="#example-4-9">  9</a></span>
+<span class="normal"><a href="#example-4-10"> 10</a></span>
+<span class="normal"><a href="#example-4-11"> 11</a></span>
+<span class="normal"><a href="#example-4-12"> 12</a></span>
+<span class="normal"><a href="#example-4-13"> 13</a></span>
+<span class="normal"><a href="#example-4-14"> 14</a></span>
+<span class="normal"><a href="#example-4-15"> 15</a></span>
+<span class="normal"><a href="#example-4-16"> 16</a></span>
+<span class="normal"><a href="#example-4-17"> 17</a></span>
+<span class="normal"><a href="#example-4-18"> 18</a></span>
+<span class="normal"><a href="#example-4-19"> 19</a></span>
+<span class="normal"><a href="#example-4-20"> 20</a></span>
+<span class="normal"><a href="#example-4-21"> 21</a></span>
+<span class="normal"><a href="#example-4-22"> 22</a></span>
+<span class="normal"><a href="#example-4-23"> 23</a></span>
+<span class="normal"><a href="#example-4-24"> 24</a></span>
+<span class="normal"><a href="#example-4-25"> 25</a></span>
+<span class="normal"><a href="#example-4-26"> 26</a></span>
+<span class="normal"><a href="#example-4-27"> 27</a></span>
+<span class="normal"><a href="#example-4-28"> 28</a></span>
+<span class="normal"><a href="#example-4-29"> 29</a></span>
+<span class="normal"><a href="#example-4-30"> 30</a></span>
+<span class="normal"><a href="#example-4-31"> 31</a></span>
+<span class="normal"><a href="#example-4-32"> 32</a></span>
+<span class="normal"><a href="#example-4-33"> 33</a></span>
+<span class="normal"><a href="#example-4-34"> 34</a></span>
+<span class="normal"><a href="#example-4-35"> 35</a></span>
+<span class="normal"><a href="#example-4-36"> 36</a></span>
+<span class="normal"><a href="#example-4-37"> 37</a></span>
+<span class="normal"><a href="#example-4-38"> 38</a></span>
+<span class="normal"><a href="#example-4-39"> 39</a></span>
+<span class="normal"><a href="#example-4-40"> 40</a></span>
+<span class="normal"><a href="#example-4-41"> 41</a></span>
+<span class="normal"><a href="#example-4-42"> 42</a></span>
+<span class="normal"><a href="#example-4-43"> 43</a></span>
+<span class="normal"><a href="#example-4-44"> 44</a></span>
+<span class="normal"><a href="#example-4-45"> 45</a></span>
+<span class="normal"><a href="#example-4-46"> 46</a></span>
+<span class="normal"><a href="#example-4-47"> 47</a></span>
+<span class="normal"><a href="#example-4-48"> 48</a></span>
+<span class="normal"><a href="#example-4-49"> 49</a></span>
+<span class="normal"><a href="#example-4-50"> 50</a></span>
+<span class="normal"><a href="#example-4-51"> 51</a></span>
+<span class="normal"><a href="#example-4-52"> 52</a></span>
+<span class="normal"><a href="#example-4-53"> 53</a></span>
+<span class="normal"><a href="#example-4-54"> 54</a></span>
+<span class="normal"><a href="#example-4-55"> 55</a></span>
+<span class="normal"><a href="#example-4-56"> 56</a></span>
+<span class="normal"><a href="#example-4-57"> 57</a></span>
+<span class="normal"><a href="#example-4-58"> 58</a></span>
+<span class="normal"><a href="#example-4-59"> 59</a></span>
+<span class="normal"><a href="#example-4-60"> 60</a></span>
+<span class="normal"><a href="#example-4-61"> 61</a></span>
+<span class="normal"><a href="#example-4-62"> 62</a></span>
+<span class="normal"><a href="#example-4-63"> 63</a></span>
+<span class="normal"><a href="#example-4-64"> 64</a></span>
+<span class="normal"><a href="#example-4-65"> 65</a></span>
+<span class="normal"><a href="#example-4-66"> 66</a></span>
+<span class="normal"><a href="#example-4-67"> 67</a></span>
+<span class="normal"><a href="#example-4-68"> 68</a></span>
+<span class="normal"><a href="#example-4-69"> 69</a></span>
+<span class="normal"><a href="#example-4-70"> 70</a></span>
+<span class="normal"><a href="#example-4-71"> 71</a></span>
+<span class="normal"><a href="#example-4-72"> 72</a></span>
+<span class="normal"><a href="#example-4-73"> 73</a></span>
+<span class="normal"><a href="#example-4-74"> 74</a></span>
+<span class="normal"><a href="#example-4-75"> 75</a></span>
+<span class="normal"><a href="#example-4-76"> 76</a></span>
+<span class="normal"><a href="#example-4-77"> 77</a></span>
+<span class="normal"><a href="#example-4-78"> 78</a></span>
+<span class="normal"><a href="#example-4-79"> 79</a></span>
+<span class="normal"><a href="#example-4-80"> 80</a></span>
+<span class="normal"><a href="#example-4-81"> 81</a></span>
+<span class="normal"><a href="#example-4-82"> 82</a></span>
+<span class="normal"><a href="#example-4-83"> 83</a></span>
+<span class="normal"><a href="#example-4-84"> 84</a></span>
+<span class="normal"><a href="#example-4-85"> 85</a></span>
+<span class="normal"><a href="#example-4-86"> 86</a></span>
+<span class="normal"><a href="#example-4-87"> 87</a></span>
+<span class="normal"><a href="#example-4-88"> 88</a></span>
+<span class="normal"><a href="#example-4-89"> 89</a></span>
+<span class="normal"><a href="#example-4-90"> 90</a></span>
+<span class="normal"><a href="#example-4-91"> 91</a></span>
+<span class="normal"><a href="#example-4-92"> 92</a></span>
+<span class="normal"><a href="#example-4-93"> 93</a></span>
+<span class="normal"><a href="#example-4-94"> 94</a></span>
+<span class="normal"><a href="#example-4-95"> 95</a></span>
+<span class="normal"><a href="#example-4-96"> 96</a></span>
+<span class="normal"><a href="#example-4-97"> 97</a></span>
+<span class="normal"><a href="#example-4-98"> 98</a></span>
+<span class="normal"><a href="#example-4-99"> 99</a></span>
+<span class="normal"><a href="#example-4-100">100</a></span>
+<span class="normal"><a href="#example-4-101">101</a></span>
+<span class="normal"><a href="#example-4-102">102</a></span>
+<span class="normal"><a href="#example-4-103">103</a></span>
+<span class="normal"><a href="#example-4-104">104</a></span>
+<span class="normal"><a href="#example-4-105">105</a></span>
+<span class="normal"><a href="#example-4-106">106</a></span>
+<span class="normal"><a href="#example-4-107">107</a></span>
+<span class="normal"><a href="#example-4-108">108</a></span>
+<span class="normal"><a href="#example-4-109">109</a></span>
+<span class="normal"><a href="#example-4-110">110</a></span>
+<span class="normal"><a href="#example-4-111">111</a></span>
+<span class="normal"><a href="#example-4-112">112</a></span>
+<span class="normal"><a href="#example-4-113">113</a></span>
+<span class="normal"><a href="#example-4-114">114</a></span>
+<span class="normal"><a href="#example-4-115">115</a></span>
+<span class="normal"><a href="#example-4-116">116</a></span>
+<span class="normal"><a href="#example-4-117">117</a></span>
+<span class="normal"><a href="#example-4-118">118</a></span>
+<span class="normal"><a href="#example-4-119">119</a></span>
+<span class="normal"><a href="#example-4-120">120</a></span>
+<span class="normal"><a href="#example-4-121">121</a></span>
+<span class="normal"><a href="#example-4-122">122</a></span>
+<span class="normal"><a href="#example-4-123">123</a></span>
+<span class="normal"><a href="#example-4-124">124</a></span>
+<span class="normal"><a href="#example-4-125">125</a></span>
+<span class="normal"><a href="#example-4-126">126</a></span>
+<span class="normal"><a href="#example-4-127">127</a></span>
+<span class="normal"><a href="#example-4-128">128</a></span>
+<span class="normal"><a href="#example-4-129">129</a></span>
+<span class="normal"><a href="#example-4-130">130</a></span>
+<span class="normal"><a href="#example-4-131">131</a></span>
+<span class="normal"><a href="#example-4-132">132</a></span>
+<span class="normal"><a href="#example-4-133">133</a></span>
+<span class="normal"><a href="#example-4-134">134</a></span>
+<span class="normal"><a href="#example-4-135">135</a></span>
+<span class="normal"><a href="#example-4-136">136</a></span>
+<span class="normal"><a href="#example-4-137">137</a></span>
+<span class="normal"><a href="#example-4-138">138</a></span>
+<span class="normal"><a href="#example-4-139">139</a></span>
+<span class="normal"><a href="#example-4-140">140</a></span>
+<span class="normal"><a href="#example-4-141">141</a></span>
+<span class="normal"><a href="#example-4-142">142</a></span>
+<span class="normal"><a href="#example-4-143">143</a></span>
+<span class="normal"><a href="#example-4-144">144</a></span>
+<span class="normal"><a href="#example-4-145">145</a></span>
+<span class="normal"><a href="#example-4-146">146</a></span>
+<span class="normal"><a href="#example-4-147">147</a></span>
+<span class="normal"><a href="#example-4-148">148</a></span>
+<span class="normal"><a href="#example-4-149">149</a></span>
+<span class="normal"><a href="#example-4-150">150</a></span>
+<span class="normal"><a href="#example-4-151">151</a></span>
+<span class="normal"><a href="#example-4-152">152</a></span>
+<span class="normal"><a href="#example-4-153">153</a></span>
+<span class="normal"><a href="#example-4-154">154</a></span>
+<span class="normal"><a href="#example-4-155">155</a></span>
+<span class="normal"><a href="#example-4-156">156</a></span>
+<span class="normal"><a href="#example-4-157">157</a></span>
+<span class="normal"><a href="#example-4-158">158</a></span>
+<span class="normal"><a href="#example-4-159">159</a></span>
+<span class="normal"><a href="#example-4-160">160</a></span>
+<span class="normal"><a href="#example-4-161">161</a></span>
+<span class="normal"><a href="#example-4-162">162</a></span>
+<span class="normal"><a href="#example-4-163">163</a></span>
+<span class="normal"><a href="#example-4-164">164</a></span>
+<span class="normal"><a href="#example-4-165">165</a></span>
+<span class="normal"><a href="#example-4-166">166</a></span>
+<span class="normal"><a href="#example-4-167">167</a></span>
+<span class="normal"><a href="#example-4-168">168</a></span>
+<span class="normal"><a href="#example-4-169">169</a></span>
+<span class="normal"><a href="#example-4-170">170</a></span>
+<span class="normal"><a href="#example-4-171">171</a></span>
+<span class="normal"><a href="#example-4-172">172</a></span>
+<span class="normal"><a href="#example-4-173">173</a></span>
+<span class="normal"><a href="#example-4-174">174</a></span>
+<span class="normal"><a href="#example-4-175">175</a></span>
+<span class="normal"><a href="#example-4-176">176</a></span>
+<span class="normal"><a href="#example-4-177">177</a></span>
+<span class="normal"><a href="#example-4-178">178</a></span>
+<span class="normal"><a href="#example-4-179">179</a></span>
+<span class="normal"><a href="#example-4-180">180</a></span>
+<span class="normal"><a href="#example-4-181">181</a></span>
+<span class="normal"><a href="#example-4-182">182</a></span>
+<span class="normal"><a href="#example-4-183">183</a></span>
+<span class="normal"><a href="#example-4-184">184</a></span>
+<span class="normal"><a href="#example-4-185">185</a></span>
+<span class="normal"><a href="#example-4-186">186</a></span>
+<span class="normal"><a href="#example-4-187">187</a></span>
+<span class="normal"><a href="#example-4-188">188</a></span>
+<span class="normal"><a href="#example-4-189">189</a></span>
+<span class="normal"><a href="#example-4-190">190</a></span>
+<span class="normal"><a href="#example-4-191">191</a></span>
+<span class="normal"><a href="#example-4-192">192</a></span>
+<span class="normal"><a href="#example-4-193">193</a></span>
+<span class="normal"><a href="#example-4-194">194</a></span>
+<span class="normal"><a href="#example-4-195">195</a></span>
+<span class="normal"><a href="#example-4-196">196</a></span>
+<span class="normal"><a href="#example-4-197">197</a></span>
+<span class="normal"><a href="#example-4-198">198</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-4-1"><a id="example-4-1" name="example-4-1"></a><span class="kd">public</span><span class="w"> </span><span class="n">Map</span><span class="w"> </span><span class="nf">run_keyword</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">List</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-4-2"><a id="example-4-2" name="example-4-2"></a><span class="w">    </span><span class="c1">// ...</span>
+</span><span id="line-4-3"><a id="example-4-3" name="example-4-3"></a><span class="p">}</span>
+</span><span id="line-4-4"><a id="example-4-4" name="example-4-4"></a>
+</span><span id="line-4-5"><a id="example-4-5" name="example-4-5"></a><span class="kd">public</span><span class="w"> </span><span class="n">Map</span><span class="w"> </span><span class="nf">run_keyword</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">List</span><span class="w"> </span><span class="n">args</span><span class="p">,</span><span class="w"> </span><span class="n">Map</span><span class="w"> </span><span class="n">kwargs</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-4-6"><a id="example-4-6" name="example-4-6"></a><span class="w">    </span><span class="c1">// ...</span>
+</span><span id="line-4-7"><a id="example-4-7" name="example-4-7"></a>
+</span><span id="line-4-8"><a id="example-4-8" name="example-4-8"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;keyword-section&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-9"><a id="example-4-9" name="example-4-9"></a>
+</span><span id="line-4-10"><a id="example-4-10" name="example-4-10"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;setting-variables-from-keyword-return-values&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-11"><a id="example-4-11" name="example-4-11"></a>
+</span><span id="line-4-12"><a id="example-4-12" name="example-4-12"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;earlier&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-13"><a id="example-4-13" name="example-4-13"></a>
+</span><span id="line-4-14"><a id="example-4-14" name="example-4-14"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;generic-automation&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-15"><a id="example-4-15" name="example-4-15"></a>
+</span><span id="line-4-16"><a id="example-4-16" name="example-4-16"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;parse-only-these-files&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-17"><a id="example-4-17" name="example-4-17"></a>
+</span><span id="line-4-18"><a id="example-4-18" name="example-4-18"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;parse-only-matching-files&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-19"><a id="example-4-19" name="example-4-19"></a>
+</span><span id="line-4-20"><a id="example-4-20" name="example-4-20"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;sets-the-name&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-21"><a id="example-4-21" name="example-4-21"></a>
+</span><span id="line-4-22"><a id="example-4-22" name="example-4-22"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;sets-the-documentation&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-23"><a id="example-4-23" name="example-4-23"></a>
+</span><span id="line-4-24"><a id="example-4-24" name="example-4-24"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;sets-free-metadata&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-25"><a id="example-4-25" name="example-4-25"></a>
+</span><span id="line-4-26"><a id="example-4-26" name="example-4-26"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;sets-the-tags&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-27"><a id="example-4-27" name="example-4-27"></a>
+</span><span id="line-4-28"><a id="example-4-28" name="example-4-28"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;selects-the-test-cases-by-name&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-29"><a id="example-4-29" name="example-4-29"></a>
+</span><span id="line-4-30"><a id="example-4-30" name="example-4-30"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;selects-the-test-suites&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-31"><a id="example-4-31" name="example-4-31"></a>
+</span><span id="line-4-32"><a id="example-4-32" name="example-4-32"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;selects-failed-test-suites&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-33"><a id="example-4-33" name="example-4-33"></a>
+</span><span id="line-4-34"><a id="example-4-34" name="example-4-34"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;selects-failed-tests&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-35"><a id="example-4-35" name="example-4-35"></a>
+</span><span id="line-4-36"><a id="example-4-36" name="example-4-36"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;selects-the-test-cases&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-37"><a id="example-4-37" name="example-4-37"></a>
+</span><span id="line-4-38"><a id="example-4-38" name="example-4-38"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;continueonfailure&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-39"><a id="example-4-39" name="example-4-39"></a>
+</span><span id="line-4-40"><a id="example-4-40" name="example-4-40"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;skips-teardowns&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-41"><a id="example-4-41" name="example-4-41"></a>
+</span><span id="line-4-42"><a id="example-4-42" name="example-4-42"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;skipteardownonexit&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-43"><a id="example-4-43" name="example-4-43"></a>
+</span><span id="line-4-44"><a id="example-4-44" name="example-4-44"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;dryrun&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-45"><a id="example-4-45" name="example-4-45"></a>
+</span><span id="line-4-46"><a id="example-4-46" name="example-4-46"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;randomizes&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-47"><a id="example-4-47" name="example-4-47"></a>
+</span><span id="line-4-48"><a id="example-4-48" name="example-4-48"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;individual-variables&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-49"><a id="example-4-49" name="example-4-49"></a>
+</span><span id="line-4-50"><a id="example-4-50" name="example-4-50"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;create-result-files&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-51"><a id="example-4-51" name="example-4-51"></a>
+</span><span id="line-4-52"><a id="example-4-52" name="example-4-52"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;robot-framework-6x-compatible-format&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-53"><a id="example-4-53" name="example-4-53"></a>
+</span><span id="line-4-54"><a id="example-4-54" name="example-4-54"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;adds-a-timestamp&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-55"><a id="example-4-55" name="example-4-55"></a>
+</span><span id="line-4-56"><a id="example-4-56" name="example-4-56"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;split-log-file&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-57"><a id="example-4-57" name="example-4-57"></a>
+</span><span id="line-4-58"><a id="example-4-58" name="example-4-58"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;sets-a-title&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-59"><a id="example-4-59" name="example-4-59"></a>
+</span><span id="line-4-60"><a id="example-4-60" name="example-4-60"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;sets-background-colors&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-61"><a id="example-4-61" name="example-4-61"></a>
+</span><span id="line-4-62"><a id="example-4-62" name="example-4-62"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;error-lines&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-63"><a id="example-4-63" name="example-4-63"></a>
+</span><span id="line-4-64"><a id="example-4-64" name="example-4-64"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;sets-the-threshold-level&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-65"><a id="example-4-65" name="example-4-65"></a>
+</span><span id="line-4-66"><a id="example-4-66" name="example-4-66"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;levels-to-show&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-67"><a id="example-4-67" name="example-4-67"></a>
+</span><span id="line-4-68"><a id="example-4-68" name="example-4-68"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;includes-only-these-tags&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-69"><a id="example-4-69" name="example-4-69"></a>
+</span><span id="line-4-70"><a id="example-4-70" name="example-4-70"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;excludes-these-tags&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-71"><a id="example-4-71" name="example-4-71"></a>
+</span><span id="line-4-72"><a id="example-4-72" name="example-4-72"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;combined-statistics-based-on-tags&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-73"><a id="example-4-73" name="example-4-73"></a>
+</span><span id="line-4-74"><a id="example-4-74" name="example-4-74"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;documentation-to-the-specified-tags&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-75"><a id="example-4-75" name="example-4-75"></a>
+</span><span id="line-4-76"><a id="example-4-76" name="example-4-76"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;external-links&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-77"><a id="example-4-77" name="example-4-77"></a>
+</span><span id="line-4-78"><a id="example-4-78" name="example-4-78"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;sets-a-listener&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-79"><a id="example-4-79" name="example-4-79"></a>
+</span><span id="line-4-80"><a id="example-4-80" name="example-4-80"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;test-suites-are-empty&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-81"><a id="example-4-81" name="example-4-81"></a>
+</span><span id="line-4-82"><a id="example-4-82" name="example-4-82"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;empty-test-suites&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-83"><a id="example-4-83" name="example-4-83"></a>
+</span><span id="line-4-84"><a id="example-4-84" name="example-4-84"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;sets-the-width&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-85"><a id="example-4-85" name="example-4-85"></a>
+</span><span id="line-4-86"><a id="example-4-86" name="example-4-86"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;specifies-are-colors&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-87"><a id="example-4-87" name="example-4-87"></a>
+</span><span id="line-4-88"><a id="example-4-88" name="example-4-88"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;markers-on-the-console&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-89"><a id="example-4-89" name="example-4-89"></a>
+</span><span id="line-4-90"><a id="example-4-90" name="example-4-90"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;read-more-arguments&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-91"><a id="example-4-91" name="example-4-91"></a>
+</span><span id="line-4-92"><a id="example-4-92" name="example-4-92"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;version-information&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-93"><a id="example-4-93" name="example-4-93"></a>
+</span><span id="line-4-94"><a id="example-4-94" name="example-4-94"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;expand-keywords&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-95"><a id="example-4-95" name="example-4-95"></a>
+</span><span id="line-4-96"><a id="example-4-96" name="example-4-96"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;removes-keyword-data&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-97"><a id="example-4-97" name="example-4-97"></a>
+</span><span id="line-4-98"><a id="example-4-98" name="example-4-98"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;flattens-keywords&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-99"><a id="example-4-99" name="example-4-99"></a>
+</span><span id="line-4-100"><a id="example-4-100" name="example-4-100"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;starting-time&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-101"><a id="example-4-101" name="example-4-101"></a>
+</span><span id="line-4-102"><a id="example-4-102" name="example-4-102"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;ending-time&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-103"><a id="example-4-103" name="example-4-103"></a>
+</span><span id="line-4-104"><a id="example-4-104" name="example-4-104"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;keyword-section&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-105"><a id="example-4-105" name="example-4-105"></a>
+</span><span id="line-4-106"><a id="example-4-106" name="example-4-106"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;setting-variables-from-keyword-return-values&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-107"><a id="example-4-107" name="example-4-107"></a>
+</span><span id="line-4-108"><a id="example-4-108" name="example-4-108"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;earlier&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-109"><a id="example-4-109" name="example-4-109"></a>
+</span><span id="line-4-110"><a id="example-4-110" name="example-4-110"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;generic-automation&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-111"><a id="example-4-111" name="example-4-111"></a>
+</span><span id="line-4-112"><a id="example-4-112" name="example-4-112"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;parse-only-these-files&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-113"><a id="example-4-113" name="example-4-113"></a>
+</span><span id="line-4-114"><a id="example-4-114" name="example-4-114"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;parse-only-matching-files&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-115"><a id="example-4-115" name="example-4-115"></a>
+</span><span id="line-4-116"><a id="example-4-116" name="example-4-116"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;sets-the-name&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-117"><a id="example-4-117" name="example-4-117"></a>
+</span><span id="line-4-118"><a id="example-4-118" name="example-4-118"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;sets-the-documentation&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-119"><a id="example-4-119" name="example-4-119"></a>
+</span><span id="line-4-120"><a id="example-4-120" name="example-4-120"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;sets-free-metadata&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-121"><a id="example-4-121" name="example-4-121"></a>
+</span><span id="line-4-122"><a id="example-4-122" name="example-4-122"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;sets-the-tags&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-123"><a id="example-4-123" name="example-4-123"></a>
+</span><span id="line-4-124"><a id="example-4-124" name="example-4-124"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;selects-the-test-cases-by-name&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-125"><a id="example-4-125" name="example-4-125"></a>
+</span><span id="line-4-126"><a id="example-4-126" name="example-4-126"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;selects-the-test-suites&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-127"><a id="example-4-127" name="example-4-127"></a>
+</span><span id="line-4-128"><a id="example-4-128" name="example-4-128"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;selects-failed-test-suites&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-129"><a id="example-4-129" name="example-4-129"></a>
+</span><span id="line-4-130"><a id="example-4-130" name="example-4-130"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;selects-failed-tests&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-131"><a id="example-4-131" name="example-4-131"></a>
+</span><span id="line-4-132"><a id="example-4-132" name="example-4-132"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;selects-the-test-cases&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-133"><a id="example-4-133" name="example-4-133"></a>
+</span><span id="line-4-134"><a id="example-4-134" name="example-4-134"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;continueonfailure&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-135"><a id="example-4-135" name="example-4-135"></a>
+</span><span id="line-4-136"><a id="example-4-136" name="example-4-136"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;skips-teardowns&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-137"><a id="example-4-137" name="example-4-137"></a>
+</span><span id="line-4-138"><a id="example-4-138" name="example-4-138"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;skipteardownonexit&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-139"><a id="example-4-139" name="example-4-139"></a>
+</span><span id="line-4-140"><a id="example-4-140" name="example-4-140"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;dryrun&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-141"><a id="example-4-141" name="example-4-141"></a>
+</span><span id="line-4-142"><a id="example-4-142" name="example-4-142"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;randomizes&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-143"><a id="example-4-143" name="example-4-143"></a>
+</span><span id="line-4-144"><a id="example-4-144" name="example-4-144"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;individual-variables&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-145"><a id="example-4-145" name="example-4-145"></a>
+</span><span id="line-4-146"><a id="example-4-146" name="example-4-146"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;create-result-files&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-147"><a id="example-4-147" name="example-4-147"></a>
+</span><span id="line-4-148"><a id="example-4-148" name="example-4-148"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;robot-framework-6x-compatible-format&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-149"><a id="example-4-149" name="example-4-149"></a>
+</span><span id="line-4-150"><a id="example-4-150" name="example-4-150"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;adds-a-timestamp&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-151"><a id="example-4-151" name="example-4-151"></a>
+</span><span id="line-4-152"><a id="example-4-152" name="example-4-152"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;split-log-file&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-153"><a id="example-4-153" name="example-4-153"></a>
+</span><span id="line-4-154"><a id="example-4-154" name="example-4-154"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;sets-a-title&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-155"><a id="example-4-155" name="example-4-155"></a>
+</span><span id="line-4-156"><a id="example-4-156" name="example-4-156"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;sets-background-colors&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-157"><a id="example-4-157" name="example-4-157"></a>
+</span><span id="line-4-158"><a id="example-4-158" name="example-4-158"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;error-lines&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-159"><a id="example-4-159" name="example-4-159"></a>
+</span><span id="line-4-160"><a id="example-4-160" name="example-4-160"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;sets-the-threshold-level&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-161"><a id="example-4-161" name="example-4-161"></a>
+</span><span id="line-4-162"><a id="example-4-162" name="example-4-162"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;levels-to-show&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-163"><a id="example-4-163" name="example-4-163"></a>
+</span><span id="line-4-164"><a id="example-4-164" name="example-4-164"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;includes-only-these-tags&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-165"><a id="example-4-165" name="example-4-165"></a>
+</span><span id="line-4-166"><a id="example-4-166" name="example-4-166"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;excludes-these-tags&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-167"><a id="example-4-167" name="example-4-167"></a>
+</span><span id="line-4-168"><a id="example-4-168" name="example-4-168"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;combined-statistics-based-on-tags&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-169"><a id="example-4-169" name="example-4-169"></a>
+</span><span id="line-4-170"><a id="example-4-170" name="example-4-170"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;documentation-to-the-specified-tags&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-171"><a id="example-4-171" name="example-4-171"></a>
+</span><span id="line-4-172"><a id="example-4-172" name="example-4-172"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;external-links&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-173"><a id="example-4-173" name="example-4-173"></a>
+</span><span id="line-4-174"><a id="example-4-174" name="example-4-174"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;sets-a-listener&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-175"><a id="example-4-175" name="example-4-175"></a>
+</span><span id="line-4-176"><a id="example-4-176" name="example-4-176"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;test-suites-are-empty&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-177"><a id="example-4-177" name="example-4-177"></a>
+</span><span id="line-4-178"><a id="example-4-178" name="example-4-178"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;empty-test-suites&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-179"><a id="example-4-179" name="example-4-179"></a>
+</span><span id="line-4-180"><a id="example-4-180" name="example-4-180"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;sets-the-width&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-181"><a id="example-4-181" name="example-4-181"></a>
+</span><span id="line-4-182"><a id="example-4-182" name="example-4-182"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;specifies-are-colors&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-183"><a id="example-4-183" name="example-4-183"></a>
+</span><span id="line-4-184"><a id="example-4-184" name="example-4-184"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;markers-on-the-console&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-185"><a id="example-4-185" name="example-4-185"></a>
+</span><span id="line-4-186"><a id="example-4-186" name="example-4-186"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;read-more-arguments&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-187"><a id="example-4-187" name="example-4-187"></a>
+</span><span id="line-4-188"><a id="example-4-188" name="example-4-188"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;version-information&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-189"><a id="example-4-189" name="example-4-189"></a>
+</span><span id="line-4-190"><a id="example-4-190" name="example-4-190"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;expand-keywords&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-191"><a id="example-4-191" name="example-4-191"></a>
+</span><span id="line-4-192"><a id="example-4-192" name="example-4-192"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;removes-keyword-data&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-193"><a id="example-4-193" name="example-4-193"></a>
+</span><span id="line-4-194"><a id="example-4-194" name="example-4-194"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;flattens-keywords&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-195"><a id="example-4-195" name="example-4-195"></a>
+</span><span id="line-4-196"><a id="example-4-196" name="example-4-196"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;starting-time&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span><span id="line-4-197"><a id="example-4-197" name="example-4-197"></a>
+</span><span id="line-4-198"><a id="example-4-198" name="example-4-198"></a><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s">&quot;ending-time&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span></code></pre></div></td></tr></table></div></p>
+<h4 id="_1">}<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
 
 
 

@@ -701,6 +701,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Creating tasks
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -717,6 +735,47 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#task-syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task syntax
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-related-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task related settings
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -9663,7 +9722,7 @@
   <span class="md-ellipsis">
     
   
-    Documentation format
+    Doc format
   
 
     
@@ -9792,7 +9851,38 @@
   
 
 
+<p><a id="rpa"></a></p>
 <h1 id="creating-tasks">Creating tasks<a class="headerlink" href="#creating-tasks" title="Permanent link">&para;</a></h1>
+<p>In addition to test automation, Robot Framework can be used for other
+automation purposes, including <a href="https://en.wikipedia.org/wiki/Robotic_process_automation">robotic process automation</a> (RPA).
+It has always been possible, but Robot Framework 3.1 added official
+support for automating <em>tasks</em>, not only tests. For most parts creating
+tasks works the same way as <a href="../tests/#creating-tests">creating tests</a> and the only real difference
+is in terminology. Tasks can also be organized into <a href="../suites/#creating-test-suites">suites</a> exactly like
+test cases.</p>
+<h2 id="task-syntax">Task syntax<a class="headerlink" href="#task-syntax" title="Permanent link">&para;</a></h2>
+<p>Tasks are created based on the available keywords exactly like test cases,
+and the task syntax is in general identical to the <a href="../tests/#test-case-syntax">test case syntax</a>.
+The main difference is that tasks are created in Task sections
+instead of Test Case sections:</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
+<span class="normal"><a href="#example-0-2">2</a></span>
+<span class="normal"><a href="#example-0-3">3</a></span>
+<span class="normal"><a href="#example-0-4">4</a></span>
+<span class="normal"><a href="#example-0-5">5</a></span>
+<span class="normal"><a href="#example-0-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="gh">*** Tasks ***</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a><span class="gu">Process invoice</span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a><span class="p">    </span><span class="nf">Read information from PDF</span>
+</span><span id="line-0-4"><a id="example-0-4" name="example-0-4"></a><span class="p">    </span><span class="nf">Validate information</span>
+</span><span id="line-0-5"><a id="example-0-5" name="example-0-5"></a><span class="p">    </span><span class="nf">Submit information to backend system</span>
+</span><span id="line-0-6"><a id="example-0-6" name="example-0-6"></a><span class="p">    </span><span class="nf">Validate information is visible in web UI</span>
+</span></code></pre></div></td></tr></table></div>
+It is an error to have both tests and tasks in same file.</p>
+<h2 id="task-related-settings">Task related settings<a class="headerlink" href="#task-related-settings" title="Permanent link">&para;</a></h2>
+<p>Settings that can be used in the task section are exactly the same as in
+the <a href="https://en.wikipedia.org/wiki/Robotic_process_automation">test case section</a>. In the <a href="../variable-files/#setting-section">setting section</a> it is possible to use
+<code>Task Setup</code>, <code>Task Teardown</code>, <code>Task Template</code>
+and <code>Task Timeout</code> instead of their <code>Test</code> variants.</p>
 
 
 

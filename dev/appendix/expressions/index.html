@@ -9627,6 +9627,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Evaluating expressions
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -9643,6 +9661,86 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evaluation-namespace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Evaluation namespace
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using variables
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#normal-variable-syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Normal ${variable} syntax
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#special-variable-syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Special $variable syntax
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -9663,7 +9761,7 @@
   <span class="md-ellipsis">
     
   
-    Documentation format
+    Doc format
   
 
     
@@ -9793,6 +9891,216 @@
 
 
 <h1 id="evaluating-expressions">Evaluating expressions<a class="headerlink" href="#evaluating-expressions" title="Permanent link">&para;</a></h1>
+<p>This appendix explains how expressions are evaluated using Python in different
+contexts and how variables in expressions are handled.</p>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<p>Constructs such as <a href="../../syntax/control/#ifelse-structures">IF/ELSE structures</a>, <a href="../../syntax/control/#while-loops">WHILE loops</a> and <a href="../../syntax/variables/#inline-python-evaluation">inline Python evaluation</a>
+as well as several <a href="../../syntax/libraries/#builtin">BuiltIn</a> keywords accept an expression that is evaluated in Python:</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1"> 1</a></span>
+<span class="normal"><a href="#example-0-2"> 2</a></span>
+<span class="normal"><a href="#example-0-3"> 3</a></span>
+<span class="normal"><a href="#example-0-4"> 4</a></span>
+<span class="normal"><a href="#example-0-5"> 5</a></span>
+<span class="normal"><a href="#example-0-6"> 6</a></span>
+<span class="normal"><a href="#example-0-7"> 7</a></span>
+<span class="normal"><a href="#example-0-8"> 8</a></span>
+<span class="normal"><a href="#example-0-9"> 9</a></span>
+<span class="normal"><a href="#example-0-10">10</a></span>
+<span class="normal"><a href="#example-0-11">11</a></span>
+<span class="normal"><a href="#example-0-12">12</a></span>
+<span class="normal"><a href="#example-0-13">13</a></span>
+<span class="normal"><a href="#example-0-14">14</a></span>
+<span class="normal"><a href="#example-0-15">15</a></span>
+<span class="normal"><a href="#example-0-16">16</a></span>
+<span class="normal"><a href="#example-0-17">17</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="gh">*** Test Cases ***</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a><span class="gu">IF/ELSE</span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a><span class="p">    </span><span class="nf">IF</span><span class="p">    ${</span><span class="nv">x</span><span class="p">}</span><span class="s"> &gt; 0</span>
+</span><span id="line-0-4"><a id="example-0-4" name="example-0-4"></a><span class="p">        </span><span class="nf">Log to console</span><span class="p">   ${</span><span class="nv">x</span><span class="p">}</span><span class="s"> is positive</span>
+</span><span id="line-0-5"><a id="example-0-5" name="example-0-5"></a><span class="p">    </span><span class="nf">ELSE</span>
+</span><span id="line-0-6"><a id="example-0-6" name="example-0-6"></a><span class="p">        </span><span class="nf">Log to console</span><span class="p">   ${</span><span class="nv">x</span><span class="p">}</span><span class="s"> is negative</span>
+</span><span id="line-0-7"><a id="example-0-7" name="example-0-7"></a><span class="p">    </span><span class="nf">END</span>
+</span><span id="line-0-8"><a id="example-0-8" name="example-0-8"></a>
+</span><span id="line-0-9"><a id="example-0-9" name="example-0-9"></a><span class="gu">Inline Python evaluation</span>
+</span><span id="line-0-10"><a id="example-0-10" name="example-0-10"></a><span class="p">    </span><span class="nf">Log to console</span><span class="p">    ${</span><span class="nv">x</span><span class="p">}</span><span class="s"> is </span><span class="p">${</span><span class="nv">{&#39;positive&#39; if </span><span class="p">${</span><span class="nv">x</span><span class="p">}</span><span class="nv"> &gt; 0 else &#39;negative&#39;</span><span class="p">}</span><span class="s">}</span>
+</span><span id="line-0-11"><a id="example-0-11" name="example-0-11"></a>
+</span><span id="line-0-12"><a id="example-0-12" name="example-0-12"></a><span class="gu">Evaluate keyword</span>
+</span><span id="line-0-13"><a id="example-0-13" name="example-0-13"></a><span class="p">    ${</span><span class="nv">type</span><span class="p">} =    </span><span class="nf">Evaluate</span><span class="p">    </span><span class="s">&#39;positive&#39; if </span><span class="p">${</span><span class="nv">x</span><span class="p">}</span><span class="s"> &gt; 0 else &#39;negative&#39;</span>
+</span><span id="line-0-14"><a id="example-0-14" name="example-0-14"></a><span class="p">    </span><span class="nf">Log to console</span><span class="p">    ${</span><span class="nv">x</span><span class="p">}</span><span class="s"> is </span><span class="p">${</span><span class="nv">type</span><span class="p">}</span>
+</span><span id="line-0-15"><a id="example-0-15" name="example-0-15"></a>
+</span><span id="line-0-16"><a id="example-0-16" name="example-0-16"></a><span class="gu">Should Be True keyword</span>
+</span><span id="line-0-17"><a id="example-0-17" name="example-0-17"></a><span class="p">    </span><span class="nf">Should Be True</span><span class="p">    ${</span><span class="nv">x</span><span class="p">}</span><span class="s"> &gt; 0</span>
+</span></code></pre></div></td></tr></table></div>
+Notice that instead of creating complicated
+expressions, it is often better to move the logic into a <a href="../../extend/libraries/#creating-test-library-class-or-module">test library</a>.
+That typically eases maintenance and also enhances execution speed.</p>
+<h2 id="evaluation-namespace">Evaluation namespace<a class="headerlink" href="#evaluation-namespace" title="Permanent link">&para;</a></h2>
+<p>Expressions are evaluated using Python's <a href="http://docs.python.org/library/functions.html#eval">eval</a> function so that normal Python
+constructs like <code>'${x}' == 'expected'</code>, <code>${x} &gt; 0</code> and
+<code>'${x}'.upper() not in ('FAIL', 'BAD')</code> can be used and all
+builtin functions like <code>len()</code> and <code>int()</code> are available.
+In addition to that, all unrecognized Python variables are considered to be
+modules that are automatically imported. It is possible to use all available
+Python modules, including the standard modules and the installed third party
+modules.</p>
+<p>The following examples demonstrate using Python builtins as well as modules
+using the <a href="../../syntax/variables/#inline-python-evaluation">inline Python evaluation</a> syntax, but same expressions would also
+work with <a href="../../syntax/control/#ifelse-structures">IF/ELSE structures</a> and <a href="../../syntax/libraries/#builtin">BuiltIn</a> keywords without the need to use
+the <code>${{}}</code> decoration around the expression:</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-1-1"> 1</a></span>
+<span class="normal"><a href="#example-1-2"> 2</a></span>
+<span class="normal"><a href="#example-1-3"> 3</a></span>
+<span class="normal"><a href="#example-1-4"> 4</a></span>
+<span class="normal"><a href="#example-1-5"> 5</a></span>
+<span class="normal"><a href="#example-1-6"> 6</a></span>
+<span class="normal"><a href="#example-1-7"> 7</a></span>
+<span class="normal"><a href="#example-1-8"> 8</a></span>
+<span class="normal"><a href="#example-1-9"> 9</a></span>
+<span class="normal"><a href="#example-1-10">10</a></span>
+<span class="normal"><a href="#example-1-11">11</a></span>
+<span class="normal"><a href="#example-1-12">12</a></span>
+<span class="normal"><a href="#example-1-13">13</a></span>
+<span class="normal"><a href="#example-1-14">14</a></span>
+<span class="normal"><a href="#example-1-15">15</a></span>
+<span class="normal"><a href="#example-1-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-1-1"><a id="example-1-1" name="example-1-1"></a><span class="gh">*** Variables ***</span>
+</span><span id="line-1-2"><a id="example-1-2" name="example-1-2"></a><span class="p">${</span><span class="nv">VAR</span><span class="p">}           </span><span class="s">123</span>
+</span><span id="line-1-3"><a id="example-1-3" name="example-1-3"></a>
+</span><span id="line-1-4"><a id="example-1-4" name="example-1-4"></a><span class="gh">*** Test Cases ***</span>
+</span><span id="line-1-5"><a id="example-1-5" name="example-1-5"></a><span class="gu">Python syntax</span>
+</span><span id="line-1-6"><a id="example-1-6" name="example-1-6"></a><span class="p">    </span><span class="nf">Should Be True</span><span class="p">       ${</span><span class="nv">{&#39;</span><span class="p">${</span><span class="nv">VAR</span><span class="p">}</span><span class="nv">&#39; == &#39;123&#39;</span><span class="p">}</span><span class="s">}</span>
+</span><span id="line-1-7"><a id="example-1-7" name="example-1-7"></a><span class="p">    </span><span class="nf">Should Be True</span><span class="p">       ${</span><span class="nv">{&#39;</span><span class="p">${</span><span class="nv">VAR</span><span class="p">}</span><span class="nv">&#39;.startswith(&#39;x&#39;) or &#39;</span><span class="p">${</span><span class="nv">VAR</span><span class="p">}</span><span class="nv">&#39; in &#39;012345&#39;</span><span class="p">}</span><span class="s">}</span>
+</span><span id="line-1-8"><a id="example-1-8" name="example-1-8"></a>
+</span><span id="line-1-9"><a id="example-1-9" name="example-1-9"></a><span class="gu">Python builtins</span>
+</span><span id="line-1-10"><a id="example-1-10" name="example-1-10"></a><span class="p">    </span><span class="nf">Should Be Equal</span><span class="p">      ${</span><span class="nv">{len(&#39;</span><span class="p">${</span><span class="nv">VAR</span><span class="p">}</span><span class="nv">&#39;)</span><span class="p">}</span><span class="s">}</span><span class="p">        ${</span><span class="nv">3</span><span class="p">}</span>
+</span><span id="line-1-11"><a id="example-1-11" name="example-1-11"></a><span class="p">    </span><span class="nf">Should Be Equal</span><span class="p">      ${</span><span class="nv">{int(&#39;</span><span class="p">${</span><span class="nv">VAR</span><span class="p">}</span><span class="nv">&#39;)</span><span class="p">}</span><span class="s">}</span><span class="p">        ${</span><span class="nv">123</span><span class="p">}</span>
+</span><span id="line-1-12"><a id="example-1-12" name="example-1-12"></a>
+</span><span id="line-1-13"><a id="example-1-13" name="example-1-13"></a><span class="gu">Access modules</span>
+</span><span id="line-1-14"><a id="example-1-14" name="example-1-14"></a><span class="p">    </span><span class="nf">Should Be Equal</span><span class="p">      ${</span><span class="nv">{os.sep</span><span class="p">}</span><span class="s">}</span><span class="p">               ${</span><span class="nv">/</span><span class="p">}</span>
+</span><span id="line-1-15"><a id="example-1-15" name="example-1-15"></a><span class="p">    </span><span class="nf">Should Be Equal</span><span class="p">      ${</span><span class="nv">{round(math.pi, 2)</span><span class="p">}</span><span class="s">}</span><span class="p">    ${</span><span class="nv">3.14</span><span class="p">}</span>
+</span><span id="line-1-16"><a id="example-1-16" name="example-1-16"></a><span class="p">    </span><span class="nf">Should Start With</span><span class="p">    ${</span><span class="nv">{robot.__version__</span><span class="p">}</span><span class="s">}</span><span class="p">    </span><span class="s">4.</span>
+</span></code></pre></div></td></tr></table></div>
+A limitation of using modules is that nested modules like <code>rootmod.submod</code>
+can only be used if the root module automatically imports the submodule. That is
+not always the case and using such modules is not possible. An concrete example
+that is relevant in the automation context is the <code>selenium</code> module that is
+implemented, at least at the time of this writing, so that just importing
+<code>selenium</code> does not import the <code>selenium.webdriver</code> submodule.
+Another limitation is that modules cannot be used in the expression part of
+a list comprehension. A workaround to both of these problems
+is using the <a href="../../syntax/libraries/#builtin">BuiltIn</a> keyword <em>Evaluate</em> that accepts modules to be imported
+and added to the evaluation namespace as an argument:</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-2-1"> 1</a></span>
+<span class="normal"><a href="#example-2-2"> 2</a></span>
+<span class="normal"><a href="#example-2-3"> 3</a></span>
+<span class="normal"><a href="#example-2-4"> 4</a></span>
+<span class="normal"><a href="#example-2-5"> 5</a></span>
+<span class="normal"><a href="#example-2-6"> 6</a></span>
+<span class="normal"><a href="#example-2-7"> 7</a></span>
+<span class="normal"><a href="#example-2-8"> 8</a></span>
+<span class="normal"><a href="#example-2-9"> 9</a></span>
+<span class="normal"><a href="#example-2-10">10</a></span>
+<span class="normal"><a href="#example-2-11">11</a></span>
+<span class="normal"><a href="#example-2-12">12</a></span>
+<span class="normal"><a href="#example-2-13">13</a></span>
+<span class="normal"><a href="#example-2-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-2-1"><a id="example-2-1" name="example-2-1"></a><span class="gh">*** Test Cases ***</span>
+</span><span id="line-2-2"><a id="example-2-2" name="example-2-2"></a><span class="gu">Does not work due to nested module structure</span>
+</span><span id="line-2-3"><a id="example-2-3" name="example-2-3"></a><span class="p">    </span><span class="nf">Log</span><span class="p">    ${</span><span class="nv">{selenium.webdriver.ChromeOptions()</span><span class="p">}</span><span class="s">}</span>
+</span><span id="line-2-4"><a id="example-2-4" name="example-2-4"></a>
+</span><span id="line-2-5"><a id="example-2-5" name="example-2-5"></a><span class="gu">Evaluate keyword with nested module</span>
+</span><span id="line-2-6"><a id="example-2-6" name="example-2-6"></a><span class="p">    ${</span><span class="nv">options</span><span class="p">} =    </span><span class="nf">Evaluate</span><span class="p">    </span><span class="s">selenium.webdriver.ChromeOptions()</span><span class="p">    </span><span class="s">modules=selenium.webdriver</span>
+</span><span id="line-2-7"><a id="example-2-7" name="example-2-7"></a><span class="p">    </span><span class="nf">Log</span><span class="p">    ${</span><span class="nv">options</span><span class="p">}</span>
+</span><span id="line-2-8"><a id="example-2-8" name="example-2-8"></a>
+</span><span id="line-2-9"><a id="example-2-9" name="example-2-9"></a><span class="gu">Does not work due to list comprehension</span>
+</span><span id="line-2-10"><a id="example-2-10" name="example-2-10"></a><span class="p">    </span><span class="nf">Log</span><span class="p">    ${</span><span class="nv">{[json.loads(item) for item in (&#39;1&#39;, &#39;&quot;b&quot;&#39;)]</span><span class="p">}</span><span class="s">}</span>
+</span><span id="line-2-11"><a id="example-2-11" name="example-2-11"></a>
+</span><span id="line-2-12"><a id="example-2-12" name="example-2-12"></a><span class="gu">Evaluate keyword with list comprehension</span>
+</span><span id="line-2-13"><a id="example-2-13" name="example-2-13"></a><span class="p">    ${</span><span class="nv">items</span><span class="p">} =    </span><span class="nf">Evaluate</span><span class="p">    </span><span class="s">[json.loads(item) for item in (&#39;1&#39;, &#39;&quot;b&quot;&#39;)]</span><span class="p">    </span><span class="s">modules=json</span>
+</span><span id="line-2-14"><a id="example-2-14" name="example-2-14"></a><span class="p">    </span><span class="nf">Log</span><span class="p">    ${</span><span class="nv">items</span><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+The <em>Evaluate</em> keyword also supports custom evaluation namespaces if further
+customization is needed. See its documentation in the <a href="../../syntax/libraries/#builtin">BuiltIn</a> library for more details.</p>
+<h2 id="using-variables">Using variables<a class="headerlink" href="#using-variables" title="Permanent link">&para;</a></h2>
+<h3 id="normal-variable-syntax">Normal <code>${variable}</code> syntax<a class="headerlink" href="#normal-variable-syntax" title="Permanent link">&para;</a></h3>
+<p>When a variable is used in the expression using the normal <code>${variable}</code>
+syntax, its value is replaced before the expression is evaluated. This
+means that the value used in the expression will be the string
+representation of the variable value, not the variable value itself.
+This is not a problem with numbers and other objects that have a string
+representation that can be evaluated directly. For example, if we have
+a return code as an integer in variable <code>${rc}</code>, using something like
+<code>${rc} &gt; 0</code> is fine.</p>
+<p>With other objects the behavior depends on the string representation.
+Most importantly, strings must always be quoted either with
+single or double quotes like <code>'${x}'</code>, and if they can contain newlines, they must be
+triple-quoted like <code>'''${x}'''</code>. Strings containing quotes themselves cause
+additional problems, but triple-quoting typically handles them. Also the
+backslash character <code>\\</code> is problematic, but can be handled by
+using Python's raw-string notation like <code>r'${path}'</code>.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-3-1">1</a></span>
+<span class="normal"><a href="#example-3-2">2</a></span>
+<span class="normal"><a href="#example-3-3">3</a></span>
+<span class="normal"><a href="#example-3-4">4</a></span>
+<span class="normal"><a href="#example-3-5">5</a></span>
+<span class="normal"><a href="#example-3-6">6</a></span>
+<span class="normal"><a href="#example-3-7">7</a></span>
+<span class="normal"><a href="#example-3-8">8</a></span>
+<span class="normal"><a href="#example-3-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-3-1"><a id="example-3-1" name="example-3-1"></a><span class="gh">*** Test Cases ***</span>
+</span><span id="line-3-2"><a id="example-3-2" name="example-3-2"></a><span class="gu">Using normal variable syntax</span>
+</span><span id="line-3-3"><a id="example-3-3" name="example-3-3"></a><span class="p">    </span><span class="nf">Should Be True</span><span class="p">    ${</span><span class="nv">rc</span><span class="p">}</span><span class="s"> &gt; 0</span>
+</span><span id="line-3-4"><a id="example-3-4" name="example-3-4"></a><span class="p">    </span><span class="nf">IF</span><span class="p">    </span><span class="s">&#39;</span><span class="p">${</span><span class="nv">status</span><span class="p">}</span><span class="s">&#39;.upper() == &#39;PASS&#39;</span>
+</span><span id="line-3-5"><a id="example-3-5" name="example-3-5"></a><span class="p">        </span><span class="nf">Log</span><span class="p">    </span><span class="s">Passed</span>
+</span><span id="line-3-6"><a id="example-3-6" name="example-3-6"></a><span class="p">    </span><span class="nf">END</span>
+</span><span id="line-3-7"><a id="example-3-7" name="example-3-7"></a><span class="p">    </span><span class="nf">IF</span><span class="p">    </span><span class="s">&#39;FAIL&#39; in r&#39;&#39;&#39;</span><span class="p">${</span><span class="nv">output</span><span class="p">}</span><span class="s">&#39;&#39;&#39;</span>
+</span><span id="line-3-8"><a id="example-3-8" name="example-3-8"></a><span class="p">        </span><span class="nf">Log</span><span class="p">    </span><span class="s">Output contains FAIL</span>
+</span><span id="line-3-9"><a id="example-3-9" name="example-3-9"></a><span class="p">    </span><span class="nf">END</span>
+</span></code></pre></div></td></tr></table></div>
+<h3 id="special-variable-syntax">Special <code>$variable</code> syntax<a class="headerlink" href="#special-variable-syntax" title="Permanent link">&para;</a></h3>
+<p>Quoting strings is not that convenient, but there are cases where replacing the variable
+with its string representation causes even bigger problems. For example, if the variable
+value can be either a string or Python <code>None</code>, quoting like <code>'${var}'</code> is needed because
+otherwise strings do not work, but then <code>None</code> is interpreted to be a string as well.
+Luckily there is an easy solution to these problems discussed in this section.</p>
+<p>Actual variables values are available in the evaluation namespace and can be accessed
+using special variable syntax without the curly braces like <code>$variable</code>. Such variables
+should never be quoted, not even if they contain strings.</p>
+<p>Compare this these examples with the example in the previous section:</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-4-1"> 1</a></span>
+<span class="normal"><a href="#example-4-2"> 2</a></span>
+<span class="normal"><a href="#example-4-3"> 3</a></span>
+<span class="normal"><a href="#example-4-4"> 4</a></span>
+<span class="normal"><a href="#example-4-5"> 5</a></span>
+<span class="normal"><a href="#example-4-6"> 6</a></span>
+<span class="normal"><a href="#example-4-7"> 7</a></span>
+<span class="normal"><a href="#example-4-8"> 8</a></span>
+<span class="normal"><a href="#example-4-9"> 9</a></span>
+<span class="normal"><a href="#example-4-10">10</a></span>
+<span class="normal"><a href="#example-4-11">11</a></span>
+<span class="normal"><a href="#example-4-12">12</a></span>
+<span class="normal"><a href="#example-4-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-4-1"><a id="example-4-1" name="example-4-1"></a><span class="gh">*** Test Cases ***</span>
+</span><span id="line-4-2"><a id="example-4-2" name="example-4-2"></a><span class="gu">Using special variable syntax</span>
+</span><span id="line-4-3"><a id="example-4-3" name="example-4-3"></a><span class="p">    </span><span class="nf">Should Be True</span><span class="p">    </span><span class="s">$rc &gt; 0</span>
+</span><span id="line-4-4"><a id="example-4-4" name="example-4-4"></a><span class="p">    </span><span class="nf">IF</span><span class="p">    </span><span class="s">$status.upper() == &#39;PASS&#39;</span>
+</span><span id="line-4-5"><a id="example-4-5" name="example-4-5"></a><span class="p">        </span><span class="nf">Log</span><span class="p">    </span><span class="s">Passed</span>
+</span><span id="line-4-6"><a id="example-4-6" name="example-4-6"></a><span class="p">    </span><span class="nf">END</span>
+</span><span id="line-4-7"><a id="example-4-7" name="example-4-7"></a><span class="p">    </span><span class="nf">IF</span><span class="p">    </span><span class="s">&#39;FAIL&#39; in $output</span>
+</span><span id="line-4-8"><a id="example-4-8" name="example-4-8"></a><span class="p">        </span><span class="nf">Log</span><span class="p">    </span><span class="s">Output contains FAIL</span>
+</span><span id="line-4-9"><a id="example-4-9" name="example-4-9"></a><span class="p">    </span><span class="nf">END</span>
+</span><span id="line-4-10"><a id="example-4-10" name="example-4-10"></a>
+</span><span id="line-4-11"><a id="example-4-11" name="example-4-11"></a><span class="gu">Only possible using special variable syntax</span>
+</span><span id="line-4-12"><a id="example-4-12" name="example-4-12"></a><span class="p">    </span><span class="nf">Should Be True</span><span class="p">    </span><span class="s">$example is not None</span>
+</span><span id="line-4-13"><a id="example-4-13" name="example-4-13"></a><span class="p">    </span><span class="nf">Should Be True</span><span class="p">    </span><span class="s">len($result) &gt; 1 and $result[1] == &#39;OK&#39;</span>
+</span></code></pre></div></td></tr></table></div>
+Using the <code>$variable</code> syntax slows down expression evaluation a little.
+This should not typically matter, but should be taken into account if
+complex expressions are evaluated often and there are strict time
+constrains. Moving such logic to test libraries is typically a good idea
+anyway.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Due to technical reasons, these special variables are available during
+evaluation as local variables. That makes them unavailable in non-local
+scopes such as in the expression part of list comprehensions and inside
+lambdas.</p>
+</div>
 
 
 
@@ -9847,13 +10155,13 @@
         
         
           
-          <a href="../doc-format/" class="md-footer__link md-footer__link--next" aria-label="Next: Documentation format">
+          <a href="../doc-format/" class="md-footer__link md-footer__link--next" aria-label="Next: Doc format">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Documentation format
+                Doc format
               </div>
             </div>
             <div class="md-footer__button md-icon">

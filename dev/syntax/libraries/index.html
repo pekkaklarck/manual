@@ -99,7 +99,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#using-libraries" class="md-skip">
+        <a href="#using-test-libraries" class="md-skip">
           Skip to content
         </a>
       
@@ -757,6 +757,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Using libraries
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -773,6 +791,164 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#importing-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Importing libraries
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Importing libraries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-library-setting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using Library setting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-import-library-keyword" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using Import Library keyword
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#specifying-library-to-import" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Specifying library to import
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Specifying library to import">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-library-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using library name
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-physical-path-to-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using physical path to library
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-custom-name-to-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setting custom name to library
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#standard-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Standard libraries
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Standard libraries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#normal-standard-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Normal standard libraries
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remote-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Remote library
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#external-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        External libraries
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -9663,7 +9839,7 @@
   <span class="md-ellipsis">
     
   
-    Documentation format
+    Doc format
   
 
     
@@ -9792,7 +9968,228 @@
   
 
 
-<h1 id="using-libraries">Using libraries<a class="headerlink" href="#using-libraries" title="Permanent link">&para;</a></h1>
+<p><a id="test-libraries"></a></p>
+<h1 id="using-test-libraries">Using test libraries<a class="headerlink" href="#using-test-libraries" title="Permanent link">&para;</a></h1>
+<p>Test libraries contain those lowest-level keywords, often called
+<em>library keywords</em>, which actually interact with the system under
+test. All test cases always use keywords from some library, often
+through higher-level <a href="../user-keywords/#user-keyword">user keywords</a>. This section explains how to
+take test libraries into use and how to use the keywords they
+provide. <a href="../../extend/libraries/#creating-test-libraries">Creating test libraries</a> is described in a separate
+section.</p>
+<h2 id="importing-libraries">Importing libraries<a class="headerlink" href="#importing-libraries" title="Permanent link">&para;</a></h2>
+<p>Test libraries are typically imported using the <code>Library</code> setting,
+but it is also possible to use the <em>Import Library</em> keyword.</p>
+<h3 id="using-library-setting">Using <code>Library</code> setting<a class="headerlink" href="#using-library-setting" title="Permanent link">&para;</a></h3>
+<p>Libraries are normally imported in the Settings section using the
+<code>Library</code> setting with the library name or path as its value.
+Unlike most of the other data, the library name or path
+is both case- and space-sensitive. If a library is in a package,
+the full name including the package name must be used.</p>
+<p>In those cases where the library needs arguments, they are listed in
+the columns after the library name. It is possible to use default
+values, variable number of arguments, and named arguments in test
+library imports similarly as with <a href="../tests/#using-arguments">arguments to keywords</a>.  Both the
+library name and arguments can be set using variables.</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
+<span class="normal"><a href="#example-0-2">2</a></span>
+<span class="normal"><a href="#example-0-3">3</a></span>
+<span class="normal"><a href="#example-0-4">4</a></span>
+<span class="normal"><a href="#example-0-5">5</a></span>
+<span class="normal"><a href="#example-0-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="gh">*** Settings ***</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a><span class="kn">Library</span><span class="p">    </span><span class="nn">OperatingSystem</span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a><span class="kn">Library</span><span class="p">    </span><span class="nn">path/to/MyLibrary.py</span>
+</span><span id="line-0-4"><a id="example-0-4" name="example-0-4"></a><span class="kn">Library</span><span class="p">    </span><span class="nn">my.package.TestLibrary</span>
+</span><span id="line-0-5"><a id="example-0-5" name="example-0-5"></a><span class="kn">Library</span><span class="p">    </span><span class="nn">LibraryAcceptingArguments</span><span class="p">    </span><span class="s">arg1</span><span class="p">    </span><span class="s">arg2</span>
+</span><span id="line-0-6"><a id="example-0-6" name="example-0-6"></a><span class="kn">Library</span><span class="p">    ${</span><span class="nv">LIBRARY</span><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+It is possible to import test libraries in <a href="../suites/#suite-files">suite files</a>,
+<a href="../resource-files/#resource-files">resource files</a> and <a href="../suites/#suite-initialization-files">suite initialization files</a>. In all these
+cases, all the keywords in the imported library are available in that
+file. With resource files, those keywords are also available in other
+files using them.</p>
+<h3 id="using-import-library-keyword">Using <code>Import Library</code> keyword<a class="headerlink" href="#using-import-library-keyword" title="Permanent link">&para;</a></h3>
+<p>Another possibility to take a test library into use is using the
+keyword <em>Import Library</em> from the <a href="#builtin">BuiltIn</a> library. This keyword
+takes the library name or path and possible arguments similarly as the
+<code>Library</code> setting. Keywords from the imported library are
+available in the test suite where the <em>Import Library</em> keyword was
+used. This approach is useful in cases where the library is not
+available when the test execution starts and only some other keywords
+make it available.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-1-1">1</a></span>
+<span class="normal"><a href="#example-1-2">2</a></span>
+<span class="normal"><a href="#example-1-3">3</a></span>
+<span class="normal"><a href="#example-1-4">4</a></span>
+<span class="normal"><a href="#example-1-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-1-1"><a id="example-1-1" name="example-1-1"></a><span class="gh">*** Test Cases ***</span>
+</span><span id="line-1-2"><a id="example-1-2" name="example-1-2"></a><span class="gu">Example</span>
+</span><span id="line-1-3"><a id="example-1-3" name="example-1-3"></a><span class="p">    </span><span class="nf">Do Something</span>
+</span><span id="line-1-4"><a id="example-1-4" name="example-1-4"></a><span class="p">    </span><span class="nf">Import Library</span><span class="p">    </span><span class="s">MyLibrary</span><span class="p">    </span><span class="s">arg1</span><span class="p">    </span><span class="s">arg2</span>
+</span><span id="line-1-5"><a id="example-1-5" name="example-1-5"></a><span class="p">    </span><span class="nf">KW From MyLibrary</span>
+</span></code></pre></div></td></tr></table></div>
+<h2 id="specifying-library-to-import">Specifying library to import<a class="headerlink" href="#specifying-library-to-import" title="Permanent link">&para;</a></h2>
+<p>Libraries to import can be specified either by using the library name
+or the path to the library. These approaches work the same way regardless
+if the library is imported using the <code>Library</code> setting or the
+<em>Import Library</em> keyword.</p>
+<h3 id="using-library-name">Using library name<a class="headerlink" href="#using-library-name" title="Permanent link">&para;</a></h3>
+<p>The most common way to specify a test library to import is using its name.
+In these cases Robot Framework tries to find the class or module
+implementing the library from the <a href="../../execution/configuration/#module-search-path">module search path</a>. Libraries that
+are installed somehow ought to be in the module search path automatically,
+but with other libraries the search path may need to be configured separately.</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-2-1">1</a></span>
+<span class="normal"><a href="#example-2-2">2</a></span>
+<span class="normal"><a href="#example-2-3">3</a></span>
+<span class="normal"><a href="#example-2-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-2-1"><a id="example-2-1" name="example-2-1"></a><span class="gh">*** Settings ***</span>
+</span><span id="line-2-2"><a id="example-2-2" name="example-2-2"></a><span class="kn">Library</span><span class="p">    </span><span class="nn">OperatingSystem</span>
+</span><span id="line-2-3"><a id="example-2-3" name="example-2-3"></a><span class="kn">Library</span><span class="p">    </span><span class="nn">CustomLibrary</span><span class="p">    </span><span class="s">possible</span><span class="p">    </span><span class="s">arguments</span>
+</span><span id="line-2-4"><a id="example-2-4" name="example-2-4"></a><span class="kn">Library</span><span class="p">    </span><span class="nn">librarymodule.LibraryClass</span>
+</span></code></pre></div></td></tr></table></div>
+The biggest benefit of this approach is that when the module search
+path has been configured, often using a custom <a href="../../execution/basics/#start-up-script">start-up script</a>,
+normal users do not need to think where libraries actually are
+installed. The drawback is that getting your own, possible
+very simple, libraries into the search path may require some
+additional configuration.</p>
+<h3 id="using-physical-path-to-library">Using physical path to library<a class="headerlink" href="#using-physical-path-to-library" title="Permanent link">&para;</a></h3>
+<p>Another mechanism for specifying the library to import is using a
+path to it in the file system. This path is considered relative to the
+directory where current test data file is situated similarly as paths
+to <a href="../variables/#variable">resource and variable files</a>. The main benefit of this approach
+is that there is no need to configure the module search path.</p>
+<p>If the library is a file, the path to it must contain extension,
+i.e. <em>.py</em>. If a library is implemented
+as a directory, the path to it must have a trailing forward slash (<code>/</code>)
+if the path is relative. With absolute paths the trailing slash is optional.
+Following examples demonstrate these different usages.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-3-1">1</a></span>
+<span class="normal"><a href="#example-3-2">2</a></span>
+<span class="normal"><a href="#example-3-3">3</a></span>
+<span class="normal"><a href="#example-3-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-3-1"><a id="example-3-1" name="example-3-1"></a><span class="gh">*** Settings ***</span>
+</span><span id="line-3-2"><a id="example-3-2" name="example-3-2"></a><span class="kn">Library</span><span class="p">    </span><span class="nn">PythonLibrary.py</span>
+</span><span id="line-3-3"><a id="example-3-3" name="example-3-3"></a><span class="kn">Library</span><span class="p">    </span><span class="nn">relative/path/PythonDirLib/</span><span class="p">    </span><span class="s">possible</span><span class="p">    </span><span class="s">arguments</span>
+</span><span id="line-3-4"><a id="example-3-4" name="example-3-4"></a><span class="kn">Library</span><span class="p">    ${</span><span class="nv">RESOURCES</span><span class="p">}</span><span class="nn">/Example.py</span>
+</span></code></pre></div></td></tr></table></div>
+<h2 id="setting-custom-name-to-library">Setting custom name to library<a class="headerlink" href="#setting-custom-name-to-library" title="Permanent link">&para;</a></h2>
+<p>The library name is shown in test logs before keyword names, and if
+multiple keywords have the same name, they must be used so that the
+<a href="../advanced/#handling-keywords-with-same-names">keyword name is prefixed with the library name</a>. The library name
+is got normally from the module or class name implementing it, but
+there are some situations where changing it is desirable:</p>
+<ul>
+<li>
+<p>There is a need to import the same library several times with
+  different arguments. This is not possible otherwise.</p>
+</li>
+<li>
+<p>The library name is inconveniently long.</p>
+</li>
+<li>
+<p>You want to use variables to import different libraries in
+  different environments, but refer to them with the same name.</p>
+</li>
+<li>
+<p>The library name is misleading or otherwise poor. In this case,
+  changing the actual name is, of course, a better solution.</p>
+</li>
+</ul>
+<p>The basic syntax for specifying the new name is having the text
+<code>AS</code> (case-sensitive) after the library name and then
+having the new name after that. The specified name is shown in
+logs and must be used in the test data when using keywords' full name
+(<em>LibraryName.Keyword Name</em>).</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-4-1">1</a></span>
+<span class="normal"><a href="#example-4-2">2</a></span>
+<span class="normal"><a href="#example-4-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-4-1"><a id="example-4-1" name="example-4-1"></a><span class="gh">*** Settings ***</span>
+</span><span id="line-4-2"><a id="example-4-2" name="example-4-2"></a><span class="kn">Library</span><span class="p">    </span><span class="nn">packagename.TestLib</span><span class="p">    </span><span class="s">AS</span><span class="p">    </span><span class="s">TestLib</span>
+</span><span id="line-4-3"><a id="example-4-3" name="example-4-3"></a><span class="kn">Library</span><span class="p">    ${</span><span class="nv">LIBRARY</span><span class="p">}    </span><span class="s">AS</span><span class="p">    </span><span class="s">MyName</span>
+</span></code></pre></div></td></tr></table></div>
+Possible arguments to the library are placed between the
+original library name and the <code>AS</code> marker. The following example
+illustrates how the same library can be imported several times with
+different arguments:</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-5-1">1</a></span>
+<span class="normal"><a href="#example-5-2">2</a></span>
+<span class="normal"><a href="#example-5-3">3</a></span>
+<span class="normal"><a href="#example-5-4">4</a></span>
+<span class="normal"><a href="#example-5-5">5</a></span>
+<span class="normal"><a href="#example-5-6">6</a></span>
+<span class="normal"><a href="#example-5-7">7</a></span>
+<span class="normal"><a href="#example-5-8">8</a></span>
+<span class="normal"><a href="#example-5-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-5-1"><a id="example-5-1" name="example-5-1"></a><span class="gh">*** Settings ***</span>
+</span><span id="line-5-2"><a id="example-5-2" name="example-5-2"></a><span class="kn">Library</span><span class="p">    </span><span class="nn">SomeLibrary</span><span class="p">    </span><span class="s">localhost</span><span class="p">        </span><span class="s">1234</span><span class="p">    </span><span class="s">AS</span><span class="p">    </span><span class="s">LocalLib</span>
+</span><span id="line-5-3"><a id="example-5-3" name="example-5-3"></a><span class="kn">Library</span><span class="p">    </span><span class="nn">SomeLibrary</span><span class="p">    </span><span class="s">server.domain</span><span class="p">    </span><span class="s">8080</span><span class="p">    </span><span class="s">AS</span><span class="p">    </span><span class="s">RemoteLib</span>
+</span><span id="line-5-4"><a id="example-5-4" name="example-5-4"></a>
+</span><span id="line-5-5"><a id="example-5-5" name="example-5-5"></a><span class="gh">*** Test Cases ***</span>
+</span><span id="line-5-6"><a id="example-5-6" name="example-5-6"></a><span class="gu">Example</span>
+</span><span id="line-5-7"><a id="example-5-7" name="example-5-7"></a><span class="p">    </span><span class="nf">LocalLib.Some Keyword</span><span class="p">     </span><span class="s">some arg</span><span class="p">       </span><span class="s">second arg</span>
+</span><span id="line-5-8"><a id="example-5-8" name="example-5-8"></a><span class="p">    </span><span class="nf">RemoteLib.Some Keyword</span><span class="p">    </span><span class="s">another arg</span><span class="p">    </span><span class="s">whatever</span>
+</span><span id="line-5-9"><a id="example-5-9" name="example-5-9"></a><span class="p">    </span><span class="nf">LocalLib.Another Keyword</span>
+</span></code></pre></div></td></tr></table></div>
+Setting a custom name to a test library works both when importing a
+library in the Setting section and when using the <em>Import Library</em> keyword.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Prior to Robot Framework 6.0 the marker to use when giving a custom name
+to a library was <code>WITH NAME</code> instead of <code>AS</code>. The old syntax continues
+to work, but it is considered deprecated and will eventually be removed.</p>
+</div>
+<h2 id="standard-libraries">Standard libraries<a class="headerlink" href="#standard-libraries" title="Permanent link">&para;</a></h2>
+<p>Some test libraries are distributed with Robot Framework and these
+libraries are called <em>standard libraries</em>. The <a href="#builtin">BuiltIn</a> library is special,
+because it is taken into use automatically and thus its keywords are always
+available. Other standard libraries need to be imported in the same way
+as any other libraries, but there is no need to install them.</p>
+<h3 id="normal-standard-libraries">Normal standard libraries<a class="headerlink" href="#normal-standard-libraries" title="Permanent link">&para;</a></h3>
+<p>The available normal standard libraries are listed below with links to their
+documentations:</p>
+<ul>
+<li><a href="#builtin">BuiltIn</a></li>
+<li><a href="#collections">Collections</a></li>
+<li><a href="#datetime">DateTime</a></li>
+<li><a href="#dialogs">Dialogs</a></li>
+<li><a href="#operatingsystem">OperatingSystem</a></li>
+<li><a href="#process">Process</a></li>
+<li><a href="#screenshot">Screenshot</a></li>
+<li><a href="#string">String</a></li>
+<li><a href="#telnet">Telnet</a></li>
+<li><a href="#xml">XML</a></li>
+</ul>
+<p><a id="xml"></a>
+<a id="telnet"></a>
+<a id="screenshot"></a>
+<a id="string"></a>
+<a id="process"></a>
+<a id="operatingsystem"></a>
+<a id="dialogs"></a>
+<a id="datetime"></a>
+<a id="collections"></a>
+<a id="builtin"></a></p>
+<h3 id="remote-library">Remote library<a class="headerlink" href="#remote-library" title="Permanent link">&para;</a></h3>
+<p>In addition to the normal standard libraries listed above, there is
+also <em>Remote</em> library that is totally different than the other standard
+libraries. It does not have any keywords of its own but it works as a
+proxy between Robot Framework and actual test library implementations.
+These libraries can be running on other machines than the core
+framework and can even be implemented using languages not supported by
+Robot Framework natively.</p>
+<p>See separate <a href="../../extend/remote/#remote-library-interface">Remote library interface</a> section for more information
+about this concept.</p>
+<h2 id="external-libraries">External libraries<a class="headerlink" href="#external-libraries" title="Permanent link">&para;</a></h2>
+<p>Any test library that is not one of the standard libraries is, by
+definition, <em>an external library</em>. The Robot Framework open source community
+has implemented several generic libraries, such as <a href="https://github.com/robotframework/SeleniumLibrary">SeleniumLibrary</a> and
+<a href="https://github.com/robotframework/SwingLibrary">SwingLibrary</a>, which are not packaged with the core framework. A list of
+publicly available libraries can be found from <a href="http://robotframework.org">http://robotframework.org</a>.</p>
+<p>Generic and custom libraries can obviously also be implemented by teams using
+Robot Framework. See <a href="../../extend/libraries/#creating-test-libraries">Creating test libraries</a> section for more information
+about that topic.</p>
+<p>Different external libraries can have a totally different mechanism
+for installing them and taking them into use. Sometimes they may also require
+some other dependencies to be installed separately. All libraries
+should have clear installation and usage documentation and they should
+preferably automate the installation process.</p>
 
 
 

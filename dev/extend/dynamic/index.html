@@ -99,7 +99,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#dynamic-library-interface" class="md-skip">
+        <a href="#dynamic-library-api" class="md-skip">
           Skip to content
         </a>
       
@@ -1312,6 +1312,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynamic library interface
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1328,6 +1346,191 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#getting-keyword-names" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting keyword names
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Getting keyword names">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#marking-methods-to-expose-as-keywords" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Marking methods to expose as keywords
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-keywords" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Running keywords
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-keyword-arguments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting keyword arguments
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-keyword-argument-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting keyword argument types
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-keyword-tags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting keyword tags
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting documentation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Getting documentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getting-keyword-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting keyword documentation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getting-general-library-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting general library documentation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-source-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting source information
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#named-argument-syntax-with-dynamic-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Named argument syntax with dynamic libraries
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#free-named-arguments-with-dynamic-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Free named arguments with dynamic libraries
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#named-only-arguments-with-dynamic-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Named-only arguments with dynamic libraries
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -9663,7 +9866,7 @@
   <span class="md-ellipsis">
     
   
-    Documentation format
+    Doc format
   
 
     
@@ -9792,8 +9995,545 @@
   
 
 
-<h1 id="dynamic-library-interface">Dynamic library interface<a class="headerlink" href="#dynamic-library-interface" title="Permanent link">&para;</a></h1>
-<p>Will also cover hybrid libraries.</p>
+<p><a id="dynamic-library"></a></p>
+<h1 id="dynamic-library-api">Dynamic library API<a class="headerlink" href="#dynamic-library-api" title="Permanent link">&para;</a></h1>
+<p>The dynamic API is in most ways similar to the static API. For
+example, reporting the keyword status, logging, and returning values
+works exactly the same way. Most importantly, there are no differences
+in importing dynamic libraries and using their keywords compared to
+other libraries. In other words, users do not need to know what APIs their
+libraries use.</p>
+<p>Only differences between static and dynamic libraries are
+how Robot Framework discovers what keywords a library implements,
+what arguments and documentation these keywords have, and how the
+keywords are actually executed. With the static API, all this is
+done using reflection, but dynamic libraries have special methods
+that are used for these purposes.</p>
+<p>One of the benefits of the dynamic API is that you have more flexibility
+in organizing your library. With the static API, you must have all
+keywords in one class or module, whereas with the dynamic API, you can,
+for example, implement each keyword as a separate class.</p>
+<p>Another major use case for the dynamic API is implementing a library
+so that it works as proxy for an actual library possibly running on
+some other process or even on another machine. This kind of a proxy
+library can be very thin, and because keyword names and all other
+information is got dynamically, there is no need to update the proxy
+when new keywords are added to the actual library.</p>
+<p>This section explains how the dynamic API works between Robot
+Framework and dynamic libraries. It does not matter for Robot
+Framework how these libraries are actually implemented (for example,
+how calls to the <code>run_keyword</code> method are mapped to a correct
+keyword implementation), and many different approaches are
+possible.
+Python users may also find the <a href="https://github.com/robotframework/PythonLibCore">PythonLibCore</a> project useful.</p>
+<p><a id="getting-dynamic-keyword-names"></a></p>
+<h2 id="getting-keyword-names">Getting keyword names<a class="headerlink" href="#getting-keyword-names" title="Permanent link">&para;</a></h2>
+<p>Dynamic libraries tell what keywords they implement with the
+<code>get_keyword_names</code> method. This
+method cannot take any arguments, and it must return a list or array
+of strings containing the names of the keywords that the library implements.</p>
+<p>If the returned keyword names contain several words, they can be returned
+separated with spaces or underscores, or in the camelCase format. For
+example, <code>['first keyword', 'second keyword']</code>,
+<code>['first_keyword', 'second_keyword']</code>, and
+<code>['firstKeyword', 'secondKeyword']</code> would all be mapped to keywords
+<em>First Keyword</em> and <em>Second Keyword</em>.</p>
+<p>Dynamic libraries must always have this method. If it is missing, or
+if calling it fails for some reason, the library is considered a
+static library.</p>
+<h3 id="marking-methods-to-expose-as-keywords">Marking methods to expose as keywords<a class="headerlink" href="#marking-methods-to-expose-as-keywords" title="Permanent link">&para;</a></h3>
+<p>If a dynamic library should contain both methods which are meant to be keywords
+and methods which are meant to be private helper methods, it may be wise to
+mark the keyword methods as such so it is easier to implement <code>get_keyword_names</code>.
+The <code>robot.api.deco.keyword</code> decorator allows an easy way to do this since it
+creates a <a href="https://github.com/robotframework/PythonLibCore">custom 'robot_name' attribute</a> on the decorated method.
+This allows generating the list of keywords just by checking for the <code>robot_name</code>
+attribute on every method in the library during <code>get_keyword_names</code>.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1"> 1</a></span>
+<span class="normal"><a href="#example-0-2"> 2</a></span>
+<span class="normal"><a href="#example-0-3"> 3</a></span>
+<span class="normal"><a href="#example-0-4"> 4</a></span>
+<span class="normal"><a href="#example-0-5"> 5</a></span>
+<span class="normal"><a href="#example-0-6"> 6</a></span>
+<span class="normal"><a href="#example-0-7"> 7</a></span>
+<span class="normal"><a href="#example-0-8"> 8</a></span>
+<span class="normal"><a href="#example-0-9"> 9</a></span>
+<span class="normal"><a href="#example-0-10">10</a></span>
+<span class="normal"><a href="#example-0-11">11</a></span>
+<span class="normal"><a href="#example-0-12">12</a></span>
+<span class="normal"><a href="#example-0-13">13</a></span>
+<span class="normal"><a href="#example-0-14">14</a></span>
+<span class="normal"><a href="#example-0-15">15</a></span>
+<span class="normal"><a href="#example-0-16">16</a></span>
+<span class="normal"><a href="#example-0-17">17</a></span>
+<span class="normal"><a href="#example-0-18">18</a></span>
+<span class="normal"><a href="#example-0-19">19</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">robot.api.deco</span><span class="w"> </span><span class="kn">import</span> <span class="n">keyword</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a><span class="k">class</span><span class="w"> </span><span class="nc">DynamicExample</span><span class="p">:</span>
+</span><span id="line-0-4"><a id="example-0-4" name="example-0-4"></a>
+</span><span id="line-0-5"><a id="example-0-5" name="example-0-5"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">get_keyword_names</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="line-0-6"><a id="example-0-6" name="example-0-6"></a>        <span class="c1"># Get all attributes and their values from the library.</span>
+</span><span id="line-0-7"><a id="example-0-7" name="example-0-7"></a>        <span class="n">attributes</span> <span class="o">=</span> <span class="p">[(</span><span class="n">name</span><span class="p">,</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">))</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="bp">self</span><span class="p">)]</span>
+</span><span id="line-0-8"><a id="example-0-8" name="example-0-8"></a>        <span class="c1"># Filter out attributes that do not have &#39;robot_name&#39; set.</span>
+</span><span id="line-0-9"><a id="example-0-9" name="example-0-9"></a>        <span class="n">keywords</span> <span class="o">=</span> <span class="p">[(</span><span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">attributes</span>
+</span><span id="line-0-10"><a id="example-0-10" name="example-0-10"></a>                    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="s1">&#39;robot_name&#39;</span><span class="p">)]</span>
+</span><span id="line-0-11"><a id="example-0-11" name="example-0-11"></a>        <span class="c1"># Return value of &#39;robot_name&#39;, if given, or the original &#39;name&#39;.</span>
+</span><span id="line-0-12"><a id="example-0-12" name="example-0-12"></a>        <span class="k">return</span> <span class="p">[</span><span class="n">value</span><span class="o">.</span><span class="n">robot_name</span> <span class="ow">or</span> <span class="n">name</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">keywords</span><span class="p">]</span>
+</span><span id="line-0-13"><a id="example-0-13" name="example-0-13"></a>
+</span><span id="line-0-14"><a id="example-0-14" name="example-0-14"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">helper_method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="line-0-15"><a id="example-0-15" name="example-0-15"></a>        <span class="o">...</span>
+</span><span id="line-0-16"><a id="example-0-16" name="example-0-16"></a>
+</span><span id="line-0-17"><a id="example-0-17" name="example-0-17"></a>    <span class="nd">@keyword</span>
+</span><span id="line-0-18"><a id="example-0-18" name="example-0-18"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">keyword_method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="line-0-19"><a id="example-0-19" name="example-0-19"></a>        <span class="o">.&lt;</span><span class="n">a</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;setting-custom-name-running-dynamic-keywords&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span></code></pre></div></td></tr></table></div>
+<p><a id="running-dynamic-keywords"></a></p>
+<h2 id="running-keywords">Running keywords<a class="headerlink" href="#running-keywords" title="Permanent link">&para;</a></h2>
+<p>Dynamic libraries have a special <code>run_keyword</code> (alias <code>runKeyword</code>)
+method for executing their keywords. When a keyword from a dynamic
+library is used in the test data, Robot Framework uses the <code>run_keyword</code>
+method to get it executed. This method takes two or three arguments.
+The first argument is a string containing the name of the keyword to be
+executed in the same format as returned by <code>get_keyword_names</code>. The second
+argument is a list of <a href="../../syntax/tests/#positional-arguments">positional arguments</a> given to the keyword in
+the test data, and the optional third argument is a dictionary
+containing <a href="../../syntax/tests/#named-arguments">named arguments</a>. If the third argument is missing, <a href="https://github.com/robotframework/PythonLibCore">free named
+arguments</a> and <a href="../../syntax/tests/#named-only-arguments">named-only arguments</a> are not supported, and other
+named arguments are mapped to positional arguments.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Prior to Robot Framework 3.1, normal named arguments were
+mapped to positional arguments regardless did <code>run_keyword</code>
+accept two or three arguments. The third argument only got
+possible free named arguments.</p>
+</div>
+<p>After getting keyword name and arguments, the library can execute
+the keyword freely, but it must use the same mechanism to
+communicate with the framework as static libraries. This means using
+exceptions for reporting keyword status, logging by writing to
+the standard output or by using the provided logging APIs, and using
+the return statement in <code>run_keyword</code> for returning something.</p>
+<p>Every dynamic library must have both the <code>get_keyword_names</code> and
+<code>run_keyword</code> methods but rest of the methods in the dynamic
+API are optional. The example below shows a working, albeit
+trivial, dynamic library.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-1-1">1</a></span>
+<span class="normal"><a href="#example-1-2">2</a></span>
+<span class="normal"><a href="#example-1-3">3</a></span>
+<span class="normal"><a href="#example-1-4">4</a></span>
+<span class="normal"><a href="#example-1-5">5</a></span>
+<span class="normal"><a href="#example-1-6">6</a></span>
+<span class="normal"><a href="#example-1-7">7</a></span>
+<span class="normal"><a href="#example-1-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-1-1"><a id="example-1-1" name="example-1-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">DynamicExample</span><span class="p">:</span>
+</span><span id="line-1-2"><a id="example-1-2" name="example-1-2"></a>
+</span><span id="line-1-3"><a id="example-1-3" name="example-1-3"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">get_keyword_names</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="line-1-4"><a id="example-1-4" name="example-1-4"></a>        <span class="k">return</span> <span class="p">[</span><span class="s1">&#39;first keyword&#39;</span><span class="p">,</span> <span class="s1">&#39;second keyword&#39;</span><span class="p">]</span>
+</span><span id="line-1-5"><a id="example-1-5" name="example-1-5"></a>
+</span><span id="line-1-6"><a id="example-1-6" name="example-1-6"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">run_keyword</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">named_args</span><span class="p">):</span>
+</span><span id="line-1-7"><a id="example-1-7" name="example-1-7"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Running keyword &#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39; with positional arguments </span><span class="si">{</span><span class="n">args</span><span class="si">}</span><span class="s2"> &quot;</span>
+</span><span id="line-1-8"><a id="example-1-8" name="example-1-8"></a>              <span class="sa">f</span><span class="s2">&quot;and named arguments </span><span class="si">{</span><span class="n">named_args</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<h2 id="getting-keyword-arguments">Getting keyword arguments<a class="headerlink" href="#getting-keyword-arguments" title="Permanent link">&para;</a></h2>
+<p>If a dynamic library only implements the <code>get_keyword_names</code> and
+<code>run_keyword</code> methods, Robot Framework does not have any information
+about the arguments that the implemented keywords accept. For example,
+both <em>First Keyword</em> and <em>Second Keyword</em> in the example above
+could be used with any arguments. This is problematic,
+because most real keywords expect a certain number of keywords, and
+under these circumstances they would need to check the argument counts
+themselves.</p>
+<p>Dynamic libraries can communicate what arguments their keywords expect
+by using the <code>get_keyword_arguments</code> (alias <code>getKeywordArguments</code>) method.
+This method gets the name of a keyword as an argument, and it must return
+a list of strings containing the arguments accepted by that keyword.</p>
+<p>Similarly as other keywords, dynamic keywords can require any number
+of <a href="../../syntax/tests/#positional-arguments">positional arguments</a>, have <a href="../../syntax/tests/#default-values">default values</a>, accept <a href="../../syntax/tests/#variable-number-of-arguments">variable number of
+arguments</a>, accept <a href="../../syntax/tests/#free-named-arguments">free named arguments</a> and have <a href="../../syntax/tests/#named-only-arguments">named-only arguments</a>.
+The syntax how to represent all these different variables is derived from how
+they are specified in Python and explained in the following table.</p>
+<table>
+<thead>
+<tr>
+<th>Argument type</th>
+<th>How to represent</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>No arguments</td>
+<td>Empty list.</td>
+<td><code>[]</code></td>
+</tr>
+<tr>
+<td>One or more <a href="../../syntax/tests/#positional-argument">positional argument</a></td>
+<td>List of strings containing argument names.</td>
+<td><code>['argument']</code> <code>['arg1', 'arg2', 'arg3']</code></td>
+</tr>
+<tr>
+<td><a href="../../syntax/tests/#default-values">Default values</a></td>
+<td>Two ways how to represent the argument name and the default value:<br>- As a string where the name and the default are separated with <code>=</code>. - As a tuple with the name and the default as separate items. New in Robot Framework 3.2.</td>
+<td>String with <code>=</code> separator:<br><code>['name=default']</code> <code>['a', 'b=1', 'c=2']</code><br>Tuple:<br><code>[('name', 'default')]</code> <code>['a', ('b', 1), ('c', 2)]</code></td>
+</tr>
+<tr>
+<td><a href="../libraries/#positional-only-arguments">Positional-only arguments</a></td>
+<td>Arguments before the <code>/</code> marker. New in Robot Framework 6.1.</td>
+<td><code>['posonly', '/']</code> <code>['p', 'q', '/', 'normal']</code></td>
+</tr>
+<tr>
+<td><a href="../../syntax/tests/#variable-number-of-arguments">Variable number of arguments</a> (varargs)</td>
+<td>Argument after possible positional arguments has a <code>*</code> prefix</td>
+<td><code>['*varargs']</code> <code>['argument', '*rest']</code> <code>['a', 'b=42', '*c']</code></td>
+</tr>
+<tr>
+<td><a href="../../syntax/tests/#named-only-arguments">Named-only arguments</a></td>
+<td>Arguments after varargs or a lone <code>*</code> if there are no varargs. With or without defaults. Requires <code>run_keyword</code> to <a href="https://github.com/robotframework/PythonLibCore">support named-only arguments</a>. New in Robot Framework 3.1.</td>
+<td><code>['*varargs', 'named']</code> <code>['*', 'named']</code> <code>['*', 'x', 'y=default']</code> <code>['a', '*b', ('c', 42)]</code></td>
+</tr>
+<tr>
+<td><a href="../../syntax/tests/#free-named-arguments">Free named arguments</a> (kwargs)</td>
+<td>Last arguments has <code>**</code> prefix. Requires <code>run_keyword</code> to <a href="../libraries/#implicit-argument-types-based-on-default-values">support free named arguments</a>.</td>
+<td><code>['**named']</code> <code>['a', ('b', 42), '**c']</code> <code>['*varargs', '**kwargs']</code> <code>['*', 'kwo', '**kws']</code></td>
+</tr>
+</tbody>
+</table>
+<p>When the <code>get_keyword_arguments</code> is used, Robot Framework automatically
+calculates how many positional arguments the keyword requires and does it
+support free named arguments or not. If a keyword is used with invalid
+arguments, an error occurs and <code>run_keyword</code> is not even called.</p>
+<p>The actual argument names and default values that are returned are also
+important. They are needed for <a href="#named-only-arguments-with-dynamic-libraries">named argument support</a> and the <a href="../libdoc/#libdoc">Libdoc</a>
+tool needs them to be able to create a meaningful library documentation.</p>
+<p>As explained in the above table, default values can be specified with argument
+names either as a string like <code>'name=default'</code> or as a tuple like
+<code>('name', 'default')</code>. The main problem with the former syntax is that all
+default values are considered strings whereas the latter syntax allows using
+all objects like <code>('integer', 1)</code> or <code>('boolean', True)</code>. When using other
+objects than strings, Robot Framework can do <a href="#named-argument-syntax-with-dynamic-libraries">automatic argument conversion</a>
+based on them.</p>
+<p>For consistency reasons, also arguments that do not accept default values can
+be specified as one item tuples. For example, <code>['a', 'b=c', '*d']</code> and
+<code>[('a',), ('b', 'c'), ('*d',)]</code> are equivalent.</p>
+<p>If <code>get_keyword_arguments</code> is missing or returns Python <code>None</code> for a certain
+keyword, that keyword gets an argument specification
+accepting all arguments. This automatic argument spec is either
+<code>[*varargs, **kwargs]</code> or <code>[*varargs]</code>, depending does
+<code>run_keyword</code> <a href="../../syntax/tests/#named-argument">support free named arguments</a> or not.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Support to specify arguments as tuples like <code>('name', 'default')</code>
+is new in Robot Framework 3.2. Support for positional-only arguments
+in dynamic library API is new in Robot Framework 6.1.</p>
+</div>
+<h2 id="getting-keyword-argument-types">Getting keyword argument types<a class="headerlink" href="#getting-keyword-argument-types" title="Permanent link">&para;</a></h2>
+<p>Robot Framework 3.1 introduced support for automatic argument conversion
+and the dynamic library API supports that as well. The conversion logic
+works exactly like with <a href="#free-named-arguments-with-dynamic-libraries">static libraries</a>, but how the type information
+is specified is naturally different.</p>
+<p>With dynamic libraries types can be returned using the optional
+<code>get_keyword_types</code> method (alias <code>getKeywordTypes</code>). It can return types
+using a list or a dictionary exactly like types can be specified when using
+the <a href="../libraries/#keyword-decorator">@keyword decorator</a>. Type information can be specified using actual
+types like <code>int</code>, but especially if a dynamic library gets this information
+from external systems, using strings like <code>'int'</code> or <code>'integer'</code> may be
+easier. See the <a href="../libraries/#supported-conversions">Supported conversions</a> section for more information about
+supported types and how to specify them.</p>
+<p>Robot Framework does automatic argument conversion also based on the
+<a href="../libraries/#specifying-argument-types-using-keyword-decorator">argument default values</a>. Earlier this did not work with the dynamic API
+because it was possible to specify arguments only as strings. As
+<a href="../libraries/#implicit-argument-types-based-on-default-values">discussed in the previous section</a>, this was changed in Robot Framework
+3.2 and nowadays default values returned like <code>('example', True)</code> are
+automatically used for this purpose.</p>
+<p>Starting from Robot Framework 7.0, dynamic libraries can also specify the
+keyword return type by using key <code>'return'</code> with an appropriate type in the
+returned type dictionary. This information is not used for anything during
+execution, but it is shown by <a href="../libdoc/#libdoc">Libdoc</a> for documentation purposes.</p>
+<h2 id="getting-keyword-tags">Getting keyword tags<a class="headerlink" href="#getting-keyword-tags" title="Permanent link">&para;</a></h2>
+<p>Dynamic libraries can report <a href="../libraries/#keyword-tags">keyword
+tags</a> by using the <code>get_keyword_tags</code> method (alias <code>getKeywordTags</code>). It
+gets a keyword name as an argument, and should return corresponding tags
+as a list of strings.</p>
+<p>Alternatively it is possible to specify tags on the last row of the
+documentation returned by the <code>get_keyword_documentation</code> method discussed
+below. This requires starting the last row with <code>Tags:</code> and listing tags
+after it like <code>Tags: first tag, second, third</code>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The <code>get_keyword_tags</code> method is guaranteed to be called before
+the <code>get_keyword_documentation</code> method. This makes it easy to
+embed tags into the documentation only if the <code>get_keyword_tags</code>
+method is not called.</p>
+</div>
+<h2 id="getting-documentation">Getting documentation<a class="headerlink" href="#getting-documentation" title="Permanent link">&para;</a></h2>
+<h3 id="getting-keyword-documentation">Getting keyword documentation<a class="headerlink" href="#getting-keyword-documentation" title="Permanent link">&para;</a></h3>
+<p>If dynamic libraries want to provide keyword documentation, they can implement
+the <code>get_keyword_documentation</code> method (alias <code>getKeywordDocumentation</code>). It
+takes a keyword name as an argument and, as the method name implies, returns
+its documentation as a string.</p>
+<p>The returned documentation is used similarly as the keyword
+documentation string with static libraries.
+The main use case is getting keywords' documentations into a
+library documentation generated by <a href="../libdoc/#libdoc">Libdoc</a>. Additionally,
+the first line of the documentation (until the first <code>\n</code>) is
+shown in log files.</p>
+<h3 id="getting-general-library-documentation">Getting general library documentation<a class="headerlink" href="#getting-general-library-documentation" title="Permanent link">&para;</a></h3>
+<p>The <code>get_keyword_documentation</code> method can also be used for
+specifying overall library documentation. This documentation is not
+used when tests are executed, but it can make the documentation
+generated by <a href="../libdoc/#libdoc">Libdoc</a> much better.</p>
+<p>Dynamic libraries can provide both general library documentation and
+documentation related to taking the library into use. The former is
+got by calling <code>get_keyword_documentation</code> with special value
+<code>__intro__</code>, and the latter is got using value
+<code>__init__</code>. How the documentation is presented is best tested
+with <a href="../libdoc/#libdoc">Libdoc</a> in practice.</p>
+<p>Dynamic libraries can also specify the general library
+documentation directly in the code as the docstring of the library
+class and its <code>__init__</code> method. If a non-empty documentation is
+got both directly from the code and from the
+<code>get_keyword_documentation</code> method, the latter has precedence.</p>
+<h2 id="getting-source-information">Getting source information<a class="headerlink" href="#getting-source-information" title="Permanent link">&para;</a></h2>
+<p>The dynamic API masks the real implementation of keywords from Robot Framework
+and thus makes it impossible to see where keywords are implemented. This
+means that editors and other tools utilizing Robot Framework APIs cannot
+implement features such as go-to-definition. This problem can be solved by
+implementing yet another optional dynamic method named <code>get_keyword_source</code>
+(alias <code>getKeywordSource</code>) that returns the source information.</p>
+<p>The return value from the <code>get_keyword_source</code> method must be a string or
+<code>None</code> if no source information is available. In the simple
+case it is enough to simply return an absolute path to the file implementing
+the keyword. If the line number where the keyword implementation starts
+is known, it can be embedded to the return value like <code>path:lineno</code>.
+Returning only the line number is possible like <code>:lineno</code>.</p>
+<p>The source information of the library itself is got automatically from
+the imported library class the same way as with the static library API. The
+library source path is used with all keywords that do not have their own
+source path defined.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Returning source information for keywords is a new feature in
+Robot Framework 3.2.</p>
+</div>
+<h2 id="named-argument-syntax-with-dynamic-libraries">Named argument syntax with dynamic libraries<a class="headerlink" href="#named-argument-syntax-with-dynamic-libraries" title="Permanent link">&para;</a></h2>
+<p>Also the dynamic library API supports
+the <a href="../../syntax/tests/#named-argument-syntax">named argument syntax</a>. Using the syntax works based on the
+argument names and default values <a href="#getting-keyword-arguments">got from the library</a> using the
+<code>get_keyword_arguments</code> method.</p>
+<p>If the <code>run_keyword</code> method accepts three arguments, the second argument
+gets all positional arguments as a list and the last arguments gets all
+named arguments as a mapping. If it accepts only two arguments, named
+arguments are mapped to positional arguments. In the latter case, if
+a keyword has multiple arguments with default values and only some of
+the latter ones are given, the framework fills the skipped optional
+arguments based on the default values returned by the <code>get_keyword_arguments</code>
+method.</p>
+<p>Using the named argument syntax with dynamic libraries is illustrated
+by the following examples. All the examples use a keyword <em>Dynamic</em>
+that has an argument specification <code>[a, b=d1, c=d2]</code>. The comment on each row
+shows how <code>run_keyword</code> would be called in these cases if it has two arguments
+(i.e. signature is <code>name, args</code>) and if it has three arguments (i.e.
+<code>name, args, kwargs</code>).</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-2-1"> 1</a></span>
+<span class="normal"><a href="#example-2-2"> 2</a></span>
+<span class="normal"><a href="#example-2-3"> 3</a></span>
+<span class="normal"><a href="#example-2-4"> 4</a></span>
+<span class="normal"><a href="#example-2-5"> 5</a></span>
+<span class="normal"><a href="#example-2-6"> 6</a></span>
+<span class="normal"><a href="#example-2-7"> 7</a></span>
+<span class="normal"><a href="#example-2-8"> 8</a></span>
+<span class="normal"><a href="#example-2-9"> 9</a></span>
+<span class="normal"><a href="#example-2-10">10</a></span>
+<span class="normal"><a href="#example-2-11">11</a></span>
+<span class="normal"><a href="#example-2-12">12</a></span>
+<span class="normal"><a href="#example-2-13">13</a></span>
+<span class="normal"><a href="#example-2-14">14</a></span>
+<span class="normal"><a href="#example-2-15">15</a></span>
+<span class="normal"><a href="#example-2-16">16</a></span>
+<span class="normal"><a href="#example-2-17">17</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-2-1"><a id="example-2-1" name="example-2-1"></a><span class="gh">*** Test Cases ***</span><span class="p">                  </span><span class="c"># args          # args, kwargs</span>
+</span><span id="line-2-2"><a id="example-2-2" name="example-2-2"></a><span class="gu">Positional only</span>
+</span><span id="line-2-3"><a id="example-2-3" name="example-2-3"></a><span class="p">    </span><span class="nf">Dynamic</span><span class="p">    </span><span class="s">x</span><span class="p">                    </span><span class="c"># [x]           # [x], {}</span>
+</span><span id="line-2-4"><a id="example-2-4" name="example-2-4"></a><span class="p">    </span><span class="nf">Dynamic</span><span class="p">    </span><span class="s">x</span><span class="p">      </span><span class="s">y</span><span class="p">             </span><span class="c"># [x, y]        # [x, y], {}</span>
+</span><span id="line-2-5"><a id="example-2-5" name="example-2-5"></a><span class="p">    </span><span class="nf">Dynamic</span><span class="p">    </span><span class="s">x</span><span class="p">      </span><span class="s">y</span><span class="p">      </span><span class="s">z</span><span class="p">      </span><span class="c"># [x, y, z]     # [x, y, z], {}</span>
+</span><span id="line-2-6"><a id="example-2-6" name="example-2-6"></a>
+</span><span id="line-2-7"><a id="example-2-7" name="example-2-7"></a><span class="gu">Named only</span>
+</span><span id="line-2-8"><a id="example-2-8" name="example-2-8"></a><span class="p">    </span><span class="nf">Dynamic</span><span class="p">    </span><span class="s">a=x</span><span class="p">                  </span><span class="c"># [x]           # [], {a: x}</span>
+</span><span id="line-2-9"><a id="example-2-9" name="example-2-9"></a><span class="p">    </span><span class="nf">Dynamic</span><span class="p">    </span><span class="s">c=z</span><span class="p">    </span><span class="s">a=x</span><span class="p">    </span><span class="s">b=y</span><span class="p">    </span><span class="c"># [x, y, z]     # [], {a: x, b: y, c: z}</span>
+</span><span id="line-2-10"><a id="example-2-10" name="example-2-10"></a>
+</span><span id="line-2-11"><a id="example-2-11" name="example-2-11"></a><span class="gu">Positional and named</span>
+</span><span id="line-2-12"><a id="example-2-12" name="example-2-12"></a><span class="p">    </span><span class="nf">Dynamic</span><span class="p">    </span><span class="s">x</span><span class="p">      </span><span class="s">b=y</span><span class="p">           </span><span class="c"># [x, y]        # [x], {b: y}</span>
+</span><span id="line-2-13"><a id="example-2-13" name="example-2-13"></a><span class="p">    </span><span class="nf">Dynamic</span><span class="p">    </span><span class="s">x</span><span class="p">      </span><span class="s">y</span><span class="p">      </span><span class="s">c=z</span><span class="p">    </span><span class="c"># [x, y, z]     # [x, y], {c: z}</span>
+</span><span id="line-2-14"><a id="example-2-14" name="example-2-14"></a><span class="p">    </span><span class="nf">Dynamic</span><span class="p">    </span><span class="s">x</span><span class="p">      </span><span class="s">b=y</span><span class="p">    </span><span class="s">c=z</span><span class="p">    </span><span class="c"># [x, y, z]     # [x], {y: b, c: z}</span>
+</span><span id="line-2-15"><a id="example-2-15" name="example-2-15"></a>
+</span><span id="line-2-16"><a id="example-2-16" name="example-2-16"></a><span class="gu">Intermediate missing</span>
+</span><span id="line-2-17"><a id="example-2-17" name="example-2-17"></a><span class="p">    </span><span class="nf">Dynamic</span><span class="p">    </span><span class="s">x</span><span class="p">      </span><span class="s">c=z</span><span class="p">           </span><span class="c"># [x, d1, z]    # [x], {c: z}</span>
+</span></code></pre></div></td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Prior to Robot Framework 3.1, all normal named arguments were
+mapped to positional arguments and the optional <code>kwargs</code> was
+only used with free named arguments. With the above examples
+<code>run_keyword</code> was always called like it is nowadays called if
+it does not support <code>kwargs</code>.</p>
+</div>
+<h2 id="free-named-arguments-with-dynamic-libraries">Free named arguments with dynamic libraries<a class="headerlink" href="#free-named-arguments-with-dynamic-libraries" title="Permanent link">&para;</a></h2>
+<p>Dynamic libraries can also support
+<a href="../../syntax/tests/#free-named-arguments">free named arguments</a> (<code>**named</code>). A mandatory precondition for
+this support is that the <code>run_keyword</code> method <a href="https://github.com/robotframework/PythonLibCore">takes three arguments</a>:
+the third one will get the free named arguments along with possible other
+named arguments. These arguments are passed to the keyword as a mapping.</p>
+<p>What arguments a keyword accepts depends on what <code>get_keyword_arguments</code>
+<a href="#getting-keyword-arguments">returns for it</a>. If the last argument starts with <code>**</code>, that keyword is
+recognized to accept free named arguments.</p>
+<p>Using the free named argument syntax with dynamic libraries is illustrated
+by the following examples. All the examples use a keyword <em>Dynamic</em>
+that has an argument specification <code>[a=d1, b=d2, **named]</code>. The comment shows
+the arguments that the <code>run_keyword</code> method is actually called with.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-3-1"> 1</a></span>
+<span class="normal"><a href="#example-3-2"> 2</a></span>
+<span class="normal"><a href="#example-3-3"> 3</a></span>
+<span class="normal"><a href="#example-3-4"> 4</a></span>
+<span class="normal"><a href="#example-3-5"> 5</a></span>
+<span class="normal"><a href="#example-3-6"> 6</a></span>
+<span class="normal"><a href="#example-3-7"> 7</a></span>
+<span class="normal"><a href="#example-3-8"> 8</a></span>
+<span class="normal"><a href="#example-3-9"> 9</a></span>
+<span class="normal"><a href="#example-3-10">10</a></span>
+<span class="normal"><a href="#example-3-11">11</a></span>
+<span class="normal"><a href="#example-3-12">12</a></span>
+<span class="normal"><a href="#example-3-13">13</a></span>
+<span class="normal"><a href="#example-3-14">14</a></span>
+<span class="normal"><a href="#example-3-15">15</a></span>
+<span class="normal"><a href="#example-3-16">16</a></span>
+<span class="normal"><a href="#example-3-17">17</a></span>
+<span class="normal"><a href="#example-3-18">18</a></span>
+<span class="normal"><a href="#example-3-19">19</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-3-1"><a id="example-3-1" name="example-3-1"></a><span class="gh">*** Test Cases ***</span><span class="p">                  </span><span class="c"># args, kwargs</span>
+</span><span id="line-3-2"><a id="example-3-2" name="example-3-2"></a><span class="gu">No arguments</span>
+</span><span id="line-3-3"><a id="example-3-3" name="example-3-3"></a><span class="p">    </span><span class="nf">Dynamic</span><span class="p">                         </span><span class="c"># [], {}</span>
+</span><span id="line-3-4"><a id="example-3-4" name="example-3-4"></a>
+</span><span id="line-3-5"><a id="example-3-5" name="example-3-5"></a><span class="gu">Only positional</span>
+</span><span id="line-3-6"><a id="example-3-6" name="example-3-6"></a><span class="p">    </span><span class="nf">Dynamic</span><span class="p">    </span><span class="s">x</span><span class="p">                    </span><span class="c"># [x], {}</span>
+</span><span id="line-3-7"><a id="example-3-7" name="example-3-7"></a><span class="p">    </span><span class="nf">Dynamic</span><span class="p">    </span><span class="s">x</span><span class="p">      </span><span class="s">y</span><span class="p">             </span><span class="c"># [x, y], {}</span>
+</span><span id="line-3-8"><a id="example-3-8" name="example-3-8"></a>
+</span><span id="line-3-9"><a id="example-3-9" name="example-3-9"></a><span class="gu">Only free named</span>
+</span><span id="line-3-10"><a id="example-3-10" name="example-3-10"></a><span class="p">    </span><span class="nf">Dynamic</span><span class="p">    </span><span class="s">x=1</span><span class="p">                  </span><span class="c"># [], {x: 1}</span>
+</span><span id="line-3-11"><a id="example-3-11" name="example-3-11"></a><span class="p">    </span><span class="nf">Dynamic</span><span class="p">    </span><span class="s">x=1</span><span class="p">    </span><span class="s">y=2</span><span class="p">    </span><span class="s">z=3</span><span class="p">    </span><span class="c"># [], {x: 1, y: 2, z: 3}</span>
+</span><span id="line-3-12"><a id="example-3-12" name="example-3-12"></a>
+</span><span id="line-3-13"><a id="example-3-13" name="example-3-13"></a><span class="gu">Positional and free named</span>
+</span><span id="line-3-14"><a id="example-3-14" name="example-3-14"></a><span class="p">    </span><span class="nf">Dynamic</span><span class="p">    </span><span class="s">x</span><span class="p">      </span><span class="s">y=2</span><span class="p">           </span><span class="c"># [x], {y: 2}</span>
+</span><span id="line-3-15"><a id="example-3-15" name="example-3-15"></a><span class="p">    </span><span class="nf">Dynamic</span><span class="p">    </span><span class="s">x</span><span class="p">      </span><span class="s">y=2</span><span class="p">    </span><span class="s">z=3</span><span class="p">    </span><span class="c"># [x], {y: 2, z: 3}</span>
+</span><span id="line-3-16"><a id="example-3-16" name="example-3-16"></a>
+</span><span id="line-3-17"><a id="example-3-17" name="example-3-17"></a><span class="gu">Positional as named and free named</span>
+</span><span id="line-3-18"><a id="example-3-18" name="example-3-18"></a><span class="p">    </span><span class="nf">Dynamic</span><span class="p">    </span><span class="s">a=1</span><span class="p">    </span><span class="s">x=1</span><span class="p">           </span><span class="c"># [], {a: 1, x: 1}</span>
+</span><span id="line-3-19"><a id="example-3-19" name="example-3-19"></a><span class="p">    </span><span class="nf">Dynamic</span><span class="p">    </span><span class="s">b=2</span><span class="p">    </span><span class="s">x=1</span><span class="p">    </span><span class="s">a=1</span><span class="p">    </span><span class="c"># [], {a: 1, b: 2, x: 1}</span>
+</span></code></pre></div></td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Prior to Robot Framework 3.1, normal named arguments were mapped
+to positional arguments but nowadays they are part of the
+<code>kwargs</code> along with the free named arguments.</p>
+</div>
+<h2 id="named-only-arguments-with-dynamic-libraries">Named-only arguments with dynamic libraries<a class="headerlink" href="#named-only-arguments-with-dynamic-libraries" title="Permanent link">&para;</a></h2>
+<p>Starting from Robot Framework 3.1, dynamic libraries can have <a href="../../syntax/tests/#named-only-arguments">named-only
+arguments</a>. This requires that the <code>run_keyword</code> method <a href="https://github.com/robotframework/PythonLibCore">takes three
+arguments</a>: the third getting the named-only arguments along with the other
+named arguments.</p>
+<p>In the <a href="#getting-keyword-tags">argument specification</a> returned by the <code>get_keyword_arguments</code>
+method named-only arguments are specified after possible variable number
+of arguments (<code>*varargs</code>) or a lone asterisk (<code>*</code>) if the keyword does not
+accept varargs. Named-only arguments can have default values, and the order
+of arguments with and without default values does not matter.</p>
+<p>Using the named-only argument syntax with dynamic libraries is illustrated
+by the following examples. All the examples use a keyword <em>Dynamic</em>
+that has been specified to have argument specification
+<code>[positional=default, *varargs, named, named2=default, **free]</code>. The comment
+shows the arguments that the <code>run_keyword</code> method is actually called with.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-4-1"> 1</a></span>
+<span class="normal"><a href="#example-4-2"> 2</a></span>
+<span class="normal"><a href="#example-4-3"> 3</a></span>
+<span class="normal"><a href="#example-4-4"> 4</a></span>
+<span class="normal"><a href="#example-4-5"> 5</a></span>
+<span class="normal"><a href="#example-4-6"> 6</a></span>
+<span class="normal"><a href="#example-4-7"> 7</a></span>
+<span class="normal"><a href="#example-4-8"> 8</a></span>
+<span class="normal"><a href="#example-4-9"> 9</a></span>
+<span class="normal"><a href="#example-4-10">10</a></span>
+<span class="normal"><a href="#example-4-11">11</a></span>
+<span class="normal"><a href="#example-4-12">12</a></span>
+<span class="normal"><a href="#example-4-13">13</a></span>
+<span class="normal"><a href="#example-4-14">14</a></span>
+<span class="normal"><a href="#example-4-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-4-1"><a id="example-4-1" name="example-4-1"></a><span class="gh">*** Test Cases ***</span><span class="p">                                  </span><span class="c"># args, kwargs</span>
+</span><span id="line-4-2"><a id="example-4-2" name="example-4-2"></a><span class="gu">Only named-only</span>
+</span><span id="line-4-3"><a id="example-4-3" name="example-4-3"></a><span class="p">    </span><span class="nf">Dynamic</span><span class="p">    </span><span class="s">named=value</span><span class="p">                          </span><span class="c"># [], {named: value}</span>
+</span><span id="line-4-4"><a id="example-4-4" name="example-4-4"></a><span class="p">    </span><span class="nf">Dynamic</span><span class="p">    </span><span class="s">named=value</span><span class="p">    </span><span class="s">named2=2</span><span class="p">              </span><span class="c"># [], {named: value, named2: 2}</span>
+</span><span id="line-4-5"><a id="example-4-5" name="example-4-5"></a>
+</span><span id="line-4-6"><a id="example-4-6" name="example-4-6"></a><span class="gu">Named-only with positional and varargs</span>
+</span><span id="line-4-7"><a id="example-4-7" name="example-4-7"></a><span class="p">    </span><span class="nf">Dynamic</span><span class="p">    </span><span class="s">argument</span><span class="p">       </span><span class="s">named=xxx</span><span class="p">             </span><span class="c"># [argument], {named: xxx}</span>
+</span><span id="line-4-8"><a id="example-4-8" name="example-4-8"></a><span class="p">    </span><span class="nf">Dynamic</span><span class="p">    </span><span class="s">a1</span><span class="p">             </span><span class="s">a2</span><span class="p">         </span><span class="s">named=3</span><span class="p">    </span><span class="c"># [a1, a2], {named: 3}</span>
+</span><span id="line-4-9"><a id="example-4-9" name="example-4-9"></a>
+</span><span id="line-4-10"><a id="example-4-10" name="example-4-10"></a><span class="gu">Named-only with positional as named</span>
+</span><span id="line-4-11"><a id="example-4-11" name="example-4-11"></a><span class="p">    </span><span class="nf">Dynamic</span><span class="p">    </span><span class="s">named=foo</span><span class="p">      </span><span class="s">positional=bar</span><span class="p">        </span><span class="c"># [], {positional: bar, named: foo}</span>
+</span><span id="line-4-12"><a id="example-4-12" name="example-4-12"></a>
+</span><span id="line-4-13"><a id="example-4-13" name="example-4-13"></a><span class="gu">Named-only with free named</span>
+</span><span id="line-4-14"><a id="example-4-14" name="example-4-14"></a><span class="p">    </span><span class="nf">Dynamic</span><span class="p">    </span><span class="s">named=value</span><span class="p">    </span><span class="s">foo=bar</span><span class="p">               </span><span class="c"># [], {named: value, foo=bar}</span>
+</span><span id="line-4-15"><a id="example-4-15" name="example-4-15"></a><span class="p">    </span><span class="nf">Dynamic</span><span class="p">    </span><span class="s">named2=2</span><span class="p">       </span><span class="s">third=3</span><span class="p">    </span><span class="s">named=1</span><span class="p">    </span><span class="c"># [], {named: 1, named2: 2, third: 3}</span>
+</span></code></pre></div></td></tr></table></div>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p>All special methods in the dynamic API are listed in the table
+below. Method names are listed in the underscore format, but their
+camelCase aliases work exactly the same way.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Arguments</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>get_keyword_names</code></td>
+<td></td>
+<td><a href="https://github.com/robotframework/PythonLibCore">Return names</a> of the implemented keywords.</td>
+</tr>
+<tr>
+<td><code>run_keyword</code></td>
+<td><code>name, arguments, kwargs</code></td>
+<td><a href="#getting-keyword-argument-types">Execute the specified keyword</a> with given arguments. <code>kwargs</code> is optional.</td>
+</tr>
+<tr>
+<td><code>get_keyword_arguments</code></td>
+<td><code>name</code></td>
+<td>Return keywords' <a href="../../syntax/control/#if">argument specification</a>. Optional method.</td>
+</tr>
+<tr>
+<td><code>get_keyword_types</code></td>
+<td><code>name</code></td>
+<td>Return keywords' <a href="#getting-keyword-documentation">argument type information</a>. Optional method. New in RF 3.1.</td>
+</tr>
+<tr>
+<td><code>get_keyword_tags</code></td>
+<td><code>name</code></td>
+<td>Return keywords' <a href="#getting-source-information">tags</a>. Optional method.</td>
+</tr>
+<tr>
+<td><code>get_keyword_documentation</code></td>
+<td><code>name</code></td>
+<td>Return keywords' and library's <a href="../../syntax/suites/#suite-documentation">documentation</a>. Optional method.</td>
+</tr>
+<tr>
+<td><code>get_keyword_source</code></td>
+<td><code>name</code></td>
+<td>Return keywords' <a href="../../syntax/resource-files/#resource-files">source</a>. Optional method. New in RF 3.2.</td>
+</tr>
+</tbody>
+</table>
+<p>A good example of using the dynamic API is Robot Framework's own
+<a href="../../syntax/libraries/#remote-library">Remote library</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Starting from Robot Framework 7.0, dynamic libraries can have asynchronous
+implementations of their special methods.</p>
+</div>
 
 
 

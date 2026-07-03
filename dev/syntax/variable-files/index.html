@@ -869,6 +869,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Variable files
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -885,6 +903,91 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#taking-variable-files-into-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Taking variable files into use
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-variables-directly-from-a-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting variables directly from a module
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-variables-from-a-special-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting variables from a special function
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementing-variable-file-as-a-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementing variable file as a class
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variable-file-as-yaml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variable file as YAML
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variable-file-as-json" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variable file as JSON
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -9663,7 +9766,7 @@
   <span class="md-ellipsis">
     
   
-    Documentation format
+    Doc format
   
 
     
@@ -9793,6 +9896,547 @@
 
 
 <h1 id="variable-files">Variable files<a class="headerlink" href="#variable-files" title="Permanent link">&para;</a></h1>
+<p>Variable files contain <a href="../variables/#variables">variables</a> that can be used in the test
+data. Variables can also be created using <a href="../variables/#variable-sections">Variable sections</a> or <a href="https://packaging.python.org/en/latest/guides/distributing-packages-using-setuptools/#package-data">set from
+the command line</a>, but variable files allow creating them dynamically
+and also make it easy to create other variable values than strings.</p>
+<p>Variable files are typically implemented as modules and there are
+two different approaches for creating variables:</p>
+<dl>
+<dt>
+	<a href="#getting-variables-directly-from-a-module"><a id="0f35216297f218ec641ca526a9579153">Getting variables directly from a module</a> </a>
+</dt>
+<dd>Variables are specified as module attributes. In simple cases, the
+   syntax is so simple that no real programming is needed. For example,
+   <code>MY_VAR = 'my value'</code> creates a variable <code>${MY_VAR}</code> with the specified
+   text as its value. One limitation of this approach is that it does
+   not allow using arguments.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a href="#getting-variables-from-a-special-function"><a id="8334446cb52f2c4c9e5b7fe20e2f5821">Getting variables from a special function</a> </a>
+</dt>
+<dd>Variable files can have a special <code>get_variables</code>
+   (or <code>getVariables</code>) method that returns variables as a mapping.
+   Because the method can take arguments this approach is very flexible.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+</dl>
+<p>Alternatively variable files can be implemented as <a href="https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.ResourceFile.to_json">classes</a>
+that the framework will instantiate. Also in this case it is possible to create
+variables as attributes or get them dynamically from the <code>get_variables</code>
+method. Variable files can also be created as <a href="https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.ResourceFile.from_json">YAML</a> and <a href="../data/#json-structure">JSON</a>.</p>
+<h3 id="taking-variable-files-into-use">Taking variable files into use<a class="headerlink" href="#taking-variable-files-into-use" title="Permanent link">&para;</a></h3>
+<h4 id="setting-section">Setting section<a class="headerlink" href="#setting-section" title="Permanent link">&para;</a></h4>
+<p>All test data files can import variable files using the <code>Variables</code>
+setting in the Setting section. Variable files are typically imported using
+a path to the file same way as <a href="../resource-files/#resource-files">resource files are imported</a> using
+the <code>Resource</code> setting. Similarly to resource files, the path to
+the imported variable file is considered relative to the directory where the
+importing file is, and if not found, it is searched from directories
+in the <a href="../../execution/configuration/#module-search-path">module search path</a>. The path can also contain variables,
+and slashes are converted to backslashes on Windows.</p>
+<p>Examples:</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
+<span class="normal"><a href="#example-0-2">2</a></span>
+<span class="normal"><a href="#example-0-3">3</a></span>
+<span class="normal"><a href="#example-0-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="gh">*** Settings ***</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a><span class="kn">Variables</span><span class="p">    </span><span class="nn">myvariables.py</span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a><span class="kn">Variables</span><span class="p">    </span><span class="nn">../data/variables.py</span>
+</span><span id="line-0-4"><a id="example-0-4" name="example-0-4"></a><span class="kn">Variables</span><span class="p">    ${</span><span class="nv">RESOURCES</span><span class="p">}</span><span class="nn">/common.yaml</span>
+</span></code></pre></div></td></tr></table></div>
+Starting from Robot Framework 5.0, variable files implemented using Python
+can also be imported using the module name <a href="https://packaging.python.org/en/latest/guides/distributing-packages-using-setuptools/#package-data">similarly as libraries</a>.
+When using this approach, the module needs to be in the <a href="../../execution/configuration/#module-search-path">module search path</a>.</p>
+<p>Examples:</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-1-1">1</a></span>
+<span class="normal"><a href="#example-1-2">2</a></span>
+<span class="normal"><a href="#example-1-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-1-1"><a id="example-1-1" name="example-1-1"></a><span class="gh">*** Settings ***</span>
+</span><span id="line-1-2"><a id="example-1-2" name="example-1-2"></a><span class="kn">Variables</span><span class="p">    </span><span class="nn">myvariables</span>
+</span><span id="line-1-3"><a id="example-1-3" name="example-1-3"></a><span class="kn">Variables</span><span class="p">    </span><span class="nn">rootmodule.Variables</span>
+</span></code></pre></div></td></tr></table></div>
+If a <a href="https://packaging.python.org/en/latest/guides/distributing-packages-using-setuptools/#package-data">variable file accepts arguments</a>, they are specified after the path
+or name of the variable file to import:</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-2-1">1</a></span>
+<span class="normal"><a href="#example-2-2">2</a></span>
+<span class="normal"><a href="#example-2-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-2-1"><a id="example-2-1" name="example-2-1"></a><span class="gh">*** Settings ***</span>
+</span><span id="line-2-2"><a id="example-2-2" name="example-2-2"></a><span class="kn">Variables</span><span class="p">    </span><span class="nn">arguments.py</span><span class="p">    </span><span class="s">arg1</span><span class="p">    ${</span><span class="nv">ARG2</span><span class="p">}</span>
+</span><span id="line-2-3"><a id="example-2-3" name="example-2-3"></a><span class="kn">Variables</span><span class="p">    </span><span class="nn">arguments</span><span class="p">    </span><span class="s">argument</span>
+</span></code></pre></div></td></tr></table></div>
+All variables from a variable file are available in the test data file
+that imports it. If several variable files are imported and they
+contain a variable with the same name, the one in the earliest imported file is
+taken into use. Additionally, variables created in Variable sections and
+set from the command line override variables from variable files.</p>
+<h4 id="command-line">Command line<a class="headerlink" href="#command-line" title="Permanent link">&para;</a></h4>
+<p>Another way to take variable files into use is using the command line option
+<code>--variablefile</code>. Variable files are referenced using a path or
+module name similarly as when importing them using the <code>Variables</code>
+setting. Possible arguments are joined to the path with a colon (<code>:</code>):</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-3-1">1</a></span>
+<span class="normal"><a href="#example-3-2">2</a></span>
+<span class="normal"><a href="#example-3-3">3</a></span>
+<span class="normal"><a href="#example-3-4">4</a></span>
+<span class="normal"><a href="#example-3-5">5</a></span>
+<span class="normal"><a href="#example-3-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-3-1"><a id="example-3-1" name="example-3-1"></a><span class="o">--</span><span class="n">variablefile</span> <span class="n">myvariables</span><span class="o">.</span><span class="n">py</span>
+</span><span id="line-3-2"><a id="example-3-2" name="example-3-2"></a><span class="o">--</span><span class="n">variablefile</span> <span class="n">path</span><span class="o">/</span><span class="n">variables</span><span class="o">.</span><span class="n">py</span>
+</span><span id="line-3-3"><a id="example-3-3" name="example-3-3"></a><span class="o">--</span><span class="n">variablefile</span> <span class="o">/</span><span class="n">absolute</span><span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">common</span><span class="o">.</span><span class="n">py</span>
+</span><span id="line-3-4"><a id="example-3-4" name="example-3-4"></a><span class="o">--</span><span class="n">variablefile</span> <span class="n">variablemodule</span>
+</span><span id="line-3-5"><a id="example-3-5" name="example-3-5"></a><span class="o">--</span><span class="n">variablefile</span> <span class="n">arguments</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="n">arg1</span><span class="p">:</span><span class="n">arg2</span>
+</span><span id="line-3-6"><a id="example-3-6" name="example-3-6"></a><span class="o">--</span><span class="n">variablefile</span> <span class="n">rootmodule</span><span class="o">.</span><span class="n">Variables</span><span class="p">:</span><span class="n">arg1</span><span class="p">:</span><span class="n">arg2</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Variable files taken into use from the
+command line are also searched from the <a href="../../execution/configuration/#module-search-path">module search path</a> similarly as
+variable files imported in the Setting section. Relative paths are considered
+relative to the directory where execution is started from.</p>
+<p>If a variable file is given as an absolute Windows path, the colon after the
+drive letter is not considered a separator:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-4-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-4-1"><a id="example-4-1" name="example-4-1"></a><span class="o">--</span><span class="n">variablefile</span> <span class="n">C</span><span class="p">:</span>\<span class="n">path</span>\<span class="n">variables</span><span class="o">.</span><span class="n">py</span>
+</span></code></pre></div></td></tr></table></div>
+<p>It is also possible to use a semicolon
+(<code>;</code>) as an argument separator. This is useful if variable file arguments
+themselves contain colons, but requires surrounding the whole value with
+quotes on UNIX-like operating systems:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-5-1">1</a></span>
+<span class="normal"><a href="#example-5-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-5-1"><a id="example-5-1" name="example-5-1"></a><span class="o">--</span><span class="n">variablefile</span> <span class="n">C</span><span class="p">:</span>\<span class="n">path</span>\<span class="n">variables</span><span class="o">.</span><span class="n">py</span><span class="p">;</span><span class="n">D</span><span class="p">:</span>\<span class="n">data</span><span class="o">.</span><span class="n">xls</span>
+</span><span id="line-5-2"><a id="example-5-2" name="example-5-2"></a><span class="o">--</span><span class="n">variablefile</span> <span class="s2">&quot;myvariables.py;argument:with:colons&quot;</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Variables in variable files taken use on the command line are globally
+available in all test data files, similarly as <a href="https://packaging.python.org/en/latest/guides/distributing-packages-using-setuptools/#package-data">individual variables</a>
+set with the <code>--variable</code> option. If both <code>--variablefile</code> and
+<code>--variable</code> options are used and there are variables with same
+names, those that are set individually with
+<code>--variable</code> option take precedence.</p>
+<h3 id="getting-variables-directly-from-a-module">Getting variables directly from a module<a class="headerlink" href="#getting-variables-directly-from-a-module" title="Permanent link">&para;</a></h3>
+<h4 id="basic-syntax">Basic syntax<a class="headerlink" href="#basic-syntax" title="Permanent link">&para;</a></h4>
+<p>When variable files are taken into use, they are imported as Python
+modules and all their module level attributes that do not start with
+an underscore (<code>_</code>) are, by default, considered to be variables. Because
+variable names are case-insensitive, both lower- and upper-case names are
+possible, but in general, capital letters are recommended for global
+variables and attributes.</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-6-1">1</a></span>
+<span class="normal"><a href="#example-6-2">2</a></span>
+<span class="normal"><a href="#example-6-3">3</a></span>
+<span class="normal"><a href="#example-6-4">4</a></span>
+<span class="normal"><a href="#example-6-5">5</a></span>
+<span class="normal"><a href="#example-6-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-6-1"><a id="example-6-1" name="example-6-1"></a><span class="n">VARIABLE</span> <span class="o">=</span> <span class="s2">&quot;An example string&quot;</span>
+</span><span id="line-6-2"><a id="example-6-2" name="example-6-2"></a><span class="n">ANOTHER_VARIABLE</span> <span class="o">=</span> <span class="s2">&quot;This is pretty easy!&quot;</span>
+</span><span id="line-6-3"><a id="example-6-3" name="example-6-3"></a><span class="n">INTEGER</span> <span class="o">=</span> <span class="mi">42</span>
+</span><span id="line-6-4"><a id="example-6-4" name="example-6-4"></a><span class="n">STRINGS</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;one&quot;</span><span class="p">,</span> <span class="s2">&quot;two&quot;</span><span class="p">,</span> <span class="s2">&quot;kolme&quot;</span><span class="p">,</span> <span class="s2">&quot;four&quot;</span><span class="p">]</span>
+</span><span id="line-6-5"><a id="example-6-5" name="example-6-5"></a><span class="n">NUMBERS</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">INTEGER</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">]</span>
+</span><span id="line-6-6"><a id="example-6-6" name="example-6-6"></a><span class="n">MAPPING</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;one&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;two&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;three&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+In the example above, variables <code>${VARIABLE}</code>, <code>${ANOTHER VARIABLE}</code>, and
+so on, are created. The first two variables are strings, the third one is
+an integer, then there are two lists, and the final value is a dictionary.
+All these variables can be used as a <a href="../variables/#scalar-variable">scalar variable</a>, lists and the
+dictionary also a <a href="../variables/#list-variable">list variable</a> like <code>@{STRINGS}</code> (in the dictionary's case
+that variable would only contain keys), and the dictionary also as a
+<a href="../variables/#dictionary-variable">dictionary variable</a> like <code>&amp;{MAPPING}</code>.</p>
+<p>To make creating a list variable or a dictionary variable more explicit,
+it is possible to prefix the variable name with <code>LIST__</code> or <code>DICT__</code>,
+respectively:</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-7-1">1</a></span>
+<span class="normal"><a href="#example-7-2">2</a></span>
+<span class="normal"><a href="#example-7-3">3</a></span>
+<span class="normal"><a href="#example-7-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-7-1"><a id="example-7-1" name="example-7-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">OrderedDict</span>
+</span><span id="line-7-2"><a id="example-7-2" name="example-7-2"></a>
+</span><span id="line-7-3"><a id="example-7-3" name="example-7-3"></a><span class="n">LIST__ANIMALS</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;cat&quot;</span><span class="p">,</span> <span class="s2">&quot;dog&quot;</span><span class="p">]</span>
+</span><span id="line-7-4"><a id="example-7-4" name="example-7-4"></a><span class="n">DICT__FINNISH</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">([(</span><span class="s2">&quot;cat&quot;</span><span class="p">,</span> <span class="s2">&quot;kissa&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;dog&quot;</span><span class="p">,</span> <span class="s2">&quot;koira&quot;</span><span class="p">)])</span>
+</span></code></pre></div></td></tr></table></div>
+These prefixes will not be part of the final variable name, but they cause
+Robot Framework to validate that the value actually is list-like or
+dictionary-like. With dictionaries the actual stored value is also turned
+into a special dictionary that is used also when <a href="../variables/#creating-dictionaries">creating dictionaries</a>
+in the Variable section. Values of these dictionaries are accessible
+as attributes like <code>${FINNISH.cat}</code>. These dictionaries are also ordered, but
+preserving the source order requires also the original dictionary to be
+ordered.</p>
+<p>The variables in both the examples above could be created also using the
+Variable section below.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-8-1">1</a></span>
+<span class="normal"><a href="#example-8-2">2</a></span>
+<span class="normal"><a href="#example-8-3">3</a></span>
+<span class="normal"><a href="#example-8-4">4</a></span>
+<span class="normal"><a href="#example-8-5">5</a></span>
+<span class="normal"><a href="#example-8-6">6</a></span>
+<span class="normal"><a href="#example-8-7">7</a></span>
+<span class="normal"><a href="#example-8-8">8</a></span>
+<span class="normal"><a href="#example-8-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-8-1"><a id="example-8-1" name="example-8-1"></a><span class="gh">*** Variables ***</span>
+</span><span id="line-8-2"><a id="example-8-2" name="example-8-2"></a><span class="p">${</span><span class="nv">VARIABLE</span><span class="p">}            </span><span class="s">An example string</span>
+</span><span id="line-8-3"><a id="example-8-3" name="example-8-3"></a><span class="p">${</span><span class="nv">ANOTHER VARIABLE</span><span class="p">}    </span><span class="s">This is pretty easy!</span>
+</span><span id="line-8-4"><a id="example-8-4" name="example-8-4"></a><span class="p">${</span><span class="nv">INTEGER</span><span class="p">}             ${</span><span class="nv">42</span><span class="p">}</span>
+</span><span id="line-8-5"><a id="example-8-5" name="example-8-5"></a><span class="p">@{</span><span class="nv">STRINGS</span><span class="p">}             </span><span class="s">one</span><span class="p">          </span><span class="s">two</span><span class="p">           </span><span class="s">kolme</span><span class="p">         </span><span class="s">four</span>
+</span><span id="line-8-6"><a id="example-8-6" name="example-8-6"></a><span class="p">@{</span><span class="nv">NUMBERS</span><span class="p">}             ${</span><span class="nv">1</span><span class="p">}         ${</span><span class="nv">INTEGER</span><span class="p">}    ${</span><span class="nv">3.14</span><span class="p">}</span>
+</span><span id="line-8-7"><a id="example-8-7" name="example-8-7"></a><span class="p">&amp;{</span><span class="nv">MAPPING</span><span class="p">}             </span><span class="s">one=</span><span class="p">${</span><span class="nv">1</span><span class="p">}     </span><span class="s">two=</span><span class="p">${</span><span class="nv">2</span><span class="p">}      </span><span class="s">three=</span><span class="p">${</span><span class="nv">3</span><span class="p">}</span>
+</span><span id="line-8-8"><a id="example-8-8" name="example-8-8"></a><span class="p">@{</span><span class="nv">ANIMALS</span><span class="p">}             </span><span class="s">cat</span><span class="p">          </span><span class="s">dog</span>
+</span><span id="line-8-9"><a id="example-8-9" name="example-8-9"></a><span class="p">&amp;{</span><span class="nv">FINNISH</span><span class="p">}             </span><span class="s">cat=kissa</span><span class="p">    </span><span class="s">dog=koira</span>
+</span></code></pre></div></td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Variables are not replaced in strings got from variable files.
+For example, <code>VAR = "an ${example}"</code> would create
+variable <code>${VAR}</code> with a literal string value
+<code>an ${example}</code> regardless would variable <code>${example}</code>
+exist or not.</p>
+</div>
+<h4 id="using-objects-as-values">Using objects as values<a class="headerlink" href="#using-objects-as-values" title="Permanent link">&para;</a></h4>
+<p>Variables in variable files are not limited to having only strings or
+other base types as values like Variable sections. Instead, their
+variables can contain any objects. In the example below, the variable
+<code>${MAPPING}</code> contains a Python dictionary and also has two variables
+created from a custom object implemented in the same file.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-9-1">1</a></span>
+<span class="normal"><a href="#example-9-2">2</a></span>
+<span class="normal"><a href="#example-9-3">3</a></span>
+<span class="normal"><a href="#example-9-4">4</a></span>
+<span class="normal"><a href="#example-9-5">5</a></span>
+<span class="normal"><a href="#example-9-6">6</a></span>
+<span class="normal"><a href="#example-9-7">7</a></span>
+<span class="normal"><a href="#example-9-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-9-1"><a id="example-9-1" name="example-9-1"></a><span class="n">MAPPING</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;one&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;two&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+</span><span id="line-9-2"><a id="example-9-2" name="example-9-2"></a>
+</span><span id="line-9-3"><a id="example-9-3" name="example-9-3"></a><span class="k">class</span><span class="w"> </span><span class="nc">MyObject</span><span class="p">:</span>
+</span><span id="line-9-4"><a id="example-9-4" name="example-9-4"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+</span><span id="line-9-5"><a id="example-9-5" name="example-9-5"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+</span><span id="line-9-6"><a id="example-9-6" name="example-9-6"></a>
+</span><span id="line-9-7"><a id="example-9-7" name="example-9-7"></a><span class="n">OBJ1</span> <span class="o">=</span> <span class="n">MyObject</span><span class="p">(</span><span class="s1">&#39;John&#39;</span><span class="p">)</span>
+</span><span id="line-9-8"><a id="example-9-8" name="example-9-8"></a><span class="n">OBJ2</span> <span class="o">=</span> <span class="n">MyObject</span><span class="p">(</span><span class="s1">&#39;Jane&#39;</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<h4 id="creating-variables-dynamically">Creating variables dynamically<a class="headerlink" href="#creating-variables-dynamically" title="Permanent link">&para;</a></h4>
+<p>Because variable files are created using a real programming language,
+they can have dynamic logic for setting variables.</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-10-1"> 1</a></span>
+<span class="normal"><a href="#example-10-2"> 2</a></span>
+<span class="normal"><a href="#example-10-3"> 3</a></span>
+<span class="normal"><a href="#example-10-4"> 4</a></span>
+<span class="normal"><a href="#example-10-5"> 5</a></span>
+<span class="normal"><a href="#example-10-6"> 6</a></span>
+<span class="normal"><a href="#example-10-7"> 7</a></span>
+<span class="normal"><a href="#example-10-8"> 8</a></span>
+<span class="normal"><a href="#example-10-9"> 9</a></span>
+<span class="normal"><a href="#example-10-10">10</a></span>
+<span class="normal"><a href="#example-10-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-10-1"><a id="example-10-1" name="example-10-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+</span><span id="line-10-2"><a id="example-10-2" name="example-10-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+</span><span id="line-10-3"><a id="example-10-3" name="example-10-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+</span><span id="line-10-4"><a id="example-10-4" name="example-10-4"></a>
+</span><span id="line-10-5"><a id="example-10-5" name="example-10-5"></a><span class="n">USER</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getlogin</span><span class="p">()</span>                <span class="c1"># current login name</span>
+</span><span id="line-10-6"><a id="example-10-6" name="example-10-6"></a><span class="n">RANDOM_INT</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>  <span class="c1"># random integer in range [0,10]</span>
+</span><span id="line-10-7"><a id="example-10-7" name="example-10-7"></a><span class="n">CURRENT_TIME</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">asctime</span><span class="p">()</span>       <span class="c1"># timestamp like &#39;Thu Apr  6 12:45:21 2006&#39;</span>
+</span><span id="line-10-8"><a id="example-10-8" name="example-10-8"></a><span class="k">if</span> <span class="n">time</span><span class="o">.</span><span class="n">localtime</span><span class="p">()[</span><span class="mi">3</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">12</span><span class="p">:</span>
+</span><span id="line-10-9"><a id="example-10-9" name="example-10-9"></a>    <span class="n">AFTERNOON</span> <span class="o">=</span> <span class="kc">True</span>
+</span><span id="line-10-10"><a id="example-10-10" name="example-10-10"></a><span class="k">else</span><span class="p">:</span>
+</span><span id="line-10-11"><a id="example-10-11" name="example-10-11"></a>    <span class="n">AFTERNOON</span> <span class="o">=</span> <span class="kc">False</span>
+</span></code></pre></div></td></tr></table></div>
+The example above uses standard Python libraries to set different
+variables, but you can use your own code to construct the values. The
+example below illustrates the concept, but similarly, your code could
+read the data from a database, from an external file or even ask it from
+the user.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-11-1">1</a></span>
+<span class="normal"><a href="#example-11-2">2</a></span>
+<span class="normal"><a href="#example-11-3">3</a></span>
+<span class="normal"><a href="#example-11-4">4</a></span>
+<span class="normal"><a href="#example-11-5">5</a></span>
+<span class="normal"><a href="#example-11-6">6</a></span>
+<span class="normal"><a href="#example-11-7">7</a></span>
+<span class="normal"><a href="#example-11-8">8</a></span>
+<span class="normal"><a href="#example-11-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-11-1"><a id="example-11-1" name="example-11-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+</span><span id="line-11-2"><a id="example-11-2" name="example-11-2"></a>
+</span><span id="line-11-3"><a id="example-11-3" name="example-11-3"></a><span class="k">def</span><span class="w"> </span><span class="nf">get_area</span><span class="p">(</span><span class="n">diameter</span><span class="p">):</span>
+</span><span id="line-11-4"><a id="example-11-4" name="example-11-4"></a>    <span class="n">radius</span> <span class="o">=</span> <span class="n">diameter</span> <span class="o">/</span> <span class="mi">2</span>
+</span><span id="line-11-5"><a id="example-11-5" name="example-11-5"></a>    <span class="n">area</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">radius</span> <span class="o">*</span> <span class="n">radius</span>
+</span><span id="line-11-6"><a id="example-11-6" name="example-11-6"></a>    <span class="k">return</span> <span class="n">area</span>
+</span><span id="line-11-7"><a id="example-11-7" name="example-11-7"></a>
+</span><span id="line-11-8"><a id="example-11-8" name="example-11-8"></a><span class="n">AREA1</span> <span class="o">=</span> <span class="n">get_area</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="line-11-9"><a id="example-11-9" name="example-11-9"></a><span class="n">AREA2</span> <span class="o">=</span> <span class="n">get_area</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<h4 id="selecting-which-variables-to-include">Selecting which variables to include<a class="headerlink" href="#selecting-which-variables-to-include" title="Permanent link">&para;</a></h4>
+<p>When Robot Framework processes variable files, all their attributes
+that do not start with an underscore are expected to be
+variables. This means that even functions or classes created in the
+variable file or imported from elsewhere are considered variables. For
+example, the last example would contain the variables <code>${math}</code>
+and <code>${get_area}</code> in addition to <code>${AREA1}</code> and
+<code>${AREA2}</code>.</p>
+<p>Normally the extra variables do not cause problems, but they
+could override some other variables and cause hard-to-debug
+errors. One possibility to ignore other attributes is prefixing them
+with an underscore:</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-12-1">1</a></span>
+<span class="normal"><a href="#example-12-2">2</a></span>
+<span class="normal"><a href="#example-12-3">3</a></span>
+<span class="normal"><a href="#example-12-4">4</a></span>
+<span class="normal"><a href="#example-12-5">5</a></span>
+<span class="normal"><a href="#example-12-6">6</a></span>
+<span class="normal"><a href="#example-12-7">7</a></span>
+<span class="normal"><a href="#example-12-8">8</a></span>
+<span class="normal"><a href="#example-12-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-12-1"><a id="example-12-1" name="example-12-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_math</span>
+</span><span id="line-12-2"><a id="example-12-2" name="example-12-2"></a>
+</span><span id="line-12-3"><a id="example-12-3" name="example-12-3"></a><span class="k">def</span><span class="w"> </span><span class="nf">_get_area</span><span class="p">(</span><span class="n">diameter</span><span class="p">):</span>
+</span><span id="line-12-4"><a id="example-12-4" name="example-12-4"></a>    <span class="n">radius</span> <span class="o">=</span> <span class="n">diameter</span> <span class="o">/</span> <span class="mf">2.0</span>
+</span><span id="line-12-5"><a id="example-12-5" name="example-12-5"></a>    <span class="n">area</span> <span class="o">=</span> <span class="n">_math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">radius</span> <span class="o">*</span> <span class="n">radius</span>
+</span><span id="line-12-6"><a id="example-12-6" name="example-12-6"></a>    <span class="k">return</span> <span class="n">area</span>
+</span><span id="line-12-7"><a id="example-12-7" name="example-12-7"></a>
+</span><span id="line-12-8"><a id="example-12-8" name="example-12-8"></a><span class="n">AREA1</span> <span class="o">=</span> <span class="n">_get_area</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="line-12-9"><a id="example-12-9" name="example-12-9"></a><span class="n">AREA2</span> <span class="o">=</span> <span class="n">_get_area</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+If there is a large number of other attributes, instead of prefixing
+them all, it is often easier to use a special attribute
+<code>__all__</code> and give it a list of attribute names to be processed
+as variables.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-13-1"> 1</a></span>
+<span class="normal"><a href="#example-13-2"> 2</a></span>
+<span class="normal"><a href="#example-13-3"> 3</a></span>
+<span class="normal"><a href="#example-13-4"> 4</a></span>
+<span class="normal"><a href="#example-13-5"> 5</a></span>
+<span class="normal"><a href="#example-13-6"> 6</a></span>
+<span class="normal"><a href="#example-13-7"> 7</a></span>
+<span class="normal"><a href="#example-13-8"> 8</a></span>
+<span class="normal"><a href="#example-13-9"> 9</a></span>
+<span class="normal"><a href="#example-13-10">10</a></span>
+<span class="normal"><a href="#example-13-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-13-1"><a id="example-13-1" name="example-13-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+</span><span id="line-13-2"><a id="example-13-2" name="example-13-2"></a>
+</span><span id="line-13-3"><a id="example-13-3" name="example-13-3"></a><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;AREA1&#39;</span><span class="p">,</span> <span class="s1">&#39;AREA2&#39;</span><span class="p">]</span>
+</span><span id="line-13-4"><a id="example-13-4" name="example-13-4"></a>
+</span><span id="line-13-5"><a id="example-13-5" name="example-13-5"></a><span class="k">def</span><span class="w"> </span><span class="nf">get_area</span><span class="p">(</span><span class="n">diameter</span><span class="p">):</span>
+</span><span id="line-13-6"><a id="example-13-6" name="example-13-6"></a>    <span class="n">radius</span> <span class="o">=</span> <span class="n">diameter</span> <span class="o">/</span> <span class="mf">2.0</span>
+</span><span id="line-13-7"><a id="example-13-7" name="example-13-7"></a>    <span class="n">area</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">radius</span> <span class="o">*</span> <span class="n">radius</span>
+</span><span id="line-13-8"><a id="example-13-8" name="example-13-8"></a>    <span class="k">return</span> <span class="n">area</span>
+</span><span id="line-13-9"><a id="example-13-9" name="example-13-9"></a>
+</span><span id="line-13-10"><a id="example-13-10" name="example-13-10"></a><span class="n">AREA1</span> <span class="o">=</span> <span class="n">get_area</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="line-13-11"><a id="example-13-11" name="example-13-11"></a><span class="n">AREA2</span> <span class="o">=</span> <span class="n">get_area</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code>__all__</code> attribute is also, and originally, used
+      by Python to decide which attributes to import
+      when using the syntax <code>from modulename import *</code>.</p>
+</div>
+<p>The third option to select what variables are actually created is using
+a special <code>get_variables</code> function discussed below.</p>
+<h3 id="getting-variables-from-a-special-function">Getting variables from a special function<a class="headerlink" href="#getting-variables-from-a-special-function" title="Permanent link">&para;</a></h3>
+<p>An alternative approach for getting variables is having a special
+<code>get_variables</code> function (also camelCase syntax <code>getVariables</code> is possible)
+in a variable file. If such a function exists, Robot Framework calls it and
+expects to receive variables as a Python dictionary with variable names as keys
+and variable values as values. Created variables can
+be used as scalars, lists, and dictionaries exactly like when <a href="#getting-variables-directly-from-a-module">getting
+variables directly from a module</a>, and it is possible to use <code>LIST__</code> and
+<code>DICT__</code> prefixes to make creating list and dictionary variables more explicit.
+The example below is functionally identical to the first example related to
+<a href="#getting-variables-directly-from-a-module">getting variables directly from a module</a>.</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-14-1">1</a></span>
+<span class="normal"><a href="#example-14-2">2</a></span>
+<span class="normal"><a href="#example-14-3">3</a></span>
+<span class="normal"><a href="#example-14-4">4</a></span>
+<span class="normal"><a href="#example-14-5">5</a></span>
+<span class="normal"><a href="#example-14-6">6</a></span>
+<span class="normal"><a href="#example-14-7">7</a></span>
+<span class="normal"><a href="#example-14-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-14-1"><a id="example-14-1" name="example-14-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">get_variables</span><span class="p">():</span>
+</span><span id="line-14-2"><a id="example-14-2" name="example-14-2"></a>    <span class="n">variables</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;VARIABLE &quot;</span><span class="p">:</span> <span class="s2">&quot;An example string&quot;</span><span class="p">,</span>
+</span><span id="line-14-3"><a id="example-14-3" name="example-14-3"></a>                 <span class="s2">&quot;ANOTHER VARIABLE&quot;</span><span class="p">:</span> <span class="s2">&quot;This is pretty easy!&quot;</span><span class="p">,</span>
+</span><span id="line-14-4"><a id="example-14-4" name="example-14-4"></a>                 <span class="s2">&quot;INTEGER&quot;</span><span class="p">:</span> <span class="mi">42</span><span class="p">,</span>
+</span><span id="line-14-5"><a id="example-14-5" name="example-14-5"></a>                 <span class="s2">&quot;STRINGS&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;one&quot;</span><span class="p">,</span> <span class="s2">&quot;two&quot;</span><span class="p">,</span> <span class="s2">&quot;kolme&quot;</span><span class="p">,</span> <span class="s2">&quot;four&quot;</span><span class="p">],</span>
+</span><span id="line-14-6"><a id="example-14-6" name="example-14-6"></a>                 <span class="s2">&quot;NUMBERS&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">],</span>
+</span><span id="line-14-7"><a id="example-14-7" name="example-14-7"></a>                 <span class="s2">&quot;MAPPING&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;one&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;two&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;three&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}}</span>
+</span><span id="line-14-8"><a id="example-14-8" name="example-14-8"></a>    <span class="k">return</span> <span class="n">variables</span>
+</span></code></pre></div></td></tr></table></div>
+<code>get_variables</code> can also take arguments, which facilitates changing
+what variables actually are created. Arguments to the function are set just
+as any other arguments for a Python function. When <a href="#taking-variable-files-into-use">taking variable files
+into use</a>, arguments are specified after the path
+to the variable file, and in the command line they are separated from the
+path with a colon or a semicolon.</p>
+<p>The dummy example below shows how to use arguments with variable files. In a
+more realistic example, the argument could be a path to an external text file
+or database where to read variables from.</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-15-1"> 1</a></span>
+<span class="normal"><a href="#example-15-2"> 2</a></span>
+<span class="normal"><a href="#example-15-3"> 3</a></span>
+<span class="normal"><a href="#example-15-4"> 4</a></span>
+<span class="normal"><a href="#example-15-5"> 5</a></span>
+<span class="normal"><a href="#example-15-6"> 6</a></span>
+<span class="normal"><a href="#example-15-7"> 7</a></span>
+<span class="normal"><a href="#example-15-8"> 8</a></span>
+<span class="normal"><a href="#example-15-9"> 9</a></span>
+<span class="normal"><a href="#example-15-10">10</a></span>
+<span class="normal"><a href="#example-15-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-15-1"><a id="example-15-1" name="example-15-1"></a><span class="n">variables1</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;scalar&#39;</span><span class="p">:</span> <span class="s1">&#39;Scalar variable&#39;</span><span class="p">,</span>
+</span><span id="line-15-2"><a id="example-15-2" name="example-15-2"></a>              <span class="s1">&#39;LIST__list&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;List&#39;</span><span class="p">,</span><span class="s1">&#39;variable&#39;</span><span class="p">]}</span>
+</span><span id="line-15-3"><a id="example-15-3" name="example-15-3"></a><span class="n">variables2</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;scalar&#39;</span> <span class="p">:</span> <span class="s1">&#39;Some other value&#39;</span><span class="p">,</span>
+</span><span id="line-15-4"><a id="example-15-4" name="example-15-4"></a>              <span class="s1">&#39;LIST__list&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Some&#39;</span><span class="p">,</span><span class="s1">&#39;other&#39;</span><span class="p">,</span><span class="s1">&#39;value&#39;</span><span class="p">],</span>
+</span><span id="line-15-5"><a id="example-15-5" name="example-15-5"></a>              <span class="s1">&#39;extra&#39;</span><span class="p">:</span> <span class="s1">&#39;variables1 does not have this at all&#39;</span><span class="p">}</span>
+</span><span id="line-15-6"><a id="example-15-6" name="example-15-6"></a>
+</span><span id="line-15-7"><a id="example-15-7" name="example-15-7"></a><span class="k">def</span><span class="w"> </span><span class="nf">get_variables</span><span class="p">(</span><span class="n">arg</span><span class="p">):</span>
+</span><span id="line-15-8"><a id="example-15-8" name="example-15-8"></a>    <span class="k">if</span> <span class="n">arg</span> <span class="o">==</span> <span class="s1">&#39;one&#39;</span><span class="p">:</span>
+</span><span id="line-15-9"><a id="example-15-9" name="example-15-9"></a>        <span class="k">return</span> <span class="n">variables1</span>
+</span><span id="line-15-10"><a id="example-15-10" name="example-15-10"></a>    <span class="k">else</span><span class="p">:</span>
+</span><span id="line-15-11"><a id="example-15-11" name="example-15-11"></a>        <span class="k">return</span> <span class="n">variables2</span>
+</span></code></pre></div></td></tr></table></div>
+Starting from Robot Framework 7.0, arguments to variable files support automatic
+argument conversion as well as named argument syntax. For example, a variable
+file with <code>get_variables(first: int = 0, second: str = '')</code> could be imported
+like this:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-16-1">1</a></span>
+<span class="normal"><a href="#example-16-2">2</a></span>
+<span class="normal"><a href="#example-16-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-16-1"><a id="example-16-1" name="example-16-1"></a><span class="gh">*** Settings ***</span>
+</span><span id="line-16-2"><a id="example-16-2" name="example-16-2"></a><span class="kn">Variables</span><span class="p">    </span><span class="nn">example.py</span><span class="p">    </span><span class="s">42</span><span class="p">              </span><span class="c"># Converted to integer.</span>
+</span><span id="line-16-3"><a id="example-16-3" name="example-16-3"></a><span class="kn">Variables</span><span class="p">    </span><span class="nn">example.py</span><span class="p">    </span><span class="s">second=value</span><span class="p">    </span><span class="c"># Named argument syntax.</span>
+</span></code></pre></div></td></tr></table></div>
+<h3 id="implementing-variable-file-as-a-class">Implementing variable file as a class<a class="headerlink" href="#implementing-variable-file-as-a-class" title="Permanent link">&para;</a></h3>
+<p>It is possible to implement variables files also as a class.</p>
+<h4 id="implementation">Implementation<a class="headerlink" href="#implementation" title="Permanent link">&para;</a></h4>
+<p>Because variable files are always imported using a file system path,
+the class must have the same name as the module it is located in.</p>
+<p>The framework will create an instance of the class using no arguments and
+variables will be gotten from the instance. Similarly as with modules,
+variables can be defined as attributes directly
+in the instance or gotten from a special <code>get_variables</code> method.</p>
+<p>When variables are defined directly in an instance, all attributes containing
+callable values are ignored to avoid creating variables from possible methods
+the instance has. If you would actually need callable variables, you need
+to use other approaches to create variable files.</p>
+<h4 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h4>
+<p>The first examples create variables from attributes.
+It creates variables <code>${VARIABLE}</code> and <code>@{LIST}</code> from class
+attributes and <code>${ANOTHER VARIABLE}</code> from an instance attribute.</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-17-1">1</a></span>
+<span class="normal"><a href="#example-17-2">2</a></span>
+<span class="normal"><a href="#example-17-3">3</a></span>
+<span class="normal"><a href="#example-17-4">4</a></span>
+<span class="normal"><a href="#example-17-5">5</a></span>
+<span class="normal"><a href="#example-17-6">6</a></span>
+<span class="normal"><a href="#example-17-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-17-1"><a id="example-17-1" name="example-17-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">StaticExample</span><span class="p">:</span>
+</span><span id="line-17-2"><a id="example-17-2" name="example-17-2"></a>    <span class="n">variable</span> <span class="o">=</span> <span class="s1">&#39;value&#39;</span>
+</span><span id="line-17-3"><a id="example-17-3" name="example-17-3"></a>    <span class="n">LIST__list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</span><span id="line-17-4"><a id="example-17-4" name="example-17-4"></a>    <span class="n">_not_variable</span> <span class="o">=</span> <span class="s1">&#39;starts with an underscore&#39;</span>
+</span><span id="line-17-5"><a id="example-17-5" name="example-17-5"></a>
+</span><span id="line-17-6"><a id="example-17-6" name="example-17-6"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="line-17-7"><a id="example-17-7" name="example-17-7"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">another_variable</span> <span class="o">=</span> <span class="s1">&#39;another value&#39;</span>
+</span></code></pre></div></td></tr></table></div>
+The second examples utilizes dynamic approach for getting variables. It
+creates only one variable <code>${DYNAMIC VARIABLE}</code>.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-18-1">1</a></span>
+<span class="normal"><a href="#example-18-2">2</a></span>
+<span class="normal"><a href="#example-18-3">3</a></span>
+<span class="normal"><a href="#example-18-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-18-1"><a id="example-18-1" name="example-18-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">DynamicExample</span><span class="p">:</span>
+</span><span id="line-18-2"><a id="example-18-2" name="example-18-2"></a>
+</span><span id="line-18-3"><a id="example-18-3" name="example-18-3"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">get_variables</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+</span><span id="line-18-4"><a id="example-18-4" name="example-18-4"></a>        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;dynamic variable&#39;</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">args</span><span class="p">)}</span>
+</span></code></pre></div></td></tr></table></div>
+<h3 id="variable-file-as-yaml">Variable file as YAML<a class="headerlink" href="#variable-file-as-yaml" title="Permanent link">&para;</a></h3>
+<p>Variable files can also be implemented as <a href="https://yaml.org">YAML</a> files.
+YAML is a data serialization language with a simple and human-friendly syntax
+that is nevertheless easy for machines to parse.
+The following example demonstrates a simple YAML file:</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-19-1">1</a></span>
+<span class="normal"><a href="#example-19-2">2</a></span>
+<span class="normal"><a href="#example-19-3">3</a></span>
+<span class="normal"><a href="#example-19-4">4</a></span>
+<span class="normal"><a href="#example-19-5">5</a></span>
+<span class="normal"><a href="#example-19-6">6</a></span>
+<span class="normal"><a href="#example-19-7">7</a></span>
+<span class="normal"><a href="#example-19-8">8</a></span>
+<span class="normal"><a href="#example-19-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-19-1"><a id="example-19-1" name="example-19-1"></a><span class="nt">string</span><span class="p">:</span><span class="w">   </span><span class="l l-Scalar l-Scalar-Plain">Hello, world!</span>
+</span><span id="line-19-2"><a id="example-19-2" name="example-19-2"></a><span class="nt">integer</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">42</span>
+</span><span id="line-19-3"><a id="example-19-3" name="example-19-3"></a><span class="nt">list</span><span class="p">:</span>
+</span><span id="line-19-4"><a id="example-19-4" name="example-19-4"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">one</span>
+</span><span id="line-19-5"><a id="example-19-5" name="example-19-5"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">two</span>
+</span><span id="line-19-6"><a id="example-19-6" name="example-19-6"></a><span class="nt">dict</span><span class="p">:</span>
+</span><span id="line-19-7"><a id="example-19-7" name="example-19-7"></a><span class="w">  </span><span class="nt">one</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yksi</span>
+</span><span id="line-19-8"><a id="example-19-8" name="example-19-8"></a><span class="w">  </span><span class="nt">two</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">kaksi</span>
+</span><span id="line-19-9"><a id="example-19-9" name="example-19-9"></a><span class="w">  </span><span class="nt">with spaces</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">kolme</span>
+</span></code></pre></div></td></tr></table></div>
+YAML variable files can be used exactly like normal variable files
+from the command line using <code>--variablefile</code> option, in the Settings
+section using <code>Variables</code> setting, and dynamically using the
+<em>Import Variables</em> keyword. They are automatically recognized by their
+extension that must be either <em>.yaml</em> or <em>.yml</em>.
+If the above YAML file is imported, it will create exactly the same variables
+as this Variable section:</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-20-1">1</a></span>
+<span class="normal"><a href="#example-20-2">2</a></span>
+<span class="normal"><a href="#example-20-3">3</a></span>
+<span class="normal"><a href="#example-20-4">4</a></span>
+<span class="normal"><a href="#example-20-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-20-1"><a id="example-20-1" name="example-20-1"></a><span class="gh">*** Variables ***</span>
+</span><span id="line-20-2"><a id="example-20-2" name="example-20-2"></a><span class="p">${</span><span class="nv">STRING</span><span class="p">}     </span><span class="s">Hello, world!</span>
+</span><span id="line-20-3"><a id="example-20-3" name="example-20-3"></a><span class="p">${</span><span class="nv">INTEGER</span><span class="p">}    ${</span><span class="nv">42</span><span class="p">}</span>
+</span><span id="line-20-4"><a id="example-20-4" name="example-20-4"></a><span class="p">@{</span><span class="nv">LIST</span><span class="p">}       </span><span class="s">one</span><span class="p">         </span><span class="s">two</span>
+</span><span id="line-20-5"><a id="example-20-5" name="example-20-5"></a><span class="p">&amp;{</span><span class="nv">DICT</span><span class="p">}       </span><span class="s">one=yksi</span><span class="p">    </span><span class="s">two=kaksi</span><span class="p">    </span><span class="s">with spaces=kolme</span>
+</span></code></pre></div></td></tr></table></div>
+YAML files used as variable files must always be mappings on the top level.
+As the above example demonstrates, keys and values in the mapping become
+variable names and values, respectively. Variable values can be any data
+types supported by YAML syntax. If names or values contain non-ASCII
+characters, YAML variables files must be UTF-8 encoded.</p>
+<p>Mappings used as values are automatically converted to special dictionaries
+that are used also when <a href="../variables/#creating-dictionaries">creating dictionaries</a> in the Variable section.
+Most importantly, values of these dictionaries are accessible as attributes
+like <code>${DICT.one}</code>, assuming their names are valid as Python attribute names.
+If the name contains spaces or is otherwise not a valid attribute name, it is
+always possible to access dictionary values using syntax like
+<code>${DICT}[with spaces]</code> syntax.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Using YAML files with Robot Framework requires <a href="http://pyyaml.org">PyYAML</a> module to be installed. You can typically
+install it with <a href="../data/#pipe-separated-format">pip</a> like <code>pip install pyyaml</code>.</p>
+</div>
+<h3 id="variable-file-as-json">Variable file as JSON<a class="headerlink" href="#variable-file-as-json" title="Permanent link">&para;</a></h3>
+<p>Variable files can also be implemented as <a href="https://json.org">JSON</a> files.
+Similarly as YAML discussed in the previous section, JSON is a data
+serialization format targeted both for humans and machines. It is based on
+JavaScript syntax and it is not as human-friendly as YAML, but it still
+relatively easy to understand and modify. The following example contains
+exactly the same data as the earlier YAML example:</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-21-1"> 1</a></span>
+<span class="normal"><a href="#example-21-2"> 2</a></span>
+<span class="normal"><a href="#example-21-3"> 3</a></span>
+<span class="normal"><a href="#example-21-4"> 4</a></span>
+<span class="normal"><a href="#example-21-5"> 5</a></span>
+<span class="normal"><a href="#example-21-6"> 6</a></span>
+<span class="normal"><a href="#example-21-7"> 7</a></span>
+<span class="normal"><a href="#example-21-8"> 8</a></span>
+<span class="normal"><a href="#example-21-9"> 9</a></span>
+<span class="normal"><a href="#example-21-10">10</a></span>
+<span class="normal"><a href="#example-21-11">11</a></span>
+<span class="normal"><a href="#example-21-12">12</a></span>
+<span class="normal"><a href="#example-21-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-21-1"><a id="example-21-1" name="example-21-1"></a><span class="p">{</span>
+</span><span id="line-21-2"><a id="example-21-2" name="example-21-2"></a><span class="w">    </span><span class="nt">&quot;string&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Hello, world!&quot;</span><span class="p">,</span>
+</span><span id="line-21-3"><a id="example-21-3" name="example-21-3"></a><span class="w">    </span><span class="nt">&quot;integer&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span><span class="p">,</span>
+</span><span id="line-21-4"><a id="example-21-4" name="example-21-4"></a><span class="w">    </span><span class="nt">&quot;list&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-21-5"><a id="example-21-5" name="example-21-5"></a><span class="w">        </span><span class="s2">&quot;one&quot;</span><span class="p">,</span>
+</span><span id="line-21-6"><a id="example-21-6" name="example-21-6"></a><span class="w">        </span><span class="s2">&quot;two&quot;</span>
+</span><span id="line-21-7"><a id="example-21-7" name="example-21-7"></a><span class="w">    </span><span class="p">],</span>
+</span><span id="line-21-8"><a id="example-21-8" name="example-21-8"></a><span class="w">    </span><span class="nt">&quot;dict&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-21-9"><a id="example-21-9" name="example-21-9"></a><span class="w">        </span><span class="nt">&quot;one&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;yksi&quot;</span><span class="p">,</span>
+</span><span id="line-21-10"><a id="example-21-10" name="example-21-10"></a><span class="w">        </span><span class="nt">&quot;two&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;kaksi&quot;</span><span class="p">,</span>
+</span><span id="line-21-11"><a id="example-21-11" name="example-21-11"></a><span class="w">        </span><span class="nt">&quot;with spaces&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;kolme&quot;</span>
+</span><span id="line-21-12"><a id="example-21-12" name="example-21-12"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="line-21-13"><a id="example-21-13" name="example-21-13"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+JSON variable files are automatically recognized by their <em>.json</em>
+extension and they can be used exactly like YAML variable files. They
+also have exactly same requirements for structure, encoding, and so on.
+Unlike YAML, Python supports JSON out-of-the-box so no extra modules need
+to be installed.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Support for JSON variable files is new in Robot Framework 6.1.</p>
+</div>
 
 
 

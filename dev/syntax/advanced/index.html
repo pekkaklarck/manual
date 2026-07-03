@@ -98,6 +98,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#advanced-features" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -917,6 +922,26 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced features
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -934,6 +959,125 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#handling-keywords-with-same-names" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Handling keywords with same names
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Handling keywords with same names">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#keyword-scopes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Keyword scopes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#specifying-a-keyword-explicitly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Specifying a keyword explicitly
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#specifying-explicit-priority-between-libraries-and-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Specifying explicit priority between libraries and resources
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#timeouts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Timeouts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Timeouts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-case-timeout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test case timeout
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user-keyword-timeout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User keyword timeout
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parallel-execution-of-keywords" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parallel execution of keywords
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -9656,7 +9800,7 @@
   <span class="md-ellipsis">
     
   
-    Documentation format
+    Doc format
   
 
     
@@ -9785,9 +9929,239 @@
   
 
 
-  <h1>Advanced features</h1>
-
-
+<h1 id="advanced-features">Advanced features<a class="headerlink" href="#advanced-features" title="Permanent link">&para;</a></h1>
+<h2 id="handling-keywords-with-same-names">Handling keywords with same names<a class="headerlink" href="#handling-keywords-with-same-names" title="Permanent link">&para;</a></h2>
+<p>Keywords that are used with Robot Framework are either <a href="#library-keywords">library
+keywords</a> or <a href="../user-keywords/#user-keyword">user keywords</a>. The former come from <a href="../libraries/#standard-libraries">standard
+libraries</a> or <a href="../libraries/#external-libraries">external libraries</a>, and the latter are either
+created in the same file where they are used or then imported from
+<a href="../resource-files/#resource-files">resource files</a>. When many keywords are in use, it is quite common
+that some of them have the same name, and this section describes how to
+handle possible conflicts in these situations.</p>
+<h3 id="keyword-scopes">Keyword scopes<a class="headerlink" href="#keyword-scopes" title="Permanent link">&para;</a></h3>
+<p>When only a keyword name is used and there are several keywords with
+that name, Robot Framework attempts to determine which keyword has the
+highest priority based on its scope. The keyword's scope is determined
+on the basis of how the keyword in question is created:</p>
+<ol>
+<li>
+<p>Created as a user keyword in the currently executed <a href="../suites/#suite-file">suite file</a>.
+   These keywords have the highest priority and they are always used, even
+   if there are other keywords with the same name elsewhere.</p>
+</li>
+<li>
+<p>Created in a resource file and imported either directly or
+   indirectly from another resource file. This is the second-highest
+   priority.</p>
+</li>
+<li>
+<p>Created in an external test library. These keywords are used, if
+   there are no user keywords with the same name. However, if there is
+   a keyword with the same name in the standard library, a warning is
+   displayed.</p>
+</li>
+<li>
+<p>Created in a standard library. These keywords have the lowest
+   priority.</p>
+</li>
+</ol>
+<h3 id="specifying-a-keyword-explicitly">Specifying a keyword explicitly<a class="headerlink" href="#specifying-a-keyword-explicitly" title="Permanent link">&para;</a></h3>
+<p>Scopes do not help if keywords with same names exists in two different libraries
+or in two different resource files. In addition to that, scopes do not help if
+a keyword in library should be used instead of a keyword with the same name in
+a resource file. In such cases, it is possible to use <em>the full keyword name</em>,
+where the keyword name is prefixed with the name of a library or a resource
+and a dot is used as a separator.</p>
+<p>With library keywords, the full name means using format
+<em>LibraryName.Keyword Name</em>. For example, the keyword <em>Get File</em>
+from the <a href="../libraries/#operatingsystem">OperatingSystem</a> library can be used as
+<em>OperatingSystem.Get File</em>, even if there was another <em>Get File</em>
+keyword somewhere else. If the library is implemented in a nested module, the
+full name must contain the full module name like <em>root.sub.Library.Keyword</em>.
+If a <a href="../libraries/#setting-custom-name-to-library">custom name</a> is given to a library when importing it, the specified
+name must be used also in the full keyword name.</p>
+<p>With user keywords in resource files the full name is constructed the same
+way as with library keywords. The name of the resource is derived from
+the basename of the resource file without the file extension. For example,
+a keyword <em>Some Keyword</em> in a resource file <em>example.resource</em> can
+be used like <em>example.Some Keyword</em>. Note that this syntax does not
+work if several resource files have the same basename. In such cases, either
+resource files or keywords must be renamed.</p>
+<p>With user keywords in a <a href="../suites/#suite-file">suite file</a>, the full name contains only the keyword
+name without any prefix.</p>
+<p>When comparing full keyword names, the library/resource part is case and
+space-insensitive and the keyword part is case, space and underscore-insensitive.</p>
+<p><a id="library-search-order"></a></p>
+<h3 id="specifying-explicit-priority-between-libraries-and-resources">Specifying explicit priority between libraries and resources<a class="headerlink" href="#specifying-explicit-priority-between-libraries-and-resources" title="Permanent link">&para;</a></h3>
+<p>If there are multiple conflicts between keywords, specifying all the keywords
+in the long format can be quite a lot work. Using the long format also makes it
+impossible to create dynamic test cases or user keywords that work differently
+depending on which libraries or resources are available. A solution to both of
+these problems is specifying the keyword priorities explicitly using the keyword
+<em>Set Library Search Order</em> from the <a href="../libraries/#builtin">BuiltIn</a> library.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the keyword has the word <em>library</em> in its name, it works
+also with resource files. As discussed above, keywords in resources
+always have higher priority than keywords in libraries, though.</p>
+</div>
+<p>The <em>Set Library Search Order</em> accepts an ordered list or libraries and
+resources as arguments. When a keyword name in the test data matches multiple
+keywords, the first library or resource containing the keyword is selected and
+that keyword implementation used. If the keyword is not found from any of the
+specified libraries or resources, execution fails for conflict the same way as
+when the search order is not set.</p>
+<p>For more information and examples, see the documentation of the keyword.</p>
+<h2 id="timeouts">Timeouts<a class="headerlink" href="#timeouts" title="Permanent link">&para;</a></h2>
+<p>Sometimes keywords may take exceptionally long time to execute or just hang
+endlessly. Robot Framework allows you to set timeouts both for <a href="../tests/#test-case">test cases</a>
+and <a href="../user-keywords/#user-keyword">user keywords</a>, and if a test or keyword is not finished within the
+specified time, the keyword that is currently being executed is forcefully
+stopped.</p>
+<p>Stopping keywords in this manner may leave the library, the test environment
+or the system under test to an unstable state, and timeouts are recommended
+only when there is no safer option available. In general, libraries should be
+implemented so that keywords cannot hang or that they have their own timeout
+mechanism.</p>
+<p><a id="test-case-timeouts"></a></p>
+<p><a id="test-timeout"></a></p>
+<h3 id="test-case-timeout">Test case timeout<a class="headerlink" href="#test-case-timeout" title="Permanent link">&para;</a></h3>
+<p>The test case timeout can be set either by using the <code>Test Timeout</code>
+setting in the Setting section or the <code>[Timeout]</code> setting with
+individual test cases. <code>Test Timeout</code> defines a default timeout
+for all the test cases in that suite, whereas <code>[Timeout]</code> applies
+a timeout to a particular test case and overrides the possible default value.</p>
+<p>Using an empty <code>[Timeout]</code> means that the test has no timeout even
+when <code>Test Timeout</code> is used. It is also possible to use explicit
+<code>NONE</code> value for this purpose. The timeout is effectively ignored also if
+its value is zero or negative.</p>
+<p>Regardless of where the test timeout is defined, the value given to it
+contains the duration of the timeout. The duration must be given in Robot
+Framework's <a href="../../appendix/time-format/#time-format">time format</a>, that is, either directly in seconds like <code>10</code>
+or in a format like <code>1 minute 30 seconds</code>. Timeouts can also be specified
+as <a href="../variables/#variables">variables</a> making it possible to give them, for example, from the command
+line.</p>
+<p>If there is a timeout and it expires, the keyword that is currently running
+is stopped and the test case fails. Keywords executed as part of <a href="../../execution/tests/#test-teardown">test
+teardown</a> are not interrupted if a test timeout occurs, though, but the test
+is nevertheless marked failed. If a keyword in teardown may hang, it can be
+stopped by using <a href="#user-keyword-timeouts">user keyword timeouts</a>.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1"> 1</a></span>
+<span class="normal"><a href="#example-0-2"> 2</a></span>
+<span class="normal"><a href="#example-0-3"> 3</a></span>
+<span class="normal"><a href="#example-0-4"> 4</a></span>
+<span class="normal"><a href="#example-0-5"> 5</a></span>
+<span class="normal"><a href="#example-0-6"> 6</a></span>
+<span class="normal"><a href="#example-0-7"> 7</a></span>
+<span class="normal"><a href="#example-0-8"> 8</a></span>
+<span class="normal"><a href="#example-0-9"> 9</a></span>
+<span class="normal"><a href="#example-0-10">10</a></span>
+<span class="normal"><a href="#example-0-11">11</a></span>
+<span class="normal"><a href="#example-0-12">12</a></span>
+<span class="normal"><a href="#example-0-13">13</a></span>
+<span class="normal"><a href="#example-0-14">14</a></span>
+<span class="normal"><a href="#example-0-15">15</a></span>
+<span class="normal"><a href="#example-0-16">16</a></span>
+<span class="normal"><a href="#example-0-17">17</a></span>
+<span class="normal"><a href="#example-0-18">18</a></span>
+<span class="normal"><a href="#example-0-19">19</a></span>
+<span class="normal"><a href="#example-0-20">20</a></span>
+<span class="normal"><a href="#example-0-21">21</a></span>
+<span class="normal"><a href="#example-0-22">22</a></span>
+<span class="normal"><a href="#example-0-23">23</a></span>
+<span class="normal"><a href="#example-0-24">24</a></span>
+<span class="normal"><a href="#example-0-25">25</a></span>
+<span class="normal"><a href="#example-0-26">26</a></span>
+<span class="normal"><a href="#example-0-27">27</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="gh">*** Settings ***</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a><span class="kn">Test Timeout</span><span class="p">       </span><span class="s">2 minutes</span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a>
+</span><span id="line-0-4"><a id="example-0-4" name="example-0-4"></a><span class="gh">*** Test Cases ***</span>
+</span><span id="line-0-5"><a id="example-0-5" name="example-0-5"></a><span class="gu">Default timeout</span>
+</span><span id="line-0-6"><a id="example-0-6" name="example-0-6"></a><span class="p">    [</span><span class="kn">Documentation</span><span class="p">]    </span><span class="s">Default timeout from Settings is used.</span>
+</span><span id="line-0-7"><a id="example-0-7" name="example-0-7"></a><span class="p">    </span><span class="nf">Some Keyword</span><span class="p">    </span><span class="s">argument</span>
+</span><span id="line-0-8"><a id="example-0-8" name="example-0-8"></a>
+</span><span id="line-0-9"><a id="example-0-9" name="example-0-9"></a><span class="gu">Override</span>
+</span><span id="line-0-10"><a id="example-0-10" name="example-0-10"></a><span class="p">    [</span><span class="kn">Documentation</span><span class="p">]    </span><span class="s">Override default, use 10 seconds timeout.</span>
+</span><span id="line-0-11"><a id="example-0-11" name="example-0-11"></a><span class="p">    [</span><span class="kn">Timeout</span><span class="p">]    </span><span class="s">10</span>
+</span><span id="line-0-12"><a id="example-0-12" name="example-0-12"></a><span class="p">    </span><span class="nf">Some Keyword</span><span class="p">    </span><span class="s">argument</span>
+</span><span id="line-0-13"><a id="example-0-13" name="example-0-13"></a>
+</span><span id="line-0-14"><a id="example-0-14" name="example-0-14"></a><span class="gu">Variables</span>
+</span><span id="line-0-15"><a id="example-0-15" name="example-0-15"></a><span class="p">    [</span><span class="kn">Documentation</span><span class="p">]    </span><span class="s">It is possible to use variables too.</span>
+</span><span id="line-0-16"><a id="example-0-16" name="example-0-16"></a><span class="p">    [</span><span class="kn">Timeout</span><span class="p">]    ${</span><span class="nv">TIMEOUT</span><span class="p">}</span>
+</span><span id="line-0-17"><a id="example-0-17" name="example-0-17"></a><span class="p">    </span><span class="nf">Some Keyword</span><span class="p">    </span><span class="s">argument</span>
+</span><span id="line-0-18"><a id="example-0-18" name="example-0-18"></a>
+</span><span id="line-0-19"><a id="example-0-19" name="example-0-19"></a><span class="gu">No timeout</span>
+</span><span id="line-0-20"><a id="example-0-20" name="example-0-20"></a><span class="p">    [</span><span class="kn">Documentation</span><span class="p">]    </span><span class="s">Empty timeout means no timeout even when Test Timeout has been used.</span>
+</span><span id="line-0-21"><a id="example-0-21" name="example-0-21"></a><span class="p">    [</span><span class="kn">Timeout</span><span class="p">]</span>
+</span><span id="line-0-22"><a id="example-0-22" name="example-0-22"></a><span class="p">    </span><span class="nf">Some Keyword</span><span class="p">    </span><span class="s">argument</span>
+</span><span id="line-0-23"><a id="example-0-23" name="example-0-23"></a>
+</span><span id="line-0-24"><a id="example-0-24" name="example-0-24"></a><span class="gu">No timeout 2</span>
+</span><span id="line-0-25"><a id="example-0-25" name="example-0-25"></a><span class="p">    [</span><span class="kn">Documentation</span><span class="p">]    </span><span class="s">Disabling timeout with NONE works too and is more explicit.</span>
+</span><span id="line-0-26"><a id="example-0-26" name="example-0-26"></a><span class="p">    [</span><span class="kn">Timeout</span><span class="p">]    </span><span class="s">NONE</span>
+</span><span id="line-0-27"><a id="example-0-27" name="example-0-27"></a><span class="p">    </span><span class="nf">Some Keyword</span><span class="p">    </span><span class="s">argument</span>
+</span></code></pre></div></td></tr></table></div>
+<p><a id="user-keyword-timeouts"></a></p>
+<p><a id="keyword-timeout"></a></p>
+<h3 id="user-keyword-timeout">User keyword timeout<a class="headerlink" href="#user-keyword-timeout" title="Permanent link">&para;</a></h3>
+<p>Timeouts can be set for user keywords using the <code>[Timeout]</code> setting.
+The syntax is exactly the same as with <a href="#test-case-timeout">test case timeout</a>, but user keyword
+timeouts do not have any default value. If a user keyword timeout is specified
+using a variable, the value can be given also as a keyword argument.</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-1-1"> 1</a></span>
+<span class="normal"><a href="#example-1-2"> 2</a></span>
+<span class="normal"><a href="#example-1-3"> 3</a></span>
+<span class="normal"><a href="#example-1-4"> 4</a></span>
+<span class="normal"><a href="#example-1-5"> 5</a></span>
+<span class="normal"><a href="#example-1-6"> 6</a></span>
+<span class="normal"><a href="#example-1-7"> 7</a></span>
+<span class="normal"><a href="#example-1-8"> 8</a></span>
+<span class="normal"><a href="#example-1-9"> 9</a></span>
+<span class="normal"><a href="#example-1-10">10</a></span>
+<span class="normal"><a href="#example-1-11">11</a></span>
+<span class="normal"><a href="#example-1-12">12</a></span>
+<span class="normal"><a href="#example-1-13">13</a></span>
+<span class="normal"><a href="#example-1-14">14</a></span>
+<span class="normal"><a href="#example-1-15">15</a></span>
+<span class="normal"><a href="#example-1-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-1-1"><a id="example-1-1" name="example-1-1"></a><span class="gh">*** Keywords ***</span>
+</span><span id="line-1-2"><a id="example-1-2" name="example-1-2"></a><span class="gu">Hardcoded</span>
+</span><span id="line-1-3"><a id="example-1-3" name="example-1-3"></a><span class="p">    [</span><span class="kn">Arguments</span><span class="p">]    ${</span><span class="nv">arg</span><span class="p">}</span>
+</span><span id="line-1-4"><a id="example-1-4" name="example-1-4"></a><span class="p">    [</span><span class="kn">Timeout</span><span class="p">]    </span><span class="s">1 minute 42 seconds</span>
+</span><span id="line-1-5"><a id="example-1-5" name="example-1-5"></a><span class="p">    </span><span class="nf">Some Keyword</span><span class="p">    ${</span><span class="nv">arg</span><span class="p">}</span>
+</span><span id="line-1-6"><a id="example-1-6" name="example-1-6"></a>
+</span><span id="line-1-7"><a id="example-1-7" name="example-1-7"></a><span class="gu">Configurable</span>
+</span><span id="line-1-8"><a id="example-1-8" name="example-1-8"></a><span class="p">    [</span><span class="kn">Arguments</span><span class="p">]    ${</span><span class="nv">arg</span><span class="p">}    ${</span><span class="nv">timeout</span><span class="p">}</span>
+</span><span id="line-1-9"><a id="example-1-9" name="example-1-9"></a><span class="p">    [</span><span class="kn">Timeout</span><span class="p">]    ${</span><span class="nv">timeout</span><span class="p">}</span>
+</span><span id="line-1-10"><a id="example-1-10" name="example-1-10"></a><span class="p">    </span><span class="nf">Some Keyword</span><span class="p">    ${</span><span class="nv">arg</span><span class="p">}</span>
+</span><span id="line-1-11"><a id="example-1-11" name="example-1-11"></a>
+</span><span id="line-1-12"><a id="example-1-12" name="example-1-12"></a><span class="gu">Run Keyword with Timeout</span>
+</span><span id="line-1-13"><a id="example-1-13" name="example-1-13"></a><span class="p">    [</span><span class="kn">Arguments</span><span class="p">]    ${</span><span class="nv">keyword</span><span class="p">}    @{</span><span class="nv">args</span><span class="p">}    &amp;{</span><span class="nv">kwargs</span><span class="p">}    ${</span><span class="nv">timeout</span><span class="p">}</span><span class="s">=1 minute</span>
+</span><span id="line-1-14"><a id="example-1-14" name="example-1-14"></a><span class="p">    [</span><span class="kn">Documentation</span><span class="p">]    </span><span class="s">Wrapper that runs another keyword with a configurable timeout.</span>
+</span><span id="line-1-15"><a id="example-1-15" name="example-1-15"></a><span class="p">    [</span><span class="kn">Timeout</span><span class="p">]    ${</span><span class="nv">timeout</span><span class="p">}</span>
+</span><span id="line-1-16"><a id="example-1-16" name="example-1-16"></a><span class="p">    </span><span class="nf">Run Keyword</span><span class="p">    ${</span><span class="nv">keyword</span><span class="p">}    @{</span><span class="nv">args</span><span class="p">}    &amp;{</span><span class="nv">kwargs</span><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+A user keyword timeout is applicable during the execution of that user
+keyword. If the total time of the whole keyword is longer than the
+timeout value, the currently executed keyword is stopped. User keyword
+timeouts are applicable also during a test case teardown, whereas test
+timeouts are not.</p>
+<p>If both the test case and some of its keywords (or several nested
+keywords) have a timeout, the active timeout is the one with the least
+time left.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>With earlier Robot Framework versions it was possible to specify
+a custom error message to use if a timeout expires. This
+functionality was deprecated in Robot Framework 3.0.1 and removed
+in Robot Framework 3.2.</p>
+</div>
+<h2 id="parallel-execution-of-keywords">Parallel execution of keywords<a class="headerlink" href="#parallel-execution-of-keywords" title="Permanent link">&para;</a></h2>
+<p>When parallel execution is needed, it must be implemented in test library
+level so that the library executes the code on background. Typically this
+means that the library needs a keyword like <em>Start Something</em> that
+starts the execution and returns immediately, and another keyword like
+<em>Get Results From Something</em> that waits until the result is available
+and returns it. See <a href="../libraries/#process">Process</a> library keywords <em>Start Process</em>
+and <em>Wait For Process</em> for an example.</p>
 
 
 

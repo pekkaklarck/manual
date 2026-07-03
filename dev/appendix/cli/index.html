@@ -9571,6 +9571,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Command line options
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -9587,6 +9605,58 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#command-line-options-for-test-execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Command line options for test execution
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#command-line-options-for-post-processing-outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Command line options for post-processing outputs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#environment-variables-for-execution-and-post-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Environment variables for execution and post-processing
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -9663,7 +9733,7 @@
   <span class="md-ellipsis">
     
   
-    Documentation format
+    Doc format
   
 
     
@@ -9793,6 +9863,1301 @@
 
 
 <h1 id="command-line-options">Command line options<a class="headerlink" href="#command-line-options" title="Permanent link">&para;</a></h1>
+<p>This appendix lists all the command line options that are available
+when <a href="../../execution/basics/#executing-test-cases">executing test cases</a>  and when <a href="../../execution/post-processing/#post-processing-outputs">post-processing outputs</a>.
+Also environment variables affecting execution and post-processing
+are listed.</p>
+<h2 id="command-line-options-for-test-execution">Command line options for test execution<a class="headerlink" href="#command-line-options-for-test-execution" title="Permanent link">&para;</a></h2>
+<dl>
+<dt>
+	<code><a id="5e794518e720c3bbe2d9b025cb00a508">--rpa</a> </code>
+</dt>
+<dd>Turn on <a href="../../execution/tasks/#generic-automation-mode">generic automation</a> mode.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="a42745bdd0c9526f52efe305a30068bc">--language &lt;lang&gt;</a> </code>
+</dt>
+<dd>Activate <a href="../../syntax/data/#localization">localization</a>. <code>lang</code> can be a name or a code of a <a href="../translations/#translations">built-in language</a>_, or a path or a module name of a custom language file.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="28055951354497a809296f6d673749c5">-F, --extension &lt;value&gt;</a> </code>
+</dt>
+<dd><a href="#parse-only-these-files">Parse only these files</a> when executing a directory.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="98db0955d6d93bbea35729c6470055e0">-I, --parseinclude &lt;pattern&gt;</a> </code>
+</dt>
+<dd><a href="#parse-only-matching-files">Parse only matching files</a> when executing a directory.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="15e68df46db1d728de7d2cf08452e3ca">-N, --name &lt;name&gt;</a> </code>
+</dt>
+<dd><a href="#sets-the-name">Sets the name</a> of the top-level test suite.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="f8817f8f68460e3ce63a2d7ae3aeb0f5">-D, --doc &lt;document&gt;</a> </code>
+</dt>
+<dd><a href="#sets-the-documentation">Sets the documentation</a> of the top-level test suite.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="cbec4b0353a7bda9117f80ed19b8640d">value&gt;</a> </code>
+</dt>
+<dd><a href="#sets-free-metadata">Sets free metadata</a> for the top level test suite.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="91ffb5bf152b933897586e70a17ef3ee">-G, --settag &lt;tag&gt;</a> </code>
+</dt>
+<dd><a href="../../syntax/tests/#tag">Sets the tag(s)</a> to all executed test cases.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="35607f9726fff712a732329666dfac65">-t, --test &lt;name&gt;</a> </code>
+</dt>
+<dd><a href="../../syntax/tests/#test-case">Selects the test cases by name</a>.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="d098173e88dce63d8b467ef48612c65a">--task &lt;name&gt;</a> </code>
+</dt>
+<dd>Alias for <code>--test</code> that can be used when <a href="../../execution/tasks/#executing-tasks">executing tasks</a>.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="ff0cc67f7282a33241372d79a211fc84">-s, --suite &lt;name&gt;</a> </code>
+</dt>
+<dd><a href="../../syntax/suites/#test-suite">Selects the test suites</a> by name.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="a7867407e121bb215a38d5a052cb399b">-R, --rerunfailed &lt;file&gt;</a> </code>
+</dt>
+<dd><a href="../../execution/tests/#fail">Selects failed tests</a> from an earlier <a href="../../execution/results/#output-file">output file</a> to be re-executed.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="bbac0f7bea14a115ed8877d590cddca6">-S, --rerunfailedsuites &lt;file&gt;</a> </code>
+</dt>
+<dd><a href="../../execution/tests/#fail">Selects failed test suites</a> from an earlier <a href="../../execution/results/#output-file">output file</a> to be re-executed.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="6a77516587bde2af543ac9c4191dbb39">-i, --include &lt;tag&gt;</a> </code>
+</dt>
+<dd><a href="../../syntax/tests/#test-case">Selects the test cases</a> by tag.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="490ff86a0328875b1bad91b826c8e5b5">-e, --exclude &lt;tag&gt;</a> </code>
+</dt>
+<dd><a href="../../syntax/tests/#test-case">Selects the test cases</a> by tag.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="fb72cb206fd5c3c426f4961fc1d11fa0">--skip &lt;tag&gt;</a> </code>
+</dt>
+<dd>Tests having given tag will be <a href="../../execution/tests/#skipped">skipped</a>. Tag can be a pattern.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="50f8a48481208c006639fb3a3754d78a">--skiponfailure &lt;tag&gt;</a> </code>
+</dt>
+<dd>Tests having given tag will be <a href="../../execution/tests/#skipped">skipped</a> if they fail.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="725b3ff2fbed78123aedeb9e05727aaa">value&gt;</a> </code>
+</dt>
+<dd>Sets <a href="../../syntax/variables/#variable">individual variables</a>.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="8aaac892e295c30776af801b0a215944">args&gt;</a> </code>
+</dt>
+<dd>Sets variables using <a href="../../syntax/variable-files/#variable-files">variable files</a>.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="0161e9cfdeaf855605cb232defcb31c5">-d, --outputdir &lt;dir&gt;</a> </code>
+</dt>
+<dd>Defines where to <a href="../../execution/results/#result-file">create result files</a>.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="1094a22409bd1c9e34f46cb26c0a0e01">-o, --output &lt;file&gt;</a> </code>
+</dt>
+<dd>Sets the path to the generated <a href="../../execution/results/#output-file">output file</a>.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="38d22ff305ca5dc5bfa68b97d7138cbd">--legacyoutput</a> </code>
+</dt>
+<dd>Creates output file in <a href="../../syntax/control/#for">Robot Framework 6.x compatible format</a>.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="5ee67c5d9b008536f575a0e4775fbf2b">-l, --log &lt;file&gt;</a> </code>
+</dt>
+<dd>Sets the path to the generated <a href="../../execution/results/#log-file">log file</a>.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="72aa0e4f99216a0b9a752889d13bddd8">-r, --report &lt;file&gt;</a> </code>
+</dt>
+<dd>Sets the path to the generated <a href="../../execution/results/#report-file">report file</a>.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="c3df78902d0f518bf6a6f4b0d2dedda3">-x, --xunit &lt;file&gt;</a> </code>
+</dt>
+<dd>Sets the path to the generated <a href="../../execution/results/#xunit-compatible-result-file">xUnit compatible result file</a>.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="fe320f871d8fe6f69759b1c2c3a8f36b">-b, --debugfile &lt;file&gt;</a> </code>
+</dt>
+<dd>A <a href="../../execution/results/#debug-file">debug file</a> that is written during execution.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="6f1063cdc45c8b2cc8293f0db37e7a2d">-T, --timestampoutputs</a> </code>
+</dt>
+<dd><a href="#adds-a-timestamp">Adds a timestamp</a> to <a href="../../execution/results/#result-files">result files</a> listed above.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="602f62eb970f36ddf8bc7a5e80d30c79">--splitlog</a> </code>
+</dt>
+<dd><a href="../../execution/results/#log">Split log file</a> into smaller pieces that open in browser transparently.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="b627fea7423918e3d37416cfd5b3cd4b">--logtitle &lt;title&gt;</a> </code>
+</dt>
+<dd><a href="#sets-a-title">Sets a title</a> for the generated test log.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="6e17b10b04ed0b19bc9635fec16d23d1">--reporttitle &lt;title&gt;</a> </code>
+</dt>
+<dd><a href="#sets-a-title">Sets a title</a> for the generated test report.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="c4b2aa091cd22c4d01b56f296728be35">--reportbackground &lt;colors&gt;</a> </code>
+</dt>
+<dd><a href="#sets-background-colors">Sets background colors</a> of the generated report.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="c1611a3922b9703b788425cfd0359b55">--maxerrorlines &lt;lines&gt;</a> </code>
+</dt>
+<dd>Sets the number of <a href="#error-lines">error lines</a> shown in report when tests fail.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="50eb2695d3de3874b4068c8dc9e30c64">--maxassignlength &lt;characters&gt;</a> </code>
+</dt>
+<dd>Sets the number of characters shown in log when <a href="../../syntax/variables/#automatically-logging-assigned-variable-value">variables are assigned</a>_.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="49dfb247da1ce8e7c9b1a30633d8d755">-L, --loglevel &lt;level&gt;</a> </code>
+</dt>
+<dd><a href="#sets-the-threshold-level">Sets the threshold level</a> for logging. Optionally the default <a href="../../execution/results/#visible-log-level">visible log level</a> can be given separated with a colon (:).
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="d3c250a19acab6b824d33506b499c50e">--suitestatlevel &lt;level&gt;</a> </code>
+</dt>
+<dd>Defines how many <a href="#levels-to-show">levels to show</a> in the <em>Statistics by Suite</em> table in outputs.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="d3ab39a77771ab3e5144a17976876f51">--tagstatinclude &lt;tag&gt;</a> </code>
+</dt>
+<dd><a href="../../syntax/tests/#tag">Includes only these tags</a> in the <em>Statistics by Tag</em> table.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="6c5a619d828bef7e656297859e989e34">--tagstatexclude &lt;tag&gt;</a> </code>
+</dt>
+<dd><a href="../../syntax/tests/#tag">Excludes these tags</a> from the <em>Statistics by Tag</em> table.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="67773769d157546a8a769cb6d8e6e791">title&gt;</a> </code>
+</dt>
+<dd>Creates <a href="../../syntax/tests/#tag">combined statistics based on tags</a>.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="e397abb0feaa9732ea039246f54b0b6a">doc&gt;</a> </code>
+</dt>
+<dd>Adds <a href="../../syntax/control/#if">documentation to the specified tags</a>.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt><code>--tagstatlink &lt;pattern:link:title&gt;</code></dt>
+<dd>Adds <a href="#external-links">external links</a> to the <em>Statistics by Tag</em> table.</dd>
+<dt><code>--expandkeywords &lt;name:pattern|tag:pattern&gt;</code></dt>
+<dd>Automatically <a href="#expand-keywords">expand keywords</a> in the generated log file.</dd>
+<dt><code>--removekeywords &lt;all|passed|name:pattern|tag:pattern|for|while|wuks&gt;</code></dt>
+<dd><a href="#removes-keyword-data">Removes keyword data</a> from the generated log file.</dd>
+<dt><code>--flattenkeywords &lt;for|while|iteration|name:pattern|tag:pattern&gt;</code></dt>
+<dd><a href="../../execution/output-files/#flattening-keywords">Flattens keywords</a> in the generated log file.</dd>
+<dt>
+	<code><a id="78380d4e4d6a693cd8669757b6ccaa97">args&gt;</a> </code>
+</dt>
+<dd><a href="../../extend/listeners/#listener">Sets a listener</a> for monitoring test execution.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="a868b9d218818eae30c1fce210c4bcec">--nostatusrc</a> </code>
+</dt>
+<dd>Sets the <a href="../../execution/basics/#return-code">return code</a> to zero regardless of failures in test cases. Error codes are returned normally.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="1a4f85bc72716ba3ff1b9daf65921961">--runemptysuite</a> </code>
+</dt>
+<dd>Executes tests also if the selected <a href="../../syntax/suites/#test-suite">test suites are empty</a>.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="664e1d9e966940242cfb2e2d1dcc0992">--dryrun</a> </code>
+</dt>
+<dd>In the <a href="../../execution/configuration/#dry-run">dry run</a> mode tests are run without executing keywords originating from test libraries. Useful for validating test data syntax.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="c927aaac510dac0b101915b309b1c9ee">-X, --exitonfailure</a> </code>
+</dt>
+<dd><a href="../../execution/tests/#stopping-when-first-test-case-fails">Stops test execution</a>_ if any test fails.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="c07ab333f00e6fd0fb08ea3b82dc8384">--exitonerror</a> </code>
+</dt>
+<dd><a href="../../execution/tests/#stopping-on-parsing-or-execution-error">Stops test execution</a>_ if any error occurs when parsing test data, importing libraries, and so on.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="e956b4e4981b9887ba5499f173985ce5">--skipteardownonexit</a> </code>
+</dt>
+<dd><a href="../../execution/tests/#skip">Skips teardowns</a> if test execution is prematurely stopped.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="14476cb2af2956a1f8c9187c75fb6c3c">args&gt;</a> </code>
+</dt>
+<dd>Activate <a href="../../execution/configuration/#programmatic-modification-of-test-data">programmatic modification of test data</a>.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="0cd2c77991502f59f33b4c1e71a2bfc1">args&gt;</a> </code>
+</dt>
+<dd>Activate <a href="../../execution/results/#programmatic-modification-of-results">programmatic modification of results</a>.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt><code>--randomize &lt;all|suites|tests|none&gt;</code></dt>
+<dd><a href="#randomizes">Randomizes</a> test execution order.</dd>
+<dt><code>--console &lt;verbose|dotted|quiet|none&gt;</code></dt>
+<dd><a href="../../execution/configuration/#console-output-type">Console output type</a>.</dd>
+<dt>
+	<code><a id="58636faa6213dcba8dd446b8044275ed">--dotted</a> </code>
+</dt>
+<dd>Shortcut for <code>--console dotted</code>.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="80cdee8754ab93de129ee12791096f94">--quiet</a> </code>
+</dt>
+<dd>Shortcut for <code>--console quiet</code>.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="e91d73755730d1e46bb954efebf46c95">-W, --consolewidth &lt;width&gt;</a> </code>
+</dt>
+<dd><a href="#sets-the-width">Sets the width</a> of the console output.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt><code>-C, --consolecolors &lt;auto|on|ansi|off&gt;</code></dt>
+<dd><a href="../../syntax/control/#if">Specifies are colors</a> used on the console.</dd>
+<dt><code>--consolelinks &lt;auto|off&gt;</code></dt>
+<dd>Controls <a href="../../execution/configuration/#console-links">making paths to results files hyperlinks</a>.</dd>
+<dt><code>-K, --consolemarkers &lt;auto|on|off&gt;</code></dt>
+<dd>Show <a href="#markers-on-the-console">markers on the console</a> when top level keywords in a test case end.</dd>
+<dt>
+	<code><a id="baa22ecdd255975e0c2cb349bdeeefe6">-P, --pythonpath &lt;path&gt;</a> </code>
+</dt>
+<dd>Additional locations to add to the <a href="../../execution/configuration/#module-search-path">module search path</a>.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="fbee0de7d581f6ac6e5b09139ece1a25">-A, --argumentfile &lt;path&gt;</a> </code>
+</dt>
+<dd>A text file to <a href="#read-more-arguments">read more arguments</a> from.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="ae3f6c86a07fb6e83be2bb00d01f754e">-h, --help</a> </code>
+</dt>
+<dd>Prints <a href="../../#usage-instructions">usage instructions</a>.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="d144e853c18fc874c282c2e12bc0e27d">--version</a> </code>
+</dt>
+<dd>Prints the <a href="../../#version-information">version information</a>.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+</dl>
+<h2 id="command-line-options-for-post-processing-outputs">Command line options for post-processing outputs<a class="headerlink" href="#command-line-options-for-post-processing-outputs" title="Permanent link">&para;</a></h2>
+<dl>
+<dt>
+	<code><a id="5e794518e720c3bbe2d9b025cb00a508">--rpa</a> </code>
+</dt>
+<dd>Turn on <a href="../../execution/tasks/#generic-automation-mode">generic automation</a> mode.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="7ac953ed729f45cb41f67ed22020a596">-R, --merge</a> </code>
+</dt>
+<dd>Changes result combining behavior to <a href="../../execution/post-processing/#merging-results">merging</a>_.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="15e68df46db1d728de7d2cf08452e3ca">-N, --name &lt;name&gt;</a> </code>
+</dt>
+<dd><a href="#sets-the-name">Sets the name</a> of the top level test suite.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="f8817f8f68460e3ce63a2d7ae3aeb0f5">-D, --doc &lt;document&gt;</a> </code>
+</dt>
+<dd><a href="#sets-the-documentation">Sets the documentation</a> of the top-level test suite.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="cbec4b0353a7bda9117f80ed19b8640d">value&gt;</a> </code>
+</dt>
+<dd><a href="#sets-free-metadata">Sets free metadata</a> for the top-level test suite.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="91ffb5bf152b933897586e70a17ef3ee">-G, --settag &lt;tag&gt;</a> </code>
+</dt>
+<dd><a href="../../syntax/tests/#tag">Sets the tag(s)</a> to all processed test cases.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="35607f9726fff712a732329666dfac65">-t, --test &lt;name&gt;</a> </code>
+</dt>
+<dd><a href="../../syntax/tests/#test-case">Selects the test cases by name</a>.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="d098173e88dce63d8b467ef48612c65a">--task &lt;name&gt;</a> </code>
+</dt>
+<dd>Alias for <code>--test</code>.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="ff0cc67f7282a33241372d79a211fc84">-s, --suite &lt;name&gt;</a> </code>
+</dt>
+<dd><a href="../../syntax/suites/#test-suite">Selects the test suites</a> by name.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="6a77516587bde2af543ac9c4191dbb39">-i, --include &lt;tag&gt;</a> </code>
+</dt>
+<dd><a href="../../syntax/tests/#test-case">Selects the test cases</a> by tag.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="490ff86a0328875b1bad91b826c8e5b5">-e, --exclude &lt;tag&gt;</a> </code>
+</dt>
+<dd><a href="../../syntax/tests/#test-case">Selects the test cases</a> by tag.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="0161e9cfdeaf855605cb232defcb31c5">-d, --outputdir &lt;dir&gt;</a> </code>
+</dt>
+<dd>Defines where to <a href="../../execution/results/#result-file">create result files</a>.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="1094a22409bd1c9e34f46cb26c0a0e01">-o, --output &lt;file&gt;</a> </code>
+</dt>
+<dd>Sets the path to the generated <a href="../../execution/results/#output-file">output file</a>.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="38d22ff305ca5dc5bfa68b97d7138cbd">--legacyoutput</a> </code>
+</dt>
+<dd>Creates output file in <a href="../../syntax/control/#for">Robot Framework 6.x compatible format</a>.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="5ee67c5d9b008536f575a0e4775fbf2b">-l, --log &lt;file&gt;</a> </code>
+</dt>
+<dd>Sets the path to the generated <a href="../../execution/results/#log-file">log file</a>.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="72aa0e4f99216a0b9a752889d13bddd8">-r, --report &lt;file&gt;</a> </code>
+</dt>
+<dd>Sets the path to the generated <a href="../../execution/results/#report-file">report file</a>.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="c3df78902d0f518bf6a6f4b0d2dedda3">-x, --xunit &lt;file&gt;</a> </code>
+</dt>
+<dd>Sets the path to the generated <a href="../../execution/results/#xunit-compatible-result-file">xUnit compatible result file</a>.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="6f1063cdc45c8b2cc8293f0db37e7a2d">-T, --timestampoutputs</a> </code>
+</dt>
+<dd><a href="#adds-a-timestamp">Adds a timestamp</a> to <a href="../../execution/results/#result-files">result files</a> listed above.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="602f62eb970f36ddf8bc7a5e80d30c79">--splitlog</a> </code>
+</dt>
+<dd><a href="../../execution/results/#log">Split log file</a> into smaller pieces that open in browser transparently.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="b627fea7423918e3d37416cfd5b3cd4b">--logtitle &lt;title&gt;</a> </code>
+</dt>
+<dd><a href="#sets-a-title">Sets a title</a> for the generated test log.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="6e17b10b04ed0b19bc9635fec16d23d1">--reporttitle &lt;title&gt;</a> </code>
+</dt>
+<dd><a href="#sets-a-title">Sets a title</a> for the generated test report.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="c4b2aa091cd22c4d01b56f296728be35">--reportbackground &lt;colors&gt;</a> </code>
+</dt>
+<dd><a href="#sets-background-colors">Sets background colors</a> of the generated report.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="49dfb247da1ce8e7c9b1a30633d8d755">-L, --loglevel &lt;level&gt;</a> </code>
+</dt>
+<dd><a href="#sets-the-threshold-level">Sets the threshold level</a> to select log messages. Optionally the default <a href="../../execution/results/#visible-log-level">visible log level</a> can be given separated with a colon (:).
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="d3c250a19acab6b824d33506b499c50e">--suitestatlevel &lt;level&gt;</a> </code>
+</dt>
+<dd>Defines how many <a href="#levels-to-show">levels to show</a> in the <em>Statistics by Suite</em> table in outputs.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="d3ab39a77771ab3e5144a17976876f51">--tagstatinclude &lt;tag&gt;</a> </code>
+</dt>
+<dd><a href="../../syntax/tests/#tag">Includes only these tags</a> in the <em>Statistics by Tag</em> table.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="6c5a619d828bef7e656297859e989e34">--tagstatexclude &lt;tag&gt;</a> </code>
+</dt>
+<dd><a href="../../syntax/tests/#tag">Excludes these tags</a> from the <em>Statistics by Tag</em> table.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="67773769d157546a8a769cb6d8e6e791">title&gt;</a> </code>
+</dt>
+<dd>Creates <a href="../../syntax/tests/#tag">combined statistics based on tags</a>.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="e397abb0feaa9732ea039246f54b0b6a">doc&gt;</a> </code>
+</dt>
+<dd>Adds <a href="../../syntax/control/#if">documentation to the specified tags</a>.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt><code>--tagstatlink &lt;pattern:link:title&gt;</code></dt>
+<dd>Adds <a href="#external-links">external links</a> to the <em>Statistics by Tag</em> table.</dd>
+<dt><code>--expandkeywords &lt;name:pattern|tag:pattern&gt;</code></dt>
+<dd>Automatically <a href="#expand-keywords">expand keywords</a> in the generated log file.</dd>
+<dt><code>--removekeywords &lt;all|passed|name:pattern|tag:pattern|for|wuks&gt;</code></dt>
+<dd><a href="#removes-keyword-data">Removes keyword data</a> from the generated outputs.</dd>
+<dt><code>--flattenkeywords &lt;for|foritem|name:pattern|tag:pattern&gt;</code></dt>
+<dd><a href="../../execution/output-files/#flattening-keywords">Flattens keywords</a> in the generated outputs.</dd>
+<dt>
+	<code><a id="5ba7ac569cb2b2dc78d20794a03ba57f">--starttime &lt;timestamp&gt;</a> </code>
+</dt>
+<dd>Sets the <a href="#starting-time">starting time</a> of test execution when creating reports.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="cd3a171b01db0849f2818cf04fd1c98c">--endtime &lt;timestamp&gt;</a> </code>
+</dt>
+<dd>Sets the <a href="#command-line-options">ending time</a> of test execution when creating reports.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="a868b9d218818eae30c1fce210c4bcec">--nostatusrc</a> </code>
+</dt>
+<dd>Sets the <a href="../../execution/basics/#return-code">return code</a> to zero regardless of failures in test cases. Error codes are returned normally.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="ac1631ba0614cdef27100ecd5efd61f1">--processemptysuite</a> </code>
+</dt>
+<dd>Processes output files even if files contain <a href="../../syntax/suites/#test-suite">empty test suites</a>.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="0cd2c77991502f59f33b4c1e71a2bfc1">args&gt;</a> </code>
+</dt>
+<dd>Activate <a href="../../execution/results/#programmatic-modification-of-results">programmatic modification of results</a>.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt><code>-C, --consolecolors &lt;auto|on|ansi|off&gt;</code></dt>
+<dd><a href="../../syntax/control/#if">Specifies are colors</a> used on the console.</dd>
+<dt><code>--consolelinks &lt;auto|off&gt;</code></dt>
+<dd>Controls <a href="../../execution/configuration/#console-links">making paths to results files hyperlinks</a>.</dd>
+<dt>
+	<code><a id="baa22ecdd255975e0c2cb349bdeeefe6">-P, --pythonpath &lt;path&gt;</a> </code>
+</dt>
+<dd>Additional locations to add to the <a href="../../execution/configuration/#module-search-path">module search path</a>.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="fbee0de7d581f6ac6e5b09139ece1a25">-A, --argumentfile &lt;path&gt;</a> </code>
+</dt>
+<dd>A text file to <a href="#read-more-arguments">read more arguments</a> from.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="ae3f6c86a07fb6e83be2bb00d01f754e">-h, --help</a> </code>
+</dt>
+<dd>Prints <a href="../../#usage-instructions">usage instructions</a>.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="d144e853c18fc874c282c2e12bc0e27d">--version</a> </code>
+</dt>
+<dd>Prints the <a href="../../#version-information">version information</a>.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+</dl>
+<h2 id="environment-variables-for-execution-and-post-processing">Environment variables for execution and post-processing<a class="headerlink" href="#environment-variables-for-execution-and-post-processing" title="Permanent link">&para;</a></h2>
+<dl>
+<dt>
+	<code>ROBOT_OPTIONS</code> and <code><a id="37f9cad78bbd9206fbb2a5141c76fb54">REBOT_OPTIONS</a> </code>
+</dt>
+<dd>Space separated list of default options to be placed
+<a href="../../extend/libdoc/#options">in front of any explicit options</a> on the command line.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="6825380054a3a82765827810c2193505">ROBOT_SYSLOG_FILE</a> </code>
+</dt>
+<dd>Path to a <a href="../../execution/results/#syslog">syslog</a> file where Robot Framework writes internal
+information about parsing test case files and running
+tests.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="a834a7ef3e3396702fb77639b07726c9">ROBOT_SYSLOG_LEVEL</a> </code>
+</dt>
+<dd>Log level to use when writing to the <a href="../../execution/results/#syslog">syslog</a> file.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="dd87673f639b3cb0bfa4656a7693f2f4">ROBOT_INTERNAL_TRACES</a> </code>
+</dt>
+<dd>When set to any non-empty value, Robot Framework's
+internal methods are included in <a href="../../extend/libraries/#tracebacks">error tracebacks</a>.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+</dl>
 
 
 

@@ -1087,6 +1087,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Task execution
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1103,6 +1121,47 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#generic-automation-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Generic automation mode
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-related-command-line-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task related command line options
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -9663,7 +9722,7 @@
   <span class="md-ellipsis">
     
   
-    Documentation format
+    Doc format
   
 
     
@@ -9792,7 +9851,34 @@
   
 
 
+<p><a id="executing-tasks"></a></p>
 <h1 id="task-execution">Task execution<a class="headerlink" href="#task-execution" title="Permanent link">&para;</a></h1>
+<p>Robot Framework can be used also for other automation purposes than test
+automation, and starting from Robot Framework 3.1 it is possible to
+explicitly <a href="#create">create</a> and execute tasks. For most parts task execution
+and test execution work the same way, and this section explains the
+differences.</p>
+<h2 id="generic-automation-mode">Generic automation mode<a class="headerlink" href="#generic-automation-mode" title="Permanent link">&para;</a></h2>
+<p>When Robot Framework is used execute a file and it notices that the file
+has tasks, not tests, it automatically sets itself into the generic automation
+mode. This mode does not change the actual execution at all, but when
+logs and reports are created, they use term <em>task</em>, not <em>test</em>. They have,
+for example, headers like <code>Task Log</code> and <code>Task Statistics</code> instead of
+<code>Test Log</code> and <code>Test Statistics</code>.</p>
+<p>The generic automation mode can also be enabled by using the <code>--rpa</code>
+option. In that case the executed files can have either tests or tasks.
+Alternatively <code>--norpa</code> can be used to force the test automation
+mode even if executed files contain tasks. If neither of these options are
+used, it is an error to execute multiple files so that some have tests and
+others have tasks.</p>
+<p>The execution mode is stored in the generated <a href="../results/#output-file">output file</a> and read by
+<a href="../post-processing/#rebot">Rebot</a> if outputs are post-processed. The mode can also <a href="../../syntax/tasks/#creating-tasks">be set when
+using Rebot</a> if necessary.</p>
+<h2 id="task-related-command-line-options">Task related command line options<a class="headerlink" href="#task-related-command-line-options" title="Permanent link">&para;</a></h2>
+<p>All normal command line options can be used when executing tasks. If there
+is a need to <a href="../post-processing/#controlling-execution-mode">select only certain tasks for execution</a>, <code>--task</code>
+can be used instead of <code>--test</code>. Additionally the aforementioned
+<code>--rpa</code> can be used to control the execution mode.</p>
 
 
 

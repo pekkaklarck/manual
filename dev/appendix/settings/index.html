@@ -99,7 +99,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#settings" class="md-skip">
+        <a href="#available-settings" class="md-skip">
           Skip to content
         </a>
       
@@ -9543,6 +9543,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Settings
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -9559,6 +9577,58 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setting-section" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setting section
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-case-section" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Case section
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keyword-section" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Keyword section
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -9663,7 +9733,7 @@
   <span class="md-ellipsis">
     
   
-    Documentation format
+    Doc format
   
 
     
@@ -9792,7 +9862,174 @@
   
 
 
-<h1 id="settings">Settings<a class="headerlink" href="#settings" title="Permanent link">&para;</a></h1>
+<p><a id="settings"></a></p>
+<h1 id="available-settings">Available settings<a class="headerlink" href="#available-settings" title="Permanent link">&para;</a></h1>
+<p>This appendix lists all settings that can be used in different sections.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Settings can be <a href="../../syntax/data/#localized">localized</a>. See the <a href="../translations/#translations">Translations</a> appendix for
+supported translations.</p>
+</div>
+<h2 id="setting-section">Setting section<a class="headerlink" href="#setting-section" title="Permanent link">&para;</a></h2>
+<p>The Setting section is used to import libraries, resource files and
+variable files and to define metadata for test suites and test
+cases. It can be included in test case files and resource files. Note
+that in a resource file, a Setting section can only include settings for
+importing libraries, resources, and variables.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Library</td>
+<td>Used for <a href="../../syntax/libraries/#importing-libraries">importing libraries</a>.</td>
+</tr>
+<tr>
+<td>Resource</td>
+<td>Used for <a href="../../syntax/resource-files/#taking-resource-files-into-use">taking resource files into use</a>.</td>
+</tr>
+<tr>
+<td>Variables</td>
+<td>Used for <a href="../../syntax/variable-files/#taking-variable-files-into-use">taking variable files into use</a>.</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>Used for setting a custom <a href="../../syntax/suites/#suite-name">suite name</a>.</td>
+</tr>
+<tr>
+<td>Documentation</td>
+<td>Used for specifying a <a href="../../syntax/suites/#suite-documentation">suite</a> or <a href="../../syntax/resource-files/#resource-files">resource file</a> documentation.</td>
+</tr>
+<tr>
+<td>Metadata</td>
+<td>Used for setting <a href="../../syntax/suites/#free-suite-metadata">free suite metadata</a>.</td>
+</tr>
+<tr>
+<td>Suite Setup</td>
+<td>Used for specifying the <a href="../../execution/tests/#suite-setup">suite setup</a>.</td>
+</tr>
+<tr>
+<td>Suite Teardown</td>
+<td>Used for specifying the <a href="../../execution/tests/#suite-teardown">suite teardown</a>.</td>
+</tr>
+<tr>
+<td>Test  Tags</td>
+<td>Used for specifying <a href="../../syntax/tests/#test-case-tags">test case tags</a> for all tests in a suite.</td>
+</tr>
+<tr>
+<td>Force Tags, Default Tags</td>
+<td><a href="../../syntax/tests/#deprecation-of-force-tags-and-default-tags">Deprecated settings</a> for specifying test case tags.</td>
+</tr>
+<tr>
+<td>Keyword Tags</td>
+<td>Used for specifying <a href="../../syntax/user-keywords/#user-keyword-tags">user keyword tags</a> for all keywords in a certain file.</td>
+</tr>
+<tr>
+<td>Test Setup</td>
+<td>Used for specifying a default <a href="../../execution/tests/#test-setup">test setup</a>.</td>
+</tr>
+<tr>
+<td>Test Teardown</td>
+<td>Used for specifying a default <a href="../../execution/tests/#test-teardown">test teardown</a>.</td>
+</tr>
+<tr>
+<td>Test Template</td>
+<td>Used for specifying a default <a href="../../syntax/tests/#template-keyword">template keyword</a> for test cases.</td>
+</tr>
+<tr>
+<td>Test Timeout</td>
+<td>Used for specifying a default <a href="../../syntax/advanced/#test-case-timeout">test case timeout</a>.</td>
+</tr>
+<tr>
+<td>Task Setup, Task Teardown, Task Template, Task Timeout</td>
+<td>Aliases for Test Setup, Test Teardown, Test Template and Test Timeout, respectively, that can be used when <a href="../../syntax/tasks/#creating-tasks">creating tasks</a>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="test-case-section">Test Case section<a class="headerlink" href="#test-case-section" title="Permanent link">&para;</a></h2>
+<p>The settings in the Test Case section are always specific to the test
+case for which they are defined. Some of these settings override the
+default values defined in the Settings section.</p>
+<p>Exactly same settings are available when <a href="../../syntax/tasks/#creating-tasks">creating tasks</a> in the Task section.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[Documentation]</td>
+<td>Used for specifying a <a href="../../syntax/tests/#test-case-documentation">test case documentation</a>.</td>
+</tr>
+<tr>
+<td>[Tags]</td>
+<td>Used for <a href="../../syntax/tests/#tagging-test-cases">tagging test cases</a>.</td>
+</tr>
+<tr>
+<td>[Setup]</td>
+<td>Used for specifying a <a href="../../execution/tests/#test-setup">test setup</a>.</td>
+</tr>
+<tr>
+<td>[Teardown]</td>
+<td>Used for specifying a <a href="../../execution/tests/#test-teardown">test teardown</a>.</td>
+</tr>
+<tr>
+<td>[Template]</td>
+<td>Used for specifying a <a href="../../syntax/tests/#template-keyword">template keyword</a>.</td>
+</tr>
+<tr>
+<td>[Timeout]</td>
+<td>Used for specifying a <a href="../../syntax/advanced/#test-case-timeout">test case timeout</a>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="keyword-section">Keyword section<a class="headerlink" href="#keyword-section" title="Permanent link">&para;</a></h2>
+<p>Settings in the Keyword section are specific to the user keyword for
+which they are defined.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[Documentation]</td>
+<td>Used for specifying a <a href="../../syntax/user-keywords/#user-keyword-documentation">user keyword documentation</a>.</td>
+</tr>
+<tr>
+<td>[Tags]</td>
+<td>Used for specifying <a href="../../syntax/user-keywords/#user-keyword-tags">user keyword tags</a>.</td>
+</tr>
+<tr>
+<td>[Arguments]</td>
+<td>Used for specifying <a href="../../syntax/user-keywords/#user-keyword-arguments">user keyword arguments</a>.</td>
+</tr>
+<tr>
+<td>[Setup]</td>
+<td>Used for specifying a <a href="../../execution/tests/#user-keyword-setup">user keyword setup</a>. New in Robot Framework 7.0.</td>
+</tr>
+<tr>
+<td>[Teardown]</td>
+<td>Used for specifying <a href="../../execution/tests/#user-keyword-teardown">user keyword teardown</a>.</td>
+</tr>
+<tr>
+<td>[Timeout]</td>
+<td>Used for specifying a <a href="../../syntax/advanced/#user-keyword-timeout">user keyword timeout</a>.</td>
+</tr>
+<tr>
+<td>[Return]</td>
+<td>Used for specifying <a href="../../syntax/user-keywords/#user-keyword-return-values">user keyword return values</a>. Deprecated in Robot Framework 7.0. Use the <a href="../../syntax/user-keywords/#return">RETURN</a> statement instead.</td>
+</tr>
+</tbody>
+</table>
 
 
 

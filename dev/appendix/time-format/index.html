@@ -9653,7 +9653,7 @@
   <span class="md-ellipsis">
     
   
-    Documentation format
+    Doc format
   
 
     
@@ -9683,6 +9683,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Time format
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -9699,6 +9717,58 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#time-as-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Time as number
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#time-as-time-string" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Time as time string
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#time-as-timer-string" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Time as "timer" string
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -9793,6 +9863,116 @@
 
 
 <h1 id="time-format">Time format<a class="headerlink" href="#time-format" title="Permanent link">&para;</a></h1>
+<p>Robot Framework has its own time format that is both flexible to use and easy
+to understand. It is used by several keywords (for example, <a href="../../syntax/libraries/#builtin">BuiltIn</a> keywords
+<em>Sleep</em> and <em>Wait Until Keyword Succeeds</em>), <a href="../../syntax/libraries/#datetime">DateTime</a> library, and
+<a href="../../syntax/advanced/#timeouts">timeouts</a>.</p>
+<h2 id="time-as-number">Time as number<a class="headerlink" href="#time-as-number" title="Permanent link">&para;</a></h2>
+<p>The time can always be given as a plain number, in which case it is
+interpreted to be seconds. Both integers and floating point numbers
+work, and it is possible to use either real numbers or strings
+containing numerical values.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In some contexts plain numbers can be interpreted otherwise as
+times. For example, with <a href="../../syntax/control/#limiting-while-loop-iterations">WHILE loop limit</a> integers denote
+the maximum iteration count.</p>
+</div>
+<h2 id="time-as-time-string">Time as time string<a class="headerlink" href="#time-as-time-string" title="Permanent link">&para;</a></h2>
+<p>Representing the time as a time string means using a format such as
+<code>2 minutes 42 seconds</code>, which is normally easier to understand than
+just having the value as seconds. It is, for example, not so easy to
+understand how long a time <code>4200</code> is in seconds, but
+<code>1 hour 10 minutes</code> is clear immediately.</p>
+<p>The basic idea of this format is having first a number and then a text
+specifying what time that number represents. Numbers can be either
+integers or floating point numbers, the whole format is case and space
+insensitive, and it is possible to add <code>-</code> prefix to specify negative
+times. The available time specifiers are:</p>
+<ul>
+<li>weeks, week, w</li>
+<li>days, day, d</li>
+<li>hours, hour, h</li>
+<li>minutes, minute, mins, min, m</li>
+<li>seconds, second, secs, sec, s</li>
+<li>milliseconds, millisecond, millis, ms</li>
+<li>microseconds, microsecond, us, μs</li>
+<li>nanoseconds, nanosecond, ns</li>
+</ul>
+<p>Examples:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
+<span class="normal"><a href="#example-0-2">2</a></span>
+<span class="normal"><a href="#example-0-3">3</a></span>
+<span class="normal"><a href="#example-0-4">4</a></span>
+<span class="normal"><a href="#example-0-5">5</a></span>
+<span class="normal"><a href="#example-0-6">6</a></span>
+<span class="normal"><a href="#example-0-7">7</a></span>
+<span class="normal"><a href="#example-0-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="mi">1</span> <span class="nb">min</span> <span class="mi">30</span> <span class="n">secs</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a><span class="mf">1.5</span> <span class="n">minutes</span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a><span class="mi">90</span> <span class="n">s</span>
+</span><span id="line-0-4"><a id="example-0-4" name="example-0-4"></a><span class="mi">1</span> <span class="n">day</span> <span class="mi">2</span> <span class="n">hours</span> <span class="mi">3</span> <span class="n">minutes</span> <span class="mi">4</span> <span class="n">seconds</span> <span class="mi">5</span> <span class="n">milliseconds</span> <span class="mi">6</span> <span class="n">microseconds</span> <span class="mi">7</span> <span class="n">nanoseconds</span>
+</span><span id="line-0-5"><a id="example-0-5" name="example-0-5"></a><span class="mi">8</span> <span class="n">weeks</span> <span class="mi">7</span> <span class="n">days</span> <span class="mi">6</span> <span class="n">hours</span> <span class="mi">5</span> <span class="n">minutes</span> <span class="mi">4</span> <span class="n">seconds</span> <span class="mi">3</span> <span class="n">milliseconds</span> <span class="mi">2</span> <span class="n">microseconds</span> <span class="mi">1</span> <span class="n">nanosecond</span>
+</span><span id="line-0-6"><a id="example-0-6" name="example-0-6"></a><span class="mi">1</span><span class="n">d</span> <span class="mi">2</span><span class="n">h</span> <span class="mi">3</span><span class="n">m</span> <span class="mi">4</span><span class="n">s</span> <span class="mi">5</span><span class="n">ms</span> <span class="mi">6</span><span class="n">μs</span> <span class="mi">7</span> <span class="n">ns</span>
+</span><span id="line-0-7"><a id="example-0-7" name="example-0-7"></a><span class="mi">8</span><span class="n">w</span> <span class="mi">7</span><span class="n">d</span> <span class="mi">6</span><span class="n">h</span> <span class="mi">5</span><span class="n">m</span> <span class="mi">4</span><span class="n">s</span> <span class="mi">3</span><span class="n">ms</span> <span class="mi">2</span><span class="n">μs</span> <span class="mi">1</span><span class="n">ns</span>
+</span><span id="line-0-8"><a id="example-0-8" name="example-0-8"></a><span class="o">-</span> <span class="mi">10</span> <span class="n">seconds</span>
+</span></code></pre></div></td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Support for micro and nanoseconds is new in Robot Framework 6.0.
+Support for weeks is new in Robot Framework 7.1.</p>
+</div>
+<h2 id="time-as-timer-string">Time as "timer" string<a class="headerlink" href="#time-as-timer-string" title="Permanent link">&para;</a></h2>
+<p>Time can also be given in timer like
+format <code>hh:mm:ss.mil</code>. In this format  both hour and millisecond parts
+are optional, leading and trailing zeros can be left out when they are not
+meaningful, and negative times can be represented by adding the <code>-</code>
+prefix. For example, following timer and time string values are identical:</p>
+<table>
+<thead>
+<tr>
+<th>Timer</th>
+<th>Time string</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>00:00:01</td>
+<td>1 second</td>
+</tr>
+<tr>
+<td>01:02:03</td>
+<td>1 hour 2 minutes 3 seconds</td>
+</tr>
+<tr>
+<td>1:00:00</td>
+<td>1 hour</td>
+</tr>
+<tr>
+<td>100:00:00</td>
+<td>100 hours</td>
+</tr>
+<tr>
+<td>00:02</td>
+<td>2 seconds</td>
+</tr>
+<tr>
+<td>42:00</td>
+<td>42 minutes</td>
+</tr>
+<tr>
+<td>00:01:02.003</td>
+<td>1 minute 2 seconds 3 milliseconds</td>
+</tr>
+<tr>
+<td>00:01.5</td>
+<td>1.5 seconds</td>
+</tr>
+<tr>
+<td>-01:02.345</td>
+<td>- 1 minute 2 seconds 345 milliseconds</td>
+</tr>
+</tbody>
+</table>
 
 
 
@@ -9830,7 +10010,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../doc-format/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Documentation format">
+          <a href="../doc-format/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Doc format">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -9840,7 +10020,7 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Documentation format
+                Doc format
               </div>
             </div>
           </a>

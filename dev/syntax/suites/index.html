@@ -99,7 +99,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#creating-suites" class="md-skip">
+        <a href="#creating-test-suites" class="md-skip">
           Skip to content
         </a>
       
@@ -729,6 +729,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Creating suites
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -745,6 +763,108 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#suite-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Suite files
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#suite-directories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Suite directories
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Suite directories">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#suite-initialization-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Suite initialization files
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#suite-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Suite name
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#suite-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Suite documentation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#free-suite-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Free suite metadata
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#suite-setup-and-teardown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Suite setup and teardown
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -9663,7 +9783,7 @@
   <span class="md-ellipsis">
     
   
-    Documentation format
+    Doc format
   
 
     
@@ -9792,7 +9912,247 @@
   
 
 
-<h1 id="creating-suites">Creating suites<a class="headerlink" href="#creating-suites" title="Permanent link">&para;</a></h1>
+<p><a id="test-suite"></a></p>
+<h1 id="creating-test-suites">Creating test suites<a class="headerlink" href="#creating-test-suites" title="Permanent link">&para;</a></h1>
+<p>Robot Framework <a href="../tests/#creating-test-cases">test cases</a> are created in test case files, which can
+be organized into directories. These files and directories create a
+hierarchical test suite structure. Same concepts apply also when
+<a href="../tasks/#creating-tasks">creating tasks</a>, but the terminology differs.</p>
+<p><a id="suite-file"></a></p>
+<h2 id="suite-files">Suite files<a class="headerlink" href="#suite-files" title="Permanent link">&para;</a></h2>
+<p>Robot Framework test cases <a href="../tests/#creating-test-cases">are created</a> using test case sections in
+suite files, also known as test case files. Such a file automatically creates
+a test suite from
+all the test cases it contains. There is no upper limit for how many
+test cases there can be, but it is recommended to have less than ten,
+unless the <a href="../tests/#data-driven-approach">data-driven approach</a> is used, where one test case consists of
+only one high-level keyword.</p>
+<p>The following settings in the Setting section can be used to customize the suite:</p>
+<dl>
+<dt>
+	<code><a id="ed746bd9f2697b95031255a45a08e2ce">Name</a> </code>
+</dt>
+<dd>Used for setting a custom <a href="#suite-name">suite name</a>. The default name is created based
+   on the file or directory name.
+<code>Documentation</code>
+   Used for specifying a <a href="#suite-documentation">suite documentation</a>.
+<code>Metadata</code>
+   Used for setting <a href="#free-suite-metadata">free suite metadata</a> as name-value pairs.
+<code>Suite Setup</code>, <code>Suite Teardown</code>
+   Specify <a href="#suite-setup-and-teardown">suite setup and teardown</a>.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Setting names are case-insensitive, but the format used above is recommended.</p>
+</div>
+<p><a id="suite-directory"></a></p>
+<h2 id="suite-directories">Suite directories<a class="headerlink" href="#suite-directories" title="Permanent link">&para;</a></h2>
+<p>Test case files can be organized into directories, and these
+directories create higher-level test suites. A test suite created from
+a directory cannot have any test cases directly, but it contains
+other test suites with test cases, instead. These directories can then be
+placed into other directories creating an even higher-level suite. There
+are no limits for the structure, so test cases can be organized
+as needed.</p>
+<p>When a test directory is executed, the files and directories it
+contains are processed recursively as follows:</p>
+<ul>
+<li>Files and directories with names starting with a dot (<em>.</em>) or an
+  underscore (<em>_</em>) are ignored.</li>
+<li>Directories with the name <em>CVS</em> are ignored (case-sensitive).</li>
+<li>Files in <a href="../data/#supported-file-formats">supported file formats</a> are processed.</li>
+<li>Other files are ignored.</li>
+</ul>
+<p>If a file or directory that is processed does not contain any test
+cases, it is silently ignored (a message is written to the <a href="../../execution/results/#syslog">syslog</a>)
+and the processing continues.</p>
+<p><a id="initialization-file"></a></p>
+<p><a id="suite-initialization-file"></a></p>
+<h3 id="suite-initialization-files">Suite initialization files<a class="headerlink" href="#suite-initialization-files" title="Permanent link">&para;</a></h3>
+<p>A test suite created from a directory can have similar settings as a suite
+created from a test case file. Because a directory alone cannot have that
+kind of information, it must be placed into a special suite initialization
+file. An initialization file name must always be of the format
+<em><a href="../../extend/parsing/#parse-init-method">__init</a>.ext</em>, where the extension must be one of the <a href="../data/#supported-file-formats">supported
+file formats</a> (typically <em><a href="../../extend/parsing/#parse-init-method">__init</a>.robot</em>).
+The name format is borrowed from Python, where files named in this manner
+denote that a directory is a module.</p>
+<p>Starting from Robot Framework 6.1, it is also possible to define a suite
+initialization file for automatically created suite when starting the test
+execution by giving multiple <a href="#paths">paths</a>.</p>
+<p>Initialization files have the same structure and syntax as test case files,
+except that they cannot have test case sections and not all settings are
+supported. Variables and keywords created or imported in initialization files
+<em>are not</em> available in the lower level suites. If you need to share
+variables or keywords, you can put them into <a href="../resource-files/#resource-files">resource files</a> that can be
+imported both by initialization and test case files.</p>
+<p>The main usage for initialization files is specifying suite related
+settings similarly as in <a href="#suite-files">suite files</a>, but setting some <a href="../../execution/configuration/#by-suite-names">test case
+related settings</a> is also possible. How to use different settings in the
+initialization files is explained below.</p>
+<dl>
+<dt>
+	<code>Name</code>, <code>Documentation</code>, <code>Metadata</code>, <code>Suite Setup</code>, <code><a id="b86f00dd78e391b2cb0ac2a105d19e9d">Suite Teardown</a> </code>
+</dt>
+<dd>These suite specific settings work the same way in suite initialization files
+   as in suite files.
+<code>Test Tags</code>
+   Specified tags are unconditionally set to all tests in all suite files
+   this directory contains, recursively. New in Robot Framework 6.1. The
+   deprecated <code>Force Tags</code> needs to be used with older versions.
+<code>Test Setup</code>, <code>Test Teardown</code>, <code>Test Timeout</code>
+   Set the default value for test setup/teardown or test timeout to all test
+   cases this directory contains. Can be overridden on lower level.
+   Notice that keywords used as setups and teardowns must be available in
+   test case files where tests using them are. Defining keywords in the
+   initialization file itself is not enough.
+<code>Task Setup</code>, <code>Task Teardown</code>, <code>Task Tags</code>, <code>Task Timeout</code>
+   Aliases for <code>Test Setup</code>, <code>Test Teardown</code>, <code>Test Tags</code>
+   and <code>Test Timeout</code>, respectively, that can be used when
+   <a href="../tasks/#creating-tasks">creating tasks</a>, not tests.
+<code>Test Template</code>, <code>Default Tags</code>
+   Not supported in initialization files.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+</dl>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1"> 1</a></span>
+<span class="normal"><a href="#example-0-2"> 2</a></span>
+<span class="normal"><a href="#example-0-3"> 3</a></span>
+<span class="normal"><a href="#example-0-4"> 4</a></span>
+<span class="normal"><a href="#example-0-5"> 5</a></span>
+<span class="normal"><a href="#example-0-6"> 6</a></span>
+<span class="normal"><a href="#example-0-7"> 7</a></span>
+<span class="normal"><a href="#example-0-8"> 8</a></span>
+<span class="normal"><a href="#example-0-9"> 9</a></span>
+<span class="normal"><a href="#example-0-10">10</a></span>
+<span class="normal"><a href="#example-0-11">11</a></span>
+<span class="normal"><a href="#example-0-12">12</a></span>
+<span class="normal"><a href="#example-0-13">13</a></span>
+<span class="normal"><a href="#example-0-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="gh">*** Settings ***</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a><span class="kn">Documentation</span><span class="p">    </span><span class="s">Example suite</span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a><span class="kn">Suite Setup</span><span class="p">      </span><span class="nf">Do Something</span><span class="p">    ${</span><span class="nv">MESSAGE</span><span class="p">}</span>
+</span><span id="line-0-4"><a id="example-0-4" name="example-0-4"></a><span class="err">Test Tags</span><span class="p">        </span><span class="s">example</span>
+</span><span id="line-0-5"><a id="example-0-5" name="example-0-5"></a><span class="kn">Library</span><span class="p">          </span><span class="nn">SomeLibrary</span>
+</span><span id="line-0-6"><a id="example-0-6" name="example-0-6"></a>
+</span><span id="line-0-7"><a id="example-0-7" name="example-0-7"></a><span class="gh">*** Variables ***</span>
+</span><span id="line-0-8"><a id="example-0-8" name="example-0-8"></a><span class="p">${</span><span class="nv">MESSAGE</span><span class="p">}       </span><span class="s">Hello, world!</span>
+</span><span id="line-0-9"><a id="example-0-9" name="example-0-9"></a>
+</span><span id="line-0-10"><a id="example-0-10" name="example-0-10"></a><span class="gh">*** Keywords ***</span>
+</span><span id="line-0-11"><a id="example-0-11" name="example-0-11"></a><span class="gu">Do Something</span>
+</span><span id="line-0-12"><a id="example-0-12" name="example-0-12"></a><span class="p">    [</span><span class="kn">Arguments</span><span class="p">]    ${</span><span class="nv">args</span><span class="p">}</span>
+</span><span id="line-0-13"><a id="example-0-13" name="example-0-13"></a><span class="p">    </span><span class="nf">Some Keyword</span><span class="p">    ${</span><span class="nv">arg</span><span class="p">}</span>
+</span><span id="line-0-14"><a id="example-0-14" name="example-0-14"></a><span class="p">    </span><span class="nf">Another Keyword</span>
+</span></code></pre></div></td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When you run a suite file or directory, possible suite initialization
+files in higher level directories are not taken into account. If that
+is not desired, run the appropriate higher level suite directory and use
+the <a href="../../execution/configuration/#setting-suite-name">--suite</a> option to select which child suite inside it is executed.</p>
+</div>
+<h2 id="suite-name">Suite name<a class="headerlink" href="#suite-name" title="Permanent link">&para;</a></h2>
+<p>The test suite name is constructed from the file or directory name by default.
+The name is created so that the extension is ignored, possible underscores are
+replaced with spaces, and names fully in lower case are title cased. For
+example, <em>some_tests.robot</em> becomes <em>Some Tests</em> and
+<em>My_test_directory</em> becomes <em>My test directory</em>.</p>
+<p>The file or directory name can contain a prefix to control the <a href="../../execution/tests/#execution-order">execution
+order</a> of the suites. The prefix is separated from the base name by two
+underscores and, when constructing the actual test suite name, both
+the prefix and underscores are removed. For example files
+<em>01__some_tests.robot</em> and <em>02__more_tests.robot</em> create test
+suites <em>Some Tests</em> and <em>More Tests</em>, respectively, and
+the former is executed before the latter.</p>
+<p>Starting from Robot Framework 6.1, it is also possible to give a custom name
+to a suite by using the <code>Name</code> setting in the Setting section:</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-1-1">1</a></span>
+<span class="normal"><a href="#example-1-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-1-1"><a id="example-1-1" name="example-1-1"></a><span class="gh">*** Settings ***</span>
+</span><span id="line-1-2"><a id="example-1-2" name="example-1-2"></a><span class="err">Name</span><span class="p">            </span><span class="s">Custom suite name</span>
+</span></code></pre></div></td></tr></table></div>
+The name of the top-level suite <a href="../../execution/configuration/#setting-suite-documentation">can be overridden</a> from the command line with
+the <code>--name</code> option.</p>
+<h2 id="suite-documentation">Suite documentation<a class="headerlink" href="#suite-documentation" title="Permanent link">&para;</a></h2>
+<p>The documentation for a test suite is set using the <code>Documentation</code>
+setting in the Settings section. It can be used both in <a href="#suite-files">suite files</a>
+and in <a href="#suite-initialization-files">suite initialization files</a>. Suite documentation has exactly
+the same characteristics regarding to where it is shown and how it can
+be created as <a href="../tests/#test-case-documentation">test case documentation</a>. For details about the syntax
+see the <a href="../../appendix/doc-format/#documentation-formatting">Documentation formatting</a> appendix.</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-2-1">1</a></span>
+<span class="normal"><a href="#example-2-2">2</a></span>
+<span class="normal"><a href="#example-2-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-2-1"><a id="example-2-1" name="example-2-1"></a><span class="gh">*** Settings ***</span>
+</span><span id="line-2-2"><a id="example-2-2" name="example-2-2"></a><span class="kn">Documentation</span><span class="p">    </span><span class="s">An example suite documentation with *some* _formatting_.</span>
+</span><span id="line-2-3"><a id="example-2-3" name="example-2-3"></a><span class="p">...              </span><span class="s">Long documentation can be split into multiple lines.</span>
+</span></code></pre></div></td></tr></table></div>
+The documentation of the top-level suite <a href="../data/#dividing-data-to-several-rows">can be overridden</a> from
+the command line with the <code>--doc</code> option.</p>
+<h2 id="free-suite-metadata">Free suite metadata<a class="headerlink" href="#free-suite-metadata" title="Permanent link">&para;</a></h2>
+<p>In addition to documentation, suites can also have free metadata. This metadata
+is defined as name-value pairs in the Settings section using the <code>Metadata</code>
+setting. It is shown in reports and logs similarly as documentation.</p>
+<p>Name of the metadata is the first argument given to the <code>Metadata</code> setting
+and the remaining arguments specify its value. The value is handled similarly as
+documentation, which means that it supports <a href="../../appendix/doc-format/#html-formatting">HTML formatting</a> and <a href="../variables/#variables">variables</a>, and
+that longer values can be <a href="../../execution/configuration/#setting-free-suite-metadata">split into multiple rows</a>.</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-3-1">1</a></span>
+<span class="normal"><a href="#example-3-2">2</a></span>
+<span class="normal"><a href="#example-3-3">3</a></span>
+<span class="normal"><a href="#example-3-4">4</a></span>
+<span class="normal"><a href="#example-3-5">5</a></span>
+<span class="normal"><a href="#example-3-6">6</a></span>
+<span class="normal"><a href="#example-3-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-3-1"><a id="example-3-1" name="example-3-1"></a><span class="gh">*** Settings ***</span>
+</span><span id="line-3-2"><a id="example-3-2" name="example-3-2"></a><span class="kn">Metadata</span><span class="p">        </span><span class="s">Version</span><span class="p">            </span><span class="s">2.0</span>
+</span><span id="line-3-3"><a id="example-3-3" name="example-3-3"></a><span class="kn">Metadata</span><span class="p">        </span><span class="s">Robot Framework</span><span class="p">    </span><span class="s">http://robotframework.org</span>
+</span><span id="line-3-4"><a id="example-3-4" name="example-3-4"></a><span class="kn">Metadata</span><span class="p">        </span><span class="s">Platform</span><span class="p">           ${</span><span class="nv">PLATFORM</span><span class="p">}</span>
+</span><span id="line-3-5"><a id="example-3-5" name="example-3-5"></a><span class="kn">Metadata</span><span class="p">        </span><span class="s">Longer Value</span>
+</span><span id="line-3-6"><a id="example-3-6" name="example-3-6"></a><span class="p">...             </span><span class="s">Longer metadata values can be split into multiple</span>
+</span><span id="line-3-7"><a id="example-3-7" name="example-3-7"></a><span class="p">...             </span><span class="s">rows. Also *simple* _formatting_ is supported.</span>
+</span></code></pre></div></td></tr></table></div>
+The free metadata of the top-level suite <a href="../tests/#test-setup-and-teardown">can be set</a> from
+the command line with the <code>--metadata</code> option.</p>
+<p><a id="suite-setup"></a></p>
+<p><a id="suite-teardown"></a></p>
+<h2 id="suite-setup-and-teardown">Suite setup and teardown<a class="headerlink" href="#suite-setup-and-teardown" title="Permanent link">&para;</a></h2>
+<p>Not only <a href="../tests/#test-case">test cases</a> but also test suites can have a setup and
+a teardown. A suite setup is executed before running any of the suite's
+test cases or child test suites, and a suite teardown is executed after
+them. All test suites can have a setup and a teardown; with suites created
+from a directory they must be specified in a <a href="#suite-initialization-file">suite initialization file</a>.</p>
+<p>Similarly as with test cases, a suite setup and teardown are keywords
+that may take arguments. They are defined in the Setting section with
+<code>Suite Setup</code> and <code>Suite Teardown</code> settings,
+respectively. Keyword names and possible arguments are located in
+the columns after the setting name.</p>
+<p>If a suite setup fails, all test cases in it and its child test suites
+are immediately assigned a fail status and they are not actually
+executed. This makes suite setups ideal for checking preconditions
+that must be met before running test cases is possible.</p>
+<p>A suite teardown is normally used for cleaning up after all the test
+cases have been executed. It is executed even if the setup of the same
+suite fails. If the suite teardown fails, all test cases in the
+suite are marked failed, regardless of their original execution status.
+Note that all the keywords in suite teardowns are executed even if one
+of them fails.</p>
+<p>The name of the keyword to be executed as a setup or a teardown can be
+a variable. This facilitates having different setups or teardowns
+in different environments by giving the keyword name as a variable
+from the command line.</p>
 
 
 

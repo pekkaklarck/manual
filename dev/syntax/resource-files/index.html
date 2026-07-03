@@ -841,6 +841,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resource files
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -857,6 +875,102 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#taking-resource-files-into-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Taking resource files into use
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resource-file-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resource file structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documenting-resource-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documenting resource files
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-resource-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example resource file
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resource-files-using-restructured-text-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resource files using reStructured text format
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resource-files-using-markdown-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resource files using Markdown format
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resource-files-using-json-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resource files using JSON format
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -9663,7 +9777,7 @@
   <span class="md-ellipsis">
     
   
-    Documentation format
+    Doc format
   
 
     
@@ -9792,7 +9906,258 @@
   
 
 
+<p><a id="Resourcefiles"></a></p>
 <h1 id="resource-files">Resource files<a class="headerlink" href="#resource-files" title="Permanent link">&para;</a></h1>
+<p>Resource files are typically created using the plain text format, but also
+<a href="https://packaging.python.org/en/latest/guides/distributing-packages-using-setuptools/#package-data">reStructuredText format</a> and <a href="https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.ResourceFile.to_json">JSON format</a> are supported.</p>
+<h3 id="taking-resource-files-into-use">Taking resource files into use<a class="headerlink" href="#taking-resource-files-into-use" title="Permanent link">&para;</a></h3>
+<p>Resource files are imported using the <code>Resource</code> setting in the
+Settings section so that the path to the resource file is given as an argument
+to the setting. The recommended extension for resource files is <em>.resource</em>.
+For backwards compatibility reasons also <em>.robot</em>, <em>.txt</em> and
+<em>.tsv</em> work, but using <em>.resource</em> may be mandated in the future.</p>
+<p>If the resource file path is absolute, it is used directly. Otherwise,
+the resource file is first searched relatively to the directory
+where the importing file is located. If the file is not found there,
+it is then searched from the directories in Python's <a href="../../execution/configuration/#module-search-path">module search path</a>.
+Searching resource files from the module search path makes it possible to
+bundle them into Python packages as <a href="https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.ResourceFile.from_json">package data</a> and importing
+them like <em>package/example.resource</em>.</p>
+<p>The resource file path can contain variables, and it is recommended to use
+them to make paths system-independent (for example,
+<em>${RESOURCES}/login.resource</em> or just <em>${RESOURCE_PATH}</em>).
+Additionally, forward slashes (<code>/</code>) in the path
+are automatically changed to backslashes (<code>\\</code>) on Windows.</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
+<span class="normal"><a href="#example-0-2">2</a></span>
+<span class="normal"><a href="#example-0-3">3</a></span>
+<span class="normal"><a href="#example-0-4">4</a></span>
+<span class="normal"><a href="#example-0-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="gh">*** Settings ***</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a><span class="kn">Resource</span><span class="p">    </span><span class="nn">example.resource</span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a><span class="kn">Resource</span><span class="p">    </span><span class="nn">../resources/login.resource</span>
+</span><span id="line-0-4"><a id="example-0-4" name="example-0-4"></a><span class="kn">Resource</span><span class="p">    </span><span class="nn">package/example.resource</span>
+</span><span id="line-0-5"><a id="example-0-5" name="example-0-5"></a><span class="kn">Resource</span><span class="p">    ${</span><span class="nv">RESOURCES</span><span class="p">}</span><span class="nn">/common.resource</span>
+</span></code></pre></div></td></tr></table></div>
+The user keywords and variables defined in a resource file are
+available in the file that takes that resource file into
+use. Similarly available are also all keywords and variables from the
+libraries, resource files and variable files imported by the said
+resource file.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <em>.resource</em> extension is new in Robot Framework 3.1.</p>
+</div>
+<h3 id="resource-file-structure">Resource file structure<a class="headerlink" href="#resource-file-structure" title="Permanent link">&para;</a></h3>
+<p>The higher-level structure of resource files is the same as that of
+suite files otherwise, but they cannot contain tests or tasks.
+Additionally, the Setting section in resource files can contain only imports
+(<code>Library</code>, <code>Resource</code>, <code>Variables</code>),
+<code>Documentation</code> and <code>Keyword Tags</code>.
+The Variable section and Keyword section are used exactly the same way
+as in suite files.</p>
+<p>If several resource files have a user keyword with the same name, they
+must be used so that the <a href="https://packaging.python.org/en/latest/guides/distributing-packages-using-setuptools/#package-data">keyword name is prefixed with the resource
+file name</a> without the extension (for example, <em>myresources.Some
+Keyword</em> and <em>common.Some Keyword</em>). Moreover, if several resource
+files contain the same variable, the one that is imported first is
+taken into use.</p>
+<h3 id="documenting-resource-files">Documenting resource files<a class="headerlink" href="#documenting-resource-files" title="Permanent link">&para;</a></h3>
+<p>Keywords created in a resource file can be <a href="https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.ResourceFile.to_json">documented</a> using
+<code>[Documentation]</code> setting. The resource file itself can have
+<code>Documentation</code> in the Setting section similarly as <a href="https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.ResourceFile.from_json">suites</a>.</p>
+<p><a href="../../extend/libdoc/#libdoc">Libdoc</a> and various editors use these documentations, and they
+are naturally available for anyone opening resource files.  The
+first logical line of the documentation of a keyword, until the first
+empty line, is logged when the keyword is run, but otherwise resource
+file documentation is ignored during the test execution.</p>
+<h3 id="example-resource-file">Example resource file<a class="headerlink" href="#example-resource-file" title="Permanent link">&para;</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-1-1"> 1</a></span>
+<span class="normal"><a href="#example-1-2"> 2</a></span>
+<span class="normal"><a href="#example-1-3"> 3</a></span>
+<span class="normal"><a href="#example-1-4"> 4</a></span>
+<span class="normal"><a href="#example-1-5"> 5</a></span>
+<span class="normal"><a href="#example-1-6"> 6</a></span>
+<span class="normal"><a href="#example-1-7"> 7</a></span>
+<span class="normal"><a href="#example-1-8"> 8</a></span>
+<span class="normal"><a href="#example-1-9"> 9</a></span>
+<span class="normal"><a href="#example-1-10">10</a></span>
+<span class="normal"><a href="#example-1-11">11</a></span>
+<span class="normal"><a href="#example-1-12">12</a></span>
+<span class="normal"><a href="#example-1-13">13</a></span>
+<span class="normal"><a href="#example-1-14">14</a></span>
+<span class="normal"><a href="#example-1-15">15</a></span>
+<span class="normal"><a href="#example-1-16">16</a></span>
+<span class="normal"><a href="#example-1-17">17</a></span>
+<span class="normal"><a href="#example-1-18">18</a></span>
+<span class="normal"><a href="#example-1-19">19</a></span>
+<span class="normal"><a href="#example-1-20">20</a></span>
+<span class="normal"><a href="#example-1-21">21</a></span>
+<span class="normal"><a href="#example-1-22">22</a></span>
+<span class="normal"><a href="#example-1-23">23</a></span>
+<span class="normal"><a href="#example-1-24">24</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-1-1"><a id="example-1-1" name="example-1-1"></a><span class="gh">*** Settings ***</span>
+</span><span id="line-1-2"><a id="example-1-2" name="example-1-2"></a><span class="kn">Documentation</span><span class="p">     </span><span class="s">An example resource file</span>
+</span><span id="line-1-3"><a id="example-1-3" name="example-1-3"></a><span class="kn">Library</span><span class="p">           </span><span class="nn">SeleniumLibrary</span>
+</span><span id="line-1-4"><a id="example-1-4" name="example-1-4"></a><span class="kn">Resource</span><span class="p">          ${</span><span class="nv">RESOURCES</span><span class="p">}</span><span class="nn">/common.resource</span>
+</span><span id="line-1-5"><a id="example-1-5" name="example-1-5"></a>
+</span><span id="line-1-6"><a id="example-1-6" name="example-1-6"></a><span class="gh">*** Variables ***</span>
+</span><span id="line-1-7"><a id="example-1-7" name="example-1-7"></a><span class="p">${</span><span class="nv">HOST</span><span class="p">}           </span><span class="s">localhost:7272</span>
+</span><span id="line-1-8"><a id="example-1-8" name="example-1-8"></a><span class="p">${</span><span class="nv">LOGIN URL</span><span class="p">}      </span><span class="s">http://</span><span class="p">${</span><span class="nv">HOST</span><span class="p">}</span><span class="s">/</span>
+</span><span id="line-1-9"><a id="example-1-9" name="example-1-9"></a><span class="p">${</span><span class="nv">WELCOME URL</span><span class="p">}    </span><span class="s">http://</span><span class="p">${</span><span class="nv">HOST</span><span class="p">}</span><span class="s">/welcome.html</span>
+</span><span id="line-1-10"><a id="example-1-10" name="example-1-10"></a><span class="p">${</span><span class="nv">BROWSER</span><span class="p">}        </span><span class="s">Firefox</span>
+</span><span id="line-1-11"><a id="example-1-11" name="example-1-11"></a>
+</span><span id="line-1-12"><a id="example-1-12" name="example-1-12"></a><span class="gh">*** Keywords ***</span>
+</span><span id="line-1-13"><a id="example-1-13" name="example-1-13"></a><span class="gu">Open Login Page</span>
+</span><span id="line-1-14"><a id="example-1-14" name="example-1-14"></a><span class="p">    [</span><span class="kn">Documentation</span><span class="p">]    </span><span class="s">Opens browser to login page</span>
+</span><span id="line-1-15"><a id="example-1-15" name="example-1-15"></a><span class="p">    </span><span class="nf">Open Browser</span><span class="p">    ${</span><span class="nv">LOGIN URL</span><span class="p">}    ${</span><span class="nv">BROWSER</span><span class="p">}</span>
+</span><span id="line-1-16"><a id="example-1-16" name="example-1-16"></a><span class="p">    </span><span class="nf">Title Should Be</span><span class="p">    </span><span class="s">Login Page</span>
+</span><span id="line-1-17"><a id="example-1-17" name="example-1-17"></a>
+</span><span id="line-1-18"><a id="example-1-18" name="example-1-18"></a><span class="gu">Input Name</span>
+</span><span id="line-1-19"><a id="example-1-19" name="example-1-19"></a><span class="p">    [</span><span class="kn">Arguments</span><span class="p">]    ${</span><span class="nv">name</span><span class="p">}</span>
+</span><span id="line-1-20"><a id="example-1-20" name="example-1-20"></a><span class="p">    </span><span class="nf">Input Text</span><span class="p">    </span><span class="s">username_field</span><span class="p">    ${</span><span class="nv">name</span><span class="p">}</span>
+</span><span id="line-1-21"><a id="example-1-21" name="example-1-21"></a>
+</span><span id="line-1-22"><a id="example-1-22" name="example-1-22"></a><span class="gu">Input Password</span>
+</span><span id="line-1-23"><a id="example-1-23" name="example-1-23"></a><span class="p">    [</span><span class="kn">Arguments</span><span class="p">]    ${</span><span class="nv">password</span><span class="p">}</span>
+</span><span id="line-1-24"><a id="example-1-24" name="example-1-24"></a><span class="p">    </span><span class="nf">Input Text</span><span class="p">    </span><span class="s">password_field</span><span class="p">    ${</span><span class="nv">password</span><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<h3 id="resource-files-using-restructured-text-format">Resource files using reStructured text format<a class="headerlink" href="#resource-files-using-restructured-text-format" title="Permanent link">&para;</a></h3>
+<p>The <a href="../data/#restructuredtext-format">reStructuredText format</a> that can be used with <a href="../suites/#suite-files">suite files</a>  works
+also with resource files. Such resource files can use either <em>.rst</em>
+or <em>.rest</em> extension and they are otherwise imported exactly as
+normal resource files:</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-2-1">1</a></span>
+<span class="normal"><a href="#example-2-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-2-1"><a id="example-2-1" name="example-2-1"></a><span class="gh">*** Settings ***</span>
+</span><span id="line-2-2"><a id="example-2-2" name="example-2-2"></a><span class="kn">Resource</span><span class="p">         </span><span class="nn">example.rst</span>
+</span></code></pre></div></td></tr></table></div>
+When parsing resource files using the reStructuredText format, Robot Framework
+ignores all data outside code blocks containing Robot Framework data exactly
+the same way as when parsing <a href="https://packaging.python.org/en/latest/guides/distributing-packages-using-setuptools/#package-data">reStructuredText suite files</a>.
+For example, the following resource file imports <em>OperatingSystem</em> library,
+defines <code>${MESSAGE}</code> variable and creates <em>My Keyword</em> keyword:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-3-1"> 1</a></span>
+<span class="normal"><a href="#example-3-2"> 2</a></span>
+<span class="normal"><a href="#example-3-3"> 3</a></span>
+<span class="normal"><a href="#example-3-4"> 4</a></span>
+<span class="normal"><a href="#example-3-5"> 5</a></span>
+<span class="normal"><a href="#example-3-6"> 6</a></span>
+<span class="normal"><a href="#example-3-7"> 7</a></span>
+<span class="normal"><a href="#example-3-8"> 8</a></span>
+<span class="normal"><a href="#example-3-9"> 9</a></span>
+<span class="normal"><a href="#example-3-10">10</a></span>
+<span class="normal"><a href="#example-3-11">11</a></span>
+<span class="normal"><a href="#example-3-12">12</a></span>
+<span class="normal"><a href="#example-3-13">13</a></span>
+<span class="normal"><a href="#example-3-14">14</a></span>
+<span class="normal"><a href="#example-3-15">15</a></span>
+<span class="normal"><a href="#example-3-16">16</a></span>
+<span class="normal"><a href="#example-3-17">17</a></span>
+<span class="normal"><a href="#example-3-18">18</a></span>
+<span class="normal"><a href="#example-3-19">19</a></span>
+<span class="normal"><a href="#example-3-20">20</a></span>
+<span class="normal"><a href="#example-3-21">21</a></span>
+<span class="normal"><a href="#example-3-22">22</a></span>
+<span class="normal"><a href="#example-3-23">23</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-3-1"><a id="example-3-1" name="example-3-1"></a><span class="gh">Resource file using reStructuredText</span>
+</span><span id="line-3-2"><a id="example-3-2" name="example-3-2"></a><span class="gh">------------------------------------</span>
+</span><span id="line-3-3"><a id="example-3-3" name="example-3-3"></a>
+</span><span id="line-3-4"><a id="example-3-4" name="example-3-4"></a>This text is outside code blocks and thus ignored.
+</span><span id="line-3-5"><a id="example-3-5" name="example-3-5"></a>
+</span><span id="line-3-6"><a id="example-3-6" name="example-3-6"></a><span class="p">..</span> <span class="ow">code</span><span class="p">::</span> <span class="k">robotframework</span>
+</span><span id="line-3-7"><a id="example-3-7" name="example-3-7"></a>
+</span><span id="line-3-8"><a id="example-3-8" name="example-3-8"></a>   <span class="gh">*** Settings ***</span>
+</span><span id="line-3-9"><a id="example-3-9" name="example-3-9"></a>   <span class="kn">Library</span><span class="p">          </span><span class="nn">OperatingSystem</span>
+</span><span id="line-3-10"><a id="example-3-10" name="example-3-10"></a>
+</span><span id="line-3-11"><a id="example-3-11" name="example-3-11"></a>   <span class="gh">*** Variables ***</span>
+</span><span id="line-3-12"><a id="example-3-12" name="example-3-12"></a>   <span class="p">${</span><span class="nv">MESSAGE</span><span class="p">}       </span><span class="s">Hello, world!</span>
+</span><span id="line-3-13"><a id="example-3-13" name="example-3-13"></a>
+</span><span id="line-3-14"><a id="example-3-14" name="example-3-14"></a>Also this text is outside code blocks and ignored. Code blocks not
+</span><span id="line-3-15"><a id="example-3-15" name="example-3-15"></a>containing Robot Framework data are ignored as well.
+</span><span id="line-3-16"><a id="example-3-16" name="example-3-16"></a>
+</span><span id="line-3-17"><a id="example-3-17" name="example-3-17"></a><span class="p">..</span> <span class="ow">code</span><span class="p">::</span> <span class="k">robotframework</span>
+</span><span id="line-3-18"><a id="example-3-18" name="example-3-18"></a>
+</span><span id="line-3-19"><a id="example-3-19" name="example-3-19"></a>   <span class="c"># Both space and pipe separated formats are supported.</span>
+</span><span id="line-3-20"><a id="example-3-20" name="example-3-20"></a>
+</span><span id="line-3-21"><a id="example-3-21" name="example-3-21"></a>   <span class="p">| </span><span class="gh">*** Keywords ***</span><span class="p">  |                        |         |</span>
+</span><span id="line-3-22"><a id="example-3-22" name="example-3-22"></a>   <span class="p">| </span><span class="gu">My Keyword</span><span class="p">        | [</span><span class="kn">Arguments</span><span class="p">]            | ${</span><span class="nv">path</span><span class="p">} |</span>
+</span><span id="line-3-23"><a id="example-3-23" name="example-3-23"></a>   <span class="p">|                   | </span><span class="nf">Directory Should Exist</span><span class="p"> | ${</span><span class="nv">path</span><span class="p">} |</span>
+</span></code></pre></div></td></tr></table></div>
+<h3 id="resource-files-using-markdown-format">Resource files using Markdown format<a class="headerlink" href="#resource-files-using-markdown-format" title="Permanent link">&para;</a></h3>
+<p>The <a href="../data/#markdown-format">Markdown format</a> that can be used with <a href="../suites/#suite-files">suite files</a> works also with
+resource files. Such resource files can use either <em>.md</em> or
+<em>.markdown</em> extension and they are otherwise imported exactly as normal
+resource files:</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-4-1">1</a></span>
+<span class="normal"><a href="#example-4-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-4-1"><a id="example-4-1" name="example-4-1"></a><span class="gh">*** Settings ***</span>
+</span><span id="line-4-2"><a id="example-4-2" name="example-4-2"></a><span class="kn">Resource</span><span class="p">         </span><span class="nn">example.md</span>
+</span></code></pre></div></td></tr></table></div>
+When parsing resource files using the Markdown format, Robot Framework
+ignores all data outside fenced code blocks with the <code>robotframework</code> or <code>robot</code>
+language tag exactly the same way as when parsing <a href="https://packaging.python.org/en/latest/guides/distributing-packages-using-setuptools/#package-data">Markdown suite files</a>.
+For example, the following resource file imports <em>OperatingSystem</em> library,
+defines <code>${MESSAGE}</code> variable and creates <em>My Keyword</em> keyword:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-5-1"> 1</a></span>
+<span class="normal"><a href="#example-5-2"> 2</a></span>
+<span class="normal"><a href="#example-5-3"> 3</a></span>
+<span class="normal"><a href="#example-5-4"> 4</a></span>
+<span class="normal"><a href="#example-5-5"> 5</a></span>
+<span class="normal"><a href="#example-5-6"> 6</a></span>
+<span class="normal"><a href="#example-5-7"> 7</a></span>
+<span class="normal"><a href="#example-5-8"> 8</a></span>
+<span class="normal"><a href="#example-5-9"> 9</a></span>
+<span class="normal"><a href="#example-5-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-5-1"><a id="example-5-1" name="example-5-1"></a><span class="gh"># Resource file using Markdown</span>
+</span><span id="line-5-2"><a id="example-5-2" name="example-5-2"></a>
+</span><span id="line-5-3"><a id="example-5-3" name="example-5-3"></a>This text is outside code blocks and thus ignored.
+</span><span id="line-5-4"><a id="example-5-4" name="example-5-4"></a>
+</span><span id="line-5-5"><a id="example-5-5" name="example-5-5"></a>```robotframework
+</span><span id="line-5-6"><a id="example-5-6" name="example-5-6"></a>*** Settings ***
+</span><span id="line-5-7"><a id="example-5-7" name="example-5-7"></a>Library          OperatingSystem
+</span><span id="line-5-8"><a id="example-5-8" name="example-5-8"></a>
+</span><span id="line-5-9"><a id="example-5-9" name="example-5-9"></a>*** Variables ***
+</span><span id="line-5-10"><a id="example-5-10" name="example-5-10"></a>${MESSAGE}       Hello, world!
+</span></code></pre></div></td></tr></table></div>
+<p>Also this text is outside code blocks and ignored. Code blocks not
+containing Robot Framework data are ignored as well.</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-6-1">1</a></span>
+<span class="normal"><a href="#example-6-2">2</a></span>
+<span class="normal"><a href="#example-6-3">3</a></span>
+<span class="normal"><a href="#example-6-4">4</a></span>
+<span class="normal"><a href="#example-6-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-6-1"><a id="example-6-1" name="example-6-1"></a><span class="c"># Both space and pipe separated formats are supported.</span>
+</span><span id="line-6-2"><a id="example-6-2" name="example-6-2"></a>
+</span><span id="line-6-3"><a id="example-6-3" name="example-6-3"></a><span class="p">| </span><span class="gh">*** Keywords ***</span><span class="p">  |                        |         |</span>
+</span><span id="line-6-4"><a id="example-6-4" name="example-6-4"></a><span class="p">| </span><span class="gu">My Keyword</span><span class="p">        | [</span><span class="kn">Arguments</span><span class="p">]            | ${</span><span class="nv">path</span><span class="p">} |</span>
+</span><span id="line-6-5"><a id="example-6-5" name="example-6-5"></a><span class="p">|                   | </span><span class="nf">Directory Should Exist</span><span class="p"> | ${</span><span class="nv">path</span><span class="p">} |</span>
+</span></code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-7-1"><a id="example-7-1" name="example-7-1"></a>
+</span></code></pre></div></td></tr></table></div></p>
+<h3 id="resource-files-using-json-format">Resource files using JSON format<a class="headerlink" href="#resource-files-using-json-format" title="Permanent link">&para;</a></h3>
+<p>Resource files can be created using JSON_ the <a href="#same-way-as-suite-files">same way as suite files</a>.
+Such JSON resource files must use either the standard <em>.json</em> extension
+or the custom <em>.rsrc</em> extension. They are otherwise imported exactly as
+normal resource files:</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-8-1">1</a></span>
+<span class="normal"><a href="#example-8-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-8-1"><a id="example-8-1" name="example-8-1"></a><span class="gh">*** Settings ***</span>
+</span><span id="line-8-2"><a id="example-8-2" name="example-8-2"></a><span class="kn">Resource</span><span class="p">         </span><span class="nn">example.rsrc</span>
+</span></code></pre></div></td></tr></table></div>
+Resource files can be converted to JSON using <a href="https://packaging.python.org/en/latest/guides/distributing-packages-using-setuptools/#package-data">ResourceFile.to_json</a> and
+recreated using <a href="https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.ResourceFile.to_json">ResourceFile.from_json</a>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-9-1"> 1</a></span>
+<span class="normal"><a href="#example-9-2"> 2</a></span>
+<span class="normal"><a href="#example-9-3"> 3</a></span>
+<span class="normal"><a href="#example-9-4"> 4</a></span>
+<span class="normal"><a href="#example-9-5"> 5</a></span>
+<span class="normal"><a href="#example-9-6"> 6</a></span>
+<span class="normal"><a href="#example-9-7"> 7</a></span>
+<span class="normal"><a href="#example-9-8"> 8</a></span>
+<span class="normal"><a href="#example-9-9"> 9</a></span>
+<span class="normal"><a href="#example-9-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-9-1"><a id="example-9-1" name="example-9-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">robot.running</span><span class="w"> </span><span class="kn">import</span> <span class="n">ResourceFile</span>
+</span><span id="line-9-2"><a id="example-9-2" name="example-9-2"></a>
+</span><span id="line-9-3"><a id="example-9-3" name="example-9-3"></a><span class="c1"># Create resource file based on data on the file system.</span>
+</span><span id="line-9-4"><a id="example-9-4" name="example-9-4"></a><span class="n">resource</span> <span class="o">=</span> <span class="n">ResourceFile</span><span class="o">.</span><span class="n">from_file_system</span><span class="p">(</span><span class="s1">&#39;example.resource&#39;</span><span class="p">)</span>
+</span><span id="line-9-5"><a id="example-9-5" name="example-9-5"></a>
+</span><span id="line-9-6"><a id="example-9-6" name="example-9-6"></a><span class="c1"># Save JSON data to a file.</span>
+</span><span id="line-9-7"><a id="example-9-7" name="example-9-7"></a><span class="n">resource</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="s1">&#39;example.rsrc&#39;</span><span class="p">)</span>
+</span><span id="line-9-8"><a id="example-9-8" name="example-9-8"></a>
+</span><span id="line-9-9"><a id="example-9-9" name="example-9-9"></a><span class="c1"># Recreate resource from JSON data.</span>
+</span><span id="line-9-10"><a id="example-9-10" name="example-9-10"></a><span class="n">resource</span> <span class="o">=</span> <span class="n">ResourceFile</span><span class="o">.</span><span class="n">from_json</span><span class="p">(</span><span class="s1">&#39;example.rsrc&#39;</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
 
 
 
