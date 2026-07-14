@@ -35,8 +35,8 @@ commands below within it. Make sure your working directory is the repository roo
 
 #### Install dependencies
 
-    pip install --upgrade pip
-    pip install -r requirements.txt
+    python -m pip install --upgrade pip
+    python -m pip install -r requirements.txt
 
 #### Verify the installation
 
