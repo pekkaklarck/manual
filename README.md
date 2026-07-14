@@ -15,7 +15,8 @@ See the generated pages at https://pekkaklarck.github.io/manual/.
 
 ## Contribution guidelines
 
-Whether you’ve found a typo, outdated instructions, or missing information, any contribution is highly valuable and welcome!
+Whether you’ve found a typo, outdated instructions, or missing information, any contribution is highly valuable and
+welcome!
 
 Common practice for submitting contributions is via
 [pull requests](https://github.com/robotframework/robotframework/blob/master/CONTRIBUTING.rst#pull-requests).
@@ -28,8 +29,9 @@ Common practice for submitting contributions is via
 
 ### Installing dependencies
 
-It’s recommended to create a Python virtual environment (with `venv`, `uv`, or another tool of your choice)
-and run the commands below within it.
+It’s recommended to create a Python virtual environment (with `venv`, `uv`, or another tool of your choice) and run the
+commands below within it. Make sure your working directory is the repository root (the top-level directory containing
+`requirements.txt`) before installation.
 
 #### Install dependencies
 
@@ -46,11 +48,8 @@ and run the commands below within it.
 
     properdocs serve
 
-Expected output:
+Example output:
 
-    (.venv) user@linux:/...
-
-    manual$ properdocs serve
     INFO    -  Building documentation...
     INFO    -  Cleaning site directory
     API doc generation takes some time. It can be disabled by setting the 'DO_NOT_GENERATE_API_DOCS' environment variable to a non-empty value.
@@ -63,9 +62,9 @@ Open http://127.0.0.1:8000/manual/ in your browser. The changes will be reflecte
 
 #### Optional: speed up builds
 
-To speed up builds, disable building API document generation:
+To speed up builds, disable API document generation:
 
-Linux
+Linux (Bash)
 
     DO_NOT_GENERATE_API_DOCS=True properdocs serve
 
@@ -81,5 +80,5 @@ To stop the development server, use the key combination:
 
 ## Getting help
 
-If you need guidance or help with getting started with contributing (or have a suggestion or would like to discuss about the manual),
-reach out in the [#manual](https://robotframework.slack.com/archives/C063Y9GEMUP) channel on Slack.
+If you need guidance or help with getting started with contributing (or have a suggestion or would like to discuss
+the manual), reach out in the [#manual](https://robotframework.slack.com/archives/C063Y9GEMUP) channel on Slack.
