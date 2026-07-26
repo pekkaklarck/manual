@@ -15,11 +15,10 @@ See the generated pages at https://pekkaklarck.github.io/manual/.
 
 ## Contribution guidelines
 
-Whether you’ve found a typo, outdated instructions, or missing information, any contribution is highly valuable and
-welcome!
+Contributions are welcome, from typo fixes to corrections and additions.
 
-Common practice for submitting contributions is via
-[pull requests](https://github.com/robotframework/robotframework/blob/master/CONTRIBUTING.rst#pull-requests).
+To contribute, fork the repository, make your changes, and open a
+[pull request](https://github.com/robotframework/robotframework/blob/master/CONTRIBUTING.rst#pull-requests).
 
 ## Setting up development environment
 
