@@ -79,5 +79,5 @@ To stop the development server, use the key combination:
 
 ## Getting help
 
-If you need guidance or help with getting started with contributing (or have a suggestion or would like to discuss
-the manual), reach out in the [#manual](https://robotframework.slack.com/archives/C063Y9GEMUP) channel on Slack.
+For help or to share ideas about the Manual, join us in the
+[#manual](https://robotframework.slack.com/archives/C063Y9GEMUP) channel on Slack.
