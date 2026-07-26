@@ -71,7 +71,7 @@ Windows (Command Prompt)
 
     set "DO_NOT_GENERATE_API_DOCS=True" && properdocs serve
 
-### Exiting development environment
+### Stopping the preview server
 
 To stop the development server, use the key combination:
 
