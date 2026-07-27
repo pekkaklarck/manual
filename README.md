@@ -15,10 +15,10 @@ See the generated pages at https://pekkaklarck.github.io/manual/.
 
 ## Contribution guidelines
 
-Whether you’ve found a typo, outdated instructions, or missing information, any contribution is highly valuable and welcome!
+Contributions are welcome, from typo fixes to corrections and additions.
 
-Common practice for submitting contributions is via
-[pull requests](https://github.com/robotframework/robotframework/blob/master/CONTRIBUTING.rst#pull-requests).
+To contribute, fork the repository, make your changes, and open a
+[pull request](https://github.com/robotframework/robotframework/blob/master/CONTRIBUTING.rst#pull-requests).
 
 ## Setting up development environment
 
@@ -28,26 +28,16 @@ Common practice for submitting contributions is via
 
 ### Installing dependencies
 
-#### Create Python virtual environment
-
-    python3 -m venv .venv
-
-#### Activate the virtual environment
-
-Linux
-
-    source .venv/bin/activate
-
-Windows (Command Prompt)
-
-    .venv\Scripts\activate
+It’s recommended to create a Python virtual environment (with `venv`, `uv`, or another tool of your choice) and run the
+commands below within it. Make sure your working directory is the repository root (the top-level directory containing
+`requirements.txt`) before installation.
 
 #### Install dependencies
 
-    pip3 install --upgrade pip
-    pip3 install -r requirements.txt
+    python -m pip install --upgrade pip
+    python -m pip install -r requirements.txt
 
-#### Verify the installation
+#### Verify the ProPerdocs installation
 
     properdocs --version
 
@@ -57,11 +47,8 @@ Windows (Command Prompt)
 
     properdocs serve
 
-Expected output:
+Example output:
 
-    (.venv) user@linux:/...
-
-    manual$ properdocs serve
     INFO    -  Building documentation...
     INFO    -  Cleaning site directory
     API doc generation takes some time. It can be disabled by setting the 'DO_NOT_GENERATE_API_DOCS' environment variable to a non-empty value.
@@ -74,9 +61,9 @@ Open http://127.0.0.1:8000/manual/ in your browser. The changes will be reflecte
 
 #### Optional: speed up builds
 
-To speed up builds, disable building API document generation:
+To speed up builds, disable API document generation:
 
-Linux
+Linux (Bash)
 
     DO_NOT_GENERATE_API_DOCS=True properdocs serve
 
@@ -84,17 +71,13 @@ Windows (Command Prompt)
 
     set "DO_NOT_GENERATE_API_DOCS=True" && properdocs serve
 
-### Exiting development environment
+### Stopping the preview server
 
 To stop the development server, use the key combination:
 
     Ctrl + C
 
-To exit the Python virtual environment, type the command:
-
-    deactivate
-
 ## Getting help
 
-If you need guidance or help with getting started with contributing (or have a suggestion or would like to discuss about the manual),
-reach out in the [#manual](https://robotframework.slack.com/archives/C063Y9GEMUP) channel on Slack.
+For help or to share ideas about the Manual, join us in the
+[#manual](https://robotframework.slack.com/archives/C063Y9GEMUP) channel on Slack.
