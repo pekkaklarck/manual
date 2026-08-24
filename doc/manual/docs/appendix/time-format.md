@@ -2,7 +2,7 @@
 
 Robot Framework has its own time format that is both flexible to use and easy
 to understand. It is used by several keywords (for example, [BuiltIn](../syntax/libraries.md#builtin) keywords
-*Sleep* and *Wait Until Keyword Succeeds*), [DateTime](../syntax/libraries.md#datetime) library, and
+*Sleep*{.name} and *Wait Until Keyword Succeeds*{.name}), [DateTime](../syntax/libraries.md#datetime) library, and
 [timeouts](../syntax/advanced.md#timeouts).
 
 ## Time as number
@@ -42,7 +42,7 @@ times. The available time specifiers are:
 
 Examples:
 
-```
+```text
 1 min 30 secs
 1.5 minutes
 90 s

@@ -22,7 +22,7 @@ All output files can be set using an absolute path, in which case they
 are created to the specified place, but in other cases, the path is
 considered relative to the output directory. The default output
 directory is the directory where the execution is started from, but it
-can be altered with the `--outputdir (-d)` option. The path
+can be altered with the `--outputdir (-d)`{.option} option. The path
 set with this option is, again, relative to the execution directory,
 but can naturally be given also as an absolute path. Regardless of how
 a path to an individual output file is obtained, its parent directory
@@ -39,36 +39,36 @@ is created automatically, if it does not exist already.
 ### Output file
 
 Output files contain all execution results in machine readable XML or JSON
-format. [Log](results.md#log), [report](results.md#report) and [xUnit](#xunit) files are typically generated based on them,
+format. [Log](#log-file), [report](#report-file) and [xUnit](#xunit) files are typically generated based on them,
 and they can also be combined and otherwise post-processed with [Rebot](post-processing.md#rebot).
 Various external tools also process output files to be able to show detailed
 execution information.
 
 !!! tip
-    Generating [report](results.md#report) and [xUnit](#xunit) files as part of test execution
+    Generating [report](#report-file) and [xUnit](#xunit) files as part of test execution
     does not require processing output files after execution. Disabling
-    [log](results.md#log) generation when running tests can thus save memory.
+    [log](#log-file) generation when running tests can thus save memory.
 
-The command line option `--output (-o)` determines the path where
+The command line option `--output (-o)`{.option} determines the path where
 the output file is created. The path is relative to the [output directory](#output-directory)
-and the default value is *output.xml* when executing tests.
+and the default value is `output.xml`{.file} when executing tests.
 When [post-processing outputs](post-processing.md#post-processing-outputs) with Rebot, new output files are not created
-unless the `--output` option is explicitly used.
+unless the `--output`{.option} option is explicitly used.
 
 It is possible to disable the output file by using a special value `NONE`
-with the `--output` option. If no outputs are needed, they should
+with the `--output`{.option} option. If no outputs are needed, they should
 all be explicitly disabled using `--output NONE --report NONE --log NONE`.
 
 #### XML output format
 
 Output files are created using XML by default. The XML output format is
-documented in the *result.xsd* [schema file](https://github.com/robotframework/robotframework/tree/master/doc/schema#readme).
+documented in the `result.xsd`{.file} [schema file](https://github.com/robotframework/robotframework/tree/master/doc/schema#readme).
 
 #### JSON output format
 
 Robot Framework supports also JSON outputs and this format is used automatically
-if the output file extension is *.json*. The JSON output format is
-documented in the *result.json* [schema file](https://github.com/robotframework/robotframework/tree/master/doc/schema#readme).
+if the output file extension is `.json`{.file}. The JSON output format is
+documented in the `result.json`{.file} [schema file](https://github.com/robotframework/robotframework/tree/master/doc/schema#readme).
 
 !!! note
     JSON output files are supported during execution starting from
@@ -80,7 +80,7 @@ documented in the *result.json* [schema file](https://github.com/robotframework/
 There were some [backwards incompatible changes](https://github.com/robotframework/robotframework/blob/master/doc/releasenotes/rf-7.0.rst#changes-to-output-xml) to the XML output file format in
 Robot Framework 7.0. To make it possible to use new Robot Framework versions
 with external tools that are not yet updated to support the new format, there is
-a `--legacyoutput` option that produces output files that are compatible
+a `--legacyoutput`{.option} option that produces output files that are compatible
 with Robot Framework 6.x and earlier. Robot Framework itself can process output
 files both in the old and in the new formats.
 
@@ -103,10 +103,10 @@ test results are to be investigated in detail. Even though log files
 also have statistics, reports are better for
 getting an higher-level overview.
 
-The command line option `--log (-l)` determines where log
+The command line option `--log (-l)`{.option} determines where log
 files are created. Unless the special value `NONE` is used,
 log files are always created and their default name is
-*log.html*.
+`log.html`{.file}.
 
 ![An example of beginning of a log file](log_passed.png)
 
@@ -137,10 +137,10 @@ overall test execution status from report, because its background
 color is green, if all tests pass and bright red if any test fails.
 Background can also be yellow, which means that all tests were [skipped](tests.md#skipped).
 
-The command line option `--report (-r)` determines where
+The command line option `--report (-r)`{.option} determines where
 report files are created. Similarly as log files, reports are always
 created unless `NONE` is used as a value, and their default
-name is *report.html*.
+name is `report.html`{.file}.
 
 ![An example report file of successful test execution](report_passed.png)
 
@@ -168,13 +168,13 @@ results.
     Jenkins also has a separate [Robot Framework plugin](https://wiki.jenkins-ci.org/display/JENKINS/Robot+Framework+Plugin).
 
 XUnit output files are not created unless the command line option
-`--xunit (-x)` is used explicitly. This option requires a path to
+`--xunit (-x)`{.option} is used explicitly. This option requires a path to
 the generated xUnit file, relatively to the [output directory](#output-directory), as a value.
 
 XUnit output files were changed pretty heavily in Robot Framework 5.0.
 They nowadays contain separate `<testsuite>` elements for each suite,
 `<testsuite>` elements have `timestamp` attribute, and [suite documentation](../syntax/suites.md#suite-documentation)
-and [metadata](configuration.md#setting-metadata) is stored as `<property>` elements.
+and [metadata](../syntax/suites.md#free-suite-metadata) is stored as `<property>` elements.
 
 
 <a id="Debugfile"></a>
@@ -186,36 +186,36 @@ execution. All messages got from test libraries are written to them,
 as well as information about started and ended test suites, test cases
 and keywords. Debug files can be used for monitoring the test
 execution. This can be done using, for example, a separate
-[fileviewer.py](https://bitbucket.org/robotframework/robottools/src/master/fileviewer/)_
+[fileviewer.py](https://bitbucket.org/robotframework/robottools/src/master/fileviewer/)
 tool, or in UNIX-like systems, simply with the `tail -f` command.
 
 Debug files are not created unless the command line option
-`--debugfile (-b)` is used explicitly.
+`--debugfile (-b)`{.option} is used explicitly.
 
 ### Timestamping output files
 
 All output files generated by Robot Framework itself can be automatically timestamped
-with the option `--timestampoutputs (-T)`. When this option is used,
+with the option `--timestampoutputs (-T)`{.option}. When this option is used,
 a timestamp in the format `YYYYMMDD-hhmmss` is placed between
 the extension and the base name of each file. The example below would,
 for example, create output files like
-*output-20080604-163225.xml* and *mylog-20080604-163225.html*:
+`output-20080604-163225.xml`{.file} and `mylog-20080604-163225.html`{.file}:
 
-```
+```text
 robot --timestampoutputs --log mylog.html --report NONE tests.robot
 ```
 
 ### Setting titles
 
-The default titles for [logs](results.md#log) and [reports](results.md#report) are generated by prefixing
-the name of the top-level test suite with *Test Log* or
-*Test Report*. Custom titles can be given from the command line
-using the options `--logtitle` and `--reporttitle`,
+The default titles for [logs](results.md#splitting-logs) and [reports](post-processing.md#creating-reports-logs-and-output-files) are generated by prefixing
+the name of the top-level test suite with *Test Log*{.name} or
+*Test Report*{.name}. Custom titles can be given from the command line
+using the options `--logtitle`{.option} and `--reporttitle`{.option},
 respectively.
 
 Example:
 
-```
+```text
 robot --logtitle "Smoke Test Log" --reporttitle "Smoke Test Report" --include smoke my_tests/
 ```
 
@@ -229,11 +229,11 @@ robot --logtitle "Smoke Test Log" --reporttitle "Smoke Test Report" --include sm
 By default the [report file](#report-file) has red background if there are failures,
 green background if there are passed tests and possibly some skipped ones,
 and a yellow background if all tests are skipped or no tests have been run.
-These colors can be customized by using the `--reportbackground`
+These colors can be customized by using the `--reportbackground`{.option}
 command line option, which takes two or three colors separated with a colon
 as an argument:
 
-```
+```text
 --reportbackground blue:red
 --reportbackground blue:red:orange
 --reportbackground #00E:#E00
@@ -264,7 +264,7 @@ respectively.
 
 Messages in [log files](results.md#log) can have different log levels. Some of the
 messages are written by Robot Framework itself, but also executed
-keywords can [log information](https://github.com/robotframework/robotframework/blob/master/doc/releasenotes/rf-7.0.rst#changes-to-output-xml) using different levels. The available
+keywords can [log information](../extend/libraries.md#logging-information) using different levels. The available
 log levels are:
 
 `FAIL`
@@ -272,39 +272,39 @@ log levels are:
 
 `ERROR`
 : Used for displaying errors. Errors are shown in [the console and in
-   the Test Execution Errors section in log files](http://en.wikipedia.org/wiki/XUnit), but they
-   do not affect test case statuses. If the [--exitonerror option is enabled](http://jenkins-ci.org),
-   errors stop the whole execution, though,
+    the Test Execution Errors section in log files](basics.md#errors-and-warnings-during-execution), but they
+    do not affect test case statuses. If the [--exitonerror option is enabled](tests.md#stopping-on-parsing-or-execution-error),
+    errors stop the whole execution, though,
 
 `WARN`
 : Used for displaying warnings. Warnings are shown in [the console and in
-   the Test Execution Errors section in log files](https://wiki.jenkins-ci.org/display/JENKINS/Robot+Framework+Plugin), but they
-   do not affect test case statuses.
+    the Test Execution Errors section in log files](basics.md#errors-and-warnings-during-execution), but they
+    do not affect test case statuses.
 
 `INFO`
 : The default level for normal messages. By default,
-   messages below this level are not shown in the log file.
+    messages below this level are not shown in the log file.
 
 `DEBUG`
 : Used for debugging purposes. Useful, for example, for
-   logging what libraries are doing internally. When a keyword fails,
-   a traceback showing where in the code the failure occurred is
-   logged using this level automatically.
+    logging what libraries are doing internally. When a keyword fails,
+    a traceback showing where in the code the failure occurred is
+    logged using this level automatically.
 
 `TRACE`
 : More detailed debugging level. The keyword arguments and return values
-   are automatically logged using this level.
+    are automatically logged using this level.
 
 ### Setting log level
 
 By default, log messages below the `INFO` level are not logged, but this
 threshold can be changed from the command line using the
-`--loglevel (-L)` option. This option takes any of the
+`--loglevel (-L)`{.option} option. This option takes any of the
 available log levels as an argument, and that level becomes the new
 threshold level. A special value `NONE` can also be used to
 disable logging altogether.
 
-It is possible to use the `--loglevel` option also when
+It is possible to use the `--loglevel`{.option} option also when
 [post-processing outputs](post-processing.md#post-processing-outputs) with Rebot. This allows, for example,
 running tests initially with the `TRACE` level, and generating smaller
 log files for normal viewing later with the `INFO` level. By default
@@ -312,8 +312,8 @@ all the messages included during execution will be included also with
 Rebot. Messages ignored during the execution cannot be recovered.
 
 Another possibility to change the log level is using the [BuiltIn](../syntax/libraries.md#builtin)
-keyword *Set Log Level* in the test data. It takes the same
-arguments as the `--loglevel` option, and it also returns the
+keyword *Set Log Level*{.name} in the test data. It takes the same
+arguments as the `--loglevel`{.option} option, and it also returns the
 old level so that it can be restored later, for example, in a [test
 teardown](tests.md#test-teardown).
 
@@ -331,10 +331,10 @@ level from the view. This can be useful especially when running test at
 
 By default the drop down will be set at the lowest level in the log file, so
 that all messages are shown. The default visible log level can be changed using
-`--loglevel` option by giving the default after the normal log level
+`--loglevel`{.option} option by giving the default after the normal log level
 separated by a colon:
 
-```
+```text
 --loglevel DEBUG:INFO
 ```
 
@@ -346,7 +346,7 @@ the default visible level in the log file is `INFO`.
 Normally the log file is just a single HTML file. When the amount of the test
 cases increases, the size of the file can grow so large that opening it into
 a browser is inconvenient or even impossible. Hence, it is possible to use
-the `--splitlog` option to split parts of the log into external files
+the `--splitlog`{.option} option to split parts of the log into external files
 that are loaded transparently into the browser when needed.
 
 The main benefit of splitting logs is that individual log parts are so small
@@ -356,47 +356,46 @@ by the log file increases.
 
 Technically the test data related to each test case is saved into
 a JavaScript file in the same folder as the main log file. These files have
-names such as *log-42.js* where *log* is the base name of the
-main log file and *42* is an incremented index.
+names such as `log-42.js`{.file} where `log`{.file} is the base name of the
+main log file and `42`{.file} is an incremented index.
 
 The JavaScript files are saved to the same directory where the [log file](#log-file)
 itself is saved. It is the common [output directory](#output-directory) by default, but
-it can be changed with the `--log` command line option.
+it can be changed with the `--log`{.option} command line option.
 
 !!! note
     When copying the log files, you need to copy also all the
-    *log-*.js* files or some information will be missing.
+    `log-*.js`{.file} files or some information will be missing.
 
 ## Configuring statistics
 
 There are several command line options that can be used to configure
-and adjust the contents of the *Statistics by Tag*, *Statistics
-by Suite* and *Test Details by Tag* tables in different output
+and adjust the contents of the *Statistics by Tag*{.name}, *Statistics by Suite*{.name} and *Test Details by Tag*{.name} tables in different output
 files. All these options work both when executing test cases and when
 post-processing outputs.
 
 ### Configuring displayed suite statistics
 
 When a deeper suite structure is executed, showing all the test suite
-levels in the *Statistics by Suite* table may make the table
+levels in the *Statistics by Suite*{.name} table may make the table
 somewhat difficult to read. By default all suites are shown, but you can
-control this with the command line option `--suitestatlevel` which
+control this with the command line option `--suitestatlevel`{.option} which
 takes the level of suites to show as an argument:
 
-```
+```text
 --suitestatlevel 3
 ```
 
 ### Including and excluding tag statistics
 
-When many tags are used, the *Statistics by Tag* table can become
+When many tags are used, the *Statistics by Tag*{.name} table can become
 quite congested. If this happens, the command line options
-`--tagstatinclude` and `--tagstatexclude` can be
+`--tagstatinclude`{.option} and `--tagstatexclude`{.option} can be
 used to select which tags to display, similarly as
-`--include` and `--exclude` are used to [select test
-cases](https://github.com/robotframework/robotframework/blob/master/doc/releasenotes/rf-7.0.rst#changes-to-output-xml):
+`--include`{.option} and `--exclude`{.option} are used to [select test
+cases](configuration.md#by-tag-names):
 
-```
+```text
 --tagstatinclude some-tag --tagstatinclude another-tag
 --tagstatexclude owner-*
 --tagstatinclude prefix-* --tagstatexclude prefix-13
@@ -404,7 +403,7 @@ cases](https://github.com/robotframework/robotframework/blob/master/doc/releasen
 
 ### Generating combined tag statistics
 
-The command line option `--tagstatcombine` can be used to
+The command line option `--tagstatcombine`{.option} can be used to
 generate aggregate tags that combine statistics from multiple
 tags. The combined tags are specified using [tag patterns](basics.md#tag-patterns) where
 `*` and `?` are supported as wildcards and `AND`,
@@ -413,9 +412,9 @@ individual tags or patterns together.
 
 The following examples illustrate creating combined tag statistics using
 different patterns, and the figure below shows a snippet of the resulting
-*Statistics by Tag* table:
+*Statistics by Tag*{.name} table:
 
-```
+```text
 --tagstatcombine owner-*
 --tagstatcombine smokeANDmytag
 --tagstatcombine smokeNOTowner-janne*
@@ -430,7 +429,7 @@ is, by default, just the given pattern. If this is not good enough, it
 is possible to give a custom name after the pattern by separating them
 with a colon (`:`):
 
-```
+```text
 --tagstatcombine "prio1ORprio2:High priority tests"
 ```
 
@@ -441,23 +440,22 @@ with a colon (`:`):
 
 ### Creating links from tag names
 
-You can add external links to the *Statistics by Tag* table by
-using the command line option `--tagstatlink`. Arguments to this
+You can add external links to the *Statistics by Tag*{.name} table by
+using the command line option `--tagstatlink`{.option}. Arguments to this
 option are given in the format `tag:link:name`, where `tag`
 specifies the tags to assign the link to, `link` is the link to
 be created, and `name` is the name to give to the link.
 
-`tag` may be a single tag, but more commonly a [simple pattern](basics.md#simple-pattern)
+`tag` may be a single tag, but more commonly a [simple pattern](basics.md#simple-patterns)
 where `*` matches anything and `?` matches any single
 character. When `tag` is a pattern, the matches to wildcards may
 be used in `link` and `title` with the syntax `%N`,
 where "N" is the index of the match starting from 1.
 
 The following examples illustrate the usage of this option, and the
-figure below shows a snippet of the resulting *Statistics by
-Tag* table when example test data is executed with these options:
+figure below shows a snippet of the resulting *Statistics by Tag*{.name} table when example test data is executed with these options:
 
-```
+```text
 --tagstatlink mytag:http://www.google.com:Google
 --tagstatlink example-bug-*:http://example.com
 --tagstatlink owner-*:mailto:%1@domain.com?subject=Acceptance_Tests:Send_Mail
@@ -470,19 +468,18 @@ Tag* table when example test data is executed with these options:
 ### Adding documentation to tags
 
 Tags can be given a documentation with the command line option
-`--tagdoc`, which takes an argument in the format
+`--tagdoc`{.option}, which takes an argument in the format
 `tag:doc`. `tag` is the name of the tag to assign the
-documentation to, and it can also be a [simple pattern](basics.md#simple-pattern) matching
+documentation to, and it can also be a [simple pattern](basics.md#simple-patterns) matching
 multiple tags. `doc` is the assigned documentation.
 
-The given documentation is shown with matching tags in the *Test
-Details by Tag* table, and as a tool tip for these tags in the
-*Statistics by Tag* table. If one tag gets multiple documentations,
+The given documentation is shown with matching tags in the *Test Details by Tag*{.name} table, and as a tool tip for these tags in the
+*Statistics by Tag*{.name} table. If one tag gets multiple documentations,
 they are combined together and separated with an ampersand.
 
 Examples:
 
-```
+```text
 --tagdoc mytag:Example
 --tagdoc "regression:See http://example.com/info.html"
 --tagdoc "owner-*:Original author"
@@ -495,15 +492,15 @@ Examples:
 
 ## Removing and flattening keywords
 
-Most of the content of [output files](#output-files) comes from keywords and their
+Most of the content of [output files](#output-file) comes from keywords and their
 log messages. When creating higher level reports, log files are not necessarily
 needed at all, and in that case keywords and their messages just take space
 unnecessarily. Log files themselves can also grow overly large, especially if
 they contain [FOR loops](../syntax/control.md#for-loops) or other constructs that repeat certain keywords
 multiple times.
 
-In these situations, command line options `--removekeywords` and
-`--flattenkeywords` can be used to dispose or flatten unnecessary keywords.
+In these situations, command line options `--removekeywords`{.option} and
+`--flattenkeywords`{.option} can be used to dispose or flatten unnecessary keywords.
 They can be used both when [executing test cases](basics.md#executing-test-cases) and when [post-processing
 outputs](post-processing.md#post-processing-outputs). When used during execution, they only affect the log file, not
 the XML output file. With `rebot` they affect both logs and possibly
@@ -511,18 +508,18 @@ generated new output XML files.
 
 ### Removing keywords
 
-The `--removekeywords` option removes keywords and their messages
+The `--removekeywords`{.option} option removes keywords and their messages
 altogether. It has the following modes of operation, and it can be used
 multiple times to enable multiple modes. Keywords that contain [errors
-or warnings](https://github.com/robotframework/robotframework/blob/master/doc/releasenotes/rf-7.0.rst#changes-to-output-xml) are not removed except when using the `ALL` mode.
+or warnings](../extend/libraries.md#errors-and-warnings) are not removed except when using the `ALL` mode.
 
 `ALL`
 : Remove data from all keywords unconditionally.
 
 `PASSED`
 : Remove keyword data from passed test cases. In most cases, log files
-   created using this option contain enough information to investigate
-   possible failures.
+    created using this option contain enough information to investigate
+    possible failures.
 
 `FOR`
 : Remove all passed iterations from [FOR loops](../syntax/control.md#for-loops) except the last one.
@@ -532,26 +529,26 @@ or warnings](https://github.com/robotframework/robotframework/blob/master/doc/re
 
 `WUKS`
 : Remove all failing keywords inside [BuiltIn](../syntax/libraries.md#builtin) keyword
-   *Wait Until Keyword Succeeds* except the last one.
+    *Wait Until Keyword Succeeds*{.name} except the last one.
 
 `NAME:<pattern>`
 : Remove data from all keywords matching the given pattern regardless the
-   keyword status. The pattern is matched against the full name of the keyword,
-   prefixed with the possible library or resource file name like
-   `MyLibrary.Keyword Name`. The pattern is case, space, and underscore
-   insensitive, and it supports [simple patterns](basics.md#simple-patterns) with `*`, `?` and `[]`
-   as wildcards.
+    keyword status. The pattern is matched against the full name of the keyword,
+    prefixed with the possible library or resource file name like
+    `MyLibrary.Keyword Name`. The pattern is case, space, and underscore
+    insensitive, and it supports [simple patterns](basics.md#simple-patterns) with `*`, `?` and `[]`
+    as wildcards.
 
 `TAG:<pattern>`
 : Remove data from keywords with tags that match the given pattern. Tags are
-   case and space insensitive and they can be specified using [tag patterns](basics.md#tag-patterns)
-   where `*`, `?` and `[]` are supported as wildcards and `AND`, `OR` and `NOT`
-   operators can be used for combining individual tags or patterns together.
-   Can be used both with [library keyword tags](http://en.wikipedia.org/wiki/XUnit) and [user keyword tags](../syntax/user-keywords.md#user-keyword-tags).
+    case and space insensitive and they can be specified using [tag patterns](basics.md#tag-patterns)
+    where `*`, `?` and `[]` are supported as wildcards and `AND`, `OR` and `NOT`
+    operators can be used for combining individual tags or patterns together.
+    Can be used both with [library keyword tags](../extend/libraries.md#keyword-tags) and [user keyword tags](../syntax/user-keywords.md#user-keyword-tags).
 
 Examples:
 
-```
+```text
 rebot --removekeywords all --output removed.xml output.xml
 robot --removekeywords passed --removekeywords for tests.robot
 robot --removekeywords name:HugeKeyword --removekeywords name:resource.* tests.robot
@@ -564,7 +561,7 @@ as [flattening keywords](#flattening-keywords).
 
 ### Flattening keywords
 
-The `--flattenkeywords` option flattens matching keywords. In practice
+The `--flattenkeywords`{.option} option flattens matching keywords. In practice
 this means that matching keywords get all log messages from their child
 keywords, recursively, and child keywords are discarded otherwise. Flattening
 supports the following modes:
@@ -583,15 +580,15 @@ supports the following modes:
 
 `NAME:<pattern>`
 : Flatten keywords matching the given pattern. Pattern matching rules are
-   same as when [removing keywords](#removing-keywords) using the `NAME:<pattern>` mode.
+    same as when [removing keywords](#removing-keywords) using the `NAME:<pattern>` mode.
 
 `TAG:<pattern>`
 : Flatten keywords with tags matching the given pattern. Pattern matching
-   rules are same as when [removing keywords](#removing-keywords) using the `TAG:<pattern>` mode.
+    rules are same as when [removing keywords](#removing-keywords) using the `TAG:<pattern>` mode.
 
 Examples:
 
-```
+```text
 robot --flattenkeywords name:HugeKeyword --flattenkeywords name:resource.* tests.robot
 rebot --flattenkeywords foritem --output flattened.xml original.xml
 ```
@@ -603,8 +600,8 @@ deeply nested keyword structures.
 ### Flattening keyword during execution time
 
 Starting from Robot Framework 6.1, it is possible to enable the keyword flattening during
-the execution time. This can be done only on an user keyword level by defining the [reserved tag](https://github.com/robotframework/robotframework/blob/master/doc/releasenotes/rf-7.0.rst#changes-to-output-xml)
-`robot:flatten` as a [keyword tag](http://en.wikipedia.org/wiki/XUnit). Using this tag will work similarly as the command line
+the execution time. This can be done only on an user keyword level by defining the [reserved tag](../syntax/tests.md#reserved-tags)
+`robot:flatten` as a [keyword tag](../extend/libraries.md#keyword-tags). Using this tag will work similarly as the command line
 option described in the previous chapter, e.g. all content except for log messages is removed
 from under the keyword having the tag. One important difference is that in this case, the removed
 content is not written to the output file at all, and thus cannot be accessed at later time.
@@ -624,35 +621,35 @@ Example
 Keywords that have passed are closed in the log file by default. Thus information
 they contain is not visible unless you expand them. If certain keywords have
 important information that should be visible when the log file is opened, you can
-use the `--expandkeywords` option to set keywords automatically expanded
+use the `--expandkeywords`{.option} option to set keywords automatically expanded
 in log file similar to failed keywords. Expanding supports the following modes:
 
 `NAME:<pattern>`
 : Expand keywords matching the given pattern. Pattern matching rules are
-   same as when [removing keywords](#removing-keywords) using the `NAME:<pattern>` mode.
+    same as when [removing keywords](#removing-keywords) using the `NAME:<pattern>` mode.
 
 `TAG:<pattern>`
 : Expand keywords with tags matching the given pattern. Pattern matching
-   rules are same as when [removing keywords](#removing-keywords) using the `TAG:<pattern>` mode.
+    rules are same as when [removing keywords](#removing-keywords) using the `TAG:<pattern>` mode.
 
 If you need to expand keywords matching different names or patterns, you can
-use the `--expandkeywords` multiple times.
+use the `--expandkeywords`{.option} multiple times.
 
 Examples:
 
-```
+```text
 robot --expandkeywords name:SeleniumLibrary.CapturePageScreenshot tests.robot
 rebot --expandkeywords tag:example --expandkeywords tag:another output.xml
 ```
 
 !!! note
-    The `--expandkeywords` option is new in Robot Framework 3.2.
+    The `--expandkeywords`{.option} option is new in Robot Framework 3.2.
 
 ## Setting start and end time of execution
 
-When [combining outputs](results.md#output) using Rebot, it is possible to set the start
-and end time of the combined test suite using the options `--starttime`
-and `--endtime`, respectively. This is convenient, because by default,
+When [combining outputs](#combining-outputs) using Rebot, it is possible to set the start
+and end time of the combined test suite using the options `--starttime`{.option}
+and `--endtime`{.option}, respectively. This is convenient, because by default,
 combined suites do not have these values. When both the start and end time are
 given, the elapsed time is also calculated based on them. Otherwise the elapsed
 time is got by adding the elapsed times of the child test suites together.
@@ -669,7 +666,7 @@ milliseconds to hours can be omitted. For example, `2008-06-11
 
 Examples:
 
-```
+```text
 rebot --starttime 20080611-17:59:20.495 output1.xml output2.xml
 rebot --starttime 20080611-175920 --endtime 20080611-180242 *.xml
 rebot --starttime 20110302-1317 --endtime 20110302-11418 myoutput.xml
@@ -678,9 +675,9 @@ rebot --starttime 20110302-1317 --endtime 20110302-11418 myoutput.xml
 ## Limiting error message length in reports
 
 If a test case fails and has a long error message, the message shown in
-[reports](results.md#report) is automatically cut from the middle to keep reports easier to
+[reports](post-processing.md#creating-reports-logs-and-output-files) is automatically cut from the middle to keep reports easier to
 read. By default messages longer than 40 lines are cut, but that can be
-configured by using the `--maxerrorlines` command line option.
+configured by using the `--maxerrorlines`{.option} command line option.
 The minimum value for this option is 10, and it is also possible to use
 a special value `NONE` to show the full message.
 
@@ -688,7 +685,7 @@ Full error messages are always visible in [log files](results.md#log) as message
 the failed keywords.
 
 !!! note
-    The `--maxerrorlines` option is new in Robot Framework 3.1.
+    The `--maxerrorlines`{.option} option is new in Robot Framework 3.1.
 
 <a id="pre-rebot-modifier"></a>
 ## Programmatic modification of results
@@ -696,10 +693,10 @@ the failed keywords.
 If the provided built-in features to modify results are not enough,
 Robot Framework makes it possible to do custom modifications
 programmatically. This is accomplished by creating a model modifier and
-activating it using the `--prerebotmodifier` option.
+activating it using the `--prerebotmodifier`{.option} option.
 
 This functionality works nearly exactly like [programmatic modification of
-test data](configuration.md#programmatic-modification-of-test-data) that can be enabled with the `--prerunmodifier` option.
+test data](configuration.md#programmatic-modification-of-test-data) that can be enabled with the `--prerunmodifier`{.option} option.
 The obvious difference is that this time modifiers operate with the
 [result model](http://robot-framework.readthedocs.org/en/master/autodoc/robot.result.html#module-robot.result.model), not the [running model](http://robot-framework.readthedocs.org/en/master/autodoc/robot.running.html#module-robot.running.model). For example, the following modifier
 marks all passed tests that have taken more time than allowed as failed:
@@ -717,22 +714,23 @@ class ExecutionTimeChecker(SuiteVisitor):
             test.status = 'FAIL'
             test.message = 'Test execution took too long.'
 ```
-If the above modifier would be in file *ExecutionTimeChecker.py*, it
+
+If the above modifier would be in file `ExecutionTimeChecker.py`{.file}, it
 could be used, for example, like this:
 
-```
+```text
 # Specify modifier as a path when running tests. Maximum time is 42 seconds.
 robot --prerebotmodifier path/to/ExecutionTimeChecker.py:42 tests.robot
+
+# Specify modifier as a name when using Rebot. Maximum time is 3.14 seconds.
+# ExecutionTimeChecker.py must be in the module search path.
+rebot --prerebotmodifier ExecutionTimeChecker:3.14 output.xml
 ```
 
-    # Specify modifier as a name when using Rebot. Maximum time is 3.14 seconds.
-    # ExecutionTimeChecker.py must be in the module search path.
-    rebot --prerebotmodifier ExecutionTimeChecker:3.14 output.xml
-
 If more than one model modifier is needed, they can be specified by using
-the `--prerebotmodifier` option multiple times. When executing tests,
-it is possible to use `--prerunmodifier` and
-`--prerebotmodifier` options together.
+the `--prerebotmodifier`{.option} option multiple times. When executing tests,
+it is possible to use `--prerunmodifier`{.option} and
+`--prerebotmodifier`{.option} options together.
 
 
 <a id="Systemlog"></a>
@@ -757,7 +755,7 @@ A system log has the same [log levels](#log-levels) as a normal log file, with t
 exception that instead of `FAIL` it has the `ERROR`
 level. The threshold level to use can be altered using the
 `ROBOT_SYSLOG_LEVEL` environment variable like shown in the
-example below.  Possible [unexpected errors and warnings](https://github.com/robotframework/robotframework/blob/master/doc/releasenotes/rf-7.0.rst#changes-to-output-xml) are
+example below.  Possible [unexpected errors and warnings](basics.md#errors-and-warnings-during-execution) are
 written into the system log in addition to the console and the normal
 log file.
 
@@ -769,3 +767,4 @@ export ROBOT_SYSLOG_LEVEL=DEBUG
 
 robot --name Syslog_example path/to/tests
 ```
+

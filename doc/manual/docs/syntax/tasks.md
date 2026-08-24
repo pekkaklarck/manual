@@ -24,12 +24,13 @@ Process invoice
     Submit information to backend system
     Validate information is visible in web UI
 ```
+
 It is an error to have both tests and tasks in same file.
 
 ## Task related settings
 
 Settings that can be used in the task section are exactly the same as in
-the [test case section](https://en.wikipedia.org/wiki/Robotic_process_automation). In the [setting section](variable-files.md#setting-section) it is possible to use
-`Task Setup`, `Task Teardown`, `Task Template`
-and `Task Timeout` instead of their `Test` variants.
+the [test case section](tests.md#settings-in-the-test-case-section). In the [setting section](tests.md#test-case-related-settings-in-the-setting-section) it is possible to use
+*Task Setup*{.setting}, *Task Teardown*{.setting}, *Task Template*{.setting}
+and *Task Timeout*{.setting} instead of their *Test*{.setting} variants.
 

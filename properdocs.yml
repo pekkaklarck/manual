@@ -34,7 +34,7 @@ nav:
       - Test execution: execution/tests.md
       - Task execution: execution/tasks.md
       - Configuring execution: execution/configuration.md
-      - Results: execution/results.md
+      - Execution artifacts: execution/results.md
   - Libraries:
       - libraries/index.md
   - Extend:

@@ -27,8 +27,9 @@ Evaluate keyword
 Should Be True keyword
     Should Be True    ${x} > 0
 ```
+
 Notice that instead of creating complicated
-expressions, it is often better to move the logic into a [test library](../extend/libraries.md#creating-test-library-class-or-module).
+expressions, it is often better to move the logic into a [test library](../syntax/libraries.md#using-test-libraries).
 That typically eases maintenance and also enhances execution speed.
 
 ## Evaluation namespace
@@ -65,6 +66,7 @@ Access modules
     Should Be Equal      ${{round(math.pi, 2)}}    ${3.14}
     Should Start With    ${{robot.__version__}}    4.
 ```
+
 A limitation of using modules is that nested modules like `rootmod.submod`
 can only be used if the root module automatically imports the submodule. That is
 not always the case and using such modules is not possible. An concrete example
@@ -73,7 +75,7 @@ implemented, at least at the time of this writing, so that just importing
 `selenium` does not import the `selenium.webdriver` submodule.
 Another limitation is that modules cannot be used in the expression part of
 a list comprehension. A workaround to both of these problems
-is using the [BuiltIn](../syntax/libraries.md#builtin) keyword *Evaluate* that accepts modules to be imported
+is using the [BuiltIn](../syntax/libraries.md#builtin) keyword *Evaluate*{.name} that accepts modules to be imported
 and added to the evaluation namespace as an argument:
 
 ```robotframework
@@ -92,7 +94,8 @@ Evaluate keyword with list comprehension
     ${items} =    Evaluate    [json.loads(item) for item in ('1', '"b"')]    modules=json
     Log    ${items}
 ```
-The *Evaluate* keyword also supports custom evaluation namespaces if further
+
+The *Evaluate*{.name} keyword also supports custom evaluation namespaces if further
 customization is needed. See its documentation in the [BuiltIn](../syntax/libraries.md#builtin) library for more details.
 
 ## Using variables
@@ -113,7 +116,7 @@ Most importantly, strings must always be quoted either with
 single or double quotes like `'${x}'`, and if they can contain newlines, they must be
 triple-quoted like `'''${x}'''`. Strings containing quotes themselves cause
 additional problems, but triple-quoting typically handles them. Also the
-backslash character `\\` is problematic, but can be handled by
+backslash character `\`{.codesc} is problematic, but can be handled by
 using Python's raw-string notation like `r'${path}'`.
 
 ```robotframework
@@ -127,6 +130,7 @@ Using normal variable syntax
         Log    Output contains FAIL
     END
 ```
+
 ### Special `$variable` syntax
 
 Quoting strings is not that convenient, but there are cases where replacing the variable
@@ -156,6 +160,7 @@ Only possible using special variable syntax
     Should Be True    $example is not None
     Should Be True    len($result) > 1 and $result[1] == 'OK'
 ```
+
 Using the `$variable` syntax slows down expression evaluation a little.
 This should not typically matter, but should be taken into account if
 complex expressions are evaluated often and there are strict time

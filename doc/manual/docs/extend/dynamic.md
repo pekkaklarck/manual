@@ -48,7 +48,7 @@ separated with spaces or underscores, or in the camelCase format. For
 example, `['first keyword', 'second keyword']`,
 `['first_keyword', 'second_keyword']`, and
 `['firstKeyword', 'secondKeyword']` would all be mapped to keywords
-*First Keyword* and *Second Keyword*.
+*First Keyword*{.name} and *Second Keyword*{.name}.
 
 Dynamic libraries must always have this method. If it is missing, or
 if calling it fails for some reason, the library is considered a
@@ -60,7 +60,7 @@ If a dynamic library should contain both methods which are meant to be keywords
 and methods which are meant to be private helper methods, it may be wise to
 mark the keyword methods as such so it is easier to implement `get_keyword_names`.
 The `robot.api.deco.keyword` decorator allows an easy way to do this since it
-creates a [custom 'robot_name' attribute](https://github.com/robotframework/PythonLibCore) on the decorated method.
+creates a [custom 'robot_name' attribute](libraries.md#setting-custom-name) on the decorated method.
 This allows generating the list of keywords just by checking for the `robot_name`
 attribute on every method in the library during `get_keyword_names`.
 
@@ -98,7 +98,7 @@ executed in the same format as returned by `get_keyword_names`. The second
 argument is a list of [positional arguments](../syntax/tests.md#positional-arguments) given to the keyword in
 the test data, and the optional third argument is a dictionary
 containing [named arguments](../syntax/tests.md#named-arguments). If the third argument is missing, [free named
-arguments](https://github.com/robotframework/PythonLibCore) and [named-only arguments](../syntax/tests.md#named-only-arguments) are not supported, and other
+arguments](#free-named-arguments-with-dynamic-libraries) and [named-only arguments](#named-only-arguments-with-dynamic-libraries) are not supported, and other
 named arguments are mapped to positional arguments.
 
 !!! note
@@ -135,7 +135,7 @@ class DynamicExample:
 If a dynamic library only implements the `get_keyword_names` and
 `run_keyword` methods, Robot Framework does not have any information
 about the arguments that the implemented keywords accept. For example,
-both *First Keyword* and *Second Keyword* in the example above
+both *First Keyword*{.name} and *Second Keyword*{.name} in the example above
 could be used with any arguments. This is problematic,
 because most real keywords expect a certain number of keywords, and
 under these circumstances they would need to check the argument counts
@@ -155,12 +155,12 @@ they are specified in Python and explained in the following table.
 | Argument type | How to represent | Examples |
 | --- | --- | --- |
 | No arguments | Empty list. | `[]` |
-| One or more [positional argument](../syntax/tests.md#positional-argument) | List of strings containing argument names. | `['argument']` `['arg1', 'arg2', 'arg3']` |
-| [Default values](../syntax/tests.md#default-values) | Two ways how to represent the argument name and the default value:<br>- As a string where the name and the default are separated with `=`. - As a tuple with the name and the default as separate items. New in Robot Framework 3.2. | String with `=` separator:<br>`['name=default']` `['a', 'b=1', 'c=2']`<br>Tuple:<br>`[('name', 'default')]` `['a', ('b', 1), ('c', 2)]` |
-| [Positional-only arguments](libraries.md#positional-only-arguments) | Arguments before the `/` marker. New in Robot Framework 6.1. | `['posonly', '/']` `['p', 'q', '/', 'normal']` |
-| [Variable number of arguments](../syntax/tests.md#variable-number-of-arguments) (varargs) | Argument after possible positional arguments has a `*` prefix | `['*varargs']` `['argument', '*rest']` `['a', 'b=42', '*c']` |
-| [Named-only arguments](../syntax/tests.md#named-only-arguments) | Arguments after varargs or a lone `*` if there are no varargs. With or without defaults. Requires `run_keyword` to [support named-only arguments](https://github.com/robotframework/PythonLibCore). New in Robot Framework 3.1. | `['*varargs', 'named']` `['*', 'named']` `['*', 'x', 'y=default']` `['a', '*b', ('c', 42)]` |
-| [Free named arguments](../syntax/tests.md#free-named-arguments) (kwargs) | Last arguments has `**` prefix. Requires `run_keyword` to [support free named arguments](libraries.md#implicit-argument-types-based-on-default-values). | `['**named']` `['a', ('b', 42), '**c']` `['*varargs', '**kwargs']` `['*', 'kwo', '**kws']` |
+| One or more [positional argument](../syntax/tests.md#positional-argument) | List of strings containing argument names. | `['argument']`<br>`['arg1', 'arg2', 'arg3']` |
+| [Default values](../syntax/tests.md#default-values) | Two ways how to represent the argument name and the default value:<br>- As a string where the name and the default are separated with `=`. - As a tuple with the name and the default as separate items. New in Robot Framework 3.2. | String with `=` separator:<br>`['name=default']`<br>`['a', 'b=1', 'c=2']`<br>Tuple:<br>`[('name', 'default')]`<br>`['a', ('b', 1), ('c', 2)]` |
+| [Positional-only arguments](libraries.md#positional-only-arguments) | Arguments before the `/` marker. New in Robot Framework 6.1. | `['posonly', '/']`<br>`['p', 'q', '/', 'normal']` |
+| [Variable number of arguments](../syntax/tests.md#variable-number-of-arguments) (varargs) | Argument after possible positional arguments has a `*` prefix | `['*varargs']`<br>`['argument', '*rest']`<br>`['a', 'b=42', '*c']` |
+| [Named-only arguments](../syntax/tests.md#named-only-arguments) | Arguments after varargs or a lone `*` if there are no varargs. With or without defaults. Requires `run_keyword` to [support named-only arguments](#free-named-arguments-with-dynamic-libraries). New in Robot Framework 3.1. | `['*varargs', 'named']`<br>`['*', 'named']`<br>`['*', 'x', 'y=default']`<br>`['a', '*b', ('c', 42)]` |
+| [Free named arguments](../syntax/tests.md#free-named-arguments) (kwargs) | Last arguments has `**` prefix. Requires `run_keyword` to [support free named arguments](#named-only-arguments-with-dynamic-libraries). | `['**named']`<br>`['a', ('b', 42), '**c']`<br>`['*varargs', '**kwargs']`<br>`['*', 'kwo', '**kws']` |
 
 When the `get_keyword_arguments` is used, Robot Framework automatically
 calculates how many positional arguments the keyword requires and does it
@@ -168,7 +168,7 @@ support free named arguments or not. If a keyword is used with invalid
 arguments, an error occurs and `run_keyword` is not even called.
 
 The actual argument names and default values that are returned are also
-important. They are needed for [named argument support](#named-only-arguments-with-dynamic-libraries) and the [Libdoc](libdoc.md#libdoc)
+important. They are needed for [named argument support](#named-argument-syntax-with-dynamic-libraries) and the [Libdoc](libdoc.md#libdoc)
 tool needs them to be able to create a meaningful library documentation.
 
 As explained in the above table, default values can be specified with argument
@@ -176,7 +176,7 @@ names either as a string like `'name=default'` or as a tuple like
 `('name', 'default')`. The main problem with the former syntax is that all
 default values are considered strings whereas the latter syntax allows using
 all objects like `('integer', 1)` or `('boolean', True)`. When using other
-objects than strings, Robot Framework can do [automatic argument conversion](#named-argument-syntax-with-dynamic-libraries)
+objects than strings, Robot Framework can do [automatic argument conversion](libraries.md#implicit-argument-types-based-on-default-values)
 based on them.
 
 For consistency reasons, also arguments that do not accept default values can
@@ -187,7 +187,7 @@ If `get_keyword_arguments` is missing or returns Python `None` for a certain
 keyword, that keyword gets an argument specification
 accepting all arguments. This automatic argument spec is either
 `[*varargs, **kwargs]` or `[*varargs]`, depending does
-`run_keyword` [support free named arguments](../syntax/tests.md#named-argument) or not.
+`run_keyword` [support free named arguments](#free-named-arguments-with-dynamic-libraries) or not.
 
 !!! note
     Support to specify arguments as tuples like `('name', 'default')`
@@ -198,22 +198,22 @@ accepting all arguments. This automatic argument spec is either
 
 Robot Framework 3.1 introduced support for automatic argument conversion
 and the dynamic library API supports that as well. The conversion logic
-works exactly like with [static libraries](#free-named-arguments-with-dynamic-libraries), but how the type information
+works exactly like with [static libraries](libraries.md#argument-conversion), but how the type information
 is specified is naturally different.
 
 With dynamic libraries types can be returned using the optional
 `get_keyword_types` method (alias `getKeywordTypes`). It can return types
 using a list or a dictionary exactly like types can be specified when using
-the [@keyword decorator](libraries.md#keyword-decorator). Type information can be specified using actual
+the [@keyword decorator](libraries.md#specifying-argument-types-using-keyword-decorator). Type information can be specified using actual
 types like `int`, but especially if a dynamic library gets this information
 from external systems, using strings like `'int'` or `'integer'` may be
 easier. See the [Supported conversions](libraries.md#supported-conversions) section for more information about
 supported types and how to specify them.
 
 Robot Framework does automatic argument conversion also based on the
-[argument default values](libraries.md#specifying-argument-types-using-keyword-decorator). Earlier this did not work with the dynamic API
+[argument default values](libraries.md#implicit-argument-types-based-on-default-values). Earlier this did not work with the dynamic API
 because it was possible to specify arguments only as strings. As
-[discussed in the previous section](libraries.md#implicit-argument-types-based-on-default-values), this was changed in Robot Framework
+[discussed in the previous section](#getting-keyword-arguments), this was changed in Robot Framework
 3.2 and nowadays default values returned like `('example', True)` are
 automatically used for this purpose.
 
@@ -318,7 +318,7 @@ arguments based on the default values returned by the `get_keyword_arguments`
 method.
 
 Using the named argument syntax with dynamic libraries is illustrated
-by the following examples. All the examples use a keyword *Dynamic*
+by the following examples. All the examples use a keyword *Dynamic*{.name}
 that has an argument specification `[a, b=d1, c=d2]`. The comment on each row
 shows how `run_keyword` would be called in these cases if it has two arguments
 (i.e. signature is `name, args`) and if it has three arguments (i.e.
@@ -343,6 +343,7 @@ Positional and named
 Intermediate missing
     Dynamic    x      c=z           # [x, d1, z]    # [x], {c: z}
 ```
+
 !!! note
     Prior to Robot Framework 3.1, all normal named arguments were
     mapped to positional arguments and the optional `kwargs` was
@@ -354,7 +355,7 @@ Intermediate missing
 
 Dynamic libraries can also support
 [free named arguments](../syntax/tests.md#free-named-arguments) (`**named`). A mandatory precondition for
-this support is that the `run_keyword` method [takes three arguments](https://github.com/robotframework/PythonLibCore):
+this support is that the `run_keyword` method [takes three arguments](#running-dynamic-keywords):
 the third one will get the free named arguments along with possible other
 named arguments. These arguments are passed to the keyword as a mapping.
 
@@ -363,7 +364,7 @@ What arguments a keyword accepts depends on what `get_keyword_arguments`
 recognized to accept free named arguments.
 
 Using the free named argument syntax with dynamic libraries is illustrated
-by the following examples. All the examples use a keyword *Dynamic*
+by the following examples. All the examples use a keyword *Dynamic*{.name}
 that has an argument specification `[a=d1, b=d2, **named]`. The comment shows
 the arguments that the `run_keyword` method is actually called with.
 
@@ -388,6 +389,7 @@ Positional as named and free named
     Dynamic    a=1    x=1           # [], {a: 1, x: 1}
     Dynamic    b=2    x=1    a=1    # [], {a: 1, b: 2, x: 1}
 ```
+
 !!! note
     Prior to Robot Framework 3.1, normal named arguments were mapped
     to positional arguments but nowadays they are part of the
@@ -397,17 +399,17 @@ Positional as named and free named
 
 Starting from Robot Framework 3.1, dynamic libraries can have [named-only
 arguments](../syntax/tests.md#named-only-arguments). This requires that the `run_keyword` method [takes three
-arguments](https://github.com/robotframework/PythonLibCore): the third getting the named-only arguments along with the other
+arguments](#running-dynamic-keywords): the third getting the named-only arguments along with the other
 named arguments.
 
-In the [argument specification](#getting-keyword-tags) returned by the `get_keyword_arguments`
+In the [argument specification](#getting-keyword-arguments) returned by the `get_keyword_arguments`
 method named-only arguments are specified after possible variable number
 of arguments (`*varargs`) or a lone asterisk (`*`) if the keyword does not
 accept varargs. Named-only arguments can have default values, and the order
 of arguments with and without default values does not matter.
 
 Using the named-only argument syntax with dynamic libraries is illustrated
-by the following examples. All the examples use a keyword *Dynamic*
+by the following examples. All the examples use a keyword *Dynamic*{.name}
 that has been specified to have argument specification
 `[positional=default, *varargs, named, named2=default, **free]`. The comment
 shows the arguments that the `run_keyword` method is actually called with.
@@ -438,13 +440,13 @@ camelCase aliases work exactly the same way.
 
    | Name | Arguments | Purpose |
    | --- | --- | --- |
-   | `get_keyword_names` |  | [Return names](https://github.com/robotframework/PythonLibCore) of the implemented keywords. |
-   | `run_keyword` | `name, arguments, kwargs` | [Execute the specified keyword](#getting-keyword-argument-types) with given arguments. `kwargs` is optional. |
-   | `get_keyword_arguments` | `name` | Return keywords' [argument specification](../syntax/control.md#if). Optional method. |
-   | `get_keyword_types` | `name` | Return keywords' [argument type information](#getting-keyword-documentation). Optional method. New in RF 3.1. |
-   | `get_keyword_tags` | `name` | Return keywords' [tags](#getting-source-information). Optional method. |
-   | `get_keyword_documentation` | `name` | Return keywords' and library's [documentation](../syntax/suites.md#suite-documentation). Optional method. |
-   | `get_keyword_source` | `name` | Return keywords' [source](../syntax/resource-files.md#resource-files). Optional method. New in RF 3.2. |
+   | `get_keyword_names` |  | [Return names](#getting-dynamic-keyword-names) of the implemented keywords. |
+   | `run_keyword` | `name, arguments, kwargs` | [Execute the specified keyword](#running-dynamic-keywords) with given arguments. `kwargs` is optional. |
+   | `get_keyword_arguments` | `name` | Return keywords' [argument specification](#getting-keyword-arguments). Optional method. |
+   | `get_keyword_types` | `name` | Return keywords' [argument type information](#getting-keyword-argument-types). Optional method. New in RF 3.1. |
+   | `get_keyword_tags` | `name` | Return keywords' [tags](#getting-keyword-tags). Optional method. |
+   | `get_keyword_documentation` | `name` | Return keywords' and library's [documentation](#getting-keyword-documentation). Optional method. |
+   | `get_keyword_source` | `name` | Return keywords' [source](#getting-source-information). Optional method. New in RF 3.2. |
 
 A good example of using the dynamic API is Robot Framework's own
 [Remote library](../syntax/libraries.md#remote-library).
