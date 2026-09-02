@@ -1,8 +1,23 @@
-.md-typeset h1, header .md-ellipsis {
-    font-family: OCRA;
+.md-typeset h1,
+header .md-ellipsis {
+  font-family: OCRA;
 }
+
 :root {
-  --md-primary-fg-color:        #00c0b5;
+  --md-primary-fg-color: #00c0b5;
   --md-primary-fg-color--light: #00c0b5;
-  --md-primary-fg-color--dark:  #00c0b5;
+  --md-primary-fg-color--dark: #00c0b5;
+}
+
+.md-content__inner {
+  /* Limit line length to make longer paragraphs easier to follow. */
+  max-width: 900px;
+
+  /* Centre the narrower article within the available content area. */
+  margin-inline: auto;
+}
+
+.md-typeset h2 {
+  /* Distinguish major page sections more clearly from body text and h3 headings. */
+  font-weight: 500;
 }
