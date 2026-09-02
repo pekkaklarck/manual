@@ -9,6 +9,52 @@ header .md-ellipsis {
   --md-primary-fg-color--dark: #00c0b5;
 }
 
+/* Advertise search shortcut */
+[data-md-toggle="search"]:not(:checked) ~ .md-header .md-search__form::after {
+  position: absolute;
+  top: .3rem;
+  right: .3rem;
+  display: block;
+  padding: .1rem .4rem;
+  font-size: .8rem;
+  /* Colors are hard-coded to avoid them switching based on the color scheme.
+     `#ffffffb3` is `var(--md-default-bg-color-light)` and
+     `#ffffff4d` is `var(--md-default-bg-color--lighter)`
+     when using the light theme.
+   */
+  color: #ffffffb3;
+  border: .05rem solid #ffffff4d;
+  border-radius: .1rem;
+  content: "s";
+}
+
+/* Definition list spacing — reduce Material theme's 1em margins so that each
+   term sits tight against its definition, with a small gap between entries. */
+.md-typeset dl dt {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.md-typeset dl dd {
+  margin-top: 0.1rem;
+  margin-bottom: 0.6rem;
+}
+
+/* ezglossary injects a back-reference list into every definition; collapse it
+   (and any wrapping paragraph) when it has no entries, so it does not add
+   blank space between a term and the next one. */
+.md-typeset dl dd .mkdocs-ezglossary-refs:not(:has(li)) {
+  display: none;
+}
+
+.md-typeset dl dd > p:empty {
+  display: none;
+}
+
+.md-typeset dl dd p:has(> .mkdocs-ezglossary-refs:not(:has(li))) {
+  display: none;
+}
+
 .md-content__inner {
   /* Limit line length to make longer paragraphs easier to follow. */
   max-width: 900px;

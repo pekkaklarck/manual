@@ -61,6 +61,8 @@ nav:
   - Glossary: glossary.md
 
 extra_css:
+  - assets/highlight-light.css
+  - assets/highlight-dark.css
   - assets/extra.css
 
 theme:
