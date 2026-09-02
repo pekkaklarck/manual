@@ -9938,7 +9938,7 @@ the name of the top-level test suite with <em>Test Log</em> or
 using the options <code>--logtitle</code> and <code>--reporttitle</code>,
 respectively.</p>
 <p>Example:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-1-1"><a id="example-1-1" name="example-1-1"></a><span class="n">robot</span> <span class="o">--</span><span class="n">logtitle</span> <span class="s2">&quot;Smoke Test Log&quot;</span> <span class="o">--</span><span class="n">reporttitle</span> <span class="s2">&quot;Smoke Test Report&quot;</span> <span class="o">--</span><span class="n">include</span> <span class="n">smoke</span> <span class="n">my_tests</span><span class="o">/</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-1-1"><a id="example-1-1" name="example-1-1"></a><span class="n">robot</span> <span class="o">--</span><span class="n">logtitle</span> <span class="s2">"Smoke Test Log"</span> <span class="o">--</span><span class="n">reporttitle</span> <span class="s2">"Smoke Test Report"</span> <span class="o">--</span><span class="n">include</span> <span class="n">smoke</span> <span class="n">my_tests</span><span class="o">/</span>
 </span></code></pre></div></td></tr></table></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -10175,7 +10175,7 @@ different patterns, and the figure below shows a snippet of the resulting
 is, by default, just the given pattern. If this is not good enough, it
 is possible to give a custom name after the pattern by separating them
 with a colon (<code>:</code>):</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-7-1"><a id="example-7-1" name="example-7-1"></a><span class="o">--</span><span class="n">tagstatcombine</span> <span class="s2">&quot;prio1ORprio2:High priority tests&quot;</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-7-1"><a id="example-7-1" name="example-7-1"></a><span class="o">--</span><span class="n">tagstatcombine</span> <span class="s2">"prio1ORprio2:High priority tests"</span>
 </span></code></pre></div></td></tr></table></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -10219,8 +10219,8 @@ they are combined together and separated with an ampersand.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-9-1">1</a></span>
 <span class="normal"><a href="#example-9-2">2</a></span>
 <span class="normal"><a href="#example-9-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-9-1"><a id="example-9-1" name="example-9-1"></a><span class="o">--</span><span class="n">tagdoc</span> <span class="n">mytag</span><span class="p">:</span><span class="n">Example</span>
-</span><span id="line-9-2"><a id="example-9-2" name="example-9-2"></a><span class="o">--</span><span class="n">tagdoc</span> <span class="s2">&quot;regression:See http://example.com/info.html&quot;</span>
-</span><span id="line-9-3"><a id="example-9-3" name="example-9-3"></a><span class="o">--</span><span class="n">tagdoc</span> <span class="s2">&quot;owner-*:Original author&quot;</span>
+</span><span id="line-9-2"><a id="example-9-2" name="example-9-2"></a><span class="o">--</span><span class="n">tagdoc</span> <span class="s2">"regression:See http://example.com/info.html"</span>
+</span><span id="line-9-3"><a id="example-9-3" name="example-9-3"></a><span class="o">--</span><span class="n">tagdoc</span> <span class="s2">"owner-*:Original author"</span>
 </span></code></pre></div></td></tr></table></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -10524,9 +10524,9 @@ marks all passed tests that have taken more time than allowed as failed:</p>
 </span><span id="line-15-6"><a id="example-15-6" name="example-15-6"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">max_milliseconds</span> <span class="o">=</span> <span class="n">max_seconds</span> <span class="o">*</span> <span class="mi">1000</span>
 </span><span id="line-15-7"><a id="example-15-7" name="example-15-7"></a>
 </span><span id="line-15-8"><a id="example-15-8" name="example-15-8"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">visit_test</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">test</span><span class="p">):</span>
-</span><span id="line-15-9"><a id="example-15-9" name="example-15-9"></a>        <span class="k">if</span> <span class="n">test</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="s1">&#39;PASS&#39;</span> <span class="ow">and</span> <span class="n">test</span><span class="o">.</span><span class="n">elapsedtime</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_milliseconds</span><span class="p">:</span>
-</span><span id="line-15-10"><a id="example-15-10" name="example-15-10"></a>            <span class="n">test</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="s1">&#39;FAIL&#39;</span>
-</span><span id="line-15-11"><a id="example-15-11" name="example-15-11"></a>            <span class="n">test</span><span class="o">.</span><span class="n">message</span> <span class="o">=</span> <span class="s1">&#39;Test execution took too long.&#39;</span>
+</span><span id="line-15-9"><a id="example-15-9" name="example-15-9"></a>        <span class="k">if</span> <span class="n">test</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="s1">'PASS'</span> <span class="ow">and</span> <span class="n">test</span><span class="o">.</span><span class="n">elapsedtime</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_milliseconds</span><span class="p">:</span>
+</span><span id="line-15-10"><a id="example-15-10" name="example-15-10"></a>            <span class="n">test</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="s1">'FAIL'</span>
+</span><span id="line-15-11"><a id="example-15-11" name="example-15-11"></a>            <span class="n">test</span><span class="o">.</span><span class="n">message</span> <span class="o">=</span> <span class="s1">'Test execution took too long.'</span>
 </span></code></pre></div></td></tr></table></div>
 If the above modifier would be in file <em>ExecutionTimeChecker.py</em>, it
 could be used, for example, like this:</p>

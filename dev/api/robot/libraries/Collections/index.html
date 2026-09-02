@@ -10590,11 +10590,11 @@ are considered deprecated. They will eventually be removed.</p>
 <span class="normal"><a href="#example-0-1029">1029</a></span>
 <span class="normal"><a href="#example-0-1030">1030</a></span>
 <span class="normal"><a href="#example-0-1031">1031</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-981"><a id="example-0-981" name="example-0-981"></a><span class="k">def</span><span class="w"> </span><span class="nf">should_contain_match</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">list</span><span class="p">,</span> <span class="n">pattern</span><span class="p">,</span> <span class="n">msg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-</span><span id="line-0-982"><a id="example-0-982" name="example-0-982"></a>                         <span class="n">case_insensitive</span><span class="p">:</span> <span class="s1">&#39;bool|None&#39;</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-</span><span id="line-0-983"><a id="example-0-983" name="example-0-983"></a>                         <span class="n">whitespace_insensitive</span><span class="p">:</span> <span class="s1">&#39;bool|None&#39;</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="line-0-982"><a id="example-0-982" name="example-0-982"></a>                         <span class="n">case_insensitive</span><span class="p">:</span> <span class="s1">'bool|None'</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="line-0-983"><a id="example-0-983" name="example-0-983"></a>                         <span class="n">whitespace_insensitive</span><span class="p">:</span> <span class="s1">'bool|None'</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 </span><span id="line-0-984"><a id="example-0-984" name="example-0-984"></a>                         <span class="n">ignore_case</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
 </span><span id="line-0-985"><a id="example-0-985" name="example-0-985"></a>                         <span class="n">ignore_whitespace</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
-</span><span id="line-0-986"><a id="example-0-986" name="example-0-986"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Fails if ``pattern`` is not found in ``list``.</span>
+</span><span id="line-0-986"><a id="example-0-986" name="example-0-986"></a><span class="w">    </span><span class="sd">"""Fails if ``pattern`` is not found in ``list``.</span>
 </span><span id="line-0-987"><a id="example-0-987" name="example-0-987"></a>
 </span><span id="line-0-988"><a id="example-0-988" name="example-0-988"></a><span class="sd">    By default, pattern matching is similar to matching files in a shell</span>
 </span><span id="line-0-989"><a id="example-0-989" name="example-0-989"></a><span class="sd">    and is case-sensitive and whitespace-sensitive. In the pattern syntax,</span>
@@ -10627,18 +10627,18 @@ are considered deprecated. They will eventually be removed.</p>
 </span><span id="line-0-1016"><a id="example-0-1016" name="example-0-1016"></a><span class="sd">    Use the ``msg`` argument to override the default error message.</span>
 </span><span id="line-0-1017"><a id="example-0-1017" name="example-0-1017"></a>
 </span><span id="line-0-1018"><a id="example-0-1018" name="example-0-1018"></a><span class="sd">    Examples:</span>
-</span><span id="line-0-1019"><a id="example-0-1019" name="example-0-1019"></a><span class="sd">    | Should Contain Match | ${list} | a*              | | | # Match strings beginning with &#39;a&#39;. |</span>
+</span><span id="line-0-1019"><a id="example-0-1019" name="example-0-1019"></a><span class="sd">    | Should Contain Match | ${list} | a*              | | | # Match strings beginning with 'a'. |</span>
 </span><span id="line-0-1020"><a id="example-0-1020" name="example-0-1020"></a><span class="sd">    | Should Contain Match | ${list} | regexp=a.*      | | | # Same as the above but with regexp. |</span>
 </span><span id="line-0-1021"><a id="example-0-1021" name="example-0-1021"></a><span class="sd">    | Should Contain Match | ${list} | regexp=\\\\d{6} | | | # Match strings containing six digits. |</span>
-</span><span id="line-0-1022"><a id="example-0-1022" name="example-0-1022"></a><span class="sd">    | Should Contain Match | ${list} | a*  | ignore_case=True       | | # Match strings beginning with &#39;a&#39; or &#39;A&#39;. |</span>
-</span><span id="line-0-1023"><a id="example-0-1023" name="example-0-1023"></a><span class="sd">    | Should Contain Match | ${list} | ab* | ignore_whitespace=yes  | | # Match strings beginning with &#39;ab&#39; with possible whitespace ignored. |</span>
+</span><span id="line-0-1022"><a id="example-0-1022" name="example-0-1022"></a><span class="sd">    | Should Contain Match | ${list} | a*  | ignore_case=True       | | # Match strings beginning with 'a' or 'A'. |</span>
+</span><span id="line-0-1023"><a id="example-0-1023" name="example-0-1023"></a><span class="sd">    | Should Contain Match | ${list} | ab* | ignore_whitespace=yes  | | # Match strings beginning with 'ab' with possible whitespace ignored. |</span>
 </span><span id="line-0-1024"><a id="example-0-1024" name="example-0-1024"></a><span class="sd">    | Should Contain Match | ${list} | ab* | ignore_whitespace=true | ignore_case=true | # Same as the above but also ignore case. |</span>
-</span><span id="line-0-1025"><a id="example-0-1025" name="example-0-1025"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-1025"><a id="example-0-1025" name="example-0-1025"></a><span class="sd">    """</span>
 </span><span id="line-0-1026"><a id="example-0-1026" name="example-0-1026"></a>    <span class="n">_List</span><span class="o">.</span><span class="n">_validate_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span>
 </span><span id="line-0-1027"><a id="example-0-1027" name="example-0-1027"></a>    <span class="n">matches</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_matches</span><span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="n">pattern</span><span class="p">,</span> <span class="n">case_insensitive</span><span class="p">,</span>
 </span><span id="line-0-1028"><a id="example-0-1028" name="example-0-1028"></a>                                <span class="n">whitespace_insensitive</span><span class="p">,</span> <span class="n">ignore_case</span><span class="p">,</span>
 </span><span id="line-0-1029"><a id="example-0-1029" name="example-0-1029"></a>                                <span class="n">ignore_whitespace</span><span class="p">)</span>
-</span><span id="line-0-1030"><a id="example-0-1030" name="example-0-1030"></a>    <span class="n">default</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">seq2str2</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span><span class="si">}</span><span class="s2"> does not contain match for pattern &#39;</span><span class="si">{</span><span class="n">pattern</span><span class="si">}</span><span class="s2">&#39;.&quot;</span>
+</span><span id="line-0-1030"><a id="example-0-1030" name="example-0-1030"></a>    <span class="n">default</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">seq2str2</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span><span class="si">}</span><span class="s2"> does not contain match for pattern '</span><span class="si">{</span><span class="n">pattern</span><span class="si">}</span><span class="s2">'."</span>
 </span><span id="line-0-1031"><a id="example-0-1031" name="example-0-1031"></a>    <span class="n">_verify_condition</span><span class="p">(</span><span class="n">matches</span><span class="p">,</span> <span class="n">default</span><span class="p">,</span> <span class="n">msg</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
@@ -10695,20 +10695,20 @@ for information about arguments and usage in general.</p>
 <span class="normal"><a href="#example-0-1046">1046</a></span>
 <span class="normal"><a href="#example-0-1047">1047</a></span>
 <span class="normal"><a href="#example-0-1048">1048</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1033"><a id="example-0-1033" name="example-0-1033"></a><span class="k">def</span><span class="w"> </span><span class="nf">should_not_contain_match</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">list</span><span class="p">,</span> <span class="n">pattern</span><span class="p">,</span> <span class="n">msg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-</span><span id="line-0-1034"><a id="example-0-1034" name="example-0-1034"></a>                             <span class="n">case_insensitive</span><span class="p">:</span> <span class="s1">&#39;bool|None&#39;</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-</span><span id="line-0-1035"><a id="example-0-1035" name="example-0-1035"></a>                             <span class="n">whitespace_insensitive</span><span class="p">:</span> <span class="s1">&#39;bool|None&#39;</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="line-0-1034"><a id="example-0-1034" name="example-0-1034"></a>                             <span class="n">case_insensitive</span><span class="p">:</span> <span class="s1">'bool|None'</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="line-0-1035"><a id="example-0-1035" name="example-0-1035"></a>                             <span class="n">whitespace_insensitive</span><span class="p">:</span> <span class="s1">'bool|None'</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 </span><span id="line-0-1036"><a id="example-0-1036" name="example-0-1036"></a>                             <span class="n">ignore_case</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
 </span><span id="line-0-1037"><a id="example-0-1037" name="example-0-1037"></a>                             <span class="n">ignore_whitespace</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
-</span><span id="line-0-1038"><a id="example-0-1038" name="example-0-1038"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Fails if ``pattern`` is found in ``list``.</span>
+</span><span id="line-0-1038"><a id="example-0-1038" name="example-0-1038"></a><span class="w">    </span><span class="sd">"""Fails if ``pattern`` is found in ``list``.</span>
 </span><span id="line-0-1039"><a id="example-0-1039" name="example-0-1039"></a>
 </span><span id="line-0-1040"><a id="example-0-1040" name="example-0-1040"></a><span class="sd">    Exact opposite of `Should Contain Match` keyword. See that keyword</span>
 </span><span id="line-0-1041"><a id="example-0-1041" name="example-0-1041"></a><span class="sd">    for information about arguments and usage in general.</span>
-</span><span id="line-0-1042"><a id="example-0-1042" name="example-0-1042"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-1042"><a id="example-0-1042" name="example-0-1042"></a><span class="sd">    """</span>
 </span><span id="line-0-1043"><a id="example-0-1043" name="example-0-1043"></a>    <span class="n">_List</span><span class="o">.</span><span class="n">_validate_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span>
 </span><span id="line-0-1044"><a id="example-0-1044" name="example-0-1044"></a>    <span class="n">matches</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_matches</span><span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="n">pattern</span><span class="p">,</span> <span class="n">case_insensitive</span><span class="p">,</span>
 </span><span id="line-0-1045"><a id="example-0-1045" name="example-0-1045"></a>                                <span class="n">whitespace_insensitive</span><span class="p">,</span> <span class="n">ignore_case</span><span class="p">,</span>
 </span><span id="line-0-1046"><a id="example-0-1046" name="example-0-1046"></a>                                <span class="n">ignore_whitespace</span><span class="p">)</span>
-</span><span id="line-0-1047"><a id="example-0-1047" name="example-0-1047"></a>    <span class="n">default</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">seq2str2</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span><span class="si">}</span><span class="s2"> contains match for pattern &#39;</span><span class="si">{</span><span class="n">pattern</span><span class="si">}</span><span class="s2">&#39;.&quot;</span>
+</span><span id="line-0-1047"><a id="example-0-1047" name="example-0-1047"></a>    <span class="n">default</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">seq2str2</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span><span class="si">}</span><span class="s2"> contains match for pattern '</span><span class="si">{</span><span class="n">pattern</span><span class="si">}</span><span class="s2">'."</span>
 </span><span id="line-0-1048"><a id="example-0-1048" name="example-0-1048"></a>    <span class="n">_verify_condition</span><span class="p">(</span><span class="ow">not</span> <span class="n">matches</span><span class="p">,</span> <span class="n">default</span><span class="p">,</span> <span class="n">msg</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
@@ -10771,20 +10771,20 @@ for information about arguments and usage in general.</p>
 <span class="normal"><a href="#example-0-1066">1066</a></span>
 <span class="normal"><a href="#example-0-1067">1067</a></span>
 <span class="normal"><a href="#example-0-1068">1068</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1050"><a id="example-0-1050" name="example-0-1050"></a><span class="k">def</span><span class="w"> </span><span class="nf">get_matches</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">list</span><span class="p">,</span> <span class="n">pattern</span><span class="p">,</span>
-</span><span id="line-0-1051"><a id="example-0-1051" name="example-0-1051"></a>                <span class="n">case_insensitive</span><span class="p">:</span> <span class="s1">&#39;bool|None&#39;</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-</span><span id="line-0-1052"><a id="example-0-1052" name="example-0-1052"></a>                <span class="n">whitespace_insensitive</span><span class="p">:</span> <span class="s1">&#39;bool|None&#39;</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="line-0-1051"><a id="example-0-1051" name="example-0-1051"></a>                <span class="n">case_insensitive</span><span class="p">:</span> <span class="s1">'bool|None'</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="line-0-1052"><a id="example-0-1052" name="example-0-1052"></a>                <span class="n">whitespace_insensitive</span><span class="p">:</span> <span class="s1">'bool|None'</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 </span><span id="line-0-1053"><a id="example-0-1053" name="example-0-1053"></a>                <span class="n">ignore_case</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
 </span><span id="line-0-1054"><a id="example-0-1054" name="example-0-1054"></a>                <span class="n">ignore_whitespace</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
-</span><span id="line-0-1055"><a id="example-0-1055" name="example-0-1055"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns a list of matches to ``pattern`` in ``list``.</span>
+</span><span id="line-0-1055"><a id="example-0-1055" name="example-0-1055"></a><span class="w">    </span><span class="sd">"""Returns a list of matches to ``pattern`` in ``list``.</span>
 </span><span id="line-0-1056"><a id="example-0-1056" name="example-0-1056"></a>
 </span><span id="line-0-1057"><a id="example-0-1057" name="example-0-1057"></a><span class="sd">    For more information on ``pattern``, ``case_insensitive/ignore_case``, and</span>
 </span><span id="line-0-1058"><a id="example-0-1058" name="example-0-1058"></a><span class="sd">    ``whitespace_insensitive/ignore_whitespace``, see `Should Contain Match`.</span>
 </span><span id="line-0-1059"><a id="example-0-1059" name="example-0-1059"></a>
 </span><span id="line-0-1060"><a id="example-0-1060" name="example-0-1060"></a><span class="sd">    Examples:</span>
-</span><span id="line-0-1061"><a id="example-0-1061" name="example-0-1061"></a><span class="sd">    | ${matches}= | Get Matches | ${list} | a* | # ${matches} will contain any string beginning with &#39;a&#39; |</span>
-</span><span id="line-0-1062"><a id="example-0-1062" name="example-0-1062"></a><span class="sd">    | ${matches}= | Get Matches | ${list} | regexp=a.* | # ${matches} will contain any string beginning with &#39;a&#39; (regexp version) |</span>
-</span><span id="line-0-1063"><a id="example-0-1063" name="example-0-1063"></a><span class="sd">    | ${matches}= | Get Matches | ${list} | a* | ignore_case=True | # ${matches} will contain any string beginning with &#39;a&#39; or &#39;A&#39; |</span>
-</span><span id="line-0-1064"><a id="example-0-1064" name="example-0-1064"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-1061"><a id="example-0-1061" name="example-0-1061"></a><span class="sd">    | ${matches}= | Get Matches | ${list} | a* | # ${matches} will contain any string beginning with 'a' |</span>
+</span><span id="line-0-1062"><a id="example-0-1062" name="example-0-1062"></a><span class="sd">    | ${matches}= | Get Matches | ${list} | regexp=a.* | # ${matches} will contain any string beginning with 'a' (regexp version) |</span>
+</span><span id="line-0-1063"><a id="example-0-1063" name="example-0-1063"></a><span class="sd">    | ${matches}= | Get Matches | ${list} | a* | ignore_case=True | # ${matches} will contain any string beginning with 'a' or 'A' |</span>
+</span><span id="line-0-1064"><a id="example-0-1064" name="example-0-1064"></a><span class="sd">    """</span>
 </span><span id="line-0-1065"><a id="example-0-1065" name="example-0-1065"></a>    <span class="n">_List</span><span class="o">.</span><span class="n">_validate_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span>
 </span><span id="line-0-1066"><a id="example-0-1066" name="example-0-1066"></a>    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_matches</span><span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="n">pattern</span><span class="p">,</span> <span class="n">case_insensitive</span><span class="p">,</span>
 </span><span id="line-0-1067"><a id="example-0-1067" name="example-0-1067"></a>                             <span class="n">whitespace_insensitive</span><span class="p">,</span> <span class="n">ignore_case</span><span class="p">,</span>
@@ -10850,20 +10850,20 @@ for information about arguments and usage in general.</p>
 <span class="normal"><a href="#example-0-1086">1086</a></span>
 <span class="normal"><a href="#example-0-1087">1087</a></span>
 <span class="normal"><a href="#example-0-1088">1088</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1070"><a id="example-0-1070" name="example-0-1070"></a><span class="k">def</span><span class="w"> </span><span class="nf">get_match_count</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">list</span><span class="p">,</span> <span class="n">pattern</span><span class="p">,</span>
-</span><span id="line-0-1071"><a id="example-0-1071" name="example-0-1071"></a>                    <span class="n">case_insensitive</span><span class="p">:</span> <span class="s1">&#39;bool|None&#39;</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-</span><span id="line-0-1072"><a id="example-0-1072" name="example-0-1072"></a>                    <span class="n">whitespace_insensitive</span><span class="p">:</span> <span class="s1">&#39;bool|None&#39;</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="line-0-1071"><a id="example-0-1071" name="example-0-1071"></a>                    <span class="n">case_insensitive</span><span class="p">:</span> <span class="s1">'bool|None'</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="line-0-1072"><a id="example-0-1072" name="example-0-1072"></a>                    <span class="n">whitespace_insensitive</span><span class="p">:</span> <span class="s1">'bool|None'</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 </span><span id="line-0-1073"><a id="example-0-1073" name="example-0-1073"></a>                    <span class="n">ignore_case</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
 </span><span id="line-0-1074"><a id="example-0-1074" name="example-0-1074"></a>                    <span class="n">ignore_whitespace</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
-</span><span id="line-0-1075"><a id="example-0-1075" name="example-0-1075"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns the count of matches to ``pattern`` in ``list``.</span>
+</span><span id="line-0-1075"><a id="example-0-1075" name="example-0-1075"></a><span class="w">    </span><span class="sd">"""Returns the count of matches to ``pattern`` in ``list``.</span>
 </span><span id="line-0-1076"><a id="example-0-1076" name="example-0-1076"></a>
 </span><span id="line-0-1077"><a id="example-0-1077" name="example-0-1077"></a><span class="sd">    For more information on ``pattern``, ``case_insensitive/ignore_case``, and</span>
 </span><span id="line-0-1078"><a id="example-0-1078" name="example-0-1078"></a><span class="sd">    ``whitespace_insensitive/ignore_whitespace``, see `Should Contain Match`.</span>
 </span><span id="line-0-1079"><a id="example-0-1079" name="example-0-1079"></a>
 </span><span id="line-0-1080"><a id="example-0-1080" name="example-0-1080"></a><span class="sd">    Examples:</span>
-</span><span id="line-0-1081"><a id="example-0-1081" name="example-0-1081"></a><span class="sd">    | ${count}= | Get Match Count | ${list} | a* | # ${count} will be the count of strings beginning with &#39;a&#39; |</span>
-</span><span id="line-0-1082"><a id="example-0-1082" name="example-0-1082"></a><span class="sd">    | ${count}= | Get Match Count | ${list} | regexp=a.* | # ${matches} will be the count of strings beginning with &#39;a&#39; (regexp version) |</span>
-</span><span id="line-0-1083"><a id="example-0-1083" name="example-0-1083"></a><span class="sd">    | ${count}= | Get Match Count | ${list} | a* | case_insensitive=${True} | # ${matches} will be the count of strings beginning with &#39;a&#39; or &#39;A&#39; |</span>
-</span><span id="line-0-1084"><a id="example-0-1084" name="example-0-1084"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-1081"><a id="example-0-1081" name="example-0-1081"></a><span class="sd">    | ${count}= | Get Match Count | ${list} | a* | # ${count} will be the count of strings beginning with 'a' |</span>
+</span><span id="line-0-1082"><a id="example-0-1082" name="example-0-1082"></a><span class="sd">    | ${count}= | Get Match Count | ${list} | regexp=a.* | # ${matches} will be the count of strings beginning with 'a' (regexp version) |</span>
+</span><span id="line-0-1083"><a id="example-0-1083" name="example-0-1083"></a><span class="sd">    | ${count}= | Get Match Count | ${list} | a* | case_insensitive=${True} | # ${matches} will be the count of strings beginning with 'a' or 'A' |</span>
+</span><span id="line-0-1084"><a id="example-0-1084" name="example-0-1084"></a><span class="sd">    """</span>
 </span><span id="line-0-1085"><a id="example-0-1085" name="example-0-1085"></a>    <span class="n">_List</span><span class="o">.</span><span class="n">_validate_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span>
 </span><span id="line-0-1086"><a id="example-0-1086" name="example-0-1086"></a>    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_matches</span><span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="n">pattern</span><span class="p">,</span> <span class="n">case_insensitive</span><span class="p">,</span>
 </span><span id="line-0-1087"><a id="example-0-1087" name="example-0-1087"></a>                                <span class="n">whitespace_insensitive</span><span class="p">,</span> <span class="n">ignore_case</span><span class="p">,</span>
@@ -10913,15 +10913,15 @@ dictionaries.</p>
 <span class="normal"><a href="#example-0-514">514</a></span>
 <span class="normal"><a href="#example-0-515">515</a></span>
 <span class="normal"><a href="#example-0-516">516</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-506"><a id="example-0-506" name="example-0-506"></a><span class="k">def</span><span class="w"> </span><span class="nf">convert_to_dictionary</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
-</span><span id="line-0-507"><a id="example-0-507" name="example-0-507"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Converts the given ``item`` to a Python ``dict`` type.</span>
+</span><span id="line-0-507"><a id="example-0-507" name="example-0-507"></a><span class="w">    </span><span class="sd">"""Converts the given ``item`` to a Python ``dict`` type.</span>
 </span><span id="line-0-508"><a id="example-0-508" name="example-0-508"></a>
 </span><span id="line-0-509"><a id="example-0-509" name="example-0-509"></a><span class="sd">    Mainly useful for converting other mappings to normal dictionaries.</span>
-</span><span id="line-0-510"><a id="example-0-510" name="example-0-510"></a><span class="sd">    This includes converting Robot Framework&#39;s own ``DotDict`` instances</span>
+</span><span id="line-0-510"><a id="example-0-510" name="example-0-510"></a><span class="sd">    This includes converting Robot Framework's own ``DotDict`` instances</span>
 </span><span id="line-0-511"><a id="example-0-511" name="example-0-511"></a><span class="sd">    that it uses if variables are created using the ``&amp;{var}`` syntax.</span>
 </span><span id="line-0-512"><a id="example-0-512" name="example-0-512"></a>
 </span><span id="line-0-513"><a id="example-0-513" name="example-0-513"></a><span class="sd">    Use `Create Dictionary` from the BuiltIn library for constructing new</span>
 </span><span id="line-0-514"><a id="example-0-514" name="example-0-514"></a><span class="sd">    dictionaries.</span>
-</span><span id="line-0-515"><a id="example-0-515" name="example-0-515"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-515"><a id="example-0-515" name="example-0-515"></a><span class="sd">    """</span>
 </span><span id="line-0-516"><a id="example-0-516" name="example-0-516"></a>    <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
@@ -10995,30 +10995,30 @@ item assignment syntax. This is equivalent to the above:
 <span class="normal"><a href="#example-0-544">544</a></span>
 <span class="normal"><a href="#example-0-545">545</a></span>
 <span class="normal"><a href="#example-0-546">546</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-518"><a id="example-0-518" name="example-0-518"></a><span class="k">def</span><span class="w"> </span><span class="nf">set_to_dictionary</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dictionary</span><span class="p">,</span> <span class="o">*</span><span class="n">key_value_pairs</span><span class="p">,</span> <span class="o">**</span><span class="n">items</span><span class="p">):</span>
-</span><span id="line-0-519"><a id="example-0-519" name="example-0-519"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</span>
+</span><span id="line-0-519"><a id="example-0-519" name="example-0-519"></a><span class="w">    </span><span class="sd">"""Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</span>
 </span><span id="line-0-520"><a id="example-0-520" name="example-0-520"></a>
 </span><span id="line-0-521"><a id="example-0-521" name="example-0-521"></a><span class="sd">    If given items already exist in the dictionary, their values are updated.</span>
 </span><span id="line-0-522"><a id="example-0-522" name="example-0-522"></a>
 </span><span id="line-0-523"><a id="example-0-523" name="example-0-523"></a><span class="sd">    It is easiest to specify items using the ``name=value`` syntax:</span>
 </span><span id="line-0-524"><a id="example-0-524" name="example-0-524"></a><span class="sd">    | Set To Dictionary | ${D1} | key=value | second=${2} |</span>
 </span><span id="line-0-525"><a id="example-0-525" name="example-0-525"></a><span class="sd">    =&gt;</span>
-</span><span id="line-0-526"><a id="example-0-526" name="example-0-526"></a><span class="sd">    | ${D1} = {&#39;a&#39;: 1, &#39;key&#39;: &#39;value&#39;, &#39;second&#39;: 2}</span>
+</span><span id="line-0-526"><a id="example-0-526" name="example-0-526"></a><span class="sd">    | ${D1} = {'a': 1, 'key': 'value', 'second': 2}</span>
 </span><span id="line-0-527"><a id="example-0-527" name="example-0-527"></a>
 </span><span id="line-0-528"><a id="example-0-528" name="example-0-528"></a><span class="sd">    A limitation of the above syntax is that keys must be strings.</span>
 </span><span id="line-0-529"><a id="example-0-529" name="example-0-529"></a><span class="sd">    That can be avoided by passing keys and values as separate arguments:</span>
 </span><span id="line-0-530"><a id="example-0-530" name="example-0-530"></a><span class="sd">    | Set To Dictionary | ${D1} | key | value | ${2} | value 2 |</span>
 </span><span id="line-0-531"><a id="example-0-531" name="example-0-531"></a><span class="sd">    =&gt;</span>
-</span><span id="line-0-532"><a id="example-0-532" name="example-0-532"></a><span class="sd">    | ${D1} = {&#39;a&#39;: 1, &#39;key&#39;: &#39;value&#39;, 2: &#39;value 2&#39;}</span>
+</span><span id="line-0-532"><a id="example-0-532" name="example-0-532"></a><span class="sd">    | ${D1} = {'a': 1, 'key': 'value', 2: 'value 2'}</span>
 </span><span id="line-0-533"><a id="example-0-533" name="example-0-533"></a>
 </span><span id="line-0-534"><a id="example-0-534" name="example-0-534"></a><span class="sd">    Starting from Robot Framework 6.1, it is also possible to use the native</span>
 </span><span id="line-0-535"><a id="example-0-535" name="example-0-535"></a><span class="sd">    item assignment syntax. This is equivalent to the above:</span>
 </span><span id="line-0-536"><a id="example-0-536" name="example-0-536"></a><span class="sd">    | ${D1}[key] =  | Set Variable | value |</span>
 </span><span id="line-0-537"><a id="example-0-537" name="example-0-537"></a><span class="sd">    | ${D1}[${2}] = | Set Variable | value 2 |</span>
-</span><span id="line-0-538"><a id="example-0-538" name="example-0-538"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-538"><a id="example-0-538" name="example-0-538"></a><span class="sd">    """</span>
 </span><span id="line-0-539"><a id="example-0-539" name="example-0-539"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_validate_dictionary</span><span class="p">(</span><span class="n">dictionary</span><span class="p">)</span>
 </span><span id="line-0-540"><a id="example-0-540" name="example-0-540"></a>    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">key_value_pairs</span><span class="p">)</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
-</span><span id="line-0-541"><a id="example-0-541" name="example-0-541"></a>        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Adding data to a dictionary failed. There &quot;</span>
-</span><span id="line-0-542"><a id="example-0-542" name="example-0-542"></a>                         <span class="s2">&quot;should be even number of key-value-pairs.&quot;</span><span class="p">)</span>
+</span><span id="line-0-541"><a id="example-0-541" name="example-0-541"></a>        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"Adding data to a dictionary failed. There "</span>
+</span><span id="line-0-542"><a id="example-0-542" name="example-0-542"></a>                         <span class="s2">"should be even number of key-value-pairs."</span><span class="p">)</span>
 </span><span id="line-0-543"><a id="example-0-543" name="example-0-543"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">key_value_pairs</span><span class="p">),</span> <span class="mi">2</span><span class="p">):</span>
 </span><span id="line-0-544"><a id="example-0-544" name="example-0-544"></a>        <span class="n">dictionary</span><span class="p">[</span><span class="n">key_value_pairs</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">=</span> <span class="n">key_value_pairs</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
 </span><span id="line-0-545"><a id="example-0-545" name="example-0-545"></a>    <span class="n">dictionary</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">items</span><span class="p">)</span>
@@ -11076,7 +11076,7 @@ is ignored.</p>
 <span class="normal"><a href="#example-0-563">563</a></span>
 <span class="normal"><a href="#example-0-564">564</a></span>
 <span class="normal"><a href="#example-0-565">565</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-548"><a id="example-0-548" name="example-0-548"></a><span class="k">def</span><span class="w"> </span><span class="nf">remove_from_dictionary</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dictionary</span><span class="p">,</span> <span class="o">*</span><span class="n">keys</span><span class="p">):</span>
-</span><span id="line-0-549"><a id="example-0-549" name="example-0-549"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Removes the given ``keys`` from the ``dictionary``.</span>
+</span><span id="line-0-549"><a id="example-0-549" name="example-0-549"></a><span class="w">    </span><span class="sd">"""Removes the given ``keys`` from the ``dictionary``.</span>
 </span><span id="line-0-550"><a id="example-0-550" name="example-0-550"></a>
 </span><span id="line-0-551"><a id="example-0-551" name="example-0-551"></a><span class="sd">    If the given ``key`` cannot be found from the ``dictionary``, it</span>
 </span><span id="line-0-552"><a id="example-0-552" name="example-0-552"></a><span class="sd">    is ignored.</span>
@@ -11084,15 +11084,15 @@ is ignored.</p>
 </span><span id="line-0-554"><a id="example-0-554" name="example-0-554"></a><span class="sd">    Example:</span>
 </span><span id="line-0-555"><a id="example-0-555" name="example-0-555"></a><span class="sd">    | Remove From Dictionary | ${D3} | b | x | y |</span>
 </span><span id="line-0-556"><a id="example-0-556" name="example-0-556"></a><span class="sd">    =&gt;</span>
-</span><span id="line-0-557"><a id="example-0-557" name="example-0-557"></a><span class="sd">    | ${D3} = {&#39;a&#39;: 1, &#39;c&#39;: 3}</span>
-</span><span id="line-0-558"><a id="example-0-558" name="example-0-558"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-557"><a id="example-0-557" name="example-0-557"></a><span class="sd">    | ${D3} = {'a': 1, 'c': 3}</span>
+</span><span id="line-0-558"><a id="example-0-558" name="example-0-558"></a><span class="sd">    """</span>
 </span><span id="line-0-559"><a id="example-0-559" name="example-0-559"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_validate_dictionary</span><span class="p">(</span><span class="n">dictionary</span><span class="p">)</span>
 </span><span id="line-0-560"><a id="example-0-560" name="example-0-560"></a>    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">keys</span><span class="p">:</span>
 </span><span id="line-0-561"><a id="example-0-561" name="example-0-561"></a>        <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">dictionary</span><span class="p">:</span>
 </span><span id="line-0-562"><a id="example-0-562" name="example-0-562"></a>            <span class="n">value</span> <span class="o">=</span> <span class="n">dictionary</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
-</span><span id="line-0-563"><a id="example-0-563" name="example-0-563"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Removed item with key &#39;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">&#39; and value &#39;</span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">&#39;.&quot;</span><span class="p">)</span>
+</span><span id="line-0-563"><a id="example-0-563" name="example-0-563"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Removed item with key '</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">' and value '</span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">'."</span><span class="p">)</span>
 </span><span id="line-0-564"><a id="example-0-564" name="example-0-564"></a>        <span class="k">else</span><span class="p">:</span>
-</span><span id="line-0-565"><a id="example-0-565" name="example-0-565"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Key &#39;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">&#39; not found.&quot;</span><span class="p">)</span>
+</span><span id="line-0-565"><a id="example-0-565" name="example-0-565"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Key '</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">' not found."</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -11148,7 +11148,7 @@ returned instead of failing.</p>
 <span class="normal"><a href="#example-0-582">582</a></span>
 <span class="normal"><a href="#example-0-583">583</a></span>
 <span class="normal"><a href="#example-0-584">584</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-567"><a id="example-0-567" name="example-0-567"></a><span class="k">def</span><span class="w"> </span><span class="nf">pop_from_dictionary</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dictionary</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">NOT_SET</span><span class="p">):</span>
-</span><span id="line-0-568"><a id="example-0-568" name="example-0-568"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Pops the given ``key`` from the ``dictionary`` and returns its value.</span>
+</span><span id="line-0-568"><a id="example-0-568" name="example-0-568"></a><span class="w">    </span><span class="sd">"""Pops the given ``key`` from the ``dictionary`` and returns its value.</span>
 </span><span id="line-0-569"><a id="example-0-569" name="example-0-569"></a>
 </span><span id="line-0-570"><a id="example-0-570" name="example-0-570"></a><span class="sd">    By default the keyword fails if the given ``key`` cannot be found from</span>
 </span><span id="line-0-571"><a id="example-0-571" name="example-0-571"></a><span class="sd">    the ``dictionary``. If optional ``default`` value is given, it will be</span>
@@ -11158,8 +11158,8 @@ returned instead of failing.</p>
 </span><span id="line-0-575"><a id="example-0-575" name="example-0-575"></a><span class="sd">    | ${val}= | Pop From Dictionary | ${D3} | b |</span>
 </span><span id="line-0-576"><a id="example-0-576" name="example-0-576"></a><span class="sd">    =&gt;</span>
 </span><span id="line-0-577"><a id="example-0-577" name="example-0-577"></a><span class="sd">    | ${val} = 2</span>
-</span><span id="line-0-578"><a id="example-0-578" name="example-0-578"></a><span class="sd">    | ${D3} = {&#39;a&#39;: 1, &#39;c&#39;: 3}</span>
-</span><span id="line-0-579"><a id="example-0-579" name="example-0-579"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-578"><a id="example-0-578" name="example-0-578"></a><span class="sd">    | ${D3} = {'a': 1, 'c': 3}</span>
+</span><span id="line-0-579"><a id="example-0-579" name="example-0-579"></a><span class="sd">    """</span>
 </span><span id="line-0-580"><a id="example-0-580" name="example-0-580"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_validate_dictionary</span><span class="p">(</span><span class="n">dictionary</span><span class="p">)</span>
 </span><span id="line-0-581"><a id="example-0-581" name="example-0-581"></a>    <span class="k">if</span> <span class="n">default</span> <span class="ow">is</span> <span class="n">NOT_SET</span><span class="p">:</span>
 </span><span id="line-0-582"><a id="example-0-582" name="example-0-582"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">dictionary_should_contain_key</span><span class="p">(</span><span class="n">dictionary</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
@@ -11214,7 +11214,7 @@ is ignored.</p>
 <span class="normal"><a href="#example-0-597">597</a></span>
 <span class="normal"><a href="#example-0-598">598</a></span>
 <span class="normal"><a href="#example-0-599">599</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-586"><a id="example-0-586" name="example-0-586"></a><span class="k">def</span><span class="w"> </span><span class="nf">keep_in_dictionary</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dictionary</span><span class="p">,</span> <span class="o">*</span><span class="n">keys</span><span class="p">):</span>
-</span><span id="line-0-587"><a id="example-0-587" name="example-0-587"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Keeps the given ``keys`` in the ``dictionary`` and removes all other.</span>
+</span><span id="line-0-587"><a id="example-0-587" name="example-0-587"></a><span class="w">    </span><span class="sd">"""Keeps the given ``keys`` in the ``dictionary`` and removes all other.</span>
 </span><span id="line-0-588"><a id="example-0-588" name="example-0-588"></a>
 </span><span id="line-0-589"><a id="example-0-589" name="example-0-589"></a><span class="sd">    If the given ``key`` cannot be found from the ``dictionary``, it</span>
 </span><span id="line-0-590"><a id="example-0-590" name="example-0-590"></a><span class="sd">    is ignored.</span>
@@ -11222,8 +11222,8 @@ is ignored.</p>
 </span><span id="line-0-592"><a id="example-0-592" name="example-0-592"></a><span class="sd">    Example:</span>
 </span><span id="line-0-593"><a id="example-0-593" name="example-0-593"></a><span class="sd">    | Keep In Dictionary | ${D5} | b | x | d |</span>
 </span><span id="line-0-594"><a id="example-0-594" name="example-0-594"></a><span class="sd">    =&gt;</span>
-</span><span id="line-0-595"><a id="example-0-595" name="example-0-595"></a><span class="sd">    | ${D5} = {&#39;b&#39;: 2, &#39;d&#39;: 4}</span>
-</span><span id="line-0-596"><a id="example-0-596" name="example-0-596"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-595"><a id="example-0-595" name="example-0-595"></a><span class="sd">    | ${D5} = {'b': 2, 'd': 4}</span>
+</span><span id="line-0-596"><a id="example-0-596" name="example-0-596"></a><span class="sd">    """</span>
 </span><span id="line-0-597"><a id="example-0-597" name="example-0-597"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_validate_dictionary</span><span class="p">(</span><span class="n">dictionary</span><span class="p">)</span>
 </span><span id="line-0-598"><a id="example-0-598" name="example-0-598"></a>    <span class="n">remove_keys</span> <span class="o">=</span> <span class="p">[</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">dictionary</span> <span class="k">if</span> <span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">keys</span><span class="p">]</span>
 </span><span id="line-0-599"><a id="example-0-599" name="example-0-599"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">remove_from_dictionary</span><span class="p">(</span><span class="n">dictionary</span><span class="p">,</span> <span class="o">*</span><span class="n">remove_keys</span><span class="p">)</span>
@@ -11273,14 +11273,14 @@ be copied.</p>
 <span class="normal"><a href="#example-0-611">611</a></span>
 <span class="normal"><a href="#example-0-612">612</a></span>
 <span class="normal"><a href="#example-0-613">613</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-601"><a id="example-0-601" name="example-0-601"></a><span class="k">def</span><span class="w"> </span><span class="nf">copy_dictionary</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dictionary</span><span class="p">,</span> <span class="n">deepcopy</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-</span><span id="line-0-602"><a id="example-0-602" name="example-0-602"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns a copy of the given dictionary.</span>
+</span><span id="line-0-602"><a id="example-0-602" name="example-0-602"></a><span class="w">    </span><span class="sd">"""Returns a copy of the given dictionary.</span>
 </span><span id="line-0-603"><a id="example-0-603" name="example-0-603"></a>
 </span><span id="line-0-604"><a id="example-0-604" name="example-0-604"></a><span class="sd">    By default, returns a new dictionary with same items as in the original.</span>
 </span><span id="line-0-605"><a id="example-0-605" name="example-0-605"></a><span class="sd">    Set the ``deepcopy`` argument to a true value if also items should</span>
 </span><span id="line-0-606"><a id="example-0-606" name="example-0-606"></a><span class="sd">    be copied.</span>
 </span><span id="line-0-607"><a id="example-0-607" name="example-0-607"></a>
 </span><span id="line-0-608"><a id="example-0-608" name="example-0-608"></a><span class="sd">    The given dictionary is never altered by this keyword.</span>
-</span><span id="line-0-609"><a id="example-0-609" name="example-0-609"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-609"><a id="example-0-609" name="example-0-609"></a><span class="sd">    """</span>
 </span><span id="line-0-610"><a id="example-0-610" name="example-0-610"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_validate_dictionary</span><span class="p">(</span><span class="n">dictionary</span><span class="p">)</span>
 </span><span id="line-0-611"><a id="example-0-611" name="example-0-611"></a>    <span class="k">if</span> <span class="n">deepcopy</span><span class="p">:</span>
 </span><span id="line-0-612"><a id="example-0-612" name="example-0-612"></a>        <span class="k">return</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">dictionary</span><span class="p">)</span>
@@ -11341,7 +11341,7 @@ sortable), but they can be returned in the original order by giving
 <span class="normal"><a href="#example-0-632">632</a></span>
 <span class="normal"><a href="#example-0-633">633</a></span>
 <span class="normal"><a href="#example-0-634">634</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-615"><a id="example-0-615" name="example-0-615"></a><span class="k">def</span><span class="w"> </span><span class="nf">get_dictionary_keys</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dictionary</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-</span><span id="line-0-616"><a id="example-0-616" name="example-0-616"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns keys of the given ``dictionary`` as a list.</span>
+</span><span id="line-0-616"><a id="example-0-616" name="example-0-616"></a><span class="w">    </span><span class="sd">"""Returns keys of the given ``dictionary`` as a list.</span>
 </span><span id="line-0-617"><a id="example-0-617" name="example-0-617"></a>
 </span><span id="line-0-618"><a id="example-0-618" name="example-0-618"></a><span class="sd">    By default, keys are returned in sorted order (assuming they are</span>
 </span><span id="line-0-619"><a id="example-0-619" name="example-0-619"></a><span class="sd">    sortable), but they can be returned in the original order by giving</span>
@@ -11352,7 +11352,7 @@ sortable), but they can be returned in the original order by giving
 </span><span id="line-0-624"><a id="example-0-624" name="example-0-624"></a><span class="sd">    Example:</span>
 </span><span id="line-0-625"><a id="example-0-625" name="example-0-625"></a><span class="sd">    | ${sorted} =   | Get Dictionary Keys | ${D3} |</span>
 </span><span id="line-0-626"><a id="example-0-626" name="example-0-626"></a><span class="sd">    | ${unsorted} = | Get Dictionary Keys | ${D3} | sort_keys=False |</span>
-</span><span id="line-0-627"><a id="example-0-627" name="example-0-627"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-627"><a id="example-0-627" name="example-0-627"></a><span class="sd">    """</span>
 </span><span id="line-0-628"><a id="example-0-628" name="example-0-628"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_validate_dictionary</span><span class="p">(</span><span class="n">dictionary</span><span class="p">)</span>
 </span><span id="line-0-629"><a id="example-0-629" name="example-0-629"></a>    <span class="k">if</span> <span class="n">sort_keys</span><span class="p">:</span>
 </span><span id="line-0-630"><a id="example-0-630" name="example-0-630"></a>        <span class="k">try</span><span class="p">:</span>
@@ -11412,7 +11412,7 @@ but this can be changed by giving <code>sort_keys</code> a false value.</p>
 <span class="normal"><a href="#example-0-649">649</a></span>
 <span class="normal"><a href="#example-0-650">650</a></span>
 <span class="normal"><a href="#example-0-651">651</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-636"><a id="example-0-636" name="example-0-636"></a><span class="k">def</span><span class="w"> </span><span class="nf">get_dictionary_values</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dictionary</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-</span><span id="line-0-637"><a id="example-0-637" name="example-0-637"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns values of the given ``dictionary`` as a list.</span>
+</span><span id="line-0-637"><a id="example-0-637" name="example-0-637"></a><span class="w">    </span><span class="sd">"""Returns values of the given ``dictionary`` as a list.</span>
 </span><span id="line-0-638"><a id="example-0-638" name="example-0-638"></a>
 </span><span id="line-0-639"><a id="example-0-639" name="example-0-639"></a><span class="sd">    Uses `Get Dictionary Keys` to get keys and then returns corresponding</span>
 </span><span id="line-0-640"><a id="example-0-640" name="example-0-640"></a><span class="sd">    values. By default, keys are sorted and values returned in that order,</span>
@@ -11423,7 +11423,7 @@ but this can be changed by giving <code>sort_keys</code> a false value.</p>
 </span><span id="line-0-645"><a id="example-0-645" name="example-0-645"></a><span class="sd">    Example:</span>
 </span><span id="line-0-646"><a id="example-0-646" name="example-0-646"></a><span class="sd">    | ${sorted} =   | Get Dictionary Values | ${D3} |</span>
 </span><span id="line-0-647"><a id="example-0-647" name="example-0-647"></a><span class="sd">    | ${unsorted} = | Get Dictionary Values | ${D3} | sort_keys=False |</span>
-</span><span id="line-0-648"><a id="example-0-648" name="example-0-648"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-648"><a id="example-0-648" name="example-0-648"></a><span class="sd">    """</span>
 </span><span id="line-0-649"><a id="example-0-649" name="example-0-649"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_validate_dictionary</span><span class="p">(</span><span class="n">dictionary</span><span class="p">)</span>
 </span><span id="line-0-650"><a id="example-0-650" name="example-0-650"></a>    <span class="n">keys</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_dictionary_keys</span><span class="p">(</span><span class="n">dictionary</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="n">sort_keys</span><span class="p">)</span>
 </span><span id="line-0-651"><a id="example-0-651" name="example-0-651"></a>    <span class="k">return</span> <span class="p">[</span><span class="n">dictionary</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">keys</span><span class="p">]</span>
@@ -11486,7 +11486,7 @@ and so on.</p>
 <span class="normal"><a href="#example-0-670">670</a></span>
 <span class="normal"><a href="#example-0-671">671</a></span>
 <span class="normal"><a href="#example-0-672">672</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-653"><a id="example-0-653" name="example-0-653"></a><span class="k">def</span><span class="w"> </span><span class="nf">get_dictionary_items</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dictionary</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-</span><span id="line-0-654"><a id="example-0-654" name="example-0-654"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns items of the given ``dictionary`` as a list.</span>
+</span><span id="line-0-654"><a id="example-0-654" name="example-0-654"></a><span class="w">    </span><span class="sd">"""Returns items of the given ``dictionary`` as a list.</span>
 </span><span id="line-0-655"><a id="example-0-655" name="example-0-655"></a>
 </span><span id="line-0-656"><a id="example-0-656" name="example-0-656"></a><span class="sd">    Uses `Get Dictionary Keys` to get keys and then returns corresponding</span>
 </span><span id="line-0-657"><a id="example-0-657" name="example-0-657"></a><span class="sd">    items. By default, keys are sorted and items returned in that order,</span>
@@ -11501,7 +11501,7 @@ and so on.</p>
 </span><span id="line-0-666"><a id="example-0-666" name="example-0-666"></a><span class="sd">    Example:</span>
 </span><span id="line-0-667"><a id="example-0-667" name="example-0-667"></a><span class="sd">    | ${sorted} =   | Get Dictionary Items | ${D3} |</span>
 </span><span id="line-0-668"><a id="example-0-668" name="example-0-668"></a><span class="sd">    | ${unsorted} = | Get Dictionary Items | ${D3} | sort_keys=False |</span>
-</span><span id="line-0-669"><a id="example-0-669" name="example-0-669"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-669"><a id="example-0-669" name="example-0-669"></a><span class="sd">    """</span>
 </span><span id="line-0-670"><a id="example-0-670" name="example-0-670"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_validate_dictionary</span><span class="p">(</span><span class="n">dictionary</span><span class="p">)</span>
 </span><span id="line-0-671"><a id="example-0-671" name="example-0-671"></a>    <span class="n">keys</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_dictionary_keys</span><span class="p">(</span><span class="n">dictionary</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="n">sort_keys</span><span class="p">)</span>
 </span><span id="line-0-672"><a id="example-0-672" name="example-0-672"></a>    <span class="k">return</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">keys</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">dictionary</span><span class="p">[</span><span class="n">key</span><span class="p">])]</span>
@@ -11566,7 +11566,7 @@ returned instead of failing.</p>
 <span class="normal"><a href="#example-0-694">694</a></span>
 <span class="normal"><a href="#example-0-695">695</a></span>
 <span class="normal"><a href="#example-0-696">696</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-674"><a id="example-0-674" name="example-0-674"></a><span class="k">def</span><span class="w"> </span><span class="nf">get_from_dictionary</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dictionary</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">NOT_SET</span><span class="p">):</span>
-</span><span id="line-0-675"><a id="example-0-675" name="example-0-675"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns a value from the given ``dictionary`` based on the given ``key``.</span>
+</span><span id="line-0-675"><a id="example-0-675" name="example-0-675"></a><span class="w">    </span><span class="sd">"""Returns a value from the given ``dictionary`` based on the given ``key``.</span>
 </span><span id="line-0-676"><a id="example-0-676" name="example-0-676"></a>
 </span><span id="line-0-677"><a id="example-0-677" name="example-0-677"></a><span class="sd">    If the given ``key`` cannot be found from the ``dictionary``, this</span>
 </span><span id="line-0-678"><a id="example-0-678" name="example-0-678"></a><span class="sd">    keyword fails. If optional ``default`` value is given, it will be</span>
@@ -11580,14 +11580,14 @@ returned instead of failing.</p>
 </span><span id="line-0-686"><a id="example-0-686" name="example-0-686"></a><span class="sd">    | ${value} = 2</span>
 </span><span id="line-0-687"><a id="example-0-687" name="example-0-687"></a>
 </span><span id="line-0-688"><a id="example-0-688" name="example-0-688"></a><span class="sd">    Support for ``default`` is new in Robot Framework 6.0.</span>
-</span><span id="line-0-689"><a id="example-0-689" name="example-0-689"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-689"><a id="example-0-689" name="example-0-689"></a><span class="sd">    """</span>
 </span><span id="line-0-690"><a id="example-0-690" name="example-0-690"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_validate_dictionary</span><span class="p">(</span><span class="n">dictionary</span><span class="p">)</span>
 </span><span id="line-0-691"><a id="example-0-691" name="example-0-691"></a>    <span class="k">try</span><span class="p">:</span>
 </span><span id="line-0-692"><a id="example-0-692" name="example-0-692"></a>        <span class="k">return</span> <span class="n">dictionary</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
 </span><span id="line-0-693"><a id="example-0-693" name="example-0-693"></a>    <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
 </span><span id="line-0-694"><a id="example-0-694" name="example-0-694"></a>        <span class="k">if</span> <span class="n">default</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">NOT_SET</span><span class="p">:</span>
 </span><span id="line-0-695"><a id="example-0-695" name="example-0-695"></a>            <span class="k">return</span> <span class="n">default</span>
-</span><span id="line-0-696"><a id="example-0-696" name="example-0-696"></a>        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Dictionary does not contain key &#39;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">&#39;.&quot;</span><span class="p">)</span>
+</span><span id="line-0-696"><a id="example-0-696" name="example-0-696"></a>        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Dictionary does not contain key '</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">'."</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -11640,19 +11640,19 @@ Robot Framework 7.0.</p>
 <span class="normal"><a href="#example-0-712">712</a></span>
 <span class="normal"><a href="#example-0-713">713</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-698"><a id="example-0-698" name="example-0-698"></a><span class="k">def</span><span class="w"> </span><span class="nf">dictionary_should_contain_key</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dictionary</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">msg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
 </span><span id="line-0-699"><a id="example-0-699" name="example-0-699"></a>                                  <span class="n">ignore_case</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-</span><span id="line-0-700"><a id="example-0-700" name="example-0-700"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Fails if ``key`` is not found from ``dictionary``.</span>
+</span><span id="line-0-700"><a id="example-0-700" name="example-0-700"></a><span class="w">    </span><span class="sd">"""Fails if ``key`` is not found from ``dictionary``.</span>
 </span><span id="line-0-701"><a id="example-0-701" name="example-0-701"></a>
 </span><span id="line-0-702"><a id="example-0-702" name="example-0-702"></a><span class="sd">    Use the ``msg`` argument to override the default error message.</span>
 </span><span id="line-0-703"><a id="example-0-703" name="example-0-703"></a>
 </span><span id="line-0-704"><a id="example-0-704" name="example-0-704"></a><span class="sd">    The ``ignore_case`` argument can be used to make comparison case-insensitive.</span>
 </span><span id="line-0-705"><a id="example-0-705" name="example-0-705"></a><span class="sd">    See the `Ignore case` section for more details. This option is new in</span>
 </span><span id="line-0-706"><a id="example-0-706" name="example-0-706"></a><span class="sd">    Robot Framework 7.0.</span>
-</span><span id="line-0-707"><a id="example-0-707" name="example-0-707"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-707"><a id="example-0-707" name="example-0-707"></a><span class="sd">    """</span>
 </span><span id="line-0-708"><a id="example-0-708" name="example-0-708"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_validate_dictionary</span><span class="p">(</span><span class="n">dictionary</span><span class="p">)</span>
 </span><span id="line-0-709"><a id="example-0-709" name="example-0-709"></a>    <span class="n">norm</span> <span class="o">=</span> <span class="n">Normalizer</span><span class="p">(</span><span class="n">ignore_case</span><span class="p">)</span>
 </span><span id="line-0-710"><a id="example-0-710" name="example-0-710"></a>    <span class="n">_verify_condition</span><span class="p">(</span>
 </span><span id="line-0-711"><a id="example-0-711" name="example-0-711"></a>        <span class="n">norm</span><span class="o">.</span><span class="n">normalize_key</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="ow">in</span> <span class="n">norm</span><span class="o">.</span><span class="n">normalize</span><span class="p">(</span><span class="n">dictionary</span><span class="p">),</span>
-</span><span id="line-0-712"><a id="example-0-712" name="example-0-712"></a>        <span class="sa">f</span><span class="s2">&quot;Dictionary does not contain key &#39;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">&#39;.&quot;</span><span class="p">,</span> <span class="n">msg</span>
+</span><span id="line-0-712"><a id="example-0-712" name="example-0-712"></a>        <span class="sa">f</span><span class="s2">"Dictionary does not contain key '</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">'."</span><span class="p">,</span> <span class="n">msg</span>
 </span><span id="line-0-713"><a id="example-0-713" name="example-0-713"></a>    <span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
@@ -11706,19 +11706,19 @@ Robot Framework 7.0.</p>
 <span class="normal"><a href="#example-0-729">729</a></span>
 <span class="normal"><a href="#example-0-730">730</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-715"><a id="example-0-715" name="example-0-715"></a><span class="k">def</span><span class="w"> </span><span class="nf">dictionary_should_not_contain_key</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dictionary</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">msg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
 </span><span id="line-0-716"><a id="example-0-716" name="example-0-716"></a>                                      <span class="n">ignore_case</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-</span><span id="line-0-717"><a id="example-0-717" name="example-0-717"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Fails if ``key`` is found from ``dictionary``.</span>
+</span><span id="line-0-717"><a id="example-0-717" name="example-0-717"></a><span class="w">    </span><span class="sd">"""Fails if ``key`` is found from ``dictionary``.</span>
 </span><span id="line-0-718"><a id="example-0-718" name="example-0-718"></a>
 </span><span id="line-0-719"><a id="example-0-719" name="example-0-719"></a><span class="sd">    Use the ``msg`` argument to override the default error message.</span>
 </span><span id="line-0-720"><a id="example-0-720" name="example-0-720"></a>
 </span><span id="line-0-721"><a id="example-0-721" name="example-0-721"></a><span class="sd">    The ``ignore_case`` argument can be used to make comparison case-insensitive.</span>
 </span><span id="line-0-722"><a id="example-0-722" name="example-0-722"></a><span class="sd">    See the `Ignore case` section for more details. This option is new in</span>
 </span><span id="line-0-723"><a id="example-0-723" name="example-0-723"></a><span class="sd">    Robot Framework 7.0.</span>
-</span><span id="line-0-724"><a id="example-0-724" name="example-0-724"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-724"><a id="example-0-724" name="example-0-724"></a><span class="sd">    """</span>
 </span><span id="line-0-725"><a id="example-0-725" name="example-0-725"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_validate_dictionary</span><span class="p">(</span><span class="n">dictionary</span><span class="p">)</span>
 </span><span id="line-0-726"><a id="example-0-726" name="example-0-726"></a>    <span class="n">norm</span> <span class="o">=</span> <span class="n">Normalizer</span><span class="p">(</span><span class="n">ignore_case</span><span class="p">)</span>
 </span><span id="line-0-727"><a id="example-0-727" name="example-0-727"></a>    <span class="n">_verify_condition</span><span class="p">(</span>
 </span><span id="line-0-728"><a id="example-0-728" name="example-0-728"></a>        <span class="n">norm</span><span class="o">.</span><span class="n">normalize_key</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">norm</span><span class="o">.</span><span class="n">normalize</span><span class="p">(</span><span class="n">dictionary</span><span class="p">),</span>
-</span><span id="line-0-729"><a id="example-0-729" name="example-0-729"></a>        <span class="sa">f</span><span class="s2">&quot;Dictionary contains key &#39;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">&#39;.&quot;</span><span class="p">,</span> <span class="n">msg</span>
+</span><span id="line-0-729"><a id="example-0-729" name="example-0-729"></a>        <span class="sa">f</span><span class="s2">"Dictionary contains key '</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">'."</span><span class="p">,</span> <span class="n">msg</span>
 </span><span id="line-0-730"><a id="example-0-730" name="example-0-730"></a>    <span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
@@ -11774,21 +11774,21 @@ Robot Framework 7.0.</p>
 <span class="normal"><a href="#example-0-748">748</a></span>
 <span class="normal"><a href="#example-0-749">749</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-732"><a id="example-0-732" name="example-0-732"></a><span class="k">def</span><span class="w"> </span><span class="nf">dictionary_should_contain_item</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dictionary</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">msg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
 </span><span id="line-0-733"><a id="example-0-733" name="example-0-733"></a>                                   <span class="n">ignore_case</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-</span><span id="line-0-734"><a id="example-0-734" name="example-0-734"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;An item of ``key`` / ``value`` must be found in a ``dictionary``.</span>
+</span><span id="line-0-734"><a id="example-0-734" name="example-0-734"></a><span class="w">    </span><span class="sd">"""An item of ``key`` / ``value`` must be found in a ``dictionary``.</span>
 </span><span id="line-0-735"><a id="example-0-735" name="example-0-735"></a>
 </span><span id="line-0-736"><a id="example-0-736" name="example-0-736"></a><span class="sd">    Use the ``msg`` argument to override the default error message.</span>
 </span><span id="line-0-737"><a id="example-0-737" name="example-0-737"></a>
 </span><span id="line-0-738"><a id="example-0-738" name="example-0-738"></a><span class="sd">    The ``ignore_case`` argument can be used to make comparison case-insensitive.</span>
 </span><span id="line-0-739"><a id="example-0-739" name="example-0-739"></a><span class="sd">    See the `Ignore case` section for more details. This option is new in</span>
 </span><span id="line-0-740"><a id="example-0-740" name="example-0-740"></a><span class="sd">    Robot Framework 7.0.</span>
-</span><span id="line-0-741"><a id="example-0-741" name="example-0-741"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-741"><a id="example-0-741" name="example-0-741"></a><span class="sd">    """</span>
 </span><span id="line-0-742"><a id="example-0-742" name="example-0-742"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_validate_dictionary</span><span class="p">(</span><span class="n">dictionary</span><span class="p">)</span>
 </span><span id="line-0-743"><a id="example-0-743" name="example-0-743"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">dictionary_should_contain_key</span><span class="p">(</span><span class="n">dictionary</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">msg</span><span class="p">,</span> <span class="n">ignore_case</span><span class="p">)</span>
 </span><span id="line-0-744"><a id="example-0-744" name="example-0-744"></a>    <span class="n">norm</span> <span class="o">=</span> <span class="n">Normalizer</span><span class="p">(</span><span class="n">ignore_case</span><span class="p">)</span>
 </span><span id="line-0-745"><a id="example-0-745" name="example-0-745"></a>    <span class="n">assert_equal</span><span class="p">(</span>
 </span><span id="line-0-746"><a id="example-0-746" name="example-0-746"></a>        <span class="n">norm</span><span class="o">.</span><span class="n">normalize</span><span class="p">(</span><span class="n">dictionary</span><span class="p">)[</span><span class="n">norm</span><span class="o">.</span><span class="n">normalize_key</span><span class="p">(</span><span class="n">key</span><span class="p">)],</span>
 </span><span id="line-0-747"><a id="example-0-747" name="example-0-747"></a>        <span class="n">norm</span><span class="o">.</span><span class="n">normalize_value</span><span class="p">(</span><span class="n">value</span><span class="p">),</span>
-</span><span id="line-0-748"><a id="example-0-748" name="example-0-748"></a>        <span class="n">msg</span> <span class="ow">or</span> <span class="sa">f</span><span class="s2">&quot;Value of dictionary key &#39;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">&#39; does not match&quot;</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="ow">not</span> <span class="n">msg</span>
+</span><span id="line-0-748"><a id="example-0-748" name="example-0-748"></a>        <span class="n">msg</span> <span class="ow">or</span> <span class="sa">f</span><span class="s2">"Value of dictionary key '</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">' does not match"</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="ow">not</span> <span class="n">msg</span>
 </span><span id="line-0-749"><a id="example-0-749" name="example-0-749"></a>    <span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
@@ -11842,19 +11842,19 @@ Robot Framework 7.0.</p>
 <span class="normal"><a href="#example-0-765">765</a></span>
 <span class="normal"><a href="#example-0-766">766</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-751"><a id="example-0-751" name="example-0-751"></a><span class="k">def</span><span class="w"> </span><span class="nf">dictionary_should_contain_value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dictionary</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">msg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
 </span><span id="line-0-752"><a id="example-0-752" name="example-0-752"></a>                                    <span class="n">ignore_case</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-</span><span id="line-0-753"><a id="example-0-753" name="example-0-753"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Fails if ``value`` is not found from ``dictionary``.</span>
+</span><span id="line-0-753"><a id="example-0-753" name="example-0-753"></a><span class="w">    </span><span class="sd">"""Fails if ``value`` is not found from ``dictionary``.</span>
 </span><span id="line-0-754"><a id="example-0-754" name="example-0-754"></a>
 </span><span id="line-0-755"><a id="example-0-755" name="example-0-755"></a><span class="sd">    Use the ``msg`` argument to override the default error message.</span>
 </span><span id="line-0-756"><a id="example-0-756" name="example-0-756"></a>
 </span><span id="line-0-757"><a id="example-0-757" name="example-0-757"></a><span class="sd">    The ``ignore_case`` argument can be used to make comparison case-insensitive.</span>
 </span><span id="line-0-758"><a id="example-0-758" name="example-0-758"></a><span class="sd">    See the `Ignore case` section for more details. This option is new in</span>
 </span><span id="line-0-759"><a id="example-0-759" name="example-0-759"></a><span class="sd">    Robot Framework 7.0.</span>
-</span><span id="line-0-760"><a id="example-0-760" name="example-0-760"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-760"><a id="example-0-760" name="example-0-760"></a><span class="sd">    """</span>
 </span><span id="line-0-761"><a id="example-0-761" name="example-0-761"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_validate_dictionary</span><span class="p">(</span><span class="n">dictionary</span><span class="p">)</span>
 </span><span id="line-0-762"><a id="example-0-762" name="example-0-762"></a>    <span class="n">norm</span> <span class="o">=</span> <span class="n">Normalizer</span><span class="p">(</span><span class="n">ignore_case</span><span class="p">)</span>
 </span><span id="line-0-763"><a id="example-0-763" name="example-0-763"></a>    <span class="n">_verify_condition</span><span class="p">(</span>
 </span><span id="line-0-764"><a id="example-0-764" name="example-0-764"></a>        <span class="n">norm</span><span class="o">.</span><span class="n">normalize_value</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="ow">in</span> <span class="n">norm</span><span class="o">.</span><span class="n">normalize</span><span class="p">(</span><span class="n">dictionary</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">(),</span>
-</span><span id="line-0-765"><a id="example-0-765" name="example-0-765"></a>        <span class="sa">f</span><span class="s2">&quot;Dictionary does not contain value &#39;</span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">&#39;.&quot;</span><span class="p">,</span> <span class="n">msg</span>
+</span><span id="line-0-765"><a id="example-0-765" name="example-0-765"></a>        <span class="sa">f</span><span class="s2">"Dictionary does not contain value '</span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">'."</span><span class="p">,</span> <span class="n">msg</span>
 </span><span id="line-0-766"><a id="example-0-766" name="example-0-766"></a>    <span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
@@ -11908,19 +11908,19 @@ Robot Framework 7.0.</p>
 <span class="normal"><a href="#example-0-782">782</a></span>
 <span class="normal"><a href="#example-0-783">783</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-768"><a id="example-0-768" name="example-0-768"></a><span class="k">def</span><span class="w"> </span><span class="nf">dictionary_should_not_contain_value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dictionary</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">msg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
 </span><span id="line-0-769"><a id="example-0-769" name="example-0-769"></a>                                        <span class="n">ignore_case</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-</span><span id="line-0-770"><a id="example-0-770" name="example-0-770"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Fails if ``value`` is found from ``dictionary``.</span>
+</span><span id="line-0-770"><a id="example-0-770" name="example-0-770"></a><span class="w">    </span><span class="sd">"""Fails if ``value`` is found from ``dictionary``.</span>
 </span><span id="line-0-771"><a id="example-0-771" name="example-0-771"></a>
 </span><span id="line-0-772"><a id="example-0-772" name="example-0-772"></a><span class="sd">    Use the ``msg`` argument to override the default error message.</span>
 </span><span id="line-0-773"><a id="example-0-773" name="example-0-773"></a>
 </span><span id="line-0-774"><a id="example-0-774" name="example-0-774"></a><span class="sd">    The ``ignore_case`` argument can be used to make comparison case-insensitive.</span>
 </span><span id="line-0-775"><a id="example-0-775" name="example-0-775"></a><span class="sd">    See the `Ignore case` section for more details. This option is new in</span>
 </span><span id="line-0-776"><a id="example-0-776" name="example-0-776"></a><span class="sd">    Robot Framework 7.0.</span>
-</span><span id="line-0-777"><a id="example-0-777" name="example-0-777"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-777"><a id="example-0-777" name="example-0-777"></a><span class="sd">    """</span>
 </span><span id="line-0-778"><a id="example-0-778" name="example-0-778"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_validate_dictionary</span><span class="p">(</span><span class="n">dictionary</span><span class="p">)</span>
 </span><span id="line-0-779"><a id="example-0-779" name="example-0-779"></a>    <span class="n">norm</span> <span class="o">=</span> <span class="n">Normalizer</span><span class="p">(</span><span class="n">ignore_case</span><span class="p">)</span>
 </span><span id="line-0-780"><a id="example-0-780" name="example-0-780"></a>    <span class="n">_verify_condition</span><span class="p">(</span>
 </span><span id="line-0-781"><a id="example-0-781" name="example-0-781"></a>        <span class="n">norm</span><span class="o">.</span><span class="n">normalize_value</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">norm</span><span class="o">.</span><span class="n">normalize</span><span class="p">(</span><span class="n">dictionary</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">(),</span>
-</span><span id="line-0-782"><a id="example-0-782" name="example-0-782"></a>        <span class="sa">f</span><span class="s2">&quot;Dictionary contains value &#39;</span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">&#39;.&quot;</span><span class="p">,</span> <span class="n">msg</span>
+</span><span id="line-0-782"><a id="example-0-782" name="example-0-782"></a>        <span class="sa">f</span><span class="s2">"Dictionary contains value '</span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">'."</span><span class="p">,</span> <span class="n">msg</span>
 </span><span id="line-0-783"><a id="example-0-783" name="example-0-783"></a>    <span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
@@ -12008,9 +12008,9 @@ Robot Framework 7.0.</p>
 <span class="normal"><a href="#example-0-815">815</a></span>
 <span class="normal"><a href="#example-0-816">816</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-785"><a id="example-0-785" name="example-0-785"></a><span class="k">def</span><span class="w"> </span><span class="nf">dictionaries_should_be_equal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dict1</span><span class="p">,</span> <span class="n">dict2</span><span class="p">,</span> <span class="n">msg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
 </span><span id="line-0-786"><a id="example-0-786" name="example-0-786"></a>                                 <span class="n">ignore_keys</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ignore_case</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-</span><span id="line-0-787"><a id="example-0-787" name="example-0-787"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Fails if the given dictionaries are not equal.</span>
+</span><span id="line-0-787"><a id="example-0-787" name="example-0-787"></a><span class="w">    </span><span class="sd">"""Fails if the given dictionaries are not equal.</span>
 </span><span id="line-0-788"><a id="example-0-788" name="example-0-788"></a>
-</span><span id="line-0-789"><a id="example-0-789" name="example-0-789"></a><span class="sd">    First the equality of dictionaries&#39; keys is checked and after that all</span>
+</span><span id="line-0-789"><a id="example-0-789" name="example-0-789"></a><span class="sd">    First the equality of dictionaries' keys is checked and after that all</span>
 </span><span id="line-0-790"><a id="example-0-790" name="example-0-790"></a><span class="sd">    the key value pairs. If there are differences between the values, those</span>
 </span><span id="line-0-791"><a id="example-0-791" name="example-0-791"></a><span class="sd">    are listed in the error message. The types of the dictionaries do not</span>
 </span><span id="line-0-792"><a id="example-0-792" name="example-0-792"></a><span class="sd">    need to be same.</span>
@@ -12023,7 +12023,7 @@ Robot Framework 7.0.</p>
 </span><span id="line-0-799"><a id="example-0-799" name="example-0-799"></a><span class="sd">    Examples:</span>
 </span><span id="line-0-800"><a id="example-0-800" name="example-0-800"></a><span class="sd">    | Dictionaries Should Be Equal | ${dict} | ${expected} |</span>
 </span><span id="line-0-801"><a id="example-0-801" name="example-0-801"></a><span class="sd">    | Dictionaries Should Be Equal | ${dict} | ${expected} | ignore_keys=${ignored} |</span>
-</span><span id="line-0-802"><a id="example-0-802" name="example-0-802"></a><span class="sd">    | Dictionaries Should Be Equal | ${dict} | ${expected} | ignore_keys=[&#39;key1&#39;, &#39;key2&#39;] |</span>
+</span><span id="line-0-802"><a id="example-0-802" name="example-0-802"></a><span class="sd">    | Dictionaries Should Be Equal | ${dict} | ${expected} | ignore_keys=['key1', 'key2'] |</span>
 </span><span id="line-0-803"><a id="example-0-803" name="example-0-803"></a>
 </span><span id="line-0-804"><a id="example-0-804" name="example-0-804"></a><span class="sd">    See `Lists Should Be Equal` for more information about configuring</span>
 </span><span id="line-0-805"><a id="example-0-805" name="example-0-805"></a><span class="sd">    the error message with ``msg`` and ``values`` arguments.</span>
@@ -12031,7 +12031,7 @@ Robot Framework 7.0.</p>
 </span><span id="line-0-807"><a id="example-0-807" name="example-0-807"></a><span class="sd">    The ``ignore_case`` argument can be used to make comparison case-insensitive.</span>
 </span><span id="line-0-808"><a id="example-0-808" name="example-0-808"></a><span class="sd">    See the `Ignore case` section for more details. This option is new in</span>
 </span><span id="line-0-809"><a id="example-0-809" name="example-0-809"></a><span class="sd">    Robot Framework 7.0.</span>
-</span><span id="line-0-810"><a id="example-0-810" name="example-0-810"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-810"><a id="example-0-810" name="example-0-810"></a><span class="sd">    """</span>
 </span><span id="line-0-811"><a id="example-0-811" name="example-0-811"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_validate_dictionary</span><span class="p">(</span><span class="n">dict1</span><span class="p">,</span> <span class="n">dict2</span><span class="p">)</span>
 </span><span id="line-0-812"><a id="example-0-812" name="example-0-812"></a>    <span class="n">normalizer</span> <span class="o">=</span> <span class="n">Normalizer</span><span class="p">(</span><span class="n">ignore_case</span><span class="p">,</span> <span class="n">ignore_keys</span><span class="o">=</span><span class="n">ignore_keys</span><span class="p">)</span>
 </span><span id="line-0-813"><a id="example-0-813" name="example-0-813"></a>    <span class="n">dict1</span> <span class="o">=</span> <span class="n">normalizer</span><span class="o">.</span><span class="n">normalize</span><span class="p">(</span><span class="n">dict1</span><span class="p">)</span>
@@ -12092,7 +12092,7 @@ Robot Framework 7.0.</p>
 <span class="normal"><a href="#example-0-856">856</a></span>
 <span class="normal"><a href="#example-0-857">857</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-841"><a id="example-0-841" name="example-0-841"></a><span class="k">def</span><span class="w"> </span><span class="nf">dictionary_should_contain_sub_dictionary</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dict1</span><span class="p">,</span> <span class="n">dict2</span><span class="p">,</span> <span class="n">msg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
 </span><span id="line-0-842"><a id="example-0-842" name="example-0-842"></a>                                             <span class="n">values</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ignore_case</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-</span><span id="line-0-843"><a id="example-0-843" name="example-0-843"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Fails unless all items in ``dict2`` are found from ``dict1``.</span>
+</span><span id="line-0-843"><a id="example-0-843" name="example-0-843"></a><span class="w">    </span><span class="sd">"""Fails unless all items in ``dict2`` are found from ``dict1``.</span>
 </span><span id="line-0-844"><a id="example-0-844" name="example-0-844"></a>
 </span><span id="line-0-845"><a id="example-0-845" name="example-0-845"></a><span class="sd">    See `Lists Should Be Equal` for more information about configuring</span>
 </span><span id="line-0-846"><a id="example-0-846" name="example-0-846"></a><span class="sd">    the error message with ``msg`` and ``values`` arguments.</span>
@@ -12100,7 +12100,7 @@ Robot Framework 7.0.</p>
 </span><span id="line-0-848"><a id="example-0-848" name="example-0-848"></a><span class="sd">    The ``ignore_case`` argument can be used to make comparison case-insensitive.</span>
 </span><span id="line-0-849"><a id="example-0-849" name="example-0-849"></a><span class="sd">    See the `Ignore case` section for more details. This option is new in</span>
 </span><span id="line-0-850"><a id="example-0-850" name="example-0-850"></a><span class="sd">    Robot Framework 7.0.</span>
-</span><span id="line-0-851"><a id="example-0-851" name="example-0-851"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-851"><a id="example-0-851" name="example-0-851"></a><span class="sd">    """</span>
 </span><span id="line-0-852"><a id="example-0-852" name="example-0-852"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_validate_dictionary</span><span class="p">(</span><span class="n">dict1</span><span class="p">,</span> <span class="n">dict2</span><span class="p">)</span>
 </span><span id="line-0-853"><a id="example-0-853" name="example-0-853"></a>    <span class="n">normalizer</span> <span class="o">=</span> <span class="n">Normalizer</span><span class="p">(</span><span class="n">ignore_case</span><span class="p">)</span>
 </span><span id="line-0-854"><a id="example-0-854" name="example-0-854"></a>    <span class="n">dict1</span> <span class="o">=</span> <span class="n">normalizer</span><span class="o">.</span><span class="n">normalize</span><span class="p">(</span><span class="n">dict1</span><span class="p">)</span>
@@ -12126,7 +12126,7 @@ Robot Framework 7.0.</p>
 
 
 <a href="#robot.libraries.Collections.Collections.log_dictionary" class="headerlink" title="Permanent link">&para;</a></h3>
-<div class="doc-signature highlight"><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1" href="#example-0-1"></a><span class="nf">log_dictionary</span><span class="p">(</span><span class="n">dictionary</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="s1">&#39;INFO&#39;</span><span class="p">)</span>
+<div class="doc-signature highlight"><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1" href="#example-0-1"></a><span class="nf">log_dictionary</span><span class="p">(</span><span class="n">dictionary</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="s1">'INFO'</span><span class="p">)</span>
 </span></code></pre></div>
 
     <div class="doc doc-contents ">
@@ -12148,16 +12148,16 @@ the BuiltIn library.</p>
 <span class="normal"><a href="#example-0-865">865</a></span>
 <span class="normal"><a href="#example-0-866">866</a></span>
 <span class="normal"><a href="#example-0-867">867</a></span>
-<span class="normal"><a href="#example-0-868">868</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-859"><a id="example-0-859" name="example-0-859"></a><span class="k">def</span><span class="w"> </span><span class="nf">log_dictionary</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dictionary</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="s1">&#39;INFO&#39;</span><span class="p">):</span>
-</span><span id="line-0-860"><a id="example-0-860" name="example-0-860"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Logs the size and contents of the ``dictionary`` using given ``level``.</span>
+<span class="normal"><a href="#example-0-868">868</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-859"><a id="example-0-859" name="example-0-859"></a><span class="k">def</span><span class="w"> </span><span class="nf">log_dictionary</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dictionary</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="s1">'INFO'</span><span class="p">):</span>
+</span><span id="line-0-860"><a id="example-0-860" name="example-0-860"></a><span class="w">    </span><span class="sd">"""Logs the size and contents of the ``dictionary`` using given ``level``.</span>
 </span><span id="line-0-861"><a id="example-0-861" name="example-0-861"></a>
 </span><span id="line-0-862"><a id="example-0-862" name="example-0-862"></a><span class="sd">    Valid levels are TRACE, DEBUG, INFO (default), and WARN.</span>
 </span><span id="line-0-863"><a id="example-0-863" name="example-0-863"></a>
 </span><span id="line-0-864"><a id="example-0-864" name="example-0-864"></a><span class="sd">    If you only want to log the size, use keyword `Get Length` from</span>
 </span><span id="line-0-865"><a id="example-0-865" name="example-0-865"></a><span class="sd">    the BuiltIn library.</span>
-</span><span id="line-0-866"><a id="example-0-866" name="example-0-866"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-866"><a id="example-0-866" name="example-0-866"></a><span class="sd">    """</span>
 </span><span id="line-0-867"><a id="example-0-867" name="example-0-867"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_validate_dictionary</span><span class="p">(</span><span class="n">dictionary</span><span class="p">)</span>
-</span><span id="line-0-868"><a id="example-0-868" name="example-0-868"></a>    <span class="n">logger</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_log_dictionary</span><span class="p">(</span><span class="n">dictionary</span><span class="p">)),</span> <span class="n">level</span><span class="p">)</span>
+</span><span id="line-0-868"><a id="example-0-868" name="example-0-868"></a>    <span class="n">logger</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_log_dictionary</span><span class="p">(</span><span class="n">dictionary</span><span class="p">)),</span> <span class="n">level</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -12196,11 +12196,11 @@ Use <code>Create List</code> from the BuiltIn library for constructing new lists
 <span class="normal"><a href="#example-0-36">36</a></span>
 <span class="normal"><a href="#example-0-37">37</a></span>
 <span class="normal"><a href="#example-0-38">38</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-32"><a id="example-0-32" name="example-0-32"></a><span class="k">def</span><span class="w"> </span><span class="nf">convert_to_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
-</span><span id="line-0-33"><a id="example-0-33" name="example-0-33"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Converts the given ``item`` to a Python ``list`` type.</span>
+</span><span id="line-0-33"><a id="example-0-33" name="example-0-33"></a><span class="w">    </span><span class="sd">"""Converts the given ``item`` to a Python ``list`` type.</span>
 </span><span id="line-0-34"><a id="example-0-34" name="example-0-34"></a>
 </span><span id="line-0-35"><a id="example-0-35" name="example-0-35"></a><span class="sd">    Mainly useful for converting tuples and other iterable to lists.</span>
 </span><span id="line-0-36"><a id="example-0-36" name="example-0-36"></a><span class="sd">    Use `Create List` from the BuiltIn library for constructing new lists.</span>
-</span><span id="line-0-37"><a id="example-0-37" name="example-0-37"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-37"><a id="example-0-37" name="example-0-37"></a><span class="sd">    """</span>
 </span><span id="line-0-38"><a id="example-0-38" name="example-0-38"></a>    <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
@@ -12250,15 +12250,15 @@ Use <code>Create List</code> from the BuiltIn library for constructing new lists
 <span class="normal"><a href="#example-0-50">50</a></span>
 <span class="normal"><a href="#example-0-51">51</a></span>
 <span class="normal"><a href="#example-0-52">52</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-40"><a id="example-0-40" name="example-0-40"></a><span class="k">def</span><span class="w"> </span><span class="nf">append_to_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">list_</span><span class="p">,</span> <span class="o">*</span><span class="n">values</span><span class="p">):</span>
-</span><span id="line-0-41"><a id="example-0-41" name="example-0-41"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds ``values`` to the end of ``list``.</span>
+</span><span id="line-0-41"><a id="example-0-41" name="example-0-41"></a><span class="w">    </span><span class="sd">"""Adds ``values`` to the end of ``list``.</span>
 </span><span id="line-0-42"><a id="example-0-42" name="example-0-42"></a>
 </span><span id="line-0-43"><a id="example-0-43" name="example-0-43"></a><span class="sd">    Example:</span>
 </span><span id="line-0-44"><a id="example-0-44" name="example-0-44"></a><span class="sd">    | Append To List | ${L1} | xxx |   |   |</span>
 </span><span id="line-0-45"><a id="example-0-45" name="example-0-45"></a><span class="sd">    | Append To List | ${L2} | x   | y | z |</span>
 </span><span id="line-0-46"><a id="example-0-46" name="example-0-46"></a><span class="sd">    =&gt;</span>
-</span><span id="line-0-47"><a id="example-0-47" name="example-0-47"></a><span class="sd">    | ${L1} = [&#39;a&#39;, &#39;xxx&#39;]</span>
-</span><span id="line-0-48"><a id="example-0-48" name="example-0-48"></a><span class="sd">    | ${L2} = [&#39;a&#39;, &#39;b&#39;, &#39;x&#39;, &#39;y&#39;, &#39;z&#39;]</span>
-</span><span id="line-0-49"><a id="example-0-49" name="example-0-49"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-47"><a id="example-0-47" name="example-0-47"></a><span class="sd">    | ${L1} = ['a', 'xxx']</span>
+</span><span id="line-0-48"><a id="example-0-48" name="example-0-48"></a><span class="sd">    | ${L2} = ['a', 'b', 'x', 'y', 'z']</span>
+</span><span id="line-0-49"><a id="example-0-49" name="example-0-49"></a><span class="sd">    """</span>
 </span><span id="line-0-50"><a id="example-0-50" name="example-0-50"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_validate_list</span><span class="p">(</span><span class="n">list_</span><span class="p">)</span>
 </span><span id="line-0-51"><a id="example-0-51" name="example-0-51"></a>    <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">values</span><span class="p">:</span>
 </span><span id="line-0-52"><a id="example-0-52" name="example-0-52"></a>        <span class="n">list_</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
@@ -12329,7 +12329,7 @@ converted to an integer.</p>
 <span class="normal"><a href="#example-0-74">74</a></span>
 <span class="normal"><a href="#example-0-75">75</a></span>
 <span class="normal"><a href="#example-0-76">76</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-54"><a id="example-0-54" name="example-0-54"></a><span class="k">def</span><span class="w"> </span><span class="nf">insert_into_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">list_</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
-</span><span id="line-0-55"><a id="example-0-55" name="example-0-55"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Inserts ``value`` into ``list`` to the position specified with ``index``.</span>
+</span><span id="line-0-55"><a id="example-0-55" name="example-0-55"></a><span class="w">    </span><span class="sd">"""Inserts ``value`` into ``list`` to the position specified with ``index``.</span>
 </span><span id="line-0-56"><a id="example-0-56" name="example-0-56"></a>
 </span><span id="line-0-57"><a id="example-0-57" name="example-0-57"></a><span class="sd">    Index ``0`` adds the value into the first position, ``1`` to the second,</span>
 </span><span id="line-0-58"><a id="example-0-58" name="example-0-58"></a><span class="sd">    and so on. Inserting from right works with negative indices so that</span>
@@ -12346,9 +12346,9 @@ converted to an integer.</p>
 </span><span id="line-0-69"><a id="example-0-69" name="example-0-69"></a><span class="sd">    | Insert Into List | ${L1} | 0     | xxx |</span>
 </span><span id="line-0-70"><a id="example-0-70" name="example-0-70"></a><span class="sd">    | Insert Into List | ${L2} | ${-1} | xxx |</span>
 </span><span id="line-0-71"><a id="example-0-71" name="example-0-71"></a><span class="sd">    =&gt;</span>
-</span><span id="line-0-72"><a id="example-0-72" name="example-0-72"></a><span class="sd">    | ${L1} = [&#39;xxx&#39;, &#39;a&#39;]</span>
-</span><span id="line-0-73"><a id="example-0-73" name="example-0-73"></a><span class="sd">    | ${L2} = [&#39;a&#39;, &#39;xxx&#39;, &#39;b&#39;]</span>
-</span><span id="line-0-74"><a id="example-0-74" name="example-0-74"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-72"><a id="example-0-72" name="example-0-72"></a><span class="sd">    | ${L1} = ['xxx', 'a']</span>
+</span><span id="line-0-73"><a id="example-0-73" name="example-0-73"></a><span class="sd">    | ${L2} = ['a', 'xxx', 'b']</span>
+</span><span id="line-0-74"><a id="example-0-74" name="example-0-74"></a><span class="sd">    """</span>
 </span><span id="line-0-75"><a id="example-0-75" name="example-0-75"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_validate_list</span><span class="p">(</span><span class="n">list_</span><span class="p">)</span>
 </span><span id="line-0-76"><a id="example-0-76" name="example-0-76"></a>    <span class="n">list_</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_index_to_int</span><span class="p">(</span><span class="n">index</span><span class="p">),</span> <span class="n">value</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
@@ -12403,7 +12403,7 @@ converted to an integer.</p>
 <span class="normal"><a href="#example-0-90">90</a></span>
 <span class="normal"><a href="#example-0-91">91</a></span>
 <span class="normal"><a href="#example-0-92">92</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-78"><a id="example-0-78" name="example-0-78"></a><span class="k">def</span><span class="w"> </span><span class="nf">combine_lists</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">lists</span><span class="p">):</span>
-</span><span id="line-0-79"><a id="example-0-79" name="example-0-79"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Combines the given ``lists`` together and returns the result.</span>
+</span><span id="line-0-79"><a id="example-0-79" name="example-0-79"></a><span class="w">    </span><span class="sd">"""Combines the given ``lists`` together and returns the result.</span>
 </span><span id="line-0-80"><a id="example-0-80" name="example-0-80"></a>
 </span><span id="line-0-81"><a id="example-0-81" name="example-0-81"></a><span class="sd">    The given lists are not altered by this keyword.</span>
 </span><span id="line-0-82"><a id="example-0-82" name="example-0-82"></a>
@@ -12411,10 +12411,10 @@ converted to an integer.</p>
 </span><span id="line-0-84"><a id="example-0-84" name="example-0-84"></a><span class="sd">    | ${x} = | Combine Lists | ${L1} | ${L2} |       |</span>
 </span><span id="line-0-85"><a id="example-0-85" name="example-0-85"></a><span class="sd">    | ${y} = | Combine Lists | ${L1} | ${L2} | ${L1} |</span>
 </span><span id="line-0-86"><a id="example-0-86" name="example-0-86"></a><span class="sd">    =&gt;</span>
-</span><span id="line-0-87"><a id="example-0-87" name="example-0-87"></a><span class="sd">    | ${x} = [&#39;a&#39;, &#39;a&#39;, &#39;b&#39;]</span>
-</span><span id="line-0-88"><a id="example-0-88" name="example-0-88"></a><span class="sd">    | ${y} = [&#39;a&#39;, &#39;a&#39;, &#39;b&#39;, &#39;a&#39;]</span>
+</span><span id="line-0-87"><a id="example-0-87" name="example-0-87"></a><span class="sd">    | ${x} = ['a', 'a', 'b']</span>
+</span><span id="line-0-88"><a id="example-0-88" name="example-0-88"></a><span class="sd">    | ${y} = ['a', 'a', 'b', 'a']</span>
 </span><span id="line-0-89"><a id="example-0-89" name="example-0-89"></a><span class="sd">    | ${L1} and ${L2} are not changed.</span>
-</span><span id="line-0-90"><a id="example-0-90" name="example-0-90"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-90"><a id="example-0-90" name="example-0-90"></a><span class="sd">    """</span>
 </span><span id="line-0-91"><a id="example-0-91" name="example-0-91"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_validate_lists</span><span class="p">(</span><span class="o">*</span><span class="n">lists</span><span class="p">)</span>
 </span><span id="line-0-92"><a id="example-0-92" name="example-0-92"></a>    <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="n">chain</span><span class="o">.</span><span class="n">from_iterable</span><span class="p">(</span><span class="n">lists</span><span class="p">))</span>
 </span></code></pre></div></td></tr></table></div>
@@ -12485,7 +12485,7 @@ item assignment syntax. This is equivalent to the above:
 <span class="normal"><a href="#example-0-116">116</a></span>
 <span class="normal"><a href="#example-0-117">117</a></span>
 <span class="normal"><a href="#example-0-118">118</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-94"><a id="example-0-94" name="example-0-94"></a><span class="k">def</span><span class="w"> </span><span class="nf">set_list_value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">list_</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
-</span><span id="line-0-95"><a id="example-0-95" name="example-0-95"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Sets the value of ``list`` specified by ``index`` to the given ``value``.</span>
+</span><span id="line-0-95"><a id="example-0-95" name="example-0-95"></a><span class="w">    </span><span class="sd">"""Sets the value of ``list`` specified by ``index`` to the given ``value``.</span>
 </span><span id="line-0-96"><a id="example-0-96" name="example-0-96"></a>
 </span><span id="line-0-97"><a id="example-0-97" name="example-0-97"></a><span class="sd">    Index ``0`` means the first position, ``1`` the second and so on.</span>
 </span><span id="line-0-98"><a id="example-0-98" name="example-0-98"></a><span class="sd">    Similarly, ``-1`` is the last position, ``-2`` second last, and so on.</span>
@@ -12497,13 +12497,13 @@ item assignment syntax. This is equivalent to the above:
 </span><span id="line-0-104"><a id="example-0-104" name="example-0-104"></a><span class="sd">    | Set List Value | ${L3} | 1  | xxx |</span>
 </span><span id="line-0-105"><a id="example-0-105" name="example-0-105"></a><span class="sd">    | Set List Value | ${L3} | -1 | yyy |</span>
 </span><span id="line-0-106"><a id="example-0-106" name="example-0-106"></a><span class="sd">    =&gt;</span>
-</span><span id="line-0-107"><a id="example-0-107" name="example-0-107"></a><span class="sd">    | ${L3} = [&#39;a&#39;, &#39;xxx&#39;, &#39;yyy&#39;]</span>
+</span><span id="line-0-107"><a id="example-0-107" name="example-0-107"></a><span class="sd">    | ${L3} = ['a', 'xxx', 'yyy']</span>
 </span><span id="line-0-108"><a id="example-0-108" name="example-0-108"></a>
 </span><span id="line-0-109"><a id="example-0-109" name="example-0-109"></a><span class="sd">    Starting from Robot Framework 6.1, it is also possible to use the native</span>
 </span><span id="line-0-110"><a id="example-0-110" name="example-0-110"></a><span class="sd">    item assignment syntax. This is equivalent to the above:</span>
 </span><span id="line-0-111"><a id="example-0-111" name="example-0-111"></a><span class="sd">    | ${L3}[1] =  | Set Variable | xxx |</span>
 </span><span id="line-0-112"><a id="example-0-112" name="example-0-112"></a><span class="sd">    | ${L3}[-1] = | Set Variable | yyy |</span>
-</span><span id="line-0-113"><a id="example-0-113" name="example-0-113"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-113"><a id="example-0-113" name="example-0-113"></a><span class="sd">    """</span>
 </span><span id="line-0-114"><a id="example-0-114" name="example-0-114"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_validate_list</span><span class="p">(</span><span class="n">list_</span><span class="p">)</span>
 </span><span id="line-0-115"><a id="example-0-115" name="example-0-115"></a>    <span class="k">try</span><span class="p">:</span>
 </span><span id="line-0-116"><a id="example-0-116" name="example-0-116"></a>        <span class="n">list_</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_index_to_int</span><span class="p">(</span><span class="n">index</span><span class="p">)]</span> <span class="o">=</span> <span class="n">value</span>
@@ -12557,15 +12557,15 @@ item assignment syntax. This is equivalent to the above:
 <span class="normal"><a href="#example-0-131">131</a></span>
 <span class="normal"><a href="#example-0-132">132</a></span>
 <span class="normal"><a href="#example-0-133">133</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-120"><a id="example-0-120" name="example-0-120"></a><span class="k">def</span><span class="w"> </span><span class="nf">remove_values_from_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">list_</span><span class="p">,</span> <span class="o">*</span><span class="n">values</span><span class="p">):</span>
-</span><span id="line-0-121"><a id="example-0-121" name="example-0-121"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Removes all occurrences of given ``values`` from ``list``.</span>
+</span><span id="line-0-121"><a id="example-0-121" name="example-0-121"></a><span class="w">    </span><span class="sd">"""Removes all occurrences of given ``values`` from ``list``.</span>
 </span><span id="line-0-122"><a id="example-0-122" name="example-0-122"></a>
 </span><span id="line-0-123"><a id="example-0-123" name="example-0-123"></a><span class="sd">    It is not an error if a value does not exist in the list at all.</span>
 </span><span id="line-0-124"><a id="example-0-124" name="example-0-124"></a>
 </span><span id="line-0-125"><a id="example-0-125" name="example-0-125"></a><span class="sd">    Example:</span>
 </span><span id="line-0-126"><a id="example-0-126" name="example-0-126"></a><span class="sd">    | Remove Values From List | ${L4} | a | c | e | f |</span>
 </span><span id="line-0-127"><a id="example-0-127" name="example-0-127"></a><span class="sd">    =&gt;</span>
-</span><span id="line-0-128"><a id="example-0-128" name="example-0-128"></a><span class="sd">    | ${L4} = [&#39;b&#39;, &#39;d&#39;]</span>
-</span><span id="line-0-129"><a id="example-0-129" name="example-0-129"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-128"><a id="example-0-128" name="example-0-128"></a><span class="sd">    | ${L4} = ['b', 'd']</span>
+</span><span id="line-0-129"><a id="example-0-129" name="example-0-129"></a><span class="sd">    """</span>
 </span><span id="line-0-130"><a id="example-0-130" name="example-0-130"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_validate_list</span><span class="p">(</span><span class="n">list_</span><span class="p">)</span>
 </span><span id="line-0-131"><a id="example-0-131" name="example-0-131"></a>    <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">values</span><span class="p">:</span>
 </span><span id="line-0-132"><a id="example-0-132" name="example-0-132"></a>        <span class="k">while</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">list_</span><span class="p">:</span>
@@ -12629,7 +12629,7 @@ to an integer.</p>
 <span class="normal"><a href="#example-0-152">152</a></span>
 <span class="normal"><a href="#example-0-153">153</a></span>
 <span class="normal"><a href="#example-0-154">154</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-135"><a id="example-0-135" name="example-0-135"></a><span class="k">def</span><span class="w"> </span><span class="nf">remove_from_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">list_</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
-</span><span id="line-0-136"><a id="example-0-136" name="example-0-136"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Removes and returns the value specified with an ``index`` from ``list``.</span>
+</span><span id="line-0-136"><a id="example-0-136" name="example-0-136"></a><span class="w">    </span><span class="sd">"""Removes and returns the value specified with an ``index`` from ``list``.</span>
 </span><span id="line-0-137"><a id="example-0-137" name="example-0-137"></a>
 </span><span id="line-0-138"><a id="example-0-138" name="example-0-138"></a><span class="sd">    Index ``0`` means the first position, ``1`` the second and so on.</span>
 </span><span id="line-0-139"><a id="example-0-139" name="example-0-139"></a><span class="sd">    Similarly, ``-1`` is the last position, ``-2`` the second last, and so on.</span>
@@ -12640,9 +12640,9 @@ to an integer.</p>
 </span><span id="line-0-144"><a id="example-0-144" name="example-0-144"></a><span class="sd">    Example:</span>
 </span><span id="line-0-145"><a id="example-0-145" name="example-0-145"></a><span class="sd">    | ${x} = | Remove From List | ${L2} | 0 |</span>
 </span><span id="line-0-146"><a id="example-0-146" name="example-0-146"></a><span class="sd">    =&gt;</span>
-</span><span id="line-0-147"><a id="example-0-147" name="example-0-147"></a><span class="sd">    | ${x} = &#39;a&#39;</span>
-</span><span id="line-0-148"><a id="example-0-148" name="example-0-148"></a><span class="sd">    | ${L2} = [&#39;b&#39;]</span>
-</span><span id="line-0-149"><a id="example-0-149" name="example-0-149"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-147"><a id="example-0-147" name="example-0-147"></a><span class="sd">    | ${x} = 'a'</span>
+</span><span id="line-0-148"><a id="example-0-148" name="example-0-148"></a><span class="sd">    | ${L2} = ['b']</span>
+</span><span id="line-0-149"><a id="example-0-149" name="example-0-149"></a><span class="sd">    """</span>
 </span><span id="line-0-150"><a id="example-0-150" name="example-0-150"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_validate_list</span><span class="p">(</span><span class="n">list_</span><span class="p">)</span>
 </span><span id="line-0-151"><a id="example-0-151" name="example-0-151"></a>    <span class="k">try</span><span class="p">:</span>
 </span><span id="line-0-152"><a id="example-0-152" name="example-0-152"></a>        <span class="k">return</span> <span class="n">list_</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_index_to_int</span><span class="p">(</span><span class="n">index</span><span class="p">))</span>
@@ -12697,20 +12697,20 @@ duplicates. Number of the removed duplicates is logged.</p>
 <span class="normal"><a href="#example-0-169">169</a></span>
 <span class="normal"><a href="#example-0-170">170</a></span>
 <span class="normal"><a href="#example-0-171">171</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-156"><a id="example-0-156" name="example-0-156"></a><span class="k">def</span><span class="w"> </span><span class="nf">remove_duplicates</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">list_</span><span class="p">):</span>
-</span><span id="line-0-157"><a id="example-0-157" name="example-0-157"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns a list without duplicates based on the given ``list``.</span>
+</span><span id="line-0-157"><a id="example-0-157" name="example-0-157"></a><span class="w">    </span><span class="sd">"""Returns a list without duplicates based on the given ``list``.</span>
 </span><span id="line-0-158"><a id="example-0-158" name="example-0-158"></a>
 </span><span id="line-0-159"><a id="example-0-159" name="example-0-159"></a><span class="sd">    Creates and returns a new list that contains all items in the given</span>
 </span><span id="line-0-160"><a id="example-0-160" name="example-0-160"></a><span class="sd">    list so that one item can appear only once. Order of the items in</span>
 </span><span id="line-0-161"><a id="example-0-161" name="example-0-161"></a><span class="sd">    the new list is the same as in the original except for missing</span>
 </span><span id="line-0-162"><a id="example-0-162" name="example-0-162"></a><span class="sd">    duplicates. Number of the removed duplicates is logged.</span>
-</span><span id="line-0-163"><a id="example-0-163" name="example-0-163"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-163"><a id="example-0-163" name="example-0-163"></a><span class="sd">    """</span>
 </span><span id="line-0-164"><a id="example-0-164" name="example-0-164"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_validate_list</span><span class="p">(</span><span class="n">list_</span><span class="p">)</span>
 </span><span id="line-0-165"><a id="example-0-165" name="example-0-165"></a>    <span class="n">ret</span> <span class="o">=</span> <span class="p">[]</span>
 </span><span id="line-0-166"><a id="example-0-166" name="example-0-166"></a>    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">list_</span><span class="p">:</span>
 </span><span id="line-0-167"><a id="example-0-167" name="example-0-167"></a>        <span class="k">if</span> <span class="n">item</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ret</span><span class="p">:</span>
 </span><span id="line-0-168"><a id="example-0-168" name="example-0-168"></a>            <span class="n">ret</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 </span><span id="line-0-169"><a id="example-0-169" name="example-0-169"></a>    <span class="n">removed</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">list_</span><span class="p">)</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">ret</span><span class="p">)</span>
-</span><span id="line-0-170"><a id="example-0-170" name="example-0-170"></a>    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">removed</span><span class="si">}</span><span class="s1"> duplicate</span><span class="si">{</span><span class="n">s</span><span class="p">(</span><span class="n">removed</span><span class="p">)</span><span class="si">}</span><span class="s1"> removed.&#39;</span><span class="p">)</span>
+</span><span id="line-0-170"><a id="example-0-170" name="example-0-170"></a>    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">removed</span><span class="si">}</span><span class="s1"> duplicate</span><span class="si">{</span><span class="n">s</span><span class="p">(</span><span class="n">removed</span><span class="p">)</span><span class="si">}</span><span class="s1"> removed.'</span><span class="p">)</span>
 </span><span id="line-0-171"><a id="example-0-171" name="example-0-171"></a>    <span class="k">return</span> <span class="n">ret</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
@@ -12778,7 +12778,7 @@ to an integer.</p>
 <span class="normal"><a href="#example-0-194">194</a></span>
 <span class="normal"><a href="#example-0-195">195</a></span>
 <span class="normal"><a href="#example-0-196">196</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-173"><a id="example-0-173" name="example-0-173"></a><span class="k">def</span><span class="w"> </span><span class="nf">get_from_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">list_</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
-</span><span id="line-0-174"><a id="example-0-174" name="example-0-174"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns the value specified with an ``index`` from ``list``.</span>
+</span><span id="line-0-174"><a id="example-0-174" name="example-0-174"></a><span class="w">    </span><span class="sd">"""Returns the value specified with an ``index`` from ``list``.</span>
 </span><span id="line-0-175"><a id="example-0-175" name="example-0-175"></a>
 </span><span id="line-0-176"><a id="example-0-176" name="example-0-176"></a><span class="sd">    The given list is never altered by this keyword.</span>
 </span><span id="line-0-177"><a id="example-0-177" name="example-0-177"></a>
@@ -12792,10 +12792,10 @@ to an integer.</p>
 </span><span id="line-0-185"><a id="example-0-185" name="example-0-185"></a><span class="sd">    | ${x} = | Get From List | ${L5} | 0  | # L5[0]  |</span>
 </span><span id="line-0-186"><a id="example-0-186" name="example-0-186"></a><span class="sd">    | ${y} = | Get From List | ${L5} | -2 | # L5[-2] |</span>
 </span><span id="line-0-187"><a id="example-0-187" name="example-0-187"></a><span class="sd">    =&gt;</span>
-</span><span id="line-0-188"><a id="example-0-188" name="example-0-188"></a><span class="sd">    | ${x} = &#39;a&#39;</span>
-</span><span id="line-0-189"><a id="example-0-189" name="example-0-189"></a><span class="sd">    | ${y} = &#39;d&#39;</span>
+</span><span id="line-0-188"><a id="example-0-188" name="example-0-188"></a><span class="sd">    | ${x} = 'a'</span>
+</span><span id="line-0-189"><a id="example-0-189" name="example-0-189"></a><span class="sd">    | ${y} = 'd'</span>
 </span><span id="line-0-190"><a id="example-0-190" name="example-0-190"></a><span class="sd">    | ${L5} is not changed</span>
-</span><span id="line-0-191"><a id="example-0-191" name="example-0-191"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-191"><a id="example-0-191" name="example-0-191"></a><span class="sd">    """</span>
 </span><span id="line-0-192"><a id="example-0-192" name="example-0-192"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_validate_list</span><span class="p">(</span><span class="n">list_</span><span class="p">)</span>
 </span><span id="line-0-193"><a id="example-0-193" name="example-0-193"></a>    <span class="k">try</span><span class="p">:</span>
 </span><span id="line-0-194"><a id="example-0-194" name="example-0-194"></a>        <span class="k">return</span> <span class="n">list_</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_index_to_int</span><span class="p">(</span><span class="n">index</span><span class="p">)]</span>
@@ -12876,7 +12876,7 @@ the largest (or smallest) available index.</p>
 <span class="normal"><a href="#example-0-224">224</a></span>
 <span class="normal"><a href="#example-0-225">225</a></span>
 <span class="normal"><a href="#example-0-226">226</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-198"><a id="example-0-198" name="example-0-198"></a><span class="k">def</span><span class="w"> </span><span class="nf">get_slice_from_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">list_</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-</span><span id="line-0-199"><a id="example-0-199" name="example-0-199"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns a slice of the given list between ``start`` and ``end`` indexes.</span>
+</span><span id="line-0-199"><a id="example-0-199" name="example-0-199"></a><span class="w">    </span><span class="sd">"""Returns a slice of the given list between ``start`` and ``end`` indexes.</span>
 </span><span id="line-0-200"><a id="example-0-200" name="example-0-200"></a>
 </span><span id="line-0-201"><a id="example-0-201" name="example-0-201"></a><span class="sd">    The given list is never altered by this keyword.</span>
 </span><span id="line-0-202"><a id="example-0-202" name="example-0-202"></a>
@@ -12894,11 +12894,11 @@ the largest (or smallest) available index.</p>
 </span><span id="line-0-214"><a id="example-0-214" name="example-0-214"></a><span class="sd">    | ${y} = | Get Slice From List | ${L5} | 1      |   | # L5[1:None] |</span>
 </span><span id="line-0-215"><a id="example-0-215" name="example-0-215"></a><span class="sd">    | ${z} = | Get Slice From List | ${L5} | end=-2 |   | # L5[0:-2]   |</span>
 </span><span id="line-0-216"><a id="example-0-216" name="example-0-216"></a><span class="sd">    =&gt;</span>
-</span><span id="line-0-217"><a id="example-0-217" name="example-0-217"></a><span class="sd">    | ${x} = [&#39;c&#39;, &#39;d&#39;]</span>
-</span><span id="line-0-218"><a id="example-0-218" name="example-0-218"></a><span class="sd">    | ${y} = [&#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;]</span>
-</span><span id="line-0-219"><a id="example-0-219" name="example-0-219"></a><span class="sd">    | ${z} = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]</span>
+</span><span id="line-0-217"><a id="example-0-217" name="example-0-217"></a><span class="sd">    | ${x} = ['c', 'd']</span>
+</span><span id="line-0-218"><a id="example-0-218" name="example-0-218"></a><span class="sd">    | ${y} = ['b', 'c', 'd', 'e']</span>
+</span><span id="line-0-219"><a id="example-0-219" name="example-0-219"></a><span class="sd">    | ${z} = ['a', 'b', 'c']</span>
 </span><span id="line-0-220"><a id="example-0-220" name="example-0-220"></a><span class="sd">    | ${L5} is not changed</span>
-</span><span id="line-0-221"><a id="example-0-221" name="example-0-221"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-221"><a id="example-0-221" name="example-0-221"></a><span class="sd">    """</span>
 </span><span id="line-0-222"><a id="example-0-222" name="example-0-222"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_validate_list</span><span class="p">(</span><span class="n">list_</span><span class="p">)</span>
 </span><span id="line-0-223"><a id="example-0-223" name="example-0-223"></a>    <span class="n">start</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_index_to_int</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
 </span><span id="line-0-224"><a id="example-0-224" name="example-0-224"></a>    <span class="k">if</span> <span class="n">end</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -12956,7 +12956,7 @@ keyword. The given list is never altered by this keyword.</p>
 <span class="normal"><a href="#example-0-240">240</a></span>
 <span class="normal"><a href="#example-0-241">241</a></span>
 <span class="normal"><a href="#example-0-242">242</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-228"><a id="example-0-228" name="example-0-228"></a><span class="k">def</span><span class="w"> </span><span class="nf">count_values_in_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">list_</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-</span><span id="line-0-229"><a id="example-0-229" name="example-0-229"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns the number of occurrences of the given ``value`` in ``list``.</span>
+</span><span id="line-0-229"><a id="example-0-229" name="example-0-229"></a><span class="w">    </span><span class="sd">"""Returns the number of occurrences of the given ``value`` in ``list``.</span>
 </span><span id="line-0-230"><a id="example-0-230" name="example-0-230"></a>
 </span><span id="line-0-231"><a id="example-0-231" name="example-0-231"></a><span class="sd">    The search can be narrowed to the selected sublist by the ``start`` and</span>
 </span><span id="line-0-232"><a id="example-0-232" name="example-0-232"></a><span class="sd">    ``end`` indexes having the same semantics as with `Get Slice From List`</span>
@@ -12967,7 +12967,7 @@ keyword. The given list is never altered by this keyword.</p>
 </span><span id="line-0-237"><a id="example-0-237" name="example-0-237"></a><span class="sd">    =&gt;</span>
 </span><span id="line-0-238"><a id="example-0-238" name="example-0-238"></a><span class="sd">    | ${x} = 1</span>
 </span><span id="line-0-239"><a id="example-0-239" name="example-0-239"></a><span class="sd">    | ${L3} is not changed</span>
-</span><span id="line-0-240"><a id="example-0-240" name="example-0-240"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-240"><a id="example-0-240" name="example-0-240"></a><span class="sd">    """</span>
 </span><span id="line-0-241"><a id="example-0-241" name="example-0-241"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_validate_list</span><span class="p">(</span><span class="n">list_</span><span class="p">)</span>
 </span><span id="line-0-242"><a id="example-0-242" name="example-0-242"></a>    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_slice_from_list</span><span class="p">(</span><span class="n">list_</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
@@ -13029,7 +13029,7 @@ is never altered by this keyword.</p>
 <span class="normal"><a href="#example-0-262">262</a></span>
 <span class="normal"><a href="#example-0-263">263</a></span>
 <span class="normal"><a href="#example-0-264">264</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-244"><a id="example-0-244" name="example-0-244"></a><span class="k">def</span><span class="w"> </span><span class="nf">get_index_from_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">list_</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-</span><span id="line-0-245"><a id="example-0-245" name="example-0-245"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns the index of the first occurrence of the ``value`` on the list.</span>
+</span><span id="line-0-245"><a id="example-0-245" name="example-0-245"></a><span class="w">    </span><span class="sd">"""Returns the index of the first occurrence of the ``value`` on the list.</span>
 </span><span id="line-0-246"><a id="example-0-246" name="example-0-246"></a>
 </span><span id="line-0-247"><a id="example-0-247" name="example-0-247"></a><span class="sd">    The search can be narrowed to the selected sublist by the ``start`` and</span>
 </span><span id="line-0-248"><a id="example-0-248" name="example-0-248"></a><span class="sd">    ``end`` indexes having the same semantics as with `Get Slice From List`</span>
@@ -13041,7 +13041,7 @@ is never altered by this keyword.</p>
 </span><span id="line-0-254"><a id="example-0-254" name="example-0-254"></a><span class="sd">    =&gt;</span>
 </span><span id="line-0-255"><a id="example-0-255" name="example-0-255"></a><span class="sd">    | ${x} = 3</span>
 </span><span id="line-0-256"><a id="example-0-256" name="example-0-256"></a><span class="sd">    | ${L5} is not changed</span>
-</span><span id="line-0-257"><a id="example-0-257" name="example-0-257"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-257"><a id="example-0-257" name="example-0-257"></a><span class="sd">    """</span>
 </span><span id="line-0-258"><a id="example-0-258" name="example-0-258"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_validate_list</span><span class="p">(</span><span class="n">list_</span><span class="p">)</span>
 </span><span id="line-0-259"><a id="example-0-259" name="example-0-259"></a>    <span class="n">start</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_index_to_int</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">empty_to_zero</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </span><span id="line-0-260"><a id="example-0-260" name="example-0-260"></a>    <span class="n">list_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_slice_from_list</span><span class="p">(</span><span class="n">list_</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
@@ -13095,14 +13095,14 @@ be copied.</p>
 <span class="normal"><a href="#example-0-276">276</a></span>
 <span class="normal"><a href="#example-0-277">277</a></span>
 <span class="normal"><a href="#example-0-278">278</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-266"><a id="example-0-266" name="example-0-266"></a><span class="k">def</span><span class="w"> </span><span class="nf">copy_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">list_</span><span class="p">,</span> <span class="n">deepcopy</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-</span><span id="line-0-267"><a id="example-0-267" name="example-0-267"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns a copy of the given list.</span>
+</span><span id="line-0-267"><a id="example-0-267" name="example-0-267"></a><span class="w">    </span><span class="sd">"""Returns a copy of the given list.</span>
 </span><span id="line-0-268"><a id="example-0-268" name="example-0-268"></a>
 </span><span id="line-0-269"><a id="example-0-269" name="example-0-269"></a><span class="sd">    By default, returns a new list with same items as in the original.</span>
 </span><span id="line-0-270"><a id="example-0-270" name="example-0-270"></a><span class="sd">    Set the ``deepcopy`` argument to a true value if also items should</span>
 </span><span id="line-0-271"><a id="example-0-271" name="example-0-271"></a><span class="sd">    be copied.</span>
 </span><span id="line-0-272"><a id="example-0-272" name="example-0-272"></a>
 </span><span id="line-0-273"><a id="example-0-273" name="example-0-273"></a><span class="sd">    The given list is never altered by this keyword.</span>
-</span><span id="line-0-274"><a id="example-0-274" name="example-0-274"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-274"><a id="example-0-274" name="example-0-274"></a><span class="sd">    """</span>
 </span><span id="line-0-275"><a id="example-0-275" name="example-0-275"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_validate_list</span><span class="p">(</span><span class="n">list_</span><span class="p">)</span>
 </span><span id="line-0-276"><a id="example-0-276" name="example-0-276"></a>    <span class="k">if</span> <span class="n">deepcopy</span><span class="p">:</span>
 </span><span id="line-0-277"><a id="example-0-277" name="example-0-277"></a>        <span class="k">return</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">list_</span><span class="p">)</span>
@@ -13153,15 +13153,15 @@ be copied.</p>
 <span class="normal"><a href="#example-0-289">289</a></span>
 <span class="normal"><a href="#example-0-290">290</a></span>
 <span class="normal"><a href="#example-0-291">291</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-280"><a id="example-0-280" name="example-0-280"></a><span class="k">def</span><span class="w"> </span><span class="nf">reverse_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">list_</span><span class="p">):</span>
-</span><span id="line-0-281"><a id="example-0-281" name="example-0-281"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Reverses the given list in place.</span>
+</span><span id="line-0-281"><a id="example-0-281" name="example-0-281"></a><span class="w">    </span><span class="sd">"""Reverses the given list in place.</span>
 </span><span id="line-0-282"><a id="example-0-282" name="example-0-282"></a>
 </span><span id="line-0-283"><a id="example-0-283" name="example-0-283"></a><span class="sd">    Note that the given list is changed and nothing is returned. Use</span>
 </span><span id="line-0-284"><a id="example-0-284" name="example-0-284"></a><span class="sd">    `Copy List` first, if you need to keep also the original order.</span>
 </span><span id="line-0-285"><a id="example-0-285" name="example-0-285"></a>
 </span><span id="line-0-286"><a id="example-0-286" name="example-0-286"></a><span class="sd">    | Reverse List | ${L3} |</span>
 </span><span id="line-0-287"><a id="example-0-287" name="example-0-287"></a><span class="sd">    =&gt;</span>
-</span><span id="line-0-288"><a id="example-0-288" name="example-0-288"></a><span class="sd">    | ${L3} = [&#39;c&#39;, &#39;b&#39;, &#39;a&#39;]</span>
-</span><span id="line-0-289"><a id="example-0-289" name="example-0-289"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-288"><a id="example-0-288" name="example-0-288"></a><span class="sd">    | ${L3} = ['c', 'b', 'a']</span>
+</span><span id="line-0-289"><a id="example-0-289" name="example-0-289"></a><span class="sd">    """</span>
 </span><span id="line-0-290"><a id="example-0-290" name="example-0-290"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_validate_list</span><span class="p">(</span><span class="n">list_</span><span class="p">)</span>
 </span><span id="line-0-291"><a id="example-0-291" name="example-0-291"></a>    <span class="n">list_</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
 </span></code></pre></div></td></tr></table></div>
@@ -13210,7 +13210,7 @@ order.</p>
 <span class="normal"><a href="#example-0-302">302</a></span>
 <span class="normal"><a href="#example-0-303">303</a></span>
 <span class="normal"><a href="#example-0-304">304</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-293"><a id="example-0-293" name="example-0-293"></a><span class="k">def</span><span class="w"> </span><span class="nf">sort_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">list_</span><span class="p">):</span>
-</span><span id="line-0-294"><a id="example-0-294" name="example-0-294"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Sorts the given list in place.</span>
+</span><span id="line-0-294"><a id="example-0-294" name="example-0-294"></a><span class="w">    </span><span class="sd">"""Sorts the given list in place.</span>
 </span><span id="line-0-295"><a id="example-0-295" name="example-0-295"></a>
 </span><span id="line-0-296"><a id="example-0-296" name="example-0-296"></a><span class="sd">    Sorting fails if items in the list are not comparable with each others.</span>
 </span><span id="line-0-297"><a id="example-0-297" name="example-0-297"></a><span class="sd">    For example, sorting a list containing strings and numbers is not possible.</span>
@@ -13218,7 +13218,7 @@ order.</p>
 </span><span id="line-0-299"><a id="example-0-299" name="example-0-299"></a><span class="sd">    Note that the given list is changed and nothing is returned. Use</span>
 </span><span id="line-0-300"><a id="example-0-300" name="example-0-300"></a><span class="sd">    `Copy List` first, if you need to preserve the list also in the original</span>
 </span><span id="line-0-301"><a id="example-0-301" name="example-0-301"></a><span class="sd">    order.</span>
-</span><span id="line-0-302"><a id="example-0-302" name="example-0-302"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-302"><a id="example-0-302" name="example-0-302"></a><span class="sd">    """</span>
 </span><span id="line-0-303"><a id="example-0-303" name="example-0-303"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_validate_list</span><span class="p">(</span><span class="n">list_</span><span class="p">)</span>
 </span><span id="line-0-304"><a id="example-0-304" name="example-0-304"></a>    <span class="n">list_</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
 </span></code></pre></div></td></tr></table></div>
@@ -13269,18 +13269,18 @@ Robot Framework 7.0.</p>
 <span class="normal"><a href="#example-0-316">316</a></span>
 <span class="normal"><a href="#example-0-317">317</a></span>
 <span class="normal"><a href="#example-0-318">318</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-306"><a id="example-0-306" name="example-0-306"></a><span class="k">def</span><span class="w"> </span><span class="nf">list_should_contain_value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">list_</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">msg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ignore_case</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-</span><span id="line-0-307"><a id="example-0-307" name="example-0-307"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Fails if the ``value`` is not found from ``list``.</span>
+</span><span id="line-0-307"><a id="example-0-307" name="example-0-307"></a><span class="w">    </span><span class="sd">"""Fails if the ``value`` is not found from ``list``.</span>
 </span><span id="line-0-308"><a id="example-0-308" name="example-0-308"></a>
 </span><span id="line-0-309"><a id="example-0-309" name="example-0-309"></a><span class="sd">    Use the ``msg`` argument to override the default error message.</span>
 </span><span id="line-0-310"><a id="example-0-310" name="example-0-310"></a>
 </span><span id="line-0-311"><a id="example-0-311" name="example-0-311"></a><span class="sd">    The ``ignore_case`` argument can be used to make comparison case-insensitive.</span>
 </span><span id="line-0-312"><a id="example-0-312" name="example-0-312"></a><span class="sd">    See the `Ignore case` section for more details. This option is new in</span>
 </span><span id="line-0-313"><a id="example-0-313" name="example-0-313"></a><span class="sd">    Robot Framework 7.0.</span>
-</span><span id="line-0-314"><a id="example-0-314" name="example-0-314"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-314"><a id="example-0-314" name="example-0-314"></a><span class="sd">    """</span>
 </span><span id="line-0-315"><a id="example-0-315" name="example-0-315"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_validate_list</span><span class="p">(</span><span class="n">list_</span><span class="p">)</span>
 </span><span id="line-0-316"><a id="example-0-316" name="example-0-316"></a>    <span class="n">normalize</span> <span class="o">=</span> <span class="n">Normalizer</span><span class="p">(</span><span class="n">ignore_case</span><span class="p">)</span><span class="o">.</span><span class="n">normalize</span>
 </span><span id="line-0-317"><a id="example-0-317" name="example-0-317"></a>    <span class="n">_verify_condition</span><span class="p">(</span><span class="n">normalize</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="ow">in</span> <span class="n">normalize</span><span class="p">(</span><span class="n">list_</span><span class="p">),</span>
-</span><span id="line-0-318"><a id="example-0-318" name="example-0-318"></a>                      <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">seq2str2</span><span class="p">(</span><span class="n">list_</span><span class="p">)</span><span class="si">}</span><span class="s2"> does not contain value &#39;</span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">&#39;.&quot;</span><span class="p">,</span> <span class="n">msg</span><span class="p">)</span>
+</span><span id="line-0-318"><a id="example-0-318" name="example-0-318"></a>                      <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">seq2str2</span><span class="p">(</span><span class="n">list_</span><span class="p">)</span><span class="si">}</span><span class="s2"> does not contain value '</span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">'."</span><span class="p">,</span> <span class="n">msg</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -13329,18 +13329,18 @@ Robot Framework 7.0.</p>
 <span class="normal"><a href="#example-0-330">330</a></span>
 <span class="normal"><a href="#example-0-331">331</a></span>
 <span class="normal"><a href="#example-0-332">332</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-320"><a id="example-0-320" name="example-0-320"></a><span class="k">def</span><span class="w"> </span><span class="nf">list_should_not_contain_value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">list_</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">msg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ignore_case</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-</span><span id="line-0-321"><a id="example-0-321" name="example-0-321"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Fails if the ``value`` is found from ``list``.</span>
+</span><span id="line-0-321"><a id="example-0-321" name="example-0-321"></a><span class="w">    </span><span class="sd">"""Fails if the ``value`` is found from ``list``.</span>
 </span><span id="line-0-322"><a id="example-0-322" name="example-0-322"></a>
 </span><span id="line-0-323"><a id="example-0-323" name="example-0-323"></a><span class="sd">    Use the ``msg`` argument to override the default error message.</span>
 </span><span id="line-0-324"><a id="example-0-324" name="example-0-324"></a>
 </span><span id="line-0-325"><a id="example-0-325" name="example-0-325"></a><span class="sd">    The ``ignore_case`` argument can be used to make comparison case-insensitive.</span>
 </span><span id="line-0-326"><a id="example-0-326" name="example-0-326"></a><span class="sd">    See the `Ignore case` section for more details. This option is new in</span>
 </span><span id="line-0-327"><a id="example-0-327" name="example-0-327"></a><span class="sd">    Robot Framework 7.0.</span>
-</span><span id="line-0-328"><a id="example-0-328" name="example-0-328"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-328"><a id="example-0-328" name="example-0-328"></a><span class="sd">    """</span>
 </span><span id="line-0-329"><a id="example-0-329" name="example-0-329"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_validate_list</span><span class="p">(</span><span class="n">list_</span><span class="p">)</span>
 </span><span id="line-0-330"><a id="example-0-330" name="example-0-330"></a>    <span class="n">normalize</span> <span class="o">=</span> <span class="n">Normalizer</span><span class="p">(</span><span class="n">ignore_case</span><span class="p">)</span><span class="o">.</span><span class="n">normalize</span>
 </span><span id="line-0-331"><a id="example-0-331" name="example-0-331"></a>    <span class="n">_verify_condition</span><span class="p">(</span><span class="n">normalize</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">normalize</span><span class="p">(</span><span class="n">list_</span><span class="p">),</span>
-</span><span id="line-0-332"><a id="example-0-332" name="example-0-332"></a>                      <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">seq2str2</span><span class="p">(</span><span class="n">list_</span><span class="p">)</span><span class="si">}</span><span class="s2"> contains value &#39;</span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">&#39;.&quot;</span><span class="p">,</span> <span class="n">msg</span><span class="p">)</span>
+</span><span id="line-0-332"><a id="example-0-332" name="example-0-332"></a>                      <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">seq2str2</span><span class="p">(</span><span class="n">list_</span><span class="p">)</span><span class="si">}</span><span class="s2"> contains value '</span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">'."</span><span class="p">,</span> <span class="n">msg</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -13407,7 +13407,7 @@ Robot Framework 7.0.</p>
 <span class="normal"><a href="#example-0-357">357</a></span>
 <span class="normal"><a href="#example-0-358">358</a></span>
 <span class="normal"><a href="#example-0-359">359</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-334"><a id="example-0-334" name="example-0-334"></a><span class="k">def</span><span class="w"> </span><span class="nf">list_should_not_contain_duplicates</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">list_</span><span class="p">,</span> <span class="n">msg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ignore_case</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-</span><span id="line-0-335"><a id="example-0-335" name="example-0-335"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Fails if any element in the ``list`` is found from it more than once.</span>
+</span><span id="line-0-335"><a id="example-0-335" name="example-0-335"></a><span class="w">    </span><span class="sd">"""Fails if any element in the ``list`` is found from it more than once.</span>
 </span><span id="line-0-336"><a id="example-0-336" name="example-0-336"></a>
 </span><span id="line-0-337"><a id="example-0-337" name="example-0-337"></a><span class="sd">    The default error message lists all the elements that were found</span>
 </span><span id="line-0-338"><a id="example-0-338" name="example-0-338"></a><span class="sd">    from the ``list`` multiple times, but it can be overridden by giving</span>
@@ -13420,7 +13420,7 @@ Robot Framework 7.0.</p>
 </span><span id="line-0-345"><a id="example-0-345" name="example-0-345"></a><span class="sd">    The ``ignore_case`` argument can be used to make comparison case-insensitive.</span>
 </span><span id="line-0-346"><a id="example-0-346" name="example-0-346"></a><span class="sd">    See the `Ignore case` section for more details. This option is new in</span>
 </span><span id="line-0-347"><a id="example-0-347" name="example-0-347"></a><span class="sd">    Robot Framework 7.0.</span>
-</span><span id="line-0-348"><a id="example-0-348" name="example-0-348"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-348"><a id="example-0-348" name="example-0-348"></a><span class="sd">    """</span>
 </span><span id="line-0-349"><a id="example-0-349" name="example-0-349"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_validate_list</span><span class="p">(</span><span class="n">list_</span><span class="p">)</span>
 </span><span id="line-0-350"><a id="example-0-350" name="example-0-350"></a>    <span class="n">dupes</span> <span class="o">=</span> <span class="p">[]</span>
 </span><span id="line-0-351"><a id="example-0-351" name="example-0-351"></a>    <span class="n">list_</span> <span class="o">=</span> <span class="n">Normalizer</span><span class="p">(</span><span class="n">ignore_case</span><span class="p">)</span><span class="o">.</span><span class="n">normalize</span><span class="p">(</span><span class="n">list_</span><span class="p">)</span>
@@ -13428,10 +13428,10 @@ Robot Framework 7.0.</p>
 </span><span id="line-0-353"><a id="example-0-353" name="example-0-353"></a>        <span class="k">if</span> <span class="n">item</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">dupes</span><span class="p">:</span>
 </span><span id="line-0-354"><a id="example-0-354" name="example-0-354"></a>            <span class="n">count</span> <span class="o">=</span> <span class="n">list_</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 </span><span id="line-0-355"><a id="example-0-355" name="example-0-355"></a>            <span class="k">if</span> <span class="n">count</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
-</span><span id="line-0-356"><a id="example-0-356" name="example-0-356"></a>                <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="n">item</span><span class="si">}</span><span class="s2">&#39; found </span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s2"> times.&quot;</span><span class="p">)</span>
+</span><span id="line-0-356"><a id="example-0-356" name="example-0-356"></a>                <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">"'</span><span class="si">{</span><span class="n">item</span><span class="si">}</span><span class="s2">' found </span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s2"> times."</span><span class="p">)</span>
 </span><span id="line-0-357"><a id="example-0-357" name="example-0-357"></a>                <span class="n">dupes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 </span><span id="line-0-358"><a id="example-0-358" name="example-0-358"></a>    <span class="k">if</span> <span class="n">dupes</span><span class="p">:</span>
-</span><span id="line-0-359"><a id="example-0-359" name="example-0-359"></a>        <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span><span class="n">msg</span> <span class="ow">or</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">seq2str</span><span class="p">(</span><span class="n">dupes</span><span class="p">)</span><span class="si">}</span><span class="s1"> found multiple times.&#39;</span><span class="p">)</span>
+</span><span id="line-0-359"><a id="example-0-359" name="example-0-359"></a>        <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span><span class="n">msg</span> <span class="ow">or</span> <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">seq2str</span><span class="p">(</span><span class="n">dupes</span><span class="p">)</span><span class="si">}</span><span class="s1"> found multiple times.'</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -13571,7 +13571,7 @@ Robot Framework 7.0.</p>
 <span class="normal"><a href="#example-0-422">422</a></span>
 <span class="normal"><a href="#example-0-423">423</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-361"><a id="example-0-361" name="example-0-361"></a><span class="k">def</span><span class="w"> </span><span class="nf">lists_should_be_equal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">list1</span><span class="p">,</span> <span class="n">list2</span><span class="p">,</span> <span class="n">msg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
 </span><span id="line-0-362"><a id="example-0-362" name="example-0-362"></a>                          <span class="n">names</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ignore_order</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">ignore_case</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-</span><span id="line-0-363"><a id="example-0-363" name="example-0-363"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Fails if given lists are unequal.</span>
+</span><span id="line-0-363"><a id="example-0-363" name="example-0-363"></a><span class="w">    </span><span class="sd">"""Fails if given lists are unequal.</span>
 </span><span id="line-0-364"><a id="example-0-364" name="example-0-364"></a>
 </span><span id="line-0-365"><a id="example-0-365" name="example-0-365"></a><span class="sd">    The keyword first verifies that the lists have equal lengths, and then</span>
 </span><span id="line-0-366"><a id="example-0-366" name="example-0-366"></a><span class="sd">    it checks are all their values equal. Possible differences between the</span>
@@ -13618,19 +13618,19 @@ Robot Framework 7.0.</p>
 </span><span id="line-0-407"><a id="example-0-407" name="example-0-407"></a><span class="sd">    The ``ignore_case`` argument can be used to make comparison case-insensitive.</span>
 </span><span id="line-0-408"><a id="example-0-408" name="example-0-408"></a><span class="sd">    See the `Ignore case` section for more details. This option is new in</span>
 </span><span id="line-0-409"><a id="example-0-409" name="example-0-409"></a><span class="sd">    Robot Framework 7.0.</span>
-</span><span id="line-0-410"><a id="example-0-410" name="example-0-410"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-410"><a id="example-0-410" name="example-0-410"></a><span class="sd">    """</span>
 </span><span id="line-0-411"><a id="example-0-411" name="example-0-411"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_validate_lists</span><span class="p">(</span><span class="n">list1</span><span class="p">,</span> <span class="n">list2</span><span class="p">)</span>
 </span><span id="line-0-412"><a id="example-0-412" name="example-0-412"></a>    <span class="n">len1</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">list1</span><span class="p">)</span>
 </span><span id="line-0-413"><a id="example-0-413" name="example-0-413"></a>    <span class="n">len2</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">list2</span><span class="p">)</span>
 </span><span id="line-0-414"><a id="example-0-414" name="example-0-414"></a>    <span class="n">_verify_condition</span><span class="p">(</span><span class="n">len1</span> <span class="o">==</span> <span class="n">len2</span><span class="p">,</span>
-</span><span id="line-0-415"><a id="example-0-415" name="example-0-415"></a>                      <span class="sa">f</span><span class="s1">&#39;Lengths are different: </span><span class="si">{</span><span class="n">len1</span><span class="si">}</span><span class="s1"> != </span><span class="si">{</span><span class="n">len2</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
+</span><span id="line-0-415"><a id="example-0-415" name="example-0-415"></a>                      <span class="sa">f</span><span class="s1">'Lengths are different: </span><span class="si">{</span><span class="n">len1</span><span class="si">}</span><span class="s1"> != </span><span class="si">{</span><span class="n">len2</span><span class="si">}</span><span class="s1">'</span><span class="p">,</span>
 </span><span id="line-0-416"><a id="example-0-416" name="example-0-416"></a>                      <span class="n">msg</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span>
 </span><span id="line-0-417"><a id="example-0-417" name="example-0-417"></a>    <span class="n">names</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_list_index_name_mapping</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">len1</span><span class="p">)</span>
 </span><span id="line-0-418"><a id="example-0-418" name="example-0-418"></a>    <span class="n">normalize</span> <span class="o">=</span> <span class="n">Normalizer</span><span class="p">(</span><span class="n">ignore_case</span><span class="p">,</span> <span class="n">ignore_order</span><span class="p">)</span><span class="o">.</span><span class="n">normalize</span>
-</span><span id="line-0-419"><a id="example-0-419" name="example-0-419"></a>    <span class="n">diffs</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_yield_list_diffs</span><span class="p">(</span><span class="n">normalize</span><span class="p">(</span><span class="n">list1</span><span class="p">),</span> <span class="n">normalize</span><span class="p">(</span><span class="n">list2</span><span class="p">),</span>
+</span><span id="line-0-419"><a id="example-0-419" name="example-0-419"></a>    <span class="n">diffs</span> <span class="o">=</span> <span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_yield_list_diffs</span><span class="p">(</span><span class="n">normalize</span><span class="p">(</span><span class="n">list1</span><span class="p">),</span> <span class="n">normalize</span><span class="p">(</span><span class="n">list2</span><span class="p">),</span>
 </span><span id="line-0-420"><a id="example-0-420" name="example-0-420"></a>                                             <span class="n">names</span><span class="p">))</span>
 </span><span id="line-0-421"><a id="example-0-421" name="example-0-421"></a>    <span class="n">_verify_condition</span><span class="p">(</span><span class="ow">not</span> <span class="n">diffs</span><span class="p">,</span>
-</span><span id="line-0-422"><a id="example-0-422" name="example-0-422"></a>                      <span class="sa">f</span><span class="s1">&#39;Lists are different:</span><span class="se">\n</span><span class="si">{</span><span class="n">diffs</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
+</span><span id="line-0-422"><a id="example-0-422" name="example-0-422"></a>                      <span class="sa">f</span><span class="s1">'Lists are different:</span><span class="se">\n</span><span class="si">{</span><span class="n">diffs</span><span class="si">}</span><span class="s1">'</span><span class="p">,</span>
 </span><span id="line-0-423"><a id="example-0-423" name="example-0-423"></a>                      <span class="n">msg</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
@@ -13692,7 +13692,7 @@ Robot Framework 7.0.</p>
 <span class="normal"><a href="#example-0-459">459</a></span>
 <span class="normal"><a href="#example-0-460">460</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-440"><a id="example-0-440" name="example-0-440"></a><span class="k">def</span><span class="w"> </span><span class="nf">list_should_contain_sub_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">list1</span><span class="p">,</span> <span class="n">list2</span><span class="p">,</span> <span class="n">msg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
 </span><span id="line-0-441"><a id="example-0-441" name="example-0-441"></a>                                 <span class="n">ignore_case</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-</span><span id="line-0-442"><a id="example-0-442" name="example-0-442"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Fails if not all elements in ``list2`` are found in ``list1``.</span>
+</span><span id="line-0-442"><a id="example-0-442" name="example-0-442"></a><span class="w">    </span><span class="sd">"""Fails if not all elements in ``list2`` are found in ``list1``.</span>
 </span><span id="line-0-443"><a id="example-0-443" name="example-0-443"></a>
 </span><span id="line-0-444"><a id="example-0-444" name="example-0-444"></a><span class="sd">    The order of values and the number of values are not taken into</span>
 </span><span id="line-0-445"><a id="example-0-445" name="example-0-445"></a><span class="sd">    account.</span>
@@ -13703,13 +13703,13 @@ Robot Framework 7.0.</p>
 </span><span id="line-0-450"><a id="example-0-450" name="example-0-450"></a><span class="sd">    The ``ignore_case`` argument can be used to make comparison case-insensitive.</span>
 </span><span id="line-0-451"><a id="example-0-451" name="example-0-451"></a><span class="sd">    See the `Ignore case` section for more details. This option is new in</span>
 </span><span id="line-0-452"><a id="example-0-452" name="example-0-452"></a><span class="sd">    Robot Framework 7.0.</span>
-</span><span id="line-0-453"><a id="example-0-453" name="example-0-453"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-453"><a id="example-0-453" name="example-0-453"></a><span class="sd">    """</span>
 </span><span id="line-0-454"><a id="example-0-454" name="example-0-454"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_validate_lists</span><span class="p">(</span><span class="n">list1</span><span class="p">,</span> <span class="n">list2</span><span class="p">)</span>
 </span><span id="line-0-455"><a id="example-0-455" name="example-0-455"></a>    <span class="n">normalize</span> <span class="o">=</span> <span class="n">Normalizer</span><span class="p">(</span><span class="n">ignore_case</span><span class="p">)</span><span class="o">.</span><span class="n">normalize</span>
 </span><span id="line-0-456"><a id="example-0-456" name="example-0-456"></a>    <span class="n">list1</span> <span class="o">=</span> <span class="n">normalize</span><span class="p">(</span><span class="n">list1</span><span class="p">)</span>
 </span><span id="line-0-457"><a id="example-0-457" name="example-0-457"></a>    <span class="n">list2</span> <span class="o">=</span> <span class="n">normalize</span><span class="p">(</span><span class="n">list2</span><span class="p">)</span>
 </span><span id="line-0-458"><a id="example-0-458" name="example-0-458"></a>    <span class="n">diffs</span> <span class="o">=</span> <span class="p">[</span><span class="n">item</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">list2</span> <span class="k">if</span> <span class="n">item</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">list1</span><span class="p">]</span>
-</span><span id="line-0-459"><a id="example-0-459" name="example-0-459"></a>    <span class="n">_verify_condition</span><span class="p">(</span><span class="ow">not</span> <span class="n">diffs</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;Following values are missing: </span><span class="si">{</span><span class="n">seq2str</span><span class="p">(</span><span class="n">diffs</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
+</span><span id="line-0-459"><a id="example-0-459" name="example-0-459"></a>    <span class="n">_verify_condition</span><span class="p">(</span><span class="ow">not</span> <span class="n">diffs</span><span class="p">,</span> <span class="sa">f</span><span class="s1">'Following values are missing: </span><span class="si">{</span><span class="n">seq2str</span><span class="p">(</span><span class="n">diffs</span><span class="p">)</span><span class="si">}</span><span class="s1">'</span><span class="p">,</span>
 </span><span id="line-0-460"><a id="example-0-460" name="example-0-460"></a>                      <span class="n">msg</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
@@ -13730,7 +13730,7 @@ Robot Framework 7.0.</p>
 
 
 <a href="#robot.libraries.Collections.Collections.log_list" class="headerlink" title="Permanent link">&para;</a></h3>
-<div class="doc-signature highlight"><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1" href="#example-0-1"></a><span class="nf">log_list</span><span class="p">(</span><span class="n">list_</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="s1">&#39;INFO&#39;</span><span class="p">)</span>
+<div class="doc-signature highlight"><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1" href="#example-0-1"></a><span class="nf">log_list</span><span class="p">(</span><span class="n">list_</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="s1">'INFO'</span><span class="p">)</span>
 </span></code></pre></div>
 
     <div class="doc doc-contents ">
@@ -13752,16 +13752,16 @@ the BuiltIn library.</p>
 <span class="normal"><a href="#example-0-468">468</a></span>
 <span class="normal"><a href="#example-0-469">469</a></span>
 <span class="normal"><a href="#example-0-470">470</a></span>
-<span class="normal"><a href="#example-0-471">471</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-462"><a id="example-0-462" name="example-0-462"></a><span class="k">def</span><span class="w"> </span><span class="nf">log_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">list_</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="s1">&#39;INFO&#39;</span><span class="p">):</span>
-</span><span id="line-0-463"><a id="example-0-463" name="example-0-463"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Logs the length and contents of the ``list`` using given ``level``.</span>
+<span class="normal"><a href="#example-0-471">471</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-462"><a id="example-0-462" name="example-0-462"></a><span class="k">def</span><span class="w"> </span><span class="nf">log_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">list_</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="s1">'INFO'</span><span class="p">):</span>
+</span><span id="line-0-463"><a id="example-0-463" name="example-0-463"></a><span class="w">    </span><span class="sd">"""Logs the length and contents of the ``list`` using given ``level``.</span>
 </span><span id="line-0-464"><a id="example-0-464" name="example-0-464"></a>
 </span><span id="line-0-465"><a id="example-0-465" name="example-0-465"></a><span class="sd">    Valid levels are TRACE, DEBUG, INFO (default), and WARN.</span>
 </span><span id="line-0-466"><a id="example-0-466" name="example-0-466"></a>
 </span><span id="line-0-467"><a id="example-0-467" name="example-0-467"></a><span class="sd">    If you only want to the length, use keyword `Get Length` from</span>
 </span><span id="line-0-468"><a id="example-0-468" name="example-0-468"></a><span class="sd">    the BuiltIn library.</span>
-</span><span id="line-0-469"><a id="example-0-469" name="example-0-469"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-469"><a id="example-0-469" name="example-0-469"></a><span class="sd">    """</span>
 </span><span id="line-0-470"><a id="example-0-470" name="example-0-470"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_validate_list</span><span class="p">(</span><span class="n">list_</span><span class="p">)</span>
-</span><span id="line-0-471"><a id="example-0-471" name="example-0-471"></a>    <span class="n">logger</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_log_list</span><span class="p">(</span><span class="n">list_</span><span class="p">)),</span> <span class="n">level</span><span class="p">)</span>
+</span><span id="line-0-471"><a id="example-0-471" name="example-0-471"></a>    <span class="n">logger</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_log_list</span><span class="p">(</span><span class="n">list_</span><span class="p">)),</span> <span class="n">level</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>

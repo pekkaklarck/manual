@@ -11052,13 +11052,13 @@ returned by this method.</p>
 <span class="normal"><a href="#example-0-109">109</a></span>
 <span class="normal"><a href="#example-0-110">110</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-101"><a id="example-0-101" name="example-0-101"></a><span class="nd">@abstractmethod</span>
 </span><span id="line-0-102"><a id="example-0-102" name="example-0-102"></a><span class="k">def</span><span class="w"> </span><span class="nf">get_keyword_names</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">Name</span><span class="p">]:</span>
-</span><span id="line-0-103"><a id="example-0-103" name="example-0-103"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Return names of the keywords this library implements.</span>
+</span><span id="line-0-103"><a id="example-0-103" name="example-0-103"></a><span class="w">    </span><span class="sd">"""Return names of the keywords this library implements.</span>
 </span><span id="line-0-104"><a id="example-0-104" name="example-0-104"></a>
 </span><span id="line-0-105"><a id="example-0-105" name="example-0-105"></a><span class="sd">    :return: Keyword names as a list of strings.</span>
 </span><span id="line-0-106"><a id="example-0-106" name="example-0-106"></a>
 </span><span id="line-0-107"><a id="example-0-107" name="example-0-107"></a><span class="sd">    ``name`` passed to other methods is always in the same format as</span>
 </span><span id="line-0-108"><a id="example-0-108" name="example-0-108"></a><span class="sd">    returned by this method.</span>
-</span><span id="line-0-109"><a id="example-0-109" name="example-0-109"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-109"><a id="example-0-109" name="example-0-109"></a><span class="sd">    """</span>
 </span><span id="line-0-110"><a id="example-0-110" name="example-0-110"></a>    <span class="k">raise</span> <span class="ne">NotImplementedError</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
@@ -11117,17 +11117,17 @@ way as with the normal static library API.</p>
 <span class="normal"><a href="#example-0-124">124</a></span>
 <span class="normal"><a href="#example-0-125">125</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-112"><a id="example-0-112" name="example-0-112"></a><span class="nd">@abstractmethod</span>
 </span><span id="line-0-113"><a id="example-0-113" name="example-0-113"></a><span class="k">def</span><span class="w"> </span><span class="nf">run_keyword</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="n">Name</span><span class="p">,</span> <span class="n">args</span><span class="p">:</span> <span class="n">PositArgs</span><span class="p">,</span> <span class="n">named</span><span class="p">:</span> <span class="n">NamedArgs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
-</span><span id="line-0-114"><a id="example-0-114" name="example-0-114"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Execute the specified keyword using the given arguments.</span>
+</span><span id="line-0-114"><a id="example-0-114" name="example-0-114"></a><span class="w">    </span><span class="sd">"""Execute the specified keyword using the given arguments.</span>
 </span><span id="line-0-115"><a id="example-0-115" name="example-0-115"></a>
 </span><span id="line-0-116"><a id="example-0-116" name="example-0-116"></a><span class="sd">    :param name: Keyword name as a string.</span>
 </span><span id="line-0-117"><a id="example-0-117" name="example-0-117"></a><span class="sd">    :param args: Positional arguments as a list.</span>
 </span><span id="line-0-118"><a id="example-0-118" name="example-0-118"></a><span class="sd">    :param named: Named arguments as a dictionary.</span>
 </span><span id="line-0-119"><a id="example-0-119" name="example-0-119"></a><span class="sd">    :raises: Reporting FAIL or SKIP status.</span>
-</span><span id="line-0-120"><a id="example-0-120" name="example-0-120"></a><span class="sd">    :return: Keyword&#39;s return value.</span>
+</span><span id="line-0-120"><a id="example-0-120" name="example-0-120"></a><span class="sd">    :return: Keyword's return value.</span>
 </span><span id="line-0-121"><a id="example-0-121" name="example-0-121"></a>
 </span><span id="line-0-122"><a id="example-0-122" name="example-0-122"></a><span class="sd">    Reporting status, logging, returning values, etc. is handled the same</span>
 </span><span id="line-0-123"><a id="example-0-123" name="example-0-123"></a><span class="sd">    way as with the normal static library API.</span>
-</span><span id="line-0-124"><a id="example-0-124" name="example-0-124"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-124"><a id="example-0-124" name="example-0-124"></a><span class="sd">    """</span>
 </span><span id="line-0-125"><a id="example-0-125" name="example-0-125"></a>    <span class="k">raise</span> <span class="ne">NotImplementedError</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
@@ -11186,8 +11186,8 @@ got by calling this method with special names <code>__intro__</code> and
 <span class="normal"><a href="#example-0-140">140</a></span>
 <span class="normal"><a href="#example-0-141">141</a></span>
 <span class="normal"><a href="#example-0-142">142</a></span>
-<span class="normal"><a href="#example-0-143">143</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-127"><a id="example-0-127" name="example-0-127"></a><span class="k">def</span><span class="w"> </span><span class="nf">get_keyword_documentation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="n">Name</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;Documentation | None&#39;</span><span class="p">:</span>
-</span><span id="line-0-128"><a id="example-0-128" name="example-0-128"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Optional method to return keyword documentation.</span>
+<span class="normal"><a href="#example-0-143">143</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-127"><a id="example-0-127" name="example-0-127"></a><span class="k">def</span><span class="w"> </span><span class="nf">get_keyword_documentation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="n">Name</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">'Documentation | None'</span><span class="p">:</span>
+</span><span id="line-0-128"><a id="example-0-128" name="example-0-128"></a><span class="w">    </span><span class="sd">"""Optional method to return keyword documentation.</span>
 </span><span id="line-0-129"><a id="example-0-129" name="example-0-129"></a>
 </span><span id="line-0-130"><a id="example-0-130" name="example-0-130"></a><span class="sd">    The first logical line of keyword documentation is shown in</span>
 </span><span id="line-0-131"><a id="example-0-131" name="example-0-131"></a><span class="sd">    the execution log under the executed keyword. The whole</span>
@@ -11201,7 +11201,7 @@ got by calling this method with special names <code>__intro__</code> and
 </span><span id="line-0-139"><a id="example-0-139" name="example-0-139"></a><span class="sd">    well as documentation related to importing the library. They are</span>
 </span><span id="line-0-140"><a id="example-0-140" name="example-0-140"></a><span class="sd">    got by calling this method with special names ``__intro__`` and</span>
 </span><span id="line-0-141"><a id="example-0-141" name="example-0-141"></a><span class="sd">    ``__init__``, respectively.</span>
-</span><span id="line-0-142"><a id="example-0-142" name="example-0-142"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-142"><a id="example-0-142" name="example-0-142"></a><span class="sd">    """</span>
 </span><span id="line-0-143"><a id="example-0-143" name="example-0-143"></a>    <span class="k">return</span> <span class="kc">None</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
@@ -11309,8 +11309,8 @@ Accepted arguments are returned as a list using these rules:</p>
 <span class="normal"><a href="#example-0-183">183</a></span>
 <span class="normal"><a href="#example-0-184">184</a></span>
 <span class="normal"><a href="#example-0-185">185</a></span>
-<span class="normal"><a href="#example-0-186">186</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-145"><a id="example-0-145" name="example-0-145"></a><span class="k">def</span><span class="w"> </span><span class="nf">get_keyword_arguments</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="n">Name</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;Arguments | None&#39;</span><span class="p">:</span>
-</span><span id="line-0-146"><a id="example-0-146" name="example-0-146"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Optional method to return keyword&#39;s argument specification.</span>
+<span class="normal"><a href="#example-0-186">186</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-145"><a id="example-0-145" name="example-0-145"></a><span class="k">def</span><span class="w"> </span><span class="nf">get_keyword_arguments</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="n">Name</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">'Arguments | None'</span><span class="p">:</span>
+</span><span id="line-0-146"><a id="example-0-146" name="example-0-146"></a><span class="w">    </span><span class="sd">"""Optional method to return keyword's argument specification.</span>
 </span><span id="line-0-147"><a id="example-0-147" name="example-0-147"></a>
 </span><span id="line-0-148"><a id="example-0-148" name="example-0-148"></a><span class="sd">    Returned information is used during execution for argument validation.</span>
 </span><span id="line-0-149"><a id="example-0-149" name="example-0-149"></a><span class="sd">    In addition to that, arguments are shown in documentation generated</span>
@@ -11324,16 +11324,16 @@ Accepted arguments are returned as a list using these rules:</p>
 </span><span id="line-0-157"><a id="example-0-157" name="example-0-157"></a><span class="sd">    Accepted arguments are returned as a list using these rules:</span>
 </span><span id="line-0-158"><a id="example-0-158" name="example-0-158"></a>
 </span><span id="line-0-159"><a id="example-0-159" name="example-0-159"></a><span class="sd">    - Normal arguments are specified as a list of strings like</span>
-</span><span id="line-0-160"><a id="example-0-160" name="example-0-160"></a><span class="sd">      ``[&#39;arg1&#39;, &#39;arg2&#39;]``. An empty list denotes that the keyword</span>
+</span><span id="line-0-160"><a id="example-0-160" name="example-0-160"></a><span class="sd">      ``['arg1', 'arg2']``. An empty list denotes that the keyword</span>
 </span><span id="line-0-161"><a id="example-0-161" name="example-0-161"></a><span class="sd">      accepts no arguments.</span>
-</span><span id="line-0-162"><a id="example-0-162" name="example-0-162"></a><span class="sd">    - Varargs must have a ``*`` prefix like ``[&#39;*numbers&#39;]``. There can</span>
+</span><span id="line-0-162"><a id="example-0-162" name="example-0-162"></a><span class="sd">    - Varargs must have a ``*`` prefix like ``['*numbers']``. There can</span>
 </span><span id="line-0-163"><a id="example-0-163" name="example-0-163"></a><span class="sd">      be only one varargs, and it must follow normal arguments.</span>
-</span><span id="line-0-164"><a id="example-0-164" name="example-0-164"></a><span class="sd">    - Arguments after varargs like ``[&#39;*items&#39;, &#39;arg&#39;]`` are considered</span>
+</span><span id="line-0-164"><a id="example-0-164" name="example-0-164"></a><span class="sd">    - Arguments after varargs like ``['*items', 'arg']`` are considered</span>
 </span><span id="line-0-165"><a id="example-0-165" name="example-0-165"></a><span class="sd">      named-only arguments.</span>
 </span><span id="line-0-166"><a id="example-0-166" name="example-0-166"></a><span class="sd">    - If keyword does not accept varargs, a lone ``*`` can be used</span>
 </span><span id="line-0-167"><a id="example-0-167" name="example-0-167"></a><span class="sd">      a separator between normal and named-only arguments like</span>
-</span><span id="line-0-168"><a id="example-0-168" name="example-0-168"></a><span class="sd">      ``[&#39;normal&#39;, &#39;*&#39;, &#39;named&#39;]``.</span>
-</span><span id="line-0-169"><a id="example-0-169" name="example-0-169"></a><span class="sd">    - Kwargs must have a ``**``  prefix like ``[&#39;**config&#39;]``. There can</span>
+</span><span id="line-0-168"><a id="example-0-168" name="example-0-168"></a><span class="sd">      ``['normal', '*', 'named']``.</span>
+</span><span id="line-0-169"><a id="example-0-169" name="example-0-169"></a><span class="sd">    - Kwargs must have a ``**``  prefix like ``['**config']``. There can</span>
 </span><span id="line-0-170"><a id="example-0-170" name="example-0-170"></a><span class="sd">      be only one kwargs, and it must be last.</span>
 </span><span id="line-0-171"><a id="example-0-171" name="example-0-171"></a>
 </span><span id="line-0-172"><a id="example-0-172" name="example-0-172"></a><span class="sd">    Both normal arguments and named-only arguments can have default values:</span>
@@ -11342,14 +11342,14 @@ Accepted arguments are returned as a list using these rules:</p>
 </span><span id="line-0-175"><a id="example-0-175" name="example-0-175"></a><span class="sd">      separated with the equal sign like ``name=default``. In this case</span>
 </span><span id="line-0-176"><a id="example-0-176" name="example-0-176"></a><span class="sd">      the default value type is always a string.</span>
 </span><span id="line-0-177"><a id="example-0-177" name="example-0-177"></a><span class="sd">    - Alternatively arguments and their default values can be represented</span>
-</span><span id="line-0-178"><a id="example-0-178" name="example-0-178"></a><span class="sd">      as two-tuples like ``(&#39;name&#39;, &#39;default&#39;)``. This allows non-string</span>
+</span><span id="line-0-178"><a id="example-0-178" name="example-0-178"></a><span class="sd">      as two-tuples like ``('name', 'default')``. This allows non-string</span>
 </span><span id="line-0-179"><a id="example-0-179" name="example-0-179"></a><span class="sd">      default values and automatic argument conversion based on them.</span>
 </span><span id="line-0-180"><a id="example-0-180" name="example-0-180"></a><span class="sd">    - Arguments without default values can also be specified as tuples</span>
-</span><span id="line-0-181"><a id="example-0-181" name="example-0-181"></a><span class="sd">      containing just the name like ``(&#39;name&#39;,)``.</span>
+</span><span id="line-0-181"><a id="example-0-181" name="example-0-181"></a><span class="sd">      containing just the name like ``('name',)``.</span>
 </span><span id="line-0-182"><a id="example-0-182" name="example-0-182"></a><span class="sd">    - With normal arguments, arguments with default values must follow</span>
 </span><span id="line-0-183"><a id="example-0-183" name="example-0-183"></a><span class="sd">      arguments without them. There is no such restriction with named-only</span>
 </span><span id="line-0-184"><a id="example-0-184" name="example-0-184"></a><span class="sd">      arguments.</span>
-</span><span id="line-0-185"><a id="example-0-185" name="example-0-185"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-185"><a id="example-0-185" name="example-0-185"></a><span class="sd">    """</span>
 </span><span id="line-0-186"><a id="example-0-186" name="example-0-186"></a>    <span class="k">return</span> <span class="kc">None</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
@@ -11433,8 +11433,8 @@ the User Guide.</p>
 <span class="normal"><a href="#example-0-216">216</a></span>
 <span class="normal"><a href="#example-0-217">217</a></span>
 <span class="normal"><a href="#example-0-218">218</a></span>
-<span class="normal"><a href="#example-0-219">219</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-188"><a id="example-0-188" name="example-0-188"></a><span class="k">def</span><span class="w"> </span><span class="nf">get_keyword_types</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="n">Name</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;TypeHints | None&#39;</span><span class="p">:</span>
-</span><span id="line-0-189"><a id="example-0-189" name="example-0-189"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Optional method to return keyword&#39;s type specification.</span>
+<span class="normal"><a href="#example-0-219">219</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-188"><a id="example-0-188" name="example-0-188"></a><span class="k">def</span><span class="w"> </span><span class="nf">get_keyword_types</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="n">Name</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">'TypeHints | None'</span><span class="p">:</span>
+</span><span id="line-0-189"><a id="example-0-189" name="example-0-189"></a><span class="w">    </span><span class="sd">"""Optional method to return keyword's type specification.</span>
 </span><span id="line-0-190"><a id="example-0-190" name="example-0-190"></a>
 </span><span id="line-0-191"><a id="example-0-191" name="example-0-191"></a><span class="sd">    Type information is used for automatic argument conversion during</span>
 </span><span id="line-0-192"><a id="example-0-192" name="example-0-192"></a><span class="sd">    execution. It is also shown in documentation generated by Libdoc.</span>
@@ -11446,8 +11446,8 @@ the User Guide.</p>
 </span><span id="line-0-198"><a id="example-0-198" name="example-0-198"></a><span class="sd">    Type information can be mapped to arguments returned by</span>
 </span><span id="line-0-199"><a id="example-0-199" name="example-0-199"></a><span class="sd">    :meth:`get_keyword_names` either by names using a dictionary or</span>
 </span><span id="line-0-200"><a id="example-0-200" name="example-0-200"></a><span class="sd">    by position using a list. For example, if a keyword has argument</span>
-</span><span id="line-0-201"><a id="example-0-201" name="example-0-201"></a><span class="sd">    specification ``[&#39;arg&#39;, &#39;second&#39;]``, it would be possible to return</span>
-</span><span id="line-0-202"><a id="example-0-202" name="example-0-202"></a><span class="sd">    types both like ``{&#39;arg&#39;: str, &#39;second&#39;: int}`` and ``[str, int]``.</span>
+</span><span id="line-0-201"><a id="example-0-201" name="example-0-201"></a><span class="sd">    specification ``['arg', 'second']``, it would be possible to return</span>
+</span><span id="line-0-202"><a id="example-0-202" name="example-0-202"></a><span class="sd">    types both like ``{'arg': str, 'second': int}`` and ``[str, int]``.</span>
 </span><span id="line-0-203"><a id="example-0-203" name="example-0-203"></a>
 </span><span id="line-0-204"><a id="example-0-204" name="example-0-204"></a><span class="sd">    Regardless of the approach that is used, it is not necessarily to</span>
 </span><span id="line-0-205"><a id="example-0-205" name="example-0-205"></a><span class="sd">    specify types for all arguments. When using a dictionary, some</span>
@@ -11456,14 +11456,14 @@ the User Guide.</p>
 </span><span id="line-0-208"><a id="example-0-208" name="example-0-208"></a><span class="sd">    information and arguments at the end can be omitted altogether.</span>
 </span><span id="line-0-209"><a id="example-0-209" name="example-0-209"></a>
 </span><span id="line-0-210"><a id="example-0-210" name="example-0-210"></a><span class="sd">    If is possible to specify that an argument has multiple possible types</span>
-</span><span id="line-0-211"><a id="example-0-211" name="example-0-211"></a><span class="sd">    by using unions like ``{&#39;arg&#39;: Union[int, float]}`` or tuples like</span>
-</span><span id="line-0-212"><a id="example-0-212" name="example-0-212"></a><span class="sd">    ``{&#39;arg&#39;: (int, float)}``.</span>
+</span><span id="line-0-211"><a id="example-0-211" name="example-0-211"></a><span class="sd">    by using unions like ``{'arg': Union[int, float]}`` or tuples like</span>
+</span><span id="line-0-212"><a id="example-0-212" name="example-0-212"></a><span class="sd">    ``{'arg': (int, float)}``.</span>
 </span><span id="line-0-213"><a id="example-0-213" name="example-0-213"></a>
 </span><span id="line-0-214"><a id="example-0-214" name="example-0-214"></a><span class="sd">    In addition to specifying types using classes, it is also possible</span>
-</span><span id="line-0-215"><a id="example-0-215" name="example-0-215"></a><span class="sd">    to use names or aliases like ``{&#39;a&#39;: &#39;int&#39;, &#39;b&#39;: &#39;boolean&#39;}``.</span>
+</span><span id="line-0-215"><a id="example-0-215" name="example-0-215"></a><span class="sd">    to use names or aliases like ``{'a': 'int', 'b': 'boolean'}``.</span>
 </span><span id="line-0-216"><a id="example-0-216" name="example-0-216"></a><span class="sd">    For an up-to-date list of supported types, names and aliases see</span>
 </span><span id="line-0-217"><a id="example-0-217" name="example-0-217"></a><span class="sd">    the User Guide.</span>
-</span><span id="line-0-218"><a id="example-0-218" name="example-0-218"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-218"><a id="example-0-218" name="example-0-218"></a><span class="sd">    """</span>
 </span><span id="line-0-219"><a id="example-0-219" name="example-0-219"></a>    <span class="k">return</span> <span class="kc">None</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
@@ -11507,15 +11507,15 @@ Libdoc. Tags can also be used with various command line options.</p>
 <span class="normal"><a href="#example-0-227">227</a></span>
 <span class="normal"><a href="#example-0-228">228</a></span>
 <span class="normal"><a href="#example-0-229">229</a></span>
-<span class="normal"><a href="#example-0-230">230</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-221"><a id="example-0-221" name="example-0-221"></a><span class="k">def</span><span class="w"> </span><span class="nf">get_keyword_tags</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="n">Name</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;Tags | None&#39;</span><span class="p">:</span>
-</span><span id="line-0-222"><a id="example-0-222" name="example-0-222"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Optional method to return keyword&#39;s tags.</span>
+<span class="normal"><a href="#example-0-230">230</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-221"><a id="example-0-221" name="example-0-221"></a><span class="k">def</span><span class="w"> </span><span class="nf">get_keyword_tags</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="n">Name</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">'Tags | None'</span><span class="p">:</span>
+</span><span id="line-0-222"><a id="example-0-222" name="example-0-222"></a><span class="w">    </span><span class="sd">"""Optional method to return keyword's tags.</span>
 </span><span id="line-0-223"><a id="example-0-223" name="example-0-223"></a>
 </span><span id="line-0-224"><a id="example-0-224" name="example-0-224"></a><span class="sd">    Tags are shown in the execution log and in documentation generated by</span>
 </span><span id="line-0-225"><a id="example-0-225" name="example-0-225"></a><span class="sd">    Libdoc. Tags can also be used with various command line options.</span>
 </span><span id="line-0-226"><a id="example-0-226" name="example-0-226"></a>
 </span><span id="line-0-227"><a id="example-0-227" name="example-0-227"></a><span class="sd">    :param name: Keyword name as a string.</span>
 </span><span id="line-0-228"><a id="example-0-228" name="example-0-228"></a><span class="sd">    :return: Tags as a list of strings or ``None`` if there are no tags.</span>
-</span><span id="line-0-229"><a id="example-0-229" name="example-0-229"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-229"><a id="example-0-229" name="example-0-229"></a><span class="sd">    """</span>
 </span><span id="line-0-230"><a id="example-0-230" name="example-0-230"></a>    <span class="k">return</span> <span class="kc">None</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
@@ -11579,8 +11579,8 @@ keywords that do not return their own path.</p>
 <span class="normal"><a href="#example-0-249">249</a></span>
 <span class="normal"><a href="#example-0-250">250</a></span>
 <span class="normal"><a href="#example-0-251">251</a></span>
-<span class="normal"><a href="#example-0-252">252</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-232"><a id="example-0-232" name="example-0-232"></a><span class="k">def</span><span class="w"> </span><span class="nf">get_keyword_source</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="n">Name</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;Source | None&#39;</span><span class="p">:</span>
-</span><span id="line-0-233"><a id="example-0-233" name="example-0-233"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Optional method to return keyword&#39;s source path and line number.</span>
+<span class="normal"><a href="#example-0-252">252</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-232"><a id="example-0-232" name="example-0-232"></a><span class="k">def</span><span class="w"> </span><span class="nf">get_keyword_source</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="n">Name</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">'Source | None'</span><span class="p">:</span>
+</span><span id="line-0-233"><a id="example-0-233" name="example-0-233"></a><span class="w">    </span><span class="sd">"""Optional method to return keyword's source path and line number.</span>
 </span><span id="line-0-234"><a id="example-0-234" name="example-0-234"></a>
 </span><span id="line-0-235"><a id="example-0-235" name="example-0-235"></a><span class="sd">    Source information is used by IDEs to provide navigation from</span>
 </span><span id="line-0-236"><a id="example-0-236" name="example-0-236"></a><span class="sd">    keyword usage to implementation.</span>
@@ -11598,7 +11598,7 @@ keywords that do not return their own path.</p>
 </span><span id="line-0-248"><a id="example-0-248" name="example-0-248"></a><span class="sd">    The source information of the library itself is got automatically from</span>
 </span><span id="line-0-249"><a id="example-0-249" name="example-0-249"></a><span class="sd">    the imported library class. The library source path is used with all</span>
 </span><span id="line-0-250"><a id="example-0-250" name="example-0-250"></a><span class="sd">    keywords that do not return their own path.</span>
-</span><span id="line-0-251"><a id="example-0-251" name="example-0-251"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-251"><a id="example-0-251" name="example-0-251"></a><span class="sd">    """</span>
 </span><span id="line-0-252"><a id="example-0-252" name="example-0-252"></a>    <span class="k">return</span> <span class="kc">None</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
@@ -11697,10 +11697,10 @@ returns desired keyword methods.</p>
 <span class="normal"><a href="#example-0-275">275</a></span>
 <span class="normal"><a href="#example-0-276">276</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-270"><a id="example-0-270" name="example-0-270"></a><span class="nd">@abstractmethod</span>
 </span><span id="line-0-271"><a id="example-0-271" name="example-0-271"></a><span class="k">def</span><span class="w"> </span><span class="nf">get_keyword_names</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">Name</span><span class="p">]:</span>
-</span><span id="line-0-272"><a id="example-0-272" name="example-0-272"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Return names of the implemented keyword methods as a list or strings.</span>
+</span><span id="line-0-272"><a id="example-0-272" name="example-0-272"></a><span class="w">    </span><span class="sd">"""Return names of the implemented keyword methods as a list or strings.</span>
 </span><span id="line-0-273"><a id="example-0-273" name="example-0-273"></a>
 </span><span id="line-0-274"><a id="example-0-274" name="example-0-274"></a><span class="sd">    Returned names must match names of the implemented keyword methods.</span>
-</span><span id="line-0-275"><a id="example-0-275" name="example-0-275"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-275"><a id="example-0-275" name="example-0-275"></a><span class="sd">    """</span>
 </span><span id="line-0-276"><a id="example-0-276" name="example-0-276"></a>    <span class="k">raise</span> <span class="ne">NotImplementedError</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
@@ -12295,7 +12295,7 @@ IF structures attributes include <code>condition</code>.</p>
               <summary>Source code in <code>src/robot/api/interfaces.py</code></summary>
               <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-428">428</a></span>
 <span class="normal"><a href="#example-0-429">429</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-428"><a id="example-0-428" name="example-0-428"></a><span class="k">def</span><span class="w"> </span><span class="nf">start_suite</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">attributes</span><span class="p">:</span> <span class="n">StartSuiteAttributes</span><span class="p">):</span>
-</span><span id="line-0-429"><a id="example-0-429" name="example-0-429"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Called when a suite starts.&quot;&quot;&quot;</span>
+</span><span id="line-0-429"><a id="example-0-429" name="example-0-429"></a><span class="w">    </span><span class="sd">"""Called when a suite starts."""</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -12327,7 +12327,7 @@ IF structures attributes include <code>condition</code>.</p>
               <summary>Source code in <code>src/robot/api/interfaces.py</code></summary>
               <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-431">431</a></span>
 <span class="normal"><a href="#example-0-432">432</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-431"><a id="example-0-431" name="example-0-431"></a><span class="k">def</span><span class="w"> </span><span class="nf">end_suite</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">attributes</span><span class="p">:</span> <span class="n">EndSuiteAttributes</span><span class="p">):</span>
-</span><span id="line-0-432"><a id="example-0-432" name="example-0-432"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Called when a suite end.&quot;&quot;&quot;</span>
+</span><span id="line-0-432"><a id="example-0-432" name="example-0-432"></a><span class="w">    </span><span class="sd">"""Called when a suite end."""</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -12359,7 +12359,7 @@ IF structures attributes include <code>condition</code>.</p>
               <summary>Source code in <code>src/robot/api/interfaces.py</code></summary>
               <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-434">434</a></span>
 <span class="normal"><a href="#example-0-435">435</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-434"><a id="example-0-434" name="example-0-434"></a><span class="k">def</span><span class="w"> </span><span class="nf">start_test</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">attributes</span><span class="p">:</span> <span class="n">StartTestAttributes</span><span class="p">):</span>
-</span><span id="line-0-435"><a id="example-0-435" name="example-0-435"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Called when a test or task starts.&quot;&quot;&quot;</span>
+</span><span id="line-0-435"><a id="example-0-435" name="example-0-435"></a><span class="w">    </span><span class="sd">"""Called when a test or task starts."""</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -12391,7 +12391,7 @@ IF structures attributes include <code>condition</code>.</p>
               <summary>Source code in <code>src/robot/api/interfaces.py</code></summary>
               <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-437">437</a></span>
 <span class="normal"><a href="#example-0-438">438</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-437"><a id="example-0-437" name="example-0-437"></a><span class="k">def</span><span class="w"> </span><span class="nf">end_test</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">attributes</span><span class="p">:</span> <span class="n">EndTestAttributes</span><span class="p">):</span>
-</span><span id="line-0-438"><a id="example-0-438" name="example-0-438"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Called when a test or task ends.&quot;&quot;&quot;</span>
+</span><span id="line-0-438"><a id="example-0-438" name="example-0-438"></a><span class="w">    </span><span class="sd">"""Called when a test or task ends."""</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -12431,11 +12431,11 @@ structures can contain extra attributes that are only relevant to them.</p>
 <span class="normal"><a href="#example-0-443">443</a></span>
 <span class="normal"><a href="#example-0-444">444</a></span>
 <span class="normal"><a href="#example-0-445">445</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-440"><a id="example-0-440" name="example-0-440"></a><span class="k">def</span><span class="w"> </span><span class="nf">start_keyword</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">attributes</span><span class="p">:</span> <span class="n">StartKeywordAttributes</span><span class="p">):</span>
-</span><span id="line-0-441"><a id="example-0-441" name="example-0-441"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Called when a keyword or a control structure like IF starts.</span>
+</span><span id="line-0-441"><a id="example-0-441" name="example-0-441"></a><span class="w">    </span><span class="sd">"""Called when a keyword or a control structure like IF starts.</span>
 </span><span id="line-0-442"><a id="example-0-442" name="example-0-442"></a>
-</span><span id="line-0-443"><a id="example-0-443" name="example-0-443"></a><span class="sd">    The type of the started item is in ``attributes[&#39;type&#39;]``. Control</span>
+</span><span id="line-0-443"><a id="example-0-443" name="example-0-443"></a><span class="sd">    The type of the started item is in ``attributes['type']``. Control</span>
 </span><span id="line-0-444"><a id="example-0-444" name="example-0-444"></a><span class="sd">    structures can contain extra attributes that are only relevant to them.</span>
-</span><span id="line-0-445"><a id="example-0-445" name="example-0-445"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-445"><a id="example-0-445" name="example-0-445"></a><span class="sd">    """</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -12473,11 +12473,11 @@ structures can contain extra attributes that are only relevant to them.</p>
 <span class="normal"><a href="#example-0-450">450</a></span>
 <span class="normal"><a href="#example-0-451">451</a></span>
 <span class="normal"><a href="#example-0-452">452</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-447"><a id="example-0-447" name="example-0-447"></a><span class="k">def</span><span class="w"> </span><span class="nf">end_keyword</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">attributes</span><span class="p">:</span> <span class="n">EndKeywordAttributes</span><span class="p">):</span>
-</span><span id="line-0-448"><a id="example-0-448" name="example-0-448"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Called when a keyword or a control structure like IF ends.</span>
+</span><span id="line-0-448"><a id="example-0-448" name="example-0-448"></a><span class="w">    </span><span class="sd">"""Called when a keyword or a control structure like IF ends.</span>
 </span><span id="line-0-449"><a id="example-0-449" name="example-0-449"></a>
-</span><span id="line-0-450"><a id="example-0-450" name="example-0-450"></a><span class="sd">    The type of the started item is in ``attributes[&#39;type&#39;]``. Control</span>
+</span><span id="line-0-450"><a id="example-0-450" name="example-0-450"></a><span class="sd">    The type of the started item is in ``attributes['type']``. Control</span>
 </span><span id="line-0-451"><a id="example-0-451" name="example-0-451"></a><span class="sd">    structures can contain extra attributes that are only relevant to them.</span>
-</span><span id="line-0-452"><a id="example-0-452" name="example-0-452"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-452"><a id="example-0-452" name="example-0-452"></a><span class="sd">    """</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -12517,12 +12517,12 @@ log.html.</p>
 <span class="normal"><a href="#example-0-458">458</a></span>
 <span class="normal"><a href="#example-0-459">459</a></span>
 <span class="normal"><a href="#example-0-460">460</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-454"><a id="example-0-454" name="example-0-454"></a><span class="k">def</span><span class="w"> </span><span class="nf">log_message</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="n">MessageAttributes</span><span class="p">):</span>
-</span><span id="line-0-455"><a id="example-0-455" name="example-0-455"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Called when a normal log message are emitted.</span>
+</span><span id="line-0-455"><a id="example-0-455" name="example-0-455"></a><span class="w">    </span><span class="sd">"""Called when a normal log message are emitted.</span>
 </span><span id="line-0-456"><a id="example-0-456" name="example-0-456"></a>
 </span><span id="line-0-457"><a id="example-0-457" name="example-0-457"></a><span class="sd">    The messages are typically logged by keywords, but also the framework</span>
 </span><span id="line-0-458"><a id="example-0-458" name="example-0-458"></a><span class="sd">    itself logs some messages. These messages end up to output.xml and</span>
 </span><span id="line-0-459"><a id="example-0-459" name="example-0-459"></a><span class="sd">    log.html.</span>
-</span><span id="line-0-460"><a id="example-0-460" name="example-0-460"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-460"><a id="example-0-460" name="example-0-460"></a><span class="sd">    """</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -12560,11 +12560,11 @@ if it is enabled.</p>
 <span class="normal"><a href="#example-0-465">465</a></span>
 <span class="normal"><a href="#example-0-466">466</a></span>
 <span class="normal"><a href="#example-0-467">467</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-462"><a id="example-0-462" name="example-0-462"></a><span class="k">def</span><span class="w"> </span><span class="nf">message</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="n">MessageAttributes</span><span class="p">):</span>
-</span><span id="line-0-463"><a id="example-0-463" name="example-0-463"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Called when framework&#39;s internal messages are emitted.</span>
+</span><span id="line-0-463"><a id="example-0-463" name="example-0-463"></a><span class="w">    </span><span class="sd">"""Called when framework's internal messages are emitted.</span>
 </span><span id="line-0-464"><a id="example-0-464" name="example-0-464"></a>
 </span><span id="line-0-465"><a id="example-0-465" name="example-0-465"></a><span class="sd">    Only logged by the framework itself. These messages end up to the syslog</span>
 </span><span id="line-0-466"><a id="example-0-466" name="example-0-466"></a><span class="sd">    if it is enabled.</span>
-</span><span id="line-0-467"><a id="example-0-467" name="example-0-467"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-467"><a id="example-0-467" name="example-0-467"></a><span class="sd">    """</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -12596,7 +12596,7 @@ if it is enabled.</p>
               <summary>Source code in <code>src/robot/api/interfaces.py</code></summary>
               <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-469">469</a></span>
 <span class="normal"><a href="#example-0-470">470</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-469"><a id="example-0-469" name="example-0-469"></a><span class="k">def</span><span class="w"> </span><span class="nf">library_import</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">attributes</span><span class="p">:</span> <span class="n">LibraryAttributes</span><span class="p">):</span>
-</span><span id="line-0-470"><a id="example-0-470" name="example-0-470"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Called after a library has been imported.&quot;&quot;&quot;</span>
+</span><span id="line-0-470"><a id="example-0-470" name="example-0-470"></a><span class="w">    </span><span class="sd">"""Called after a library has been imported."""</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -12628,7 +12628,7 @@ if it is enabled.</p>
               <summary>Source code in <code>src/robot/api/interfaces.py</code></summary>
               <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-472">472</a></span>
 <span class="normal"><a href="#example-0-473">473</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-472"><a id="example-0-472" name="example-0-472"></a><span class="k">def</span><span class="w"> </span><span class="nf">resource_import</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">attributes</span><span class="p">:</span> <span class="n">ResourceAttributes</span><span class="p">):</span>
-</span><span id="line-0-473"><a id="example-0-473" name="example-0-473"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Called after a resource file has been imported.&quot;&quot;&quot;</span>
+</span><span id="line-0-473"><a id="example-0-473" name="example-0-473"></a><span class="w">    </span><span class="sd">"""Called after a resource file has been imported."""</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -12662,7 +12662,7 @@ if it is enabled.</p>
               <summary>Source code in <code>src/robot/api/interfaces.py</code></summary>
               <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-475">475</a></span>
 <span class="normal"><a href="#example-0-476">476</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-475"><a id="example-0-475" name="example-0-475"></a><span class="k">def</span><span class="w"> </span><span class="nf">variables_import</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">attributes</span><span class="p">:</span> <span class="n">VariablesAttributes</span><span class="p">):</span>
-</span><span id="line-0-476"><a id="example-0-476" name="example-0-476"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Called after a variable file has been imported.&quot;&quot;&quot;</span>
+</span><span id="line-0-476"><a id="example-0-476" name="example-0-476"></a><span class="w">    </span><span class="sd">"""Called after a variable file has been imported."""</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -12700,11 +12700,11 @@ a string <code>None</code> if creating the output file is disabled.</p>
 <span class="normal"><a href="#example-0-481">481</a></span>
 <span class="normal"><a href="#example-0-482">482</a></span>
 <span class="normal"><a href="#example-0-483">483</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-478"><a id="example-0-478" name="example-0-478"></a><span class="k">def</span><span class="w"> </span><span class="nf">output_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
-</span><span id="line-0-479"><a id="example-0-479" name="example-0-479"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Called after the output file has been created.</span>
+</span><span id="line-0-479"><a id="example-0-479" name="example-0-479"></a><span class="w">    </span><span class="sd">"""Called after the output file has been created.</span>
 </span><span id="line-0-480"><a id="example-0-480" name="example-0-480"></a>
 </span><span id="line-0-481"><a id="example-0-481" name="example-0-481"></a><span class="sd">    ``path`` is an absolute path to the output file or</span>
 </span><span id="line-0-482"><a id="example-0-482" name="example-0-482"></a><span class="sd">    a string ``None`` if creating the output file is disabled.</span>
-</span><span id="line-0-483"><a id="example-0-483" name="example-0-483"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-483"><a id="example-0-483" name="example-0-483"></a><span class="sd">    """</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -12742,11 +12742,11 @@ Not called if creating the log file is disabled.</p>
 <span class="normal"><a href="#example-0-488">488</a></span>
 <span class="normal"><a href="#example-0-489">489</a></span>
 <span class="normal"><a href="#example-0-490">490</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-485"><a id="example-0-485" name="example-0-485"></a><span class="k">def</span><span class="w"> </span><span class="nf">log_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
-</span><span id="line-0-486"><a id="example-0-486" name="example-0-486"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Called after the log file has been created.</span>
+</span><span id="line-0-486"><a id="example-0-486" name="example-0-486"></a><span class="w">    </span><span class="sd">"""Called after the log file has been created.</span>
 </span><span id="line-0-487"><a id="example-0-487" name="example-0-487"></a>
 </span><span id="line-0-488"><a id="example-0-488" name="example-0-488"></a><span class="sd">    ``path`` is an absolute path to the log file.</span>
 </span><span id="line-0-489"><a id="example-0-489" name="example-0-489"></a><span class="sd">    Not called if creating the log file is disabled.</span>
-</span><span id="line-0-490"><a id="example-0-490" name="example-0-490"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-490"><a id="example-0-490" name="example-0-490"></a><span class="sd">    """</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -12784,11 +12784,11 @@ Not called if creating the report file is disabled.</p>
 <span class="normal"><a href="#example-0-495">495</a></span>
 <span class="normal"><a href="#example-0-496">496</a></span>
 <span class="normal"><a href="#example-0-497">497</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-492"><a id="example-0-492" name="example-0-492"></a><span class="k">def</span><span class="w"> </span><span class="nf">report_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
-</span><span id="line-0-493"><a id="example-0-493" name="example-0-493"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Called after the report file has been created.</span>
+</span><span id="line-0-493"><a id="example-0-493" name="example-0-493"></a><span class="w">    </span><span class="sd">"""Called after the report file has been created.</span>
 </span><span id="line-0-494"><a id="example-0-494" name="example-0-494"></a>
 </span><span id="line-0-495"><a id="example-0-495" name="example-0-495"></a><span class="sd">    ``path`` is an absolute path to the report file.</span>
 </span><span id="line-0-496"><a id="example-0-496" name="example-0-496"></a><span class="sd">    Not called if creating the report file is disabled.</span>
-</span><span id="line-0-497"><a id="example-0-497" name="example-0-497"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-497"><a id="example-0-497" name="example-0-497"></a><span class="sd">    """</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -12826,11 +12826,11 @@ Only called if creating the xunit file is enabled.</p>
 <span class="normal"><a href="#example-0-502">502</a></span>
 <span class="normal"><a href="#example-0-503">503</a></span>
 <span class="normal"><a href="#example-0-504">504</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-499"><a id="example-0-499" name="example-0-499"></a><span class="k">def</span><span class="w"> </span><span class="nf">xunit_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
-</span><span id="line-0-500"><a id="example-0-500" name="example-0-500"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Called after the xunit compatible output file has been created.</span>
+</span><span id="line-0-500"><a id="example-0-500" name="example-0-500"></a><span class="w">    </span><span class="sd">"""Called after the xunit compatible output file has been created.</span>
 </span><span id="line-0-501"><a id="example-0-501" name="example-0-501"></a>
 </span><span id="line-0-502"><a id="example-0-502" name="example-0-502"></a><span class="sd">    ``path`` is an absolute path to the xunit file.</span>
 </span><span id="line-0-503"><a id="example-0-503" name="example-0-503"></a><span class="sd">    Only called if creating the xunit file is enabled.</span>
-</span><span id="line-0-504"><a id="example-0-504" name="example-0-504"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-504"><a id="example-0-504" name="example-0-504"></a><span class="sd">    """</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -12868,11 +12868,11 @@ Only called if creating the debug file is enabled.</p>
 <span class="normal"><a href="#example-0-509">509</a></span>
 <span class="normal"><a href="#example-0-510">510</a></span>
 <span class="normal"><a href="#example-0-511">511</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-506"><a id="example-0-506" name="example-0-506"></a><span class="k">def</span><span class="w"> </span><span class="nf">debug_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
-</span><span id="line-0-507"><a id="example-0-507" name="example-0-507"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Called after the debug file has been created.</span>
+</span><span id="line-0-507"><a id="example-0-507" name="example-0-507"></a><span class="w">    </span><span class="sd">"""Called after the debug file has been created.</span>
 </span><span id="line-0-508"><a id="example-0-508" name="example-0-508"></a>
 </span><span id="line-0-509"><a id="example-0-509" name="example-0-509"></a><span class="sd">    ``path`` is an absolute path to the debug file.</span>
 </span><span id="line-0-510"><a id="example-0-510" name="example-0-510"></a><span class="sd">    Only called if creating the debug file is enabled.</span>
-</span><span id="line-0-511"><a id="example-0-511" name="example-0-511"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-511"><a id="example-0-511" name="example-0-511"></a><span class="sd">    """</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -12908,10 +12908,10 @@ Only called if creating the debug file is enabled.</p>
 <span class="normal"><a href="#example-0-515">515</a></span>
 <span class="normal"><a href="#example-0-516">516</a></span>
 <span class="normal"><a href="#example-0-517">517</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-513"><a id="example-0-513" name="example-0-513"></a><span class="k">def</span><span class="w"> </span><span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="line-0-514"><a id="example-0-514" name="example-0-514"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Called when the whole execution ends.</span>
+</span><span id="line-0-514"><a id="example-0-514" name="example-0-514"></a><span class="w">    </span><span class="sd">"""Called when the whole execution ends.</span>
 </span><span id="line-0-515"><a id="example-0-515" name="example-0-515"></a>
 </span><span id="line-0-516"><a id="example-0-516" name="example-0-516"></a><span class="sd">    With library listeners called when the library goes out of scope.</span>
-</span><span id="line-0-517"><a id="example-0-517" name="example-0-517"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-517"><a id="example-0-517" name="example-0-517"></a><span class="sd">    """</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -12987,7 +12987,7 @@ Only called if creating the debug file is enabled.</p>
               <summary>Source code in <code>src/robot/api/interfaces.py</code></summary>
               <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-524">524</a></span>
 <span class="normal"><a href="#example-0-525">525</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-524"><a id="example-0-524" name="example-0-524"></a><span class="k">def</span><span class="w"> </span><span class="nf">start_suite</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">running</span><span class="o">.</span><span class="n">TestSuite</span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n">result</span><span class="o">.</span><span class="n">TestSuite</span><span class="p">):</span>
-</span><span id="line-0-525"><a id="example-0-525" name="example-0-525"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Called when a suite starts.&quot;&quot;&quot;</span>
+</span><span id="line-0-525"><a id="example-0-525" name="example-0-525"></a><span class="w">    </span><span class="sd">"""Called when a suite starts."""</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -13019,7 +13019,7 @@ Only called if creating the debug file is enabled.</p>
               <summary>Source code in <code>src/robot/api/interfaces.py</code></summary>
               <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-527">527</a></span>
 <span class="normal"><a href="#example-0-528">528</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-527"><a id="example-0-527" name="example-0-527"></a><span class="k">def</span><span class="w"> </span><span class="nf">end_suite</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">running</span><span class="o">.</span><span class="n">TestSuite</span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n">result</span><span class="o">.</span><span class="n">TestSuite</span><span class="p">):</span>
-</span><span id="line-0-528"><a id="example-0-528" name="example-0-528"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Called when a suite ends.&quot;&quot;&quot;</span>
+</span><span id="line-0-528"><a id="example-0-528" name="example-0-528"></a><span class="w">    </span><span class="sd">"""Called when a suite ends."""</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -13051,7 +13051,7 @@ Only called if creating the debug file is enabled.</p>
               <summary>Source code in <code>src/robot/api/interfaces.py</code></summary>
               <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-530">530</a></span>
 <span class="normal"><a href="#example-0-531">531</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-530"><a id="example-0-530" name="example-0-530"></a><span class="k">def</span><span class="w"> </span><span class="nf">start_test</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">running</span><span class="o">.</span><span class="n">TestCase</span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n">result</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
-</span><span id="line-0-531"><a id="example-0-531" name="example-0-531"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Called when a test or task starts.&quot;&quot;&quot;</span>
+</span><span id="line-0-531"><a id="example-0-531" name="example-0-531"></a><span class="w">    </span><span class="sd">"""Called when a test or task starts."""</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -13083,7 +13083,7 @@ Only called if creating the debug file is enabled.</p>
               <summary>Source code in <code>src/robot/api/interfaces.py</code></summary>
               <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-533">533</a></span>
 <span class="normal"><a href="#example-0-534">534</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-533"><a id="example-0-533" name="example-0-533"></a><span class="k">def</span><span class="w"> </span><span class="nf">end_test</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">running</span><span class="o">.</span><span class="n">TestCase</span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n">result</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
-</span><span id="line-0-534"><a id="example-0-534" name="example-0-534"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Called when a test or tasks ends.&quot;&quot;&quot;</span>
+</span><span id="line-0-534"><a id="example-0-534" name="example-0-534"></a><span class="w">    </span><span class="sd">"""Called when a test or tasks ends."""</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -13132,7 +13132,7 @@ specific :meth:<code>start_user_keyword</code>, :meth:<code>start_library_keywor
 <span class="normal"><a href="#example-0-546">546</a></span>
 <span class="normal"><a href="#example-0-547">547</a></span>
 <span class="normal"><a href="#example-0-548">548</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-536"><a id="example-0-536" name="example-0-536"></a><span class="k">def</span><span class="w"> </span><span class="nf">start_keyword</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">running</span><span class="o">.</span><span class="n">Keyword</span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n">result</span><span class="o">.</span><span class="n">Keyword</span><span class="p">):</span>
-</span><span id="line-0-537"><a id="example-0-537" name="example-0-537"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Called when a keyword starts by default.</span>
+</span><span id="line-0-537"><a id="example-0-537" name="example-0-537"></a><span class="w">    </span><span class="sd">"""Called when a keyword starts by default.</span>
 </span><span id="line-0-538"><a id="example-0-538" name="example-0-538"></a>
 </span><span id="line-0-539"><a id="example-0-539" name="example-0-539"></a><span class="sd">    This method is called, by default, with user keywords, library keywords</span>
 </span><span id="line-0-540"><a id="example-0-540" name="example-0-540"></a><span class="sd">    and when a keyword call is invalid. It is not called, however, if a more</span>
@@ -13142,7 +13142,7 @@ specific :meth:<code>start_user_keyword</code>, :meth:<code>start_library_keywor
 </span><span id="line-0-544"><a id="example-0-544" name="example-0-544"></a><span class="sd">    The default implementation calls :meth:`start_body_item`.</span>
 </span><span id="line-0-545"><a id="example-0-545" name="example-0-545"></a>
 </span><span id="line-0-546"><a id="example-0-546" name="example-0-546"></a><span class="sd">    New in Robot Framework 7.0.</span>
-</span><span id="line-0-547"><a id="example-0-547" name="example-0-547"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-547"><a id="example-0-547" name="example-0-547"></a><span class="sd">    """</span>
 </span><span id="line-0-548"><a id="example-0-548" name="example-0-548"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">start_body_item</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
@@ -13192,7 +13192,7 @@ specific :meth:<code>end_user_keyword</code>, :meth:<code>end_library_keyword</c
 <span class="normal"><a href="#example-0-560">560</a></span>
 <span class="normal"><a href="#example-0-561">561</a></span>
 <span class="normal"><a href="#example-0-562">562</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-550"><a id="example-0-550" name="example-0-550"></a><span class="k">def</span><span class="w"> </span><span class="nf">end_keyword</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">running</span><span class="o">.</span><span class="n">Keyword</span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n">result</span><span class="o">.</span><span class="n">Keyword</span><span class="p">):</span>
-</span><span id="line-0-551"><a id="example-0-551" name="example-0-551"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Called when a keyword ends by default.</span>
+</span><span id="line-0-551"><a id="example-0-551" name="example-0-551"></a><span class="w">    </span><span class="sd">"""Called when a keyword ends by default.</span>
 </span><span id="line-0-552"><a id="example-0-552" name="example-0-552"></a>
 </span><span id="line-0-553"><a id="example-0-553" name="example-0-553"></a><span class="sd">    This method is called, by default, with user keywords, library keywords</span>
 </span><span id="line-0-554"><a id="example-0-554" name="example-0-554"></a><span class="sd">    and when a keyword call is invalid. It is not called, however, if a more</span>
@@ -13202,7 +13202,7 @@ specific :meth:<code>end_user_keyword</code>, :meth:<code>end_library_keyword</c
 </span><span id="line-0-558"><a id="example-0-558" name="example-0-558"></a><span class="sd">    The default implementation calls :meth:`end_body_item`.</span>
 </span><span id="line-0-559"><a id="example-0-559" name="example-0-559"></a>
 </span><span id="line-0-560"><a id="example-0-560" name="example-0-560"></a><span class="sd">    New in Robot Framework 7.0.</span>
-</span><span id="line-0-561"><a id="example-0-561" name="example-0-561"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-561"><a id="example-0-561" name="example-0-561"></a><span class="sd">    """</span>
 </span><span id="line-0-562"><a id="example-0-562" name="example-0-562"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">end_body_item</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
@@ -13251,12 +13251,12 @@ specific :meth:<code>end_user_keyword</code>, :meth:<code>end_library_keyword</c
 <span class="normal"><a href="#example-0-573">573</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-564"><a id="example-0-564" name="example-0-564"></a><span class="k">def</span><span class="w"> </span><span class="nf">start_user_keyword</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">running</span><span class="o">.</span><span class="n">Keyword</span><span class="p">,</span>
 </span><span id="line-0-565"><a id="example-0-565" name="example-0-565"></a>                       <span class="n">implementation</span><span class="p">:</span> <span class="n">running</span><span class="o">.</span><span class="n">UserKeyword</span><span class="p">,</span>
 </span><span id="line-0-566"><a id="example-0-566" name="example-0-566"></a>                       <span class="n">result</span><span class="p">:</span> <span class="n">result</span><span class="o">.</span><span class="n">Keyword</span><span class="p">):</span>
-</span><span id="line-0-567"><a id="example-0-567" name="example-0-567"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Called when a user keyword starts.</span>
+</span><span id="line-0-567"><a id="example-0-567" name="example-0-567"></a><span class="w">    </span><span class="sd">"""Called when a user keyword starts.</span>
 </span><span id="line-0-568"><a id="example-0-568" name="example-0-568"></a>
 </span><span id="line-0-569"><a id="example-0-569" name="example-0-569"></a><span class="sd">    The default implementation calls :meth:`start_keyword`.</span>
 </span><span id="line-0-570"><a id="example-0-570" name="example-0-570"></a>
 </span><span id="line-0-571"><a id="example-0-571" name="example-0-571"></a><span class="sd">    New in Robot Framework 7.0.</span>
-</span><span id="line-0-572"><a id="example-0-572" name="example-0-572"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-572"><a id="example-0-572" name="example-0-572"></a><span class="sd">    """</span>
 </span><span id="line-0-573"><a id="example-0-573" name="example-0-573"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">start_keyword</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
@@ -13305,12 +13305,12 @@ specific :meth:<code>end_user_keyword</code>, :meth:<code>end_library_keyword</c
 <span class="normal"><a href="#example-0-584">584</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-575"><a id="example-0-575" name="example-0-575"></a><span class="k">def</span><span class="w"> </span><span class="nf">end_user_keyword</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">running</span><span class="o">.</span><span class="n">Keyword</span><span class="p">,</span>
 </span><span id="line-0-576"><a id="example-0-576" name="example-0-576"></a>                     <span class="n">implementation</span><span class="p">:</span> <span class="n">running</span><span class="o">.</span><span class="n">UserKeyword</span><span class="p">,</span>
 </span><span id="line-0-577"><a id="example-0-577" name="example-0-577"></a>                     <span class="n">result</span><span class="p">:</span> <span class="n">result</span><span class="o">.</span><span class="n">Keyword</span><span class="p">):</span>
-</span><span id="line-0-578"><a id="example-0-578" name="example-0-578"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Called when a user keyword ends.</span>
+</span><span id="line-0-578"><a id="example-0-578" name="example-0-578"></a><span class="w">    </span><span class="sd">"""Called when a user keyword ends.</span>
 </span><span id="line-0-579"><a id="example-0-579" name="example-0-579"></a>
 </span><span id="line-0-580"><a id="example-0-580" name="example-0-580"></a><span class="sd">    The default implementation calls :meth:`end_keyword`.</span>
 </span><span id="line-0-581"><a id="example-0-581" name="example-0-581"></a>
 </span><span id="line-0-582"><a id="example-0-582" name="example-0-582"></a><span class="sd">    New in Robot Framework 7.0.</span>
-</span><span id="line-0-583"><a id="example-0-583" name="example-0-583"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-583"><a id="example-0-583" name="example-0-583"></a><span class="sd">    """</span>
 </span><span id="line-0-584"><a id="example-0-584" name="example-0-584"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">end_keyword</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
@@ -13359,12 +13359,12 @@ specific :meth:<code>end_user_keyword</code>, :meth:<code>end_library_keyword</c
 <span class="normal"><a href="#example-0-595">595</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-586"><a id="example-0-586" name="example-0-586"></a><span class="k">def</span><span class="w"> </span><span class="nf">start_library_keyword</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">running</span><span class="o">.</span><span class="n">Keyword</span><span class="p">,</span>
 </span><span id="line-0-587"><a id="example-0-587" name="example-0-587"></a>                          <span class="n">implementation</span><span class="p">:</span> <span class="n">running</span><span class="o">.</span><span class="n">LibraryKeyword</span><span class="p">,</span>
 </span><span id="line-0-588"><a id="example-0-588" name="example-0-588"></a>                          <span class="n">result</span><span class="p">:</span> <span class="n">result</span><span class="o">.</span><span class="n">Keyword</span><span class="p">):</span>
-</span><span id="line-0-589"><a id="example-0-589" name="example-0-589"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Called when a library keyword starts.</span>
+</span><span id="line-0-589"><a id="example-0-589" name="example-0-589"></a><span class="w">    </span><span class="sd">"""Called when a library keyword starts.</span>
 </span><span id="line-0-590"><a id="example-0-590" name="example-0-590"></a>
 </span><span id="line-0-591"><a id="example-0-591" name="example-0-591"></a><span class="sd">    The default implementation calls :meth:`start_keyword`.</span>
 </span><span id="line-0-592"><a id="example-0-592" name="example-0-592"></a>
 </span><span id="line-0-593"><a id="example-0-593" name="example-0-593"></a><span class="sd">    New in Robot Framework 7.0.</span>
-</span><span id="line-0-594"><a id="example-0-594" name="example-0-594"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-594"><a id="example-0-594" name="example-0-594"></a><span class="sd">    """</span>
 </span><span id="line-0-595"><a id="example-0-595" name="example-0-595"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">start_keyword</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
@@ -13413,12 +13413,12 @@ specific :meth:<code>end_user_keyword</code>, :meth:<code>end_library_keyword</c
 <span class="normal"><a href="#example-0-606">606</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-597"><a id="example-0-597" name="example-0-597"></a><span class="k">def</span><span class="w"> </span><span class="nf">end_library_keyword</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">running</span><span class="o">.</span><span class="n">Keyword</span><span class="p">,</span>
 </span><span id="line-0-598"><a id="example-0-598" name="example-0-598"></a>                        <span class="n">implementation</span><span class="p">:</span> <span class="n">running</span><span class="o">.</span><span class="n">LibraryKeyword</span><span class="p">,</span>
 </span><span id="line-0-599"><a id="example-0-599" name="example-0-599"></a>                        <span class="n">result</span><span class="p">:</span> <span class="n">result</span><span class="o">.</span><span class="n">Keyword</span><span class="p">):</span>
-</span><span id="line-0-600"><a id="example-0-600" name="example-0-600"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Called when a library keyword ends.</span>
+</span><span id="line-0-600"><a id="example-0-600" name="example-0-600"></a><span class="w">    </span><span class="sd">"""Called when a library keyword ends.</span>
 </span><span id="line-0-601"><a id="example-0-601" name="example-0-601"></a>
 </span><span id="line-0-602"><a id="example-0-602" name="example-0-602"></a><span class="sd">    The default implementation calls :meth:`start_keyword`.</span>
 </span><span id="line-0-603"><a id="example-0-603" name="example-0-603"></a>
 </span><span id="line-0-604"><a id="example-0-604" name="example-0-604"></a><span class="sd">    New in Robot Framework 7.0.</span>
-</span><span id="line-0-605"><a id="example-0-605" name="example-0-605"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-605"><a id="example-0-605" name="example-0-605"></a><span class="sd">    """</span>
 </span><span id="line-0-606"><a id="example-0-606" name="example-0-606"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">end_keyword</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
@@ -13472,7 +13472,7 @@ or the keyword call itself could have been invalid.</p>
 <span class="normal"><a href="#example-0-620">620</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-608"><a id="example-0-608" name="example-0-608"></a><span class="k">def</span><span class="w"> </span><span class="nf">start_invalid_keyword</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">running</span><span class="o">.</span><span class="n">Keyword</span><span class="p">,</span>
 </span><span id="line-0-609"><a id="example-0-609" name="example-0-609"></a>                          <span class="n">implementation</span><span class="p">:</span> <span class="n">running</span><span class="o">.</span><span class="n">KeywordImplementation</span><span class="p">,</span>
 </span><span id="line-0-610"><a id="example-0-610" name="example-0-610"></a>                          <span class="n">result</span><span class="p">:</span> <span class="n">result</span><span class="o">.</span><span class="n">Keyword</span><span class="p">):</span>
-</span><span id="line-0-611"><a id="example-0-611" name="example-0-611"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Called when an invalid keyword call starts.</span>
+</span><span id="line-0-611"><a id="example-0-611" name="example-0-611"></a><span class="w">    </span><span class="sd">"""Called when an invalid keyword call starts.</span>
 </span><span id="line-0-612"><a id="example-0-612" name="example-0-612"></a>
 </span><span id="line-0-613"><a id="example-0-613" name="example-0-613"></a><span class="sd">    Keyword may not have been found, there could have been multiple matches,</span>
 </span><span id="line-0-614"><a id="example-0-614" name="example-0-614"></a><span class="sd">    or the keyword call itself could have been invalid.</span>
@@ -13480,7 +13480,7 @@ or the keyword call itself could have been invalid.</p>
 </span><span id="line-0-616"><a id="example-0-616" name="example-0-616"></a><span class="sd">    The default implementation calls :meth:`start_keyword`.</span>
 </span><span id="line-0-617"><a id="example-0-617" name="example-0-617"></a>
 </span><span id="line-0-618"><a id="example-0-618" name="example-0-618"></a><span class="sd">    New in Robot Framework 7.0.</span>
-</span><span id="line-0-619"><a id="example-0-619" name="example-0-619"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-619"><a id="example-0-619" name="example-0-619"></a><span class="sd">    """</span>
 </span><span id="line-0-620"><a id="example-0-620" name="example-0-620"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">start_keyword</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
@@ -13534,7 +13534,7 @@ or the keyword call itself could have been invalid.</p>
 <span class="normal"><a href="#example-0-634">634</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-622"><a id="example-0-622" name="example-0-622"></a><span class="k">def</span><span class="w"> </span><span class="nf">end_invalid_keyword</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">running</span><span class="o">.</span><span class="n">Keyword</span><span class="p">,</span>
 </span><span id="line-0-623"><a id="example-0-623" name="example-0-623"></a>                        <span class="n">implementation</span><span class="p">:</span> <span class="n">running</span><span class="o">.</span><span class="n">KeywordImplementation</span><span class="p">,</span>
 </span><span id="line-0-624"><a id="example-0-624" name="example-0-624"></a>                        <span class="n">result</span><span class="p">:</span> <span class="n">result</span><span class="o">.</span><span class="n">Keyword</span><span class="p">):</span>
-</span><span id="line-0-625"><a id="example-0-625" name="example-0-625"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Called when an invalid keyword call ends.</span>
+</span><span id="line-0-625"><a id="example-0-625" name="example-0-625"></a><span class="w">    </span><span class="sd">"""Called when an invalid keyword call ends.</span>
 </span><span id="line-0-626"><a id="example-0-626" name="example-0-626"></a>
 </span><span id="line-0-627"><a id="example-0-627" name="example-0-627"></a><span class="sd">    Keyword may not have been found, there could have been multiple matches,</span>
 </span><span id="line-0-628"><a id="example-0-628" name="example-0-628"></a><span class="sd">    or the keyword call itself could have been invalid.</span>
@@ -13542,7 +13542,7 @@ or the keyword call itself could have been invalid.</p>
 </span><span id="line-0-630"><a id="example-0-630" name="example-0-630"></a><span class="sd">    The default implementation calls :meth:`end_keyword`.</span>
 </span><span id="line-0-631"><a id="example-0-631" name="example-0-631"></a>
 </span><span id="line-0-632"><a id="example-0-632" name="example-0-632"></a><span class="sd">    New in Robot Framework 7.0.</span>
-</span><span id="line-0-633"><a id="example-0-633" name="example-0-633"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-633"><a id="example-0-633" name="example-0-633"></a><span class="sd">    """</span>
 </span><span id="line-0-634"><a id="example-0-634" name="example-0-634"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">end_keyword</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
@@ -13583,12 +13583,12 @@ or the keyword call itself could have been invalid.</p>
 <span class="normal"><a href="#example-0-641">641</a></span>
 <span class="normal"><a href="#example-0-642">642</a></span>
 <span class="normal"><a href="#example-0-643">643</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-636"><a id="example-0-636" name="example-0-636"></a><span class="k">def</span><span class="w"> </span><span class="nf">start_for</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">running</span><span class="o">.</span><span class="n">For</span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n">result</span><span class="o">.</span><span class="n">For</span><span class="p">):</span>
-</span><span id="line-0-637"><a id="example-0-637" name="example-0-637"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Called when a FOR loop starts.</span>
+</span><span id="line-0-637"><a id="example-0-637" name="example-0-637"></a><span class="w">    </span><span class="sd">"""Called when a FOR loop starts.</span>
 </span><span id="line-0-638"><a id="example-0-638" name="example-0-638"></a>
 </span><span id="line-0-639"><a id="example-0-639" name="example-0-639"></a><span class="sd">    The default implementation calls :meth:`start_body_item`.</span>
 </span><span id="line-0-640"><a id="example-0-640" name="example-0-640"></a>
 </span><span id="line-0-641"><a id="example-0-641" name="example-0-641"></a><span class="sd">    New in Robot Framework 7.0.</span>
-</span><span id="line-0-642"><a id="example-0-642" name="example-0-642"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-642"><a id="example-0-642" name="example-0-642"></a><span class="sd">    """</span>
 </span><span id="line-0-643"><a id="example-0-643" name="example-0-643"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">start_body_item</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
@@ -13629,12 +13629,12 @@ or the keyword call itself could have been invalid.</p>
 <span class="normal"><a href="#example-0-650">650</a></span>
 <span class="normal"><a href="#example-0-651">651</a></span>
 <span class="normal"><a href="#example-0-652">652</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-645"><a id="example-0-645" name="example-0-645"></a><span class="k">def</span><span class="w"> </span><span class="nf">end_for</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">running</span><span class="o">.</span><span class="n">For</span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n">result</span><span class="o">.</span><span class="n">For</span><span class="p">):</span>
-</span><span id="line-0-646"><a id="example-0-646" name="example-0-646"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Called when a FOR loop ends.</span>
+</span><span id="line-0-646"><a id="example-0-646" name="example-0-646"></a><span class="w">    </span><span class="sd">"""Called when a FOR loop ends.</span>
 </span><span id="line-0-647"><a id="example-0-647" name="example-0-647"></a>
 </span><span id="line-0-648"><a id="example-0-648" name="example-0-648"></a><span class="sd">    The default implementation calls :meth:`end_body_item`.</span>
 </span><span id="line-0-649"><a id="example-0-649" name="example-0-649"></a>
 </span><span id="line-0-650"><a id="example-0-650" name="example-0-650"></a><span class="sd">    New in Robot Framework 7.0.</span>
-</span><span id="line-0-651"><a id="example-0-651" name="example-0-651"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-651"><a id="example-0-651" name="example-0-651"></a><span class="sd">    """</span>
 </span><span id="line-0-652"><a id="example-0-652" name="example-0-652"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">end_body_item</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
@@ -13679,12 +13679,12 @@ or the keyword call itself could have been invalid.</p>
 <span class="normal"><a href="#example-0-661">661</a></span>
 <span class="normal"><a href="#example-0-662">662</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-654"><a id="example-0-654" name="example-0-654"></a><span class="k">def</span><span class="w"> </span><span class="nf">start_for_iteration</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">running</span><span class="o">.</span><span class="n">ForIteration</span><span class="p">,</span>
 </span><span id="line-0-655"><a id="example-0-655" name="example-0-655"></a>                        <span class="n">result</span><span class="p">:</span> <span class="n">result</span><span class="o">.</span><span class="n">ForIteration</span><span class="p">):</span>
-</span><span id="line-0-656"><a id="example-0-656" name="example-0-656"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Called when a FOR loop iteration starts.</span>
+</span><span id="line-0-656"><a id="example-0-656" name="example-0-656"></a><span class="w">    </span><span class="sd">"""Called when a FOR loop iteration starts.</span>
 </span><span id="line-0-657"><a id="example-0-657" name="example-0-657"></a>
 </span><span id="line-0-658"><a id="example-0-658" name="example-0-658"></a><span class="sd">    The default implementation calls :meth:`start_body_item`.</span>
 </span><span id="line-0-659"><a id="example-0-659" name="example-0-659"></a>
 </span><span id="line-0-660"><a id="example-0-660" name="example-0-660"></a><span class="sd">    New in Robot Framework 7.0.</span>
-</span><span id="line-0-661"><a id="example-0-661" name="example-0-661"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-661"><a id="example-0-661" name="example-0-661"></a><span class="sd">    """</span>
 </span><span id="line-0-662"><a id="example-0-662" name="example-0-662"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">start_body_item</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
@@ -13727,12 +13727,12 @@ or the keyword call itself could have been invalid.</p>
 <span class="normal"><a href="#example-0-671">671</a></span>
 <span class="normal"><a href="#example-0-672">672</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-664"><a id="example-0-664" name="example-0-664"></a><span class="k">def</span><span class="w"> </span><span class="nf">end_for_iteration</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">running</span><span class="o">.</span><span class="n">ForIteration</span><span class="p">,</span>
 </span><span id="line-0-665"><a id="example-0-665" name="example-0-665"></a>                      <span class="n">result</span><span class="p">:</span> <span class="n">result</span><span class="o">.</span><span class="n">ForIteration</span><span class="p">):</span>
-</span><span id="line-0-666"><a id="example-0-666" name="example-0-666"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Called when a FOR loop iteration ends.</span>
+</span><span id="line-0-666"><a id="example-0-666" name="example-0-666"></a><span class="w">    </span><span class="sd">"""Called when a FOR loop iteration ends.</span>
 </span><span id="line-0-667"><a id="example-0-667" name="example-0-667"></a>
 </span><span id="line-0-668"><a id="example-0-668" name="example-0-668"></a><span class="sd">    The default implementation calls :meth:`end_body_item`.</span>
 </span><span id="line-0-669"><a id="example-0-669" name="example-0-669"></a>
 </span><span id="line-0-670"><a id="example-0-670" name="example-0-670"></a><span class="sd">    New in Robot Framework 7.0.</span>
-</span><span id="line-0-671"><a id="example-0-671" name="example-0-671"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-671"><a id="example-0-671" name="example-0-671"></a><span class="sd">    """</span>
 </span><span id="line-0-672"><a id="example-0-672" name="example-0-672"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">end_body_item</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
@@ -13773,12 +13773,12 @@ or the keyword call itself could have been invalid.</p>
 <span class="normal"><a href="#example-0-679">679</a></span>
 <span class="normal"><a href="#example-0-680">680</a></span>
 <span class="normal"><a href="#example-0-681">681</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-674"><a id="example-0-674" name="example-0-674"></a><span class="k">def</span><span class="w"> </span><span class="nf">start_while</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">running</span><span class="o">.</span><span class="n">While</span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n">result</span><span class="o">.</span><span class="n">While</span><span class="p">):</span>
-</span><span id="line-0-675"><a id="example-0-675" name="example-0-675"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Called when a WHILE loop starts.</span>
+</span><span id="line-0-675"><a id="example-0-675" name="example-0-675"></a><span class="w">    </span><span class="sd">"""Called when a WHILE loop starts.</span>
 </span><span id="line-0-676"><a id="example-0-676" name="example-0-676"></a>
 </span><span id="line-0-677"><a id="example-0-677" name="example-0-677"></a><span class="sd">    The default implementation calls :meth:`start_body_item`.</span>
 </span><span id="line-0-678"><a id="example-0-678" name="example-0-678"></a>
 </span><span id="line-0-679"><a id="example-0-679" name="example-0-679"></a><span class="sd">    New in Robot Framework 7.0.</span>
-</span><span id="line-0-680"><a id="example-0-680" name="example-0-680"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-680"><a id="example-0-680" name="example-0-680"></a><span class="sd">    """</span>
 </span><span id="line-0-681"><a id="example-0-681" name="example-0-681"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">start_body_item</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
@@ -13819,12 +13819,12 @@ or the keyword call itself could have been invalid.</p>
 <span class="normal"><a href="#example-0-688">688</a></span>
 <span class="normal"><a href="#example-0-689">689</a></span>
 <span class="normal"><a href="#example-0-690">690</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-683"><a id="example-0-683" name="example-0-683"></a><span class="k">def</span><span class="w"> </span><span class="nf">end_while</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">running</span><span class="o">.</span><span class="n">While</span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n">result</span><span class="o">.</span><span class="n">While</span><span class="p">):</span>
-</span><span id="line-0-684"><a id="example-0-684" name="example-0-684"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Called when a WHILE loop ends.</span>
+</span><span id="line-0-684"><a id="example-0-684" name="example-0-684"></a><span class="w">    </span><span class="sd">"""Called when a WHILE loop ends.</span>
 </span><span id="line-0-685"><a id="example-0-685" name="example-0-685"></a>
 </span><span id="line-0-686"><a id="example-0-686" name="example-0-686"></a><span class="sd">    The default implementation calls :meth:`end_body_item`.</span>
 </span><span id="line-0-687"><a id="example-0-687" name="example-0-687"></a>
 </span><span id="line-0-688"><a id="example-0-688" name="example-0-688"></a><span class="sd">    New in Robot Framework 7.0.</span>
-</span><span id="line-0-689"><a id="example-0-689" name="example-0-689"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-689"><a id="example-0-689" name="example-0-689"></a><span class="sd">    """</span>
 </span><span id="line-0-690"><a id="example-0-690" name="example-0-690"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">end_body_item</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
@@ -13869,12 +13869,12 @@ or the keyword call itself could have been invalid.</p>
 <span class="normal"><a href="#example-0-699">699</a></span>
 <span class="normal"><a href="#example-0-700">700</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-692"><a id="example-0-692" name="example-0-692"></a><span class="k">def</span><span class="w"> </span><span class="nf">start_while_iteration</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">running</span><span class="o">.</span><span class="n">WhileIteration</span><span class="p">,</span>
 </span><span id="line-0-693"><a id="example-0-693" name="example-0-693"></a>                          <span class="n">result</span><span class="p">:</span> <span class="n">result</span><span class="o">.</span><span class="n">WhileIteration</span><span class="p">):</span>
-</span><span id="line-0-694"><a id="example-0-694" name="example-0-694"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Called when a WHILE loop iteration starts.</span>
+</span><span id="line-0-694"><a id="example-0-694" name="example-0-694"></a><span class="w">    </span><span class="sd">"""Called when a WHILE loop iteration starts.</span>
 </span><span id="line-0-695"><a id="example-0-695" name="example-0-695"></a>
 </span><span id="line-0-696"><a id="example-0-696" name="example-0-696"></a><span class="sd">    The default implementation calls :meth:`start_body_item`.</span>
 </span><span id="line-0-697"><a id="example-0-697" name="example-0-697"></a>
 </span><span id="line-0-698"><a id="example-0-698" name="example-0-698"></a><span class="sd">    New in Robot Framework 7.0.</span>
-</span><span id="line-0-699"><a id="example-0-699" name="example-0-699"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-699"><a id="example-0-699" name="example-0-699"></a><span class="sd">    """</span>
 </span><span id="line-0-700"><a id="example-0-700" name="example-0-700"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">start_body_item</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
@@ -13919,12 +13919,12 @@ or the keyword call itself could have been invalid.</p>
 <span class="normal"><a href="#example-0-709">709</a></span>
 <span class="normal"><a href="#example-0-710">710</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-702"><a id="example-0-702" name="example-0-702"></a><span class="k">def</span><span class="w"> </span><span class="nf">end_while_iteration</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">running</span><span class="o">.</span><span class="n">WhileIteration</span><span class="p">,</span>
 </span><span id="line-0-703"><a id="example-0-703" name="example-0-703"></a>                        <span class="n">result</span><span class="p">:</span> <span class="n">result</span><span class="o">.</span><span class="n">WhileIteration</span><span class="p">):</span>
-</span><span id="line-0-704"><a id="example-0-704" name="example-0-704"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Called when a WHILE loop iteration ends.</span>
+</span><span id="line-0-704"><a id="example-0-704" name="example-0-704"></a><span class="w">    </span><span class="sd">"""Called when a WHILE loop iteration ends.</span>
 </span><span id="line-0-705"><a id="example-0-705" name="example-0-705"></a>
 </span><span id="line-0-706"><a id="example-0-706" name="example-0-706"></a><span class="sd">    The default implementation calls :meth:`end_body_item`.</span>
 </span><span id="line-0-707"><a id="example-0-707" name="example-0-707"></a>
 </span><span id="line-0-708"><a id="example-0-708" name="example-0-708"></a><span class="sd">    New in Robot Framework 7.0.</span>
-</span><span id="line-0-709"><a id="example-0-709" name="example-0-709"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-709"><a id="example-0-709" name="example-0-709"></a><span class="sd">    """</span>
 </span><span id="line-0-710"><a id="example-0-710" name="example-0-710"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">end_body_item</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
@@ -13965,12 +13965,12 @@ or the keyword call itself could have been invalid.</p>
 <span class="normal"><a href="#example-0-717">717</a></span>
 <span class="normal"><a href="#example-0-718">718</a></span>
 <span class="normal"><a href="#example-0-719">719</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-712"><a id="example-0-712" name="example-0-712"></a><span class="k">def</span><span class="w"> </span><span class="nf">start_if</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">running</span><span class="o">.</span><span class="n">If</span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n">result</span><span class="o">.</span><span class="n">If</span><span class="p">):</span>
-</span><span id="line-0-713"><a id="example-0-713" name="example-0-713"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Called when an IF/ELSE structure starts.</span>
+</span><span id="line-0-713"><a id="example-0-713" name="example-0-713"></a><span class="w">    </span><span class="sd">"""Called when an IF/ELSE structure starts.</span>
 </span><span id="line-0-714"><a id="example-0-714" name="example-0-714"></a>
 </span><span id="line-0-715"><a id="example-0-715" name="example-0-715"></a><span class="sd">    The default implementation calls :meth:`start_body_item`.</span>
 </span><span id="line-0-716"><a id="example-0-716" name="example-0-716"></a>
 </span><span id="line-0-717"><a id="example-0-717" name="example-0-717"></a><span class="sd">    New in Robot Framework 7.0.</span>
-</span><span id="line-0-718"><a id="example-0-718" name="example-0-718"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-718"><a id="example-0-718" name="example-0-718"></a><span class="sd">    """</span>
 </span><span id="line-0-719"><a id="example-0-719" name="example-0-719"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">start_body_item</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
@@ -14011,12 +14011,12 @@ or the keyword call itself could have been invalid.</p>
 <span class="normal"><a href="#example-0-726">726</a></span>
 <span class="normal"><a href="#example-0-727">727</a></span>
 <span class="normal"><a href="#example-0-728">728</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-721"><a id="example-0-721" name="example-0-721"></a><span class="k">def</span><span class="w"> </span><span class="nf">end_if</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">running</span><span class="o">.</span><span class="n">If</span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n">result</span><span class="o">.</span><span class="n">If</span><span class="p">):</span>
-</span><span id="line-0-722"><a id="example-0-722" name="example-0-722"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Called when an IF/ELSE structure ends.</span>
+</span><span id="line-0-722"><a id="example-0-722" name="example-0-722"></a><span class="w">    </span><span class="sd">"""Called when an IF/ELSE structure ends.</span>
 </span><span id="line-0-723"><a id="example-0-723" name="example-0-723"></a>
 </span><span id="line-0-724"><a id="example-0-724" name="example-0-724"></a><span class="sd">    The default implementation calls :meth:`end_body_item`.</span>
 </span><span id="line-0-725"><a id="example-0-725" name="example-0-725"></a>
 </span><span id="line-0-726"><a id="example-0-726" name="example-0-726"></a><span class="sd">    New in Robot Framework 7.0.</span>
-</span><span id="line-0-727"><a id="example-0-727" name="example-0-727"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-727"><a id="example-0-727" name="example-0-727"></a><span class="sd">    """</span>
 </span><span id="line-0-728"><a id="example-0-728" name="example-0-728"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">end_body_item</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
@@ -14057,12 +14057,12 @@ or the keyword call itself could have been invalid.</p>
 <span class="normal"><a href="#example-0-735">735</a></span>
 <span class="normal"><a href="#example-0-736">736</a></span>
 <span class="normal"><a href="#example-0-737">737</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-730"><a id="example-0-730" name="example-0-730"></a><span class="k">def</span><span class="w"> </span><span class="nf">start_if_branch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">running</span><span class="o">.</span><span class="n">IfBranch</span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n">result</span><span class="o">.</span><span class="n">IfBranch</span><span class="p">):</span>
-</span><span id="line-0-731"><a id="example-0-731" name="example-0-731"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Called when an individual IF/ELSE branch starts.</span>
+</span><span id="line-0-731"><a id="example-0-731" name="example-0-731"></a><span class="w">    </span><span class="sd">"""Called when an individual IF/ELSE branch starts.</span>
 </span><span id="line-0-732"><a id="example-0-732" name="example-0-732"></a>
 </span><span id="line-0-733"><a id="example-0-733" name="example-0-733"></a><span class="sd">    The default implementation calls :meth:`start_body_item`.</span>
 </span><span id="line-0-734"><a id="example-0-734" name="example-0-734"></a>
 </span><span id="line-0-735"><a id="example-0-735" name="example-0-735"></a><span class="sd">    New in Robot Framework 7.0.</span>
-</span><span id="line-0-736"><a id="example-0-736" name="example-0-736"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-736"><a id="example-0-736" name="example-0-736"></a><span class="sd">    """</span>
 </span><span id="line-0-737"><a id="example-0-737" name="example-0-737"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">start_body_item</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
@@ -14103,12 +14103,12 @@ or the keyword call itself could have been invalid.</p>
 <span class="normal"><a href="#example-0-744">744</a></span>
 <span class="normal"><a href="#example-0-745">745</a></span>
 <span class="normal"><a href="#example-0-746">746</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-739"><a id="example-0-739" name="example-0-739"></a><span class="k">def</span><span class="w"> </span><span class="nf">end_if_branch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">running</span><span class="o">.</span><span class="n">IfBranch</span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n">result</span><span class="o">.</span><span class="n">IfBranch</span><span class="p">):</span>
-</span><span id="line-0-740"><a id="example-0-740" name="example-0-740"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Called when an individual IF/ELSE branch ends.</span>
+</span><span id="line-0-740"><a id="example-0-740" name="example-0-740"></a><span class="w">    </span><span class="sd">"""Called when an individual IF/ELSE branch ends.</span>
 </span><span id="line-0-741"><a id="example-0-741" name="example-0-741"></a>
 </span><span id="line-0-742"><a id="example-0-742" name="example-0-742"></a><span class="sd">    The default implementation calls :meth:`end_body_item`.</span>
 </span><span id="line-0-743"><a id="example-0-743" name="example-0-743"></a>
 </span><span id="line-0-744"><a id="example-0-744" name="example-0-744"></a><span class="sd">    New in Robot Framework 7.0.</span>
-</span><span id="line-0-745"><a id="example-0-745" name="example-0-745"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-745"><a id="example-0-745" name="example-0-745"></a><span class="sd">    """</span>
 </span><span id="line-0-746"><a id="example-0-746" name="example-0-746"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">end_body_item</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
@@ -14149,12 +14149,12 @@ or the keyword call itself could have been invalid.</p>
 <span class="normal"><a href="#example-0-753">753</a></span>
 <span class="normal"><a href="#example-0-754">754</a></span>
 <span class="normal"><a href="#example-0-755">755</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-748"><a id="example-0-748" name="example-0-748"></a><span class="k">def</span><span class="w"> </span><span class="nf">start_try</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">running</span><span class="o">.</span><span class="n">Try</span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n">result</span><span class="o">.</span><span class="n">Try</span><span class="p">):</span>
-</span><span id="line-0-749"><a id="example-0-749" name="example-0-749"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Called when a TRY/EXCEPT structure starts.</span>
+</span><span id="line-0-749"><a id="example-0-749" name="example-0-749"></a><span class="w">    </span><span class="sd">"""Called when a TRY/EXCEPT structure starts.</span>
 </span><span id="line-0-750"><a id="example-0-750" name="example-0-750"></a>
 </span><span id="line-0-751"><a id="example-0-751" name="example-0-751"></a><span class="sd">    The default implementation calls :meth:`start_body_item`.</span>
 </span><span id="line-0-752"><a id="example-0-752" name="example-0-752"></a>
 </span><span id="line-0-753"><a id="example-0-753" name="example-0-753"></a><span class="sd">    New in Robot Framework 7.0.</span>
-</span><span id="line-0-754"><a id="example-0-754" name="example-0-754"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-754"><a id="example-0-754" name="example-0-754"></a><span class="sd">    """</span>
 </span><span id="line-0-755"><a id="example-0-755" name="example-0-755"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">start_body_item</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
@@ -14195,12 +14195,12 @@ or the keyword call itself could have been invalid.</p>
 <span class="normal"><a href="#example-0-762">762</a></span>
 <span class="normal"><a href="#example-0-763">763</a></span>
 <span class="normal"><a href="#example-0-764">764</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-757"><a id="example-0-757" name="example-0-757"></a><span class="k">def</span><span class="w"> </span><span class="nf">end_try</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">running</span><span class="o">.</span><span class="n">Try</span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n">result</span><span class="o">.</span><span class="n">Try</span><span class="p">):</span>
-</span><span id="line-0-758"><a id="example-0-758" name="example-0-758"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Called when a TRY/EXCEPT structure ends.</span>
+</span><span id="line-0-758"><a id="example-0-758" name="example-0-758"></a><span class="w">    </span><span class="sd">"""Called when a TRY/EXCEPT structure ends.</span>
 </span><span id="line-0-759"><a id="example-0-759" name="example-0-759"></a>
 </span><span id="line-0-760"><a id="example-0-760" name="example-0-760"></a><span class="sd">    The default implementation calls :meth:`end_body_item`.</span>
 </span><span id="line-0-761"><a id="example-0-761" name="example-0-761"></a>
 </span><span id="line-0-762"><a id="example-0-762" name="example-0-762"></a><span class="sd">    New in Robot Framework 7.0.</span>
-</span><span id="line-0-763"><a id="example-0-763" name="example-0-763"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-763"><a id="example-0-763" name="example-0-763"></a><span class="sd">    """</span>
 </span><span id="line-0-764"><a id="example-0-764" name="example-0-764"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">end_body_item</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
@@ -14241,12 +14241,12 @@ or the keyword call itself could have been invalid.</p>
 <span class="normal"><a href="#example-0-771">771</a></span>
 <span class="normal"><a href="#example-0-772">772</a></span>
 <span class="normal"><a href="#example-0-773">773</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-766"><a id="example-0-766" name="example-0-766"></a><span class="k">def</span><span class="w"> </span><span class="nf">start_try_branch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">running</span><span class="o">.</span><span class="n">TryBranch</span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n">result</span><span class="o">.</span><span class="n">TryBranch</span><span class="p">):</span>
-</span><span id="line-0-767"><a id="example-0-767" name="example-0-767"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Called when an individual TRY/EXCEPT branch starts.</span>
+</span><span id="line-0-767"><a id="example-0-767" name="example-0-767"></a><span class="w">    </span><span class="sd">"""Called when an individual TRY/EXCEPT branch starts.</span>
 </span><span id="line-0-768"><a id="example-0-768" name="example-0-768"></a>
 </span><span id="line-0-769"><a id="example-0-769" name="example-0-769"></a><span class="sd">    The default implementation calls :meth:`start_body_item`.</span>
 </span><span id="line-0-770"><a id="example-0-770" name="example-0-770"></a>
 </span><span id="line-0-771"><a id="example-0-771" name="example-0-771"></a><span class="sd">    New in Robot Framework 7.0.</span>
-</span><span id="line-0-772"><a id="example-0-772" name="example-0-772"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-772"><a id="example-0-772" name="example-0-772"></a><span class="sd">    """</span>
 </span><span id="line-0-773"><a id="example-0-773" name="example-0-773"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">start_body_item</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
@@ -14287,12 +14287,12 @@ or the keyword call itself could have been invalid.</p>
 <span class="normal"><a href="#example-0-780">780</a></span>
 <span class="normal"><a href="#example-0-781">781</a></span>
 <span class="normal"><a href="#example-0-782">782</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-775"><a id="example-0-775" name="example-0-775"></a><span class="k">def</span><span class="w"> </span><span class="nf">end_try_branch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">running</span><span class="o">.</span><span class="n">TryBranch</span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n">result</span><span class="o">.</span><span class="n">TryBranch</span><span class="p">):</span>
-</span><span id="line-0-776"><a id="example-0-776" name="example-0-776"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Called when an individual TRY/EXCEPT branch ends.</span>
+</span><span id="line-0-776"><a id="example-0-776" name="example-0-776"></a><span class="w">    </span><span class="sd">"""Called when an individual TRY/EXCEPT branch ends.</span>
 </span><span id="line-0-777"><a id="example-0-777" name="example-0-777"></a>
 </span><span id="line-0-778"><a id="example-0-778" name="example-0-778"></a><span class="sd">    The default implementation calls :meth:`end_body_item`.</span>
 </span><span id="line-0-779"><a id="example-0-779" name="example-0-779"></a>
 </span><span id="line-0-780"><a id="example-0-780" name="example-0-780"></a><span class="sd">    New in Robot Framework 7.0.</span>
-</span><span id="line-0-781"><a id="example-0-781" name="example-0-781"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-781"><a id="example-0-781" name="example-0-781"></a><span class="sd">    """</span>
 </span><span id="line-0-782"><a id="example-0-782" name="example-0-782"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">end_body_item</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
@@ -14333,12 +14333,12 @@ or the keyword call itself could have been invalid.</p>
 <span class="normal"><a href="#example-0-789">789</a></span>
 <span class="normal"><a href="#example-0-790">790</a></span>
 <span class="normal"><a href="#example-0-791">791</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-784"><a id="example-0-784" name="example-0-784"></a><span class="k">def</span><span class="w"> </span><span class="nf">start_var</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">running</span><span class="o">.</span><span class="n">Var</span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n">result</span><span class="o">.</span><span class="n">Var</span><span class="p">):</span>
-</span><span id="line-0-785"><a id="example-0-785" name="example-0-785"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Called when VAR starts.</span>
+</span><span id="line-0-785"><a id="example-0-785" name="example-0-785"></a><span class="w">    </span><span class="sd">"""Called when VAR starts.</span>
 </span><span id="line-0-786"><a id="example-0-786" name="example-0-786"></a>
 </span><span id="line-0-787"><a id="example-0-787" name="example-0-787"></a><span class="sd">    The default implementation calls :meth:`start_body_item`.</span>
 </span><span id="line-0-788"><a id="example-0-788" name="example-0-788"></a>
 </span><span id="line-0-789"><a id="example-0-789" name="example-0-789"></a><span class="sd">    New in Robot Framework 7.0.</span>
-</span><span id="line-0-790"><a id="example-0-790" name="example-0-790"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-790"><a id="example-0-790" name="example-0-790"></a><span class="sd">    """</span>
 </span><span id="line-0-791"><a id="example-0-791" name="example-0-791"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">start_body_item</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
@@ -14379,12 +14379,12 @@ or the keyword call itself could have been invalid.</p>
 <span class="normal"><a href="#example-0-798">798</a></span>
 <span class="normal"><a href="#example-0-799">799</a></span>
 <span class="normal"><a href="#example-0-800">800</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-793"><a id="example-0-793" name="example-0-793"></a><span class="k">def</span><span class="w"> </span><span class="nf">end_var</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">running</span><span class="o">.</span><span class="n">Var</span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n">result</span><span class="o">.</span><span class="n">Var</span><span class="p">):</span>
-</span><span id="line-0-794"><a id="example-0-794" name="example-0-794"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Called when VAR ends.</span>
+</span><span id="line-0-794"><a id="example-0-794" name="example-0-794"></a><span class="w">    </span><span class="sd">"""Called when VAR ends.</span>
 </span><span id="line-0-795"><a id="example-0-795" name="example-0-795"></a>
 </span><span id="line-0-796"><a id="example-0-796" name="example-0-796"></a><span class="sd">    The default implementation calls :meth:`end_body_item`.</span>
 </span><span id="line-0-797"><a id="example-0-797" name="example-0-797"></a>
 </span><span id="line-0-798"><a id="example-0-798" name="example-0-798"></a><span class="sd">    New in Robot Framework 7.0.</span>
-</span><span id="line-0-799"><a id="example-0-799" name="example-0-799"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-799"><a id="example-0-799" name="example-0-799"></a><span class="sd">    """</span>
 </span><span id="line-0-800"><a id="example-0-800" name="example-0-800"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">end_body_item</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
@@ -14425,12 +14425,12 @@ or the keyword call itself could have been invalid.</p>
 <span class="normal"><a href="#example-0-807">807</a></span>
 <span class="normal"><a href="#example-0-808">808</a></span>
 <span class="normal"><a href="#example-0-809">809</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-802"><a id="example-0-802" name="example-0-802"></a><span class="k">def</span><span class="w"> </span><span class="nf">start_break</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">running</span><span class="o">.</span><span class="n">Break</span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n">result</span><span class="o">.</span><span class="n">Break</span><span class="p">):</span>
-</span><span id="line-0-803"><a id="example-0-803" name="example-0-803"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Called when BREAK starts.</span>
+</span><span id="line-0-803"><a id="example-0-803" name="example-0-803"></a><span class="w">    </span><span class="sd">"""Called when BREAK starts.</span>
 </span><span id="line-0-804"><a id="example-0-804" name="example-0-804"></a>
 </span><span id="line-0-805"><a id="example-0-805" name="example-0-805"></a><span class="sd">    The default implementation calls :meth:`start_body_item`.</span>
 </span><span id="line-0-806"><a id="example-0-806" name="example-0-806"></a>
 </span><span id="line-0-807"><a id="example-0-807" name="example-0-807"></a><span class="sd">    New in Robot Framework 7.0.</span>
-</span><span id="line-0-808"><a id="example-0-808" name="example-0-808"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-808"><a id="example-0-808" name="example-0-808"></a><span class="sd">    """</span>
 </span><span id="line-0-809"><a id="example-0-809" name="example-0-809"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">start_body_item</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
@@ -14471,12 +14471,12 @@ or the keyword call itself could have been invalid.</p>
 <span class="normal"><a href="#example-0-816">816</a></span>
 <span class="normal"><a href="#example-0-817">817</a></span>
 <span class="normal"><a href="#example-0-818">818</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-811"><a id="example-0-811" name="example-0-811"></a><span class="k">def</span><span class="w"> </span><span class="nf">end_break</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">running</span><span class="o">.</span><span class="n">Break</span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n">result</span><span class="o">.</span><span class="n">Break</span><span class="p">):</span>
-</span><span id="line-0-812"><a id="example-0-812" name="example-0-812"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Called when BREAK ends.</span>
+</span><span id="line-0-812"><a id="example-0-812" name="example-0-812"></a><span class="w">    </span><span class="sd">"""Called when BREAK ends.</span>
 </span><span id="line-0-813"><a id="example-0-813" name="example-0-813"></a>
 </span><span id="line-0-814"><a id="example-0-814" name="example-0-814"></a><span class="sd">    The default implementation calls :meth:`end_body_item`.</span>
 </span><span id="line-0-815"><a id="example-0-815" name="example-0-815"></a>
 </span><span id="line-0-816"><a id="example-0-816" name="example-0-816"></a><span class="sd">    New in Robot Framework 7.0.</span>
-</span><span id="line-0-817"><a id="example-0-817" name="example-0-817"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-817"><a id="example-0-817" name="example-0-817"></a><span class="sd">    """</span>
 </span><span id="line-0-818"><a id="example-0-818" name="example-0-818"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">end_body_item</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
@@ -14517,12 +14517,12 @@ or the keyword call itself could have been invalid.</p>
 <span class="normal"><a href="#example-0-825">825</a></span>
 <span class="normal"><a href="#example-0-826">826</a></span>
 <span class="normal"><a href="#example-0-827">827</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-820"><a id="example-0-820" name="example-0-820"></a><span class="k">def</span><span class="w"> </span><span class="nf">start_continue</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">running</span><span class="o">.</span><span class="n">Continue</span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n">result</span><span class="o">.</span><span class="n">Continue</span><span class="p">):</span>
-</span><span id="line-0-821"><a id="example-0-821" name="example-0-821"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Called when CONTINUE starts.</span>
+</span><span id="line-0-821"><a id="example-0-821" name="example-0-821"></a><span class="w">    </span><span class="sd">"""Called when CONTINUE starts.</span>
 </span><span id="line-0-822"><a id="example-0-822" name="example-0-822"></a>
 </span><span id="line-0-823"><a id="example-0-823" name="example-0-823"></a><span class="sd">    The default implementation calls :meth:`start_body_item`.</span>
 </span><span id="line-0-824"><a id="example-0-824" name="example-0-824"></a>
 </span><span id="line-0-825"><a id="example-0-825" name="example-0-825"></a><span class="sd">    New in Robot Framework 7.0.</span>
-</span><span id="line-0-826"><a id="example-0-826" name="example-0-826"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-826"><a id="example-0-826" name="example-0-826"></a><span class="sd">    """</span>
 </span><span id="line-0-827"><a id="example-0-827" name="example-0-827"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">start_body_item</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
@@ -14563,12 +14563,12 @@ or the keyword call itself could have been invalid.</p>
 <span class="normal"><a href="#example-0-834">834</a></span>
 <span class="normal"><a href="#example-0-835">835</a></span>
 <span class="normal"><a href="#example-0-836">836</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-829"><a id="example-0-829" name="example-0-829"></a><span class="k">def</span><span class="w"> </span><span class="nf">end_continue</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">running</span><span class="o">.</span><span class="n">Continue</span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n">result</span><span class="o">.</span><span class="n">Continue</span><span class="p">):</span>
-</span><span id="line-0-830"><a id="example-0-830" name="example-0-830"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Called when CONTINUE ends.</span>
+</span><span id="line-0-830"><a id="example-0-830" name="example-0-830"></a><span class="w">    </span><span class="sd">"""Called when CONTINUE ends.</span>
 </span><span id="line-0-831"><a id="example-0-831" name="example-0-831"></a>
 </span><span id="line-0-832"><a id="example-0-832" name="example-0-832"></a><span class="sd">    The default implementation calls :meth:`end_body_item`.</span>
 </span><span id="line-0-833"><a id="example-0-833" name="example-0-833"></a>
 </span><span id="line-0-834"><a id="example-0-834" name="example-0-834"></a><span class="sd">    New in Robot Framework 7.0.</span>
-</span><span id="line-0-835"><a id="example-0-835" name="example-0-835"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-835"><a id="example-0-835" name="example-0-835"></a><span class="sd">    """</span>
 </span><span id="line-0-836"><a id="example-0-836" name="example-0-836"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">end_body_item</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
@@ -14609,12 +14609,12 @@ or the keyword call itself could have been invalid.</p>
 <span class="normal"><a href="#example-0-843">843</a></span>
 <span class="normal"><a href="#example-0-844">844</a></span>
 <span class="normal"><a href="#example-0-845">845</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-838"><a id="example-0-838" name="example-0-838"></a><span class="k">def</span><span class="w"> </span><span class="nf">start_return</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">running</span><span class="o">.</span><span class="n">Return</span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n">result</span><span class="o">.</span><span class="n">Return</span><span class="p">):</span>
-</span><span id="line-0-839"><a id="example-0-839" name="example-0-839"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Called when RETURN starts.</span>
+</span><span id="line-0-839"><a id="example-0-839" name="example-0-839"></a><span class="w">    </span><span class="sd">"""Called when RETURN starts.</span>
 </span><span id="line-0-840"><a id="example-0-840" name="example-0-840"></a>
 </span><span id="line-0-841"><a id="example-0-841" name="example-0-841"></a><span class="sd">    The default implementation calls :meth:`start_body_item`.</span>
 </span><span id="line-0-842"><a id="example-0-842" name="example-0-842"></a>
 </span><span id="line-0-843"><a id="example-0-843" name="example-0-843"></a><span class="sd">    New in Robot Framework 7.0.</span>
-</span><span id="line-0-844"><a id="example-0-844" name="example-0-844"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-844"><a id="example-0-844" name="example-0-844"></a><span class="sd">    """</span>
 </span><span id="line-0-845"><a id="example-0-845" name="example-0-845"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">start_body_item</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
@@ -14655,12 +14655,12 @@ or the keyword call itself could have been invalid.</p>
 <span class="normal"><a href="#example-0-852">852</a></span>
 <span class="normal"><a href="#example-0-853">853</a></span>
 <span class="normal"><a href="#example-0-854">854</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-847"><a id="example-0-847" name="example-0-847"></a><span class="k">def</span><span class="w"> </span><span class="nf">end_return</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">running</span><span class="o">.</span><span class="n">Return</span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n">result</span><span class="o">.</span><span class="n">Return</span><span class="p">):</span>
-</span><span id="line-0-848"><a id="example-0-848" name="example-0-848"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Called when RETURN ends.</span>
+</span><span id="line-0-848"><a id="example-0-848" name="example-0-848"></a><span class="w">    </span><span class="sd">"""Called when RETURN ends.</span>
 </span><span id="line-0-849"><a id="example-0-849" name="example-0-849"></a>
 </span><span id="line-0-850"><a id="example-0-850" name="example-0-850"></a><span class="sd">    The default implementation calls :meth:`end_body_item`.</span>
 </span><span id="line-0-851"><a id="example-0-851" name="example-0-851"></a>
 </span><span id="line-0-852"><a id="example-0-852" name="example-0-852"></a><span class="sd">    New in Robot Framework 7.0.</span>
-</span><span id="line-0-853"><a id="example-0-853" name="example-0-853"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-853"><a id="example-0-853" name="example-0-853"></a><span class="sd">    """</span>
 </span><span id="line-0-854"><a id="example-0-854" name="example-0-854"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">end_body_item</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
@@ -14701,12 +14701,12 @@ or the keyword call itself could have been invalid.</p>
 <span class="normal"><a href="#example-0-861">861</a></span>
 <span class="normal"><a href="#example-0-862">862</a></span>
 <span class="normal"><a href="#example-0-863">863</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-856"><a id="example-0-856" name="example-0-856"></a><span class="k">def</span><span class="w"> </span><span class="nf">start_error</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">running</span><span class="o">.</span><span class="n">Error</span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n">result</span><span class="o">.</span><span class="n">Error</span><span class="p">):</span>
-</span><span id="line-0-857"><a id="example-0-857" name="example-0-857"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Called when encountered invalid syntax starts.</span>
+</span><span id="line-0-857"><a id="example-0-857" name="example-0-857"></a><span class="w">    </span><span class="sd">"""Called when encountered invalid syntax starts.</span>
 </span><span id="line-0-858"><a id="example-0-858" name="example-0-858"></a>
 </span><span id="line-0-859"><a id="example-0-859" name="example-0-859"></a><span class="sd">    The default implementation calls :meth:`start_body_item`.</span>
 </span><span id="line-0-860"><a id="example-0-860" name="example-0-860"></a>
 </span><span id="line-0-861"><a id="example-0-861" name="example-0-861"></a><span class="sd">    New in Robot Framework 7.0.</span>
-</span><span id="line-0-862"><a id="example-0-862" name="example-0-862"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-862"><a id="example-0-862" name="example-0-862"></a><span class="sd">    """</span>
 </span><span id="line-0-863"><a id="example-0-863" name="example-0-863"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">start_body_item</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
@@ -14747,12 +14747,12 @@ or the keyword call itself could have been invalid.</p>
 <span class="normal"><a href="#example-0-870">870</a></span>
 <span class="normal"><a href="#example-0-871">871</a></span>
 <span class="normal"><a href="#example-0-872">872</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-865"><a id="example-0-865" name="example-0-865"></a><span class="k">def</span><span class="w"> </span><span class="nf">end_error</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">running</span><span class="o">.</span><span class="n">Error</span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n">result</span><span class="o">.</span><span class="n">Error</span><span class="p">):</span>
-</span><span id="line-0-866"><a id="example-0-866" name="example-0-866"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Called when encountered invalid syntax ends.</span>
+</span><span id="line-0-866"><a id="example-0-866" name="example-0-866"></a><span class="w">    </span><span class="sd">"""Called when encountered invalid syntax ends.</span>
 </span><span id="line-0-867"><a id="example-0-867" name="example-0-867"></a>
 </span><span id="line-0-868"><a id="example-0-868" name="example-0-868"></a><span class="sd">    The default implementation calls :meth:`end_body_item`.</span>
 </span><span id="line-0-869"><a id="example-0-869" name="example-0-869"></a>
 </span><span id="line-0-870"><a id="example-0-870" name="example-0-870"></a><span class="sd">    New in Robot Framework 7.0.</span>
-</span><span id="line-0-871"><a id="example-0-871" name="example-0-871"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-871"><a id="example-0-871" name="example-0-871"></a><span class="sd">    """</span>
 </span><span id="line-0-872"><a id="example-0-872" name="example-0-872"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">end_body_item</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
@@ -14790,10 +14790,10 @@ or the keyword call itself could have been invalid.</p>
 <span class="normal"><a href="#example-0-877">877</a></span>
 <span class="normal"><a href="#example-0-878">878</a></span>
 <span class="normal"><a href="#example-0-879">879</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-874"><a id="example-0-874" name="example-0-874"></a><span class="k">def</span><span class="w"> </span><span class="nf">start_body_item</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
-</span><span id="line-0-875"><a id="example-0-875" name="example-0-875"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Called by default when a keyword or a control structure starts.</span>
+</span><span id="line-0-875"><a id="example-0-875" name="example-0-875"></a><span class="w">    </span><span class="sd">"""Called by default when a keyword or a control structure starts.</span>
 </span><span id="line-0-876"><a id="example-0-876" name="example-0-876"></a>
 </span><span id="line-0-877"><a id="example-0-877" name="example-0-877"></a><span class="sd">    New in Robot Framework 7.0.</span>
-</span><span id="line-0-878"><a id="example-0-878" name="example-0-878"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-878"><a id="example-0-878" name="example-0-878"></a><span class="sd">    """</span>
 </span><span id="line-0-879"><a id="example-0-879" name="example-0-879"></a>    <span class="k">pass</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
@@ -14831,10 +14831,10 @@ or the keyword call itself could have been invalid.</p>
 <span class="normal"><a href="#example-0-884">884</a></span>
 <span class="normal"><a href="#example-0-885">885</a></span>
 <span class="normal"><a href="#example-0-886">886</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-881"><a id="example-0-881" name="example-0-881"></a><span class="k">def</span><span class="w"> </span><span class="nf">end_body_item</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
-</span><span id="line-0-882"><a id="example-0-882" name="example-0-882"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Called by default when a keyword or a control structure ends.</span>
+</span><span id="line-0-882"><a id="example-0-882" name="example-0-882"></a><span class="w">    </span><span class="sd">"""Called by default when a keyword or a control structure ends.</span>
 </span><span id="line-0-883"><a id="example-0-883" name="example-0-883"></a>
 </span><span id="line-0-884"><a id="example-0-884" name="example-0-884"></a><span class="sd">    New in Robot Framework 7.0.</span>
-</span><span id="line-0-885"><a id="example-0-885" name="example-0-885"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-885"><a id="example-0-885" name="example-0-885"></a><span class="sd">    """</span>
 </span><span id="line-0-886"><a id="example-0-886" name="example-0-886"></a>    <span class="k">pass</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
@@ -14875,12 +14875,12 @@ log.html.</p>
 <span class="normal"><a href="#example-0-892">892</a></span>
 <span class="normal"><a href="#example-0-893">893</a></span>
 <span class="normal"><a href="#example-0-894">894</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-888"><a id="example-0-888" name="example-0-888"></a><span class="k">def</span><span class="w"> </span><span class="nf">log_message</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="n">Message</span><span class="p">):</span>
-</span><span id="line-0-889"><a id="example-0-889" name="example-0-889"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Called when a normal log message are emitted.</span>
+</span><span id="line-0-889"><a id="example-0-889" name="example-0-889"></a><span class="w">    </span><span class="sd">"""Called when a normal log message are emitted.</span>
 </span><span id="line-0-890"><a id="example-0-890" name="example-0-890"></a>
 </span><span id="line-0-891"><a id="example-0-891" name="example-0-891"></a><span class="sd">    The messages are typically logged by keywords, but also the framework</span>
 </span><span id="line-0-892"><a id="example-0-892" name="example-0-892"></a><span class="sd">    itself logs some messages. These messages end up to output.xml and</span>
 </span><span id="line-0-893"><a id="example-0-893" name="example-0-893"></a><span class="sd">    log.html.</span>
-</span><span id="line-0-894"><a id="example-0-894" name="example-0-894"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-894"><a id="example-0-894" name="example-0-894"></a><span class="sd">    """</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -14918,11 +14918,11 @@ if it is enabled.</p>
 <span class="normal"><a href="#example-0-899">899</a></span>
 <span class="normal"><a href="#example-0-900">900</a></span>
 <span class="normal"><a href="#example-0-901">901</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-896"><a id="example-0-896" name="example-0-896"></a><span class="k">def</span><span class="w"> </span><span class="nf">message</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="n">Message</span><span class="p">):</span>
-</span><span id="line-0-897"><a id="example-0-897" name="example-0-897"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Called when framework&#39;s internal messages are emitted.</span>
+</span><span id="line-0-897"><a id="example-0-897" name="example-0-897"></a><span class="w">    </span><span class="sd">"""Called when framework's internal messages are emitted.</span>
 </span><span id="line-0-898"><a id="example-0-898" name="example-0-898"></a>
 </span><span id="line-0-899"><a id="example-0-899" name="example-0-899"></a><span class="sd">    Only logged by the framework itself. These messages end up to the syslog</span>
 </span><span id="line-0-900"><a id="example-0-900" name="example-0-900"></a><span class="sd">    if it is enabled.</span>
-</span><span id="line-0-901"><a id="example-0-901" name="example-0-901"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-901"><a id="example-0-901" name="example-0-901"></a><span class="sd">    """</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -14965,14 +14965,14 @@ the library was imported.</p>
 <span class="normal"><a href="#example-0-909">909</a></span>
 <span class="normal"><a href="#example-0-910">910</a></span>
 <span class="normal"><a href="#example-0-911">911</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-903"><a id="example-0-903" name="example-0-903"></a><span class="k">def</span><span class="w"> </span><span class="nf">library_import</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">library</span><span class="p">:</span> <span class="n">running</span><span class="o">.</span><span class="n">TestLibrary</span><span class="p">,</span> <span class="n">importer</span><span class="p">:</span> <span class="n">running</span><span class="o">.</span><span class="n">Import</span><span class="p">):</span>
-</span><span id="line-0-904"><a id="example-0-904" name="example-0-904"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Called after a library has been imported.</span>
+</span><span id="line-0-904"><a id="example-0-904" name="example-0-904"></a><span class="w">    </span><span class="sd">"""Called after a library has been imported.</span>
 </span><span id="line-0-905"><a id="example-0-905" name="example-0-905"></a>
 </span><span id="line-0-906"><a id="example-0-906" name="example-0-906"></a><span class="sd">    ``library`` represents the imported library. It can be inspected and</span>
 </span><span id="line-0-907"><a id="example-0-907" name="example-0-907"></a><span class="sd">    also modified. ``importer`` contains information about the location where</span>
 </span><span id="line-0-908"><a id="example-0-908" name="example-0-908"></a><span class="sd">    the library was imported.</span>
 </span><span id="line-0-909"><a id="example-0-909" name="example-0-909"></a>
 </span><span id="line-0-910"><a id="example-0-910" name="example-0-910"></a><span class="sd">    New in Robot Framework 7.1.</span>
-</span><span id="line-0-911"><a id="example-0-911" name="example-0-911"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-911"><a id="example-0-911" name="example-0-911"></a><span class="sd">    """</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -15015,14 +15015,14 @@ the resource was imported.</p>
 <span class="normal"><a href="#example-0-919">919</a></span>
 <span class="normal"><a href="#example-0-920">920</a></span>
 <span class="normal"><a href="#example-0-921">921</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-913"><a id="example-0-913" name="example-0-913"></a><span class="k">def</span><span class="w"> </span><span class="nf">resource_import</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">resource</span><span class="p">:</span> <span class="n">running</span><span class="o">.</span><span class="n">ResourceFile</span><span class="p">,</span> <span class="n">importer</span><span class="p">:</span> <span class="n">running</span><span class="o">.</span><span class="n">Import</span><span class="p">):</span>
-</span><span id="line-0-914"><a id="example-0-914" name="example-0-914"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Called after a resource file has been imported.</span>
+</span><span id="line-0-914"><a id="example-0-914" name="example-0-914"></a><span class="w">    </span><span class="sd">"""Called after a resource file has been imported.</span>
 </span><span id="line-0-915"><a id="example-0-915" name="example-0-915"></a>
 </span><span id="line-0-916"><a id="example-0-916" name="example-0-916"></a><span class="sd">    ``resource`` represents the imported resource file. It can be inspected and</span>
 </span><span id="line-0-917"><a id="example-0-917" name="example-0-917"></a><span class="sd">    also modified. ``importer`` contains information about the location where</span>
 </span><span id="line-0-918"><a id="example-0-918" name="example-0-918"></a><span class="sd">    the resource was imported.</span>
 </span><span id="line-0-919"><a id="example-0-919" name="example-0-919"></a>
 </span><span id="line-0-920"><a id="example-0-920" name="example-0-920"></a><span class="sd">    New in Robot Framework 7.1.</span>
-</span><span id="line-0-921"><a id="example-0-921" name="example-0-921"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-921"><a id="example-0-921" name="example-0-921"></a><span class="sd">    """</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -15049,7 +15049,7 @@ the resource was imported.</p>
 
         <p>Called after a variable file has been imported.</p>
 <p><code>attrs</code> contains information about the imported variable file. It can be
-inspected, but modifications to it have no effect. `importer`` contains
+inspected, but modifications to it have no effect. <code>mporter</code> contains
 information about the location where the variable file was imported.</p>
 <p>New in Robot Framework 7.1. This method will be changed in the future
 so that the <code>attrs</code> dictionary is replaced with an object representing
@@ -15069,7 +15069,7 @@ the imported variable file.</p>
 <span class="normal"><a href="#example-0-931">931</a></span>
 <span class="normal"><a href="#example-0-932">932</a></span>
 <span class="normal"><a href="#example-0-933">933</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-923"><a id="example-0-923" name="example-0-923"></a><span class="k">def</span><span class="w"> </span><span class="nf">variables_import</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">attrs</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">importer</span><span class="p">:</span> <span class="n">running</span><span class="o">.</span><span class="n">Import</span><span class="p">):</span>
-</span><span id="line-0-924"><a id="example-0-924" name="example-0-924"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Called after a variable file has been imported.</span>
+</span><span id="line-0-924"><a id="example-0-924" name="example-0-924"></a><span class="w">    </span><span class="sd">"""Called after a variable file has been imported.</span>
 </span><span id="line-0-925"><a id="example-0-925" name="example-0-925"></a>
 </span><span id="line-0-926"><a id="example-0-926" name="example-0-926"></a><span class="sd">    ``attrs`` contains information about the imported variable file. It can be</span>
 </span><span id="line-0-927"><a id="example-0-927" name="example-0-927"></a><span class="sd">    inspected, but modifications to it have no effect. `importer`` contains</span>
@@ -15078,7 +15078,7 @@ the imported variable file.</p>
 </span><span id="line-0-930"><a id="example-0-930" name="example-0-930"></a><span class="sd">    New in Robot Framework 7.1. This method will be changed in the future</span>
 </span><span id="line-0-931"><a id="example-0-931" name="example-0-931"></a><span class="sd">    so that the ``attrs`` dictionary is replaced with an object representing</span>
 </span><span id="line-0-932"><a id="example-0-932" name="example-0-932"></a><span class="sd">    the imported variable file.</span>
-</span><span id="line-0-933"><a id="example-0-933" name="example-0-933"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-933"><a id="example-0-933" name="example-0-933"></a><span class="sd">    """</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -15115,12 +15115,12 @@ the imported variable file.</p>
 <span class="normal"><a href="#example-0-937">937</a></span>
 <span class="normal"><a href="#example-0-938">938</a></span>
 <span class="normal"><a href="#example-0-939">939</a></span>
-<span class="normal"><a href="#example-0-940">940</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-935"><a id="example-0-935" name="example-0-935"></a><span class="k">def</span><span class="w"> </span><span class="nf">output_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="s1">&#39;Path | None&#39;</span><span class="p">):</span>
-</span><span id="line-0-936"><a id="example-0-936" name="example-0-936"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Called after the output file has been created.</span>
+<span class="normal"><a href="#example-0-940">940</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-935"><a id="example-0-935" name="example-0-935"></a><span class="k">def</span><span class="w"> </span><span class="nf">output_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="s1">'Path | None'</span><span class="p">):</span>
+</span><span id="line-0-936"><a id="example-0-936" name="example-0-936"></a><span class="w">    </span><span class="sd">"""Called after the output file has been created.</span>
 </span><span id="line-0-937"><a id="example-0-937" name="example-0-937"></a>
 </span><span id="line-0-938"><a id="example-0-938" name="example-0-938"></a><span class="sd">    ``path`` is an absolute path to the output file or</span>
 </span><span id="line-0-939"><a id="example-0-939" name="example-0-939"></a><span class="sd">    ``None`` if creating the output file is disabled.</span>
-</span><span id="line-0-940"><a id="example-0-940" name="example-0-940"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-940"><a id="example-0-940" name="example-0-940"></a><span class="sd">    """</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -15158,11 +15158,11 @@ Not called if creating the log file is disabled.</p>
 <span class="normal"><a href="#example-0-945">945</a></span>
 <span class="normal"><a href="#example-0-946">946</a></span>
 <span class="normal"><a href="#example-0-947">947</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-942"><a id="example-0-942" name="example-0-942"></a><span class="k">def</span><span class="w"> </span><span class="nf">log_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="n">Path</span><span class="p">):</span>
-</span><span id="line-0-943"><a id="example-0-943" name="example-0-943"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Called after the log file has been created.</span>
+</span><span id="line-0-943"><a id="example-0-943" name="example-0-943"></a><span class="w">    </span><span class="sd">"""Called after the log file has been created.</span>
 </span><span id="line-0-944"><a id="example-0-944" name="example-0-944"></a>
 </span><span id="line-0-945"><a id="example-0-945" name="example-0-945"></a><span class="sd">    ``path`` is an absolute path to the log file.</span>
 </span><span id="line-0-946"><a id="example-0-946" name="example-0-946"></a><span class="sd">    Not called if creating the log file is disabled.</span>
-</span><span id="line-0-947"><a id="example-0-947" name="example-0-947"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-947"><a id="example-0-947" name="example-0-947"></a><span class="sd">    """</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -15200,11 +15200,11 @@ Not called if creating the report file is disabled.</p>
 <span class="normal"><a href="#example-0-952">952</a></span>
 <span class="normal"><a href="#example-0-953">953</a></span>
 <span class="normal"><a href="#example-0-954">954</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-949"><a id="example-0-949" name="example-0-949"></a><span class="k">def</span><span class="w"> </span><span class="nf">report_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="n">Path</span><span class="p">):</span>
-</span><span id="line-0-950"><a id="example-0-950" name="example-0-950"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Called after the report file has been created.</span>
+</span><span id="line-0-950"><a id="example-0-950" name="example-0-950"></a><span class="w">    </span><span class="sd">"""Called after the report file has been created.</span>
 </span><span id="line-0-951"><a id="example-0-951" name="example-0-951"></a>
 </span><span id="line-0-952"><a id="example-0-952" name="example-0-952"></a><span class="sd">    ``path`` is an absolute path to the report file.</span>
 </span><span id="line-0-953"><a id="example-0-953" name="example-0-953"></a><span class="sd">    Not called if creating the report file is disabled.</span>
-</span><span id="line-0-954"><a id="example-0-954" name="example-0-954"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-954"><a id="example-0-954" name="example-0-954"></a><span class="sd">    """</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -15242,11 +15242,11 @@ Only called if creating the xunit file is enabled.</p>
 <span class="normal"><a href="#example-0-959">959</a></span>
 <span class="normal"><a href="#example-0-960">960</a></span>
 <span class="normal"><a href="#example-0-961">961</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-956"><a id="example-0-956" name="example-0-956"></a><span class="k">def</span><span class="w"> </span><span class="nf">xunit_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="n">Path</span><span class="p">):</span>
-</span><span id="line-0-957"><a id="example-0-957" name="example-0-957"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Called after the xunit compatible output file has been created.</span>
+</span><span id="line-0-957"><a id="example-0-957" name="example-0-957"></a><span class="w">    </span><span class="sd">"""Called after the xunit compatible output file has been created.</span>
 </span><span id="line-0-958"><a id="example-0-958" name="example-0-958"></a>
 </span><span id="line-0-959"><a id="example-0-959" name="example-0-959"></a><span class="sd">    ``path`` is an absolute path to the xunit file.</span>
 </span><span id="line-0-960"><a id="example-0-960" name="example-0-960"></a><span class="sd">    Only called if creating the xunit file is enabled.</span>
-</span><span id="line-0-961"><a id="example-0-961" name="example-0-961"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-961"><a id="example-0-961" name="example-0-961"></a><span class="sd">    """</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -15284,11 +15284,11 @@ Only called if creating the debug file is enabled.</p>
 <span class="normal"><a href="#example-0-966">966</a></span>
 <span class="normal"><a href="#example-0-967">967</a></span>
 <span class="normal"><a href="#example-0-968">968</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-963"><a id="example-0-963" name="example-0-963"></a><span class="k">def</span><span class="w"> </span><span class="nf">debug_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="n">Path</span><span class="p">):</span>
-</span><span id="line-0-964"><a id="example-0-964" name="example-0-964"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Called after the debug file has been created.</span>
+</span><span id="line-0-964"><a id="example-0-964" name="example-0-964"></a><span class="w">    </span><span class="sd">"""Called after the debug file has been created.</span>
 </span><span id="line-0-965"><a id="example-0-965" name="example-0-965"></a>
 </span><span id="line-0-966"><a id="example-0-966" name="example-0-966"></a><span class="sd">    ``path`` is an absolute path to the debug file.</span>
 </span><span id="line-0-967"><a id="example-0-967" name="example-0-967"></a><span class="sd">    Only called if creating the debug file is enabled.</span>
-</span><span id="line-0-968"><a id="example-0-968" name="example-0-968"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-968"><a id="example-0-968" name="example-0-968"></a><span class="sd">    """</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -15324,10 +15324,10 @@ Only called if creating the debug file is enabled.</p>
 <span class="normal"><a href="#example-0-972">972</a></span>
 <span class="normal"><a href="#example-0-973">973</a></span>
 <span class="normal"><a href="#example-0-974">974</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-970"><a id="example-0-970" name="example-0-970"></a><span class="k">def</span><span class="w"> </span><span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="line-0-971"><a id="example-0-971" name="example-0-971"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Called when the whole execution ends.</span>
+</span><span id="line-0-971"><a id="example-0-971" name="example-0-971"></a><span class="w">    </span><span class="sd">"""Called when the whole execution ends.</span>
 </span><span id="line-0-972"><a id="example-0-972" name="example-0-972"></a>
 </span><span id="line-0-973"><a id="example-0-973" name="example-0-973"></a><span class="sd">    With library listeners called when the library goes out of scope.</span>
-</span><span id="line-0-974"><a id="example-0-974" name="example-0-974"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-974"><a id="example-0-974" name="example-0-974"></a><span class="sd">    """</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -15394,7 +15394,7 @@ when a parser is implemented as a module.</p>
 
 
 <span class="k">class</span><span class="w"> </span><span class="nc">ExampleParser</span><span class="p">(</span><span class="n">Parser</span><span class="p">):</span>
-    <span class="n">extension</span> <span class="o">=</span> <span class="s1">&#39;.example&#39;</span>
+    <span class="n">extension</span> <span class="o">=</span> <span class="s1">'.example'</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">parse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">defaults</span><span class="p">:</span> <span class="n">TestDefaults</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TestSuite</span><span class="p">:</span>
         <span class="n">suite</span> <span class="o">=</span> <span class="n">TestSuite</span><span class="p">(</span><span class="n">TestSuite</span><span class="o">.</span><span class="n">name_from_source</span><span class="p">(</span><span class="n">source</span><span class="p">),</span> <span class="n">source</span><span class="o">=</span><span class="n">source</span><span class="p">)</span>
@@ -15459,14 +15459,14 @@ this method also so that it accepts only <code>source</code>.</p>
 <span class="normal"><a href="#example-0-1020">1020</a></span>
 <span class="normal"><a href="#example-0-1021">1021</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1011"><a id="example-0-1011" name="example-0-1011"></a><span class="nd">@abstractmethod</span>
 </span><span id="line-0-1012"><a id="example-0-1012" name="example-0-1012"></a><span class="k">def</span><span class="w"> </span><span class="nf">parse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">defaults</span><span class="p">:</span> <span class="n">TestDefaults</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TestSuite</span><span class="p">:</span>
-</span><span id="line-0-1013"><a id="example-0-1013" name="example-0-1013"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Mandatory method for parsing suite files.</span>
+</span><span id="line-0-1013"><a id="example-0-1013" name="example-0-1013"></a><span class="w">    </span><span class="sd">"""Mandatory method for parsing suite files.</span>
 </span><span id="line-0-1014"><a id="example-0-1014" name="example-0-1014"></a>
 </span><span id="line-0-1015"><a id="example-0-1015" name="example-0-1015"></a><span class="sd">    :param source: Path to the file to parse.</span>
 </span><span id="line-0-1016"><a id="example-0-1016" name="example-0-1016"></a><span class="sd">    :param defaults: Default values set for test in init files.</span>
 </span><span id="line-0-1017"><a id="example-0-1017" name="example-0-1017"></a>
 </span><span id="line-0-1018"><a id="example-0-1018" name="example-0-1018"></a><span class="sd">    The ``defaults`` argument is optional. It is possible to implement</span>
 </span><span id="line-0-1019"><a id="example-0-1019" name="example-0-1019"></a><span class="sd">    this method also so that it accepts only ``source``.</span>
-</span><span id="line-0-1020"><a id="example-0-1020" name="example-0-1020"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-1020"><a id="example-0-1020" name="example-0-1020"></a><span class="sd">    """</span>
 </span><span id="line-0-1021"><a id="example-0-1021" name="example-0-1021"></a>    <span class="k">raise</span> <span class="ne">NotImplementedError</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
@@ -15518,7 +15518,7 @@ an error.</p>
 <span class="normal"><a href="#example-0-1033">1033</a></span>
 <span class="normal"><a href="#example-0-1034">1034</a></span>
 <span class="normal"><a href="#example-0-1035">1035</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1023"><a id="example-0-1023" name="example-0-1023"></a><span class="k">def</span><span class="w"> </span><span class="nf">parse_init</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">defaults</span><span class="p">:</span> <span class="n">TestDefaults</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TestSuite</span><span class="p">:</span>
-</span><span id="line-0-1024"><a id="example-0-1024" name="example-0-1024"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Optional method for parsing suite initialization files.</span>
+</span><span id="line-0-1024"><a id="example-0-1024" name="example-0-1024"></a><span class="w">    </span><span class="sd">"""Optional method for parsing suite initialization files.</span>
 </span><span id="line-0-1025"><a id="example-0-1025" name="example-0-1025"></a>
 </span><span id="line-0-1026"><a id="example-0-1026" name="example-0-1026"></a><span class="sd">    :param source: Path to the file to parse.</span>
 </span><span id="line-0-1027"><a id="example-0-1027" name="example-0-1027"></a><span class="sd">    :param defaults: Default values to used with tests in child suites.</span>
@@ -15528,7 +15528,7 @@ an error.</p>
 </span><span id="line-0-1031"><a id="example-0-1031" name="example-0-1031"></a>
 </span><span id="line-0-1032"><a id="example-0-1032" name="example-0-1032"></a><span class="sd">    If this method is not implemented, possible initialization files cause</span>
 </span><span id="line-0-1033"><a id="example-0-1033" name="example-0-1033"></a><span class="sd">    an error.</span>
-</span><span id="line-0-1034"><a id="example-0-1034" name="example-0-1034"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-1034"><a id="example-0-1034" name="example-0-1034"></a><span class="sd">    """</span>
 </span><span id="line-0-1035"><a id="example-0-1035" name="example-0-1035"></a>    <span class="k">raise</span> <span class="ne">NotImplementedError</span>
 </span></code></pre></div></td></tr></table></div>
             </details>

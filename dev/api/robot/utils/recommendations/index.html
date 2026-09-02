@@ -9978,7 +9978,7 @@
 <span class="normal"><a href="#example-0-45">45</a></span>
 <span class="normal"><a href="#example-0-46">46</a></span>
 <span class="normal"><a href="#example-0-47">47</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-37"><a id="example-0-37" name="example-0-37"></a><span class="k">def</span><span class="w"> </span><span class="nf">find</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">candidates</span><span class="p">,</span> <span class="n">max_matches</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
-</span><span id="line-0-38"><a id="example-0-38" name="example-0-38"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Return a list of close matches to `name` from `candidates`.&quot;&quot;&quot;</span>
+</span><span id="line-0-38"><a id="example-0-38" name="example-0-38"></a><span class="w">    </span><span class="sd">"""Return a list of close matches to `name` from `candidates`."""</span>
 </span><span id="line-0-39"><a id="example-0-39" name="example-0-39"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">name</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">candidates</span><span class="p">:</span>
 </span><span id="line-0-40"><a id="example-0-40" name="example-0-40"></a>        <span class="k">return</span> <span class="p">[]</span>
 </span><span id="line-0-41"><a id="example-0-41" name="example-0-41"></a>    <span class="n">norm_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">normalizer</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
@@ -10041,7 +10041,7 @@
 <span class="normal"><a href="#example-0-61">61</a></span>
 <span class="normal"><a href="#example-0-62">62</a></span>
 <span class="normal"><a href="#example-0-63">63</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-49"><a id="example-0-49" name="example-0-49"></a><span class="k">def</span><span class="w"> </span><span class="nf">format</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="n">recommendations</span><span class="p">):</span>
-</span><span id="line-0-50"><a id="example-0-50" name="example-0-50"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Add recommendations to the given message.</span>
+</span><span id="line-0-50"><a id="example-0-50" name="example-0-50"></a><span class="w">    </span><span class="sd">"""Add recommendations to the given message.</span>
 </span><span id="line-0-51"><a id="example-0-51" name="example-0-51"></a>
 </span><span id="line-0-52"><a id="example-0-52" name="example-0-52"></a><span class="sd">    The recommendation string looks like::</span>
 </span><span id="line-0-53"><a id="example-0-53" name="example-0-53"></a>
@@ -10049,11 +10049,11 @@
 </span><span id="line-0-55"><a id="example-0-55" name="example-0-55"></a><span class="sd">            &lt;recommendations[0]&gt;</span>
 </span><span id="line-0-56"><a id="example-0-56" name="example-0-56"></a><span class="sd">            &lt;recommendations[1]&gt;</span>
 </span><span id="line-0-57"><a id="example-0-57" name="example-0-57"></a><span class="sd">            &lt;recommendations[2]&gt;</span>
-</span><span id="line-0-58"><a id="example-0-58" name="example-0-58"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-58"><a id="example-0-58" name="example-0-58"></a><span class="sd">    """</span>
 </span><span id="line-0-59"><a id="example-0-59" name="example-0-59"></a>    <span class="k">if</span> <span class="n">recommendations</span><span class="p">:</span>
-</span><span id="line-0-60"><a id="example-0-60" name="example-0-60"></a>        <span class="n">message</span> <span class="o">+=</span> <span class="s2">&quot; Did you mean:&quot;</span>
+</span><span id="line-0-60"><a id="example-0-60" name="example-0-60"></a>        <span class="n">message</span> <span class="o">+=</span> <span class="s2">" Did you mean:"</span>
 </span><span id="line-0-61"><a id="example-0-61" name="example-0-61"></a>        <span class="k">for</span> <span class="n">rec</span> <span class="ow">in</span> <span class="n">recommendations</span><span class="p">:</span>
-</span><span id="line-0-62"><a id="example-0-62" name="example-0-62"></a>            <span class="n">message</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">    </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">rec</span>
+</span><span id="line-0-62"><a id="example-0-62" name="example-0-62"></a>            <span class="n">message</span> <span class="o">+=</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">    </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="n">rec</span>
 </span><span id="line-0-63"><a id="example-0-63" name="example-0-63"></a>    <span class="k">return</span> <span class="n">message</span>
 </span></code></pre></div></td></tr></table></div>
             </details>

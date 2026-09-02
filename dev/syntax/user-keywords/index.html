@@ -10395,16 +10395,16 @@ only the first physical line of the keyword documentation.</p>
 </span><span id="line-2-3"><a id="example-2-3" name="example-2-3"></a>
 </span><span id="line-2-4"><a id="example-2-4" name="example-2-4"></a><span class="gh">*** Keywords ***</span>
 </span><span id="line-2-5"><a id="example-2-5" name="example-2-5"></a><span class="gu">No own tags</span>
-</span><span id="line-2-6"><a id="example-2-6" name="example-2-6"></a><span class="p">    [</span><span class="kn">Documentation</span><span class="p">]    </span><span class="s">Keyword has tags &#39;gui&#39; and &#39;html&#39;.</span>
+</span><span id="line-2-6"><a id="example-2-6" name="example-2-6"></a><span class="p">    [</span><span class="kn">Documentation</span><span class="p">]    </span><span class="s">Keyword has tags 'gui' and 'html'.</span>
 </span><span id="line-2-7"><a id="example-2-7" name="example-2-7"></a><span class="p">    </span><span class="nf">No Operation</span>
 </span><span id="line-2-8"><a id="example-2-8" name="example-2-8"></a>
 </span><span id="line-2-9"><a id="example-2-9" name="example-2-9"></a><span class="gu">Own tags</span>
-</span><span id="line-2-10"><a id="example-2-10" name="example-2-10"></a><span class="p">    [</span><span class="kn">Documentation</span><span class="p">]    </span><span class="s">Keyword has tags &#39;gui&#39;, &#39;html&#39;, &#39;own&#39; and &#39;tags&#39;.</span>
+</span><span id="line-2-10"><a id="example-2-10" name="example-2-10"></a><span class="p">    [</span><span class="kn">Documentation</span><span class="p">]    </span><span class="s">Keyword has tags 'gui', 'html', 'own' and 'tags'.</span>
 </span><span id="line-2-11"><a id="example-2-11" name="example-2-11"></a><span class="p">    [</span><span class="kn">Tags</span><span class="p">]    </span><span class="s">own</span><span class="p">    </span><span class="s">tags</span>
 </span><span id="line-2-12"><a id="example-2-12" name="example-2-12"></a><span class="p">    </span><span class="nf">No Operation</span>
 </span><span id="line-2-13"><a id="example-2-13" name="example-2-13"></a>
 </span><span id="line-2-14"><a id="example-2-14" name="example-2-14"></a><span class="gu">Remove common tag</span>
-</span><span id="line-2-15"><a id="example-2-15" name="example-2-15"></a><span class="p">    [</span><span class="kn">Documentation</span><span class="p">]    </span><span class="s">Test has tags &#39;gui&#39; and &#39;own&#39;.</span>
+</span><span id="line-2-15"><a id="example-2-15" name="example-2-15"></a><span class="p">    [</span><span class="kn">Documentation</span><span class="p">]    </span><span class="s">Test has tags 'gui' and 'own'.</span>
 </span><span id="line-2-16"><a id="example-2-16" name="example-2-16"></a><span class="p">    [</span><span class="kn">Tags</span><span class="p">]    </span><span class="s">own</span><span class="p">    </span><span class="s">-html</span>
 </span><span id="line-2-17"><a id="example-2-17" name="example-2-17"></a><span class="p">    </span><span class="nf">No Operation</span>
 </span></code></pre></div></td></tr></table></div>
@@ -10813,7 +10813,7 @@ an informative error message.</p>
 </span><span id="line-14-19"><a id="example-14-19" name="example-14-19"></a><span class="p">    </span><span class="nf">END</span>
 </span><span id="line-14-20"><a id="example-14-20" name="example-14-20"></a>
 </span><span id="line-14-21"><a id="example-14-21" name="example-14-21"></a><span class="gu"> Turn</span>
-</span><span id="line-14-22"><a id="example-14-22" name="example-14-22"></a><span class="p">    [</span><span class="kn">Arguments</span><span class="p">]    ${</span><span class="nv">direction: Literal[&quot;LEFT&quot;, &quot;RIGHT&quot;]</span><span class="p">}</span>
+</span><span id="line-14-22"><a id="example-14-22" name="example-14-22"></a><span class="p">    [</span><span class="kn">Arguments</span><span class="p">]    ${</span><span class="nv">direction: Literal["LEFT", "RIGHT"]</span><span class="p">}</span>
 </span><span id="line-14-23"><a id="example-14-23" name="example-14-23"></a><span class="p">    </span><span class="nf">Log</span><span class="p">    </span><span class="s">Turning </span><span class="p">${</span><span class="nv">direction</span><span class="p">}</span><span class="s">.</span>
 </span></code></pre></div></td></tr></table></div>
 <div class="admonition tip">
@@ -11014,11 +11014,11 @@ that cities and teams match correctly:</p>
 <span class="normal"><a href="#example-21-7">7</a></span>
 <span class="normal"><a href="#example-21-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-21-1"><a id="example-21-1" name="example-21-1"></a><span class="gh">*** Test Cases ***</span>
 </span><span id="line-21-2"><a id="example-21-2" name="example-21-2"></a><span class="gu">Example</span>
-</span><span id="line-21-3"><a id="example-21-3" name="example-21-3"></a><span class="p">    </span><span class="nf">Select &quot;Chicago&quot; &quot;Bulls&quot;</span>
-</span><span id="line-21-4"><a id="example-21-4" name="example-21-4"></a><span class="p">    </span><span class="nf">Select &quot;Los Angeles&quot; &quot;Lakers&quot;</span>
+</span><span id="line-21-3"><a id="example-21-3" name="example-21-3"></a><span class="p">    </span><span class="nf">Select "Chicago" "Bulls"</span>
+</span><span id="line-21-4"><a id="example-21-4" name="example-21-4"></a><span class="p">    </span><span class="nf">Select "Los Angeles" "Lakers"</span>
 </span><span id="line-21-5"><a id="example-21-5" name="example-21-5"></a>
 </span><span id="line-21-6"><a id="example-21-6" name="example-21-6"></a><span class="gh">*** Keywords ***</span>
-</span><span id="line-21-7"><a id="example-21-7" name="example-21-7"></a><span class="gu">Select &quot;</span><span class="p">${</span><span class="nv">city</span><span class="p">}</span><span class="gu">&quot; &quot;</span><span class="p">${</span><span class="nv">team</span><span class="p">}</span><span class="gu">&quot;</span>
+</span><span id="line-21-7"><a id="example-21-7" name="example-21-7"></a><span class="gu">Select "</span><span class="p">${</span><span class="nv">city</span><span class="p">}</span><span class="gu">" "</span><span class="p">${</span><span class="nv">team</span><span class="p">}</span><span class="gu">"</span>
 </span><span id="line-21-8"><a id="example-21-8" name="example-21-8"></a><span class="p">    </span><span class="nf">Log</span><span class="p">    </span><span class="s">Selected </span><span class="p">${</span><span class="nv">team</span><span class="p">}</span><span class="s"> from </span><span class="p">${</span><span class="nv">city</span><span class="p">}</span><span class="s">.</span>
 </span></code></pre></div></td></tr></table></div>
 This approach is not enough to resolve all conflicts, but it helps in common
@@ -11058,14 +11058,14 @@ we want, but it also matches <em>Execute "${cmd}"</em> so that <code>${cmd}</cod
 </span><span id="line-22-3"><a id="example-22-3" name="example-22-3"></a>
 </span><span id="line-22-4"><a id="example-22-4" name="example-22-4"></a><span class="gh">*** Test Cases ***</span>
 </span><span id="line-22-5"><a id="example-22-5" name="example-22-5"></a><span class="gu">Automatic conflict resolution</span>
-</span><span id="line-22-6"><a id="example-22-6" name="example-22-6"></a><span class="p">    </span><span class="nf">Execute &quot;ls&quot;</span>
-</span><span id="line-22-7"><a id="example-22-7" name="example-22-7"></a><span class="p">    </span><span class="nf">Execute &quot;ls&quot; with &quot;-lh&quot;</span>
+</span><span id="line-22-6"><a id="example-22-6" name="example-22-6"></a><span class="p">    </span><span class="nf">Execute "ls"</span>
+</span><span id="line-22-7"><a id="example-22-7" name="example-22-7"></a><span class="p">    </span><span class="nf">Execute "ls" with "-lh"</span>
 </span><span id="line-22-8"><a id="example-22-8" name="example-22-8"></a>
 </span><span id="line-22-9"><a id="example-22-9" name="example-22-9"></a><span class="gh">*** Keywords ***</span>
-</span><span id="line-22-10"><a id="example-22-10" name="example-22-10"></a><span class="gu">Execute &quot;</span><span class="p">${</span><span class="nv">cmd</span><span class="p">}</span><span class="gu">&quot;</span>
+</span><span id="line-22-10"><a id="example-22-10" name="example-22-10"></a><span class="gu">Execute "</span><span class="p">${</span><span class="nv">cmd</span><span class="p">}</span><span class="gu">"</span>
 </span><span id="line-22-11"><a id="example-22-11" name="example-22-11"></a><span class="p">    </span><span class="nf">Run Process</span><span class="p">    ${</span><span class="nv">cmd</span><span class="p">}    </span><span class="s">shell=True</span>
 </span><span id="line-22-12"><a id="example-22-12" name="example-22-12"></a>
-</span><span id="line-22-13"><a id="example-22-13" name="example-22-13"></a><span class="gu">Execute &quot;</span><span class="p">${</span><span class="nv">cmd</span><span class="p">}</span><span class="gu">&quot; with &quot;</span><span class="p">${</span><span class="nv">opts</span><span class="p">}</span><span class="gu">&quot;</span>
+</span><span id="line-22-13"><a id="example-22-13" name="example-22-13"></a><span class="gu">Execute "</span><span class="p">${</span><span class="nv">cmd</span><span class="p">}</span><span class="gu">" with "</span><span class="p">${</span><span class="nv">opts</span><span class="p">}</span><span class="gu">"</span>
 </span><span id="line-22-14"><a id="example-22-14" name="example-22-14"></a><span class="p">    </span><span class="nf">Run Process</span><span class="p">    ${</span><span class="nv">cmd</span><span class="p">}</span><span class="s"> </span><span class="p">${</span><span class="nv">opts</span><span class="p">}    </span><span class="s">shell=True</span>
 </span></code></pre></div></td></tr></table></div>
 When this kind of conflicts occur, Robot Framework tries to automatically select
@@ -11190,7 +11190,7 @@ characters.</p>
 </span><span id="line-25-7"><a id="example-25-7" name="example-25-7"></a><span class="p">    </span><span class="nf">1 + 2 = 3</span>
 </span><span id="line-25-8"><a id="example-25-8" name="example-25-8"></a><span class="p">    </span><span class="nf">53 - 11 = 42</span>
 </span><span id="line-25-9"><a id="example-25-9" name="example-25-9"></a>
-</span><span id="line-25-10"><a id="example-25-10" name="example-25-10"></a><span class="gu">Match either date or literal &#39;today&#39;</span>
+</span><span id="line-25-10"><a id="example-25-10" name="example-25-10"></a><span class="gu">Match either date or literal 'today'</span>
 </span><span id="line-25-11"><a id="example-25-11" name="example-25-11"></a><span class="p">    </span><span class="nf">Deadline is 2022-09-21</span>
 </span><span id="line-25-12"><a id="example-25-12" name="example-25-12"></a><span class="p">    </span><span class="nf">Deadline is today</span>
 </span><span id="line-25-13"><a id="example-25-13" name="example-25-13"></a>
@@ -11207,7 +11207,7 @@ characters.</p>
 </span><span id="line-25-24"><a id="example-25-24" name="example-25-24"></a><span class="p">    </span><span class="nf">Should Be Equal As Integers</span><span class="p">    ${</span><span class="nv">result</span><span class="p">}    ${</span><span class="nv">expected</span><span class="p">}</span>
 </span><span id="line-25-25"><a id="example-25-25" name="example-25-25"></a>
 </span><span id="line-25-26"><a id="example-25-26" name="example-25-26"></a><span class="gu">Deadline is </span><span class="p">${</span><span class="nv">deadline: date:\d{4</span><span class="p">}</span><span class="gu">-\d{2}-\d{2}|today}</span>
-</span><span id="line-25-27"><a id="example-25-27" name="example-25-27"></a><span class="p">    </span><span class="c"># The &#39;: date&#39; part of the above argument specifies the argument type.</span>
+</span><span id="line-25-27"><a id="example-25-27" name="example-25-27"></a><span class="p">    </span><span class="c"># The ': date' part of the above argument specifies the argument type.</span>
 </span><span id="line-25-28"><a id="example-25-28" name="example-25-28"></a><span class="p">    </span><span class="c"># See the separate section about argument conversion for more information.</span>
 </span><span id="line-25-29"><a id="example-25-29" name="example-25-29"></a><span class="p">    </span><span class="nf">Log</span><span class="p">    </span><span class="s">Deadline is </span><span class="p">${</span><span class="nv">deadline.day</span><span class="p">}</span><span class="s">.</span><span class="p">${</span><span class="nv">deadline.month</span><span class="p">}</span><span class="s">.</span><span class="p">${</span><span class="nv">deadline.year</span><span class="p">}</span><span class="s">.</span>
 </span><span id="line-25-30"><a id="example-25-30" name="example-25-30"></a>

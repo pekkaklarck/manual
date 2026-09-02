@@ -9930,7 +9930,7 @@ or enabled using <code>settings</code> or <code>options</code> passed to the
 :meth:<code>write_results</code> method. The latter is typically more convenient::</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">writer</span> <span class="o">=</span> <span class="n">ResultWriter</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-<span class="n">writer</span><span class="o">.</span><span class="n">write_results</span><span class="p">(</span><span class="n">report</span><span class="o">=</span><span class="s1">&#39;custom.html&#39;</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">xunit</span><span class="o">=</span><span class="s1">&#39;xunit.xml&#39;</span><span class="p">)</span>
+<span class="n">writer</span><span class="o">.</span><span class="n">write_results</span><span class="p">(</span><span class="n">report</span><span class="o">=</span><span class="s1">'custom.html'</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">xunit</span><span class="o">=</span><span class="s1">'xunit.xml'</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 
 
@@ -10005,14 +10005,14 @@ or enabled using <code>settings</code> or <code>options</code> passed to the
 <span class="normal"><a href="#example-0-66">66</a></span>
 <span class="normal"><a href="#example-0-67">67</a></span>
 <span class="normal"><a href="#example-0-68">68</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-45"><a id="example-0-45" name="example-0-45"></a><span class="k">def</span><span class="w"> </span><span class="nf">write_results</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">settings</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">):</span>
-</span><span id="line-0-46"><a id="example-0-46" name="example-0-46"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Writes results based on the given ``settings``  or ``options``.</span>
+</span><span id="line-0-46"><a id="example-0-46" name="example-0-46"></a><span class="w">    </span><span class="sd">"""Writes results based on the given ``settings``  or ``options``.</span>
 </span><span id="line-0-47"><a id="example-0-47" name="example-0-47"></a>
 </span><span id="line-0-48"><a id="example-0-48" name="example-0-48"></a><span class="sd">    :param settings: :class:`~robot.conf.settings.RebotSettings` object</span>
 </span><span id="line-0-49"><a id="example-0-49" name="example-0-49"></a><span class="sd">        to configure result writing.</span>
 </span><span id="line-0-50"><a id="example-0-50" name="example-0-50"></a><span class="sd">    :param options: Used to construct new</span>
 </span><span id="line-0-51"><a id="example-0-51" name="example-0-51"></a><span class="sd">        :class:`~robot.conf.settings.RebotSettings` object if ``settings``</span>
 </span><span id="line-0-52"><a id="example-0-52" name="example-0-52"></a><span class="sd">        are not given.</span>
-</span><span id="line-0-53"><a id="example-0-53" name="example-0-53"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-53"><a id="example-0-53" name="example-0-53"></a><span class="sd">    """</span>
 </span><span id="line-0-54"><a id="example-0-54" name="example-0-54"></a>    <span class="n">settings</span> <span class="o">=</span> <span class="n">settings</span> <span class="ow">or</span> <span class="n">RebotSettings</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
 </span><span id="line-0-55"><a id="example-0-55" name="example-0-55"></a>    <span class="n">results</span> <span class="o">=</span> <span class="n">Results</span><span class="p">(</span><span class="n">settings</span><span class="p">,</span> <span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">_sources</span><span class="p">)</span>
 </span><span id="line-0-56"><a id="example-0-56" name="example-0-56"></a>    <span class="k">if</span> <span class="n">settings</span><span class="o">.</span><span class="n">output</span><span class="p">:</span>

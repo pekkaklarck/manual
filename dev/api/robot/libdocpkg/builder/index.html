@@ -9934,7 +9934,7 @@ programmatically. It should be imported via the :mod:<code>robot.libdoc</code> m
 <span class="normal">5</span>
 <span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">robot.libdoc</span><span class="w"> </span><span class="kn">import</span> <span class="n">LibraryDocumentation</span>
 
-<span class="n">lib</span> <span class="o">=</span> <span class="n">LibraryDocumentation</span><span class="p">(</span><span class="s1">&#39;OperatingSystem&#39;</span><span class="p">)</span>
+<span class="n">lib</span> <span class="o">=</span> <span class="n">LibraryDocumentation</span><span class="p">(</span><span class="s1">'OperatingSystem'</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">lib</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">lib</span><span class="o">.</span><span class="n">version</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">kw</span> <span class="ow">in</span> <span class="n">lib</span><span class="o">.</span><span class="n">keywords</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">kw</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
@@ -9977,7 +9977,7 @@ programmatically. It should be imported via the :mod:<code>robot.libdoc</code> m
 <span class="normal"><a href="#example-0-62">62</a></span>
 <span class="normal"><a href="#example-0-63">63</a></span>
 <span class="normal"><a href="#example-0-64">64</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-31"><a id="example-0-31" name="example-0-31"></a><span class="k">def</span><span class="w"> </span><span class="nf">LibraryDocumentation</span><span class="p">(</span><span class="n">library_or_resource</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">doc_format</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-</span><span id="line-0-32"><a id="example-0-32" name="example-0-32"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Generate keyword documentation for the given library, resource or suite file.</span>
+</span><span id="line-0-32"><a id="example-0-32" name="example-0-32"></a><span class="w">    </span><span class="sd">"""Generate keyword documentation for the given library, resource or suite file.</span>
 </span><span id="line-0-33"><a id="example-0-33" name="example-0-33"></a>
 </span><span id="line-0-34"><a id="example-0-34" name="example-0-34"></a><span class="sd">    :param library_or_resource:</span>
 </span><span id="line-0-35"><a id="example-0-35" name="example-0-35"></a><span class="sd">        Name or path of the library, or path of a resource or a suite file.</span>
@@ -9997,11 +9997,11 @@ programmatically. It should be imported via the :mod:<code>robot.libdoc</code> m
 </span><span id="line-0-49"><a id="example-0-49" name="example-0-49"></a>
 </span><span id="line-0-50"><a id="example-0-50" name="example-0-50"></a><span class="sd">        from robot.libdoc import LibraryDocumentation</span>
 </span><span id="line-0-51"><a id="example-0-51" name="example-0-51"></a>
-</span><span id="line-0-52"><a id="example-0-52" name="example-0-52"></a><span class="sd">        lib = LibraryDocumentation(&#39;OperatingSystem&#39;)</span>
+</span><span id="line-0-52"><a id="example-0-52" name="example-0-52"></a><span class="sd">        lib = LibraryDocumentation('OperatingSystem')</span>
 </span><span id="line-0-53"><a id="example-0-53" name="example-0-53"></a><span class="sd">        print(lib.name, lib.version)</span>
 </span><span id="line-0-54"><a id="example-0-54" name="example-0-54"></a><span class="sd">        for kw in lib.keywords:</span>
 </span><span id="line-0-55"><a id="example-0-55" name="example-0-55"></a><span class="sd">            print(kw.name)</span>
-</span><span id="line-0-56"><a id="example-0-56" name="example-0-56"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-56"><a id="example-0-56" name="example-0-56"></a><span class="sd">    """</span>
 </span><span id="line-0-57"><a id="example-0-57" name="example-0-57"></a>    <span class="n">libdoc</span> <span class="o">=</span> <span class="n">DocumentationBuilder</span><span class="p">()</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="n">library_or_resource</span><span class="p">)</span>
 </span><span id="line-0-58"><a id="example-0-58" name="example-0-58"></a>    <span class="k">if</span> <span class="n">name</span><span class="p">:</span>
 </span><span id="line-0-59"><a id="example-0-59" name="example-0-59"></a>        <span class="n">libdoc</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>

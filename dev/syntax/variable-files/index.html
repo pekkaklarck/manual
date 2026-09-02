@@ -10013,7 +10013,7 @@ themselves contain colons, but requires surrounding the whole value with
 quotes on UNIX-like operating systems:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-5-1">1</a></span>
 <span class="normal"><a href="#example-5-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-5-1"><a id="example-5-1" name="example-5-1"></a><span class="o">--</span><span class="n">variablefile</span> <span class="n">C</span><span class="p">:</span>\<span class="n">path</span>\<span class="n">variables</span><span class="o">.</span><span class="n">py</span><span class="p">;</span><span class="n">D</span><span class="p">:</span>\<span class="n">data</span><span class="o">.</span><span class="n">xls</span>
-</span><span id="line-5-2"><a id="example-5-2" name="example-5-2"></a><span class="o">--</span><span class="n">variablefile</span> <span class="s2">&quot;myvariables.py;argument:with:colons&quot;</span>
+</span><span id="line-5-2"><a id="example-5-2" name="example-5-2"></a><span class="o">--</span><span class="n">variablefile</span> <span class="s2">"myvariables.py;argument:with:colons"</span>
 </span></code></pre></div></td></tr></table></div>
 <p>Variables in variable files taken use on the command line are globally
 available in all test data files, similarly as <a href="https://packaging.python.org/en/latest/guides/distributing-packages-using-setuptools/#package-data">individual variables</a>
@@ -10034,12 +10034,12 @@ variables and attributes.</p>
 <span class="normal"><a href="#example-6-3">3</a></span>
 <span class="normal"><a href="#example-6-4">4</a></span>
 <span class="normal"><a href="#example-6-5">5</a></span>
-<span class="normal"><a href="#example-6-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-6-1"><a id="example-6-1" name="example-6-1"></a><span class="n">VARIABLE</span> <span class="o">=</span> <span class="s2">&quot;An example string&quot;</span>
-</span><span id="line-6-2"><a id="example-6-2" name="example-6-2"></a><span class="n">ANOTHER_VARIABLE</span> <span class="o">=</span> <span class="s2">&quot;This is pretty easy!&quot;</span>
+<span class="normal"><a href="#example-6-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-6-1"><a id="example-6-1" name="example-6-1"></a><span class="n">VARIABLE</span> <span class="o">=</span> <span class="s2">"An example string"</span>
+</span><span id="line-6-2"><a id="example-6-2" name="example-6-2"></a><span class="n">ANOTHER_VARIABLE</span> <span class="o">=</span> <span class="s2">"This is pretty easy!"</span>
 </span><span id="line-6-3"><a id="example-6-3" name="example-6-3"></a><span class="n">INTEGER</span> <span class="o">=</span> <span class="mi">42</span>
-</span><span id="line-6-4"><a id="example-6-4" name="example-6-4"></a><span class="n">STRINGS</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;one&quot;</span><span class="p">,</span> <span class="s2">&quot;two&quot;</span><span class="p">,</span> <span class="s2">&quot;kolme&quot;</span><span class="p">,</span> <span class="s2">&quot;four&quot;</span><span class="p">]</span>
+</span><span id="line-6-4"><a id="example-6-4" name="example-6-4"></a><span class="n">STRINGS</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"one"</span><span class="p">,</span> <span class="s2">"two"</span><span class="p">,</span> <span class="s2">"kolme"</span><span class="p">,</span> <span class="s2">"four"</span><span class="p">]</span>
 </span><span id="line-6-5"><a id="example-6-5" name="example-6-5"></a><span class="n">NUMBERS</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">INTEGER</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">]</span>
-</span><span id="line-6-6"><a id="example-6-6" name="example-6-6"></a><span class="n">MAPPING</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;one&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;two&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;three&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
+</span><span id="line-6-6"><a id="example-6-6" name="example-6-6"></a><span class="n">MAPPING</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"one"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"two"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">"three"</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
 In the example above, variables <code>${VARIABLE}</code>, <code>${ANOTHER VARIABLE}</code>, and
 so on, are created. The first two variables are strings, the third one is
@@ -10056,8 +10056,8 @@ respectively:</p>
 <span class="normal"><a href="#example-7-3">3</a></span>
 <span class="normal"><a href="#example-7-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-7-1"><a id="example-7-1" name="example-7-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">OrderedDict</span>
 </span><span id="line-7-2"><a id="example-7-2" name="example-7-2"></a>
-</span><span id="line-7-3"><a id="example-7-3" name="example-7-3"></a><span class="n">LIST__ANIMALS</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;cat&quot;</span><span class="p">,</span> <span class="s2">&quot;dog&quot;</span><span class="p">]</span>
-</span><span id="line-7-4"><a id="example-7-4" name="example-7-4"></a><span class="n">DICT__FINNISH</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">([(</span><span class="s2">&quot;cat&quot;</span><span class="p">,</span> <span class="s2">&quot;kissa&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;dog&quot;</span><span class="p">,</span> <span class="s2">&quot;koira&quot;</span><span class="p">)])</span>
+</span><span id="line-7-3"><a id="example-7-3" name="example-7-3"></a><span class="n">LIST__ANIMALS</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"cat"</span><span class="p">,</span> <span class="s2">"dog"</span><span class="p">]</span>
+</span><span id="line-7-4"><a id="example-7-4" name="example-7-4"></a><span class="n">DICT__FINNISH</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">([(</span><span class="s2">"cat"</span><span class="p">,</span> <span class="s2">"kissa"</span><span class="p">),</span> <span class="p">(</span><span class="s2">"dog"</span><span class="p">,</span> <span class="s2">"koira"</span><span class="p">)])</span>
 </span></code></pre></div></td></tr></table></div>
 These prefixes will not be part of the final variable name, but they cause
 Robot Framework to validate that the value actually is list-like or
@@ -10108,14 +10108,14 @@ created from a custom object implemented in the same file.</p>
 <span class="normal"><a href="#example-9-5">5</a></span>
 <span class="normal"><a href="#example-9-6">6</a></span>
 <span class="normal"><a href="#example-9-7">7</a></span>
-<span class="normal"><a href="#example-9-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-9-1"><a id="example-9-1" name="example-9-1"></a><span class="n">MAPPING</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;one&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;two&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+<span class="normal"><a href="#example-9-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-9-1"><a id="example-9-1" name="example-9-1"></a><span class="n">MAPPING</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'one'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">'two'</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
 </span><span id="line-9-2"><a id="example-9-2" name="example-9-2"></a>
 </span><span id="line-9-3"><a id="example-9-3" name="example-9-3"></a><span class="k">class</span><span class="w"> </span><span class="nc">MyObject</span><span class="p">:</span>
 </span><span id="line-9-4"><a id="example-9-4" name="example-9-4"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
 </span><span id="line-9-5"><a id="example-9-5" name="example-9-5"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
 </span><span id="line-9-6"><a id="example-9-6" name="example-9-6"></a>
-</span><span id="line-9-7"><a id="example-9-7" name="example-9-7"></a><span class="n">OBJ1</span> <span class="o">=</span> <span class="n">MyObject</span><span class="p">(</span><span class="s1">&#39;John&#39;</span><span class="p">)</span>
-</span><span id="line-9-8"><a id="example-9-8" name="example-9-8"></a><span class="n">OBJ2</span> <span class="o">=</span> <span class="n">MyObject</span><span class="p">(</span><span class="s1">&#39;Jane&#39;</span><span class="p">)</span>
+</span><span id="line-9-7"><a id="example-9-7" name="example-9-7"></a><span class="n">OBJ1</span> <span class="o">=</span> <span class="n">MyObject</span><span class="p">(</span><span class="s1">'John'</span><span class="p">)</span>
+</span><span id="line-9-8"><a id="example-9-8" name="example-9-8"></a><span class="n">OBJ2</span> <span class="o">=</span> <span class="n">MyObject</span><span class="p">(</span><span class="s1">'Jane'</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 <h4 id="creating-variables-dynamically">Creating variables dynamically<a class="headerlink" href="#creating-variables-dynamically" title="Permanent link">&para;</a></h4>
 <p>Because variable files are created using a real programming language,
@@ -10136,7 +10136,7 @@ they can have dynamic logic for setting variables.</p>
 </span><span id="line-10-4"><a id="example-10-4" name="example-10-4"></a>
 </span><span id="line-10-5"><a id="example-10-5" name="example-10-5"></a><span class="n">USER</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getlogin</span><span class="p">()</span>                <span class="c1"># current login name</span>
 </span><span id="line-10-6"><a id="example-10-6" name="example-10-6"></a><span class="n">RANDOM_INT</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>  <span class="c1"># random integer in range [0,10]</span>
-</span><span id="line-10-7"><a id="example-10-7" name="example-10-7"></a><span class="n">CURRENT_TIME</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">asctime</span><span class="p">()</span>       <span class="c1"># timestamp like &#39;Thu Apr  6 12:45:21 2006&#39;</span>
+</span><span id="line-10-7"><a id="example-10-7" name="example-10-7"></a><span class="n">CURRENT_TIME</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">asctime</span><span class="p">()</span>       <span class="c1"># timestamp like 'Thu Apr  6 12:45:21 2006'</span>
 </span><span id="line-10-8"><a id="example-10-8" name="example-10-8"></a><span class="k">if</span> <span class="n">time</span><span class="o">.</span><span class="n">localtime</span><span class="p">()[</span><span class="mi">3</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">12</span><span class="p">:</span>
 </span><span id="line-10-9"><a id="example-10-9" name="example-10-9"></a>    <span class="n">AFTERNOON</span> <span class="o">=</span> <span class="kc">True</span>
 </span><span id="line-10-10"><a id="example-10-10" name="example-10-10"></a><span class="k">else</span><span class="p">:</span>
@@ -10211,7 +10211,7 @@ as variables.</p>
 <span class="normal"><a href="#example-13-10">10</a></span>
 <span class="normal"><a href="#example-13-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-13-1"><a id="example-13-1" name="example-13-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
 </span><span id="line-13-2"><a id="example-13-2" name="example-13-2"></a>
-</span><span id="line-13-3"><a id="example-13-3" name="example-13-3"></a><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;AREA1&#39;</span><span class="p">,</span> <span class="s1">&#39;AREA2&#39;</span><span class="p">]</span>
+</span><span id="line-13-3"><a id="example-13-3" name="example-13-3"></a><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'AREA1'</span><span class="p">,</span> <span class="s1">'AREA2'</span><span class="p">]</span>
 </span><span id="line-13-4"><a id="example-13-4" name="example-13-4"></a>
 </span><span id="line-13-5"><a id="example-13-5" name="example-13-5"></a><span class="k">def</span><span class="w"> </span><span class="nf">get_area</span><span class="p">(</span><span class="n">diameter</span><span class="p">):</span>
 </span><span id="line-13-6"><a id="example-13-6" name="example-13-6"></a>    <span class="n">radius</span> <span class="o">=</span> <span class="n">diameter</span> <span class="o">/</span> <span class="mf">2.0</span>
@@ -10248,12 +10248,12 @@ The example below is functionally identical to the first example related to
 <span class="normal"><a href="#example-14-6">6</a></span>
 <span class="normal"><a href="#example-14-7">7</a></span>
 <span class="normal"><a href="#example-14-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-14-1"><a id="example-14-1" name="example-14-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">get_variables</span><span class="p">():</span>
-</span><span id="line-14-2"><a id="example-14-2" name="example-14-2"></a>    <span class="n">variables</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;VARIABLE &quot;</span><span class="p">:</span> <span class="s2">&quot;An example string&quot;</span><span class="p">,</span>
-</span><span id="line-14-3"><a id="example-14-3" name="example-14-3"></a>                 <span class="s2">&quot;ANOTHER VARIABLE&quot;</span><span class="p">:</span> <span class="s2">&quot;This is pretty easy!&quot;</span><span class="p">,</span>
-</span><span id="line-14-4"><a id="example-14-4" name="example-14-4"></a>                 <span class="s2">&quot;INTEGER&quot;</span><span class="p">:</span> <span class="mi">42</span><span class="p">,</span>
-</span><span id="line-14-5"><a id="example-14-5" name="example-14-5"></a>                 <span class="s2">&quot;STRINGS&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;one&quot;</span><span class="p">,</span> <span class="s2">&quot;two&quot;</span><span class="p">,</span> <span class="s2">&quot;kolme&quot;</span><span class="p">,</span> <span class="s2">&quot;four&quot;</span><span class="p">],</span>
-</span><span id="line-14-6"><a id="example-14-6" name="example-14-6"></a>                 <span class="s2">&quot;NUMBERS&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">],</span>
-</span><span id="line-14-7"><a id="example-14-7" name="example-14-7"></a>                 <span class="s2">&quot;MAPPING&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;one&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;two&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;three&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}}</span>
+</span><span id="line-14-2"><a id="example-14-2" name="example-14-2"></a>    <span class="n">variables</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"VARIABLE "</span><span class="p">:</span> <span class="s2">"An example string"</span><span class="p">,</span>
+</span><span id="line-14-3"><a id="example-14-3" name="example-14-3"></a>                 <span class="s2">"ANOTHER VARIABLE"</span><span class="p">:</span> <span class="s2">"This is pretty easy!"</span><span class="p">,</span>
+</span><span id="line-14-4"><a id="example-14-4" name="example-14-4"></a>                 <span class="s2">"INTEGER"</span><span class="p">:</span> <span class="mi">42</span><span class="p">,</span>
+</span><span id="line-14-5"><a id="example-14-5" name="example-14-5"></a>                 <span class="s2">"STRINGS"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"one"</span><span class="p">,</span> <span class="s2">"two"</span><span class="p">,</span> <span class="s2">"kolme"</span><span class="p">,</span> <span class="s2">"four"</span><span class="p">],</span>
+</span><span id="line-14-6"><a id="example-14-6" name="example-14-6"></a>                 <span class="s2">"NUMBERS"</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">],</span>
+</span><span id="line-14-7"><a id="example-14-7" name="example-14-7"></a>                 <span class="s2">"MAPPING"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"one"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"two"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">"three"</span><span class="p">:</span> <span class="mi">3</span><span class="p">}}</span>
 </span><span id="line-14-8"><a id="example-14-8" name="example-14-8"></a>    <span class="k">return</span> <span class="n">variables</span>
 </span></code></pre></div></td></tr></table></div>
 <code>get_variables</code> can also take arguments, which facilitates changing
@@ -10275,14 +10275,14 @@ or database where to read variables from.</p>
 <span class="normal"><a href="#example-15-8"> 8</a></span>
 <span class="normal"><a href="#example-15-9"> 9</a></span>
 <span class="normal"><a href="#example-15-10">10</a></span>
-<span class="normal"><a href="#example-15-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-15-1"><a id="example-15-1" name="example-15-1"></a><span class="n">variables1</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;scalar&#39;</span><span class="p">:</span> <span class="s1">&#39;Scalar variable&#39;</span><span class="p">,</span>
-</span><span id="line-15-2"><a id="example-15-2" name="example-15-2"></a>              <span class="s1">&#39;LIST__list&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;List&#39;</span><span class="p">,</span><span class="s1">&#39;variable&#39;</span><span class="p">]}</span>
-</span><span id="line-15-3"><a id="example-15-3" name="example-15-3"></a><span class="n">variables2</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;scalar&#39;</span> <span class="p">:</span> <span class="s1">&#39;Some other value&#39;</span><span class="p">,</span>
-</span><span id="line-15-4"><a id="example-15-4" name="example-15-4"></a>              <span class="s1">&#39;LIST__list&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Some&#39;</span><span class="p">,</span><span class="s1">&#39;other&#39;</span><span class="p">,</span><span class="s1">&#39;value&#39;</span><span class="p">],</span>
-</span><span id="line-15-5"><a id="example-15-5" name="example-15-5"></a>              <span class="s1">&#39;extra&#39;</span><span class="p">:</span> <span class="s1">&#39;variables1 does not have this at all&#39;</span><span class="p">}</span>
+<span class="normal"><a href="#example-15-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-15-1"><a id="example-15-1" name="example-15-1"></a><span class="n">variables1</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'scalar'</span><span class="p">:</span> <span class="s1">'Scalar variable'</span><span class="p">,</span>
+</span><span id="line-15-2"><a id="example-15-2" name="example-15-2"></a>              <span class="s1">'LIST__list'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'List'</span><span class="p">,</span><span class="s1">'variable'</span><span class="p">]}</span>
+</span><span id="line-15-3"><a id="example-15-3" name="example-15-3"></a><span class="n">variables2</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'scalar'</span> <span class="p">:</span> <span class="s1">'Some other value'</span><span class="p">,</span>
+</span><span id="line-15-4"><a id="example-15-4" name="example-15-4"></a>              <span class="s1">'LIST__list'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'Some'</span><span class="p">,</span><span class="s1">'other'</span><span class="p">,</span><span class="s1">'value'</span><span class="p">],</span>
+</span><span id="line-15-5"><a id="example-15-5" name="example-15-5"></a>              <span class="s1">'extra'</span><span class="p">:</span> <span class="s1">'variables1 does not have this at all'</span><span class="p">}</span>
 </span><span id="line-15-6"><a id="example-15-6" name="example-15-6"></a>
 </span><span id="line-15-7"><a id="example-15-7" name="example-15-7"></a><span class="k">def</span><span class="w"> </span><span class="nf">get_variables</span><span class="p">(</span><span class="n">arg</span><span class="p">):</span>
-</span><span id="line-15-8"><a id="example-15-8" name="example-15-8"></a>    <span class="k">if</span> <span class="n">arg</span> <span class="o">==</span> <span class="s1">&#39;one&#39;</span><span class="p">:</span>
+</span><span id="line-15-8"><a id="example-15-8" name="example-15-8"></a>    <span class="k">if</span> <span class="n">arg</span> <span class="o">==</span> <span class="s1">'one'</span><span class="p">:</span>
 </span><span id="line-15-9"><a id="example-15-9" name="example-15-9"></a>        <span class="k">return</span> <span class="n">variables1</span>
 </span><span id="line-15-10"><a id="example-15-10" name="example-15-10"></a>    <span class="k">else</span><span class="p">:</span>
 </span><span id="line-15-11"><a id="example-15-11" name="example-15-11"></a>        <span class="k">return</span> <span class="n">variables2</span>
@@ -10321,12 +10321,12 @@ attributes and <code>${ANOTHER VARIABLE}</code> from an instance attribute.</p>
 <span class="normal"><a href="#example-17-5">5</a></span>
 <span class="normal"><a href="#example-17-6">6</a></span>
 <span class="normal"><a href="#example-17-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-17-1"><a id="example-17-1" name="example-17-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">StaticExample</span><span class="p">:</span>
-</span><span id="line-17-2"><a id="example-17-2" name="example-17-2"></a>    <span class="n">variable</span> <span class="o">=</span> <span class="s1">&#39;value&#39;</span>
+</span><span id="line-17-2"><a id="example-17-2" name="example-17-2"></a>    <span class="n">variable</span> <span class="o">=</span> <span class="s1">'value'</span>
 </span><span id="line-17-3"><a id="example-17-3" name="example-17-3"></a>    <span class="n">LIST__list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-</span><span id="line-17-4"><a id="example-17-4" name="example-17-4"></a>    <span class="n">_not_variable</span> <span class="o">=</span> <span class="s1">&#39;starts with an underscore&#39;</span>
+</span><span id="line-17-4"><a id="example-17-4" name="example-17-4"></a>    <span class="n">_not_variable</span> <span class="o">=</span> <span class="s1">'starts with an underscore'</span>
 </span><span id="line-17-5"><a id="example-17-5" name="example-17-5"></a>
 </span><span id="line-17-6"><a id="example-17-6" name="example-17-6"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="line-17-7"><a id="example-17-7" name="example-17-7"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">another_variable</span> <span class="o">=</span> <span class="s1">&#39;another value&#39;</span>
+</span><span id="line-17-7"><a id="example-17-7" name="example-17-7"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">another_variable</span> <span class="o">=</span> <span class="s1">'another value'</span>
 </span></code></pre></div></td></tr></table></div>
 The second examples utilizes dynamic approach for getting variables. It
 creates only one variable <code>${DYNAMIC VARIABLE}</code>.</p>
@@ -10336,7 +10336,7 @@ creates only one variable <code>${DYNAMIC VARIABLE}</code>.</p>
 <span class="normal"><a href="#example-18-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-18-1"><a id="example-18-1" name="example-18-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">DynamicExample</span><span class="p">:</span>
 </span><span id="line-18-2"><a id="example-18-2" name="example-18-2"></a>
 </span><span id="line-18-3"><a id="example-18-3" name="example-18-3"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">get_variables</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
-</span><span id="line-18-4"><a id="example-18-4" name="example-18-4"></a>        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;dynamic variable&#39;</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">args</span><span class="p">)}</span>
+</span><span id="line-18-4"><a id="example-18-4" name="example-18-4"></a>        <span class="k">return</span> <span class="p">{</span><span class="s1">'dynamic variable'</span><span class="p">:</span> <span class="s1">' '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">args</span><span class="p">)}</span>
 </span></code></pre></div></td></tr></table></div>
 <h3 id="variable-file-as-yaml">Variable file as YAML<a class="headerlink" href="#variable-file-as-yaml" title="Permanent link">&para;</a></h3>
 <p>Variable files can also be implemented as <a href="https://yaml.org">YAML</a> files.
@@ -10415,16 +10415,16 @@ exactly the same data as the earlier YAML example:</p>
 <span class="normal"><a href="#example-21-11">11</a></span>
 <span class="normal"><a href="#example-21-12">12</a></span>
 <span class="normal"><a href="#example-21-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-21-1"><a id="example-21-1" name="example-21-1"></a><span class="p">{</span>
-</span><span id="line-21-2"><a id="example-21-2" name="example-21-2"></a><span class="w">    </span><span class="nt">&quot;string&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Hello, world!&quot;</span><span class="p">,</span>
-</span><span id="line-21-3"><a id="example-21-3" name="example-21-3"></a><span class="w">    </span><span class="nt">&quot;integer&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span><span class="p">,</span>
-</span><span id="line-21-4"><a id="example-21-4" name="example-21-4"></a><span class="w">    </span><span class="nt">&quot;list&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="line-21-5"><a id="example-21-5" name="example-21-5"></a><span class="w">        </span><span class="s2">&quot;one&quot;</span><span class="p">,</span>
-</span><span id="line-21-6"><a id="example-21-6" name="example-21-6"></a><span class="w">        </span><span class="s2">&quot;two&quot;</span>
+</span><span id="line-21-2"><a id="example-21-2" name="example-21-2"></a><span class="w">    </span><span class="nt">"string"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hello, world!"</span><span class="p">,</span>
+</span><span id="line-21-3"><a id="example-21-3" name="example-21-3"></a><span class="w">    </span><span class="nt">"integer"</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span><span class="p">,</span>
+</span><span id="line-21-4"><a id="example-21-4" name="example-21-4"></a><span class="w">    </span><span class="nt">"list"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="line-21-5"><a id="example-21-5" name="example-21-5"></a><span class="w">        </span><span class="s2">"one"</span><span class="p">,</span>
+</span><span id="line-21-6"><a id="example-21-6" name="example-21-6"></a><span class="w">        </span><span class="s2">"two"</span>
 </span><span id="line-21-7"><a id="example-21-7" name="example-21-7"></a><span class="w">    </span><span class="p">],</span>
-</span><span id="line-21-8"><a id="example-21-8" name="example-21-8"></a><span class="w">    </span><span class="nt">&quot;dict&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="line-21-9"><a id="example-21-9" name="example-21-9"></a><span class="w">        </span><span class="nt">&quot;one&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;yksi&quot;</span><span class="p">,</span>
-</span><span id="line-21-10"><a id="example-21-10" name="example-21-10"></a><span class="w">        </span><span class="nt">&quot;two&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;kaksi&quot;</span><span class="p">,</span>
-</span><span id="line-21-11"><a id="example-21-11" name="example-21-11"></a><span class="w">        </span><span class="nt">&quot;with spaces&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;kolme&quot;</span>
+</span><span id="line-21-8"><a id="example-21-8" name="example-21-8"></a><span class="w">    </span><span class="nt">"dict"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-21-9"><a id="example-21-9" name="example-21-9"></a><span class="w">        </span><span class="nt">"one"</span><span class="p">:</span><span class="w"> </span><span class="s2">"yksi"</span><span class="p">,</span>
+</span><span id="line-21-10"><a id="example-21-10" name="example-21-10"></a><span class="w">        </span><span class="nt">"two"</span><span class="p">:</span><span class="w"> </span><span class="s2">"kaksi"</span><span class="p">,</span>
+</span><span id="line-21-11"><a id="example-21-11" name="example-21-11"></a><span class="w">        </span><span class="nt">"with spaces"</span><span class="p">:</span><span class="w"> </span><span class="s2">"kolme"</span>
 </span><span id="line-21-12"><a id="example-21-12" name="example-21-12"></a><span class="w">    </span><span class="p">}</span>
 </span><span id="line-21-13"><a id="example-21-13" name="example-21-13"></a><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>

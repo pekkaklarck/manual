@@ -9941,7 +9941,7 @@ sequence.</p>
 
 <a href="#robot.libraries.Dialogs.pause_execution" class="headerlink" title="Permanent link">&para;</a></h2>
 <div class="doc-signature highlight"><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1" href="#example-0-1"></a><span class="nf">pause_execution</span><span class="p">(</span>
-</span><span id="line-0-2"><a id="example-0-2" name="example-0-2" href="#example-0-2"></a>    <span class="n">message</span><span class="o">=</span><span class="s2">&quot;Execution paused. Press OK to continue.&quot;</span><span class="p">,</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2" href="#example-0-2"></a>    <span class="n">message</span><span class="o">=</span><span class="s2">"Execution paused. Press OK to continue."</span><span class="p">,</span>
 </span><span id="line-0-3"><a id="example-0-3" name="example-0-3" href="#example-0-3"></a><span class="p">)</span>
 </span></code></pre></div>
 
@@ -9958,11 +9958,11 @@ sequence.</p>
 <span class="normal"><a href="#example-0-42">42</a></span>
 <span class="normal"><a href="#example-0-43">43</a></span>
 <span class="normal"><a href="#example-0-44">44</a></span>
-<span class="normal"><a href="#example-0-45">45</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-40"><a id="example-0-40" name="example-0-40"></a><span class="k">def</span><span class="w"> </span><span class="nf">pause_execution</span><span class="p">(</span><span class="n">message</span><span class="o">=</span><span class="s1">&#39;Execution paused. Press OK to continue.&#39;</span><span class="p">):</span>
-</span><span id="line-0-41"><a id="example-0-41" name="example-0-41"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Pauses execution until user clicks ``Ok`` button.</span>
+<span class="normal"><a href="#example-0-45">45</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-40"><a id="example-0-40" name="example-0-40"></a><span class="k">def</span><span class="w"> </span><span class="nf">pause_execution</span><span class="p">(</span><span class="n">message</span><span class="o">=</span><span class="s1">'Execution paused. Press OK to continue.'</span><span class="p">):</span>
+</span><span id="line-0-41"><a id="example-0-41" name="example-0-41"></a><span class="w">    </span><span class="sd">"""Pauses execution until user clicks ``Ok`` button.</span>
 </span><span id="line-0-42"><a id="example-0-42" name="example-0-42"></a>
 </span><span id="line-0-43"><a id="example-0-43" name="example-0-43"></a><span class="sd">    ``message`` is the message shown in the dialog.</span>
-</span><span id="line-0-44"><a id="example-0-44" name="example-0-44"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-44"><a id="example-0-44" name="example-0-44"></a><span class="sd">    """</span>
 </span><span id="line-0-45"><a id="example-0-45" name="example-0-45"></a>    <span class="n">MessageDialog</span><span class="p">(</span><span class="n">message</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
@@ -9983,7 +9983,7 @@ sequence.</p>
 
 
 <a href="#robot.libraries.Dialogs.execute_manual_step" class="headerlink" title="Permanent link">&para;</a></h2>
-<div class="doc-signature highlight"><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1" href="#example-0-1"></a><span class="nf">execute_manual_step</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">default_error</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<div class="doc-signature highlight"><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1" href="#example-0-1"></a><span class="nf">execute_manual_step</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">default_error</span><span class="o">=</span><span class="s1">''</span><span class="p">)</span>
 </span></code></pre></div>
 
     <div class="doc doc-contents ">
@@ -10010,8 +10010,8 @@ dialog.</p>
 <span class="normal"><a href="#example-0-57">57</a></span>
 <span class="normal"><a href="#example-0-58">58</a></span>
 <span class="normal"><a href="#example-0-59">59</a></span>
-<span class="normal"><a href="#example-0-60">60</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-48"><a id="example-0-48" name="example-0-48"></a><span class="k">def</span><span class="w"> </span><span class="nf">execute_manual_step</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">default_error</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">):</span>
-</span><span id="line-0-49"><a id="example-0-49" name="example-0-49"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Pauses execution until user sets the keyword status.</span>
+<span class="normal"><a href="#example-0-60">60</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-48"><a id="example-0-48" name="example-0-48"></a><span class="k">def</span><span class="w"> </span><span class="nf">execute_manual_step</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">default_error</span><span class="o">=</span><span class="s1">''</span><span class="p">):</span>
+</span><span id="line-0-49"><a id="example-0-49" name="example-0-49"></a><span class="w">    </span><span class="sd">"""Pauses execution until user sets the keyword status.</span>
 </span><span id="line-0-50"><a id="example-0-50" name="example-0-50"></a>
 </span><span id="line-0-51"><a id="example-0-51" name="example-0-51"></a><span class="sd">    User can press either ``PASS`` or ``FAIL`` button. In the latter case execution</span>
 </span><span id="line-0-52"><a id="example-0-52" name="example-0-52"></a><span class="sd">    fails and an additional dialog is opened for defining the error message.</span>
@@ -10019,9 +10019,9 @@ dialog.</p>
 </span><span id="line-0-54"><a id="example-0-54" name="example-0-54"></a><span class="sd">    ``message`` is the instruction shown in the initial dialog and</span>
 </span><span id="line-0-55"><a id="example-0-55" name="example-0-55"></a><span class="sd">    ``default_error`` is the default value shown in the possible error message</span>
 </span><span id="line-0-56"><a id="example-0-56" name="example-0-56"></a><span class="sd">    dialog.</span>
-</span><span id="line-0-57"><a id="example-0-57" name="example-0-57"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-57"><a id="example-0-57" name="example-0-57"></a><span class="sd">    """</span>
 </span><span id="line-0-58"><a id="example-0-58" name="example-0-58"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">_validate_user_input</span><span class="p">(</span><span class="n">PassFailDialog</span><span class="p">(</span><span class="n">message</span><span class="p">)):</span>
-</span><span id="line-0-59"><a id="example-0-59" name="example-0-59"></a>        <span class="n">msg</span> <span class="o">=</span> <span class="n">get_value_from_user</span><span class="p">(</span><span class="s1">&#39;Give error message:&#39;</span><span class="p">,</span> <span class="n">default_error</span><span class="p">)</span>
+</span><span id="line-0-59"><a id="example-0-59" name="example-0-59"></a>        <span class="n">msg</span> <span class="o">=</span> <span class="n">get_value_from_user</span><span class="p">(</span><span class="s1">'Give error message:'</span><span class="p">,</span> <span class="n">default_error</span><span class="p">)</span>
 </span><span id="line-0-60"><a id="example-0-60" name="example-0-60"></a>        <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
@@ -10043,7 +10043,7 @@ dialog.</p>
 
 <a href="#robot.libraries.Dialogs.get_value_from_user" class="headerlink" title="Permanent link">&para;</a></h2>
 <div class="doc-signature highlight"><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1" href="#example-0-1"></a><span class="nf">get_value_from_user</span><span class="p">(</span>
-</span><span id="line-0-2"><a id="example-0-2" name="example-0-2" href="#example-0-2"></a>    <span class="n">message</span><span class="p">,</span> <span class="n">default_value</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">hidden</span><span class="o">=</span><span class="kc">False</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2" href="#example-0-2"></a>    <span class="n">message</span><span class="p">,</span> <span class="n">default_value</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span> <span class="n">hidden</span><span class="o">=</span><span class="kc">False</span>
 </span><span id="line-0-3"><a id="example-0-3" name="example-0-3" href="#example-0-3"></a><span class="p">)</span>
 </span></code></pre></div>
 
@@ -10086,8 +10086,8 @@ its truth value is got directly using same
 <span class="normal"><a href="#example-0-80">80</a></span>
 <span class="normal"><a href="#example-0-81">81</a></span>
 <span class="normal"><a href="#example-0-82">82</a></span>
-<span class="normal"><a href="#example-0-83">83</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-63"><a id="example-0-63" name="example-0-63"></a><span class="k">def</span><span class="w"> </span><span class="nf">get_value_from_user</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">default_value</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">hidden</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-</span><span id="line-0-64"><a id="example-0-64" name="example-0-64"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Pauses execution and asks user to input a value.</span>
+<span class="normal"><a href="#example-0-83">83</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-63"><a id="example-0-63" name="example-0-63"></a><span class="k">def</span><span class="w"> </span><span class="nf">get_value_from_user</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">default_value</span><span class="o">=</span><span class="s1">''</span><span class="p">,</span> <span class="n">hidden</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+</span><span id="line-0-64"><a id="example-0-64" name="example-0-64"></a><span class="w">    </span><span class="sd">"""Pauses execution and asks user to input a value.</span>
 </span><span id="line-0-65"><a id="example-0-65" name="example-0-65"></a>
 </span><span id="line-0-66"><a id="example-0-66" name="example-0-66"></a><span class="sd">    Value typed by the user, or the possible default value, is returned.</span>
 </span><span id="line-0-67"><a id="example-0-67" name="example-0-67"></a><span class="sd">    Returning an empty value is fine, but pressing ``Cancel`` fails the keyword.</span>
@@ -10104,7 +10104,7 @@ its truth value is got directly using same
 </span><span id="line-0-78"><a id="example-0-78" name="example-0-78"></a><span class="sd">    Example:</span>
 </span><span id="line-0-79"><a id="example-0-79" name="example-0-79"></a><span class="sd">    | ${username} = | Get Value From User | Input user name | default    |</span>
 </span><span id="line-0-80"><a id="example-0-80" name="example-0-80"></a><span class="sd">    | ${password} = | Get Value From User | Input password  | hidden=yes |</span>
-</span><span id="line-0-81"><a id="example-0-81" name="example-0-81"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-81"><a id="example-0-81" name="example-0-81"></a><span class="sd">    """</span>
 </span><span id="line-0-82"><a id="example-0-82" name="example-0-82"></a>    <span class="k">return</span> <span class="n">_validate_user_input</span><span class="p">(</span><span class="n">InputDialog</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">default_value</span><span class="p">,</span>
 </span><span id="line-0-83"><a id="example-0-83" name="example-0-83"></a>                                            <span class="n">is_truthy</span><span class="p">(</span><span class="n">hidden</span><span class="p">)))</span>
 </span></code></pre></div></td></tr></table></div>
@@ -10167,7 +10167,7 @@ in the examples below have the exact same effect.</p>
 <span class="normal"><a href="#example-0-103">103</a></span>
 <span class="normal"><a href="#example-0-104">104</a></span>
 <span class="normal"><a href="#example-0-105">105</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-86"><a id="example-0-86" name="example-0-86"></a><span class="k">def</span><span class="w"> </span><span class="nf">get_selection_from_user</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="o">*</span><span class="n">values</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-</span><span id="line-0-87"><a id="example-0-87" name="example-0-87"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Pauses execution and asks user to select a value.</span>
+</span><span id="line-0-87"><a id="example-0-87" name="example-0-87"></a><span class="w">    </span><span class="sd">"""Pauses execution and asks user to select a value.</span>
 </span><span id="line-0-88"><a id="example-0-88" name="example-0-88"></a>
 </span><span id="line-0-89"><a id="example-0-89" name="example-0-89"></a><span class="sd">    The selected value is returned. Pressing ``Cancel`` fails the keyword.</span>
 </span><span id="line-0-90"><a id="example-0-90" name="example-0-90"></a>
@@ -10184,7 +10184,7 @@ in the examples below have the exact same effect.</p>
 </span><span id="line-0-101"><a id="example-0-101" name="example-0-101"></a><span class="sd">    | ${user} = | Get Selection From User | Select user | user1 | user2 | admin | default=1 |</span>
 </span><span id="line-0-102"><a id="example-0-102" name="example-0-102"></a>
 </span><span id="line-0-103"><a id="example-0-103" name="example-0-103"></a><span class="sd">    ``default`` is new in Robot Framework 7.1.</span>
-</span><span id="line-0-104"><a id="example-0-104" name="example-0-104"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-104"><a id="example-0-104" name="example-0-104"></a><span class="sd">    """</span>
 </span><span id="line-0-105"><a id="example-0-105" name="example-0-105"></a>    <span class="k">return</span> <span class="n">_validate_user_input</span><span class="p">(</span><span class="n">SelectionDialog</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="n">default</span><span class="p">))</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
@@ -10236,7 +10236,7 @@ the options given to the user.</p>
 <span class="normal"><a href="#example-0-119">119</a></span>
 <span class="normal"><a href="#example-0-120">120</a></span>
 <span class="normal"><a href="#example-0-121">121</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-108"><a id="example-0-108" name="example-0-108"></a><span class="k">def</span><span class="w"> </span><span class="nf">get_selections_from_user</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="o">*</span><span class="n">values</span><span class="p">):</span>
-</span><span id="line-0-109"><a id="example-0-109" name="example-0-109"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Pauses execution and asks user to select multiple values.</span>
+</span><span id="line-0-109"><a id="example-0-109" name="example-0-109"></a><span class="w">    </span><span class="sd">"""Pauses execution and asks user to select multiple values.</span>
 </span><span id="line-0-110"><a id="example-0-110" name="example-0-110"></a>
 </span><span id="line-0-111"><a id="example-0-111" name="example-0-111"></a><span class="sd">    The selected values are returned as a list. Selecting no values is OK</span>
 </span><span id="line-0-112"><a id="example-0-112" name="example-0-112"></a><span class="sd">    and in that case the returned list is empty. Pressing ``Cancel`` fails</span>
@@ -10247,7 +10247,7 @@ the options given to the user.</p>
 </span><span id="line-0-117"><a id="example-0-117" name="example-0-117"></a>
 </span><span id="line-0-118"><a id="example-0-118" name="example-0-118"></a><span class="sd">    Example:</span>
 </span><span id="line-0-119"><a id="example-0-119" name="example-0-119"></a><span class="sd">    | ${users} = | Get Selections From User | Select users | user1 | user2 | admin |</span>
-</span><span id="line-0-120"><a id="example-0-120" name="example-0-120"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-120"><a id="example-0-120" name="example-0-120"></a><span class="sd">    """</span>
 </span><span id="line-0-121"><a id="example-0-121" name="example-0-121"></a>    <span class="k">return</span> <span class="n">_validate_user_input</span><span class="p">(</span><span class="n">MultipleSelectionDialog</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">values</span><span class="p">))</span>
 </span></code></pre></div></td></tr></table></div>
             </details>

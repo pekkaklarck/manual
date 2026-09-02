@@ -9867,7 +9867,7 @@ sets itself.</p>
 <span class="normal">2</span>
 <span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">robot</span><span class="w"> </span><span class="kn">import</span> <span class="n">rebot_cli</span>
 
-<span class="n">rebot_cli</span><span class="p">([</span><span class="s1">&#39;--name&#39;</span><span class="p">,</span> <span class="s1">&#39;Example&#39;</span><span class="p">,</span> <span class="s1">&#39;--log&#39;</span><span class="p">,</span> <span class="s1">&#39;NONE&#39;</span><span class="p">,</span> <span class="s1">&#39;o1.xml&#39;</span><span class="p">,</span> <span class="s1">&#39;o2.xml&#39;</span><span class="p">])</span>
+<span class="n">rebot_cli</span><span class="p">([</span><span class="s1">'--name'</span><span class="p">,</span> <span class="s1">'Example'</span><span class="p">,</span> <span class="s1">'--log'</span><span class="p">,</span> <span class="s1">'NONE'</span><span class="p">,</span> <span class="s1">'o1.xml'</span><span class="p">,</span> <span class="s1">'o2.xml'</span><span class="p">])</span>
 </code></pre></div></td></tr></table></div>
 <p>See also the :func:<code>rebot</code> function that allows setting options as keyword
 arguments like <code>name="Example"</code> and generally has a richer API for
@@ -9903,7 +9903,7 @@ programmatic Rebot execution.</p>
 <span class="normal"><a href="#example-0-373">373</a></span>
 <span class="normal"><a href="#example-0-374">374</a></span>
 <span class="normal"><a href="#example-0-375">375</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-349"><a id="example-0-349" name="example-0-349"></a><span class="k">def</span><span class="w"> </span><span class="nf">rebot_cli</span><span class="p">(</span><span class="n">arguments</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">exit</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-</span><span id="line-0-350"><a id="example-0-350" name="example-0-350"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Command line execution entry point for post-processing outputs.</span>
+</span><span id="line-0-350"><a id="example-0-350" name="example-0-350"></a><span class="w">    </span><span class="sd">"""Command line execution entry point for post-processing outputs.</span>
 </span><span id="line-0-351"><a id="example-0-351" name="example-0-351"></a>
 </span><span id="line-0-352"><a id="example-0-352" name="example-0-352"></a><span class="sd">    :param arguments: Command line options and arguments as a list of strings.</span>
 </span><span id="line-0-353"><a id="example-0-353" name="example-0-353"></a><span class="sd">        Defaults to ``sys.argv[1:]`` if not given.</span>
@@ -9920,12 +9920,12 @@ programmatic Rebot execution.</p>
 </span><span id="line-0-364"><a id="example-0-364" name="example-0-364"></a>
 </span><span id="line-0-365"><a id="example-0-365" name="example-0-365"></a><span class="sd">        from robot import rebot_cli</span>
 </span><span id="line-0-366"><a id="example-0-366" name="example-0-366"></a>
-</span><span id="line-0-367"><a id="example-0-367" name="example-0-367"></a><span class="sd">        rebot_cli([&#39;--name&#39;, &#39;Example&#39;, &#39;--log&#39;, &#39;NONE&#39;, &#39;o1.xml&#39;, &#39;o2.xml&#39;])</span>
+</span><span id="line-0-367"><a id="example-0-367" name="example-0-367"></a><span class="sd">        rebot_cli(['--name', 'Example', '--log', 'NONE', 'o1.xml', 'o2.xml'])</span>
 </span><span id="line-0-368"><a id="example-0-368" name="example-0-368"></a>
 </span><span id="line-0-369"><a id="example-0-369" name="example-0-369"></a><span class="sd">    See also the :func:`rebot` function that allows setting options as keyword</span>
-</span><span id="line-0-370"><a id="example-0-370" name="example-0-370"></a><span class="sd">    arguments like ``name=&quot;Example&quot;`` and generally has a richer API for</span>
+</span><span id="line-0-370"><a id="example-0-370" name="example-0-370"></a><span class="sd">    arguments like ``name="Example"`` and generally has a richer API for</span>
 </span><span id="line-0-371"><a id="example-0-371" name="example-0-371"></a><span class="sd">    programmatic Rebot execution.</span>
-</span><span id="line-0-372"><a id="example-0-372" name="example-0-372"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-372"><a id="example-0-372" name="example-0-372"></a><span class="sd">    """</span>
 </span><span id="line-0-373"><a id="example-0-373" name="example-0-373"></a>    <span class="k">if</span> <span class="n">arguments</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="line-0-374"><a id="example-0-374" name="example-0-374"></a>        <span class="n">arguments</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
 </span><span id="line-0-375"><a id="example-0-375" name="example-0-375"></a>    <span class="k">return</span> <span class="n">Rebot</span><span class="p">()</span><span class="o">.</span><span class="n">execute_cli</span><span class="p">(</span><span class="n">arguments</span><span class="p">,</span> <span class="n">exit</span><span class="o">=</span><span class="n">exit</span><span class="p">)</span>
@@ -10020,10 +10020,10 @@ possible default values it sets itself.</p>
 <span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">robot</span><span class="w"> </span><span class="kn">import</span> <span class="n">run_cli</span>
 
 <span class="c1"># Run tests and return the return code.</span>
-<span class="n">rc</span> <span class="o">=</span> <span class="n">run_cli</span><span class="p">([</span><span class="s1">&#39;--name&#39;</span><span class="p">,</span> <span class="s1">&#39;Example&#39;</span><span class="p">,</span> <span class="s1">&#39;tests.robot&#39;</span><span class="p">],</span> <span class="n">exit</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">rc</span> <span class="o">=</span> <span class="n">run_cli</span><span class="p">([</span><span class="s1">'--name'</span><span class="p">,</span> <span class="s1">'Example'</span><span class="p">,</span> <span class="s1">'tests.robot'</span><span class="p">],</span> <span class="n">exit</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
 <span class="c1"># Run tests and exit to the system automatically.</span>
-<span class="n">run_cli</span><span class="p">([</span><span class="s1">&#39;--name&#39;</span><span class="p">,</span> <span class="s1">&#39;Example&#39;</span><span class="p">,</span> <span class="s1">&#39;tests.robot&#39;</span><span class="p">])</span>
+<span class="n">run_cli</span><span class="p">([</span><span class="s1">'--name'</span><span class="p">,</span> <span class="s1">'Example'</span><span class="p">,</span> <span class="s1">'tests.robot'</span><span class="p">])</span>
 </code></pre></div></td></tr></table></div>
 <p>See also the <a class="autorefs autorefs-internal" title="            run" href="run/#robot.run.run">robot.run</a> function that allows setting options as keyword
 arguments like <code>name="Example"</code> and generally has a richer API for
@@ -10063,8 +10063,8 @@ programmatic test execution.</p>
 <span class="normal"><a href="#example-0-514">514</a></span>
 <span class="normal"><a href="#example-0-515">515</a></span>
 <span class="normal"><a href="#example-0-516">516</a></span>
-<span class="normal"><a href="#example-0-517">517</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-486"><a id="example-0-486" name="example-0-486"></a><span class="k">def</span><span class="w"> </span><span class="nf">run_cli</span><span class="p">(</span><span class="n">arguments</span><span class="p">:</span> <span class="s1">&#39;list[str]|None&#39;</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">exit</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
-</span><span id="line-0-487"><a id="example-0-487" name="example-0-487"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Command line execution entry point for running tests.</span>
+<span class="normal"><a href="#example-0-517">517</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-486"><a id="example-0-486" name="example-0-486"></a><span class="k">def</span><span class="w"> </span><span class="nf">run_cli</span><span class="p">(</span><span class="n">arguments</span><span class="p">:</span> <span class="s1">'list[str]|None'</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">exit</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
+</span><span id="line-0-487"><a id="example-0-487" name="example-0-487"></a><span class="w">    </span><span class="sd">"""Command line execution entry point for running tests.</span>
 </span><span id="line-0-488"><a id="example-0-488" name="example-0-488"></a>
 </span><span id="line-0-489"><a id="example-0-489" name="example-0-489"></a><span class="sd">    Parameters:</span>
 </span><span id="line-0-490"><a id="example-0-490" name="example-0-490"></a><span class="sd">        arguments: Command line options and arguments as a list of strings.</span>
@@ -10083,15 +10083,15 @@ programmatic test execution.</p>
 </span><span id="line-0-503"><a id="example-0-503" name="example-0-503"></a><span class="sd">        from robot import run_cli</span>
 </span><span id="line-0-504"><a id="example-0-504" name="example-0-504"></a>
 </span><span id="line-0-505"><a id="example-0-505" name="example-0-505"></a><span class="sd">        # Run tests and return the return code.</span>
-</span><span id="line-0-506"><a id="example-0-506" name="example-0-506"></a><span class="sd">        rc = run_cli([&#39;--name&#39;, &#39;Example&#39;, &#39;tests.robot&#39;], exit=False)</span>
+</span><span id="line-0-506"><a id="example-0-506" name="example-0-506"></a><span class="sd">        rc = run_cli(['--name', 'Example', 'tests.robot'], exit=False)</span>
 </span><span id="line-0-507"><a id="example-0-507" name="example-0-507"></a>
 </span><span id="line-0-508"><a id="example-0-508" name="example-0-508"></a><span class="sd">        # Run tests and exit to the system automatically.</span>
-</span><span id="line-0-509"><a id="example-0-509" name="example-0-509"></a><span class="sd">        run_cli([&#39;--name&#39;, &#39;Example&#39;, &#39;tests.robot&#39;])</span>
+</span><span id="line-0-509"><a id="example-0-509" name="example-0-509"></a><span class="sd">        run_cli(['--name', 'Example', 'tests.robot'])</span>
 </span><span id="line-0-510"><a id="example-0-510" name="example-0-510"></a>
 </span><span id="line-0-511"><a id="example-0-511" name="example-0-511"></a><span class="sd">    See also the [robot.run][robot.run.run] function that allows setting options as keyword</span>
-</span><span id="line-0-512"><a id="example-0-512" name="example-0-512"></a><span class="sd">    arguments like `name=&quot;Example&quot;` and generally has a richer API for</span>
+</span><span id="line-0-512"><a id="example-0-512" name="example-0-512"></a><span class="sd">    arguments like `name="Example"` and generally has a richer API for</span>
 </span><span id="line-0-513"><a id="example-0-513" name="example-0-513"></a><span class="sd">    programmatic test execution.</span>
-</span><span id="line-0-514"><a id="example-0-514" name="example-0-514"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-514"><a id="example-0-514" name="example-0-514"></a><span class="sd">    """</span>
 </span><span id="line-0-515"><a id="example-0-515" name="example-0-515"></a>    <span class="k">if</span> <span class="n">arguments</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="line-0-516"><a id="example-0-516" name="example-0-516"></a>        <span class="n">arguments</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
 </span><span id="line-0-517"><a id="example-0-517" name="example-0-517"></a>    <span class="k">return</span> <span class="n">RobotFramework</span><span class="p">()</span><span class="o">.</span><span class="n">execute_cli</span><span class="p">(</span><span class="n">arguments</span><span class="p">,</span> <span class="n">exit</span><span class="o">=</span><span class="n">exit</span><span class="p">)</span>

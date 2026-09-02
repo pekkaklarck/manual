@@ -10019,17 +10019,17 @@ to called keywords unmodified.</p>
 <span class="normal"><a href="#example-0-43">43</a></span>
 <span class="normal"><a href="#example-0-44">44</a></span>
 <span class="normal"><a href="#example-0-45">45</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-30"><a id="example-0-30" name="example-0-30"></a><span class="k">def</span><span class="w"> </span><span class="nf">replace_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">items</span><span class="p">,</span> <span class="n">replace_until</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ignore_errors</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-</span><span id="line-0-31"><a id="example-0-31" name="example-0-31"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Replaces variables from a list of items.</span>
+</span><span id="line-0-31"><a id="example-0-31" name="example-0-31"></a><span class="w">    </span><span class="sd">"""Replaces variables from a list of items.</span>
 </span><span id="line-0-32"><a id="example-0-32" name="example-0-32"></a>
 </span><span id="line-0-33"><a id="example-0-33" name="example-0-33"></a><span class="sd">    If an item in a list is a @{list} variable its value is returned.</span>
-</span><span id="line-0-34"><a id="example-0-34" name="example-0-34"></a><span class="sd">    Possible variables from other items are replaced using &#39;replace_scalar&#39;.</span>
+</span><span id="line-0-34"><a id="example-0-34" name="example-0-34"></a><span class="sd">    Possible variables from other items are replaced using 'replace_scalar'.</span>
 </span><span id="line-0-35"><a id="example-0-35" name="example-0-35"></a><span class="sd">    Result is always a list.</span>
 </span><span id="line-0-36"><a id="example-0-36" name="example-0-36"></a>
-</span><span id="line-0-37"><a id="example-0-37" name="example-0-37"></a><span class="sd">    &#39;replace_until&#39; can be used to limit replacing arguments to certain</span>
+</span><span id="line-0-37"><a id="example-0-37" name="example-0-37"></a><span class="sd">    'replace_until' can be used to limit replacing arguments to certain</span>
 </span><span id="line-0-38"><a id="example-0-38" name="example-0-38"></a><span class="sd">    index from the beginning. Used with Run Keyword variants that only</span>
 </span><span id="line-0-39"><a id="example-0-39" name="example-0-39"></a><span class="sd">    want to resolve some arguments in the beginning and pass others</span>
 </span><span id="line-0-40"><a id="example-0-40" name="example-0-40"></a><span class="sd">    to called keywords unmodified.</span>
-</span><span id="line-0-41"><a id="example-0-41" name="example-0-41"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-41"><a id="example-0-41" name="example-0-41"></a><span class="sd">    """</span>
 </span><span id="line-0-42"><a id="example-0-42" name="example-0-42"></a>    <span class="n">items</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">items</span> <span class="ow">or</span> <span class="p">[])</span>
 </span><span id="line-0-43"><a id="example-0-43" name="example-0-43"></a>    <span class="k">if</span> <span class="n">replace_until</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="line-0-44"><a id="example-0-44" name="example-0-44"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_replace_list_until</span><span class="p">(</span><span class="n">items</span><span class="p">,</span> <span class="n">replace_until</span><span class="p">,</span> <span class="n">ignore_errors</span><span class="p">)</span>
@@ -10080,12 +10080,12 @@ its value is returned. Otherwise, possible variables are replaced with
 <span class="normal"><a href="#example-0-83">83</a></span>
 <span class="normal"><a href="#example-0-84">84</a></span>
 <span class="normal"><a href="#example-0-85">85</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-72"><a id="example-0-72" name="example-0-72"></a><span class="k">def</span><span class="w"> </span><span class="nf">replace_scalar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">ignore_errors</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-</span><span id="line-0-73"><a id="example-0-73" name="example-0-73"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Replaces variables from a scalar item.</span>
+</span><span id="line-0-73"><a id="example-0-73" name="example-0-73"></a><span class="w">    </span><span class="sd">"""Replaces variables from a scalar item.</span>
 </span><span id="line-0-74"><a id="example-0-74" name="example-0-74"></a>
 </span><span id="line-0-75"><a id="example-0-75" name="example-0-75"></a><span class="sd">    If the item is not a string it is returned as is. If it is a variable,</span>
 </span><span id="line-0-76"><a id="example-0-76" name="example-0-76"></a><span class="sd">    its value is returned. Otherwise, possible variables are replaced with</span>
-</span><span id="line-0-77"><a id="example-0-77" name="example-0-77"></a><span class="sd">    &#39;replace_string&#39;. Result may be any object.</span>
-</span><span id="line-0-78"><a id="example-0-78" name="example-0-78"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-77"><a id="example-0-77" name="example-0-77"></a><span class="sd">    'replace_string'. Result may be any object.</span>
+</span><span id="line-0-78"><a id="example-0-78" name="example-0-78"></a><span class="sd">    """</span>
 </span><span id="line-0-79"><a id="example-0-79" name="example-0-79"></a>    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">VariableMatch</span><span class="p">):</span>
 </span><span id="line-0-80"><a id="example-0-80" name="example-0-80"></a>        <span class="n">match</span> <span class="o">=</span> <span class="n">item</span>
 </span><span id="line-0-81"><a id="example-0-81" name="example-0-81"></a>    <span class="k">else</span><span class="p">:</span>
@@ -10138,10 +10138,10 @@ its value is returned. Otherwise, possible variables are replaced with
 <span class="normal"><a href="#example-0-102">102</a></span>
 <span class="normal"><a href="#example-0-103">103</a></span>
 <span class="normal"><a href="#example-0-104">104</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-92"><a id="example-0-92" name="example-0-92"></a><span class="k">def</span><span class="w"> </span><span class="nf">replace_string</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">custom_unescaper</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ignore_errors</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-</span><span id="line-0-93"><a id="example-0-93" name="example-0-93"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Replaces variables from a string. Result is always a string.</span>
+</span><span id="line-0-93"><a id="example-0-93" name="example-0-93"></a><span class="w">    </span><span class="sd">"""Replaces variables from a string. Result is always a string.</span>
 </span><span id="line-0-94"><a id="example-0-94" name="example-0-94"></a>
 </span><span id="line-0-95"><a id="example-0-95" name="example-0-95"></a><span class="sd">    Input can also be an already found VariableMatch.</span>
-</span><span id="line-0-96"><a id="example-0-96" name="example-0-96"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-96"><a id="example-0-96" name="example-0-96"></a><span class="sd">    """</span>
 </span><span id="line-0-97"><a id="example-0-97" name="example-0-97"></a>    <span class="n">unescaper</span> <span class="o">=</span> <span class="n">custom_unescaper</span> <span class="ow">or</span> <span class="n">unescape</span>
 </span><span id="line-0-98"><a id="example-0-98" name="example-0-98"></a>    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">VariableMatch</span><span class="p">):</span>
 </span><span id="line-0-99"><a id="example-0-99" name="example-0-99"></a>        <span class="n">match</span> <span class="o">=</span> <span class="n">item</span>

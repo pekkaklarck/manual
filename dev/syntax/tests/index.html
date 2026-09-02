@@ -10679,8 +10679,8 @@ examples</a> that only supports configuring <code>shell</code>:</p>
 <span class="normal"><a href="#example-9-8">8</a></span>
 <span class="normal"><a href="#example-9-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-9-1"><a id="example-9-1" name="example-9-1"></a><span class="gh">*** Test Cases ***</span>
 </span><span id="line-9-2"><a id="example-9-2" name="example-9-2"></a><span class="gu">Named-only Arguments</span>
-</span><span id="line-9-3"><a id="example-9-3" name="example-9-3"></a><span class="p">    </span><span class="nf">Run Program</span><span class="p">    </span><span class="s">arg1</span><span class="p">    </span><span class="s">arg2</span><span class="p">              </span><span class="c"># &#39;shell&#39; is False (default)</span>
-</span><span id="line-9-4"><a id="example-9-4" name="example-9-4"></a><span class="p">    </span><span class="nf">Run Program</span><span class="p">    </span><span class="s">argument</span><span class="p">    </span><span class="s">shell=True</span><span class="p">    </span><span class="c"># &#39;shell&#39; is True</span>
+</span><span id="line-9-3"><a id="example-9-3" name="example-9-3"></a><span class="p">    </span><span class="nf">Run Program</span><span class="p">    </span><span class="s">arg1</span><span class="p">    </span><span class="s">arg2</span><span class="p">              </span><span class="c"># 'shell' is False (default)</span>
+</span><span id="line-9-4"><a id="example-9-4" name="example-9-4"></a><span class="p">    </span><span class="nf">Run Program</span><span class="p">    </span><span class="s">argument</span><span class="p">    </span><span class="s">shell=True</span><span class="p">    </span><span class="c"># 'shell' is True</span>
 </span><span id="line-9-5"><a id="example-9-5" name="example-9-5"></a>
 </span><span id="line-9-6"><a id="example-9-6" name="example-9-6"></a><span class="gh">*** Keywords ***</span>
 </span><span id="line-9-7"><a id="example-9-7" name="example-9-7"></a><span class="gu">Run Program</span>
@@ -10929,31 +10929,31 @@ purposes:</p>
 </span><span id="line-13-6"><a id="example-13-6" name="example-13-6"></a>
 </span><span id="line-13-7"><a id="example-13-7" name="example-13-7"></a><span class="gh">*** Test Cases ***</span>
 </span><span id="line-13-8"><a id="example-13-8" name="example-13-8"></a><span class="gu">No own tags</span>
-</span><span id="line-13-9"><a id="example-13-9" name="example-13-9"></a><span class="p">    [</span><span class="kn">Documentation</span><span class="p">]    </span><span class="s">Test has tags &#39;requirement: 42&#39; and &#39;smoke&#39;.</span>
+</span><span id="line-13-9"><a id="example-13-9" name="example-13-9"></a><span class="p">    [</span><span class="kn">Documentation</span><span class="p">]    </span><span class="s">Test has tags 'requirement: 42' and 'smoke'.</span>
 </span><span id="line-13-10"><a id="example-13-10" name="example-13-10"></a><span class="p">    </span><span class="nf">No Operation</span>
 </span><span id="line-13-11"><a id="example-13-11" name="example-13-11"></a>
 </span><span id="line-13-12"><a id="example-13-12" name="example-13-12"></a><span class="gu">Own tags</span>
-</span><span id="line-13-13"><a id="example-13-13" name="example-13-13"></a><span class="p">    [</span><span class="kn">Documentation</span><span class="p">]    </span><span class="s">Test has tags &#39;requirement: 42&#39;, &#39;smoke&#39; and &#39;not ready&#39;.</span>
+</span><span id="line-13-13"><a id="example-13-13" name="example-13-13"></a><span class="p">    [</span><span class="kn">Documentation</span><span class="p">]    </span><span class="s">Test has tags 'requirement: 42', 'smoke' and 'not ready'.</span>
 </span><span id="line-13-14"><a id="example-13-14" name="example-13-14"></a><span class="p">    [</span><span class="kn">Tags</span><span class="p">]    </span><span class="s">not ready</span>
 </span><span id="line-13-15"><a id="example-13-15" name="example-13-15"></a><span class="p">    </span><span class="nf">No Operation</span>
 </span><span id="line-13-16"><a id="example-13-16" name="example-13-16"></a>
 </span><span id="line-13-17"><a id="example-13-17" name="example-13-17"></a><span class="gu">Own tags with variable</span>
-</span><span id="line-13-18"><a id="example-13-18" name="example-13-18"></a><span class="p">    [</span><span class="kn">Documentation</span><span class="p">]    </span><span class="s">Test has tags &#39;requirement: 42&#39;, &#39;smoke&#39; and &#39;host: 10.0.1.42&#39;.</span>
+</span><span id="line-13-18"><a id="example-13-18" name="example-13-18"></a><span class="p">    [</span><span class="kn">Documentation</span><span class="p">]    </span><span class="s">Test has tags 'requirement: 42', 'smoke' and 'host: 10.0.1.42'.</span>
 </span><span id="line-13-19"><a id="example-13-19" name="example-13-19"></a><span class="p">    [</span><span class="kn">Tags</span><span class="p">]    </span><span class="s">host: </span><span class="p">${</span><span class="nv">HOST</span><span class="p">}</span>
 </span><span id="line-13-20"><a id="example-13-20" name="example-13-20"></a><span class="p">    </span><span class="nf">No Operation</span>
 </span><span id="line-13-21"><a id="example-13-21" name="example-13-21"></a>
 </span><span id="line-13-22"><a id="example-13-22" name="example-13-22"></a><span class="gu">Remove common tag</span>
-</span><span id="line-13-23"><a id="example-13-23" name="example-13-23"></a><span class="p">    [</span><span class="kn">Documentation</span><span class="p">]    </span><span class="s">Test has only tag &#39;requirement: 42&#39;.</span>
+</span><span id="line-13-23"><a id="example-13-23" name="example-13-23"></a><span class="p">    [</span><span class="kn">Documentation</span><span class="p">]    </span><span class="s">Test has only tag 'requirement: 42'.</span>
 </span><span id="line-13-24"><a id="example-13-24" name="example-13-24"></a><span class="p">    [</span><span class="kn">Tags</span><span class="p">]    </span><span class="s">-smoke</span>
 </span><span id="line-13-25"><a id="example-13-25" name="example-13-25"></a><span class="p">    </span><span class="nf">No Operation</span>
 </span><span id="line-13-26"><a id="example-13-26" name="example-13-26"></a>
 </span><span id="line-13-27"><a id="example-13-27" name="example-13-27"></a><span class="gu">Remove common tag using a pattern</span>
-</span><span id="line-13-28"><a id="example-13-28" name="example-13-28"></a><span class="p">    [</span><span class="kn">Documentation</span><span class="p">]    </span><span class="s">Test has only tag &#39;smoke&#39;.</span>
+</span><span id="line-13-28"><a id="example-13-28" name="example-13-28"></a><span class="p">    [</span><span class="kn">Documentation</span><span class="p">]    </span><span class="s">Test has only tag 'smoke'.</span>
 </span><span id="line-13-29"><a id="example-13-29" name="example-13-29"></a><span class="p">    [</span><span class="kn">Tags</span><span class="p">]    </span><span class="s">-requirement: *</span>
 </span><span id="line-13-30"><a id="example-13-30" name="example-13-30"></a><span class="p">    </span><span class="nf">No Operation</span>
 </span><span id="line-13-31"><a id="example-13-31" name="example-13-31"></a>
 </span><span id="line-13-32"><a id="example-13-32" name="example-13-32"></a><span class="gu">Set Tags and Remove Tags keywords</span>
-</span><span id="line-13-33"><a id="example-13-33" name="example-13-33"></a><span class="p">    [</span><span class="kn">Documentation</span><span class="p">]    </span><span class="s">This test has tags &#39;smoke&#39;, &#39;example&#39; and &#39;another&#39;.</span>
+</span><span id="line-13-33"><a id="example-13-33" name="example-13-33"></a><span class="p">    [</span><span class="kn">Documentation</span><span class="p">]    </span><span class="s">This test has tags 'smoke', 'example' and 'another'.</span>
 </span><span id="line-13-34"><a id="example-13-34" name="example-13-34"></a><span class="p">    </span><span class="nf">Set Tags</span><span class="p">    </span><span class="s">example</span><span class="p">    </span><span class="s">another</span>
 </span><span id="line-13-35"><a id="example-13-35" name="example-13-35"></a><span class="p">    </span><span class="nf">Remove Tags</span><span class="p">    </span><span class="s">requirement: *</span>
 </span></code></pre></div></td></tr></table></div>
@@ -11048,16 +11048,16 @@ functionality. The following examples demonstrate the needed changes.</p>
 </span><span id="line-14-4"><a id="example-14-4" name="example-14-4"></a>
 </span><span id="line-14-5"><a id="example-14-5" name="example-14-5"></a><span class="gh">*** Test Cases ***</span>
 </span><span id="line-14-6"><a id="example-14-6" name="example-14-6"></a><span class="gu">Common only</span>
-</span><span id="line-14-7"><a id="example-14-7" name="example-14-7"></a><span class="p">    [</span><span class="kn">Documentation</span><span class="p">]    </span><span class="s">Test has tags &#39;all&#39; and &#39;default&#39;.</span>
+</span><span id="line-14-7"><a id="example-14-7" name="example-14-7"></a><span class="p">    [</span><span class="kn">Documentation</span><span class="p">]    </span><span class="s">Test has tags 'all' and 'default'.</span>
 </span><span id="line-14-8"><a id="example-14-8" name="example-14-8"></a><span class="p">    </span><span class="nf">No Operation</span>
 </span><span id="line-14-9"><a id="example-14-9" name="example-14-9"></a>
 </span><span id="line-14-10"><a id="example-14-10" name="example-14-10"></a><span class="gu">No default</span>
-</span><span id="line-14-11"><a id="example-14-11" name="example-14-11"></a><span class="p">    [</span><span class="kn">Documentation</span><span class="p">]    </span><span class="s">Test has only tag &#39;all&#39;.</span>
+</span><span id="line-14-11"><a id="example-14-11" name="example-14-11"></a><span class="p">    [</span><span class="kn">Documentation</span><span class="p">]    </span><span class="s">Test has only tag 'all'.</span>
 </span><span id="line-14-12"><a id="example-14-12" name="example-14-12"></a><span class="p">    [</span><span class="kn">Tags</span><span class="p">]</span>
 </span><span id="line-14-13"><a id="example-14-13" name="example-14-13"></a><span class="p">    </span><span class="nf">No Operation</span>
 </span><span id="line-14-14"><a id="example-14-14" name="example-14-14"></a>
 </span><span id="line-14-15"><a id="example-14-15" name="example-14-15"></a><span class="gu">Own and no default</span>
-</span><span id="line-14-16"><a id="example-14-16" name="example-14-16"></a><span class="p">    [</span><span class="kn">Documentation</span><span class="p">]    </span><span class="s">Test has tags &#39;all&#39; and &#39;own&#39;.</span>
+</span><span id="line-14-16"><a id="example-14-16" name="example-14-16"></a><span class="p">    [</span><span class="kn">Documentation</span><span class="p">]    </span><span class="s">Test has tags 'all' and 'own'.</span>
 </span><span id="line-14-17"><a id="example-14-17" name="example-14-17"></a><span class="p">    [</span><span class="kn">Tags</span><span class="p">]    </span><span class="s">own</span>
 </span><span id="line-14-18"><a id="example-14-18" name="example-14-18"></a><span class="p">    </span><span class="nf">No Operation</span>
 </span></code></pre></div></td></tr></table></div>
@@ -11083,16 +11083,16 @@ New syntax:</p>
 </span><span id="line-15-3"><a id="example-15-3" name="example-15-3"></a>
 </span><span id="line-15-4"><a id="example-15-4" name="example-15-4"></a><span class="gh">*** Test Cases ***</span>
 </span><span id="line-15-5"><a id="example-15-5" name="example-15-5"></a><span class="gu">Common only</span>
-</span><span id="line-15-6"><a id="example-15-6" name="example-15-6"></a><span class="p">    [</span><span class="kn">Documentation</span><span class="p">]    </span><span class="s">Test has tags &#39;all&#39; and &#39;default&#39;.</span>
+</span><span id="line-15-6"><a id="example-15-6" name="example-15-6"></a><span class="p">    [</span><span class="kn">Documentation</span><span class="p">]    </span><span class="s">Test has tags 'all' and 'default'.</span>
 </span><span id="line-15-7"><a id="example-15-7" name="example-15-7"></a><span class="p">    </span><span class="nf">No Operation</span>
 </span><span id="line-15-8"><a id="example-15-8" name="example-15-8"></a>
 </span><span id="line-15-9"><a id="example-15-9" name="example-15-9"></a><span class="gu">No default</span>
-</span><span id="line-15-10"><a id="example-15-10" name="example-15-10"></a><span class="p">    [</span><span class="kn">Documentation</span><span class="p">]    </span><span class="s">Test has only tag &#39;all&#39;.</span>
+</span><span id="line-15-10"><a id="example-15-10" name="example-15-10"></a><span class="p">    [</span><span class="kn">Documentation</span><span class="p">]    </span><span class="s">Test has only tag 'all'.</span>
 </span><span id="line-15-11"><a id="example-15-11" name="example-15-11"></a><span class="p">    [</span><span class="kn">Tags</span><span class="p">]    </span><span class="s">-default</span>
 </span><span id="line-15-12"><a id="example-15-12" name="example-15-12"></a><span class="p">    </span><span class="nf">No Operation</span>
 </span><span id="line-15-13"><a id="example-15-13" name="example-15-13"></a>
 </span><span id="line-15-14"><a id="example-15-14" name="example-15-14"></a><span class="gu">Own and no default</span>
-</span><span id="line-15-15"><a id="example-15-15" name="example-15-15"></a><span class="p">    [</span><span class="kn">Documentation</span><span class="p">]    </span><span class="s">Test has tags &#39;all&#39; and &#39;own&#39;.</span>
+</span><span id="line-15-15"><a id="example-15-15" name="example-15-15"></a><span class="p">    [</span><span class="kn">Documentation</span><span class="p">]    </span><span class="s">Test has tags 'all' and 'own'.</span>
 </span><span id="line-15-16"><a id="example-15-16" name="example-15-16"></a><span class="p">    [</span><span class="kn">Tags</span><span class="p">]    </span><span class="s">own</span><span class="p">    </span><span class="s">-default</span>
 </span><span id="line-15-17"><a id="example-15-17" name="example-15-17"></a><span class="p">    </span><span class="nf">No Operation</span>
 </span></code></pre></div></td></tr></table></div>

@@ -9994,10 +9994,10 @@ possible default values it sets itself.</p>
 <span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">robot</span><span class="w"> </span><span class="kn">import</span> <span class="n">run_cli</span>
 
 <span class="c1"># Run tests and return the return code.</span>
-<span class="n">rc</span> <span class="o">=</span> <span class="n">run_cli</span><span class="p">([</span><span class="s1">&#39;--name&#39;</span><span class="p">,</span> <span class="s1">&#39;Example&#39;</span><span class="p">,</span> <span class="s1">&#39;tests.robot&#39;</span><span class="p">],</span> <span class="n">exit</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">rc</span> <span class="o">=</span> <span class="n">run_cli</span><span class="p">([</span><span class="s1">'--name'</span><span class="p">,</span> <span class="s1">'Example'</span><span class="p">,</span> <span class="s1">'tests.robot'</span><span class="p">],</span> <span class="n">exit</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
 <span class="c1"># Run tests and exit to the system automatically.</span>
-<span class="n">run_cli</span><span class="p">([</span><span class="s1">&#39;--name&#39;</span><span class="p">,</span> <span class="s1">&#39;Example&#39;</span><span class="p">,</span> <span class="s1">&#39;tests.robot&#39;</span><span class="p">])</span>
+<span class="n">run_cli</span><span class="p">([</span><span class="s1">'--name'</span><span class="p">,</span> <span class="s1">'Example'</span><span class="p">,</span> <span class="s1">'tests.robot'</span><span class="p">])</span>
 </code></pre></div></td></tr></table></div>
 <p>See also the <a class="autorefs autorefs-internal" title="            run" href="#robot.run.run">robot.run</a> function that allows setting options as keyword
 arguments like <code>name="Example"</code> and generally has a richer API for
@@ -10037,8 +10037,8 @@ programmatic test execution.</p>
 <span class="normal"><a href="#example-0-514">514</a></span>
 <span class="normal"><a href="#example-0-515">515</a></span>
 <span class="normal"><a href="#example-0-516">516</a></span>
-<span class="normal"><a href="#example-0-517">517</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-486"><a id="example-0-486" name="example-0-486"></a><span class="k">def</span><span class="w"> </span><span class="nf">run_cli</span><span class="p">(</span><span class="n">arguments</span><span class="p">:</span> <span class="s1">&#39;list[str]|None&#39;</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">exit</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
-</span><span id="line-0-487"><a id="example-0-487" name="example-0-487"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Command line execution entry point for running tests.</span>
+<span class="normal"><a href="#example-0-517">517</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-486"><a id="example-0-486" name="example-0-486"></a><span class="k">def</span><span class="w"> </span><span class="nf">run_cli</span><span class="p">(</span><span class="n">arguments</span><span class="p">:</span> <span class="s1">'list[str]|None'</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">exit</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
+</span><span id="line-0-487"><a id="example-0-487" name="example-0-487"></a><span class="w">    </span><span class="sd">"""Command line execution entry point for running tests.</span>
 </span><span id="line-0-488"><a id="example-0-488" name="example-0-488"></a>
 </span><span id="line-0-489"><a id="example-0-489" name="example-0-489"></a><span class="sd">    Parameters:</span>
 </span><span id="line-0-490"><a id="example-0-490" name="example-0-490"></a><span class="sd">        arguments: Command line options and arguments as a list of strings.</span>
@@ -10057,15 +10057,15 @@ programmatic test execution.</p>
 </span><span id="line-0-503"><a id="example-0-503" name="example-0-503"></a><span class="sd">        from robot import run_cli</span>
 </span><span id="line-0-504"><a id="example-0-504" name="example-0-504"></a>
 </span><span id="line-0-505"><a id="example-0-505" name="example-0-505"></a><span class="sd">        # Run tests and return the return code.</span>
-</span><span id="line-0-506"><a id="example-0-506" name="example-0-506"></a><span class="sd">        rc = run_cli([&#39;--name&#39;, &#39;Example&#39;, &#39;tests.robot&#39;], exit=False)</span>
+</span><span id="line-0-506"><a id="example-0-506" name="example-0-506"></a><span class="sd">        rc = run_cli(['--name', 'Example', 'tests.robot'], exit=False)</span>
 </span><span id="line-0-507"><a id="example-0-507" name="example-0-507"></a>
 </span><span id="line-0-508"><a id="example-0-508" name="example-0-508"></a><span class="sd">        # Run tests and exit to the system automatically.</span>
-</span><span id="line-0-509"><a id="example-0-509" name="example-0-509"></a><span class="sd">        run_cli([&#39;--name&#39;, &#39;Example&#39;, &#39;tests.robot&#39;])</span>
+</span><span id="line-0-509"><a id="example-0-509" name="example-0-509"></a><span class="sd">        run_cli(['--name', 'Example', 'tests.robot'])</span>
 </span><span id="line-0-510"><a id="example-0-510" name="example-0-510"></a>
 </span><span id="line-0-511"><a id="example-0-511" name="example-0-511"></a><span class="sd">    See also the [robot.run][robot.run.run] function that allows setting options as keyword</span>
-</span><span id="line-0-512"><a id="example-0-512" name="example-0-512"></a><span class="sd">    arguments like `name=&quot;Example&quot;` and generally has a richer API for</span>
+</span><span id="line-0-512"><a id="example-0-512" name="example-0-512"></a><span class="sd">    arguments like `name="Example"` and generally has a richer API for</span>
 </span><span id="line-0-513"><a id="example-0-513" name="example-0-513"></a><span class="sd">    programmatic test execution.</span>
-</span><span id="line-0-514"><a id="example-0-514" name="example-0-514"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-514"><a id="example-0-514" name="example-0-514"></a><span class="sd">    """</span>
 </span><span id="line-0-515"><a id="example-0-515" name="example-0-515"></a>    <span class="k">if</span> <span class="n">arguments</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="line-0-516"><a id="example-0-516" name="example-0-516"></a>        <span class="n">arguments</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
 </span><span id="line-0-517"><a id="example-0-517" name="example-0-517"></a>    <span class="k">return</span> <span class="n">RobotFramework</span><span class="p">()</span><span class="o">.</span><span class="n">execute_cli</span><span class="p">(</span><span class="n">arguments</span><span class="p">,</span> <span class="n">exit</span><span class="o">=</span><span class="n">exit</span><span class="p">)</span>
@@ -10159,7 +10159,7 @@ with Python <code>None</code>. For example, using <code>log=None</code> is equiv
 <code>--log NONE</code>.</p>
 <p><code>listener</code>, <code>prerunmodifier</code> and <code>prerebotmodifier</code> options allow
 passing values as Python objects in addition to module names these command
-line options support. For example, <code class="highlight"><span class="n">run</span><span class="p">(</span><span class="s1">&#39;tests&#39;</span><span class="p">,</span> <span class="n">listener</span><span class="o">=</span><span class="n">MyListener</span><span class="p">())</span></code>.</p>
+line options support. For example, <code class="highlight"><span class="n">run</span><span class="p">(</span><span class="s1">'tests'</span><span class="p">,</span> <span class="n">listener</span><span class="o">=</span><span class="n">MyListener</span><span class="p">())</span></code>.</p>
 <p>To capture the standard output and error streams, pass an open file or
 file-like object as special keyword arguments <code>stdout</code> and <code>stderr</code>,
 respectively.</p>
@@ -10175,10 +10175,10 @@ statuses documented in the Robot Framework User Guide.</p>
 <span class="normal">5</span>
 <span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">robot</span><span class="w"> </span><span class="kn">import</span> <span class="n">run</span>
 
-<span class="n">run</span><span class="p">(</span><span class="s1">&#39;path/to/tests.robot&#39;</span><span class="p">)</span>
-<span class="n">run</span><span class="p">(</span><span class="s1">&#39;tests.robot&#39;</span><span class="p">,</span> <span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;tag1&#39;</span><span class="p">,</span> <span class="s1">&#39;tag2&#39;</span><span class="p">],</span> <span class="n">splitlog</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;stdout.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">stdout</span><span class="p">:</span>
-    <span class="n">run</span><span class="p">(</span><span class="s1">&#39;t1.robot&#39;</span><span class="p">,</span> <span class="s1">&#39;t2.robot&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Example&#39;</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">stdout</span><span class="o">=</span><span class="n">stdout</span><span class="p">)</span>
+<span class="n">run</span><span class="p">(</span><span class="s1">'path/to/tests.robot'</span><span class="p">)</span>
+<span class="n">run</span><span class="p">(</span><span class="s1">'tests.robot'</span><span class="p">,</span> <span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="s1">'tag1'</span><span class="p">,</span> <span class="s1">'tag2'</span><span class="p">],</span> <span class="n">splitlog</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'stdout.txt'</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">stdout</span><span class="p">:</span>
+    <span class="n">run</span><span class="p">(</span><span class="s1">'t1.robot'</span><span class="p">,</span> <span class="s1">'t2.robot'</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">'Example'</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">stdout</span><span class="o">=</span><span class="n">stdout</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 <p>Equivalent command line usage:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -10246,8 +10246,8 @@ statuses documented in the Robot Framework User Guide.</p>
 <span class="normal"><a href="#example-0-572">572</a></span>
 <span class="normal"><a href="#example-0-573">573</a></span>
 <span class="normal"><a href="#example-0-574">574</a></span>
-<span class="normal"><a href="#example-0-575">575</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-520"><a id="example-0-520" name="example-0-520"></a><span class="k">def</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span><span class="o">*</span><span class="n">sources</span><span class="p">:</span> <span class="s1">&#39;list[str|Path]&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">:</span> <span class="s1">&#39;dict[str, Any]&#39;</span><span class="p">):</span>
-</span><span id="line-0-521"><a id="example-0-521" name="example-0-521"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Programmatic entry point for running tests.</span>
+<span class="normal"><a href="#example-0-575">575</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-520"><a id="example-0-520" name="example-0-520"></a><span class="k">def</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span><span class="o">*</span><span class="n">sources</span><span class="p">:</span> <span class="s1">'list[str|Path]'</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">:</span> <span class="s1">'dict[str, Any]'</span><span class="p">):</span>
+</span><span id="line-0-521"><a id="example-0-521" name="example-0-521"></a><span class="w">    </span><span class="sd">"""Programmatic entry point for running tests.</span>
 </span><span id="line-0-522"><a id="example-0-522" name="example-0-522"></a>
 </span><span id="line-0-523"><a id="example-0-523" name="example-0-523"></a><span class="sd">    Parameters:</span>
 </span><span id="line-0-524"><a id="example-0-524" name="example-0-524"></a><span class="sd">        sources: Paths to test case files/directories to be executed similarly</span>
@@ -10262,9 +10262,9 @@ statuses documented in the Robot Framework User Guide.</p>
 </span><span id="line-0-533"><a id="example-0-533" name="example-0-533"></a><span class="sd">    `--version` are not supported.</span>
 </span><span id="line-0-534"><a id="example-0-534" name="example-0-534"></a>
 </span><span id="line-0-535"><a id="example-0-535" name="example-0-535"></a><span class="sd">    Options that can be given on the command line multiple times can be</span>
-</span><span id="line-0-536"><a id="example-0-536" name="example-0-536"></a><span class="sd">    passed as lists. For example, `include=[&#39;tag1&#39;, &#39;tag2&#39;]` is equivalent</span>
+</span><span id="line-0-536"><a id="example-0-536" name="example-0-536"></a><span class="sd">    passed as lists. For example, `include=['tag1', 'tag2']` is equivalent</span>
 </span><span id="line-0-537"><a id="example-0-537" name="example-0-537"></a><span class="sd">    to `--include tag1 --include tag2`. If such options are used only once,</span>
-</span><span id="line-0-538"><a id="example-0-538" name="example-0-538"></a><span class="sd">    they can be given also as a single string like `include=&#39;tag&#39;`.</span>
+</span><span id="line-0-538"><a id="example-0-538" name="example-0-538"></a><span class="sd">    they can be given also as a single string like `include='tag'`.</span>
 </span><span id="line-0-539"><a id="example-0-539" name="example-0-539"></a>
 </span><span id="line-0-540"><a id="example-0-540" name="example-0-540"></a><span class="sd">    Options that accept no value can be given as Booleans. For example,</span>
 </span><span id="line-0-541"><a id="example-0-541" name="example-0-541"></a><span class="sd">    `dryrun=True` is same as using the `--dryrun` option.</span>
@@ -10275,7 +10275,7 @@ statuses documented in the Robot Framework User Guide.</p>
 </span><span id="line-0-546"><a id="example-0-546" name="example-0-546"></a>
 </span><span id="line-0-547"><a id="example-0-547" name="example-0-547"></a><span class="sd">    `listener`, `prerunmodifier` and `prerebotmodifier` options allow</span>
 </span><span id="line-0-548"><a id="example-0-548" name="example-0-548"></a><span class="sd">    passing values as Python objects in addition to module names these command</span>
-</span><span id="line-0-549"><a id="example-0-549" name="example-0-549"></a><span class="sd">    line options support. For example, `#!py run(&#39;tests&#39;, listener=MyListener())`.</span>
+</span><span id="line-0-549"><a id="example-0-549" name="example-0-549"></a><span class="sd">    line options support. For example, `#!py run('tests', listener=MyListener())`.</span>
 </span><span id="line-0-550"><a id="example-0-550" name="example-0-550"></a>
 </span><span id="line-0-551"><a id="example-0-551" name="example-0-551"></a><span class="sd">    To capture the standard output and error streams, pass an open file or</span>
 </span><span id="line-0-552"><a id="example-0-552" name="example-0-552"></a><span class="sd">    file-like object as special keyword arguments `stdout` and `stderr`,</span>
@@ -10290,17 +10290,17 @@ statuses documented in the Robot Framework User Guide.</p>
 </span><span id="line-0-561"><a id="example-0-561" name="example-0-561"></a>
 </span><span id="line-0-562"><a id="example-0-562" name="example-0-562"></a><span class="sd">        from robot import run</span>
 </span><span id="line-0-563"><a id="example-0-563" name="example-0-563"></a>
-</span><span id="line-0-564"><a id="example-0-564" name="example-0-564"></a><span class="sd">        run(&#39;path/to/tests.robot&#39;)</span>
-</span><span id="line-0-565"><a id="example-0-565" name="example-0-565"></a><span class="sd">        run(&#39;tests.robot&#39;, include=[&#39;tag1&#39;, &#39;tag2&#39;], splitlog=True)</span>
-</span><span id="line-0-566"><a id="example-0-566" name="example-0-566"></a><span class="sd">        with open(&#39;stdout.txt&#39;, &#39;w&#39;) as stdout:</span>
-</span><span id="line-0-567"><a id="example-0-567" name="example-0-567"></a><span class="sd">            run(&#39;t1.robot&#39;, &#39;t2.robot&#39;, name=&#39;Example&#39;, log=None, stdout=stdout)</span>
+</span><span id="line-0-564"><a id="example-0-564" name="example-0-564"></a><span class="sd">        run('path/to/tests.robot')</span>
+</span><span id="line-0-565"><a id="example-0-565" name="example-0-565"></a><span class="sd">        run('tests.robot', include=['tag1', 'tag2'], splitlog=True)</span>
+</span><span id="line-0-566"><a id="example-0-566" name="example-0-566"></a><span class="sd">        with open('stdout.txt', 'w') as stdout:</span>
+</span><span id="line-0-567"><a id="example-0-567" name="example-0-567"></a><span class="sd">            run('t1.robot', 't2.robot', name='Example', log=None, stdout=stdout)</span>
 </span><span id="line-0-568"><a id="example-0-568" name="example-0-568"></a>
 </span><span id="line-0-569"><a id="example-0-569" name="example-0-569"></a><span class="sd">    Equivalent command line usage:</span>
 </span><span id="line-0-570"><a id="example-0-570" name="example-0-570"></a>
 </span><span id="line-0-571"><a id="example-0-571" name="example-0-571"></a><span class="sd">        robot path/to/tests.robot</span>
 </span><span id="line-0-572"><a id="example-0-572" name="example-0-572"></a><span class="sd">        robot --include tag1 --include tag2 --splitlog tests.robot</span>
 </span><span id="line-0-573"><a id="example-0-573" name="example-0-573"></a><span class="sd">        robot --name Example --log NONE t1.robot t2.robot &gt; stdout.txt</span>
-</span><span id="line-0-574"><a id="example-0-574" name="example-0-574"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-574"><a id="example-0-574" name="example-0-574"></a><span class="sd">    """</span>
 </span><span id="line-0-575"><a id="example-0-575" name="example-0-575"></a>    <span class="k">return</span> <span class="n">RobotFramework</span><span class="p">()</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="o">*</span><span class="n">sources</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>

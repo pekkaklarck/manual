@@ -9937,7 +9937,7 @@ sets itself.</p>
 <span class="normal">2</span>
 <span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">robot</span><span class="w"> </span><span class="kn">import</span> <span class="n">rebot_cli</span>
 
-<span class="n">rebot_cli</span><span class="p">([</span><span class="s1">&#39;--name&#39;</span><span class="p">,</span> <span class="s1">&#39;Example&#39;</span><span class="p">,</span> <span class="s1">&#39;--log&#39;</span><span class="p">,</span> <span class="s1">&#39;NONE&#39;</span><span class="p">,</span> <span class="s1">&#39;o1.xml&#39;</span><span class="p">,</span> <span class="s1">&#39;o2.xml&#39;</span><span class="p">])</span>
+<span class="n">rebot_cli</span><span class="p">([</span><span class="s1">'--name'</span><span class="p">,</span> <span class="s1">'Example'</span><span class="p">,</span> <span class="s1">'--log'</span><span class="p">,</span> <span class="s1">'NONE'</span><span class="p">,</span> <span class="s1">'o1.xml'</span><span class="p">,</span> <span class="s1">'o2.xml'</span><span class="p">])</span>
 </code></pre></div></td></tr></table></div>
 <p>See also the :func:<code>rebot</code> function that allows setting options as keyword
 arguments like <code>name="Example"</code> and generally has a richer API for
@@ -9973,7 +9973,7 @@ programmatic Rebot execution.</p>
 <span class="normal"><a href="#example-0-373">373</a></span>
 <span class="normal"><a href="#example-0-374">374</a></span>
 <span class="normal"><a href="#example-0-375">375</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-349"><a id="example-0-349" name="example-0-349"></a><span class="k">def</span><span class="w"> </span><span class="nf">rebot_cli</span><span class="p">(</span><span class="n">arguments</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">exit</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-</span><span id="line-0-350"><a id="example-0-350" name="example-0-350"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Command line execution entry point for post-processing outputs.</span>
+</span><span id="line-0-350"><a id="example-0-350" name="example-0-350"></a><span class="w">    </span><span class="sd">"""Command line execution entry point for post-processing outputs.</span>
 </span><span id="line-0-351"><a id="example-0-351" name="example-0-351"></a>
 </span><span id="line-0-352"><a id="example-0-352" name="example-0-352"></a><span class="sd">    :param arguments: Command line options and arguments as a list of strings.</span>
 </span><span id="line-0-353"><a id="example-0-353" name="example-0-353"></a><span class="sd">        Defaults to ``sys.argv[1:]`` if not given.</span>
@@ -9990,12 +9990,12 @@ programmatic Rebot execution.</p>
 </span><span id="line-0-364"><a id="example-0-364" name="example-0-364"></a>
 </span><span id="line-0-365"><a id="example-0-365" name="example-0-365"></a><span class="sd">        from robot import rebot_cli</span>
 </span><span id="line-0-366"><a id="example-0-366" name="example-0-366"></a>
-</span><span id="line-0-367"><a id="example-0-367" name="example-0-367"></a><span class="sd">        rebot_cli([&#39;--name&#39;, &#39;Example&#39;, &#39;--log&#39;, &#39;NONE&#39;, &#39;o1.xml&#39;, &#39;o2.xml&#39;])</span>
+</span><span id="line-0-367"><a id="example-0-367" name="example-0-367"></a><span class="sd">        rebot_cli(['--name', 'Example', '--log', 'NONE', 'o1.xml', 'o2.xml'])</span>
 </span><span id="line-0-368"><a id="example-0-368" name="example-0-368"></a>
 </span><span id="line-0-369"><a id="example-0-369" name="example-0-369"></a><span class="sd">    See also the :func:`rebot` function that allows setting options as keyword</span>
-</span><span id="line-0-370"><a id="example-0-370" name="example-0-370"></a><span class="sd">    arguments like ``name=&quot;Example&quot;`` and generally has a richer API for</span>
+</span><span id="line-0-370"><a id="example-0-370" name="example-0-370"></a><span class="sd">    arguments like ``name="Example"`` and generally has a richer API for</span>
 </span><span id="line-0-371"><a id="example-0-371" name="example-0-371"></a><span class="sd">    programmatic Rebot execution.</span>
-</span><span id="line-0-372"><a id="example-0-372" name="example-0-372"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-372"><a id="example-0-372" name="example-0-372"></a><span class="sd">    """</span>
 </span><span id="line-0-373"><a id="example-0-373" name="example-0-373"></a>    <span class="k">if</span> <span class="n">arguments</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="line-0-374"><a id="example-0-374" name="example-0-374"></a>        <span class="n">arguments</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
 </span><span id="line-0-375"><a id="example-0-375" name="example-0-375"></a>    <span class="k">return</span> <span class="n">Rebot</span><span class="p">()</span><span class="o">.</span><span class="n">execute_cli</span><span class="p">(</span><span class="n">arguments</span><span class="p">,</span> <span class="n">exit</span><span class="o">=</span><span class="n">exit</span><span class="p">)</span>
@@ -10039,9 +10039,9 @@ programmatic Rebot execution.</p>
 <span class="normal">4</span>
 <span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">robot</span><span class="w"> </span><span class="kn">import</span> <span class="n">rebot</span>
 
-<span class="n">rebot</span><span class="p">(</span><span class="s1">&#39;path/to/output.xml&#39;</span><span class="p">)</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;stdout.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">stdout</span><span class="p">:</span>
-    <span class="n">rebot</span><span class="p">(</span><span class="s1">&#39;o1.xml&#39;</span><span class="p">,</span> <span class="s1">&#39;o2.xml&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Example&#39;</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">stdout</span><span class="o">=</span><span class="n">stdout</span><span class="p">)</span>
+<span class="n">rebot</span><span class="p">(</span><span class="s1">'path/to/output.xml'</span><span class="p">)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'stdout.txt'</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">stdout</span><span class="p">:</span>
+    <span class="n">rebot</span><span class="p">(</span><span class="s1">'o1.xml'</span><span class="p">,</span> <span class="s1">'o2.xml'</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">'Example'</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">stdout</span><span class="o">=</span><span class="n">stdout</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 <p>Equivalent command line usage::</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -10079,7 +10079,7 @@ programmatic Rebot execution.</p>
 <span class="normal"><a href="#example-0-402">402</a></span>
 <span class="normal"><a href="#example-0-403">403</a></span>
 <span class="normal"><a href="#example-0-404">404</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-378"><a id="example-0-378" name="example-0-378"></a><span class="k">def</span><span class="w"> </span><span class="nf">rebot</span><span class="p">(</span><span class="o">*</span><span class="n">outputs</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">):</span>
-</span><span id="line-0-379"><a id="example-0-379" name="example-0-379"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Programmatic entry point for post-processing outputs.</span>
+</span><span id="line-0-379"><a id="example-0-379" name="example-0-379"></a><span class="w">    </span><span class="sd">"""Programmatic entry point for post-processing outputs.</span>
 </span><span id="line-0-380"><a id="example-0-380" name="example-0-380"></a>
 </span><span id="line-0-381"><a id="example-0-381" name="example-0-381"></a><span class="sd">    :param outputs: Paths to Robot Framework output files similarly</span>
 </span><span id="line-0-382"><a id="example-0-382" name="example-0-382"></a><span class="sd">        as when running the ``rebot`` command on the command line.</span>
@@ -10095,15 +10095,15 @@ programmatic Rebot execution.</p>
 </span><span id="line-0-392"><a id="example-0-392" name="example-0-392"></a>
 </span><span id="line-0-393"><a id="example-0-393" name="example-0-393"></a><span class="sd">        from robot import rebot</span>
 </span><span id="line-0-394"><a id="example-0-394" name="example-0-394"></a>
-</span><span id="line-0-395"><a id="example-0-395" name="example-0-395"></a><span class="sd">        rebot(&#39;path/to/output.xml&#39;)</span>
-</span><span id="line-0-396"><a id="example-0-396" name="example-0-396"></a><span class="sd">        with open(&#39;stdout.txt&#39;, &#39;w&#39;) as stdout:</span>
-</span><span id="line-0-397"><a id="example-0-397" name="example-0-397"></a><span class="sd">            rebot(&#39;o1.xml&#39;, &#39;o2.xml&#39;, name=&#39;Example&#39;, log=None, stdout=stdout)</span>
+</span><span id="line-0-395"><a id="example-0-395" name="example-0-395"></a><span class="sd">        rebot('path/to/output.xml')</span>
+</span><span id="line-0-396"><a id="example-0-396" name="example-0-396"></a><span class="sd">        with open('stdout.txt', 'w') as stdout:</span>
+</span><span id="line-0-397"><a id="example-0-397" name="example-0-397"></a><span class="sd">            rebot('o1.xml', 'o2.xml', name='Example', log=None, stdout=stdout)</span>
 </span><span id="line-0-398"><a id="example-0-398" name="example-0-398"></a>
 </span><span id="line-0-399"><a id="example-0-399" name="example-0-399"></a><span class="sd">    Equivalent command line usage::</span>
 </span><span id="line-0-400"><a id="example-0-400" name="example-0-400"></a>
 </span><span id="line-0-401"><a id="example-0-401" name="example-0-401"></a><span class="sd">        rebot path/to/output.xml</span>
 </span><span id="line-0-402"><a id="example-0-402" name="example-0-402"></a><span class="sd">        rebot --name Example --log NONE o1.xml o2.xml &gt; stdout.txt</span>
-</span><span id="line-0-403"><a id="example-0-403" name="example-0-403"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-403"><a id="example-0-403" name="example-0-403"></a><span class="sd">    """</span>
 </span><span id="line-0-404"><a id="example-0-404" name="example-0-404"></a>    <span class="k">return</span> <span class="n">Rebot</span><span class="p">()</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="o">*</span><span class="n">outputs</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>

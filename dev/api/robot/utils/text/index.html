@@ -9918,11 +9918,11 @@ the first one is considered to be the separator.</p>
 <span class="normal"><a href="#example-0-147">147</a></span>
 <span class="normal"><a href="#example-0-148">148</a></span>
 <span class="normal"><a href="#example-0-149">149</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-132"><a id="example-0-132" name="example-0-132"></a><span class="k">def</span><span class="w"> </span><span class="nf">split_args_from_name_or_path</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
-</span><span id="line-0-133"><a id="example-0-133" name="example-0-133"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Split arguments embedded to name or path like ``Example:arg1:arg2``.</span>
+</span><span id="line-0-133"><a id="example-0-133" name="example-0-133"></a><span class="w">    </span><span class="sd">"""Split arguments embedded to name or path like ``Example:arg1:arg2``.</span>
 </span><span id="line-0-134"><a id="example-0-134" name="example-0-134"></a>
 </span><span id="line-0-135"><a id="example-0-135" name="example-0-135"></a><span class="sd">    The separator can be either colon ``:`` or semicolon ``;``. If both are used,</span>
 </span><span id="line-0-136"><a id="example-0-136" name="example-0-136"></a><span class="sd">    the first one is considered to be the separator.</span>
-</span><span id="line-0-137"><a id="example-0-137" name="example-0-137"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-137"><a id="example-0-137" name="example-0-137"></a><span class="sd">    """</span>
 </span><span id="line-0-138"><a id="example-0-138" name="example-0-138"></a>    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
 </span><span id="line-0-139"><a id="example-0-139" name="example-0-139"></a>        <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">name</span><span class="p">),</span> <span class="p">[]</span>
 </span><span id="line-0-140"><a id="example-0-140" name="example-0-140"></a>    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">Path</span><span class="p">):</span>

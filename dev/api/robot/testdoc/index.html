@@ -9947,7 +9947,7 @@ this function.</p>
 <span class="normal">2</span>
 <span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">robot.testdoc</span><span class="w"> </span><span class="kn">import</span> <span class="n">testdoc_cli</span>
 
-<span class="n">testdoc_cli</span><span class="p">([</span><span class="s1">&#39;--title&#39;</span><span class="p">,</span> <span class="s1">&#39;Test Plan&#39;</span><span class="p">,</span> <span class="s1">&#39;mytests&#39;</span><span class="p">,</span> <span class="s1">&#39;plan.html&#39;</span><span class="p">])</span>
+<span class="n">testdoc_cli</span><span class="p">([</span><span class="s1">'--title'</span><span class="p">,</span> <span class="s1">'Test Plan'</span><span class="p">,</span> <span class="s1">'mytests'</span><span class="p">,</span> <span class="s1">'plan.html'</span><span class="p">])</span>
 </code></pre></div></td></tr></table></div>
 
 
@@ -9969,7 +9969,7 @@ this function.</p>
 <span class="normal"><a href="#example-0-299">299</a></span>
 <span class="normal"><a href="#example-0-300">300</a></span>
 <span class="normal"><a href="#example-0-301">301</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-286"><a id="example-0-286" name="example-0-286"></a><span class="k">def</span><span class="w"> </span><span class="nf">testdoc_cli</span><span class="p">(</span><span class="n">arguments</span><span class="p">):</span>
-</span><span id="line-0-287"><a id="example-0-287" name="example-0-287"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Executes `Testdoc` similarly as from the command line.</span>
+</span><span id="line-0-287"><a id="example-0-287" name="example-0-287"></a><span class="w">    </span><span class="sd">"""Executes `Testdoc` similarly as from the command line.</span>
 </span><span id="line-0-288"><a id="example-0-288" name="example-0-288"></a>
 </span><span id="line-0-289"><a id="example-0-289" name="example-0-289"></a><span class="sd">    :param arguments: command line arguments as a list of strings.</span>
 </span><span id="line-0-290"><a id="example-0-290" name="example-0-290"></a>
@@ -9981,8 +9981,8 @@ this function.</p>
 </span><span id="line-0-296"><a id="example-0-296" name="example-0-296"></a>
 </span><span id="line-0-297"><a id="example-0-297" name="example-0-297"></a><span class="sd">        from robot.testdoc import testdoc_cli</span>
 </span><span id="line-0-298"><a id="example-0-298" name="example-0-298"></a>
-</span><span id="line-0-299"><a id="example-0-299" name="example-0-299"></a><span class="sd">        testdoc_cli([&#39;--title&#39;, &#39;Test Plan&#39;, &#39;mytests&#39;, &#39;plan.html&#39;])</span>
-</span><span id="line-0-300"><a id="example-0-300" name="example-0-300"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-299"><a id="example-0-299" name="example-0-299"></a><span class="sd">        testdoc_cli(['--title', 'Test Plan', 'mytests', 'plan.html'])</span>
+</span><span id="line-0-300"><a id="example-0-300" name="example-0-300"></a><span class="sd">    """</span>
 </span><span id="line-0-301"><a id="example-0-301" name="example-0-301"></a>    <span class="n">TestDoc</span><span class="p">()</span><span class="o">.</span><span class="n">execute_cli</span><span class="p">(</span><span class="n">arguments</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
@@ -10016,7 +10016,7 @@ as arguments and options to Testdoc.</p>
 <span class="normal">2</span>
 <span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">robot.testdoc</span><span class="w"> </span><span class="kn">import</span> <span class="n">testdoc</span>
 
-<span class="n">testdoc</span><span class="p">(</span><span class="s1">&#39;mytests&#39;</span><span class="p">,</span> <span class="s1">&#39;plan.html&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Test Plan&#39;</span><span class="p">)</span>
+<span class="n">testdoc</span><span class="p">(</span><span class="s1">'mytests'</span><span class="p">,</span> <span class="s1">'plan.html'</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">'Test Plan'</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 
 
@@ -10035,7 +10035,7 @@ as arguments and options to Testdoc.</p>
 <span class="normal"><a href="#example-0-314">314</a></span>
 <span class="normal"><a href="#example-0-315">315</a></span>
 <span class="normal"><a href="#example-0-316">316</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-304"><a id="example-0-304" name="example-0-304"></a><span class="k">def</span><span class="w"> </span><span class="nf">testdoc</span><span class="p">(</span><span class="o">*</span><span class="n">arguments</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">):</span>
-</span><span id="line-0-305"><a id="example-0-305" name="example-0-305"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Executes `Testdoc` programmatically.</span>
+</span><span id="line-0-305"><a id="example-0-305" name="example-0-305"></a><span class="w">    </span><span class="sd">"""Executes `Testdoc` programmatically.</span>
 </span><span id="line-0-306"><a id="example-0-306" name="example-0-306"></a>
 </span><span id="line-0-307"><a id="example-0-307" name="example-0-307"></a><span class="sd">    Arguments and options have same semantics, and options have same names,</span>
 </span><span id="line-0-308"><a id="example-0-308" name="example-0-308"></a><span class="sd">    as arguments and options to Testdoc.</span>
@@ -10044,8 +10044,8 @@ as arguments and options to Testdoc.</p>
 </span><span id="line-0-311"><a id="example-0-311" name="example-0-311"></a>
 </span><span id="line-0-312"><a id="example-0-312" name="example-0-312"></a><span class="sd">        from robot.testdoc import testdoc</span>
 </span><span id="line-0-313"><a id="example-0-313" name="example-0-313"></a>
-</span><span id="line-0-314"><a id="example-0-314" name="example-0-314"></a><span class="sd">        testdoc(&#39;mytests&#39;, &#39;plan.html&#39;, title=&#39;Test Plan&#39;)</span>
-</span><span id="line-0-315"><a id="example-0-315" name="example-0-315"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-314"><a id="example-0-314" name="example-0-314"></a><span class="sd">        testdoc('mytests', 'plan.html', title='Test Plan')</span>
+</span><span id="line-0-315"><a id="example-0-315" name="example-0-315"></a><span class="sd">    """</span>
 </span><span id="line-0-316"><a id="example-0-316" name="example-0-316"></a>    <span class="n">TestDoc</span><span class="p">()</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="o">*</span><span class="n">arguments</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>

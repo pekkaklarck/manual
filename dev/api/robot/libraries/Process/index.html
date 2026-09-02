@@ -10331,7 +10331,7 @@ their value, and other argument types are tested using the same
                     <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-322">322</a></span>
 <span class="normal"><a href="#example-0-323">323</a></span>
 <span class="normal"><a href="#example-0-324">324</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-322"><a id="example-0-322" name="example-0-322"></a><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="line-0-323"><a id="example-0-323" name="example-0-323"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_processes</span> <span class="o">=</span> <span class="n">ConnectionCache</span><span class="p">(</span><span class="s1">&#39;No active process.&#39;</span><span class="p">)</span>
+</span><span id="line-0-323"><a id="example-0-323" name="example-0-323"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_processes</span> <span class="o">=</span> <span class="n">ConnectionCache</span><span class="p">(</span><span class="s1">'No active process.'</span><span class="p">)</span>
 </span><span id="line-0-324"><a id="example-0-324" name="example-0-324"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_results</span> <span class="o">=</span> <span class="p">{}</span>
 </span></code></pre></div></td></tr></table></div>
                   </details>
@@ -10434,7 +10434,7 @@ as <code>**configuration</code>.</p>
 <span class="normal"><a href="#example-0-367">367</a></span>
 <span class="normal"><a href="#example-0-368">368</a></span>
 <span class="normal"><a href="#example-0-369">369</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-326"><a id="example-0-326" name="example-0-326"></a><span class="k">def</span><span class="w"> </span><span class="nf">run_process</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">command</span><span class="p">,</span> <span class="o">*</span><span class="n">arguments</span><span class="p">,</span> <span class="o">**</span><span class="n">configuration</span><span class="p">):</span>
-</span><span id="line-0-327"><a id="example-0-327" name="example-0-327"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Runs a process and waits for it to complete.</span>
+</span><span id="line-0-327"><a id="example-0-327" name="example-0-327"></a><span class="w">    </span><span class="sd">"""Runs a process and waits for it to complete.</span>
 </span><span id="line-0-328"><a id="example-0-328" name="example-0-328"></a>
 </span><span id="line-0-329"><a id="example-0-329" name="example-0-329"></a><span class="sd">    ``command`` and ``*arguments`` specify the command to execute and</span>
 </span><span id="line-0-330"><a id="example-0-330" name="example-0-330"></a><span class="sd">    arguments passed to it. See `Specifying command and arguments` for</span>
@@ -10461,17 +10461,17 @@ as <code>**configuration</code>.</p>
 </span><span id="line-0-351"><a id="example-0-351" name="example-0-351"></a><span class="sd">    as ``**configuration``.</span>
 </span><span id="line-0-352"><a id="example-0-352" name="example-0-352"></a>
 </span><span id="line-0-353"><a id="example-0-353" name="example-0-353"></a><span class="sd">    Examples:</span>
-</span><span id="line-0-354"><a id="example-0-354" name="example-0-354"></a><span class="sd">    | ${result} = | Run Process | python | -c | print(&#39;Hello, world!&#39;) |</span>
+</span><span id="line-0-354"><a id="example-0-354" name="example-0-354"></a><span class="sd">    | ${result} = | Run Process | python | -c | print('Hello, world!') |</span>
 </span><span id="line-0-355"><a id="example-0-355" name="example-0-355"></a><span class="sd">    | Should Be Equal | ${result.stdout} | Hello, world! |</span>
 </span><span id="line-0-356"><a id="example-0-356" name="example-0-356"></a><span class="sd">    | ${result} = | Run Process | ${command} | stdout=${CURDIR}/stdout.txt | stderr=STDOUT |</span>
 </span><span id="line-0-357"><a id="example-0-357" name="example-0-357"></a><span class="sd">    | ${result} = | Run Process | ${command} | timeout=1min | on_timeout=continue |</span>
 </span><span id="line-0-358"><a id="example-0-358" name="example-0-358"></a><span class="sd">    | ${result} = | Run Process | java -Dname\\=value Example | shell=True | cwd=${EXAMPLE} |</span>
 </span><span id="line-0-359"><a id="example-0-359" name="example-0-359"></a>
 </span><span id="line-0-360"><a id="example-0-360" name="example-0-360"></a><span class="sd">    This keyword does not change the `active process`.</span>
-</span><span id="line-0-361"><a id="example-0-361" name="example-0-361"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-361"><a id="example-0-361" name="example-0-361"></a><span class="sd">    """</span>
 </span><span id="line-0-362"><a id="example-0-362" name="example-0-362"></a>    <span class="n">current</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_processes</span><span class="o">.</span><span class="n">current</span>
-</span><span id="line-0-363"><a id="example-0-363" name="example-0-363"></a>    <span class="n">timeout</span> <span class="o">=</span> <span class="n">configuration</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;timeout&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-</span><span id="line-0-364"><a id="example-0-364" name="example-0-364"></a>    <span class="n">on_timeout</span> <span class="o">=</span> <span class="n">configuration</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;on_timeout&#39;</span><span class="p">,</span> <span class="s1">&#39;terminate&#39;</span><span class="p">)</span>
+</span><span id="line-0-363"><a id="example-0-363" name="example-0-363"></a>    <span class="n">timeout</span> <span class="o">=</span> <span class="n">configuration</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">'timeout'</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+</span><span id="line-0-364"><a id="example-0-364" name="example-0-364"></a>    <span class="n">on_timeout</span> <span class="o">=</span> <span class="n">configuration</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">'on_timeout'</span><span class="p">,</span> <span class="s1">'terminate'</span><span class="p">)</span>
 </span><span id="line-0-365"><a id="example-0-365" name="example-0-365"></a>    <span class="k">try</span><span class="p">:</span>
 </span><span id="line-0-366"><a id="example-0-366" name="example-0-366"></a>        <span class="n">handle</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_process</span><span class="p">(</span><span class="n">command</span><span class="p">,</span> <span class="o">*</span><span class="n">arguments</span><span class="p">,</span> <span class="o">**</span><span class="n">configuration</span><span class="p">)</span>
 </span><span id="line-0-367"><a id="example-0-367" name="example-0-367"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">wait_for_process</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">timeout</span><span class="p">,</span> <span class="n">on_timeout</span><span class="p">)</span>
@@ -10582,7 +10582,7 @@ required using <code>Get Process Object</code> separately.</p>
 <span class="normal"><a href="#example-0-415">415</a></span>
 <span class="normal"><a href="#example-0-416">416</a></span>
 <span class="normal"><a href="#example-0-417">417</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-371"><a id="example-0-371" name="example-0-371"></a><span class="k">def</span><span class="w"> </span><span class="nf">start_process</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">command</span><span class="p">,</span> <span class="o">*</span><span class="n">arguments</span><span class="p">,</span> <span class="o">**</span><span class="n">configuration</span><span class="p">):</span>
-</span><span id="line-0-372"><a id="example-0-372" name="example-0-372"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Starts a new process on background.</span>
+</span><span id="line-0-372"><a id="example-0-372" name="example-0-372"></a><span class="w">    </span><span class="sd">"""Starts a new process on background.</span>
 </span><span id="line-0-373"><a id="example-0-373" name="example-0-373"></a>
 </span><span id="line-0-374"><a id="example-0-374" name="example-0-374"></a><span class="sd">    See `Specifying command and arguments` and `Process configuration`</span>
 </span><span id="line-0-375"><a id="example-0-375" name="example-0-375"></a><span class="sd">    for more information about the arguments, and `Run Process` keyword</span>
@@ -10612,7 +10612,7 @@ required using <code>Get Process Object</code> separately.</p>
 </span><span id="line-0-399"><a id="example-0-399" name="example-0-399"></a><span class="sd">    | ${result} = | `Terminate Process` | ${process} |</span>
 </span><span id="line-0-400"><a id="example-0-400" name="example-0-400"></a>
 </span><span id="line-0-401"><a id="example-0-401" name="example-0-401"></a><span class="sd">    Use started process in a pipeline with another process:</span>
-</span><span id="line-0-402"><a id="example-0-402" name="example-0-402"></a><span class="sd">    | ${process} = | `Start Process` | python | -c | print(&#39;Hello, world!&#39;) |</span>
+</span><span id="line-0-402"><a id="example-0-402" name="example-0-402"></a><span class="sd">    | ${process} = | `Start Process` | python | -c | print('Hello, world!') |</span>
 </span><span id="line-0-403"><a id="example-0-403" name="example-0-403"></a><span class="sd">    | ${result} = | `Run Process` | python | -c | import sys; print(sys.stdin.read().upper().strip()) | stdin=${process.stdout} |</span>
 </span><span id="line-0-404"><a id="example-0-404" name="example-0-404"></a><span class="sd">    | `Wait For Process` | ${process} |</span>
 </span><span id="line-0-405"><a id="example-0-405" name="example-0-405"></a><span class="sd">    | `Should Be Equal` | ${result.stdout} | HELLO, WORLD! |</span>
@@ -10620,7 +10620,7 @@ required using <code>Get Process Object</code> separately.</p>
 </span><span id="line-0-407"><a id="example-0-407" name="example-0-407"></a><span class="sd">    Returning a ``subprocess.Popen`` object is new in Robot Framework 5.0.</span>
 </span><span id="line-0-408"><a id="example-0-408" name="example-0-408"></a><span class="sd">    Earlier versions returned a generic handle and getting the process object</span>
 </span><span id="line-0-409"><a id="example-0-409" name="example-0-409"></a><span class="sd">    required using `Get Process Object` separately.</span>
-</span><span id="line-0-410"><a id="example-0-410" name="example-0-410"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-410"><a id="example-0-410" name="example-0-410"></a><span class="sd">    """</span>
 </span><span id="line-0-411"><a id="example-0-411" name="example-0-411"></a>    <span class="n">conf</span> <span class="o">=</span> <span class="n">ProcessConfiguration</span><span class="p">(</span><span class="o">**</span><span class="n">configuration</span><span class="p">)</span>
 </span><span id="line-0-412"><a id="example-0-412" name="example-0-412"></a>    <span class="n">command</span> <span class="o">=</span> <span class="n">conf</span><span class="o">.</span><span class="n">get_command</span><span class="p">(</span><span class="n">command</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">arguments</span><span class="p">))</span>
 </span><span id="line-0-413"><a id="example-0-413" name="example-0-413"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_log_start</span><span class="p">(</span><span class="n">command</span><span class="p">,</span> <span class="n">conf</span><span class="p">)</span>
@@ -10667,12 +10667,12 @@ required using <code>Get Process Object</code> separately.</p>
 <span class="normal"><a href="#example-0-430">430</a></span>
 <span class="normal"><a href="#example-0-431">431</a></span>
 <span class="normal"><a href="#example-0-432">432</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-425"><a id="example-0-425" name="example-0-425"></a><span class="k">def</span><span class="w"> </span><span class="nf">is_process_running</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-</span><span id="line-0-426"><a id="example-0-426" name="example-0-426"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Checks is the process running or not.</span>
+</span><span id="line-0-426"><a id="example-0-426" name="example-0-426"></a><span class="w">    </span><span class="sd">"""Checks is the process running or not.</span>
 </span><span id="line-0-427"><a id="example-0-427" name="example-0-427"></a>
 </span><span id="line-0-428"><a id="example-0-428" name="example-0-428"></a><span class="sd">    If ``handle`` is not given, uses the current `active process`.</span>
 </span><span id="line-0-429"><a id="example-0-429" name="example-0-429"></a>
 </span><span id="line-0-430"><a id="example-0-430" name="example-0-430"></a><span class="sd">    Returns ``True`` if the process is still running and ``False`` otherwise.</span>
-</span><span id="line-0-431"><a id="example-0-431" name="example-0-431"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-431"><a id="example-0-431" name="example-0-431"></a><span class="sd">    """</span>
 </span><span id="line-0-432"><a id="example-0-432" name="example-0-432"></a>    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_processes</span><span class="p">[</span><span class="n">handle</span><span class="p">]</span><span class="o">.</span><span class="n">poll</span><span class="p">()</span> <span class="ow">is</span> <span class="kc">None</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
@@ -10694,7 +10694,7 @@ required using <code>Get Process Object</code> separately.</p>
 
 <a href="#robot.libraries.Process.Process.process_should_be_running" class="headerlink" title="Permanent link">&para;</a></h3>
 <div class="doc-signature highlight"><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1" href="#example-0-1"></a><span class="nf">process_should_be_running</span><span class="p">(</span>
-</span><span id="line-0-2"><a id="example-0-2" name="example-0-2" href="#example-0-2"></a>    <span class="n">handle</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">error_message</span><span class="o">=</span><span class="s2">&quot;Process is not running.&quot;</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2" href="#example-0-2"></a>    <span class="n">handle</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">error_message</span><span class="o">=</span><span class="s2">"Process is not running."</span>
 </span><span id="line-0-3"><a id="example-0-3" name="example-0-3" href="#example-0-3"></a><span class="p">)</span>
 </span></code></pre></div>
 
@@ -10717,13 +10717,13 @@ required using <code>Get Process Object</code> separately.</p>
 <span class="normal"><a href="#example-0-441">441</a></span>
 <span class="normal"><a href="#example-0-442">442</a></span>
 <span class="normal"><a href="#example-0-443">443</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-434"><a id="example-0-434" name="example-0-434"></a><span class="k">def</span><span class="w"> </span><span class="nf">process_should_be_running</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-</span><span id="line-0-435"><a id="example-0-435" name="example-0-435"></a>                              <span class="n">error_message</span><span class="o">=</span><span class="s1">&#39;Process is not running.&#39;</span><span class="p">):</span>
-</span><span id="line-0-436"><a id="example-0-436" name="example-0-436"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Verifies that the process is running.</span>
+</span><span id="line-0-435"><a id="example-0-435" name="example-0-435"></a>                              <span class="n">error_message</span><span class="o">=</span><span class="s1">'Process is not running.'</span><span class="p">):</span>
+</span><span id="line-0-436"><a id="example-0-436" name="example-0-436"></a><span class="w">    </span><span class="sd">"""Verifies that the process is running.</span>
 </span><span id="line-0-437"><a id="example-0-437" name="example-0-437"></a>
 </span><span id="line-0-438"><a id="example-0-438" name="example-0-438"></a><span class="sd">    If ``handle`` is not given, uses the current `active process`.</span>
 </span><span id="line-0-439"><a id="example-0-439" name="example-0-439"></a>
 </span><span id="line-0-440"><a id="example-0-440" name="example-0-440"></a><span class="sd">    Fails if the process has stopped.</span>
-</span><span id="line-0-441"><a id="example-0-441" name="example-0-441"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-441"><a id="example-0-441" name="example-0-441"></a><span class="sd">    """</span>
 </span><span id="line-0-442"><a id="example-0-442" name="example-0-442"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_process_running</span><span class="p">(</span><span class="n">handle</span><span class="p">):</span>
 </span><span id="line-0-443"><a id="example-0-443" name="example-0-443"></a>        <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span><span class="n">error_message</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
@@ -10746,7 +10746,7 @@ required using <code>Get Process Object</code> separately.</p>
 
 <a href="#robot.libraries.Process.Process.process_should_be_stopped" class="headerlink" title="Permanent link">&para;</a></h3>
 <div class="doc-signature highlight"><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1" href="#example-0-1"></a><span class="nf">process_should_be_stopped</span><span class="p">(</span>
-</span><span id="line-0-2"><a id="example-0-2" name="example-0-2" href="#example-0-2"></a>    <span class="n">handle</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">error_message</span><span class="o">=</span><span class="s2">&quot;Process is running.&quot;</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2" href="#example-0-2"></a>    <span class="n">handle</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">error_message</span><span class="o">=</span><span class="s2">"Process is running."</span>
 </span><span id="line-0-3"><a id="example-0-3" name="example-0-3" href="#example-0-3"></a><span class="p">)</span>
 </span></code></pre></div>
 
@@ -10769,13 +10769,13 @@ required using <code>Get Process Object</code> separately.</p>
 <span class="normal"><a href="#example-0-452">452</a></span>
 <span class="normal"><a href="#example-0-453">453</a></span>
 <span class="normal"><a href="#example-0-454">454</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-445"><a id="example-0-445" name="example-0-445"></a><span class="k">def</span><span class="w"> </span><span class="nf">process_should_be_stopped</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-</span><span id="line-0-446"><a id="example-0-446" name="example-0-446"></a>                              <span class="n">error_message</span><span class="o">=</span><span class="s1">&#39;Process is running.&#39;</span><span class="p">):</span>
-</span><span id="line-0-447"><a id="example-0-447" name="example-0-447"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Verifies that the process is not running.</span>
+</span><span id="line-0-446"><a id="example-0-446" name="example-0-446"></a>                              <span class="n">error_message</span><span class="o">=</span><span class="s1">'Process is running.'</span><span class="p">):</span>
+</span><span id="line-0-447"><a id="example-0-447" name="example-0-447"></a><span class="w">    </span><span class="sd">"""Verifies that the process is not running.</span>
 </span><span id="line-0-448"><a id="example-0-448" name="example-0-448"></a>
 </span><span id="line-0-449"><a id="example-0-449" name="example-0-449"></a><span class="sd">    If ``handle`` is not given, uses the current `active process`.</span>
 </span><span id="line-0-450"><a id="example-0-450" name="example-0-450"></a>
 </span><span id="line-0-451"><a id="example-0-451" name="example-0-451"></a><span class="sd">    Fails if the process is still running.</span>
-</span><span id="line-0-452"><a id="example-0-452" name="example-0-452"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-452"><a id="example-0-452" name="example-0-452"></a><span class="sd">    """</span>
 </span><span id="line-0-453"><a id="example-0-453" name="example-0-453"></a>    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_process_running</span><span class="p">(</span><span class="n">handle</span><span class="p">):</span>
 </span><span id="line-0-454"><a id="example-0-454" name="example-0-454"></a>        <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span><span class="n">error_message</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
@@ -10798,7 +10798,7 @@ required using <code>Get Process Object</code> separately.</p>
 
 <a href="#robot.libraries.Process.Process.wait_for_process" class="headerlink" title="Permanent link">&para;</a></h3>
 <div class="doc-signature highlight"><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1" href="#example-0-1"></a><span class="nf">wait_for_process</span><span class="p">(</span>
-</span><span id="line-0-2"><a id="example-0-2" name="example-0-2" href="#example-0-2"></a>    <span class="n">handle</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">on_timeout</span><span class="o">=</span><span class="s2">&quot;continue&quot;</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2" href="#example-0-2"></a>    <span class="n">handle</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">on_timeout</span><span class="o">=</span><span class="s2">"continue"</span>
 </span><span id="line-0-3"><a id="example-0-3" name="example-0-3" href="#example-0-3"></a><span class="p">)</span>
 </span></code></pre></div>
 
@@ -10898,8 +10898,8 @@ returned instead.</p>
 <span class="normal"><a href="#example-0-506">506</a></span>
 <span class="normal"><a href="#example-0-507">507</a></span>
 <span class="normal"><a href="#example-0-508">508</a></span>
-<span class="normal"><a href="#example-0-509">509</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-456"><a id="example-0-456" name="example-0-456"></a><span class="k">def</span><span class="w"> </span><span class="nf">wait_for_process</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">on_timeout</span><span class="o">=</span><span class="s1">&#39;continue&#39;</span><span class="p">):</span>
-</span><span id="line-0-457"><a id="example-0-457" name="example-0-457"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Waits for the process to complete or to reach the given timeout.</span>
+<span class="normal"><a href="#example-0-509">509</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-456"><a id="example-0-456" name="example-0-456"></a><span class="k">def</span><span class="w"> </span><span class="nf">wait_for_process</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">on_timeout</span><span class="o">=</span><span class="s1">'continue'</span><span class="p">):</span>
+</span><span id="line-0-457"><a id="example-0-457" name="example-0-457"></a><span class="w">    </span><span class="sd">"""Waits for the process to complete or to reach the given timeout.</span>
 </span><span id="line-0-458"><a id="example-0-458" name="example-0-458"></a>
 </span><span id="line-0-459"><a id="example-0-459" name="example-0-459"></a><span class="sd">    The process to wait for must have been started earlier with</span>
 </span><span id="line-0-460"><a id="example-0-460" name="example-0-460"></a><span class="sd">    `Start Process`. If ``handle`` is not given, uses the current</span>
@@ -10943,13 +10943,13 @@ returned instead.</p>
 </span><span id="line-0-498"><a id="example-0-498" name="example-0-498"></a><span class="sd">    | ${result} =                 | Wait For Process | timeout=1min 30s | on_timeout=kill |</span>
 </span><span id="line-0-499"><a id="example-0-499" name="example-0-499"></a><span class="sd">    | Process Should Be Stopped   |                  |                  |</span>
 </span><span id="line-0-500"><a id="example-0-500" name="example-0-500"></a><span class="sd">    | Should Be Equal As Integers | ${result.rc}     | -9               |</span>
-</span><span id="line-0-501"><a id="example-0-501" name="example-0-501"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-501"><a id="example-0-501" name="example-0-501"></a><span class="sd">    """</span>
 </span><span id="line-0-502"><a id="example-0-502" name="example-0-502"></a>    <span class="n">process</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_processes</span><span class="p">[</span><span class="n">handle</span><span class="p">]</span>
-</span><span id="line-0-503"><a id="example-0-503" name="example-0-503"></a>    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Waiting for process to complete.&#39;</span><span class="p">)</span>
+</span><span id="line-0-503"><a id="example-0-503" name="example-0-503"></a>    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">'Waiting for process to complete.'</span><span class="p">)</span>
 </span><span id="line-0-504"><a id="example-0-504" name="example-0-504"></a>    <span class="n">timeout</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_timeout</span><span class="p">(</span><span class="n">timeout</span><span class="p">)</span>
 </span><span id="line-0-505"><a id="example-0-505" name="example-0-505"></a>    <span class="k">if</span> <span class="n">timeout</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
 </span><span id="line-0-506"><a id="example-0-506" name="example-0-506"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_process_is_stopped</span><span class="p">(</span><span class="n">process</span><span class="p">,</span> <span class="n">timeout</span><span class="p">):</span>
-</span><span id="line-0-507"><a id="example-0-507" name="example-0-507"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Process did not complete in </span><span class="si">{</span><span class="n">secs_to_timestr</span><span class="p">(</span><span class="n">timeout</span><span class="p">)</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
+</span><span id="line-0-507"><a id="example-0-507" name="example-0-507"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Process did not complete in </span><span class="si">{</span><span class="n">secs_to_timestr</span><span class="p">(</span><span class="n">timeout</span><span class="p">)</span><span class="si">}</span><span class="s1">.'</span><span class="p">)</span>
 </span><span id="line-0-508"><a id="example-0-508" name="example-0-508"></a>            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_manage_process_timeout</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">on_timeout</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
 </span><span id="line-0-509"><a id="example-0-509" name="example-0-509"></a>    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wait</span><span class="p">(</span><span class="n">process</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
@@ -11045,7 +11045,7 @@ event and killing using Win32 API function <code>TerminateProcess()</code>.</p>
 <span class="normal"><a href="#example-0-572">572</a></span>
 <span class="normal"><a href="#example-0-573">573</a></span>
 <span class="normal"><a href="#example-0-574">574</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-532"><a id="example-0-532" name="example-0-532"></a><span class="k">def</span><span class="w"> </span><span class="nf">terminate_process</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">kill</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-</span><span id="line-0-533"><a id="example-0-533" name="example-0-533"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Stops the process gracefully or forcefully.</span>
+</span><span id="line-0-533"><a id="example-0-533" name="example-0-533"></a><span class="w">    </span><span class="sd">"""Stops the process gracefully or forcefully.</span>
 </span><span id="line-0-534"><a id="example-0-534" name="example-0-534"></a>
 </span><span id="line-0-535"><a id="example-0-535" name="example-0-535"></a><span class="sd">    If ``handle`` is not given, uses the current `active process`.</span>
 </span><span id="line-0-536"><a id="example-0-536" name="example-0-536"></a>
@@ -11074,18 +11074,18 @@ event and killing using Win32 API function <code>TerminateProcess()</code>.</p>
 </span><span id="line-0-559"><a id="example-0-559" name="example-0-559"></a><span class="sd">    Limitations:</span>
 </span><span id="line-0-560"><a id="example-0-560" name="example-0-560"></a><span class="sd">    - On Windows forceful kill only stops the main process, not possible</span>
 </span><span id="line-0-561"><a id="example-0-561" name="example-0-561"></a><span class="sd">      child processes.</span>
-</span><span id="line-0-562"><a id="example-0-562" name="example-0-562"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-562"><a id="example-0-562" name="example-0-562"></a><span class="sd">    """</span>
 </span><span id="line-0-563"><a id="example-0-563" name="example-0-563"></a>    <span class="n">process</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_processes</span><span class="p">[</span><span class="n">handle</span><span class="p">]</span>
-</span><span id="line-0-564"><a id="example-0-564" name="example-0-564"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">process</span><span class="p">,</span> <span class="s1">&#39;terminate&#39;</span><span class="p">):</span>
-</span><span id="line-0-565"><a id="example-0-565" name="example-0-565"></a>        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s1">&#39;Terminating processes is not supported &#39;</span>
-</span><span id="line-0-566"><a id="example-0-566" name="example-0-566"></a>                           <span class="s1">&#39;by this Python version.&#39;</span><span class="p">)</span>
+</span><span id="line-0-564"><a id="example-0-564" name="example-0-564"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">process</span><span class="p">,</span> <span class="s1">'terminate'</span><span class="p">):</span>
+</span><span id="line-0-565"><a id="example-0-565" name="example-0-565"></a>        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s1">'Terminating processes is not supported '</span>
+</span><span id="line-0-566"><a id="example-0-566" name="example-0-566"></a>                           <span class="s1">'by this Python version.'</span><span class="p">)</span>
 </span><span id="line-0-567"><a id="example-0-567" name="example-0-567"></a>    <span class="n">terminator</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_kill</span> <span class="k">if</span> <span class="n">is_truthy</span><span class="p">(</span><span class="n">kill</span><span class="p">)</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">_terminate</span>
 </span><span id="line-0-568"><a id="example-0-568" name="example-0-568"></a>    <span class="k">try</span><span class="p">:</span>
 </span><span id="line-0-569"><a id="example-0-569" name="example-0-569"></a>        <span class="n">terminator</span><span class="p">(</span><span class="n">process</span><span class="p">)</span>
 </span><span id="line-0-570"><a id="example-0-570" name="example-0-570"></a>    <span class="k">except</span> <span class="ne">OSError</span><span class="p">:</span>
 </span><span id="line-0-571"><a id="example-0-571" name="example-0-571"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_process_is_stopped</span><span class="p">(</span><span class="n">process</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">KILL_TIMEOUT</span><span class="p">):</span>
 </span><span id="line-0-572"><a id="example-0-572" name="example-0-572"></a>            <span class="k">raise</span>
-</span><span id="line-0-573"><a id="example-0-573" name="example-0-573"></a>        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;Ignored OSError because process was stopped.&#39;</span><span class="p">)</span>
+</span><span id="line-0-573"><a id="example-0-573" name="example-0-573"></a>        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">'Ignored OSError because process was stopped.'</span><span class="p">)</span>
 </span><span id="line-0-574"><a id="example-0-574" name="example-0-574"></a>    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wait</span><span class="p">(</span><span class="n">process</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
@@ -11135,7 +11135,7 @@ that this keyword uses internally for more details.</p>
 <span class="normal"><a href="#example-0-610">610</a></span>
 <span class="normal"><a href="#example-0-611">611</a></span>
 <span class="normal"><a href="#example-0-612">612</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-599"><a id="example-0-599" name="example-0-599"></a><span class="k">def</span><span class="w"> </span><span class="nf">terminate_all_processes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kill</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-</span><span id="line-0-600"><a id="example-0-600" name="example-0-600"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Terminates all still running processes started by this library.</span>
+</span><span id="line-0-600"><a id="example-0-600" name="example-0-600"></a><span class="w">    </span><span class="sd">"""Terminates all still running processes started by this library.</span>
 </span><span id="line-0-601"><a id="example-0-601" name="example-0-601"></a>
 </span><span id="line-0-602"><a id="example-0-602" name="example-0-602"></a><span class="sd">    This keyword can be used in suite teardown or elsewhere to make</span>
 </span><span id="line-0-603"><a id="example-0-603" name="example-0-603"></a><span class="sd">    sure that all processes are stopped,</span>
@@ -11143,7 +11143,7 @@ that this keyword uses internally for more details.</p>
 </span><span id="line-0-605"><a id="example-0-605" name="example-0-605"></a><span class="sd">    By default tries to terminate processes gracefully, but can be</span>
 </span><span id="line-0-606"><a id="example-0-606" name="example-0-606"></a><span class="sd">    configured to forcefully kill them immediately. See `Terminate Process`</span>
 </span><span id="line-0-607"><a id="example-0-607" name="example-0-607"></a><span class="sd">    that this keyword uses internally for more details.</span>
-</span><span id="line-0-608"><a id="example-0-608" name="example-0-608"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-608"><a id="example-0-608" name="example-0-608"></a><span class="sd">    """</span>
 </span><span id="line-0-609"><a id="example-0-609" name="example-0-609"></a>    <span class="k">for</span> <span class="n">handle</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_processes</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
 </span><span id="line-0-610"><a id="example-0-610" name="example-0-610"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_process_running</span><span class="p">(</span><span class="n">handle</span><span class="p">):</span>
 </span><span id="line-0-611"><a id="example-0-611" name="example-0-611"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">terminate_process</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">kill</span><span class="o">=</span><span class="n">kill</span><span class="p">)</span>
@@ -11234,7 +11234,7 @@ be set to any true value (see <code>Boolean arguments</code>).</p>
 <span class="normal"><a href="#example-0-650">650</a></span>
 <span class="normal"><a href="#example-0-651">651</a></span>
 <span class="normal"><a href="#example-0-652">652</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-614"><a id="example-0-614" name="example-0-614"></a><span class="k">def</span><span class="w"> </span><span class="nf">send_signal_to_process</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">signal</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">group</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-</span><span id="line-0-615"><a id="example-0-615" name="example-0-615"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Sends the given ``signal`` to the specified process.</span>
+</span><span id="line-0-615"><a id="example-0-615" name="example-0-615"></a><span class="w">    </span><span class="sd">"""Sends the given ``signal`` to the specified process.</span>
 </span><span id="line-0-616"><a id="example-0-616" name="example-0-616"></a>
 </span><span id="line-0-617"><a id="example-0-617" name="example-0-617"></a><span class="sd">    If ``handle`` is not given, uses the current `active process`.</span>
 </span><span id="line-0-618"><a id="example-0-618" name="example-0-618"></a>
@@ -11259,19 +11259,19 @@ be set to any true value (see <code>Boolean arguments</code>).</p>
 </span><span id="line-0-637"><a id="example-0-637" name="example-0-637"></a>
 </span><span id="line-0-638"><a id="example-0-638" name="example-0-638"></a><span class="sd">    To send the signal to the whole process group, ``group`` argument can</span>
 </span><span id="line-0-639"><a id="example-0-639" name="example-0-639"></a><span class="sd">    be set to any true value (see `Boolean arguments`).</span>
-</span><span id="line-0-640"><a id="example-0-640" name="example-0-640"></a><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="line-0-641"><a id="example-0-641" name="example-0-641"></a>    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">sep</span> <span class="o">==</span> <span class="s1">&#39;</span><span class="se">\\</span><span class="s1">&#39;</span><span class="p">:</span>
-</span><span id="line-0-642"><a id="example-0-642" name="example-0-642"></a>        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s1">&#39;This keyword does not work on Windows.&#39;</span><span class="p">)</span>
+</span><span id="line-0-640"><a id="example-0-640" name="example-0-640"></a><span class="sd">    """</span>
+</span><span id="line-0-641"><a id="example-0-641" name="example-0-641"></a>    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">sep</span> <span class="o">==</span> <span class="s1">'</span><span class="se">\\</span><span class="s1">'</span><span class="p">:</span>
+</span><span id="line-0-642"><a id="example-0-642" name="example-0-642"></a>        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s1">'This keyword does not work on Windows.'</span><span class="p">)</span>
 </span><span id="line-0-643"><a id="example-0-643" name="example-0-643"></a>    <span class="n">process</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_processes</span><span class="p">[</span><span class="n">handle</span><span class="p">]</span>
 </span><span id="line-0-644"><a id="example-0-644" name="example-0-644"></a>    <span class="n">signum</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_signal_number</span><span class="p">(</span><span class="n">signal</span><span class="p">)</span>
-</span><span id="line-0-645"><a id="example-0-645" name="example-0-645"></a>    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Sending signal </span><span class="si">{</span><span class="n">signal</span><span class="si">}</span><span class="s1"> (</span><span class="si">{</span><span class="n">signum</span><span class="si">}</span><span class="s1">).&#39;</span><span class="p">)</span>
-</span><span id="line-0-646"><a id="example-0-646" name="example-0-646"></a>    <span class="k">if</span> <span class="n">is_truthy</span><span class="p">(</span><span class="n">group</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">os</span><span class="p">,</span> <span class="s1">&#39;killpg&#39;</span><span class="p">):</span>
+</span><span id="line-0-645"><a id="example-0-645" name="example-0-645"></a>    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Sending signal </span><span class="si">{</span><span class="n">signal</span><span class="si">}</span><span class="s1"> (</span><span class="si">{</span><span class="n">signum</span><span class="si">}</span><span class="s1">).'</span><span class="p">)</span>
+</span><span id="line-0-646"><a id="example-0-646" name="example-0-646"></a>    <span class="k">if</span> <span class="n">is_truthy</span><span class="p">(</span><span class="n">group</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">os</span><span class="p">,</span> <span class="s1">'killpg'</span><span class="p">):</span>
 </span><span id="line-0-647"><a id="example-0-647" name="example-0-647"></a>        <span class="n">os</span><span class="o">.</span><span class="n">killpg</span><span class="p">(</span><span class="n">process</span><span class="o">.</span><span class="n">pid</span><span class="p">,</span> <span class="n">signum</span><span class="p">)</span>
-</span><span id="line-0-648"><a id="example-0-648" name="example-0-648"></a>    <span class="k">elif</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">process</span><span class="p">,</span> <span class="s1">&#39;send_signal&#39;</span><span class="p">):</span>
+</span><span id="line-0-648"><a id="example-0-648" name="example-0-648"></a>    <span class="k">elif</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">process</span><span class="p">,</span> <span class="s1">'send_signal'</span><span class="p">):</span>
 </span><span id="line-0-649"><a id="example-0-649" name="example-0-649"></a>        <span class="n">process</span><span class="o">.</span><span class="n">send_signal</span><span class="p">(</span><span class="n">signum</span><span class="p">)</span>
 </span><span id="line-0-650"><a id="example-0-650" name="example-0-650"></a>    <span class="k">else</span><span class="p">:</span>
-</span><span id="line-0-651"><a id="example-0-651" name="example-0-651"></a>        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s1">&#39;Sending signals is not supported &#39;</span>
-</span><span id="line-0-652"><a id="example-0-652" name="example-0-652"></a>                           <span class="s1">&#39;by this Python version.&#39;</span><span class="p">)</span>
+</span><span id="line-0-651"><a id="example-0-651" name="example-0-651"></a>        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s1">'Sending signals is not supported '</span>
+</span><span id="line-0-652"><a id="example-0-652" name="example-0-652"></a>                           <span class="s1">'by this Python version.'</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -11315,14 +11315,14 @@ the <code>pid</code> attribute of the <code>subprocess.Popen</code> object retur
 <span class="normal"><a href="#example-0-674">674</a></span>
 <span class="normal"><a href="#example-0-675">675</a></span>
 <span class="normal"><a href="#example-0-676">676</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-667"><a id="example-0-667" name="example-0-667"></a><span class="k">def</span><span class="w"> </span><span class="nf">get_process_id</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-</span><span id="line-0-668"><a id="example-0-668" name="example-0-668"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns the process ID (pid) of the process as an integer.</span>
+</span><span id="line-0-668"><a id="example-0-668" name="example-0-668"></a><span class="w">    </span><span class="sd">"""Returns the process ID (pid) of the process as an integer.</span>
 </span><span id="line-0-669"><a id="example-0-669" name="example-0-669"></a>
 </span><span id="line-0-670"><a id="example-0-670" name="example-0-670"></a><span class="sd">    If ``handle`` is not given, uses the current `active process`.</span>
 </span><span id="line-0-671"><a id="example-0-671" name="example-0-671"></a>
 </span><span id="line-0-672"><a id="example-0-672" name="example-0-672"></a><span class="sd">    Starting from Robot Framework 5.0, it is also possible to directly access</span>
 </span><span id="line-0-673"><a id="example-0-673" name="example-0-673"></a><span class="sd">    the ``pid`` attribute of the ``subprocess.Popen`` object returned by</span>
 </span><span id="line-0-674"><a id="example-0-674" name="example-0-674"></a><span class="sd">    `Start Process` like ``${process.pid}``.</span>
-</span><span id="line-0-675"><a id="example-0-675" name="example-0-675"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-675"><a id="example-0-675" name="example-0-675"></a><span class="sd">    """</span>
 </span><span id="line-0-676"><a id="example-0-676" name="example-0-676"></a>    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_processes</span><span class="p">[</span><span class="n">handle</span><span class="p">]</span><span class="o">.</span><span class="n">pid</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
@@ -11367,14 +11367,14 @@ mostly redundant.</p>
 <span class="normal"><a href="#example-0-685">685</a></span>
 <span class="normal"><a href="#example-0-686">686</a></span>
 <span class="normal"><a href="#example-0-687">687</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-678"><a id="example-0-678" name="example-0-678"></a><span class="k">def</span><span class="w"> </span><span class="nf">get_process_object</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-</span><span id="line-0-679"><a id="example-0-679" name="example-0-679"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Return the underlying ``subprocess.Popen`` object.</span>
+</span><span id="line-0-679"><a id="example-0-679" name="example-0-679"></a><span class="w">    </span><span class="sd">"""Return the underlying ``subprocess.Popen`` object.</span>
 </span><span id="line-0-680"><a id="example-0-680" name="example-0-680"></a>
 </span><span id="line-0-681"><a id="example-0-681" name="example-0-681"></a><span class="sd">    If ``handle`` is not given, uses the current `active process`.</span>
 </span><span id="line-0-682"><a id="example-0-682" name="example-0-682"></a>
 </span><span id="line-0-683"><a id="example-0-683" name="example-0-683"></a><span class="sd">    Starting from Robot Framework 5.0, `Start Process` returns the created</span>
 </span><span id="line-0-684"><a id="example-0-684" name="example-0-684"></a><span class="sd">    ``subprocess.Popen`` object, not a generic handle, making this keyword</span>
 </span><span id="line-0-685"><a id="example-0-685" name="example-0-685"></a><span class="sd">    mostly redundant.</span>
-</span><span id="line-0-686"><a id="example-0-686" name="example-0-686"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-686"><a id="example-0-686" name="example-0-686"></a><span class="sd">    """</span>
 </span><span id="line-0-687"><a id="example-0-687" name="example-0-687"></a>    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_processes</span><span class="p">[</span><span class="n">handle</span><span class="p">]</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
@@ -11498,7 +11498,7 @@ can be returned without problems.</p>
 <span class="normal"><a href="#example-0-739">739</a></span>
 <span class="normal"><a href="#example-0-740">740</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-689"><a id="example-0-689" name="example-0-689"></a><span class="k">def</span><span class="w"> </span><span class="nf">get_process_result</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">rc</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">stdout</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
 </span><span id="line-0-690"><a id="example-0-690" name="example-0-690"></a>                       <span class="n">stderr</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">stdout_path</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">stderr_path</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-</span><span id="line-0-691"><a id="example-0-691" name="example-0-691"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns the specified `result object` or some of its attributes.</span>
+</span><span id="line-0-691"><a id="example-0-691" name="example-0-691"></a><span class="w">    </span><span class="sd">"""Returns the specified `result object` or some of its attributes.</span>
 </span><span id="line-0-692"><a id="example-0-692" name="example-0-692"></a>
 </span><span id="line-0-693"><a id="example-0-693" name="example-0-693"></a><span class="sd">    The given ``handle`` specifies the process whose results should be</span>
 </span><span id="line-0-694"><a id="example-0-694" name="example-0-694"></a><span class="sd">    returned. If no ``handle`` is given, results of the current `active</span>
@@ -11517,7 +11517,7 @@ can be returned without problems.</p>
 </span><span id="line-0-707"><a id="example-0-707" name="example-0-707"></a><span class="sd">    values.</span>
 </span><span id="line-0-708"><a id="example-0-708" name="example-0-708"></a>
 </span><span id="line-0-709"><a id="example-0-709" name="example-0-709"></a><span class="sd">    Examples:</span>
-</span><span id="line-0-710"><a id="example-0-710" name="example-0-710"></a><span class="sd">    | Run Process           | python             | -c            | print(&#39;Hello, world!&#39;) | alias=myproc |</span>
+</span><span id="line-0-710"><a id="example-0-710" name="example-0-710"></a><span class="sd">    | Run Process           | python             | -c            | print('Hello, world!') | alias=myproc |</span>
 </span><span id="line-0-711"><a id="example-0-711" name="example-0-711"></a><span class="sd">    | # Get result object   |                    |               |</span>
 </span><span id="line-0-712"><a id="example-0-712" name="example-0-712"></a><span class="sd">    | ${result} =           | Get Process Result | myproc        |</span>
 </span><span id="line-0-713"><a id="example-0-713" name="example-0-713"></a><span class="sd">    | Should Be Equal       | ${result.rc}       | ${0}          |</span>
@@ -11536,11 +11536,11 @@ can be returned without problems.</p>
 </span><span id="line-0-726"><a id="example-0-726" name="example-0-726"></a><span class="sd">    over the remote library interface. The remote interface does not</span>
 </span><span id="line-0-727"><a id="example-0-727" name="example-0-727"></a><span class="sd">    support returning the whole result object, but individual attributes</span>
 </span><span id="line-0-728"><a id="example-0-728" name="example-0-728"></a><span class="sd">    can be returned without problems.</span>
-</span><span id="line-0-729"><a id="example-0-729" name="example-0-729"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-729"><a id="example-0-729" name="example-0-729"></a><span class="sd">    """</span>
 </span><span id="line-0-730"><a id="example-0-730" name="example-0-730"></a>    <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_results</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_processes</span><span class="p">[</span><span class="n">handle</span><span class="p">]]</span>
 </span><span id="line-0-731"><a id="example-0-731" name="example-0-731"></a>    <span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">rc</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-0-732"><a id="example-0-732" name="example-0-732"></a>        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s1">&#39;Getting results of unfinished processes &#39;</span>
-</span><span id="line-0-733"><a id="example-0-733" name="example-0-733"></a>                           <span class="s1">&#39;is not supported.&#39;</span><span class="p">)</span>
+</span><span id="line-0-732"><a id="example-0-732" name="example-0-732"></a>        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s1">'Getting results of unfinished processes '</span>
+</span><span id="line-0-733"><a id="example-0-733" name="example-0-733"></a>                           <span class="s1">'is not supported.'</span><span class="p">)</span>
 </span><span id="line-0-734"><a id="example-0-734" name="example-0-734"></a>    <span class="n">attributes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_result_attributes</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">rc</span><span class="p">,</span> <span class="n">stdout</span><span class="p">,</span> <span class="n">stderr</span><span class="p">,</span>
 </span><span id="line-0-735"><a id="example-0-735" name="example-0-735"></a>                                             <span class="n">stdout_path</span><span class="p">,</span> <span class="n">stderr_path</span><span class="p">)</span>
 </span><span id="line-0-736"><a id="example-0-736" name="example-0-736"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">attributes</span><span class="p">:</span>
@@ -11599,7 +11599,7 @@ the <code>alias</code> given to it explicitly.</p>
 <span class="normal"><a href="#example-0-759">759</a></span>
 <span class="normal"><a href="#example-0-760">760</a></span>
 <span class="normal"><a href="#example-0-761">761</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-748"><a id="example-0-748" name="example-0-748"></a><span class="k">def</span><span class="w"> </span><span class="nf">switch_process</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handle</span><span class="p">):</span>
-</span><span id="line-0-749"><a id="example-0-749" name="example-0-749"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Makes the specified process the current `active process`.</span>
+</span><span id="line-0-749"><a id="example-0-749" name="example-0-749"></a><span class="w">    </span><span class="sd">"""Makes the specified process the current `active process`.</span>
 </span><span id="line-0-750"><a id="example-0-750" name="example-0-750"></a>
 </span><span id="line-0-751"><a id="example-0-751" name="example-0-751"></a><span class="sd">    The handle can be an identifier returned by `Start Process` or</span>
 </span><span id="line-0-752"><a id="example-0-752" name="example-0-752"></a><span class="sd">    the ``alias`` given to it explicitly.</span>
@@ -11610,7 +11610,7 @@ the <code>alias</code> given to it explicitly.</p>
 </span><span id="line-0-757"><a id="example-0-757" name="example-0-757"></a><span class="sd">    | # currently active process is process2 |</span>
 </span><span id="line-0-758"><a id="example-0-758" name="example-0-758"></a><span class="sd">    | Switch Process | process1 |</span>
 </span><span id="line-0-759"><a id="example-0-759" name="example-0-759"></a><span class="sd">    | # now active process is process1 |</span>
-</span><span id="line-0-760"><a id="example-0-760" name="example-0-760"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-760"><a id="example-0-760" name="example-0-760"></a><span class="sd">    """</span>
 </span><span id="line-0-761"><a id="example-0-761" name="example-0-761"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_processes</span><span class="o">.</span><span class="n">switch</span><span class="p">(</span><span class="n">handle</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
@@ -11666,7 +11666,7 @@ in Windows paths and elsewhere.</p>
 <span class="normal"><a href="#example-0-783">783</a></span>
 <span class="normal"><a href="#example-0-784">784</a></span>
 <span class="normal"><a href="#example-0-785">785</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-770"><a id="example-0-770" name="example-0-770"></a><span class="k">def</span><span class="w"> </span><span class="nf">split_command_line</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">escaping</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-</span><span id="line-0-771"><a id="example-0-771" name="example-0-771"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Splits command line string into a list of arguments.</span>
+</span><span id="line-0-771"><a id="example-0-771" name="example-0-771"></a><span class="w">    </span><span class="sd">"""Splits command line string into a list of arguments.</span>
 </span><span id="line-0-772"><a id="example-0-772" name="example-0-772"></a>
 </span><span id="line-0-773"><a id="example-0-773" name="example-0-773"></a><span class="sd">    String is split from spaces, but argument surrounded in quotes may</span>
 </span><span id="line-0-774"><a id="example-0-774" name="example-0-774"></a><span class="sd">    contain spaces in them.</span>
@@ -11677,9 +11677,9 @@ in Windows paths and elsewhere.</p>
 </span><span id="line-0-779"><a id="example-0-779" name="example-0-779"></a><span class="sd">    in Windows paths and elsewhere.</span>
 </span><span id="line-0-780"><a id="example-0-780" name="example-0-780"></a>
 </span><span id="line-0-781"><a id="example-0-781" name="example-0-781"></a><span class="sd">    Examples:</span>
-</span><span id="line-0-782"><a id="example-0-782" name="example-0-782"></a><span class="sd">    | @{cmd} = | Split Command Line | --option &quot;value with spaces&quot; |</span>
-</span><span id="line-0-783"><a id="example-0-783" name="example-0-783"></a><span class="sd">    | Should Be True | $cmd == [&#39;--option&#39;, &#39;value with spaces&#39;] |</span>
-</span><span id="line-0-784"><a id="example-0-784" name="example-0-784"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-782"><a id="example-0-782" name="example-0-782"></a><span class="sd">    | @{cmd} = | Split Command Line | --option "value with spaces" |</span>
+</span><span id="line-0-783"><a id="example-0-783" name="example-0-783"></a><span class="sd">    | Should Be True | $cmd == ['--option', 'value with spaces'] |</span>
+</span><span id="line-0-784"><a id="example-0-784" name="example-0-784"></a><span class="sd">    """</span>
 </span><span id="line-0-785"><a id="example-0-785" name="example-0-785"></a>    <span class="k">return</span> <span class="n">cmdline2list</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">escaping</span><span class="o">=</span><span class="n">escaping</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
@@ -11735,7 +11735,7 @@ object, then the values of that list are joined instead.</p>
 <span class="normal"><a href="#example-0-801">801</a></span>
 <span class="normal"><a href="#example-0-802">802</a></span>
 <span class="normal"><a href="#example-0-803">803</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-787"><a id="example-0-787" name="example-0-787"></a><span class="k">def</span><span class="w"> </span><span class="nf">join_command_line</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
-</span><span id="line-0-788"><a id="example-0-788" name="example-0-788"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Joins arguments into one command line string.</span>
+</span><span id="line-0-788"><a id="example-0-788" name="example-0-788"></a><span class="w">    </span><span class="sd">"""Joins arguments into one command line string.</span>
 </span><span id="line-0-789"><a id="example-0-789" name="example-0-789"></a>
 </span><span id="line-0-790"><a id="example-0-790" name="example-0-790"></a><span class="sd">    In resulting command line string arguments are delimited with a space,</span>
 </span><span id="line-0-791"><a id="example-0-791" name="example-0-791"></a><span class="sd">    arguments containing spaces are surrounded with quotes, and possible</span>
@@ -11746,8 +11746,8 @@ object, then the values of that list are joined instead.</p>
 </span><span id="line-0-796"><a id="example-0-796" name="example-0-796"></a>
 </span><span id="line-0-797"><a id="example-0-797" name="example-0-797"></a><span class="sd">    Example:</span>
 </span><span id="line-0-798"><a id="example-0-798" name="example-0-798"></a><span class="sd">    | ${cmd} = | Join Command Line | --option | value with spaces |</span>
-</span><span id="line-0-799"><a id="example-0-799" name="example-0-799"></a><span class="sd">    | Should Be Equal | ${cmd} | --option &quot;value with spaces&quot; |</span>
-</span><span id="line-0-800"><a id="example-0-800" name="example-0-800"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-799"><a id="example-0-799" name="example-0-799"></a><span class="sd">    | Should Be Equal | ${cmd} | --option "value with spaces" |</span>
+</span><span id="line-0-800"><a id="example-0-800" name="example-0-800"></a><span class="sd">    """</span>
 </span><span id="line-0-801"><a id="example-0-801" name="example-0-801"></a>    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">is_list_like</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
 </span><span id="line-0-802"><a id="example-0-802" name="example-0-802"></a>        <span class="n">args</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 </span><span id="line-0-803"><a id="example-0-803" name="example-0-803"></a>    <span class="k">return</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">list2cmdline</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">args</span><span class="p">)</span>

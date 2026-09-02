@@ -10032,7 +10032,7 @@ given, the first module/tool found is used in that order.</p>
 <span class="normal"><a href="#example-0-106">106</a></span>
 <span class="normal"><a href="#example-0-107">107</a></span>
 <span class="normal"><a href="#example-0-108">108</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-89"><a id="example-0-89" name="example-0-89"></a><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">screenshot_directory</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">screenshot_module</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-</span><span id="line-0-90"><a id="example-0-90" name="example-0-90"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Configure where screenshots are saved.</span>
+</span><span id="line-0-90"><a id="example-0-90" name="example-0-90"></a><span class="w">    </span><span class="sd">"""Configure where screenshots are saved.</span>
 </span><span id="line-0-91"><a id="example-0-91" name="example-0-91"></a>
 </span><span id="line-0-92"><a id="example-0-92" name="example-0-92"></a><span class="sd">    If ``screenshot_directory`` is not given, screenshots are saved into</span>
 </span><span id="line-0-93"><a id="example-0-93" name="example-0-93"></a><span class="sd">    same directory as the log file. The directory can also be set using</span>
@@ -10048,7 +10048,7 @@ given, the first module/tool found is used in that order.</p>
 </span><span id="line-0-103"><a id="example-0-103" name="example-0-103"></a><span class="sd">    | Library   | Screenshot |            |</span>
 </span><span id="line-0-104"><a id="example-0-104" name="example-0-104"></a><span class="sd">    | Library   | Screenshot | ${TEMPDIR} |</span>
 </span><span id="line-0-105"><a id="example-0-105" name="example-0-105"></a><span class="sd">    | Library   | Screenshot | screenshot_module=PyGTK |</span>
-</span><span id="line-0-106"><a id="example-0-106" name="example-0-106"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-106"><a id="example-0-106" name="example-0-106"></a><span class="sd">    """</span>
 </span><span id="line-0-107"><a id="example-0-107" name="example-0-107"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_given_screenshot_dir</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_norm_path</span><span class="p">(</span><span class="n">screenshot_directory</span><span class="p">)</span>
 </span><span id="line-0-108"><a id="example-0-108" name="example-0-108"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_screenshot_taker</span> <span class="o">=</span> <span class="n">ScreenshotTaker</span><span class="p">(</span><span class="n">screenshot_module</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
@@ -10101,16 +10101,16 @@ systems. Path to the old directory is returned.</p>
 <span class="normal"><a href="#example-0-142">142</a></span>
 <span class="normal"><a href="#example-0-143">143</a></span>
 <span class="normal"><a href="#example-0-144">144</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-131"><a id="example-0-131" name="example-0-131"></a><span class="k">def</span><span class="w"> </span><span class="nf">set_screenshot_directory</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
-</span><span id="line-0-132"><a id="example-0-132" name="example-0-132"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Sets the directory where screenshots are saved.</span>
+</span><span id="line-0-132"><a id="example-0-132" name="example-0-132"></a><span class="w">    </span><span class="sd">"""Sets the directory where screenshots are saved.</span>
 </span><span id="line-0-133"><a id="example-0-133" name="example-0-133"></a>
 </span><span id="line-0-134"><a id="example-0-134" name="example-0-134"></a><span class="sd">    It is possible to use ``/`` as a path separator in all operating</span>
 </span><span id="line-0-135"><a id="example-0-135" name="example-0-135"></a><span class="sd">    systems. Path to the old directory is returned.</span>
 </span><span id="line-0-136"><a id="example-0-136" name="example-0-136"></a>
 </span><span id="line-0-137"><a id="example-0-137" name="example-0-137"></a><span class="sd">    The directory can also be set in `importing`.</span>
-</span><span id="line-0-138"><a id="example-0-138" name="example-0-138"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-138"><a id="example-0-138" name="example-0-138"></a><span class="sd">    """</span>
 </span><span id="line-0-139"><a id="example-0-139" name="example-0-139"></a>    <span class="n">path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_norm_path</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
 </span><span id="line-0-140"><a id="example-0-140" name="example-0-140"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
-</span><span id="line-0-141"><a id="example-0-141" name="example-0-141"></a>        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Directory &#39;</span><span class="si">%s</span><span class="s2">&#39; does not exist.&quot;</span> <span class="o">%</span> <span class="n">path</span><span class="p">)</span>
+</span><span id="line-0-141"><a id="example-0-141" name="example-0-141"></a>        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">"Directory '</span><span class="si">%s</span><span class="s2">' does not exist."</span> <span class="o">%</span> <span class="n">path</span><span class="p">)</span>
 </span><span id="line-0-142"><a id="example-0-142" name="example-0-142"></a>    <span class="n">old</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_screenshot_dir</span>
 </span><span id="line-0-143"><a id="example-0-143" name="example-0-143"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_given_screenshot_dir</span> <span class="o">=</span> <span class="n">path</span>
 </span><span id="line-0-144"><a id="example-0-144" name="example-0-144"></a>    <span class="k">return</span> <span class="n">old</span>
@@ -10133,7 +10133,7 @@ systems. Path to the old directory is returned.</p>
 
 
 <a href="#robot.libraries.Screenshot.Screenshot.take_screenshot" class="headerlink" title="Permanent link">&para;</a></h3>
-<div class="doc-signature highlight"><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1" href="#example-0-1"></a><span class="nf">take_screenshot</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;screenshot&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="s1">&#39;800px&#39;</span><span class="p">)</span>
+<div class="doc-signature highlight"><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1" href="#example-0-1"></a><span class="nf">take_screenshot</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'screenshot'</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="s1">'800px'</span><span class="p">)</span>
 </span></code></pre></div>
 
     <div class="doc doc-contents ">
@@ -10187,8 +10187,8 @@ Using <code>/</code> as a path separator works in all operating systems.</p>
 <span class="normal"><a href="#example-0-170">170</a></span>
 <span class="normal"><a href="#example-0-171">171</a></span>
 <span class="normal"><a href="#example-0-172">172</a></span>
-<span class="normal"><a href="#example-0-173">173</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-146"><a id="example-0-146" name="example-0-146"></a><span class="k">def</span><span class="w"> </span><span class="nf">take_screenshot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;screenshot&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="s2">&quot;800px&quot;</span><span class="p">):</span>
-</span><span id="line-0-147"><a id="example-0-147" name="example-0-147"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Takes a screenshot in JPEG format and embeds it into the log file.</span>
+<span class="normal"><a href="#example-0-173">173</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-146"><a id="example-0-146" name="example-0-146"></a><span class="k">def</span><span class="w"> </span><span class="nf">take_screenshot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">"screenshot"</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="s2">"800px"</span><span class="p">):</span>
+</span><span id="line-0-147"><a id="example-0-147" name="example-0-147"></a><span class="w">    </span><span class="sd">"""Takes a screenshot in JPEG format and embeds it into the log file.</span>
 </span><span id="line-0-148"><a id="example-0-148" name="example-0-148"></a>
 </span><span id="line-0-149"><a id="example-0-149" name="example-0-149"></a><span class="sd">    Name of the file where the screenshot is stored is derived from the</span>
 </span><span id="line-0-150"><a id="example-0-150" name="example-0-150"></a><span class="sd">    given ``name``. If the ``name`` ends with extension ``.jpg`` or</span>
@@ -10211,7 +10211,7 @@ Using <code>/</code> as a path separator works in all operating systems.</p>
 </span><span id="line-0-167"><a id="example-0-167" name="example-0-167"></a><span class="sd">    | Take Screenshot | width=550px      |     | # Specify only width. |</span>
 </span><span id="line-0-168"><a id="example-0-168" name="example-0-168"></a>
 </span><span id="line-0-169"><a id="example-0-169" name="example-0-169"></a><span class="sd">    The path where the screenshot is saved is returned.</span>
-</span><span id="line-0-170"><a id="example-0-170" name="example-0-170"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-170"><a id="example-0-170" name="example-0-170"></a><span class="sd">    """</span>
 </span><span id="line-0-171"><a id="example-0-171" name="example-0-171"></a>    <span class="n">path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_save_screenshot</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
 </span><span id="line-0-172"><a id="example-0-172" name="example-0-172"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_embed_screenshot</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">width</span><span class="p">)</span>
 </span><span id="line-0-173"><a id="example-0-173" name="example-0-173"></a>    <span class="k">return</span> <span class="n">path</span>
@@ -10234,7 +10234,7 @@ Using <code>/</code> as a path separator works in all operating systems.</p>
 
 
 <a href="#robot.libraries.Screenshot.Screenshot.take_screenshot_without_embedding" class="headerlink" title="Permanent link">&para;</a></h3>
-<div class="doc-signature highlight"><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1" href="#example-0-1"></a><span class="nf">take_screenshot_without_embedding</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;screenshot&#39;</span><span class="p">)</span>
+<div class="doc-signature highlight"><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1" href="#example-0-1"></a><span class="nf">take_screenshot_without_embedding</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'screenshot'</span><span class="p">)</span>
 </span></code></pre></div>
 
     <div class="doc doc-contents ">
@@ -10256,13 +10256,13 @@ so it is nevertheless easily available.</p>
 <span class="normal"><a href="#example-0-181">181</a></span>
 <span class="normal"><a href="#example-0-182">182</a></span>
 <span class="normal"><a href="#example-0-183">183</a></span>
-<span class="normal"><a href="#example-0-184">184</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-175"><a id="example-0-175" name="example-0-175"></a><span class="k">def</span><span class="w"> </span><span class="nf">take_screenshot_without_embedding</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;screenshot&quot;</span><span class="p">):</span>
-</span><span id="line-0-176"><a id="example-0-176" name="example-0-176"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Takes a screenshot and links it from the log file.</span>
+<span class="normal"><a href="#example-0-184">184</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-175"><a id="example-0-175" name="example-0-175"></a><span class="k">def</span><span class="w"> </span><span class="nf">take_screenshot_without_embedding</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">"screenshot"</span><span class="p">):</span>
+</span><span id="line-0-176"><a id="example-0-176" name="example-0-176"></a><span class="w">    </span><span class="sd">"""Takes a screenshot and links it from the log file.</span>
 </span><span id="line-0-177"><a id="example-0-177" name="example-0-177"></a>
 </span><span id="line-0-178"><a id="example-0-178" name="example-0-178"></a><span class="sd">    This keyword is otherwise identical to `Take Screenshot` but the saved</span>
 </span><span id="line-0-179"><a id="example-0-179" name="example-0-179"></a><span class="sd">    screenshot is not embedded into the log file. The screenshot is linked</span>
 </span><span id="line-0-180"><a id="example-0-180" name="example-0-180"></a><span class="sd">    so it is nevertheless easily available.</span>
-</span><span id="line-0-181"><a id="example-0-181" name="example-0-181"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-181"><a id="example-0-181" name="example-0-181"></a><span class="sd">    """</span>
 </span><span id="line-0-182"><a id="example-0-182" name="example-0-182"></a>    <span class="n">path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_save_screenshot</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
 </span><span id="line-0-183"><a id="example-0-183" name="example-0-183"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_link_screenshot</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
 </span><span id="line-0-184"><a id="example-0-184" name="example-0-184"></a>    <span class="k">return</span> <span class="n">path</span>

@@ -9993,7 +9993,7 @@
 </span><span id="line-0-37"><a id="example-0-37" name="example-0-37"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">failed</span> <span class="o">=</span> <span class="mi">0</span>
 </span><span id="line-0-38"><a id="example-0-38" name="example-0-38"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">skipped</span> <span class="o">=</span> <span class="mi">0</span>
 </span><span id="line-0-39"><a id="example-0-39" name="example-0-39"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">elapsed</span> <span class="o">=</span> <span class="n">timedelta</span><span class="p">()</span>
-</span><span id="line-0-40"><a id="example-0-40" name="example-0-40"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_norm_name</span> <span class="o">=</span> <span class="n">normalize</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">ignore</span><span class="o">=</span><span class="s1">&#39;_&#39;</span><span class="p">)</span>
+</span><span id="line-0-40"><a id="example-0-40" name="example-0-40"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_norm_name</span> <span class="o">=</span> <span class="n">normalize</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">ignore</span><span class="o">=</span><span class="s1">'_'</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
                   </details>
 
@@ -10071,7 +10071,7 @@
 </span><span id="line-0-37"><a id="example-0-37" name="example-0-37"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">failed</span> <span class="o">=</span> <span class="mi">0</span>
 </span><span id="line-0-38"><a id="example-0-38" name="example-0-38"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">skipped</span> <span class="o">=</span> <span class="mi">0</span>
 </span><span id="line-0-39"><a id="example-0-39" name="example-0-39"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">elapsed</span> <span class="o">=</span> <span class="n">timedelta</span><span class="p">()</span>
-</span><span id="line-0-40"><a id="example-0-40" name="example-0-40"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_norm_name</span> <span class="o">=</span> <span class="n">normalize</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">ignore</span><span class="o">=</span><span class="s1">&#39;_&#39;</span><span class="p">)</span>
+</span><span id="line-0-40"><a id="example-0-40" name="example-0-40"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_norm_name</span> <span class="o">=</span> <span class="n">normalize</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">ignore</span><span class="o">=</span><span class="s1">'_'</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
                   </details>
 
@@ -10163,7 +10163,7 @@
 
 
 <a href="#robot.model.stats.TagStat" class="headerlink" title="Permanent link">&para;</a></h2>
-<div class="doc-signature highlight"><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1" href="#example-0-1"></a><span class="nf">TagStat</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">links</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">combined</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<div class="doc-signature highlight"><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1" href="#example-0-1"></a><span class="nf">TagStat</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s1">''</span><span class="p">,</span> <span class="n">links</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">combined</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 </span></code></pre></div>
 
     <div class="doc doc-contents ">
@@ -10191,7 +10191,7 @@
 <span class="normal"><a href="#example-0-132">132</a></span>
 <span class="normal"><a href="#example-0-133">133</a></span>
 <span class="normal"><a href="#example-0-134">134</a></span>
-<span class="normal"><a href="#example-0-135">135</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-127"><a id="example-0-127" name="example-0-127"></a><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">links</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">combined</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="normal"><a href="#example-0-135">135</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-127"><a id="example-0-127" name="example-0-127"></a><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s1">''</span><span class="p">,</span> <span class="n">links</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">combined</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 </span><span id="line-0-128"><a id="example-0-128" name="example-0-128"></a>    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
 </span><span id="line-0-129"><a id="example-0-129" name="example-0-129"></a>    <span class="c1">#: Documentation of tag as a string.</span>
 </span><span id="line-0-130"><a id="example-0-130" name="example-0-130"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">doc</span> <span class="o">=</span> <span class="n">doc</span>

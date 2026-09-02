@@ -10499,16 +10499,16 @@ arguments are shown.</p>
 <span class="normal"><a href="#example-11-12">12</a></span>
 <span class="normal"><a href="#example-11-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-11-1"><a id="example-11-1" name="example-11-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">TestLibrary</span><span class="p">:</span>
 </span><span id="line-11-2"><a id="example-11-2" name="example-11-2"></a>
-</span><span id="line-11-3"><a id="example-11-3" name="example-11-3"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;default&#39;</span><span class="p">)</span>
-</span><span id="line-11-4"><a id="example-11-4" name="example-11-4"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Creates new TestLibrary. `mode` argument is used to determine mode.&quot;&quot;&quot;</span>
+</span><span id="line-11-3"><a id="example-11-3" name="example-11-3"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">'default'</span><span class="p">)</span>
+</span><span id="line-11-4"><a id="example-11-4" name="example-11-4"></a><span class="w">        </span><span class="sd">"""Creates new TestLibrary. `mode` argument is used to determine mode."""</span>
 </span><span id="line-11-5"><a id="example-11-5" name="example-11-5"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">mode</span> <span class="o">=</span> <span class="n">mode</span>
 </span><span id="line-11-6"><a id="example-11-6" name="example-11-6"></a>
 </span><span id="line-11-7"><a id="example-11-7" name="example-11-7"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">some_keyword</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arg</span><span class="p">):</span>
-</span><span id="line-11-8"><a id="example-11-8" name="example-11-8"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Does something based on given `arg`.</span>
+</span><span id="line-11-8"><a id="example-11-8" name="example-11-8"></a><span class="w">        </span><span class="sd">"""Does something based on given `arg`.</span>
 </span><span id="line-11-9"><a id="example-11-9" name="example-11-9"></a>
 </span><span id="line-11-10"><a id="example-11-10" name="example-11-10"></a><span class="sd">        What is done depends on the `mode` specified when `importing` the library.</span>
-</span><span id="line-11-11"><a id="example-11-11" name="example-11-11"></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="line-11-12"><a id="example-11-12" name="example-11-12"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">mode</span> <span class="o">==</span> <span class="s1">&#39;secret&#39;</span><span class="p">:</span>
+</span><span id="line-11-11"><a id="example-11-11" name="example-11-11"></a><span class="sd">        """</span>
+</span><span id="line-11-12"><a id="example-11-12" name="example-11-12"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">mode</span> <span class="o">==</span> <span class="s1">'secret'</span><span class="p">:</span>
 </span><span id="line-11-13"><a id="example-11-13" name="example-11-13"></a>             <span class="c1"># ...</span>
 </span></code></pre></div></td></tr></table></div>
 <h3 id="resource-file-documentation">Resource file documentation<a class="headerlink" href="#resource-file-documentation" title="Permanent link">&para;</a></h3>
@@ -10538,7 +10538,7 @@ Setting section for documenting the whole resource file.</p>
 <span class="normal"><a href="#example-12-16">16</a></span>
 <span class="normal"><a href="#example-12-17">17</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-12-1"><a id="example-12-1" name="example-12-1"></a><span class="gh">*** Settings ***</span>
 </span><span id="line-12-2"><a id="example-12-2" name="example-12-2"></a><span class="kn">Documentation</span><span class="p">    </span><span class="s">Resource file for demo purposes.</span>
-</span><span id="line-12-3"><a id="example-12-3" name="example-12-3"></a><span class="p">...              </span><span class="s">This resource is only used in an example and it doesn&#39;t do anything useful.</span>
+</span><span id="line-12-3"><a id="example-12-3" name="example-12-3"></a><span class="p">...              </span><span class="s">This resource is only used in an example and it doesn't do anything useful.</span>
 </span><span id="line-12-4"><a id="example-12-4" name="example-12-4"></a>
 </span><span id="line-12-5"><a id="example-12-5" name="example-12-5"></a><span class="gh">*** Keywords ***</span>
 </span><span id="line-12-6"><a id="example-12-6" name="example-12-6"></a><span class="gu">My Keyword</span>
@@ -10583,16 +10583,16 @@ line.</p>
 <span class="normal"><a href="#example-13-7"> 7</a></span>
 <span class="normal"><a href="#example-13-8"> 8</a></span>
 <span class="normal"><a href="#example-13-9"> 9</a></span>
-<span class="normal"><a href="#example-13-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-13-1"><a id="example-13-1" name="example-13-1"></a><span class="sd">&quot;&quot;&quot;Example library in Robot Framework format.</span>
+<span class="normal"><a href="#example-13-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-13-1"><a id="example-13-1" name="example-13-1"></a><span class="sd">"""Example library in Robot Framework format.</span>
 </span><span id="line-13-2"><a id="example-13-2" name="example-13-2"></a>
 </span><span id="line-13-3"><a id="example-13-3" name="example-13-3"></a><span class="sd">- Formatting with *bold* and _italic_.</span>
 </span><span id="line-13-4"><a id="example-13-4" name="example-13-4"></a><span class="sd">- URLs like http://example.com are turned to links.</span>
 </span><span id="line-13-5"><a id="example-13-5" name="example-13-5"></a><span class="sd">- Custom links like [http://robotframework.org|Robot Framework] are supported.</span>
 </span><span id="line-13-6"><a id="example-13-6" name="example-13-6"></a><span class="sd">- Linking to `My Keyword` works.</span>
-</span><span id="line-13-7"><a id="example-13-7" name="example-13-7"></a><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-13-7"><a id="example-13-7" name="example-13-7"></a><span class="sd">"""</span>
 </span><span id="line-13-8"><a id="example-13-8" name="example-13-8"></a>
 </span><span id="line-13-9"><a id="example-13-9" name="example-13-9"></a><span class="k">def</span><span class="w"> </span><span class="nf">my_keyword</span><span class="p">():</span>
-</span><span id="line-13-10"><a id="example-13-10" name="example-13-10"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Nothing more to see here.&quot;&quot;&quot;</span>
+</span><span id="line-13-10"><a id="example-13-10" name="example-13-10"></a><span class="w">    </span><span class="sd">"""Nothing more to see here."""</span>
 </span></code></pre></div></td></tr></table></div>
 <h4 id="creating-table-of-contents-automatically">Creating table of contents automatically<a class="headerlink" href="#creating-table-of-contents-automatically" title="Permanent link">&para;</a></h4>
 <p>With bigger libraries it is often useful to add a table of contents to
@@ -10624,7 +10624,7 @@ applicable.</p>
 <span class="normal"><a href="#example-14-19">19</a></span>
 <span class="normal"><a href="#example-14-20">20</a></span>
 <span class="normal"><a href="#example-14-21">21</a></span>
-<span class="normal"><a href="#example-14-22">22</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-14-1"><a id="example-14-1" name="example-14-1"></a><span class="sd">&quot;&quot;&quot;Example library demonstrating TOC generation.</span>
+<span class="normal"><a href="#example-14-22">22</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-14-1"><a id="example-14-1" name="example-14-1"></a><span class="sd">"""Example library demonstrating TOC generation.</span>
 </span><span id="line-14-2"><a id="example-14-2" name="example-14-2"></a>
 </span><span id="line-14-3"><a id="example-14-3" name="example-14-3"></a><span class="sd">The %TOC% marker only creates the actual table of contents and possible</span>
 </span><span id="line-14-4"><a id="example-14-4" name="example-14-4"></a><span class="sd">header or other explanation needs to be added separately like done below.</span>
@@ -10642,10 +10642,10 @@ applicable.</p>
 </span><span id="line-14-16"><a id="example-14-16" name="example-14-16"></a><span class="sd">== Sub section ==</span>
 </span><span id="line-14-17"><a id="example-14-17" name="example-14-17"></a>
 </span><span id="line-14-18"><a id="example-14-18" name="example-14-18"></a><span class="sd">Sub section titles are not added to the TOC.</span>
-</span><span id="line-14-19"><a id="example-14-19" name="example-14-19"></a><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-14-19"><a id="example-14-19" name="example-14-19"></a><span class="sd">"""</span>
 </span><span id="line-14-20"><a id="example-14-20" name="example-14-20"></a>
 </span><span id="line-14-21"><a id="example-14-21" name="example-14-21"></a><span class="k">def</span><span class="w"> </span><span class="nf">my_keyword</span><span class="p">():</span>
-</span><span id="line-14-22"><a id="example-14-22" name="example-14-22"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Nothing more to see here.&quot;&quot;&quot;</span>
+</span><span id="line-14-22"><a id="example-14-22" name="example-14-22"></a><span class="w">    </span><span class="sd">"""Nothing more to see here."""</span>
 </span></code></pre></div></td></tr></table></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -10673,19 +10673,19 @@ on the command line like <code>--docformat HTML</code>.</p>
 <span class="normal"><a href="#example-15-10">10</a></span>
 <span class="normal"><a href="#example-15-11">11</a></span>
 <span class="normal"><a href="#example-15-12">12</a></span>
-<span class="normal"><a href="#example-15-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-15-1"><a id="example-15-1" name="example-15-1"></a><span class="sd">&quot;&quot;&quot;Example library in HTML format.</span>
+<span class="normal"><a href="#example-15-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-15-1"><a id="example-15-1" name="example-15-1"></a><span class="sd">"""Example library in HTML format.</span>
 </span><span id="line-15-2"><a id="example-15-2" name="example-15-2"></a>
 </span><span id="line-15-3"><a id="example-15-3" name="example-15-3"></a><span class="sd">&lt;ul&gt;</span>
 </span><span id="line-15-4"><a id="example-15-4" name="example-15-4"></a><span class="sd">  &lt;li&gt;Formatting with &lt;b&gt;bold&lt;/b&gt; and &lt;i&gt;italic&lt;/i&gt;.</span>
 </span><span id="line-15-5"><a id="example-15-5" name="example-15-5"></a><span class="sd">  &lt;li&gt;URLs are not turned to links automatically.</span>
-</span><span id="line-15-6"><a id="example-15-6" name="example-15-6"></a><span class="sd">  &lt;li&gt;Custom links like &lt;a href=&quot;http://www.w3.org/html&quot;&gt;HTML&lt;/a&gt; are supported.</span>
+</span><span id="line-15-6"><a id="example-15-6" name="example-15-6"></a><span class="sd">  &lt;li&gt;Custom links like &lt;a href="http://www.w3.org/html"&gt;HTML&lt;/a&gt; are supported.</span>
 </span><span id="line-15-7"><a id="example-15-7" name="example-15-7"></a><span class="sd">  &lt;li&gt;Linking to `My Keyword` works.</span>
 </span><span id="line-15-8"><a id="example-15-8" name="example-15-8"></a><span class="sd">&lt;/ul&gt;</span>
-</span><span id="line-15-9"><a id="example-15-9" name="example-15-9"></a><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-15-10"><a id="example-15-10" name="example-15-10"></a><span class="n">ROBOT_LIBRARY_DOC_FORMAT</span> <span class="o">=</span> <span class="s1">&#39;HTML&#39;</span>
+</span><span id="line-15-9"><a id="example-15-9" name="example-15-9"></a><span class="sd">"""</span>
+</span><span id="line-15-10"><a id="example-15-10" name="example-15-10"></a><span class="n">ROBOT_LIBRARY_DOC_FORMAT</span> <span class="o">=</span> <span class="s1">'HTML'</span>
 </span><span id="line-15-11"><a id="example-15-11" name="example-15-11"></a>
 </span><span id="line-15-12"><a id="example-15-12" name="example-15-12"></a><span class="k">def</span><span class="w"> </span><span class="nf">my_keyword</span><span class="p">():</span>
-</span><span id="line-15-13"><a id="example-15-13" name="example-15-13"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Nothing more to see here.&quot;&quot;&quot;</span>
+</span><span id="line-15-13"><a id="example-15-13" name="example-15-13"></a><span class="w">    </span><span class="sd">"""Nothing more to see here."""</span>
 </span></code></pre></div></td></tr></table></div>
 <h3 id="plain-text-documentation-syntax">Plain text documentation syntax<a class="headerlink" href="#plain-text-documentation-syntax" title="Permanent link">&para;</a></h3>
 <p>When the plain text format is used, Libdoc uses the documentation as-is.
@@ -10703,17 +10703,17 @@ like <code>\</code>My Keyword``.</p>
 <span class="normal"><a href="#example-16-8"> 8</a></span>
 <span class="normal"><a href="#example-16-9"> 9</a></span>
 <span class="normal"><a href="#example-16-10">10</a></span>
-<span class="normal"><a href="#example-16-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-16-1"><a id="example-16-1" name="example-16-1"></a><span class="sd">&quot;&quot;&quot;Example library in plain text format.</span>
+<span class="normal"><a href="#example-16-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-16-1"><a id="example-16-1" name="example-16-1"></a><span class="sd">"""Example library in plain text format.</span>
 </span><span id="line-16-2"><a id="example-16-2" name="example-16-2"></a>
 </span><span id="line-16-3"><a id="example-16-3" name="example-16-3"></a><span class="sd">- Formatting is not supported.</span>
 </span><span id="line-16-4"><a id="example-16-4" name="example-16-4"></a><span class="sd">- URLs like http://example.com are turned to links.</span>
 </span><span id="line-16-5"><a id="example-16-5" name="example-16-5"></a><span class="sd">- Custom links are not supported.</span>
 </span><span id="line-16-6"><a id="example-16-6" name="example-16-6"></a><span class="sd">- Linking to `My Keyword` works.</span>
-</span><span id="line-16-7"><a id="example-16-7" name="example-16-7"></a><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-16-8"><a id="example-16-8" name="example-16-8"></a><span class="n">ROBOT_LIBRARY_DOC_FORMAT</span> <span class="o">=</span> <span class="s1">&#39;text&#39;</span>
+</span><span id="line-16-7"><a id="example-16-7" name="example-16-7"></a><span class="sd">"""</span>
+</span><span id="line-16-8"><a id="example-16-8" name="example-16-8"></a><span class="n">ROBOT_LIBRARY_DOC_FORMAT</span> <span class="o">=</span> <span class="s1">'text'</span>
 </span><span id="line-16-9"><a id="example-16-9" name="example-16-9"></a>
 </span><span id="line-16-10"><a id="example-16-10" name="example-16-10"></a><span class="k">def</span><span class="w"> </span><span class="nf">my_keyword</span><span class="p">():</span>
-</span><span id="line-16-11"><a id="example-16-11" name="example-16-11"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Nothing more to see here.&quot;&quot;&quot;</span>
+</span><span id="line-16-11"><a id="example-16-11" name="example-16-11"></a><span class="w">    </span><span class="sd">"""Nothing more to see here."""</span>
 </span></code></pre></div></td></tr></table></div>
 <h3 id="restructuredtext-documentation-syntax">reStructuredText documentation syntax<a class="headerlink" href="#restructuredtext-documentation-syntax" title="Permanent link">&para;</a></h3>
 <p><a href="https://en.wikipedia.org/wiki/ReStructuredText">reStructuredText</a> is simple yet powerful markup syntax used widely in Python
@@ -10742,7 +10742,7 @@ languages that Pygments supports.</p>
 <span class="normal"><a href="#example-17-14">14</a></span>
 <span class="normal"><a href="#example-17-15">15</a></span>
 <span class="normal"><a href="#example-17-16">16</a></span>
-<span class="normal"><a href="#example-17-17">17</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-17-1"><a id="example-17-1" name="example-17-1"></a><span class="sd">&quot;&quot;&quot;Example library in reStructuredText format.</span>
+<span class="normal"><a href="#example-17-17">17</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-17-1"><a id="example-17-1" name="example-17-1"></a><span class="sd">"""Example library in reStructuredText format.</span>
 </span><span id="line-17-2"><a id="example-17-2" name="example-17-2"></a>
 </span><span id="line-17-3"><a id="example-17-3" name="example-17-3"></a><span class="sd">- Formatting with **bold** and *italic*.</span>
 </span><span id="line-17-4"><a id="example-17-4" name="example-17-4"></a><span class="sd">- URLs like http://example.com are turned to links.</span>
@@ -10754,11 +10754,11 @@ languages that Pygments supports.</p>
 </span><span id="line-17-10"><a id="example-17-10" name="example-17-10"></a><span class="sd">    *** Test Cases ***</span>
 </span><span id="line-17-11"><a id="example-17-11" name="example-17-11"></a><span class="sd">    Example</span>
 </span><span id="line-17-12"><a id="example-17-12" name="example-17-12"></a><span class="sd">        My keyword    # How cool is this!!?!!?!1!!</span>
-</span><span id="line-17-13"><a id="example-17-13" name="example-17-13"></a><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="line-17-14"><a id="example-17-14" name="example-17-14"></a><span class="n">ROBOT_LIBRARY_DOC_FORMAT</span> <span class="o">=</span> <span class="s1">&#39;reST&#39;</span>
+</span><span id="line-17-13"><a id="example-17-13" name="example-17-13"></a><span class="sd">"""</span>
+</span><span id="line-17-14"><a id="example-17-14" name="example-17-14"></a><span class="n">ROBOT_LIBRARY_DOC_FORMAT</span> <span class="o">=</span> <span class="s1">'reST'</span>
 </span><span id="line-17-15"><a id="example-17-15" name="example-17-15"></a>
 </span><span id="line-17-16"><a id="example-17-16" name="example-17-16"></a><span class="k">def</span><span class="w"> </span><span class="nf">my_keyword</span><span class="p">():</span>
-</span><span id="line-17-17"><a id="example-17-17" name="example-17-17"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Nothing more to see here.&quot;&quot;&quot;</span>
+</span><span id="line-17-17"><a id="example-17-17" name="example-17-17"></a><span class="w">    </span><span class="sd">"""Nothing more to see here."""</span>
 </span></code></pre></div></td></tr></table></div>
 <a id="internal-linking"></a></p>
 <h2 id="internal-linking">Internal linking<a class="headerlink" href="#internal-linking" title="Permanent link">&para;</a></h2>
@@ -10796,20 +10796,20 @@ the example below where both keywords have links to each others.</p>
 <span class="normal"><a href="#example-18-12">12</a></span>
 <span class="normal"><a href="#example-18-13">13</a></span>
 <span class="normal"><a href="#example-18-14">14</a></span>
-<span class="normal"><a href="#example-18-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-18-1"><a id="example-18-1" name="example-18-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">keyword</span><span class="p">(</span><span class="n">log_level</span><span class="o">=</span><span class="s2">&quot;INFO&quot;</span><span class="p">):</span>
-</span><span id="line-18-2"><a id="example-18-2" name="example-18-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Does something and logs the output using the given level.</span>
+<span class="normal"><a href="#example-18-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-18-1"><a id="example-18-1" name="example-18-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">keyword</span><span class="p">(</span><span class="n">log_level</span><span class="o">=</span><span class="s2">"INFO"</span><span class="p">):</span>
+</span><span id="line-18-2"><a id="example-18-2" name="example-18-2"></a><span class="w">    </span><span class="sd">"""Does something and logs the output using the given level.</span>
 </span><span id="line-18-3"><a id="example-18-3" name="example-18-3"></a>
-</span><span id="line-18-4"><a id="example-18-4" name="example-18-4"></a><span class="sd">    Valid values for log level` are &quot;INFO&quot; (default) &quot;DEBUG&quot; and &quot;TRACE&quot;.</span>
+</span><span id="line-18-4"><a id="example-18-4" name="example-18-4"></a><span class="sd">    Valid values for log level` are "INFO" (default) "DEBUG" and "TRACE".</span>
 </span><span id="line-18-5"><a id="example-18-5" name="example-18-5"></a>
 </span><span id="line-18-6"><a id="example-18-6" name="example-18-6"></a><span class="sd">    See also `Another Keyword`.</span>
-</span><span id="line-18-7"><a id="example-18-7" name="example-18-7"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-18-7"><a id="example-18-7" name="example-18-7"></a><span class="sd">    """</span>
 </span><span id="line-18-8"><a id="example-18-8" name="example-18-8"></a>    <span class="c1"># ...</span>
 </span><span id="line-18-9"><a id="example-18-9" name="example-18-9"></a>
-</span><span id="line-18-10"><a id="example-18-10" name="example-18-10"></a><span class="k">def</span><span class="w"> </span><span class="nf">another_keyword</span><span class="p">(</span><span class="n">argument</span><span class="p">,</span> <span class="n">log_level</span><span class="o">=</span><span class="s2">&quot;INFO&quot;</span><span class="p">):</span>
-</span><span id="line-18-11"><a id="example-18-11" name="example-18-11"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Does something with the given argument else and logs the output.</span>
+</span><span id="line-18-10"><a id="example-18-10" name="example-18-10"></a><span class="k">def</span><span class="w"> </span><span class="nf">another_keyword</span><span class="p">(</span><span class="n">argument</span><span class="p">,</span> <span class="n">log_level</span><span class="o">=</span><span class="s2">"INFO"</span><span class="p">):</span>
+</span><span id="line-18-11"><a id="example-18-11" name="example-18-11"></a><span class="w">    </span><span class="sd">"""Does something with the given argument else and logs the output.</span>
 </span><span id="line-18-12"><a id="example-18-12" name="example-18-12"></a>
 </span><span id="line-18-13"><a id="example-18-13" name="example-18-13"></a><span class="sd">    See `Keyword` for information about valid log levels.</span>
-</span><span id="line-18-14"><a id="example-18-14" name="example-18-14"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-18-14"><a id="example-18-14" name="example-18-14"></a><span class="sd">    """</span>
 </span><span id="line-18-15"><a id="example-18-15" name="example-18-15"></a>    <span class="c1"># ...</span>
 </span></code></pre></div></td></tr></table></div>
 <div class="admonition note">
@@ -10875,21 +10875,21 @@ custom sections:</p>
 <span class="normal"><a href="#example-19-13">13</a></span>
 <span class="normal"><a href="#example-19-14">14</a></span>
 <span class="normal"><a href="#example-19-15">15</a></span>
-<span class="normal"><a href="#example-19-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-19-1"><a id="example-19-1" name="example-19-1"></a><span class="sd">&quot;&quot;&quot;Library for Libdoc demonstration purposes.</span>
+<span class="normal"><a href="#example-19-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-19-1"><a id="example-19-1" name="example-19-1"></a><span class="sd">"""Library for Libdoc demonstration purposes.</span>
 </span><span id="line-19-2"><a id="example-19-2" name="example-19-2"></a>
 </span><span id="line-19-3"><a id="example-19-3" name="example-19-3"></a><span class="sd">This library does not do anything useful.</span>
 </span><span id="line-19-4"><a id="example-19-4" name="example-19-4"></a>
 </span><span id="line-19-5"><a id="example-19-5" name="example-19-5"></a><span class="sd">= My section  =</span>
 </span><span id="line-19-6"><a id="example-19-6" name="example-19-6"></a>
 </span><span id="line-19-7"><a id="example-19-7" name="example-19-7"></a><span class="sd">We do have a custom section in the documentation, though.</span>
-</span><span id="line-19-8"><a id="example-19-8" name="example-19-8"></a><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-19-8"><a id="example-19-8" name="example-19-8"></a><span class="sd">"""</span>
 </span><span id="line-19-9"><a id="example-19-9" name="example-19-9"></a>
 </span><span id="line-19-10"><a id="example-19-10" name="example-19-10"></a><span class="k">def</span><span class="w"> </span><span class="nf">keyword</span><span class="p">():</span>
-</span><span id="line-19-11"><a id="example-19-11" name="example-19-11"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Does nothing.</span>
+</span><span id="line-19-11"><a id="example-19-11" name="example-19-11"></a><span class="w">    </span><span class="sd">"""Does nothing.</span>
 </span><span id="line-19-12"><a id="example-19-12" name="example-19-12"></a>
 </span><span id="line-19-13"><a id="example-19-13" name="example-19-13"></a><span class="sd">    See `introduction` for more information and `My section` to test how</span>
 </span><span id="line-19-14"><a id="example-19-14" name="example-19-14"></a><span class="sd">    linking to custom sections works.</span>
-</span><span id="line-19-15"><a id="example-19-15" name="example-19-15"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-19-15"><a id="example-19-15" name="example-19-15"></a><span class="sd">    """</span>
 </span><span id="line-19-16"><a id="example-19-16" name="example-19-16"></a>    <span class="k">pass</span>
 </span></code></pre></div></td></tr></table></div>
 <div class="admonition note">

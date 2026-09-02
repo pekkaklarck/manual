@@ -9986,10 +9986,10 @@
 <span class="normal"><a href="#example-0-34">34</a></span>
 <span class="normal"><a href="#example-0-35">35</a></span>
 <span class="normal"><a href="#example-0-36">36</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-31"><a id="example-0-31" name="example-0-31"></a><span class="k">def</span><span class="w"> </span><span class="nf">robot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-</span><span id="line-0-32"><a id="example-0-32" name="example-0-32"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Check do tags contain a reserved tag in format `robot:&lt;name&gt;`.</span>
+</span><span id="line-0-32"><a id="example-0-32" name="example-0-32"></a><span class="w">    </span><span class="sd">"""Check do tags contain a reserved tag in format `robot:&lt;name&gt;`.</span>
 </span><span id="line-0-33"><a id="example-0-33" name="example-0-33"></a>
-</span><span id="line-0-34"><a id="example-0-34" name="example-0-34"></a><span class="sd">    This is same as `&#39;robot:&lt;name&gt;&#39; in tags` but considerably faster.</span>
-</span><span id="line-0-35"><a id="example-0-35" name="example-0-35"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-34"><a id="example-0-34" name="example-0-34"></a><span class="sd">    This is same as `'robot:&lt;name&gt;' in tags` but considerably faster.</span>
+</span><span id="line-0-35"><a id="example-0-35" name="example-0-35"></a><span class="sd">    """</span>
 </span><span id="line-0-36"><a id="example-0-36" name="example-0-36"></a>    <span class="k">return</span> <span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reserved</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
@@ -10036,12 +10036,12 @@
 <span class="normal"><a href="#example-0-238">238</a></span>
 <span class="normal"><a href="#example-0-239">239</a></span>
 <span class="normal"><a href="#example-0-240">240</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-234"><a id="example-0-234" name="example-0-234"></a><span class="k">def</span><span class="w"> </span><span class="nf">normalize_tags</span><span class="p">(</span><span class="n">tags</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
-</span><span id="line-0-235"><a id="example-0-235" name="example-0-235"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Performance optimization to normalize tags only once.&quot;&quot;&quot;</span>
+</span><span id="line-0-235"><a id="example-0-235" name="example-0-235"></a><span class="w">    </span><span class="sd">"""Performance optimization to normalize tags only once."""</span>
 </span><span id="line-0-236"><a id="example-0-236" name="example-0-236"></a>    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">tags</span><span class="p">,</span> <span class="n">NormalizedTags</span><span class="p">):</span>
 </span><span id="line-0-237"><a id="example-0-237" name="example-0-237"></a>        <span class="k">return</span> <span class="n">tags</span>
 </span><span id="line-0-238"><a id="example-0-238" name="example-0-238"></a>    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">tags</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
 </span><span id="line-0-239"><a id="example-0-239" name="example-0-239"></a>        <span class="n">tags</span> <span class="o">=</span> <span class="p">[</span><span class="n">tags</span><span class="p">]</span>
-</span><span id="line-0-240"><a id="example-0-240" name="example-0-240"></a>    <span class="k">return</span> <span class="n">NormalizedTags</span><span class="p">([</span><span class="n">normalize</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">ignore</span><span class="o">=</span><span class="s1">&#39;_&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">tags</span><span class="p">])</span>
+</span><span id="line-0-240"><a id="example-0-240" name="example-0-240"></a>    <span class="k">return</span> <span class="n">NormalizedTags</span><span class="p">([</span><span class="n">normalize</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">ignore</span><span class="o">=</span><span class="s1">'_'</span><span class="p">)</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">tags</span><span class="p">])</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>

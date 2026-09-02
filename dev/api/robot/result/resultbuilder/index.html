@@ -9974,7 +9974,7 @@ package. See the :mod:<code>robot.result</code> package for a usage example.</p>
 <span class="normal"><a href="#example-0-55">55</a></span>
 <span class="normal"><a href="#example-0-56">56</a></span>
 <span class="normal"><a href="#example-0-57">57</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-27"><a id="example-0-27" name="example-0-27"></a><span class="k">def</span><span class="w"> </span><span class="nf">ExecutionResult</span><span class="p">(</span><span class="o">*</span><span class="n">sources</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">):</span>
-</span><span id="line-0-28"><a id="example-0-28" name="example-0-28"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Factory method to constructs :class:`~.executionresult.Result` objects.</span>
+</span><span id="line-0-28"><a id="example-0-28" name="example-0-28"></a><span class="w">    </span><span class="sd">"""Factory method to constructs :class:`~.executionresult.Result` objects.</span>
 </span><span id="line-0-29"><a id="example-0-29" name="example-0-29"></a>
 </span><span id="line-0-30"><a id="example-0-30" name="example-0-30"></a><span class="sd">    :param sources: XML or JSON source(s) containing execution results.</span>
 </span><span id="line-0-31"><a id="example-0-31" name="example-0-31"></a><span class="sd">        Can be specified as paths (``pathlib.Path`` or ``str``), opened file</span>
@@ -9996,10 +9996,10 @@ package. See the :mod:<code>robot.result</code> package for a usage example.</p>
 </span><span id="line-0-47"><a id="example-0-47" name="example-0-47"></a>
 </span><span id="line-0-48"><a id="example-0-48" name="example-0-48"></a><span class="sd">    This method should be imported by external code via the :mod:`robot.api`</span>
 </span><span id="line-0-49"><a id="example-0-49" name="example-0-49"></a><span class="sd">    package. See the :mod:`robot.result` package for a usage example.</span>
-</span><span id="line-0-50"><a id="example-0-50" name="example-0-50"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-50"><a id="example-0-50" name="example-0-50"></a><span class="sd">    """</span>
 </span><span id="line-0-51"><a id="example-0-51" name="example-0-51"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">sources</span><span class="p">:</span>
-</span><span id="line-0-52"><a id="example-0-52" name="example-0-52"></a>        <span class="k">raise</span> <span class="n">DataError</span><span class="p">(</span><span class="s1">&#39;One or more data source needed.&#39;</span><span class="p">)</span>
-</span><span id="line-0-53"><a id="example-0-53" name="example-0-53"></a>    <span class="k">if</span> <span class="n">options</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;merge&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
+</span><span id="line-0-52"><a id="example-0-52" name="example-0-52"></a>        <span class="k">raise</span> <span class="n">DataError</span><span class="p">(</span><span class="s1">'One or more data source needed.'</span><span class="p">)</span>
+</span><span id="line-0-53"><a id="example-0-53" name="example-0-53"></a>    <span class="k">if</span> <span class="n">options</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">'merge'</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
 </span><span id="line-0-54"><a id="example-0-54" name="example-0-54"></a>        <span class="k">return</span> <span class="n">_merge_results</span><span class="p">(</span><span class="n">sources</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">sources</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">options</span><span class="p">)</span>
 </span><span id="line-0-55"><a id="example-0-55" name="example-0-55"></a>    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sources</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
 </span><span id="line-0-56"><a id="example-0-56" name="example-0-56"></a>        <span class="k">return</span> <span class="n">_combine_results</span><span class="p">(</span><span class="n">sources</span><span class="p">,</span> <span class="n">options</span><span class="p">)</span>
@@ -10070,7 +10070,7 @@ package. See the :mod:<code>robot.result</code> package for a usage example.</p>
 <span class="normal"><a href="#example-0-124">124</a></span>
 <span class="normal"><a href="#example-0-125">125</a></span>
 <span class="normal"><a href="#example-0-126">126</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-112"><a id="example-0-112" name="example-0-112"></a><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">include_keywords</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">flattened_keywords</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-</span><span id="line-0-113"><a id="example-0-113" name="example-0-113"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="line-0-113"><a id="example-0-113" name="example-0-113"></a><span class="w">    </span><span class="sd">"""</span>
 </span><span id="line-0-114"><a id="example-0-114" name="example-0-114"></a><span class="sd">    :param source: Path to the XML output file to build</span>
 </span><span id="line-0-115"><a id="example-0-115" name="example-0-115"></a><span class="sd">        :class:`~.executionresult.Result` objects from.</span>
 </span><span id="line-0-116"><a id="example-0-116" name="example-0-116"></a><span class="sd">    :param include_keywords: Controls whether to include keywords and control</span>
@@ -10079,7 +10079,7 @@ package. See the :mod:<code>robot.result</code> package for a usage example.</p>
 </span><span id="line-0-119"><a id="example-0-119" name="example-0-119"></a><span class="sd">    :param flattened_keywords: List of patterns controlling what keywords</span>
 </span><span id="line-0-120"><a id="example-0-120" name="example-0-120"></a><span class="sd">        and control structures to flatten. See the documentation of</span>
 </span><span id="line-0-121"><a id="example-0-121" name="example-0-121"></a><span class="sd">        the ``--flattenkeywords`` option for more details.</span>
-</span><span id="line-0-122"><a id="example-0-122" name="example-0-122"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-122"><a id="example-0-122" name="example-0-122"></a><span class="sd">    """</span>
 </span><span id="line-0-123"><a id="example-0-123" name="example-0-123"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_source</span> <span class="o">=</span> <span class="n">source</span> \
 </span><span id="line-0-124"><a id="example-0-124" name="example-0-124"></a>        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">ETSource</span><span class="p">)</span> <span class="k">else</span> <span class="n">ETSource</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>
 </span><span id="line-0-125"><a id="example-0-125" name="example-0-125"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_include_keywords</span> <span class="o">=</span> <span class="n">include_keywords</span>

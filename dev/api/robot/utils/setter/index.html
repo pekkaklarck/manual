@@ -9914,7 +9914,7 @@
     <span class="k">return</span> <span class="n">source</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">Path</span><span class="p">)</span> <span class="k">else</span> <span class="n">Path</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 <p>The setter method is called when the attribute is assigned like::</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">instance</span><span class="o">.</span><span class="n">source</span> <span class="o">=</span> <span class="s1">&#39;example.txt&#39;</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">instance</span><span class="o">.</span><span class="n">source</span> <span class="o">=</span> <span class="s1">'example.txt'</span>
 </code></pre></div></td></tr></table></div>
 <p>and the returned value is stored in the instance in an attribute like
 <code>_setter__source</code>. When the attribute is accessed, the stored value is
@@ -9954,7 +9954,7 @@ attributes needs to be added to <code>__slots__</code> as well. The provided
 <span class="normal"><a href="#example-0-60">60</a></span>
 <span class="normal"><a href="#example-0-61">61</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-58"><a id="example-0-58" name="example-0-58"></a><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">method</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">T</span><span class="p">,</span> <span class="n">V</span><span class="p">],</span> <span class="n">A</span><span class="p">]):</span>
 </span><span id="line-0-59"><a id="example-0-59" name="example-0-59"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">method</span> <span class="o">=</span> <span class="n">method</span>
-</span><span id="line-0-60"><a id="example-0-60" name="example-0-60"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">attr_name</span> <span class="o">=</span> <span class="s1">&#39;_setter__&#39;</span> <span class="o">+</span> <span class="n">method</span><span class="o">.</span><span class="vm">__name__</span>
+</span><span id="line-0-60"><a id="example-0-60" name="example-0-60"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">attr_name</span> <span class="o">=</span> <span class="s1">'_setter__'</span> <span class="o">+</span> <span class="n">method</span><span class="o">.</span><span class="vm">__name__</span>
 </span><span id="line-0-61"><a id="example-0-61" name="example-0-61"></a>    <span class="bp">self</span><span class="o">.</span><span class="vm">__doc__</span> <span class="o">=</span> <span class="n">method</span><span class="o">.</span><span class="vm">__doc__</span>
 </span></code></pre></div></td></tr></table></div>
                   </details>

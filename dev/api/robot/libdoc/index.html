@@ -9940,7 +9940,7 @@ approaches::</p>
 <span class="normal">2</span>
 <span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">robot.libdoc</span><span class="w"> </span><span class="kn">import</span> <span class="n">libdoc_cli</span>
 
-<span class="n">libdoc_cli</span><span class="p">([</span><span class="s1">&#39;--version&#39;</span><span class="p">,</span> <span class="s1">&#39;1.0&#39;</span><span class="p">,</span> <span class="s1">&#39;MyLibrary.py&#39;</span><span class="p">,</span> <span class="s1">&#39;MyLibrary.html&#39;</span><span class="p">])</span>
+<span class="n">libdoc_cli</span><span class="p">([</span><span class="s1">'--version'</span><span class="p">,</span> <span class="s1">'1.0'</span><span class="p">,</span> <span class="s1">'MyLibrary.py'</span><span class="p">,</span> <span class="s1">'MyLibrary.html'</span><span class="p">])</span>
 </code></pre></div></td></tr></table></div>
 
 
@@ -9964,7 +9964,7 @@ approaches::</p>
 <span class="normal"><a href="#example-0-248">248</a></span>
 <span class="normal"><a href="#example-0-249">249</a></span>
 <span class="normal"><a href="#example-0-250">250</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-233"><a id="example-0-233" name="example-0-233"></a><span class="k">def</span><span class="w"> </span><span class="nf">libdoc_cli</span><span class="p">(</span><span class="n">arguments</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">exit</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-</span><span id="line-0-234"><a id="example-0-234" name="example-0-234"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Executes Libdoc similarly as from the command line.</span>
+</span><span id="line-0-234"><a id="example-0-234" name="example-0-234"></a><span class="w">    </span><span class="sd">"""Executes Libdoc similarly as from the command line.</span>
 </span><span id="line-0-235"><a id="example-0-235" name="example-0-235"></a>
 </span><span id="line-0-236"><a id="example-0-236" name="example-0-236"></a><span class="sd">    :param arguments: Command line options and arguments as a list of strings.</span>
 </span><span id="line-0-237"><a id="example-0-237" name="example-0-237"></a><span class="sd">        Starting from RF 4.0, defaults to ``sys.argv[1:]`` if not given.</span>
@@ -9976,8 +9976,8 @@ approaches::</p>
 </span><span id="line-0-243"><a id="example-0-243" name="example-0-243"></a>
 </span><span id="line-0-244"><a id="example-0-244" name="example-0-244"></a><span class="sd">        from robot.libdoc import libdoc_cli</span>
 </span><span id="line-0-245"><a id="example-0-245" name="example-0-245"></a>
-</span><span id="line-0-246"><a id="example-0-246" name="example-0-246"></a><span class="sd">        libdoc_cli([&#39;--version&#39;, &#39;1.0&#39;, &#39;MyLibrary.py&#39;, &#39;MyLibrary.html&#39;])</span>
-</span><span id="line-0-247"><a id="example-0-247" name="example-0-247"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-246"><a id="example-0-246" name="example-0-246"></a><span class="sd">        libdoc_cli(['--version', '1.0', 'MyLibrary.py', 'MyLibrary.html'])</span>
+</span><span id="line-0-247"><a id="example-0-247" name="example-0-247"></a><span class="sd">    """</span>
 </span><span id="line-0-248"><a id="example-0-248" name="example-0-248"></a>    <span class="k">if</span> <span class="n">arguments</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="line-0-249"><a id="example-0-249" name="example-0-249"></a>        <span class="n">arguments</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
 </span><span id="line-0-250"><a id="example-0-250" name="example-0-250"></a>    <span class="n">LibDoc</span><span class="p">()</span><span class="o">.</span><span class="n">execute_cli</span><span class="p">(</span><span class="n">arguments</span><span class="p">,</span> <span class="n">exit</span><span class="o">=</span><span class="n">exit</span><span class="p">)</span>
@@ -10003,8 +10003,8 @@ approaches::</p>
 <div class="doc-signature highlight"><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1" href="#example-0-1"></a><span class="nf">libdoc</span><span class="p">(</span>
 </span><span id="line-0-2"><a id="example-0-2" name="example-0-2" href="#example-0-2"></a>    <span class="n">library_or_resource</span><span class="p">,</span>
 </span><span id="line-0-3"><a id="example-0-3" name="example-0-3" href="#example-0-3"></a>    <span class="n">outfile</span><span class="p">,</span>
-</span><span id="line-0-4"><a id="example-0-4" name="example-0-4" href="#example-0-4"></a>    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-</span><span id="line-0-5"><a id="example-0-5" name="example-0-5" href="#example-0-5"></a>    <span class="n">version</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+</span><span id="line-0-4"><a id="example-0-4" name="example-0-4" href="#example-0-4"></a>    <span class="n">name</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span>
+</span><span id="line-0-5"><a id="example-0-5" name="example-0-5" href="#example-0-5"></a>    <span class="n">version</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span>
 </span><span id="line-0-6"><a id="example-0-6" name="example-0-6" href="#example-0-6"></a>    <span class="nb">format</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
 </span><span id="line-0-7"><a id="example-0-7" name="example-0-7" href="#example-0-7"></a>    <span class="n">docformat</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
 </span><span id="line-0-8"><a id="example-0-8" name="example-0-8" href="#example-0-8"></a>    <span class="n">specdocformat</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
@@ -10043,7 +10043,7 @@ User Guide for more details.</p>
 <span class="normal">2</span>
 <span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">robot.libdoc</span><span class="w"> </span><span class="kn">import</span> <span class="n">libdoc</span>
 
-<span class="n">libdoc</span><span class="p">(</span><span class="s1">&#39;MyLibrary.py&#39;</span><span class="p">,</span> <span class="s1">&#39;MyLibrary.html&#39;</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s1">&#39;1.0&#39;</span><span class="p">)</span>
+<span class="n">libdoc</span><span class="p">(</span><span class="s1">'MyLibrary.py'</span><span class="p">,</span> <span class="s1">'MyLibrary.html'</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s1">'1.0'</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 
 
@@ -10087,9 +10087,9 @@ User Guide for more details.</p>
 <span class="normal"><a href="#example-0-288">288</a></span>
 <span class="normal"><a href="#example-0-289">289</a></span>
 <span class="normal"><a href="#example-0-290">290</a></span>
-<span class="normal"><a href="#example-0-291">291</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-253"><a id="example-0-253" name="example-0-253"></a><span class="k">def</span><span class="w"> </span><span class="nf">libdoc</span><span class="p">(</span><span class="n">library_or_resource</span><span class="p">,</span> <span class="n">outfile</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="normal"><a href="#example-0-291">291</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-253"><a id="example-0-253" name="example-0-253"></a><span class="k">def</span><span class="w"> </span><span class="nf">libdoc</span><span class="p">(</span><span class="n">library_or_resource</span><span class="p">,</span> <span class="n">outfile</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">''</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s1">''</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
 </span><span id="line-0-254"><a id="example-0-254" name="example-0-254"></a>           <span class="n">docformat</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">specdocformat</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">quiet</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-</span><span id="line-0-255"><a id="example-0-255" name="example-0-255"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Executes Libdoc.</span>
+</span><span id="line-0-255"><a id="example-0-255" name="example-0-255"></a><span class="w">    </span><span class="sd">"""Executes Libdoc.</span>
 </span><span id="line-0-256"><a id="example-0-256" name="example-0-256"></a>
 </span><span id="line-0-257"><a id="example-0-257" name="example-0-257"></a><span class="sd">    :param library_or_resource: Name or path of the library or resource</span>
 </span><span id="line-0-258"><a id="example-0-258" name="example-0-258"></a><span class="sd">        file to be documented.</span>
@@ -10098,15 +10098,15 @@ User Guide for more details.</p>
 </span><span id="line-0-261"><a id="example-0-261" name="example-0-261"></a><span class="sd">    :param version: Version to give to the documented library or resource.</span>
 </span><span id="line-0-262"><a id="example-0-262" name="example-0-262"></a><span class="sd">    :param format: Specifies whether to generate HTML, XML or JSON output.</span>
 </span><span id="line-0-263"><a id="example-0-263" name="example-0-263"></a><span class="sd">        If this options is not used, the format is got from the extension of</span>
-</span><span id="line-0-264"><a id="example-0-264" name="example-0-264"></a><span class="sd">        the output file. Possible values are ``&#39;HTML&#39;``, ``&#39;XML&#39;``, ``&#39;JSON&#39;``</span>
-</span><span id="line-0-265"><a id="example-0-265" name="example-0-265"></a><span class="sd">        and ``&#39;LIBSPEC&#39;``.</span>
+</span><span id="line-0-264"><a id="example-0-264" name="example-0-264"></a><span class="sd">        the output file. Possible values are ``'HTML'``, ``'XML'``, ``'JSON'``</span>
+</span><span id="line-0-265"><a id="example-0-265" name="example-0-265"></a><span class="sd">        and ``'LIBSPEC'``.</span>
 </span><span id="line-0-266"><a id="example-0-266" name="example-0-266"></a><span class="sd">    :param docformat: Documentation source format. Possible values are</span>
-</span><span id="line-0-267"><a id="example-0-267" name="example-0-267"></a><span class="sd">        ``&#39;ROBOT&#39;``, ``&#39;reST&#39;``, ``&#39;HTML&#39;`` and ``&#39;TEXT&#39;``. The default value</span>
+</span><span id="line-0-267"><a id="example-0-267" name="example-0-267"></a><span class="sd">        ``'ROBOT'``, ``'reST'``, ``'HTML'`` and ``'TEXT'``. The default value</span>
 </span><span id="line-0-268"><a id="example-0-268" name="example-0-268"></a><span class="sd">        can be specified in library source code and the initial default</span>
-</span><span id="line-0-269"><a id="example-0-269" name="example-0-269"></a><span class="sd">        is ``&#39;ROBOT&#39;``.</span>
+</span><span id="line-0-269"><a id="example-0-269" name="example-0-269"></a><span class="sd">        is ``'ROBOT'``.</span>
 </span><span id="line-0-270"><a id="example-0-270" name="example-0-270"></a><span class="sd">    :param specdocformat: Specifies whether the keyword documentation in spec</span>
 </span><span id="line-0-271"><a id="example-0-271" name="example-0-271"></a><span class="sd">        files is converted to HTML regardless of the original documentation</span>
-</span><span id="line-0-272"><a id="example-0-272" name="example-0-272"></a><span class="sd">        format. Possible values are ``&#39;HTML&#39;`` (convert to HTML) and ``&#39;RAW&#39;``</span>
+</span><span id="line-0-272"><a id="example-0-272" name="example-0-272"></a><span class="sd">        format. Possible values are ``'HTML'`` (convert to HTML) and ``'RAW'``</span>
 </span><span id="line-0-273"><a id="example-0-273" name="example-0-273"></a><span class="sd">        (use original format). The default depends on the output format.</span>
 </span><span id="line-0-274"><a id="example-0-274" name="example-0-274"></a><span class="sd">        New in Robot Framework 4.0.</span>
 </span><span id="line-0-275"><a id="example-0-275" name="example-0-275"></a><span class="sd">    :param quiet: When true, the path of the generated output file is not</span>
@@ -10120,8 +10120,8 @@ User Guide for more details.</p>
 </span><span id="line-0-283"><a id="example-0-283" name="example-0-283"></a>
 </span><span id="line-0-284"><a id="example-0-284" name="example-0-284"></a><span class="sd">        from robot.libdoc import libdoc</span>
 </span><span id="line-0-285"><a id="example-0-285" name="example-0-285"></a>
-</span><span id="line-0-286"><a id="example-0-286" name="example-0-286"></a><span class="sd">        libdoc(&#39;MyLibrary.py&#39;, &#39;MyLibrary.html&#39;, version=&#39;1.0&#39;)</span>
-</span><span id="line-0-287"><a id="example-0-287" name="example-0-287"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-286"><a id="example-0-286" name="example-0-286"></a><span class="sd">        libdoc('MyLibrary.py', 'MyLibrary.html', version='1.0')</span>
+</span><span id="line-0-287"><a id="example-0-287" name="example-0-287"></a><span class="sd">    """</span>
 </span><span id="line-0-288"><a id="example-0-288" name="example-0-288"></a>    <span class="k">return</span> <span class="n">LibDoc</span><span class="p">()</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
 </span><span id="line-0-289"><a id="example-0-289" name="example-0-289"></a>        <span class="n">library_or_resource</span><span class="p">,</span> <span class="n">outfile</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="n">version</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="nb">format</span><span class="p">,</span>
 </span><span id="line-0-290"><a id="example-0-290" name="example-0-290"></a>        <span class="n">docformat</span><span class="o">=</span><span class="n">docformat</span><span class="p">,</span> <span class="n">specdocformat</span><span class="o">=</span><span class="n">specdocformat</span><span class="p">,</span> <span class="n">quiet</span><span class="o">=</span><span class="n">quiet</span>

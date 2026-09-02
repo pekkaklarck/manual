@@ -10309,7 +10309,7 @@ object:</p>
 <span class="normal"><a href="#example-1-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-1-1"><a id="example-1-1" name="example-1-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">MyObj</span><span class="p">:</span>
 </span><span id="line-1-2"><a id="example-1-2" name="example-1-2"></a>
 </span><span id="line-1-3"><a id="example-1-3" name="example-1-3"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="line-1-4"><a id="example-1-4" name="example-1-4"></a>        <span class="k">return</span> <span class="s2">&quot;Hi, terra!&quot;</span>
+</span><span id="line-1-4"><a id="example-1-4" name="example-1-4"></a>        <span class="k">return</span> <span class="s2">"Hi, terra!"</span>
 </span></code></pre></div></td></tr></table></div>
 With these two variables set, we then have the following test data:</p>
 <p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-2-1">1</a></span>
@@ -10321,8 +10321,8 @@ With these two variables set, we then have the following test data:</p>
 </span><span id="line-2-2"><a id="example-2-2" name="example-2-2"></a><span class="gu">Objects</span>
 </span><span id="line-2-3"><a id="example-2-3" name="example-2-3"></a><span class="p">    </span><span class="nf">KW 1</span><span class="p">    ${</span><span class="nv">STR</span><span class="p">}</span>
 </span><span id="line-2-4"><a id="example-2-4" name="example-2-4"></a><span class="p">    </span><span class="nf">KW 2</span><span class="p">    ${</span><span class="nv">OBJ</span><span class="p">}</span>
-</span><span id="line-2-5"><a id="example-2-5" name="example-2-5"></a><span class="p">    </span><span class="nf">KW 3</span><span class="p">    </span><span class="s">I said &quot;</span><span class="p">${</span><span class="nv">STR</span><span class="p">}</span><span class="s">&quot;</span>
-</span><span id="line-2-6"><a id="example-2-6" name="example-2-6"></a><span class="p">    </span><span class="nf">KW 4</span><span class="p">    </span><span class="s">You said &quot;</span><span class="p">${</span><span class="nv">OBJ</span><span class="p">}</span><span class="s">&quot;</span>
+</span><span id="line-2-5"><a id="example-2-5" name="example-2-5"></a><span class="p">    </span><span class="nf">KW 3</span><span class="p">    </span><span class="s">I said "</span><span class="p">${</span><span class="nv">STR</span><span class="p">}</span><span class="s">"</span>
+</span><span id="line-2-6"><a id="example-2-6" name="example-2-6"></a><span class="p">    </span><span class="nf">KW 4</span><span class="p">    </span><span class="s">You said "</span><span class="p">${</span><span class="nv">OBJ</span><span class="p">}</span><span class="s">"</span>
 </span></code></pre></div></td></tr></table></div>
 Finally, when this test data is executed, different keywords receive
 the arguments as explained below:</p>
@@ -10373,15 +10373,15 @@ and variable <code>${b}</code> bytes <code>a\xe4</code>.</p>
 <span class="normal"><a href="#example-3-11">11</a></span>
 <span class="normal"><a href="#example-3-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-3-1"><a id="example-3-1" name="example-3-1"></a><span class="gh">*** Test Cases ***</span>
 </span><span id="line-3-2"><a id="example-3-2" name="example-3-2"></a><span class="gu">Bytes alone</span>
-</span><span id="line-3-3"><a id="example-3-3" name="example-3-3"></a><span class="p">    [</span><span class="kn">Documentation</span><span class="p">]    </span><span class="s">Keyword gets bytes &#39;\x00\x01&#39;.</span>
+</span><span id="line-3-3"><a id="example-3-3" name="example-3-3"></a><span class="p">    [</span><span class="kn">Documentation</span><span class="p">]    </span><span class="s">Keyword gets bytes '\x00\x01'.</span>
 </span><span id="line-3-4"><a id="example-3-4" name="example-3-4"></a><span class="p">    </span><span class="nf">Keyword</span><span class="p">    ${</span><span class="nv">a</span><span class="p">}</span>
 </span><span id="line-3-5"><a id="example-3-5" name="example-3-5"></a>
 </span><span id="line-3-6"><a id="example-3-6" name="example-3-6"></a><span class="gu">Bytes concatenated with bytes</span>
-</span><span id="line-3-7"><a id="example-3-7" name="example-3-7"></a><span class="p">    [</span><span class="kn">Documentation</span><span class="p">]    </span><span class="s">Keyword gets bytes &#39;\x00\x01a\xe4&#39;.</span>
+</span><span id="line-3-7"><a id="example-3-7" name="example-3-7"></a><span class="p">    [</span><span class="kn">Documentation</span><span class="p">]    </span><span class="s">Keyword gets bytes '\x00\x01a\xe4'.</span>
 </span><span id="line-3-8"><a id="example-3-8" name="example-3-8"></a><span class="p">    </span><span class="nf">Keyword</span><span class="p">    ${</span><span class="nv">a</span><span class="p">}${</span><span class="nv">b</span><span class="p">}</span>
 </span><span id="line-3-9"><a id="example-3-9" name="example-3-9"></a>
 </span><span id="line-3-10"><a id="example-3-10" name="example-3-10"></a><span class="gu">Bytes concatenated with others</span>
-</span><span id="line-3-11"><a id="example-3-11" name="example-3-11"></a><span class="p">    [</span><span class="kn">Documentation</span><span class="p">]    </span><span class="s">Keyword gets string &#39;=\x00\x01a\xe4=&#39;.</span>
+</span><span id="line-3-11"><a id="example-3-11" name="example-3-11"></a><span class="p">    [</span><span class="kn">Documentation</span><span class="p">]    </span><span class="s">Keyword gets string '=\x00\x01a\xe4='.</span>
 </span><span id="line-3-12"><a id="example-3-12" name="example-3-12"></a><span class="p">    </span><span class="nf">Keyword</span><span class="p">    </span><span class="s">=</span><span class="p">${</span><span class="nv">a</span><span class="p">}${</span><span class="nv">b</span><span class="p">}</span><span class="s">=</span>
 </span></code></pre></div></td></tr></table></div>
 <div class="admonition note">
@@ -10439,13 +10439,13 @@ also as a scalar. In that test the keyword gets the whole list as a single argum
 <span class="normal"><a href="#example-5-8">8</a></span>
 <span class="normal"><a href="#example-5-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-5-1"><a id="example-5-1" name="example-5-1"></a><span class="gh">*** Test Cases ***</span>
 </span><span id="line-5-2"><a id="example-5-2" name="example-5-2"></a><span class="gu">Nested container</span>
-</span><span id="line-5-3"><a id="example-5-3" name="example-5-3"></a><span class="p">    ${</span><span class="nv">nested</span><span class="p">} =    </span><span class="nf">Evaluate</span><span class="p">    </span><span class="s">[[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;], {&#39;key&#39;: [&#39;x&#39;, &#39;y&#39;]}]</span>
-</span><span id="line-5-4"><a id="example-5-4" name="example-5-4"></a><span class="p">    </span><span class="nf">Log Many</span><span class="p">    @{</span><span class="nv">nested</span><span class="p">}[</span><span class="nv">0</span><span class="p">]         </span><span class="c"># Logs &#39;a&#39;, &#39;b&#39; and &#39;c&#39;.</span>
-</span><span id="line-5-5"><a id="example-5-5" name="example-5-5"></a><span class="p">    </span><span class="nf">Log Many</span><span class="p">    @{</span><span class="nv">nested</span><span class="p">}[</span><span class="nv">1</span><span class="p">]</span><span class="s">[key]</span><span class="p">    </span><span class="c"># Logs &#39;x&#39; and &#39;y&#39;.</span>
+</span><span id="line-5-3"><a id="example-5-3" name="example-5-3"></a><span class="p">    ${</span><span class="nv">nested</span><span class="p">} =    </span><span class="nf">Evaluate</span><span class="p">    </span><span class="s">[['a', 'b', 'c'], {'key': ['x', 'y']}]</span>
+</span><span id="line-5-4"><a id="example-5-4" name="example-5-4"></a><span class="p">    </span><span class="nf">Log Many</span><span class="p">    @{</span><span class="nv">nested</span><span class="p">}[</span><span class="nv">0</span><span class="p">]         </span><span class="c"># Logs 'a', 'b' and 'c'.</span>
+</span><span id="line-5-5"><a id="example-5-5" name="example-5-5"></a><span class="p">    </span><span class="nf">Log Many</span><span class="p">    @{</span><span class="nv">nested</span><span class="p">}[</span><span class="nv">1</span><span class="p">]</span><span class="s">[key]</span><span class="p">    </span><span class="c"># Logs 'x' and 'y'.</span>
 </span><span id="line-5-6"><a id="example-5-6" name="example-5-6"></a>
 </span><span id="line-5-7"><a id="example-5-7" name="example-5-7"></a><span class="gu">Slice</span>
 </span><span id="line-5-8"><a id="example-5-8" name="example-5-8"></a><span class="p">    ${</span><span class="nv">items</span><span class="p">} =    </span><span class="nf">Create List</span><span class="p">    </span><span class="s">first</span><span class="p">    </span><span class="s">second</span><span class="p">    </span><span class="s">third</span>
-</span><span id="line-5-9"><a id="example-5-9" name="example-5-9"></a><span class="p">    </span><span class="nf">Log Many</span><span class="p">    @{</span><span class="nv">items</span><span class="p">}[</span><span class="nv">1:</span><span class="p">]         </span><span class="c"># Logs &#39;second&#39; and  &#39;third&#39;.</span>
+</span><span id="line-5-9"><a id="example-5-9" name="example-5-9"></a><span class="p">    </span><span class="nf">Log Many</span><span class="p">    @{</span><span class="nv">items</span><span class="p">}[</span><span class="nv">1:</span><span class="p">]         </span><span class="c"># Logs 'second' and  'third'.</span>
 </span></code></pre></div></td></tr></table></div>
 <h4 id="using-list-variables-with-other-data">Using list variables with other data<a class="headerlink" href="#using-list-variables-with-other-data" title="Permanent link">&para;</a></h4>
 <p>It is possible to use list variables with other arguments, including
@@ -10859,7 +10859,7 @@ dynamically based on another variable:</p>
 <span class="normal"><a href="#example-22-6">6</a></span>
 <span class="normal"><a href="#example-22-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-22-1"><a id="example-22-1" name="example-22-1"></a><span class="gh">*** Variables ***</span>
 </span><span id="line-22-2"><a id="example-22-2" name="example-22-2"></a><span class="p">${</span><span class="nv">X</span><span class="p">}        </span><span class="s">Y</span>
-</span><span id="line-22-3"><a id="example-22-3" name="example-22-3"></a><span class="p">${${</span><span class="nv">X</span><span class="p">}}     </span><span class="s">Z</span><span class="p">    </span><span class="c"># Name is created based on &#39;${X}&#39;.</span>
+</span><span id="line-22-3"><a id="example-22-3" name="example-22-3"></a><span class="p">${${</span><span class="nv">X</span><span class="p">}}     </span><span class="s">Z</span><span class="p">    </span><span class="c"># Name is created based on '${X}'.</span>
 </span><span id="line-22-4"><a id="example-22-4" name="example-22-4"></a>
 </span><span id="line-22-5"><a id="example-22-5" name="example-22-5"></a><span class="gh">*** Test Cases ***</span>
 </span><span id="line-22-6"><a id="example-22-6" name="example-22-6"></a><span class="gu">Dynamically created name</span>
@@ -10964,13 +10964,13 @@ where the <code>item</code> part can itself contain a variable:</p>
 </span><span id="line-26-5"><a id="example-26-5" name="example-26-5"></a><span class="p">    ${</span><span class="nv">list</span><span class="p">}</span><span class="nf">[</span><span class="p">${</span><span class="nv">1</span><span class="p">}</span><span class="nf">] =</span><span class="p">    </span><span class="s">Set Variable</span><span class="p">     </span><span class="s">second</span>
 </span><span id="line-26-6"><a id="example-26-6" name="example-26-6"></a><span class="p">    ${</span><span class="nv">list</span><span class="p">}</span><span class="nf">[2:3] =</span><span class="p">     </span><span class="s">Create List</span><span class="p">      </span><span class="s">third</span>
 </span><span id="line-26-7"><a id="example-26-7" name="example-26-7"></a><span class="p">    ${</span><span class="nv">list</span><span class="p">}</span><span class="nf">[-1] =</span><span class="p">      </span><span class="s">Set Variable</span><span class="p">     </span><span class="s">last</span>
-</span><span id="line-26-8"><a id="example-26-8" name="example-26-8"></a><span class="p">    </span><span class="nf">Log Many</span><span class="p">           @{</span><span class="nv">list</span><span class="p">}          </span><span class="c"># Logs &#39;first&#39;, &#39;second&#39;, &#39;third&#39; and &#39;last&#39;</span>
+</span><span id="line-26-8"><a id="example-26-8" name="example-26-8"></a><span class="p">    </span><span class="nf">Log Many</span><span class="p">           @{</span><span class="nv">list</span><span class="p">}          </span><span class="c"># Logs 'first', 'second', 'third' and 'last'</span>
 </span><span id="line-26-9"><a id="example-26-9" name="example-26-9"></a>
 </span><span id="line-26-10"><a id="example-26-10" name="example-26-10"></a><span class="gu">Dictionary item assignment</span>
 </span><span id="line-26-11"><a id="example-26-11" name="example-26-11"></a><span class="p">    ${</span><span class="nv">dict</span><span class="p">} =                </span><span class="nf">Create Dictionary</span><span class="p">    </span><span class="s">first_name=unknown</span>
 </span><span id="line-26-12"><a id="example-26-12" name="example-26-12"></a><span class="p">    ${</span><span class="nv">dict</span><span class="p">}</span><span class="nf">[first_name] =</span><span class="p">    </span><span class="s">Set Variable</span><span class="p">         </span><span class="s">John</span>
 </span><span id="line-26-13"><a id="example-26-13" name="example-26-13"></a><span class="p">    ${</span><span class="nv">dict</span><span class="p">}</span><span class="nf">[last_name] =</span><span class="p">     </span><span class="s">Set Variable</span><span class="p">         </span><span class="s">Doe</span>
-</span><span id="line-26-14"><a id="example-26-14" name="example-26-14"></a><span class="p">    </span><span class="nf">Log</span><span class="p">                      ${</span><span class="nv">dictionary</span><span class="p">}        </span><span class="c"># Logs {&#39;first_name&#39;: &#39;John&#39;, &#39;last_name&#39;: &#39;Doe&#39;}</span>
+</span><span id="line-26-14"><a id="example-26-14" name="example-26-14"></a><span class="p">    </span><span class="nf">Log</span><span class="p">                      ${</span><span class="nv">dictionary</span><span class="p">}        </span><span class="c"># Logs {'first_name': 'John', 'last_name': 'Doe'}</span>
 </span></code></pre></div></td></tr></table></div>
 <h4 id="creating-variable-name-based-on-another-variable_1">Creating variable name based on another variable<a class="headerlink" href="#creating-variable-name-based-on-another-variable_1" title="Permanent link">&para;</a></h4>
 <p>Starting from Robot Framework 7.0, it is possible to create the name of the assigned
@@ -10982,7 +10982,7 @@ variable dynamically based on another variable:</p>
 <span class="normal"><a href="#example-27-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-27-1"><a id="example-27-1" name="example-27-1"></a><span class="gh">*** Test Cases ***</span>
 </span><span id="line-27-2"><a id="example-27-2" name="example-27-2"></a><span class="gu">Dynamically created name</span>
 </span><span id="line-27-3"><a id="example-27-3" name="example-27-3"></a><span class="p">    ${</span><span class="nv">x</span><span class="p">} =    </span><span class="nf">Set Variable</span><span class="p">    </span><span class="s">y</span>
-</span><span id="line-27-4"><a id="example-27-4" name="example-27-4"></a><span class="p">    ${${</span><span class="nv">x</span><span class="p">}} =    </span><span class="nf">Set Variable</span><span class="p">    </span><span class="s">z</span><span class="p">    </span><span class="c"># Name is created based on &#39;${x}&#39;.</span>
+</span><span id="line-27-4"><a id="example-27-4" name="example-27-4"></a><span class="p">    ${${</span><span class="nv">x</span><span class="p">}} =    </span><span class="nf">Set Variable</span><span class="p">    </span><span class="s">z</span><span class="p">    </span><span class="c"># Name is created based on '${x}'.</span>
 </span><span id="line-27-5"><a id="example-27-5" name="example-27-5"></a><span class="p">    </span><span class="nf">Should Be Equal</span><span class="p">    ${</span><span class="nv">y</span><span class="p">}    </span><span class="s">z</span>
 </span></code></pre></div></td></tr></table></div>
 <h4 id="assigning-list-variables">Assigning list variables<a class="headerlink" href="#assigning-list-variables" title="Permanent link">&para;</a></h4>
@@ -11353,7 +11353,7 @@ variables conditionally. In simple cases using <a href="../control/#inline-if">i
 <span class="normal"><a href="#example-35-11">11</a></span>
 <span class="normal"><a href="#example-35-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-35-1"><a id="example-35-1" name="example-35-1"></a><span class="gh">*** Test Cases ***</span>
 </span><span id="line-35-2"><a id="example-35-2" name="example-35-2"></a><span class="gu">IF/ELSE example</span>
-</span><span id="line-35-3"><a id="example-35-3" name="example-35-3"></a><span class="p">    </span><span class="nf">IF</span><span class="p">    </span><span class="s">&quot;</span><span class="p">${</span><span class="nv">ENV</span><span class="p">}</span><span class="s">&quot; == &quot;devel&quot;</span>
+</span><span id="line-35-3"><a id="example-35-3" name="example-35-3"></a><span class="p">    </span><span class="nf">IF</span><span class="p">    </span><span class="s">"</span><span class="p">${</span><span class="nv">ENV</span><span class="p">}</span><span class="s">" == "devel"</span>
 </span><span id="line-35-4"><a id="example-35-4" name="example-35-4"></a><span class="p">        </span><span class="nf">VAR</span><span class="p">    ${</span><span class="nv">address</span><span class="p">}    </span><span class="s">127.0.0.1</span>
 </span><span id="line-35-5"><a id="example-35-5" name="example-35-5"></a><span class="p">        </span><span class="nf">VAR</span><span class="p">    ${</span><span class="nv">name</span><span class="p">}       </span><span class="s">demo</span>
 </span><span id="line-35-6"><a id="example-35-6" name="example-35-6"></a><span class="p">    </span><span class="nf">ELSE</span>
@@ -11362,7 +11362,7 @@ variables conditionally. In simple cases using <a href="../control/#inline-if">i
 </span><span id="line-35-9"><a id="example-35-9" name="example-35-9"></a><span class="p">    </span><span class="nf">END</span>
 </span><span id="line-35-10"><a id="example-35-10" name="example-35-10"></a>
 </span><span id="line-35-11"><a id="example-35-11" name="example-35-11"></a><span class="gu">Inline IF</span>
-</span><span id="line-35-12"><a id="example-35-12" name="example-35-12"></a><span class="p">    </span><span class="nf">IF</span><span class="p">    </span><span class="s">&quot;</span><span class="p">${</span><span class="nv">ENV</span><span class="p">}</span><span class="s">&quot; == &quot;devel&quot;</span><span class="p">    </span><span class="s">VAR</span><span class="p">    ${</span><span class="nv">name</span><span class="p">}    </span><span class="s">demo</span><span class="p">    </span><span class="s">ELSE</span><span class="p">    </span><span class="s">VAR</span><span class="p">    ${</span><span class="nv">name</span><span class="p">}    </span><span class="s">robot</span>
+</span><span id="line-35-12"><a id="example-35-12" name="example-35-12"></a><span class="p">    </span><span class="nf">IF</span><span class="p">    </span><span class="s">"</span><span class="p">${</span><span class="nv">ENV</span><span class="p">}</span><span class="s">" == "devel"</span><span class="p">    </span><span class="s">VAR</span><span class="p">    ${</span><span class="nv">name</span><span class="p">}    </span><span class="s">demo</span><span class="p">    </span><span class="s">ELSE</span><span class="p">    </span><span class="s">VAR</span><span class="p">    ${</span><span class="nv">name</span><span class="p">}    </span><span class="s">robot</span>
 </span></code></pre></div></td></tr></table></div>
 <h4 id="creating-variable-name-based-on-another-variable_2">Creating variable name based on another variable<a class="headerlink" href="#creating-variable-name-based-on-another-variable_2" title="Permanent link">&para;</a></h4>
 <p>If there is a need, variable name can also be created dynamically based on
@@ -11537,8 +11537,8 @@ Python list and dictionary literals:</p>
 <span class="normal"><a href="#example-39-3">3</a></span>
 <span class="normal"><a href="#example-39-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-39-1"><a id="example-39-1" name="example-39-1"></a><span class="gh">*** Variables ***</span>
 </span><span id="line-39-2"><a id="example-39-2" name="example-39-2"></a><span class="p">${</span><span class="nv">NUMBERS: list[int]</span><span class="p">}            </span><span class="s">[1, 2, 3, 4, 5]</span>
-</span><span id="line-39-3"><a id="example-39-3" name="example-39-3"></a><span class="p">${</span><span class="nv">DATES: list[date]</span><span class="p">}             </span><span class="s">{&#39;rc1&#39;: &#39;2025-05-08&#39;, &#39;final&#39;: &#39;2025-05-30&#39;}</span>
-</span><span id="line-39-4"><a id="example-39-4" name="example-39-4"></a><span class="p">${</span><span class="nv">PRIORITIES: dict[int, str]</span><span class="p">}    </span><span class="s">{3278: &#39;Critical&#39;, 4173: &#39;High&#39;, 5334: &#39;High&#39;}</span>
+</span><span id="line-39-3"><a id="example-39-3" name="example-39-3"></a><span class="p">${</span><span class="nv">DATES: list[date]</span><span class="p">}             </span><span class="s">{'rc1': '2025-05-08', 'final': '2025-05-30'}</span>
+</span><span id="line-39-4"><a id="example-39-4" name="example-39-4"></a><span class="p">${</span><span class="nv">PRIORITIES: dict[int, str]</span><span class="p">}    </span><span class="s">{3278: 'Critical', 4173: 'High', 5334: 'High'}</span>
 </span></code></pre></div></td></tr></table></div>
 Using Python list and dictionary literals can be somewhat complicated especially
 for non-programmers. The main benefit of this approach is that it supports also
@@ -11552,7 +11552,7 @@ create the same <code>${PAYLOAD}</code> variable using different approaches:</p>
 </span></code></pre></div></td></tr></table></div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-41-1">1</a></span>
 <span class="normal"><a href="#example-41-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-41-1"><a id="example-41-1" name="example-41-1"></a><span class="gh">*** Variables ***</span>
-</span><span id="line-41-2"><a id="example-41-2" name="example-41-2"></a><span class="p">${</span><span class="nv">PAYLOAD: dict</span><span class="p">}            </span><span class="s">{&#39;id&#39;: 1, &#39;name&#39;: &#39;Robot&#39;, &#39;children&#39;: [2, 13, 15]}</span>
+</span><span id="line-41-2"><a id="example-41-2" name="example-41-2"></a><span class="p">${</span><span class="nv">PAYLOAD: dict</span><span class="p">}            </span><span class="s">{'id': 1, 'name': 'Robot', 'children': [2, 13, 15]}</span>
 </span></code></pre></div></td></tr></table></div></p>
 <h4 id="variable-conversion-on-command-line">Variable conversion on command line<a class="headerlink" href="#variable-conversion-on-command-line" title="Permanent link">&para;</a></h4>
 <p>Variable conversion works also with the <a href="#command-line-variables">command line variables</a> that are
@@ -11562,9 +11562,9 @@ be quoted. Following examples demonstrate some possible usages for this
 functionality:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-42-1">1</a></span>
 <span class="normal"><a href="#example-42-2">2</a></span>
-<span class="normal"><a href="#example-42-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-42-1"><a id="example-42-1" name="example-42-1"></a><span class="o">--</span><span class="n">variable</span> <span class="s2">&quot;ITERATIONS: int:99&quot;</span>
-</span><span id="line-42-2"><a id="example-42-2" name="example-42-2"></a><span class="o">--</span><span class="n">variable</span> <span class="s2">&quot;PAYLOAD: dict:{&#39;id&#39;: 1, &#39;name&#39;: &#39;Robot&#39;, &#39;children&#39;: [2, 13, 15]}&quot;</span>
-</span><span id="line-42-3"><a id="example-42-3" name="example-42-3"></a><span class="o">--</span><span class="n">variable</span> <span class="s2">&quot;START_TIME: datetime:now&quot;</span>
+<span class="normal"><a href="#example-42-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-42-1"><a id="example-42-1" name="example-42-1"></a><span class="o">--</span><span class="n">variable</span> <span class="s2">"ITERATIONS: int:99"</span>
+</span><span id="line-42-2"><a id="example-42-2" name="example-42-2"></a><span class="o">--</span><span class="n">variable</span> <span class="s2">"PAYLOAD: dict:{'id': 1, 'name': 'Robot', 'children': [2, 13, 15]}"</span>
+</span><span id="line-42-3"><a id="example-42-3" name="example-42-3"></a><span class="o">--</span><span class="n">variable</span> <span class="s2">"START_TIME: datetime:now"</span>
 </span></code></pre></div></td></tr></table></div>
 <h4 id="failing-conversion">Failing conversion<a class="headerlink" href="#failing-conversion" title="Permanent link">&para;</a></h4>
 <p>If type conversion fails, there is an error and the variable is not created.
@@ -11639,12 +11639,12 @@ secret variables is exactly the same when using the <a href="#var-syntax">VAR sy
 </div>
 <h4 id="creating-secrets-on-command-line">Creating secrets on command line<a class="headerlink" href="#creating-secrets-on-command-line" title="Permanent link">&para;</a></h4>
 <p><a href="https://docs.python.org/3/library/stdtypes.html#bytes-objects">Command line variable conversion</a> supports secret values directly:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-46-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-46-1"><a id="example-46-1" name="example-46-1"></a><span class="o">--</span><span class="n">variable</span> <span class="s2">&quot;PASSWORD: Secret:robot123&quot;</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-46-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-46-1"><a id="example-46-1" name="example-46-1"></a><span class="o">--</span><span class="n">variable</span> <span class="s2">"PASSWORD: Secret:robot123"</span>
 </span></code></pre></div></td></tr></table></div>
 <p>Having the secret value directly visible on the command line history or in continuous
 integration system logs can be a security risk. One way to mitigate that is using
 environment variables:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-47-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-47-1"><a id="example-47-1" name="example-47-1"></a><span class="o">--</span><span class="n">variable</span> <span class="s2">&quot;PASSWORD: Secret:$PASSWORD&quot;</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-47-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-47-1"><a id="example-47-1" name="example-47-1"></a><span class="o">--</span><span class="n">variable</span> <span class="s2">"PASSWORD: Secret:$PASSWORD"</span>
 </span></code></pre></div></td></tr></table></div>
 <p>Many systems running tests or tasks also support hiding secret values used on
 the command line.</p>
@@ -11658,8 +11658,8 @@ class. This is most commonly done by <a href="../../extend/#libraries">libraries
 <span class="normal"><a href="#example-48-3">3</a></span>
 <span class="normal"><a href="#example-48-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-48-1"><a id="example-48-1" name="example-48-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">robot.api.types</span><span class="w"> </span><span class="kn">import</span> <span class="n">Secret</span>
 </span><span id="line-48-2"><a id="example-48-2" name="example-48-2"></a>
-</span><span id="line-48-3"><a id="example-48-3" name="example-48-3"></a><span class="n">USERNAME</span> <span class="o">=</span> <span class="s2">&quot;robot&quot;</span>
-</span><span id="line-48-4"><a id="example-48-4" name="example-48-4"></a><span class="n">PASSWORD</span> <span class="o">=</span> <span class="n">Secret</span><span class="p">(</span><span class="s2">&quot;robot123&quot;</span><span class="p">)</span>
+</span><span id="line-48-3"><a id="example-48-3" name="example-48-3"></a><span class="n">USERNAME</span> <span class="o">=</span> <span class="s2">"robot"</span>
+</span><span id="line-48-4"><a id="example-48-4" name="example-48-4"></a><span class="n">PASSWORD</span> <span class="o">=</span> <span class="n">Secret</span><span class="p">(</span><span class="s2">"robot123"</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 Creating a keyword returning a secret is not much more complicated either:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-49-1">1</a></span>
@@ -11668,7 +11668,7 @@ Creating a keyword returning a secret is not much more complicated either:</p>
 <span class="normal"><a href="#example-49-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-49-1"><a id="example-49-1" name="example-49-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">robot.api.types</span><span class="w"> </span><span class="kn">import</span> <span class="n">Secret</span>
 </span><span id="line-49-2"><a id="example-49-2" name="example-49-2"></a>
 </span><span id="line-49-3"><a id="example-49-3" name="example-49-3"></a><span class="k">def</span><span class="w"> </span><span class="nf">get_token</span><span class="p">():</span>
-</span><span id="line-49-4"><a id="example-49-4" name="example-49-4"></a>    <span class="k">return</span> <span class="n">Secret</span><span class="p">(</span><span class="s2">&quot;e5805f56-92e1-11f0-a798-8782a78eb4b5&quot;</span><span class="p">)</span>
+</span><span id="line-49-4"><a id="example-49-4" name="example-49-4"></a>    <span class="k">return</span> <span class="n">Secret</span><span class="p">(</span><span class="s2">"e5805f56-92e1-11f0-a798-8782a78eb4b5"</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -11824,10 +11824,10 @@ easier to understand than those using backslashes.</p>
 </span><span id="line-54-9"><a id="example-54-9" name="example-54-9"></a><span class="p">    </span><span class="nf">Should Be Equal</span><span class="p">    ${</span><span class="nv">SPACE * 10</span><span class="p">}     </span><span class="s">\ \ \ \ \ \ \ \ \ \ \</span>
 </span><span id="line-54-10"><a id="example-54-10" name="example-54-10"></a>
 </span><span id="line-54-11"><a id="example-54-11" name="example-54-11"></a><span class="gu">Quoted space</span>
-</span><span id="line-54-12"><a id="example-54-12" name="example-54-12"></a><span class="p">    </span><span class="nf">Should Be Equal</span><span class="p">    </span><span class="s">&quot;</span><span class="p">${</span><span class="nv">SPACE</span><span class="p">}</span><span class="s">&quot;</span><span class="p">        </span><span class="s">&quot; &quot;</span>
+</span><span id="line-54-12"><a id="example-54-12" name="example-54-12"></a><span class="p">    </span><span class="nf">Should Be Equal</span><span class="p">    </span><span class="s">"</span><span class="p">${</span><span class="nv">SPACE</span><span class="p">}</span><span class="s">"</span><span class="p">        </span><span class="s">" "</span>
 </span><span id="line-54-13"><a id="example-54-13" name="example-54-13"></a>
 </span><span id="line-54-14"><a id="example-54-14" name="example-54-14"></a><span class="gu">Quoted spaces</span>
-</span><span id="line-54-15"><a id="example-54-15" name="example-54-15"></a><span class="p">    </span><span class="nf">Should Be Equal</span><span class="p">    </span><span class="s">&quot;</span><span class="p">${</span><span class="nv">SPACE * 2</span><span class="p">}</span><span class="s">&quot;</span><span class="p">    </span><span class="s">&quot; \ &quot;</span>
+</span><span id="line-54-15"><a id="example-54-15" name="example-54-15"></a><span class="p">    </span><span class="nf">Should Be Equal</span><span class="p">    </span><span class="s">"</span><span class="p">${</span><span class="nv">SPACE * 2</span><span class="p">}</span><span class="s">"</span><span class="p">    </span><span class="s">" \ "</span>
 </span><span id="line-54-16"><a id="example-54-16" name="example-54-16"></a>
 </span><span id="line-54-17"><a id="example-54-17" name="example-54-17"></a><span class="gu">Empty</span>
 </span><span id="line-54-18"><a id="example-54-18" name="example-54-18"></a><span class="p">    </span><span class="nf">Should Be Equal</span><span class="p">    ${</span><span class="nv">EMPTY</span><span class="p">}          </span><span class="s">\</span>
@@ -12134,13 +12134,13 @@ in the example below. First assume that we have the following <a href="../variab
 </span><span id="line-56-4"><a id="example-56-4" name="example-56-4"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
 </span><span id="line-56-5"><a id="example-56-5" name="example-56-5"></a>
 </span><span id="line-56-6"><a id="example-56-6" name="example-56-6"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">eat</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">what</span><span class="p">):</span>
-</span><span id="line-56-7"><a id="example-56-7" name="example-56-7"></a>        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1"> eats </span><span class="si">{</span><span class="n">what</span><span class="si">}</span><span class="s1">&#39;</span>
+</span><span id="line-56-7"><a id="example-56-7" name="example-56-7"></a>        <span class="k">return</span> <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1"> eats </span><span class="si">{</span><span class="n">what</span><span class="si">}</span><span class="s1">'</span>
 </span><span id="line-56-8"><a id="example-56-8" name="example-56-8"></a>
 </span><span id="line-56-9"><a id="example-56-9" name="example-56-9"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 </span><span id="line-56-10"><a id="example-56-10" name="example-56-10"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
 </span><span id="line-56-11"><a id="example-56-11" name="example-56-11"></a>
-</span><span id="line-56-12"><a id="example-56-12" name="example-56-12"></a><span class="n">OBJECT</span> <span class="o">=</span> <span class="n">MyObject</span><span class="p">(</span><span class="s1">&#39;Robot&#39;</span><span class="p">)</span>
-</span><span id="line-56-13"><a id="example-56-13" name="example-56-13"></a><span class="n">DICTIONARY</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="s1">&#39;one&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="s1">&#39;two&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span> <span class="s1">&#39;three&#39;</span><span class="p">}</span>
+</span><span id="line-56-12"><a id="example-56-12" name="example-56-12"></a><span class="n">OBJECT</span> <span class="o">=</span> <span class="n">MyObject</span><span class="p">(</span><span class="s1">'Robot'</span><span class="p">)</span>
+</span><span id="line-56-13"><a id="example-56-13" name="example-56-13"></a><span class="n">DICTIONARY</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="s1">'one'</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="s1">'two'</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span> <span class="s1">'three'</span><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-57-1">1</a></span>
 <span class="normal"><a href="#example-57-2">2</a></span>
@@ -12149,7 +12149,7 @@ in the example below. First assume that we have the following <a href="../variab
 <span class="normal"><a href="#example-57-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-57-1"><a id="example-57-1" name="example-57-1"></a><span class="gh">*** Test Cases ***</span>
 </span><span id="line-57-2"><a id="example-57-2" name="example-57-2"></a><span class="gu">Example</span>
 </span><span id="line-57-3"><a id="example-57-3" name="example-57-3"></a><span class="p">    </span><span class="nf">KW 1</span><span class="p">    ${</span><span class="nv">OBJECT.name</span><span class="p">}</span>
-</span><span id="line-57-4"><a id="example-57-4" name="example-57-4"></a><span class="p">    </span><span class="nf">KW 2</span><span class="p">    ${</span><span class="nv">OBJECT.eat(&#39;Cucumber&#39;)</span><span class="p">}</span>
+</span><span id="line-57-4"><a id="example-57-4" name="example-57-4"></a><span class="p">    </span><span class="nf">KW 2</span><span class="p">    ${</span><span class="nv">OBJECT.eat('Cucumber')</span><span class="p">}</span>
 </span><span id="line-57-5"><a id="example-57-5" name="example-57-5"></a><span class="p">    </span><span class="nf">KW 3</span><span class="p">    ${</span><span class="nv">DICTIONARY[2]</span><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
 When this test data is executed, the keywords get the arguments as
@@ -12206,8 +12206,8 @@ show few pretty good usages.</p>
 <span class="normal"><a href="#example-58-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-58-1"><a id="example-58-1" name="example-58-1"></a><span class="gh">*** Test Cases ***</span>
 </span><span id="line-58-2"><a id="example-58-2" name="example-58-2"></a><span class="gu">String</span>
 </span><span id="line-58-3"><a id="example-58-3" name="example-58-3"></a><span class="p">    </span><span class="nf">VAR</span><span class="p">    ${</span><span class="nv">string</span><span class="p">}    </span><span class="s">abc</span>
-</span><span id="line-58-4"><a id="example-58-4" name="example-58-4"></a><span class="p">    </span><span class="nf">Log</span><span class="p">    ${</span><span class="nv">string.upper()</span><span class="p">}      </span><span class="c"># Logs &#39;ABC&#39;</span>
-</span><span id="line-58-5"><a id="example-58-5" name="example-58-5"></a><span class="p">    </span><span class="nf">Log</span><span class="p">    ${</span><span class="nv">string * 2</span><span class="p">}          </span><span class="c"># Logs &#39;abcabc&#39;</span>
+</span><span id="line-58-4"><a id="example-58-4" name="example-58-4"></a><span class="p">    </span><span class="nf">Log</span><span class="p">    ${</span><span class="nv">string.upper()</span><span class="p">}      </span><span class="c"># Logs 'ABC'</span>
+</span><span id="line-58-5"><a id="example-58-5" name="example-58-5"></a><span class="p">    </span><span class="nf">Log</span><span class="p">    ${</span><span class="nv">string * 2</span><span class="p">}          </span><span class="c"># Logs 'abcabc'</span>
 </span><span id="line-58-6"><a id="example-58-6" name="example-58-6"></a>
 </span><span id="line-58-7"><a id="example-58-7" name="example-58-7"></a><span class="gu">Number</span>
 </span><span id="line-58-8"><a id="example-58-8" name="example-58-8"></a><span class="p">    </span><span class="nf">VAR</span><span class="p">    ${</span><span class="nv">number</span><span class="p">}    ${</span><span class="nv">-2</span><span class="p">}</span>

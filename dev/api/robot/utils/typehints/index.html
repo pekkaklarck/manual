@@ -9905,10 +9905,10 @@ and discussion.</p>
 <span class="normal"><a href="#example-0-32">32</a></span>
 <span class="normal"><a href="#example-0-33">33</a></span>
 <span class="normal"><a href="#example-0-34">34</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-26"><a id="example-0-26" name="example-0-26"></a><span class="k">def</span><span class="w"> </span><span class="nf">copy_signature</span><span class="p">(</span><span class="n">target</span><span class="p">:</span> <span class="n">T</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">T</span><span class="p">]:</span>
-</span><span id="line-0-27"><a id="example-0-27" name="example-0-27"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;A decorator that applies the signature of `T` to any function that it decorates</span>
+</span><span id="line-0-27"><a id="example-0-27" name="example-0-27"></a><span class="w">    </span><span class="sd">"""A decorator that applies the signature of `T` to any function that it decorates</span>
 </span><span id="line-0-28"><a id="example-0-28" name="example-0-28"></a><span class="sd">    see https://github.com/python/typing/issues/270#issuecomment-555966301 for source</span>
 </span><span id="line-0-29"><a id="example-0-29" name="example-0-29"></a><span class="sd">    and discussion.</span>
-</span><span id="line-0-30"><a id="example-0-30" name="example-0-30"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="line-0-30"><a id="example-0-30" name="example-0-30"></a><span class="sd">    """</span>
 </span><span id="line-0-31"><a id="example-0-31" name="example-0-31"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">decorator</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
 </span><span id="line-0-32"><a id="example-0-32" name="example-0-32"></a>        <span class="k">return</span> <span class="n">func</span>
 </span><span id="line-0-33"><a id="example-0-33" name="example-0-33"></a>

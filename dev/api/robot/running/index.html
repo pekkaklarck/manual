@@ -9865,7 +9865,7 @@ the :mod:<code>robot.api</code> package.</p>
 <span class="normal">2</span>
 <span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">robot.api</span><span class="w"> </span><span class="kn">import</span> <span class="n">TestSuite</span>
 
-<span class="n">suite</span> <span class="o">=</span> <span class="n">TestSuite</span><span class="o">.</span><span class="n">from_file_system</span><span class="p">(</span><span class="s1">&#39;path/to/activate_skynet.robot&#39;</span><span class="p">)</span>
+<span class="n">suite</span> <span class="o">=</span> <span class="n">TestSuite</span><span class="o">.</span><span class="n">from_file_system</span><span class="p">(</span><span class="s1">'path/to/activate_skynet.robot'</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 <p>That was easy. Let's next generate the same test suite from scratch::</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -9876,11 +9876,11 @@ the :mod:<code>robot.api</code> package.</p>
 <span class="normal">6</span>
 <span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">robot.api</span><span class="w"> </span><span class="kn">import</span> <span class="n">TestSuite</span>
 
-<span class="n">suite</span> <span class="o">=</span> <span class="n">TestSuite</span><span class="p">(</span><span class="s1">&#39;Activate Skynet&#39;</span><span class="p">)</span>
-<span class="n">suite</span><span class="o">.</span><span class="n">resource</span><span class="o">.</span><span class="n">imports</span><span class="o">.</span><span class="n">library</span><span class="p">(</span><span class="s1">&#39;OperatingSystem&#39;</span><span class="p">)</span>
-<span class="n">test</span> <span class="o">=</span> <span class="n">suite</span><span class="o">.</span><span class="n">tests</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="s1">&#39;Should Activate Skynet&#39;</span><span class="p">,</span> <span class="n">tags</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;smoke&#39;</span><span class="p">])</span>
-<span class="n">test</span><span class="o">.</span><span class="n">setup</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Set Environment Variable&#39;</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;SKYNET&#39;</span><span class="p">,</span> <span class="s1">&#39;activated&#39;</span><span class="p">])</span>
-<span class="n">test</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">create_keyword</span><span class="p">(</span><span class="s1">&#39;Environment Variable Should Be Set&#39;</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;SKYNET&#39;</span><span class="p">])</span>
+<span class="n">suite</span> <span class="o">=</span> <span class="n">TestSuite</span><span class="p">(</span><span class="s1">'Activate Skynet'</span><span class="p">)</span>
+<span class="n">suite</span><span class="o">.</span><span class="n">resource</span><span class="o">.</span><span class="n">imports</span><span class="o">.</span><span class="n">library</span><span class="p">(</span><span class="s1">'OperatingSystem'</span><span class="p">)</span>
+<span class="n">test</span> <span class="o">=</span> <span class="n">suite</span><span class="o">.</span><span class="n">tests</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="s1">'Should Activate Skynet'</span><span class="p">,</span> <span class="n">tags</span><span class="o">=</span><span class="p">[</span><span class="s1">'smoke'</span><span class="p">])</span>
+<span class="n">test</span><span class="o">.</span><span class="n">setup</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'Set Environment Variable'</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">[</span><span class="s1">'SKYNET'</span><span class="p">,</span> <span class="s1">'activated'</span><span class="p">])</span>
+<span class="n">test</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">create_keyword</span><span class="p">(</span><span class="s1">'Environment Variable Should Be Set'</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">[</span><span class="s1">'SKYNET'</span><span class="p">])</span>
 </code></pre></div></td></tr></table></div>
 <p>Not that complicated either, especially considering the flexibility. Notice
 that the suite created based on the file could also be edited further using
@@ -9897,12 +9897,12 @@ information::</p>
 <span class="normal">6</span>
 <span class="normal">7</span>
 <span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">result</span> <span class="o">=</span> <span class="n">suite</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">output</span><span class="o">=</span><span class="s1">&#39;skynet.xml&#39;</span><span class="p">)</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">result</span> <span class="o">=</span> <span class="n">suite</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">output</span><span class="o">=</span><span class="s1">'skynet.xml'</span><span class="p">)</span>
 
 <span class="k">assert</span> <span class="n">result</span><span class="o">.</span><span class="n">return_code</span> <span class="o">==</span> <span class="mi">0</span>
-<span class="k">assert</span> <span class="n">result</span><span class="o">.</span><span class="n">suite</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;Activate Skynet&#39;</span>
+<span class="k">assert</span> <span class="n">result</span><span class="o">.</span><span class="n">suite</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s1">'Activate Skynet'</span>
 <span class="n">test</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">suite</span><span class="o">.</span><span class="n">tests</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="k">assert</span> <span class="n">test</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;Should Activate Skynet&#39;</span>
+<span class="k">assert</span> <span class="n">test</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s1">'Should Activate Skynet'</span>
 <span class="k">assert</span> <span class="n">test</span><span class="o">.</span><span class="n">passed</span>
 <span class="n">stats</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">suite</span><span class="o">.</span><span class="n">statistics</span>
 <span class="k">assert</span> <span class="n">stats</span><span class="o">.</span><span class="n">total</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">stats</span><span class="o">.</span><span class="n">passed</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">stats</span><span class="o">.</span><span class="n">failed</span> <span class="o">==</span> <span class="mi">0</span>
@@ -9919,9 +9919,9 @@ the results is possible using the
 <span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">robot.api</span><span class="w"> </span><span class="kn">import</span> <span class="n">ResultWriter</span>
 
 <span class="c1"># Report and xUnit files can be generated based on the result object.</span>
-<span class="n">ResultWriter</span><span class="p">(</span><span class="n">result</span><span class="p">)</span><span class="o">.</span><span class="n">write_results</span><span class="p">(</span><span class="n">report</span><span class="o">=</span><span class="s1">&#39;skynet.html&#39;</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">ResultWriter</span><span class="p">(</span><span class="n">result</span><span class="p">)</span><span class="o">.</span><span class="n">write_results</span><span class="p">(</span><span class="n">report</span><span class="o">=</span><span class="s1">'skynet.html'</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 <span class="c1"># Generating log files requires processing the earlier generated output XML.</span>
-<span class="n">ResultWriter</span><span class="p">(</span><span class="s1">&#39;skynet.xml&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">write_results</span><span class="p">()</span>
+<span class="n">ResultWriter</span><span class="p">(</span><span class="s1">'skynet.xml'</span><span class="p">)</span><span class="o">.</span><span class="n">write_results</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
 
 
