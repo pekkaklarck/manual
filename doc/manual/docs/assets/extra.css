@@ -1,11 +1,14 @@
-.md-typeset h1, header .md-ellipsis {
+.md-typeset h1,
+header .md-ellipsis {
   font-family: OCRA;
 }
+
 :root {
-  --md-primary-fg-color:        #00c0b5;
+  --md-primary-fg-color: #00c0b5;
   --md-primary-fg-color--light: #00c0b5;
-  --md-primary-fg-color--dark:  #00c0b5;
+  --md-primary-fg-color--dark: #00c0b5;
 }
+
 /* Advertise search shortcut */
 [data-md-toggle="search"]:not(:checked) ~ .md-header .md-search__form::after {
   position: absolute;
@@ -31,19 +34,36 @@
   margin-top: 0;
   margin-bottom: 0;
 }
+
 .md-typeset dl dd {
   margin-top: 0.1rem;
   margin-bottom: 0.6rem;
 }
+
 /* ezglossary injects a back-reference list into every definition; collapse it
    (and any wrapping paragraph) when it has no entries, so it does not add
    blank space between a term and the next one. */
 .md-typeset dl dd .mkdocs-ezglossary-refs:not(:has(li)) {
   display: none;
 }
+
 .md-typeset dl dd > p:empty {
   display: none;
 }
+
 .md-typeset dl dd p:has(> .mkdocs-ezglossary-refs:not(:has(li))) {
   display: none;
+}
+
+.md-content__inner {
+  /* Limit line length to make longer paragraphs easier to follow. */
+  max-width: 900px;
+
+  /* Centre the narrower article within the available content area. */
+  margin-inline: auto;
+}
+
+.md-typeset h2 {
+  /* Distinguish major page sections more clearly from body text and h3 headings. */
+  font-weight: 500;
 }

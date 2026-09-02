@@ -1,57 +1,58 @@
 # Robot Framework Manual
 
-## What is Robot Framework?  :simple-robotframework:
+Robot Framework is an open source automation framework for software testing, robotic process automation (RPA), and other automation tasks. Its readable syntax supports keyword-driven and data-driven approaches, as well as behaviour-driven development (BDD). It can be extended with libraries and used with supporting tools.
 
-Robot Framework® is a generic open source automation framework for acceptance testing,
-behavior-driven development (BDD) and robotic process automation (RPA). It has simple
-[plain text syntax][syntax], and it can be [extended][extending-robot-framework]
-easily with generic and custom [libraries][].
+This Manual is the **technical reference** for installing, using, and extending Robot Framework. It covers the framework itself and the standard libraries distributed with it. External libraries and tools have their own documentation.
 
-Robot Framework is operating system and application independent. It is implemented
-using Python which is also the primary language to extend it. The framework has
-a rich ecosystem around it consisting of various generic libraries and tools that
-are developed as separate projects. For more information about Robot Framework and
-the ecosystem, see https://robotframework.org.
-
-## What is in this manual?  :blue_book:
-
-Robot Framework Manual contains indepth information about all Robot Framework features
-such as data syntax, how to execute tests and how to extend the framework.
-
-The manual concentrates only to Robot Framework core and is rather technical.
-If you are looking for more practical information related to getting started with
-Robot Framework or using it in a certain domain such as web automation, see
-the excellent [Robot Framework Guides](https://docs.robotframework.org/docs) project.
-
-## Examples
-
-These examples were added for testing syntax highlighting and can be removed.
-Having some examples on the front page could be a good idea, though.
+Robot Framework automation is organised into test cases or tasks. This example shows a simple task:
 
 ```robotframework
-*** Settings ***
-Documentation        Is this an interesting example?
-Library              Example.py
-
-*** Test Cases ***
-Example
-    [Documentation]    No, this this isn't.
-    Greeting    Robot
-
-*** Keyword ***
-Greeting
-    [Arguments]    ${name}
-    IF    $name == "Robot"
-        Log    Hello, good sir!
-    ELSE  # Not Robot!
-        Log    Hello, ${name}!
-    END
+*** Tasks ***
+Create the monthly report
+    Collect report data
+    Generate report    format=PDF
+    Send report    recipient=finance@example.com
 ```
 
-```python
-def greeting(name):
-    if name == "Robot":
-        print("Hello, good sir!")
-    else:  # Not Robot!
-        print(f"Hello, {name}!")
-```
+The task name and keywords describe the workflow. Named arguments such as `format=PDF` add details while keeping the workflow readable. Keywords can come from standard or external libraries, or you can create user keywords for your project.
+
+## What the Manual covers
+
+- **Installation**: Set up Python, [install Robot Framework](install/index.md), and verify the installation. We recommend using a virtual environment to keep project dependencies isolated.
+- **Write and run automation**: [Syntax](syntax/index.md) covers automation file structure, variables, keywords, and control structures. [Execution](execution/index.md) covers running and configuring automation and generated execution artifacts such as logs and reports. [Libraries](libraries/index.md) provides reference documentation for the standard libraries.
+- **Create extensions**: [Extend](extend/index.md) explains how to create libraries and use extension interfaces such as listeners and parsers. Use the Python [API reference](api/index.md) when working with Robot Framework programmatically.
+- **Find settings and terminology**: Look in the [Appendix](appendix/index.md) for settings, command-line options, and supported file formats. If a term is unfamiliar, check the [Glossary](glossary.md) for its definition.
+
+## Guides, libraries, and tools
+
+The Manual explains Robot Framework features and behaviour in detail. If you want to learn through examples or complete a specific task, the community-maintained [Robot Framework Guides](https://docs.robotframework.org/) offer tutorials and step-by-step instructions.
+
+The wider Robot Framework ecosystem also includes libraries and tools developed and maintained separately from the framework. **Libraries** can connect the framework to browsers, APIs, databases, and other technologies. **Tools** help with writing, running, and maintaining automation. You can find an overview of available external libraries and tools on the [Robot Framework website](https://robotframework.org/#resources).
+
+## Community and contributions
+
+The Robot Framework community is a place to ask questions, share knowledge, and work with others who use and develop the framework. You can contribute by helping another user or improving the project.
+
+Here are three places to start:
+
+- [**Community forum**](https://forum.robotframework.org/): Ask questions, find previous answers, and take part in longer discussions.
+
+- [**Slack**](https://slack.robotframework.org/): Chat with other community members in real time.
+
+- [**GitHub**](https://github.com/robotframework): Follow development, report project issues, and contribute documentation or code.
+
+## Robot Framework Foundation
+
+Robot Framework is open source software released under the Apache License 2.0. The Robot Framework Foundation, a non-profit association, supports the project’s continued development and infrastructure.
+
+The Foundation stewards the project and funds core development and maintenance. It also supports the wider ecosystem and community activities.
+
+Learn more about the [Robot Framework Foundation](https://robotframework.org/foundation/).
+
+## Reporting security issues
+
+If you discover a potential security issue, **do not** disclose it through a public issue or community channel.
+
+For independently maintained libraries and tools, contact the maintainers of the affected project privately.
+
+For Robot Framework or another Foundation-managed project, report the issue confidentially to [security@robotframework.org](mailto:security@robotframework.org).
