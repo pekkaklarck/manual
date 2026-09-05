@@ -2,8 +2,8 @@
 
 Robot Framework test cases are executed from the command line, and the
 end result is, by default, an [output file](results.md#output-file) in XML format and an HTML
-[report](results.md#report) and [log](results.md#log). After the execution, output files can be combined and
-otherwise [post-processed](http://en.wikipedia.org/wiki/Glob_(programming)) with the Rebot tool.
+[report](results.md#report-file) and [log](results.md#log-file). After the execution, output files can be combined and
+otherwise [post-processed](post-processing.md#post-processing-outputs) with the Rebot tool.
 
 <a id="executing-test-cases"></a>
 
@@ -17,14 +17,14 @@ otherwise [post-processed](http://en.wikipedia.org/wiki/Glob_(programming)) with
 
 ### Synopsis
 
-```
+```text
 robot [options] data
 python -m robot [options] data
 python path/to/robot/ [options] data
 ```
 
 Execution is normally started using the `robot` command created as part of
-[installation](http://en.wikipedia.org/wiki/Glob_(programming)). Alternatively it is possible to execute the installed `robot`
+[installation](../appendix/doc-format.md#installation). Alternatively it is possible to execute the installed `robot`
 module using the selected Python interpreter. This is especially convenient
 if Robot Framework has been installed under multiple Python versions.
 Finally, if you know where the installed `robot` directory exists, it can
@@ -37,27 +37,27 @@ outputs in many ways.
 
 ### Specifying test data to be executed
 
-Robot Framework test cases are created in [files](https://docs.python.org/library/subprocess.html) and [directories](https://robot-framework.readthedocs.io),
+Robot Framework test cases are created in [files](../syntax/suites.md#suite-files) and [directories](../syntax/suites.md#suite-directories),
 and they are executed by giving the path to the file or directory in
 question to the selected runner script. The path can be absolute or,
 more commonly, relative to the directory where tests are executed
 from. The given file or directory creates the top-level test suite,
-which, by default, gets its name from the [file or directory name](https://en.wikipedia.org/wiki/Shebang_(Unix)).
+which, by default, gets its name from the [file or directory name](../syntax/suites.md#suite-name).
 Different execution possibilities
 are illustrated in the examples below. Note that in these examples, as
 well as in other examples in this section, only the `robot` script
 is used, but other execution approaches could be used similarly.
 
-```
+```text
 robot tests.robot
 robot path/to/my_tests/
 robot c:\robot\tests.robot
 ```
 
 !!! note
-    When executing a [directory](http://en.wikipedia.org/wiki/Glob_(programming)), all files and directories starting with
-    a dot (*.*) or an underscore (*_*) are ignored and,
-    by default, only files with the *.robot* extension executed.
+    When executing a [directory](../syntax/suites.md#suite-directories), all files and directories starting with
+    a dot (`.`{.file}) or an underscore (`_`{.file}) are ignored and,
+    by default, only files with the `.robot`{.file} extension executed.
     See the [Selecting files to parse](configuration.md#selecting-files-to-parse) section for more details.
 
 It is also possible to give paths to several test case files or
@@ -67,22 +67,22 @@ the specified files and directories become its child test suites. The name
 of the created test suite is got from child suite names by
 concatenating them together with an ampersand (&) and spaces. For example,
 the name of the top-level suite in the first example below is
-*My Tests & Your Tests*. These automatically created names are
+*My Tests & Your Tests*{.name}. These automatically created names are
 often quite long and complicated. In most cases, it is thus better to
-use the `--name` option for overriding it, as in the second
+use the `--name`{.option} option for overriding it, as in the second
 example below:
 
-```
+```text
 robot my_tests.robot your_tests.robot
 robot --name Example path/to/tests/pattern_*.robot
 ```
 
 Starting from Robot Framework 6.1, it is also possible to define a
-[test suite initialisation file](http://en.wikipedia.org/wiki/Glob_(programming)) for the automatically created top-level
+[test suite initialisation file](../syntax/suites.md#suite-initialization-files) for the automatically created top-level
 suite. The path to the init file is given similarly to the
 test case files:
 
-```
+```text
 robot __init__.robot my_tests.robot other_tests.robot
 ```
 
@@ -99,27 +99,27 @@ in this chapter.
 When options are used, they must always be given between the runner
 script and the data sources. For example:
 
-```
+```text
 robot -L debug my_tests.robot
 robot --include smoke --variable HOST:10.0.0.42 path/to/tests/
 ```
 
 ### Short and long options
 
-Options always have a long name, such as `--name`, and the
+Options always have a long name, such as `--name`{.option}, and the
 most frequently needed options also have a short name, such as
-`-N`. In addition to that, long options can be shortened as
+`-N`{.option}. In addition to that, long options can be shortened as
 long as they are unique. For example, `--logle DEBUG` works,
 while `--lo log.html` does not, because the former matches only
-`--loglevel`, but the latter matches several options. Short
+`--loglevel`{.option}, but the latter matches several options. Short
 and shortened options are practical when executing test cases
 manually, but long options are recommended in [start-up scripts](#creating-start-up-scripts),
 because they are easier to understand.
 
 The long option names are case-insensitive and hyphen-insensitive,
 which facilitates writing option names in an easy-to-read format.
-For example, `--SuiteStatLevel` and `--suite-stat-level`
-are equivalent to, but easier to read than, `--suitestatlevel`.
+For example, `--SuiteStatLevel`{.option} and `--suite-stat-level`{.option}
+are equivalent to, but easier to read than, `--suitestatlevel`{.option}.
 
 !!! note
     Long options being hyphen-insensitive is new in Robot Framework 6.1.
@@ -165,13 +165,13 @@ Many command line options take arguments as *simple patterns*. These
 - `[a-z]` matches one character from the range in the bracket.
 - `[!a-z]` matches one character not from the range in the bracket.
 - Unlike with glob patterns normally, path separator characters `/` and
-  `\\` and the newline character `\n` are matches by the above
+  `\`{.codesc} and the newline character `\n` are matches by the above
   wildcards.
 - Unless noted otherwise, pattern matching is case, space, and underscore insensitive.
 
 Examples:
 
-```
+```text
 --test Example*        # Matches tests with name starting 'Example'.
 --test Example[1-2]    # Matches tests 'Example1' and 'Example2'.
 --include f??          # Matches tests with a tag that starts with 'f' is three characters long.
@@ -204,7 +204,7 @@ case-insensitive, this works even if tags themselves would be upper case like `P
 `AND`
 : The whole pattern matches if all individual patterns match:
 
-```
+```text
 --include fooANDbar     # Matches tests containing tags 'foo' and 'bar'.
 --exclude xANDyANDz     # Matches tests containing tags 'x', 'y', and 'z'.
 ```
@@ -212,33 +212,31 @@ case-insensitive, this works even if tags themselves would be upper case like `P
 `OR`
 : The whole pattern matches if any individual pattern matches:
 
-```
+```text
 --include fooORbar      # Matches tests containing either tag 'foo' or tag 'bar'.
 --exclude xORyORz       # Matches tests containing any of tags 'x', 'y', or 'z'.
 ```
 
 `NOT`
 : The whole pattern matches if the pattern on the left side of `NOT` matches,
-   but the pattern on the right side does not. If used multiple times, none of
-   the patterns after the first `NOT` can match:
+    but the pattern on the right side does not. If used multiple times, none of
+    the patterns after the first `NOT` can match:
 
-```
---include fooNOTbar     # Matches tests containing tag 'foo' but not tag 'bar'.
---exclude xNOTyNOTz     # Matches tests containing tag 'x' but not tag 'y' or tag 'z'.
-```
+```text
+   --include fooNOTbar     # Matches tests containing tag 'foo' but not tag 'bar'.
+   --exclude xNOTyNOTz     # Matches tests containing tag 'x' but not tag 'y' or tag 'z'.
 
-   The pattern can also start with `NOT`. In that case the pattern matches
-   if the pattern after `NOT` does not match:
+The pattern can also start with `NOT`. In that case the pattern matches
+if the pattern after `NOT` does not match::
 
-```
---include NOTfoo        # Matches tests not containing tag 'foo'.
---include NOTxANDy      # Matches tests not containing tags 'x' and 'y'.
+   --include NOTfoo        # Matches tests not containing tag 'foo'.
+   --include NOTxANDy      # Matches tests not containing tags 'x' and 'y'.
 ```
 
 The above operators can also be used together. The operator precedence,
 from highest to lowest, is `AND`, `OR` and `NOT`:
 
-```
+```text
 --include xANDyORz        # Matches tests containing either tags 'x' and 'y', or tag 'z'.
 --include xORyNOTz        # Matches tests containing either tag 'x' or 'y', but not tag 'z'.
 --include xNOTyANDz       # Matches tests containing tag 'x', but not tags 'y' and 'z'.
@@ -258,8 +256,8 @@ from highest to lowest, is `AND`, `OR` and `NOT`:
 ### `ROBOT_OPTIONS` and `REBOT_OPTIONS` environment variables
 
 Environment variables `ROBOT_OPTIONS` and `REBOT_OPTIONS` can be
-used to specify default options for [test execution](tests.md#test-execution) and [result
-post-processing](http://en.wikipedia.org/wiki/Glob_(programming)), respectively. The options and their values must be
+used to specify default options for [test execution](#starting-test-execution) and [result
+post-processing](post-processing.md#post-processing-outputs), respectively. The options and their values must be
 defined as a space separated list and they are placed in front of any
 explicit options on the command line. The main use case for these
 environment variables is setting global default values for certain options to
@@ -281,7 +279,7 @@ the command line. All executed test suites and test cases, as well as
 their statuses, are shown there in real time. The example below shows the
 output from executing a simple test suite with only two test cases:
 
-```
+```text
 ==============================================================================
 Example test suite
 ==============================================================================
@@ -306,13 +304,13 @@ Writing the markers is disabled if console output is redirected to a file.
 
 ### Generated result files
 
-The command line output is very limited, and separate result files are
-normally needed for investigating the test results. As the example
+The command line output is very limited, and separate [result files](results.md#result-files) are
+normally needed for investigating results further. As the example
 above shows, three result files are generated by default. The first
-one is in XML format and contains all the information about test
-execution. The second is a higher-level report and the third is a more
-detailed log file. These files and other possible result files are
-discussed in more detail in the [Different result files](results.md#different-result-files) section.
+one is in XML format and contains all the information about execution in
+machine readable format. The second is a higher-level report and the third
+is a more detailed log file. These files and other possible result files are
+discussed in more detail in the [Execution artifacts](results.md#execution-artifacts) section.
 
 <a id="return-code"></a>
 
@@ -343,7 +341,7 @@ variable. If you use some external tool for running tests, consult its
 documentation for how to get the return code.
 
 The return code can be set to zero regardless the execution status by using
-the `--nostatusrc` command line option. This might be useful, for
+the `--nostatusrc`{.option} command line option. This might be useful, for
 example, in continuous integration servers where post-processing of results
 is needed before the overall status of execution can be determined.
 
@@ -351,7 +349,7 @@ is needed before the overall status of execution can be determined.
     Same return codes are also used with [Rebot](post-processing.md#rebot).
 
 !!! note
-    When [getting help and version information](#getting-help-and-version-information), the `--nostatusrc`
+    When [getting help and version information](#getting-help-and-version-information), the `--nostatusrc`{.option}
     option has an effect only with Robot Framework 7.4 and newer.
 
 <a id="execution-errors"></a>
@@ -359,7 +357,7 @@ is needed before the overall status of execution can be determined.
 
 During the test execution there can be unexpected problems like
 failing to import a library or a resource file or a keyword being
-[deprecated](http://en.wikipedia.org/wiki/Glob_(programming)). Depending on the severity such problems are categorized
+[deprecated](../extend/libraries.md#deprecating-keywords). Depending on the severity such problems are categorized
 as errors or warnings and they are written into the console (using the
 standard error stream), shown on a separate *Test Execution Errors*
 section in log files, and also written into Robot Framework's own
@@ -380,6 +378,7 @@ Example below illustrates how errors and warnings look like in the log file.
   </tr>
 </table>
 
+<a id="read-more-arguments"></a>
 ## Argument files
 
 Argument files allow placing all or some command line options and arguments
@@ -388,12 +387,12 @@ characters that are problematic on the command line. If lot of options or
 arguments are needed, argument files also prevent the command that is used on
 the command line growing too long.
 
-Argument files are taken into use with `--argumentfile (-A)` option
+Argument files are taken into use with `--argumentfile (-A)`{.option} option
 along with possible other command line options.
 
 !!! note
-    Unlike other [long command line options](https://docs.python.org/library/subprocess.html), `--argumentfile`
-    cannot be given in shortened format like `--argumentf`.
+    Unlike other [long command line options](#short-and-long-options), `--argumentfile`{.option}
+    cannot be given in shortened format like `--argumentf`{.option}.
 
 ### Argument file syntax
 
@@ -404,7 +403,7 @@ Argument files can contain any characters without escaping, but spaces in
 the beginning and end of lines are ignored. Additionally, empty lines and
 lines starting with a hash mark (`#`) are ignored:
 
-```
+```text
 --doc This is an example (where "special characters" are ok!)
 --metadata X:Value with spaces
 --variable NAME:Hello, world!
@@ -417,15 +416,15 @@ space. It is possible to use either an equal
 sign (=) or any number of spaces. As an example, the following three lines are
 identical:
 
-```
+```text
 --name An Example
 --name=An Example
 --name       An Example
 ```
 
 If argument files contain non-ASCII characters, they must be saved using
-the UTF-8 encoding. Argument files can use any extension. Typically *.txt*
-works fine, but a custom extension like *.args* can be used to separate
+the UTF-8 encoding. Argument files can use any extension. Typically `.txt`{.file}
+works fine, but a custom extension like `.args`{.file} can be used to separate
 argument files from normal text files.
 
 ### Expanding environment variables
@@ -441,7 +440,7 @@ Environment variables can be used in format `$NAME` and `${NAME}`. In addition t
 that, default values are supported like `${NAME=default}`. If a literal dollar sign
 is needed, it can be escaped by doubling it like `$$not_var`:
 
-```
+```text
 # expandvars: true
 --name $NAME
 --doc ${NAME}v${VERSION}
@@ -453,7 +452,7 @@ Environment variables are not limited to option values. They can also contain
 option names, both names and values, and using the comment character even enables
 conditional options:
 
-```
+```text
 # expandvars: true
 --${NAME} ${VALUE}
 ${NAME_AND_VALUE}
@@ -473,9 +472,9 @@ an argument file is used with other arguments, its contents are placed into
 the original list of arguments to the same place where the argument file
 option was. This means that options in argument files can override options
 before it, and its options can be overridden by options after it. It is possible
-to use `--argumentfile` option multiple times or even recursively:
+to use `--argumentfile`{.option} option multiple times or even recursively:
 
-```
+```text
 robot --argumentfile all_options_and_arguments.txt
 robot --argumentfile defaults.args --name Example tests.robot
 robot -A first.txt -A second.txt -A third.txt tests.robot
@@ -487,34 +486,35 @@ Special argument file name `STDIN` can be used to read arguments from the
 standard input stream instead of a file. This can be useful when generating
 arguments with a script:
 
-```
+```text
 generate_arguments.sh | robot --argumentfile STDIN
 generate_arguments.sh | robot --name Example --argumentfile STDIN tests.robot
 ```
 
+<a id="usage-instructions"></a>
 ## Getting help and version information
 
 Both when executing tests and when post-processing outputs, it is possible
-to get command line help with the option `--help (-h)`.
+to get command line help with the option `--help (-h)`{.option}.
 This help text provides version information, a short general introduction
 and explanation of the available command line options.
 
 It is also possible to get just the version information with
-the option `--version`. This information also contains Python
+the option `--version`{.option}. This information also contains Python
 version and the platform type:
 
 ```bash
 $ robot --version
 Robot Framework 7.4 (Python 3.14.0 on linux)
+
+C:\>rebot --version
+Rebot 7.3.1 (Python 3.13.7 on win32)
 ```
 
-   C:\>rebot --version
-   Rebot 7.3.1 (Python 3.13.7 on win32)
-
 When help or version information is printed to the console, the execution
-exits with a special [return code](#return-code) 251 by default. Starting from Robot
+exits with a special [return code](#return-codes) 251 by default. Starting from Robot
 Framework 7.4, the return code can be changed to zero by using the
-`--nostatusrc` option like `robot --version --nostatusrc`.
+`--nostatusrc`{.option} option like `robot --version --nostatusrc`.
 
 <a id="start-up-script"></a>
 <a id="start-up-scripts"></a>
@@ -553,6 +553,7 @@ robot --name Firefox --variable BROWSER:Firefox --output out/fx.xml --log none -
 robot --name IE --variable BROWSER:IE --output out/ie.xml --log none --report none  $* login
 rebot --name Login --outputdir out --output login.xml out/fx.xml out/ie.xml
 ```
+
 ### Batch file example
 
 Implementing the above shell script example using batch files is not very
@@ -565,6 +566,7 @@ robot --name Firefox --variable BROWSER:Firefox --output out\fx.xml --log none -
 robot --name IE --variable BROWSER:IE --log none --output out\ie.xml --report none %* login
 rebot --name Login --outputdir out --output login.xml out\fx.xml out\ie.xml
 ```
+
 !!! note
     Prior to Robot Framework 3.1 `robot` and `rebot` commands were
     implemented as batch files on Windows and using them in another
@@ -576,8 +578,8 @@ When start-up scripts gets more complicated, implementing them using shell
 scripts or batch files is not that convenient. This is especially true if
 both variants are needed and same logic needs to be implemented twice. In
 such situations it is often better to switch to Python. It is possible to
-execute Robot Framework from Python using the [subprocess module](http://en.wikipedia.org/wiki/Glob_(programming)), but
-often using Robot Framework's own [programmatic API](https://docs.python.org/library/subprocess.html) is more convenient.
+execute Robot Framework from Python using the [subprocess module](https://docs.python.org/library/subprocess.html), but
+often using Robot Framework's own [programmatic API](https://robot-framework.readthedocs.io) is more convenient.
 The easiest APIs to use are `robot.run_cli` and `robot.rebot_cli` that
 accept same command line arguments than the `robot` and `rebot` commands.
 
@@ -595,15 +597,16 @@ run_cli(['--name', 'Firefox', '--variable', 'BROWSER:Firefox', '--output', 'out/
 run_cli(['--name', 'IE', '--variable', 'BROWSER:IE', '--output', 'out/ie.xml'] + common, exit=False)
 rebot_cli(['--name', 'Login', '--outputdir', 'out', 'out/fx.xml', 'out/ie.xml'])
 ```
+
 !!! note
     `exit=False` is needed because by default `run_cli` exits to
-    system with the correct [return code](#return-code). `rebot_cli` does that too,
+    system with the correct [return code](#return-codes). `rebot_cli` does that too,
     but in the above example that is fine.
 
-## Making **.robot* files executable
+## Making `*.robot`{.file} files executable
 
-On UNIX-like operating systems it is possible to make **.robot*
-files executable by giving them execution permission and adding a [shebang](http://en.wikipedia.org/wiki/Glob_(programming))
+On UNIX-like operating systems it is possible to make `*.robot`{.file}
+files executable by giving them execution permission and adding a [shebang](https://en.wikipedia.org/wiki/Shebang_(Unix))
 like in this example:
 
 ```robotframework
@@ -613,18 +616,20 @@ like in this example:
 Example
     Log to console    Executing!
 ```
-If the above content would be in a file *example.robot* and that file
+
+If the above content would be in a file `example.robot`{.file} and that file
 would be executable, it could be executed from the command line like below.
 Starting from Robot Framework 3.2, individually executed files can have any
 extension, or no extension at all, so the same would work also if the file
-would be named just *example*.
+would be named just `example`{.file}.
 
 ```bash
 ./example.robot
 ```
+
 This trick does not work when executing a directory but can be handy when
 executing a single file. It is probably more often useful when
-[automating tasks](http://en.wikipedia.org/wiki/Glob_(programming)) than when automating tests.
+[automating tasks](../syntax/tasks.md#creating-tasks) than when automating tests.
 
 ## Debugging problems
 
@@ -639,7 +644,7 @@ other log messages and they show which keyword actually failed.
 When a failure is caused by the tested application, the error message
 and log messages ought to be enough to understand what caused it. If
 that is not the case, the test library does not provide [enough
-information](https://docs.python.org/library/subprocess.html) and needs to be enhanced. In this situation running the
+information](../extend/libraries.md#communicating-with-robot-framework) and needs to be enhanced. In this situation running the
 same test manually, if possible, may also reveal more information
 about the issue.
 
@@ -648,12 +653,12 @@ sometimes be hard to debug. If the error message, for example, tells
 that a keyword is used with wrong number of arguments fixing the
 problem is obviously easy, but if a keyword is missing or fails in
 unexpected way finding the root cause can be harder. The first place
-to look for more information is the [execution errors](#execution-errors) section in
+to look for more information is the [execution errors](#errors-and-warnings-during-execution) section in
 the log file. For example, an error about a failed test library import
 may well explain why a test has failed due to a missing keyword.
 
 If the log file does not provide enough information by default, it is
-possible to execute tests with a lower [log level](results.md#log-level). For example
+possible to execute tests with a lower [log level](results.md#log-levels). For example
 tracebacks showing where in the code the failure occurred are logged
 using the `DEBUG` level, and this information is invaluable when
 the problem is in an individual library keyword.
@@ -664,21 +669,21 @@ you can enable showing internal traces by setting environment variable
 `ROBOT_INTERNAL_TRACES` to any non-empty value.
 
 If the log file still does not have enough information, it is a good
-idea to enable the [syslog](results.md#syslog) and see what information it provides. It is
+idea to enable the [syslog](results.md#system-log) and see what information it provides. It is
 also possible to add some keywords to the test cases to see what is
-going on. Especially [BuiltIn](../syntax/libraries.md#builtin) keywords *Log* and *Log
-Variables* are useful. If nothing else works, it is always possible to
+going on. Especially [BuiltIn](../syntax/libraries.md#builtin) keywords *Log*{.name} and *Log Variables*{.name} are useful. If nothing else works, it is always possible to
 search help from [mailing lists](../getting-started/introduction.md#mailing-lists) or elsewhere.
 
 ### Using the Python debugger (pdb)
 
-It is also possible to use the [pdb](https://robot-framework.readthedocs.io) module from the Python standard
+It is also possible to use the [pdb](http://docs.python.org/library/pdb.html) module from the Python standard
 library to set a break point and interactively debug a running test.
 The typical way of invoking pdb by inserting:
 
 ```python
 import pdb; pdb.set_trace()
 ```
+
 at the location you want to break into debugger will not work correctly
 with Robot Framework, as the standard output stream is
 redirected during keyword execution. Instead, you can use the following:
@@ -686,10 +691,12 @@ redirected during keyword execution. Instead, you can use the following:
 ```python
 import sys, pdb; pdb.Pdb(stdout=sys.__stdout__).set_trace()
 ```
+
 from within a python library or alternatively:
 
 ```robotframework
 Evaluate    pdb.Pdb(stdout=sys.__stdout__).set_trace()    modules=sys, pdb
 ```
+
 can be used directly in a test case.
 

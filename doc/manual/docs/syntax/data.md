@@ -12,20 +12,20 @@ when [creating tasks](tasks.md#creating-tasks).
 The hierarchical structure for arranging test cases is built as follows:
 
 - Test cases are created in [suite files](suites.md#suite-files).
-- A test case file automatically creates a [test suite](suites.md#test-suite) containing
+- A test case file automatically creates a [test suite](suites.md#creating-test-suites) containing
   the test cases in that file.
 - A directory containing test case files forms a higher-level test
-  suite. Such a [suite directory](suites.md#suite-directory) has suites created from test
+  suite. Such a [suite directory](suites.md#suite-directories) has suites created from test
   case files as its child test suites.
 - A test suite directory can also contain other test suite directories,
   and this hierarchical structure can be as deeply nested as needed.
-- Test suite directories can have a special [initialization file](suites.md#initialization-file)
+- Test suite directories can have a special [initialization file](suites.md#suite-initialization-files)
   configuring the created test suite.
 
 In addition to this, there are:
 
-- [Test libraries](libraries.md#test-libraries) containing the lowest-level keywords.
-- [Resource files](resource-files.md#resource-files) with [variables](variables.md#variables) and higher-level [user keywords](user-keywords.md#user-keyword).
+- [Test libraries](libraries.md#using-test-libraries) containing the lowest-level keywords.
+- [Resource files](resource-files.md#resource-files) with [variables](variables.md#variables) and higher-level [user keywords](user-keywords.md#creating-user-keywords).
 - [Variable files](variable-files.md#variable-files) to provide more flexible ways to create variables
   than resource files.
 
@@ -44,7 +44,7 @@ called tables, listed below:
 
 | Section | Used for |
 | --- | --- |
-| Settings | 1) Importing [test libraries](libraries.md#test-libraries), [resource files](resource-files.md#resource-files) and [variable files](variable-files.md#variable-files). 2) Defining metadata for [test suites](suites.md#test-suite) and [test cases](tests.md#test-case). |
+| Settings | 1) Importing [test libraries](libraries.md#using-test-libraries), [resource files](resource-files.md#resource-files) and [variable files](variable-files.md#variable-files).<br>2) Defining metadata for [test suites](suites.md#creating-test-suites) and [test cases](tests.md#creating-test-cases). |
 | Variables | Defining [variables](variables.md#variables) that can be used elsewhere in the test data. |
 | Test Cases | [Creating test cases](tests.md#creating-test-cases) from available keywords. |
 | Tasks | [Creating tasks](tasks.md#creating-tasks) using available keywords. Single file can only contain either tests or tasks. |
@@ -78,31 +78,31 @@ Possible data before the first section is ignored.
 ## Supported file formats
 
 The most common approach to create Robot Framework data is using the
-[space separated format](#space-separated-format) where pieces of the data, such as keywords
+[space separated data format](#space-separated-data-format) where pieces of the data, such as keywords
 and their arguments, are separated from each others with two or more spaces.
-An alternative is using the [pipe separated format](#pipe-separated-format) where the separator is
-the pipe character surrounded with spaces (`\ |\ `).
+An alternative is using the [pipe separated data format](#pipe-separated-data-format) where the separator
+is the pipe character surrounded with spaces (`  |  `{.codesc}).
 
-Suite files typically use the *.robot* extension, but what files are
-parsed [can be configured](https://issues.robotframework.org). [Resource files](resource-files.md#resource-files) can use the *.robot*
-extension as well, but using the dedicated *.resource* extension is
+Suite files typically use the `.robot`{.file} extension, but what files are
+parsed [can be configured](../execution/configuration.md#selecting-files-to-parse). [Resource files](resource-files.md#resource-files) can use the `.robot`{.file}
+extension as well, but using the dedicated `.resource`{.file} extension is
 recommended and may be mandated in the future. Files containing non-ASCII
 characters must be saved using the UTF-8 encoding.
 
 Robot Framework supports also [reStructuredText](https://en.wikipedia.org/wiki/ReStructuredText) files so that normal
-Robot Framework data is [embedded into code blocks](https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.TestSuite.to_json). Only files with
-the *.robot.rst* extension are parsed by default. If you would
-rather use just *.rst* or *.rest* extension, that needs to be
+Robot Framework data is [embedded into code blocks](#restructuredtext-data-format). Only files with
+the `.robot.rst`{.file} extension are parsed by default. If you would
+rather use just `.rst`{.file} or `.rest`{.file} extension, that needs to be
 configured separately.
 
 Robot Framework supports also [Markdown](https://en.wikipedia.org/wiki/Markdown) files so that normal Robot Framework
-data is [embedded into code blocks](https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.TestSuite.to_dict). Only files with the *.robot.md*
-extension are parsed by default. If you would rather use just *.md* or
-*.markdown* extension, that needs to be configured separately.
+data is [embedded into code blocks](#markdown-data-format). Only files with the `.robot.md`{.file}
+extension are parsed by default. If you would rather use just `.md`{.file} or
+`.markdown`{.file} extension, that needs to be configured separately.
 
-Robot Framework data can also be created in the [JSON format](control.md#for) that is targeted
+Robot Framework supports also [JSON data format](#json-data-format) that is targeted
 more for tool developers than normal Robot Framework users. Only JSON files
-with the custom *.rbt* extension are parsed by default.
+with the custom `.rbt`{.file} extension are parsed by default.
 
 Earlier Robot Framework versions supported data also in HTML and TSV formats.
 The TSV format still works if the data is compatible with the [space separated
@@ -113,9 +113,10 @@ way to do that is using the [Tidy](../extend/tidy.md#tidy) tool, but you must us
 with Robot Framework 3.1 because newer versions do not understand the HTML
 format at all.
 
+<a id="space-separated-format"></a>
 <a id="space-separated-plain-text-format"></a>
-<a id="plain-text-format"></a>
-### Space separated format
+<a id="plain-text-data-format"></a>
+### Space separated data format
 
 When Robot Framework parses data, it first splits the data to lines and then
 lines to tokens such as keywords and arguments. When using the space
@@ -148,6 +149,7 @@ My Keyword
     [Arguments]    ${path}
     Directory Should Exist    ${path}
 ```
+
 Because tabs and consecutive spaces are considered separators, they must
 be escaped if they are needed in keyword arguments or elsewhere
 in the actual data. It is possible to use special escape syntax like
@@ -163,7 +165,8 @@ in the actual data. It is possible to use special escape syntax like
     were converted to ASCII spaces during parsing. Nowadays all data
     is preserved as-is.
 
-### Pipe separated format
+<a id="pipe-separated-format"></a>
+### Pipe separated data format
 
 The biggest problem of the space delimited format is that visually
 separating keywords from arguments can be tricky. This is a problem
@@ -196,9 +199,10 @@ makes the data easier to read.
 | My Keyword         | [Arguments]            | ${path} |
 |                    | Directory Should Exist | ${path} |
 ```
+
 When using the pipe separated format, consecutive spaces or tabs inside
 arguments do not need to be escaped. Similarly empty columns do not need
-to be escaped except [if they are at the end](https://issues.robotframework.org). Possible pipes surrounded by
+to be escaped except [if they are at the end](#escaping). Possible pipes surrounded by
 spaces in the actual test data must be escaped with a backslash, though:
 
 ```robotframework
@@ -212,7 +216,7 @@ spaces in the actual test data must be escaped with a backslash, though:
     in Robot Framework 3.2. Prior to it non-ASCII spaces used in
     the data were also converted to ASCII spaces.
 
-### reStructuredText format
+### reStructuredText data format
 
 [reStructuredText](https://en.wikipedia.org/wiki/ReStructuredText) (reST) is an easy-to-read plain text markup syntax that
 is commonly used for documentation of Python projects, including Python itself
@@ -272,12 +276,13 @@ containing Robot Framework data are ignored as well.
    def example():
        print('Hello, world!')
 ```
-Robot Framework supports reStructuredText files using *.robot.rst*,
-*.rst* and *.rest* extensions. To avoid parsing unrelated
-reStructuredText files, only files with the *.robot.rst* extension
+
+Robot Framework supports reStructuredText files using `.robot.rst`{.file},
+`.rst`{.file} and `.rest`{.file} extensions. To avoid parsing unrelated
+reStructuredText files, only files with the `.robot.rst`{.file} extension
 are parsed by default when executing a directory. Parsing files with
-other extensions [can be enabled](https://issues.robotframework.org) by using either `--parseinclude`
-or `--extension` option.
+other extensions [can be enabled](../execution/configuration.md#selecting-files-to-parse) by using either `--parseinclude`{.option}
+or `--extension`{.option} option.
 
 When Robot Framework parses reStructuredText files, errors below level
 `SEVERE` are ignored to avoid noise about possible non-standard directives
@@ -285,10 +290,10 @@ and other such markup. This may hide also real errors, but they can be seen
 when processing files using reStructuredText tooling normally.
 
 !!! note
-    Parsing *.robot.rst* files automatically is new in
+    Parsing `.robot.rst`{.file} files automatically is new in
     Robot Framework 6.1.
 
-### Markdown format
+### Markdown data format
 
 [Markdown](https://en.wikipedia.org/wiki/Markdown) is a lightweight plain text markup syntax that is widely used for
 documentation, README files, and technical content across the software
@@ -297,7 +302,7 @@ using Markdown with Robot Framework allows you to create test data in a format
 that is easy to read, write and preview using standard editors and tools.
 
 When Robot Framework parses Markdown files, it searches for code blocks
-starting with fences of at least three backticks `\`\`\`` or tildes
+starting with fences of at least three backticks ```` ``` ````{.codesc} or tildes
 `~~~` and the `robotframework` or `robot` language tag.
 All content outside such blocks is ignored. The parser follows the [CommonMark](https://spec.commonmark.org)
 specification for fenced code blocks, which means that the opening and closing
@@ -305,7 +310,7 @@ fences must match and the closing fence must be at least as long as the
 opening one. If a code block is not closed properly, the rest of the file
 will be considered as part of the code block itself.
 
-```markdown
+````markdown
 # Markdown example
 
 This text is outside code blocks and thus ignored.
@@ -338,25 +343,87 @@ Robot Framework data as well.
 def example():
     print('Hello, world!')
 ```
-```
-Robot Framework supports Markdown files using *.robot.md*,
-*.md* and *.markdown* extensions. To avoid parsing unrelated
-Markdown files, only files with the *.robot.md* extension
+````
+
+Robot Framework supports Markdown files using `.robot.md`{.file},
+`.md`{.file} and `.markdown`{.file} extensions. To avoid parsing unrelated
+Markdown files, only files with the `.robot.md`{.file} extension
 are parsed by default when executing a directory. Parsing files with
-the *.md* or *.markdown* extension [can be enabled](../executing-tests/configuring-execution.md#selecting-files-to-parse) by using
-either `--parseinclude` or `--extension` option.
+the `.md`{.file} or `.markdown`{.file} extension [can be enabled](../execution/configuration.md#selecting-files-to-parse) by using
+either `--parseinclude`{.option} or `--extension`{.option} option.
+
+#### Living documentation
+
+In software development, the term *living documentation* is commonly used when
+acceptance tests are written in such a way that they can be used as an
+executable specification. The executable specification acts as the single
+source of truth from which both the specification document and the test
+automation is derived. When the specification changes, the test changes,
+implying a compliant system when the tests pass.
+
+A common issue is that test automation requires documentation files to use
+the syntax of the selected automation tool, but the people responsible for
+the specification typically do not work well with such syntax-rich files.
+Robot Framework data files can in general be written using style that can
+work reasonably well with all stakeholders, but embedding Robot Framework
+data to Markdown files makes it even more convenient.
+
+!!! tip
+    You can use Markdown comment blocks created using the `<!--- comment -->`
+    syntax for hiding technical content from generated HTML files.
+
+Example:
+
+````markdown
+# Feature title
+
+Free text introducing the feature. You can use tables, lists, images,
+etc. if needed.
+
+<!---  Markdown comment block hiding technical details.
+
+```robotframework
+*** Settings ***
+Resource        example.resource
+
+*** Test Cases ***
+```
+
+-->
+
+## Business Rule 1
+
+In Specification by Example, test cases are usually grouped per business
+rule. Example scenarios illustrate the behavior of the rule. The scenarios
+are what links the specification document and Robot Framework together. The
+scenarios stay visible to both sides and are not inside a comment block.
+
+```robotframework
+Scenario 1
+    Given we want to use BDD
+    When we use Given/When/Then prefixes
+    Then everything works fine.
+```
+
+Some additional in-between explanation.
+
+```robotframework
+Scenario 2
+    There is not need to use BDD if that adds no benefits
+    Complicated syntax should be avoided anyway
+```
+````
 
 !!! note
-    Using Markdown_ files with Robot Framework does not require any
-    external Python module to be installed.
+    Using [Markdown](https://en.wikipedia.org/wiki/Markdown) files with Robot Framework does not require any
+    external Markdown module or tool to be installed.
 
 !!! note
     Markdown support is new in Robot Framework 7.5.
-```
 
-### JSON format
+### JSON data format
 
-Robot Framework supports data also in the JSON_ format. This format is designed
+Robot Framework supports data also in the [JSON](#json) format. This format is designed
 more for tool developers than for regular Robot Framework users and it is not
 meant to be edited manually. Its most important use cases are:
 
@@ -369,12 +436,12 @@ meant to be edited manually. Its most important use cases are:
 !!! note
     The JSON data support is new in Robot Framework 6.1 and it can be
     enhanced in future Robot Framework versions. If you have an enhancement
-    idea or believe you have encountered a bug, please submit an issue__
-    or start a discussion thread on the `#devel` channel on our Slack_.
+    idea or believe you have encountered a bug, please submit an [issue](https://issues.robotframework.org)
+    or start a discussion thread on the `#devel` channel on our [Slack](http://slack.robotframework.org).
 
 #### Converting suite to JSON
 
-A suite structure can be serialized into JSON by using the [TestSuite.to_json](https://robot-framework.readthedocs.io/en/master/autodoc/robot.result.html#robot.result.model.TestSuite.to_json)
+A suite structure can be serialized into JSON by using the [TestSuite.to_json](https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.TestSuite.to_json)
 method. When used without arguments, it returns JSON data as a string, but
 it also accepts a path or an open file where to write JSON data along with
 configuration options related to JSON formatting:
@@ -391,12 +458,13 @@ data = suite.to_json()
 # Save JSON data to a file with custom indentation.
 suite.to_json('data.rbt', indent=2)
 ```
+
 If you would rather work with Python data and then convert that to JSON
-or some other format yourself, you can use [TestSuite.to_dict](https://issues.robotframework.org) instead.
+or some other format yourself, you can use [TestSuite.to_dict](https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.TestSuite.to_dict) instead.
 
 #### Creating suite from JSON
 
-A suite can be constructed from JSON data using the [TestSuite.from_json](https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.TestSuite.to_json)
+A suite can be constructed from JSON data using the [TestSuite.from_json](https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.TestSuite.from_json)
 method. It works both with JSON strings and paths to JSON files:
 
 ```python
@@ -411,28 +479,29 @@ suite = TestSuite.from_json('{"name": "Suite", "tests": [{"name": "Test"}]}')
 # Execute suite. Notice that log and report needs to be created separately.
 suite.run(output='example.xml')
 ```
-If you have data as a Python dictionary, you can use [TestSuite.from_dict](https://issues.robotframework.org)
+
+If you have data as a Python dictionary, you can use [TestSuite.from_dict](https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.TestSuite.from_dict)
 instead. Regardless of how a suite is recreated, it exists only in memory and
 original data files on the file system are not recreated.
 
 As the above example demonstrates, the created suite can be executed using
-the [TestSuite.run](https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.TestSuite.to_json) method. It may, however, be easier to execute a JSON file
+the [TestSuite.run](https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.TestSuite.run) method. It may, however, be easier to execute a JSON file
 directly as explained in the following section.
 
 #### Executing JSON files
 
 When executing tests or tasks using the `robot` command, JSON files with
-the custom *.rbt* extension are parsed automatically. This includes
+the custom `.rbt`{.file} extension are parsed automatically. This includes
 running individual JSON files like `robot tests.rbt` and running directories
-containing *.rbt* files. If you would rather use the standard
-*.json* extension, you need to [configure which files are parsed](https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.TestSuite.to_dict).
+containing `.rbt`{.file} files. If you would rather use the standard
+`.json`{.file} extension, you need to [configure which files are parsed](../execution/configuration.md#selecting-files-to-parse).
 
 #### Adjusting suite source
 
 Suite source in the data got from `TestSuite.to_json` and `TestSuite.to_dict`
 is in absolute format. If a suite is recreated later on a different machine,
 the source may thus not match the directory structure on that machine. To
-avoid that, it is possible to use the [TestSuite.adjust_source](https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.TestSuite.from_json) method to
+avoid that, it is possible to use the [TestSuite.adjust_source](https://robot-framework.readthedocs.io/en/master/autodoc/robot.model.html#robot.model.testsuite.TestSuite.adjust_source) method to
 make the suite source relative before getting the data and add a correct root
 directory after the suite is recreated:
 
@@ -453,7 +522,7 @@ suite.adjust_source(root='/new/path/to')
 
 Imports, variables and keywords created in suite files are included in the
 generated JSON along with tests and tasks. The exact JSON structure is documented
-in the *running.json* [schema file](https://github.com/robotframework/robotframework/tree/master/doc/schema#readme).
+in the `running.json`{.file} [schema file](https://github.com/robotframework/robotframework/tree/master/doc/schema#readme).
 
 ## Rules for parsing the data
 
@@ -462,11 +531,11 @@ in the *running.json* [schema file](https://github.com/robotframework/robotframe
 
 When Robot Framework parses the test data files, it ignores:
 
-- All data before the first [test data section](https://issues.robotframework.org).
-- Data in the [Comments](https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.TestSuite.to_json) section.
+- All data before the first [test data section](#test-data-sections).
+- Data in the [Comments](#test-data-sections) section.
 - All empty rows.
 - All empty cells at the end of rows when using the [pipe separated format](#pipe-separated-format).
-- All single backslashes (`\\`) when not used for [escaping](#escaping).
+- All single backslashes (`\`{.codesc}) when not used for [escaping](#escaping).
 - All characters following the hash character (`#`), when it is the first
   character of a cell. This means that hash marks can be used to enter
   comments in the test data.
@@ -475,13 +544,13 @@ When Robot Framework ignores some data, this data is not available in
 any resulting reports and, additionally, most tools used with Robot
 Framework also ignore them. To add information that is visible in
 Robot Framework outputs, place it to the documentation or other metadata of
-test cases or suites, or log it with the [BuiltIn](libraries.md#builtin) keywords *Log* or
-*Comment*.
+test cases or suites, or log it with the [BuiltIn](libraries.md#builtin) keywords *Log*{.name} or
+*Comment*{.name}.
 
 ### Escaping
 
 The escape character in Robot Framework test data is the backslash
-(`\\`) and additionally [built-in variables](variables.md#built-in-variables) `${EMPTY}` and `${SPACE}`
+(`\`{.codesc}) and additionally [built-in variables](variables.md#built-in-variables) `${EMPTY}` and `${SPACE}`
 can often be used for escaping. Different escaping mechanisms are
 discussed in the sections below.
 
@@ -522,7 +591,7 @@ in the test data.
     All strings created in the test data, including characters like
     `\x02`, are Unicode and must be explicitly converted to
     byte strings if needed. This can be done, for example, using
-    *Convert To Bytes* or *Encode String To Bytes* keywords
+    *Convert To Bytes*{.name} or *Encode String To Bytes*{.name} keywords
     in [BuiltIn](libraries.md#builtin) and [String](libraries.md#string) libraries, respectively, or with
     something like `value.encode('UTF-8')` in Python code.
 
@@ -557,6 +626,7 @@ Using ${EMPTY}
     Do Something    first arg    ${EMPTY}
     Do Something    ${EMPTY}     second arg
 ```
+
 When using the [pipe separated format](#pipe-separated-format), empty values need to be escaped
 only when they are at the end of the row:
 
@@ -568,6 +638,7 @@ only when they are at the end of the row:
 | Using ${EMPTY}     | Do Something | first arg | ${EMPTY}   |
 |                    | Do Something |           | second arg |
 ```
+
 #### Handling spaces
 
 Spaces, especially consecutive spaces, as part of arguments for keywords or
@@ -584,10 +655,10 @@ by using the [built-in variable](variables.md#built-in-variable) `${SPACE}`.
 
    | Escaping with backslash | Escaping with `${SPACE}` | Notes |
    | --- | --- | --- |
-   | `\\ leading space`          `${SPA | }leading space` |  |
-   | `trailing space \\`         `trail | g space${SPACE}`            Backsl | h must be after the space. |
-   | `\\ \\`                     `${SPA | }`                          Backsl | h needed on both sides. |
-   | `consecutive \\ \\ spaces`  `conse | tive${SPACE * 3}spaces[Using | xtended variable syntax](index.md#syntax). |
+   | `\ leading space`{.codesc} | `${SPACE}leading space` |  |
+   | `trailing space \`{.codesc} | `trailing space${SPACE}` | Backslash must be after the space. |
+   | `\ \`{.codesc} | `${SPACE}` | Backslash needed on both sides. |
+   | `consecutive \ \ spaces`{.codesc} | `consecutive${SPACE * 3}spaces` | Using [extended variable syntax](variables.md#extended-variable-syntax). |
 
 As the above examples show, using the `${SPACE}` variable often makes the
 test data easier to understand. It is especially handy in combination with
@@ -601,9 +672,9 @@ to match the indentation of the starting row and they must always be followed
 by the normal test data separator.
 
 In most places split lines have exact same semantics as lines that are not
-split. Exceptions to this rule are [suite](https://issues.robotframework.org), [test](https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.TestSuite.to_json) and [keyword](https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.TestSuite.to_dict) documentation
-as well [suite metadata](https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.TestSuite.from_json). With them split values are automatically
-[joined together with the newline character](https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.TestSuite.from_dict) to ease creating multiline
+split. Exceptions to this rule are [suite](suites.md#suite-documentation), [test](tests.md#test-case-documentation) and [keyword](user-keywords.md#user-keyword-documentation) documentation
+as well [suite metadata](suites.md#free-suite-metadata). With them split values are automatically
+[joined together with the newline character](../appendix/doc-format.md#newlines) to ease creating multiline
 values.
 
 The `...` syntax allows also splitting variables in the [Variable section](variables.md#variable-section).
@@ -632,6 +703,7 @@ Example
     Do X    first argument    second argument    third argument    fourth argument    fifth argument    sixth argument
     ${var} =    Get X    first argument passed to this keyword is pretty long    second argument passed to this keyword is long too
 ```
+
 ```robotframework
 *** Settings ***
 Documentation      Here we have documentation for this suite.
@@ -669,37 +741,37 @@ Example
 ## Localization
 
 Robot Framework localization efforts were started in Robot Framework 6.0
-that allowed translation of [section headers](../appendix/translations.md#section-headers), [settings](../appendix/translations.md#settings),
-[Given/When/Then prefixes](https://issues.robotframework.org) used in Behavior Driven Development (BDD), and
-[true and false strings](https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.TestSuite.to_json) used in automatic Boolean argument conversion.
+that allowed translation of [section headers](#test-data-sections), [settings](../appendix/settings.md#available-settings),
+[Given/When/Then prefixes](#enabling-languages) used in Behavior Driven Development (BDD), and
+[true and false strings](tests.md#behavior-driven-style) used in automatic Boolean argument conversion.
 The plan is to extend localization support in the future, for example,
 to log and report and possibly also to control structures.
 
-This section explains how to [activate languages](https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.TestSuite.to_dict), what [built-in languages](#built-in-languages)
+This section explains how to [activate languages](../extend/libraries.md#supported-conversions), what [built-in languages](#built-in-languages)
 are supported, how to create [custom language files](#custom-language-files) and how new translations
-can be [contributed](https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.TestSuite.from_json).
+can be [contributed](#contributing-translations).
 
 ### Enabling languages
 
 #### Using command line option
 
 The main mechanism to activate languages is specifying them from the command line
-using the `--language` option. When enabling [built-in languages](#built-in-languages),
+using the `--language`{.option} option. When enabling [built-in languages](#built-in-languages),
 it is possible to use either the language name like `Finnish` or the language
 code like `fi`. Both names and codes are case and space insensitive and also
 the hyphen (`-`) is ignored. To enable multiple languages, the
-`--language` option needs to be used multiple times:
+`--language`{.option} option needs to be used multiple times:
 
-```
+```text
 robot --language Finnish testit.robot
 robot --language pt --language ptbr testes.robot
 ```
 
-The same `--language` option is also used when activating
+The same `--language`{.option} option is also used when activating
 [custom language files](#custom-language-files). With them the value can be either a path to the file or,
 if the file is in the [module search path](../execution/configuration.md#module-search-path), the module name:
 
-```
+```text
 robot --language Custom.py tests.robot
 robot --language MyLang tests.robot
 ```
@@ -713,14 +785,14 @@ it.
 It is also possible to enable languages directly in data files by having
 a line `Language: <value>` (case-insensitive) before any of the section
 headers. The value after the colon is interpreted the same way as with
-the `--language` option:
+the `--language`{.option} option:
 
-```
+```text
 Language: Finnish
-```
 
-    *** Asetukset ***
-    Dokumentaatio        Example using Finnish.
+*** Asetukset ***
+Dokumentaatio        Example using Finnish.
+```
 
 If there is a need to enable multiple languages, the `Language:` line
 can be repeated. These configuration lines cannot be in comments so something like
@@ -730,7 +802,7 @@ Due to technical limitations, the per-file language configuration affects also
 parsing subsequent files as well as the whole execution. This
 behavior is likely to change in the future and *should not* be relied upon.
 If you use per-file configuration, use it with all files or enable languages
-globally with the `--language` option.
+globally with the `--language`{.option} option.
 
 ### Built-in languages
 
@@ -769,7 +841,7 @@ to see the actual translations:
 <!-- END GENERATED CONTENT -->
 All these translations have been provided by the awesome Robot Framework
 community. If a language you are interested in is not included, you can
-consider [contributing](https://issues.robotframework.org) it!
+consider [contributing](#contributing-translations) it!
 
 ### Custom language files
 
@@ -789,22 +861,23 @@ class Example(Language):
     given_prefixes = ['Assuming']
     true_strings = ['OK', '\N{THUMBS UP SIGN}']
 ```
-Assuming the above code would be in file *example.py*, a path to that
+
+Assuming the above code would be in file `example.py`{.file}, a path to that
 file or just the module name `example` could be used when the language file
-is [activated](https://issues.robotframework.org).
+is [activated](#enabling-languages).
 
 The above example adds only some of the possible translations. That is fine
 because English is automatically enabled anyway. Most values must be specified
 as strings, but BDD prefixes and true/false strings allow more than one value
 and must be given as lists. For more examples, see Robot Framework's internal
-[languages](https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.TestSuite.to_json) module that contains the `Language` class as well as all built-in
+[languages](https://github.com/robotframework/robotframework/blob/master/src/robot/conf/languages.py) module that contains the `Language` class as well as all built-in
 language definitions.
 
 ### Contributing translations
 
 If you want to add translation for a new language or enhance existing, head
-to [Crowdin](https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.TestSuite.to_dict) that we use for collaboration. For more details, see the
-separate [Localization](https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.TestSuite.from_json) project, and for questions and free discussion join
+to [Crowdin](https://robotframework.crowdin.com) that we use for collaboration. For more details, see the
+separate [Localization](https://github.com/MarketSquare/localization) project, and for questions and free discussion join
 the `#localization` channel on our [Slack](http://slack.robotframework.org).
 
 ## Style
@@ -824,13 +897,13 @@ conventions:
 - Consistency within a single file and preferably within the whole project.
 
 One case where there currently is no strong convention is keyword capitalization.
-Robot Framework itself typically uses title case like *Example Keyword* in
+Robot Framework itself typically uses title case like *Example Keyword*{.name} in
 documentation and elsewhere, and this style is often used in Robot Framework data
 as well. It does not work too well with longer, sentence-like keywords such as
-*Log into system as an admin*, though.
+*Log into system as an admin*{.name}, though.
 
 Teams and organizations using Robot Framework should have their own coding standards.
-The community developed [Robot Framework Style Guide](https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.TestSuite.from_dict) is an excellent
+The community developed [Robot Framework Style Guide](https://docs.robotframework.org/docs/style_guide) is an excellent
 starting point that can be amended as needed. It is also possible to enforce these
-conventions by using the [Robocop](https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.TestSuite.run) linter and the [Robotidy](https://robot-framework.readthedocs.io/en/master/autodoc/robot.model.html#robot.model.testsuite.TestSuite.adjust_source) code formatter.
+conventions by using the [Robocop](https://robocop.readthedocs.io/) linter and the [Robotidy](https://robotidy.readthedocs.io/) code formatter.
 

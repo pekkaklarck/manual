@@ -8,12 +8,12 @@ even override Robot Framework's own parser.
 
 ## Taking parsers into use
 
-Parsers are taken into use from the command line with the `--parser`
-option using exactly the same semantics as with [listeners](https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.TestSuite.from_string). This includes
+Parsers are taken into use from the command line with the `--parser`{.option}
+option using exactly the same semantics as with [listeners](listeners.md#registering-listeners-from-command-line). This includes
 specifying parsers as names or paths, giving arguments to parser classes, and
 so on:
 
-```
+```text
 robot --parser MyParser tests.custom
 robot --parser path/to/MyParser.py tests.custom
 robot --parser Parser1:arg --parser Parser2:a1:a2 path/to/tests
@@ -33,23 +33,23 @@ Extensions are case-insensitive and can be specified with or without the leading
 dot. If a parser is implemented as a class, it is possible to set this attribute
 either as a class attribute or as an instance attribute.
 
-Also extensions containing multiple parts like *.example.ext* or
-*.robot.zip* are supported.
+Also extensions containing multiple parts like `.example.ext`{.file} or
+`.robot.zip`{.file} are supported.
 
 !!! note
-    If a parser supports the *.robot* extension, it will be used
+    If a parser supports the `.robot`{.file} extension, it will be used
     for parsing these files instead of the standard parser.
 
 ### `parse` method
 
 The mandatory `parse` method is responsible for parsing [suite files](../syntax/suites.md#suite-files). It is
 called with each parsed file that has an extension that the parser supports.
-The method must return a [TestSuite](#runningtestsuite)_ object.
+The method must return a [TestSuite](http://robot-framework.readthedocs.org/en/master/autodoc/robot.running.html#robot.running.model.TestSuite) object.
 
 In simple cases `parse` can be implemented so that it accepts just a single
-argument that is a [pathlib.Path](#pathlib)_ object pointing to the file to
-parse. If the parser is interested in defaults for `Test Setup`,
-`Test Teardown`, `Test Tags` and `Test Timeout`
+argument that is a [pathlib.Path](https://docs.python.org/library/pathlib.html) object pointing to the file to
+parse. If the parser is interested in defaults for *Test Setup*{.setting},
+*Test Teardown*{.setting}, *Test Tags*{.setting} and *Test Timeout*{.setting}
 set in higher level [suite initialization files](../syntax/suites.md#suite-initialization-files), the `parse` method must
 accept two arguments. In that case the second argument is a [TestDefaults](https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.builder.html#robot.running.builder.settings.TestDefaults) object.
 
@@ -57,7 +57,7 @@ accept two arguments. In that case the second argument is a [TestDefaults](https
 
 The optional `parse_init` method is responsible for parsing [suite initialization
 files](../syntax/suites.md#suite-initialization-files) i.e. files in format `__init__.ext` where `.ext` is an extension
-supported by the parser. The method must return a [TestSuite](#runningtestsuite)_
+supported by the parser. The method must return a [TestSuite](http://robot-framework.readthedocs.org/en/master/autodoc/robot.running.html#robot.running.model.TestSuite)
 object representing the whole directory. Suites created from child suite files
 and directories will be added to its child suites.
 
@@ -94,6 +94,7 @@ def parse(source):
     test.body.create_keyword(name='Log', args=['Hello!'])
     return suite
 ```
+
 ### Parser implemented as class
 
 The second parser is implemented as a class that accepts the extension to use
@@ -117,6 +118,7 @@ class ExampleParser:
             test.body.create_keyword(name='Log', args=['Hello!'])
         return suite
 ```
+
 ### Parser extending optional base class
 
 This parser extends the optional [Parser](https://robot-framework.readthedocs.io/en/master/autodoc/robot.api.html#robot.api.interfaces.Parser) base class. It supports parsing suite
@@ -150,6 +152,7 @@ class ExampleParser(Parser):
         return TestSuite(TestSuite.name_from_source(source.parent), doc='Example',
                          source=source, metadata={'Example': 'Value'})
 ```
+
 ### Parser as preprocessor
 
 The final example parser acts as a preprocessor for Robot Framework data files

@@ -23,6 +23,7 @@ False examples
     Should Be Equal    ${x}    ${y}    Custom error    values=${FALSE}     # Python `False` is false.
     Should Be Equal    ${x}    ${y}    Custom error    values=no values    # Special false string with this keyword.
 ```
+
 !!! note
     Considering `OFF` and `0` false is new in Robot Framework 3.1.
 

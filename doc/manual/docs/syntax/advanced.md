@@ -3,7 +3,7 @@
 ## Handling keywords with same names
 
 Keywords that are used with Robot Framework are either [library
-keywords](#library-keywords) or [user keywords](user-keywords.md#user-keyword). The former come from [standard
+keywords](#library-keywords) or [user keywords](user-keywords.md#creating-user-keywords). The former come from [standard
 libraries](libraries.md#standard-libraries) or [external libraries](libraries.md#external-libraries), and the latter are either
 created in the same file where they are used or then imported from
 [resource files](resource-files.md#resource-files). When many keywords are in use, it is quite common
@@ -17,21 +17,21 @@ that name, Robot Framework attempts to determine which keyword has the
 highest priority based on its scope. The keyword's scope is determined
 on the basis of how the keyword in question is created:
 
-1. Created as a user keyword in the currently executed [suite file](suites.md#suite-file).
-   These keywords have the highest priority and they are always used, even
-   if there are other keywords with the same name elsewhere.
+1. Created as a user keyword in the currently executed [suite file](suites.md#suite-files).
+    These keywords have the highest priority and they are always used, even
+    if there are other keywords with the same name elsewhere.
 
 2. Created in a resource file and imported either directly or
-   indirectly from another resource file. This is the second-highest
-   priority.
+    indirectly from another resource file. This is the second-highest
+    priority.
 
 3. Created in an external test library. These keywords are used, if
-   there are no user keywords with the same name. However, if there is
-   a keyword with the same name in the standard library, a warning is
-   displayed.
+    there are no user keywords with the same name. However, if there is
+    a keyword with the same name in the standard library, a warning is
+    displayed.
 
 4. Created in a standard library. These keywords have the lowest
-   priority.
+    priority.
 
 ### Specifying a keyword explicitly
 
@@ -43,23 +43,23 @@ where the keyword name is prefixed with the name of a library or a resource
 and a dot is used as a separator.
 
 With library keywords, the full name means using format
-*LibraryName.Keyword Name*. For example, the keyword *Get File*
+*LibraryName.Keyword Name*{.name}. For example, the keyword *Get File*{.name}
 from the [OperatingSystem](libraries.md#operatingsystem) library can be used as
-*OperatingSystem.Get File*, even if there was another *Get File*
+*OperatingSystem.Get File*{.name}, even if there was another *Get File*{.name}
 keyword somewhere else. If the library is implemented in a nested module, the
-full name must contain the full module name like *root.sub.Library.Keyword*.
+full name must contain the full module name like *root.sub.Library.Keyword*{.name}.
 If a [custom name](libraries.md#setting-custom-name-to-library) is given to a library when importing it, the specified
 name must be used also in the full keyword name.
 
 With user keywords in resource files the full name is constructed the same
 way as with library keywords. The name of the resource is derived from
 the basename of the resource file without the file extension. For example,
-a keyword *Some Keyword* in a resource file *example.resource* can
-be used like *example.Some Keyword*. Note that this syntax does not
+a keyword *Some Keyword*{.name} in a resource file `example.resource`{.file} can
+be used like *example.Some Keyword*{.name}. Note that this syntax does not
 work if several resource files have the same basename. In such cases, either
 resource files or keywords must be renamed.
 
-With user keywords in a [suite file](suites.md#suite-file), the full name contains only the keyword
+With user keywords in a [suite file](suites.md#suite-files), the full name contains only the keyword
 name without any prefix.
 
 When comparing full keyword names, the library/resource part is case and
@@ -73,14 +73,14 @@ in the long format can be quite a lot work. Using the long format also makes it
 impossible to create dynamic test cases or user keywords that work differently
 depending on which libraries or resources are available. A solution to both of
 these problems is specifying the keyword priorities explicitly using the keyword
-*Set Library Search Order* from the [BuiltIn](libraries.md#builtin) library.
+*Set Library Search Order*{.name} from the [BuiltIn](libraries.md#builtin) library.
 
 !!! note
     Although the keyword has the word *library* in its name, it works
     also with resource files. As discussed above, keywords in resources
     always have higher priority than keywords in libraries, though.
 
-The *Set Library Search Order* accepts an ordered list or libraries and
+The *Set Library Search Order*{.name} accepts an ordered list or libraries and
 resources as arguments. When a keyword name in the test data matches multiple
 keywords, the first library or resource containing the keyword is selected and
 that keyword implementation used. If the keyword is not found from any of the
@@ -92,8 +92,8 @@ For more information and examples, see the documentation of the keyword.
 ## Timeouts
 
 Sometimes keywords may take exceptionally long time to execute or just hang
-endlessly. Robot Framework allows you to set timeouts both for [test cases](tests.md#test-case)
-and [user keywords](user-keywords.md#user-keyword), and if a test or keyword is not finished within the
+endlessly. Robot Framework allows you to set timeouts both for [test cases](tests.md#creating-test-cases)
+and [user keywords](user-keywords.md#creating-user-keywords), and if a test or keyword is not finished within the
 specified time, the keyword that is currently being executed is forcefully
 stopped.
 
@@ -108,14 +108,14 @@ mechanism.
 <a id="test-timeout"></a>
 ### Test case timeout
 
-The test case timeout can be set either by using the `Test Timeout`
-setting in the Setting section or the `[Timeout]` setting with
-individual test cases. `Test Timeout` defines a default timeout
-for all the test cases in that suite, whereas `[Timeout]` applies
+The test case timeout can be set either by using the *Test Timeout*{.setting}
+setting in the Setting section or the *[Timeout]*{.setting} setting with
+individual test cases. *Test Timeout*{.setting} defines a default timeout
+for all the test cases in that suite, whereas *[Timeout]*{.setting} applies
 a timeout to a particular test case and overrides the possible default value.
 
-Using an empty `[Timeout]` means that the test has no timeout even
-when `Test Timeout` is used. It is also possible to use explicit
+Using an empty *[Timeout]*{.setting} means that the test has no timeout even
+when *Test Timeout*{.setting} is used. It is also possible to use explicit
 `NONE` value for this purpose. The timeout is effectively ignored also if
 its value is zero or negative.
 
@@ -130,7 +130,7 @@ If there is a timeout and it expires, the keyword that is currently running
 is stopped and the test case fails. Keywords executed as part of [test
 teardown](../execution/tests.md#test-teardown) are not interrupted if a test timeout occurs, though, but the test
 is nevertheless marked failed. If a keyword in teardown may hang, it can be
-stopped by using [user keyword timeouts](#user-keyword-timeouts).
+stopped by using [user keyword timeouts](#user-keyword-timeout).
 
 ```robotframework
 *** Settings ***
@@ -167,7 +167,7 @@ No timeout 2
 <a id="keyword-timeout"></a>
 ### User keyword timeout
 
-Timeouts can be set for user keywords using the `[Timeout]` setting.
+Timeouts can be set for user keywords using the *[Timeout]*{.setting} setting.
 The syntax is exactly the same as with [test case timeout](#test-case-timeout), but user keyword
 timeouts do not have any default value. If a user keyword timeout is specified
 using a variable, the value can be given also as a keyword argument.
@@ -190,6 +190,7 @@ Run Keyword with Timeout
     [Timeout]    ${timeout}
     Run Keyword    ${keyword}    @{args}    &{kwargs}
 ```
+
 A user keyword timeout is applicable during the execution of that user
 keyword. If the total time of the whole keyword is longer than the
 timeout value, the currently executed keyword is stopped. User keyword
@@ -210,8 +211,8 @@ time left.
 
 When parallel execution is needed, it must be implemented in test library
 level so that the library executes the code on background. Typically this
-means that the library needs a keyword like *Start Something* that
+means that the library needs a keyword like *Start Something*{.name} that
 starts the execution and returns immediately, and another keyword like
-*Get Results From Something* that waits until the result is available
-and returns it. See [Process](libraries.md#process) library keywords *Start Process*
-and *Wait For Process* for an example.
+*Get Results From Something*{.name} that waits until the result is available
+and returns it. See [Process](libraries.md#process) library keywords *Start Process*{.name}
+and *Wait For Process*{.name} for an example.

@@ -10,12 +10,12 @@ execution gracefully.
 ### Executed suites and tests
 
 Test cases are always executed within a test suite. A test suite
-created from a [suite file](../syntax/suites.md#suite-file) has tests directly, whereas suites
-created from [directories](https://github.com/robotframework/robotframework/issues/3624) have child test suites which either have
+created from a [suite file](../syntax/suites.md#suite-files) has tests directly, whereas suites
+created from [directories](../syntax/suites.md#suite-directories) have child test suites which either have
 tests or their own child suites. By default all the tests in an
-executed suite are run, but it is possible to [select tests](../syntax/suites.md#suite-directories) using
-options `--test`, `--suite`, `--include` and
-`--exclude`. Suites containing no tests are ignored.
+executed suite are run, but it is possible to [select tests](configuration.md#selecting-test-cases) using
+options `--test`{.option}, `--suite`{.option}, `--include`{.option} and
+`--exclude`{.option}. Suites containing no tests are ignored.
 
 The execution starts from the top-level test suite. If the suite has
 tests they are executed one-by-one, and if it has suites they are
@@ -23,14 +23,14 @@ executed recursively in depth-first order. When an individual test
 case is executed, the keywords it contains are run in a
 sequence. Normally the execution of the current test ends if any
 of the keywords fails, but it is also possible to
-[continue after failures](configuration.md#selecting-test-cases). The exact [execution order](#execution-order) and how
+[continue after failures](#continue-on-failure). The exact [execution order](#execution-order) and how
 possible [setups and teardowns](#setups-and-teardowns) affect the execution are discussed
 in the following sections.
 
 ### Setups and teardowns
 
-Setups and teardowns can be used on [test suite](#continue-on-failure), [test case](../syntax/suites.md#suite-setup-and-teardown) and
-[user keyword](../syntax/tests.md#test-setup-and-teardown) levels.
+Setups and teardowns can be used on [test suite](../syntax/suites.md#suite-setup-and-teardown), [test case](../syntax/tests.md#test-setup-and-teardown) and
+[user keyword](../syntax/user-keywords.md#user-keyword-setup-and-teardown) levels.
 
 #### Suite setup
 
@@ -55,7 +55,7 @@ reports and logs.
 
 Suite teardowns are mostly used for cleaning up the test environment
 after the execution. To ensure that all these tasks are done, [all the
-keywords used in the teardown are executed](../syntax/user-keywords.md#user-keyword-setup-and-teardown) even if some of them
+keywords used in the teardown are executed](#continue-on-failure) even if some of them
 fail.
 
 #### Test setup
@@ -91,6 +91,7 @@ User keyword teardown is run after the keyword is executed otherwise, regardless
 the status. User keyword teardowns are executed fully even if some of their
 keywords would fail.
 
+<a id="randomizes"></a>
 ### Execution order
 
 Test cases in a test suite are executed in the same order as they are defined
@@ -100,12 +101,12 @@ name. If multiple files and/or directories are given from the command line,
 they are executed in the order they are given.
 
 If there is a need to use certain test suite execution order inside a
-directory, it is possible to add prefixes like *01* and
-*02* into file and directory names. Such prefixes are not
+directory, it is possible to add prefixes like `01`{.file} and
+`02`{.file} into file and directory names. Such prefixes are not
 included in the generated test suite name if they are separated from
 the base name of the suite with two underscores:
 
-```
+```text
 01__my_suite.robot -> My Suite
 02__another_suite.robot -> Another Suite
 ```
@@ -115,8 +116,8 @@ problematic, a good workaround is giving them separately in the
 required order. This easily leads to overly long start-up commands,
 but [argument files](basics.md#argument-files) allow listing files nicely one file per line.
 
-It is also possible to [randomize the execution order](https://github.com/robotframework/robotframework/issues/3624) using
-the `--randomize` option.
+It is also possible to [randomize the execution order](configuration.md#randomizing-execution-order) using
+the `--randomize`{.option} option.
 
 ## Test and suite statuses
 
@@ -133,26 +134,26 @@ A test gets the PASS status if it is executed and none of the keywords it contai
 #### Prematurely passing tests
 
 Normally all keywords are executed, but it is also possible to use
-[BuiltIn](../syntax/libraries.md#builtin) keywords *Pass Execution* and *Pass Execution If* to stop
+[BuiltIn](../syntax/libraries.md#builtin) keywords *Pass Execution*{.name} and *Pass Execution If*{.name} to stop
 execution with the PASS status and not run the remaining keywords.
 
-How *Pass Execution* and *Pass Execution If* behave
+How *Pass Execution*{.name} and *Pass Execution If*{.name} behave
 in different situations is explained below:
 
-- When used in any [setup or teardown](configuration.md#randomizing-execution-order) (suite, test or keyword), these
+- When used in any [setup or teardown](#setups-and-teardowns) (suite, test or keyword), these
   keywords pass that setup or teardown. Possible teardowns of the started
   keywords are executed. Test execution or statuses are not affected otherwise.
 
 - When used in a test case outside setup or teardown, the keywords pass that
   particular test case. Possible test and keyword teardowns are executed.
 
-- Possible [continuable failures](../extend/libraries.md#continuable-failures) that occur before these keyword are used,
+- Possible [continuable failures](#continue-on-failure) that occur before these keyword are used,
   as well as failures in teardowns executed afterwards, will fail the execution.
 
 - It is mandatory to give an explanation message
   why execution was interrupted, and it is also possible to
   modify test case tags. For more details, and usage examples, see the
-  [documentation of these keywords](#continue-on-failure).
+  [documentation of these keywords](../syntax/libraries.md#builtin).
 
 Passing execution in the middle of a test, setup or teardown should be
 used with care. In the worst case it leads to tests that skip all the
@@ -160,15 +161,20 @@ parts that could actually uncover problems in the tested application.
 In cases where execution cannot continue do to external factors,
 it is often safer to [skip](#skip) the test.
 
+<a id="selects-failed-test-suites"></a>
+
+<a id="selects-failed-tests"></a>
+
+<a id="continueonfailure"></a>
 ### FAIL
 
 The most common reason for a test to get the FAIL status is that one of the keywords
-it contains fails. The keyword itself can fail by [raising an exception](#special-failures-from-keywords) or the
+it contains fails. The keyword itself can fail by [raising an exception](../extend/libraries.md#reporting-keyword-status) or the
 keyword can be called incorrectly. Other reasons for failures include syntax errors
 and the test being empty.
 
-If a [suite setup](#suite-setup) fails, tests in that suite are marked failed without running them.
-If a [suite teardown](#suite-teardown) fails, tests are marked failed retroactively.
+If a [suite setup](../syntax/suites.md#suite-setup-and-teardown) fails, tests in that suite are marked failed without running them.
+If a [suite teardown](../syntax/suites.md#suite-setup-and-teardown) fails, tests are marked failed retroactively.
 
 <a id="skipped"></a>
 ### SKIP
@@ -178,18 +184,18 @@ PASS and FAIL. There are many different ways to get this status.
 
 #### Skipping before execution
 
-The command line option `--skip` can be used to skip specified tests without
-running them at all. It works based on [tags](../syntax/tests.md#tag) and supports [tag patterns](basics.md#tag-patterns) like
+The command line option `--skip`{.option} can be used to skip specified tests without
+running them at all. It works based on [tags](../extend/libraries.md#keyword-tags) and supports [tag patterns](basics.md#tag-patterns) like
 `examp??` and `tagANDanother`. If it is used multiple times, all tests matching any of
 specified tags or tag patterns are skipped:
 
-```
+```text
 --skip require-network
 --skip windowsANDversion9?
 --skip python2.* --skip python3.[0-6]
 ```
 
-Tests can also be skipped by tagging the test with the `robot:skip` [reserved tag](https://github.com/robotframework/robotframework/issues/3624).
+Tests can also be skipped by tagging the test with the `robot:skip` [reserved tag](../syntax/tests.md#reserved-tags).
 This tag can also be set using a variable, which allows skipping test dynamically
 during execution.
 
@@ -208,8 +214,9 @@ As variable
    [Tags]    ${SKIP}
    Log    This is not executed by default
 ```
-The difference between `--skip` and `--exclude` is that with
-the latter tests are [omitted from the execution altogether](https://github.com/robotframework/robotframework/issues/3624) and they will not
+
+The difference between `--skip`{.option} and `--exclude`{.option} is that with
+the latter tests are [omitted from the execution altogether](configuration.md#by-tag-names) and they will not
 be shown in logs and reports. With the former they are included, but not actually
 executed, and they will be visible in logs and reports.
 
@@ -224,30 +231,30 @@ executed, and they will be visible in logs and reports.
 
 Tests can get the skip status during execution in various ways:
 
-- Using the [BuiltIn](../syntax/libraries.md#builtin) keyword *Skip* anywhere in the test case, including setup or
-  teardown. Using *Skip* keyword has two effects: the test gets the SKIP status
+- Using the [BuiltIn](../syntax/libraries.md#builtin) keyword *Skip*{.name} anywhere in the test case, including setup or
+  teardown. Using *Skip*{.name} keyword has two effects: the test gets the SKIP status
   and rest of the test is not executed. However, if the test has a teardown, it will be
   run.
 
-- Using the [BuiltIn](../syntax/libraries.md#builtin) keyword *Skip If* which takes a condition and skips the test
+- Using the [BuiltIn](../syntax/libraries.md#builtin) keyword *Skip If*{.name} which takes a condition and skips the test
   if the condition is true.
 
-- [Library keywords](#enabling-continue-on-failure-using-tags) may also trigger skip behavior by using a special exceptions.
+- [Library keywords](../syntax/libraries.md#using-test-libraries) may also trigger skip behavior by using a special exceptions.
   This is explained the [Skipping tests](../extend/libraries.md#skipping-tests) section in the [Creating test libraries](../extend/libraries.md#creating-test-libraries)
   chapter.
 
-- If [suite setup](#suite-setup) is skipped using any of the above means, all tests in the suite
+- If [suite setup](../syntax/suites.md#suite-setup-and-teardown) is skipped using any of the above means, all tests in the suite
   are skipped without executing them.
 
-- If [suite teardown](#suite-teardown) is skipped, all tests will be marked skipped retroactively.
+- If [suite teardown](../syntax/suites.md#suite-setup-and-teardown) is skipped, all tests will be marked skipped retroactively.
 
 #### Automatically skipping failed tests
 
-The command line option `--skiponfailure` can be used to automatically mark
-failed tests skipped. It works based on [tags](../syntax/tests.md#tag) and supports [tag patterns](basics.md#tag-patterns) like
-the `--skip` option discussed above:
+The command line option `--skiponfailure`{.option} can be used to automatically mark
+failed tests skipped. It works based on [tags](../extend/libraries.md#keyword-tags) and supports [tag patterns](basics.md#tag-patterns) like
+the `--skip`{.option} option discussed above:
 
-```
+```text
 --skiponfailure not-ready
 --skiponfailure experimentalANDmobile
 ```
@@ -261,6 +268,7 @@ Example
     [Tags]    robot:skip-on-failure
     Fail      this test will be marked as skipped instead of failed
 ```
+
 The motivation for this functionality is allowing execution of tests that are not yet
 ready or that are testing a functionality that is not yet ready. Instead of such tests
 failing, they will be marked skipped and their tags can be used to separate them
@@ -270,7 +278,7 @@ from possible other skipped tests.
 
 Earlier Robot Framework versions supported criticality concept that allowed marking
 tests critical or non-critical. By default all tests were critical, but the
-`--critical` and `--noncritical` options could be used to configure that.
+`--critical`{.option} and `--noncritical`{.option} options could be used to configure that.
 The difference between critical and non-critical tests was that non-critical tests
 were not included when determining the final status for an executed test suite or
 for the whole test run. In practice the test status was two dimensional having
@@ -287,9 +295,9 @@ are not yet ready or that are testing a functionality that is not yet ready. Thi
 use case is nowadays covered by the skip-on-failure functionality discussed in
 the previous section.
 
-To ease migrating from criticality to skipping, the old `--noncritical`
-option worked as an alias for the new `--skiponfailure` in Robot Framework 4.0
-and also the old `--critical` option was preserved. Both old options
+To ease migrating from criticality to skipping, the old `--noncritical`{.option}
+option worked as an alias for the new `--skiponfailure`{.option} in Robot Framework 4.0
+and also the old `--critical`{.option} option was preserved. Both old options
 were deprecated and they were removed in Robot Framework 5.0.
 
 ### Suite status
@@ -320,11 +328,11 @@ several features to continue even if there are failures.
 
 To make it sure that all the cleanup activities are taken care of, the
 continue-on-failure mode is automatically enabled in [suite, test and keyword
-teardowns](https://github.com/robotframework/robotframework/issues/3624). In practice this means that in teardowns all the
+teardowns](#setups-and-teardowns). In practice this means that in teardowns all the
 keywords in all levels are always executed.
 
 If this behavior is not desired, the special `robot:stop-on-failure` and
-`robot:recursive-stop-on-failure` tags can be used to [disable it](#setups-and-teardowns).
+`robot:recursive-stop-on-failure` tags can be used to [disable it](#disabling-continue-on-failure-using-tags).
 
 ### All top-level keywords are executed when tests have templates
 
@@ -340,12 +348,13 @@ Continue with templates
     this    fails
     this    is run
 ```
+
 If this behavior is not desired, the special `robot:stop-on-failure` and
-`robot:recursive-stop-on-failure` tags can be used to [disable it](https://github.com/robotframework/robotframework/issues/3624).
+`robot:recursive-stop-on-failure` tags can be used to [disable it](#disabling-continue-on-failure-using-tags).
 
 ### Special failures from keywords
 
-[Library keywords](../extend/libraries.md#creating-keywords) report failures using exceptions, and it is
+[Library keywords](../syntax/libraries.md#using-test-libraries) report failures using exceptions, and it is
 possible to use special exceptions to tell Robot Framework that
 execution can continue regardless the failure. How these exceptions
 can be created is explained in the [Continuable failures](../extend/libraries.md#continuable-failures) section in
@@ -355,13 +364,13 @@ When a test ends and there have been continuable failures,
 the test will be marked failed. If there are more than one failure,
 all of them will be enumerated in the final error message:
 
-```
+```text
 Several failures occurred:
+
+1) First error message.
+
+2) Second error message.
 ```
-
-  1) First error message.
-
-  2) Second error message.
 
 Test execution ends also if a normal failure occurs after a continuable
 failure. Also in that case all the failures will be listed in the
@@ -370,9 +379,9 @@ final error message.
 The return value from failed keywords, possibly assigned to a
 variable, is always the Python `None`.
 
-### *Run Keyword And Continue On Failure* keyword
+### *Run Keyword And Continue On Failure*{.name} keyword
 
-[BuiltIn](../syntax/libraries.md#builtin) keyword *Run Keyword And Continue On Failure* allows
+[BuiltIn](../syntax/libraries.md#builtin) keyword *Run Keyword And Continue On Failure*{.name} allows
 converting any failure into a continuable failure. These failures are
 handled by the framework exactly the same way as continuable failures
 originating from library keywords discussed above.
@@ -383,6 +392,7 @@ Example
     Run Keyword and Continue on Failure    Should be Equal    1    2
     Log    This is executed but test fails in the end
 ```
+
 ### Enabling continue-on-failure using tags
 
 All keywords executed as part of test cases or user keywords which are
@@ -410,9 +420,10 @@ User Keyword 2
     Should be Equal    3    4
     Log    This is executed
 ```
+
 These tags also affect the continue-on-failure mode with different [control
 structures](../syntax/control.md#control-structures). For example, the below test case will execute the
-*Do Something* keyword ten times regardless does it succeed or not:
+*Do Something*{.name} keyword ten times regardless does it succeed or not:
 
 ```robotframework
 *** Test Cases ***
@@ -422,6 +433,7 @@ Example
         Do Something
     END
 ```
+
 Setting `robot:continue-on-failure` within a test case or a user keyword
 will not propagate the continue-on-failure behavior into user keywords
 they call. If such recursive behavior is needed, the
@@ -446,9 +458,10 @@ User Keyword 2
     Should be Equal    5    6
     Log    This is executed
 ```
+
 Setting `robot:continue-on-failure` or `robot:recursive-continue-on-failure` in a
 test case does NOT alter the behaviour of a failure in the keyword(s) executed
-as part of the `[Setup]`: The test case is marked as failed and no
+as part of the *[Setup]*{.setting}: The test case is marked as failed and no
 test case keywords are executed.
 
 !!! note
@@ -460,8 +473,8 @@ test case keywords are executed.
 
 Special tags `robot:stop-on-failure` and `robot:recursive-stop-on-failure`
 can be used to disable the continue-on-failure mode if needed. They work
-when [continue-on-failure has been enabled using tags](https://github.com/robotframework/robotframework/issues/3624) and also with
-[teardowns](configuration.md#example-disable-setups-and-teardowns) and [templates](../syntax/tests.md#test-templates):
+when [continue-on-failure has been enabled using tags](#enabling-continue-on-failure-using-tags) and also with
+[teardowns](#execution-continues-on-teardowns-automatically) and [templates](#all-top-level-keywords-are-executed-when-tests-have-templates):
 
 ```robotframework
 *** Test Cases ***
@@ -486,6 +499,7 @@ Keyword
     Should be Equal    this    fails
     Should be Equal    this    is not run
 ```
+
 The `robot:stop-on-failure` tag affects only test cases and user keywords
 where it is used and does not propagate to user keywords they call nor to
 their own teardowns. If recursive behavior affecting all called user keywords
@@ -495,8 +509,8 @@ level keywords by using `robot:continue-on-failure` or
 `robot:recursive-continue-on-failure` tags.
 
 The `robot:stop-on-failure` and `robot:recursive-stop-on-failure` tags do not
-alter the behavior of continuable failures caused by [library keywords](https://github.com/robotframework/robotframework/issues/3624) or
-by [Run Keyword And Continue On Failure](#execution-continues-on-teardowns-automatically). For example, both keywords in this
+alter the behavior of continuable failures caused by [library keywords](#special-failures-from-keywords) or
+by [Run Keyword And Continue On Failure](#run-keyword-and-continue-on-failure-keyword). For example, both keywords in this
 example are run even though `robot:stop-on-failure` is used:
 
 ```robotframework
@@ -506,6 +520,7 @@ Example
     Run Keyword and Continue on Failure    Should be Equal    1    2
     Log    This is executed regardless the tag
 ```
+
 If `robot:recursive-stop-on-failure` and `robot:continue-on-failure` are used
 together in the same test or keyword, execution is stopped in called keywords
 if there are failures, but continues in the test or keyword using these tags.
@@ -535,6 +550,7 @@ Example
         Error Handler Keyword
     END
 ```
+
 For more details see the separate [TRY/EXCEPT syntax](../syntax/control.md#tryexcept-syntax) section.
 
 ### BuiltIn keywords
@@ -542,20 +558,20 @@ For more details see the separate [TRY/EXCEPT syntax](../syntax/control.md#tryex
 There are several [BuiltIn](../syntax/libraries.md#builtin) keywords that can be used to execute other keywords
 so that execution can continue after possible failures:
 
-- *Run Keyword And Expect Error* executes a keyword and expects it to fail
+- *Run Keyword And Expect Error*{.name} executes a keyword and expects it to fail
   with the specified error message. The aforementioned `TRY/EXCEPT` syntax is
   nowadays generally recommended instead.
 
-- *Run Keyword And Ignore Error* executes a keyword and silences possible
+- *Run Keyword And Ignore Error*{.name} executes a keyword and silences possible
   error. It returns the status along with possible keyword return value or
   error message. The `TRY/EXCEPT` syntax generally works better in this case
   as well.
 
-- *Run Keyword And Warn On Failure* is a wrapper for
-  *Run Keyword And Ignore Error* that automatically logs a warning
+- *Run Keyword And Warn On Failure*{.name} is a wrapper for
+  *Run Keyword And Ignore Error*{.name} that automatically logs a warning
   if the executed keyword fails.
 
-- *Run Keyword And Return Status* executes a keyword and returns Boolean
+- *Run Keyword And Return Status*{.name} executes a keyword and returns Boolean
   `True` or `False` depending on did it pass or fail.
 
 ## Stopping test execution gracefully
@@ -566,7 +582,7 @@ to accomplish this are explained below. In all these cases the remaining
 test cases are marked failed.
 
 The tests that are automatically failed get `robot:exit` tag and
-the generated report will include `NOT robot:exit` [combined tag pattern](https://github.com/robotframework/robotframework/issues/3624)
+the generated report will include `NOT robot:exit` [combined tag pattern](results.md#generating-combined-tag-statistics)
 to easily see those tests that were not skipped. Note that the test in which
 the exit happened does not get the `robot:exit` tag.
 
@@ -592,17 +608,17 @@ also be easily automated.
 ### Using keywords
 
 The execution can be stopped also by the executed keywords. There is a
-separate *Fatal Error* [BuiltIn](../syntax/libraries.md#builtin) keyword for this purpose, and
-custom keywords can use [fatal exceptions](#special-failures-from-keywords) when they fail.
+separate *Fatal Error*{.name} [BuiltIn](../syntax/libraries.md#builtin) keyword for this purpose, and
+custom keywords can use [fatal exceptions](../extend/libraries.md#stopping-test-execution) when they fail.
 
 ### Stopping when first test case fails
 
-If option `--exitonfailure (-X)` is used, the whole execution stops
+If option `--exitonfailure (-X)`{.option} is used, the whole execution stops
 immediately if any test fails.
 
 ### Stopping using `robot:exit-on-failure` tag
 
-If a failed test has a [special](../appendix/expressions.md#special-variable-syntax) `robot:exit-on-failure` tag, the whole execution
+If a failed test has a [special](../syntax/tests.md#reserved-tags) `robot:exit-on-failure` tag, the whole execution
 stops immediately after that test.
 
 !!! note
@@ -612,18 +628,21 @@ stops immediately after that test.
 
 Robot Framework separates *failures* caused by failing keywords from *errors*
 caused by, for example, invalid settings or failed test library imports.
-By default these errors are reported as [test execution errors](#run-keyword-and-continue-on-failure-keyword), but errors
+By default these errors are reported as [test execution errors](basics.md#errors-and-warnings-during-execution), but errors
 themselves do not fail tests or affect execution otherwise. If
-`--exitonerror` option is used, however, all such errors are considered
+`--exitonerror`{.option} option is used, however, all such errors are considered
 fatal and execution stopped so that remaining tests are marked failed. With
 parsing errors encountered before execution even starts, this means that no
 tests are actually run.
 
 !!! note
-    Also logging something with the `ERROR` [log level](results.md#log-level) is considered
-    an error and stops the execution if the `--exitonerror` option
+    Also logging something with the `ERROR` [log level](results.md#log-levels) is considered
+    an error and stops the execution if the `--exitonerror`{.option} option
     is used.
 
+<a id="skips-teardowns"></a>
+
+<a id="skipteardownonexit"></a>
 ### Handling teardowns
 
 By default teardowns of the tests and suites that have been started are
@@ -632,5 +651,5 @@ above. This allows clean-up activities to be run regardless how execution
 ends.
 
 It is also possible to skip teardowns when execution is stopped by using
-`--skipteardownonexit` option. This can be useful if, for example,
+`--skipteardownonexit`{.option} option. This can be useful if, for example,
 clean-up tasks take a lot of time.
