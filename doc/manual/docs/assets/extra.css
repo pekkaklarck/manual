@@ -1,6 +1,6 @@
 /* ============================================================================
    LAYOUT — Docusaurus-style: no centred page grid. The primary sidebar hugs
-   the left edge, the article grows to 900px when there is room, and the page
+   the left edge, the article grows to 1000px when there is room, and the page
    TOC sits directly to its right instead of at the far edge of the viewport.
    Material's `.md-grid` (61rem, centred) is what caused the narrow, centred
    column; the header and tabs share it and stretch too.
@@ -15,7 +15,7 @@
 }
 
 @media screen and (min-width: 76.25em) {
-  /* Sidebars are shown: cap the article column (900px plus Material's
+  /* Sidebars are shown: cap the article column (1000px plus Material's
      1.2rem inner margins) so the secondary sidebar, which follows it in the
      flex row, stays attached to the content. `flex-shrink: 1` lets it give
      way on narrower windows instead of overflowing. */
@@ -34,9 +34,9 @@
 
 /* ============================================================================
    HEADER — ground-coloured with a thin rule, as on the Guides. Material paints
-   the header with --md-primary-fg-color (now the ground) and its text with
-   --md-primary-bg-color (now ink); the rules here add the rule line and the
-   type treatment Material has no variable for.
+   the header with --md-primary-fg-color (now ramp step 0: white / black) and
+   its text with --md-primary-bg-color (now ink); the rules here add the rule
+   line and the type treatment Material has no variable for.
    ========================================================================== */
 .md-header {
   border-bottom: 1px solid rgb(var(--rf-700) / 0.18);
@@ -61,10 +61,10 @@
   border-bottom: 1px solid rgb(var(--rf-700) / 0.18);
 }
 
-/* The header rule and the tabs rule would stack into a 2px line. */
-.md-header + .md-tabs,
-.md-header ~ .md-tabs {
-  margin-top: -1px;
+/* With sticky tabs, `.md-tabs` renders inside `.md-header`; the header's own
+   bottom border is the single rule, so the tabs draw none of their own. */
+.md-header .md-tabs {
+  border-bottom: 0;
 }
 
 .md-tabs__link {
@@ -72,14 +72,11 @@
   font-weight: 600;
   opacity: 1;
   color: rgb(var(--rf-text) / 0.75);
+  margin-top: 0;
 }
 
 .md-tabs__item {
   height: 1.4rem;
-}
-
-.md-tabs__link {
-  margin-top: 0;
 }
 
 .md-tabs__link:hover,
@@ -99,12 +96,6 @@
 .md-search__input::placeholder,
 .md-search__form .md-search__icon {
   color: rgb(var(--rf-text) / 0.7);
-}
-
-/* Palette toggle and repo link inherit the header text colour. */
-.md-header__button,
-.md-header__source {
-  color: rgb(var(--rf-text));
 }
 
 /* The logo is black ink; invert it on the dark ground. */
@@ -144,23 +135,20 @@
   color: rgb(var(--rf-accent-text));
 }
 
-/* Hairline under each top-level group in the primary sidebar — matches the
-   top-level tab items (Manual, Install, Syntax, ...), not the pages within
-   a tab. With `navigation.tabs`, Material shows only the active tab's item
-   on desktop, expanded inline into that tab's flat page list; since it's
-   the sole visible item it is also `:last-child`, so its own border is
-   suppressed — this rule currently draws nothing on desktop for any tab in
-   this site. It does separate groups on the mobile drawer's root screen,
-   where all top-level tab items are visible at once, and would do the same
-   on desktop if a tab ever grew real nested sections. */
-.md-sidebar--primary .md-nav--primary > .md-nav__list > .md-nav__item {
-  padding-bottom: 0.4rem;
-  margin-bottom: 0.4rem;
-  border-bottom: 1px solid rgb(var(--rf-700) / 0.18);
-}
+/* Hairline between top-level groups in the mobile drawer's root screen, where
+   all tabs are listed. On desktop Material keeps every tab item in the DOM
+   and shows only the active one, so the same rule would draw a lone line
+   under the last page of the active tab — hence the drawer-only scope. */
+@media screen and (max-width: 76.1875em) {
+  .md-sidebar--primary .md-nav--primary > .md-nav__list > .md-nav__item {
+    padding-bottom: 0.4rem;
+    margin-bottom: 0.4rem;
+    border-bottom: 1px solid rgb(var(--rf-700) / 0.18);
+  }
 
-.md-sidebar--primary .md-nav--primary > .md-nav__list > .md-nav__item:last-child {
-  border-bottom: 0;
+  .md-sidebar--primary .md-nav--primary > .md-nav__list > .md-nav__item:last-child {
+    border-bottom: 0;
+  }
 }
 
 /* Material draws the sidebar scrollbar track and a vertical rule via
@@ -196,6 +184,7 @@
 /* Material's permalink icon inherits the heading colour; keep it quiet. */
 .md-typeset .headerlink {
   color: rgb(var(--rf-500) / 0.6);
+  text-decoration: none;
 }
 
 /* ============================================================================
@@ -269,6 +258,12 @@
   background: rgb(var(--rf-500) / 0.06);
   border-right: 1px solid rgb(var(--rf-700) / 0.18);
   color: rgb(var(--rf-text) / 0.45);
+}
+
+/* Pygments wraps each line number in an anchor; keep it out of the prose link style. */
+.md-typeset .linenos a {
+  font-weight: inherit;
+  text-decoration: none;
 }
 
 /* Copy button: outlined, quiet until hovered. Icon-only, so no display font. */
@@ -370,7 +365,6 @@
   border-radius: var(--rf-r-md);
   border-width: 0 0 0 3px;
   box-shadow: none;
-  background: rgb(var(--rf-100) / 0.5);
   font-size: 0.8rem;
 }
 
@@ -432,10 +426,6 @@
 
 .md-footer__link:hover .md-footer__title {
   color: rgb(92 214 207);
-}
-
-.md-footer-meta {
-  background: var(--md-footer-bg-color--dark);
 }
 
 .md-copyright a {
