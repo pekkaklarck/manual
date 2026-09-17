@@ -207,6 +207,15 @@
    pages. The `.highlight > pre > code` selector from the brief is dropped
    below since it cannot match anything this build produces; `.highlight pre`
    (a descendant selector) covers the real `<pre>` instead.
+
+   Fix round 1: the brief's `font-size`/`line-height` on `.md-typeset pre >
+   code` only reached the code column (`td.code pre > code`) — the line-number
+   column is `td.linenos pre` with no `<code>` child, so it kept Material's
+   own sizing while the code column got the Guides' 0.83rem/1.55, breaking
+   gutter/code alignment. Sizing is dropped (Material's own sizes already
+   agree across both columns); the font-family rule now targets both
+   `td.linenos pre` and `td.code pre > code` so the monospace face still
+   applies everywhere.
    ========================================================================== */
 .md-typeset .highlight {
   border: 1px solid rgb(var(--rf-700) / 0.25);
@@ -222,10 +231,9 @@
   background: var(--md-code-bg-color);
 }
 
+.md-typeset .highlighttable pre,
 .md-typeset pre > code {
   font-family: var(--rf-ff-code);
-  font-size: 0.83rem;
-  line-height: 1.55;
 }
 
 /* Line-number gutter: a hair lighter than the code, separated by the same
