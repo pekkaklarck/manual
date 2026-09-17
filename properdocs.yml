@@ -72,7 +72,7 @@ extra_css:
 theme:
   name: material
   font: false    # Fonts are self-hosted, see `assets/fonts.css`.
-  logo: assets/logo-white.png
+  logo: assets/logo.png
   favicon: assets/logo.png
   icon:
     repo: fontawesome/brands/github

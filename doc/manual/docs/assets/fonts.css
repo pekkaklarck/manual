@@ -71,8 +71,3 @@
 header .md-ellipsis {
   font-family: var(--rf-ff-display);
 }
-
-.md-tabs__link {
-  font-family: var(--rf-ff-nav);
-  font-weight: 600;
-}

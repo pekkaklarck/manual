@@ -1,22 +1,3 @@
-/* Advertise search shortcut */
-[data-md-toggle="search"]:not(:checked) ~ .md-header .md-search__form::after {
-  position: absolute;
-  top: .3rem;
-  right: .3rem;
-  display: block;
-  padding: .1rem .4rem;
-  font-size: .8rem;
-  /* Colors are hard-coded to avoid them switching based on the color scheme.
-     `#ffffffb3` is `var(--md-default-bg-color-light)` and
-     `#ffffff4d` is `var(--md-default-bg-color--lighter)`
-     when using the light theme.
-   */
-  color: #ffffffb3;
-  border: .05rem solid #ffffff4d;
-  border-radius: .1rem;
-  content: "s";
-}
-
 /* Definition list spacing — reduce Material theme's 1em margins so that each
    term sits tight against its definition, with a small gap between entries. */
 .md-typeset dl dt {
@@ -79,4 +60,77 @@
 .md-typeset h2 {
   /* Distinguish major page sections more clearly from body text and h3 headings. */
   font-weight: 500;
+}
+
+/* ============================================================================
+   HEADER — ground-coloured with a thin rule, as on the Guides. Material paints
+   the header with --md-primary-fg-color (now the ground) and its text with
+   --md-primary-bg-color (now ink); the rules here add the rule line and the
+   type treatment Material has no variable for.
+   ========================================================================== */
+.md-header {
+  border-bottom: 1px solid rgb(var(--rf-700) / 0.18);
+  box-shadow: none;
+}
+
+/* Material re-adds a shadow once the page scrolls. */
+.md-header[data-md-state="shadow"],
+.md-header--shadow {
+  box-shadow: none;
+  transition: none;
+}
+
+.md-header__title .md-ellipsis {
+  font-family: var(--rf-ff-display);
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: -0.05em;
+}
+
+.md-tabs {
+  background: transparent;
+  border-bottom: 1px solid rgb(var(--rf-700) / 0.18);
+}
+
+/* The header rule and the tabs rule would stack into a 2px line. */
+.md-header + .md-tabs,
+.md-header ~ .md-tabs {
+  margin-top: -1px;
+}
+
+.md-tabs__link {
+  font-family: var(--rf-ff-nav);
+  font-weight: 600;
+  opacity: 1;
+  color: rgb(var(--rf-text) / 0.75);
+}
+
+.md-tabs__link:hover,
+.md-tabs__item--active .md-tabs__link {
+  color: rgb(var(--rf-accent-text));
+}
+
+/* Search box sits on the ground, so it needs an edge of its own. */
+.md-search__form {
+  background: rgb(var(--rf-0));
+  border: 1px solid rgb(var(--rf-700) / 0.25);
+  border-radius: var(--rf-r-sm);
+  box-shadow: none;
+}
+
+.md-search__input,
+.md-search__input::placeholder,
+.md-search__form .md-search__icon {
+  color: rgb(var(--rf-text) / 0.7);
+}
+
+/* Palette toggle and repo link inherit the header text colour. */
+.md-header__button,
+.md-header__source {
+  color: rgb(var(--rf-text));
+}
+
+/* The logo is black ink; invert it on the dark ground. */
+[data-md-color-scheme="slate"] .md-header__button.md-logo img {
+  filter: invert(1);
 }
