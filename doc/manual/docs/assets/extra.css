@@ -270,3 +270,135 @@
 .md-typeset a code {
   color: inherit;
 }
+
+/* ============================================================================
+   SIDEBARS — left nav and right TOC. 14px like the Guides, hairline between
+   top-level groups, active item in the accent.
+   ========================================================================== */
+.md-sidebar .md-nav {
+  font-size: 0.7rem;                /* 14px at Material's 20px root */
+}
+
+.md-nav__title {
+  font-family: var(--rf-ff-display);
+  font-weight: 600;
+  letter-spacing: -0.05em;
+  color: rgb(var(--rf-text));
+}
+
+.md-nav__link {
+  color: rgb(var(--rf-text) / 0.8);
+}
+
+.md-nav__link:hover {
+  color: rgb(var(--rf-accent-text));
+}
+
+.md-nav__link--active,
+.md-nav__item--active > .md-nav__link {
+  color: rgb(var(--rf-accent-text));
+}
+
+/* Hairline under each top-level group in the primary sidebar. Material
+   nests every section's links inside `.md-nav__item--section`, so the
+   brief's `> .md-nav__list > .md-nav__item` selector already lands on the
+   sections/top-level links only (confirmed against the built /syntax/
+   pages) — a hairline per group, not per link. */
+.md-sidebar--primary .md-nav--primary > .md-nav__list > .md-nav__item {
+  padding-bottom: 0.4rem;
+  margin-bottom: 0.4rem;
+  border-bottom: 1px solid rgb(var(--rf-700) / 0.18);
+}
+
+.md-sidebar--primary .md-nav--primary > .md-nav__list > .md-nav__item:last-child {
+  border-bottom: 0;
+}
+
+/* Material draws the sidebar scrollbar track and a vertical rule via
+   box-shadow on `.md-nav__list`; the rule is on the ramp now. */
+.md-nav--secondary .md-nav__list {
+  border-left: 1px solid rgb(var(--rf-700) / 0.18);
+}
+
+/* ============================================================================
+   PROSE ELEMENTS
+   ========================================================================== */
+.md-typeset table:not([class]) {
+  font-size: 0.72rem;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.md-typeset table:not([class]) th {
+  font-family: var(--rf-ff-display);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: rgb(var(--rf-accent-text));
+  background: none;
+  border-bottom: 1px solid rgb(var(--rf-300) / 0.4);
+}
+
+.md-typeset table:not([class]) td {
+  border-top: 0;
+  border-bottom: 1px solid rgb(var(--rf-700) / 0.25);
+}
+
+.md-typeset table:not([class]) tbody tr:hover {
+  background: rgb(var(--rf-500) / 0.08);
+  box-shadow: none;
+}
+
+/* Admonitions inherit the ramp so they sit on the page rather than on top.
+   Material colours the rail per type via --md-admonition-icon and the type
+   class; only the shape and surface change here. */
+.md-typeset .admonition,
+.md-typeset details {
+  border-radius: var(--rf-r-md);
+  border-width: 0 0 0 3px;
+  box-shadow: none;
+  background: rgb(var(--rf-100) / 0.5);
+  font-size: 0.8rem;
+}
+
+.md-typeset .admonition-title,
+.md-typeset summary {
+  font-family: var(--rf-ff-display);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+}
+
+/* The `note` type — 207 of the Manual's 228 admonitions — takes the brand. */
+.md-typeset .admonition.note,
+.md-typeset details.note {
+  border-color: rgb(var(--rf-accent-text));
+}
+
+.md-typeset .note > .admonition-title,
+.md-typeset .note > summary {
+  background: rgb(var(--rf-500) / 0.1);
+}
+
+.md-typeset .note > .admonition-title::before,
+.md-typeset .note > summary::before {
+  background-color: rgb(var(--rf-accent-text));
+}
+
+/* details / summary — a rail that brightens to the pivot when open. */
+.md-typeset details[open] {
+  border-left-color: rgb(var(--rf-accent-indicator));
+}
+
+.md-typeset blockquote {
+  border-left: 3px solid rgb(var(--rf-accent-indicator));
+  background: rgb(var(--rf-500) / 0.06);
+  padding: 0.8rem 1.1rem;
+  border-radius: 0 var(--rf-r-sm) var(--rf-r-sm) 0;
+  color: inherit;
+}
+
+.md-typeset img {
+  border-radius: var(--rf-r-md);
+}
