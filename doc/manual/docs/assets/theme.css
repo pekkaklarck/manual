@@ -10,7 +10,10 @@
 
    Values are RGB channels so a rule can write `rgb(var(--rf-500) / 0.2)`. */
 
-:root {
+/* Material's generated palette.css stamps its own stock variables on
+   body[data-md-color-scheme="default"], which outranks a value inherited
+   from :root alone — so every light-scheme block below targets both. */
+:root, [data-md-color-scheme="default"] {
   --rf-0: 255 255 255;
   --rf-50: 230 248 246;
   --rf-100: 204 230 227;
@@ -73,6 +76,7 @@
 /* Material reads these. Declared on the same two selectors so each one
    resolves against its own ramp. */
 :root,
+[data-md-color-scheme="default"],
 [data-md-color-scheme="slate"] {
   --md-default-bg-color: rgb(var(--rf-ground));
   --md-default-fg-color: rgb(var(--rf-text));
@@ -124,7 +128,7 @@
   --md-shadow-z3: none;
 }
 
-:root {
+:root, [data-md-color-scheme="default"] {
   --md-code-bg-color: rgb(var(--rf-100));
   --md-code-bg-color--light: rgb(var(--rf-100) / 0.9);
   --md-code-bg-color--lighter: rgb(var(--rf-100) / 0.54);
