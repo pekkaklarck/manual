@@ -1,8 +1,3 @@
-.md-typeset h1,
-header .md-ellipsis {
-  font-family: OCRA;
-}
-
 :root {
   --md-primary-fg-color: #00c0b5;
   --md-primary-fg-color--light: #00c0b5;
@@ -61,6 +56,14 @@ header .md-ellipsis {
 
   /* Centre the narrower article within the available content area. */
   margin-inline: auto;
+}
+
+/* Below the sidebar breakpoint the content spans the whole viewport, so
+   restore the side gutter that `margin-inline: auto` above removes. */
+@media screen and (max-width: 76.1875em) {
+  .md-content__inner {
+    margin-inline: 0.8rem;
+  }
 }
 
 .md-typeset h2 {

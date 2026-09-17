@@ -1,0 +1,78 @@
+/* Robot Framework type families, self-hosted from the same files the Guides
+   (robotframework.org/docs) serve, so the two sites cannot drift apart.
+
+   OCR-A          display: site title and headings
+   IBM Plex Sans  body: long-form prose. robotframework.org sets monospace
+                  running text; the Manual and the Guides use Plex Sans on
+                  purpose because they carry far more text.
+   IBM Plex Mono  code
+   JetBrains Mono navigation labels */
+
+@font-face {
+  font-family: "OCR-A";
+  src: url("fonts/OCRA.woff2") format("woff2"),
+       url("fonts/OCRA.woff") format("woff");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM Plex Sans";
+  src: url("fonts/ibm-plex-sans-var.woff2") format("woff2-variations"),
+       url("fonts/ibm-plex-sans-var.woff2") format("woff2");
+  font-weight: 100 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM Plex Sans";
+  src: url("fonts/ibm-plex-sans-italic-var.woff2") format("woff2-variations"),
+       url("fonts/ibm-plex-sans-italic-var.woff2") format("woff2");
+  font-weight: 100 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM Plex Mono";
+  src: url("fonts/plex-mono-400.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM Plex Mono";
+  src: url("fonts/plex-mono-600.woff2") format("woff2");
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("fonts/JetBrainsMono[wght].woff2") format("woff2-variations"),
+       url("fonts/JetBrainsMono[wght].woff2") format("woff2");
+  font-weight: 100 800;
+  font-display: swap;
+}
+
+:root {
+  --rf-ff-display: "OCR-A", "Courier New", monospace;
+  --rf-ff-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --rf-ff-code: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --rf-ff-nav: "JetBrains Mono", var(--rf-ff-code);
+
+  /* Material reads these for body text and code. `theme.font: false` in
+     properdocs.yml stops it loading Roboto from Google Fonts. */
+  --md-text-font: var(--rf-ff-body);
+  --md-code-font: var(--rf-ff-code);
+}
+
+.md-typeset h1,
+header .md-ellipsis {
+  font-family: var(--rf-ff-display);
+}
+
+.md-tabs__link {
+  font-family: var(--rf-ff-nav);
+  font-weight: 600;
+}
