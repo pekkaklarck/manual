@@ -105,6 +105,18 @@
   color: rgb(var(--rf-text) / 0.75);
 }
 
+.md-nav--primary .md-nav__link {
+  padding: .3rem .6rem;
+}
+
+.md-tabs__item {
+  height: 1.4rem;
+}
+
+.md-tabs__link {
+  margin-top: 0;
+}
+
 .md-tabs__link:hover,
 .md-tabs__item--active .md-tabs__link {
   color: rgb(var(--rf-accent-text));
