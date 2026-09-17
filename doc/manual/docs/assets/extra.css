@@ -307,11 +307,15 @@
   color: rgb(var(--rf-accent-text));
 }
 
-/* Hairline under each top-level group in the primary sidebar. Material
-   nests every section's links inside `.md-nav__item--section`, so the
-   brief's `> .md-nav__list > .md-nav__item` selector already lands on the
-   sections/top-level links only (confirmed against the built /syntax/
-   pages) — a hairline per group, not per link. */
+/* Hairline under each top-level group in the primary sidebar — matches the
+   top-level tab items (Manual, Install, Syntax, ...), not the pages within
+   a tab. With `navigation.tabs`, Material shows only the active tab's item
+   on desktop, expanded inline into that tab's flat page list; since it's
+   the sole visible item it is also `:last-child`, so its own border is
+   suppressed — this rule currently draws nothing on desktop for any tab in
+   this site. It does separate groups on the mobile drawer's root screen,
+   where all top-level tab items are visible at once, and would do the same
+   on desktop if a tab ever grew real nested sections. */
 .md-sidebar--primary .md-nav--primary > .md-nav__list > .md-nav__item {
   padding-bottom: 0.4rem;
   margin-bottom: 0.4rem;
