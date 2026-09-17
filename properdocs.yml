@@ -64,6 +64,7 @@ nav:
 
 extra_css:
   - assets/fonts.css    # Self-hosted fonts shared with robotframework.org, see the file for details.
+  - assets/theme.css    # Colour ramp and Material variable mapping, see the file for details.
   - assets/highlight-light.css
   - assets/highlight-dark.css
   - assets/extra.css
@@ -95,20 +96,17 @@ theme:
   palette:
     # Palette toggle for automatic mode
     - media: "(prefers-color-scheme)"
-      primary: custom
       toggle:
         icon: material/brightness-auto
         name: Switch to light mode
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
-      primary: custom
       scheme: default
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
     # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
-      primary: custom
       scheme: slate
       toggle:
         icon: material/brightness-4
