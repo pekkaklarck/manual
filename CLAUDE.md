@@ -68,8 +68,17 @@ The visual design follows robotframework.org. In order of authority:
    design system (colour ramp `--robot-*`, type families, semantic tokens).
 2. `~/Source/MarketSquare/robotframeworkguides/website/src/css/custom.css` — the Docusaurus Guides, already
    ported from the homepage; the closest reference for a long-form docs site.
-3. This repo: `assets/fonts.css` (self-hosted fonts + `--rf-ff-*` tokens; `theme.font: false` keeps
-   Material from loading Roboto) and `assets/extra.css` (layout and Material overrides).
+3. This repo, three stylesheets loaded in this order:
+   - `assets/fonts.css` — self-hosted fonts and `--rf-ff-*` type tokens (`theme.font: false` keeps Material
+     from loading Roboto).
+   - `assets/theme.css` — the `--rf-*` colour ramp and its mapping onto Material's `--md-*` variables. The ramp
+     is declared once for light and once, reversed, under `[data-md-color-scheme="slate"]`, so a component rule
+     is written **once** against a ramp step and is correct in both schemes. Never add a dark override to a
+     `--rf-*` colour in a component rule — it would flip twice.
+   - `assets/extra.css` — component rules (header, sidebars, headings, code plate, prose, footer, layout).
+     Colours are `rgb(var(--rf-N) / alpha)`, never hex; the footer is the one fixed-dark exception.
+   - Layout: no centred page grid (`.md-grid { max-width: none }`); article column caps at 1000px; page TOC
+     hugs it.
 
 Fonts are copied from the Guides' `static/fonts/`; keep the two in sync. IBM Plex Sans for body text is a
 deliberate exception to the homepage's monospace running text, because the Manual is prose-heavy.
