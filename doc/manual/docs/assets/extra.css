@@ -57,11 +57,6 @@
   }
 }
 
-.md-typeset h2 {
-  /* Distinguish major page sections more clearly from body text and h3 headings. */
-  font-weight: 500;
-}
-
 /* ============================================================================
    HEADER — ground-coloured with a thin rule, as on the Guides. Material paints
    the header with --md-primary-fg-color (now the ground) and its text with
@@ -145,4 +140,56 @@
 /* The logo is black ink; invert it on the dark ground. */
 [data-md-color-scheme="slate"] .md-header__button.md-logo img {
   filter: invert(1);
+}
+
+/* ============================================================================
+   HEADINGS — OCR-A with the source site's tracking. Sentence case: only the
+   hero on robotframework.org is uppercase.
+   ========================================================================== */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
+  font-family: var(--rf-ff-display);
+  font-weight: 600;
+  letter-spacing: -0.1em;
+  text-wrap: balance;
+  color: rgb(var(--rf-text));
+}
+
+/* Section heads take the accent, as on the source site. h1 stays ink: a
+   full-width teal page title reads as a banner rather than a heading. */
+.md-typeset h2,
+.md-typeset h3 {
+  color: rgb(var(--rf-accent-text));
+}
+
+/* Material's permalink icon inherits the heading colour; keep it quiet. */
+.md-typeset .headerlink {
+  color: rgb(var(--rf-500) / 0.6);
+}
+
+/* ============================================================================
+   LINKS
+   ========================================================================== */
+.md-typeset a {
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: rgb(var(--rf-500));
+  text-underline-offset: 0.15em;
+}
+
+.md-typeset a:hover,
+.md-typeset a:focus {
+  color: rgb(var(--rf-800));
+  text-decoration-color: currentColor;
+}
+
+/* Sidebar and TOC links are navigation, not prose: plain weight, no underline. */
+.md-nav a,
+.md-nav a:hover {
+  font-weight: 400;
+  text-decoration: none;
 }

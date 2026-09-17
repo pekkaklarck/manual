@@ -66,8 +66,3 @@
   --md-text-font: var(--rf-ff-body);
   --md-code-font: var(--rf-ff-code);
 }
-
-.md-typeset h1,
-header .md-ellipsis {
-  font-family: var(--rf-ff-display);
-}
