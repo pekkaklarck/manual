@@ -63,12 +63,14 @@ nav:
   - Glossary: glossary.md
 
 extra_css:
+  - assets/fonts.css    # Self-hosted fonts shared with robotframework.org, see the file for details.
   - assets/highlight-light.css
   - assets/highlight-dark.css
   - assets/extra.css
 
 theme:
   name: material
+  font: false    # Fonts are self-hosted, see `assets/fonts.css`.
   logo: assets/logo-white.png
   favicon: assets/logo.png
   icon:
@@ -88,7 +90,7 @@ theme:
     - navigation.top
     - search.highlight
     - search.suggest
-    - toc.integrate
+    - toc.follow
   language: en
   palette:
     # Palette toggle for automatic mode
