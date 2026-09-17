@@ -44,19 +44,35 @@
   display: none;
 }
 
-.md-content__inner {
-  /* Limit line length to make longer paragraphs easier to follow. */
-  max-width: 900px;
-
-  /* Centre the narrower article within the available content area. */
-  margin-inline: auto;
+/* Page layout, Docusaurus-style: no centred page grid. The primary sidebar
+   hugs the left edge, the article grows to 900px when there is room, and the
+   page TOC sits directly to its right instead of at the far edge of the
+   viewport. Material's `.md-grid` (61rem, centred) is what caused the
+   narrow, centred column; the header and tabs share it and stretch too. */
+.md-grid {
+  max-width: none;
 }
 
-/* Below the sidebar breakpoint the content spans the whole viewport, so
-   restore the side gutter that `margin-inline: auto` above removes. */
+.md-content__inner {
+  /* Limit line length to make longer paragraphs easier to follow. */
+  max-width: 1000px;
+}
+
+@media screen and (min-width: 76.25em) {
+  /* Sidebars are shown: cap the article column (900px plus Material's
+     1.2rem inner margins) so the secondary sidebar, which follows it in the
+     flex row, stays attached to the content. `flex-shrink: 1` lets it give
+     way on narrower windows instead of overflowing. */
+  .md-content {
+    flex: 0 1 calc(1000px + 2.4rem);
+  }
+}
+
 @media screen and (max-width: 76.1875em) {
+  /* No sidebars: centre the article and keep a side gutter. */
   .md-content__inner {
-    margin-inline: 0.8rem;
+    margin-inline: auto;
+    padding-inline: 0.8rem;
   }
 }
 
