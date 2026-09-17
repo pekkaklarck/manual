@@ -414,3 +414,29 @@
 .md-typeset img {
   border-radius: var(--rf-r-md);
 }
+
+/* ============================================================================
+   FOOTER — a dark island on a light page, as on the source site. The colours
+   are fixed dark values in theme.css (no flip: the island is dark under both
+   schemes), so only the type treatment lives here.
+   ========================================================================== */
+.md-footer {
+  border-top: 1px solid rgb(0 192 181 / 0.25);
+}
+
+.md-footer__title,
+.md-footer__direction {
+  font-family: var(--rf-ff-nav);
+}
+
+.md-footer__link:hover .md-footer__title {
+  color: rgb(92 214 207);
+}
+
+.md-footer-meta {
+  background: var(--md-footer-bg-color--dark);
+}
+
+.md-copyright a {
+  color: rgb(92 214 207);
+}
