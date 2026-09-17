@@ -193,3 +193,80 @@
   font-weight: 400;
   text-decoration: none;
 }
+
+/* ============================================================================
+   THE PLATE — shared editor chrome from the source site, dressing Material's
+   own code-block markup. The generated highlight-*.css files set their own
+   `.highlight { background }`; the surface rule below wins by load order.
+
+   This site's build always renders fenced code through Pygments' `linenos:
+   table` formatter (`.highlight > table.highlighttable > tr > td.linenos
+   / td.code > div > pre > code`) rather than Material's own
+   `.highlight > pre > code` shape, even for blocks without explicit line
+   numbers — confirmed against the built /syntax/tests/ and /extend/dynamic/
+   pages. The `.highlight > pre > code` selector from the brief is dropped
+   below since it cannot match anything this build produces; `.highlight pre`
+   (a descendant selector) covers the real `<pre>` instead.
+   ========================================================================== */
+.md-typeset .highlight {
+  border: 1px solid rgb(var(--rf-700) / 0.25);
+  border-radius: var(--rf-r-md);
+  overflow: hidden;
+  background: var(--md-code-bg-color);
+}
+
+.md-typeset .highlight pre,
+.md-typeset .highlighttable,
+.md-typeset .highlighttable .linenos,
+.md-typeset .highlighttable .code {
+  background: var(--md-code-bg-color);
+}
+
+.md-typeset pre > code {
+  font-family: var(--rf-ff-code);
+  font-size: 0.83rem;
+  line-height: 1.55;
+}
+
+/* Line-number gutter: a hair lighter than the code, separated by the same
+   line the plate uses. */
+.md-typeset .highlighttable .linenos {
+  background: rgb(var(--rf-500) / 0.06);
+  border-right: 1px solid rgb(var(--rf-700) / 0.18);
+  color: rgb(var(--rf-text) / 0.45);
+}
+
+/* Copy button: OCR-A, outlined, quiet until hovered. */
+.md-typeset .md-clipboard {
+  font-family: var(--rf-ff-display);
+  border: 1px solid rgb(var(--rf-500) / 0.35);
+  border-radius: var(--rf-r-sm);
+  color: rgb(var(--rf-text) / 0.65);
+}
+
+.md-typeset .md-clipboard:hover,
+.md-typeset .md-clipboard:focus-visible {
+  color: rgb(var(--rf-accent-text));
+  border-color: rgb(var(--rf-accent-text));
+}
+
+/* Marked lines (`hl_lines`): the brand pivot with a solid rail. */
+.md-typeset .highlight .hll {
+  background: rgb(var(--rf-500) / 0.12);
+  box-shadow: inset 2px 0 0 0 rgb(var(--rf-accent-indicator));
+}
+
+/* Inline code. */
+.md-typeset code:not(pre code) {
+  font-family: var(--rf-ff-code);
+  background: rgb(var(--rf-500) / 0.13);
+  border-radius: var(--rf-r-sm);
+  padding: 0.1em 0.35em;
+  font-size: 0.87em;
+  color: inherit;
+}
+
+/* Code inside a link keeps the link colour. */
+.md-typeset a code {
+  color: inherit;
+}
