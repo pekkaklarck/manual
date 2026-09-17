@@ -1,35 +1,10 @@
-/* Definition list spacing — reduce Material theme's 1em margins so that each
-   term sits tight against its definition, with a small gap between entries. */
-.md-typeset dl dt {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.md-typeset dl dd {
-  margin-top: 0.1rem;
-  margin-bottom: 0.6rem;
-}
-
-/* ezglossary injects a back-reference list into every definition; collapse it
-   (and any wrapping paragraph) when it has no entries, so it does not add
-   blank space between a term and the next one. */
-.md-typeset dl dd .mkdocs-ezglossary-refs:not(:has(li)) {
-  display: none;
-}
-
-.md-typeset dl dd > p:empty {
-  display: none;
-}
-
-.md-typeset dl dd p:has(> .mkdocs-ezglossary-refs:not(:has(li))) {
-  display: none;
-}
-
-/* Page layout, Docusaurus-style: no centred page grid. The primary sidebar
-   hugs the left edge, the article grows to 900px when there is room, and the
-   page TOC sits directly to its right instead of at the far edge of the
-   viewport. Material's `.md-grid` (61rem, centred) is what caused the
-   narrow, centred column; the header and tabs share it and stretch too. */
+/* ============================================================================
+   LAYOUT — Docusaurus-style: no centred page grid. The primary sidebar hugs
+   the left edge, the article grows to 900px when there is room, and the page
+   TOC sits directly to its right instead of at the far edge of the viewport.
+   Material's `.md-grid` (61rem, centred) is what caused the narrow, centred
+   column; the header and tabs share it and stretch too.
+   ========================================================================== */
 .md-grid {
   max-width: none;
 }
@@ -69,7 +44,6 @@
 }
 
 /* Material re-adds a shadow once the page scrolls. */
-.md-header[data-md-state="shadow"],
 .md-header--shadow {
   box-shadow: none;
   transition: none;
@@ -98,10 +72,6 @@
   font-weight: 600;
   opacity: 1;
   color: rgb(var(--rf-text) / 0.75);
-}
-
-.md-nav--primary .md-nav__link {
-  padding: .3rem .6rem;
 }
 
 .md-tabs__item {
@@ -140,6 +110,63 @@
 /* The logo is black ink; invert it on the dark ground. */
 [data-md-color-scheme="slate"] .md-header__button.md-logo img {
   filter: invert(1);
+}
+
+/* ============================================================================
+   SIDEBARS — left nav and right TOC. 14px like the Guides, hairline between
+   top-level groups, active item in the accent.
+   ========================================================================== */
+.md-sidebar .md-nav {
+  font-size: 0.7rem;                /* 14px at Material's 20px root */
+}
+
+.md-nav--primary .md-nav__link {
+  padding: .3rem .6rem;
+}
+
+.md-nav__title {
+  font-family: var(--rf-ff-display);
+  font-weight: 600;
+  letter-spacing: -0.05em;
+  color: rgb(var(--rf-text));
+}
+
+.md-nav__link {
+  color: rgb(var(--rf-text) / 0.8);
+}
+
+.md-nav__link:hover {
+  color: rgb(var(--rf-accent-text));
+}
+
+.md-nav__link--active,
+.md-nav__item--active > .md-nav__link {
+  color: rgb(var(--rf-accent-text));
+}
+
+/* Hairline under each top-level group in the primary sidebar — matches the
+   top-level tab items (Manual, Install, Syntax, ...), not the pages within
+   a tab. With `navigation.tabs`, Material shows only the active tab's item
+   on desktop, expanded inline into that tab's flat page list; since it's
+   the sole visible item it is also `:last-child`, so its own border is
+   suppressed — this rule currently draws nothing on desktop for any tab in
+   this site. It does separate groups on the mobile drawer's root screen,
+   where all top-level tab items are visible at once, and would do the same
+   on desktop if a tab ever grew real nested sections. */
+.md-sidebar--primary .md-nav--primary > .md-nav__list > .md-nav__item {
+  padding-bottom: 0.4rem;
+  margin-bottom: 0.4rem;
+  border-bottom: 1px solid rgb(var(--rf-700) / 0.18);
+}
+
+.md-sidebar--primary .md-nav--primary > .md-nav__list > .md-nav__item:last-child {
+  border-bottom: 0;
+}
+
+/* Material draws the sidebar scrollbar track and a vertical rule via
+   box-shadow on `.md-nav__list`; the rule is on the ramp now. */
+.md-nav--secondary .md-nav__list {
+  border-left: 1px solid rgb(var(--rf-700) / 0.18);
 }
 
 /* ============================================================================
@@ -244,9 +271,8 @@
   color: rgb(var(--rf-text) / 0.45);
 }
 
-/* Copy button: OCR-A, outlined, quiet until hovered. */
+/* Copy button: outlined, quiet until hovered. Icon-only, so no display font. */
 .md-typeset .md-clipboard {
-  font-family: var(--rf-ff-display);
   border: 1px solid rgb(var(--rf-500) / 0.35);
   border-radius: var(--rf-r-sm);
   color: rgb(var(--rf-text) / 0.65);
@@ -280,61 +306,36 @@
 }
 
 /* ============================================================================
-   SIDEBARS — left nav and right TOC. 14px like the Guides, hairline between
-   top-level groups, active item in the accent.
-   ========================================================================== */
-.md-sidebar .md-nav {
-  font-size: 0.7rem;                /* 14px at Material's 20px root */
-}
-
-.md-nav__title {
-  font-family: var(--rf-ff-display);
-  font-weight: 600;
-  letter-spacing: -0.05em;
-  color: rgb(var(--rf-text));
-}
-
-.md-nav__link {
-  color: rgb(var(--rf-text) / 0.8);
-}
-
-.md-nav__link:hover {
-  color: rgb(var(--rf-accent-text));
-}
-
-.md-nav__link--active,
-.md-nav__item--active > .md-nav__link {
-  color: rgb(var(--rf-accent-text));
-}
-
-/* Hairline under each top-level group in the primary sidebar — matches the
-   top-level tab items (Manual, Install, Syntax, ...), not the pages within
-   a tab. With `navigation.tabs`, Material shows only the active tab's item
-   on desktop, expanded inline into that tab's flat page list; since it's
-   the sole visible item it is also `:last-child`, so its own border is
-   suppressed — this rule currently draws nothing on desktop for any tab in
-   this site. It does separate groups on the mobile drawer's root screen,
-   where all top-level tab items are visible at once, and would do the same
-   on desktop if a tab ever grew real nested sections. */
-.md-sidebar--primary .md-nav--primary > .md-nav__list > .md-nav__item {
-  padding-bottom: 0.4rem;
-  margin-bottom: 0.4rem;
-  border-bottom: 1px solid rgb(var(--rf-700) / 0.18);
-}
-
-.md-sidebar--primary .md-nav--primary > .md-nav__list > .md-nav__item:last-child {
-  border-bottom: 0;
-}
-
-/* Material draws the sidebar scrollbar track and a vertical rule via
-   box-shadow on `.md-nav__list`; the rule is on the ramp now. */
-.md-nav--secondary .md-nav__list {
-  border-left: 1px solid rgb(var(--rf-700) / 0.18);
-}
-
-/* ============================================================================
    PROSE ELEMENTS
    ========================================================================== */
+
+/* Definition list spacing — reduce Material theme's 1em margins so that each
+   term sits tight against its definition, with a small gap between entries. */
+.md-typeset dl dt {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.md-typeset dl dd {
+  margin-top: 0.1rem;
+  margin-bottom: 0.6rem;
+}
+
+/* ezglossary injects a back-reference list into every definition; collapse it
+   (and any wrapping paragraph) when it has no entries, so it does not add
+   blank space between a term and the next one. */
+.md-typeset dl dd .mkdocs-ezglossary-refs:not(:has(li)) {
+  display: none;
+}
+
+.md-typeset dl dd > p:empty {
+  display: none;
+}
+
+.md-typeset dl dd p:has(> .mkdocs-ezglossary-refs:not(:has(li))) {
+  display: none;
+}
+
 .md-typeset table:not([class]) {
   font-size: 0.72rem;
   border: 0;
