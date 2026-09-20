@@ -9788,9 +9788,9 @@
 <h1 id="glossary">Glossary<a class="headerlink" href="#glossary" title="Permanent link">&para;</a></h1>
 <dl>
 <dt>
-	<a id="9408d0cc618d9ce1290b76e280583fc3">Keyword</a> 
+	<a id="2ded58482d072dff71a39d1240aeea14">Acceptance Testing</a> 
 </dt>
-<dd>Keywords are very important for us.
+<dd>Validation that a system satisfies agreed business requirements and is ready for deployment or release.
 <p>
 <div class="mkdocs-ezglossary-refs list">
     
@@ -9801,9 +9801,1599 @@
 </p></dd>
 
 <dt>
-	<a id="355b687f9bb6935601b5c3956e07a1dc">Library keyword</a> 
+	<a id="366722617262892f61536528b586526f">Argument</a> 
 </dt>
-<dd>Ditto
+<dd>Value supplied to a keyword call as positional, named, or embedded input to configure its behavior.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="8fc0ea2e6e3b1ab8f3a8b8b285e1917b">Argument File</a> 
+</dt>
+<dd>File containing command-line options and data sources that Robot Framework reads as arguments through the <code>--argumentfile</code> option.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="c5cd8df9ed8206b5c2880c82f0e04863">Argument Interface</a> 
+</dt>
+<dd>Ordered specification of a keyword’s arguments, including kinds (for example positional-or-named, named-only, variable positional, free named, embedded), names, default values, and optional type hints.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="b378ea78bb8b9b30a5928045303944a2">Atomic Element</a> 
+</dt>
+<dd>Execution element without child steps whose status depends solely on its own execution result.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="51f0f5d7a844cff41b21b78c62527b02">Automatic Variable</a> 
+</dt>
+<dd>Built-in variable whose value Robot Framework sets from the current execution context and whose availability can depend on the execution phase.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="0b7e472fc2c6b6a940f2fd90011f5377">Behavior-Driven Development</a> 
+</dt>
+<dd><p>Development approach that describes system behavior in business-readable language, often using Given/When/Then phrasing.</p>
+<p><strong>Aliases:</strong> BDD</p>
+
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="b1a5ac3377fc0a449f82b8637b9cf136">Behavior-Driven Specification</a> 
+</dt>
+<dd>Declarative Robot Framework style in which tests|tasks describe system behavior from the user's perspective using natural-language-like steps with embedded arguments and optional Given/When/Then/And/But prefixes.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="ad51f7106ac592ee52d133837c1ddb17">Boolean Argument</a> 
+</dt>
+<dd>Keyword argument whose value Robot Framework interprets as true or false according to its Boolean conversion rules.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="9d18af0b33b3e6d1bcbc08008cb8300d">Built-In Variables</a> 
+</dt>
+<dd>Variables provided by Robot Framework that expose execution-related information such as paths, timestamps, and status without explicit definition.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="9d2cac7afc0e87b9b874e67260270a0c">Command Line Interface</a> 
+</dt>
+<dd><p>Interface used to run Robot Framework from the command line (for example with the <code>robot</code> command), configure execution options, and pass arguments or variables.</p>
+<p><strong>Aliases:</strong> CLI, Robot Framework CLI</p>
+
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="f790cba4c3aa660a2fa7e53b25bbb577">Command-Line Option</a> 
+</dt>
+<dd><p>Named option passed to the <code>robot</code> or <code>rebot</code> command to configure execution or result post-processing.</p>
+<p><strong>Aliases:</strong> CLI option</p>
+
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="8ac013edb59bccbdefd3fd5fe840468c">Composite Element</a> 
+</dt>
+<dd>Execution element composed of child elements (for example suites with tests|tasks, tests|tasks with keywords, or user keywords with child steps) whose status is derived from its children.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="4aec7c1331a82cfae29339e5549eae85">Continuable Failure</a> 
+</dt>
+<dd><p>Keyword failure that marks the test or task as failed but allows execution to continue.</p>
+<p><strong>Aliases:</strong> continue-on-failure</p>
+
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="235e872595184b9bf9d5d1bf83faf6ae">Control Structure</a> 
+</dt>
+<dd>Statement such as <code>IF</code>, <code>FOR</code>, <code>WHILE</code>, <code>BREAK</code>, or <code>CONTINUE</code> that controls execution flow inside a test|task, or keyword.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="65eb319e6915c7bfb90251dbf9c5b82a">Data-Driven Specification</a> 
+</dt>
+<dd>Specification style where the same logic or test flow is executed multiple times with varying input or expected output data, often implemented with test|task templates.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="783a5ec7fb83a1d9f81e6e4c735f636b">Debug File</a> 
+</dt>
+<dd><p>Optional plain-text result file written during execution that records library messages and the start and end of suites, tests or tasks, and keywords.</p>
+<p><strong>Aliases:</strong> <code>debug.txt</code></p>
+
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="f92b73de790f7615ee9591464e6c8beb">Dictionary Variable</a> 
+</dt>
+<dd><p>Robot Framework variable of dictionary type created with the <code>&amp;{}</code> syntax that holds key-value pairs and can be accessed by keys.</p>
+<p><strong>Aliases:</strong> <code>&amp;{}</code></p>
+
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="bf074319013ab8304e6115ae62fb415c">Documentation</a> 
+</dt>
+<dd>Descriptive text attached to a suite, test or task, user keyword, library, or resource file to explain its purpose, behaviour, or use.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="413eba928508c4b05a7e22c50b2ca62b">Dry Run</a> 
+</dt>
+<dd>Execution mode that validates test data without running keywords provided by test libraries.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="351c9e034838382c08d31ff93fae9b98">Dynamic Library API</a> 
+</dt>
+<dd><p>Test library API in which special methods provide keyword names, arguments, documentation, and execution at runtime.</p>
+<p><strong>Aliases:</strong> Dynamic API</p>
+
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="fc3d4606c243e66453fe6c825ba1f161">Embedded Argument</a> 
+</dt>
+<dd>Argument kind defined directly in a keyword name using <code>${}</code> syntax whose value must appear in that position in calls, often used in behavior-driven steps.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="ebfd2d98e835b4ffc00efe08106842ad">Environment Variable</a> 
+</dt>
+<dd><p>Operating-system variable available in Robot Framework data through <code>%{NAME}</code> syntax, optionally with a default value.</p>
+<p><strong>Aliases:</strong> operating-system variable</p>
+
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="2da97be88bed043dda75bba8d2cee978">Execution Artifacts</a> 
+</dt>
+<dd>Files generated by a Robot Framework execution (e.g. <code>output.xml</code>, <code>log.html</code>, and <code>report.html</code>) that document the execution process and its results.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="2930b37c5adc18ed65d752412c799c88">Execution Flow</a> 
+</dt>
+<dd>Order and conditions under which Robot Framework executes suites, tests or tasks, setups, teardowns, keywords, and control structures.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="9229296eee680c3fa0928992774b8a76">Execution Model</a> 
+</dt>
+<dd><p>Internal representation created after parsing suites, tests, tasks, and keywords that the execution engine uses to perform automation.</p>
+<p><strong>Aliases:</strong> data model, running model</p>
+
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="6f84916483cfd52f05d0d8f681896f4a">External Library</a> 
+</dt>
+<dd>Test library that is distributed separately from Robot Framework rather than included as a standard library.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="574283059925a2b9928163c3f4584bc3">Fail Status</a> 
+</dt>
+<dd>Execution status indicating that an element (e.g. keyword, test|task, or suite) did not meet its expected outcome or raised an error during execution.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="58b14376bba8bfb43fc19e3d39745776">FOR Loop</a> 
+</dt>
+<dd>Control structure used to iterate over items in a list or other iterable and execute a body of keywords for each item.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="ecb13d162f019409544fb783187ecc4d">Free Named Argument</a> 
+</dt>
+<dd><p>Catch-all named argument kind in a keyword specification, marked with **, that gathers all named values not explicitly defined elsewhere into a dictionary.</p>
+<p><strong>Aliases:</strong> <code>**kwargs</code></p>
+
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>Given / When / Then / And / But</dt>
+<dd>Conventional prefixes in behavior-driven specification style that Robot Framework can ignore when matching keywords if the remaining part of the name matches a keyword.</dd>
+<dt>
+	<a id="0c297be14ce90d85270d5e190d498f77">Global Variable</a> 
+</dt>
+<dd>Variable with global scope that can be accessed from all suites and keywords in a Robot Framework execution.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="cb536f08fb5dfecc3666fc70e177fb93">GROUP Structure</a> 
+</dt>
+<dd><p>Control structure that groups related keywords and control structures under a name without creating a separate keyword or variable scope.</p>
+<p><strong>Aliases:</strong> GROUP</p>
+
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="0dca114eb8920f033aeb799e8718a500">Hybrid Library API</a> 
+</dt>
+<dd><p>Test library API that lists keyword names with <code>get_keyword_names</code> but otherwise exposes and executes keywords through the static library API.</p>
+<p><strong>Aliases:</strong> hybrid library</p>
+
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="9ca10759fc9b56b7e42b5db8d84b8a24">IF Statement</a> 
+</dt>
+<dd><p>Control structure in Robot Framework used to execute one block of statements when a condition is true and optionally alternative blocks with <code>ELSE IF</code> or <code>ELSE</code> when it is not.</p>
+<p><strong>Aliases:</strong> IF, <code>IF/ELSE</code></p>
+
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="6768cabd495d9ab100fe96ecfa88e840">Initialization File</a> 
+</dt>
+<dd><p>Suite file located in a directory that configures that directory as a suite and defines suite-level settings, variables, setups, and teardowns for contained suites.</p>
+<p><strong>Aliases:</strong> <code>__init__.robot</code>, Suite Initialization File</p>
+
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="bae2f3b5c2d45915458d0a2211ab7a65">Inline Comment</a> 
+</dt>
+<dd>Comment at the beginning or end of a line in a Robot Framework file, separated by at least two spaces and starting with # so that it is ignored by the interpreter.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="e6eb672486f0446dc1a20895a4dd3199">Inline IF</a> 
+</dt>
+<dd>Compact single-line IF statement (<code>IF  &lt;condition&gt;  &lt;keyword&gt;  [args]</code>) used to execute one keyword conditionally without an END.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="ef307f78d149fb759784b494cacd1694">JSON Model</a> 
+</dt>
+<dd><p>JSON representation of an execution or result model that can be serialized and reconstructed through Robot Framework's model APIs.</p>
+<p><strong>Aliases:</strong> JSON data model</p>
+
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="20feadcff0e60ca30d81b2ea630074e9">JSON Output Format</a> 
+</dt>
+<dd><p>Machine-readable JSON representation of execution results used in output files with the <code>.json</code> extension.</p>
+<p><strong>Aliases:</strong> JSON output file</p>
+
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="9408d0cc618d9ce1290b76e280583fc3">Keyword</a> 
+</dt>
+<dd>Named reusable action or sequence of actions in Robot Framework callable from tests, tasks, or other keywords that may accept arguments and return values.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="7cb470eb0adfb53b7774f96bc033a024">Keyword Interface</a> 
+</dt>
+<dd>Documented information about a keyword, including its name, arguments with kinds and types, return values, documentation, and examples, as exposed by HTML documentation or IDEs.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="28c45a107af9e663a86576ec7742a723">Keyword Library</a> 
+</dt>
+<dd><p>Collection of library keywords implemented typically in Python (or other languages) that Robot Framework imports to interact with external systems, perform computations, or provide utility functions.</p>
+<p><strong>Aliases:</strong> Library, Test Library</p>
+
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="dc8d4bdf46a0f1801f36e90cbbbce610">Keyword Scope</a> 
+</dt>
+<dd>Priority category based on where a keyword is defined that Robot Framework uses to resolve calls when multiple keywords have the same name.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="61974bf82285c8dc057deeeb33e1f51b">Keyword-Driven Specification</a> 
+</dt>
+<dd>Imperative Robot Framework style where tests|tasks are written as sequences of keyword calls with arguments, focusing on executed actions and their order.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="e471c7b4213bc04f6ef524dccb125bd9">Keyword-Only Argument</a> 
+</dt>
+<dd>Python function argument defined after <code>*args</code> or a bare <code>*</code> that Robot Framework exposes as a named-only keyword argument.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="37e872438f938c92ff343dc73503aa08">Library API</a> 
+</dt>
+<dd><p>Interface through which Robot Framework discovers and executes keywords provided by a test library, using either the static or dynamic API.</p>
+<p><strong>Aliases:</strong> test library API</p>
+
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="355b687f9bb6935601b5c3956e07a1dc">Library Keyword</a> 
+</dt>
+<dd>Lowest-level keyword implemented by a test library, often used to interact with a system or perform utility operations.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="cf8368c675ebe3c972c02a4a7fbd5097">Library Scope</a> 
+</dt>
+<dd>Setting that controls how long a class-based test library instance is retained and whether it is shared between tests or suites.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="13782ff57e5566e62cfa7299b85dda3e">Library Specification File</a> 
+</dt>
+<dd><p>Machine-readable XML or JSON file generated by Libdoc that describes a library or resource file and the keywords it provides.</p>
+<p><strong>Aliases:</strong> libspec, Libdoc spec file</p>
+
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="fbdb99eab6701cbf69afd16e560bea0f">List Variable</a> 
+</dt>
+<dd><p>Robot Framework variable of list type created with the <code>@{}</code> syntax that holds an ordered collection of values and can be unpacked when passed to keywords.</p>
+<p><strong>Aliases:</strong> <code>@{}</code></p>
+
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="c92abe465dde5e9635d061562353132e">Listener Interface</a> 
+</dt>
+<dd><p>Extension interface that notifies listeners about execution events and allows them to inspect or modify execution data and results.</p>
+<p><strong>Aliases:</strong> listener API</p>
+
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="bc1adc45594a0059387046b800b66252">Local Variable</a> 
+</dt>
+<dd>Variable whose scope is limited to a single keyword, test, or task execution and is not visible outside that body.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="0a4aca49d6bad6ec3e89e97a7cf1e35b">Log File</a> 
+</dt>
+<dd><p>Detailed HTML execution log (log.html) generated by Robot Framework that shows keyword-level execution steps, arguments, messages, and statuses.</p>
+<p><strong>Aliases:</strong> <code>log.html</code></p>
+
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="7d6ed6302c46ba4f3765453e584406c5">Log Level</a> 
+</dt>
+<dd>Classification that indicates the severity or detail of a log message and determines whether the message is recorded or shown.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="3ff7bf7a9d8e622555a8df9804f2dc0f">Mandatory Argument</a> 
+</dt>
+<dd>Argument kind in a keyword specification without a default value that must be provided in calls and that precedes optional arguments.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="5b4d2d257b88ac43547a89cd6f75d41b">Metadata</a> 
+</dt>
+<dd><p>Key–value information attached to a suite, test, or task to document attributes such as owner, environment, version, or related requirements.</p>
+<p><strong>Aliases:</strong> free metadata</p>
+
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="65b34b6a3bb6ae09b00dac06d71941e9">Named Argument</a> 
+</dt>
+<dd>Argument value provided in a keyword call using an explicit name=value pair.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="d3166d542ebc9995357f15e75cdc1645">Named-Only Argument</a> 
+</dt>
+<dd>Argument kind in a keyword specification that must be provided by name (never positionally), typically defined after a Variable Number of Positional Arguments or explicitly marked, and that can be mandatory or optional.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="746420d2a225e6496f188f58f67e80b8">Optional Argument</a> 
+</dt>
+<dd>Argument kind in a keyword specification that may be omitted because it has a default value or is a catch-all (e.g. <code>Variable Number of Positional Arguments</code> marked with <code>*</code> or <code>Free Named Arguments</code> marked with <code>**</code>).
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="898283202807d1fa5c07c47c9f22b96d">Output Directory</a> 
+</dt>
+<dd>Base directory used for result files whose paths are not absolute, configured with the <code>--outputdir</code> option.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="906bc859c4527e5c9a8371a63e9e6beb">Output File</a> 
+</dt>
+<dd><p>Primary machine-readable execution result file (e.g. <code>output.xml</code>) produced by Robot Framework that stores the full execution tree, messages, and statistics and serves as the source for generating log and report files.</p>
+<p><strong>Aliases:</strong> <code>output.xml</code></p>
+
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="c7077fbba92bab2eb001c73d3e950aad">Parser Interface</a> 
+</dt>
+<dd><p>Extension interface for parsing custom test data formats or replacing Robot Framework's standard parser for selected file extensions.</p>
+<p><strong>Aliases:</strong> parser API</p>
+
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="d34775ed9b414d43e7a64be8a28b90c0">Pass Status</a> 
+</dt>
+<dd>Execution status indicating that an element (e.g. keyword, test|task, or suite) executed successfully and met its expectations.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="61dc79e5891e37b9a40752348488f339">Positional Argument</a> 
+</dt>
+<dd>Argument value provided in a keyword call solely by its position in the argument list without naming it explicitly.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="27d8c2763fdbe3159b5488e1027f8429">Positional or Named Argument</a> 
+</dt>
+<dd>Argument kind in a keyword specification that can be set either by position or by name (but not both for the same value) and that may be mandatory or optional.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="876c730a44dfb09ab3d28d9380df218b">Positional-Only Argument</a> 
+</dt>
+<dd>Python function argument defined before <code>/</code> that Robot Framework accepts only by position.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="11eebec6a70289c82bab35836d380140">Pre-Run Modifier</a> 
+</dt>
+<dd>Visitor-based extension that can inspect or modify the executable suite structure before test or task selection and execution.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="7fcc3f65df29210fff255874ae3c737f">Private User Keyword</a> 
+</dt>
+<dd>User keyword tagged with <code>robot:private</code> that is intended for use only in the file where it is defined; use elsewhere causes a warning.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="d2e4b340bb49bc9afb9a5a3b2b339743">Rebot</a> 
+</dt>
+<dd>Command-line tool for generating, combining, merging, and otherwise post-processing Robot Framework output files.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="2531c115eb1d1c6001f518f3fea12073">Remote Library Interface</a> 
+</dt>
+<dd><p>Interface that makes keywords running in another process or machine, including implementations in other languages, available through the standard Remote library.</p>
+<p><strong>Aliases:</strong> Remote library</p>
+
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="6afe6d4d831103405baecf437ef5feca">Remote Protocol</a> 
+</dt>
+<dd>XML-RPC-based protocol used between the standard Remote library and a remote server to discover and execute keywords.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="78840492cb744ca39e897ac60573b7df">Report File</a> 
+</dt>
+<dd><p>High-level HTML summary (<code>report.html</code>) of a Robot Framework execution that focuses on statistics and the overall pass/fail status of suites and tests|tasks.</p>
+<p><strong>Aliases:</strong> <code>report.html</code></p>
+
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="060a982c5301895d8ff757e1fb1f511d">Reserved Tag</a> 
+</dt>
+<dd>Tag with the <code>robot:</code> prefix whose meaning and behaviour are defined by Robot Framework.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="8385f30c85e8d2d75b06308bb2c170b1">Resource File</a> 
+</dt>
+<dd>File (commonly with extension .resource or .robot) that contains user keywords and variables and is imported by suites to share and reuse these artifacts.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="04f6c08a5f13b82da05452c3208fc65c">Result File</a> 
+</dt>
+<dd><p>Execution artifact that stores or presents Robot Framework execution results, such as an output, log, report, xUnit-compatible, or debug file.</p>
+<p><strong>Aliases:</strong> result files</p>
+
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="454638a5efb68345bd2692d893b05662">Result Model</a> 
+</dt>
+<dd>Programmatic object model of Robot Framework execution results used to inspect, modify, and generate result files.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="5fece8ceb7cd455f8775fdf71caa0377">Result Visitor</a> 
+</dt>
+<dd><p>Visitor interface that traverses a result model and calls handlers for suites, tests or tasks, keywords, messages, statistics, and errors.</p>
+<p><strong>Aliases:</strong> visitor interface</p>
+
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="8811bd078b1c27b55779bf89a0139473">RETURN Statement</a> 
+</dt>
+<dd><p>Statement used in user keywords to return one or more values that can be assigned to variables in the calling context.</p>
+<p><strong>Aliases:</strong> RETURN</p>
+
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="090e62fcb6ffe84d728f06a595bdcb31">Return Type Hint</a> 
+</dt>
+<dd>Documented indication of the type of value a keyword returns, helping users understand how to use the returned data.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="1869ce22b80fed857d1b2ebbb57df25b">Robot Framework Foundation</a> 
+</dt>
+<dd>Non-profit association (Robot Framework ry) that stewards the development, ecosystem, governance, and promotion of Robot Framework and its community.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="7fb9a2e43c40c090fa91a2510cdd1710">Robotic Process Automation</a> 
+</dt>
+<dd><p>Automation of business processes or tasks normally performed by humans, often across multiple systems, without necessarily focusing on testing.</p>
+<p><strong>Aliases:</strong> RPA</p>
+
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="a44f42b727aec7934107b0d1f35843e0">Root Suite</a> 
+</dt>
+<dd>Top-level suite in a Robot Framework execution determined by the initial directory or file path passed to the <code>robot</code> command.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="19505abe34f26d7d03a975c871cd5f54">Scalar Access Syntax</a> 
+</dt>
+<dd><p>Standard variable access form <code>${}</code> in Robot Framework used to read values regardless of whether the underlying variable was defined as scalar, list-like, or dictionary-like.</p>
+<p><strong>Aliases:</strong> <code>${}</code></p>
+
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="35cd4f42cf1210f176d4abbc52921f30">Scalar Variable</a> 
+</dt>
+<dd>Robot Framework variable accessed with the <code>${}</code> syntax that holds a single value of any supported data type.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="19701446ab3d689a6297fa6c9e7d9b77">Secret Variable</a> 
+</dt>
+<dd><p>Variable whose value Robot Framework avoids logging when it is passed as an argument or return value, without hiding or encrypting the value from code.</p>
+<p><strong>Aliases:</strong> secret</p>
+
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="966a2253bf4e690c76cd71292ec5107b">Section</a> 
+</dt>
+<dd><p>Structural part of a Robot Framework data file identified by a header, such as Setting, Variable, Test Case, Task, Keyword, or Comment, with available types depending on whether the file is a suite or resource file.</p>
+<p><strong>Aliases:</strong> test data section, test data sections, table, tables</p>
+
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="f95c158a515ee462ad3d1efde35c3f4d">Section Header</a> 
+</dt>
+<dd>Header row such as <code>*** Settings ***</code> that identifies the type of a section.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="867f667d7b2cdc9c548154b364e4fbc3">Setting</a> 
+</dt>
+<dd>Named instruction that imports data or configures behaviour for a file, suite, test or task, or user keyword.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="bd50668578744e21b2643f82fbf2599f">Setup</a> 
+</dt>
+<dd>Keyword executed before the content of a suite, test or task, or user keyword to prepare the state needed by that scope.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="3a89f8270e70419263f33ebe9143ffa6">Simple Pattern</a> 
+</dt>
+<dd><p>Glob-like pattern that uses <code>*</code>, <code>?</code>, and bracket expressions for matching and is normally case-, space-, and underscore-insensitive.</p>
+<p><strong>Aliases:</strong> glob-like pattern</p>
+
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="9664beb87a2035667bf68c377b33845a">Skip Status</a> 
+</dt>
+<dd>Execution status indicating that an element (e.g. a test|task) was intentionally not executed, for example due to selection options or an explicit skip.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="d614e09c76560dd4de41b4431d2113e8">Standard Library</a> 
+</dt>
+<dd>Library shipped with Robot Framework itself providing generic functionality such as operating system interaction, string manipulation, or process handling.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="8ef9c8bff8952415611351b3ecc506cf">Static Library API</a> 
+</dt>
+<dd><p>Default test library API in which Robot Framework uses reflection to map functions or methods directly to keywords.</p>
+<p><strong>Aliases:</strong> Static API</p>
+
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="c5c3fbfdc6ac20214c8fdf8b2300cffd">Suite</a> 
+</dt>
+<dd><p>Collection of tests|tasks (optionally with local keywords and variables) defined in a .robot file or directory that is executed as a unit by Robot Framework.</p>
+<p><strong>Aliases:</strong> Test Suite, Task Suite</p>
+
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="3cbc7535738723a652c96aae15fcdd96">Suite Directory</a> 
+</dt>
+<dd><p>Directory treated as a suite because it directly or indirectly contains at least one suite file, grouping lower-level suites into a suite tree.</p>
+<p><strong>Aliases:</strong> Higher-Level Suite</p>
+
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="674ad6bb3ca42a045c303c5aa9943a1c">Suite File</a> 
+</dt>
+<dd>.robot file that contains at least one test case or task and is therefore treated by Robot Framework as an executable suite.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="7c12778bc56d8fa6a3c959f6f1dbd6a5">Suite Status</a> 
+</dt>
+<dd>PASS, FAIL, or SKIP status of a suite, derived from the statuses of the tests or tasks it contains.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="4c1aa5bf7314d3b7377428ed68385331">Suite Variable</a> 
+</dt>
+<dd>Variable whose scope covers all tests|tasks and keywords within a specific suite but is not visible outside that suite.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="4a5887eadf05195c6eec09790b211dcd">System Log</a> 
+</dt>
+<dd><p>Optional plain-text diagnostic log containing information about Robot Framework's internal parsing, imports, execution, and output creation.</p>
+<p><strong>Aliases:</strong> syslog</p>
+
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="6e42791220840eefde8d47eddc4643b3">Tag</a> 
+</dt>
+<dd>Label assigned to a test, task, or keyword to categorize it, support filtering or reporting, or activate reserved Robot Framework behaviour.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="16d70427f173c771801d3950c6f7a177">Tag Pattern</a> 
+</dt>
+<dd>Pattern used to select tags with simple wildcards and the Boolean operators <code>AND</code>, <code>OR</code>, and <code>NOT</code>.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="92dd74392234146445fc75558e6968cb">Task</a> 
+</dt>
+<dd>Executable entity in Robot Framework similar to a test case but used for non-testing automation such as RPA workflows, defined in a <code>*** Tasks ***</code> section.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="2a29b47f78a21467c102f77616611bcc">Teardown</a> 
+</dt>
+<dd>Keyword executed after the content of a suite, test or task, or user keyword to clean up resources, including when earlier execution fails.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="22f74454c882d0bc184beeedadfe6ee9">Test Case</a> 
+</dt>
+<dd><p>Executable specification in Robot Framework that verifies some aspect of system behavior and is defined in a <code>*** Test Cases ***</code> section.</p>
+<p><strong>Aliases:</strong> Test</p>
+
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="ca99d46aaeb824ed27076c09a140a61c">Test Data</a> 
+</dt>
+<dd>Collection of suites, tests, tasks, resource files, keywords, and variables that define what Robot Framework executes.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="49b0b61116c3d35bb68544e1a87dc732">Test Template</a> 
+</dt>
+<dd><p>Setting that defines a keyword used as a template for multiple tests|tasks, where each row of data calls the template keyword with different arguments.</p>
+<p><strong>Aliases:</strong> Task Template</p>
+
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="571218bac6629bea37fd29bf2521b6d7">Timeout</a> 
+</dt>
+<dd>Maximum execution time configured for a test, task, or user keyword, after which Robot Framework stops the affected execution and marks it as failed.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>TRY/EXCEPT Structure</dt>
+<dd>
+<p>Control structure that handles keyword failures by matching error messages in one or more <code>EXCEPT</code> branches, with optional <code>ELSE</code> and <code>FINALLY</code> branches.</p>
+<p><strong>Aliases:</strong> <code>TRY/EXCEPT</code></p>
+</dd>
+<dt>
+	<a id="65be978e1709d0fa3e779b797c68c46d">User Keyword</a> 
+</dt>
+<dd><p>Keyword defined in Robot Framework syntax (typically in suites or resource files) composed of calls to other keywords and statements, often describing higher-level or business-oriented actions.</p>
+<p><strong>Aliases:</strong> Composite Keyword</p>
+
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="024cde3e83d89560b95538d2bca8ed82">Variable</a> 
+</dt>
+<dd>Named reference to a value or collection of values in Robot Framework used to store data and pass it between keywords, tests, and tasks.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="0e0e5b2fd1f4571e8fb5ed287a775684">Variable File</a> 
+</dt>
+<dd>File (often a Python module or other supported format) that provides variables which can be imported into suites using the Variables setting.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="8d34c988ccc1acdcfe611295c5ecf98a">Variable Number of Positional Arguments</a> 
+</dt>
+<dd><p>Optional argument kind in a keyword specification, marked with a single *, that collects all remaining positional values; once present, any subsequent parameters must be provided as named arguments.</p>
+<p><strong>Aliases:</strong> <code>*varargs</code>, <code>*args</code></p>
+
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="385132b21a26679c91ce16e9f6c30f8d">Variable Priority</a> 
+</dt>
+<dd>Order that determines which value Robot Framework uses when variables with the same name come from different sources.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="ebfad14803f7cc3242aa53339bc1f34f">Variable Scope</a> 
+</dt>
+<dd>Visibility and lifetime of a variable (e.g. global, suite, test|task, or local) during a Robot Framework execution.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="728a39a3bcd95c6ed4e6426d1efc6bce">Variable Type Conversion</a> 
+</dt>
+<dd>Automatic conversion of a value to a specified type when a variable is created using typed variable syntax.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="050d0558536de4b405b527f0a73e4c0e">WHILE Loop</a> 
+</dt>
+<dd>Control structure in Robot Framework that repeatedly executes a block of keywords as long as a given condition evaluates to true.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="cf44c69ac5388d087421ff0572b0db3b">XML Output Format</a> 
+</dt>
+<dd>Machine-readable XML representation of execution results used by default for output files.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<a id="d5aea84bea5b127bf4c16111e81769e8">XUnit-Compatible Result File</a> 
+</dt>
+<dd><p>Optional XML file containing an execution summary in a format understood by xUnit-compatible tools.</p>
+<p><strong>Aliases:</strong> xUnit file</p>
+
 <p>
 <div class="mkdocs-ezglossary-refs list">
     

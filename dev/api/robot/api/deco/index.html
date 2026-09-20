@@ -10067,7 +10067,7 @@
   </span>
 
 <a href="#robot.api.deco.L" class="headerlink" title="Permanent link">&para;</a></h2>
-<div class="doc-signature highlight"><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1" href="#example-0-1"></a><span class="n">L</span> <span class="o">=</span> <span class="n"><a class="autorefs autorefs-external" title="typing.TypeVar" href="https://docs.python.org/3/library/typing.html#typing.TypeVar">TypeVar</a></span><span class="p">(</span><span class="s1">'L'</span><span class="p">,</span> <span class="n"><span title="typing.TypeVar(bound)">bound</span></span><span class="o">=</span><span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#type">type</a></span><span class="p">)</span>
+<div class="doc-signature highlight"><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1" href="#example-0-1"></a><span class="n">L</span> <span class="o">=</span> <span class="n"><a class="autorefs autorefs-external" title="typing.TypeVar" href="https://docs.python.org/3/library/typing.html#typing.TypeVar">TypeVar</a></span><span class="p">(</span><span class="s1">'L'</span><span class="p">,</span> <span class="n"><span title="typing.TypeVar(bound)">bound</span></span><span class="o">=</span><span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/builtins/functions.html#type">type</a></span><span class="p">)</span>
 </span></code></pre></div>
 
     <div class="doc doc-contents ">
@@ -10221,7 +10221,7 @@
 the value to be converted. If it accepts two, it gets the value and also
 the library the used keyword belongs to. The latter approach allows making
 conversion based on the library state.</p>
-<p>The converted value is returned. If the value is invalid, a <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/exceptions.html#ValueError">ValueError</a>
+<p>The converted value is returned. If the value is invalid, a <a class="autorefs autorefs-external" href="https://docs.python.org/3/builtins/exceptions.html#ValueError">ValueError</a>
 should be raised.</p>
 
     </div>
@@ -10381,8 +10381,8 @@ the <code>ROBOT_AUTO_KEYWORDS</code> attribute to a false value.</p>
       module-attribute
    (robot.api.deco.K)" href="#robot.api.deco.K">K</a></span>
 </span></code></pre></div><div class="doc-signature highlight"><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1" href="#example-0-1"></a><span class="nf">keyword</span><span class="p">(</span>
-</span><span id="line-0-2"><a id="example-0-2" name="example-0-2" href="#example-0-2"></a>    <span class="n">name</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-</span><span id="line-0-3"><a id="example-0-3" name="example-0-3" href="#example-0-3"></a>    <span class="n">tags</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" title="typing.Sequence" href="https://docs.python.org/3/library/typing.html#typing.Sequence">Sequence</a></span><span class="p">[</span><span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span><span class="p">]</span> <span class="o">=</span> <span class="p">(),</span>
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2" href="#example-0-2"></a>    <span class="n">name</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/builtins/stdtypes.html#str">str</a></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3" href="#example-0-3"></a>    <span class="n">tags</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" title="typing.Sequence" href="https://docs.python.org/3/library/typing.html#typing.Sequence">Sequence</a></span><span class="p">[</span><span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/builtins/stdtypes.html#str">str</a></span><span class="p">]</span> <span class="o">=</span> <span class="p">(),</span>
 </span><span id="line-0-4"><a id="example-0-4" name="example-0-4" href="#example-0-4"></a>    <span class="n">types</span><span class="p">:</span> <span class="n"><span title="robot.api.interfaces.TypeHints">TypeHints</span></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="p">(),</span>
 </span><span id="line-0-5"><a id="example-0-5" name="example-0-5" href="#example-0-5"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="n"><a class="autorefs autorefs-internal" title="            KeywordDecorator
 
@@ -10397,8 +10397,8 @@ the <code>ROBOT_AUTO_KEYWORDS</code> attribute to a false value.</p>
 
   
       module-attribute
-   (robot.api.deco.K)" href="#robot.api.deco.K">K</a></span> <span class="o">|</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-</span><span id="line-0-3"><a id="example-0-3" name="example-0-3" href="#example-0-3"></a>    <span class="n">tags</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" title="typing.Sequence" href="https://docs.python.org/3/library/typing.html#typing.Sequence">Sequence</a></span><span class="p">[</span><span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span><span class="p">]</span> <span class="o">=</span> <span class="p">(),</span>
+   (robot.api.deco.K)" href="#robot.api.deco.K">K</a></span> <span class="o">|</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/builtins/stdtypes.html#str">str</a></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3" href="#example-0-3"></a>    <span class="n">tags</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" title="typing.Sequence" href="https://docs.python.org/3/library/typing.html#typing.Sequence">Sequence</a></span><span class="p">[</span><span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/builtins/stdtypes.html#str">str</a></span><span class="p">]</span> <span class="o">=</span> <span class="p">(),</span>
 </span><span id="line-0-4"><a id="example-0-4" name="example-0-4" href="#example-0-4"></a>    <span class="n">types</span><span class="p">:</span> <span class="n"><span title="robot.api.interfaces.TypeHints">TypeHints</span></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="p">(),</span>
 </span><span id="line-0-5"><a id="example-0-5" name="example-0-5" href="#example-0-5"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="n"><a class="autorefs autorefs-internal" title="            K
 
@@ -10439,7 +10439,7 @@ the <code>ROBOT_AUTO_KEYWORDS</code> attribute to a false value.</p>
 
   
       module-attribute
-   (robot.api.deco.K)" href="#robot.api.deco.K">K</a> | <a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
+   (robot.api.deco.K)" href="#robot.api.deco.K">K</a> | <a class="autorefs autorefs-external" href="https://docs.python.org/3/builtins/stdtypes.html#str">str</a> | None</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -10458,7 +10458,7 @@ method of function.</p>
                 <code>tags</code>
             </td>
             <td>
-                  <code><a class="autorefs autorefs-external" title="typing.Sequence" href="https://docs.python.org/3/library/typing.html#typing.Sequence">Sequence</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a>]</code>
+                  <code><a class="autorefs autorefs-external" title="typing.Sequence" href="https://docs.python.org/3/library/typing.html#typing.Sequence">Sequence</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/builtins/stdtypes.html#str">str</a>]</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -10722,8 +10722,8 @@ is typically used without any arguments like <code>@keyword</code>.</p>
   
       module-attribute
    (robot.api.deco.Scope)" href="#robot.api.deco.Scope">Scope</a></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-</span><span id="line-0-3"><a id="example-0-3" name="example-0-3" href="#example-0-3"></a>    <span class="n">version</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-</span><span id="line-0-4"><a id="example-0-4" name="example-0-4" href="#example-0-4"></a>    <span class="n">converters</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></span><span class="p">[</span><span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#type">type</a></span><span class="p">,</span> <span class="n"><a class="autorefs autorefs-internal" title="            Converter
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3" href="#example-0-3"></a>    <span class="n">version</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/builtins/stdtypes.html#str">str</a></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="line-0-4"><a id="example-0-4" name="example-0-4" href="#example-0-4"></a>    <span class="n">converters</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/builtins/stdtypes.html#dict">dict</a></span><span class="p">[</span><span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/builtins/functions.html#type">type</a></span><span class="p">,</span> <span class="n"><a class="autorefs autorefs-internal" title="            Converter
 
 
   
@@ -10736,7 +10736,7 @@ is typically used without any arguments like <code>@keyword</code>.</p>
       module-attribute
    (robot.api.deco.DocFormat)" href="#robot.api.deco.DocFormat">DocFormat</a></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 </span><span id="line-0-6"><a id="example-0-6" name="example-0-6" href="#example-0-6"></a>    <span class="n">listener</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-</span><span id="line-0-7"><a id="example-0-7" name="example-0-7" href="#example-0-7"></a>    <span class="n">auto_keywords</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+</span><span id="line-0-7"><a id="example-0-7" name="example-0-7" href="#example-0-7"></a>    <span class="n">auto_keywords</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/builtins/functions.html#bool">bool</a></span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
 </span><span id="line-0-8"><a id="example-0-8" name="example-0-8" href="#example-0-8"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="n"><a class="autorefs autorefs-internal" title="            LibraryDecorator
 
 
@@ -10756,8 +10756,8 @@ is typically used without any arguments like <code>@keyword</code>.</p>
   
       module-attribute
    (robot.api.deco.Scope)" href="#robot.api.deco.Scope">Scope</a></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-</span><span id="line-0-3"><a id="example-0-3" name="example-0-3" href="#example-0-3"></a>    <span class="n">version</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-</span><span id="line-0-4"><a id="example-0-4" name="example-0-4" href="#example-0-4"></a>    <span class="n">converters</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a></span><span class="p">[</span><span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#type">type</a></span><span class="p">,</span> <span class="n"><a class="autorefs autorefs-internal" title="            Converter
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3" href="#example-0-3"></a>    <span class="n">version</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/builtins/stdtypes.html#str">str</a></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="line-0-4"><a id="example-0-4" name="example-0-4" href="#example-0-4"></a>    <span class="n">converters</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/builtins/stdtypes.html#dict">dict</a></span><span class="p">[</span><span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/builtins/functions.html#type">type</a></span><span class="p">,</span> <span class="n"><a class="autorefs autorefs-internal" title="            Converter
 
 
   
@@ -10770,7 +10770,7 @@ is typically used without any arguments like <code>@keyword</code>.</p>
       module-attribute
    (robot.api.deco.DocFormat)" href="#robot.api.deco.DocFormat">DocFormat</a></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 </span><span id="line-0-6"><a id="example-0-6" name="example-0-6" href="#example-0-6"></a>    <span class="n">listener</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" title="typing.Any" href="https://docs.python.org/3/library/typing.html#typing.Any">Any</a></span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-</span><span id="line-0-7"><a id="example-0-7" name="example-0-7" href="#example-0-7"></a>    <span class="n">auto_keywords</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+</span><span id="line-0-7"><a id="example-0-7" name="example-0-7" href="#example-0-7"></a>    <span class="n">auto_keywords</span><span class="p">:</span> <span class="n"><a class="autorefs autorefs-external" href="https://docs.python.org/3/builtins/functions.html#bool">bool</a></span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
 </span><span id="line-0-8"><a id="example-0-8" name="example-0-8" href="#example-0-8"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="n"><a class="autorefs autorefs-internal" title="            L
 
 
@@ -10832,7 +10832,7 @@ Sets class attribute <code>ROBOT_LIBRARY_SCOPE</code>.</p>
                 <code>version</code>
             </td>
             <td>
-                  <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#str">str</a> | None</code>
+                  <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/builtins/stdtypes.html#str">str</a> | None</code>
             </td>
             <td>
               <div class="doc-md-description">
@@ -10849,7 +10849,7 @@ Sets class attribute <code>ROBOT_LIBRARY_VERSION</code>.</p>
                 <code>converters</code>
             </td>
             <td>
-                  <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/stdtypes.html#dict">dict</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#type">type</a>, <a class="autorefs autorefs-internal" title="            Converter
+                  <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/builtins/stdtypes.html#dict">dict</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/builtins/functions.html#type">type</a>, <a class="autorefs autorefs-internal" title="            Converter
 
 
   
@@ -10910,7 +10910,7 @@ Sets class attribute <code>ROBOT_LIBRARY_LISTENER</code>.</p>
                 <code>auto_keywords</code>
             </td>
             <td>
-                  <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/library/functions.html#bool">bool</a></code>
+                  <code><a class="autorefs autorefs-external" href="https://docs.python.org/3/builtins/functions.html#bool">bool</a></code>
             </td>
             <td>
               <div class="doc-md-description">
