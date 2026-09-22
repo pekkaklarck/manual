@@ -730,10 +730,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#space-separated-format" class="md-nav__link">
+  <a href="#space-separated-data-format" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Space separated format
+        Space separated data format
       
     </span>
   </a>
@@ -741,10 +741,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#pipe-separated-format" class="md-nav__link">
+  <a href="#pipe-separated-data-format" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Pipe separated format
+        Pipe separated data format
       
     </span>
   </a>
@@ -752,10 +752,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#restructuredtext-format" class="md-nav__link">
+  <a href="#restructuredtext-data-format" class="md-nav__link">
     <span class="md-ellipsis">
       
-        reStructuredText format
+        reStructuredText data format
       
     </span>
   </a>
@@ -763,10 +763,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#markdown-format" class="md-nav__link">
+  <a href="#markdown-data-format" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Markdown format
+        Markdown data format
       
     </span>
   </a>
@@ -774,10 +774,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#json-format" class="md-nav__link">
+  <a href="#json-data-format" class="md-nav__link">
     <span class="md-ellipsis">
       
-        JSON format
+        JSON data format
       
     </span>
   </a>
@@ -1404,7 +1404,7 @@
   <span class="md-ellipsis">
     
   
-    Results
+    Execution artifacts
   
 
     
@@ -10055,20 +10055,20 @@ when <a href="../tasks/#creating-tasks">creating tasks</a>.</p>
 <p>The hierarchical structure for arranging test cases is built as follows:</p>
 <ul>
 <li>Test cases are created in <a href="../suites/#suite-files">suite files</a>.</li>
-<li>A test case file automatically creates a <a href="../suites/#test-suite">test suite</a> containing
+<li>A test case file automatically creates a <a href="../suites/#creating-test-suites">test suite</a> containing
   the test cases in that file.</li>
 <li>A directory containing test case files forms a higher-level test
-  suite. Such a <a href="../suites/#suite-directory">suite directory</a> has suites created from test
+  suite. Such a <a href="../suites/#suite-directories">suite directory</a> has suites created from test
   case files as its child test suites.</li>
 <li>A test suite directory can also contain other test suite directories,
   and this hierarchical structure can be as deeply nested as needed.</li>
-<li>Test suite directories can have a special <a href="../suites/#initialization-file">initialization file</a>
+<li>Test suite directories can have a special <a href="../suites/#suite-initialization-files">initialization file</a>
   configuring the created test suite.</li>
 </ul>
 <p>In addition to this, there are:</p>
 <ul>
-<li><a href="../libraries/#test-libraries">Test libraries</a> containing the lowest-level keywords.</li>
-<li><a href="../resource-files/#resource-files">Resource files</a> with <a href="../variables/#variables">variables</a> and higher-level <a href="../user-keywords/#user-keyword">user keywords</a>.</li>
+<li><a href="../libraries/#using-test-libraries">Test libraries</a> containing the lowest-level keywords.</li>
+<li><a href="../resource-files/#resource-files">Resource files</a> with <a href="../variables/#variables">variables</a> and higher-level <a href="../user-keywords/#creating-user-keywords">user keywords</a>.</li>
 <li><a href="../variable-files/#variable-files">Variable files</a> to provide more flexible ways to create variables
   than resource files.</li>
 </ul>
@@ -10091,7 +10091,7 @@ called tables, listed below:</p>
 <tbody>
 <tr>
 <td>Settings</td>
-<td>1) Importing <a href="../libraries/#test-libraries">test libraries</a>, <a href="../resource-files/#resource-files">resource files</a> and <a href="../variable-files/#variable-files">variable files</a>. 2) Defining metadata for <a href="../suites/#test-suite">test suites</a> and <a href="../tests/#test-case">test cases</a>.</td>
+<td>1) Importing <a href="../libraries/#using-test-libraries">test libraries</a>, <a href="../resource-files/#resource-files">resource files</a> and <a href="../variable-files/#variable-files">variable files</a>.<br>2) Defining metadata for <a href="../suites/#creating-test-suites">test suites</a> and <a href="../tests/#creating-test-cases">test cases</a>.</td>
 </tr>
 <tr>
 <td>Variables</td>
@@ -10138,27 +10138,27 @@ supported translations.</p>
 </div>
 <h2 id="supported-file-formats">Supported file formats<a class="headerlink" href="#supported-file-formats" title="Permanent link">&para;</a></h2>
 <p>The most common approach to create Robot Framework data is using the
-<a href="#space-separated-format">space separated format</a> where pieces of the data, such as keywords
+<a href="#space-separated-data-format">space separated data format</a> where pieces of the data, such as keywords
 and their arguments, are separated from each others with two or more spaces.
-An alternative is using the <a href="#pipe-separated-format">pipe separated format</a> where the separator is
-the pipe character surrounded with spaces (<code>\ |\</code>).</p>
-<p>Suite files typically use the <em>.robot</em> extension, but what files are
-parsed <a href="https://issues.robotframework.org">can be configured</a>. <a href="../resource-files/#resource-files">Resource files</a> can use the <em>.robot</em>
-extension as well, but using the dedicated <em>.resource</em> extension is
+An alternative is using the <a href="#pipe-separated-data-format">pipe separated data format</a> where the separator
+is the pipe character surrounded with spaces (<code class="codesc">|</code>).</p>
+<p>Suite files typically use the <code class="file">.robot</code> extension, but what files are
+parsed <a href="../../execution/configuration/#selecting-files-to-parse">can be configured</a>. <a href="../resource-files/#resource-files">Resource files</a> can use the <code class="file">.robot</code>
+extension as well, but using the dedicated <code class="file">.resource</code> extension is
 recommended and may be mandated in the future. Files containing non-ASCII
 characters must be saved using the UTF-8 encoding.</p>
 <p>Robot Framework supports also <a href="https://en.wikipedia.org/wiki/ReStructuredText">reStructuredText</a> files so that normal
-Robot Framework data is <a href="https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.TestSuite.to_json">embedded into code blocks</a>. Only files with
-the <em>.robot.rst</em> extension are parsed by default. If you would
-rather use just <em>.rst</em> or <em>.rest</em> extension, that needs to be
+Robot Framework data is <a href="#restructuredtext-data-format">embedded into code blocks</a>. Only files with
+the <code class="file">.robot.rst</code> extension are parsed by default. If you would
+rather use just <code class="file">.rst</code> or <code class="file">.rest</code> extension, that needs to be
 configured separately.</p>
 <p>Robot Framework supports also <a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a> files so that normal Robot Framework
-data is <a href="https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.TestSuite.to_dict">embedded into code blocks</a>. Only files with the <em>.robot.md</em>
-extension are parsed by default. If you would rather use just <em>.md</em> or
-<em>.markdown</em> extension, that needs to be configured separately.</p>
-<p>Robot Framework data can also be created in the <a href="../control/#for">JSON format</a> that is targeted
+data is <a href="#markdown-data-format">embedded into code blocks</a>. Only files with the <code class="file">.robot.md</code>
+extension are parsed by default. If you would rather use just <code class="file">.md</code> or
+<code class="file">.markdown</code> extension, that needs to be configured separately.</p>
+<p>Robot Framework supports also <a href="#json-data-format">JSON data format</a> that is targeted
 more for tool developers than normal Robot Framework users. Only JSON files
-with the custom <em>.rbt</em> extension are parsed by default.</p>
+with the custom <code class="file">.rbt</code> extension are parsed by default.</p>
 <p>Earlier Robot Framework versions supported data also in HTML and TSV formats.
 The TSV format still works if the data is compatible with the <a href="#space-separated-format">space separated
 format</a>, but the support for the HTML format has been removed altogether.
@@ -10167,9 +10167,10 @@ format to be able to use them with Robot Framework 3.2 or newer. The easiest
 way to do that is using the <a href="../extend/tidy.md#tidy">Tidy</a> tool, but you must use the version included
 with Robot Framework 3.1 because newer versions do not understand the HTML
 format at all.</p>
-<p><a id="space-separated-plain-text-format"></a>
-<a id="plain-text-format"></a></p>
-<h3 id="space-separated-format">Space separated format<a class="headerlink" href="#space-separated-format" title="Permanent link">&para;</a></h3>
+<p><a id="space-separated-format"></a>
+<a id="space-separated-plain-text-format"></a>
+<a id="plain-text-data-format"></a></p>
+<h3 id="space-separated-data-format">Space separated data format<a class="headerlink" href="#space-separated-data-format" title="Permanent link">&para;</a></h3>
 <p>When Robot Framework parses data, it first splits the data to lines and then
 lines to tokens such as keywords and arguments. When using the space
 separated format, the separator between tokens is two or more spaces or
@@ -10178,7 +10179,7 @@ space, any Unicode character considered to be a space (e.g. no-break space)
 works as a separator. The number of spaces used as separator can vary, as
 long as there are at least two, making it possible to align the data nicely
 in settings and elsewhere when it makes the data easier to understand.</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1"> 1</a></span>
 <span class="normal"><a href="#example-0-2"> 2</a></span>
 <span class="normal"><a href="#example-0-3"> 3</a></span>
 <span class="normal"><a href="#example-0-4"> 4</a></span>
@@ -10218,7 +10219,7 @@ in settings and elsewhere when it makes the data easier to understand.</p>
 </span><span id="line-0-19"><a id="example-0-19" name="example-0-19"></a><span class="p">    [</span><span class="kn">Arguments</span><span class="p">]    ${</span><span class="nv">path</span><span class="p">}</span>
 </span><span id="line-0-20"><a id="example-0-20" name="example-0-20"></a><span class="p">    </span><span class="nf">Directory Should Exist</span><span class="p">    ${</span><span class="nv">path</span><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
-Because tabs and consecutive spaces are considered separators, they must
+<p>Because tabs and consecutive spaces are considered separators, they must
 be escaped if they are needed in keyword arguments or elsewhere
 in the actual data. It is possible to use special escape syntax like
 <code>\t</code> for tab and <code>\xA0</code> for no-break space as well as <a href="../variables/#built-in-variables">built-in variables</a>
@@ -10234,7 +10235,8 @@ to use four spaces to make the separator easier to recognize.</p>
 were converted to ASCII spaces during parsing. Nowadays all data
 is preserved as-is.</p>
 </div>
-<h3 id="pipe-separated-format">Pipe separated format<a class="headerlink" href="#pipe-separated-format" title="Permanent link">&para;</a></h3>
+<p><a id="pipe-separated-format"></a></p>
+<h3 id="pipe-separated-data-format">Pipe separated data format<a class="headerlink" href="#pipe-separated-data-format" title="Permanent link">&para;</a></h3>
 <p>The biggest problem of the space delimited format is that visually
 separating keywords from arguments can be tricky. This is a problem
 especially if keywords take a lot of arguments and/or arguments
@@ -10246,7 +10248,7 @@ but the pipe at the end of the line is optional. There must always be at
 least one space or tab on both sides of the pipe except at the beginning and
 at the end of the line. There is no need to align the pipes, but that often
 makes the data easier to read.</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-1-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-1-1"> 1</a></span>
 <span class="normal"><a href="#example-1-2"> 2</a></span>
 <span class="normal"><a href="#example-1-3"> 3</a></span>
 <span class="normal"><a href="#example-1-4"> 4</a></span>
@@ -10278,9 +10280,9 @@ makes the data easier to read.</p>
 </span><span id="line-1-15"><a id="example-1-15" name="example-1-15"></a><span class="p">| </span><span class="gu">My Keyword</span><span class="p">         | [</span><span class="kn">Arguments</span><span class="p">]            | ${</span><span class="nv">path</span><span class="p">} |</span>
 </span><span id="line-1-16"><a id="example-1-16" name="example-1-16"></a><span class="p">|                    | </span><span class="nf">Directory Should Exist</span><span class="p"> | ${</span><span class="nv">path</span><span class="p">} |</span>
 </span></code></pre></div></td></tr></table></div>
-When using the pipe separated format, consecutive spaces or tabs inside
+<p>When using the pipe separated format, consecutive spaces or tabs inside
 arguments do not need to be escaped. Similarly empty columns do not need
-to be escaped except <a href="https://issues.robotframework.org">if they are at the end</a>. Possible pipes surrounded by
+to be escaped except <a href="#escaping">if they are at the end</a>. Possible pipes surrounded by
 spaces in the actual test data must be escaped with a backslash, though:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-2-1">1</a></span>
 <span class="normal"><a href="#example-2-2">2</a></span>
@@ -10294,7 +10296,7 @@ spaces in the actual test data must be escaped with a backslash, though:</p>
 in Robot Framework 3.2. Prior to it non-ASCII spaces used in
 the data were also converted to ASCII spaces.</p>
 </div>
-<h3 id="restructuredtext-format">reStructuredText format<a class="headerlink" href="#restructuredtext-format" title="Permanent link">&para;</a></h3>
+<h3 id="restructuredtext-data-format">reStructuredText data format<a class="headerlink" href="#restructuredtext-data-format" title="Permanent link">&para;</a></h3>
 <p><a href="https://en.wikipedia.org/wiki/ReStructuredText">reStructuredText</a> (reST) is an easy-to-read plain text markup syntax that
 is commonly used for documentation of Python projects, including Python itself
 as well as this User Guide. reST documents are most often compiled to HTML,
@@ -10310,8 +10312,8 @@ Python <a href="https://pypi.python.org/pypi/docutils">docutils</a> module to be
 <p>When using Robot Framework with reStructuredText files, normal Robot Framework
 data is embedded to so called code blocks. In standard reST code blocks are
 marked using the <code>code</code> directive, but Robot Framework supports also
-<code>code-block</code> or <code>sourcecode</code> directives used by the <a href="http://sphinx-doc.org/">Sphinx</a> tool.</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-3-1"> 1</a></span>
+<code>code-block</code> or <code>sourcecode</code> directives used by the <a href="https://sphinx-doc.org/">Sphinx</a> tool.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-3-1"> 1</a></span>
 <span class="normal"><a href="#example-3-2"> 2</a></span>
 <span class="normal"><a href="#example-3-3"> 3</a></span>
 <span class="normal"><a href="#example-3-4"> 4</a></span>
@@ -10389,29 +10391,30 @@ marked using the <code>code</code> directive, but Robot Framework supports also
 </span><span id="line-3-38"><a id="example-3-38" name="example-3-38"></a>   <span class="k">def</span><span class="w"> </span><span class="nf">example</span><span class="p">():</span>
 </span><span id="line-3-39"><a id="example-3-39" name="example-3-39"></a>       <span class="nb">print</span><span class="p">(</span><span class="s1">'Hello, world!'</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
-Robot Framework supports reStructuredText files using <em>.robot.rst</em>,
-<em>.rst</em> and <em>.rest</em> extensions. To avoid parsing unrelated
-reStructuredText files, only files with the <em>.robot.rst</em> extension
+<p>Robot Framework supports reStructuredText files using <code class="file">.robot.rst</code>,
+<code class="file">.rst</code> and <code class="file">.rest</code> extensions. To avoid parsing unrelated
+reStructuredText files, only files with the <code class="file">.robot.rst</code> extension
 are parsed by default when executing a directory. Parsing files with
-other extensions <a href="https://issues.robotframework.org">can be enabled</a> by using either <code>--parseinclude</code>
-or <code>--extension</code> option.</p>
+other extensions <a href="../../execution/configuration/#selecting-files-to-parse">can be enabled</a> by using either <code class="option">--parseinclude</code>
+or <code class="option">--extension</code> option.</p>
 <p>When Robot Framework parses reStructuredText files, errors below level
 <code>SEVERE</code> are ignored to avoid noise about possible non-standard directives
 and other such markup. This may hide also real errors, but they can be seen
 when processing files using reStructuredText tooling normally.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Parsing <em>.robot.rst</em> files automatically is new in
+<p>Parsing <code class="file">.robot.rst</code> files automatically is new in
 Robot Framework 6.1.</p>
 </div>
-<h3 id="markdown-format">Markdown format<a class="headerlink" href="#markdown-format" title="Permanent link">&para;</a></h3>
+<h3 id="markdown-data-format">Markdown data format<a class="headerlink" href="#markdown-data-format" title="Permanent link">&para;</a></h3>
 <p><a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a> is a lightweight plain text markup syntax that is widely used for
 documentation, README files, and technical content across the software
 development industry. Because of its natural fit for narrative documentation,
 using Markdown with Robot Framework allows you to create test data in a format
 that is easy to read, write and preview using standard editors and tools.</p>
 <p>When Robot Framework parses Markdown files, it searches for code blocks
-starting with fences of at least three backticks <code>\</code>``<code>or tildes</code>~~~<code>and the</code>robotframework<code>or</code>robot` language tag.
+starting with fences of at least three backticks <code class="codesc">```</code> or tildes
+<code>~~~</code> and the <code>robotframework</code> or <code>robot</code> language tag.
 All content outside such blocks is ignored. The parser follows the <a href="https://spec.commonmark.org">CommonMark</a>
 specification for fenced code blocks, which means that the opening and closing
 fences must match and the closing fence must be at least as long as the
@@ -10438,65 +10441,159 @@ will be considered as part of the code block itself.</p>
 <span class="normal"><a href="#example-4-19">19</a></span>
 <span class="normal"><a href="#example-4-20">20</a></span>
 <span class="normal"><a href="#example-4-21">21</a></span>
-<span class="normal"><a href="#example-4-22">22</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-4-1"><a id="example-4-1" name="example-4-1"></a><span class="gh"># Markdown example</span>
+<span class="normal"><a href="#example-4-22">22</a></span>
+<span class="normal"><a href="#example-4-23">23</a></span>
+<span class="normal"><a href="#example-4-24">24</a></span>
+<span class="normal"><a href="#example-4-25">25</a></span>
+<span class="normal"><a href="#example-4-26">26</a></span>
+<span class="normal"><a href="#example-4-27">27</a></span>
+<span class="normal"><a href="#example-4-28">28</a></span>
+<span class="normal"><a href="#example-4-29">29</a></span>
+<span class="normal"><a href="#example-4-30">30</a></span>
+<span class="normal"><a href="#example-4-31">31</a></span>
+<span class="normal"><a href="#example-4-32">32</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-4-1"><a id="example-4-1" name="example-4-1"></a><span class="gh"># Markdown example</span>
 </span><span id="line-4-2"><a id="example-4-2" name="example-4-2"></a>
 </span><span id="line-4-3"><a id="example-4-3" name="example-4-3"></a>This text is outside code blocks and thus ignored.
 </span><span id="line-4-4"><a id="example-4-4" name="example-4-4"></a>
-</span><span id="line-4-5"><a id="example-4-5" name="example-4-5"></a>```robotframework
-</span><span id="line-4-6"><a id="example-4-6" name="example-4-6"></a>*** Settings ***
-</span><span id="line-4-7"><a id="example-4-7" name="example-4-7"></a>Documentation    Example using the Markdown format.
-</span><span id="line-4-8"><a id="example-4-8" name="example-4-8"></a>Library          OperatingSystem
+</span><span id="line-4-5"><a id="example-4-5" name="example-4-5"></a><span class="sb">```robotframework</span>
+</span><span id="line-4-6"><a id="example-4-6" name="example-4-6"></a><span class="gh">*** Settings ***</span>
+</span><span id="line-4-7"><a id="example-4-7" name="example-4-7"></a><span class="kn">Documentation</span><span class="p">    </span><span class="s">Example using the Markdown format.</span>
+</span><span id="line-4-8"><a id="example-4-8" name="example-4-8"></a><span class="kn">Library</span><span class="p">          </span><span class="nn">OperatingSystem</span>
 </span><span id="line-4-9"><a id="example-4-9" name="example-4-9"></a>
-</span><span id="line-4-10"><a id="example-4-10" name="example-4-10"></a>*** Variables ***
-</span><span id="line-4-11"><a id="example-4-11" name="example-4-11"></a>${MESSAGE}       Hello, world!
+</span><span id="line-4-10"><a id="example-4-10" name="example-4-10"></a><span class="gh">*** Variables ***</span>
+</span><span id="line-4-11"><a id="example-4-11" name="example-4-11"></a><span class="p">${</span><span class="nv">MESSAGE</span><span class="p">}       </span><span class="s">Hello, world!</span>
 </span><span id="line-4-12"><a id="example-4-12" name="example-4-12"></a>
-</span><span id="line-4-13"><a id="example-4-13" name="example-4-13"></a>*** Test Cases ***
-</span><span id="line-4-14"><a id="example-4-14" name="example-4-14"></a>My Test
-</span><span id="line-4-15"><a id="example-4-15" name="example-4-15"></a>    [Documentation]    Example test.
-</span><span id="line-4-16"><a id="example-4-16" name="example-4-16"></a>    Log    ${MESSAGE}
-</span><span id="line-4-17"><a id="example-4-17" name="example-4-17"></a>    My Keyword    ${CURDIR}
+</span><span id="line-4-13"><a id="example-4-13" name="example-4-13"></a><span class="gh">*** Test Cases ***</span>
+</span><span id="line-4-14"><a id="example-4-14" name="example-4-14"></a><span class="gu">My Test</span>
+</span><span id="line-4-15"><a id="example-4-15" name="example-4-15"></a><span class="p">    [</span><span class="kn">Documentation</span><span class="p">]    </span><span class="s">Example test.</span>
+</span><span id="line-4-16"><a id="example-4-16" name="example-4-16"></a><span class="p">    </span><span class="nf">Log</span><span class="p">    ${</span><span class="nv">MESSAGE</span><span class="p">}</span>
+</span><span id="line-4-17"><a id="example-4-17" name="example-4-17"></a><span class="p">    </span><span class="nf">My Keyword</span><span class="p">    ${</span><span class="nv">CURDIR</span><span class="p">}</span>
 </span><span id="line-4-18"><a id="example-4-18" name="example-4-18"></a>
-</span><span id="line-4-19"><a id="example-4-19" name="example-4-19"></a>*** Keywords ***
-</span><span id="line-4-20"><a id="example-4-20" name="example-4-20"></a>My Keyword
-</span><span id="line-4-21"><a id="example-4-21" name="example-4-21"></a>    [Arguments]    ${path}
-</span><span id="line-4-22"><a id="example-4-22" name="example-4-22"></a>    Directory Should Exist    ${path}
+</span><span id="line-4-19"><a id="example-4-19" name="example-4-19"></a><span class="gh">*** Keywords ***</span>
+</span><span id="line-4-20"><a id="example-4-20" name="example-4-20"></a><span class="gu">My Keyword</span>
+</span><span id="line-4-21"><a id="example-4-21" name="example-4-21"></a><span class="p">    [</span><span class="kn">Arguments</span><span class="p">]    ${</span><span class="nv">path</span><span class="p">}</span>
+</span><span id="line-4-22"><a id="example-4-22" name="example-4-22"></a><span class="p">    </span><span class="nf">Directory Should Exist</span><span class="p">    ${</span><span class="nv">path</span><span class="p">}</span>
+</span><span id="line-4-23"><a id="example-4-23" name="example-4-23"></a><span class="sb">```</span>
+</span><span id="line-4-24"><a id="example-4-24" name="example-4-24"></a>
+</span><span id="line-4-25"><a id="example-4-25" name="example-4-25"></a>More free text here. There could be additional code blocks with more
+</span><span id="line-4-26"><a id="example-4-26" name="example-4-26"></a>Robot Framework data as well.
+</span><span id="line-4-27"><a id="example-4-27" name="example-4-27"></a>
+</span><span id="line-4-28"><a id="example-4-28" name="example-4-28"></a><span class="sb">```python</span>
+</span><span id="line-4-29"><a id="example-4-29" name="example-4-29"></a><span class="c1"># This code block is ignored.</span>
+</span><span id="line-4-30"><a id="example-4-30" name="example-4-30"></a><span class="k">def</span><span class="w"> </span><span class="nf">example</span><span class="p">():</span>
+</span><span id="line-4-31"><a id="example-4-31" name="example-4-31"></a>    <span class="nb">print</span><span class="p">(</span><span class="s1">'Hello, world!'</span><span class="p">)</span>
+</span><span id="line-4-32"><a id="example-4-32" name="example-4-32"></a><span class="sb">```</span>
 </span></code></pre></div></td></tr></table></div>
-<p>More free text here. There could be additional code blocks with more
-Robot Framework data as well.</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-5-1">1</a></span>
-<span class="normal"><a href="#example-5-2">2</a></span>
-<span class="normal"><a href="#example-5-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-5-1"><a id="example-5-1" name="example-5-1"></a><span class="c1"># This code block is ignored.</span>
-</span><span id="line-5-2"><a id="example-5-2" name="example-5-2"></a><span class="k">def</span><span class="w"> </span><span class="nf">example</span><span class="p">():</span>
-</span><span id="line-5-3"><a id="example-5-3" name="example-5-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="s1">'Hello, world!'</span><span class="p">)</span>
+<p>Robot Framework supports Markdown files using <code class="file">.robot.md</code>,
+<code class="file">.md</code> and <code class="file">.markdown</code> extensions. To avoid parsing unrelated
+Markdown files, only files with the <code class="file">.robot.md</code> extension
+are parsed by default when executing a directory. Parsing files with
+the <code class="file">.md</code> or <code class="file">.markdown</code> extension <a href="../../execution/configuration/#selecting-files-to-parse">can be enabled</a> by using
+either <code class="option">--parseinclude</code> or <code class="option">--extension</code> option.</p>
+<h4 id="living-documentation">Living documentation<a class="headerlink" href="#living-documentation" title="Permanent link">&para;</a></h4>
+<p>In software development, the term <em>living documentation</em> is commonly used when
+acceptance tests are written in such a way that they can be used as an
+executable specification. The executable specification acts as the single
+source of truth from which both the specification document and the test
+automation is derived. When the specification changes, the test changes,
+implying a compliant system when the tests pass.</p>
+<p>A common issue is that test automation requires documentation files to use
+the syntax of the selected automation tool, but the people responsible for
+the specification typically do not work well with such syntax-rich files.
+Robot Framework data files can in general be written using style that can
+work reasonably well with all stakeholders, but embedding Robot Framework
+data to Markdown files makes it even more convenient.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can use Markdown comment blocks created using the <code>&lt;!--- comment --&gt;</code>
+syntax for hiding technical content from generated HTML files.</p>
+</div>
+<p>Example:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-5-1"> 1</a></span>
+<span class="normal"><a href="#example-5-2"> 2</a></span>
+<span class="normal"><a href="#example-5-3"> 3</a></span>
+<span class="normal"><a href="#example-5-4"> 4</a></span>
+<span class="normal"><a href="#example-5-5"> 5</a></span>
+<span class="normal"><a href="#example-5-6"> 6</a></span>
+<span class="normal"><a href="#example-5-7"> 7</a></span>
+<span class="normal"><a href="#example-5-8"> 8</a></span>
+<span class="normal"><a href="#example-5-9"> 9</a></span>
+<span class="normal"><a href="#example-5-10">10</a></span>
+<span class="normal"><a href="#example-5-11">11</a></span>
+<span class="normal"><a href="#example-5-12">12</a></span>
+<span class="normal"><a href="#example-5-13">13</a></span>
+<span class="normal"><a href="#example-5-14">14</a></span>
+<span class="normal"><a href="#example-5-15">15</a></span>
+<span class="normal"><a href="#example-5-16">16</a></span>
+<span class="normal"><a href="#example-5-17">17</a></span>
+<span class="normal"><a href="#example-5-18">18</a></span>
+<span class="normal"><a href="#example-5-19">19</a></span>
+<span class="normal"><a href="#example-5-20">20</a></span>
+<span class="normal"><a href="#example-5-21">21</a></span>
+<span class="normal"><a href="#example-5-22">22</a></span>
+<span class="normal"><a href="#example-5-23">23</a></span>
+<span class="normal"><a href="#example-5-24">24</a></span>
+<span class="normal"><a href="#example-5-25">25</a></span>
+<span class="normal"><a href="#example-5-26">26</a></span>
+<span class="normal"><a href="#example-5-27">27</a></span>
+<span class="normal"><a href="#example-5-28">28</a></span>
+<span class="normal"><a href="#example-5-29">29</a></span>
+<span class="normal"><a href="#example-5-30">30</a></span>
+<span class="normal"><a href="#example-5-31">31</a></span>
+<span class="normal"><a href="#example-5-32">32</a></span>
+<span class="normal"><a href="#example-5-33">33</a></span>
+<span class="normal"><a href="#example-5-34">34</a></span>
+<span class="normal"><a href="#example-5-35">35</a></span>
+<span class="normal"><a href="#example-5-36">36</a></span>
+<span class="normal"><a href="#example-5-37">37</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-5-1"><a id="example-5-1" name="example-5-1"></a><span class="gh"># Feature title</span>
+</span><span id="line-5-2"><a id="example-5-2" name="example-5-2"></a>
+</span><span id="line-5-3"><a id="example-5-3" name="example-5-3"></a>Free text introducing the feature. You can use tables, lists, images,
+</span><span id="line-5-4"><a id="example-5-4" name="example-5-4"></a>etc. if needed.
+</span><span id="line-5-5"><a id="example-5-5" name="example-5-5"></a>
+</span><span id="line-5-6"><a id="example-5-6" name="example-5-6"></a>&lt;!---  Markdown comment block hiding technical details.
+</span><span id="line-5-7"><a id="example-5-7" name="example-5-7"></a>
+</span><span id="line-5-8"><a id="example-5-8" name="example-5-8"></a><span class="sb">```robotframework</span>
+</span><span id="line-5-9"><a id="example-5-9" name="example-5-9"></a><span class="gh">*** Settings ***</span>
+</span><span id="line-5-10"><a id="example-5-10" name="example-5-10"></a><span class="kn">Resource</span><span class="p">        </span><span class="nn">example.resource</span>
+</span><span id="line-5-11"><a id="example-5-11" name="example-5-11"></a>
+</span><span id="line-5-12"><a id="example-5-12" name="example-5-12"></a><span class="gh">*** Test Cases ***</span>
+</span><span id="line-5-13"><a id="example-5-13" name="example-5-13"></a><span class="sb">```</span>
+</span><span id="line-5-14"><a id="example-5-14" name="example-5-14"></a>
+</span><span id="line-5-15"><a id="example-5-15" name="example-5-15"></a>--&gt;
+</span><span id="line-5-16"><a id="example-5-16" name="example-5-16"></a>
+</span><span id="line-5-17"><a id="example-5-17" name="example-5-17"></a><span class="gu">## Business Rule 1</span>
+</span><span id="line-5-18"><a id="example-5-18" name="example-5-18"></a>
+</span><span id="line-5-19"><a id="example-5-19" name="example-5-19"></a>In Specification by Example, test cases are usually grouped per business
+</span><span id="line-5-20"><a id="example-5-20" name="example-5-20"></a>rule. Example scenarios illustrate the behavior of the rule. The scenarios
+</span><span id="line-5-21"><a id="example-5-21" name="example-5-21"></a>are what links the specification document and Robot Framework together. The
+</span><span id="line-5-22"><a id="example-5-22" name="example-5-22"></a>scenarios stay visible to both sides and are not inside a comment block.
+</span><span id="line-5-23"><a id="example-5-23" name="example-5-23"></a>
+</span><span id="line-5-24"><a id="example-5-24" name="example-5-24"></a><span class="sb">```robotframework</span>
+</span><span id="line-5-25"><a id="example-5-25" name="example-5-25"></a><span class="c">Scenario 1</span>
+</span><span id="line-5-26"><a id="example-5-26" name="example-5-26"></a><span class="p">    </span><span class="c">Given we want to use BDD</span>
+</span><span id="line-5-27"><a id="example-5-27" name="example-5-27"></a><span class="p">    </span><span class="c">When we use Given/When/Then prefixes</span>
+</span><span id="line-5-28"><a id="example-5-28" name="example-5-28"></a><span class="p">    </span><span class="c">Then everything works fine.</span>
+</span><span id="line-5-29"><a id="example-5-29" name="example-5-29"></a><span class="sb">```</span>
+</span><span id="line-5-30"><a id="example-5-30" name="example-5-30"></a>
+</span><span id="line-5-31"><a id="example-5-31" name="example-5-31"></a>Some additional in-between explanation.
+</span><span id="line-5-32"><a id="example-5-32" name="example-5-32"></a>
+</span><span id="line-5-33"><a id="example-5-33" name="example-5-33"></a><span class="sb">```robotframework</span>
+</span><span id="line-5-34"><a id="example-5-34" name="example-5-34"></a><span class="c">Scenario 2</span>
+</span><span id="line-5-35"><a id="example-5-35" name="example-5-35"></a><span class="p">    </span><span class="c">There is not need to use BDD if that adds no benefits</span>
+</span><span id="line-5-36"><a id="example-5-36" name="example-5-36"></a><span class="p">    </span><span class="c">Complicated syntax should be avoided anyway</span>
+</span><span id="line-5-37"><a id="example-5-37" name="example-5-37"></a><span class="sb">```</span>
 </span></code></pre></div></td></tr></table></div>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-6-1"> 1</a></span>
-<span class="normal"><a href="#example-6-2"> 2</a></span>
-<span class="normal"><a href="#example-6-3"> 3</a></span>
-<span class="normal"><a href="#example-6-4"> 4</a></span>
-<span class="normal"><a href="#example-6-5"> 5</a></span>
-<span class="normal"><a href="#example-6-6"> 6</a></span>
-<span class="normal"><a href="#example-6-7"> 7</a></span>
-<span class="normal"><a href="#example-6-8"> 8</a></span>
-<span class="normal"><a href="#example-6-9"> 9</a></span>
-<span class="normal"><a href="#example-6-10">10</a></span>
-<span class="normal"><a href="#example-6-11">11</a></span>
-<span class="normal"><a href="#example-6-12">12</a></span>
-<span class="normal"><a href="#example-6-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-6-1"><a id="example-6-1" name="example-6-1"></a><span class="n">Robot</span> <span class="n">Framework</span> <span class="n">supports</span> <span class="n">Markdown</span> <span class="n">files</span> <span class="n">using</span> <span class="o">*.</span><span class="n">robot</span><span class="o">.</span><span class="n">md</span><span class="o">*</span><span class="p">,</span>
-</span><span id="line-6-2"><a id="example-6-2" name="example-6-2"></a><span class="o">*.</span><span class="n">md</span><span class="o">*</span> <span class="ow">and</span> <span class="o">*.</span><span class="n">markdown</span><span class="o">*</span> <span class="n">extensions</span><span class="o">.</span> <span class="n">To</span> <span class="n">avoid</span> <span class="n">parsing</span> <span class="n">unrelated</span>
-</span><span id="line-6-3"><a id="example-6-3" name="example-6-3"></a><span class="n">Markdown</span> <span class="n">files</span><span class="p">,</span> <span class="n">only</span> <span class="n">files</span> <span class="k">with</span> <span class="n">the</span> <span class="o">*.</span><span class="n">robot</span><span class="o">.</span><span class="n">md</span><span class="o">*</span> <span class="n">extension</span>
-</span><span id="line-6-4"><a id="example-6-4" name="example-6-4"></a><span class="n">are</span> <span class="n">parsed</span> <span class="n">by</span> <span class="n">default</span> <span class="n">when</span> <span class="n">executing</span> <span class="n">a</span> <span class="n">directory</span><span class="o">.</span> <span class="n">Parsing</span> <span class="n">files</span> <span class="k">with</span>
-</span><span id="line-6-5"><a id="example-6-5" name="example-6-5"></a><span class="n">the</span> <span class="o">*.</span><span class="n">md</span><span class="o">*</span> <span class="ow">or</span> <span class="o">*.</span><span class="n">markdown</span><span class="o">*</span> <span class="n">extension</span> <span class="p">[</span><span class="n">can</span> <span class="n">be</span> <span class="n">enabled</span><span class="p">](</span><span class="o">../</span><span class="n">executing</span><span class="o">-</span><span class="n">tests</span><span class="o">/</span><span class="n">configuring</span><span class="o">-</span><span class="n">execution</span><span class="o">.</span><span class="n">md</span><span class="c1">#selecting-files-to-parse) by using</span>
-</span><span id="line-6-6"><a id="example-6-6" name="example-6-6"></a><span class="n">either</span> <span class="err">`</span><span class="o">--</span><span class="n">parseinclude</span><span class="err">`</span> <span class="ow">or</span> <span class="err">`</span><span class="o">--</span><span class="n">extension</span><span class="err">`</span> <span class="n">option</span><span class="o">.</span>
-</span><span id="line-6-7"><a id="example-6-7" name="example-6-7"></a>
-</span><span id="line-6-8"><a id="example-6-8" name="example-6-8"></a><span class="err">!!!</span> <span class="n">note</span>
-</span><span id="line-6-9"><a id="example-6-9" name="example-6-9"></a>    <span class="n">Using</span> <span class="n">Markdown_</span> <span class="n">files</span> <span class="k">with</span> <span class="n">Robot</span> <span class="n">Framework</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">require</span> <span class="nb">any</span>
-</span><span id="line-6-10"><a id="example-6-10" name="example-6-10"></a>    <span class="n">external</span> <span class="n">Python</span> <span class="n">module</span> <span class="n">to</span> <span class="n">be</span> <span class="n">installed</span><span class="o">.</span>
-</span><span id="line-6-11"><a id="example-6-11" name="example-6-11"></a>
-</span><span id="line-6-12"><a id="example-6-12" name="example-6-12"></a><span class="err">!!!</span> <span class="n">note</span>
-</span><span id="line-6-13"><a id="example-6-13" name="example-6-13"></a>    <span class="n">Markdown</span> <span class="n">support</span> <span class="ow">is</span> <span class="n">new</span> <span class="ow">in</span> <span class="n">Robot</span> <span class="n">Framework</span> <span class="mf">7.5</span><span class="o">.</span>
-</span></code></pre></div></td></tr></table></div></p>
-<h3 id="json-format">JSON format<a class="headerlink" href="#json-format" title="Permanent link">&para;</a></h3>
-<p>Robot Framework supports data also in the JSON_ format. This format is designed
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Using <a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a> files with Robot Framework does not require any
+external Markdown module or tool to be installed.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Markdown support is new in Robot Framework 7.5.</p>
+</div>
+<h3 id="json-data-format">JSON data format<a class="headerlink" href="#json-data-format" title="Permanent link">&para;</a></h3>
+<p>Robot Framework supports data also in the <a href="https://json.org">JSON</a> format. This format is designed
 more for tool developers than for regular Robot Framework users and it is not
 meant to be edited manually. Its most important use cases are:</p>
 <ul>
@@ -10510,15 +10607,40 @@ meant to be edited manually. Its most important use cases are:</p>
 <p class="admonition-title">Note</p>
 <p>The JSON data support is new in Robot Framework 6.1 and it can be
 enhanced in future Robot Framework versions. If you have an enhancement
-idea or believe you have encountered a bug, please submit an issue__
-or start a discussion thread on the <code>#devel</code> channel on our Slack_.</p>
+idea or believe you have encountered a bug, please submit an <a href="https://issues.robotframework.org">issue</a>
+or start a discussion thread on the <code>#devel</code> channel on our <a href="https://slack.robotframework.org">Slack</a>.</p>
 </div>
 <h4 id="converting-suite-to-json">Converting suite to JSON<a class="headerlink" href="#converting-suite-to-json" title="Permanent link">&para;</a></h4>
-<p>A suite structure can be serialized into JSON by using the <a href="https://robot-framework.readthedocs.io/en/master/autodoc/robot.result.html#robot.result.model.TestSuite.to_json">TestSuite.to_json</a>
+<p>A suite structure can be serialized into JSON by using the <a href="https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.TestSuite.to_json">TestSuite.to_json</a>
 method. When used without arguments, it returns JSON data as a string, but
 it also accepts a path or an open file where to write JSON data along with
 configuration options related to JSON formatting:</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-7-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-6-1"> 1</a></span>
+<span class="normal"><a href="#example-6-2"> 2</a></span>
+<span class="normal"><a href="#example-6-3"> 3</a></span>
+<span class="normal"><a href="#example-6-4"> 4</a></span>
+<span class="normal"><a href="#example-6-5"> 5</a></span>
+<span class="normal"><a href="#example-6-6"> 6</a></span>
+<span class="normal"><a href="#example-6-7"> 7</a></span>
+<span class="normal"><a href="#example-6-8"> 8</a></span>
+<span class="normal"><a href="#example-6-9"> 9</a></span>
+<span class="normal"><a href="#example-6-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-6-1"><a id="example-6-1" name="example-6-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">robot.running</span><span class="w"> </span><span class="kn">import</span> <span class="n">TestSuite</span>
+</span><span id="line-6-2"><a id="example-6-2" name="example-6-2"></a>
+</span><span id="line-6-3"><a id="example-6-3" name="example-6-3"></a><span class="c1"># Create suite based on data on the file system.</span>
+</span><span id="line-6-4"><a id="example-6-4" name="example-6-4"></a><span class="n">suite</span> <span class="o">=</span> <span class="n">TestSuite</span><span class="o">.</span><span class="n">from_file_system</span><span class="p">(</span><span class="s1">'/path/to/data'</span><span class="p">)</span>
+</span><span id="line-6-5"><a id="example-6-5" name="example-6-5"></a>
+</span><span id="line-6-6"><a id="example-6-6" name="example-6-6"></a><span class="c1"># Get JSON data as a string.</span>
+</span><span id="line-6-7"><a id="example-6-7" name="example-6-7"></a><span class="n">data</span> <span class="o">=</span> <span class="n">suite</span><span class="o">.</span><span class="n">to_json</span><span class="p">()</span>
+</span><span id="line-6-8"><a id="example-6-8" name="example-6-8"></a>
+</span><span id="line-6-9"><a id="example-6-9" name="example-6-9"></a><span class="c1"># Save JSON data to a file with custom indentation.</span>
+</span><span id="line-6-10"><a id="example-6-10" name="example-6-10"></a><span class="n">suite</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="s1">'data.rbt'</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<p>If you would rather work with Python data and then convert that to JSON
+or some other format yourself, you can use <a href="https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.TestSuite.to_dict">TestSuite.to_dict</a> instead.</p>
+<h4 id="creating-suite-from-json">Creating suite from JSON<a class="headerlink" href="#creating-suite-from-json" title="Permanent link">&para;</a></h4>
+<p>A suite can be constructed from JSON data using the <a href="https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.TestSuite.from_json">TestSuite.from_json</a>
+method. It works both with JSON strings and paths to JSON files:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-7-1"> 1</a></span>
 <span class="normal"><a href="#example-7-2"> 2</a></span>
 <span class="normal"><a href="#example-7-3"> 3</a></span>
 <span class="normal"><a href="#example-7-4"> 4</a></span>
@@ -10529,21 +10651,35 @@ configuration options related to JSON formatting:</p>
 <span class="normal"><a href="#example-7-9"> 9</a></span>
 <span class="normal"><a href="#example-7-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-7-1"><a id="example-7-1" name="example-7-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">robot.running</span><span class="w"> </span><span class="kn">import</span> <span class="n">TestSuite</span>
 </span><span id="line-7-2"><a id="example-7-2" name="example-7-2"></a>
-</span><span id="line-7-3"><a id="example-7-3" name="example-7-3"></a><span class="c1"># Create suite based on data on the file system.</span>
-</span><span id="line-7-4"><a id="example-7-4" name="example-7-4"></a><span class="n">suite</span> <span class="o">=</span> <span class="n">TestSuite</span><span class="o">.</span><span class="n">from_file_system</span><span class="p">(</span><span class="s1">'/path/to/data'</span><span class="p">)</span>
+</span><span id="line-7-3"><a id="example-7-3" name="example-7-3"></a><span class="c1"># Create suite from JSON data in a file.</span>
+</span><span id="line-7-4"><a id="example-7-4" name="example-7-4"></a><span class="n">suite</span> <span class="o">=</span> <span class="n">TestSuite</span><span class="o">.</span><span class="n">from_json</span><span class="p">(</span><span class="s1">'data.rbt'</span><span class="p">)</span>
 </span><span id="line-7-5"><a id="example-7-5" name="example-7-5"></a>
-</span><span id="line-7-6"><a id="example-7-6" name="example-7-6"></a><span class="c1"># Get JSON data as a string.</span>
-</span><span id="line-7-7"><a id="example-7-7" name="example-7-7"></a><span class="n">data</span> <span class="o">=</span> <span class="n">suite</span><span class="o">.</span><span class="n">to_json</span><span class="p">()</span>
+</span><span id="line-7-6"><a id="example-7-6" name="example-7-6"></a><span class="c1"># Create suite from a JSON string.</span>
+</span><span id="line-7-7"><a id="example-7-7" name="example-7-7"></a><span class="n">suite</span> <span class="o">=</span> <span class="n">TestSuite</span><span class="o">.</span><span class="n">from_json</span><span class="p">(</span><span class="s1">'{"name": "Suite", "tests": [{"name": "Test"}]}'</span><span class="p">)</span>
 </span><span id="line-7-8"><a id="example-7-8" name="example-7-8"></a>
-</span><span id="line-7-9"><a id="example-7-9" name="example-7-9"></a><span class="c1"># Save JSON data to a file with custom indentation.</span>
-</span><span id="line-7-10"><a id="example-7-10" name="example-7-10"></a><span class="n">suite</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="s1">'data.rbt'</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</span><span id="line-7-9"><a id="example-7-9" name="example-7-9"></a><span class="c1"># Execute suite. Notice that log and report needs to be created separately.</span>
+</span><span id="line-7-10"><a id="example-7-10" name="example-7-10"></a><span class="n">suite</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">output</span><span class="o">=</span><span class="s1">'example.xml'</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
-If you would rather work with Python data and then convert that to JSON
-or some other format yourself, you can use <a href="https://issues.robotframework.org">TestSuite.to_dict</a> instead.</p>
-<h4 id="creating-suite-from-json">Creating suite from JSON<a class="headerlink" href="#creating-suite-from-json" title="Permanent link">&para;</a></h4>
-<p>A suite can be constructed from JSON data using the <a href="https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.TestSuite.to_json">TestSuite.from_json</a>
-method. It works both with JSON strings and paths to JSON files:</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-8-1"> 1</a></span>
+<p>If you have data as a Python dictionary, you can use <a href="https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.TestSuite.from_dict">TestSuite.from_dict</a>
+instead. Regardless of how a suite is recreated, it exists only in memory and
+original data files on the file system are not recreated.</p>
+<p>As the above example demonstrates, the created suite can be executed using
+the <a href="https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.TestSuite.run">TestSuite.run</a> method. It may, however, be easier to execute a JSON file
+directly as explained in the following section.</p>
+<h4 id="executing-json-files">Executing JSON files<a class="headerlink" href="#executing-json-files" title="Permanent link">&para;</a></h4>
+<p>When executing tests or tasks using the <code>robot</code> command, JSON files with
+the custom <code class="file">.rbt</code> extension are parsed automatically. This includes
+running individual JSON files like <code>robot tests.rbt</code> and running directories
+containing <code class="file">.rbt</code> files. If you would rather use the standard
+<code class="file">.json</code> extension, you need to <a href="../../execution/configuration/#selecting-files-to-parse">configure which files are parsed</a>.</p>
+<h4 id="adjusting-suite-source">Adjusting suite source<a class="headerlink" href="#adjusting-suite-source" title="Permanent link">&para;</a></h4>
+<p>Suite source in the data got from <code>TestSuite.to_json</code> and <code>TestSuite.to_dict</code>
+is in absolute format. If a suite is recreated later on a different machine,
+the source may thus not match the directory structure on that machine. To
+avoid that, it is possible to use the <a href="https://robot-framework.readthedocs.io/en/master/autodoc/robot.model.html#robot.model.testsuite.TestSuite.adjust_source">TestSuite.adjust_source</a> method to
+make the suite source relative before getting the data and add a correct root
+directory after the suite is recreated:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-8-1"> 1</a></span>
 <span class="normal"><a href="#example-8-2"> 2</a></span>
 <span class="normal"><a href="#example-8-3"> 3</a></span>
 <span class="normal"><a href="#example-8-4"> 4</a></span>
@@ -10554,68 +10690,29 @@ method. It works both with JSON strings and paths to JSON files:</p>
 <span class="normal"><a href="#example-8-9"> 9</a></span>
 <span class="normal"><a href="#example-8-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-8-1"><a id="example-8-1" name="example-8-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">robot.running</span><span class="w"> </span><span class="kn">import</span> <span class="n">TestSuite</span>
 </span><span id="line-8-2"><a id="example-8-2" name="example-8-2"></a>
-</span><span id="line-8-3"><a id="example-8-3" name="example-8-3"></a><span class="c1"># Create suite from JSON data in a file.</span>
-</span><span id="line-8-4"><a id="example-8-4" name="example-8-4"></a><span class="n">suite</span> <span class="o">=</span> <span class="n">TestSuite</span><span class="o">.</span><span class="n">from_json</span><span class="p">(</span><span class="s1">'data.rbt'</span><span class="p">)</span>
-</span><span id="line-8-5"><a id="example-8-5" name="example-8-5"></a>
-</span><span id="line-8-6"><a id="example-8-6" name="example-8-6"></a><span class="c1"># Create suite from a JSON string.</span>
-</span><span id="line-8-7"><a id="example-8-7" name="example-8-7"></a><span class="n">suite</span> <span class="o">=</span> <span class="n">TestSuite</span><span class="o">.</span><span class="n">from_json</span><span class="p">(</span><span class="s1">'{"name": "Suite", "tests": [{"name": "Test"}]}'</span><span class="p">)</span>
-</span><span id="line-8-8"><a id="example-8-8" name="example-8-8"></a>
-</span><span id="line-8-9"><a id="example-8-9" name="example-8-9"></a><span class="c1"># Execute suite. Notice that log and report needs to be created separately.</span>
-</span><span id="line-8-10"><a id="example-8-10" name="example-8-10"></a><span class="n">suite</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">output</span><span class="o">=</span><span class="s1">'example.xml'</span><span class="p">)</span>
-</span></code></pre></div></td></tr></table></div>
-If you have data as a Python dictionary, you can use <a href="https://issues.robotframework.org">TestSuite.from_dict</a>
-instead. Regardless of how a suite is recreated, it exists only in memory and
-original data files on the file system are not recreated.</p>
-<p>As the above example demonstrates, the created suite can be executed using
-the <a href="https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.TestSuite.to_json">TestSuite.run</a> method. It may, however, be easier to execute a JSON file
-directly as explained in the following section.</p>
-<h4 id="executing-json-files">Executing JSON files<a class="headerlink" href="#executing-json-files" title="Permanent link">&para;</a></h4>
-<p>When executing tests or tasks using the <code>robot</code> command, JSON files with
-the custom <em>.rbt</em> extension are parsed automatically. This includes
-running individual JSON files like <code>robot tests.rbt</code> and running directories
-containing <em>.rbt</em> files. If you would rather use the standard
-<em>.json</em> extension, you need to <a href="https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.TestSuite.to_dict">configure which files are parsed</a>.</p>
-<h4 id="adjusting-suite-source">Adjusting suite source<a class="headerlink" href="#adjusting-suite-source" title="Permanent link">&para;</a></h4>
-<p>Suite source in the data got from <code>TestSuite.to_json</code> and <code>TestSuite.to_dict</code>
-is in absolute format. If a suite is recreated later on a different machine,
-the source may thus not match the directory structure on that machine. To
-avoid that, it is possible to use the <a href="https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.TestSuite.from_json">TestSuite.adjust_source</a> method to
-make the suite source relative before getting the data and add a correct root
-directory after the suite is recreated:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-9-1"> 1</a></span>
-<span class="normal"><a href="#example-9-2"> 2</a></span>
-<span class="normal"><a href="#example-9-3"> 3</a></span>
-<span class="normal"><a href="#example-9-4"> 4</a></span>
-<span class="normal"><a href="#example-9-5"> 5</a></span>
-<span class="normal"><a href="#example-9-6"> 6</a></span>
-<span class="normal"><a href="#example-9-7"> 7</a></span>
-<span class="normal"><a href="#example-9-8"> 8</a></span>
-<span class="normal"><a href="#example-9-9"> 9</a></span>
-<span class="normal"><a href="#example-9-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-9-1"><a id="example-9-1" name="example-9-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">robot.running</span><span class="w"> </span><span class="kn">import</span> <span class="n">TestSuite</span>
-</span><span id="line-9-2"><a id="example-9-2" name="example-9-2"></a>
-</span><span id="line-9-3"><a id="example-9-3" name="example-9-3"></a><span class="c1"># Create a suite, adjust source and convert to JSON.</span>
-</span><span id="line-9-4"><a id="example-9-4" name="example-9-4"></a><span class="n">suite</span> <span class="o">=</span> <span class="n">TestSuite</span><span class="o">.</span><span class="n">from_file_system</span><span class="p">(</span><span class="s1">'/path/to/data'</span><span class="p">)</span>
-</span><span id="line-9-5"><a id="example-9-5" name="example-9-5"></a><span class="n">suite</span><span class="o">.</span><span class="n">adjust_source</span><span class="p">(</span><span class="n">relative_to</span><span class="o">=</span><span class="s1">'/path/to'</span><span class="p">)</span>
-</span><span id="line-9-6"><a id="example-9-6" name="example-9-6"></a><span class="n">suite</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="s1">'data.rbt'</span><span class="p">)</span>
-</span><span id="line-9-7"><a id="example-9-7" name="example-9-7"></a>
-</span><span id="line-9-8"><a id="example-9-8" name="example-9-8"></a><span class="c1"># Recreate suite elsewhere and adjust source accordingly.</span>
-</span><span id="line-9-9"><a id="example-9-9" name="example-9-9"></a><span class="n">suite</span> <span class="o">=</span> <span class="n">TestSuite</span><span class="o">.</span><span class="n">from_json</span><span class="p">(</span><span class="s1">'data.rbt'</span><span class="p">)</span>
-</span><span id="line-9-10"><a id="example-9-10" name="example-9-10"></a><span class="n">suite</span><span class="o">.</span><span class="n">adjust_source</span><span class="p">(</span><span class="n">root</span><span class="o">=</span><span class="s1">'/new/path/to'</span><span class="p">)</span>
+</span><span id="line-8-3"><a id="example-8-3" name="example-8-3"></a><span class="c1"># Create a suite, adjust source and convert to JSON.</span>
+</span><span id="line-8-4"><a id="example-8-4" name="example-8-4"></a><span class="n">suite</span> <span class="o">=</span> <span class="n">TestSuite</span><span class="o">.</span><span class="n">from_file_system</span><span class="p">(</span><span class="s1">'/path/to/data'</span><span class="p">)</span>
+</span><span id="line-8-5"><a id="example-8-5" name="example-8-5"></a><span class="n">suite</span><span class="o">.</span><span class="n">adjust_source</span><span class="p">(</span><span class="n">relative_to</span><span class="o">=</span><span class="s1">'/path/to'</span><span class="p">)</span>
+</span><span id="line-8-6"><a id="example-8-6" name="example-8-6"></a><span class="n">suite</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="s1">'data.rbt'</span><span class="p">)</span>
+</span><span id="line-8-7"><a id="example-8-7" name="example-8-7"></a>
+</span><span id="line-8-8"><a id="example-8-8" name="example-8-8"></a><span class="c1"># Recreate suite elsewhere and adjust source accordingly.</span>
+</span><span id="line-8-9"><a id="example-8-9" name="example-8-9"></a><span class="n">suite</span> <span class="o">=</span> <span class="n">TestSuite</span><span class="o">.</span><span class="n">from_json</span><span class="p">(</span><span class="s1">'data.rbt'</span><span class="p">)</span>
+</span><span id="line-8-10"><a id="example-8-10" name="example-8-10"></a><span class="n">suite</span><span class="o">.</span><span class="n">adjust_source</span><span class="p">(</span><span class="n">root</span><span class="o">=</span><span class="s1">'/new/path/to'</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 <h4 id="json-structure">JSON structure<a class="headerlink" href="#json-structure" title="Permanent link">&para;</a></h4>
 <p>Imports, variables and keywords created in suite files are included in the
 generated JSON along with tests and tasks. The exact JSON structure is documented
-in the <em>running.json</em> <a href="https://github.com/robotframework/robotframework/tree/master/doc/schema#readme">schema file</a>.</p>
+in the <code class="file">running.json</code> <a href="https://github.com/robotframework/robotframework/tree/master/doc/schema#readme">schema file</a>.</p>
 <h2 id="rules-for-parsing-the-data">Rules for parsing the data<a class="headerlink" href="#rules-for-parsing-the-data" title="Permanent link">&para;</a></h2>
 <p><a id="comment"></a></p>
 <h3 id="ignored-data">Ignored data<a class="headerlink" href="#ignored-data" title="Permanent link">&para;</a></h3>
 <p>When Robot Framework parses the test data files, it ignores:</p>
 <ul>
-<li>All data before the first <a href="https://issues.robotframework.org">test data section</a>.</li>
-<li>Data in the <a href="https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.TestSuite.to_json">Comments</a> section.</li>
+<li>All data before the first <a href="#test-data-sections">test data section</a>.</li>
+<li>Data in the <a href="#test-data-sections">Comments</a> section.</li>
 <li>All empty rows.</li>
 <li>All empty cells at the end of rows when using the <a href="#pipe-separated-format">pipe separated format</a>.</li>
-<li>All single backslashes (<code>\\</code>) when not used for <a href="#escaping">escaping</a>.</li>
+<li>All single backslashes (<code class="codesc">\</code>) when not used for <a href="#escaping">escaping</a>.</li>
 <li>All characters following the hash character (<code>#</code>), when it is the first
   character of a cell. This means that hash marks can be used to enter
   comments in the test data.</li>
@@ -10624,11 +10721,11 @@ in the <em>running.json</em> <a href="https://github.com/robotframework/robotfra
 any resulting reports and, additionally, most tools used with Robot
 Framework also ignore them. To add information that is visible in
 Robot Framework outputs, place it to the documentation or other metadata of
-test cases or suites, or log it with the <a href="../libraries/#builtin">BuiltIn</a> keywords <em>Log</em> or
-<em>Comment</em>.</p>
+test cases or suites, or log it with the <a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> keywords <em class="name">Log</em> or
+<em class="name">Comment</em>.</p>
 <h3 id="escaping">Escaping<a class="headerlink" href="#escaping" title="Permanent link">&para;</a></h3>
 <p>The escape character in Robot Framework test data is the backslash
-(<code>\\</code>) and additionally <a href="../variables/#built-in-variables">built-in variables</a> <code>${EMPTY}</code> and <code>${SPACE}</code>
+(<code class="codesc">\</code>) and additionally <a href="../variables/#built-in-variables">built-in variables</a> <code>${EMPTY}</code> and <code>${SPACE}</code>
 can often be used for escaping. Different escaping mechanisms are
 discussed in the sections below.</p>
 <h4 id="escaping-special-characters">Escaping special characters<a class="headerlink" href="#escaping-special-characters" title="Permanent link">&para;</a></h4>
@@ -10737,8 +10834,8 @@ in the test data.</p>
 <p>All strings created in the test data, including characters like
 <code>\x02</code>, are Unicode and must be explicitly converted to
 byte strings if needed. This can be done, for example, using
-<em>Convert To Bytes</em> or <em>Encode String To Bytes</em> keywords
-in <a href="../libraries/#builtin">BuiltIn</a> and <a href="../libraries/#string">String</a> libraries, respectively, or with
+<em class="name">Convert To Bytes</em> or <em class="name">Encode String To Bytes</em> keywords
+in <a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> and <a href="https://robotframework.org/robotframework/latest/libraries/String.html">String</a> libraries, respectively, or with
 something like <code>value.encode('UTF-8')</code> in Python code.</p>
 </div>
 <div class="admonition note">
@@ -10762,35 +10859,35 @@ a separator can vary and thus empty values cannot be recognized unless they
 are escaped. Empty cells can be escaped either with the backslash character
 or with <a href="../variables/#built-in-variable">built-in variable</a> <code>${EMPTY}</code>. The latter is typically recommended
 as it is easier to understand.</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-10-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-9-1">1</a></span>
+<span class="normal"><a href="#example-9-2">2</a></span>
+<span class="normal"><a href="#example-9-3">3</a></span>
+<span class="normal"><a href="#example-9-4">4</a></span>
+<span class="normal"><a href="#example-9-5">5</a></span>
+<span class="normal"><a href="#example-9-6">6</a></span>
+<span class="normal"><a href="#example-9-7">7</a></span>
+<span class="normal"><a href="#example-9-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-9-1"><a id="example-9-1" name="example-9-1"></a><span class="gh">*** Test Cases ***</span>
+</span><span id="line-9-2"><a id="example-9-2" name="example-9-2"></a><span class="gu">Using backslash</span>
+</span><span id="line-9-3"><a id="example-9-3" name="example-9-3"></a><span class="p">    </span><span class="nf">Do Something</span><span class="p">    </span><span class="s">first arg</span><span class="p">    </span><span class="s">\</span>
+</span><span id="line-9-4"><a id="example-9-4" name="example-9-4"></a><span class="p">    </span><span class="nf">Do Something</span><span class="p">    </span><span class="s">\</span><span class="p">            </span><span class="s">second arg</span>
+</span><span id="line-9-5"><a id="example-9-5" name="example-9-5"></a>
+</span><span id="line-9-6"><a id="example-9-6" name="example-9-6"></a><span class="gu">Using </span><span class="p">${</span><span class="nv">EMPTY</span><span class="p">}</span>
+</span><span id="line-9-7"><a id="example-9-7" name="example-9-7"></a><span class="p">    </span><span class="nf">Do Something</span><span class="p">    </span><span class="s">first arg</span><span class="p">    ${</span><span class="nv">EMPTY</span><span class="p">}</span>
+</span><span id="line-9-8"><a id="example-9-8" name="example-9-8"></a><span class="p">    </span><span class="nf">Do Something</span><span class="p">    ${</span><span class="nv">EMPTY</span><span class="p">}     </span><span class="s">second arg</span>
+</span></code></pre></div></td></tr></table></div>
+<p>When using the <a href="#pipe-separated-format">pipe separated format</a>, empty values need to be escaped
+only when they are at the end of the row:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-10-1">1</a></span>
 <span class="normal"><a href="#example-10-2">2</a></span>
 <span class="normal"><a href="#example-10-3">3</a></span>
 <span class="normal"><a href="#example-10-4">4</a></span>
 <span class="normal"><a href="#example-10-5">5</a></span>
-<span class="normal"><a href="#example-10-6">6</a></span>
-<span class="normal"><a href="#example-10-7">7</a></span>
-<span class="normal"><a href="#example-10-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-10-1"><a id="example-10-1" name="example-10-1"></a><span class="gh">*** Test Cases ***</span>
-</span><span id="line-10-2"><a id="example-10-2" name="example-10-2"></a><span class="gu">Using backslash</span>
-</span><span id="line-10-3"><a id="example-10-3" name="example-10-3"></a><span class="p">    </span><span class="nf">Do Something</span><span class="p">    </span><span class="s">first arg</span><span class="p">    </span><span class="s">\</span>
-</span><span id="line-10-4"><a id="example-10-4" name="example-10-4"></a><span class="p">    </span><span class="nf">Do Something</span><span class="p">    </span><span class="s">\</span><span class="p">            </span><span class="s">second arg</span>
-</span><span id="line-10-5"><a id="example-10-5" name="example-10-5"></a>
-</span><span id="line-10-6"><a id="example-10-6" name="example-10-6"></a><span class="gu">Using </span><span class="p">${</span><span class="nv">EMPTY</span><span class="p">}</span>
-</span><span id="line-10-7"><a id="example-10-7" name="example-10-7"></a><span class="p">    </span><span class="nf">Do Something</span><span class="p">    </span><span class="s">first arg</span><span class="p">    ${</span><span class="nv">EMPTY</span><span class="p">}</span>
-</span><span id="line-10-8"><a id="example-10-8" name="example-10-8"></a><span class="p">    </span><span class="nf">Do Something</span><span class="p">    ${</span><span class="nv">EMPTY</span><span class="p">}     </span><span class="s">second arg</span>
-</span></code></pre></div></td></tr></table></div>
-When using the <a href="#pipe-separated-format">pipe separated format</a>, empty values need to be escaped
-only when they are at the end of the row:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-11-1">1</a></span>
-<span class="normal"><a href="#example-11-2">2</a></span>
-<span class="normal"><a href="#example-11-3">3</a></span>
-<span class="normal"><a href="#example-11-4">4</a></span>
-<span class="normal"><a href="#example-11-5">5</a></span>
-<span class="normal"><a href="#example-11-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-11-1"><a id="example-11-1" name="example-11-1"></a><span class="p">| </span><span class="gh">*** Test Cases ***</span><span class="p"> |              |           |            |</span>
-</span><span id="line-11-2"><a id="example-11-2" name="example-11-2"></a><span class="p">| </span><span class="gu">Using backslash</span><span class="p">    | </span><span class="nf">Do Something</span><span class="p"> | </span><span class="s">first arg</span><span class="p"> | </span><span class="s">\</span><span class="p">          |</span>
-</span><span id="line-11-3"><a id="example-11-3" name="example-11-3"></a><span class="p">|                    | </span><span class="nf">Do Something</span><span class="p"> |           | </span><span class="s">second arg</span><span class="p"> |</span>
-</span><span id="line-11-4"><a id="example-11-4" name="example-11-4"></a><span class="p">|                    |              |           |            |</span>
-</span><span id="line-11-5"><a id="example-11-5" name="example-11-5"></a><span class="p">| </span><span class="gu">Using </span><span class="p">${</span><span class="nv">EMPTY</span><span class="p">}     | </span><span class="nf">Do Something</span><span class="p"> | </span><span class="s">first arg</span><span class="p"> | ${</span><span class="nv">EMPTY</span><span class="p">}   |</span>
-</span><span id="line-11-6"><a id="example-11-6" name="example-11-6"></a><span class="p">|                    | </span><span class="nf">Do Something</span><span class="p"> |           | </span><span class="s">second arg</span><span class="p"> |</span>
+<span class="normal"><a href="#example-10-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-10-1"><a id="example-10-1" name="example-10-1"></a><span class="p">| </span><span class="gh">*** Test Cases ***</span><span class="p"> |              |           |            |</span>
+</span><span id="line-10-2"><a id="example-10-2" name="example-10-2"></a><span class="p">| </span><span class="gu">Using backslash</span><span class="p">    | </span><span class="nf">Do Something</span><span class="p"> | </span><span class="s">first arg</span><span class="p"> | </span><span class="s">\</span><span class="p">          |</span>
+</span><span id="line-10-3"><a id="example-10-3" name="example-10-3"></a><span class="p">|                    | </span><span class="nf">Do Something</span><span class="p"> |           | </span><span class="s">second arg</span><span class="p"> |</span>
+</span><span id="line-10-4"><a id="example-10-4" name="example-10-4"></a><span class="p">|                    |              |           |            |</span>
+</span><span id="line-10-5"><a id="example-10-5" name="example-10-5"></a><span class="p">| </span><span class="gu">Using </span><span class="p">${</span><span class="nv">EMPTY</span><span class="p">}     | </span><span class="nf">Do Something</span><span class="p"> | </span><span class="s">first arg</span><span class="p"> | ${</span><span class="nv">EMPTY</span><span class="p">}   |</span>
+</span><span id="line-10-6"><a id="example-10-6" name="example-10-6"></a><span class="p">|                    | </span><span class="nf">Do Something</span><span class="p"> |           | </span><span class="s">second arg</span><span class="p"> |</span>
 </span></code></pre></div></td></tr></table></div>
 <h4 id="handling-spaces">Handling spaces<a class="headerlink" href="#handling-spaces" title="Permanent link">&para;</a></h4>
 <p>Spaces, especially consecutive spaces, as part of arguments for keywords or
@@ -10814,24 +10911,24 @@ by using the <a href="../variables/#built-in-variable">built-in variable</a> <co
 </thead>
 <tbody>
 <tr>
-<td><code>\\ leading space</code>          <code>${SPA | }leading space</code></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><code>trailing space \\</code>         <code>trail | g space${SPACE}</code>            Backsl</td>
-<td>h must be after the space.</td>
+<td><code class="codesc">\ leading space</code></td>
+<td><code>${SPACE}leading space</code></td>
 <td></td>
 </tr>
 <tr>
-<td><code>\\ \\</code>                     <code>${SPA | }</code>                          Backsl</td>
-<td>h needed on both sides.</td>
-<td></td>
+<td><code class="codesc">trailing space \</code></td>
+<td><code>trailing space${SPACE}</code></td>
+<td>Backslash must be after the space.</td>
 </tr>
 <tr>
-<td><code>consecutive \\ \\ spaces</code>  `conse</td>
-<td>tive${SPACE * 3}spaces[Using</td>
-<td>xtended variable syntax](index.md#syntax).</td>
+<td><code class="codesc">\ \</code></td>
+<td><code>${SPACE}</code></td>
+<td>Backslash needed on both sides.</td>
+</tr>
+<tr>
+<td><code class="codesc">consecutive \ \ spaces</code></td>
+<td><code>consecutive${SPACE * 3}spaces</code></td>
+<td>Using <a href="../variables/#extended-variable-syntax">extended variable syntax</a>.</td>
 </tr>
 </tbody>
 </table>
@@ -10844,9 +10941,9 @@ and start continuing rows with ellipsis (<code>...</code>). Ellipses can be inde
 to match the indentation of the starting row and they must always be followed
 by the normal test data separator.</p>
 <p>In most places split lines have exact same semantics as lines that are not
-split. Exceptions to this rule are <a href="https://issues.robotframework.org">suite</a>, <a href="https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.TestSuite.to_json">test</a> and <a href="https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.TestSuite.to_dict">keyword</a> documentation
-as well <a href="https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.TestSuite.from_json">suite metadata</a>. With them split values are automatically
-<a href="https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.TestSuite.from_dict">joined together with the newline character</a> to ease creating multiline
+split. Exceptions to this rule are <a href="../suites/#suite-documentation">suite</a>, <a href="../tests/#test-case-documentation">test</a> and <a href="../user-keywords/#user-keyword-documentation">keyword</a> documentation
+as well <a href="../suites/#free-suite-metadata">suite metadata</a>. With them split values are automatically
+<a href="../../appendix/doc-format/#newlines">joined together with the newline character</a> to ease creating multiline
 values.</p>
 <p>The <code>...</code> syntax allows also splitting variables in the <a href="../variables/#variable-section">Variable section</a>.
 When long scalar variables (e.g. <code>${STRING}</code>) are split to multiple rows,
@@ -10855,7 +10952,37 @@ a space by default, but that can be changed by starting the value with
 <code>SEPARATOR=&lt;sep&gt;</code>.</p>
 <p>Splitting lines is illustrated in the following two examples containing
 exactly same data without and with splitting.</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-12-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-11-1"> 1</a></span>
+<span class="normal"><a href="#example-11-2"> 2</a></span>
+<span class="normal"><a href="#example-11-3"> 3</a></span>
+<span class="normal"><a href="#example-11-4"> 4</a></span>
+<span class="normal"><a href="#example-11-5"> 5</a></span>
+<span class="normal"><a href="#example-11-6"> 6</a></span>
+<span class="normal"><a href="#example-11-7"> 7</a></span>
+<span class="normal"><a href="#example-11-8"> 8</a></span>
+<span class="normal"><a href="#example-11-9"> 9</a></span>
+<span class="normal"><a href="#example-11-10">10</a></span>
+<span class="normal"><a href="#example-11-11">11</a></span>
+<span class="normal"><a href="#example-11-12">12</a></span>
+<span class="normal"><a href="#example-11-13">13</a></span>
+<span class="normal"><a href="#example-11-14">14</a></span>
+<span class="normal"><a href="#example-11-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-11-1"><a id="example-11-1" name="example-11-1"></a><span class="gh">*** Settings ***</span>
+</span><span id="line-11-2"><a id="example-11-2" name="example-11-2"></a><span class="kn">Documentation</span><span class="p">      </span><span class="s">Here we have documentation for this suite.\nDocumentation is often quite long.\n\nIt can also contain multiple paragraphs.</span>
+</span><span id="line-11-3"><a id="example-11-3" name="example-11-3"></a><span class="err">Test Tags</span><span class="p">          </span><span class="s">test tag 1</span><span class="p">    </span><span class="s">test tag 2</span><span class="p">    </span><span class="s">test tag 3</span><span class="p">    </span><span class="s">test tag 4</span><span class="p">    </span><span class="s">test tag 5</span>
+</span><span id="line-11-4"><a id="example-11-4" name="example-11-4"></a>
+</span><span id="line-11-5"><a id="example-11-5" name="example-11-5"></a><span class="gh">*** Variables ***</span>
+</span><span id="line-11-6"><a id="example-11-6" name="example-11-6"></a><span class="p">${</span><span class="nv">STRING</span><span class="p">}          </span><span class="s">This is a long string. It has multiple sentences. It does not have newlines.</span>
+</span><span id="line-11-7"><a id="example-11-7" name="example-11-7"></a><span class="p">${</span><span class="nv">MULTILINE</span><span class="p">}       </span><span class="s">This is a long multiline string.\nThis is the second line.\nThis is the third and the last line.</span>
+</span><span id="line-11-8"><a id="example-11-8" name="example-11-8"></a><span class="p">@{</span><span class="nv">LIST</span><span class="p">}            </span><span class="s">this</span><span class="p">     </span><span class="s">list</span><span class="p">     </span><span class="s">is</span><span class="p">    </span><span class="s">quite</span><span class="p">    </span><span class="s">long</span><span class="p">     </span><span class="s">and</span><span class="p">    </span><span class="s">items in it can also be long</span>
+</span><span id="line-11-9"><a id="example-11-9" name="example-11-9"></a><span class="p">&amp;{</span><span class="nv">DICT</span><span class="p">}            </span><span class="s">first=This value is pretty long.</span><span class="p">    </span><span class="s">second=This value is even longer. It has two sentences.</span>
+</span><span id="line-11-10"><a id="example-11-10" name="example-11-10"></a>
+</span><span id="line-11-11"><a id="example-11-11" name="example-11-11"></a><span class="gh">*** Test Cases ***</span>
+</span><span id="line-11-12"><a id="example-11-12" name="example-11-12"></a><span class="gu">Example</span>
+</span><span id="line-11-13"><a id="example-11-13" name="example-11-13"></a><span class="p">    [</span><span class="kn">Tags</span><span class="p">]    </span><span class="s">you</span><span class="p">    </span><span class="s">probably</span><span class="p">    </span><span class="s">do</span><span class="p">    </span><span class="s">not</span><span class="p">    </span><span class="s">have</span><span class="p">    </span><span class="s">this</span><span class="p">    </span><span class="s">many</span><span class="p">    </span><span class="s">tags</span><span class="p">    </span><span class="s">in</span><span class="p">    </span><span class="s">real</span><span class="p">    </span><span class="s">life</span>
+</span><span id="line-11-14"><a id="example-11-14" name="example-11-14"></a><span class="p">    </span><span class="nf">Do X</span><span class="p">    </span><span class="s">first argument</span><span class="p">    </span><span class="s">second argument</span><span class="p">    </span><span class="s">third argument</span><span class="p">    </span><span class="s">fourth argument</span><span class="p">    </span><span class="s">fifth argument</span><span class="p">    </span><span class="s">sixth argument</span>
+</span><span id="line-11-15"><a id="example-11-15" name="example-11-15"></a><span class="p">    ${</span><span class="nv">var</span><span class="p">} =    </span><span class="nf">Get X</span><span class="p">    </span><span class="s">first argument passed to this keyword is pretty long</span><span class="p">    </span><span class="s">second argument passed to this keyword is long too</span>
+</span></code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-12-1"> 1</a></span>
 <span class="normal"><a href="#example-12-2"> 2</a></span>
 <span class="normal"><a href="#example-12-3"> 3</a></span>
 <span class="normal"><a href="#example-12-4"> 4</a></span>
@@ -10869,111 +10996,81 @@ exactly same data without and with splitting.</p>
 <span class="normal"><a href="#example-12-12">12</a></span>
 <span class="normal"><a href="#example-12-13">13</a></span>
 <span class="normal"><a href="#example-12-14">14</a></span>
-<span class="normal"><a href="#example-12-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-12-1"><a id="example-12-1" name="example-12-1"></a><span class="gh">*** Settings ***</span>
-</span><span id="line-12-2"><a id="example-12-2" name="example-12-2"></a><span class="kn">Documentation</span><span class="p">      </span><span class="s">Here we have documentation for this suite.\nDocumentation is often quite long.\n\nIt can also contain multiple paragraphs.</span>
-</span><span id="line-12-3"><a id="example-12-3" name="example-12-3"></a><span class="err">Test Tags</span><span class="p">          </span><span class="s">test tag 1</span><span class="p">    </span><span class="s">test tag 2</span><span class="p">    </span><span class="s">test tag 3</span><span class="p">    </span><span class="s">test tag 4</span><span class="p">    </span><span class="s">test tag 5</span>
-</span><span id="line-12-4"><a id="example-12-4" name="example-12-4"></a>
-</span><span id="line-12-5"><a id="example-12-5" name="example-12-5"></a><span class="gh">*** Variables ***</span>
-</span><span id="line-12-6"><a id="example-12-6" name="example-12-6"></a><span class="p">${</span><span class="nv">STRING</span><span class="p">}          </span><span class="s">This is a long string. It has multiple sentences. It does not have newlines.</span>
-</span><span id="line-12-7"><a id="example-12-7" name="example-12-7"></a><span class="p">${</span><span class="nv">MULTILINE</span><span class="p">}       </span><span class="s">This is a long multiline string.\nThis is the second line.\nThis is the third and the last line.</span>
-</span><span id="line-12-8"><a id="example-12-8" name="example-12-8"></a><span class="p">@{</span><span class="nv">LIST</span><span class="p">}            </span><span class="s">this</span><span class="p">     </span><span class="s">list</span><span class="p">     </span><span class="s">is</span><span class="p">    </span><span class="s">quite</span><span class="p">    </span><span class="s">long</span><span class="p">     </span><span class="s">and</span><span class="p">    </span><span class="s">items in it can also be long</span>
-</span><span id="line-12-9"><a id="example-12-9" name="example-12-9"></a><span class="p">&amp;{</span><span class="nv">DICT</span><span class="p">}            </span><span class="s">first=This value is pretty long.</span><span class="p">    </span><span class="s">second=This value is even longer. It has two sentences.</span>
-</span><span id="line-12-10"><a id="example-12-10" name="example-12-10"></a>
-</span><span id="line-12-11"><a id="example-12-11" name="example-12-11"></a><span class="gh">*** Test Cases ***</span>
-</span><span id="line-12-12"><a id="example-12-12" name="example-12-12"></a><span class="gu">Example</span>
-</span><span id="line-12-13"><a id="example-12-13" name="example-12-13"></a><span class="p">    [</span><span class="kn">Tags</span><span class="p">]    </span><span class="s">you</span><span class="p">    </span><span class="s">probably</span><span class="p">    </span><span class="s">do</span><span class="p">    </span><span class="s">not</span><span class="p">    </span><span class="s">have</span><span class="p">    </span><span class="s">this</span><span class="p">    </span><span class="s">many</span><span class="p">    </span><span class="s">tags</span><span class="p">    </span><span class="s">in</span><span class="p">    </span><span class="s">real</span><span class="p">    </span><span class="s">life</span>
-</span><span id="line-12-14"><a id="example-12-14" name="example-12-14"></a><span class="p">    </span><span class="nf">Do X</span><span class="p">    </span><span class="s">first argument</span><span class="p">    </span><span class="s">second argument</span><span class="p">    </span><span class="s">third argument</span><span class="p">    </span><span class="s">fourth argument</span><span class="p">    </span><span class="s">fifth argument</span><span class="p">    </span><span class="s">sixth argument</span>
-</span><span id="line-12-15"><a id="example-12-15" name="example-12-15"></a><span class="p">    ${</span><span class="nv">var</span><span class="p">} =    </span><span class="nf">Get X</span><span class="p">    </span><span class="s">first argument passed to this keyword is pretty long</span><span class="p">    </span><span class="s">second argument passed to this keyword is long too</span>
+<span class="normal"><a href="#example-12-15">15</a></span>
+<span class="normal"><a href="#example-12-16">16</a></span>
+<span class="normal"><a href="#example-12-17">17</a></span>
+<span class="normal"><a href="#example-12-18">18</a></span>
+<span class="normal"><a href="#example-12-19">19</a></span>
+<span class="normal"><a href="#example-12-20">20</a></span>
+<span class="normal"><a href="#example-12-21">21</a></span>
+<span class="normal"><a href="#example-12-22">22</a></span>
+<span class="normal"><a href="#example-12-23">23</a></span>
+<span class="normal"><a href="#example-12-24">24</a></span>
+<span class="normal"><a href="#example-12-25">25</a></span>
+<span class="normal"><a href="#example-12-26">26</a></span>
+<span class="normal"><a href="#example-12-27">27</a></span>
+<span class="normal"><a href="#example-12-28">28</a></span>
+<span class="normal"><a href="#example-12-29">29</a></span>
+<span class="normal"><a href="#example-12-30">30</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-12-1"><a id="example-12-1" name="example-12-1"></a><span class="gh">*** Settings ***</span>
+</span><span id="line-12-2"><a id="example-12-2" name="example-12-2"></a><span class="kn">Documentation</span><span class="p">      </span><span class="s">Here we have documentation for this suite.</span>
+</span><span id="line-12-3"><a id="example-12-3" name="example-12-3"></a><span class="p">...                </span><span class="s">Documentation is often quite long.</span>
+</span><span id="line-12-4"><a id="example-12-4" name="example-12-4"></a><span class="p">...</span>
+</span><span id="line-12-5"><a id="example-12-5" name="example-12-5"></a><span class="p">...                </span><span class="s">It can also contain multiple paragraphs.</span>
+</span><span id="line-12-6"><a id="example-12-6" name="example-12-6"></a><span class="err">Test Tags</span><span class="p">          </span><span class="s">test tag 1</span><span class="p">    </span><span class="s">test tag 2</span><span class="p">    </span><span class="s">test tag 3</span>
+</span><span id="line-12-7"><a id="example-12-7" name="example-12-7"></a><span class="p">...                </span><span class="s">test tag 4</span><span class="p">    </span><span class="s">test tag 5</span>
+</span><span id="line-12-8"><a id="example-12-8" name="example-12-8"></a>
+</span><span id="line-12-9"><a id="example-12-9" name="example-12-9"></a><span class="gh">*** Variables ***</span>
+</span><span id="line-12-10"><a id="example-12-10" name="example-12-10"></a><span class="p">${</span><span class="nv">STRING</span><span class="p">}          </span><span class="s">This is a long string.</span>
+</span><span id="line-12-11"><a id="example-12-11" name="example-12-11"></a><span class="p">...                </span><span class="s">It has multiple sentences.</span>
+</span><span id="line-12-12"><a id="example-12-12" name="example-12-12"></a><span class="p">...                </span><span class="s">It does not have newlines.</span>
+</span><span id="line-12-13"><a id="example-12-13" name="example-12-13"></a><span class="p">${</span><span class="nv">MULTILINE</span><span class="p">}       </span><span class="s">SEPARATOR=\n</span>
+</span><span id="line-12-14"><a id="example-12-14" name="example-12-14"></a><span class="p">...                </span><span class="s">This is a long multiline string.</span>
+</span><span id="line-12-15"><a id="example-12-15" name="example-12-15"></a><span class="p">...                </span><span class="s">This is the second line.</span>
+</span><span id="line-12-16"><a id="example-12-16" name="example-12-16"></a><span class="p">...                </span><span class="s">This is the third and the last line.</span>
+</span><span id="line-12-17"><a id="example-12-17" name="example-12-17"></a><span class="p">@{</span><span class="nv">LIST</span><span class="p">}            </span><span class="s">this</span><span class="p">     </span><span class="s">list</span><span class="p">     </span><span class="s">is</span><span class="p">      </span><span class="s">quite</span><span class="p">    </span><span class="s">long</span><span class="p">     </span><span class="s">and</span>
+</span><span id="line-12-18"><a id="example-12-18" name="example-12-18"></a><span class="p">...                </span><span class="s">items in it can also be long</span>
+</span><span id="line-12-19"><a id="example-12-19" name="example-12-19"></a><span class="p">&amp;{</span><span class="nv">DICT</span><span class="p">}            </span><span class="s">first=This value is pretty long.</span>
+</span><span id="line-12-20"><a id="example-12-20" name="example-12-20"></a><span class="p">...                </span><span class="s">second=This value is even longer. It has two sentences.</span>
+</span><span id="line-12-21"><a id="example-12-21" name="example-12-21"></a>
+</span><span id="line-12-22"><a id="example-12-22" name="example-12-22"></a><span class="gh">*** Test Cases ***</span>
+</span><span id="line-12-23"><a id="example-12-23" name="example-12-23"></a><span class="gu">Example</span>
+</span><span id="line-12-24"><a id="example-12-24" name="example-12-24"></a><span class="p">    [</span><span class="kn">Tags</span><span class="p">]    </span><span class="s">you</span><span class="p">    </span><span class="s">probably</span><span class="p">    </span><span class="s">do</span><span class="p">    </span><span class="s">not</span><span class="p">    </span><span class="s">have</span><span class="p">    </span><span class="s">this</span><span class="p">    </span><span class="s">many</span>
+</span><span id="line-12-25"><a id="example-12-25" name="example-12-25"></a><span class="p">    ...       </span><span class="s">tags</span><span class="p">    </span><span class="s">in</span><span class="p">    </span><span class="s">real</span><span class="p">    </span><span class="s">life</span>
+</span><span id="line-12-26"><a id="example-12-26" name="example-12-26"></a><span class="p">    </span><span class="nf">Do X</span><span class="p">    </span><span class="s">first argument</span><span class="p">    </span><span class="s">second argument</span><span class="p">    </span><span class="s">third argument</span>
+</span><span id="line-12-27"><a id="example-12-27" name="example-12-27"></a><span class="p">    ...    </span><span class="s">fourth argument</span><span class="p">    </span><span class="s">fifth argument</span><span class="p">    </span><span class="s">sixth argument</span>
+</span><span id="line-12-28"><a id="example-12-28" name="example-12-28"></a><span class="p">    ${</span><span class="nv">var</span><span class="p">} =    </span><span class="nf">Get X</span>
+</span><span id="line-12-29"><a id="example-12-29" name="example-12-29"></a><span class="p">    ...    </span><span class="s">first argument passed to this keyword is pretty long</span>
+</span><span id="line-12-30"><a id="example-12-30" name="example-12-30"></a><span class="p">    ...    </span><span class="s">second argument passed to this keyword is long too</span>
 </span></code></pre></div></td></tr></table></div>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-13-1"> 1</a></span>
-<span class="normal"><a href="#example-13-2"> 2</a></span>
-<span class="normal"><a href="#example-13-3"> 3</a></span>
-<span class="normal"><a href="#example-13-4"> 4</a></span>
-<span class="normal"><a href="#example-13-5"> 5</a></span>
-<span class="normal"><a href="#example-13-6"> 6</a></span>
-<span class="normal"><a href="#example-13-7"> 7</a></span>
-<span class="normal"><a href="#example-13-8"> 8</a></span>
-<span class="normal"><a href="#example-13-9"> 9</a></span>
-<span class="normal"><a href="#example-13-10">10</a></span>
-<span class="normal"><a href="#example-13-11">11</a></span>
-<span class="normal"><a href="#example-13-12">12</a></span>
-<span class="normal"><a href="#example-13-13">13</a></span>
-<span class="normal"><a href="#example-13-14">14</a></span>
-<span class="normal"><a href="#example-13-15">15</a></span>
-<span class="normal"><a href="#example-13-16">16</a></span>
-<span class="normal"><a href="#example-13-17">17</a></span>
-<span class="normal"><a href="#example-13-18">18</a></span>
-<span class="normal"><a href="#example-13-19">19</a></span>
-<span class="normal"><a href="#example-13-20">20</a></span>
-<span class="normal"><a href="#example-13-21">21</a></span>
-<span class="normal"><a href="#example-13-22">22</a></span>
-<span class="normal"><a href="#example-13-23">23</a></span>
-<span class="normal"><a href="#example-13-24">24</a></span>
-<span class="normal"><a href="#example-13-25">25</a></span>
-<span class="normal"><a href="#example-13-26">26</a></span>
-<span class="normal"><a href="#example-13-27">27</a></span>
-<span class="normal"><a href="#example-13-28">28</a></span>
-<span class="normal"><a href="#example-13-29">29</a></span>
-<span class="normal"><a href="#example-13-30">30</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-13-1"><a id="example-13-1" name="example-13-1"></a><span class="gh">*** Settings ***</span>
-</span><span id="line-13-2"><a id="example-13-2" name="example-13-2"></a><span class="kn">Documentation</span><span class="p">      </span><span class="s">Here we have documentation for this suite.</span>
-</span><span id="line-13-3"><a id="example-13-3" name="example-13-3"></a><span class="p">...                </span><span class="s">Documentation is often quite long.</span>
-</span><span id="line-13-4"><a id="example-13-4" name="example-13-4"></a><span class="p">...</span>
-</span><span id="line-13-5"><a id="example-13-5" name="example-13-5"></a><span class="p">...                </span><span class="s">It can also contain multiple paragraphs.</span>
-</span><span id="line-13-6"><a id="example-13-6" name="example-13-6"></a><span class="err">Test Tags</span><span class="p">          </span><span class="s">test tag 1</span><span class="p">    </span><span class="s">test tag 2</span><span class="p">    </span><span class="s">test tag 3</span>
-</span><span id="line-13-7"><a id="example-13-7" name="example-13-7"></a><span class="p">...                </span><span class="s">test tag 4</span><span class="p">    </span><span class="s">test tag 5</span>
-</span><span id="line-13-8"><a id="example-13-8" name="example-13-8"></a>
-</span><span id="line-13-9"><a id="example-13-9" name="example-13-9"></a><span class="gh">*** Variables ***</span>
-</span><span id="line-13-10"><a id="example-13-10" name="example-13-10"></a><span class="p">${</span><span class="nv">STRING</span><span class="p">}          </span><span class="s">This is a long string.</span>
-</span><span id="line-13-11"><a id="example-13-11" name="example-13-11"></a><span class="p">...                </span><span class="s">It has multiple sentences.</span>
-</span><span id="line-13-12"><a id="example-13-12" name="example-13-12"></a><span class="p">...                </span><span class="s">It does not have newlines.</span>
-</span><span id="line-13-13"><a id="example-13-13" name="example-13-13"></a><span class="p">${</span><span class="nv">MULTILINE</span><span class="p">}       </span><span class="s">SEPARATOR=\n</span>
-</span><span id="line-13-14"><a id="example-13-14" name="example-13-14"></a><span class="p">...                </span><span class="s">This is a long multiline string.</span>
-</span><span id="line-13-15"><a id="example-13-15" name="example-13-15"></a><span class="p">...                </span><span class="s">This is the second line.</span>
-</span><span id="line-13-16"><a id="example-13-16" name="example-13-16"></a><span class="p">...                </span><span class="s">This is the third and the last line.</span>
-</span><span id="line-13-17"><a id="example-13-17" name="example-13-17"></a><span class="p">@{</span><span class="nv">LIST</span><span class="p">}            </span><span class="s">this</span><span class="p">     </span><span class="s">list</span><span class="p">     </span><span class="s">is</span><span class="p">      </span><span class="s">quite</span><span class="p">    </span><span class="s">long</span><span class="p">     </span><span class="s">and</span>
-</span><span id="line-13-18"><a id="example-13-18" name="example-13-18"></a><span class="p">...                </span><span class="s">items in it can also be long</span>
-</span><span id="line-13-19"><a id="example-13-19" name="example-13-19"></a><span class="p">&amp;{</span><span class="nv">DICT</span><span class="p">}            </span><span class="s">first=This value is pretty long.</span>
-</span><span id="line-13-20"><a id="example-13-20" name="example-13-20"></a><span class="p">...                </span><span class="s">second=This value is even longer. It has two sentences.</span>
-</span><span id="line-13-21"><a id="example-13-21" name="example-13-21"></a>
-</span><span id="line-13-22"><a id="example-13-22" name="example-13-22"></a><span class="gh">*** Test Cases ***</span>
-</span><span id="line-13-23"><a id="example-13-23" name="example-13-23"></a><span class="gu">Example</span>
-</span><span id="line-13-24"><a id="example-13-24" name="example-13-24"></a><span class="p">    [</span><span class="kn">Tags</span><span class="p">]    </span><span class="s">you</span><span class="p">    </span><span class="s">probably</span><span class="p">    </span><span class="s">do</span><span class="p">    </span><span class="s">not</span><span class="p">    </span><span class="s">have</span><span class="p">    </span><span class="s">this</span><span class="p">    </span><span class="s">many</span>
-</span><span id="line-13-25"><a id="example-13-25" name="example-13-25"></a><span class="p">    ...       </span><span class="s">tags</span><span class="p">    </span><span class="s">in</span><span class="p">    </span><span class="s">real</span><span class="p">    </span><span class="s">life</span>
-</span><span id="line-13-26"><a id="example-13-26" name="example-13-26"></a><span class="p">    </span><span class="nf">Do X</span><span class="p">    </span><span class="s">first argument</span><span class="p">    </span><span class="s">second argument</span><span class="p">    </span><span class="s">third argument</span>
-</span><span id="line-13-27"><a id="example-13-27" name="example-13-27"></a><span class="p">    ...    </span><span class="s">fourth argument</span><span class="p">    </span><span class="s">fifth argument</span><span class="p">    </span><span class="s">sixth argument</span>
-</span><span id="line-13-28"><a id="example-13-28" name="example-13-28"></a><span class="p">    ${</span><span class="nv">var</span><span class="p">} =    </span><span class="nf">Get X</span>
-</span><span id="line-13-29"><a id="example-13-29" name="example-13-29"></a><span class="p">    ...    </span><span class="s">first argument passed to this keyword is pretty long</span>
-</span><span id="line-13-30"><a id="example-13-30" name="example-13-30"></a><span class="p">    ...    </span><span class="s">second argument passed to this keyword is long too</span>
-</span></code></pre></div></td></tr></table></div></p>
 <p><a id="localized"></a></p>
 <h2 id="localization">Localization<a class="headerlink" href="#localization" title="Permanent link">&para;</a></h2>
 <p>Robot Framework localization efforts were started in Robot Framework 6.0
-that allowed translation of <a href="../../appendix/translations/#section-headers">section headers</a>, <a href="../../appendix/translations/#settings">settings</a>,
-<a href="https://issues.robotframework.org">Given/When/Then prefixes</a> used in Behavior Driven Development (BDD), and
-<a href="https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.TestSuite.to_json">true and false strings</a> used in automatic Boolean argument conversion.
+that allowed translation of <a href="#test-data-sections">section headers</a>, <a href="../../appendix/settings/#available-settings">settings</a>,
+<a href="#enabling-languages">Given/When/Then prefixes</a> used in Behavior Driven Development (BDD), and
+<a href="../tests/#behavior-driven-style">true and false strings</a> used in automatic Boolean argument conversion.
 The plan is to extend localization support in the future, for example,
 to log and report and possibly also to control structures.</p>
-<p>This section explains how to <a href="https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.TestSuite.to_dict">activate languages</a>, what <a href="#built-in-languages">built-in languages</a>
+<p>This section explains how to <a href="../../extend/libraries/#supported-conversions">activate languages</a>, what <a href="#built-in-languages">built-in languages</a>
 are supported, how to create <a href="#custom-language-files">custom language files</a> and how new translations
-can be <a href="https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.TestSuite.from_json">contributed</a>.</p>
+can be <a href="#contributing-translations">contributed</a>.</p>
 <h3 id="enabling-languages">Enabling languages<a class="headerlink" href="#enabling-languages" title="Permanent link">&para;</a></h3>
 <h4 id="using-command-line-option">Using command line option<a class="headerlink" href="#using-command-line-option" title="Permanent link">&para;</a></h4>
 <p>The main mechanism to activate languages is specifying them from the command line
-using the <code>--language</code> option. When enabling <a href="#built-in-languages">built-in languages</a>,
+using the <code class="option">--language</code> option. When enabling <a href="#built-in-languages">built-in languages</a>,
 it is possible to use either the language name like <code>Finnish</code> or the language
 code like <code>fi</code>. Both names and codes are case and space insensitive and also
 the hyphen (<code>-</code>) is ignored. To enable multiple languages, the
-<code>--language</code> option needs to be used multiple times:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-14-1">1</a></span>
-<span class="normal"><a href="#example-14-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-14-1"><a id="example-14-1" name="example-14-1"></a><span class="n">robot</span> <span class="o">--</span><span class="n">language</span> <span class="n">Finnish</span> <span class="n">testit</span><span class="o">.</span><span class="n">robot</span>
-</span><span id="line-14-2"><a id="example-14-2" name="example-14-2"></a><span class="n">robot</span> <span class="o">--</span><span class="n">language</span> <span class="n">pt</span> <span class="o">--</span><span class="n">language</span> <span class="n">ptbr</span> <span class="n">testes</span><span class="o">.</span><span class="n">robot</span>
+<code class="option">--language</code> option needs to be used multiple times:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-13-1">1</a></span>
+<span class="normal"><a href="#example-13-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-13-1"><a id="example-13-1" name="example-13-1"></a>robot --language Finnish testit.robot
+</span><span id="line-13-2"><a id="example-13-2" name="example-13-2"></a>robot --language pt --language ptbr testes.robot
 </span></code></pre></div></td></tr></table></div>
-<p>The same <code>--language</code> option is also used when activating
+<p>The same <code class="option">--language</code> option is also used when activating
 <a href="#custom-language-files">custom language files</a>. With them the value can be either a path to the file or,
 if the file is in the <a href="../../execution/configuration/#module-search-path">module search path</a>, the module name:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-15-1">1</a></span>
-<span class="normal"><a href="#example-15-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-15-1"><a id="example-15-1" name="example-15-1"></a><span class="n">robot</span> <span class="o">--</span><span class="n">language</span> <span class="n">Custom</span><span class="o">.</span><span class="n">py</span> <span class="n">tests</span><span class="o">.</span><span class="n">robot</span>
-</span><span id="line-15-2"><a id="example-15-2" name="example-15-2"></a><span class="n">robot</span> <span class="o">--</span><span class="n">language</span> <span class="n">MyLang</span> <span class="n">tests</span><span class="o">.</span><span class="n">robot</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-14-1">1</a></span>
+<span class="normal"><a href="#example-14-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-14-1"><a id="example-14-1" name="example-14-1"></a>robot --language Custom.py tests.robot
+</span><span id="line-14-2"><a id="example-14-2" name="example-14-2"></a>robot --language MyLang tests.robot
 </span></code></pre></div></td></tr></table></div>
 <p>For backwards compatibility reasons, and to support partial translations,
 English is always activated automatically. Future versions may allow disabling
@@ -10982,13 +11079,15 @@ it.</p>
 <p>It is also possible to enable languages directly in data files by having
 a line <code>Language: &lt;value&gt;</code> (case-insensitive) before any of the section
 headers. The value after the colon is interpreted the same way as with
-the <code>--language</code> option:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-16-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-16-1"><a id="example-16-1" name="example-16-1"></a><span class="n">Language</span><span class="p">:</span> <span class="n">Finnish</span>
+the <code class="option">--language</code> option:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-15-1">1</a></span>
+<span class="normal"><a href="#example-15-2">2</a></span>
+<span class="normal"><a href="#example-15-3">3</a></span>
+<span class="normal"><a href="#example-15-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-15-1"><a id="example-15-1" name="example-15-1"></a>Language: Finnish
+</span><span id="line-15-2"><a id="example-15-2" name="example-15-2"></a>
+</span><span id="line-15-3"><a id="example-15-3" name="example-15-3"></a>*** Asetukset ***
+</span><span id="line-15-4"><a id="example-15-4" name="example-15-4"></a>Dokumentaatio        Example using Finnish.
 </span></code></pre></div></td></tr></table></div>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="o">***</span> <span class="n">Asetukset</span> <span class="o">***</span>
-<span class="n">Dokumentaatio</span>        <span class="n">Example</span> <span class="n">using</span> <span class="n">Finnish</span><span class="o">.</span>
-</code></pre></div></td></tr></table></div>
 <p>If there is a need to enable multiple languages, the <code>Language:</code> line
 can be repeated. These configuration lines cannot be in comments so something like
 <code># Language: Finnish</code> has no effect.</p>
@@ -10996,7 +11095,7 @@ can be repeated. These configuration lines cannot be in comments so something li
 parsing subsequent files as well as the whole execution. This
 behavior is likely to change in the future and <em>should not</em> be relied upon.
 If you use per-file configuration, use it with all files or enable languages
-globally with the <code>--language</code> option.</p>
+globally with the <code class="option">--language</code> option.</p>
 <h3 id="built-in-languages">Built-in languages<a class="headerlink" href="#built-in-languages" title="Permanent link">&para;</a></h3>
 <p>The following languages are supported out-of-the-box. Click the language name
 to see the actual translations:</p>
@@ -11032,7 +11131,7 @@ to see the actual translations:</p>
 <!-- END GENERATED CONTENT -->
 <p>All these translations have been provided by the awesome Robot Framework
 community. If a language you are interested in is not included, you can
-consider <a href="https://issues.robotframework.org">contributing</a> it!</p>
+consider <a href="#contributing-translations">contributing</a> it!</p>
 <h3 id="custom-language-files">Custom language files<a class="headerlink" href="#custom-language-files" title="Permanent link">&para;</a></h3>
 <p>If a language you would need is not available as a built-in language, or you
 want to create a totally custom language for some specific need, you can easily
@@ -11040,34 +11139,34 @@ create a custom language file. Language files are Python files that contain
 one or more language definitions that are all loaded when the language file
 is taken into use. Language definitions are created by extending the
 <code>robot.api.Language</code> base class and overriding class attributes as needed:</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-17-1">1</a></span>
-<span class="normal"><a href="#example-17-2">2</a></span>
-<span class="normal"><a href="#example-17-3">3</a></span>
-<span class="normal"><a href="#example-17-4">4</a></span>
-<span class="normal"><a href="#example-17-5">5</a></span>
-<span class="normal"><a href="#example-17-6">6</a></span>
-<span class="normal"><a href="#example-17-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-17-1"><a id="example-17-1" name="example-17-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">robot.api</span><span class="w"> </span><span class="kn">import</span> <span class="n">Language</span>
-</span><span id="line-17-2"><a id="example-17-2" name="example-17-2"></a>
-</span><span id="line-17-3"><a id="example-17-3" name="example-17-3"></a><span class="k">class</span><span class="w"> </span><span class="nc">Example</span><span class="p">(</span><span class="n">Language</span><span class="p">):</span>
-</span><span id="line-17-4"><a id="example-17-4" name="example-17-4"></a>    <span class="n">test_cases_header</span> <span class="o">=</span> <span class="s1">'Validations'</span>
-</span><span id="line-17-5"><a id="example-17-5" name="example-17-5"></a>    <span class="n">tags_setting</span> <span class="o">=</span> <span class="s1">'Labels'</span>
-</span><span id="line-17-6"><a id="example-17-6" name="example-17-6"></a>    <span class="n">given_prefixes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Assuming'</span><span class="p">]</span>
-</span><span id="line-17-7"><a id="example-17-7" name="example-17-7"></a>    <span class="n">true_strings</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'OK'</span><span class="p">,</span> <span class="s1">'</span><span class="se">\N{THUMBS UP SIGN}</span><span class="s1">'</span><span class="p">]</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-16-1">1</a></span>
+<span class="normal"><a href="#example-16-2">2</a></span>
+<span class="normal"><a href="#example-16-3">3</a></span>
+<span class="normal"><a href="#example-16-4">4</a></span>
+<span class="normal"><a href="#example-16-5">5</a></span>
+<span class="normal"><a href="#example-16-6">6</a></span>
+<span class="normal"><a href="#example-16-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-16-1"><a id="example-16-1" name="example-16-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">robot.api</span><span class="w"> </span><span class="kn">import</span> <span class="n">Language</span>
+</span><span id="line-16-2"><a id="example-16-2" name="example-16-2"></a>
+</span><span id="line-16-3"><a id="example-16-3" name="example-16-3"></a><span class="k">class</span><span class="w"> </span><span class="nc">Example</span><span class="p">(</span><span class="n">Language</span><span class="p">):</span>
+</span><span id="line-16-4"><a id="example-16-4" name="example-16-4"></a>    <span class="n">test_cases_header</span> <span class="o">=</span> <span class="s1">'Validations'</span>
+</span><span id="line-16-5"><a id="example-16-5" name="example-16-5"></a>    <span class="n">tags_setting</span> <span class="o">=</span> <span class="s1">'Labels'</span>
+</span><span id="line-16-6"><a id="example-16-6" name="example-16-6"></a>    <span class="n">given_prefixes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Assuming'</span><span class="p">]</span>
+</span><span id="line-16-7"><a id="example-16-7" name="example-16-7"></a>    <span class="n">true_strings</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'OK'</span><span class="p">,</span> <span class="s1">'</span><span class="se">\N{THUMBS UP SIGN}</span><span class="s1">'</span><span class="p">]</span>
 </span></code></pre></div></td></tr></table></div>
-Assuming the above code would be in file <em>example.py</em>, a path to that
+<p>Assuming the above code would be in file <code class="file">example.py</code>, a path to that
 file or just the module name <code>example</code> could be used when the language file
-is <a href="https://issues.robotframework.org">activated</a>.</p>
+is <a href="#enabling-languages">activated</a>.</p>
 <p>The above example adds only some of the possible translations. That is fine
 because English is automatically enabled anyway. Most values must be specified
 as strings, but BDD prefixes and true/false strings allow more than one value
 and must be given as lists. For more examples, see Robot Framework's internal
-<a href="https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.TestSuite.to_json">languages</a> module that contains the <code>Language</code> class as well as all built-in
+<a href="https://github.com/robotframework/robotframework/blob/master/src/robot/conf/languages.py">languages</a> module that contains the <code>Language</code> class as well as all built-in
 language definitions.</p>
 <h3 id="contributing-translations">Contributing translations<a class="headerlink" href="#contributing-translations" title="Permanent link">&para;</a></h3>
 <p>If you want to add translation for a new language or enhance existing, head
-to <a href="https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.TestSuite.to_dict">Crowdin</a> that we use for collaboration. For more details, see the
-separate <a href="https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.TestSuite.from_json">Localization</a> project, and for questions and free discussion join
-the <code>#localization</code> channel on our <a href="http://slack.robotframework.org">Slack</a>.</p>
+to <a href="https://robotframework.crowdin.com">Crowdin</a> that we use for collaboration. For more details, see the
+separate <a href="https://github.com/MarketSquare/localization">Localization</a> project, and for questions and free discussion join
+the <code>#localization</code> channel on our <a href="https://slack.robotframework.org">Slack</a>.</p>
 <h2 id="style">Style<a class="headerlink" href="#style" title="Permanent link">&para;</a></h2>
 <p>Robot Framework syntax creates a simple programming language, and similarly as with
 other languages, it is important to think about the coding style. Robot Framework
@@ -11084,14 +11183,14 @@ conventions:</p>
 <li>Consistency within a single file and preferably within the whole project.</li>
 </ul>
 <p>One case where there currently is no strong convention is keyword capitalization.
-Robot Framework itself typically uses title case like <em>Example Keyword</em> in
+Robot Framework itself typically uses title case like <em class="name">Example Keyword</em> in
 documentation and elsewhere, and this style is often used in Robot Framework data
 as well. It does not work too well with longer, sentence-like keywords such as
-<em>Log into system as an admin</em>, though.</p>
+<em class="name">Log into system as an admin</em>, though.</p>
 <p>Teams and organizations using Robot Framework should have their own coding standards.
-The community developed <a href="https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.TestSuite.from_dict">Robot Framework Style Guide</a> is an excellent
+The community developed <a href="https://docs.robotframework.org/docs/style_guide">Robot Framework Style Guide</a> is an excellent
 starting point that can be amended as needed. It is also possible to enforce these
-conventions by using the <a href="https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.TestSuite.run">Robocop</a> linter and the <a href="https://robot-framework.readthedocs.io/en/master/autodoc/robot.model.html#robot.model.testsuite.TestSuite.adjust_source">Robotidy</a> code formatter.</p>
+conventions by using the <a href="https://robocop.readthedocs.io/">Robocop</a> linter and the <a href="https://robotidy.readthedocs.io/">Robotidy</a> code formatter.</p>
 
 
 

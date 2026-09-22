@@ -1136,7 +1136,7 @@
   <span class="md-ellipsis">
     
   
-    Results
+    Execution artifacts
   
 
     
@@ -9895,8 +9895,8 @@
 contexts and how variables in expressions are handled.</p>
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
 <p>Constructs such as <a href="../../syntax/control/#ifelse-structures">IF/ELSE structures</a>, <a href="../../syntax/control/#while-loops">WHILE loops</a> and <a href="../../syntax/variables/#inline-python-evaluation">inline Python evaluation</a>
-as well as several <a href="../../syntax/libraries/#builtin">BuiltIn</a> keywords accept an expression that is evaluated in Python:</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1"> 1</a></span>
+as well as several <a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> keywords accept an expression that is evaluated in Python:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1"> 1</a></span>
 <span class="normal"><a href="#example-0-2"> 2</a></span>
 <span class="normal"><a href="#example-0-3"> 3</a></span>
 <span class="normal"><a href="#example-0-4"> 4</a></span>
@@ -9930,11 +9930,11 @@ as well as several <a href="../../syntax/libraries/#builtin">BuiltIn</a> keyword
 </span><span id="line-0-16"><a id="example-0-16" name="example-0-16"></a><span class="gu">Should Be True keyword</span>
 </span><span id="line-0-17"><a id="example-0-17" name="example-0-17"></a><span class="p">    </span><span class="nf">Should Be True</span><span class="p">    ${</span><span class="nv">x</span><span class="p">}</span><span class="s"> &gt; 0</span>
 </span></code></pre></div></td></tr></table></div>
-Notice that instead of creating complicated
-expressions, it is often better to move the logic into a <a href="../../extend/libraries/#creating-test-library-class-or-module">test library</a>.
+<p>Notice that instead of creating complicated
+expressions, it is often better to move the logic into a <a href="../../syntax/libraries/#using-test-libraries">test library</a>.
 That typically eases maintenance and also enhances execution speed.</p>
 <h2 id="evaluation-namespace">Evaluation namespace<a class="headerlink" href="#evaluation-namespace" title="Permanent link">&para;</a></h2>
-<p>Expressions are evaluated using Python's <a href="http://docs.python.org/library/functions.html#eval">eval</a> function so that normal Python
+<p>Expressions are evaluated using Python's <a href="https://docs.python.org/library/functions.html#eval">eval</a> function so that normal Python
 constructs like <code>'${x}' == 'expected'</code>, <code>${x} &gt; 0</code> and
 <code>'${x}'.upper() not in ('FAIL', 'BAD')</code> can be used and all
 builtin functions like <code>len()</code> and <code>int()</code> are available.
@@ -9944,9 +9944,9 @@ Python modules, including the standard modules and the installed third party
 modules.</p>
 <p>The following examples demonstrate using Python builtins as well as modules
 using the <a href="../../syntax/variables/#inline-python-evaluation">inline Python evaluation</a> syntax, but same expressions would also
-work with <a href="../../syntax/control/#ifelse-structures">IF/ELSE structures</a> and <a href="../../syntax/libraries/#builtin">BuiltIn</a> keywords without the need to use
+work with <a href="../../syntax/control/#ifelse-structures">IF/ELSE structures</a> and <a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> keywords without the need to use
 the <code>${{}}</code> decoration around the expression:</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-1-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-1-1"> 1</a></span>
 <span class="normal"><a href="#example-1-2"> 2</a></span>
 <span class="normal"><a href="#example-1-3"> 3</a></span>
 <span class="normal"><a href="#example-1-4"> 4</a></span>
@@ -9978,7 +9978,7 @@ the <code>${{}}</code> decoration around the expression:</p>
 </span><span id="line-1-15"><a id="example-1-15" name="example-1-15"></a><span class="p">    </span><span class="nf">Should Be Equal</span><span class="p">      ${</span><span class="nv">{round(math.pi, 2)</span><span class="p">}</span><span class="s">}</span><span class="p">    ${</span><span class="nv">3.14</span><span class="p">}</span>
 </span><span id="line-1-16"><a id="example-1-16" name="example-1-16"></a><span class="p">    </span><span class="nf">Should Start With</span><span class="p">    ${</span><span class="nv">{robot.__version__</span><span class="p">}</span><span class="s">}</span><span class="p">    </span><span class="s">4.</span>
 </span></code></pre></div></td></tr></table></div>
-A limitation of using modules is that nested modules like <code>rootmod.submod</code>
+<p>A limitation of using modules is that nested modules like <code>rootmod.submod</code>
 can only be used if the root module automatically imports the submodule. That is
 not always the case and using such modules is not possible. An concrete example
 that is relevant in the automation context is the <code>selenium</code> module that is
@@ -9986,9 +9986,9 @@ implemented, at least at the time of this writing, so that just importing
 <code>selenium</code> does not import the <code>selenium.webdriver</code> submodule.
 Another limitation is that modules cannot be used in the expression part of
 a list comprehension. A workaround to both of these problems
-is using the <a href="../../syntax/libraries/#builtin">BuiltIn</a> keyword <em>Evaluate</em> that accepts modules to be imported
+is using the <a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> keyword <em class="name">Evaluate</em> that accepts modules to be imported
 and added to the evaluation namespace as an argument:</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-2-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-2-1"> 1</a></span>
 <span class="normal"><a href="#example-2-2"> 2</a></span>
 <span class="normal"><a href="#example-2-3"> 3</a></span>
 <span class="normal"><a href="#example-2-4"> 4</a></span>
@@ -10016,8 +10016,8 @@ and added to the evaluation namespace as an argument:</p>
 </span><span id="line-2-13"><a id="example-2-13" name="example-2-13"></a><span class="p">    ${</span><span class="nv">items</span><span class="p">} =    </span><span class="nf">Evaluate</span><span class="p">    </span><span class="s">[json.loads(item) for item in ('1', '"b"')]</span><span class="p">    </span><span class="s">modules=json</span>
 </span><span id="line-2-14"><a id="example-2-14" name="example-2-14"></a><span class="p">    </span><span class="nf">Log</span><span class="p">    ${</span><span class="nv">items</span><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
-The <em>Evaluate</em> keyword also supports custom evaluation namespaces if further
-customization is needed. See its documentation in the <a href="../../syntax/libraries/#builtin">BuiltIn</a> library for more details.</p>
+<p>The <em class="name">Evaluate</em> keyword also supports custom evaluation namespaces if further
+customization is needed. See its documentation in the <a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> library for more details.</p>
 <h2 id="using-variables">Using variables<a class="headerlink" href="#using-variables" title="Permanent link">&para;</a></h2>
 <h3 id="normal-variable-syntax">Normal <code>${variable}</code> syntax<a class="headerlink" href="#normal-variable-syntax" title="Permanent link">&para;</a></h3>
 <p>When a variable is used in the expression using the normal <code>${variable}</code>
@@ -10033,7 +10033,7 @@ Most importantly, strings must always be quoted either with
 single or double quotes like <code>'${x}'</code>, and if they can contain newlines, they must be
 triple-quoted like <code>'''${x}'''</code>. Strings containing quotes themselves cause
 additional problems, but triple-quoting typically handles them. Also the
-backslash character <code>\\</code> is problematic, but can be handled by
+backslash character <code class="codesc">\</code> is problematic, but can be handled by
 using Python's raw-string notation like <code>r'${path}'</code>.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-3-1">1</a></span>
 <span class="normal"><a href="#example-3-2">2</a></span>
@@ -10063,7 +10063,7 @@ Luckily there is an easy solution to these problems discussed in this section.</
 using special variable syntax without the curly braces like <code>$variable</code>. Such variables
 should never be quoted, not even if they contain strings.</p>
 <p>Compare this these examples with the example in the previous section:</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-4-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-4-1"> 1</a></span>
 <span class="normal"><a href="#example-4-2"> 2</a></span>
 <span class="normal"><a href="#example-4-3"> 3</a></span>
 <span class="normal"><a href="#example-4-4"> 4</a></span>
@@ -10089,7 +10089,7 @@ should never be quoted, not even if they contain strings.</p>
 </span><span id="line-4-12"><a id="example-4-12" name="example-4-12"></a><span class="p">    </span><span class="nf">Should Be True</span><span class="p">    </span><span class="s">$example is not None</span>
 </span><span id="line-4-13"><a id="example-4-13" name="example-4-13"></a><span class="p">    </span><span class="nf">Should Be True</span><span class="p">    </span><span class="s">len($result) &gt; 1 and $result[1] == 'OK'</span>
 </span></code></pre></div></td></tr></table></div>
-Using the <code>$variable</code> syntax slows down expression evaluation a little.
+<p>Using the <code>$variable</code> syntax slows down expression evaluation a little.
 This should not typically matter, but should be taken into account if
 complex expressions are evaluated often and there are strict time
 constrains. Moving such logic to test libraries is typically a good idea

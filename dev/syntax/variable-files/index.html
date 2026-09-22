@@ -1254,7 +1254,7 @@
   <span class="md-ellipsis">
     
   
-    Results
+    Execution artifacts
   
 
     
@@ -9897,7 +9897,7 @@
 
 <h1 id="variable-files">Variable files<a class="headerlink" href="#variable-files" title="Permanent link">&para;</a></h1>
 <p>Variable files contain <a href="../variables/#variables">variables</a> that can be used in the test
-data. Variables can also be created using <a href="../variables/#variable-sections">Variable sections</a> or <a href="https://packaging.python.org/en/latest/guides/distributing-packages-using-setuptools/#package-data">set from
+data. Variables can also be created using <a href="../variables/#variable-sections">Variable sections</a> or <a href="../variables/#command-line-variables">set from
 the command line</a>, but variable files allow creating them dynamically
 and also make it easy to create other variable values than strings.</p>
 <p>Variable files are typically implemented as modules and there are
@@ -9907,10 +9907,10 @@ two different approaches for creating variables:</p>
 	<a href="#getting-variables-directly-from-a-module"><a id="0f35216297f218ec641ca526a9579153">Getting variables directly from a module</a> </a>
 </dt>
 <dd>Variables are specified as module attributes. In simple cases, the
-   syntax is so simple that no real programming is needed. For example,
-   <code>MY_VAR = 'my value'</code> creates a variable <code>${MY_VAR}</code> with the specified
-   text as its value. One limitation of this approach is that it does
-   not allow using arguments.
+syntax is so simple that no real programming is needed. For example,
+<code>MY_VAR = 'my value'</code> creates a variable <code>${MY_VAR}</code> with the specified
+text as its value. One limitation of this approach is that it does
+not allow using arguments.
 <p>
 <div class="mkdocs-ezglossary-refs list">
     
@@ -9924,8 +9924,8 @@ two different approaches for creating variables:</p>
 	<a href="#getting-variables-from-a-special-function"><a id="8334446cb52f2c4c9e5b7fe20e2f5821">Getting variables from a special function</a> </a>
 </dt>
 <dd>Variable files can have a special <code>get_variables</code>
-   (or <code>getVariables</code>) method that returns variables as a mapping.
-   Because the method can take arguments this approach is very flexible.
+(or <code>getVariables</code>) method that returns variables as a mapping.
+Because the method can take arguments this approach is very flexible.
 <p>
 <div class="mkdocs-ezglossary-refs list">
     
@@ -9936,22 +9936,22 @@ two different approaches for creating variables:</p>
 </p></dd>
 
 </dl>
-<p>Alternatively variable files can be implemented as <a href="https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.ResourceFile.to_json">classes</a>
+<p>Alternatively variable files can be implemented as <a href="#implementing-variable-file-as-a-class">classes</a>
 that the framework will instantiate. Also in this case it is possible to create
 variables as attributes or get them dynamically from the <code>get_variables</code>
-method. Variable files can also be created as <a href="https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.ResourceFile.from_json">YAML</a> and <a href="../data/#json-structure">JSON</a>.</p>
+method. Variable files can also be created as <a href="#variable-file-as-yaml">YAML</a> and <a href="#variable-file-as-json">JSON</a>.</p>
 <h3 id="taking-variable-files-into-use">Taking variable files into use<a class="headerlink" href="#taking-variable-files-into-use" title="Permanent link">&para;</a></h3>
 <h4 id="setting-section">Setting section<a class="headerlink" href="#setting-section" title="Permanent link">&para;</a></h4>
-<p>All test data files can import variable files using the <code>Variables</code>
+<p>All test data files can import variable files using the <em class="setting">Variables</em>
 setting in the Setting section. Variable files are typically imported using
-a path to the file same way as <a href="../resource-files/#resource-files">resource files are imported</a> using
-the <code>Resource</code> setting. Similarly to resource files, the path to
+a path to the file same way as <a href="../resource-files/#taking-resource-files-into-use">resource files are imported</a> using
+the <em class="setting">Resource</em> setting. Similarly to resource files, the path to
 the imported variable file is considered relative to the directory where the
 importing file is, and if not found, it is searched from directories
 in the <a href="../../execution/configuration/#module-search-path">module search path</a>. The path can also contain variables,
 and slashes are converted to backslashes on Windows.</p>
 <p>Examples:</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
 <span class="normal"><a href="#example-0-2">2</a></span>
 <span class="normal"><a href="#example-0-3">3</a></span>
 <span class="normal"><a href="#example-0-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="gh">*** Settings ***</span>
@@ -9959,45 +9959,45 @@ and slashes are converted to backslashes on Windows.</p>
 </span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a><span class="kn">Variables</span><span class="p">    </span><span class="nn">../data/variables.py</span>
 </span><span id="line-0-4"><a id="example-0-4" name="example-0-4"></a><span class="kn">Variables</span><span class="p">    ${</span><span class="nv">RESOURCES</span><span class="p">}</span><span class="nn">/common.yaml</span>
 </span></code></pre></div></td></tr></table></div>
-Starting from Robot Framework 5.0, variable files implemented using Python
-can also be imported using the module name <a href="https://packaging.python.org/en/latest/guides/distributing-packages-using-setuptools/#package-data">similarly as libraries</a>.
+<p>Starting from Robot Framework 5.0, variable files implemented using Python
+can also be imported using the module name <a href="../libraries/#specifying-library-to-import">similarly as libraries</a>.
 When using this approach, the module needs to be in the <a href="../../execution/configuration/#module-search-path">module search path</a>.</p>
 <p>Examples:</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-1-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-1-1">1</a></span>
 <span class="normal"><a href="#example-1-2">2</a></span>
 <span class="normal"><a href="#example-1-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-1-1"><a id="example-1-1" name="example-1-1"></a><span class="gh">*** Settings ***</span>
 </span><span id="line-1-2"><a id="example-1-2" name="example-1-2"></a><span class="kn">Variables</span><span class="p">    </span><span class="nn">myvariables</span>
 </span><span id="line-1-3"><a id="example-1-3" name="example-1-3"></a><span class="kn">Variables</span><span class="p">    </span><span class="nn">rootmodule.Variables</span>
 </span></code></pre></div></td></tr></table></div>
-If a <a href="https://packaging.python.org/en/latest/guides/distributing-packages-using-setuptools/#package-data">variable file accepts arguments</a>, they are specified after the path
+<p>If a <a href="#getting-variables-from-a-special-function">variable file accepts arguments</a>, they are specified after the path
 or name of the variable file to import:</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-2-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-2-1">1</a></span>
 <span class="normal"><a href="#example-2-2">2</a></span>
 <span class="normal"><a href="#example-2-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-2-1"><a id="example-2-1" name="example-2-1"></a><span class="gh">*** Settings ***</span>
 </span><span id="line-2-2"><a id="example-2-2" name="example-2-2"></a><span class="kn">Variables</span><span class="p">    </span><span class="nn">arguments.py</span><span class="p">    </span><span class="s">arg1</span><span class="p">    ${</span><span class="nv">ARG2</span><span class="p">}</span>
 </span><span id="line-2-3"><a id="example-2-3" name="example-2-3"></a><span class="kn">Variables</span><span class="p">    </span><span class="nn">arguments</span><span class="p">    </span><span class="s">argument</span>
 </span></code></pre></div></td></tr></table></div>
-All variables from a variable file are available in the test data file
+<p>All variables from a variable file are available in the test data file
 that imports it. If several variable files are imported and they
 contain a variable with the same name, the one in the earliest imported file is
 taken into use. Additionally, variables created in Variable sections and
 set from the command line override variables from variable files.</p>
 <h4 id="command-line">Command line<a class="headerlink" href="#command-line" title="Permanent link">&para;</a></h4>
 <p>Another way to take variable files into use is using the command line option
-<code>--variablefile</code>. Variable files are referenced using a path or
-module name similarly as when importing them using the <code>Variables</code>
+<code class="option">--variablefile</code>. Variable files are referenced using a path or
+module name similarly as when importing them using the <em class="setting">Variables</em>
 setting. Possible arguments are joined to the path with a colon (<code>:</code>):</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-3-1">1</a></span>
 <span class="normal"><a href="#example-3-2">2</a></span>
 <span class="normal"><a href="#example-3-3">3</a></span>
 <span class="normal"><a href="#example-3-4">4</a></span>
 <span class="normal"><a href="#example-3-5">5</a></span>
-<span class="normal"><a href="#example-3-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-3-1"><a id="example-3-1" name="example-3-1"></a><span class="o">--</span><span class="n">variablefile</span> <span class="n">myvariables</span><span class="o">.</span><span class="n">py</span>
-</span><span id="line-3-2"><a id="example-3-2" name="example-3-2"></a><span class="o">--</span><span class="n">variablefile</span> <span class="n">path</span><span class="o">/</span><span class="n">variables</span><span class="o">.</span><span class="n">py</span>
-</span><span id="line-3-3"><a id="example-3-3" name="example-3-3"></a><span class="o">--</span><span class="n">variablefile</span> <span class="o">/</span><span class="n">absolute</span><span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">common</span><span class="o">.</span><span class="n">py</span>
-</span><span id="line-3-4"><a id="example-3-4" name="example-3-4"></a><span class="o">--</span><span class="n">variablefile</span> <span class="n">variablemodule</span>
-</span><span id="line-3-5"><a id="example-3-5" name="example-3-5"></a><span class="o">--</span><span class="n">variablefile</span> <span class="n">arguments</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="n">arg1</span><span class="p">:</span><span class="n">arg2</span>
-</span><span id="line-3-6"><a id="example-3-6" name="example-3-6"></a><span class="o">--</span><span class="n">variablefile</span> <span class="n">rootmodule</span><span class="o">.</span><span class="n">Variables</span><span class="p">:</span><span class="n">arg1</span><span class="p">:</span><span class="n">arg2</span>
+<span class="normal"><a href="#example-3-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-3-1"><a id="example-3-1" name="example-3-1"></a>--variablefile myvariables.py
+</span><span id="line-3-2"><a id="example-3-2" name="example-3-2"></a>--variablefile path/variables.py
+</span><span id="line-3-3"><a id="example-3-3" name="example-3-3"></a>--variablefile /absolute/path/common.py
+</span><span id="line-3-4"><a id="example-3-4" name="example-3-4"></a>--variablefile variablemodule
+</span><span id="line-3-5"><a id="example-3-5" name="example-3-5"></a>--variablefile arguments.py:arg1:arg2
+</span><span id="line-3-6"><a id="example-3-6" name="example-3-6"></a>--variablefile rootmodule.Variables:arg1:arg2
 </span></code></pre></div></td></tr></table></div>
 <p>Variable files taken into use from the
 command line are also searched from the <a href="../../execution/configuration/#module-search-path">module search path</a> similarly as
@@ -10005,22 +10005,22 @@ variable files imported in the Setting section. Relative paths are considered
 relative to the directory where execution is started from.</p>
 <p>If a variable file is given as an absolute Windows path, the colon after the
 drive letter is not considered a separator:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-4-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-4-1"><a id="example-4-1" name="example-4-1"></a><span class="o">--</span><span class="n">variablefile</span> <span class="n">C</span><span class="p">:</span>\<span class="n">path</span>\<span class="n">variables</span><span class="o">.</span><span class="n">py</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-4-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-4-1"><a id="example-4-1" name="example-4-1"></a>--variablefile C:\path\variables.py
 </span></code></pre></div></td></tr></table></div>
 <p>It is also possible to use a semicolon
 (<code>;</code>) as an argument separator. This is useful if variable file arguments
 themselves contain colons, but requires surrounding the whole value with
 quotes on UNIX-like operating systems:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-5-1">1</a></span>
-<span class="normal"><a href="#example-5-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-5-1"><a id="example-5-1" name="example-5-1"></a><span class="o">--</span><span class="n">variablefile</span> <span class="n">C</span><span class="p">:</span>\<span class="n">path</span>\<span class="n">variables</span><span class="o">.</span><span class="n">py</span><span class="p">;</span><span class="n">D</span><span class="p">:</span>\<span class="n">data</span><span class="o">.</span><span class="n">xls</span>
-</span><span id="line-5-2"><a id="example-5-2" name="example-5-2"></a><span class="o">--</span><span class="n">variablefile</span> <span class="s2">"myvariables.py;argument:with:colons"</span>
+<span class="normal"><a href="#example-5-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-5-1"><a id="example-5-1" name="example-5-1"></a>--variablefile C:\path\variables.py;D:\data.xls
+</span><span id="line-5-2"><a id="example-5-2" name="example-5-2"></a>--variablefile "myvariables.py;argument:with:colons"
 </span></code></pre></div></td></tr></table></div>
 <p>Variables in variable files taken use on the command line are globally
-available in all test data files, similarly as <a href="https://packaging.python.org/en/latest/guides/distributing-packages-using-setuptools/#package-data">individual variables</a>
-set with the <code>--variable</code> option. If both <code>--variablefile</code> and
-<code>--variable</code> options are used and there are variables with same
+available in all test data files, similarly as <a href="../variables/#command-line-variables">individual variables</a>
+set with the <code class="option">--variable</code> option. If both <code class="option">--variablefile</code> and
+<code class="option">--variable</code> options are used and there are variables with same
 names, those that are set individually with
-<code>--variable</code> option take precedence.</p>
+<code class="option">--variable</code> option take precedence.</p>
 <h3 id="getting-variables-directly-from-a-module">Getting variables directly from a module<a class="headerlink" href="#getting-variables-directly-from-a-module" title="Permanent link">&para;</a></h3>
 <h4 id="basic-syntax">Basic syntax<a class="headerlink" href="#basic-syntax" title="Permanent link">&para;</a></h4>
 <p>When variable files are taken into use, they are imported as Python
@@ -10029,7 +10029,7 @@ an underscore (<code>_</code>) are, by default, considered to be variables. Beca
 variable names are case-insensitive, both lower- and upper-case names are
 possible, but in general, capital letters are recommended for global
 variables and attributes.</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-6-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-6-1">1</a></span>
 <span class="normal"><a href="#example-6-2">2</a></span>
 <span class="normal"><a href="#example-6-3">3</a></span>
 <span class="normal"><a href="#example-6-4">4</a></span>
@@ -10041,7 +10041,7 @@ variables and attributes.</p>
 </span><span id="line-6-5"><a id="example-6-5" name="example-6-5"></a><span class="n">NUMBERS</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">INTEGER</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">]</span>
 </span><span id="line-6-6"><a id="example-6-6" name="example-6-6"></a><span class="n">MAPPING</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"one"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"two"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">"three"</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
-In the example above, variables <code>${VARIABLE}</code>, <code>${ANOTHER VARIABLE}</code>, and
+<p>In the example above, variables <code>${VARIABLE}</code>, <code>${ANOTHER VARIABLE}</code>, and
 so on, are created. The first two variables are strings, the third one is
 an integer, then there are two lists, and the final value is a dictionary.
 All these variables can be used as a <a href="../variables/#scalar-variable">scalar variable</a>, lists and the
@@ -10051,7 +10051,7 @@ that variable would only contain keys), and the dictionary also as a
 <p>To make creating a list variable or a dictionary variable more explicit,
 it is possible to prefix the variable name with <code>LIST__</code> or <code>DICT__</code>,
 respectively:</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-7-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-7-1">1</a></span>
 <span class="normal"><a href="#example-7-2">2</a></span>
 <span class="normal"><a href="#example-7-3">3</a></span>
 <span class="normal"><a href="#example-7-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-7-1"><a id="example-7-1" name="example-7-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">OrderedDict</span>
@@ -10059,7 +10059,7 @@ respectively:</p>
 </span><span id="line-7-3"><a id="example-7-3" name="example-7-3"></a><span class="n">LIST__ANIMALS</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"cat"</span><span class="p">,</span> <span class="s2">"dog"</span><span class="p">]</span>
 </span><span id="line-7-4"><a id="example-7-4" name="example-7-4"></a><span class="n">DICT__FINNISH</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">([(</span><span class="s2">"cat"</span><span class="p">,</span> <span class="s2">"kissa"</span><span class="p">),</span> <span class="p">(</span><span class="s2">"dog"</span><span class="p">,</span> <span class="s2">"koira"</span><span class="p">)])</span>
 </span></code></pre></div></td></tr></table></div>
-These prefixes will not be part of the final variable name, but they cause
+<p>These prefixes will not be part of the final variable name, but they cause
 Robot Framework to validate that the value actually is list-like or
 dictionary-like. With dictionaries the actual stored value is also turned
 into a special dictionary that is used also when <a href="../variables/#creating-dictionaries">creating dictionaries</a>
@@ -10120,7 +10120,7 @@ created from a custom object implemented in the same file.</p>
 <h4 id="creating-variables-dynamically">Creating variables dynamically<a class="headerlink" href="#creating-variables-dynamically" title="Permanent link">&para;</a></h4>
 <p>Because variable files are created using a real programming language,
 they can have dynamic logic for setting variables.</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-10-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-10-1"> 1</a></span>
 <span class="normal"><a href="#example-10-2"> 2</a></span>
 <span class="normal"><a href="#example-10-3"> 3</a></span>
 <span class="normal"><a href="#example-10-4"> 4</a></span>
@@ -10142,7 +10142,7 @@ they can have dynamic logic for setting variables.</p>
 </span><span id="line-10-10"><a id="example-10-10" name="example-10-10"></a><span class="k">else</span><span class="p">:</span>
 </span><span id="line-10-11"><a id="example-10-11" name="example-10-11"></a>    <span class="n">AFTERNOON</span> <span class="o">=</span> <span class="kc">False</span>
 </span></code></pre></div></td></tr></table></div>
-The example above uses standard Python libraries to set different
+<p>The example above uses standard Python libraries to set different
 variables, but you can use your own code to construct the values. The
 example below illustrates the concept, but similarly, your code could
 read the data from a database, from an external file or even ask it from
@@ -10177,7 +10177,7 @@ and <code>${get_area}</code> in addition to <code>${AREA1}</code> and
 could override some other variables and cause hard-to-debug
 errors. One possibility to ignore other attributes is prefixing them
 with an underscore:</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-12-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-12-1">1</a></span>
 <span class="normal"><a href="#example-12-2">2</a></span>
 <span class="normal"><a href="#example-12-3">3</a></span>
 <span class="normal"><a href="#example-12-4">4</a></span>
@@ -10195,7 +10195,7 @@ with an underscore:</p>
 </span><span id="line-12-8"><a id="example-12-8" name="example-12-8"></a><span class="n">AREA1</span> <span class="o">=</span> <span class="n">_get_area</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </span><span id="line-12-9"><a id="example-12-9" name="example-12-9"></a><span class="n">AREA2</span> <span class="o">=</span> <span class="n">_get_area</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
-If there is a large number of other attributes, instead of prefixing
+<p>If there is a large number of other attributes, instead of prefixing
 them all, it is often easier to use a special attribute
 <code>__all__</code> and give it a list of attribute names to be processed
 as variables.</p>
@@ -10240,7 +10240,7 @@ variables directly from a module</a>, and it is possible to use <code>LIST__</co
 <code>DICT__</code> prefixes to make creating list and dictionary variables more explicit.
 The example below is functionally identical to the first example related to
 <a href="#getting-variables-directly-from-a-module">getting variables directly from a module</a>.</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-14-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-14-1">1</a></span>
 <span class="normal"><a href="#example-14-2">2</a></span>
 <span class="normal"><a href="#example-14-3">3</a></span>
 <span class="normal"><a href="#example-14-4">4</a></span>
@@ -10256,7 +10256,7 @@ The example below is functionally identical to the first example related to
 </span><span id="line-14-7"><a id="example-14-7" name="example-14-7"></a>                 <span class="s2">"MAPPING"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"one"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"two"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">"three"</span><span class="p">:</span> <span class="mi">3</span><span class="p">}}</span>
 </span><span id="line-14-8"><a id="example-14-8" name="example-14-8"></a>    <span class="k">return</span> <span class="n">variables</span>
 </span></code></pre></div></td></tr></table></div>
-<code>get_variables</code> can also take arguments, which facilitates changing
+<p><code>get_variables</code> can also take arguments, which facilitates changing
 what variables actually are created. Arguments to the function are set just
 as any other arguments for a Python function. When <a href="#taking-variable-files-into-use">taking variable files
 into use</a>, arguments are specified after the path
@@ -10265,7 +10265,7 @@ path with a colon or a semicolon.</p>
 <p>The dummy example below shows how to use arguments with variable files. In a
 more realistic example, the argument could be a path to an external text file
 or database where to read variables from.</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-15-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-15-1"> 1</a></span>
 <span class="normal"><a href="#example-15-2"> 2</a></span>
 <span class="normal"><a href="#example-15-3"> 3</a></span>
 <span class="normal"><a href="#example-15-4"> 4</a></span>
@@ -10287,7 +10287,7 @@ or database where to read variables from.</p>
 </span><span id="line-15-10"><a id="example-15-10" name="example-15-10"></a>    <span class="k">else</span><span class="p">:</span>
 </span><span id="line-15-11"><a id="example-15-11" name="example-15-11"></a>        <span class="k">return</span> <span class="n">variables2</span>
 </span></code></pre></div></td></tr></table></div>
-Starting from Robot Framework 7.0, arguments to variable files support automatic
+<p>Starting from Robot Framework 7.0, arguments to variable files support automatic
 argument conversion as well as named argument syntax. For example, a variable
 file with <code>get_variables(first: int = 0, second: str = '')</code> could be imported
 like this:</p>
@@ -10314,7 +10314,7 @@ to use other approaches to create variable files.</p>
 <p>The first examples create variables from attributes.
 It creates variables <code>${VARIABLE}</code> and <code>@{LIST}</code> from class
 attributes and <code>${ANOTHER VARIABLE}</code> from an instance attribute.</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-17-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-17-1">1</a></span>
 <span class="normal"><a href="#example-17-2">2</a></span>
 <span class="normal"><a href="#example-17-3">3</a></span>
 <span class="normal"><a href="#example-17-4">4</a></span>
@@ -10328,7 +10328,7 @@ attributes and <code>${ANOTHER VARIABLE}</code> from an instance attribute.</p>
 </span><span id="line-17-6"><a id="example-17-6" name="example-17-6"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 </span><span id="line-17-7"><a id="example-17-7" name="example-17-7"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">another_variable</span> <span class="o">=</span> <span class="s1">'another value'</span>
 </span></code></pre></div></td></tr></table></div>
-The second examples utilizes dynamic approach for getting variables. It
+<p>The second examples utilizes dynamic approach for getting variables. It
 creates only one variable <code>${DYNAMIC VARIABLE}</code>.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-18-1">1</a></span>
 <span class="normal"><a href="#example-18-2">2</a></span>
@@ -10343,7 +10343,7 @@ creates only one variable <code>${DYNAMIC VARIABLE}</code>.</p>
 YAML is a data serialization language with a simple and human-friendly syntax
 that is nevertheless easy for machines to parse.
 The following example demonstrates a simple YAML file:</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-19-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-19-1">1</a></span>
 <span class="normal"><a href="#example-19-2">2</a></span>
 <span class="normal"><a href="#example-19-3">3</a></span>
 <span class="normal"><a href="#example-19-4">4</a></span>
@@ -10361,14 +10361,14 @@ The following example demonstrates a simple YAML file:</p>
 </span><span id="line-19-8"><a id="example-19-8" name="example-19-8"></a><span class="w">  </span><span class="nt">two</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">kaksi</span>
 </span><span id="line-19-9"><a id="example-19-9" name="example-19-9"></a><span class="w">  </span><span class="nt">with spaces</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">kolme</span>
 </span></code></pre></div></td></tr></table></div>
-YAML variable files can be used exactly like normal variable files
-from the command line using <code>--variablefile</code> option, in the Settings
-section using <code>Variables</code> setting, and dynamically using the
-<em>Import Variables</em> keyword. They are automatically recognized by their
-extension that must be either <em>.yaml</em> or <em>.yml</em>.
+<p>YAML variable files can be used exactly like normal variable files
+from the command line using <code class="option">--variablefile</code> option, in the Settings
+section using <em class="setting">Variables</em> setting, and dynamically using the
+<em class="name">Import Variables</em> keyword. They are automatically recognized by their
+extension that must be either <code class="file">.yaml</code> or <code class="file">.yml</code>.
 If the above YAML file is imported, it will create exactly the same variables
 as this Variable section:</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-20-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-20-1">1</a></span>
 <span class="normal"><a href="#example-20-2">2</a></span>
 <span class="normal"><a href="#example-20-3">3</a></span>
 <span class="normal"><a href="#example-20-4">4</a></span>
@@ -10378,7 +10378,7 @@ as this Variable section:</p>
 </span><span id="line-20-4"><a id="example-20-4" name="example-20-4"></a><span class="p">@{</span><span class="nv">LIST</span><span class="p">}       </span><span class="s">one</span><span class="p">         </span><span class="s">two</span>
 </span><span id="line-20-5"><a id="example-20-5" name="example-20-5"></a><span class="p">&amp;{</span><span class="nv">DICT</span><span class="p">}       </span><span class="s">one=yksi</span><span class="p">    </span><span class="s">two=kaksi</span><span class="p">    </span><span class="s">with spaces=kolme</span>
 </span></code></pre></div></td></tr></table></div>
-YAML files used as variable files must always be mappings on the top level.
+<p>YAML files used as variable files must always be mappings on the top level.
 As the above example demonstrates, keys and values in the mapping become
 variable names and values, respectively. Variable values can be any data
 types supported by YAML syntax. If names or values contain non-ASCII
@@ -10392,8 +10392,8 @@ always possible to access dictionary values using syntax like
 <code>${DICT}[with spaces]</code> syntax.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Using YAML files with Robot Framework requires <a href="http://pyyaml.org">PyYAML</a> module to be installed. You can typically
-install it with <a href="../data/#pipe-separated-format">pip</a> like <code>pip install pyyaml</code>.</p>
+<p>Using YAML files with Robot Framework requires <a href="https://pyyaml.org">PyYAML</a> module to be installed. You can typically
+install it with <a href="#pip">pip</a> like <code>pip install pyyaml</code>.</p>
 </div>
 <h3 id="variable-file-as-json">Variable file as JSON<a class="headerlink" href="#variable-file-as-json" title="Permanent link">&para;</a></h3>
 <p>Variable files can also be implemented as <a href="https://json.org">JSON</a> files.
@@ -10402,7 +10402,7 @@ serialization format targeted both for humans and machines. It is based on
 JavaScript syntax and it is not as human-friendly as YAML, but it still
 relatively easy to understand and modify. The following example contains
 exactly the same data as the earlier YAML example:</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-21-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-21-1"> 1</a></span>
 <span class="normal"><a href="#example-21-2"> 2</a></span>
 <span class="normal"><a href="#example-21-3"> 3</a></span>
 <span class="normal"><a href="#example-21-4"> 4</a></span>
@@ -10428,7 +10428,7 @@ exactly the same data as the earlier YAML example:</p>
 </span><span id="line-21-12"><a id="example-21-12" name="example-21-12"></a><span class="w">    </span><span class="p">}</span>
 </span><span id="line-21-13"><a id="example-21-13" name="example-21-13"></a><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
-JSON variable files are automatically recognized by their <em>.json</em>
+<p>JSON variable files are automatically recognized by their <code class="file">.json</code>
 extension and they can be used exactly like YAML variable files. They
 also have exactly same requirements for structure, encoding, and so on.
 Unlike YAML, Python supports JSON out-of-the-box so no extra modules need

@@ -922,6 +922,45 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="User keyword tags">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setting-tags-using-dedicated-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setting tags using dedicated settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listing-tags-in-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Listing tags in documentation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-cases-for-keyword-tags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use cases for keyword tags
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1498,7 +1537,7 @@
   <span class="md-ellipsis">
     
   
-    Results
+    Execution artifacts
   
 
     
@@ -10139,6 +10178,7 @@
   
 
 
+<p><a id="keyword-section"></a></p>
 <p><a id="user-keyword"></a></p>
 <h1 id="creating-user-keywords">Creating user keywords<a class="headerlink" href="#creating-user-keywords" title="Permanent link">&para;</a></h1>
 <p>Keyword sections are used to create new higher-level keywords by
@@ -10157,7 +10197,7 @@ test cases names. Also user keywords are created from keywords, either
 from keywords in test libraries or other user keywords. Keyword names
 are normally in the second column, but when setting variables from
 keyword return values, they are in the subsequent columns.</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
 <span class="normal"><a href="#example-0-2">2</a></span>
 <span class="normal"><a href="#example-0-3">3</a></span>
 <span class="normal"><a href="#example-0-4">4</a></span>
@@ -10175,22 +10215,22 @@ keyword return values, they are in the subsequent columns.</p>
 </span><span id="line-0-8"><a id="example-0-8" name="example-0-8"></a><span class="p">    ${</span><span class="nv">title</span><span class="p">} =    </span><span class="nf">Get Title</span>
 </span><span id="line-0-9"><a id="example-0-9" name="example-0-9"></a><span class="p">    </span><span class="nf">Should Start With</span><span class="p">    ${</span><span class="nv">title</span><span class="p">}    ${</span><span class="nv">expected</span><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
-Most user keywords take some arguments. This important feature is used
+<p>Most user keywords take some arguments. This important feature is used
 already in the second example above, and it is explained in detail
-<a href="https://www.python.org/dev/peps/pep-3102">later in this section</a>, similarly as <a href="#user-keyword-return-values">user keyword return
+<a href="#user-keyword-arguments">later in this section</a>, similarly as <a href="#user-keyword-return-values">user keyword return
 values</a>.</p>
 <p>User keywords can be created in <a href="../suites/#suite-files">suite files</a>, <a href="../resource-files/#resource-files">resource files</a>,
 and <a href="../suites/#suite-initialization-files">suite initialization files</a>. Keywords created in resource
 files are available for files using them, whereas other keywords are
 only available in the files where they are created.</p>
 <h3 id="settings-in-the-keyword-section">Settings in the Keyword section<a class="headerlink" href="#settings-in-the-keyword-section" title="Permanent link">&para;</a></h3>
-<p>User keywords can have similar settings as <a href="http://en.wikipedia.org/wiki/Regular_expression">test cases</a>, and they
+<p>User keywords can have similar settings as <a href="../tests/#settings-in-the-test-case-section">test cases</a>, and they
 have the same square bracket syntax separating them from keyword
 names. All available settings are listed below and explained later in
 this section.</p>
 <dl>
 <dt>
-	<code><a id="1d4d0a48818ef00b36340968517b0387">[Documentation]</a> </code>
+	<em class="setting"><a id="1d4d0a48818ef00b36340968517b0387">[Documentation]</a> </em>
 </dt>
 <dd>Used for setting a <a href="#user-keyword-documentation">user keyword documentation</a>.
 <p>
@@ -10203,9 +10243,9 @@ this section.</p>
 </p></dd>
 
 <dt>
-	<code><a id="907a2edf6c2085233fd8eece6e62c508">[Tags]</a> </code>
+	<em class="setting"><a id="907a2edf6c2085233fd8eece6e62c508">[Tags]</a> </em>
 </dt>
-<dd>Sets <a href="https://docs.python.org/3/library/re.html#regular-expression-syntax">tags</a> for the keyword.
+<dd>Sets <a href="#user-keyword-tags">tags</a> for the keyword.
 <p>
 <div class="mkdocs-ezglossary-refs list">
     
@@ -10216,7 +10256,7 @@ this section.</p>
 </p></dd>
 
 <dt>
-	<code><a id="7ab6f846e68e88efe6e687b454fc3824">[Arguments]</a> </code>
+	<em class="setting"><a id="7ab6f846e68e88efe6e687b454fc3824">[Arguments]</a> </em>
 </dt>
 <dd>Specifies <a href="#user-keyword-arguments">user keyword arguments</a>.
 <p>
@@ -10229,10 +10269,10 @@ this section.</p>
 </p></dd>
 
 <dt>
-	<code>[Setup]</code>, <code><a id="74f57773ad581bb0aa2c6d9cb05fd185">[Teardown]</a> </code>
+	<em class="setting">[Setup]</em>, <em class="setting"><a id="74f57773ad581bb0aa2c6d9cb05fd185">[Teardown]</a> </em>
 </dt>
-<dd>Specify <a href="#user-keyword-setup-and-teardown">user keyword setup and teardown</a>. <code>[Setup]</code> is new in
-   Robot Framework 7.0.
+<dd>Specify <a href="#user-keyword-setup-and-teardown">user keyword setup and teardown</a>. <em class="setting">[Setup]</em> is new in
+Robot Framework 7.0.
 <p>
 <div class="mkdocs-ezglossary-refs list">
     
@@ -10243,10 +10283,10 @@ this section.</p>
 </p></dd>
 
 <dt>
-	<code><a id="fd730a4a89f0d973b8fd594b660fa474">[Timeout]</a> </code>
+	<em class="setting"><a id="fd730a4a89f0d973b8fd594b660fa474">[Timeout]</a> </em>
 </dt>
 <dd>Sets the possible <a href="../advanced/#user-keyword-timeout">user keyword timeout</a>. <a href="../advanced/#timeouts">Timeouts</a> are discussed
-   in a section of their own.
+in a section of their own.
 <p>
 <div class="mkdocs-ezglossary-refs list">
     
@@ -10257,10 +10297,10 @@ this section.</p>
 </p></dd>
 
 <dt>
-	<code><a id="e29f7eab9f963007f062f65039cc2ee6">[Return]</a> </code>
+	<em class="setting"><a id="e29f7eab9f963007f062f65039cc2ee6">[Return]</a> </em>
 </dt>
 <dd>Specifies <a href="#user-keyword-return-values">user keyword return values</a>. Deprecated in Robot Framework 7.0,
-   the <a href="#return">RETURN</a> statement should be used instead.
+the <a href="#return">RETURN</a> statement should be used instead.
 <p>
 <div class="mkdocs-ezglossary-refs list">
     
@@ -10285,13 +10325,13 @@ acceptable to have quite long keyword names. Actually, when creating
 use-case-like test cases, the highest-level keywords are often
 formulated as sentences or even paragraphs.</p>
 <p>User keywords can have a documentation that is set with the
-<code>[Documentation]</code> setting. It supports same formatting,
-splitting to multiple lines, and other features as <a href="../tests/#test-case-documentation">test case documentation</a>.
+<em class="setting">[Documentation]</em> setting. It supports same formatting,
+splitting to multiple lines, and other features as <a href="../tests/#test-case-name-and-documentation">test case documentation</a>.
 This setting documents the user keyword in the test data. It is also shown
 in a more formal keyword documentation, which the <a href="../../extend/libdoc/#libdoc">Libdoc</a> tool can create
 from <a href="../resource-files/#resource-files">resource files</a>. Finally, the first logical row of the documentation,
-until the first empty row, is shown as a keyword documentation in <a href="../../execution/results/#log">test logs</a>.</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-1-1"> 1</a></span>
+until the first empty row, is shown as a keyword documentation in <a href="#test-logs">test logs</a>.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-1-1"> 1</a></span>
 <span class="normal"><a href="#example-1-2"> 2</a></span>
 <span class="normal"><a href="#example-1-3"> 3</a></span>
 <span class="normal"><a href="#example-1-4"> 4</a></span>
@@ -10331,7 +10371,7 @@ until the first empty row, is shown as a keyword documentation in <a href="../..
 </span><span id="line-1-19"><a id="example-1-19" name="example-1-19"></a><span class="p">    ...                </span><span class="s">an empty line.</span>
 </span><span id="line-1-20"><a id="example-1-20" name="example-1-20"></a><span class="p">    </span><span class="nf">No Operation</span>
 </span></code></pre></div></td></tr></table></div>
-Sometimes keywords need to be removed, replaced with new ones, or
+<p>Sometimes keywords need to be removed, replaced with new ones, or
 deprecated for other reasons.  User keywords can be marked deprecated
 by starting the documentation with <code>*DEPRECATED*</code>, which will
 cause a warning when the keyword is used. For more information, see
@@ -10342,11 +10382,14 @@ the <a href="../../extend/libraries/#deprecating-keywords">Deprecating keywords<
 only the first physical line of the keyword documentation.</p>
 </div>
 <h2 id="user-keyword-tags">User keyword tags<a class="headerlink" href="#user-keyword-tags" title="Permanent link">&para;</a></h2>
-<p>Both user keywords and <a href="../../extend/libraries/#creating-keywords">library keywords</a> can have tags. Similarly as when
-<a href="../tests/#tagging-test-cases">tagging test cases</a>, there are two settings affecting user keyword tags:</p>
+<p>User keywords can be tagged similarly as test cases and <a href="../libraries/#using-test-libraries">library keywords</a>
+support <a href="../../extend/libraries/#keyword-tags">tags</a> as well.</p>
+<h3 id="setting-tags-using-dedicated-settings">Setting tags using dedicated settings<a class="headerlink" href="#setting-tags-using-dedicated-settings" title="Permanent link">&para;</a></h3>
+<p>Similarly as when <a href="../tests/#tagging-test-cases">tagging test cases</a>, there are two settings affecting
+user keyword tags:</p>
 <dl>
 <dt>
-	<code>Keyword Tags</code><a id="6a5ed58854fc1fed3d6ef334aa6abc54"> setting in the Settings section</a> 
+	<em class="setting">Keyword Tags</em><a id="6a5ed58854fc1fed3d6ef334aa6abc54"> setting in the Settings section</a> 
 </dt>
 <dd>All keywords in a file with this setting always get specified tags.
 <p>
@@ -10359,11 +10402,11 @@ only the first physical line of the keyword documentation.</p>
 </p></dd>
 
 <dt>
-	<code>[Tags]</code><a id="daa3818752a9717749da6c3425ff5f4c"> setting with each keyword</a> 
+	<em class="setting">[Tags]</em><a id="daa3818752a9717749da6c3425ff5f4c"> setting with each keyword</a> 
 </dt>
 <dd>Keywords get these tags in addition to possible tags specified using the
-   <code>Keyword Tags</code> setting. The <code>[Tags]</code> setting also allows
-   removing tags set with <code>Keyword Tags</code> by using the <code>-tag</code> syntax.
+<em class="setting">Keyword Tags</em> setting. The <em class="setting">[Tags]</em> setting also allows
+removing tags set with <em class="setting">Keyword Tags</em> by using the <code>-tag</code> syntax.
 <p>
 <div class="mkdocs-ezglossary-refs list">
     
@@ -10374,7 +10417,7 @@ only the first physical line of the keyword documentation.</p>
 </p></dd>
 
 </dl>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-2-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-2-1"> 1</a></span>
 <span class="normal"><a href="#example-2-2"> 2</a></span>
 <span class="normal"><a href="#example-2-3"> 3</a></span>
 <span class="normal"><a href="#example-2-4"> 4</a></span>
@@ -10408,61 +10451,89 @@ only the first physical line of the keyword documentation.</p>
 </span><span id="line-2-16"><a id="example-2-16" name="example-2-16"></a><span class="p">    [</span><span class="kn">Tags</span><span class="p">]    </span><span class="s">own</span><span class="p">    </span><span class="s">-html</span>
 </span><span id="line-2-17"><a id="example-2-17" name="example-2-17"></a><span class="p">    </span><span class="nf">No Operation</span>
 </span></code></pre></div></td></tr></table></div>
-Keyword tags can be specified using variables, the <code>-tag</code> syntax supports
+<p>Keyword tags can be specified using variables, the <code>-tag</code> syntax supports
 patterns, and so on, exactly as <a href="../tests/#test-case-tags">test case tags</a>.</p>
-<p>In addition to using the dedicated settings, keyword tags can be specified on
-the last line of the documentation with <code>Tags:</code> prefix so that tags are separated
-with a comma. For example, following two keywords get same three tags:</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-3-1">1</a></span>
-<span class="normal"><a href="#example-3-2">2</a></span>
-<span class="normal"><a href="#example-3-3">3</a></span>
-<span class="normal"><a href="#example-3-4">4</a></span>
-<span class="normal"><a href="#example-3-5">5</a></span>
-<span class="normal"><a href="#example-3-6">6</a></span>
-<span class="normal"><a href="#example-3-7">7</a></span>
-<span class="normal"><a href="#example-3-8">8</a></span>
-<span class="normal"><a href="#example-3-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-3-1"><a id="example-3-1" name="example-3-1"></a><span class="gh">*** Keywords ***</span>
-</span><span id="line-3-2"><a id="example-3-2" name="example-3-2"></a><span class="gu">Settings tags using separate setting</span>
-</span><span id="line-3-3"><a id="example-3-3" name="example-3-3"></a><span class="p">    [</span><span class="kn">Tags</span><span class="p">]    </span><span class="s">my</span><span class="p">    </span><span class="s">fine</span><span class="p">    </span><span class="s">tags</span>
-</span><span id="line-3-4"><a id="example-3-4" name="example-3-4"></a><span class="p">    </span><span class="nf">No Operation</span>
-</span><span id="line-3-5"><a id="example-3-5" name="example-3-5"></a>
-</span><span id="line-3-6"><a id="example-3-6" name="example-3-6"></a><span class="gu">Settings tags using documentation</span>
-</span><span id="line-3-7"><a id="example-3-7" name="example-3-7"></a><span class="p">    [</span><span class="kn">Documentation</span><span class="p">]    </span><span class="s">I have documentation. And my documentation has tags.</span>
-</span><span id="line-3-8"><a id="example-3-8" name="example-3-8"></a><span class="p">    ...                </span><span class="s">Tags: my, fine, tags</span>
-</span><span id="line-3-9"><a id="example-3-9" name="example-3-9"></a><span class="p">    </span><span class="nf">No Operation</span>
-</span></code></pre></div></td></tr></table></div>
-Keyword tags are shown in logs and in documentation generated by <a href="../../extend/libdoc/#libdoc">Libdoc</a>,
-where the keywords can also be searched based on tags. The <a href="https://www.python.org/dev/peps/pep-3102">--removekeywords</a>
-and <a href="http://en.wikipedia.org/wiki/Regular_expression">--flattenkeywords</a> commandline options also support selecting keywords by
-tag, and new usages for keywords tags are possibly added in later releases.</p>
-<p>Similarly as with <a href="../tests/#test-case-tags">test case tags</a>, user keyword tags with the <code>robot:</code>
-prefix are <a href="https://docs.python.org/3/library/re.html#regular-expression-syntax">reserved</a> for special features by Robot Framework
-itself. Users should thus not use any tag with these prefixes unless actually
-activating the special functionality. Starting from Robot Framework 6.1,
-<a href="../../execution/results/#flattening-keyword-during-execution-time">flattening keyword during execution time</a> can be taken into use using
-reserved tag <code>robot:flatten</code>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p><code>Keyword Tags</code> is new in Robot Framework 6.0. With earlier
-versions all keyword tags need to be specified using the
-<code>[Tags]</code> setting.</p>
+<p>The <em class="setting">Keyword Tags</em> setting is new in Robot Framework 6.0.
+With earlier versions all keyword tags need to be specified using
+the <em class="setting">[Tags]</em> setting.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The <code>-tag</code> syntax for removing common tags is new in Robot Framework 7.0.</p>
 </div>
+<h3 id="listing-tags-in-documentation">Listing tags in documentation<a class="headerlink" href="#listing-tags-in-documentation" title="Permanent link">&para;</a></h3>
+<p>In addition to using the dedicated settings, keyword tags can be specified
+as part of the keyword documentation in a <code>Tags:</code> section. Tags must be separated
+with a comma and they can be listed either on the same line as the <code>Tags:</code> header
+or on subsequent indented lines:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-3-1"> 1</a></span>
+<span class="normal"><a href="#example-3-2"> 2</a></span>
+<span class="normal"><a href="#example-3-3"> 3</a></span>
+<span class="normal"><a href="#example-3-4"> 4</a></span>
+<span class="normal"><a href="#example-3-5"> 5</a></span>
+<span class="normal"><a href="#example-3-6"> 6</a></span>
+<span class="normal"><a href="#example-3-7"> 7</a></span>
+<span class="normal"><a href="#example-3-8"> 8</a></span>
+<span class="normal"><a href="#example-3-9"> 9</a></span>
+<span class="normal"><a href="#example-3-10">10</a></span>
+<span class="normal"><a href="#example-3-11">11</a></span>
+<span class="normal"><a href="#example-3-12">12</a></span>
+<span class="normal"><a href="#example-3-13">13</a></span>
+<span class="normal"><a href="#example-3-14">14</a></span>
+<span class="normal"><a href="#example-3-15">15</a></span>
+<span class="normal"><a href="#example-3-16">16</a></span>
+<span class="normal"><a href="#example-3-17">17</a></span>
+<span class="normal"><a href="#example-3-18">18</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-3-1"><a id="example-3-1" name="example-3-1"></a><span class="gh">*** Keywords ***</span>
+</span><span id="line-3-2"><a id="example-3-2" name="example-3-2"></a><span class="gu">Tags on same line</span>
+</span><span id="line-3-3"><a id="example-3-3" name="example-3-3"></a><span class="p">    [</span><span class="kn">Documentation</span><span class="p">]    </span><span class="s">Tags: my, fine, tags</span>
+</span><span id="line-3-4"><a id="example-3-4" name="example-3-4"></a><span class="p">    </span><span class="nf">No Operation</span>
+</span><span id="line-3-5"><a id="example-3-5" name="example-3-5"></a>
+</span><span id="line-3-6"><a id="example-3-6" name="example-3-6"></a><span class="gu">Tags on own line</span>
+</span><span id="line-3-7"><a id="example-3-7" name="example-3-7"></a><span class="p">    [</span><span class="kn">Documentation</span><span class="p">]    </span><span class="s">Some documentation.</span>
+</span><span id="line-3-8"><a id="example-3-8" name="example-3-8"></a><span class="p">    ...</span>
+</span><span id="line-3-9"><a id="example-3-9" name="example-3-9"></a><span class="p">    ...    </span><span class="s">Args:</span>
+</span><span id="line-3-10"><a id="example-3-10" name="example-3-10"></a><span class="p">    ...        </span><span class="s">first: Documentation of the first argument.</span>
+</span><span id="line-3-11"><a id="example-3-11" name="example-3-11"></a><span class="p">    ...        </span><span class="s">second: Documentation of the second argument.</span>
+</span><span id="line-3-12"><a id="example-3-12" name="example-3-12"></a><span class="p">    ...</span>
+</span><span id="line-3-13"><a id="example-3-13" name="example-3-13"></a><span class="p">    ...    </span><span class="s">Tags:</span>
+</span><span id="line-3-14"><a id="example-3-14" name="example-3-14"></a><span class="p">    ...        </span><span class="s">my, fine, tags</span>
+</span><span id="line-3-15"><a id="example-3-15" name="example-3-15"></a><span class="p">    ...</span>
+</span><span id="line-3-16"><a id="example-3-16" name="example-3-16"></a><span class="p">    ...    </span><span class="s">Normal documentation continues.</span>
+</span><span id="line-3-17"><a id="example-3-17" name="example-3-17"></a><span class="p">    [</span><span class="kn">Arguments</span><span class="p">]    ${</span><span class="nv">first</span><span class="p">}    ${</span><span class="nv">second</span><span class="p">}</span>
+</span><span id="line-3-18"><a id="example-3-18" name="example-3-18"></a><span class="p">    </span><span class="nf">Log Many</span><span class="p">    ${</span><span class="nv">first</span><span class="p">}    ${</span><span class="nv">second</span><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<p>As the latter example demonstrates, the syntax for defining tags is similar
+to how Libdoc handles <a href="../../extend/libdoc/#arguments-return-values-exceptions-and-tags">argument, return value and exception documentation</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Prior to Robot Framework 7.5, tags were only supported on the last
+row of the documentation.</p>
+</div>
+<h3 id="use-cases-for-keyword-tags">Use cases for keyword tags<a class="headerlink" href="#use-cases-for-keyword-tags" title="Permanent link">&para;</a></h3>
+<p>Keyword tags are shown in logs and in documentation generated by <a href="../../extend/libdoc/#libdoc">Libdoc</a>,
+where the keywords can also be searched based on tags. The <a href="../../execution/results/#removing-keywords">--removekeywords</a>
+and <a href="../../execution/results/#flattening-keywords">--flattenkeywords</a> commandline options also support selecting keywords by
+tag, and new usages for keywords tags are possibly added in later releases.</p>
+<p>Similarly as with <a href="../tests/#test-case-tags">test case tags</a>, user keyword tags with the <code>robot:</code>
+prefix are <a href="../tests/#reserved-tags">reserved</a> for special features by Robot Framework
+itself. Users should thus not use any tag with these prefixes unless actually
+activating the special functionality. Starting from Robot Framework 6.1,
+<a href="../../execution/results/#flattening-keyword-during-execution-time">flattening keyword during execution time</a> can be taken into use using
+reserved tag <code>robot:flatten</code>.</p>
 <h2 id="user-keyword-arguments">User keyword arguments<a class="headerlink" href="#user-keyword-arguments" title="Permanent link">&para;</a></h2>
 <p>Most user keywords need to take some arguments. The syntax for
 specifying them is probably the most complicated feature normally
 needed with Robot Framework, but even that is relatively easy,
 particularly in most common cases. Arguments are normally specified with
-the <code>[Arguments]</code> setting, and argument names use the same
+the <em class="setting">[Arguments]</em> setting, and argument names use the same
 syntax as <a href="../variables/#variables">variables</a>, for example <code>${arg}</code>.</p>
 <h3 id="positional-arguments-with-user-keywords">Positional arguments with user keywords<a class="headerlink" href="#positional-arguments-with-user-keywords" title="Permanent link">&para;</a></h3>
 <p>The simplest way to specify arguments (apart from not having them at all)
 is using only positional arguments. In most cases, this is all
 that is needed.</p>
-<p>The syntax is such that first the <code>[Arguments]</code> setting is
+<p>The syntax is such that first the <em class="setting">[Arguments]</em> setting is
 given and then argument names are defined in the subsequent
 cells. Each argument is in its own cell, using the same syntax as with
 variables. The keyword must be used with as many arguments as there
@@ -10501,7 +10572,7 @@ to the already discussed basic syntax.</p>
 the equals sign (<code>=</code>) and then the value, for example <code>${arg}=default</code>.
 There can be many arguments with defaults, but they all must be given after
 the normal positional arguments. The default value can contain a <a href="../variables/#variable">variable</a>
-created on <a href="https://www.python.org/dev/peps/pep-3102">test, suite or global scope</a>, but local variables of the keyword
+created on <a href="../variables/#variable-priorities-and-scopes">test, suite or global scope</a>, but local variables of the keyword
 executor cannot be used. Default value can
 also be defined based on earlier arguments accepted by the keyword.</p>
 <div class="admonition note">
@@ -10510,7 +10581,7 @@ also be defined based on earlier arguments accepted by the keyword.</p>
 before the <code>=</code> sign are not allowed, and possible spaces
 after it are considered part of the default value itself.</p>
 </div>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-5-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-5-1"> 1</a></span>
 <span class="normal"><a href="#example-5-2"> 2</a></span>
 <span class="normal"><a href="#example-5-3"> 3</a></span>
 <span class="normal"><a href="#example-5-4"> 4</a></span>
@@ -10554,19 +10625,19 @@ after it are considered part of the default value itself.</p>
 </span><span id="line-5-21"><a id="example-5-21" name="example-5-21"></a><span class="p">    </span><span class="nf">Should Be Equal</span><span class="p">    ${</span><span class="nv">a</span><span class="p">}    ${</span><span class="nv">b</span><span class="p">}</span>
 </span><span id="line-5-22"><a id="example-5-22" name="example-5-22"></a><span class="p">    </span><span class="nf">Should Be Equal</span><span class="p">    ${</span><span class="nv">c</span><span class="p">}    ${</span><span class="nv">a</span><span class="p">}</span><span class="s"> and </span><span class="p">${</span><span class="nv">b</span><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
-When a keyword accepts several arguments with default values and only
+<p>When a keyword accepts several arguments with default values and only
 some of them needs to be overridden, it is often handy to use the
 <a href="../tests/#named-arguments">named arguments</a> syntax. When this syntax is used with user
 keywords, the arguments are specified without the <code>${}</code>
 decoration. For example, the second keyword above could be used like
 below and <code>${arg1}</code> would still get its default value.</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-6-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-6-1">1</a></span>
 <span class="normal"><a href="#example-6-2">2</a></span>
 <span class="normal"><a href="#example-6-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-6-1"><a id="example-6-1" name="example-6-1"></a><span class="gh">*** Test Cases ***</span>
 </span><span id="line-6-2"><a id="example-6-2" name="example-6-2"></a><span class="gu">Example</span>
 </span><span id="line-6-3"><a id="example-6-3" name="example-6-3"></a><span class="p">    </span><span class="nf">Two Arguments With Defaults</span><span class="p">    </span><span class="s">arg2=new value</span>
 </span></code></pre></div></td></tr></table></div>
-As all Pythonistas must have already noticed, the syntax for
+<p>As all Pythonistas must have already noticed, the syntax for
 specifying default arguments is heavily inspired by Python syntax for
 function default values.</p>
 <h3 id="variable-number-of-arguments-with-user-keywords">Variable number of arguments with user keywords<a class="headerlink" href="#variable-number-of-arguments-with-user-keywords" title="Permanent link">&para;</a></h3>
@@ -10577,7 +10648,7 @@ as <code>@{varargs}</code> after possible positional arguments in the keyword si
 This syntax can be combined with the previously described default values, and
 at the end the list variable gets all the leftover arguments that do not match
 other arguments. The list variable can thus have any number of items, even zero.</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-7-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-7-1"> 1</a></span>
 <span class="normal"><a href="#example-7-2"> 2</a></span>
 <span class="normal"><a href="#example-7-3"> 3</a></span>
 <span class="normal"><a href="#example-7-4"> 4</a></span>
@@ -10611,15 +10682,15 @@ other arguments. The list variable can thus have any number of items, even zero.
 </span><span id="line-7-16"><a id="example-7-16" name="example-7-16"></a><span class="p">        </span><span class="nf">Log</span><span class="p">    ${</span><span class="nv">item</span><span class="p">}</span>
 </span><span id="line-7-17"><a id="example-7-17" name="example-7-17"></a><span class="p">    </span><span class="nf">END</span>
 </span></code></pre></div></td></tr></table></div>
-Notice that if the last keyword above is used with more than one
+<p>Notice that if the last keyword above is used with more than one
 argument, the second argument <code>${opt}</code> always gets the given
 value instead of the default value. This happens even if the given
 value is empty. The last example also illustrates how a variable
-number of arguments accepted by a user keyword can be used in a <a href="https://www.python.org/dev/peps/pep-3102">for
+number of arguments accepted by a user keyword can be used in a <a href="../control/#for-loops">for
 loop</a>. This combination of two rather advanced functions can
 sometimes be very useful.</p>
 <p>The keywords in the examples above could be used, for example, like this:</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-8-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-8-1"> 1</a></span>
 <span class="normal"><a href="#example-8-2"> 2</a></span>
 <span class="normal"><a href="#example-8-3"> 3</a></span>
 <span class="normal"><a href="#example-8-4"> 4</a></span>
@@ -10639,15 +10710,15 @@ sometimes be very useful.</p>
 </span><span id="line-8-9"><a id="example-8-9" name="example-8-9"></a><span class="p">    </span><span class="nf">Required, Default, Varargs</span><span class="p">    </span><span class="s">required</span><span class="p">    </span><span class="s">optional</span>
 </span><span id="line-8-10"><a id="example-8-10" name="example-8-10"></a><span class="p">    </span><span class="nf">Required, Default, Varargs</span><span class="p">    </span><span class="s">arg1</span><span class="p">    </span><span class="s">arg2</span><span class="p">    </span><span class="s">arg3</span><span class="p">    </span><span class="s">arg4</span><span class="p">    </span><span class="s">arg5</span>
 </span></code></pre></div></td></tr></table></div>
-Again, Pythonistas probably notice that the variable number of
+<p>Again, Pythonistas probably notice that the variable number of
 arguments syntax is very close to the one in Python.</p>
 <h3 id="free-named-arguments-with-user-keywords">Free named arguments with user keywords<a class="headerlink" href="#free-named-arguments-with-user-keywords" title="Permanent link">&para;</a></h3>
 <p>User keywords can also accept <a href="../tests/#free-named-arguments">free named arguments</a> by having a <a href="../variables/#dictionary-variable">dictionary
 variable</a> like <code>&amp;{named}</code> as the absolutely last argument. When the keyword
 is called, this variable will get all <a href="../tests/#named-arguments">named arguments</a> that do not match
-any <a href="https://www.python.org/dev/peps/pep-3102">positional argument</a> or <a href="http://en.wikipedia.org/wiki/Regular_expression">named-only argument</a> in the keyword
+any <a href="#positional-arguments-with-user-keywords">positional argument</a> or <a href="#named-only-arguments-with-user-keywords">named-only argument</a> in the keyword
 signature.</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-9-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-9-1"> 1</a></span>
 <span class="normal"><a href="#example-9-2"> 2</a></span>
 <span class="normal"><a href="#example-9-3"> 3</a></span>
 <span class="normal"><a href="#example-9-4"> 4</a></span>
@@ -10671,7 +10742,7 @@ signature.</p>
 </span><span id="line-9-11"><a id="example-9-11" name="example-9-11"></a><span class="p">    [</span><span class="kn">Arguments</span><span class="p">]    @{</span><span class="nv">args</span><span class="p">}    &amp;{</span><span class="nv">config</span><span class="p">}</span>
 </span><span id="line-9-12"><a id="example-9-12" name="example-9-12"></a><span class="p">    </span><span class="nf">Run Process</span><span class="p">    </span><span class="s">program.py</span><span class="p">    @{</span><span class="nv">args</span><span class="p">}    &amp;{</span><span class="nv">config</span><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
-The last example above shows how to create a wrapper keyword that
+<p>The last example above shows how to create a wrapper keyword that
 accepts any positional or named argument and passes them forward.
 See <a href="../tests/#free-named-argument-examples">free named argument examples</a> for a full example with same keyword.</p>
 <p>Free named arguments support with user keywords works similarly as kwargs
@@ -10681,10 +10752,10 @@ work in Python. In the signature and also when passing arguments forward,
 <p>User keywords support <a href="../tests/#named-only-arguments">named-only arguments</a> that are inspired by Python's
 <a href="https://www.python.org/dev/peps/pep-3102">keyword-only arguments</a>.
 This syntax is typically used by having normal arguments <em>after</em>
-<a href="http://en.wikipedia.org/wiki/Regular_expression">variable number of arguments</a> (<code>@{varargs}</code>). If the keywords does not
+<a href="#variable-number-of-arguments-with-user-keywords">variable number of arguments</a> (<code>@{varargs}</code>). If the keywords does not
 use varargs, it is possible to use just <code>@{}</code> to denote that the subsequent
 arguments are named-only:</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-10-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-10-1">1</a></span>
 <span class="normal"><a href="#example-10-2">2</a></span>
 <span class="normal"><a href="#example-10-3">3</a></span>
 <span class="normal"><a href="#example-10-4">4</a></span>
@@ -10700,10 +10771,10 @@ arguments are named-only:</p>
 </span><span id="line-10-7"><a id="example-10-7" name="example-10-7"></a><span class="p">    [</span><span class="kn">Arguments</span><span class="p">]    @{}    ${</span><span class="nv">first</span><span class="p">}    ${</span><span class="nv">second</span><span class="p">}</span>
 </span><span id="line-10-8"><a id="example-10-8" name="example-10-8"></a><span class="p">    </span><span class="nf">Log Many</span><span class="p">    ${</span><span class="nv">first</span><span class="p">}    ${</span><span class="nv">second</span><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
-Named-only arguments can be used together with <a href="https://www.python.org/dev/peps/pep-3102">positional arguments</a> as
-well as with <a href="http://en.wikipedia.org/wiki/Regular_expression">free named arguments</a>. When using free named arguments, they
+<p>Named-only arguments can be used together with <a href="#positional-arguments-with-user-keywords">positional arguments</a> as
+well as with <a href="#free-named-arguments-with-user-keywords">free named arguments</a>. When using free named arguments, they
 must be last:</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-11-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-11-1">1</a></span>
 <span class="normal"><a href="#example-11-2">2</a></span>
 <span class="normal"><a href="#example-11-3">3</a></span>
 <span class="normal"><a href="#example-11-4">4</a></span>
@@ -10719,10 +10790,10 @@ must be last:</p>
 </span><span id="line-11-7"><a id="example-11-7" name="example-11-7"></a><span class="p">    [</span><span class="kn">Arguments</span><span class="p">]    @{</span><span class="nv">varargs</span><span class="p">}    ${</span><span class="nv">named only</span><span class="p">}    &amp;{</span><span class="nv">free named</span><span class="p">}</span>
 </span><span id="line-11-8"><a id="example-11-8" name="example-11-8"></a><span class="p">    </span><span class="nf">Log Many</span><span class="p">    @{</span><span class="nv">varargs</span><span class="p">}    ${</span><span class="nv">named only</span><span class="p">}    &amp;{</span><span class="nv">free named</span><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
-When passing named-only arguments to keywords, their order does not matter
+<p>When passing named-only arguments to keywords, their order does not matter
 other than they must follow possible positional arguments. The keywords above
 could be used, for example, like this:</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-12-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-12-1"> 1</a></span>
 <span class="normal"><a href="#example-12-2"> 2</a></span>
 <span class="normal"><a href="#example-12-3"> 3</a></span>
 <span class="normal"><a href="#example-12-4"> 4</a></span>
@@ -10742,7 +10813,7 @@ could be used, for example, like this:</p>
 </span><span id="line-12-9"><a id="example-12-9" name="example-12-9"></a><span class="p">    </span><span class="nf">With Free Named</span><span class="p">    </span><span class="s">positional</span><span class="p">    </span><span class="s">named only=value</span><span class="p">    </span><span class="s">x=1</span><span class="p">    </span><span class="s">y=2</span>
 </span><span id="line-12-10"><a id="example-12-10" name="example-12-10"></a><span class="p">    </span><span class="nf">With Free Named</span><span class="p">    </span><span class="s">foo=a</span><span class="p">    </span><span class="s">bar=b</span><span class="p">    </span><span class="s">named only=c</span><span class="p">    </span><span class="s">quux=d</span>
 </span></code></pre></div></td></tr></table></div>
-Named-only arguments can have default values similarly as <a href="https://www.python.org/dev/peps/pep-3102">normal user
+<p>Named-only arguments can have default values similarly as <a href="#default-values-with-user-keywords">normal user
 keyword arguments</a>. A minor difference is that the order of arguments
 with and without default values is not important.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-13-1">1</a></span>
@@ -10764,7 +10835,7 @@ with and without default values is not important.</p>
 <h3 id="argument-conversion-with-user-keywords">Argument conversion with user keywords<a class="headerlink" href="#argument-conversion-with-user-keywords" title="Permanent link">&para;</a></h3>
 <p>User keywords support automatic argument conversion based on explicitly specified
 types. The type syntax <code>${name: type}</code> is the same, and the supported conversions
-are the same, as when <a href="https://www.python.org/dev/peps/pep-3102">creating variables</a>.</p>
+are the same, as when <a href="../variables/#variable-type-syntax">creating variables</a>.</p>
 <p>The basic usage with normal arguments is very simple. You only need to specify
 the type like <code>${count: int}</code> and the used value is converted automatically.
 If an argument has a default value like <code>${count: int}=1</code>, also the default
@@ -10821,10 +10892,10 @@ an informative error message.</p>
 <p>Using <code>Literal</code>, like in the above example, is a convenient way to
 limit what values are accepted.</p>
 </div>
-<p>When using <a href="https://www.python.org/dev/peps/pep-3102">variable number of arguments</a>, the type is specified like
+<p>When using <a href="#variable-number-of-arguments-with-user-keywords">variable number of arguments</a>, the type is specified like
 <code>@{numbers: int}</code> and is applied to all arguments. If arguments may have
 different types, it is possible to use an union like <code>@{numbers: float | int}</code>.
-With <a href="http://en.wikipedia.org/wiki/Regular_expression">free named arguments</a> the type is specified like <code>&amp;{named: int}</code> and
+With <a href="#free-named-arguments-with-user-keywords">free named arguments</a> the type is specified like <code>&amp;{named: int}</code> and
 it is applied to all argument values. Converting argument names is not supported.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-15-1"> 1</a></span>
 <span class="normal"><a href="#example-15-2"> 2</a></span>
@@ -10874,7 +10945,7 @@ it is applied to all argument values. Converting argument names is not supported
 that they are listed separately after the keyword name. Robot
 Framework has also another approach to pass arguments, embedding them
 directly to the keyword name, used by the second test below:</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-16-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-16-1">1</a></span>
 <span class="normal"><a href="#example-16-2">2</a></span>
 <span class="normal"><a href="#example-16-3">3</a></span>
 <span class="normal"><a href="#example-16-4">4</a></span>
@@ -10886,19 +10957,19 @@ directly to the keyword name, used by the second test below:</p>
 </span><span id="line-16-5"><a id="example-16-5" name="example-16-5"></a><span class="gu">Embedded arguments</span>
 </span><span id="line-16-6"><a id="example-16-6" name="example-16-6"></a><span class="p">    </span><span class="nf">Select cat from list</span>
 </span></code></pre></div></td></tr></table></div>
-As the example illustrates, embedding arguments to keyword names
+<p>As the example illustrates, embedding arguments to keyword names
 can make the data easier to read and understand even for people without
 any Robot Framework experience.</p>
 <h3 id="basic-syntax_1">Basic syntax<a class="headerlink" href="#basic-syntax_1" title="Permanent link">&para;</a></h3>
-<p>The previous example showed how using a keyword <em>Select cat from list</em> is
-more fluent than using <em>Select from list</em> so that <code>cat</code> is passed to
-it as an argument. We obviously could implement <em>Select cat from list</em>
+<p>The previous example showed how using a keyword <em class="name">Select cat from list</em> is
+more fluent than using <em class="name">Select from list</em> so that <code>cat</code> is passed to
+it as an argument. We obviously could implement <em class="name">Select cat from list</em>
 as a normal keyword accepting no arguments, but then we needed to implement
-various other keywords like <em>Select dog from list</em> for other animals.
+various other keywords like <em class="name">Select dog from list</em> for other animals.
 Embedded arguments simplify this and we can instead implement just one
-keyword with name <em>Select ${animal} from list</em> and use it with any
+keyword with name <em class="name">Select ${animal} from list</em> and use it with any
 animal:</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-17-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-17-1">1</a></span>
 <span class="normal"><a href="#example-17-2">2</a></span>
 <span class="normal"><a href="#example-17-3">3</a></span>
 <span class="normal"><a href="#example-17-4">4</a></span>
@@ -10916,7 +10987,7 @@ animal:</p>
 </span><span id="line-17-8"><a id="example-17-8" name="example-17-8"></a><span class="p">    </span><span class="nf">Open Page</span><span class="p">    </span><span class="s">Pet Selection</span>
 </span><span id="line-17-9"><a id="example-17-9" name="example-17-9"></a><span class="p">    </span><span class="nf">Select Item From List</span><span class="p">    </span><span class="s">animal_list</span><span class="p">    ${</span><span class="nv">animal</span><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
-As the above example shows, embedded arguments are specified simply by using
+<p>As the above example shows, embedded arguments are specified simply by using
 variables in keyword names. The arguments used in the name are naturally
 available inside the keyword and they have different values depending on how
 the keyword is called. In the above example, <code>${animal}</code> has value <code>cat</code> when
@@ -10924,7 +10995,7 @@ the keyword is used for the first time and <code>dog</code> when it is used for
 the second time.</p>
 <p>Starting from Robot Framework 6.1, it is possible to create user keywords
 that accept both embedded and "normal" arguments:</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-18-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-18-1"> 1</a></span>
 <span class="normal"><a href="#example-18-2"> 2</a></span>
 <span class="normal"><a href="#example-18-3"> 3</a></span>
 <span class="normal"><a href="#example-18-4"> 4</a></span>
@@ -10946,12 +11017,12 @@ that accept both embedded and "normal" arguments:</p>
 </span><span id="line-18-10"><a id="example-18-10" name="example-18-10"></a><span class="p">    </span><span class="nf">Select Items From List</span><span class="p">    </span><span class="s">animal_list</span><span class="p">    ${</span><span class="nv">animals</span><span class="p">}</span>
 </span><span id="line-18-11"><a id="example-18-11" name="example-18-11"></a><span class="p">    </span><span class="nf">Number of Selected List Items Should Be</span><span class="p">    ${</span><span class="nv">count</span><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
-Other than the special name, keywords with embedded
+<p>Other than the special name, keywords with embedded
 arguments are created just like other user keywords. They are also used the same
 way as other keywords except that spaces and underscores are not ignored in their
 names when keywords are matched. They are, however, case-insensitive like
-other keywords. For example, the <em>Select ${animal} from list</em> keyword could
-be used like <em>select cow from list</em>, but not like <em>Select cow fromlist</em>.</p>
+other keywords. For example, the <em class="name">Select ${animal} from list</em> keyword could
+be used like <em class="name">select cow from list</em>, but not like <em class="name">Select cow fromlist</em>.</p>
 <p>Embedded arguments do not support default values or variable number of
 arguments like normal arguments do. If such functionality is needed, normal
 arguments should be used instead. Passing embedded arguments as variables
@@ -10983,10 +11054,10 @@ is possible, but that can reduce readability:</p>
 values used when calling the keyword match the correct arguments. This
 is a problem especially if there are multiple arguments and characters
 separating them may also appear in the given values. For example,
-<em>Select Los Angeles Lakers</em> in the following example matches
-<em>Select ${city} ${team}</em> so that <code>${city}</code> contains <code>Los</code> and
+<em class="name">Select Los Angeles Lakers</em> in the following example matches
+<em class="name">Select ${city} ${team}</em> so that <code>${city}</code> contains <code>Los</code> and
 <code>${team}</code> contains <code>Angeles Lakers</code>:</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-20-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-20-1">1</a></span>
 <span class="normal"><a href="#example-20-2">2</a></span>
 <span class="normal"><a href="#example-20-3">3</a></span>
 <span class="normal"><a href="#example-20-4">4</a></span>
@@ -11002,10 +11073,10 @@ separating them may also appear in the given values. For example,
 </span><span id="line-20-7"><a id="example-20-7" name="example-20-7"></a><span class="gu">Select </span><span class="p">${</span><span class="nv">city</span><span class="p">}</span><span class="gu"> </span><span class="p">${</span><span class="nv">team</span><span class="p">}</span>
 </span><span id="line-20-8"><a id="example-20-8" name="example-20-8"></a><span class="p">    </span><span class="nf">Log</span><span class="p">    </span><span class="s">Selected </span><span class="p">${</span><span class="nv">team</span><span class="p">}</span><span class="s"> from </span><span class="p">${</span><span class="nv">city</span><span class="p">}</span><span class="s">.</span>
 </span></code></pre></div></td></tr></table></div>
-An easy solution to this problem is surrounding arguments with double quotes or
+<p>An easy solution to this problem is surrounding arguments with double quotes or
 other characters not used in the actual values. This fixed example works so
 that cities and teams match correctly:</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-21-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-21-1">1</a></span>
 <span class="normal"><a href="#example-21-2">2</a></span>
 <span class="normal"><a href="#example-21-3">3</a></span>
 <span class="normal"><a href="#example-21-4">4</a></span>
@@ -11021,26 +11092,26 @@ that cities and teams match correctly:</p>
 </span><span id="line-21-7"><a id="example-21-7" name="example-21-7"></a><span class="gu">Select "</span><span class="p">${</span><span class="nv">city</span><span class="p">}</span><span class="gu">" "</span><span class="p">${</span><span class="nv">team</span><span class="p">}</span><span class="gu">"</span>
 </span><span id="line-21-8"><a id="example-21-8" name="example-21-8"></a><span class="p">    </span><span class="nf">Log</span><span class="p">    </span><span class="s">Selected </span><span class="p">${</span><span class="nv">team</span><span class="p">}</span><span class="s"> from </span><span class="p">${</span><span class="nv">city</span><span class="p">}</span><span class="s">.</span>
 </span></code></pre></div></td></tr></table></div>
-This approach is not enough to resolve all conflicts, but it helps in common
+<p>This approach is not enough to resolve all conflicts, but it helps in common
 cases and is generally recommended. Another benefit is that it makes arguments
 stand out from rest of the keyword.</p>
 <p>Prior to Robot Framework 7.1, embedded arguments starting the keyword name also
-matched possible <a href="https://www.python.org/dev/peps/pep-3102">given/when/then/and/but prefixes</a> typically used in Behavior
-Driven Development (BDD). For example, <em>${name} goes home</em> matched
-<em>Given Janne goes home</em> so that <code>${name}</code> got value <code>Given Janne</code>.
+matched possible <a href="../tests/#ignoring-givenwhenthenandbut-prefixes">given/when/then/and/but prefixes</a> typically used in Behavior
+Driven Development (BDD). For example, <em class="name">${name} goes home</em> matched
+<em class="name">Given Janne goes home</em> so that <code>${name}</code> got value <code>Given Janne</code>.
 Nowadays the prefix is ignored and <code>${name}</code> will be <code>Janne</code> as expected.
 If older Robot Framework versions need to be supported, it is easiest to quote
-the argument like in <em>"${name}" goes home</em> to get consistent behavior.</p>
+the argument like in <em class="name">"${name}" goes home</em> to get consistent behavior.</p>
 <p>An alternative solution for limiting what values arguments match is
 <a href="#using-custom-regular-expressions">using custom regular expressions</a>.</p>
 <h3 id="resolving-conflicts">Resolving conflicts<a class="headerlink" href="#resolving-conflicts" title="Permanent link">&para;</a></h3>
 <p>When using embedded arguments, it is pretty common that there are multiple
 keyword implementations that match the keyword that is used. For example,
-<em>Execute "ls" with "lf"</em> in the example below matches both of the keywords.
-It matching <em>Execute "${cmd}" with "${opts}"</em> is pretty obvious and what
-we want, but it also matches <em>Execute "${cmd}"</em> so that <code>${cmd}</code> matches
+<em class="name">Execute "ls" with "lf"</em> in the example below matches both of the keywords.
+It matching <em class="name">Execute "${cmd}" with "${opts}"</em> is pretty obvious and what
+we want, but it also matches <em class="name">Execute "${cmd}"</em> so that <code>${cmd}</code> matches
 <code>ls" with "-lh</code>.</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-22-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-22-1"> 1</a></span>
 <span class="normal"><a href="#example-22-2"> 2</a></span>
 <span class="normal"><a href="#example-22-3"> 3</a></span>
 <span class="normal"><a href="#example-22-4"> 4</a></span>
@@ -11068,15 +11139,15 @@ we want, but it also matches <em>Execute "${cmd}"</em> so that <code>${cmd}</cod
 </span><span id="line-22-13"><a id="example-22-13" name="example-22-13"></a><span class="gu">Execute "</span><span class="p">${</span><span class="nv">cmd</span><span class="p">}</span><span class="gu">" with "</span><span class="p">${</span><span class="nv">opts</span><span class="p">}</span><span class="gu">"</span>
 </span><span id="line-22-14"><a id="example-22-14" name="example-22-14"></a><span class="p">    </span><span class="nf">Run Process</span><span class="p">    ${</span><span class="nv">cmd</span><span class="p">}</span><span class="s"> </span><span class="p">${</span><span class="nv">opts</span><span class="p">}    </span><span class="s">shell=True</span>
 </span></code></pre></div></td></tr></table></div>
-When this kind of conflicts occur, Robot Framework tries to automatically select
-the best match and use that. In the above example, <em>Execute "${cmd}" with "${opts}"</em>
-is considered a better match than the more generic <em>Execute "${cmd}"</em> and
+<p>When this kind of conflicts occur, Robot Framework tries to automatically select
+the best match and use that. In the above example, <em class="name">Execute "${cmd}" with "${opts}"</em>
+is considered a better match than the more generic <em class="name">Execute "${cmd}"</em> and
 running the example thus succeeds without conflicts.</p>
 <p>It is not always possible to find a single match that is better than others.
-For example, the second test below fails because <em>Robot Framework</em> matches
+For example, the second test below fails because <em class="name">Robot Framework</em> matches
 both of the keywords equally well. This kind of conflicts need to be resolved
 manually either by renaming keywords or by <a href="#using-custom-regular-expressions">using custom regular expressions</a>.</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-23-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-23-1"> 1</a></span>
 <span class="normal"><a href="#example-23-2"> 2</a></span>
 <span class="normal"><a href="#example-23-3"> 3</a></span>
 <span class="normal"><a href="#example-23-4"> 4</a></span>
@@ -11104,18 +11175,18 @@ manually either by renaming keywords or by <a href="#using-custom-regular-expres
 </span><span id="line-23-13"><a id="example-23-13" name="example-23-13"></a><span class="gu">Robot </span><span class="p">${</span><span class="nv">action</span><span class="p">}</span>
 </span><span id="line-23-14"><a id="example-23-14" name="example-23-14"></a><span class="p">    </span><span class="nf">Should Be Equal</span><span class="p">    ${</span><span class="nv">action</span><span class="p">}    </span><span class="s">uprising</span>
 </span></code></pre></div></td></tr></table></div>
-Keywords that accept only "normal" arguments or no arguments at all are
+<p>Keywords that accept only "normal" arguments or no arguments at all are
 considered to match better than keywords accepting embedded arguments.
 For example, if the following keyword is added to the above example,
-<em>Robot Framework</em> used by the latter test matches it and the test
+<em class="name">Robot Framework</em> used by the latter test matches it and the test
 succeeds:</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-24-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-24-1">1</a></span>
 <span class="normal"><a href="#example-24-2">2</a></span>
 <span class="normal"><a href="#example-24-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-24-1"><a id="example-24-1" name="example-24-1"></a><span class="gh">*** Keywords ***</span>
 </span><span id="line-24-2"><a id="example-24-2" name="example-24-2"></a><span class="gu">Robot Framework</span>
 </span><span id="line-24-3"><a id="example-24-3" name="example-24-3"></a><span class="p">    </span><span class="nf">No Operation</span>
 </span></code></pre></div></td></tr></table></div>
-Before looking which match is best, Robot Framework checks are some of the matching
+<p>Before looking which match is best, Robot Framework checks are some of the matching
 keywords implemented in the same file as the caller keyword. If there are such keywords,
 they are given precedence over other keywords. Alternatively, <a href="../advanced/#library-search-order">library search order</a>
 can be used to control the order in which Robot Framework looks for keywords in resources
@@ -11128,11 +11199,11 @@ versions custom regular expressions explained below can be used instead.</p>
 </div>
 <h3 id="using-custom-regular-expressions">Using custom regular expressions<a class="headerlink" href="#using-custom-regular-expressions" title="Permanent link">&para;</a></h3>
 <p>When keywords with embedded arguments are called, the values are matched
-internally using <a href="https://www.python.org/dev/peps/pep-3102">regular expressions</a> (regexps for short). The default
+internally using <a href="https://en.wikipedia.org/wiki/Regular_expression">regular expressions</a> (regexps for short). The default
 logic goes so that every argument in the name is replaced with a pattern <code>.*?</code>
 that matches any string and tries to match as little as possible. This logic works
 fairly well normally, but as discussed above, sometimes keywords
-<a href="http://en.wikipedia.org/wiki/Regular_expression">match wrong values</a> and sometimes there are <a href="https://docs.python.org/3/library/re.html#regular-expression-syntax">conflicts that cannot
+<a href="#embedded-arguments-matching-wrong-values">match wrong values</a> and sometimes there are <a href="#resolving-conflicts">conflicts that cannot
 be resolved</a> . A solution in these cases is specifying a custom regular
 expression that makes sure that the keyword matches only what it should in that
 particular context. To be able to use this feature, and to fully
@@ -11142,11 +11213,11 @@ least the basics of the regular expression syntax.</p>
 base name of the argument so that the argument and the regexp are
 separated with a colon. For example, an argument that should match
 only numbers can be defined like <code>${arg:\d+}</code>.
-If needed, custom patterns can be prefixed with <a href="http://docs.python.org/library/re.html">inline flags</a> such as
+If needed, custom patterns can be prefixed with <a href="https://docs.python.org/3/library/re.html#regular-expression-syntax">inline flags</a> such as
 <code>(?i)</code> for case-insensitivity.</p>
 <p>Using custom regular expressions is illustrated by the following examples.
-The first one shows how the earlier problem with <em>Select ${city} ${team}</em>
-not matching <em>Select Los Angeles Lakers</em> properly can be resolved without
+The first one shows how the earlier problem with <em class="name">Select ${city} ${team}</em>
+not matching <em class="name">Select Los Angeles Lakers</em> properly can be resolved without
 quoting by implementing the keyword so that <code>${team}</code> can only contain non-whitespace
 characters.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-25-1"> 1</a></span>
@@ -11221,16 +11292,16 @@ characters.</p>
 </div>
 <h4 id="supported-regular-expression-syntax">Supported regular expression syntax<a class="headerlink" href="#supported-regular-expression-syntax" title="Permanent link">&para;</a></h4>
 <p>Being implemented with Python, Robot Framework naturally uses Python's
-<a href="https://www.python.org/dev/peps/pep-3102">re module</a> that has pretty standard regular expressions syntax.
+<a href="https://docs.python.org/library/re.html">re module</a> that has pretty standard regular expressions syntax.
 This syntax is otherwise fully supported with embedded arguments, but
 regexp extensions in format <code>(?...)</code> cannot be used. If the regular
 expression syntax is invalid, creating the keyword fails with an error
-visible in <a href="http://en.wikipedia.org/wiki/Regular_expression">test execution errors</a>.</p>
+visible in <a href="../../execution/basics/#errors-and-warnings-during-execution">test execution errors</a>.</p>
 <h4 id="escaping-special-characters">Escaping special characters<a class="headerlink" href="#escaping-special-characters" title="Permanent link">&para;</a></h4>
-<p>Regular expressions use the backslash character (<code>\\</code>) heavily both
+<p>Regular expressions use the backslash character (<code class="codesc">\</code>) heavily both
 to form special sequences (e.g. <code>\d</code>) and to escape characters that have
 a special meaning in regexps (e.g. <code>\$</code>). Typically in Robot Framework data
-backslash characters <a href="https://docs.python.org/3/library/re.html#regular-expression-syntax">need to be escaped</a> with another backslash, but
+backslash characters <a href="../data/#escaping">need to be escaped</a> with another backslash, but
 that is not required in this context. If there is a need to have a literal
 backslash in the pattern, then the backslash must be escaped like
 <code>${path:c:\\temp\\.*}</code>.</p>
@@ -11258,7 +11329,7 @@ argument, not if there is any additional content with the variable.
 For example, the first test below succeeds because the variable <code>${DATE}</code>
 is used on its own, but the last test fails because <code>${YEAR}-${MONTH}-${DAY}</code>
 is not a single variable.</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-26-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-26-1"> 1</a></span>
 <span class="normal"><a href="#example-26-2"> 2</a></span>
 <span class="normal"><a href="#example-26-3"> 3</a></span>
 <span class="normal"><a href="#example-26-4"> 4</a></span>
@@ -11296,16 +11367,16 @@ is not a single variable.</p>
 </span><span id="line-26-18"><a id="example-26-18" name="example-26-18"></a><span class="gu">Deadline is </span><span class="p">${</span><span class="nv">deadline:\d{4</span><span class="p">}</span><span class="gu">-\d{2}-\d{2}}</span>
 </span><span id="line-26-19"><a id="example-26-19" name="example-26-19"></a><span class="p">    </span><span class="nf">Should Be Equal</span><span class="p">    ${</span><span class="nv">deadline</span><span class="p">}    </span><span class="s">2011-06-27</span>
 </span></code></pre></div></td></tr></table></div>
-Another limitation of using variables is that their actual values are not matched
+<p>Another limitation of using variables is that their actual values are not matched
 against custom regular expressions. As the result keywords may be called with
 values that their custom regexps would not allow. This behavior is deprecated
 starting from Robot Framework 6.0 and values will be validated in the future.
-For more information see issue <a href="https://www.python.org/dev/peps/pep-3102">#4462</a>.</p>
+For more information see issue <a href="https://github.com/robotframework/robotframework/issues/4462">#4462</a>.</p>
 <h3 id="argument-conversion-with-embedded-arguments">Argument conversion with embedded arguments<a class="headerlink" href="#argument-conversion-with-embedded-arguments" title="Permanent link">&para;</a></h3>
 <p>User keywords accepting embedded arguments support argument conversion with type
-syntax <code>${name: type}</code> similarly as <a href="http://en.wikipedia.org/wiki/Regular_expression">normal user keywords</a>. If a <a href="https://docs.python.org/3/library/re.html#regular-expression-syntax">custom pattern</a>
+syntax <code>${name: type}</code> similarly as <a href="#argument-conversion-with-user-keywords">normal user keywords</a>. If a <a href="#using-custom-regular-expressions">custom pattern</a>
 is needed, it can be separated with an additional colon like <code>${name: type:pattern}</code>.</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-27-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-27-1"> 1</a></span>
 <span class="normal"><a href="#example-27-2"> 2</a></span>
 <span class="normal"><a href="#example-27-3"> 3</a></span>
 <span class="normal"><a href="#example-27-4"> 4</a></span>
@@ -11331,7 +11402,7 @@ is needed, it can be separated with an additional colon like <code>${name: type:
 </span><span id="line-27-12"><a id="example-27-12" name="example-27-12"></a><span class="p">    </span><span class="nf">Should Be Equal</span><span class="p">    ${</span><span class="nv">deadline.month</span><span class="p">}    ${</span><span class="nv">5</span><span class="p">}</span>
 </span><span id="line-27-13"><a id="example-27-13" name="example-27-13"></a><span class="p">    </span><span class="nf">Should Be Equal</span><span class="p">    ${</span><span class="nv">deadline.day</span><span class="p">}      ${</span><span class="nv">30</span><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
-Because the type separator is a colon followed by a space (e.g. <code>${arg: int}</code>)
+<p>Because the type separator is a colon followed by a space (e.g. <code>${arg: int}</code>)
 and the pattern separator is just a colon (e.g. <code>${arg:\d+}</code>), there typically
 are no conflicts when using only a type or only a pattern. The only exception
 is using a pattern starting with a space, but in that case the space can be
@@ -11345,7 +11416,7 @@ escaped like <code>${arg:\ abc}</code> or a type added like <code>${arg: str: ab
 makes it easier to use higher-level sentence-like keywords when using the
 <a href="../tests/#behavior-driven-style">behavior-driven style</a> to write tests. As the example below shows, this
 support is typically used in combination with the possibility to
-<a href="https://www.python.org/dev/peps/pep-3102">omit Given, When and Then prefixes</a> in keyword definitions:</p>
+<a href="../tests/#ignoring-givenwhenthenandbut-prefixes">omit Given, When and Then prefixes</a> in keyword definitions:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-28-1"> 1</a></span>
 <span class="normal"><a href="#example-28-2"> 2</a></span>
 <span class="normal"><a href="#example-28-3"> 3</a></span>
@@ -11397,23 +11468,24 @@ support is typically used in combination with the possibility to
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Embedded arguments feature in Robot Framework is inspired by
-how <em>step definitions</em> are created in the popular BDD tool <a href="https://www.python.org/dev/peps/pep-3102">Cucumber</a>.</p>
+how <em>step definitions</em> are created in the popular BDD tool <a href="https://cucumber.io">Cucumber</a>.</p>
 </div>
+<p><a id="setting-variables-from-keyword-return-values"></a></p>
 <h2 id="user-keyword-return-values">User keyword return values<a class="headerlink" href="#user-keyword-return-values" title="Permanent link">&para;</a></h2>
 <p>Similarly as library keywords, also user keywords can return values.
 When using Robot Framework 5.0 or newer, the recommended approach is
-using the native <a href="#return">RETURN</a> statement. The old <code>[Return]</code>
-setting was deprecated in Robot Framework 7.0 and also <a href="../libraries/#builtin">BuiltIn</a> keywords
-<em>Return From Keyword</em> and <em>Return From Keyword If</em> are considered
+using the native <a href="#return">RETURN</a> statement. The old <em class="setting">[Return]</em>
+setting was deprecated in Robot Framework 7.0 and also <a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> keywords
+<em class="name">Return From Keyword</em> and <em class="name">Return From Keyword If</em> are considered
 deprecated.</p>
-<p>Regardless how values are returned, they can be <a href="http://en.wikipedia.org/wiki/Regular_expression">assigned to variables</a>
+<p>Regardless how values are returned, they can be <a href="../variables/#return-values-from-keywords">assigned to variables</a>
 in test cases and in other user keywords.</p>
 <p><a id="return"></a></p>
 <h3 id="using-return-statement">Using <code>RETURN</code> statement<a class="headerlink" href="#using-return-statement" title="Permanent link">&para;</a></h3>
 <p>The recommended approach to return values is using the <code>RETURN</code> statement.
 It accepts optional return values and can be used with <a href="../control/#if">IF</a> and <a href="../control/#inline-if">inline IF</a>
 structures. Its usage is easiest explained with examples:</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-29-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-29-1"> 1</a></span>
 <span class="normal"><a href="#example-29-2"> 2</a></span>
 <span class="normal"><a href="#example-29-3"> 3</a></span>
 <span class="normal"><a href="#example-29-4"> 4</a></span>
@@ -11473,7 +11545,7 @@ structures. Its usage is easiest explained with examples:</p>
 </span><span id="line-29-29"><a id="example-29-29" name="example-29-29"></a><span class="p">    </span><span class="nf">END</span>
 </span><span id="line-29-30"><a id="example-29-30" name="example-29-30"></a><span class="p">    </span><span class="nf">RETURN</span><span class="p">    ${</span><span class="nv">-1</span><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
-If you want to test the above examples yourself, you can use them with these test cases:</p>
+<p>If you want to test the above examples yourself, you can use them with these test cases:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-30-1"> 1</a></span>
 <span class="normal"><a href="#example-30-2"> 2</a></span>
 <span class="normal"><a href="#example-30-3"> 3</a></span>
@@ -11527,11 +11599,11 @@ If you want to test the above examples yourself, you can use them with these tes
 <p><code>RETURN</code> is new in Robot Framework 5.0. Use approaches explained
 below if you need to support older versions.</p>
 </div>
-<h3 id="using-return-setting">Using <code>[Return]</code> setting<a class="headerlink" href="#using-return-setting" title="Permanent link">&para;</a></h3>
-<p>The <code>[Return]</code> setting defines what the keyword should return after
+<h3 id="using-return-setting">Using <em class="setting">[Return]</em> setting<a class="headerlink" href="#using-return-setting" title="Permanent link">&para;</a></h3>
+<p>The <em class="setting">[Return]</em> setting defines what the keyword should return after
 it has been executed. Although it is recommended to have it at the end of keyword
 where it logically belongs, its position does not affect how it is used.</p>
-<p>An inherent limitation of the <code>[Return]</code> setting is that cannot be used
+<p>An inherent limitation of the <em class="setting">[Return]</em> setting is that cannot be used
 conditionally. Thus only the first two earlier <code>RETURN</code> statement examples
 can be created using it.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-31-1">1</a></span>
@@ -11552,16 +11624,16 @@ can be created using it.</p>
 </span></code></pre></div></td></tr></table></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The <code>[Return]</code> setting was deprecated in Robot Framework 7.0
+<p>The <em class="setting">[Return]</em> setting was deprecated in Robot Framework 7.0
 and the <code>RETURN</code> statement should be used instead. If there is a need
 to support older Robot Framework versions that do not support <code>RETURN</code>,
 it is possible to use the special keywords discussed in the next section.</p>
 </div>
 <h3 id="using-special-keywords-to-return">Using special keywords to return<a class="headerlink" href="#using-special-keywords-to-return" title="Permanent link">&para;</a></h3>
-<p><a href="../libraries/#builtin">BuiltIn</a> keywords <em>Return From Keyword</em> and <em>Return From Keyword If</em>
+<p><a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> keywords <em class="name">Return From Keyword</em> and <em class="name">Return From Keyword If</em>
 allow returning from a user keyword conditionally in the middle of the keyword.
 Both of them also accept optional return values that are handled exactly like
-with the <code>RETURN</code> statement and the <code>[Return]</code> setting discussed above.</p>
+with the <code>RETURN</code> statement and the <em class="setting">[Return]</em> setting discussed above.</p>
 <p>The introduction of the <code>RETURN</code> statement makes these keywords redundant.
 Examples below contain same keywords as earlier <code>RETURN</code> examples but these
 ones are more verbose:</p>
@@ -11623,8 +11695,8 @@ used unless there is a need to support also older versions than Robot Framework
 they will be loudly deprecated and eventually removed in the future.</p>
 </div>
 <h2 id="user-keyword-setup-and-teardown">User keyword setup and teardown<a class="headerlink" href="#user-keyword-setup-and-teardown" title="Permanent link">&para;</a></h2>
-<p>A user keyword can have a setup and a teardown similarly as <a href="https://www.python.org/dev/peps/pep-3102">tests</a>.
-They are specified using <code>[Setup]</code> and <code>[Teardown]</code>
+<p>A user keyword can have a setup and a teardown similarly as <a href="../tests/#test-setup-and-teardown">tests</a>.
+They are specified using <em class="setting">[Setup]</em> and <em class="setting">[Teardown]</em>
 settings, respectively, directly to the keyword having them. Unlike with
 tests, it is not possible to specify a common setup or teardown to all
 keywords in a certain file.</p>
@@ -11666,9 +11738,9 @@ teardowns the same way as with test teardowns.</p>
 <p>User keyword setups are new in Robot Framework 7.0.</p>
 </div>
 <h2 id="private-user-keywords">Private user keywords<a class="headerlink" href="#private-user-keywords" title="Permanent link">&para;</a></h2>
-<p>User keywords can be <a href="https://www.python.org/dev/peps/pep-3102">tagged</a> with a special <code>robot:private</code> tag to indicate
+<p>User keywords can be <a href="#user-keyword-tags">tagged</a> with a special <code>robot:private</code> tag to indicate
 that they should only be used in the file where they are created:</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-34-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-34-1">1</a></span>
 <span class="normal"><a href="#example-34-2">2</a></span>
 <span class="normal"><a href="#example-34-3">3</a></span>
 <span class="normal"><a href="#example-34-4">4</a></span>
@@ -11682,7 +11754,7 @@ that they should only be used in the file where they are created:</p>
 </span><span id="line-34-6"><a id="example-34-6" name="example-34-6"></a><span class="p">    [</span><span class="kn">Tags</span><span class="p">]    </span><span class="s">robot:private</span>
 </span><span id="line-34-7"><a id="example-34-7" name="example-34-7"></a><span class="p">    </span><span class="nf">No Operation</span>
 </span></code></pre></div></td></tr></table></div>
-Using the <code>robot:private</code> tag does not outright prevent using the keyword
+<p>Using the <code>robot:private</code> tag does not outright prevent using the keyword
 outside the file where it is created, but such usages will cause a warning.
 If there is both a public and a private keyword with the same name,
 the public one will be used but also this situation causes a warning.</p>
@@ -11704,7 +11776,7 @@ allowed and execution fails.</p>
 <p>Python's default recursion limit is 1000 stack frames, which in practice means that
 it is possible to start approximately 140 keywords or control structures.
 If that is not enough, Python's recursion limit can be raised using the
-<a href="https://www.python.org/dev/peps/pep-3102">sys.setrecursionlimit()</a> function. As the documentation of the function explains,
+<a href="https://docs.python.org/3/library/sys.html#sys.setrecursionlimit">sys.setrecursionlimit()</a> function. As the documentation of the function explains,
 this should be done with care, because a too-high level can lead to a crash.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>

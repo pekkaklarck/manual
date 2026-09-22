@@ -1136,7 +1136,7 @@
   <span class="md-ellipsis">
     
   
-    Results
+    Execution artifacts
   
 
     
@@ -9989,7 +9989,7 @@ when result files are ready, and finally when the whole execution ends.
 Example usages include communicating with external test management systems,
 sending a message when a test fails, and modifying tests during execution.</p>
 <p>Listeners are implemented as classes or modules with certain special methods.
-They can be <a href="https://github.com/robotframework/robotframework/tree/master/atest/testdata/output/listener_interface/body_items_v3">taken into use from the command line</a> and be <a href="#libraries-as-listeners">registered
+They can be <a href="#registering-listeners-from-command-line">taken into use from the command line</a> and be <a href="#libraries-as-listeners">registered
 by libraries</a>. The former listeners are active during the whole execution
 while the latter are active only when executing suites where libraries registering
 them are imported.</p>
@@ -9997,6 +9997,10 @@ them are imported.</p>
 <a href="#listener-version-3">listener version 3</a>. They have mostly the same methods, but these methods are
 called with different arguments. The newer listener version 3 is more powerful
 and generally recommended.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The listener interface is used also by <a href="../../execution/configuration/#custom-console-loggers">custom console loggers</a>.</p>
+</div>
 <h2 id="listener-structure">Listener structure<a class="headerlink" href="#listener-structure" title="Permanent link">&para;</a></h2>
 <p>Listeners are implement as modules or classes <a href="../libraries/#creating-test-library-class-or-module">similarly as libraries</a>.
 They can implement certain named hook methods depending on what events they
@@ -10004,7 +10008,7 @@ are interested in. For example, if a listener wants to get a notification when
 a test starts, it can implement the <code>start_test</code> method. As discussed in the
 subsequent sections, different listener versions have slightly different set of
 available methods and they also are called with different arguments.</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
 <span class="normal"><a href="#example-0-2">2</a></span>
 <span class="normal"><a href="#example-0-3">3</a></span>
 <span class="normal"><a href="#example-0-4">4</a></span>
@@ -10018,10 +10022,10 @@ available methods and they also are called with different arguments.</p>
 </span><span id="line-0-6"><a id="example-0-6" name="example-0-6"></a><span class="k">def</span><span class="w"> </span><span class="nf">end_test</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
 </span><span id="line-0-7"><a id="example-0-7" name="example-0-7"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Test '</span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">' ended with status </span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">status</span><span class="si">}</span><span class="s2">."</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
-Listeners do not need to implement any explicit interface, it is enough to
+<p>Listeners do not need to implement any explicit interface, it is enough to
 simply implement needed methods and they will be recognized automatically.
-There are, however, base classes <a href="#listenerv2">robot.api.interfaces.ListenerV2</a><em>
-and <a href="#listenerv3">robot.api.interfaces.ListenerV3</a></em> that can be used to get
+There are, however, base classes <a href="https://robot-framework.readthedocs.io/en/master/autodoc/robot.api.html#robot.api.interfaces.ListenerV2">robot.api.interfaces.ListenerV2</a>
+and <a href="https://robot-framework.readthedocs.io/en/master/autodoc/robot.api.html#robot.api.interfaces.ListenerV3">robot.api.interfaces.ListenerV3</a> that can be used to get
 method name completion in editors, type hints, and so on.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-1-1"> 1</a></span>
 <span class="normal"><a href="#example-1-2"> 2</a></span>
@@ -10102,12 +10106,12 @@ it. If that is needed, <a href="#listener-version-3">listener version 3</a> can 
 <tr>
 <td>start_test</td>
 <td>name, attributes</td>
-<td>Called when a test case starts.<br>Contents of the attribute dictionary:<br><ul><li><code>id</code>: Test id in format like <code>s1-s2-t2</code>, where the beginning is the parent suite id and the last part shows test index in that suite.</li><li><code>longname</code>: Test name including parent suites.</li><li><code>originalname</code>: Test name with possible variables unresolved. New in RF 3.2.</li><li><code>doc</code>: Test documentation.</li><li><code>tags</code>: Test tags as a list of strings.</li><li><code>template</code>: The name of the template used for the test. An empty string if the test not templated.</li><li><code>source</code>: An absolute path of the test case source file. New in RF 4.0.</li><li><code>lineno</code>: Line number where the test starts in the source file. New in RF 3.2.</li><li><code>starttime</code>: Test execution execution start time.</li></ul></td>
+<td>Called when a test case starts.<br>Contents of the attribute dictionary:<br><ul><li><code>id</code>: Test id in format like <code>s1-s2-t2</code>, where the beginning is the parent suite id and the last part shows test index in that suite.</li><li><code>longname</code>: Test name including parent suites.</li><li><code>originalname</code>: Test name with possible variables unresolved. New in RF 3.2.</li><li><code>doc</code>: Test documentation.</li><li><code>tags</code>: Test tags as a list of strings.</li><li><code>metadata</code>: <a href="../../syntax/tests/#free-test-metadata">Free test metadata</a> as a dictionary. New in RF 7.5.</li><li><code>template</code>: The name of the template used for the test. An empty string if the test not templated.</li><li><code>source</code>: An absolute path of the test case source file. New in RF 4.0.</li><li><code>lineno</code>: Line number where the test starts in the source file. New in RF 3.2.</li><li><code>starttime</code>: Test execution execution start time.</li></ul></td>
 </tr>
 <tr>
 <td>end_test</td>
 <td>name, attributes</td>
-<td>Called when a test case ends.<br>Contents of the attribute dictionary:<br><ul><li><code>id</code>: Same as in <code>start_test</code>.</li><li><code>longname</code>: Same as in <code>start_test</code>.</li><li><code>originalname</code>: Same as in <code>start_test</code>.</li><li><code>doc</code>: Same as in <code>start_test</code>.</li><li><code>tags</code>: Same as in <code>start_test</code>.</li><li><code>template</code>: Same as in <code>start_test</code>.</li><li><code>source</code>: Same as in <code>start_test</code>.</li><li><code>lineno</code>: Same as in <code>start_test</code>.</li><li><code>starttime</code>: Same as in <code>start_test</code>.</li><li><code>endtime</code>: Test execution execution end time.</li><li><code>elapsedtime</code>: Total execution time in milliseconds as an integer</li><li><code>status</code>: Test status as string <code>PASS</code>, <code>FAIL</code> or <code>SKIP</code>.</li><li><code>message</code>: Status message. Normally an error message or an empty string.</li></ul></td>
+<td>Called when a test case ends.<br>Contents of the attribute dictionary:<br><ul><li><code>id</code>: Same as in <code>start_test</code>.</li><li><code>longname</code>: Same as in <code>start_test</code>.</li><li><code>originalname</code>: Same as in <code>start_test</code>.</li><li><code>doc</code>: Same as in <code>start_test</code>.</li><li><code>tags</code>: Same as in <code>start_test</code>.</li><li><code>metadata</code>: Same as in <code>start_test</code>.</li><li><code>template</code>: Same as in <code>start_test</code>.</li><li><code>source</code>: Same as in <code>start_test</code>.</li><li><code>lineno</code>: Same as in <code>start_test</code>.</li><li><code>starttime</code>: Same as in <code>start_test</code>.</li><li><code>endtime</code>: Test execution execution end time.</li><li><code>elapsedtime</code>: Total execution time in milliseconds as an integer</li><li><code>status</code>: Test status as string <code>PASS</code>, <code>FAIL</code> or <code>SKIP</code>.</li><li><code>message</code>: Status message. Normally an error message or an empty string.</li></ul></td>
 </tr>
 <tr>
 <td>start_keyword</td>
@@ -10122,27 +10126,27 @@ it. If that is needed, <a href="#listener-version-3">listener version 3</a> can 
 <tr>
 <td>log_message</td>
 <td>message</td>
-<td>Called when an executed keyword writes a log message.<br><code>message</code> is a dictionary with the following contents:<br><ul><li><code>message</code>: The content of the message.</li><li><code>level</code>: <a href="../../execution/results/#log-level">Log level</a> used in logging the message.</li><li><code>timestamp</code>: Message creation time in format <code>YYYY-MM-DD hh:mm:ss.mil</code>.</li><li><code>html</code>: String <code>yes</code> or <code>no</code> denoting whether the message should be interpreted as HTML or not.</li></ul><br>Not called if the message level is below the current <a href="../../execution/results/#log-levels">threshold level</a>_.</td>
+<td>Called when an executed keyword writes a log message.<br><code>message</code> is a dictionary with the following contents:<br><ul><li><code>message</code>: The content of the message.</li><li><code>level</code>: <a href="../../execution/results/#log-levels">Log level</a> used in logging the message.</li><li><code>timestamp</code>: Message creation time in format <code>YYYY-MM-DD hh:mm:ss.mil</code>.</li><li><code>html</code>: String <code>yes</code> or <code>no</code> denoting whether the message should be interpreted as HTML or not.</li></ul><br>Not called if the message level is below the current <a href="../../execution/results/#log-levels">threshold level</a>.</td>
 </tr>
 <tr>
 <td>message</td>
 <td>message</td>
-<td>Called when the framework itself writes a <a href="../../execution/results/#syslog">syslog</a> message.<br><code>message</code> is a dictionary with the same contents as with <code>log_message</code> method.</td>
+<td>Called when the framework itself writes a <a href="../../execution/results/#system-log">syslog</a> message.<br><code>message</code> is a dictionary with the same contents as with <code>log_message</code> method.</td>
 </tr>
 <tr>
 <td>library_import</td>
 <td>name, attributes</td>
-<td>Called when a library has been imported.<br><code>name</code> is the name of the imported library. If the library has been given a custom name when imported it using <code>AS</code>, <code>name</code> is the specified alias.<br>Contents of the attribute dictionary:<br><ul><li><code>args</code>: Arguments passed to the library as a list.</li><li><code>originalname</code>: The original library name if the library has been given an alias using <code>AS</code>, otherwise same as <code>name</code>.</li><li><code>source</code>: An absolute path to the library source. An empty string if getting the source of the library failed for some reason.</li><li><code>importer</code>: An absolute path to the file importing the library. <code>None</code> when <a href="../../syntax/libraries/#builtin">BuiltIn</a> is imported as well as when</li></ul></td>
+<td>Called when a library has been imported.<br><code>name</code> is the name of the imported library. If the library has been given a custom name when imported it using <code>AS</code>, <code>name</code> is the specified alias.<br>Contents of the attribute dictionary:<br><ul><li><code>args</code>: Arguments passed to the library as a list.</li><li><code>originalname</code>: The original library name if the library has been given an alias using <code>AS</code>, otherwise same as <code>name</code>.</li><li><code>source</code>: An absolute path to the library source. An empty string if getting the source of the library failed for some reason.</li><li><code>importer</code>: An absolute path to the file importing the library. <code>None</code> when <a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> is imported as well as when using the <em class="name">Import Library</em> keyword.</li></ul></td>
 </tr>
 <tr>
 <td>resource_import</td>
 <td>name, attributes</td>
-<td>Called when a resource file has been imported.<br><code>name</code> is the name of the imported resource file without the file extension.<br>Contents of the attribute dictionary:<br><ul><li><code>source</code>: An absolute path to the imported resource file.</li><li><code>importer</code>: An absolute path to the file importing the keyword.</li></ul></td>
+<td>Called when a resource file has been imported.<br><code>name</code> is the name of the imported resource file without the file extension.<br>Contents of the attribute dictionary:<br><ul><li><code>source</code>: An absolute path to the imported resource file.</li><li><code>importer</code>: An absolute path to the file importing the resource file. <code>None</code> when using the <em class="name">Import Resource</em> keyword.</li></ul></td>
 </tr>
 <tr>
 <td>variables_import</td>
 <td>name, attributes</td>
-<td>Called when a variable file has been imported.<br><code>name</code> is the name of the imported variable file with the file extension.<br>Contents of the attribute dictionary:<br><ul><li><code>args</code>: Arguments passed to the variable file as a list.</li><li><code>source</code>: An absolute path to the imported variable file.</li><li><code>importer</code>: An absolute path to the file importing the Variables* keyword.</li></ul></td>
+<td>Called when a variable file has been imported.<br><code>name</code> is the name of the imported variable file with the file extension.<br>Contents of the attribute dictionary:<br><ul><li><code>args</code>: Arguments passed to the variable file as a list.</li><li><code>source</code>: An absolute path to the imported variable file.</li><li><code>importer</code>: An absolute path to the file importing the resource file. <code>None</code> when using the <em class="name">Import Variables</em> key</li></ul></td>
 </tr>
 <tr>
 <td>output_file</td>
@@ -10162,7 +10166,7 @@ it. If that is needed, <a href="#listener-version-3">listener version 3</a> can 
 <tr>
 <td>xunit_file</td>
 <td>path</td>
-<td>Called when the <a href="../../execution/output-files/#xunit-file">xunit file</a> is ready.<br><code>path</code> is an absolute path to the file as a string.<br>Only called if creating the xunit file is enabled.</td>
+<td>Called when the <a href="../../execution/results/#xunit-file">xunit file</a> is ready.<br><code>path</code> is an absolute path to the file as a string.<br>Only called if creating the xunit file is enabled.</td>
 </tr>
 <tr>
 <td>debug_file</td>
@@ -10215,7 +10219,7 @@ and in the API docs of the optional <a href="https://robot-framework.readthedocs
 <tr>
 <td>start_suite</td>
 <td>data, result</td>
-<td>Called when a test suite starts.<br><code>data</code> and <code>result</code> are model objects representing the <a href="#runningtestsuite">executed test suite</a><em> and <a href="#resulttestsuite">its execution results</a></em>, respectively.</td>
+<td>Called when a test suite starts.<br><code>data</code> and <code>result</code> are model objects representing the <a href="https://robot-framework.readthedocs.org/en/master/autodoc/robot.running.html#robot.running.model.TestSuite">executed test suite</a> and <a href="https://robot-framework.readthedocs.org/en/master/autodoc/robot.result.html#robot.result.model.TestSuite">its execution results</a>, respectively.</td>
 </tr>
 <tr>
 <td>end_suite</td>
@@ -10225,7 +10229,7 @@ and in the API docs of the optional <a href="https://robot-framework.readthedocs
 <tr>
 <td>start_test</td>
 <td>data, result</td>
-<td>Called when a test case starts.<br><code>data</code> and <code>result</code> are model objects representing the <a href="#runningtestcase">executed test case</a><em> and <a href="#resulttestcase">its execution results</a></em>, respectively.</td>
+<td>Called when a test case starts.<br><code>data</code> and <code>result</code> are model objects representing the <a href="https://robot-framework.readthedocs.org/en/master/autodoc/robot.running.html#robot.running.model.TestCase">executed test case</a> and <a href="https://robot-framework.readthedocs.org/en/master/autodoc/robot.result.html#robot.result.model.TestCase">its execution results</a>, respectively.</td>
 </tr>
 <tr>
 <td>end_test</td>
@@ -10235,7 +10239,7 @@ and in the API docs of the optional <a href="https://robot-framework.readthedocs
 <tr>
 <td>start_keyword</td>
 <td>data, result</td>
-<td>Called when a keyword starts.<br><code>data</code> and <code>result</code> are model objects representing the <a href="#runningkeyword">executed keyword call</a><em> and <a href="#resultkeyword">its execution results</a></em>, respectively.<br>This method is called, by default, with user keywords, library keywords and when a keyword call is invalid. It is not called if a more specific <code>start_user_keyword</code>, <code>start_library_keyword</code> or <code>start_invalid_keyword</code> method is implemented.</td>
+<td>Called when a keyword starts.<br><code>data</code> and <code>result</code> are model objects representing the <a href="https://robot-framework.readthedocs.org/en/master/autodoc/robot.running.html#robot.running.model.Keyword">executed keyword call</a> and <a href="https://robot-framework.readthedocs.org/en/master/autodoc/robot.result.html#robot.result.model.Keyword">its execution results</a>, respectively.<br>This method is called, by default, with user keywords, library keywords and when a keyword call is invalid. It is not called if a more specific <code>start_user_keyword</code>, <code>start_library_keyword</code> or <code>start_invalid_keyword</code> method is implemented.</td>
 </tr>
 <tr>
 <td>end_keyword</td>
@@ -10245,7 +10249,7 @@ and in the API docs of the optional <a href="https://robot-framework.readthedocs
 <tr>
 <td>start_user_keyword</td>
 <td>data, implementation, result</td>
-<td>Called when a user keyword starts.<br><code>data</code> and <code>result</code> are the same as with <code>start_keyword</code> and <code>implementation</code> is the actually executed <a href="#runninguserkeyword">user keyword</a>_.<br>If this method is implemented, <code>start_keyword</code> is not called with user keywords.</td>
+<td>Called when a user keyword starts.<br><code>data</code> and <code>result</code> are the same as with <code>start_keyword</code> and <code>implementation</code> is the actually executed <a href="https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.resourcemodel.UserKeyword">user keyword</a>.<br>If this method is implemented, <code>start_keyword</code> is not called with user keywords.</td>
 </tr>
 <tr>
 <td>end_user_keyword</td>
@@ -10255,7 +10259,7 @@ and in the API docs of the optional <a href="https://robot-framework.readthedocs
 <tr>
 <td>start_library_keyword</td>
 <td>data implementation, result</td>
-<td>Called when a library keyword starts.<br><code>data</code> and <code>result</code> are the same as with <code>start_keyword</code> and <code>implementation</code> represents the executed <a href="#runninglibrarykeyword">library keyword</a>_.<br>If this method is implemented, <code>start_keyword</code> is not called with library keywords.</td>
+<td>Called when a library keyword starts.<br><code>data</code> and <code>result</code> are the same as with <code>start_keyword</code> and <code>implementation</code> represents the executed <a href="https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.librarykeyword.LibraryKeyword">library keyword</a>.<br>If this method is implemented, <code>start_keyword</code> is not called with library keywords.</td>
 </tr>
 <tr>
 <td>end_library_keyword</td>
@@ -10265,7 +10269,7 @@ and in the API docs of the optional <a href="https://robot-framework.readthedocs
 <tr>
 <td>start_invalid_keyword</td>
 <td>data implementation, result</td>
-<td>Called when an invalid keyword call starts.<br><code>data</code> and <code>result</code> are the same as with <code>start_keyword</code> and <code>implementation</code> represents the <a href="#runninginvalidkeyword">invalid keyword call</a>_. Keyword may not have been found, there could have been multiple matches, or the keyword call itself could have been invalid.<br>If this method is implemented, <code>start_keyword</code> is not called with invalid keyword calls.</td>
+<td>Called when an invalid keyword call starts.<br><code>data</code> and <code>result</code> are the same as with <code>start_keyword</code> and <code>implementation</code> represents the <a href="https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.invalidkeyword.InvalidKeyword">invalid keyword call</a>. Keyword may not have been found, there could have been multiple matches, or the keyword call itself could have been invalid.<br>If this method is implemented, <code>start_keyword</code> is not called with invalid keyword calls.</td>
 </tr>
 <tr>
 <td>end_invalid_keyword</td>
@@ -10305,32 +10309,32 @@ and in the API docs of the optional <a href="https://robot-framework.readthedocs
 <tr>
 <td>log_message</td>
 <td>message</td>
-<td>Called when an executed keyword writes a log message. <code>message</code> is a model object representing the <a href="#resultmessage">logged message</a><em>.<br>This method is not called if the message has level below the current <a href="../../execution/results/#log-levels">threshold level</a></em>.</td>
+<td>Called when an executed keyword writes a log message. <code>message</code> is a model object representing the <a href="https://robot-framework.readthedocs.org/en/master/autodoc/robot.result.html#robot.result.model.Message">logged message</a>.<br>This method is not called if the message has level below the current <a href="../../execution/results/#log-levels">threshold level</a>.</td>
 </tr>
 <tr>
 <td>message</td>
 <td>message</td>
-<td>Called when the framework itself writes a <a href="../../execution/results/#syslog">syslog</a> message.<br><code>message</code> is same object as with <code>log_message</code>.</td>
+<td>Called when the framework itself writes a <a href="../../execution/results/#system-log">syslog</a> message.<br><code>message</code> is same object as with <code>log_message</code>.</td>
 </tr>
 <tr>
 <td>library_import</td>
 <td>library, importer</td>
-<td>Called after a library has been imported.<br><a href="#runningtestlibrary">library</a><em> represents the imported library. It can be inspected and also modified. <a href="#runningimport">importer</a></em> contains information about the location where the library was imported.</td>
+<td>Called after a library has been imported.<br><a href="https://robot-framework.readthedocs.io/en/stable/autodoc/robot.running.html#robot.running.testlibraries.TestLibrary">library</a> represents the imported library. It can be inspected and also modified. <a href="https://robot-framework.readthedocs.io/en/stable/autodoc/robot.running.html#robot.running.resourcemodel.Import">importer</a> contains information about the location where the library was imported.</td>
 </tr>
 <tr>
 <td>resource_import</td>
 <td>resource, importer</td>
-<td>Called after a resource file has been imported.<br><a href="#runningresourcefile">resource</a><em> represents the imported resource file. It can be inspected and also modified. <a href="#runningimport">importer</a></em> contains information about the location where the resource was imported.</td>
+<td>Called after a resource file has been imported.<br><a href="https://robot-framework.readthedocs.io/en/stable/autodoc/robot.running.html#robot.running.resourcemodel.ResourceFile">resource</a> represents the imported resource file. It can be inspected and also modified. <a href="https://robot-framework.readthedocs.io/en/stable/autodoc/robot.running.html#robot.running.resourcemodel.Import">importer</a> contains information about the location where the resource was imported.</td>
 </tr>
 <tr>
 <td>variables_import</td>
 <td>attrs, importer</td>
-<td>Called after a variable file has been imported.<br><code>attrs</code> contains information about the imported variable file as a dictionary. It can be inspected, but modifications to it have no effect. <a href="#runningimport">importer</a>_ contains information about the location where the variable file was imported.<br>This method will be changed in the future so that the <code>attrs</code> dictionary is replaced with an object representing the imported variable file.</td>
+<td>Called after a variable file has been imported.<br><code>attrs</code> contains information about the imported variable file as a dictionary. It can be inspected, but modifications to it have no effect. <a href="https://robot-framework.readthedocs.io/en/stable/autodoc/robot.running.html#robot.running.resourcemodel.Import">importer</a> contains information about the location where the variable file was imported.<br>This method will be changed in the future so that the <code>attrs</code> dictionary is replaced with an object representing the imported variable file.</td>
 </tr>
 <tr>
 <td>result_file</td>
 <td>kind, path</td>
-<td>Called, by default, when a <a href="../../execution/results/#result-file">result file</a> like output or log is ready.<br><code>kind</code> is a string <code>OUTPUT</code>, <code>REPORT</code>, <code>LOG</code>, <code>XUNIT</code> or <code>DEBUG</code>. <code>path</code> is an absolute path to the file as a <code>pathlib.Path</code> object.<br>Not called if a more specific result file related method like <code>output_file</code> or <code>log_file</code> is implemented or when creating a result file is disabled.<br>New in Robot Framework 7.5.</td>
+<td>Called, by default, when a <a href="../../execution/results/#result-files">result file</a> like an output file or a log file is ready.<br><code>kind</code> is a string <code>OUTPUT</code>, <code>REPORT</code>, <code>LOG</code>, <code>XUNIT</code> or <code>DEBUG</code>. <code>path</code> is an absolute path to the file as a <code>pathlib.Path</code> object.<br>Not called if a more specific result file related method like <code>output_file</code> or <code>log_file</code> is implemented or when creating a result file is disabled.<br>New in Robot Framework 7.5.</td>
 </tr>
 <tr>
 <td>output_file</td>
@@ -10350,7 +10354,7 @@ and in the API docs of the optional <a href="https://robot-framework.readthedocs
 <tr>
 <td>xunit_file</td>
 <td>path</td>
-<td>Called when <a href="../../execution/output-files/#xunit-file">xunit file</a> is ready.<br><code>path</code> is an absolute path to the file as a <code>pathlib.Path</code> object.<br>Only called if creating the xunit file is enabled.<br>Starting from Robot Framework 7.5, the generic <code>result_file</code> method is called if this method is not implemented.</td>
+<td>Called when <a href="../../execution/results/#xunit-file">xunit file</a> is ready.<br><code>path</code> is an absolute path to the file as a <code>pathlib.Path</code> object.<br>Only called if creating the xunit file is enabled.<br>Starting from Robot Framework 7.5, the generic <code>result_file</code> method is called if this method is not implemented.</td>
 </tr>
 <tr>
 <td>debug_file</td>
@@ -10382,21 +10386,21 @@ version 3 methods were strings.</p>
 <h2 id="taking-listeners-into-use">Taking listeners into use<a class="headerlink" href="#taking-listeners-into-use" title="Permanent link">&para;</a></h2>
 <h3 id="registering-listeners-from-command-line">Registering listeners from command line<a class="headerlink" href="#registering-listeners-from-command-line" title="Permanent link">&para;</a></h3>
 <p>Listeners that need to be active during the whole execution must be taken into
-use from the command line. That is done using the <code>--listener</code> option
+use from the command line. That is done using the <code class="option">--listener</code> option
 so that the name of the listener is given to it as an argument. The listener
 name is got from the name of the class or module implementing the
 listener, similarly as <a href="../libraries/#library-name">library name</a> is got from the class or module
 implementing the library. The specified listeners must be in the same <a href="../../execution/configuration/#module-search-path">module
 search path</a> where test libraries are searched from when they are imported.
 In addition to registering a listener by using a name, it is possible to give
-an absolute or a relative path to the listener file <a href="https://github.com/robotframework/robotframework/tree/master/atest/testdata/output/listener_interface/body_items_v3">similarly as with test
+an absolute or a relative path to the listener file <a href="../../syntax/libraries/#using-physical-path-to-library">similarly as with test
 libraries</a>. It is possible to take multiple listeners
 into use by using this option several times:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-2-1">1</a></span>
 <span class="normal"><a href="#example-2-2">2</a></span>
-<span class="normal"><a href="#example-2-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-2-1"><a id="example-2-1" name="example-2-1"></a><span class="n">robot</span> <span class="o">--</span><span class="n">listener</span> <span class="n">MyListener</span> <span class="n">tests</span><span class="o">.</span><span class="n">robot</span>
-</span><span id="line-2-2"><a id="example-2-2" name="example-2-2"></a><span class="n">robot</span> <span class="o">--</span><span class="n">listener</span> <span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">MyListener</span><span class="o">.</span><span class="n">py</span> <span class="n">tests</span><span class="o">.</span><span class="n">robot</span>
-</span><span id="line-2-3"><a id="example-2-3" name="example-2-3"></a><span class="n">robot</span> <span class="o">--</span><span class="n">listener</span> <span class="n">module</span><span class="o">.</span><span class="n">Listener</span> <span class="o">--</span><span class="n">listener</span> <span class="n">AnotherListener</span> <span class="n">tests</span><span class="o">.</span><span class="n">robot</span>
+<span class="normal"><a href="#example-2-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-2-1"><a id="example-2-1" name="example-2-1"></a>robot --listener MyListener tests.robot
+</span><span id="line-2-2"><a id="example-2-2" name="example-2-2"></a>robot --listener path/to/MyListener.py tests.robot
+</span><span id="line-2-3"><a id="example-2-3" name="example-2-3"></a>robot --listener module.Listener --listener AnotherListener tests.robot
 </span></code></pre></div></td></tr></table></div>
 <p>It is also possible to give arguments to listener classes from the command
 line. Arguments are specified after the listener name (or path) using a colon
@@ -10408,21 +10412,21 @@ themselves contain colons, but requires surrounding the whole value with
 quotes on UNIX-like operating systems:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-3-1">1</a></span>
 <span class="normal"><a href="#example-3-2">2</a></span>
-<span class="normal"><a href="#example-3-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-3-1"><a id="example-3-1" name="example-3-1"></a><span class="n">robot</span> <span class="o">--</span><span class="n">listener</span> <span class="n">listener</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="n">arg1</span><span class="p">:</span><span class="n">arg2</span> <span class="n">tests</span><span class="o">.</span><span class="n">robot</span>
-</span><span id="line-3-2"><a id="example-3-2" name="example-3-2"></a><span class="n">robot</span> <span class="o">--</span><span class="n">listener</span> <span class="s2">"listener.py;arg:with:colons"</span> <span class="n">tests</span><span class="o">.</span><span class="n">robot</span>
-</span><span id="line-3-3"><a id="example-3-3" name="example-3-3"></a><span class="n">robot</span> <span class="o">--</span><span class="n">listener</span> <span class="n">c</span><span class="p">:</span>\<span class="n">path</span>\<span class="n">listener</span><span class="o">.</span><span class="n">py</span><span class="p">;</span><span class="n">d</span><span class="p">:</span>\<span class="n">first</span>\<span class="n">arg</span><span class="p">;</span><span class="n">e</span><span class="p">:</span>\<span class="n">second</span>\<span class="n">arg</span> <span class="n">tests</span><span class="o">.</span><span class="n">robot</span>
+<span class="normal"><a href="#example-3-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-3-1"><a id="example-3-1" name="example-3-1"></a>robot --listener listener.py:arg1:arg2 tests.robot
+</span><span id="line-3-2"><a id="example-3-2" name="example-3-2"></a>robot --listener "listener.py;arg:with:colons" tests.robot
+</span><span id="line-3-3"><a id="example-3-3" name="example-3-3"></a>robot --listener c:\path\listener.py;d:\first\arg;e:\second\arg tests.robot
 </span></code></pre></div></td></tr></table></div>
 <p>In addition to passing arguments one-by-one as positional arguments, it is
 possible to pass them using the <a href="../../syntax/tests/#named-argument-syntax">named argument syntax</a> similarly as when using
 keywords:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-4-1">1</a></span>
-<span class="normal"><a href="#example-4-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-4-1"><a id="example-4-1" name="example-4-1"></a><span class="n">robot</span> <span class="o">--</span><span class="n">listener</span> <span class="n">listener</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="n">name</span><span class="o">=</span><span class="n">value</span> <span class="n">tests</span><span class="o">.</span><span class="n">robot</span>
-</span><span id="line-4-2"><a id="example-4-2" name="example-4-2"></a><span class="n">robot</span> <span class="o">--</span><span class="n">listener</span> <span class="s2">"listener.py;name=value:with:colons;second=argument"</span> <span class="n">tests</span><span class="o">.</span><span class="n">robot</span>
+<span class="normal"><a href="#example-4-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-4-1"><a id="example-4-1" name="example-4-1"></a>robot --listener listener.py:name=value tests.robot
+</span><span id="line-4-2"><a id="example-4-2" name="example-4-2"></a>robot --listener "listener.py;name=value:with:colons;second=argument" tests.robot
 </span></code></pre></div></td></tr></table></div>
-<p>Listener arguments are automatically converted using <a href="https://github.com/robotframework/robotframework/tree/master/atest/testdata/output/listener_interface/body_items_v3">same rules as with
-keywords</a> based on <a href="#type-hints">type hints</a> and <a href="../../syntax/tests/#default-values">default values</a>. For example,
+<p>Listener arguments are automatically converted using <a href="../libraries/#supported-conversions">same rules as with
+keywords</a> based on <a href="../libraries/#specifying-argument-types-using-function-annotations">type hints</a> and <a href="../libraries/#implicit-argument-types-based-on-default-values">default values</a>. For example,
 this listener</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-5-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-5-1">1</a></span>
 <span class="normal"><a href="#example-5-2">2</a></span>
 <span class="normal"><a href="#example-5-3">3</a></span>
 <span class="normal"><a href="#example-5-4">4</a></span>
@@ -10432,8 +10436,8 @@ this listener</p>
 </span><span id="line-5-4"><a id="example-5-4" name="example-5-4"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">port</span> <span class="o">=</span> <span class="n">post</span>
 </span><span id="line-5-5"><a id="example-5-5" name="example-5-5"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">log</span> <span class="o">=</span> <span class="n">log</span>
 </span></code></pre></div></td></tr></table></div>
-could be used like</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-6-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-6-1"><a id="example-6-1" name="example-6-1"></a><span class="n">robot</span> <span class="o">--</span><span class="n">listener</span> <span class="n">Listener</span><span class="p">:</span><span class="mi">8270</span><span class="p">:</span><span class="n">false</span>
+<p>could be used like</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-6-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-6-1"><a id="example-6-1" name="example-6-1"></a>robot --listener Listener:8270:false
 </span></code></pre></div></td></tr></table></div>
 <p>and the first argument would be converted to an integer based on the type hint
 and the second to a Boolean based on the default value.</p>
@@ -10446,7 +10450,7 @@ Robot Framework 4.0.</p>
 <p><a id="library listeners"></a>
 <a id="Librariesaslisteners"></a></p>
 <h3 id="libraries-as-listeners">Libraries as listeners<a class="headerlink" href="#libraries-as-listeners" title="Permanent link">&para;</a></h3>
-<p>Sometimes it is useful also for <a href="../../syntax/libraries/#test-libraries">test libraries</a> to get notifications about
+<p>Sometimes it is useful also for <a href="../../syntax/libraries/#using-test-libraries">test libraries</a> to get notifications about
 test execution. This allows them, for example, to perform certain clean-up
 activities automatically when a test suite or the whole test execution ends.</p>
 <h4 id="registering-listener">Registering listener<a class="headerlink" href="#registering-listener" title="Permanent link">&para;</a></h4>
@@ -10455,10 +10459,10 @@ attribute. The value of this attribute should be an instance of the listener
 to use. It may be a totally independent listener or the library itself can
 act as a listener. To avoid listener methods to be exposed as keywords in
 the latter case, it is possible to prefix them with an underscore.
-For example, instead of using <code>end_suite[it is possible to use](#it-is-possible-to-use)end_suite</code>.</p>
+For example, instead of using <code>end_suite</code> it is possible to use <code>_end_suite</code>.</p>
 <p>Following examples illustrates using an external listener as well as a library
 acting as a listener itself:</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-7-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-7-1">1</a></span>
 <span class="normal"><a href="#example-7-2">2</a></span>
 <span class="normal"><a href="#example-7-3">3</a></span>
 <span class="normal"><a href="#example-7-4">4</a></span>
@@ -10500,13 +10504,13 @@ acting as a listener itself:</p>
 </span><span id="line-8-12"><a id="example-8-12" name="example-8-12"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">example_keyword</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 </span><span id="line-8-13"><a id="example-8-13" name="example-8-13"></a>         <span class="o">...</span>
 </span></code></pre></div></td></tr></table></div>
-As the second example above already demonstrated, library listeners can
+<p>As the second example above already demonstrated, library listeners can
 specify <a href="#listener-interface-versions">listener interface versions</a> using the <code>ROBOT_LISTENER_API_VERSION</code>
 attribute exactly like any other listener.</p>
 <p>Starting from Robot Framework 7.0, a listener can register itself to be a listener
 also by using a string <code>SELF</code> (case-insensitive) as a listener. This is especially
 convenient when using the <a href="../libraries/#library-decorator">@library decorator</a>:</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-9-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-9-1"> 1</a></span>
 <span class="normal"><a href="#example-9-2"> 2</a></span>
 <span class="normal"><a href="#example-9-3"> 3</a></span>
 <span class="normal"><a href="#example-9-4"> 4</a></span>
@@ -10534,7 +10538,7 @@ convenient when using the <a href="../libraries/#library-decorator">@library dec
 </span><span id="line-9-13"><a id="example-9-13" name="example-9-13"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">example_keyword</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 </span><span id="line-9-14"><a id="example-9-14" name="example-9-14"></a>         <span class="o">...</span>
 </span></code></pre></div></td></tr></table></div>
-It is also possible to specify multiple listeners for a single library by
+<p>It is also possible to specify multiple listeners for a single library by
 giving <code>ROBOT_LIBRARY_LISTENER</code> a value as a list:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-10-1">1</a></span>
 <span class="normal"><a href="#example-10-2">2</a></span>
@@ -10580,7 +10584,7 @@ executed tests and created results.</p>
 <p>The first example is implemented as a Python module. It uses the <a href="#listener-version-2">listener
 version 2</a>, but could equally well be implemented by using the <a href="#listener-version-3">listener
 version 3</a>.</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-11-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-11-1">1</a></span>
 <span class="normal"><a href="#example-11-2">2</a></span>
 <span class="normal"><a href="#example-11-3">3</a></span>
 <span class="normal"><a href="#example-11-4">4</a></span>
@@ -10596,16 +10600,16 @@ version 3</a>.</p>
 </span><span id="line-11-7"><a id="example-11-7" name="example-11-7"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Test '</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">'"</span> <span class="n">failed</span><span class="p">:</span> <span class="p">{</span><span class="n">attrs</span><span class="p">[</span><span class="s1">'message'</span><span class="p">]}</span><span class="s2">")</span>
 </span><span id="line-11-8"><a id="example-11-8" name="example-11-8"></a>        <span class="nb">input</span><span class="p">(</span><span class="s2">"Press enter to continue."</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
-If the above example would be saved to, for example, <em>PauseExecution.py</em>
+<p>If the above example would be saved to, for example, <code class="file">PauseExecution.py</code>
 file, it could be used from the command line like this:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-12-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-12-1"><a id="example-12-1" name="example-12-1"></a><span class="n">robot</span> <span class="o">--</span><span class="n">listener</span> <span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">PauseExecution</span><span class="o">.</span><span class="n">py</span> <span class="n">tests</span><span class="o">.</span><span class="n">robot</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-12-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-12-1"><a id="example-12-1" name="example-12-1"></a>robot --listener path/to/PauseExecution.py tests.robot
 </span></code></pre></div></td></tr></table></div>
 <p>The next example, which still uses the listener version 2, is slightly more
 complicated. It writes all the information it gets into a text file in
 a temporary directory without much formatting. The filename may be given
 from the command line, but it also has a default value. Note that in real usage,
 the <a href="../../execution/results/#debug-file">debug file</a> functionality available through the command line option
-<code>--debugfile</code> is probably more useful than this example.</p>
+<code class="option">--debugfile</code> is probably more useful than this example.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-13-1"> 1</a></span>
 <span class="normal"><a href="#example-13-2"> 2</a></span>
 <span class="normal"><a href="#example-13-3"> 3</a></span>
@@ -10670,7 +10674,7 @@ the <a href="#listener-version-3">listener version 3</a>.</p>
 <p>Changing what is executed is as easy as modifying the model objects representing
 executed data passed to listener methods. This is illustrated by the example below that
 adds a new test to each executed suite and a new keyword call to each test.</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-14-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-14-1">1</a></span>
 <span class="normal"><a href="#example-14-2">2</a></span>
 <span class="normal"><a href="#example-14-3">3</a></span>
 <span class="normal"><a href="#example-14-4">4</a></span>
@@ -10680,13 +10684,13 @@ adds a new test to each executed suite and a new keyword call to each test.</p>
 </span><span id="line-14-4"><a id="example-14-4" name="example-14-4"></a><span class="k">def</span><span class="w"> </span><span class="nf">start_test</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
 </span><span id="line-14-5"><a id="example-14-5" name="example-14-5"></a>    <span class="n">data</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">create_keyword</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'Log'</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">[</span><span class="s1">'Keyword added by listener!'</span><span class="p">])</span>
 </span></code></pre></div></td></tr></table></div>
-This API is very similar to the <a href="../../execution/configuration/#pre-run-modifier">pre-run modifier</a> API that can be used
+<p>This API is very similar to the <a href="../../execution/configuration/#pre-run-modifier">pre-run modifier</a> API that can be used
 to modify suites and tests before the whole test execution starts. The main
 benefit of using the listener API is that modifications can be done
 dynamically based on execution results or otherwise. This allows, for example,
 interesting possibilities for model based testing.</p>
 <p>Although the listener interface is not built on top of Robot Framework's
-internal <a href="http://robot-framework.readthedocs.org/en/master/autodoc/robot.model.html#module-robot.model.visitor">visitor interface</a> similarly as the pre-run modifier API,
+internal <a href="https://robot-framework.readthedocs.org/en/master/autodoc/robot.model.html#module-robot.model.visitor">visitor interface</a> similarly as the pre-run modifier API,
 listeners can still use the visitors interface themselves. For example,
 the <code>SelectEveryXthTest</code> visitor used in <a href="../../execution/configuration/#pre-run-modifier">pre-run modifier</a> examples could
 be used like this:</p>
@@ -10703,7 +10707,7 @@ be used like this:</p>
 <h4 id="accessing-library-or-resource-file">Accessing library or resource file<a class="headerlink" href="#accessing-library-or-resource-file" title="Permanent link">&para;</a></h4>
 <p>It is possible to get more information about the actually executed keyword and
 the library or resource file it belongs to:</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-16-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-16-1"> 1</a></span>
 <span class="normal"><a href="#example-16-2"> 2</a></span>
 <span class="normal"><a href="#example-16-3"> 3</a></span>
 <span class="normal"><a href="#example-16-4"> 4</a></span>
@@ -10725,7 +10729,7 @@ the library or resource file it belongs to:</p>
 </span><span id="line-16-10"><a id="example-16-10" name="example-16-10"></a>          <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">implementation</span><span class="o">.</span><span class="n">lineno</span><span class="si">}</span><span class="s2">. The library has </span><span class="si">{</span><span class="n">library</span><span class="o">.</span><span class="n">scope</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> "</span>
 </span><span id="line-16-11"><a id="example-16-11" name="example-16-11"></a>          <span class="sa">f</span><span class="s2">"scope and the current instance is </span><span class="si">{</span><span class="n">library</span><span class="o">.</span><span class="n">instance</span><span class="si">}</span><span class="s2">."</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
-As the above example illustrates, it is possible to get an access to the actual
+<p>As the above example illustrates, it is possible to get an access to the actual
 library instance. This means that listeners can inspect the library state and also
 modify it. With user keywords it is even possible to modify the keyword itself or,
 via the <code>owner</code> resource file, any other keyword in the resource file.</p>
@@ -10733,7 +10737,7 @@ via the <code>owner</code> resource file, any other keyword in the resource file
 <p>Test execution results can be altered by modifying the result objects passed to
 listener methods. This is demonstrated by the following listener that is implemented
 as a class and also uses type hints:</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-17-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-17-1"> 1</a></span>
 <span class="normal"><a href="#example-17-2"> 2</a></span>
 <span class="normal"><a href="#example-17-3"> 3</a></span>
 <span class="normal"><a href="#example-17-4"> 4</a></span>
@@ -10789,17 +10793,17 @@ as a class and also uses type hints:</p>
 </span><span id="line-17-27"><a id="example-17-27" name="example-17-27"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">_message_is_not_relevant</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
 </span><span id="line-17-28"><a id="example-17-28" name="example-17-28"></a>        <span class="o">...</span>
 </span></code></pre></div></td></tr></table></div>
-A limitation is that modifying the name of the current test suite or test
-case is not possible because it has already been written to the <a href="../../execution/output-files/#outputxml">output.xml</a>
+<p>A limitation is that modifying the name of the current test suite or test
+case is not possible because it has already been written to the <a href="../../execution/results/#outputxml">output.xml</a>
 file when listeners are called. Due to the same reason modifying already
 finished tests in the <code>end_suite</code> method has no effect either.</p>
 <p>When modifying logged messages, it is possible to remove a message altogether
 by setting <code>message</code> to <code>None</code> as the above example demonstrates. This can be
 used for removing sensitive or non-relevant messages so that there is nothing
 visible in the log file.</p>
-<p>This API is very similar to the <a href="../../execution/output-files/#pre-rebot-modifier">pre-Rebot modifier</a> API that can be used
+<p>This API is very similar to the <a href="../../execution/results/#pre-rebot-modifier">pre-Rebot modifier</a> API that can be used
 to modify results before report and log are generated. The main difference is
-that listeners modify also the created <em>output.xml</em> file.</p>
+that listeners modify also the created <code class="file">output.xml</code> file.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Removing messages altogether by setting them to <code>None</code> is new in

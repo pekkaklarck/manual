@@ -1130,7 +1130,7 @@
   <span class="md-ellipsis">
     
   
-    Results
+    Execution artifacts
   
 
     
@@ -9789,7 +9789,7 @@ file.</p>
 are created to the specified place, but in other cases, the path is
 considered relative to the output directory. The default output
 directory is the directory where the execution is started from, but it
-can be altered with the <code>--outputdir (-d)</code> option. The path
+can be altered with the <code class="option">--outputdir (-d)</code> option. The path
 set with this option is, again, relative to the execution directory,
 but can naturally be given also as an absolute path. Regardless of how
 a path to an individual output file is obtained, its parent directory
@@ -9803,31 +9803,31 @@ is created automatically, if it does not exist already.</p>
 <a id="XML output files"></a></p>
 <h3 id="output-file">Output file<a class="headerlink" href="#output-file" title="Permanent link">&para;</a></h3>
 <p>Output files contain all execution results in machine readable XML or JSON
-format. <a href="../results/#log">Log</a>, <a href="../results/#report">report</a> and <a href="#xunit">xUnit</a> files are typically generated based on them,
+format. <a href="#log-file">Log</a>, <a href="#report-file">report</a> and <a href="#xunit">xUnit</a> files are typically generated based on them,
 and they can also be combined and otherwise post-processed with <a href="../post-processing/#rebot">Rebot</a>.
 Various external tools also process output files to be able to show detailed
 execution information.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Generating <a href="../results/#report">report</a> and <a href="#xunit">xUnit</a> files as part of test execution
+<p>Generating <a href="#report-file">report</a> and <a href="#xunit">xUnit</a> files as part of test execution
 does not require processing output files after execution. Disabling
-<a href="../results/#log">log</a> generation when running tests can thus save memory.</p>
+<a href="#log-file">log</a> generation when running tests can thus save memory.</p>
 </div>
-<p>The command line option <code>--output (-o)</code> determines the path where
+<p>The command line option <code class="option">--output (-o)</code> determines the path where
 the output file is created. The path is relative to the <a href="#output-directory">output directory</a>
-and the default value is <em>output.xml</em> when executing tests.
+and the default value is <code class="file">output.xml</code> when executing tests.
 When <a href="../post-processing/#post-processing-outputs">post-processing outputs</a> with Rebot, new output files are not created
-unless the <code>--output</code> option is explicitly used.</p>
+unless the <code class="option">--output</code> option is explicitly used.</p>
 <p>It is possible to disable the output file by using a special value <code>NONE</code>
-with the <code>--output</code> option. If no outputs are needed, they should
+with the <code class="option">--output</code> option. If no outputs are needed, they should
 all be explicitly disabled using <code>--output NONE --report NONE --log NONE</code>.</p>
 <h4 id="xml-output-format">XML output format<a class="headerlink" href="#xml-output-format" title="Permanent link">&para;</a></h4>
 <p>Output files are created using XML by default. The XML output format is
-documented in the <em>result.xsd</em> <a href="https://github.com/robotframework/robotframework/tree/master/doc/schema#readme">schema file</a>.</p>
+documented in the <code class="file">result.xsd</code> <a href="https://github.com/robotframework/robotframework/tree/master/doc/schema#readme">schema file</a>.</p>
 <h4 id="json-output-format">JSON output format<a class="headerlink" href="#json-output-format" title="Permanent link">&para;</a></h4>
 <p>Robot Framework supports also JSON outputs and this format is used automatically
-if the output file extension is <em>.json</em>. The JSON output format is
-documented in the <em>result.json</em> <a href="https://github.com/robotframework/robotframework/tree/master/doc/schema#readme">schema file</a>.</p>
+if the output file extension is <code class="file">.json</code>. The JSON output format is
+documented in the <code class="file">result.json</code> <a href="https://github.com/robotframework/robotframework/tree/master/doc/schema#readme">schema file</a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>JSON output files are supported during execution starting from
@@ -9838,7 +9838,7 @@ files already with Robot Framework 7.0.</p>
 <p>There were some <a href="https://github.com/robotframework/robotframework/blob/master/doc/releasenotes/rf-7.0.rst#changes-to-output-xml">backwards incompatible changes</a> to the XML output file format in
 Robot Framework 7.0. To make it possible to use new Robot Framework versions
 with external tools that are not yet updated to support the new format, there is
-a <code>--legacyoutput</code> option that produces output files that are compatible
+a <code class="option">--legacyoutput</code> option that produces output files that are compatible
 with Robot Framework 6.x and earlier. Robot Framework itself can process output
 files both in the old and in the new formats.</p>
 <p>We hope that external tools are updated soon, but we plan to support this
@@ -9856,10 +9856,10 @@ case and keyword details. Log files are needed nearly every time when
 test results are to be investigated in detail. Even though log files
 also have statistics, reports are better for
 getting an higher-level overview.</p>
-<p>The command line option <code>--log (-l)</code> determines where log
+<p>The command line option <code class="option">--log (-l)</code> determines where log
 files are created. Unless the special value <code>NONE</code> is used,
 log files are always created and their default name is
-<em>log.html</em>.</p>
+<code class="file">log.html</code>.</p>
 <p><img alt="An example of beginning of a log file" src="../log_passed.png" /></p>
 <p><em>An example of beginning of a log file</em></p>
 <p><img alt="An example of a log file with keyword details visible" src="../log_failed.png" /></p>
@@ -9880,10 +9880,10 @@ navigation to more detailed information.  It is easy to see the
 overall test execution status from report, because its background
 color is green, if all tests pass and bright red if any test fails.
 Background can also be yellow, which means that all tests were <a href="../tests/#skipped">skipped</a>.</p>
-<p>The command line option <code>--report (-r)</code> determines where
+<p>The command line option <code class="option">--report (-r)</code> determines where
 report files are created. Similarly as log files, reports are always
 created unless <code>NONE</code> is used as a value, and their default
-name is <em>report.html</em>.</p>
+name is <code class="file">report.html</code>.</p>
 <p><img alt="An example report file of successful test execution" src="../report_passed.png" /></p>
 <p><em>An example report file of successful test execution</em></p>
 <p><img alt="An example report file of failed test execution" src="../report_failed.png" /></p>
@@ -9904,12 +9904,12 @@ results.</p>
 <p>Jenkins also has a separate <a href="https://wiki.jenkins-ci.org/display/JENKINS/Robot+Framework+Plugin">Robot Framework plugin</a>.</p>
 </div>
 <p>XUnit output files are not created unless the command line option
-<code>--xunit (-x)</code> is used explicitly. This option requires a path to
+<code class="option">--xunit (-x)</code> is used explicitly. This option requires a path to
 the generated xUnit file, relatively to the <a href="#output-directory">output directory</a>, as a value.</p>
 <p>XUnit output files were changed pretty heavily in Robot Framework 5.0.
 They nowadays contain separate <code>&lt;testsuite&gt;</code> elements for each suite,
 <code>&lt;testsuite&gt;</code> elements have <code>timestamp</code> attribute, and <a href="../../syntax/suites/#suite-documentation">suite documentation</a>
-and <a href="../configuration/#setting-metadata">metadata</a> is stored as <code>&lt;property&gt;</code> elements.</p>
+and <a href="../../syntax/suites/#free-suite-metadata">metadata</a> is stored as <code>&lt;property&gt;</code> elements.</p>
 <p><a id="Debugfile"></a>
 <a id="debug files"></a></p>
 <h3 id="debug-file">Debug file<a class="headerlink" href="#debug-file" title="Permanent link">&para;</a></h3>
@@ -9918,27 +9918,27 @@ execution. All messages got from test libraries are written to them,
 as well as information about started and ended test suites, test cases
 and keywords. Debug files can be used for monitoring the test
 execution. This can be done using, for example, a separate
-<a href="https://bitbucket.org/robotframework/robottools/src/master/fileviewer/">fileviewer.py</a>_
+<a href="https://bitbucket.org/robotframework/robottools/src/master/fileviewer/">fileviewer.py</a>
 tool, or in UNIX-like systems, simply with the <code>tail -f</code> command.</p>
 <p>Debug files are not created unless the command line option
-<code>--debugfile (-b)</code> is used explicitly.</p>
+<code class="option">--debugfile (-b)</code> is used explicitly.</p>
 <h3 id="timestamping-output-files">Timestamping output files<a class="headerlink" href="#timestamping-output-files" title="Permanent link">&para;</a></h3>
 <p>All output files generated by Robot Framework itself can be automatically timestamped
-with the option <code>--timestampoutputs (-T)</code>. When this option is used,
+with the option <code class="option">--timestampoutputs (-T)</code>. When this option is used,
 a timestamp in the format <code>YYYYMMDD-hhmmss</code> is placed between
 the extension and the base name of each file. The example below would,
 for example, create output files like
-<em>output-20080604-163225.xml</em> and <em>mylog-20080604-163225.html</em>:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="n">robot</span> <span class="o">--</span><span class="n">timestampoutputs</span> <span class="o">--</span><span class="n">log</span> <span class="n">mylog</span><span class="o">.</span><span class="n">html</span> <span class="o">--</span><span class="n">report</span> <span class="n">NONE</span> <span class="n">tests</span><span class="o">.</span><span class="n">robot</span>
+<code class="file">output-20080604-163225.xml</code> and <code class="file">mylog-20080604-163225.html</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a>robot --timestampoutputs --log mylog.html --report NONE tests.robot
 </span></code></pre></div></td></tr></table></div>
 <h3 id="setting-titles">Setting titles<a class="headerlink" href="#setting-titles" title="Permanent link">&para;</a></h3>
-<p>The default titles for <a href="../results/#log">logs</a> and <a href="../results/#report">reports</a> are generated by prefixing
-the name of the top-level test suite with <em>Test Log</em> or
-<em>Test Report</em>. Custom titles can be given from the command line
-using the options <code>--logtitle</code> and <code>--reporttitle</code>,
+<p>The default titles for <a href="../results/#splitting-logs">logs</a> and <a href="../post-processing/#creating-reports-logs-and-output-files">reports</a> are generated by prefixing
+the name of the top-level test suite with <em class="name">Test Log</em> or
+<em class="name">Test Report</em>. Custom titles can be given from the command line
+using the options <code class="option">--logtitle</code> and <code class="option">--reporttitle</code>,
 respectively.</p>
 <p>Example:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-1-1"><a id="example-1-1" name="example-1-1"></a><span class="n">robot</span> <span class="o">--</span><span class="n">logtitle</span> <span class="s2">"Smoke Test Log"</span> <span class="o">--</span><span class="n">reporttitle</span> <span class="s2">"Smoke Test Report"</span> <span class="o">--</span><span class="n">include</span> <span class="n">smoke</span> <span class="n">my_tests</span><span class="o">/</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-1-1"><a id="example-1-1" name="example-1-1"></a>robot --logtitle "Smoke Test Log" --reporttitle "Smoke Test Report" --include smoke my_tests/
 </span></code></pre></div></td></tr></table></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -9950,14 +9950,14 @@ like in the example above.</p>
 <p>By default the <a href="#report-file">report file</a> has red background if there are failures,
 green background if there are passed tests and possibly some skipped ones,
 and a yellow background if all tests are skipped or no tests have been run.
-These colors can be customized by using the <code>--reportbackground</code>
+These colors can be customized by using the <code class="option">--reportbackground</code>
 command line option, which takes two or three colors separated with a colon
 as an argument:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-2-1">1</a></span>
 <span class="normal"><a href="#example-2-2">2</a></span>
-<span class="normal"><a href="#example-2-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-2-1"><a id="example-2-1" name="example-2-1"></a><span class="o">--</span><span class="n">reportbackground</span> <span class="n">blue</span><span class="p">:</span><span class="n">red</span>
-</span><span id="line-2-2"><a id="example-2-2" name="example-2-2"></a><span class="o">--</span><span class="n">reportbackground</span> <span class="n">blue</span><span class="p">:</span><span class="n">red</span><span class="p">:</span><span class="n">orange</span>
-</span><span id="line-2-3"><a id="example-2-3" name="example-2-3"></a><span class="o">--</span><span class="n">reportbackground</span> <span class="c1">#00E:#E00</span>
+<span class="normal"><a href="#example-2-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-2-1"><a id="example-2-1" name="example-2-1"></a>--reportbackground blue:red
+</span><span id="line-2-2"><a id="example-2-2" name="example-2-2"></a>--reportbackground blue:red:orange
+</span><span id="line-2-3"><a id="example-2-3" name="example-2-3"></a>--reportbackground #00E:#E00
 </span></code></pre></div></td></tr></table></div>
 <p>If you specify two colors, the first one will be used instead of the
 default green (pass) color and the second instead of the default red (fail).
@@ -9978,7 +9978,7 @@ respectively.</p>
 <h3 id="available-log-levels">Available log levels<a class="headerlink" href="#available-log-levels" title="Permanent link">&para;</a></h3>
 <p>Messages in <a href="../results/#log">log files</a> can have different log levels. Some of the
 messages are written by Robot Framework itself, but also executed
-keywords can <a href="https://github.com/robotframework/robotframework/blob/master/doc/releasenotes/rf-7.0.rst#changes-to-output-xml">log information</a> using different levels. The available
+keywords can <a href="../../extend/libraries/#logging-information">log information</a> using different levels. The available
 log levels are:</p>
 <dl>
 <dt>
@@ -9997,10 +9997,10 @@ log levels are:</p>
 <dt>
 	<code><a id="39b22c6eb743e7631bec49810d665d8f">ERROR</a> </code>
 </dt>
-<dd>Used for displaying errors. Errors are shown in <a href="http://en.wikipedia.org/wiki/XUnit">the console and in
-   the Test Execution Errors section in log files</a>, but they
-   do not affect test case statuses. If the <a href="http://jenkins-ci.org">--exitonerror option is enabled</a>,
-   errors stop the whole execution, though,
+<dd>Used for displaying errors. Errors are shown in <a href="../basics/#errors-and-warnings-during-execution">the console and in
+the Test Execution Errors section in log files</a>, but they
+do not affect test case statuses. If the <a href="../tests/#stopping-on-parsing-or-execution-error">--exitonerror option is enabled</a>,
+errors stop the whole execution, though,
 <p>
 <div class="mkdocs-ezglossary-refs list">
     
@@ -10013,9 +10013,9 @@ log levels are:</p>
 <dt>
 	<code><a id="e4346ecd6670d4c76705398d092622f7">WARN</a> </code>
 </dt>
-<dd>Used for displaying warnings. Warnings are shown in <a href="https://wiki.jenkins-ci.org/display/JENKINS/Robot+Framework+Plugin">the console and in
-   the Test Execution Errors section in log files</a>, but they
-   do not affect test case statuses.
+<dd>Used for displaying warnings. Warnings are shown in <a href="../basics/#errors-and-warnings-during-execution">the console and in
+the Test Execution Errors section in log files</a>, but they
+do not affect test case statuses.
 <p>
 <div class="mkdocs-ezglossary-refs list">
     
@@ -10029,7 +10029,7 @@ log levels are:</p>
 	<code><a id="a883c53af399a9ed1d19d893f051d7ce">INFO</a> </code>
 </dt>
 <dd>The default level for normal messages. By default,
-   messages below this level are not shown in the log file.
+messages below this level are not shown in the log file.
 <p>
 <div class="mkdocs-ezglossary-refs list">
     
@@ -10043,9 +10043,9 @@ log levels are:</p>
 	<code><a id="6669314aadfa40e6abc7c962acbad480">DEBUG</a> </code>
 </dt>
 <dd>Used for debugging purposes. Useful, for example, for
-   logging what libraries are doing internally. When a keyword fails,
-   a traceback showing where in the code the failure occurred is
-   logged using this level automatically.
+logging what libraries are doing internally. When a keyword fails,
+a traceback showing where in the code the failure occurred is
+logged using this level automatically.
 <p>
 <div class="mkdocs-ezglossary-refs list">
     
@@ -10059,7 +10059,7 @@ log levels are:</p>
 	<code><a id="8b11b0def7164f3d6f5cabd85abf9103">TRACE</a> </code>
 </dt>
 <dd>More detailed debugging level. The keyword arguments and return values
-   are automatically logged using this level.
+are automatically logged using this level.
 <p>
 <div class="mkdocs-ezglossary-refs list">
     
@@ -10073,19 +10073,19 @@ log levels are:</p>
 <h3 id="setting-log-level">Setting log level<a class="headerlink" href="#setting-log-level" title="Permanent link">&para;</a></h3>
 <p>By default, log messages below the <code>INFO</code> level are not logged, but this
 threshold can be changed from the command line using the
-<code>--loglevel (-L)</code> option. This option takes any of the
+<code class="option">--loglevel (-L)</code> option. This option takes any of the
 available log levels as an argument, and that level becomes the new
 threshold level. A special value <code>NONE</code> can also be used to
 disable logging altogether.</p>
-<p>It is possible to use the <code>--loglevel</code> option also when
+<p>It is possible to use the <code class="option">--loglevel</code> option also when
 <a href="../post-processing/#post-processing-outputs">post-processing outputs</a> with Rebot. This allows, for example,
 running tests initially with the <code>TRACE</code> level, and generating smaller
 log files for normal viewing later with the <code>INFO</code> level. By default
 all the messages included during execution will be included also with
 Rebot. Messages ignored during the execution cannot be recovered.</p>
-<p>Another possibility to change the log level is using the <a href="../../syntax/libraries/#builtin">BuiltIn</a>
-keyword <em>Set Log Level</em> in the test data. It takes the same
-arguments as the <code>--loglevel</code> option, and it also returns the
+<p>Another possibility to change the log level is using the <a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a>
+keyword <em class="name">Set Log Level</em> in the test data. It takes the same
+arguments as the <code class="option">--loglevel</code> option, and it also returns the
 old level so that it can be restored later, for example, in a <a href="../tests/#test-teardown">test
 teardown</a>.</p>
 <h3 id="visible-log-level">Visible log level<a class="headerlink" href="#visible-log-level" title="Permanent link">&para;</a></h3>
@@ -10098,9 +10098,9 @@ level from the view. This can be useful especially when running test at
 <p><em>An example log showing the visible log level drop down</em></p>
 <p>By default the drop down will be set at the lowest level in the log file, so
 that all messages are shown. The default visible log level can be changed using
-<code>--loglevel</code> option by giving the default after the normal log level
+<code class="option">--loglevel</code> option by giving the default after the normal log level
 separated by a colon:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-3-1"><a id="example-3-1" name="example-3-1"></a><span class="o">--</span><span class="n">loglevel</span> <span class="n">DEBUG</span><span class="p">:</span><span class="n">INFO</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-3-1"><a id="example-3-1" name="example-3-1"></a>--loglevel DEBUG:INFO
 </span></code></pre></div></td></tr></table></div>
 <p>In the above example, tests are run using level <code>DEBUG</code>, but
 the default visible level in the log file is <code>INFO</code>.</p>
@@ -10108,7 +10108,7 @@ the default visible level in the log file is <code>INFO</code>.</p>
 <p>Normally the log file is just a single HTML file. When the amount of the test
 cases increases, the size of the file can grow so large that opening it into
 a browser is inconvenient or even impossible. Hence, it is possible to use
-the <code>--splitlog</code> option to split parts of the log into external files
+the <code class="option">--splitlog</code> option to split parts of the log into external files
 that are loaded transparently into the browser when needed.</p>
 <p>The main benefit of splitting logs is that individual log parts are so small
 that opening and browsing the log file is possible even if the amount
@@ -10116,45 +10116,44 @@ of the test data is very large. A small drawback is that the overall size taken
 by the log file increases.</p>
 <p>Technically the test data related to each test case is saved into
 a JavaScript file in the same folder as the main log file. These files have
-names such as <em>log-42.js</em> where <em>log</em> is the base name of the
-main log file and <em>42</em> is an incremented index.</p>
+names such as <code class="file">log-42.js</code> where <code class="file">log</code> is the base name of the
+main log file and <code class="file">42</code> is an incremented index.</p>
 <p>The JavaScript files are saved to the same directory where the <a href="#log-file">log file</a>
 itself is saved. It is the common <a href="#output-directory">output directory</a> by default, but
-it can be changed with the <code>--log</code> command line option.</p>
+it can be changed with the <code class="option">--log</code> command line option.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>When copying the log files, you need to copy also all the
-<em>log-</em>.js* files or some information will be missing.</p>
+<code class="file">log-*.js</code> files or some information will be missing.</p>
 </div>
 <h2 id="configuring-statistics">Configuring statistics<a class="headerlink" href="#configuring-statistics" title="Permanent link">&para;</a></h2>
 <p>There are several command line options that can be used to configure
-and adjust the contents of the <em>Statistics by Tag</em>, <em>Statistics
-by Suite</em> and <em>Test Details by Tag</em> tables in different output
+and adjust the contents of the <em class="name">Statistics by Tag</em>, <em class="name">Statistics by Suite</em> and <em class="name">Test Details by Tag</em> tables in different output
 files. All these options work both when executing test cases and when
 post-processing outputs.</p>
 <h3 id="configuring-displayed-suite-statistics">Configuring displayed suite statistics<a class="headerlink" href="#configuring-displayed-suite-statistics" title="Permanent link">&para;</a></h3>
 <p>When a deeper suite structure is executed, showing all the test suite
-levels in the <em>Statistics by Suite</em> table may make the table
+levels in the <em class="name">Statistics by Suite</em> table may make the table
 somewhat difficult to read. By default all suites are shown, but you can
-control this with the command line option <code>--suitestatlevel</code> which
+control this with the command line option <code class="option">--suitestatlevel</code> which
 takes the level of suites to show as an argument:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-4-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-4-1"><a id="example-4-1" name="example-4-1"></a><span class="o">--</span><span class="n">suitestatlevel</span> <span class="mi">3</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-4-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-4-1"><a id="example-4-1" name="example-4-1"></a>--suitestatlevel 3
 </span></code></pre></div></td></tr></table></div>
 <h3 id="including-and-excluding-tag-statistics">Including and excluding tag statistics<a class="headerlink" href="#including-and-excluding-tag-statistics" title="Permanent link">&para;</a></h3>
-<p>When many tags are used, the <em>Statistics by Tag</em> table can become
+<p>When many tags are used, the <em class="name">Statistics by Tag</em> table can become
 quite congested. If this happens, the command line options
-<code>--tagstatinclude</code> and <code>--tagstatexclude</code> can be
+<code class="option">--tagstatinclude</code> and <code class="option">--tagstatexclude</code> can be
 used to select which tags to display, similarly as
-<code>--include</code> and <code>--exclude</code> are used to <a href="https://github.com/robotframework/robotframework/blob/master/doc/releasenotes/rf-7.0.rst#changes-to-output-xml">select test
+<code class="option">--include</code> and <code class="option">--exclude</code> are used to <a href="../configuration/#by-tag-names">select test
 cases</a>:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-5-1">1</a></span>
 <span class="normal"><a href="#example-5-2">2</a></span>
-<span class="normal"><a href="#example-5-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-5-1"><a id="example-5-1" name="example-5-1"></a><span class="o">--</span><span class="n">tagstatinclude</span> <span class="n">some</span><span class="o">-</span><span class="n">tag</span> <span class="o">--</span><span class="n">tagstatinclude</span> <span class="n">another</span><span class="o">-</span><span class="n">tag</span>
-</span><span id="line-5-2"><a id="example-5-2" name="example-5-2"></a><span class="o">--</span><span class="n">tagstatexclude</span> <span class="n">owner</span><span class="o">-*</span>
-</span><span id="line-5-3"><a id="example-5-3" name="example-5-3"></a><span class="o">--</span><span class="n">tagstatinclude</span> <span class="n">prefix</span><span class="o">-*</span> <span class="o">--</span><span class="n">tagstatexclude</span> <span class="n">prefix</span><span class="o">-</span><span class="mi">13</span>
+<span class="normal"><a href="#example-5-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-5-1"><a id="example-5-1" name="example-5-1"></a>--tagstatinclude some-tag --tagstatinclude another-tag
+</span><span id="line-5-2"><a id="example-5-2" name="example-5-2"></a>--tagstatexclude owner-*
+</span><span id="line-5-3"><a id="example-5-3" name="example-5-3"></a>--tagstatinclude prefix-* --tagstatexclude prefix-13
 </span></code></pre></div></td></tr></table></div>
 <h3 id="generating-combined-tag-statistics">Generating combined tag statistics<a class="headerlink" href="#generating-combined-tag-statistics" title="Permanent link">&para;</a></h3>
-<p>The command line option <code>--tagstatcombine</code> can be used to
+<p>The command line option <code class="option">--tagstatcombine</code> can be used to
 generate aggregate tags that combine statistics from multiple
 tags. The combined tags are specified using <a href="../basics/#tag-patterns">tag patterns</a> where
 <code>*</code> and <code>?</code> are supported as wildcards and <code>AND</code>,
@@ -10162,12 +10161,12 @@ tags. The combined tags are specified using <a href="../basics/#tag-patterns">ta
 individual tags or patterns together.</p>
 <p>The following examples illustrate creating combined tag statistics using
 different patterns, and the figure below shows a snippet of the resulting
-<em>Statistics by Tag</em> table:</p>
+<em class="name">Statistics by Tag</em> table:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-6-1">1</a></span>
 <span class="normal"><a href="#example-6-2">2</a></span>
-<span class="normal"><a href="#example-6-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-6-1"><a id="example-6-1" name="example-6-1"></a><span class="o">--</span><span class="n">tagstatcombine</span> <span class="n">owner</span><span class="o">-*</span>
-</span><span id="line-6-2"><a id="example-6-2" name="example-6-2"></a><span class="o">--</span><span class="n">tagstatcombine</span> <span class="n">smokeANDmytag</span>
-</span><span id="line-6-3"><a id="example-6-3" name="example-6-3"></a><span class="o">--</span><span class="n">tagstatcombine</span> <span class="n">smokeNOTowner</span><span class="o">-</span><span class="n">janne</span><span class="o">*</span>
+<span class="normal"><a href="#example-6-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-6-1"><a id="example-6-1" name="example-6-1"></a>--tagstatcombine owner-*
+</span><span id="line-6-2"><a id="example-6-2" name="example-6-2"></a>--tagstatcombine smokeANDmytag
+</span><span id="line-6-3"><a id="example-6-3" name="example-6-3"></a>--tagstatcombine smokeNOTowner-janne*
 </span></code></pre></div></td></tr></table></div>
 <p><img alt="Examples of combined tag statistics" src="../tagstatcombine.png" /></p>
 <p><em>Examples of combined tag statistics</em></p>
@@ -10175,7 +10174,7 @@ different patterns, and the figure below shows a snippet of the resulting
 is, by default, just the given pattern. If this is not good enough, it
 is possible to give a custom name after the pattern by separating them
 with a colon (<code>:</code>):</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-7-1"><a id="example-7-1" name="example-7-1"></a><span class="o">--</span><span class="n">tagstatcombine</span> <span class="s2">"prio1ORprio2:High priority tests"</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-7-1"><a id="example-7-1" name="example-7-1"></a>--tagstatcombine "prio1ORprio2:High priority tests"
 </span></code></pre></div></td></tr></table></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -10184,43 +10183,41 @@ converted to spaces. Nowadays spaces need to be escaped or quoted
 like in the example above.</p>
 </div>
 <h3 id="creating-links-from-tag-names">Creating links from tag names<a class="headerlink" href="#creating-links-from-tag-names" title="Permanent link">&para;</a></h3>
-<p>You can add external links to the <em>Statistics by Tag</em> table by
-using the command line option <code>--tagstatlink</code>. Arguments to this
+<p>You can add external links to the <em class="name">Statistics by Tag</em> table by
+using the command line option <code class="option">--tagstatlink</code>. Arguments to this
 option are given in the format <code>tag:link:name</code>, where <code>tag</code>
 specifies the tags to assign the link to, <code>link</code> is the link to
 be created, and <code>name</code> is the name to give to the link.</p>
-<p><code>tag</code> may be a single tag, but more commonly a <a href="../basics/#simple-pattern">simple pattern</a>
+<p><code>tag</code> may be a single tag, but more commonly a <a href="../basics/#simple-patterns">simple pattern</a>
 where <code>*</code> matches anything and <code>?</code> matches any single
 character. When <code>tag</code> is a pattern, the matches to wildcards may
 be used in <code>link</code> and <code>title</code> with the syntax <code>%N</code>,
 where "N" is the index of the match starting from 1.</p>
 <p>The following examples illustrate the usage of this option, and the
-figure below shows a snippet of the resulting <em>Statistics by
-Tag</em> table when example test data is executed with these options:</p>
+figure below shows a snippet of the resulting <em class="name">Statistics by Tag</em> table when example test data is executed with these options:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-8-1">1</a></span>
 <span class="normal"><a href="#example-8-2">2</a></span>
-<span class="normal"><a href="#example-8-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-8-1"><a id="example-8-1" name="example-8-1"></a><span class="o">--</span><span class="n">tagstatlink</span> <span class="n">mytag</span><span class="p">:</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">google</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">Google</span>
-</span><span id="line-8-2"><a id="example-8-2" name="example-8-2"></a><span class="o">--</span><span class="n">tagstatlink</span> <span class="n">example</span><span class="o">-</span><span class="n">bug</span><span class="o">-*</span><span class="p">:</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">example</span><span class="o">.</span><span class="n">com</span>
-</span><span id="line-8-3"><a id="example-8-3" name="example-8-3"></a><span class="o">--</span><span class="n">tagstatlink</span> <span class="n">owner</span><span class="o">-*</span><span class="p">:</span><span class="n">mailto</span><span class="p">:</span><span class="o">%</span><span class="mi">1</span><span class="nd">@domain</span><span class="o">.</span><span class="n">com</span><span class="err">?</span><span class="n">subject</span><span class="o">=</span><span class="n">Acceptance_Tests</span><span class="p">:</span><span class="n">Send_Mail</span>
+<span class="normal"><a href="#example-8-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-8-1"><a id="example-8-1" name="example-8-1"></a>--tagstatlink mytag:http://www.google.com:Google
+</span><span id="line-8-2"><a id="example-8-2" name="example-8-2"></a>--tagstatlink example-bug-*:http://example.com
+</span><span id="line-8-3"><a id="example-8-3" name="example-8-3"></a>--tagstatlink owner-*:mailto:%1@domain.com?subject=Acceptance_Tests:Send_Mail
 </span></code></pre></div></td></tr></table></div>
 <p><img alt="Examples of links from tag names" src="../tagstatlink.png" /></p>
 <p><em>Examples of links from tag names</em></p>
 <h3 id="adding-documentation-to-tags">Adding documentation to tags<a class="headerlink" href="#adding-documentation-to-tags" title="Permanent link">&para;</a></h3>
 <p>Tags can be given a documentation with the command line option
-<code>--tagdoc</code>, which takes an argument in the format
+<code class="option">--tagdoc</code>, which takes an argument in the format
 <code>tag:doc</code>. <code>tag</code> is the name of the tag to assign the
-documentation to, and it can also be a <a href="../basics/#simple-pattern">simple pattern</a> matching
+documentation to, and it can also be a <a href="../basics/#simple-patterns">simple pattern</a> matching
 multiple tags. <code>doc</code> is the assigned documentation.</p>
-<p>The given documentation is shown with matching tags in the <em>Test
-Details by Tag</em> table, and as a tool tip for these tags in the
-<em>Statistics by Tag</em> table. If one tag gets multiple documentations,
+<p>The given documentation is shown with matching tags in the <em class="name">Test Details by Tag</em> table, and as a tool tip for these tags in the
+<em class="name">Statistics by Tag</em> table. If one tag gets multiple documentations,
 they are combined together and separated with an ampersand.</p>
 <p>Examples:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-9-1">1</a></span>
 <span class="normal"><a href="#example-9-2">2</a></span>
-<span class="normal"><a href="#example-9-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-9-1"><a id="example-9-1" name="example-9-1"></a><span class="o">--</span><span class="n">tagdoc</span> <span class="n">mytag</span><span class="p">:</span><span class="n">Example</span>
-</span><span id="line-9-2"><a id="example-9-2" name="example-9-2"></a><span class="o">--</span><span class="n">tagdoc</span> <span class="s2">"regression:See http://example.com/info.html"</span>
-</span><span id="line-9-3"><a id="example-9-3" name="example-9-3"></a><span class="o">--</span><span class="n">tagdoc</span> <span class="s2">"owner-*:Original author"</span>
+<span class="normal"><a href="#example-9-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-9-1"><a id="example-9-1" name="example-9-1"></a>--tagdoc mytag:Example
+</span><span id="line-9-2"><a id="example-9-2" name="example-9-2"></a>--tagdoc "regression:See http://example.com/info.html"
+</span><span id="line-9-3"><a id="example-9-3" name="example-9-3"></a>--tagdoc "owner-*:Original author"
 </span></code></pre></div></td></tr></table></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -10229,22 +10226,22 @@ converted to spaces. Nowadays spaces need to be escaped or quoted
 like in the examples above.</p>
 </div>
 <h2 id="removing-and-flattening-keywords">Removing and flattening keywords<a class="headerlink" href="#removing-and-flattening-keywords" title="Permanent link">&para;</a></h2>
-<p>Most of the content of <a href="#output-files">output files</a> comes from keywords and their
+<p>Most of the content of <a href="#output-file">output files</a> comes from keywords and their
 log messages. When creating higher level reports, log files are not necessarily
 needed at all, and in that case keywords and their messages just take space
 unnecessarily. Log files themselves can also grow overly large, especially if
 they contain <a href="../../syntax/control/#for-loops">FOR loops</a> or other constructs that repeat certain keywords
 multiple times.</p>
-<p>In these situations, command line options <code>--removekeywords</code> and
-<code>--flattenkeywords</code> can be used to dispose or flatten unnecessary keywords.
+<p>In these situations, command line options <code class="option">--removekeywords</code> and
+<code class="option">--flattenkeywords</code> can be used to dispose or flatten unnecessary keywords.
 They can be used both when <a href="../basics/#executing-test-cases">executing test cases</a> and when <a href="../post-processing/#post-processing-outputs">post-processing
 outputs</a>. When used during execution, they only affect the log file, not
 the XML output file. With <code>rebot</code> they affect both logs and possibly
 generated new output XML files.</p>
 <h3 id="removing-keywords">Removing keywords<a class="headerlink" href="#removing-keywords" title="Permanent link">&para;</a></h3>
-<p>The <code>--removekeywords</code> option removes keywords and their messages
+<p>The <code class="option">--removekeywords</code> option removes keywords and their messages
 altogether. It has the following modes of operation, and it can be used
-multiple times to enable multiple modes. Keywords that contain <a href="https://github.com/robotframework/robotframework/blob/master/doc/releasenotes/rf-7.0.rst#changes-to-output-xml">errors
+multiple times to enable multiple modes. Keywords that contain <a href="../../extend/libraries/#errors-and-warnings">errors
 or warnings</a> are not removed except when using the <code>ALL</code> mode.</p>
 <dl>
 <dt>
@@ -10264,8 +10261,8 @@ or warnings</a> are not removed except when using the <code>ALL</code> mode.</p>
 	<code><a id="adf038cc02371fe20b79ecd1ea9ad8be">PASSED</a> </code>
 </dt>
 <dd>Remove keyword data from passed test cases. In most cases, log files
-   created using this option contain enough information to investigate
-   possible failures.
+created using this option contain enough information to investigate
+possible failures.
 <p>
 <div class="mkdocs-ezglossary-refs list">
     
@@ -10304,8 +10301,8 @@ or warnings</a> are not removed except when using the <code>ALL</code> mode.</p>
 <dt>
 	<code><a id="0386259dce993fd3459824eae2425337">WUKS</a> </code>
 </dt>
-<dd>Remove all failing keywords inside <a href="../../syntax/libraries/#builtin">BuiltIn</a> keyword
-   <em>Wait Until Keyword Succeeds</em> except the last one.
+<dd>Remove all failing keywords inside <a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> keyword
+<em class="name">Wait Until Keyword Succeeds</em> except the last one.
 <p>
 <div class="mkdocs-ezglossary-refs list">
     
@@ -10317,32 +10314,32 @@ or warnings</a> are not removed except when using the <code>ALL</code> mode.</p>
 
 <dt><code>NAME:&lt;pattern&gt;</code></dt>
 <dd>Remove data from all keywords matching the given pattern regardless the
-   keyword status. The pattern is matched against the full name of the keyword,
-   prefixed with the possible library or resource file name like
-   <code>MyLibrary.Keyword Name</code>. The pattern is case, space, and underscore
-   insensitive, and it supports <a href="../basics/#simple-patterns">simple patterns</a> with <code>*</code>, <code>?</code> and <code>[]</code>
-   as wildcards.</dd>
+keyword status. The pattern is matched against the full name of the keyword,
+prefixed with the possible library or resource file name like
+<code>MyLibrary.Keyword Name</code>. The pattern is case, space, and underscore
+insensitive, and it supports <a href="../basics/#simple-patterns">simple patterns</a> with <code>*</code>, <code>?</code> and <code>[]</code>
+as wildcards.</dd>
 <dt><code>TAG:&lt;pattern&gt;</code></dt>
 <dd>Remove data from keywords with tags that match the given pattern. Tags are
-   case and space insensitive and they can be specified using <a href="../basics/#tag-patterns">tag patterns</a>
-   where <code>*</code>, <code>?</code> and <code>[]</code> are supported as wildcards and <code>AND</code>, <code>OR</code> and <code>NOT</code>
-   operators can be used for combining individual tags or patterns together.
-   Can be used both with <a href="http://en.wikipedia.org/wiki/XUnit">library keyword tags</a> and <a href="../../syntax/user-keywords/#user-keyword-tags">user keyword tags</a>.</dd>
+case and space insensitive and they can be specified using <a href="../basics/#tag-patterns">tag patterns</a>
+where <code>*</code>, <code>?</code> and <code>[]</code> are supported as wildcards and <code>AND</code>, <code>OR</code> and <code>NOT</code>
+operators can be used for combining individual tags or patterns together.
+Can be used both with <a href="../../extend/libraries/#keyword-tags">library keyword tags</a> and <a href="../../syntax/user-keywords/#user-keyword-tags">user keyword tags</a>.</dd>
 </dl>
 <p>Examples:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-10-1">1</a></span>
 <span class="normal"><a href="#example-10-2">2</a></span>
 <span class="normal"><a href="#example-10-3">3</a></span>
-<span class="normal"><a href="#example-10-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-10-1"><a id="example-10-1" name="example-10-1"></a><span class="n">rebot</span> <span class="o">--</span><span class="n">removekeywords</span> <span class="nb">all</span> <span class="o">--</span><span class="n">output</span> <span class="n">removed</span><span class="o">.</span><span class="n">xml</span> <span class="n">output</span><span class="o">.</span><span class="n">xml</span>
-</span><span id="line-10-2"><a id="example-10-2" name="example-10-2"></a><span class="n">robot</span> <span class="o">--</span><span class="n">removekeywords</span> <span class="n">passed</span> <span class="o">--</span><span class="n">removekeywords</span> <span class="k">for</span> <span class="n">tests</span><span class="o">.</span><span class="n">robot</span>
-</span><span id="line-10-3"><a id="example-10-3" name="example-10-3"></a><span class="n">robot</span> <span class="o">--</span><span class="n">removekeywords</span> <span class="n">name</span><span class="p">:</span><span class="n">HugeKeyword</span> <span class="o">--</span><span class="n">removekeywords</span> <span class="n">name</span><span class="p">:</span><span class="n">resource</span><span class="o">.*</span> <span class="n">tests</span><span class="o">.</span><span class="n">robot</span>
-</span><span id="line-10-4"><a id="example-10-4" name="example-10-4"></a><span class="n">robot</span> <span class="o">--</span><span class="n">removekeywords</span> <span class="n">tag</span><span class="p">:</span><span class="n">huge</span> <span class="n">tests</span><span class="o">.</span><span class="n">robot</span>
+<span class="normal"><a href="#example-10-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-10-1"><a id="example-10-1" name="example-10-1"></a>rebot --removekeywords all --output removed.xml output.xml
+</span><span id="line-10-2"><a id="example-10-2" name="example-10-2"></a>robot --removekeywords passed --removekeywords for tests.robot
+</span><span id="line-10-3"><a id="example-10-3" name="example-10-3"></a>robot --removekeywords name:HugeKeyword --removekeywords name:resource.* tests.robot
+</span><span id="line-10-4"><a id="example-10-4" name="example-10-4"></a>robot --removekeywords tag:huge tests.robot
 </span></code></pre></div></td></tr></table></div>
 <p>Removing keywords is done after parsing the <a href="#output-file">output file</a> and generating
 an internal model based on it. Thus it does not reduce memory usage as much
 as <a href="#flattening-keywords">flattening keywords</a>.</p>
 <h3 id="flattening-keywords">Flattening keywords<a class="headerlink" href="#flattening-keywords" title="Permanent link">&para;</a></h3>
-<p>The <code>--flattenkeywords</code> option flattens matching keywords. In practice
+<p>The <code class="option">--flattenkeywords</code> option flattens matching keywords. In practice
 this means that matching keywords get all log messages from their child
 keywords, recursively, and child keywords are discarded otherwise. Flattening
 supports the following modes:</p>
@@ -10401,23 +10398,23 @@ supports the following modes:</p>
 
 <dt><code>NAME:&lt;pattern&gt;</code></dt>
 <dd>Flatten keywords matching the given pattern. Pattern matching rules are
-   same as when <a href="#removing-keywords">removing keywords</a> using the <code>NAME:&lt;pattern&gt;</code> mode.</dd>
+same as when <a href="#removing-keywords">removing keywords</a> using the <code>NAME:&lt;pattern&gt;</code> mode.</dd>
 <dt><code>TAG:&lt;pattern&gt;</code></dt>
 <dd>Flatten keywords with tags matching the given pattern. Pattern matching
-   rules are same as when <a href="#removing-keywords">removing keywords</a> using the <code>TAG:&lt;pattern&gt;</code> mode.</dd>
+rules are same as when <a href="#removing-keywords">removing keywords</a> using the <code>TAG:&lt;pattern&gt;</code> mode.</dd>
 </dl>
 <p>Examples:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-11-1">1</a></span>
-<span class="normal"><a href="#example-11-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-11-1"><a id="example-11-1" name="example-11-1"></a><span class="n">robot</span> <span class="o">--</span><span class="n">flattenkeywords</span> <span class="n">name</span><span class="p">:</span><span class="n">HugeKeyword</span> <span class="o">--</span><span class="n">flattenkeywords</span> <span class="n">name</span><span class="p">:</span><span class="n">resource</span><span class="o">.*</span> <span class="n">tests</span><span class="o">.</span><span class="n">robot</span>
-</span><span id="line-11-2"><a id="example-11-2" name="example-11-2"></a><span class="n">rebot</span> <span class="o">--</span><span class="n">flattenkeywords</span> <span class="n">foritem</span> <span class="o">--</span><span class="n">output</span> <span class="n">flattened</span><span class="o">.</span><span class="n">xml</span> <span class="n">original</span><span class="o">.</span><span class="n">xml</span>
+<span class="normal"><a href="#example-11-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-11-1"><a id="example-11-1" name="example-11-1"></a>robot --flattenkeywords name:HugeKeyword --flattenkeywords name:resource.* tests.robot
+</span><span id="line-11-2"><a id="example-11-2" name="example-11-2"></a>rebot --flattenkeywords foritem --output flattened.xml original.xml
 </span></code></pre></div></td></tr></table></div>
 <p>Flattening keywords is done already when the <a href="#output-file">output file</a> is parsed
 initially. This can save a significant amount of memory especially with
 deeply nested keyword structures.</p>
 <h3 id="flattening-keyword-during-execution-time">Flattening keyword during execution time<a class="headerlink" href="#flattening-keyword-during-execution-time" title="Permanent link">&para;</a></h3>
 <p>Starting from Robot Framework 6.1, it is possible to enable the keyword flattening during
-the execution time. This can be done only on an user keyword level by defining the <a href="https://github.com/robotframework/robotframework/blob/master/doc/releasenotes/rf-7.0.rst#changes-to-output-xml">reserved tag</a>
-<code>robot:flatten</code> as a <a href="http://en.wikipedia.org/wiki/XUnit">keyword tag</a>. Using this tag will work similarly as the command line
+the execution time. This can be done only on an user keyword level by defining the <a href="../../syntax/tests/#reserved-tags">reserved tag</a>
+<code>robot:flatten</code> as a <a href="../../extend/libraries/#keyword-tags">keyword tag</a>. Using this tag will work similarly as the command line
 option described in the previous chapter, e.g. all content except for log messages is removed
 from under the keyword having the tag. One important difference is that in this case, the removed
 content is not written to the output file at all, and thus cannot be accessed at later time.</p>
@@ -10439,31 +10436,31 @@ content is not written to the output file at all, and thus cannot be accessed at
 <p>Keywords that have passed are closed in the log file by default. Thus information
 they contain is not visible unless you expand them. If certain keywords have
 important information that should be visible when the log file is opened, you can
-use the <code>--expandkeywords</code> option to set keywords automatically expanded
+use the <code class="option">--expandkeywords</code> option to set keywords automatically expanded
 in log file similar to failed keywords. Expanding supports the following modes:</p>
 <dl>
 <dt><code>NAME:&lt;pattern&gt;</code></dt>
 <dd>Expand keywords matching the given pattern. Pattern matching rules are
-   same as when <a href="#removing-keywords">removing keywords</a> using the <code>NAME:&lt;pattern&gt;</code> mode.</dd>
+same as when <a href="#removing-keywords">removing keywords</a> using the <code>NAME:&lt;pattern&gt;</code> mode.</dd>
 <dt><code>TAG:&lt;pattern&gt;</code></dt>
 <dd>Expand keywords with tags matching the given pattern. Pattern matching
-   rules are same as when <a href="#removing-keywords">removing keywords</a> using the <code>TAG:&lt;pattern&gt;</code> mode.</dd>
+rules are same as when <a href="#removing-keywords">removing keywords</a> using the <code>TAG:&lt;pattern&gt;</code> mode.</dd>
 </dl>
 <p>If you need to expand keywords matching different names or patterns, you can
-use the <code>--expandkeywords</code> multiple times.</p>
+use the <code class="option">--expandkeywords</code> multiple times.</p>
 <p>Examples:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-13-1">1</a></span>
-<span class="normal"><a href="#example-13-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-13-1"><a id="example-13-1" name="example-13-1"></a><span class="n">robot</span> <span class="o">--</span><span class="n">expandkeywords</span> <span class="n">name</span><span class="p">:</span><span class="n">SeleniumLibrary</span><span class="o">.</span><span class="n">CapturePageScreenshot</span> <span class="n">tests</span><span class="o">.</span><span class="n">robot</span>
-</span><span id="line-13-2"><a id="example-13-2" name="example-13-2"></a><span class="n">rebot</span> <span class="o">--</span><span class="n">expandkeywords</span> <span class="n">tag</span><span class="p">:</span><span class="n">example</span> <span class="o">--</span><span class="n">expandkeywords</span> <span class="n">tag</span><span class="p">:</span><span class="n">another</span> <span class="n">output</span><span class="o">.</span><span class="n">xml</span>
+<span class="normal"><a href="#example-13-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-13-1"><a id="example-13-1" name="example-13-1"></a>robot --expandkeywords name:SeleniumLibrary.CapturePageScreenshot tests.robot
+</span><span id="line-13-2"><a id="example-13-2" name="example-13-2"></a>rebot --expandkeywords tag:example --expandkeywords tag:another output.xml
 </span></code></pre></div></td></tr></table></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The <code>--expandkeywords</code> option is new in Robot Framework 3.2.</p>
+<p>The <code class="option">--expandkeywords</code> option is new in Robot Framework 3.2.</p>
 </div>
 <h2 id="setting-start-and-end-time-of-execution">Setting start and end time of execution<a class="headerlink" href="#setting-start-and-end-time-of-execution" title="Permanent link">&para;</a></h2>
-<p>When <a href="../results/#output">combining outputs</a> using Rebot, it is possible to set the start
-and end time of the combined test suite using the options <code>--starttime</code>
-and <code>--endtime</code>, respectively. This is convenient, because by default,
+<p>When <a href="#combining-outputs">combining outputs</a> using Rebot, it is possible to set the start
+and end time of the combined test suite using the options <code class="option">--starttime</code>
+and <code class="option">--endtime</code>, respectively. This is convenient, because by default,
 combined suites do not have these values. When both the start and end time are
 given, the elapsed time is also calculated based on them. Otherwise the elapsed
 time is got by adding the elapsed times of the child test suites together.</p>
@@ -10478,35 +10475,35 @@ milliseconds to hours can be omitted. For example, <code>2008-06-11
 <p>Examples:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-14-1">1</a></span>
 <span class="normal"><a href="#example-14-2">2</a></span>
-<span class="normal"><a href="#example-14-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-14-1"><a id="example-14-1" name="example-14-1"></a><span class="n">rebot</span> <span class="o">--</span><span class="n">starttime</span> <span class="mi">20080611</span><span class="o">-</span><span class="mi">17</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mf">20.495</span> <span class="n">output1</span><span class="o">.</span><span class="n">xml</span> <span class="n">output2</span><span class="o">.</span><span class="n">xml</span>
-</span><span id="line-14-2"><a id="example-14-2" name="example-14-2"></a><span class="n">rebot</span> <span class="o">--</span><span class="n">starttime</span> <span class="mi">20080611</span><span class="o">-</span><span class="mi">175920</span> <span class="o">--</span><span class="n">endtime</span> <span class="mi">20080611</span><span class="o">-</span><span class="mi">180242</span> <span class="o">*.</span><span class="n">xml</span>
-</span><span id="line-14-3"><a id="example-14-3" name="example-14-3"></a><span class="n">rebot</span> <span class="o">--</span><span class="n">starttime</span> <span class="mi">20110302</span><span class="o">-</span><span class="mi">1317</span> <span class="o">--</span><span class="n">endtime</span> <span class="mi">20110302</span><span class="o">-</span><span class="mi">11418</span> <span class="n">myoutput</span><span class="o">.</span><span class="n">xml</span>
+<span class="normal"><a href="#example-14-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-14-1"><a id="example-14-1" name="example-14-1"></a>rebot --starttime 20080611-17:59:20.495 output1.xml output2.xml
+</span><span id="line-14-2"><a id="example-14-2" name="example-14-2"></a>rebot --starttime 20080611-175920 --endtime 20080611-180242 *.xml
+</span><span id="line-14-3"><a id="example-14-3" name="example-14-3"></a>rebot --starttime 20110302-1317 --endtime 20110302-11418 myoutput.xml
 </span></code></pre></div></td></tr></table></div>
 <h2 id="limiting-error-message-length-in-reports">Limiting error message length in reports<a class="headerlink" href="#limiting-error-message-length-in-reports" title="Permanent link">&para;</a></h2>
 <p>If a test case fails and has a long error message, the message shown in
-<a href="../results/#report">reports</a> is automatically cut from the middle to keep reports easier to
+<a href="../post-processing/#creating-reports-logs-and-output-files">reports</a> is automatically cut from the middle to keep reports easier to
 read. By default messages longer than 40 lines are cut, but that can be
-configured by using the <code>--maxerrorlines</code> command line option.
+configured by using the <code class="option">--maxerrorlines</code> command line option.
 The minimum value for this option is 10, and it is also possible to use
 a special value <code>NONE</code> to show the full message.</p>
 <p>Full error messages are always visible in <a href="../results/#log">log files</a> as messages of
 the failed keywords.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The <code>--maxerrorlines</code> option is new in Robot Framework 3.1.</p>
+<p>The <code class="option">--maxerrorlines</code> option is new in Robot Framework 3.1.</p>
 </div>
 <p><a id="pre-rebot-modifier"></a></p>
 <h2 id="programmatic-modification-of-results">Programmatic modification of results<a class="headerlink" href="#programmatic-modification-of-results" title="Permanent link">&para;</a></h2>
 <p>If the provided built-in features to modify results are not enough,
 Robot Framework makes it possible to do custom modifications
 programmatically. This is accomplished by creating a model modifier and
-activating it using the <code>--prerebotmodifier</code> option.</p>
+activating it using the <code class="option">--prerebotmodifier</code> option.</p>
 <p>This functionality works nearly exactly like <a href="../configuration/#programmatic-modification-of-test-data">programmatic modification of
-test data</a> that can be enabled with the <code>--prerunmodifier</code> option.
+test data</a> that can be enabled with the <code class="option">--prerunmodifier</code> option.
 The obvious difference is that this time modifiers operate with the
-<a href="http://robot-framework.readthedocs.org/en/master/autodoc/robot.result.html#module-robot.result.model">result model</a>, not the <a href="http://robot-framework.readthedocs.org/en/master/autodoc/robot.running.html#module-robot.running.model">running model</a>. For example, the following modifier
+<a href="https://robot-framework.readthedocs.org/en/master/autodoc/robot.result.html#module-robot.result.model">result model</a>, not the <a href="https://robot-framework.readthedocs.org/en/master/autodoc/robot.running.html#module-robot.running.model">running model</a>. For example, the following modifier
 marks all passed tests that have taken more time than allowed as failed:</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-15-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-15-1"> 1</a></span>
 <span class="normal"><a href="#example-15-2"> 2</a></span>
 <span class="normal"><a href="#example-15-3"> 3</a></span>
 <span class="normal"><a href="#example-15-4"> 4</a></span>
@@ -10528,22 +10525,24 @@ marks all passed tests that have taken more time than allowed as failed:</p>
 </span><span id="line-15-10"><a id="example-15-10" name="example-15-10"></a>            <span class="n">test</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="s1">'FAIL'</span>
 </span><span id="line-15-11"><a id="example-15-11" name="example-15-11"></a>            <span class="n">test</span><span class="o">.</span><span class="n">message</span> <span class="o">=</span> <span class="s1">'Test execution took too long.'</span>
 </span></code></pre></div></td></tr></table></div>
-If the above modifier would be in file <em>ExecutionTimeChecker.py</em>, it
+<p>If the above modifier would be in file <code class="file">ExecutionTimeChecker.py</code>, it
 could be used, for example, like this:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-16-1">1</a></span>
-<span class="normal"><a href="#example-16-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-16-1"><a id="example-16-1" name="example-16-1"></a><span class="c1"># Specify modifier as a path when running tests. Maximum time is 42 seconds.</span>
-</span><span id="line-16-2"><a id="example-16-2" name="example-16-2"></a><span class="n">robot</span> <span class="o">--</span><span class="n">prerebotmodifier</span> <span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">ExecutionTimeChecker</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">42</span> <span class="n">tests</span><span class="o">.</span><span class="n">robot</span>
+<span class="normal"><a href="#example-16-2">2</a></span>
+<span class="normal"><a href="#example-16-3">3</a></span>
+<span class="normal"><a href="#example-16-4">4</a></span>
+<span class="normal"><a href="#example-16-5">5</a></span>
+<span class="normal"><a href="#example-16-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-16-1"><a id="example-16-1" name="example-16-1"></a># Specify modifier as a path when running tests. Maximum time is 42 seconds.
+</span><span id="line-16-2"><a id="example-16-2" name="example-16-2"></a>robot --prerebotmodifier path/to/ExecutionTimeChecker.py:42 tests.robot
+</span><span id="line-16-3"><a id="example-16-3" name="example-16-3"></a>
+</span><span id="line-16-4"><a id="example-16-4" name="example-16-4"></a># Specify modifier as a name when using Rebot. Maximum time is 3.14 seconds.
+</span><span id="line-16-5"><a id="example-16-5" name="example-16-5"></a># ExecutionTimeChecker.py must be in the module search path.
+</span><span id="line-16-6"><a id="example-16-6" name="example-16-6"></a>rebot --prerebotmodifier ExecutionTimeChecker:3.14 output.xml
 </span></code></pre></div></td></tr></table></div>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Specify modifier as a name when using Rebot. Maximum time is 3.14 seconds.</span>
-<span class="c1"># ExecutionTimeChecker.py must be in the module search path.</span>
-<span class="n">rebot</span> <span class="o">--</span><span class="n">prerebotmodifier</span> <span class="n">ExecutionTimeChecker</span><span class="p">:</span><span class="mf">3.14</span> <span class="n">output</span><span class="o">.</span><span class="n">xml</span>
-</code></pre></div></td></tr></table></div>
 <p>If more than one model modifier is needed, they can be specified by using
-the <code>--prerebotmodifier</code> option multiple times. When executing tests,
-it is possible to use <code>--prerunmodifier</code> and
-<code>--prerebotmodifier</code> options together.</p>
+the <code class="option">--prerebotmodifier</code> option multiple times. When executing tests,
+it is possible to use <code class="option">--prerunmodifier</code> and
+<code class="option">--prerebotmodifier</code> options together.</p>
 <p><a id="Systemlog"></a>
 <a id="syslog"></a></p>
 <h2 id="system-log">System log<a class="headerlink" href="#system-log" title="Permanent link">&para;</a></h2>
@@ -10564,7 +10563,7 @@ that it contains a path to the selected file.</p>
 exception that instead of <code>FAIL</code> it has the <code>ERROR</code>
 level. The threshold level to use can be altered using the
 <code>ROBOT_SYSLOG_LEVEL</code> environment variable like shown in the
-example below.  Possible <a href="https://github.com/robotframework/robotframework/blob/master/doc/releasenotes/rf-7.0.rst#changes-to-output-xml">unexpected errors and warnings</a> are
+example below.  Possible <a href="../basics/#errors-and-warnings-during-execution">unexpected errors and warnings</a> are
 written into the system log in addition to the console and the normal
 log file.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-17-1">1</a></span>

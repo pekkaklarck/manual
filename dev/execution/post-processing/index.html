@@ -1130,7 +1130,7 @@
   <span class="md-ellipsis">
     
   
-    Results
+    Execution artifacts
   
 
     
@@ -9774,7 +9774,7 @@
 <p><a id="rebot"></a></p>
 <p><a id="post-process-outputs"></a></p>
 <h1 id="post-processing-outputs">Post-processing outputs<a class="headerlink" href="#post-processing-outputs" title="Permanent link">&para;</a></h1>
-<p><a href="../output-files/#xml-output-files">XML output files</a> that are generated during the test execution can be
+<p><a href="../results/#output-file">XML output files</a> that are generated during the test execution can be
 post-processed afterwards by the Rebot tool, which is an integral
 part of Robot Framework. It is used automatically when test
 reports and logs are generated during the test execution, and using it
@@ -9787,9 +9787,9 @@ and merging results.</p>
 <h3 id="synopsis">Synopsis<a class="headerlink" href="#synopsis" title="Permanent link">&para;</a></h3>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
 <span class="normal"><a href="#example-0-2">2</a></span>
-<span class="normal"><a href="#example-0-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="n">rebot</span> <span class="p">[</span><span class="n">options</span><span class="p">]</span> <span class="n">outputs</span>
-</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">robot</span><span class="o">.</span><span class="n">rebot</span> <span class="p">[</span><span class="n">options</span><span class="p">]</span> <span class="n">outputs</span>
-</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a><span class="n">python</span> <span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">robot</span><span class="o">/</span><span class="n">rebot</span><span class="o">.</span><span class="n">py</span> <span class="p">[</span><span class="n">options</span><span class="p">]</span> <span class="n">outputs</span>
+<span class="normal"><a href="#example-0-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a>rebot [options] outputs
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>python -m robot.rebot [options] outputs
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a>python path/to/robot/rebot.py [options] outputs
 </span></code></pre></div></td></tr></table></div>
 <p>The most common way to use Rebot is using the <code>rebot</code> command.
 Alternatively it is possible to execute the installed <code>robot.rebot</code>
@@ -9799,15 +9799,15 @@ interpreter.</p>
 <p>The basic syntax for using Rebot is exactly the same as when
 <a href="../basics/#starting-test-execution">starting test execution</a> and also most of the command line options are
 identical. The main difference is that arguments to Rebot are
-<a href="../output-files/#xml-output-files">XML output files</a> instead of test data files or directories.</p>
+<a href="../results/#output-file">XML output files</a> instead of test data files or directories.</p>
 <h3 id="return-codes-with-rebot">Return codes with Rebot<a class="headerlink" href="#return-codes-with-rebot" title="Permanent link">&para;</a></h3>
 <p>Return codes from Rebot are exactly same as when <a href="../basics/#return-codes">running tests</a>.</p>
 <h3 id="controlling-execution-mode">Controlling execution mode<a class="headerlink" href="#controlling-execution-mode" title="Permanent link">&para;</a></h3>
-<p>Rebot notices have <a href="../../syntax/tests/#example-tests">tests</a> or <a href="../../syntax/tasks/#creating-tasks">tasks</a> been run, and by default preserves the
+<p>Rebot notices have <a href="../tests/#test-execution">tests</a> or <a href="../tasks/#task-execution">tasks</a> been run, and by default preserves the
 execution mode. The mode affects logs and reports so that in the former case
 they will use term <em>test</em> like <code>Test Log</code> and <code>Test Statistics</code>, and in
 the latter case term <em>task</em> like <code>Task Log</code> and <code>Task Statistics</code>.</p>
-<p>Rebot also supports using <code>--rpa</code> or <code>--norpa</code> options to set
+<p>Rebot also supports using <code class="option">--rpa</code> or <code class="option">--norpa</code> options to set
 the execution mode explicitly. This is necessary if multiple output files
 are processed and they have conflicting modes.</p>
 <h2 id="creating-reports-logs-and-output-files">Creating reports, logs and output files<a class="headerlink" href="#creating-reports-logs-and-output-files" title="Permanent link">&para;</a></h2>
@@ -9818,9 +9818,9 @@ having one report with all test cases and another with only some
 subset of tests can be useful:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-1-1">1</a></span>
 <span class="normal"><a href="#example-1-2">2</a></span>
-<span class="normal"><a href="#example-1-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-1-1"><a id="example-1-1" name="example-1-1"></a><span class="n">rebot</span> <span class="n">output</span><span class="o">.</span><span class="n">xml</span>
-</span><span id="line-1-2"><a id="example-1-2" name="example-1-2"></a><span class="n">rebot</span> <span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">output_file</span><span class="o">.</span><span class="n">xml</span>
-</span><span id="line-1-3"><a id="example-1-3" name="example-1-3"></a><span class="n">rebot</span> <span class="o">--</span><span class="n">include</span> <span class="n">smoke</span> <span class="o">--</span><span class="n">name</span> <span class="n">Smoke_Tests</span> <span class="n">c</span><span class="p">:</span>\<span class="n">results</span>\<span class="n">output</span><span class="o">.</span><span class="n">xml</span>
+<span class="normal"><a href="#example-1-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-1-1"><a id="example-1-1" name="example-1-1"></a>rebot output.xml
+</span><span id="line-1-2"><a id="example-1-2" name="example-1-2"></a>rebot path/to/output_file.xml
+</span><span id="line-1-3"><a id="example-1-3" name="example-1-3"></a>rebot --include smoke --name Smoke_Tests c:\results\output.xml
 </span></code></pre></div></td></tr></table></div>
 <p>Another common usage is creating only the output file when running tests
 (log and report generation can be disabled with  <code>--log NONE
@@ -9828,10 +9828,10 @@ subset of tests can be useful:</p>
 for example, be executed on different environments, output files collected
 to a central place, and reports and logs created there.</p>
 <p>Rebot does not create XML output files by default, but it is possible to
-create them by using the <code>--output (-o)</code> option. Log and report
+create them by using the <code class="option">--output (-o)</code> option. Log and report
 are created by default, but they can be disabled by using value <code>NONE</code>
 (case-insensitive) if they are not needed:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-2-1"><a id="example-2-1" name="example-2-1"></a><span class="n">rebot</span> <span class="o">--</span><span class="n">include</span> <span class="n">smoke</span> <span class="o">--</span><span class="n">output</span> <span class="n">smoke</span><span class="o">.</span><span class="n">xml</span> <span class="o">--</span><span class="n">log</span> <span class="n">none</span> <span class="o">--</span><span class="n">report</span> <span class="n">none</span> <span class="n">original</span><span class="o">.</span><span class="n">xml</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-2-1"><a id="example-2-1" name="example-2-1"></a>rebot --include smoke --output smoke.xml --log none --report none original.xml
 </span></code></pre></div></td></tr></table></div>
 <h2 id="combining-results">Combining results<a class="headerlink" href="#combining-results" title="Permanent link">&para;</a></h2>
 <p>An important feature in Rebot is its ability to combine
@@ -9841,31 +9841,31 @@ generating an overall report from all outputs. Combining results is
 extremely easy, all that needs to be done is giving several output
 files as arguments:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-3-1">1</a></span>
-<span class="normal"><a href="#example-3-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-3-1"><a id="example-3-1" name="example-3-1"></a><span class="n">rebot</span> <span class="n">output1</span><span class="o">.</span><span class="n">xml</span> <span class="n">output2</span><span class="o">.</span><span class="n">xml</span>
-</span><span id="line-3-2"><a id="example-3-2" name="example-3-2"></a><span class="n">rebot</span> <span class="n">outputs</span><span class="o">/*.</span><span class="n">xml</span>
+<span class="normal"><a href="#example-3-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-3-1"><a id="example-3-1" name="example-3-1"></a>rebot output1.xml output2.xml
+</span><span id="line-3-2"><a id="example-3-2" name="example-3-2"></a>rebot outputs/*.xml
 </span></code></pre></div></td></tr></table></div>
 <p>When results are combined, a new top-level test suite is created so
 that test suites in the given output files are its child suites. This
-works the same way when <a href="../tests/#test-execution">multiple test data files or directories are
+works the same way when <a href="../basics/#specifying-test-data-to-be-executed">multiple test data files or directories are
 executed</a>, and also in this case the name of the top-level test
 suite is created by joining child suite names with an ampersand (&amp;)
 and spaces. These automatically generated names are not that good, and
-it is often a good idea to use <code>--name</code> to give a more
+it is often a good idea to use <code class="option">--name</code> to give a more
 meaningful name:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-4-1">1</a></span>
-<span class="normal"><a href="#example-4-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-4-1"><a id="example-4-1" name="example-4-1"></a><span class="n">rebot</span> <span class="o">--</span><span class="n">name</span> <span class="s2">"Browser Compatibility"</span> <span class="n">firefox</span><span class="o">.</span><span class="n">xml</span> <span class="n">opera</span><span class="o">.</span><span class="n">xml</span> <span class="n">safari</span><span class="o">.</span><span class="n">xml</span> <span class="n">ie</span><span class="o">.</span><span class="n">xml</span>
-</span><span id="line-4-2"><a id="example-4-2" name="example-4-2"></a><span class="n">rebot</span> <span class="o">--</span><span class="n">include</span> <span class="n">smoke</span> <span class="o">--</span><span class="n">name</span> <span class="n">Smoke</span> <span class="n">c</span><span class="p">:</span>\<span class="n">results</span>\<span class="o">*.</span><span class="n">xml</span>
+<span class="normal"><a href="#example-4-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-4-1"><a id="example-4-1" name="example-4-1"></a>rebot --name "Browser Compatibility" firefox.xml opera.xml safari.xml ie.xml
+</span><span id="line-4-2"><a id="example-4-2" name="example-4-2"></a>rebot --include smoke --name Smoke c:\results\*.xml
 </span></code></pre></div></td></tr></table></div>
 <h2 id="merging-results">Merging results<a class="headerlink" href="#merging-results" title="Permanent link">&para;</a></h2>
 <p>If same tests are re-executed or a single test suite executed in pieces,
 combining results like discussed above creates an unnecessary top-level
 test suite. In these cases it is typically better to merge results instead.
-Merging is done by using <code>--merge (-R)</code> option which changes the way how
+Merging is done by using <code class="option">--merge (-R)</code> option which changes the way how
 Rebot combines two or more output files. This option itself takes no
 arguments and all other command line options can be used with it normally:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-5-1">1</a></span>
-<span class="normal"><a href="#example-5-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-5-1"><a id="example-5-1" name="example-5-1"></a><span class="n">rebot</span> <span class="o">--</span><span class="n">merge</span> <span class="n">original</span><span class="o">.</span><span class="n">xml</span> <span class="n">merged</span><span class="o">.</span><span class="n">xml</span>
-</span><span id="line-5-2"><a id="example-5-2" name="example-5-2"></a><span class="n">rebot</span> <span class="o">--</span><span class="n">merge</span> <span class="o">--</span><span class="n">name</span> <span class="n">Example</span> <span class="n">first</span><span class="o">.</span><span class="n">xml</span> <span class="n">second</span><span class="o">.</span><span class="n">xml</span> <span class="n">third</span><span class="o">.</span><span class="n">xml</span>
+<span class="normal"><a href="#example-5-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-5-1"><a id="example-5-1" name="example-5-1"></a>rebot --merge original.xml merged.xml
+</span><span id="line-5-2"><a id="example-5-2" name="example-5-2"></a>rebot --merge --name Example first.xml second.xml third.xml
 </span></code></pre></div></td></tr></table></div>
 <p>When suites are merged, documentation, suite setup and suite teardown are got
 from the last merged suite. Suite metadata from all merged suites is preserved
@@ -9880,24 +9880,24 @@ Robot Framework 6.0.</p>
 <h3 id="merging-re-executed-tests">Merging re-executed tests<a class="headerlink" href="#merging-re-executed-tests" title="Permanent link">&para;</a></h3>
 <p>There is often a need to re-execute a subset of tests, for example, after
 fixing a bug in the system under test or in the tests themselves. This can be
-accomplished by <a href="../configuration/#selecting-test-cases">selecting test cases</a> by names (<code>--test</code> and
-<code>--suite</code> options), tags (<code>--include</code> and <code>--exclude</code>),
-or by previous status (<code>--rerunfailed</code> or <code>--rerunfailedsuites</code>).</p>
+accomplished by <a href="../configuration/#selecting-test-cases">selecting test cases</a> by names (<code class="option">--test</code> and
+<code class="option">--suite</code> options), tags (<code class="option">--include</code> and <code class="option">--exclude</code>),
+or by previous status (<code class="option">--rerunfailed</code> or <code class="option">--rerunfailedsuites</code>).</p>
 <p>Combining re-execution results with the original results using the default
 <a href="#combining-results">combining results</a> approach does not work too well. The main problem is
 that you get separate test suites and possibly already fixed failures are
-also shown. In this situation it is better to use <code>--merge (-R)</code>
+also shown. In this situation it is better to use <code class="option">--merge (-R)</code>
 option to tell Rebot to merge the results instead. In practice this
 means that tests from the latter test runs replace tests in the original.
 An exception to this rule is that <a href="../tests/#skipped">skipped</a> tests in latter runs are ignored
 and original tests preserved.</p>
 <p>This usage is best illustrated by a practical example using
-<code>--rerunfailed</code> and <code>--merge</code> together:</p>
+<code class="option">--rerunfailed</code> and <code class="option">--merge</code> together:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-6-1">1</a></span>
 <span class="normal"><a href="#example-6-2">2</a></span>
-<span class="normal"><a href="#example-6-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-6-1"><a id="example-6-1" name="example-6-1"></a><span class="n">robot</span> <span class="o">--</span><span class="n">output</span> <span class="n">original</span><span class="o">.</span><span class="n">xml</span> <span class="n">tests</span>                          <span class="c1"># first execute all tests</span>
-</span><span id="line-6-2"><a id="example-6-2" name="example-6-2"></a><span class="n">robot</span> <span class="o">--</span><span class="n">rerunfailed</span> <span class="n">original</span><span class="o">.</span><span class="n">xml</span> <span class="o">--</span><span class="n">output</span> <span class="n">rerun</span><span class="o">.</span><span class="n">xml</span> <span class="n">tests</span>  <span class="c1"># then re-execute failing</span>
-</span><span id="line-6-3"><a id="example-6-3" name="example-6-3"></a><span class="n">rebot</span> <span class="o">--</span><span class="n">merge</span> <span class="n">original</span><span class="o">.</span><span class="n">xml</span> <span class="n">rerun</span><span class="o">.</span><span class="n">xml</span>                       <span class="c1"># finally merge results</span>
+<span class="normal"><a href="#example-6-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-6-1"><a id="example-6-1" name="example-6-1"></a>robot --output original.xml tests                          # first execute all tests
+</span><span id="line-6-2"><a id="example-6-2" name="example-6-2"></a>robot --rerunfailed original.xml --output rerun.xml tests  # then re-execute failing
+</span><span id="line-6-3"><a id="example-6-3" name="example-6-3"></a>rebot --merge original.xml rerun.xml                       # finally merge results
 </span></code></pre></div></td></tr></table></div>
 <p>The message of the merged tests contains a note that results have been
 replaced. The message also shows the old status and message of the test.</p>
@@ -9910,14 +9910,14 @@ section.</p>
 <p>Ignoring skipped tests in latter runs is new in Robot Framework 4.1.</p>
 </div>
 <h3 id="merging-suites-executed-in-pieces">Merging suites executed in pieces<a class="headerlink" href="#merging-suites-executed-in-pieces" title="Permanent link">&para;</a></h3>
-<p>Another important use case for the <code>--merge</code> option is merging results
-got when running a test suite in pieces using, for example, <code>--include</code>
-and <code>--exclude</code> options:</p>
+<p>Another important use case for the <code class="option">--merge</code> option is merging results
+got when running a test suite in pieces using, for example, <code class="option">--include</code>
+and <code class="option">--exclude</code> options:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-7-1">1</a></span>
 <span class="normal"><a href="#example-7-2">2</a></span>
-<span class="normal"><a href="#example-7-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-7-1"><a id="example-7-1" name="example-7-1"></a><span class="n">robot</span> <span class="o">--</span><span class="n">include</span> <span class="n">smoke</span> <span class="o">--</span><span class="n">output</span> <span class="n">smoke</span><span class="o">.</span><span class="n">xml</span> <span class="n">tests</span>   <span class="c1"># first run some tests</span>
-</span><span id="line-7-2"><a id="example-7-2" name="example-7-2"></a><span class="n">robot</span> <span class="o">--</span><span class="n">exclude</span> <span class="n">smoke</span> <span class="o">--</span><span class="n">output</span> <span class="n">others</span><span class="o">.</span><span class="n">xml</span> <span class="n">tests</span>  <span class="c1"># then run others</span>
-</span><span id="line-7-3"><a id="example-7-3" name="example-7-3"></a><span class="n">rebot</span> <span class="o">--</span><span class="n">merge</span> <span class="n">smoke</span><span class="o">.</span><span class="n">xml</span> <span class="n">others</span><span class="o">.</span><span class="n">xml</span>               <span class="c1"># finally merge results</span>
+<span class="normal"><a href="#example-7-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-7-1"><a id="example-7-1" name="example-7-1"></a>robot --include smoke --output smoke.xml tests   # first run some tests
+</span><span id="line-7-2"><a id="example-7-2" name="example-7-2"></a>robot --exclude smoke --output others.xml tests  # then run others
+</span><span id="line-7-3"><a id="example-7-3" name="example-7-3"></a>rebot --merge smoke.xml others.xml               # finally merge results
 </span></code></pre></div></td></tr></table></div>
 <p>When merging outputs like this, the resulting output contains all tests and
 suites found from all given output files. If some test is found from multiple
@@ -9925,29 +9925,82 @@ outputs, latest results replace the earlier ones like explained in the previous
 section. Also this merging strategy requires the top-level test suites to
 be same in all outputs.</p>
 <h2 id="json-output-files">JSON output files<a class="headerlink" href="#json-output-files" title="Permanent link">&para;</a></h2>
-<p>Rebot can create and process output files also in the <a href="../../syntax/data/#json-structure">JSON</a> format.
-Creating JSON output files is done using the normal <code>--output</code> option
-so that the specified file has a <em>.json</em> extension:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-8-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-8-1"><a id="example-8-1" name="example-8-1"></a><span class="n">rebot</span> <span class="o">--</span><span class="n">output</span> <span class="n">output</span><span class="o">.</span><span class="n">json</span> <span class="n">output</span><span class="o">.</span><span class="n">xml</span>
+<p>Rebot can create and process output files also in the <a href="https://json.org">JSON</a> format.
+Creating JSON output files is done using the normal <code class="option">--output</code> option
+so that the specified file has a <code class="file">.json</code> extension:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-8-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-8-1"><a id="example-8-1" name="example-8-1"></a>rebot --output output.json output.xml
 </span></code></pre></div></td></tr></table></div>
 <p>When reading output files, JSON files are automatically recognized by
 the extension:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-9-1">1</a></span>
-<span class="normal"><a href="#example-9-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-9-1"><a id="example-9-1" name="example-9-1"></a><span class="n">rebot</span> <span class="n">output</span><span class="o">.</span><span class="n">json</span>
-</span><span id="line-9-2"><a id="example-9-2" name="example-9-2"></a><span class="n">rebot</span> <span class="n">output1</span><span class="o">.</span><span class="n">json</span> <span class="n">output2</span><span class="o">.</span><span class="n">json</span>
+<span class="normal"><a href="#example-9-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-9-1"><a id="example-9-1" name="example-9-1"></a>rebot output.json
+</span><span id="line-9-2"><a id="example-9-2" name="example-9-2"></a>rebot output1.json output2.json
 </span></code></pre></div></td></tr></table></div>
 <p>When combining or merging results, it is possible to mix JSON and XML output files:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-10-1">1</a></span>
-<span class="normal"><a href="#example-10-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-10-1"><a id="example-10-1" name="example-10-1"></a><span class="n">rebot</span> <span class="n">output1</span><span class="o">.</span><span class="n">xml</span> <span class="n">output2</span><span class="o">.</span><span class="n">json</span>
-</span><span id="line-10-2"><a id="example-10-2" name="example-10-2"></a><span class="n">rebot</span> <span class="o">--</span><span class="n">merge</span> <span class="n">original</span><span class="o">.</span><span class="n">xml</span> <span class="n">rerun</span><span class="o">.</span><span class="n">json</span>
+<span class="normal"><a href="#example-10-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-10-1"><a id="example-10-1" name="example-10-1"></a>rebot output1.xml output2.json
+</span><span id="line-10-2"><a id="example-10-2" name="example-10-2"></a>rebot --merge original.xml rerun.json
 </span></code></pre></div></td></tr></table></div>
-<p>The JSON output file structure is documented in the <em>result.json</em> <a href="https://github.com/robotframework/robotframework/tree/master/doc/schema#readme">schema file</a>.</p>
+<p>The JSON output file structure is documented in the <code class="file">result.json</code> <a href="https://github.com/robotframework/robotframework/tree/master/doc/schema#readme">schema file</a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Support for JSON output files is new in Robot Framework 7.0.
 Prior to Robot Framework 7.2 JSON output files contained only
 information about the executed suite, but nowadays they contain
-the same result data as <a href="../output-files/#xml-output-files">XML output files</a>.</p>
+the same result data as <a href="../results/#output-file">XML output files</a>.</p>
+</div>
+<h2 id="controlling-rebot-console-output">Controlling Rebot console output<a class="headerlink" href="#controlling-rebot-console-output" title="Permanent link">&para;</a></h2>
+<p>By default, Rebot reports output file paths and possible errors and warnings
+on the console. This can be controlled with the <code class="option">--console</code> option
+that supports the following case-insensitive values:</p>
+<dl>
+<dt>
+	<code><a id="1024e32cff7efa7eac0e3969cc835758">verbose</a> </code>
+</dt>
+<dd>Report output file paths, errors and warnings (default).
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="b901d96988fca6aaf65b0500e121f133">quiet</a> </code>
+</dt>
+<dd>No output except for errors and warnings.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="695fd0a3820c106f7c347c5a7d560249">none</a> </code>
+</dt>
+<dd>No output whatsoever.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+</dl>
+<p>The <code class="option">--quiet</code> option is a shortcut for <code>--console quiet</code>.</p>
+<p>In addition to the built-in values, <code class="option">--console</code> also accepts
+<a href="../configuration/#custom-console-loggers">custom console loggers</a>, using the same mechanism as with <code>robot</code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Support for <code class="option">--console</code> and <code class="option">--quiet</code> with Rebot
+is new in Robot Framework 7.5.</p>
 </div>
 
 

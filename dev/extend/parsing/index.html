@@ -1136,7 +1136,7 @@
   <span class="md-ellipsis">
     
   
-    Results
+    Execution artifacts
   
 
     
@@ -9970,15 +9970,15 @@ even override Robot Framework's own parser.</p>
 <p>Custom parsers are new in Robot Framework 6.1.</p>
 </div>
 <h2 id="taking-parsers-into-use">Taking parsers into use<a class="headerlink" href="#taking-parsers-into-use" title="Permanent link">&para;</a></h2>
-<p>Parsers are taken into use from the command line with the <code>--parser</code>
-option using exactly the same semantics as with <a href="https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.TestSuite.from_string">listeners</a>. This includes
+<p>Parsers are taken into use from the command line with the <code class="option">--parser</code>
+option using exactly the same semantics as with <a href="../listeners/#registering-listeners-from-command-line">listeners</a>. This includes
 specifying parsers as names or paths, giving arguments to parser classes, and
 so on:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
 <span class="normal"><a href="#example-0-2">2</a></span>
-<span class="normal"><a href="#example-0-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="n">robot</span> <span class="o">--</span><span class="n">parser</span> <span class="n">MyParser</span> <span class="n">tests</span><span class="o">.</span><span class="n">custom</span>
-</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a><span class="n">robot</span> <span class="o">--</span><span class="n">parser</span> <span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">MyParser</span><span class="o">.</span><span class="n">py</span> <span class="n">tests</span><span class="o">.</span><span class="n">custom</span>
-</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a><span class="n">robot</span> <span class="o">--</span><span class="n">parser</span> <span class="n">Parser1</span><span class="p">:</span><span class="n">arg</span> <span class="o">--</span><span class="n">parser</span> <span class="n">Parser2</span><span class="p">:</span><span class="n">a1</span><span class="p">:</span><span class="n">a2</span> <span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">tests</span>
+<span class="normal"><a href="#example-0-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a>robot --parser MyParser tests.custom
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>robot --parser path/to/MyParser.py tests.custom
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a>robot --parser Parser1:arg --parser Parser2:a1:a2 path/to/tests
 </span></code></pre></div></td></tr></table></div>
 <h2 id="parser-api">Parser API<a class="headerlink" href="#parser-api" title="Permanent link">&para;</a></h2>
 <p>Parsers can be implemented both as modules and classes. This section explains
@@ -9990,27 +9990,27 @@ if both exist. The attribute can be either a string or a sequence of strings.
 Extensions are case-insensitive and can be specified with or without the leading
 dot. If a parser is implemented as a class, it is possible to set this attribute
 either as a class attribute or as an instance attribute.</p>
-<p>Also extensions containing multiple parts like <em>.example.ext</em> or
-<em>.robot.zip</em> are supported.</p>
+<p>Also extensions containing multiple parts like <code class="file">.example.ext</code> or
+<code class="file">.robot.zip</code> are supported.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If a parser supports the <em>.robot</em> extension, it will be used
+<p>If a parser supports the <code class="file">.robot</code> extension, it will be used
 for parsing these files instead of the standard parser.</p>
 </div>
 <h3 id="parse-method"><code>parse</code> method<a class="headerlink" href="#parse-method" title="Permanent link">&para;</a></h3>
 <p>The mandatory <code>parse</code> method is responsible for parsing <a href="../../syntax/suites/#suite-files">suite files</a>. It is
 called with each parsed file that has an extension that the parser supports.
-The method must return a <a href="#runningtestsuite">TestSuite</a>_ object.</p>
+The method must return a <a href="https://robot-framework.readthedocs.org/en/master/autodoc/robot.running.html#robot.running.model.TestSuite">TestSuite</a> object.</p>
 <p>In simple cases <code>parse</code> can be implemented so that it accepts just a single
-argument that is a <a href="#pathlib">pathlib.Path</a>_ object pointing to the file to
-parse. If the parser is interested in defaults for <code>Test Setup</code>,
-<code>Test Teardown</code>, <code>Test Tags</code> and <code>Test Timeout</code>
+argument that is a <a href="https://docs.python.org/library/pathlib.html">pathlib.Path</a> object pointing to the file to
+parse. If the parser is interested in defaults for <em class="setting">Test Setup</em>,
+<em class="setting">Test Teardown</em>, <em class="setting">Test Tags</em> and <em class="setting">Test Timeout</em>
 set in higher level <a href="../../syntax/suites/#suite-initialization-files">suite initialization files</a>, the <code>parse</code> method must
 accept two arguments. In that case the second argument is a <a href="https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.builder.html#robot.running.builder.settings.TestDefaults">TestDefaults</a> object.</p>
 <h3 id="parse_init-method"><code>parse_init</code> method<a class="headerlink" href="#parse_init-method" title="Permanent link">&para;</a></h3>
 <p>The optional <code>parse_init</code> method is responsible for parsing <a href="../../syntax/suites/#suite-initialization-files">suite initialization
 files</a> i.e. files in format <code>__init__.ext</code> where <code>.ext</code> is an extension
-supported by the parser. The method must return a <a href="#runningtestsuite">TestSuite</a>_
+supported by the parser. The method must return a <a href="https://robot-framework.readthedocs.org/en/master/autodoc/robot.running.html#robot.running.model.TestSuite">TestSuite</a>
 object representing the whole directory. Suites created from child suite files
 and directories will be added to its child suites.</p>
 <p>Also <code>parse_init</code> can be implemented so that it accepts one or two arguments,

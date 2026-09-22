@@ -1603,7 +1603,7 @@
   <span class="md-ellipsis">
     
   
-    Results
+    Execution artifacts
   
 
     
@@ -10250,7 +10250,7 @@ execution flow. These structures are familiar from most programming languages
 and they allow conditional execution, repeatedly executing a block of keywords
 and fine-grained error handling. For readability reasons these structures should
 be used judiciously, and more complex use cases should be preferably
-implemented in <a href="http://docs.python.org/library/functions.html#func-range">test libraries</a>.</p>
+implemented in <a href="../../extend/libraries/#creating-test-libraries">test libraries</a>.</p>
 <p><a id="for"></a>
 <a id="for-loop"></a></p>
 <h2 id="for-loops"><code>FOR</code> loops<a class="headerlink" href="#for-loops" title="Permanent link">&para;</a></h2>
@@ -10275,7 +10275,7 @@ a separator, and finally the values to iterate. These values can contain
 ends with <code>END</code> (case-sensitive) on its own row. Keywords inside the loop
 do not need to be indented, but that is highly recommended to make the syntax
 easier to read.</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1"> 1</a></span>
 <span class="normal"><a href="#example-0-2"> 2</a></span>
 <span class="normal"><a href="#example-0-3"> 3</a></span>
 <span class="normal"><a href="#example-0-4"> 4</a></span>
@@ -10301,14 +10301,14 @@ easier to read.</p>
 </span><span id="line-0-12"><a id="example-0-12" name="example-0-12"></a><span class="p">        </span><span class="nf">Log</span><span class="p">    ${</span><span class="nv">var</span><span class="p">}</span>
 </span><span id="line-0-13"><a id="example-0-13" name="example-0-13"></a><span class="p">    </span><span class="nf">END</span>
 </span></code></pre></div></td></tr></table></div>
-The <code>FOR</code> loop in <em>Example</em> above is executed twice, so that first
+<p>The <code>FOR</code> loop in <em class="name">Example</em> above is executed twice, so that first
 the loop variable <code>${animal}</code> has the value <code>cat</code> and then
-<code>dog</code>. The loop consists of two <em>Log</em> keywords. In the
-second example, loop values are <a href="http://docs.python.org/library/functions.html#func-range">split into two rows</a> and the
+<code>dog</code>. The loop consists of two <em class="name">Log</em> keywords. In the
+second example, loop values are <a href="../data/#dividing-data-to-several-rows">split into two rows</a> and the
 loop is run altogether ten times.</p>
 <p>It is often convenient to use <code>FOR</code> loops with <a href="../variables/#list-variables">list variables</a>. This is
 illustrated by the example below, where <code>@{ELEMENTS}</code> contains
-an arbitrarily long list of elements and keyword <em>Start Element</em> is
+an arbitrarily long list of elements and keyword <em class="name">Start Element</em> is
 used with all of them one by one.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-1-1">1</a></span>
 <span class="normal"><a href="#example-1-2">2</a></span>
@@ -10325,7 +10325,7 @@ used with all of them one by one.</p>
 The marker to start the loop was <code>:FOR</code> instead of <code>FOR</code> and loop contents needed
 to be explicitly marked with a backslash instead of using the <code>END</code> marker to end
 the loop. The first example above would look like this using the old syntax:</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-2-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-2-1">1</a></span>
 <span class="normal"><a href="#example-2-2">2</a></span>
 <span class="normal"><a href="#example-2-3">3</a></span>
 <span class="normal"><a href="#example-2-4">4</a></span>
@@ -10337,12 +10337,12 @@ the loop. The first example above would look like this using the old syntax:</p>
 </span><span id="line-2-5"><a id="example-2-5" name="example-2-5"></a><span class="p">    \    </span><span class="nf">Log</span><span class="p">    </span><span class="s">2nd keyword</span>
 </span><span id="line-2-6"><a id="example-2-6" name="example-2-6"></a><span class="p">    </span><span class="nf">Log</span><span class="p">    </span><span class="s">Outside loop</span>
 </span></code></pre></div></td></tr></table></div>
-The old syntax was deprecated in Robot Framework 3.2 and the support for it was
+<p>The old syntax was deprecated in Robot Framework 3.2 and the support for it was
 removed altogether in Robot Framework 4.0.</p>
 <h3 id="nesting-for-loops">Nesting <code>FOR</code> loops<a class="headerlink" href="#nesting-for-loops" title="Permanent link">&para;</a></h3>
 <p>Starting from Robot Framework 4.0, it is possible to use nested <code>FOR</code> loops
 simply by adding a loop inside another loop:</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-3-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-3-1">1</a></span>
 <span class="normal"><a href="#example-3-2">2</a></span>
 <span class="normal"><a href="#example-3-3">3</a></span>
 <span class="normal"><a href="#example-3-4">4</a></span>
@@ -10358,7 +10358,7 @@ simply by adding a loop inside another loop:</p>
 </span><span id="line-3-7"><a id="example-3-7" name="example-3-7"></a><span class="p">        </span><span class="nf">END</span>
 </span><span id="line-3-8"><a id="example-3-8" name="example-3-8"></a><span class="p">    </span><span class="nf">END</span>
 </span></code></pre></div></td></tr></table></div>
-There can be multiple nesting levels and loops can also be combined with
+<p>There can be multiple nesting levels and loops can also be combined with
 other control structures:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-4-1"> 1</a></span>
 <span class="normal"><a href="#example-4-2"> 2</a></span>
@@ -10423,7 +10423,7 @@ them below the loop variables, as in the first loop of the example below:</p>
 common use case, but sometimes it is convenient to have a loop that is executed
 a certain number of times. For this purpose Robot Framework has a special
 <code>FOR index IN RANGE limit</code> loop syntax that is derived from the similar Python
-idiom using the <a href="http://docs.python.org/library/functions.html#func-range">built-in range() function</a>.</p>
+idiom using the <a href="https://docs.python.org/library/functions.html#func-range">built-in range() function</a>.</p>
 <p>Similarly as other <code>FOR</code> loops, the <code>FOR-IN-RANGE</code> loop starts with
 <code>FOR</code> that is followed by a loop variable. In this format
 there can be only one loop variable and it contains the current loop
@@ -10516,14 +10516,14 @@ integers, but using float values is possible as well.</p>
 <p>Sometimes it is useful to loop over a list and also keep track of your location
 inside the list. Robot Framework has a special
 <code>FOR index ... IN ENUMERATE ...</code> syntax for this situation.
-This syntax is derived from the <a href="http://docs.python.org/library/functions.html#func-range">Python built-in enumerate() function</a>.</p>
+This syntax is derived from the <a href="https://docs.python.org/library/functions.html#enumerate">Python built-in enumerate() function</a>.</p>
 <p><code>FOR-IN-ENUMERATE</code> loops syntax is just like the regular <code>FOR</code> loop syntax,
 except that the separator between variables and values is <code>IN ENUMERATE</code>
 (case-sensitive). Typically they are used so that there is an additional index
 variable before any other loop-variables. By default the index has a value <code>0</code>
 on the first iteration, <code>1</code> on the second, and so on.</p>
 <p>For example, the following two test cases do the same thing:</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-7-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-7-1"> 1</a></span>
 <span class="normal"><a href="#example-7-2"> 2</a></span>
 <span class="normal"><a href="#example-7-3"> 3</a></span>
 <span class="normal"><a href="#example-7-4"> 4</a></span>
@@ -10553,10 +10553,10 @@ on the first iteration, <code>1</code> on the second, and so on.</p>
 </span><span id="line-7-14"><a id="example-7-14" name="example-7-14"></a><span class="p">        </span><span class="nf">My Keyword</span><span class="p">    ${</span><span class="nv">index</span><span class="p">}    ${</span><span class="nv">item</span><span class="p">}</span>
 </span><span id="line-7-15"><a id="example-7-15" name="example-7-15"></a><span class="p">    </span><span class="nf">END</span>
 </span></code></pre></div></td></tr></table></div>
-Starting from Robot Framework 4.0, it is possible to specify a custom start index
+<p>Starting from Robot Framework 4.0, it is possible to specify a custom start index
 by using <code>start=&lt;index&gt;</code> syntax as the last item of the <code>FOR ... IN ENUMERATE ...</code>
 header:</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-8-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-8-1"> 1</a></span>
 <span class="normal"><a href="#example-8-2"> 2</a></span>
 <span class="normal"><a href="#example-8-3"> 3</a></span>
 <span class="normal"><a href="#example-8-4"> 4</a></span>
@@ -10584,13 +10584,13 @@ header:</p>
 </span><span id="line-8-13"><a id="example-8-13" name="example-8-13"></a><span class="p">        </span><span class="nf">My Keyword</span><span class="p">    ${</span><span class="nv">index</span><span class="p">}    ${</span><span class="nv">item</span><span class="p">}</span>
 </span><span id="line-8-14"><a id="example-8-14" name="example-8-14"></a><span class="p">    </span><span class="nf">END</span>
 </span></code></pre></div></td></tr></table></div>
-The <code>start=&lt;index&gt;</code> syntax must be explicitly used in the <code>FOR</code> header and it cannot
+<p>The <code>start=&lt;index&gt;</code> syntax must be explicitly used in the <code>FOR</code> header and it cannot
 itself come from a variable. If the last actual item to enumerate would start with
 <code>start=</code>, it needs to be escaped like <code>start\=</code>.</p>
 <p>Just like with regular <code>FOR</code> loops, you can loop over multiple values per loop
 iteration as long as the number of values in your list is evenly divisible by
 the number of loop-variables (excluding the index variable):</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-9-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-9-1">1</a></span>
 <span class="normal"><a href="#example-9-2">2</a></span>
 <span class="normal"><a href="#example-9-3">3</a></span>
 <span class="normal"><a href="#example-9-4">4</a></span>
@@ -10606,7 +10606,7 @@ the number of loop-variables (excluding the index variable):</p>
 </span><span id="line-9-7"><a id="example-9-7" name="example-9-7"></a><span class="p">        </span><span class="nf">Log</span><span class="p">    </span><span class="s">"</span><span class="p">${</span><span class="nv">en</span><span class="p">}</span><span class="s">" in English is "</span><span class="p">${</span><span class="nv">fi</span><span class="p">}</span><span class="s">" in Finnish (index: </span><span class="p">${</span><span class="nv">index</span><span class="p">}</span><span class="s">)</span>
 </span><span id="line-9-8"><a id="example-9-8" name="example-9-8"></a><span class="p">    </span><span class="nf">END</span>
 </span></code></pre></div></td></tr></table></div>
-If you only use one loop variable with <code>FOR-IN-ENUMERATE</code> loops, that variable
+<p>If you only use one loop variable with <code>FOR-IN-ENUMERATE</code> loops, that variable
 will become a Python tuple containing the index and the iterated value:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-10-1">1</a></span>
 <span class="normal"><a href="#example-10-2">2</a></span>
@@ -10628,9 +10628,9 @@ feature in Robot Framework 3.2.</p>
 <h3 id="for-in-zip-loop"><code>FOR-IN-ZIP</code> loop<a class="headerlink" href="#for-in-zip-loop" title="Permanent link">&para;</a></h3>
 <p>Some tests build up several related lists, then loop over them together.
 Robot Framework has a shortcut for this case: <code>FOR ... IN ZIP ...</code>, which
-is derived from the <a href="http://docs.python.org/library/functions.html#func-range">Python built-in zip() function</a>.</p>
+is derived from the <a href="https://docs.python.org/library/functions.html#zip">Python built-in zip() function</a>.</p>
 <p>This may be easiest to show with an example:</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-11-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-11-1"> 1</a></span>
 <span class="normal"><a href="#example-11-2"> 2</a></span>
 <span class="normal"><a href="#example-11-3"> 3</a></span>
 <span class="normal"><a href="#example-11-4"> 4</a></span>
@@ -10660,14 +10660,14 @@ is derived from the <a href="http://docs.python.org/library/functions.html#func-
 </span><span id="line-11-14"><a id="example-11-14" name="example-11-14"></a><span class="p">        </span><span class="nf">Log Many</span><span class="p">    ${</span><span class="nv">number</span><span class="p">}    ${</span><span class="nv">name</span><span class="p">}</span>
 </span><span id="line-11-15"><a id="example-11-15" name="example-11-15"></a><span class="p">    </span><span class="nf">END</span>
 </span></code></pre></div></td></tr></table></div>
-As the example above illustrates, <code>FOR-IN-ZIP</code> loops require their own custom
+<p>As the example above illustrates, <code>FOR-IN-ZIP</code> loops require their own custom
 separator <code>IN ZIP</code> (case-sensitive) between loop variables and values.
 Values used with <code>FOR-IN-ZIP</code> loops must be lists or list-like objects.</p>
 <p>Items to iterate over must always be given either as <a href="../variables/#scalar-variables">scalar variables</a> like
 <code>${items}</code> or as <a href="../variables/#list-variables">list variables</a> like <code>@{lists}</code> that yield the actual
 iterated lists. The former approach is more common and it was already
 demonstrated above. The latter approach works like this:</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-12-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-12-1"> 1</a></span>
 <span class="normal"><a href="#example-12-2"> 2</a></span>
 <span class="normal"><a href="#example-12-3"> 3</a></span>
 <span class="normal"><a href="#example-12-4"> 4</a></span>
@@ -10687,10 +10687,10 @@ demonstrated above. The latter approach works like this:</p>
 </span><span id="line-12-9"><a id="example-12-9" name="example-12-9"></a><span class="p">        </span><span class="nf">Log Many</span><span class="p">    ${</span><span class="nv">number</span><span class="p">}    ${</span><span class="nv">name</span><span class="p">}</span>
 </span><span id="line-12-10"><a id="example-12-10" name="example-12-10"></a><span class="p">    </span><span class="nf">END</span>
 </span></code></pre></div></td></tr></table></div>
-The number of lists to iterate over is not limited, but it must match
+<p>The number of lists to iterate over is not limited, but it must match
 the number of loop variables. Alternatively, there can be just one loop
 variable that then becomes a Python tuple getting items from all lists.</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-13-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-13-1"> 1</a></span>
 <span class="normal"><a href="#example-13-2"> 2</a></span>
 <span class="normal"><a href="#example-13-3"> 3</a></span>
 <span class="normal"><a href="#example-13-4"> 4</a></span>
@@ -10722,20 +10722,20 @@ variable that then becomes a Python tuple getting items from all lists.</p>
 </span><span id="line-13-15"><a id="example-13-15" name="example-13-15"></a><span class="p">        </span><span class="nf">Log Many</span><span class="p">    ${</span><span class="nv">items</span><span class="p">}</span><span class="s">[0]</span><span class="p">    ${</span><span class="nv">items</span><span class="p">}</span><span class="s">[1]</span><span class="p">    ${</span><span class="nv">items</span><span class="p">}</span><span class="s">[2]</span>
 </span><span id="line-13-16"><a id="example-13-16" name="example-13-16"></a><span class="p">    </span><span class="nf">END</span>
 </span></code></pre></div></td></tr></table></div>
-Starting from Robot Framework 6.1, it is possible to configure what to do if
+<p>Starting from Robot Framework 6.1, it is possible to configure what to do if
 lengths of the iterated items differ. By default, the shortest item defines how
 many iterations there are and values at the end of longer ones are ignored.
 This can be changed by using the <code>mode</code> option that has three possible values:</p>
 <ul>
 <li><code>STRICT</code>: Items must have equal lengths. If not, execution fails. This is
-  the same as using <code>strict=True</code> with Python's <a href="http://docs.python.org/library/functions.html#func-range">zip</a> function.</li>
+  the same as using <code>strict=True</code> with Python's <a href="https://docs.python.org/library/functions.html#zip">zip</a> function.</li>
 <li><code>SHORTEST</code>: Items in longer items are ignored. Infinite iterators are supported
   in this mode as long as one of the items is exhausted. This is the default
   behavior.</li>
 <li><code>LONGEST</code>: The longest item defines how many iterations there are. Missing
   values in shorter items are filled-in with value specified using the <code>fill</code>
   option or <code>None</code> if it is not used. This is the same as using Python's
-  <a href="http://docs.python.org/library/functions.html#enumerate">zip_longest</a> function except that it has <code>fillvalue</code> argument instead of
+  <a href="https://docs.python.org/library/itertools.html#itertools.zip_longest">zip_longest</a> function except that it has <code>fillvalue</code> argument instead of
   <code>fill</code>.</li>
 </ul>
 <p>All these modes are illustrated by the following examples:</p>
@@ -10812,7 +10812,7 @@ values to be a <a href="../variables/#dictionary-variable">dictionary variable</
 It is possible to use multiple dictionary variables and to give additional
 items in <code>key=value</code> syntax. Items are iterated in the order they are defined
 and if same key gets multiple values the last value will be used.</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-15-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-15-1"> 1</a></span>
 <span class="normal"><a href="#example-15-2"> 2</a></span>
 <span class="normal"><a href="#example-15-3"> 3</a></span>
 <span class="normal"><a href="#example-15-4"> 4</a></span>
@@ -10850,7 +10850,7 @@ and if same key gets multiple values the last value will be used.</p>
 </span><span id="line-15-18"><a id="example-15-18" name="example-15-18"></a><span class="p">        </span><span class="nf">Log</span><span class="p">    </span><span class="s">Key is '</span><span class="p">${</span><span class="nv">key</span><span class="p">}</span><span class="s">' and value is '</span><span class="p">${</span><span class="nv">value</span><span class="p">}</span><span class="s">'.</span>
 </span><span id="line-15-19"><a id="example-15-19" name="example-15-19"></a><span class="p">    </span><span class="nf">END</span>
 </span></code></pre></div></td></tr></table></div>
-Typically it is easiest to use the dictionary iteration syntax so that keys
+<p>Typically it is easiest to use the dictionary iteration syntax so that keys
 and values get separate variables like in the above examples. With normal <code>FOR</code>
 loops it is also possible to use just a single variable that will become
 a tuple containing the key and the value. If only one variable is used with
@@ -10858,7 +10858,7 @@ a tuple containing the key and the value. If only one variable is used with
 the value. Two variables with <code>FOR-IN-ENUMERATE</code> loops means assigning the index
 to the first variable and making the second variable a tuple containing the key
 and the value.</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-16-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-16-1"> 1</a></span>
 <span class="normal"><a href="#example-16-2"> 2</a></span>
 <span class="normal"><a href="#example-16-3"> 3</a></span>
 <span class="normal"><a href="#example-16-4"> 4</a></span>
@@ -10888,7 +10888,7 @@ and the value.</p>
 </span><span id="line-16-14"><a id="example-16-14" name="example-16-14"></a><span class="p">        </span><span class="nf">Log</span><span class="p">    </span><span class="s">On round </span><span class="p">${</span><span class="nv">index</span><span class="p">}</span><span class="s"> key is '</span><span class="p">${</span><span class="nv">item</span><span class="p">}</span><span class="s">[0]' and value is '</span><span class="p">${</span><span class="nv">item</span><span class="p">}</span><span class="s">[1]'.</span>
 </span><span id="line-16-15"><a id="example-16-15" name="example-16-15"></a><span class="p">    </span><span class="nf">END</span>
 </span></code></pre></div></td></tr></table></div>
-In addition to iterating over names and values in dictionaries, it is possible
+<p>In addition to iterating over names and values in dictionaries, it is possible
 to iterate over keys and then possibly fetch the value based on it. This syntax
 requires using dictionaries as <a href="../variables/#list-variables">list variables</a>:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-17-1">1</a></span>
@@ -10938,17 +10938,17 @@ can be added to any loop variable by using the familiar <code>${name: type}</cod
 </div>
 <h3 id="removing-unnecessary-keywords-from-outputs">Removing unnecessary keywords from outputs<a class="headerlink" href="#removing-unnecessary-keywords-from-outputs" title="Permanent link">&para;</a></h3>
 <p><code>FOR</code> loops with multiple iterations often create lots of output and
-considerably increase the size of the generated <a href="../../execution/results/#output">output</a> and <a href="../../execution/results/#log">log</a> files.
-It is possible to <a href="http://docs.python.org/library/functions.html#func-range">remove or flatten unnecessary keywords</a> using
-<code>--removekeywords</code> and <code>--flattenkeywords</code> command line options.</p>
+considerably increase the size of the generated <a href="../../execution/results/#output-file">output</a> and <a href="../../execution/results/#log-file">log</a> files.
+It is possible to <a href="../../execution/results/#removing-and-flattening-keywords">remove or flatten unnecessary keywords</a> using
+<code class="option">--removekeywords</code> and <code class="option">--flattenkeywords</code> command line options.</p>
 <h3 id="repeating-single-keyword">Repeating single keyword<a class="headerlink" href="#repeating-single-keyword" title="Permanent link">&para;</a></h3>
 <p><code>FOR</code> loops can be excessive in situations where there is only a need to
 repeat a single keyword. In these cases it is often easier to use
-<a href="../libraries/#builtin">BuiltIn</a> keyword <em>Repeat Keyword</em>. This keyword takes a
+<a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> keyword <em class="name">Repeat Keyword</em>. This keyword takes a
 keyword and how many times to repeat it as arguments. The times to
 repeat the keyword can have an optional postfix <code>times</code> or <code>x</code>
 to make the syntax easier to read.</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-19-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-19-1">1</a></span>
 <span class="normal"><a href="#example-19-2">2</a></span>
 <span class="normal"><a href="#example-19-3">3</a></span>
 <span class="normal"><a href="#example-19-4">4</a></span>
@@ -10958,7 +10958,7 @@ to make the syntax easier to read.</p>
 </span><span id="line-19-4"><a id="example-19-4" name="example-19-4"></a><span class="p">    </span><span class="nf">Repeat Keyword</span><span class="p">    </span><span class="s">42 times</span><span class="p">    </span><span class="s">My Keyword</span>
 </span><span id="line-19-5"><a id="example-19-5" name="example-19-5"></a><span class="p">    </span><span class="nf">Repeat Keyword</span><span class="p">    ${</span><span class="nv">var</span><span class="p">}    </span><span class="s">Another Keyword</span><span class="p">    </span><span class="s">argument</span>
 </span></code></pre></div></td></tr></table></div>
-<a id="while"></a></p>
+<p><a id="while"></a></p>
 <h2 id="while-loops"><code>WHILE loops</code><a class="headerlink" href="#while-loops" title="Permanent link">&para;</a></h2>
 <p><code>WHILE</code> loops combine features of <a href="#for-loops">FOR loops</a> and <a href="#ifelse-structures">IF/ELSE structures</a>.
 They specify a condition and repeat the loop body as long as the condition
@@ -10970,7 +10970,7 @@ alternative to <a href="#for-loops">FOR loops</a>.</p>
 <p><code>WHILE</code> loops are new in Robot Framework 5.0.</p>
 </div>
 <h3 id="basic-while-syntax">Basic <code>WHILE</code> syntax<a class="headerlink" href="#basic-while-syntax" title="Permanent link">&para;</a></h3>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-20-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-20-1">1</a></span>
 <span class="normal"><a href="#example-20-2">2</a></span>
 <span class="normal"><a href="#example-20-3">3</a></span>
 <span class="normal"><a href="#example-20-4">4</a></span>
@@ -10982,7 +10982,7 @@ alternative to <a href="#for-loops">FOR loops</a>.</p>
 </span><span id="line-20-5"><a id="example-20-5" name="example-20-5"></a><span class="p">        ${</span><span class="nv">rc</span><span class="p">} =    </span><span class="nf">Keyword that returns zero on success</span>
 </span><span id="line-20-6"><a id="example-20-6" name="example-20-6"></a><span class="p">    </span><span class="nf">END</span>
 </span></code></pre></div></td></tr></table></div>
-The <code>WHILE</code> loop condition is evaluated in Python so that Python builtins like
+<p>The <code>WHILE</code> loop condition is evaluated in Python so that Python builtins like
 <code>len()</code> are available and modules are imported automatically to support usages
 like <code>math.pi * math.pow(${radius}, 2) &lt; 10</code>.
 Normal variables like <code>${rc}</code> in the above example are replaced before evaluation, but
@@ -11007,7 +11007,7 @@ limit of 10 000 iterations. If the limit is exceeded, the loop fails.</p>
 iteration count or as a maximum time for the whole loop. When the limit is an
 iteration count, it is possible to use just integers like <code>100</code> and to add <code>times</code>
 or <code>x</code> suffix after the value like <code>100 times</code>. When the limit is a timeout,
-it is possible to use <a href="http://docs.python.org/library/functions.html#func-range">time strings</a> like <code>10 s</code> or <code>1 hour 10 minutes</code>.
+it is possible to use <a href="../../appendix/time-format/#time-format">time strings</a> like <code>10 s</code> or <code>1 hour 10 minutes</code>.
 The limit can also be disabled altogether by using <code>NONE</code> (case-insensitive).
 All these options are illustrated by the examples below.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-21-1"> 1</a></span>
@@ -11066,7 +11066,7 @@ and <code>fail</code>, case insensitively. If the value is <code>pass</code>, th
 normally when the limit is reached and the status of the <code>WHILE</code> loop will be <code>PASS</code>.
 The value <code>fail</code> works similarly as the default behaviour, e.g. the loop and the
 test will fail if the limit is exceeded.</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-22-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-22-1"> 1</a></span>
 <span class="normal"><a href="#example-22-2"> 2</a></span>
 <span class="normal"><a href="#example-22-3"> 3</a></span>
 <span class="normal"><a href="#example-22-4"> 4</a></span>
@@ -11092,7 +11092,7 @@ test will fail if the limit is exceeded.</p>
 </span><span id="line-22-12"><a id="example-22-12" name="example-22-12"></a><span class="p">    </span><span class="nf">END</span>
 </span><span id="line-22-13"><a id="example-22-13" name="example-22-13"></a><span class="p">    </span><span class="nf">Log</span><span class="p">    </span><span class="s">This will be executed normally.</span>
 </span></code></pre></div></td></tr></table></div>
-By default, the error message raised when the limit is reached is
+<p>By default, the error message raised when the limit is reached is
 <code>WHILE loop was aborted because it did not finish within the limit of 0.5
 seconds. Use the 'limit' argument to increase or remove the limit if
 needed.</code>. Starting from Robot Framework 6.1, the error message can be changed
@@ -11143,9 +11143,9 @@ with the <code>on_limit_message</code> configuration parameter.</p>
 </span></code></pre></div></td></tr></table></div>
 <h3 id="removing-unnecessary-keywords-from-outputs_1">Removing unnecessary keywords from outputs<a class="headerlink" href="#removing-unnecessary-keywords-from-outputs_1" title="Permanent link">&para;</a></h3>
 <p><code>WHILE</code> loops with multiple iterations often create lots of output and
-considerably increase the size of the generated <a href="../../execution/results/#output">output</a> and <a href="../../execution/results/#log">log</a> files.
-It is possible to <a href="http://docs.python.org/library/functions.html#func-range">remove or flatten unnecessary keywords</a> using
-<code>--removekeywords</code> and <code>--flattenkeywords</code> command line options.</p>
+considerably increase the size of the generated <a href="../../execution/results/#output-file">output</a> and <a href="../../execution/results/#log-file">log</a> files.
+It is possible to <a href="../../execution/results/#removing-and-flattening-keywords">remove or flatten unnecessary keywords</a> using
+<code class="option">--removekeywords</code> and <code class="option">--flattenkeywords</code> command line options.</p>
 <p><a id="break"></a>
 <a id="continue"></a></p>
 <h2 id="loop-control-using-break-and-continue">Loop control using <code>BREAK</code> and <code>CONTINUE</code><a class="headerlink" href="#loop-control-using-break-and-continue" title="Permanent link">&para;</a></h2>
@@ -11241,15 +11241,15 @@ keyword called in the loop body is invalid.</p>
 <p class="admonition-title">Note</p>
 <p><code>BREAK</code> and <code>CONTINUE</code> statements are new in Robot Framework 5.0 similarly
 as <code>WHILE</code>. Earlier versions supported controlling <code>FOR</code> loops using
-<a href="../libraries/#builtin">BuiltIn</a> keywords <em>Exit For Loop</em>, <em>Exit For Loop If</em>,
-<em>Continue For Loop</em> and <em>Continue For Loop If</em>. These
+<a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> keywords <em class="name">Exit For Loop</em>, <em class="name">Exit For Loop If</em>,
+<em class="name">Continue For Loop</em> and <em class="name">Continue For Loop If</em>. These
 keywords still continue to work, but they will be deprecated and removed
 in the future.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Also the <a href="../user-keywords/#return">RETURN</a> statement can be used to a exit loop. It only works
-when loops are used inside a <a href="../user-keywords/#user-keyword">user keyword</a>.</p>
+when loops are used inside a <a href="../user-keywords/#creating-user-keywords">user keyword</a>.</p>
 </div>
 <p><a id="if"></a>
 <a id="ifelse"></a>
@@ -11258,16 +11258,16 @@ when loops are used inside a <a href="../user-keywords/#user-keyword">user keywo
 <p>Sometimes there is a need to execute some keywords conditionally. Starting
 from Robot Framework 4.0 there is a separate <code>IF/ELSE</code> syntax, but
 there are also <a href="#other-ways-to-execute-keywords-conditionally">other ways to execute keywords conditionally</a>. Notice that if
-the logic gets complicated, it is typically better to move it into a <a href="../../extend/libraries/#creating-test-library-class-or-module">test library</a>.</p>
+the logic gets complicated, it is typically better to move it into a <a href="../libraries/#using-test-libraries">test library</a>.</p>
 <h3 id="basic-if-syntax">Basic <code>IF</code> syntax<a class="headerlink" href="#basic-if-syntax" title="Permanent link">&para;</a></h3>
 <p>Robot Framework's native <code>IF</code> syntax starts with <code>IF</code> (case-sensitive) and
 ends with <code>END</code> (case-sensitive). The <code>IF</code> marker requires exactly one value that is
 the condition to evaluate. Keywords to execute if the condition is true are on their
 own rows between the <code>IF</code> and <code>END</code> markers. Indenting keywords in the <code>IF</code> block is
 highly recommended but not mandatory.</p>
-<p>In the following example keywords <em>Some keyword</em> and <em>Another keyword</em>
+<p>In the following example keywords <em class="name">Some keyword</em> and <em class="name">Another keyword</em>
 are executed if <code>${rc}</code> is greater than zero:</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-26-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-26-1">1</a></span>
 <span class="normal"><a href="#example-26-2">2</a></span>
 <span class="normal"><a href="#example-26-3">3</a></span>
 <span class="normal"><a href="#example-26-4">4</a></span>
@@ -11279,7 +11279,7 @@ are executed if <code>${rc}</code> is greater than zero:</p>
 </span><span id="line-26-5"><a id="example-26-5" name="example-26-5"></a><span class="p">       </span><span class="nf">Another keyword</span>
 </span><span id="line-26-6"><a id="example-26-6" name="example-26-6"></a><span class="p">   </span><span class="nf">END</span>
 </span></code></pre></div></td></tr></table></div>
-The condition is evaluated in Python so that Python builtins like
+<p>The condition is evaluated in Python so that Python builtins like
 <code>len()</code> are available and modules are imported automatically to support usages like
 <code>platform.system() == 'Linux'</code> and <code>math.ceil(${x}) == 1</code>.
 Normal variables like <code>${rc}</code> in the above example are replaced before evaluation, but
@@ -11293,8 +11293,8 @@ appendix.</p>
 <p>Like most other languages supporting conditional execution, Robot Framework <code>IF</code>
 syntax also supports <code>ELSE</code> branches that are executed if the <code>IF</code> condition is
 not true.</p>
-<p>In this example <em>Some keyword</em> is executed if <code>${rc}</code> is greater than
-zero and <em>Another keyword</em> is executed otherwise:</p>
+<p>In this example <em class="name">Some keyword</em> is executed if <code>${rc}</code> is greater than
+zero and <em class="name">Another keyword</em> is executed otherwise:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-27-1">1</a></span>
 <span class="normal"><a href="#example-27-2">2</a></span>
 <span class="normal"><a href="#example-27-3">3</a></span>
@@ -11318,7 +11318,7 @@ and remaining <code>ELSE IF</code> branches are ignored. An optional <code>ELSE<
 <code>ELSE IF</code> branches and it is executed if all conditions are false.</p>
 <p>In the following example different keyword is executed depending on is <code>${rc}</code> positive,
 negative, zero, or something else like a string or <code>None</code>:</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-28-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-28-1"> 1</a></span>
 <span class="normal"><a href="#example-28-2"> 2</a></span>
 <span class="normal"><a href="#example-28-3"> 3</a></span>
 <span class="normal"><a href="#example-28-4"> 4</a></span>
@@ -11340,7 +11340,7 @@ negative, zero, or something else like a string or <code>None</code>:</p>
 </span><span id="line-28-10"><a id="example-28-10" name="example-28-10"></a><span class="p">        </span><span class="nf">Fail</span><span class="p">    </span><span class="s">Unexpected rc: </span><span class="p">${</span><span class="nv">rc</span><span class="p">}</span>
 </span><span id="line-28-11"><a id="example-28-11" name="example-28-11"></a><span class="p">    </span><span class="nf">END</span>
 </span></code></pre></div></td></tr></table></div>
-Notice that this example uses the <code>${rc}</code> variable in the special <code>$rc</code> format to
+<p>Notice that this example uses the <code>${rc}</code> variable in the special <code>$rc</code> format to
 avoid evaluation failures if it is not a number. See the aforementioned
 <a href="../../appendix/expressions/#evaluating-expressions">Evaluating expressions</a> appendix for more information about this syntax.</p>
 <p><a id="inline-if"></a></p>
@@ -11350,7 +11350,7 @@ a single statement. An alternative to it is using inline <code>IF</code> syntax 
 the statement to execute follows the <code>IF</code> marker and condition directly and
 no <code>END</code> marker is needed. For example, the following two keywords are
 equivalent:</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-29-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-29-1"> 1</a></span>
 <span class="normal"><a href="#example-29-2"> 2</a></span>
 <span class="normal"><a href="#example-29-3"> 3</a></span>
 <span class="normal"><a href="#example-29-4"> 4</a></span>
@@ -11374,8 +11374,8 @@ equivalent:</p>
 </span><span id="line-29-11"><a id="example-29-11" name="example-29-11"></a><span class="p">    </span><span class="nf">IF</span><span class="p">    </span><span class="s">$condition1</span><span class="p">    </span><span class="s">Keyword</span><span class="p">    </span><span class="s">argument</span>
 </span><span id="line-29-12"><a id="example-29-12" name="example-29-12"></a><span class="p">    </span><span class="nf">IF</span><span class="p">    </span><span class="s">$condition2</span><span class="p">    </span><span class="s">RETURN</span>
 </span></code></pre></div></td></tr></table></div>
-The inline <code>IF</code> syntax supports also <code>ELSE</code> and <code>ELSE IF</code> branches:</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-30-1">1</a></span>
+<p>The inline <code>IF</code> syntax supports also <code>ELSE</code> and <code>ELSE IF</code> branches:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-30-1">1</a></span>
 <span class="normal"><a href="#example-30-2">2</a></span>
 <span class="normal"><a href="#example-30-3">3</a></span>
 <span class="normal"><a href="#example-30-4">4</a></span>
@@ -11387,16 +11387,16 @@ The inline <code>IF</code> syntax supports also <code>ELSE</code> and <code>ELSE
 </span><span id="line-30-5"><a id="example-30-5" name="example-30-5"></a><span class="gu">Inline IF/ELSE IF/ELSE</span>
 </span><span id="line-30-6"><a id="example-30-6" name="example-30-6"></a><span class="p">    </span><span class="nf">IF</span><span class="p">    </span><span class="s">$cond1</span><span class="p">    </span><span class="s">Keyword 1</span><span class="p">    </span><span class="s">ELSE IF</span><span class="p">    </span><span class="s">$cond2</span><span class="p">    </span><span class="s">Keyword 2</span><span class="p">    </span><span class="s">ELSE IF</span><span class="p">    </span><span class="s">$cond3</span><span class="p">    </span><span class="s">Keyword 3</span><span class="p">    </span><span class="s">ELSE</span><span class="p">    </span><span class="s">Keyword 4</span>
 </span></code></pre></div></td></tr></table></div>
-As the latter example above demonstrates, inline <code>IF</code> with several <code>ELSE IF</code>
+<p>As the latter example above demonstrates, inline <code>IF</code> with several <code>ELSE IF</code>
 and <code>ELSE</code> branches starts to get hard to understand. Long inline <code>IF</code>
-structures can be <a href="http://docs.python.org/library/functions.html#func-range">split into multiple lines</a> using the common <code>...</code>
+structures can be <a href="../data/#dividing-data-to-several-rows">split into multiple lines</a> using the common <code>...</code>
 continuation syntax, but using a normal <code>IF/ELSE</code> structure or moving the logic
-into a <a href="../../extend/libraries/#creating-test-library-class-or-module">test library</a> is probably a better idea. Each inline <code>IF</code> branch can
+into a <a href="../libraries/#using-test-libraries">test library</a> is probably a better idea. Each inline <code>IF</code> branch can
 contain only one statement. If more statements are needed, normal <code>IF/ELSE</code>
 structure needs to be used instead.</p>
 <p>If there is a need for an assignment with inline <code>IF</code>, the variable or variables
 to assign must be before the starting <code>IF</code>. Otherwise the logic is exactly
-the same as when <a href="http://docs.python.org/library/functions.html#enumerate">assigning variables</a> based on keyword return values. If
+the same as when <a href="../variables/#return-values-from-keywords">assigning variables</a> based on keyword return values. If
 assignment is used and no branch is run, the variable gets value <code>None</code>.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-31-1">1</a></span>
 <span class="normal"><a href="#example-31-2">2</a></span>
@@ -11481,37 +11481,37 @@ as <a href="#for-in-enumerate-loop">FOR-IN-ENUMERATE loop</a>, <a href="../user-
 <p>There are also other methods to execute keywords conditionally:</p>
 <ul>
 <li>
-<p>The name of the keyword used as a setup or a teardown with <a href="http://docs.python.org/library/functions.html#func-range">suites</a>, <a href="http://docs.python.org/library/functions.html#enumerate">tests</a> and
-  <a href="http://docs.python.org/library/functions.html#zip">keywords</a> can be specified using a variable. This facilitates changing them,
+<p>The name of the keyword used as a setup or a teardown with <a href="../suites/#suite-setup-and-teardown">suites</a>, <a href="../tests/#test-setup-and-teardown">tests</a> and
+  <a href="../user-keywords/#user-keyword-setup-and-teardown">keywords</a> can be specified using a variable. This facilitates changing them,
   for example, from the command line.</p>
 </li>
 <li>
-<p>The <a href="../libraries/#builtin">BuiltIn</a> keyword <em>Run Keyword</em> takes a keyword to actually
+<p>The <a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> keyword <em class="name">Run Keyword</em> takes a keyword to actually
   execute as an argument and it can thus be a variable. The value of
   the variable can, for example, be got dynamically from an earlier
   keyword or given from the command line.</p>
 </li>
 <li>
-<p>The <a href="../libraries/#builtin">BuiltIn</a> keywords <em>Run Keyword If</em> and <em>Run Keyword Unless</em>
+<p>The <a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> keywords <em class="name">Run Keyword If</em> and <em class="name">Run Keyword Unless</em>
   execute a named keyword only if a certain expression is true or false, respectively.
   The new <code>IF/ELSE</code> syntax explained above is generally recommended, though.</p>
 </li>
 <li>
-<p>Another <a href="../libraries/#builtin">BuiltIn</a> keyword, <em>Set Variable If</em>, can be used to set
+<p>Another <a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> keyword, <em class="name">Set Variable If</em>, can be used to set
   variables dynamically based on a given expression.</p>
 </li>
 <li>
-<p>There are several <a href="../libraries/#builtin">BuiltIn</a> keywords that allow executing a named
+<p>There are several <a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> keywords that allow executing a named
   keyword only if a test case or test suite has failed or passed.</p>
 </li>
 </ul>
 <p><a id="tryexcept"></a></p>
 <h2 id="tryexcept-syntax"><code>TRY/EXCEPT</code> syntax<a class="headerlink" href="#tryexcept-syntax" title="Permanent link">&para;</a></h2>
 <p>When a keyword fails, Robot Framework's default behavior is to stop the current
-test and executes its possible <a href="../../execution/tests/#teardown">teardown</a>. There can, however, be needs to handle
+test and executes its possible <a href="../tests/#test-setup-and-teardown">teardown</a>. There can, however, be needs to handle
 these failures during execution as well. Robot Framework 5.0 introduces native
 <code>TRY/EXCEPT</code> syntax for this purpose, but there also <a href="#other-ways-to-handle-errors">other ways to handle errors</a>.</p>
-<p>Robot Framework's <code>TRY/EXCEPT</code> syntax is inspired by Python's <a href="https://docs.python.org/library/functions.html#zip">exception handling</a>
+<p>Robot Framework's <code>TRY/EXCEPT</code> syntax is inspired by Python's <a href="https://docs.python.org/tutorial/errors.html#handling-exceptions">exception handling</a>
 syntax. It has same <code>TRY</code>, <code>EXCEPT</code>, <code>ELSE</code> and <code>FINALLY</code> branches as Python and
 they also mostly work the same way. A difference is that Python uses lower case
 <code>try</code>, <code>except</code>, etc. but with Robot Framework all this kind of syntax must use
@@ -11520,12 +11520,12 @@ and with Robot Framework you are dealing with error messages as strings.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>It is not possible to catch errors caused by invalid syntax or errors
-that <a href="https://docs.python.org/library/itertools.html#itertools.zip_longest">stop the whole execution</a>.</p>
+that <a href="../../execution/tests/#stopping-test-execution-gracefully">stop the whole execution</a>.</p>
 </div>
 <h3 id="catching-exceptions-with-except">Catching exceptions with <code>EXCEPT</code><a class="headerlink" href="#catching-exceptions-with-except" title="Permanent link">&para;</a></h3>
 <p>The basic <code>TRY/EXCEPT</code> syntax can be used to handle failures based on
 error messages:</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-33-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-33-1">1</a></span>
 <span class="normal"><a href="#example-33-2">2</a></span>
 <span class="normal"><a href="#example-33-3">3</a></span>
 <span class="normal"><a href="#example-33-4">4</a></span>
@@ -11541,7 +11541,7 @@ error messages:</p>
 </span><span id="line-33-7"><a id="example-33-7" name="example-33-7"></a><span class="p">    </span><span class="nf">END</span>
 </span><span id="line-33-8"><a id="example-33-8" name="example-33-8"></a><span class="p">    </span><span class="nf">Keyword Outside</span>
 </span></code></pre></div></td></tr></table></div>
-In the above example, if <code>Some Keyword</code> passes, the <code>EXCEPT</code> branch is not run
+<p>In the above example, if <code>Some Keyword</code> passes, the <code>EXCEPT</code> branch is not run
 and execution continues after the <code>TRY/EXCEPT</code> structure. If the keyword fails
 with a message <code>Error message</code> (case-sensitive), the <code>EXCEPT</code> branch is executed.
 If the <code>EXCEPT</code> branch succeeds, execution continues after the <code>TRY/EXCEPT</code>
@@ -11553,7 +11553,7 @@ by one and the first matching branch is executed. One <code>EXCEPT</code> can al
 multiple messages to match, and such a branch is executed if any of its messages
 match. In all these cases messages can be specified using variables in addition
 to literal strings.</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-34-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-34-1"> 1</a></span>
 <span class="normal"><a href="#example-34-2"> 2</a></span>
 <span class="normal"><a href="#example-34-3"> 3</a></span>
 <span class="normal"><a href="#example-34-4"> 4</a></span>
@@ -11589,7 +11589,7 @@ to literal strings.</p>
 </span><span id="line-34-17"><a id="example-34-17" name="example-34-17"></a><span class="p">        </span><span class="nf">Error handler</span>
 </span><span id="line-34-18"><a id="example-34-18" name="example-34-18"></a><span class="p">    </span><span class="nf">END</span>
 </span></code></pre></div></td></tr></table></div>
-It is also possible to have an <code>EXCEPT</code> without messages, in which case it matches
+<p>It is also possible to have an <code>EXCEPT</code> without messages, in which case it matches
 any error. There can be only one such <code>EXCEPT</code> and it must follow possible
 other <code>EXCEPT</code> branches:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-35-1"> 1</a></span>
@@ -11628,7 +11628,7 @@ other <code>EXCEPT</code> branches:</p>
 <p>By default matching an error using <code>EXCEPT</code> requires an exact match. That can be
 changed using a configuration option <code>type=</code> as an argument to the except clause.
 Valid values for the option are <code>GLOB</code>, <code>REGEXP</code> or <code>START</code> (case-insensitive)
-to make the match a <a href="http://docs.python.org/library/functions.html#func-range">glob pattern match</a>, a <a href="http://docs.python.org/library/functions.html#enumerate">regular expression match</a>, or
+to make the match a <a href="https://en.wikipedia.org/wiki/Glob_(programming)">glob pattern match</a>, a <a href="https://en.wikipedia.org/wiki/Regular_expression">regular expression match</a>, or
 to match only the beginning of the error, respectively. Using value
 <code>LITERAL</code> has the same effect as the default behavior. If an <code>EXCEPT</code> has multiple
 messages, this option applies to all of them. The value of the option
@@ -11710,7 +11710,7 @@ can be defined with a variable as well.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Remember that the backslash character often used with regular expressions
-is an <a href="http://docs.python.org/library/functions.html#func-range">escape character</a> in Robot Framework data. It thus needs to be
+is an <a href="../data/#escaping">escape character</a> in Robot Framework data. It thus needs to be
 escaped with another backslash when using it in regular expressions.</p>
 </div>
 <h3 id="capturing-error-message">Capturing error message<a class="headerlink" href="#capturing-error-message" title="Permanent link">&para;</a></h3>
@@ -11745,7 +11745,7 @@ end of the <code>EXCEPT</code> statement:</p>
 <p>Optional <code>ELSE</code> branches make it possible to execute keywords if there is no error.
 There can be only one <code>ELSE</code> branch and it is allowed only after one or more
 <code>EXCEPT</code> branches:</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-38-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-38-1"> 1</a></span>
 <span class="normal"><a href="#example-38-2"> 2</a></span>
 <span class="normal"><a href="#example-38-3"> 3</a></span>
 <span class="normal"><a href="#example-38-4"> 4</a></span>
@@ -11769,7 +11769,7 @@ There can be only one <code>ELSE</code> branch and it is allowed only after one 
 </span><span id="line-38-11"><a id="example-38-11" name="example-38-11"></a><span class="p">    </span><span class="nf">END</span>
 </span><span id="line-38-12"><a id="example-38-12" name="example-38-12"></a><span class="p">    </span><span class="nf">Keyword Outside</span>
 </span></code></pre></div></td></tr></table></div>
-In the above example, if <code>Some Keyword</code> passes, the <code>ELSE</code> branch is executed,
+<p>In the above example, if <code>Some Keyword</code> passes, the <code>ELSE</code> branch is executed,
 and if it fails with message <code>X</code> or <code>Y</code>, the appropriate <code>EXCEPT</code> branch run.
 In all these cases execution continues after the whole <code>TRY/EXCEPT/ELSE</code> structure.
 If <code>Some Keyword</code> fail any other way, <code>EXCEPT</code> and <code>ELSE</code> branches are not run
@@ -11797,7 +11797,7 @@ it is possible to use an <code>EXCEPT</code> without any message in combination 
 <h3 id="using-finally-to-execute-keywords-regardless-are-there-errors-or-not">Using <code>FINALLY</code> to execute keywords regardless are there errors or not<a class="headerlink" href="#using-finally-to-execute-keywords-regardless-are-there-errors-or-not" title="Permanent link">&para;</a></h3>
 <p>Optional <code>FINALLY</code> branches make it possible to execute keywords both when there
 is an error and when there is not. They are thus suitable for cleaning up
-after a keyword execution somewhat similarly as <a href="../../execution/tests/#teardown">teardowns</a>. There can be only one
+after a keyword execution somewhat similarly as <a href="../../execution/tests/#skips-teardowns">teardowns</a>. There can be only one
 <code>FINALLY</code> branch and it must always be last. They can be used in combination with
 <code>EXCEPT</code> and <code>ELSE</code> branches and having also <code>TRY/FINALLY</code> structure is possible:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-40-1"> 1</a></span>
@@ -11842,7 +11842,7 @@ after a keyword execution somewhat similarly as <a href="../../execution/tests/#
 <p>There are also other methods to execute keywords conditionally:</p>
 <ul>
 <li>
-<p>The <a href="../libraries/#builtin">BuiltIn</a> keyword <em>Run Keyword And Expect Error</em> executes a named
+<p>The <a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> keyword <em class="name">Run Keyword And Expect Error</em> executes a named
   keyword and expects that it fails with a specified error message. It is basically
   the same as using <code>TRY/EXCEPT</code> with a specified message. The syntax to specify
   the error message is also identical except that this keyword uses glob pattern
@@ -11851,31 +11851,31 @@ after a keyword execution somewhat similarly as <a href="../../execution/tests/#
   versions that do not support it.</p>
 </li>
 <li>
-<p>The <a href="../libraries/#builtin">BuiltIn</a> keyword <em>Run Keyword And Ignore Error</em> executes a named keyword
+<p>The <a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> keyword <em class="name">Run Keyword And Ignore Error</em> executes a named keyword
   and returns its status as string <code>PASS</code> or <code>FAIL</code> along with possible return value
   or error message. It is basically the same as using <code>TRY/EXCEPT/ELSE</code> so that
   <code>EXCEPT</code> catches all errors. Using the native syntax is recommended unless
   old Robot Framework versions need to be supported.</p>
 </li>
 <li>
-<p>The <a href="../libraries/#builtin">BuiltIn</a> keyword <em>Run Keyword And Return Status</em> executes a named keyword
+<p>The <a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> keyword <em class="name">Run Keyword And Return Status</em> executes a named keyword
   and returns its status as a Boolean true or false. It is a wrapper for the
-  aforementioned <em>Run Keyword And Ignore Error</em>. The native syntax is
+  aforementioned <em class="name">Run Keyword And Ignore Error</em>. The native syntax is
   nowadays recommended instead.</p>
 </li>
 <li>
-<p><a href="http://docs.python.org/library/functions.html#func-range">Test teardowns</a> and <a href="http://docs.python.org/library/functions.html#enumerate">keyword teardowns</a> can be used for cleaning up activities
+<p><a href="../../execution/tests/#test-teardown">Test teardowns</a> and <a href="../../execution/tests/#user-keyword-teardown">keyword teardowns</a> can be used for cleaning up activities
   similarly as <code>FINALLY</code> branches.</p>
 </li>
 <li>
-<p>When keywords are implemented in Python based <a href="../../extend/#libraries">libraries</a>, all Python's error
+<p>When keywords are implemented in Python based <a href="../libraries/#using-test-libraries">libraries</a>, all Python's error
   handling features are readily available. This is the recommended approach
   especially if needed logic gets more complicated.</p>
 </li>
 </ul>
 <h2 id="group-syntax"><code>GROUP</code> syntax<a class="headerlink" href="#group-syntax" title="Permanent link">&para;</a></h2>
 <p>The <code>GROUP</code> syntax allows grouping related keywords and control structures together:</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-41-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-41-1"> 1</a></span>
 <span class="normal"><a href="#example-41-2"> 2</a></span>
 <span class="normal"><a href="#example-41-3"> 3</a></span>
 <span class="normal"><a href="#example-41-4"> 4</a></span>
@@ -11937,10 +11937,10 @@ after a keyword execution somewhat similarly as <a href="../../execution/tests/#
 </span><span id="line-41-30"><a id="example-41-30" name="example-41-30"></a><span class="p">        </span><span class="nf">END</span>
 </span><span id="line-41-31"><a id="example-41-31" name="example-41-31"></a><span class="p">    </span><span class="nf">END</span>
 </span></code></pre></div></td></tr></table></div>
-As the above examples demonstrates, groups can have a name, but the name is
+<p>As the above examples demonstrates, groups can have a name, but the name is
 optional. Groups can also be nested freely with each others and with other
 control structures.</p>
-<p><a href="../user-keywords/#user-keyword">User keywords</a> are in general recommended over the <code>GROUP</code> syntax, because
+<p><a href="../user-keywords/#creating-user-keywords">User keywords</a> are in general recommended over the <code>GROUP</code> syntax, because
 they are reusable and because they simplify tests or keywords where they are
 used by hiding and encapsulating lower level details. In the log file user
 keywords and groups look the same, though, except that instead of a <code>KEYWORD</code>
@@ -12008,8 +12008,8 @@ cause a huge mess.</p>
 <p>One of the primary usages for groups is making it possible to create structured
 tests and user keywords programmatically. For example, the following
 <a href="../../execution/configuration/#pre-run-modifier">pre-run modifier</a> adds a group with two keywords at the end of each modified
-test. Groups can be added also by <a href="../../extend/listeners/#listeners">listeners</a> that use the
-<a href="http://docs.python.org/library/functions.html#func-range">listener API version 3</a>.</p>
+test. Groups can be added also by <a href="../../extend/listeners/#listener-interface">listeners</a> that use the
+<a href="../../extend/listeners/#listener-version-3">listener API version 3</a>.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-43-1">1</a></span>
 <span class="normal"><a href="#example-43-2">2</a></span>
 <span class="normal"><a href="#example-43-3">3</a></span>

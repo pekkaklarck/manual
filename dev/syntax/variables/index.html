@@ -1548,7 +1548,7 @@
   <span class="md-ellipsis">
     
   
-    Results
+    Execution artifacts
   
 
     
@@ -10196,10 +10196,10 @@
 used in most places in test data. Most commonly, they are used in
 arguments for keywords in Test Case and Keyword sections, but
 also all settings allow variables in their values. A normal keyword
-name <em>cannot</em> be specified with a variable, but the <a href="../libraries/#builtin">BuiltIn</a> keyword
-<em>Run Keyword</em> can be used to get the same effect.</p>
-<p>Robot Framework has its own variables that can be used as <a href="https://docs.python.org/3/library/stdtypes.html#bytes-objects">scalars</a>, <a href="https://docs.python.org/3/library/stdtypes.html#bytearray-objects">lists</a>
-or <a href="https://docs.python.org/3/glossary.html#term-sequence">dictionaries</a> using syntax <code>${SCALAR}</code>, <code>@{LIST}</code> and <code>&amp;{DICT}</code>,
+name <em>cannot</em> be specified with a variable, but the <a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> keyword
+<em class="name">Run Keyword</em> can be used to get the same effect.</p>
+<p>Robot Framework has its own variables that can be used as <a href="#scalar-variables">scalars</a>, <a href="#list-variables">lists</a>
+or <a href="#dictionary-variables">dictionaries</a> using syntax <code>${SCALAR}</code>, <code>@{LIST}</code> and <code>&amp;{DICT}</code>,
 respectively. In addition to this, <a href="#environment-variables">environment variables</a> can be used
 directly with syntax <code>%{ENV_VAR}</code>.</p>
 <p>Variables are useful, for example, in these cases:</p>
@@ -10212,7 +10212,7 @@ directly with syntax <code>%{ENV_VAR}</code>.</p>
 <p>When creating system-independent and operating-system-independent data.
   Using variables instead of hard-coded values eases that considerably
   (for example, <code>${RESOURCES}</code> instead of <code>c:\resources</code>, or <code>${HOST}</code>
-  instead of <code>10.0.0.1:8080</code>). Because variables can be <a href="https://docs.python.org/glossary.html#term-slice">set from the
+  instead of <code>10.0.0.1:8080</code>). Because variables can be <a href="#command-line-variables">set from the
   command line</a> when tests are started, changing system-specific
   variables is easy (for example, <code>--variable RESOURCES:/opt/resources
   --variable HOST:10.0.0.2:1234</code>). This also facilitates
@@ -10237,7 +10237,7 @@ directly with syntax <code>%{ENV_VAR}</code>.</p>
 </ul>
 <p>If a non-existent variable is used in the test data, the keyword using
 it fails. If the same syntax that is used for variables is needed as a
-literal string, it must be <a href="https://groups.google.com/group/robotframework-users/browse_thread/thread/ccc9e1cd77870437/4577836fe946e7d5?lnk=gst&amp;q=templates#4577836fe946e7d5">escaped with a backslash</a> as in <code>\${NAME}</code>.</p>
+literal string, it must be <a href="../data/#escaping">escaped with a backslash</a> as in <code>\${NAME}</code>.</p>
 <h2 id="using-variables">Using variables<a class="headerlink" href="#using-variables" title="Permanent link">&para;</a></h2>
 <p>This section explains how to use variables using the normal scalar
 variable syntax <code>${var}</code>, how to expand lists and dictionaries
@@ -10253,7 +10253,7 @@ test cases or user keywords (for example, <code>${my var}</code>). Much more
 importantly, though, case should be used consistently.</p>
 <p>A variable name, such as <code>${example}</code>, consists of the variable identifier
 (<code>$</code>, <code>@</code>, <code>&amp;</code>, <code>%</code>), curly braces (<code>{</code>, <code>}</code>), and the base name between the
-braces. When creating variables, there may also be a <a href="http://jkorpela.fi/chars/spaces.html">variable type definition</a>
+braces. When creating variables, there may also be a <a href="#variable-type-conversion">variable type definition</a>
 after the base name like <code>${example: int}</code>.</p>
 <p>The variable base name can contain any characters. It is, however, highly
 recommended to use only alphabetic characters, numbers, underscores and spaces.
@@ -10271,7 +10271,7 @@ lists, dictionaries, or even custom objects.</p>
 that the variables <code>${GREET}</code> and <code>${NAME}</code> are available
 and assigned to strings <code>Hello</code> and <code>world</code>, respectively,
 these two example test cases are equivalent:</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
 <span class="normal"><a href="#example-0-2">2</a></span>
 <span class="normal"><a href="#example-0-3">3</a></span>
 <span class="normal"><a href="#example-0-4">4</a></span>
@@ -10287,7 +10287,7 @@ these two example test cases are equivalent:</p>
 </span><span id="line-0-7"><a id="example-0-7" name="example-0-7"></a><span class="p">    </span><span class="nf">Log</span><span class="p">    ${</span><span class="nv">GREET</span><span class="p">}</span>
 </span><span id="line-0-8"><a id="example-0-8" name="example-0-8"></a><span class="p">    </span><span class="nf">Log</span><span class="p">    ${</span><span class="nv">GREET</span><span class="p">}</span><span class="s">, </span><span class="p">${</span><span class="nv">NAME</span><span class="p">}</span><span class="s">!!</span>
 </span></code></pre></div></td></tr></table></div>
-When a scalar variable is used alone without any text or other variables
+<p>When a scalar variable is used alone without any text or other variables
 around it, like in <code>${GREET}</code> above, the variable is replaced with
 its value as-is and the value can be any object. If the variable is not used
 alone, like <code>${GREER}, ${NAME}!!</code> above, its value is first converted into
@@ -10303,7 +10303,7 @@ variable in alone or with other content. First, let us assume
 that we have a variable <code>${STR}</code> set to a string <code>Hello,
 world!</code> and <code>${OBJ}</code> set to an instance of the following Python
 object:</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-1-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-1-1">1</a></span>
 <span class="normal"><a href="#example-1-2">2</a></span>
 <span class="normal"><a href="#example-1-3">3</a></span>
 <span class="normal"><a href="#example-1-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-1-1"><a id="example-1-1" name="example-1-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">MyObj</span><span class="p">:</span>
@@ -10311,8 +10311,8 @@ object:</p>
 </span><span id="line-1-3"><a id="example-1-3" name="example-1-3"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 </span><span id="line-1-4"><a id="example-1-4" name="example-1-4"></a>        <span class="k">return</span> <span class="s2">"Hi, terra!"</span>
 </span></code></pre></div></td></tr></table></div>
-With these two variables set, we then have the following test data:</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-2-1">1</a></span>
+<p>With these two variables set, we then have the following test data:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-2-1">1</a></span>
 <span class="normal"><a href="#example-2-2">2</a></span>
 <span class="normal"><a href="#example-2-3">3</a></span>
 <span class="normal"><a href="#example-2-4">4</a></span>
@@ -10324,13 +10324,13 @@ With these two variables set, we then have the following test data:</p>
 </span><span id="line-2-5"><a id="example-2-5" name="example-2-5"></a><span class="p">    </span><span class="nf">KW 3</span><span class="p">    </span><span class="s">I said "</span><span class="p">${</span><span class="nv">STR</span><span class="p">}</span><span class="s">"</span>
 </span><span id="line-2-6"><a id="example-2-6" name="example-2-6"></a><span class="p">    </span><span class="nf">KW 4</span><span class="p">    </span><span class="s">You said "</span><span class="p">${</span><span class="nv">OBJ</span><span class="p">}</span><span class="s">"</span>
 </span></code></pre></div></td></tr></table></div>
-Finally, when this test data is executed, different keywords receive
+<p>Finally, when this test data is executed, different keywords receive
 the arguments as explained below:</p>
 <ul>
-<li><em>KW 1</em> gets a string <code>Hello, world!</code></li>
-<li><em>KW 2</em> gets an object stored to variable <code>${OBJ}</code></li>
-<li><em>KW 3</em> gets a string <code>I said "Hello, world!"</code></li>
-<li><em>KW 4</em> gets a string <code>You said "Hi, terra!"</code></li>
+<li><em class="name">KW 1</em> gets a string <code>Hello, world!</code></li>
+<li><em class="name">KW 2</em> gets an object stored to variable <code>${OBJ}</code></li>
+<li><em class="name">KW 3</em> gets a string <code>I said "Hello, world!"</code></li>
+<li><em class="name">KW 4</em> gets a string <code>You said "Hi, terra!"</code></li>
 </ul>
 <h4 id="scalar-variables-containing-bytes">Scalar variables containing bytes<a class="headerlink" href="#scalar-variables-containing-bytes" title="Permanent link">&para;</a></h4>
 <p>Variables containing <a href="https://docs.python.org/3/library/stdtypes.html#bytes-objects">bytes</a> or <a href="https://docs.python.org/3/library/stdtypes.html#bytearray-objects">bytearrays</a> are handled slightly differently
@@ -10353,8 +10353,8 @@ than other variables containing non-string values:</p>
   and the prefix are omitted, and each byte is mapped to a Unicode code point
   with the same ordinal. In practice this is same as converting bytes to strings
   using the Latin-1 encoding. This format has a big benefit that the resulting
-  string can be converted back to bytes, for example, by using the <a href="../libraries/#builtin">BuiltIn</a>
-  keyword <em>Convert To Bytes</em> or by automatic <a href="../../extend/libraries/#argument-conversion">argument conversion</a>.</p>
+  string can be converted back to bytes, for example, by using the <a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a>
+  keyword <em class="name">Convert To Bytes</em> or by automatic <a href="../../extend/libraries/#argument-conversion">argument conversion</a>.</p>
 </li>
 </ul>
 <p>The following examples demonstrates using bytes and bytearrays would work
@@ -10407,7 +10407,7 @@ and individual items are passed in as separate arguments.</p>
 <p>This is easiest to explain with an example. Assuming that a variable <code>${USER}</code>
 contains a list with two items <code>robot</code> and <code>secret</code>, the first two of these tests
 are equivalent:</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-4-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-4-1">1</a></span>
 <span class="normal"><a href="#example-4-2">2</a></span>
 <span class="normal"><a href="#example-4-3">3</a></span>
 <span class="normal"><a href="#example-4-4">4</a></span>
@@ -10425,10 +10425,10 @@ are equivalent:</p>
 </span><span id="line-4-8"><a id="example-4-8" name="example-4-8"></a><span class="gu">List as scalar</span>
 </span><span id="line-4-9"><a id="example-4-9" name="example-4-9"></a><span class="p">    </span><span class="nf">Keyword</span><span class="p">    ${</span><span class="nv">USER</span><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
-The third test above illustrates that a variable containing a list can be used
+<p>The third test above illustrates that a variable containing a list can be used
 also as a scalar. In that test the keyword gets the whole list as a single argument.</p>
 <p>Starting from Robot Framework 4.0, list expansion can be used in combination with
-<a href="https://docs.python.org/3/library/stdtypes.html#bytes-objects">list item access</a> making these usages possible:</p>
+<a href="#accessing-sequence-items">list item access</a> making these usages possible:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-5-1">1</a></span>
 <span class="normal"><a href="#example-5-2">2</a></span>
 <span class="normal"><a href="#example-5-3">3</a></span>
@@ -10461,14 +10461,14 @@ other list variables.</p>
 </span><span id="line-6-5"><a id="example-6-5" name="example-6-5"></a><span class="p">    </span><span class="nf">Keyword</span><span class="p">    @{</span><span class="nv">LIST</span><span class="p">}    @{</span><span class="nv">ANOTHER</span><span class="p">}    @{</span><span class="nv">ONE MORE</span><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
 <h4 id="using-list-variables-with-settings">Using list variables with settings<a class="headerlink" href="#using-list-variables-with-settings" title="Permanent link">&para;</a></h4>
-<p>List variables can be used only with some of the <a href="../../appendix/translations/#settings">settings</a>. They can
+<p>List variables can be used only with some of the <a href="../../appendix/settings/#available-settings">settings</a>. They can
 be used in arguments to imported libraries and variable files, but
 library and variable file names themselves cannot be list
 variables. Also with setups and teardowns list variable can not be used
 as the name of the keyword, but can be used in arguments. With tag related
 settings they can be used freely. Using scalar variables is possible in
 those places where list variables are not supported.</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-7-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-7-1">1</a></span>
 <span class="normal"><a href="#example-7-2">2</a></span>
 <span class="normal"><a href="#example-7-3">3</a></span>
 <span class="normal"><a href="#example-7-4">4</a></span>
@@ -10484,7 +10484,7 @@ those places where list variables are not supported.</p>
 </span><span id="line-7-7"><a id="example-7-7" name="example-7-7"></a><span class="kn">Suite Setup</span><span class="p">     @{</span><span class="nv">KEYWORD AND ARGS</span><span class="p">}                </span><span class="c"># This does not work</span>
 </span><span id="line-7-8"><a id="example-7-8" name="example-7-8"></a><span class="err">Test Tags</span><span class="p">       @{</span><span class="nv">TAGS</span><span class="p">}                            </span><span class="c"># This works</span>
 </span></code></pre></div></td></tr></table></div>
-<a id="dictionary-variable"></a>
+<p><a id="dictionary-variable"></a>
 <a id="dictionary-variables"></a>
 <a id="dictionary-expansion"></a></p>
 <h3 id="dictionary-variable-syntax">Dictionary variable syntax<a class="headerlink" href="#dictionary-variable-syntax" title="Permanent link">&para;</a></h3>
@@ -10496,7 +10496,7 @@ this means that the dictionary is expanded and individual items are passed as
 <a href="../tests/#named-arguments">named arguments</a> to the keyword. Assuming that a variable <code>&amp;{USER}</code> has a
 value <code>{'name': 'robot', 'password': 'secret'}</code>, the first two test cases
 below are equivalent:</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-8-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-8-1">1</a></span>
 <span class="normal"><a href="#example-8-2">2</a></span>
 <span class="normal"><a href="#example-8-3">3</a></span>
 <span class="normal"><a href="#example-8-4">4</a></span>
@@ -10514,10 +10514,10 @@ below are equivalent:</p>
 </span><span id="line-8-8"><a id="example-8-8" name="example-8-8"></a><span class="gu">Dictionary as scalar</span>
 </span><span id="line-8-9"><a id="example-8-9" name="example-8-9"></a><span class="p">    </span><span class="nf">Keyword</span><span class="p">    ${</span><span class="nv">USER</span><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
-The third test above illustrates that a variable containing a dictionary can be used
+<p>The third test above illustrates that a variable containing a dictionary can be used
 also as a scalar. In that test the keyword gets the whole dictionary as a single argument.</p>
 <p>Starting from Robot Framework 4.0, dictionary expansion can be used in combination with
-<a href="https://docs.python.org/3/library/stdtypes.html#bytes-objects">dictionary item access</a> making usages like <code>&amp;{nested}[key]</code> possible.</p>
+<a href="#accessing-individual-dictionary-items">dictionary item access</a> making usages like <code>&amp;{nested}[key]</code> possible.</p>
 <h4 id="using-dictionary-variables-with-other-data">Using dictionary variables with other data<a class="headerlink" href="#using-dictionary-variables-with-other-data" title="Permanent link">&para;</a></h4>
 <p>It is possible to use dictionary variables with other arguments, including
 other dictionary variables. Because <a href="../tests/#named-argument-syntax">named argument syntax</a> requires positional
@@ -10536,13 +10536,13 @@ named arguments or other dictionaries.</p>
 <h4 id="using-dictionary-variables-with-settings">Using dictionary variables with settings<a class="headerlink" href="#using-dictionary-variables-with-settings" title="Permanent link">&para;</a></h4>
 <p>Dictionary variables cannot generally be used with settings. The only exception
 are imports, setups and teardowns where dictionaries can be used as arguments.</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-10-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-10-1">1</a></span>
 <span class="normal"><a href="#example-10-2">2</a></span>
 <span class="normal"><a href="#example-10-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-10-1"><a id="example-10-1" name="example-10-1"></a><span class="gh">*** Settings ***</span>
 </span><span id="line-10-2"><a id="example-10-2" name="example-10-2"></a><span class="kn">Library</span><span class="p">        </span><span class="nn">ExampleLibrary</span><span class="p">    &amp;{</span><span class="nv">LIB ARGS</span><span class="p">}</span>
 </span><span id="line-10-3"><a id="example-10-3" name="example-10-3"></a><span class="kn">Suite Setup</span><span class="p">    </span><span class="nf">Some Keyword</span><span class="p">      &amp;{</span><span class="nv">KW ARGS</span><span class="p">}     </span><span class="s">named=arg</span>
 </span></code></pre></div></td></tr></table></div>
-<a id="environment-variable"></a></p>
+<p><a id="environment-variable"></a></p>
 <h3 id="accessing-list-and-dictionary-items">Accessing list and dictionary items<a class="headerlink" href="#accessing-list-and-dictionary-items" title="Permanent link">&para;</a></h3>
 <p>It is possible to access items of subscriptable variables, e.g. lists and dictionaries,
 using special syntax like <code>${var}[item]</code> or <code>${var}[nested][item]</code>.
@@ -10558,13 +10558,13 @@ the old item access syntax was deprecated in Robot Framework 3.2.</p>
 </div>
 <p><a id="sequence-items"></a></p>
 <h4 id="accessing-sequence-items">Accessing sequence items<a class="headerlink" href="#accessing-sequence-items" title="Permanent link">&para;</a></h4>
-<p>It is possible to access a certain item of a variable containing a <a href="https://docs.python.org/3/library/stdtypes.html#bytes-objects">sequence</a>
+<p>It is possible to access a certain item of a variable containing a <a href="https://docs.python.org/3/glossary.html#term-sequence">sequence</a>
 (e.g. list, string or bytes) with the syntax <code>${var}[index]</code>, where <code>index</code>
 is the index of the selected value. Indices start from zero, negative indices
 can be used to access items from the end, and trying to access an item with
 too large an index causes an error. Indices are automatically converted to
 integers, and it is also possible to use variables as indices.</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-11-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-11-1"> 1</a></span>
 <span class="normal"><a href="#example-11-2"> 2</a></span>
 <span class="normal"><a href="#example-11-3"> 3</a></span>
 <span class="normal"><a href="#example-11-4"> 4</a></span>
@@ -10584,7 +10584,7 @@ integers, and it is also possible to use variables as indices.</p>
 </span><span id="line-11-9"><a id="example-11-9" name="example-11-9"></a><span class="gu">Index defined as variable</span>
 </span><span id="line-11-10"><a id="example-11-10" name="example-11-10"></a><span class="p">    </span><span class="nf">Keyword</span><span class="p">    ${</span><span class="nv">SEQUENCE</span><span class="p">}</span><span class="s">[</span><span class="p">${</span><span class="nv">INDEX</span><span class="p">}</span><span class="s">]</span>
 </span></code></pre></div></td></tr></table></div>
-Sequence item access supports also the <a href="https://docs.python.org/3/library/stdtypes.html#bytes-objects">same "slice" functionality as Python</a>
+<p>Sequence item access supports also the <a href="https://docs.python.org/glossary.html#term-slice">same "slice" functionality as Python</a>
 with syntax like <code>${var}[1:]</code>. With this syntax, you do not get a single
 item, but a <em>slice</em> of the original sequence. Same way as with Python, you can
 specify the start index, the end index, and the step:</p>
@@ -10677,9 +10677,9 @@ variable does not exists, by separating the variable name and the default
 value with an equal sign like <code>%{ENV_VAR_NAME=default value}</code>.</p>
 <p>Environment variables set in the operating system before the test execution are
 available during it, and it is possible to create new ones with the keyword
-<em>Set Environment Variable</em> or delete existing ones with the
-keyword <em>Delete Environment Variable</em>, both available in the
-<a href="../libraries/#operatingsystem">OperatingSystem</a> library. Because environment variables are global,
+<em class="name">Set Environment Variable</em> or delete existing ones with the
+keyword <em class="name">Delete Environment Variable</em>, both available in the
+<a href="https://robotframework.org/robotframework/latest/libraries/OperatingSystem.html">OperatingSystem</a> library. Because environment variables are global,
 environment variables set in one test case can be used in other test
 cases executed after it. However, changes to environment variables are
 not effective after the test execution.</p>
@@ -10706,7 +10706,7 @@ not effective after the test execution.</p>
 <ul>
 <li>In the <a href="#variable-section">Variable section</a></li>
 <li>Using <a href="../variable-files/#variable-files">variable files</a></li>
-<li>On the <a href="https://docs.python.org/3/library/stdtypes.html#bytes-objects">command line</a></li>
+<li>On the <a href="#command-line-variables">command line</a></li>
 <li>Based on <a href="#return-values-from-keywords">return values from keywords</a></li>
 <li>Using the <a href="#var-syntax">VAR syntax</a></li>
 <li>Using <a href="#set-testsuiteglobal-variable-keywords">Set Test/Suite/Global Variable keywords</a></li>
@@ -10733,7 +10733,7 @@ scalar variable. This is done by giving the variable name (including
 <code>${}</code>) in the first column of the Variable section and the value in
 the second one. If the second column is empty, an empty string is set
 as a value. Also an already defined variable can be used in the value.</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-16-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-16-1">1</a></span>
 <span class="normal"><a href="#example-16-2">2</a></span>
 <span class="normal"><a href="#example-16-3">3</a></span>
 <span class="normal"><a href="#example-16-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-16-1"><a id="example-16-1" name="example-16-1"></a><span class="gh">*** Variables ***</span>
@@ -10741,20 +10741,20 @@ as a value. Also an already defined variable can be used in the value.</p>
 </span><span id="line-16-3"><a id="example-16-3" name="example-16-3"></a><span class="p">${</span><span class="nv">VERSION</span><span class="p">}      </span><span class="s">2.0</span>
 </span><span id="line-16-4"><a id="example-16-4" name="example-16-4"></a><span class="p">${</span><span class="nv">ROBOT</span><span class="p">}        ${</span><span class="nv">NAME</span><span class="p">}</span><span class="s"> </span><span class="p">${</span><span class="nv">VERSION</span><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
-It is also possible, but not obligatory,
+<p>It is also possible, but not obligatory,
 to use the equals sign <code>=</code> after the variable name to make assigning
 variables slightly more explicit.</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-17-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-17-1">1</a></span>
 <span class="normal"><a href="#example-17-2">2</a></span>
 <span class="normal"><a href="#example-17-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-17-1"><a id="example-17-1" name="example-17-1"></a><span class="gh">*** Variables ***</span>
 </span><span id="line-17-2"><a id="example-17-2" name="example-17-2"></a><span class="p">${</span><span class="nv">NAME</span><span class="p">} =       </span><span class="s">Robot Framework</span>
 </span><span id="line-17-3"><a id="example-17-3" name="example-17-3"></a><span class="p">${</span><span class="nv">VERSION</span><span class="p">} =    </span><span class="s">2.0</span>
 </span></code></pre></div></td></tr></table></div>
-If a scalar variable has a long value, it can be <a href="https://docs.python.org/3/library/stdtypes.html#bytes-objects">split into multiple rows</a>
+<p>If a scalar variable has a long value, it can be <a href="../data/#dividing-data-to-several-rows">split into multiple rows</a>
 by using the <code>...</code> syntax. By default rows are concatenated together using
 a space, but this can be changed by using a <code>separator</code> configuration
 option after the last value:</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-18-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-18-1">1</a></span>
 <span class="normal"><a href="#example-18-2">2</a></span>
 <span class="normal"><a href="#example-18-3">3</a></span>
 <span class="normal"><a href="#example-18-4">4</a></span>
@@ -10768,10 +10768,10 @@ option after the last value:</p>
 </span><span id="line-18-6"><a id="example-18-6" name="example-18-6"></a><span class="p">...             </span><span class="s">Third line.</span>
 </span><span id="line-18-7"><a id="example-18-7" name="example-18-7"></a><span class="p">...             </span><span class="s">separator=\n</span>
 </span></code></pre></div></td></tr></table></div>
-The <code>separator</code> option is new in Robot Framework 7.0, but also older versions
+<p>The <code>separator</code> option is new in Robot Framework 7.0, but also older versions
 support configuring the separator. With them the first value can contain a
 special <code>SEPARATOR</code> marker:</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-19-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-19-1">1</a></span>
 <span class="normal"><a href="#example-19-2">2</a></span>
 <span class="normal"><a href="#example-19-3">3</a></span>
 <span class="normal"><a href="#example-19-4">4</a></span>
@@ -10781,7 +10781,7 @@ special <code>SEPARATOR</code> marker:</p>
 </span><span id="line-19-4"><a id="example-19-4" name="example-19-4"></a><span class="p">...             </span><span class="s">Second line.</span>
 </span><span id="line-19-5"><a id="example-19-5" name="example-19-5"></a><span class="p">...             </span><span class="s">Third line.</span>
 </span></code></pre></div></td></tr></table></div>
-Both the <code>separator</code> option and the <code>SEPARATOR</code> marker are case-sensitive.
+<p>Both the <code>separator</code> option and the <code>SEPARATOR</code> marker are case-sensitive.
 Using the <code>separator</code> option is recommended, unless there is a need to
 support also older versions.</p>
 <h4 id="creating-lists">Creating lists<a class="headerlink" href="#creating-lists" title="Permanent link">&para;</a></h4>
@@ -10789,7 +10789,7 @@ support also older versions.</p>
 variable name is in the first column of the Variable section and
 values in the subsequent columns, but this time the variable name must
 start with <code>@</code> instead of <code>$</code>. A list can have any number of items,
-including zero, and items can be <a href="https://docs.python.org/3/library/stdtypes.html#bytes-objects">split into several rows</a> if needed.</p>
+including zero, and items can be <a href="../data/#dividing-data-to-several-rows">split into several rows</a> if needed.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-20-1">1</a></span>
 <span class="normal"><a href="#example-20-2">2</a></span>
 <span class="normal"><a href="#example-20-3">3</a></span>
@@ -10813,7 +10813,7 @@ by using the list expansion syntax like <code>@{NAMES}</code>.</p>
 The differences are that the name must now start with <code>&amp;</code> and that items need
 to be created using the <code>name=value</code> syntax or based on existing dictionary variables.
 If there are multiple items with same name, the last value has precedence.
-If a name contains a literal equal sign, it can be <a href="https://docs.python.org/3/library/stdtypes.html#bytes-objects">escaped</a> with a backslash like <code>\=</code>.</p>
+If a name contains a literal equal sign, it can be <a href="../data/#escaping">escaped</a> with a backslash like <code>\=</code>.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-21-1">1</a></span>
 <span class="normal"><a href="#example-21-2">2</a></span>
 <span class="normal"><a href="#example-21-3">3</a></span>
@@ -10871,31 +10871,32 @@ kind of variables. It is possible to assign variables to any object
 using them, and they also enable creating variables dynamically. The
 variable file syntax and taking variable files into use is explained
 in section <a href="../variable-files/#variable-files">Resource and variable files</a>.</p>
+<p><a id="individual-variables"></a></p>
 <h3 id="command-line-variables">Command line variables<a class="headerlink" href="#command-line-variables" title="Permanent link">&para;</a></h3>
 <p>Variables can be set from the command line either individually with
-the <code>--variable (-v)</code> option or using the aforementioned variable files
-with the <code>--variablefile (-V)</code> option. Variables set from the command line
+the <code class="option">--variable (-v)</code> option or using the aforementioned variable files
+with the <code class="option">--variablefile (-V)</code> option. Variables set from the command line
 are globally available for all executed test data files, and they also
 override possible variables with the same names in the Variable section and in
 variable files imported in the Setting section.</p>
-<p>The syntax for setting individual variables is <code>--variable name:value</code>,
+<p>The syntax for setting individual variables is <code class="option">--variable name:value</code>,
 where <code>name</code> is the name of the variable without the <code>${}</code> decoration and <code>value</code>
 is its value. Several variables can be set by using this option several times.</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-23-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-23-1">1</a></span>
 <span class="normal"><a href="#example-23-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-23-1"><a id="example-23-1" name="example-23-1"></a>--variable<span class="w"> </span>EXAMPLE:value
 </span><span id="line-23-2"><a id="example-23-2" name="example-23-2"></a>--variable<span class="w"> </span>HOST:localhost:7272<span class="w"> </span>--variable<span class="w"> </span>USER:robot
 </span></code></pre></div></td></tr></table></div>
-In the examples above, variables are set so that:</p>
+<p>In the examples above, variables are set so that:</p>
 <ul>
 <li><code>${EXAMPLE}</code> gets value <code>value</code>, and</li>
 <li><code>${HOST}</code> and <code>${USER}</code> get values <code>localhost:7272</code> and <code>robot</code>, respectively.</li>
 </ul>
 <p>The basic syntax for taking <a href="../variable-files/#variable-files">variable files</a> into use from the command line is
-<code>--variablefile path/to/variables.py</code> and the <a href="../variable-files/#taking-variable-files-into-use">Taking variable files into
+<code class="option">--variablefile path/to/variables.py</code> and the <a href="../variable-files/#taking-variable-files-into-use">Taking variable files into
 use</a> section explains this more thoroughly. What variables actually are created
 depends on what variables there are in the referenced variable file.</p>
 <p>If both variable files and individual variables are given from the command line,
-the latter have <a href="https://docs.python.org/3/library/stdtypes.html#bytes-objects">higher priority</a>.</p>
+the latter have <a href="#variable-priorities-and-scopes">higher priority</a>.</p>
 <h3 id="return-values-from-keywords">Return values from keywords<a class="headerlink" href="#return-values-from-keywords" title="Permanent link">&para;</a></h3>
 <p>Return values from keywords can also be assigned into variables. This
 allows communication between different keywords even in different libraries
@@ -10913,7 +10914,7 @@ as explained in the subsequent sections.</p>
 <h4 id="assigning-scalar-variables">Assigning scalar variables<a class="headerlink" href="#assigning-scalar-variables" title="Permanent link">&para;</a></h4>
 <p>Any value returned by a keyword can be assigned to a <a href="#scalar-variable">scalar variable</a>.
 As illustrated by the example below, the required syntax is very simple:</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-24-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-24-1">1</a></span>
 <span class="normal"><a href="#example-24-2">2</a></span>
 <span class="normal"><a href="#example-24-3">3</a></span>
 <span class="normal"><a href="#example-24-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-24-1"><a id="example-24-1" name="example-24-1"></a><span class="gh">*** Test Cases ***</span>
@@ -10921,8 +10922,8 @@ As illustrated by the example below, the required syntax is very simple:</p>
 </span><span id="line-24-3"><a id="example-24-3" name="example-24-3"></a><span class="p">    ${</span><span class="nv">x</span><span class="p">} =    </span><span class="nf">Get X</span><span class="p">    </span><span class="s">an argument</span>
 </span><span id="line-24-4"><a id="example-24-4" name="example-24-4"></a><span class="p">    </span><span class="nf">Log</span><span class="p">    </span><span class="s">We got </span><span class="p">${</span><span class="nv">x</span><span class="p">}</span><span class="s">!</span>
 </span></code></pre></div></td></tr></table></div>
-In the above example the value returned by the <em>Get X</em> keyword
-is first set into the variable <code>${x}</code> and then used by the <em>Log</em>
+<p>In the above example the value returned by the <em class="name">Get X</em> keyword
+is first set into the variable <code>${x}</code> and then used by the <em class="name">Log</em>
 keyword. Having the equals sign <code>=</code> after the name of the assigned variable is
 not obligatory, but it makes the assignment more explicit. Creating
 local variables like this works both in test case and user keyword level.</p>
@@ -10988,7 +10989,7 @@ variable dynamically based on another variable:</p>
 <h4 id="assigning-list-variables">Assigning list variables<a class="headerlink" href="#assigning-list-variables" title="Permanent link">&para;</a></h4>
 <p>If a keyword returns a list or any list-like object, it is possible to
 assign it to a <a href="#list-variable">list variable</a>:</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-28-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-28-1">1</a></span>
 <span class="normal"><a href="#example-28-2">2</a></span>
 <span class="normal"><a href="#example-28-3">3</a></span>
 <span class="normal"><a href="#example-28-4">4</a></span>
@@ -10998,7 +10999,7 @@ assign it to a <a href="#list-variable">list variable</a>:</p>
 </span><span id="line-28-4"><a id="example-28-4" name="example-28-4"></a><span class="p">    </span><span class="nf">Length Should Be</span><span class="p">    ${</span><span class="nv">list</span><span class="p">}    </span><span class="s">3</span>
 </span><span id="line-28-5"><a id="example-28-5" name="example-28-5"></a><span class="p">    </span><span class="nf">Log Many</span><span class="p">    @{</span><span class="nv">list</span><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
-Because all Robot Framework variables are stored in the same namespace, there is
+<p>Because all Robot Framework variables are stored in the same namespace, there is
 not much difference between assigning a value to a scalar variable or a list
 variable. This can be seen by comparing the above example with the earlier
 example with the <code>List assigned to scalar variable</code> test case. The main
@@ -11010,7 +11011,7 @@ stored value will be the exact same object that was returned.</p>
 <h4 id="assigning-dictionary-variables">Assigning dictionary variables<a class="headerlink" href="#assigning-dictionary-variables" title="Permanent link">&para;</a></h4>
 <p>If a keyword returns a dictionary or any dictionary-like object, it is possible
 to assign it to a <a href="#dictionary-variable">dictionary variable</a>:</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-29-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-29-1">1</a></span>
 <span class="normal"><a href="#example-29-2">2</a></span>
 <span class="normal"><a href="#example-29-3">3</a></span>
 <span class="normal"><a href="#example-29-4">4</a></span>
@@ -11022,7 +11023,7 @@ to assign it to a <a href="#dictionary-variable">dictionary variable</a>:</p>
 </span><span id="line-29-5"><a id="example-29-5" name="example-29-5"></a><span class="p">    </span><span class="nf">Do Something</span><span class="p">    &amp;{</span><span class="nv">dict</span><span class="p">}</span>
 </span><span id="line-29-6"><a id="example-29-6" name="example-29-6"></a><span class="p">    </span><span class="nf">Log</span><span class="p">    ${</span><span class="nv">dict.first</span><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
-Because all Robot Framework variables are stored in the same namespace, it would
+<p>Because all Robot Framework variables are stored in the same namespace, it would
 also be possible to assign a dictionary into a scalar variable and use it
 later as a dictionary when needed. There are, however, some concrete benefits
 in creating a dictionary variable explicitly. First of all, Robot Framework
@@ -11036,7 +11037,7 @@ Values in these dictionaries can be accessed using attribute access like
 <p>If a keyword returns a list or a list-like object, it is possible to assign
 individual values into multiple scalar variables or into scalar variables and
 a list variable.</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-30-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-30-1">1</a></span>
 <span class="normal"><a href="#example-30-2">2</a></span>
 <span class="normal"><a href="#example-30-3">3</a></span>
 <span class="normal"><a href="#example-30-4">4</a></span>
@@ -11048,7 +11049,7 @@ a list variable.</p>
 </span><span id="line-30-5"><a id="example-30-5" name="example-30-5"></a><span class="p">    @{</span><span class="nv">before</span><span class="p">}    ${</span><span class="nv">last</span><span class="p">} =    </span><span class="nf">Get Three</span>
 </span><span id="line-30-6"><a id="example-30-6" name="example-30-6"></a><span class="p">    ${</span><span class="nv">begin</span><span class="p">}    @{</span><span class="nv">middle</span><span class="p">}    ${</span><span class="nv">end</span><span class="p">} =    </span><span class="nf">Get Three</span>
 </span></code></pre></div></td></tr></table></div>
-Assuming that the keyword <em>Get Three</em> returns a list <code>[1, 2, 3]</code>,
+<p>Assuming that the keyword <em class="name">Get Three</em> returns a list <code>[1, 2, 3]</code>,
 the following variables are created:</p>
 <ul>
 <li><code>${a}</code>, <code>${b}</code> and <code>${c}</code> with values <code>1</code>, <code>2</code>, and <code>3</code>, respectively.</li>
@@ -11064,19 +11065,19 @@ and dictionary variables can only be assigned alone.</p>
 <p>To make it easier to understand what happens during execution,
 the beginning of value that is assigned is automatically logged.
 The default is to show 200 first characters, but this can be changed
-by using the <code>--maxassignlength</code> command line option when
+by using the <code class="option">--maxassignlength</code> command line option when
 running tests. If the value is zero or negative, the whole assigned
 value is hidden.</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-31-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-31-1">1</a></span>
 <span class="normal"><a href="#example-31-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-31-1"><a id="example-31-1" name="example-31-1"></a>--maxassignlength<span class="w"> </span><span class="m">1000</span>
 </span><span id="line-31-2"><a id="example-31-2" name="example-31-2"></a>--maxassignlength<span class="w"> </span><span class="m">0</span>
 </span></code></pre></div></td></tr></table></div>
-The reason the value is not logged fully is that it could be really
+<p>The reason the value is not logged fully is that it could be really
 big. If you always want to see a certain value fully, it is possible
-to use the <a href="../libraries/#builtin">BuiltIn</a> <em>Log</em> keyword to log it after the assignment.</p>
+to use the <a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> <em class="name">Log</em> keyword to log it after the assignment.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The <code>--maxassignlength</code> option is new in Robot Framework 5.0.</p>
+<p>The <code class="option">--maxassignlength</code> option is new in Robot Framework 5.0.</p>
 </div>
 <h3 id="var-syntax"><code>VAR</code> syntax<a class="headerlink" href="#var-syntax" title="Permanent link">&para;</a></h3>
 <p>Starting from Robot Framework 7.0, it is possible to create variables inside
@@ -11085,10 +11086,10 @@ and it must be followed by a variable name and value. Other than the mandatory
 <code>VAR</code>, the overall syntax is mostly the same as when creating variables
 in the <a href="#variable-section">Variable section</a>.</p>
 <p>The new syntax aims to make creating variables simpler and more uniform. It is
-especially indented to replace the <a href="../libraries/#builtin">BuiltIn</a> keywords <em>Set Variable</em>,
-<em>Set Local Variable</em>, <em>Set Test Variable</em>, <em>Set Suite Variable</em>
-and <em>Set Global Variable</em>, but it can be used instead of <em>Catenate</em>,
-<em>Create List</em> and <em>Create Dictionary</em> as well.</p>
+especially indented to replace the <a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> keywords <em class="name">Set Variable</em>,
+<em class="name">Set Local Variable</em>, <em class="name">Set Test Variable</em>, <em class="name">Set Suite Variable</em>
+and <em class="name">Set Global Variable</em>, but it can be used instead of <em class="name">Catenate</em>,
+<em class="name">Create List</em> and <em class="name">Create Dictionary</em> as well.</p>
 <h4 id="creating-scalar-variables">Creating scalar variables<a class="headerlink" href="#creating-scalar-variables" title="Permanent link">&para;</a></h4>
 <p>In simple cases scalar variables are created by just giving a variable name
 and its value. The value can be a hard-coded string or it can itself contain
@@ -11377,43 +11378,43 @@ another variable.</p>
 </span><span id="line-36-4"><a id="example-36-4" name="example-36-4"></a><span class="p">    </span><span class="nf">VAR</span><span class="p">    ${${</span><span class="nv">x</span><span class="p">}}    </span><span class="s">z</span><span class="p">    </span><span class="c"># Name created dynamically.</span>
 </span><span id="line-36-5"><a id="example-36-5" name="example-36-5"></a><span class="p">    </span><span class="nf">Should Be Equal</span><span class="p">    ${</span><span class="nv">y</span><span class="p">}    </span><span class="s">z</span>
 </span></code></pre></div></td></tr></table></div>
-<h3 id="set-testsuiteglobal-variable-keywords"><em>Set Test/Suite/Global Variable</em> keywords<a class="headerlink" href="#set-testsuiteglobal-variable-keywords" title="Permanent link">&para;</a></h3>
+<h3 id="set-testsuiteglobal-variable-keywords"><em class="name">Set Test/Suite/Global Variable</em> keywords<a class="headerlink" href="#set-testsuiteglobal-variable-keywords" title="Permanent link">&para;</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The <code>VAR</code> syntax is recommended over these keywords when using
 Robot Framework 7.0 or newer.</p>
 </div>
-<p>The <a href="../libraries/#builtin">BuiltIn</a> library has keywords <em>Set Test Variable</em>,
-<em>Set Suite Variable</em> and <em>Set Global Variable</em> which can
+<p>The <a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> library has keywords <em class="name">Set Test Variable</em>,
+<em class="name">Set Suite Variable</em> and <em class="name">Set Global Variable</em> which can
 be used for setting variables dynamically during the test
 execution. If a variable already exists within the new scope, its
 value will be overwritten, and otherwise a new variable is created.</p>
-<p>Variables set with <em>Set Test Variable</em> keyword are available
+<p>Variables set with <em class="name">Set Test Variable</em> keyword are available
 everywhere within the scope of the currently executed test case. For
 example, if you set a variable in a user keyword, it is available both
 in the test case level and also in all other user keywords used in the
 current test. Other test cases will not see variables set with this
-keyword. It is an error to call <em>Set Test Variable</em>
+keyword. It is an error to call <em class="name">Set Test Variable</em>
 outside the scope of a test (e.g. in a Suite Setup or Teardown).</p>
-<p>Variables set with <em>Set Suite Variable</em> keyword are available
+<p>Variables set with <em class="name">Set Suite Variable</em> keyword are available
 everywhere within the scope of the currently executed test
 suite. Setting variables with this keyword thus has the same effect as
 creating them using the <a href="#variable-section">Variable section</a> in the test data file or
 importing them from <a href="../variable-files/#variable-files">variable files</a>. Other test suites, including
 possible child test suites, will not see variables set with this
 keyword.</p>
-<p>Variables set with <em>Set Global Variable</em> keyword are globally
+<p>Variables set with <em class="name">Set Global Variable</em> keyword are globally
 available in all test cases and suites executed after setting
 them. Setting variables with this keyword thus has the same effect as
-<a href="https://docs.python.org/3/library/stdtypes.html#bytes-objects">creating variables on the command line</a> using the <code>--variable</code> and
-<code>--variablefile</code> options. Because this keyword can change variables
+<a href="#command-line-variables">creating variables on the command line</a> using the <code class="option">--variable</code> and
+<code class="option">--variablefile</code> options. Because this keyword can change variables
 everywhere, it should be used with care.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p><em>Set Test/Suite/Global Variable</em> keywords set named
-variables directly into <a href="https://docs.python.org/3/library/stdtypes.html#bytearray-objects">test, suite or global variable scope</a>
-and return nothing. On the other hand, another <a href="../libraries/#builtin">BuiltIn</a> keyword
-<em>Set Variable</em> sets local variables using <a href="https://docs.python.org/3/glossary.html#term-sequence">return values</a>.</p>
+<p><em class="name">Set Test/Suite/Global Variable</em> keywords set named
+variables directly into <a href="#variable-scopes">test, suite or global variable scope</a>
+and return nothing. On the other hand, another <a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> keyword
+<em class="name">Set Variable</em> sets local variables using <a href="#return-values-from-keywords">return values</a>.</p>
 </div>
 <h3 id="variable-type-conversion">Variable type conversion<a class="headerlink" href="#variable-type-conversion" title="Permanent link">&para;</a></h3>
 <p>Variable values are typically strings, but non-string values are often needed
@@ -11434,12 +11435,12 @@ and how it works in practice is discussed in this section.</p>
 <p>Variable type conversion is new in Robot Framework 7.3.</p>
 </div>
 <h4 id="variable-type-syntax">Variable type syntax<a class="headerlink" href="#variable-type-syntax" title="Permanent link">&para;</a></h4>
-<p>The general variable types syntax is <code>${name: type}</code> <a href="https://docs.python.org/glossary.html#term-slice">in the data</a> and
-<code>name: type:value</code> <a href="https://groups.google.com/group/robotframework-users/browse_thread/thread/ccc9e1cd77870437/4577836fe946e7d5?lnk=gst&amp;q=templates#4577836fe946e7d5">on the command line</a>. The space after the colon is mandatory
+<p>The general variable types syntax is <code>${name: type}</code> <a href="#variable-conversion-in-data">in the data</a> and
+<code>name: type:value</code> <a href="#variable-conversion-on-command-line">on the command line</a>. The space after the colon is mandatory
 in both cases. Although variable name can in some contexts be created dynamically
 based on another variable, the type and the type separator must be always specified
 as literal values.</p>
-<p>Variable type conversion supports the same base types that the <a href="http://jkorpela.fi/chars/spaces.html">argument conversion</a>
+<p>Variable type conversion supports the same base types that the <a href="../../extend/libraries/#supported-conversions">argument conversion</a>
 supports with library keywords. For example, <code>${number: int}</code> means that the value
 of the variable <code>${number}</code> is converted to an integer.</p>
 <p>Variable type conversion supports also <a href="../../extend/libraries/#specifying-multiple-possible-types">specifying multiple possible types</a>
@@ -11515,13 +11516,13 @@ for more details.</p>
 keywords</a>. The <a href="#var-syntax">VAR syntax</a> needs to be used instead.</p>
 </div>
 <h4 id="conversion-with-list-and-dict-variables">Conversion with <code>@{list}</code> and <code>&amp;{dict}</code> variables<a class="headerlink" href="#conversion-with-list-and-dict-variables" title="Permanent link">&para;</a></h4>
-<p>Type conversion works also when creating <a href="https://docs.python.org/3/library/stdtypes.html#bytes-objects">lists</a> and <a href="https://docs.python.org/3/library/stdtypes.html#bytearray-objects">dictionaries</a> using
+<p>Type conversion works also when creating <a href="#creating-lists">lists</a> and <a href="#creating-dictionaries">dictionaries</a> using
 <code>@{list}</code> and <code>&amp;{dict}</code> syntax. With lists the type is specified
 like <code>@{name: type}</code> and the type is the type of the list items. With dictionaries
 the type of the dictionary values can be specified like <code>&amp;{name: type}</code>. If
 there is a need to specify also the key type, it is possible to use syntax
 <code>&amp;{name: ktype=vtype}</code>.</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-38-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-38-1">1</a></span>
 <span class="normal"><a href="#example-38-2">2</a></span>
 <span class="normal"><a href="#example-38-3">3</a></span>
 <span class="normal"><a href="#example-38-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-38-1"><a id="example-38-1" name="example-38-1"></a><span class="gh">*** Variables ***</span>
@@ -11529,10 +11530,10 @@ there is a need to specify also the key type, it is possible to use syntax
 </span><span id="line-38-3"><a id="example-38-3" name="example-38-3"></a><span class="p">&amp;{</span><span class="nv">DATES: date</span><span class="p">}            </span><span class="s">rc1=2025-05-08</span><span class="p">    </span><span class="s">final=2025-05-30</span>
 </span><span id="line-38-4"><a id="example-38-4" name="example-38-4"></a><span class="p">&amp;{</span><span class="nv">PRIORITIES: int=str</span><span class="p">}    </span><span class="s">3278=Critical</span><span class="p">    </span><span class="s">4173=High</span><span class="p">    </span><span class="s">5334=High</span>
 </span></code></pre></div></td></tr></table></div>
-An alternative way to create lists and dictionaries is creating <code>${scalar}</code> variables,
+<p>An alternative way to create lists and dictionaries is creating <code>${scalar}</code> variables,
 using <code>list</code> and <code>dict</code> types, possibly parameterizing them, and giving values as
 Python list and dictionary literals:</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-39-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-39-1">1</a></span>
 <span class="normal"><a href="#example-39-2">2</a></span>
 <span class="normal"><a href="#example-39-3">3</a></span>
 <span class="normal"><a href="#example-39-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-39-1"><a id="example-39-1" name="example-39-1"></a><span class="gh">*** Variables ***</span>
@@ -11540,11 +11541,11 @@ Python list and dictionary literals:</p>
 </span><span id="line-39-3"><a id="example-39-3" name="example-39-3"></a><span class="p">${</span><span class="nv">DATES: list[date]</span><span class="p">}             </span><span class="s">{'rc1': '2025-05-08', 'final': '2025-05-30'}</span>
 </span><span id="line-39-4"><a id="example-39-4" name="example-39-4"></a><span class="p">${</span><span class="nv">PRIORITIES: dict[int, str]</span><span class="p">}    </span><span class="s">{3278: 'Critical', 4173: 'High', 5334: 'High'}</span>
 </span></code></pre></div></td></tr></table></div>
-Using Python list and dictionary literals can be somewhat complicated especially
+<p>Using Python list and dictionary literals can be somewhat complicated especially
 for non-programmers. The main benefit of this approach is that it supports also
 nested structures without needing to use temporary values. The following examples
 create the same <code>${PAYLOAD}</code> variable using different approaches:</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-40-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-40-1">1</a></span>
 <span class="normal"><a href="#example-40-2">2</a></span>
 <span class="normal"><a href="#example-40-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-40-1"><a id="example-40-1" name="example-40-1"></a><span class="gh">*** Variables ***</span>
 </span><span id="line-40-2"><a id="example-40-2" name="example-40-2"></a><span class="p">@{</span><span class="nv">CHILDREN: int</span><span class="p">}            </span><span class="s">2</span><span class="p">    </span><span class="s">13</span><span class="p">    </span><span class="s">15</span>
@@ -11553,7 +11554,7 @@ create the same <code>${PAYLOAD}</code> variable using different approaches:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-41-1">1</a></span>
 <span class="normal"><a href="#example-41-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-41-1"><a id="example-41-1" name="example-41-1"></a><span class="gh">*** Variables ***</span>
 </span><span id="line-41-2"><a id="example-41-2" name="example-41-2"></a><span class="p">${</span><span class="nv">PAYLOAD: dict</span><span class="p">}            </span><span class="s">{'id': 1, 'name': 'Robot', 'children': [2, 13, 15]}</span>
-</span></code></pre></div></td></tr></table></div></p>
+</span></code></pre></div></td></tr></table></div>
 <h4 id="variable-conversion-on-command-line">Variable conversion on command line<a class="headerlink" href="#variable-conversion-on-command-line" title="Permanent link">&para;</a></h4>
 <p>Variable conversion works also with the <a href="#command-line-variables">command line variables</a> that are
 created using the <code>--variable</code> option. The syntax is <code>name: type:value</code> and,
@@ -11562,9 +11563,9 @@ be quoted. Following examples demonstrate some possible usages for this
 functionality:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-42-1">1</a></span>
 <span class="normal"><a href="#example-42-2">2</a></span>
-<span class="normal"><a href="#example-42-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-42-1"><a id="example-42-1" name="example-42-1"></a><span class="o">--</span><span class="n">variable</span> <span class="s2">"ITERATIONS: int:99"</span>
-</span><span id="line-42-2"><a id="example-42-2" name="example-42-2"></a><span class="o">--</span><span class="n">variable</span> <span class="s2">"PAYLOAD: dict:{'id': 1, 'name': 'Robot', 'children': [2, 13, 15]}"</span>
-</span><span id="line-42-3"><a id="example-42-3" name="example-42-3"></a><span class="o">--</span><span class="n">variable</span> <span class="s2">"START_TIME: datetime:now"</span>
+<span class="normal"><a href="#example-42-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-42-1"><a id="example-42-1" name="example-42-1"></a>--variable "ITERATIONS: int:99"
+</span><span id="line-42-2"><a id="example-42-2" name="example-42-2"></a>--variable "PAYLOAD: dict:{'id': 1, 'name': 'Robot', 'children': [2, 13, 15]}"
+</span><span id="line-42-3"><a id="example-42-3" name="example-42-3"></a>--variable "START_TIME: datetime:now"
 </span></code></pre></div></td></tr></table></div>
 <h4 id="failing-conversion">Failing conversion<a class="headerlink" href="#failing-conversion" title="Permanent link">&para;</a></h4>
 <p>If type conversion fails, there is an error and the variable is not created.
@@ -11585,10 +11586,10 @@ type or if the type itself is not supported:</p>
 <h3 id="secret-variables">Secret variables<a class="headerlink" href="#secret-variables" title="Permanent link">&para;</a></h3>
 <p>An important usage for <a href="#variable-type-conversion">variable type conversion</a> is creating so called
 <em>secret variables</em>. These variables encapsulate their values so that the real
-values are <a href="https://docs.python.org/3/library/stdtypes.html#bytes-objects">not logged even on the trace level</a> when variables are passed
+values are <a href="../../execution/results/#log-levels">not logged even on the trace level</a> when variables are passed
 between keywords as arguments and return values.</p>
 <p>The actual value is available via the <code>value</code> attribute of a secret variable.
-It is mainly meant to be used by <a href="../../extend/libraries/#creating-keywords">library keywords</a> that accept <a href="https://docs.python.org/3/library/stdtypes.html#bytearray-objects">secret values</a>,
+It is mainly meant to be used by <a href="../libraries/#using-test-libraries">library keywords</a> that accept <a href="../../extend/libraries/#secret-type">secret values</a>,
 but it can be accessed also in the data using the <a href="#extended-variable-syntax">extended variable syntax</a>
 like <code>${secret.value}</code>. Accessing the value in the data makes it visible in the
 log file similarly as if it was a normal variable, so that should only be done for
@@ -11613,7 +11614,7 @@ with a literal value like <code>%{SECRET}123</code> is allowed as well.</p>
 <p>If showing the secret variable in the data is not an issue, it is possible to use
 environment variable default values like <code>%{NAME=default}</code>. The name can even be
 left empty like <code>%{=secret}</code> to always use the default value.</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-44-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-44-1">1</a></span>
 <span class="normal"><a href="#example-44-2">2</a></span>
 <span class="normal"><a href="#example-44-3">3</a></span>
 <span class="normal"><a href="#example-44-4">4</a></span>
@@ -11625,7 +11626,7 @@ left empty like <code>%{=secret}</code> to always use the default value.</p>
 </span><span id="line-44-5"><a id="example-44-5" name="example-44-5"></a><span class="p">${</span><span class="nv">JOIN: Secret</span><span class="p">}       ${</span><span class="nv">XXX</span><span class="p">}</span><span class="s">-123</span><span class="p">      </span><span class="c"># Joining secrets with literals is ok.</span>
 </span><span id="line-44-6"><a id="example-44-6" name="example-44-6"></a><span class="p">${</span><span class="nv">LITERAL: Secret</span><span class="p">}    </span><span class="s">robot123</span><span class="p">        </span><span class="c"># This fails.</span>
 </span></code></pre></div></td></tr></table></div>
-Also list and dictionary variables support secret values:</p>
+<p>Also list and dictionary variables support secret values:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-45-1">1</a></span>
 <span class="normal"><a href="#example-45-2">2</a></span>
 <span class="normal"><a href="#example-45-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-45-1"><a id="example-45-1" name="example-45-1"></a><span class="gh">*** Variables ***</span>
@@ -11638,22 +11639,22 @@ Also list and dictionary variables support secret values:</p>
 secret variables is exactly the same when using the <a href="#var-syntax">VAR syntax</a>.</p>
 </div>
 <h4 id="creating-secrets-on-command-line">Creating secrets on command line<a class="headerlink" href="#creating-secrets-on-command-line" title="Permanent link">&para;</a></h4>
-<p><a href="https://docs.python.org/3/library/stdtypes.html#bytes-objects">Command line variable conversion</a> supports secret values directly:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-46-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-46-1"><a id="example-46-1" name="example-46-1"></a><span class="o">--</span><span class="n">variable</span> <span class="s2">"PASSWORD: Secret:robot123"</span>
+<p><a href="#variable-conversion-on-command-line">Command line variable conversion</a> supports secret values directly:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-46-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-46-1"><a id="example-46-1" name="example-46-1"></a>--variable "PASSWORD: Secret:robot123"
 </span></code></pre></div></td></tr></table></div>
 <p>Having the secret value directly visible on the command line history or in continuous
 integration system logs can be a security risk. One way to mitigate that is using
 environment variables:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-47-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-47-1"><a id="example-47-1" name="example-47-1"></a><span class="o">--</span><span class="n">variable</span> <span class="s2">"PASSWORD: Secret:$PASSWORD"</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-47-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-47-1"><a id="example-47-1" name="example-47-1"></a>--variable "PASSWORD: Secret:$PASSWORD"
 </span></code></pre></div></td></tr></table></div>
 <p>Many systems running tests or tasks also support hiding secret values used on
 the command line.</p>
 <h4 id="creating-secrets-programmatically">Creating secrets programmatically<a class="headerlink" href="#creating-secrets-programmatically" title="Permanent link">&para;</a></h4>
-<p>Secrets can be created programmatically by using the <a href="../../extend/libraries/#secret-type">robot.api.types.Secret</a>
-class. This is most commonly done by <a href="../../extend/#libraries">libraries</a> and <a href="../variable-files/#variable-files">variable files</a>, but also
-<a href="https://docs.python.org/3/library/stdtypes.html#bytes-objects">pre-run modifiers</a> and <a href="../../extend/listeners/#listeners">listeners</a> can utilize secrets if needed.</p>
+<p>Secrets can be created programmatically by using the <a href="https://robot-framework.readthedocs.io/en/master/autodoc/robot.utils.html#robot.utils.secret.Secret">robot.api.types.Secret</a>
+class. This is most commonly done by <a href="../libraries/#using-test-libraries">libraries</a> and <a href="../variable-files/#variable-files">variable files</a>, but also
+<a href="../../execution/configuration/#programmatic-modification-of-test-data">pre-run modifiers</a> and <a href="../../extend/listeners/#listener-interface">listeners</a> can utilize secrets if needed.</p>
 <p>The simplest possible example of the programmatic usage is a variable file:</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-48-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-48-1">1</a></span>
 <span class="normal"><a href="#example-48-2">2</a></span>
 <span class="normal"><a href="#example-48-3">3</a></span>
 <span class="normal"><a href="#example-48-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-48-1"><a id="example-48-1" name="example-48-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">robot.api.types</span><span class="w"> </span><span class="kn">import</span> <span class="n">Secret</span>
@@ -11661,7 +11662,7 @@ class. This is most commonly done by <a href="../../extend/#libraries">libraries
 </span><span id="line-48-3"><a id="example-48-3" name="example-48-3"></a><span class="n">USERNAME</span> <span class="o">=</span> <span class="s2">"robot"</span>
 </span><span id="line-48-4"><a id="example-48-4" name="example-48-4"></a><span class="n">PASSWORD</span> <span class="o">=</span> <span class="n">Secret</span><span class="p">(</span><span class="s2">"robot123"</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
-Creating a keyword returning a secret is not much more complicated either:</p>
+<p>Creating a keyword returning a secret is not much more complicated either:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-49-1">1</a></span>
 <span class="normal"><a href="#example-49-2">2</a></span>
 <span class="normal"><a href="#example-49-3">3</a></span>
@@ -11700,7 +11701,7 @@ operating-system-agnostic.</p>
 </tr>
 <tr>
 <td>${TEMPDIR}</td>
-<td>An absolute path to the system temporary directory. In UNIX-like</td>
+<td>An absolute path to the system temporary directory. In UNIX-like systems this is typically <code class="file">/tmp</code>, and in Windows <code class="file">c:\\Documents and Settings\\&lt;user&gt;\\Local Settings\\Temp</code>.</td>
 </tr>
 <tr>
 <td>${EXECDIR}</td>
@@ -11708,7 +11709,7 @@ operating-system-agnostic.</p>
 </tr>
 <tr>
 <td>${/}</td>
-<td>The system directory path separator. <code>/</code> in UNIX-like</td>
+<td>The system directory path separator. <code>/</code> in UNIX-like systems and <code class="codesc">\</code> in Windows.</td>
 </tr>
 <tr>
 <td>${:}</td>
@@ -11716,7 +11717,7 @@ operating-system-agnostic.</p>
 </tr>
 <tr>
 <td>${\n}</td>
-<td></td>
+<td>The system line separator. <code class="codesc">\n</code> in UNIX-like systems and <code class="codesc">\r\n</code> in Windows.</td>
 </tr>
 </tbody>
 </table>
@@ -11733,7 +11734,7 @@ operating-system-agnostic.</p>
 floating point numbers, as illustrated in the example below. This is
 useful when a keyword expects to get an actual number, and not a
 string that just looks like a number, as an argument.</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-51-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-51-1">1</a></span>
 <span class="normal"><a href="#example-51-2">2</a></span>
 <span class="normal"><a href="#example-51-3">3</a></span>
 <span class="normal"><a href="#example-51-4">4</a></span>
@@ -11751,7 +11752,7 @@ string that just looks like a number, as an argument.</p>
 </span><span id="line-51-8"><a id="example-51-8" name="example-51-8"></a><span class="gu">Example 2</span>
 </span><span id="line-51-9"><a id="example-51-9" name="example-51-9"></a><span class="p">    </span><span class="nf">Do X</span><span class="p">    ${</span><span class="nv">3.14</span><span class="p">}    ${</span><span class="nv">-1e-4</span><span class="p">}        </span><span class="c"># Do X gets floating point numbers 3.14 and -0.0001</span>
 </span></code></pre></div></td></tr></table></div>
-It is possible to create integers also from binary, octal, and
+<p>It is possible to create integers also from binary, octal, and
 hexadecimal values using <code>0b</code>, <code>0o</code> and <code>0x</code> prefixes, respectively.
 The syntax is case insensitive.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-52-1">1</a></span>
@@ -11769,7 +11770,7 @@ The syntax is case insensitive.</p>
 <h3 id="boolean-and-nonenull-variables">Boolean and None/null variables<a class="headerlink" href="#boolean-and-nonenull-variables" title="Permanent link">&para;</a></h3>
 <p>Also Boolean values and Python <code>None</code> can
 be created using the variable syntax similarly as numbers.</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-53-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-53-1">1</a></span>
 <span class="normal"><a href="#example-53-2">2</a></span>
 <span class="normal"><a href="#example-53-3">3</a></span>
 <span class="normal"><a href="#example-53-4">4</a></span>
@@ -11783,20 +11784,19 @@ be created using the variable syntax similarly as numbers.</p>
 </span><span id="line-53-6"><a id="example-53-6" name="example-53-6"></a><span class="gu">None</span>
 </span><span id="line-53-7"><a id="example-53-7" name="example-53-7"></a><span class="p">    </span><span class="nf">Do XYZ</span><span class="p">    ${</span><span class="nv">None</span><span class="p">}                   </span><span class="c"># Do XYZ gets Python None as an argument</span>
 </span></code></pre></div></td></tr></table></div>
-These variables are case-insensitive, so for example <code>${True}</code> and <code>${true}</code>
+<p>These variables are case-insensitive, so for example <code>${True}</code> and <code>${true}</code>
 are equivalent. Keywords accepting Boolean values typically do automatic
 argument conversion and handle string values like <code>True</code> and <code>false</code> as
 expected. In such cases using the variable syntax is not required.</p>
 <h3 id="space-and-empty-variables">Space and empty variables<a class="headerlink" href="#space-and-empty-variables" title="Permanent link">&para;</a></h3>
 <p>It is possible to create spaces and empty strings using variables
 <code>${SPACE}</code> and <code>${EMPTY}</code>, respectively. These variables are
-useful, for example, when there would otherwise be a need to <a href="https://docs.python.org/3/library/stdtypes.html#bytes-objects">escape
+useful, for example, when there would otherwise be a need to <a href="../data/#escaping">escape
 spaces or empty cells</a> with a backslash. If more than one space is
 needed, it is possible to use the <a href="#extended-variable-syntax">extended variable syntax</a> like
-<code>${SPACE * 5}</code>.  In the following example, <em>Should Be
-Equal</em> keyword gets identical arguments, but those using variables are
+<code>${SPACE * 5}</code>.  In the following example, <em class="name">Should Be Equal</em> keyword gets identical arguments, but those using variables are
 easier to understand than those using backslashes.</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-54-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-54-1"> 1</a></span>
 <span class="normal"><a href="#example-54-2"> 2</a></span>
 <span class="normal"><a href="#example-54-3"> 3</a></span>
 <span class="normal"><a href="#example-54-4"> 4</a></span>
@@ -11832,10 +11832,10 @@ easier to understand than those using backslashes.</p>
 </span><span id="line-54-17"><a id="example-54-17" name="example-54-17"></a><span class="gu">Empty</span>
 </span><span id="line-54-18"><a id="example-54-18" name="example-54-18"></a><span class="p">    </span><span class="nf">Should Be Equal</span><span class="p">    ${</span><span class="nv">EMPTY</span><span class="p">}          </span><span class="s">\</span>
 </span></code></pre></div></td></tr></table></div>
-There is also an empty <a href="#list-variable">list variable</a> <code>@{EMPTY}</code> and an empty <a href="#dictionary-variable">dictionary
+<p>There is also an empty <a href="#list-variable">list variable</a> <code>@{EMPTY}</code> and an empty <a href="#dictionary-variable">dictionary
 variable</a> <code>&amp;{EMPTY}</code>. Because they have no content, they basically
 vanish when used somewhere in the test data. They are useful, for example,
-with <a href="../tests/#test-templates">test templates</a> when the <a href="https://docs.python.org/3/library/stdtypes.html#bytes-objects">template keyword is used without
+with <a href="../tests/#test-templates">test templates</a> when the <a href="https://groups.google.com/group/robotframework-users/browse_thread/thread/ccc9e1cd77870437/4577836fe946e7d5?lnk=gst&amp;q=templates#4577836fe946e7d5">template keyword is used without
 arguments</a> or when overriding list or dictionary variables in different
 scopes. Modifying the value of <code>@{EMPTY}</code> or <code>&amp;{EMPTY}</code> is not possible.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-55-1">1</a></span>
@@ -11856,8 +11856,8 @@ scopes. Modifying the value of <code>@{EMPTY}</code> or <code>&amp;{EMPTY}</code
 </span></code></pre></div></td></tr></table></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p><code>${SPACE}</code> represents the ASCII space (<code>\x20</code>) and <a href="https://docs.python.org/3/library/stdtypes.html#bytes-objects">other spaces</a>
-should be specified using the <a href="https://docs.python.org/3/library/stdtypes.html#bytearray-objects">escape sequences</a> like <code>\xA0</code>
+<p><code>${SPACE}</code> represents the ASCII space (<code>\x20</code>) and <a href="https://jkorpela.fi/chars/spaces.html">other spaces</a>
+should be specified using the <a href="../data/#escaping">escape sequences</a> like <code>\xA0</code>
 (NO-BREAK SPACE) and <code>\u3000</code> (IDEOGRAPHIC SPACE).</p>
 </div>
 <p><a id="automatic-variable"></a></p>
@@ -11868,7 +11868,7 @@ should be specified using the <a href="https://docs.python.org/3/library/stdtype
 variables can have different values during the test execution and some
 of them are not even available all the time. Altering the value of
 these variables does not affect the original values, but some values
-can be changed dynamically using keywords from the <a href="../libraries/#builtin">BuiltIn</a> library.</p>
+can be changed dynamically using keywords from the <a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> library.</p>
 <table>
 <thead>
 <tr>
@@ -11884,24 +11884,29 @@ can be changed dynamically using keywords from the <a href="../libraries/#builti
 <td>Test case</td>
 </tr>
 <tr>
-<td>@{TEST TAGS}</td>
-<td>Contains the tags of the current test case in alphabetical order. Can be modified dynamically using <em>Set Tags</em> and <em>Remove Tags</em> keywords.</td>
+<td>${TEST DOCUMENTATION}</td>
+<td>The documentation of the current test case. Can be set dynamically using using <em class="name">Set Test Documentation</em> keyword.</td>
 <td>Test case</td>
 </tr>
 <tr>
-<td>${TEST DOCUMENTATION}</td>
-<td>The documentation of the current test case. Can be set dynamically using using <em>Set Test Documentation</em> keyword.</td>
+<td>@{TEST TAGS}</td>
+<td>Contains the tags of the current test case in alphabetical order. Can be modified dynamically using <em class="name">Set Tags</em> and <em class="name">Remove Tags</em> keywords.</td>
+<td>Test case</td>
+</tr>
+<tr>
+<td>&amp;{TEST METADATA}</td>
+<td>The free metadata of the current test case. Can be set dynamically using <em class="name">Set Test Metadata</em> keyword. New in Robot Framework 7.5.</td>
 <td>Test case</td>
 </tr>
 <tr>
 <td>${TEST STATUS}</td>
 <td>The status of the current test case, either PASS or FAIL.</td>
-<td><a href="../../execution/tests/#test-teardown">Test teardown</a></td>
+<td><a href="../tests/#test-setup-and-teardown">Test teardown</a></td>
 </tr>
 <tr>
 <td>${TEST MESSAGE}</td>
 <td>The message of the current test case.</td>
-<td><a href="../../execution/tests/#test-teardown">Test teardown</a></td>
+<td><a href="../tests/#test-setup-and-teardown">Test teardown</a></td>
 </tr>
 <tr>
 <td>${PREV TEST NAME}</td>
@@ -11930,23 +11935,23 @@ can be changed dynamically using keywords from the <a href="../libraries/#builti
 </tr>
 <tr>
 <td>${SUITE DOCUMENTATION}</td>
-<td>The documentation of the current test suite. Can be set dynamically using using <em>Set Suite Documentation</em> keyword.</td>
-<td>Everywhere</td>
+<td>The documentation of the current test suite. Can be set dynamically using using Set Suite Documentation</td>
+<td>Everywhere keyword.</td>
 </tr>
 <tr>
 <td>&amp;{SUITE METADATA}</td>
-<td>The free metadata of the current test suite. Can be set using <em>Set Suite Metadata</em> keyword.</td>
+<td>The free metadata of the current test suite. Can be set using <em class="name">Set Suite Metadata</em> keyword.</td>
 <td>Everywhere</td>
 </tr>
 <tr>
 <td>${SUITE STATUS}</td>
 <td>The status of the current test suite, either PASS or FAIL.</td>
-<td><a href="../../execution/tests/#suite-teardown">Suite teardown</a></td>
+<td><a href="../suites/#suite-setup-and-teardown">Suite teardown</a></td>
 </tr>
 <tr>
 <td>${SUITE MESSAGE}</td>
 <td>The full message of the current test suite, including statistics.</td>
-<td><a href="../../execution/tests/#suite-teardown">Suite teardown</a></td>
+<td><a href="../suites/#suite-setup-and-teardown">Suite teardown</a></td>
 </tr>
 <tr>
 <td>${KEYWORD STATUS}</td>
@@ -11960,7 +11965,7 @@ can be changed dynamically using keywords from the <a href="../libraries/#builti
 </tr>
 <tr>
 <td>${LOG LEVEL}</td>
-<td>Current <a href="../../execution/results/#log-level">log level</a>.</td>
+<td>Current <a href="../../execution/results/#log-levels">log level</a>.</td>
 <td>Everywhere</td>
 </tr>
 <tr>
@@ -11990,7 +11995,7 @@ can be changed dynamically using keywords from the <a href="../libraries/#builti
 </tr>
 <tr>
 <td>&amp;{OPTIONS}</td>
-<td>A dictionary exposing command line options. The dictionary keys match the command line options and can be accessed both like <code>${OPTIONS}[key]</code> and <code>${OPTIONS.key}</code>. Available options:<br>- <code>${OPTIONS.exclude}</code> (<code>--exclude</code>) - <code>${OPTIONS.include}</code> (<code>--include</code>) - <code>${OPTIONS.skip}</code> (<code>--skip</code>) - <code>${OPTIONS.skip_on_failure}</code> (<code>--skip-on-failure</code>) - <code>${OPTIONS.console_width}</code> (integer, <code>--console-width</code>) - <code>${OPTIONS.rpa}</code> (boolean, <code>--rpa</code>)<br><code>${OPTIONS}</code> itself was added in RF 5.0, <code>${OPTIONS.console_width}</code> in RF 7.1 and <code>${OPTIONS.rpa}</code> in RF 7.3. More options can be exposed later.</td>
+<td>A dictionary exposing command line options. The dictionary keys match the command line options and can be accessed both like <code>${OPTIONS}[key]</code> and <code>${OPTIONS.key}</code>. Available options:<br>- <code>${OPTIONS.exclude}</code> (<code class="option">--exclude</code>) - <code>${OPTIONS.include}</code> (<code class="option">--include</code>) - <code>${OPTIONS.skip}</code> (<code class="option">--skip</code>) - <code>${OPTIONS.skip_on_failure}</code> (<code class="option">--skip-on-failure</code>) - <code>${OPTIONS.console_width}</code> (integer, <code class="option">--console-width</code>) - <code>${OPTIONS.rpa}</code> (boolean, <code class="option">--rpa</code>)<br><code>${OPTIONS}</code> itself was added in RF 5.0, <code>${OPTIONS.console_width}</code> in RF 7.1 and <code>${OPTIONS.rpa}</code> in RF 7.3. More options can be exposed later.</td>
 <td>Everywhere</td>
 </tr>
 </tbody>
@@ -12005,13 +12010,13 @@ resolved at the import time, though.</p>
 are available in different scopes.</p>
 <h3 id="variable-priorities">Variable priorities<a class="headerlink" href="#variable-priorities" title="Permanent link">&para;</a></h3>
 <p><em>Variables from the command line</em></p>
-<p>Variables <a href="https://docs.python.org/3/glossary.html#term-sequence">set on the command line</a> have the highest priority of all
+<p>Variables <a href="#command-line-variables">set on the command line</a> have the highest priority of all
    variables that can be set before the actual test execution starts. They
    override possible variables created in Variable sections in test case
    files, as well as in resource and variable files imported in the
    test data.</p>
-<p>Individually set variables (<code>--variable</code> option) override the
-   variables set using <a href="../variable-files/#variable-files">variable files</a> (<code>--variablefile</code> option).
+<p>Individually set variables (<code class="option">--variable</code> option) override the
+   variables set using <a href="../variable-files/#variable-files">variable files</a> (<code class="option">--variablefile</code> option).
    If you specify same individual variable multiple times, the one specified
    last will override earlier ones. This allows setting default values for
    variables in a <a href="../../execution/basics/#start-up-script">start-up script</a> and overriding them from the command line.
@@ -12060,10 +12065,10 @@ are available in different scopes.</p>
 global, test suite, test case or local scope.</p>
 <h4 id="global-scope">Global scope<a class="headerlink" href="#global-scope" title="Permanent link">&para;</a></h4>
 <p>Global variables are available everywhere in the test data. These
-variables are normally <a href="https://docs.python.org/glossary.html#term-slice">set from the command line</a> with the
-<code>--variable</code> and <code>--variablefile</code> options, but it is also
+variables are normally <a href="#command-line-variables">set from the command line</a> with the
+<code class="option">--variable</code> and <code class="option">--variablefile</code> options, but it is also
 possible to create new global variables or change the existing ones
-by using the <a href="#var-syntax">VAR syntax</a> or the <em>Set Global Variable</em> keyword anywhere in
+by using the <a href="#var-syntax">VAR syntax</a> or the <em class="name">Set Global Variable</em> keyword anywhere in
 the test data. Additionally also <a href="#built-in-variables">built-in variables</a> are global.</p>
 <p>It is recommended to use capital letters with all global variables.</p>
 <h4 id="test-suite-scope">Test suite scope<a class="headerlink" href="#test-suite-scope" title="Permanent link">&para;</a></h4>
@@ -12071,7 +12076,7 @@ the test data. Additionally also <a href="#built-in-variables">built-in variable
 test suite where they are defined or imported. They can be created
 in Variable sections, imported from <a href="../variable-files/#variable-files">resource and variable files</a>,
 or set during the test execution using the <a href="#var-syntax">VAR syntax</a> or the
-<em>Set Suite Variable</em> keyword.</p>
+<em class="name">Set Suite Variable</em> keyword.</p>
 <p>The test suite scope <em>is not recursive</em>, which means that variables
 available in a higher-level test suite <em>are not available</em> in
 lower-level suites. If necessary, <a href="../variable-files/#variable-files">resource and variable files</a> can
@@ -12082,7 +12087,7 @@ they are used, it is recommended to use capital letters also with them.</p>
 <p>Variables with the test case scope are visible in a test case and in
 all user keywords the test uses. Initially there are no variables in
 this scope, but it is possible to create them by using the <a href="#var-syntax">VAR syntax</a> or
-the <em>Set Test Variable</em> keyword anywhere in a test case.</p>
+the <em class="name">Set Test Variable</em> keyword anywhere in a test case.</p>
 <p>If a variable with the test scope is created in suite setup, the variable is
 available everywhere within that suite setup as well as in the corresponding suite
 teardown, but it is not seen by tests or possible child suites. If such
@@ -12098,8 +12103,8 @@ caused an error prior to Robot Framework 7.2.</p>
 <h4 id="local-scope">Local scope<a class="headerlink" href="#local-scope" title="Permanent link">&para;</a></h4>
 <p>Test cases and user keywords have a local variable scope that is not
 seen by other tests or keywords. Local variables can be created using
-<a href="https://groups.google.com/group/robotframework-users/browse_thread/thread/ccc9e1cd77870437/4577836fe946e7d5?lnk=gst&amp;q=templates#4577836fe946e7d5">return values</a> from executed keywords and with the <a href="#var-syntax">VAR syntax</a>,
-and user keywords also get them as <a href="http://jkorpela.fi/chars/spaces.html">arguments</a>.</p>
+<a href="#return-values-from-keywords">return values</a> from executed keywords and with the <a href="#var-syntax">VAR syntax</a>,
+and user keywords also get them as <a href="../user-keywords/#user-keyword-arguments">arguments</a>.</p>
 <p>It is recommended to use lower-case letters with local variables.</p>
 <h2 id="advanced-variable-features">Advanced variable features<a class="headerlink" href="#advanced-variable-features" title="Permanent link">&para;</a></h2>
 <p><a id="Extendedvariablesyntax"></a></p>
@@ -12115,8 +12120,8 @@ other hand, calling methods, especially when they are used with
 arguments, can make the test data pretty complicated to understand.
 If that happens, it is recommended to move the code into a library.</p>
 <p>The most common usages of extended variable syntax are illustrated
-in the example below. First assume that we have the following <a href="../variable-files/#variable-files">variable file</a>_ and test case:</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-56-1"> 1</a></span>
+in the example below. First assume that we have the following <a href="../variable-files/#variable-files">variable file</a> and test case:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-56-1"> 1</a></span>
 <span class="normal"><a href="#example-56-2"> 2</a></span>
 <span class="normal"><a href="#example-56-3"> 3</a></span>
 <span class="normal"><a href="#example-56-4"> 4</a></span>
@@ -12152,40 +12157,40 @@ in the example below. First assume that we have the following <a href="../variab
 </span><span id="line-57-4"><a id="example-57-4" name="example-57-4"></a><span class="p">    </span><span class="nf">KW 2</span><span class="p">    ${</span><span class="nv">OBJECT.eat('Cucumber')</span><span class="p">}</span>
 </span><span id="line-57-5"><a id="example-57-5" name="example-57-5"></a><span class="p">    </span><span class="nf">KW 3</span><span class="p">    ${</span><span class="nv">DICTIONARY[2]</span><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
-When this test data is executed, the keywords get the arguments as
+<p>When this test data is executed, the keywords get the arguments as
 explained below:</p>
 <ul>
-<li><em>KW 1</em> gets string <code>Robot</code></li>
-<li><em>KW 2</em> gets string <code>Robot eats Cucumber</code></li>
-<li><em>KW 3</em> gets string <code>two</code></li>
+<li><em class="name">KW 1</em> gets string <code>Robot</code></li>
+<li><em class="name">KW 2</em> gets string <code>Robot eats Cucumber</code></li>
+<li><em class="name">KW 3</em> gets string <code>two</code></li>
 </ul>
 <p>The extended variable syntax is evaluated in the following order:</p>
 <ol>
 <li>
 <p>The variable is searched using the full variable name. The extended
-   variable syntax is evaluated only if no matching variable is found.</p>
+    variable syntax is evaluated only if no matching variable is found.</p>
 </li>
 <li>
 <p>The name of the base variable is created. The body of the name
-   consists of all the characters after the opening <code>{</code> until
-   the first occurrence of a character that is not an alphanumeric character,
-   an underscore or a space. For example, base variables of <code>${OBJECT.name}</code>
-   and <code>${DICTIONARY[2]}</code>) are <code>OBJECT</code> and <code>DICTIONARY</code>, respectively.</p>
+    consists of all the characters after the opening <code>{</code> until
+    the first occurrence of a character that is not an alphanumeric character,
+    an underscore or a space. For example, base variables of <code>${OBJECT.name}</code>
+    and <code>${DICTIONARY[2]}</code>) are <code>OBJECT</code> and <code>DICTIONARY</code>, respectively.</p>
 </li>
 <li>
 <p>A variable matching the base name is searched. If there is no match, an
-   exception is raised and the test case fails.</p>
+    exception is raised and the test case fails.</p>
 </li>
 <li>
 <p>The expression inside the curly brackets is evaluated as a Python
-   expression, so that the base variable name is replaced with its
-   value. If the evaluation fails because of an invalid syntax or that
-   the queried attribute does not exist, an exception is raised and
-   the test fails.</p>
+    expression, so that the base variable name is replaced with its
+    value. If the evaluation fails because of an invalid syntax or that
+    the queried attribute does not exist, an exception is raised and
+    the test fails.</p>
 </li>
 <li>
 <p>The whole extended variable is replaced with the value returned
-   from the evaluation.</p>
+    from the evaluation.</p>
 </li>
 </ol>
 <p>Many standard Python objects, including strings and numbers, have
@@ -12194,7 +12199,7 @@ explicitly or implicitly. Sometimes this can be really useful and
 reduce the need for setting temporary variables, but it is also easy
 to overuse it and create really cryptic test data. Following examples
 show few pretty good usages.</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-58-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-58-1"> 1</a></span>
 <span class="normal"><a href="#example-58-2"> 2</a></span>
 <span class="normal"><a href="#example-58-3"> 3</a></span>
 <span class="normal"><a href="#example-58-4"> 4</a></span>
@@ -12214,10 +12219,10 @@ show few pretty good usages.</p>
 </span><span id="line-58-9"><a id="example-58-9" name="example-58-9"></a><span class="p">    </span><span class="nf">Log</span><span class="p">    ${</span><span class="nv">number * 10</span><span class="p">}         </span><span class="c"># Logs -20</span>
 </span><span id="line-58-10"><a id="example-58-10" name="example-58-10"></a><span class="p">    </span><span class="nf">Log</span><span class="p">    ${</span><span class="nv">number.__abs__()</span><span class="p">}    </span><span class="c"># Logs 2</span>
 </span></code></pre></div></td></tr></table></div>
-Note that even though <code>abs(number)</code> is recommended over
-<code>number.[__abs](https://docs.python.org/3/library/stdtypes.html#bytes-objects)()</code> in normal Python code, using
-<code>${abs(number)}[ does not work. This is because the variable name
-must be in the beginning of the extended syntax. Using ](https://docs.python.org/3/library/stdtypes.html#bytearray-objects)xxx__</code>
+<p>Note that even though <code>abs(number)</code> is recommended over
+<code>number.__abs__()</code> in normal Python code, using
+<code>${abs(number)}</code> does not work. This is because the variable name
+must be in the beginning of the extended syntax. Using <code>__xxx__</code>
 methods in the test data like this is already a bit questionable, and
 it is normally better to move this kind of logic into test libraries.</p>
 <p>Extended variable syntax works also in <a href="#list-variable">list variable</a> and <a href="#dictionary-variable">dictionary variable</a>
@@ -12226,11 +12231,11 @@ an attribute <code>attribute</code> that contains a list as a value, it can be
 used as a list variable <code>@{EXTENDED.attribute}</code>.</p>
 <h3 id="extended-variable-assignment">Extended variable assignment<a class="headerlink" href="#extended-variable-assignment" title="Permanent link">&para;</a></h3>
 <p>It is possible to set attributes of
-objects stored to scalar variables using <a href="https://docs.python.org/3/glossary.html#term-sequence">keyword return values</a> and
+objects stored to scalar variables using <a href="#return-values-from-keywords">keyword return values</a> and
 a variation of the <a href="#extended-variable-syntax">extended variable syntax</a>. Assuming we have
 variable <code>${OBJECT}</code> from the previous examples, attributes could
 be set to it like in the example below.</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-59-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-59-1">1</a></span>
 <span class="normal"><a href="#example-59-2">2</a></span>
 <span class="normal"><a href="#example-59-3">3</a></span>
 <span class="normal"><a href="#example-59-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-59-1"><a id="example-59-1" name="example-59-1"></a><span class="gh">*** Test Cases ***</span>
@@ -12238,51 +12243,51 @@ be set to it like in the example below.</p>
 </span><span id="line-59-3"><a id="example-59-3" name="example-59-3"></a><span class="p">    ${</span><span class="nv">OBJECT.name</span><span class="p">} =    </span><span class="nf">Set Variable</span><span class="p">    </span><span class="s">New name</span>
 </span><span id="line-59-4"><a id="example-59-4" name="example-59-4"></a><span class="p">    ${</span><span class="nv">OBJECT.new_attr</span><span class="p">} =    </span><span class="nf">Set Variable</span><span class="p">    </span><span class="s">New attribute</span>
 </span></code></pre></div></td></tr></table></div>
-The extended variable assignment syntax is evaluated using the
+<p>The extended variable assignment syntax is evaluated using the
 following rules:</p>
 <ol>
 <li>
 <p>The assigned variable must be a scalar variable and have at least
-   one dot. Otherwise the extended assignment syntax is not used and
-   the variable is assigned normally.</p>
+    one dot. Otherwise the extended assignment syntax is not used and
+    the variable is assigned normally.</p>
 </li>
 <li>
 <p>If there exists a variable with the full name
-   (e.g. <code>${OBJECT.name}</code> in the example above) that variable
-   will be assigned a new value and the extended syntax is not used.</p>
+    (e.g. <code>${OBJECT.name}</code> in the example above) that variable
+    will be assigned a new value and the extended syntax is not used.</p>
 </li>
 <li>
 <p>The name of the base variable is created. The body of the name
-   consists of all the characters between the opening <code>${</code> and
-   the last dot, for example, <code>OBJECT</code> in <code>${OBJECT.name}</code>
-   and <code>foo.bar</code> in <code>${foo.bar.zap}</code>. As the second example
-   illustrates, the base name may contain normal extended variable
-   syntax.</p>
+    consists of all the characters between the opening <code>${</code> and
+    the last dot, for example, <code>OBJECT</code> in <code>${OBJECT.name}</code>
+    and <code>foo.bar</code> in <code>${foo.bar.zap}</code>. As the second example
+    illustrates, the base name may contain normal extended variable
+    syntax.</p>
 </li>
 <li>
 <p>The name of the attribute to set is created by taking all the
-   characters between the last dot and the closing <code>}</code>, for
-   example, <code>name</code> in <code>${OBJECT.name}</code>. If the name does not
-   start with a letter or underscore and contain only these characters
-   and numbers, the attribute is considered invalid and the extended
-   syntax is not used. A new variable with the full name is created
-   instead.</p>
+    characters between the last dot and the closing <code>}</code>, for
+    example, <code>name</code> in <code>${OBJECT.name}</code>. If the name does not
+    start with a letter or underscore and contain only these characters
+    and numbers, the attribute is considered invalid and the extended
+    syntax is not used. A new variable with the full name is created
+    instead.</p>
 </li>
 <li>
 <p>A variable matching the base name is searched. If no variable is
-   found, the extended syntax is not used and, instead, a new variable
-   is created using the full variable name.</p>
+    found, the extended syntax is not used and, instead, a new variable
+    is created using the full variable name.</p>
 </li>
 <li>
 <p>If the found variable is a string or a number, the extended syntax
-   is ignored and a new variable created using the full name. This is
-   done because you cannot add new attributes to Python strings or
-   numbers, and this way the syntax is also less backwards-incompatible.</p>
+    is ignored and a new variable created using the full name. This is
+    done because you cannot add new attributes to Python strings or
+    numbers, and this way the syntax is also less backwards-incompatible.</p>
 </li>
 <li>
 <p>If all the previous rules match, the attribute is set to the base
-   variable. If setting fails for any reason, an exception is raised
-   and the test fails.</p>
+    variable. If setting fails for any reason, an exception is raised
+    and the test fails.</p>
 </li>
 </ol>
 <div class="admonition note">
@@ -12302,11 +12307,11 @@ first. If it has the value <code>name</code>, the final value is then the
 value of the variable <code>${varname}</code>. There can be several nested
 variables, but resolving the outermost fails, if any of them does not
 exist.</p>
-<p>In the example below, <em>Do X</em> gets the value <code>${JOHN HOME}</code>
-or <code>${JANE HOME}</code>, depending on if <em>Get Name</em> returns
+<p>In the example below, <em class="name">Do X</em> gets the value <code>${JOHN HOME}</code>
+or <code>${JANE HOME}</code>, depending on if <em class="name">Get Name</em> returns
 <code>john</code> or <code>jane</code>. If it returns something else, resolving
 <code>${${name} HOME}</code> fails.</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-60-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-60-1">1</a></span>
 <span class="normal"><a href="#example-60-2">2</a></span>
 <span class="normal"><a href="#example-60-3">3</a></span>
 <span class="normal"><a href="#example-60-4">4</a></span>
@@ -12322,7 +12327,7 @@ or <code>${JANE HOME}</code>, depending on if <em>Get Name</em> returns
 </span><span id="line-60-7"><a id="example-60-7" name="example-60-7"></a><span class="p">    ${</span><span class="nv">name</span><span class="p">} =    </span><span class="nf">Get Name</span>
 </span><span id="line-60-8"><a id="example-60-8" name="example-60-8"></a><span class="p">    </span><span class="nf">Do X</span><span class="p">    ${${</span><span class="nv">name</span><span class="p">}</span><span class="nv"> HOME</span><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
-<a id="inline-python-evaluation"></a></p>
+<p><a id="inline-python-evaluation"></a></p>
 <p><a id="inline Python evaluation"></a>
 <a id="InlinePythonevaluation"></a></p>
 <h3 id="inline-python-evaluation">Inline Python evaluation<a class="headerlink" href="#inline-python-evaluation" title="Permanent link">&para;</a></h3>
@@ -12367,7 +12372,7 @@ syntax is explained in the <a href="../../appendix/expressions/#evaluating-expre
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Instead of creating complicated expressions, it is often better
-to move the logic into a <a href="https://docs.python.org/3/library/stdtypes.html#bytes-objects">custom library</a>. That eases
+to move the logic into a <a href="../../extend/libraries/#creating-test-libraries">custom library</a>. That eases
 maintenance, makes test data easier to understand and can also
 enhance execution speed.</p>
 </div>

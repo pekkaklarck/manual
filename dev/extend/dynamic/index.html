@@ -1136,7 +1136,7 @@
   <span class="md-ellipsis">
     
   
-    Results
+    Execution artifacts
   
 
     
@@ -10037,7 +10037,7 @@ separated with spaces or underscores, or in the camelCase format. For
 example, <code>['first keyword', 'second keyword']</code>,
 <code>['first_keyword', 'second_keyword']</code>, and
 <code>['firstKeyword', 'secondKeyword']</code> would all be mapped to keywords
-<em>First Keyword</em> and <em>Second Keyword</em>.</p>
+<em class="name">First Keyword</em> and <em class="name">Second Keyword</em>.</p>
 <p>Dynamic libraries must always have this method. If it is missing, or
 if calling it fails for some reason, the library is considered a
 static library.</p>
@@ -10046,7 +10046,7 @@ static library.</p>
 and methods which are meant to be private helper methods, it may be wise to
 mark the keyword methods as such so it is easier to implement <code>get_keyword_names</code>.
 The <code>robot.api.deco.keyword</code> decorator allows an easy way to do this since it
-creates a <a href="https://github.com/robotframework/PythonLibCore">custom 'robot_name' attribute</a> on the decorated method.
+creates a <a href="../libraries/#setting-custom-name">custom 'robot_name' attribute</a> on the decorated method.
 This allows generating the list of keywords just by checking for the <code>robot_name</code>
 attribute on every method in the library during <code>get_keyword_names</code>.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1"> 1</a></span>
@@ -10097,8 +10097,8 @@ The first argument is a string containing the name of the keyword to be
 executed in the same format as returned by <code>get_keyword_names</code>. The second
 argument is a list of <a href="../../syntax/tests/#positional-arguments">positional arguments</a> given to the keyword in
 the test data, and the optional third argument is a dictionary
-containing <a href="../../syntax/tests/#named-arguments">named arguments</a>. If the third argument is missing, <a href="https://github.com/robotframework/PythonLibCore">free named
-arguments</a> and <a href="../../syntax/tests/#named-only-arguments">named-only arguments</a> are not supported, and other
+containing <a href="../../syntax/tests/#named-arguments">named arguments</a>. If the third argument is missing, <a href="#free-named-arguments-with-dynamic-libraries">free named
+arguments</a> and <a href="#named-only-arguments-with-dynamic-libraries">named-only arguments</a> are not supported, and other
 named arguments are mapped to positional arguments.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -10137,7 +10137,7 @@ trivial, dynamic library.</p>
 <p>If a dynamic library only implements the <code>get_keyword_names</code> and
 <code>run_keyword</code> methods, Robot Framework does not have any information
 about the arguments that the implemented keywords accept. For example,
-both <em>First Keyword</em> and <em>Second Keyword</em> in the example above
+both <em class="name">First Keyword</em> and <em class="name">Second Keyword</em> in the example above
 could be used with any arguments. This is problematic,
 because most real keywords expect a certain number of keywords, and
 under these circumstances they would need to check the argument counts
@@ -10168,32 +10168,32 @@ they are specified in Python and explained in the following table.</p>
 <tr>
 <td>One or more <a href="../../syntax/tests/#positional-argument">positional argument</a></td>
 <td>List of strings containing argument names.</td>
-<td><code>['argument']</code> <code>['arg1', 'arg2', 'arg3']</code></td>
+<td><code>['argument']</code><br><code>['arg1', 'arg2', 'arg3']</code></td>
 </tr>
 <tr>
 <td><a href="../../syntax/tests/#default-values">Default values</a></td>
 <td>Two ways how to represent the argument name and the default value:<br>- As a string where the name and the default are separated with <code>=</code>. - As a tuple with the name and the default as separate items. New in Robot Framework 3.2.</td>
-<td>String with <code>=</code> separator:<br><code>['name=default']</code> <code>['a', 'b=1', 'c=2']</code><br>Tuple:<br><code>[('name', 'default')]</code> <code>['a', ('b', 1), ('c', 2)]</code></td>
+<td>String with <code>=</code> separator:<br><code>['name=default']</code><br><code>['a', 'b=1', 'c=2']</code><br>Tuple:<br><code>[('name', 'default')]</code><br><code>['a', ('b', 1), ('c', 2)]</code></td>
 </tr>
 <tr>
 <td><a href="../libraries/#positional-only-arguments">Positional-only arguments</a></td>
 <td>Arguments before the <code>/</code> marker. New in Robot Framework 6.1.</td>
-<td><code>['posonly', '/']</code> <code>['p', 'q', '/', 'normal']</code></td>
+<td><code>['posonly', '/']</code><br><code>['p', 'q', '/', 'normal']</code></td>
 </tr>
 <tr>
 <td><a href="../../syntax/tests/#variable-number-of-arguments">Variable number of arguments</a> (varargs)</td>
 <td>Argument after possible positional arguments has a <code>*</code> prefix</td>
-<td><code>['*varargs']</code> <code>['argument', '*rest']</code> <code>['a', 'b=42', '*c']</code></td>
+<td><code>['*varargs']</code><br><code>['argument', '*rest']</code><br><code>['a', 'b=42', '*c']</code></td>
 </tr>
 <tr>
 <td><a href="../../syntax/tests/#named-only-arguments">Named-only arguments</a></td>
-<td>Arguments after varargs or a lone <code>*</code> if there are no varargs. With or without defaults. Requires <code>run_keyword</code> to <a href="https://github.com/robotframework/PythonLibCore">support named-only arguments</a>. New in Robot Framework 3.1.</td>
-<td><code>['*varargs', 'named']</code> <code>['*', 'named']</code> <code>['*', 'x', 'y=default']</code> <code>['a', '*b', ('c', 42)]</code></td>
+<td>Arguments after varargs or a lone <code>*</code> if there are no varargs. With or without defaults. Requires <code>run_keyword</code> to <a href="#free-named-arguments-with-dynamic-libraries">support named-only arguments</a>. New in Robot Framework 3.1.</td>
+<td><code>['*varargs', 'named']</code><br><code>['*', 'named']</code><br><code>['*', 'x', 'y=default']</code><br><code>['a', '*b', ('c', 42)]</code></td>
 </tr>
 <tr>
 <td><a href="../../syntax/tests/#free-named-arguments">Free named arguments</a> (kwargs)</td>
-<td>Last arguments has <code>**</code> prefix. Requires <code>run_keyword</code> to <a href="../libraries/#implicit-argument-types-based-on-default-values">support free named arguments</a>.</td>
-<td><code>['**named']</code> <code>['a', ('b', 42), '**c']</code> <code>['*varargs', '**kwargs']</code> <code>['*', 'kwo', '**kws']</code></td>
+<td>Last arguments has <code>**</code> prefix. Requires <code>run_keyword</code> to <a href="#named-only-arguments-with-dynamic-libraries">support free named arguments</a>.</td>
+<td><code>['**named']</code><br><code>['a', ('b', 42), '**c']</code><br><code>['*varargs', '**kwargs']</code><br><code>['*', 'kwo', '**kws']</code></td>
 </tr>
 </tbody>
 </table>
@@ -10202,14 +10202,14 @@ calculates how many positional arguments the keyword requires and does it
 support free named arguments or not. If a keyword is used with invalid
 arguments, an error occurs and <code>run_keyword</code> is not even called.</p>
 <p>The actual argument names and default values that are returned are also
-important. They are needed for <a href="#named-only-arguments-with-dynamic-libraries">named argument support</a> and the <a href="../libdoc/#libdoc">Libdoc</a>
+important. They are needed for <a href="#named-argument-syntax-with-dynamic-libraries">named argument support</a> and the <a href="../libdoc/#libdoc">Libdoc</a>
 tool needs them to be able to create a meaningful library documentation.</p>
 <p>As explained in the above table, default values can be specified with argument
 names either as a string like <code>'name=default'</code> or as a tuple like
 <code>('name', 'default')</code>. The main problem with the former syntax is that all
 default values are considered strings whereas the latter syntax allows using
 all objects like <code>('integer', 1)</code> or <code>('boolean', True)</code>. When using other
-objects than strings, Robot Framework can do <a href="#named-argument-syntax-with-dynamic-libraries">automatic argument conversion</a>
+objects than strings, Robot Framework can do <a href="../libraries/#implicit-argument-types-based-on-default-values">automatic argument conversion</a>
 based on them.</p>
 <p>For consistency reasons, also arguments that do not accept default values can
 be specified as one item tuples. For example, <code>['a', 'b=c', '*d']</code> and
@@ -10218,7 +10218,7 @@ be specified as one item tuples. For example, <code>['a', 'b=c', '*d']</code> an
 keyword, that keyword gets an argument specification
 accepting all arguments. This automatic argument spec is either
 <code>[*varargs, **kwargs]</code> or <code>[*varargs]</code>, depending does
-<code>run_keyword</code> <a href="../../syntax/tests/#named-argument">support free named arguments</a> or not.</p>
+<code>run_keyword</code> <a href="#free-named-arguments-with-dynamic-libraries">support free named arguments</a> or not.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Support to specify arguments as tuples like <code>('name', 'default')</code>
@@ -10228,20 +10228,20 @@ in dynamic library API is new in Robot Framework 6.1.</p>
 <h2 id="getting-keyword-argument-types">Getting keyword argument types<a class="headerlink" href="#getting-keyword-argument-types" title="Permanent link">&para;</a></h2>
 <p>Robot Framework 3.1 introduced support for automatic argument conversion
 and the dynamic library API supports that as well. The conversion logic
-works exactly like with <a href="#free-named-arguments-with-dynamic-libraries">static libraries</a>, but how the type information
+works exactly like with <a href="../libraries/#argument-conversion">static libraries</a>, but how the type information
 is specified is naturally different.</p>
 <p>With dynamic libraries types can be returned using the optional
 <code>get_keyword_types</code> method (alias <code>getKeywordTypes</code>). It can return types
 using a list or a dictionary exactly like types can be specified when using
-the <a href="../libraries/#keyword-decorator">@keyword decorator</a>. Type information can be specified using actual
+the <a href="../libraries/#specifying-argument-types-using-keyword-decorator">@keyword decorator</a>. Type information can be specified using actual
 types like <code>int</code>, but especially if a dynamic library gets this information
 from external systems, using strings like <code>'int'</code> or <code>'integer'</code> may be
 easier. See the <a href="../libraries/#supported-conversions">Supported conversions</a> section for more information about
 supported types and how to specify them.</p>
 <p>Robot Framework does automatic argument conversion also based on the
-<a href="../libraries/#specifying-argument-types-using-keyword-decorator">argument default values</a>. Earlier this did not work with the dynamic API
+<a href="../libraries/#implicit-argument-types-based-on-default-values">argument default values</a>. Earlier this did not work with the dynamic API
 because it was possible to specify arguments only as strings. As
-<a href="../libraries/#implicit-argument-types-based-on-default-values">discussed in the previous section</a>, this was changed in Robot Framework
+<a href="#getting-keyword-arguments">discussed in the previous section</a>, this was changed in Robot Framework
 3.2 and nowadays default values returned like <code>('example', True)</code> are
 automatically used for this purpose.</p>
 <p>Starting from Robot Framework 7.0, dynamic libraries can also specify the
@@ -10328,7 +10328,7 @@ the latter ones are given, the framework fills the skipped optional
 arguments based on the default values returned by the <code>get_keyword_arguments</code>
 method.</p>
 <p>Using the named argument syntax with dynamic libraries is illustrated
-by the following examples. All the examples use a keyword <em>Dynamic</em>
+by the following examples. All the examples use a keyword <em class="name">Dynamic</em>
 that has an argument specification <code>[a, b=d1, c=d2]</code>. The comment on each row
 shows how <code>run_keyword</code> would be called in these cases if it has two arguments
 (i.e. signature is <code>name, args</code>) and if it has three arguments (i.e.
@@ -10378,14 +10378,14 @@ it does not support <code>kwargs</code>.</p>
 <h2 id="free-named-arguments-with-dynamic-libraries">Free named arguments with dynamic libraries<a class="headerlink" href="#free-named-arguments-with-dynamic-libraries" title="Permanent link">&para;</a></h2>
 <p>Dynamic libraries can also support
 <a href="../../syntax/tests/#free-named-arguments">free named arguments</a> (<code>**named</code>). A mandatory precondition for
-this support is that the <code>run_keyword</code> method <a href="https://github.com/robotframework/PythonLibCore">takes three arguments</a>:
+this support is that the <code>run_keyword</code> method <a href="#running-dynamic-keywords">takes three arguments</a>:
 the third one will get the free named arguments along with possible other
 named arguments. These arguments are passed to the keyword as a mapping.</p>
 <p>What arguments a keyword accepts depends on what <code>get_keyword_arguments</code>
 <a href="#getting-keyword-arguments">returns for it</a>. If the last argument starts with <code>**</code>, that keyword is
 recognized to accept free named arguments.</p>
 <p>Using the free named argument syntax with dynamic libraries is illustrated
-by the following examples. All the examples use a keyword <em>Dynamic</em>
+by the following examples. All the examples use a keyword <em class="name">Dynamic</em>
 that has an argument specification <code>[a=d1, b=d2, **named]</code>. The comment shows
 the arguments that the <code>run_keyword</code> method is actually called with.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-3-1"> 1</a></span>
@@ -10434,16 +10434,16 @@ to positional arguments but nowadays they are part of the
 </div>
 <h2 id="named-only-arguments-with-dynamic-libraries">Named-only arguments with dynamic libraries<a class="headerlink" href="#named-only-arguments-with-dynamic-libraries" title="Permanent link">&para;</a></h2>
 <p>Starting from Robot Framework 3.1, dynamic libraries can have <a href="../../syntax/tests/#named-only-arguments">named-only
-arguments</a>. This requires that the <code>run_keyword</code> method <a href="https://github.com/robotframework/PythonLibCore">takes three
+arguments</a>. This requires that the <code>run_keyword</code> method <a href="#running-dynamic-keywords">takes three
 arguments</a>: the third getting the named-only arguments along with the other
 named arguments.</p>
-<p>In the <a href="#getting-keyword-tags">argument specification</a> returned by the <code>get_keyword_arguments</code>
+<p>In the <a href="#getting-keyword-arguments">argument specification</a> returned by the <code>get_keyword_arguments</code>
 method named-only arguments are specified after possible variable number
 of arguments (<code>*varargs</code>) or a lone asterisk (<code>*</code>) if the keyword does not
 accept varargs. Named-only arguments can have default values, and the order
 of arguments with and without default values does not matter.</p>
 <p>Using the named-only argument syntax with dynamic libraries is illustrated
-by the following examples. All the examples use a keyword <em>Dynamic</em>
+by the following examples. All the examples use a keyword <em class="name">Dynamic</em>
 that has been specified to have argument specification
 <code>[positional=default, *varargs, named, named2=default, **free]</code>. The comment
 shows the arguments that the <code>run_keyword</code> method is actually called with.</p>
@@ -10493,37 +10493,37 @@ camelCase aliases work exactly the same way.</p>
 <tr>
 <td><code>get_keyword_names</code></td>
 <td></td>
-<td><a href="https://github.com/robotframework/PythonLibCore">Return names</a> of the implemented keywords.</td>
+<td><a href="#getting-dynamic-keyword-names">Return names</a> of the implemented keywords.</td>
 </tr>
 <tr>
 <td><code>run_keyword</code></td>
 <td><code>name, arguments, kwargs</code></td>
-<td><a href="#getting-keyword-argument-types">Execute the specified keyword</a> with given arguments. <code>kwargs</code> is optional.</td>
+<td><a href="#running-dynamic-keywords">Execute the specified keyword</a> with given arguments. <code>kwargs</code> is optional.</td>
 </tr>
 <tr>
 <td><code>get_keyword_arguments</code></td>
 <td><code>name</code></td>
-<td>Return keywords' <a href="../../syntax/control/#if">argument specification</a>. Optional method.</td>
+<td>Return keywords' <a href="#getting-keyword-arguments">argument specification</a>. Optional method.</td>
 </tr>
 <tr>
 <td><code>get_keyword_types</code></td>
 <td><code>name</code></td>
-<td>Return keywords' <a href="#getting-keyword-documentation">argument type information</a>. Optional method. New in RF 3.1.</td>
+<td>Return keywords' <a href="#getting-keyword-argument-types">argument type information</a>. Optional method. New in RF 3.1.</td>
 </tr>
 <tr>
 <td><code>get_keyword_tags</code></td>
 <td><code>name</code></td>
-<td>Return keywords' <a href="#getting-source-information">tags</a>. Optional method.</td>
+<td>Return keywords' <a href="#getting-keyword-tags">tags</a>. Optional method.</td>
 </tr>
 <tr>
 <td><code>get_keyword_documentation</code></td>
 <td><code>name</code></td>
-<td>Return keywords' and library's <a href="../../syntax/suites/#suite-documentation">documentation</a>. Optional method.</td>
+<td>Return keywords' and library's <a href="#getting-keyword-documentation">documentation</a>. Optional method.</td>
 </tr>
 <tr>
 <td><code>get_keyword_source</code></td>
 <td><code>name</code></td>
-<td>Return keywords' <a href="../../syntax/resource-files/#resource-files">source</a>. Optional method. New in RF 3.2.</td>
+<td>Return keywords' <a href="#getting-source-information">source</a>. Optional method. New in RF 3.2.</td>
 </tr>
 </tbody>
 </table>
