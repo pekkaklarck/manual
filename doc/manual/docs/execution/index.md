@@ -1,3 +1,5 @@
+
+<a id="starting-time"></a>
 # Execution
 
 Running Robot Framework is straightforward: point it at a file or directory and it handles the rest. [Basic usage](basics.md) covers the command-line entry points, and [configuring execution](configuration.md) covers the options for filtering, tagging, and controlling exactly what runs. After execution, the output and result files give you a full record of what happened — down to every keyword call.
@@ -9,4 +11,5 @@ Running Robot Framework is straightforward: point it at a file or directory and 
 - [Task Execution](tasks.md)
 - [Post-Processing](post-processing.md)
 - [Configuring Execution](configuration.md)
+- [Execution Artifacts](results.md)
 - [Output Files](output-files.md)
