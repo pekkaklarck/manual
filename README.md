@@ -17,6 +17,8 @@ See the generated pages at https://pekkaklarck.github.io/manual/.
 
 Contributions are welcome, from typo fixes to corrections and additions.
 
+Use American English for documentation prose, headings, and navigation labels.
+
 Pages with related attachments use a page bundle: a folder containing `index.md`
 and the page's images, downloadable examples, or sample HTML files. For example,
 `doc/manual/docs/extend/libdoc/` contains the Libdoc page and its examples.

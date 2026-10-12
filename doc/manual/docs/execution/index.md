@@ -2,13 +2,13 @@
 <a id="starting-time"></a>
 # Execution
 
-Running Robot Framework is straightforward: point it at a file or directory and it handles the rest. [Basic usage](basics.md) covers the command-line entry points, and [configuring execution](configuration/index.md) covers the options for filtering, tagging, and controlling exactly what runs. After execution, the output and result files give you a full record of what happened — down to every keyword call.
+This section explains how to run tests and tasks with Robot Framework. [Basic usage](basics.md) covers the command-line entry points, and [configuring execution](configuration/index.md) covers options for selecting tests and controlling execution. After execution, [execution artifacts](results/index.md#artifact-files), including output files, logs, and reports, provide a record of what happened. [Post-processing](post_processing.md) explains how to process output files to combine results or generate new logs and reports.
 
 ## In this section
 
-- [Basic Usage](basics.md)
-- [Test Execution](tests.md)
-- [Task Execution](tasks.md)
-- [Post-Processing](post_processing.md)
-- [Configuring Execution](configuration/index.md)
-- [Execution Artifacts](results/index.md)
+- [Basic usage](basics.md)
+- [Test execution](tests.md)
+- [Task execution](tasks.md)
+- [Configuring execution](configuration/index.md)
+- [Execution artifacts](results/index.md)
+- [Post-processing](post_processing.md)

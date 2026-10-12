@@ -460,7 +460,7 @@ User Keyword 2
 ```
 
 Setting `robot:continue-on-failure` or `robot:recursive-continue-on-failure` in a
-test case does NOT alter the behaviour of a failure in the keyword(s) executed
+test case does NOT alter the behavior of a failure in the keyword(s) executed
 as part of the *[Setup]*{.setting}: The test case is marked as failed and no
 test case keywords are executed.
 

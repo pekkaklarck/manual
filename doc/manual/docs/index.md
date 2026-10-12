@@ -1,10 +1,10 @@
 # Robot Framework Manual
 
-Robot Framework is an open source automation framework for software testing, robotic process automation (RPA), and other automation tasks. Its readable syntax supports keyword-driven and data-driven approaches, as well as behaviour-driven development (BDD). It can be extended with libraries and used with supporting tools.
+Robot Framework is an open source automation framework for software testing, robotic process automation (RPA), and other automation tasks. Its readable syntax supports keyword-driven and data-driven approaches, as well as behavior-driven development (BDD). It can be extended with libraries and used with supporting tools.
 
 This Manual is the **technical reference** for installing, using, and extending Robot Framework. It covers the framework itself and the standard libraries distributed with it. External libraries and tools have their own documentation.
 
-Robot Framework automation is organised into test cases or tasks. This example shows a simple task:
+Robot Framework automation is organized into test cases or tasks. This example shows a simple task:
 
 ```robotframework
 *** Tasks ***
@@ -25,7 +25,7 @@ The task name and keywords describe the workflow. Named arguments such as `forma
 
 ## Guides, libraries, and tools
 
-The Manual explains Robot Framework features and behaviour in detail. If you want to learn through examples or complete a specific task, the community-maintained [Robot Framework Guides](https://docs.robotframework.org/) offer tutorials and step-by-step instructions.
+The Manual explains Robot Framework features and behavior in detail. If you want to learn through examples or complete a specific task, the community-maintained [Robot Framework Guides](https://docs.robotframework.org/) offer tutorials and step-by-step instructions.
 
 The wider Robot Framework ecosystem also includes libraries and tools developed and maintained separately from the framework. **Libraries** can connect the framework to browsers, APIs, databases, and other technologies. **Tools** help with writing, running, and maintaining automation. You can find an overview of available external libraries and tools on the [Robot Framework website](https://robotframework.org/#resources).
 

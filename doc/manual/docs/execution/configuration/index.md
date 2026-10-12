@@ -812,7 +812,7 @@ hooks it is interested in.
 !!! note
     Console loggers should treat the `data` and `result` objects passed
     to their methods as read-only. Currently live objects are passed so modifications
-    would take effect, but this behaviour may change without notice. Use the
+    would take effect, but this behavior may change without notice. Use the
     [Listener interface](../../extend/listeners.md#listener-interface) if you need to legitimately modify them.
 
     Support for custom console loggers is new in Robot Framework 7.5.

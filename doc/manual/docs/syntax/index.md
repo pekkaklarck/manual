@@ -1,17 +1,17 @@
 # Syntax
 
-This is where most of your time goes. Robot Framework data files have a clean, tabular syntax described in [Test data syntax](data.md) — learn it once and you’re set for everything else. From there, [creating test cases](tests.md) and [creating user keywords](user_keywords.md) cover the two building blocks you’ll use every day; the rest of the section fills in variables, control structures, and the finer details you’ll reach for as your test suite grows.
+Robot Framework data files use a tabular syntax described in [Test data syntax](data.md). This section explains how to [create test cases](tests.md), tasks, and suites; use libraries; and define variables and [user keywords](user_keywords.md). It also covers resource files, variable files, control structures, and advanced features.
 
 ## In this section
 
-- [Test Data Syntax](data.md)
-- [Creating Test Cases](tests.md)
-- [Creating Tasks](tasks.md)
-- [Creating Test Suites](suites.md)
-- [Using Test Libraries](libraries.md)
+- [Test data syntax](data.md)
+- [Creating test cases](tests.md)
+- [Creating tasks](tasks.md)
+- [Creating test suites](suites.md)
+- [Using test libraries](libraries.md)
 - [Variables](variables.md)
-- [Creating User Keywords](user_keywords.md)
+- [Creating user keywords](user_keywords.md)
 - [Resource files](resource_files.md)
 - [Variable files](variable_files.md)
-- [Control Structures](control.md)
-- [Advanced Features](advanced.md)
+- [Control structures](control.md)
+- [Advanced features](advanced.md)

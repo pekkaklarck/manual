@@ -86,7 +86,7 @@ are listed.
 :   A [debug file](../execution/results/index.md#debug-file) that is written during execution.
 
 `-T, --timestampoutputs`{.option}
-:   [Adds a timestamp](../execution/results/index.md#timestamping-result-files) to [result files](../execution/results/index.md#result-files) listed above.
+:   [Adds a timestamp](../execution/results/index.md#timestamping-artifact-files) to [result files](../execution/results/index.md#artifact-files) listed above.
 
 `--splitlog`{.option}
 :   [Split log file](../execution/results/index.md#splitting-logs) into smaller pieces that open in browser transparently.
@@ -253,7 +253,7 @@ are listed.
 :   Sets the path to the generated [xUnit compatible result file](../execution/results/index.md#xunit-compatible-result-file).
 
 `-T, --timestampoutputs`{.option}
-:   [Adds a timestamp](../execution/results/index.md#timestamping-result-files) to [result files](../execution/results/index.md#result-files) listed above.
+:   [Adds a timestamp](../execution/results/index.md#timestamping-artifact-files) to [result files](../execution/results/index.md#artifact-files) listed above.
 
 `--splitlog`{.option}
 :   [Split log file](../execution/results/index.md#splitting-logs) into smaller pieces that open in browser transparently.

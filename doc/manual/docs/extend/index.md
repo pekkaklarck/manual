@@ -2,11 +2,16 @@
 <a id="extending-robot-framework"></a>
 # Extend
 
-Robot Framework’s real power comes from its library interface. [Creating test libraries](libraries.md) explains how to write Python libraries using the static, hybrid, or dynamic API — if your keyword belongs in Python code rather than a `.robot` file, this is the place to start. For reacting to execution events in real time or running libraries as separate processes, the [listener interface](listeners.md) and [remote library interface](remote/index.md) have you covered.
+Robot Framework can be extended with Python libraries and other interfaces. [Creating test libraries](libraries.md) explains the static, hybrid, and dynamic library APIs. The [listener interface](listeners.md) provides access to execution events, and the [remote library interface](remote/index.md) supports libraries running in separate processes. This section also covers library documentation, custom parsers, execution and result models, and output formats.
 
 ## In this section
 
-- [Creating Test Libraries](libraries.md)
-- [Remote Library](remote/index.md)
-- [Listener Interface](listeners.md)
-- [Parser Interface](parsing.md)
+- [Creating test libraries](libraries.md)
+- [Dynamic library API](dynamic.md)
+- [Remote library interface](remote/index.md)
+- [Libdoc](libdoc/index.md)
+- [Listener interface](listeners.md)
+- [Parser interface](parsing.md)
+- [Execution and result models](models.md)
+- [JSON models](json.md)
+- [XML output format](xml.md)

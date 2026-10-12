@@ -67,7 +67,7 @@ Dictionary Variable
     **Aliases:** `&{}`
 
 Documentation
-:  Descriptive text attached to a suite, test or task, user keyword, library, or resource file to explain its purpose, behaviour, or use.
+:  Descriptive text attached to a suite, test or task, user keyword, library, or resource file to explain its purpose, behavior, or use.
 
 Dry Run
 :  Execution mode that validates test data without running keywords provided by test libraries.
@@ -274,7 +274,7 @@ Report File
     **Aliases:** `report.html`
 
 Reserved Tag
-:  Tag with the `robot:` prefix whose meaning and behaviour are defined by Robot Framework.
+:  Tag with the `robot:` prefix whose meaning and behavior are defined by Robot Framework.
 
 Resource File
 :  File (commonly with extension .resource or .robot) that contains user keywords and variables and is imported by suites to share and reuse these artifacts.
@@ -333,7 +333,7 @@ Section Header
 :  Header row such as `*** Settings ***` that identifies the type of a section.
 
 Setting
-:  Named instruction that imports data or configures behaviour for a file, suite, test or task, or user keyword.
+:  Named instruction that imports data or configures behavior for a file, suite, test or task, or user keyword.
 
 Setup
 :  Keyword executed before the content of a suite, test or task, or user keyword to prepare the state needed by that scope.
@@ -379,7 +379,7 @@ System Log
     **Aliases:** syslog
 
 Tag
-:  Label assigned to a test, task, or keyword to categorize it, support filtering or reporting, or activate reserved Robot Framework behaviour.
+:  Label assigned to a test, task, or keyword to categorize it, support filtering or reporting, or activate reserved Robot Framework behavior.
 
 Tag Pattern
 :  Pattern used to select tags with simple wildcards and the Boolean operators `AND`, `OR`, and `NOT`.

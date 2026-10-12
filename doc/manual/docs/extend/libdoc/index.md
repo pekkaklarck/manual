@@ -175,7 +175,7 @@ texts in the HTML documentation by using the `--language`{.option} option.
 
 See the `README.rst` file in `src/web/libodc` directory in the project
 repository for up to date information about how to add new languages
-for the localisation.
+for the localization.
 
 ```text
 libdoc OperatingSystem OperatingSystem.html
