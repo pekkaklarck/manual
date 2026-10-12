@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://pekkaklarck.github.io/manual/latest/syntax/resource-files/">
+        <link rel="canonical" href="https://pekkaklarck.github.io/manual/latest/execution/post_processing/">
       
       
-        <link rel="prev" href="../user-keywords/">
+        <link rel="prev" href="../results/">
       
       
-        <link rel="next" href="../variable-files/">
+        <link rel="next" href="../../libraries/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>Resource files - Robot Framework</title>
+        <title>Post-processing - Robot Framework</title>
       
     
     
@@ -69,17 +69,17 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Resource files - Robot Framework" />
+<meta property="og:title" content="Post-processing - Robot Framework" />
 <meta property="og:description" content="Robot Framework is a generic open source automation framework. This reference manual covers all its features in detail." />
-<meta property="og:image" content="https://pekkaklarck.github.io/manual/latest/assets/images/social/syntax/resource-files.png" />
+<meta property="og:image" content="https://pekkaklarck.github.io/manual/latest/assets/images/social/execution/post_processing.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://pekkaklarck.github.io/manual/latest/syntax/resource-files/" />
+<meta property="og:url" content="https://pekkaklarck.github.io/manual/latest/execution/post_processing/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Resource files - Robot Framework" />
+<meta property="twitter:title" content="Post-processing - Robot Framework" />
 <meta property="twitter:description" content="Robot Framework is a generic open source automation framework. This reference manual covers all its features in detail." />
-<meta property="twitter:image" content="https://pekkaklarck.github.io/manual/latest/assets/images/social/syntax/resource-files.png" />
+<meta property="twitter:image" content="https://pekkaklarck.github.io/manual/latest/assets/images/social/execution/post_processing.png" />
 </head>
   
   
@@ -99,7 +99,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#resource-files" class="md-skip">
+        <a href="#post-processing-outputs" class="md-skip">
           Skip to content
         </a>
       
@@ -148,7 +148,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Resource files
+              Post-processing
             
           </span>
         </div>
@@ -307,11 +307,9 @@
   
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="../" class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href="../../syntax/" class="md-tabs__link">
         
   
   
@@ -328,9 +326,11 @@
   
   
   
+    
   
-    <li class="md-tabs__item">
-      <a href="../../execution/" class="md-tabs__link">
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="../" class="md-tabs__link">
         
   
   
@@ -545,8 +545,6 @@
       
   
   
-    
-  
   
   
     
@@ -561,6 +559,396 @@
         
       
         
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../syntax/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syntax
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Syntax
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../syntax/data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Test data syntax
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../syntax/tests/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Creating test cases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../syntax/tasks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Creating tasks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../syntax/suites/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Creating test suites
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../syntax/libraries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Using test libraries
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../syntax/variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Variables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../syntax/user_keywords/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Creating user keywords
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../syntax/resource_files/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resource files
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../syntax/variable_files/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Variable files
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../syntax/control/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Control structures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../syntax/advanced/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced features
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
       
         
       
@@ -590,7 +978,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           <div class="md-nav__link md-nav__container">
@@ -601,7 +989,7 @@
   <span class="md-ellipsis">
     
   
-    Syntax
+    Execution
   
 
     
@@ -612,18 +1000,18 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
   
-    Syntax
+    Execution
   
 
           </label>
@@ -636,14 +1024,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../data/" class="md-nav__link">
+      <a href="../basics/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Test Data
+    Basic usage
   
 
     
@@ -671,7 +1059,7 @@
   <span class="md-ellipsis">
     
   
-    Creating tests
+    Test execution
   
 
     
@@ -699,7 +1087,7 @@
   <span class="md-ellipsis">
     
   
-    Creating tasks
+    Task execution
   
 
     
@@ -720,14 +1108,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../suites/" class="md-nav__link">
+      <a href="../configuration/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Creating suites
+    Configuring execution
   
 
     
@@ -748,70 +1136,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../libraries/" class="md-nav__link">
+      <a href="../results/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Using libraries
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../variables/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Variables
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../user-keywords/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    User keywords
+    Execution artifacts
   
 
     
@@ -848,7 +1180,7 @@
   <span class="md-ellipsis">
     
   
-    Resource files
+    Post-processing
   
 
     
@@ -866,7 +1198,7 @@
   <span class="md-ellipsis">
     
   
-    Resource files
+    Post-processing
   
 
     
@@ -892,10 +1224,71 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#taking-resource-files-into-use" class="md-nav__link">
+  <a href="#using-rebot" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Taking resource files into use
+        Using Rebot
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using Rebot">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#synopsis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Synopsis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#specifying-options-and-arguments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Specifying options and arguments
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-codes-with-rebot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Return codes with Rebot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#controlling-execution-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Controlling execution mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-reports-logs-and-output-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating reports, logs and output files
       
     </span>
   </a>
@@ -903,10 +1296,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#resource-file-structure" class="md-nav__link">
+  <a href="#combining-results" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Resource file structure
+        Combining results
       
     </span>
   </a>
@@ -914,10 +1307,49 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#documenting-resource-files" class="md-nav__link">
+  <a href="#merging-results" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Documenting resource files
+        Merging results
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Merging results">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#merging-re-executed-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Merging re-executed tests
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#merging-suites-executed-in-pieces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Merging suites executed in pieces
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#json-output-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JSON output files
       
     </span>
   </a>
@@ -925,43 +1357,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#example-resource-file" class="md-nav__link">
+  <a href="#controlling-rebot-console-output" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example resource file
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#resource-files-using-restructuredtext-format" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Resource files using reStructuredText format
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#resource-files-using-markdown-format" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Resource files using Markdown format
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#resource-files-using-json-format" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Resource files using JSON format
+        Controlling Rebot console output
       
     </span>
   </a>
@@ -972,308 +1371,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../variable-files/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Variable files
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../control/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Control structures
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../advanced/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Advanced features
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
-        
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../../execution/" class="md-nav__link ">
-              
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Execution
-  
-
-    
-  </span>
-  
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Execution
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../execution/basics/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Basic usage
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../execution/tests/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Test execution
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../execution/tasks/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Task execution
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../execution/configuration/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Configuring execution
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../execution/results/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Execution artifacts
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -1406,7 +1503,7 @@
   <span class="md-ellipsis">
     
   
-    Library interface
+    Creating test libraries
   
 
     
@@ -1434,7 +1531,7 @@
   <span class="md-ellipsis">
     
   
-    Dynamic library interface
+    Dynamic library API
   
 
     
@@ -1630,7 +1727,7 @@
   <span class="md-ellipsis">
     
   
-    XML output
+    XML output format
   
 
     
@@ -9599,6 +9696,8 @@
       
         
       
+        
+      
     
     
     
@@ -9770,7 +9869,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../appendix/doc-format/" class="md-nav__link">
+      <a href="../../appendix/doc_format/" class="md-nav__link">
         
   
   
@@ -9798,7 +9897,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../appendix/time-format/" class="md-nav__link">
+      <a href="../../appendix/time_format/" class="md-nav__link">
         
   
   
@@ -9834,6 +9933,34 @@
     
   
     Registrations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/boolean_arguments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Boolean arguments
   
 
     
@@ -9898,7 +10025,7 @@
 
 
   
-    <a href="https://github.com/pekkaklarck/manual/blob/main/doc/manual/docs/syntax/resource-files.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/pekkaklarck/manual/blob/main/doc/manual/docs/execution/post_processing.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -9906,267 +10033,237 @@
   
 
 
-<p><a id="Resourcefiles"></a></p>
-<h1 id="resource-files">Resource files<a class="headerlink" href="#resource-files" title="Permanent link">&para;</a></h1>
-<p>Resource files are typically created using the plain text format, but also
-<a href="#resource-files-using-restructuredtext-format">reStructuredText</a>, <a href="#resource-files-using-markdown-format">Markdown</a> and <a href="#resource-files-using-json-format">JSON</a> resource files are supported.</p>
-<h3 id="taking-resource-files-into-use">Taking resource files into use<a class="headerlink" href="#taking-resource-files-into-use" title="Permanent link">&para;</a></h3>
-<p>Resource files are imported using the <em class="setting">Resource</em> setting in the
-Settings section so that the path to the resource file is given as an argument
-to the setting. The recommended extension for resource files is <code class="file">.resource</code>.
-For backwards compatibility reasons also <code class="file">.robot</code>, <code class="file">.txt</code> and
-<code class="file">.tsv</code> work, but using <code class="file">.resource</code> may be mandated in the future.</p>
-<p>If the resource file path is absolute, it is used directly. Otherwise,
-the resource file is first searched relatively to the directory
-where the importing file is located. If the file is not found there,
-it is then searched from the directories in Python's <a href="../../execution/configuration/#module-search-path">module search path</a>.
-Searching resource files from the module search path makes it possible to
-bundle them into Python packages as <a href="https://packaging.python.org/en/latest/guides/distributing-packages-using-setuptools/#package-data">package data</a> and importing
-them like <code class="file">package/example.resource</code>.</p>
-<p>The resource file path can contain variables, and it is recommended to use
-them to make paths system-independent (for example,
-<code class="file">${RESOURCES}/login.resource</code> or just <code class="file">${RESOURCE_PATH}</code>).
-Additionally, forward slashes (<code>/</code>) in the path
-are automatically changed to backslashes (<code class="codesc">\</code>) on Windows.</p>
+<p><a id="rebot"></a></p>
+<p><a id="post-process-outputs"></a></p>
+<h1 id="post-processing-outputs">Post-processing outputs<a class="headerlink" href="#post-processing-outputs" title="Permanent link">&para;</a></h1>
+<p><a href="../results/#output-file">XML output files</a> that are generated during the test execution can be
+post-processed afterwards by the Rebot tool, which is an integral
+part of Robot Framework. It is used automatically when test
+reports and logs are generated during the test execution, and using it
+separately allows creating custom reports and logs as well as combining
+and merging results.</p>
+<p><a id="rebot"></a>
+<a id="Post-processingoutputs"></a>
+<a id="post-process outputs"></a></p>
+<h2 id="using-rebot">Using Rebot<a class="headerlink" href="#using-rebot" title="Permanent link">&para;</a></h2>
+<h3 id="synopsis">Synopsis<a class="headerlink" href="#synopsis" title="Permanent link">&para;</a></h3>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-1">1</a></span>
 <span class="normal"><a href="#example-0-2">2</a></span>
-<span class="normal"><a href="#example-0-3">3</a></span>
-<span class="normal"><a href="#example-0-4">4</a></span>
-<span class="normal"><a href="#example-0-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a><span class="gh">*** Settings ***</span>
-</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a><span class="kn">Resource</span><span class="p">    </span><span class="nn">example.resource</span>
-</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a><span class="kn">Resource</span><span class="p">    </span><span class="nn">../resources/login.resource</span>
-</span><span id="line-0-4"><a id="example-0-4" name="example-0-4"></a><span class="kn">Resource</span><span class="p">    </span><span class="nn">package/example.resource</span>
-</span><span id="line-0-5"><a id="example-0-5" name="example-0-5"></a><span class="kn">Resource</span><span class="p">    ${</span><span class="nv">RESOURCES</span><span class="p">}</span><span class="nn">/common.resource</span>
+<span class="normal"><a href="#example-0-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-1"><a id="example-0-1" name="example-0-1"></a>rebot [options] outputs
+</span><span id="line-0-2"><a id="example-0-2" name="example-0-2"></a>python -m robot.rebot [options] outputs
+</span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a>python path/to/robot/rebot.py [options] outputs
 </span></code></pre></div></td></tr></table></div>
-<p>The user keywords and variables defined in a resource file are
-available in the file that takes that resource file into
-use. Similarly available are also all keywords and variables from the
-libraries, resource files and variable files imported by the said
-resource file.</p>
+<p>The most common way to use Rebot is using the <code>rebot</code> command.
+Alternatively it is possible to execute the installed <code>robot.rebot</code>
+module or the <code>robot/rebot.py</code> file using the selected Python
+interpreter.</p>
+<h3 id="specifying-options-and-arguments">Specifying options and arguments<a class="headerlink" href="#specifying-options-and-arguments" title="Permanent link">&para;</a></h3>
+<p>The basic syntax for using Rebot is exactly the same as when
+<a href="../basics/#starting-test-execution">starting test execution</a> and also most of the command line options are
+identical. The main difference is that arguments to Rebot are
+<a href="../results/#output-file">XML output files</a> instead of test data files or directories.</p>
+<h3 id="return-codes-with-rebot">Return codes with Rebot<a class="headerlink" href="#return-codes-with-rebot" title="Permanent link">&para;</a></h3>
+<p>Return codes from Rebot are exactly same as when <a href="../basics/#return-codes">running tests</a>.</p>
+<h3 id="controlling-execution-mode">Controlling execution mode<a class="headerlink" href="#controlling-execution-mode" title="Permanent link">&para;</a></h3>
+<p>Rebot notices have <a href="../tests/#test-execution">tests</a> or <a href="../tasks/#task-execution">tasks</a> been run, and by default preserves the
+execution mode. The mode affects logs and reports so that in the former case
+they will use term <em>test</em> like <code>Test Log</code> and <code>Test Statistics</code>, and in
+the latter case term <em>task</em> like <code>Task Log</code> and <code>Task Statistics</code>.</p>
+<p>Rebot also supports using <code class="option">--rpa</code> or <code class="option">--norpa</code> options to set
+the execution mode explicitly. This is necessary if multiple output files
+are processed and they have conflicting modes.</p>
+<h2 id="creating-reports-logs-and-output-files">Creating reports, logs and output files<a class="headerlink" href="#creating-reports-logs-and-output-files" title="Permanent link">&para;</a></h2>
+<p>You can use Rebot for creating the same reports and logs that
+are created automatically during the test execution. Of course, it is
+not sensible to create the exactly same files, but, for example,
+having one report with all test cases and another with only some
+subset of tests can be useful:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-1-1">1</a></span>
+<span class="normal"><a href="#example-1-2">2</a></span>
+<span class="normal"><a href="#example-1-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-1-1"><a id="example-1-1" name="example-1-1"></a>rebot output.xml
+</span><span id="line-1-2"><a id="example-1-2" name="example-1-2"></a>rebot path/to/output_file.xml
+</span><span id="line-1-3"><a id="example-1-3" name="example-1-3"></a>rebot --include smoke --name Smoke_Tests c:\results\output.xml
+</span></code></pre></div></td></tr></table></div>
+<p>Another common usage is creating only the output file when running tests
+(log and report generation can be disabled with  <code>--log NONE
+--report NONE</code>) and generating logs and reports later. Tests can,
+for example, be executed on different environments, output files collected
+to a central place, and reports and logs created there.</p>
+<p>Rebot does not create XML output files by default, but it is possible to
+create them by using the <code class="option">--output (-o)</code> option. Log and report
+are created by default, but they can be disabled by using value <code>NONE</code>
+(case-insensitive) if they are not needed:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-2-1"><a id="example-2-1" name="example-2-1"></a>rebot --include smoke --output smoke.xml --log none --report none original.xml
+</span></code></pre></div></td></tr></table></div>
+<h2 id="combining-results">Combining results<a class="headerlink" href="#combining-results" title="Permanent link">&para;</a></h2>
+<p>An important feature in Rebot is its ability to combine
+results from different execution rounds. This capability allows,
+for example, running the same test cases on different environments and
+generating an overall report from all outputs. Combining results is
+extremely easy, all that needs to be done is giving several output
+files as arguments:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-3-1">1</a></span>
+<span class="normal"><a href="#example-3-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-3-1"><a id="example-3-1" name="example-3-1"></a>rebot output1.xml output2.xml
+</span><span id="line-3-2"><a id="example-3-2" name="example-3-2"></a>rebot outputs/*.xml
+</span></code></pre></div></td></tr></table></div>
+<p>When results are combined, a new top-level test suite is created so
+that test suites in the given output files are its child suites. This
+works the same way when <a href="../basics/#specifying-test-data-to-be-executed">multiple test data files or directories are
+executed</a>, and also in this case the name of the top-level test
+suite is created by joining child suite names with an ampersand (&amp;)
+and spaces. These automatically generated names are not that good, and
+it is often a good idea to use <code class="option">--name</code> to give a more
+meaningful name:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-4-1">1</a></span>
+<span class="normal"><a href="#example-4-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-4-1"><a id="example-4-1" name="example-4-1"></a>rebot --name "Browser Compatibility" firefox.xml opera.xml safari.xml ie.xml
+</span><span id="line-4-2"><a id="example-4-2" name="example-4-2"></a>rebot --include smoke --name Smoke c:\results\*.xml
+</span></code></pre></div></td></tr></table></div>
+<h2 id="merging-results">Merging results<a class="headerlink" href="#merging-results" title="Permanent link">&para;</a></h2>
+<p>If same tests are re-executed or a single test suite executed in pieces,
+combining results like discussed above creates an unnecessary top-level
+test suite. In these cases it is typically better to merge results instead.
+Merging is done by using <code class="option">--merge (-R)</code> option which changes the way how
+Rebot combines two or more output files. This option itself takes no
+arguments and all other command line options can be used with it normally:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-5-1">1</a></span>
+<span class="normal"><a href="#example-5-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-5-1"><a id="example-5-1" name="example-5-1"></a>rebot --merge original.xml merged.xml
+</span><span id="line-5-2"><a id="example-5-2" name="example-5-2"></a>rebot --merge --name Example first.xml second.xml third.xml
+</span></code></pre></div></td></tr></table></div>
+<p>When suites are merged, documentation, suite setup and suite teardown are got
+from the last merged suite. Suite metadata from all merged suites is preserved
+so that values in latter suites have precedence.</p>
+<p>How merging tests works is explained in the following sections discussing
+the two main merge use cases.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The <code class="file">.resource</code> extension is new in Robot Framework 3.1.</p>
+<p>Getting suite documentation and metadata from merged suites is new in
+Robot Framework 6.0.</p>
 </div>
-<h3 id="resource-file-structure">Resource file structure<a class="headerlink" href="#resource-file-structure" title="Permanent link">&para;</a></h3>
-<p>The higher-level structure of resource files is the same as that of
-suite files otherwise, but they cannot contain tests or tasks.
-Additionally, the Setting section in resource files can contain only imports
-(<em class="setting">Library</em>, <em class="setting">Resource</em>, <em class="setting">Variables</em>),
-<em class="setting">Documentation</em> and <em class="setting">Keyword Tags</em>.
-The Variable section and Keyword section are used exactly the same way
-as in suite files.</p>
-<p>If several resource files have a user keyword with the same name, they
-must be used so that the <a href="../advanced/#handling-keywords-with-same-names">keyword name is prefixed with the resource
-file name</a> without the extension (for example, <em class="name">myresources.Some Keyword</em> and <em class="name">common.Some Keyword</em>). Moreover, if several resource
-files contain the same variable, the one that is imported first is
-taken into use.</p>
-<h3 id="documenting-resource-files">Documenting resource files<a class="headerlink" href="#documenting-resource-files" title="Permanent link">&para;</a></h3>
-<p>Keywords created in a resource file can be <a href="../user-keywords/#user-keyword-name-and-documentation">documented</a> using
-<em class="setting">[Documentation]</em> setting. The resource file itself can have
-<em class="setting">Documentation</em> in the Setting section similarly as <a href="../suites/#suite-name">suites</a>.</p>
-<p><a href="../../extend/libdoc/#libdoc">Libdoc</a> and various editors use these documentations, and they
-are naturally available for anyone opening resource files.  The
-first logical line of the documentation of a keyword, until the first
-empty line, is logged when the keyword is run, but otherwise resource
-file documentation is ignored during the test execution.</p>
-<h3 id="example-resource-file">Example resource file<a class="headerlink" href="#example-resource-file" title="Permanent link">&para;</a></h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-1-1"> 1</a></span>
-<span class="normal"><a href="#example-1-2"> 2</a></span>
-<span class="normal"><a href="#example-1-3"> 3</a></span>
-<span class="normal"><a href="#example-1-4"> 4</a></span>
-<span class="normal"><a href="#example-1-5"> 5</a></span>
-<span class="normal"><a href="#example-1-6"> 6</a></span>
-<span class="normal"><a href="#example-1-7"> 7</a></span>
-<span class="normal"><a href="#example-1-8"> 8</a></span>
-<span class="normal"><a href="#example-1-9"> 9</a></span>
-<span class="normal"><a href="#example-1-10">10</a></span>
-<span class="normal"><a href="#example-1-11">11</a></span>
-<span class="normal"><a href="#example-1-12">12</a></span>
-<span class="normal"><a href="#example-1-13">13</a></span>
-<span class="normal"><a href="#example-1-14">14</a></span>
-<span class="normal"><a href="#example-1-15">15</a></span>
-<span class="normal"><a href="#example-1-16">16</a></span>
-<span class="normal"><a href="#example-1-17">17</a></span>
-<span class="normal"><a href="#example-1-18">18</a></span>
-<span class="normal"><a href="#example-1-19">19</a></span>
-<span class="normal"><a href="#example-1-20">20</a></span>
-<span class="normal"><a href="#example-1-21">21</a></span>
-<span class="normal"><a href="#example-1-22">22</a></span>
-<span class="normal"><a href="#example-1-23">23</a></span>
-<span class="normal"><a href="#example-1-24">24</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-1-1"><a id="example-1-1" name="example-1-1"></a><span class="gh">*** Settings ***</span>
-</span><span id="line-1-2"><a id="example-1-2" name="example-1-2"></a><span class="kn">Documentation</span><span class="p">     </span><span class="s">An example resource file</span>
-</span><span id="line-1-3"><a id="example-1-3" name="example-1-3"></a><span class="kn">Library</span><span class="p">           </span><span class="nn">SeleniumLibrary</span>
-</span><span id="line-1-4"><a id="example-1-4" name="example-1-4"></a><span class="kn">Resource</span><span class="p">          ${</span><span class="nv">RESOURCES</span><span class="p">}</span><span class="nn">/common.resource</span>
-</span><span id="line-1-5"><a id="example-1-5" name="example-1-5"></a>
-</span><span id="line-1-6"><a id="example-1-6" name="example-1-6"></a><span class="gh">*** Variables ***</span>
-</span><span id="line-1-7"><a id="example-1-7" name="example-1-7"></a><span class="p">${</span><span class="nv">HOST</span><span class="p">}           </span><span class="s">localhost:7272</span>
-</span><span id="line-1-8"><a id="example-1-8" name="example-1-8"></a><span class="p">${</span><span class="nv">LOGIN URL</span><span class="p">}      </span><span class="s">http://</span><span class="p">${</span><span class="nv">HOST</span><span class="p">}</span><span class="s">/</span>
-</span><span id="line-1-9"><a id="example-1-9" name="example-1-9"></a><span class="p">${</span><span class="nv">WELCOME URL</span><span class="p">}    </span><span class="s">http://</span><span class="p">${</span><span class="nv">HOST</span><span class="p">}</span><span class="s">/welcome.html</span>
-</span><span id="line-1-10"><a id="example-1-10" name="example-1-10"></a><span class="p">${</span><span class="nv">BROWSER</span><span class="p">}        </span><span class="s">Firefox</span>
-</span><span id="line-1-11"><a id="example-1-11" name="example-1-11"></a>
-</span><span id="line-1-12"><a id="example-1-12" name="example-1-12"></a><span class="gh">*** Keywords ***</span>
-</span><span id="line-1-13"><a id="example-1-13" name="example-1-13"></a><span class="gu">Open Login Page</span>
-</span><span id="line-1-14"><a id="example-1-14" name="example-1-14"></a><span class="p">    [</span><span class="kn">Documentation</span><span class="p">]    </span><span class="s">Opens browser to login page</span>
-</span><span id="line-1-15"><a id="example-1-15" name="example-1-15"></a><span class="p">    </span><span class="nf">Open Browser</span><span class="p">    ${</span><span class="nv">LOGIN URL</span><span class="p">}    ${</span><span class="nv">BROWSER</span><span class="p">}</span>
-</span><span id="line-1-16"><a id="example-1-16" name="example-1-16"></a><span class="p">    </span><span class="nf">Title Should Be</span><span class="p">    </span><span class="s">Login Page</span>
-</span><span id="line-1-17"><a id="example-1-17" name="example-1-17"></a>
-</span><span id="line-1-18"><a id="example-1-18" name="example-1-18"></a><span class="gu">Input Name</span>
-</span><span id="line-1-19"><a id="example-1-19" name="example-1-19"></a><span class="p">    [</span><span class="kn">Arguments</span><span class="p">]    ${</span><span class="nv">name</span><span class="p">}</span>
-</span><span id="line-1-20"><a id="example-1-20" name="example-1-20"></a><span class="p">    </span><span class="nf">Input Text</span><span class="p">    </span><span class="s">username_field</span><span class="p">    ${</span><span class="nv">name</span><span class="p">}</span>
-</span><span id="line-1-21"><a id="example-1-21" name="example-1-21"></a>
-</span><span id="line-1-22"><a id="example-1-22" name="example-1-22"></a><span class="gu">Input Password</span>
-</span><span id="line-1-23"><a id="example-1-23" name="example-1-23"></a><span class="p">    [</span><span class="kn">Arguments</span><span class="p">]    ${</span><span class="nv">password</span><span class="p">}</span>
-</span><span id="line-1-24"><a id="example-1-24" name="example-1-24"></a><span class="p">    </span><span class="nf">Input Text</span><span class="p">    </span><span class="s">password_field</span><span class="p">    ${</span><span class="nv">password</span><span class="p">}</span>
-</span></code></pre></div></td></tr></table></div>
-<h3 id="resource-files-using-restructuredtext-format">Resource files using reStructuredText format<a class="headerlink" href="#resource-files-using-restructuredtext-format" title="Permanent link">&para;</a></h3>
-<p>The <a href="../data/#restructuredtext-data-format">reStructuredText data format</a> that can be used with <a href="../suites/#suite-files">suite files</a>  works
-also with resource files. Such resource files can use either <code class="file">.rst</code>
-or <code class="file">.rest</code> extension and they are otherwise imported exactly as
-normal resource files:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-2-1">1</a></span>
-<span class="normal"><a href="#example-2-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-2-1"><a id="example-2-1" name="example-2-1"></a><span class="gh">*** Settings ***</span>
-</span><span id="line-2-2"><a id="example-2-2" name="example-2-2"></a><span class="kn">Resource</span><span class="p">         </span><span class="nn">example.rst</span>
-</span></code></pre></div></td></tr></table></div>
-<p>When parsing resource files using the reStructuredText format, Robot Framework
-ignores all data outside code blocks containing Robot Framework data exactly
-the same way as when parsing <a href="../data/#restructuredtext-data-format">reStructuredText suite files</a>.
-For example, the following resource file imports <em class="name">OperatingSystem</em> library,
-defines <code>${MESSAGE}</code> variable and creates <em class="name">My Keyword</em> keyword:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-3-1"> 1</a></span>
-<span class="normal"><a href="#example-3-2"> 2</a></span>
-<span class="normal"><a href="#example-3-3"> 3</a></span>
-<span class="normal"><a href="#example-3-4"> 4</a></span>
-<span class="normal"><a href="#example-3-5"> 5</a></span>
-<span class="normal"><a href="#example-3-6"> 6</a></span>
-<span class="normal"><a href="#example-3-7"> 7</a></span>
-<span class="normal"><a href="#example-3-8"> 8</a></span>
-<span class="normal"><a href="#example-3-9"> 9</a></span>
-<span class="normal"><a href="#example-3-10">10</a></span>
-<span class="normal"><a href="#example-3-11">11</a></span>
-<span class="normal"><a href="#example-3-12">12</a></span>
-<span class="normal"><a href="#example-3-13">13</a></span>
-<span class="normal"><a href="#example-3-14">14</a></span>
-<span class="normal"><a href="#example-3-15">15</a></span>
-<span class="normal"><a href="#example-3-16">16</a></span>
-<span class="normal"><a href="#example-3-17">17</a></span>
-<span class="normal"><a href="#example-3-18">18</a></span>
-<span class="normal"><a href="#example-3-19">19</a></span>
-<span class="normal"><a href="#example-3-20">20</a></span>
-<span class="normal"><a href="#example-3-21">21</a></span>
-<span class="normal"><a href="#example-3-22">22</a></span>
-<span class="normal"><a href="#example-3-23">23</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-3-1"><a id="example-3-1" name="example-3-1"></a><span class="gh">Resource file using reStructuredText</span>
-</span><span id="line-3-2"><a id="example-3-2" name="example-3-2"></a><span class="gh">------------------------------------</span>
-</span><span id="line-3-3"><a id="example-3-3" name="example-3-3"></a>
-</span><span id="line-3-4"><a id="example-3-4" name="example-3-4"></a>This text is outside code blocks and thus ignored.
-</span><span id="line-3-5"><a id="example-3-5" name="example-3-5"></a>
-</span><span id="line-3-6"><a id="example-3-6" name="example-3-6"></a><span class="p">..</span> <span class="ow">code</span><span class="p">::</span> <span class="k">robotframework</span>
-</span><span id="line-3-7"><a id="example-3-7" name="example-3-7"></a>
-</span><span id="line-3-8"><a id="example-3-8" name="example-3-8"></a>   <span class="gh">*** Settings ***</span>
-</span><span id="line-3-9"><a id="example-3-9" name="example-3-9"></a>   <span class="kn">Library</span><span class="p">          </span><span class="nn">OperatingSystem</span>
-</span><span id="line-3-10"><a id="example-3-10" name="example-3-10"></a>
-</span><span id="line-3-11"><a id="example-3-11" name="example-3-11"></a>   <span class="gh">*** Variables ***</span>
-</span><span id="line-3-12"><a id="example-3-12" name="example-3-12"></a>   <span class="p">${</span><span class="nv">MESSAGE</span><span class="p">}       </span><span class="s">Hello, world!</span>
-</span><span id="line-3-13"><a id="example-3-13" name="example-3-13"></a>
-</span><span id="line-3-14"><a id="example-3-14" name="example-3-14"></a>Also this text is outside code blocks and ignored. Code blocks not
-</span><span id="line-3-15"><a id="example-3-15" name="example-3-15"></a>containing Robot Framework data are ignored as well.
-</span><span id="line-3-16"><a id="example-3-16" name="example-3-16"></a>
-</span><span id="line-3-17"><a id="example-3-17" name="example-3-17"></a><span class="p">..</span> <span class="ow">code</span><span class="p">::</span> <span class="k">robotframework</span>
-</span><span id="line-3-18"><a id="example-3-18" name="example-3-18"></a>
-</span><span id="line-3-19"><a id="example-3-19" name="example-3-19"></a>   <span class="c"># Both space and pipe separated formats are supported.</span>
-</span><span id="line-3-20"><a id="example-3-20" name="example-3-20"></a>
-</span><span id="line-3-21"><a id="example-3-21" name="example-3-21"></a>   <span class="p">| </span><span class="gh">*** Keywords ***</span><span class="p">  |                        |         |</span>
-</span><span id="line-3-22"><a id="example-3-22" name="example-3-22"></a>   <span class="p">| </span><span class="gu">My Keyword</span><span class="p">        | [</span><span class="kn">Arguments</span><span class="p">]            | ${</span><span class="nv">path</span><span class="p">} |</span>
-</span><span id="line-3-23"><a id="example-3-23" name="example-3-23"></a>   <span class="p">|                   | </span><span class="nf">Directory Should Exist</span><span class="p"> | ${</span><span class="nv">path</span><span class="p">} |</span>
-</span></code></pre></div></td></tr></table></div>
-<h3 id="resource-files-using-markdown-format">Resource files using Markdown format<a class="headerlink" href="#resource-files-using-markdown-format" title="Permanent link">&para;</a></h3>
-<p>The <a href="../data/#markdown-data-format">Markdown data format</a> that can be used with <a href="../suites/#suite-files">suite files</a> works also with
-resource files. Such resource files can use either <code class="file">.md</code> or
-<code class="file">.markdown</code> extension and they are otherwise imported exactly as normal
-resource files:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-4-1">1</a></span>
-<span class="normal"><a href="#example-4-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-4-1"><a id="example-4-1" name="example-4-1"></a><span class="gh">*** Settings ***</span>
-</span><span id="line-4-2"><a id="example-4-2" name="example-4-2"></a><span class="kn">Resource</span><span class="p">         </span><span class="nn">example.md</span>
-</span></code></pre></div></td></tr></table></div>
-<p>When parsing resource files using the Markdown format, Robot Framework
-ignores all data outside fenced code blocks with the <code>robotframework</code> or <code>robot</code>
-language tag exactly the same way as when parsing <a href="../data/#markdown-data-format">Markdown suite files</a>.
-For example, the following resource file imports <em class="name">OperatingSystem</em> library,
-defines <code>${MESSAGE}</code> variable and creates <em class="name">My Keyword</em> keyword:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-5-1"> 1</a></span>
-<span class="normal"><a href="#example-5-2"> 2</a></span>
-<span class="normal"><a href="#example-5-3"> 3</a></span>
-<span class="normal"><a href="#example-5-4"> 4</a></span>
-<span class="normal"><a href="#example-5-5"> 5</a></span>
-<span class="normal"><a href="#example-5-6"> 6</a></span>
-<span class="normal"><a href="#example-5-7"> 7</a></span>
-<span class="normal"><a href="#example-5-8"> 8</a></span>
-<span class="normal"><a href="#example-5-9"> 9</a></span>
-<span class="normal"><a href="#example-5-10">10</a></span>
-<span class="normal"><a href="#example-5-11">11</a></span>
-<span class="normal"><a href="#example-5-12">12</a></span>
-<span class="normal"><a href="#example-5-13">13</a></span>
-<span class="normal"><a href="#example-5-14">14</a></span>
-<span class="normal"><a href="#example-5-15">15</a></span>
-<span class="normal"><a href="#example-5-16">16</a></span>
-<span class="normal"><a href="#example-5-17">17</a></span>
-<span class="normal"><a href="#example-5-18">18</a></span>
-<span class="normal"><a href="#example-5-19">19</a></span>
-<span class="normal"><a href="#example-5-20">20</a></span>
-<span class="normal"><a href="#example-5-21">21</a></span>
-<span class="normal"><a href="#example-5-22">22</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-5-1"><a id="example-5-1" name="example-5-1"></a><span class="gh"># Resource file using Markdown</span>
-</span><span id="line-5-2"><a id="example-5-2" name="example-5-2"></a>
-</span><span id="line-5-3"><a id="example-5-3" name="example-5-3"></a>This text is outside code blocks and thus ignored.
-</span><span id="line-5-4"><a id="example-5-4" name="example-5-4"></a>
-</span><span id="line-5-5"><a id="example-5-5" name="example-5-5"></a><span class="sb">```robotframework</span>
-</span><span id="line-5-6"><a id="example-5-6" name="example-5-6"></a><span class="gh">*** Settings ***</span>
-</span><span id="line-5-7"><a id="example-5-7" name="example-5-7"></a><span class="kn">Library</span><span class="p">          </span><span class="nn">OperatingSystem</span>
-</span><span id="line-5-8"><a id="example-5-8" name="example-5-8"></a>
-</span><span id="line-5-9"><a id="example-5-9" name="example-5-9"></a><span class="gh">*** Variables ***</span>
-</span><span id="line-5-10"><a id="example-5-10" name="example-5-10"></a><span class="p">${</span><span class="nv">MESSAGE</span><span class="p">}       </span><span class="s">Hello, world!</span>
-</span><span id="line-5-11"><a id="example-5-11" name="example-5-11"></a><span class="sb">```</span>
-</span><span id="line-5-12"><a id="example-5-12" name="example-5-12"></a>
-</span><span id="line-5-13"><a id="example-5-13" name="example-5-13"></a>Also this text is outside code blocks and ignored. Code blocks not
-</span><span id="line-5-14"><a id="example-5-14" name="example-5-14"></a>containing Robot Framework data are ignored as well.
-</span><span id="line-5-15"><a id="example-5-15" name="example-5-15"></a>
-</span><span id="line-5-16"><a id="example-5-16" name="example-5-16"></a><span class="sb">```robotframework</span>
-</span><span id="line-5-17"><a id="example-5-17" name="example-5-17"></a><span class="c"># Both space and pipe separated formats are supported.</span>
-</span><span id="line-5-18"><a id="example-5-18" name="example-5-18"></a>
-</span><span id="line-5-19"><a id="example-5-19" name="example-5-19"></a><span class="p">| </span><span class="gh">*** Keywords ***</span><span class="p">  |                        |         |</span>
-</span><span id="line-5-20"><a id="example-5-20" name="example-5-20"></a><span class="p">| </span><span class="gu">My Keyword</span><span class="p">        | [</span><span class="kn">Arguments</span><span class="p">]            | ${</span><span class="nv">path</span><span class="p">} |</span>
-</span><span id="line-5-21"><a id="example-5-21" name="example-5-21"></a><span class="p">|                   | </span><span class="nf">Directory Should Exist</span><span class="p"> | ${</span><span class="nv">path</span><span class="p">} |</span>
-</span><span id="line-5-22"><a id="example-5-22" name="example-5-22"></a><span class="sb">```</span>
-</span></code></pre></div></td></tr></table></div>
-<h3 id="resource-files-using-json-format">Resource files using JSON format<a class="headerlink" href="#resource-files-using-json-format" title="Permanent link">&para;</a></h3>
-<p>Resource files can be created using <a href="https://json.org">JSON</a> the <a href="../data/#json-data-format">same way as suite files</a>.
-Such JSON resource files must use either the standard <code class="file">.json</code> extension
-or the custom <code class="file">.rsrc</code> extension. They are otherwise imported exactly as
-normal resource files:</p>
+<h3 id="merging-re-executed-tests">Merging re-executed tests<a class="headerlink" href="#merging-re-executed-tests" title="Permanent link">&para;</a></h3>
+<p>There is often a need to re-execute a subset of tests, for example, after
+fixing a bug in the system under test or in the tests themselves. This can be
+accomplished by <a href="../configuration/#selecting-test-cases">selecting test cases</a> by names (<code class="option">--test</code> and
+<code class="option">--suite</code> options), tags (<code class="option">--include</code> and <code class="option">--exclude</code>),
+or by previous status (<code class="option">--rerunfailed</code> or <code class="option">--rerunfailedsuites</code>).</p>
+<p>Combining re-execution results with the original results using the default
+<a href="#combining-results">combining results</a> approach does not work too well. The main problem is
+that you get separate test suites and possibly already fixed failures are
+also shown. In this situation it is better to use <code class="option">--merge (-R)</code>
+option to tell Rebot to merge the results instead. In practice this
+means that tests from the latter test runs replace tests in the original.
+An exception to this rule is that <a href="../tests/#skipped">skipped</a> tests in latter runs are ignored
+and original tests preserved.</p>
+<p>This usage is best illustrated by a practical example using
+<code class="option">--rerunfailed</code> and <code class="option">--merge</code> together:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-6-1">1</a></span>
-<span class="normal"><a href="#example-6-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-6-1"><a id="example-6-1" name="example-6-1"></a><span class="gh">*** Settings ***</span>
-</span><span id="line-6-2"><a id="example-6-2" name="example-6-2"></a><span class="kn">Resource</span><span class="p">         </span><span class="nn">example.rsrc</span>
+<span class="normal"><a href="#example-6-2">2</a></span>
+<span class="normal"><a href="#example-6-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-6-1"><a id="example-6-1" name="example-6-1"></a>robot --output original.xml tests                          # first execute all tests
+</span><span id="line-6-2"><a id="example-6-2" name="example-6-2"></a>robot --rerunfailed original.xml --output rerun.xml tests  # then re-execute failing
+</span><span id="line-6-3"><a id="example-6-3" name="example-6-3"></a>rebot --merge original.xml rerun.xml                       # finally merge results
 </span></code></pre></div></td></tr></table></div>
-<p>Resource files can be converted to JSON using <a href="https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.ResourceFile.to_json">ResourceFile.to_json</a> and
-recreated using <a href="https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.ResourceFile.from_json">ResourceFile.from_json</a>:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-7-1"> 1</a></span>
-<span class="normal"><a href="#example-7-2"> 2</a></span>
-<span class="normal"><a href="#example-7-3"> 3</a></span>
-<span class="normal"><a href="#example-7-4"> 4</a></span>
-<span class="normal"><a href="#example-7-5"> 5</a></span>
-<span class="normal"><a href="#example-7-6"> 6</a></span>
-<span class="normal"><a href="#example-7-7"> 7</a></span>
-<span class="normal"><a href="#example-7-8"> 8</a></span>
-<span class="normal"><a href="#example-7-9"> 9</a></span>
-<span class="normal"><a href="#example-7-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-7-1"><a id="example-7-1" name="example-7-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">robot.running</span><span class="w"> </span><span class="kn">import</span> <span class="n">ResourceFile</span>
-</span><span id="line-7-2"><a id="example-7-2" name="example-7-2"></a>
-</span><span id="line-7-3"><a id="example-7-3" name="example-7-3"></a><span class="c1"># Create resource file based on data on the file system.</span>
-</span><span id="line-7-4"><a id="example-7-4" name="example-7-4"></a><span class="n">resource</span> <span class="o">=</span> <span class="n">ResourceFile</span><span class="o">.</span><span class="n">from_file_system</span><span class="p">(</span><span class="s1">'example.resource'</span><span class="p">)</span>
-</span><span id="line-7-5"><a id="example-7-5" name="example-7-5"></a>
-</span><span id="line-7-6"><a id="example-7-6" name="example-7-6"></a><span class="c1"># Save JSON data to a file.</span>
-</span><span id="line-7-7"><a id="example-7-7" name="example-7-7"></a><span class="n">resource</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="s1">'example.rsrc'</span><span class="p">)</span>
-</span><span id="line-7-8"><a id="example-7-8" name="example-7-8"></a>
-</span><span id="line-7-9"><a id="example-7-9" name="example-7-9"></a><span class="c1"># Recreate resource from JSON data.</span>
-</span><span id="line-7-10"><a id="example-7-10" name="example-7-10"></a><span class="n">resource</span> <span class="o">=</span> <span class="n">ResourceFile</span><span class="o">.</span><span class="n">from_json</span><span class="p">(</span><span class="s1">'example.rsrc'</span><span class="p">)</span>
+<p>The message of the merged tests contains a note that results have been
+replaced. The message also shows the old status and message of the test.</p>
+<p>Merged results must always have same top-level test suite. Tests and suites
+in merged outputs that are not found from the original output are added into
+the resulting output. How this works in practice is discussed in the next
+section.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Ignoring skipped tests in latter runs is new in Robot Framework 4.1.</p>
+</div>
+<h3 id="merging-suites-executed-in-pieces">Merging suites executed in pieces<a class="headerlink" href="#merging-suites-executed-in-pieces" title="Permanent link">&para;</a></h3>
+<p>Another important use case for the <code class="option">--merge</code> option is merging results
+got when running a test suite in pieces using, for example, <code class="option">--include</code>
+and <code class="option">--exclude</code> options:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-7-1">1</a></span>
+<span class="normal"><a href="#example-7-2">2</a></span>
+<span class="normal"><a href="#example-7-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-7-1"><a id="example-7-1" name="example-7-1"></a>robot --include smoke --output smoke.xml tests   # first run some tests
+</span><span id="line-7-2"><a id="example-7-2" name="example-7-2"></a>robot --exclude smoke --output others.xml tests  # then run others
+</span><span id="line-7-3"><a id="example-7-3" name="example-7-3"></a>rebot --merge smoke.xml others.xml               # finally merge results
 </span></code></pre></div></td></tr></table></div>
+<p>When merging outputs like this, the resulting output contains all tests and
+suites found from all given output files. If some test is found from multiple
+outputs, latest results replace the earlier ones like explained in the previous
+section. Also this merging strategy requires the top-level test suites to
+be same in all outputs.</p>
+<h2 id="json-output-files">JSON output files<a class="headerlink" href="#json-output-files" title="Permanent link">&para;</a></h2>
+<p>Rebot can create and process output files also in the <a href="https://json.org">JSON</a> format.
+Creating JSON output files is done using the normal <code class="option">--output</code> option
+so that the specified file has a <code class="file">.json</code> extension:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-8-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-8-1"><a id="example-8-1" name="example-8-1"></a>rebot --output output.json output.xml
+</span></code></pre></div></td></tr></table></div>
+<p>When reading output files, JSON files are automatically recognized by
+the extension:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-9-1">1</a></span>
+<span class="normal"><a href="#example-9-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-9-1"><a id="example-9-1" name="example-9-1"></a>rebot output.json
+</span><span id="line-9-2"><a id="example-9-2" name="example-9-2"></a>rebot output1.json output2.json
+</span></code></pre></div></td></tr></table></div>
+<p>When combining or merging results, it is possible to mix JSON and XML output files:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-10-1">1</a></span>
+<span class="normal"><a href="#example-10-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-10-1"><a id="example-10-1" name="example-10-1"></a>rebot output1.xml output2.json
+</span><span id="line-10-2"><a id="example-10-2" name="example-10-2"></a>rebot --merge original.xml rerun.json
+</span></code></pre></div></td></tr></table></div>
+<p>The JSON output file structure is documented in the <code class="file">result.json</code> <a href="https://github.com/robotframework/robotframework/tree/master/doc/schema#readme">schema file</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Support for JSON output files is new in Robot Framework 7.0.
+Prior to Robot Framework 7.2 JSON output files contained only
+information about the executed suite, but nowadays they contain
+the same result data as <a href="../results/#output-file">XML output files</a>.</p>
+</div>
+<h2 id="controlling-rebot-console-output">Controlling Rebot console output<a class="headerlink" href="#controlling-rebot-console-output" title="Permanent link">&para;</a></h2>
+<p>By default, Rebot reports output file paths and possible errors and warnings
+on the console. This can be controlled with the <code class="option">--console</code> option
+that supports the following case-insensitive values:</p>
+<dl>
+<dt>
+	<code><a id="1024e32cff7efa7eac0e3969cc835758">verbose</a> </code>
+</dt>
+<dd>Report output file paths, errors and warnings (default).
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="b901d96988fca6aaf65b0500e121f133">quiet</a> </code>
+</dt>
+<dd>No output except for errors and warnings.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code><a id="695fd0a3820c106f7c347c5a7d560249">none</a> </code>
+</dt>
+<dd>No output whatsoever.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+</dl>
+<p>The <code class="option">--quiet</code> option is a shortcut for <code>--console quiet</code>.</p>
+<p>In addition to the built-in values, <code class="option">--console</code> also accepts
+<a href="../configuration/#custom-console-loggers">custom console loggers</a>, using the same mechanism as with <code>robot</code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Support for <code class="option">--console</code> and <code class="option">--quiet</code> with Rebot
+is new in Robot Framework 7.5.</p>
+</div>
 
 
 
@@ -10204,7 +10301,7 @@ recreated using <a href="https://robot-framework.readthedocs.io/en/master/autodo
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../user-keywords/" class="md-footer__link md-footer__link--prev" aria-label="Previous: User keywords">
+          <a href="../results/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Execution artifacts">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -10214,20 +10311,20 @@ recreated using <a href="https://robot-framework.readthedocs.io/en/master/autodo
                 Previous
               </span>
               <div class="md-ellipsis">
-                User keywords
+                Execution artifacts
               </div>
             </div>
           </a>
         
         
           
-          <a href="../variable-files/" class="md-footer__link md-footer__link--next" aria-label="Next: Variable files">
+          <a href="../../libraries/" class="md-footer__link md-footer__link--next" aria-label="Next: Libraries">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Variable files
+                Libraries
               </div>
             </div>
             <div class="md-footer__button md-icon">

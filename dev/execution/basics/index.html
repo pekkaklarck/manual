@@ -638,7 +638,7 @@
   <span class="md-ellipsis">
     
   
-    Test Data
+    Test data syntax
   
 
     
@@ -666,7 +666,7 @@
   <span class="md-ellipsis">
     
   
-    Creating tests
+    Creating test cases
   
 
     
@@ -722,7 +722,7 @@
   <span class="md-ellipsis">
     
   
-    Creating suites
+    Creating test suites
   
 
     
@@ -750,7 +750,7 @@
   <span class="md-ellipsis">
     
   
-    Using libraries
+    Using test libraries
   
 
     
@@ -799,14 +799,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../syntax/user-keywords/" class="md-nav__link">
+      <a href="../../syntax/user_keywords/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    User keywords
+    Creating user keywords
   
 
     
@@ -827,7 +827,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../syntax/resource-files/" class="md-nav__link">
+      <a href="../../syntax/resource_files/" class="md-nav__link">
         
   
   
@@ -855,7 +855,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../syntax/variable-files/" class="md-nav__link">
+      <a href="../../syntax/variable_files/" class="md-nav__link">
         
   
   
@@ -949,6 +949,8 @@
   
     
     
+      
+        
       
         
       
@@ -1238,10 +1240,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#generated-result-files" class="md-nav__link">
+  <a href="#generated-execution-artifacts" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Generated result files
+        Generated execution artifacts
       
     </span>
   </a>
@@ -1557,6 +1559,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../post_processing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Post-processing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1684,7 +1714,7 @@
   <span class="md-ellipsis">
     
   
-    Library interface
+    Creating test libraries
   
 
     
@@ -1712,7 +1742,7 @@
   <span class="md-ellipsis">
     
   
-    Dynamic library interface
+    Dynamic library API
   
 
     
@@ -1908,7 +1938,7 @@
   <span class="md-ellipsis">
     
   
-    XML output
+    XML output format
   
 
     
@@ -9877,6 +9907,8 @@
       
         
       
+        
+      
     
     
     
@@ -10048,7 +10080,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../appendix/doc-format/" class="md-nav__link">
+      <a href="../../appendix/doc_format/" class="md-nav__link">
         
   
   
@@ -10076,7 +10108,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../appendix/time-format/" class="md-nav__link">
+      <a href="../../appendix/time_format/" class="md-nav__link">
         
   
   
@@ -10112,6 +10144,34 @@
     
   
     Registrations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/boolean_arguments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Boolean arguments
   
 
     
@@ -10188,7 +10248,7 @@
 <p>Robot Framework test cases are executed from the command line, and the
 end result is, by default, an <a href="../results/#output-file">output file</a> in XML format and an HTML
 <a href="../results/#report-file">report</a> and <a href="../results/#log-file">log</a>. After the execution, output files can be combined and
-otherwise <a href="../post-processing/#post-processing-outputs">post-processed</a> with the Rebot tool.</p>
+otherwise <a href="../post_processing/#post-processing-outputs">post-processed</a> with the Rebot tool.</p>
 <p><a id="executing-test-cases"></a></p>
 <p><a id="test-execution"></a></p>
 <p><a id="executing test cases"></a>
@@ -10204,7 +10264,7 @@ otherwise <a href="../post-processing/#post-processing-outputs">post-processed</
 </span><span id="line-0-3"><a id="example-0-3" name="example-0-3"></a>python path/to/robot/ [options] data
 </span></code></pre></div></td></tr></table></div>
 <p>Execution is normally started using the <code>robot</code> command created as part of
-<a href="../../appendix/doc-format/#installation">installation</a>. Alternatively it is possible to execute the installed <code>robot</code>
+<a href="../../install/">installation</a>. Alternatively it is possible to execute the installed <code>robot</code>
 module using the selected Python interpreter. This is especially convenient
 if Robot Framework has been installed under multiple Python versions.
 Finally, if you know where the installed <code>robot</code> directory exists, it can
@@ -10253,7 +10313,7 @@ example below:</p>
 </span><span id="line-2-2"><a id="example-2-2" name="example-2-2"></a>robot --name Example path/to/tests/pattern_*.robot
 </span></code></pre></div></td></tr></table></div>
 <p>Starting from Robot Framework 6.1, it is also possible to define a
-<a href="../../syntax/suites/#suite-initialization-files">test suite initialisation file</a> for the automatically created top-level
+<a href="../../syntax/suites/#suite-initialization-files">test suite initialization file</a> for the automatically created top-level
 suite. The path to the init file is given similarly to the
 test case files:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-3-1"><a id="example-3-1" name="example-3-1"></a>robot __init__.robot my_tests.robot other_tests.robot
@@ -10447,7 +10507,7 @@ in Robot Framework 8.0.</p>
 </div>
 <h3 id="robot_options-and-rebot_options-environment-variables"><code>ROBOT_OPTIONS</code> and <code>REBOT_OPTIONS</code> environment variables<a class="headerlink" href="#robot_options-and-rebot_options-environment-variables" title="Permanent link">&para;</a></h3>
 <p>Environment variables <code>ROBOT_OPTIONS</code> and <code>REBOT_OPTIONS</code> can be
-used to specify default options for <a href="#starting-test-execution">test execution</a> and <a href="../post-processing/#post-processing-outputs">result
+used to specify default options for <a href="#starting-test-execution">test execution</a> and <a href="../post_processing/#post-processing-outputs">result
 post-processing</a>, respectively. The options and their values must be
 defined as a space separated list and they are placed in front of any
 explicit options on the command line. The main use case for these
@@ -10500,10 +10560,10 @@ whenever a top-level keyword in a test case ends. A green dot is used if
 a keyword passes and a red F if it fails. These markers are written to the end
 of line and they are overwritten by the test status when the test itself ends.
 Writing the markers is disabled if console output is redirected to a file.</p>
-<h3 id="generated-result-files">Generated result files<a class="headerlink" href="#generated-result-files" title="Permanent link">&para;</a></h3>
-<p>The command line output is very limited, and separate <a href="../results/#result-files">result files</a> are
+<h3 id="generated-execution-artifacts">Generated execution artifacts<a class="headerlink" href="#generated-execution-artifacts" title="Permanent link">&para;</a></h3>
+<p>The command line output is very limited, and separate <a href="../results/#file-types">files</a> are
 normally needed for investigating results further. As the example
-above shows, three result files are generated by default. The first
+above shows, three execution artifacts are generated by default. The first
 one is in XML format and contains all the information about execution in
 machine readable format. The second is a higher-level report and the third
 is a more detailed log file. These files and other possible result files are
@@ -10566,7 +10626,7 @@ example, in continuous integration servers where post-processing of results
 is needed before the overall status of execution can be determined.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Same return codes are also used with <a href="../post-processing/#rebot">Rebot</a>.</p>
+<p>Same return codes are also used with <a href="../post_processing/#rebot">Rebot</a>.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -10745,7 +10805,7 @@ language, it is recommended that long option names are used, because
 they are easier to understand than the short names.</p>
 <h3 id="shell-script-example">Shell script example<a class="headerlink" href="#shell-script-example" title="Permanent link">&para;</a></h3>
 <p>In this example, the same web tests in the <code>login</code> directory are executed
-with different browsers and the results combined afterwards using <a href="../post-processing/#rebot">Rebot</a>.
+with different browsers and the results combined afterwards using <a href="../post_processing/#rebot">Rebot</a>.
 The script also accepts command line options itself and simply forwards them
 to the <code>robot</code> command using the handy <code>$*</code> variable:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-19-1">1</a></span>
@@ -10866,8 +10926,7 @@ you can enable showing internal traces by setting environment variable
 <p>If the log file still does not have enough information, it is a good
 idea to enable the <a href="../results/#system-log">syslog</a> and see what information it provides. It is
 also possible to add some keywords to the test cases to see what is
-going on. Especially <a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> keywords <em class="name">Log</em> and <em class="name">Log Variables</em> are useful. If nothing else works, it is always possible to
-ask help on <a href="../getting-started/introduction.md#support-forums">support forums</a>.</p>
+going on. Especially <a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> keywords <em class="name">Log</em> and <em class="name">Log Variables</em> are useful. If you need more help, ask on the <a href="https://forum.robotframework.org/">Robot Framework forum</a>.</p>
 <h3 id="using-the-python-debugger-pdb">Using the Python debugger (pdb)<a class="headerlink" href="#using-the-python-debugger-pdb" title="Permanent link">&para;</a></h3>
 <p>It is also possible to use the <a href="https://docs.python.org/library/pdb.html">pdb</a> module from the Python standard
 library to set a break point and interactively debug a running test.

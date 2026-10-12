@@ -16,7 +16,7 @@
         <link rel="prev" href="../libraries/">
       
       
-        <link rel="next" href="../user-keywords/">
+        <link rel="next" href="../user_keywords/">
       
       
         
@@ -643,7 +643,7 @@
   <span class="md-ellipsis">
     
   
-    Test Data
+    Test data syntax
   
 
     
@@ -671,7 +671,7 @@
   <span class="md-ellipsis">
     
   
-    Creating tests
+    Creating test cases
   
 
     
@@ -727,7 +727,7 @@
   <span class="md-ellipsis">
     
   
-    Creating suites
+    Creating test suites
   
 
     
@@ -755,7 +755,7 @@
   <span class="md-ellipsis">
     
   
-    Using libraries
+    Using test libraries
   
 
     
@@ -1211,14 +1211,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../user-keywords/" class="md-nav__link">
+      <a href="../user_keywords/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    User keywords
+    Creating user keywords
   
 
     
@@ -1239,7 +1239,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../resource-files/" class="md-nav__link">
+      <a href="../resource_files/" class="md-nav__link">
         
   
   
@@ -1267,7 +1267,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../variable-files/" class="md-nav__link">
+      <a href="../variable_files/" class="md-nav__link">
         
   
   
@@ -1359,6 +1359,8 @@
   
     
     
+      
+        
       
         
       
@@ -1562,6 +1564,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../execution/post_processing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Post-processing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1689,7 +1719,7 @@
   <span class="md-ellipsis">
     
   
-    Library interface
+    Creating test libraries
   
 
     
@@ -1717,7 +1747,7 @@
   <span class="md-ellipsis">
     
   
-    Dynamic library interface
+    Dynamic library API
   
 
     
@@ -1913,7 +1943,7 @@
   <span class="md-ellipsis">
     
   
-    XML output
+    XML output format
   
 
     
@@ -9882,6 +9912,8 @@
       
         
       
+        
+      
     
     
     
@@ -10053,7 +10085,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../appendix/doc-format/" class="md-nav__link">
+      <a href="../../appendix/doc_format/" class="md-nav__link">
         
   
   
@@ -10081,7 +10113,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../appendix/time-format/" class="md-nav__link">
+      <a href="../../appendix/time_format/" class="md-nav__link">
         
   
   
@@ -10117,6 +10149,34 @@
     
   
     Registrations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/boolean_arguments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Boolean arguments
   
 
     
@@ -10705,14 +10765,14 @@ not effective after the test execution.</p>
 <p>Variables can be created using different approaches discussed in this section:</p>
 <ul>
 <li>In the <a href="#variable-section">Variable section</a></li>
-<li>Using <a href="../variable-files/#variable-files">variable files</a></li>
+<li>Using <a href="../variable_files/#variable-files">variable files</a></li>
 <li>On the <a href="#command-line-variables">command line</a></li>
 <li>Based on <a href="#return-values-from-keywords">return values from keywords</a></li>
 <li>Using the <a href="#var-syntax">VAR syntax</a></li>
 <li>Using <a href="#set-testsuiteglobal-variable-keywords">Set Test/Suite/Global Variable keywords</a></li>
 </ul>
 <p>In addition to this, there are various automatically available <a href="#built-in-variables">built-in variables</a>
-and also <a href="../user-keywords/#user-keyword-arguments">user keyword arguments</a> and <a href="../control/#for-loops">FOR loops</a> create variables. In most
+and also <a href="../user_keywords/#user-keyword-arguments">user keyword arguments</a> and <a href="../control/#for-loops">FOR loops</a> create variables. In most
 places where variables are created, it is possible to use <a href="#variable-type-conversion">variable type conversion</a>
 to easily create variables with non-string values. An important application for
 conversions is creating <a href="#secret-variables">secret variables</a>.</p>
@@ -10722,10 +10782,10 @@ conversions is creating <a href="#secret-variables">secret variables</a>.</p>
 <a id="Variable table"></a></p>
 <h3 id="variable-section">Variable section<a class="headerlink" href="#variable-section" title="Permanent link">&para;</a></h3>
 <p>The most common source for variables are Variable sections in <a href="../suites/#suite-files">suite files</a>
-and <a href="../resource-files/#resource-files">resource files</a>. Variable sections are convenient, because they
+and <a href="../resource_files/#resource-files">resource files</a>. Variable sections are convenient, because they
 allow creating variables in the same place as the rest of the test
 data, and the needed syntax is very simple. Their main disadvantage is that
-variables cannot be created dynamically. If that is a problem, <a href="../variable-files/#variable-files">variable files</a>
+variables cannot be created dynamically. If that is a problem, <a href="../variable_files/#variable-files">variable files</a>
 can be used instead.</p>
 <h4 id="creating-scalar-values">Creating scalar values<a class="headerlink" href="#creating-scalar-values" title="Permanent link">&para;</a></h4>
 <p>The simplest possible variable assignment is setting a string into a
@@ -10870,7 +10930,7 @@ dynamically based on another variable:</p>
 kind of variables. It is possible to assign variables to any object
 using them, and they also enable creating variables dynamically. The
 variable file syntax and taking variable files into use is explained
-in section <a href="../variable-files/#variable-files">Resource and variable files</a>.</p>
+in section <a href="../variable_files/#variable-files">Resource and variable files</a>.</p>
 <p><a id="individual-variables"></a></p>
 <h3 id="command-line-variables">Command line variables<a class="headerlink" href="#command-line-variables" title="Permanent link">&para;</a></h3>
 <p>Variables can be set from the command line either individually with
@@ -10891,8 +10951,8 @@ is its value. Several variables can be set by using this option several times.</
 <li><code>${EXAMPLE}</code> gets value <code>value</code>, and</li>
 <li><code>${HOST}</code> and <code>${USER}</code> get values <code>localhost:7272</code> and <code>robot</code>, respectively.</li>
 </ul>
-<p>The basic syntax for taking <a href="../variable-files/#variable-files">variable files</a> into use from the command line is
-<code class="option">--variablefile path/to/variables.py</code> and the <a href="../variable-files/#taking-variable-files-into-use">Taking variable files into
+<p>The basic syntax for taking <a href="../variable_files/#variable-files">variable files</a> into use from the command line is
+<code class="option">--variablefile path/to/variables.py</code> and the <a href="../variable_files/#taking-variable-files-into-use">Taking variable files into
 use</a> section explains this more thoroughly. What variables actually are created
 depends on what variables there are in the referenced variable file.</p>
 <p>If both variable files and individual variables are given from the command line,
@@ -11400,7 +11460,7 @@ outside the scope of a test (e.g. in a Suite Setup or Teardown).</p>
 everywhere within the scope of the currently executed test
 suite. Setting variables with this keyword thus has the same effect as
 creating them using the <a href="#variable-section">Variable section</a> in the test data file or
-importing them from <a href="../variable-files/#variable-files">variable files</a>. Other test suites, including
+importing them from <a href="../variable_files/#variable-files">variable files</a>. Other test suites, including
 possible child test suites, will not see variables set with this
 keyword.</p>
 <p>Variables set with <em class="name">Set Global Variable</em> keyword are globally
@@ -11421,7 +11481,7 @@ and return nothing. On the other hand, another <a href="https://robotframework.o
 as well. Various ways how to create variables with non-string values has
 already been discussed:</p>
 <ul>
-<li><a href="../variable-files/#variable-files">Variable files</a> allow creating any kind of objects.</li>
+<li><a href="../variable_files/#variable-files">Variable files</a> allow creating any kind of objects.</li>
 <li><a href="#return-values-from-keywords">Return values from keywords</a> can contain any objects.</li>
 <li>Variables can be created based on existing variables that contain non-string values.</li>
 <li><code>@{list}</code> and <code>&amp;{dict}</code> syntax allows creating lists and dictionaries natively.</li>
@@ -11507,7 +11567,7 @@ not when they are used.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>In addition to the above, variable type conversion works also with
-<a href="../user-keywords/#user-keyword-arguments">user keyword arguments</a> and with <a href="../control/#for-loops">FOR loops</a>. See their documentation
+<a href="../user_keywords/#user-keyword-arguments">user keyword arguments</a> and with <a href="../control/#for-loops">FOR loops</a>. See their documentation
 for more details.</p>
 </div>
 <div class="admonition note">
@@ -11651,7 +11711,7 @@ environment variables:</p>
 the command line.</p>
 <h4 id="creating-secrets-programmatically">Creating secrets programmatically<a class="headerlink" href="#creating-secrets-programmatically" title="Permanent link">&para;</a></h4>
 <p>Secrets can be created programmatically by using the <a href="https://robot-framework.readthedocs.io/en/master/autodoc/robot.utils.html#robot.utils.secret.Secret">robot.api.types.Secret</a>
-class. This is most commonly done by <a href="../libraries/#using-test-libraries">libraries</a> and <a href="../variable-files/#variable-files">variable files</a>, but also
+class. This is most commonly done by <a href="../libraries/#using-test-libraries">libraries</a> and <a href="../variable_files/#variable-files">variable files</a>, but also
 <a href="../../execution/configuration/#programmatic-modification-of-test-data">pre-run modifiers</a> and <a href="../../extend/listeners/#listener-interface">listeners</a> can utilize secrets if needed.</p>
 <p>The simplest possible example of the programmatic usage is a variable file:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-48-1">1</a></span>
@@ -12016,7 +12076,7 @@ are available in different scopes.</p>
    files, as well as in resource and variable files imported in the
    test data.</p>
 <p>Individually set variables (<code class="option">--variable</code> option) override the
-   variables set using <a href="../variable-files/#variable-files">variable files</a> (<code class="option">--variablefile</code> option).
+   variables set using <a href="../variable_files/#variable-files">variable files</a> (<code class="option">--variablefile</code> option).
    If you specify same individual variable multiple times, the one specified
    last will override earlier ones. This allows setting default values for
    variables in a <a href="../../execution/basics/#start-up-script">start-up script</a> and overriding them from the command line.
@@ -12032,7 +12092,7 @@ are available in different scopes.</p>
    in the Setting section, for example, for importing more variables from
    resource and variable files.</p>
 <p><em>Imported resource and variable files</em></p>
-<p>Variables imported from the <a href="../variable-files/#variable-files">resource and variable files</a> have the
+<p>Variables imported from the <a href="../variable_files/#variable-files">resource and variable files</a> have the
    lowest priority of all variables created in the test data.
    Variables from resource files and variable files have the same
    priority. If several resource and/or variable file have same
@@ -12074,12 +12134,12 @@ the test data. Additionally also <a href="#built-in-variables">built-in variable
 <h4 id="test-suite-scope">Test suite scope<a class="headerlink" href="#test-suite-scope" title="Permanent link">&para;</a></h4>
 <p>Variables with the test suite scope are available anywhere in the
 test suite where they are defined or imported. They can be created
-in Variable sections, imported from <a href="../variable-files/#variable-files">resource and variable files</a>,
+in Variable sections, imported from <a href="../variable_files/#variable-files">resource and variable files</a>,
 or set during the test execution using the <a href="#var-syntax">VAR syntax</a> or the
 <em class="name">Set Suite Variable</em> keyword.</p>
 <p>The test suite scope <em>is not recursive</em>, which means that variables
 available in a higher-level test suite <em>are not available</em> in
-lower-level suites. If necessary, <a href="../variable-files/#variable-files">resource and variable files</a> can
+lower-level suites. If necessary, <a href="../variable_files/#variable-files">resource and variable files</a> can
 be used for sharing variables.</p>
 <p>Since these variables can be considered global in the test suite where
 they are used, it is recommended to use capital letters also with them.</p>
@@ -12104,7 +12164,7 @@ caused an error prior to Robot Framework 7.2.</p>
 <p>Test cases and user keywords have a local variable scope that is not
 seen by other tests or keywords. Local variables can be created using
 <a href="#return-values-from-keywords">return values</a> from executed keywords and with the <a href="#var-syntax">VAR syntax</a>,
-and user keywords also get them as <a href="../user-keywords/#user-keyword-arguments">arguments</a>.</p>
+and user keywords also get them as <a href="../user_keywords/#user-keyword-arguments">arguments</a>.</p>
 <p>It is recommended to use lower-case letters with local variables.</p>
 <h2 id="advanced-variable-features">Advanced variable features<a class="headerlink" href="#advanced-variable-features" title="Permanent link">&para;</a></h2>
 <p><a id="Extendedvariablesyntax"></a></p>
@@ -12120,7 +12180,7 @@ other hand, calling methods, especially when they are used with
 arguments, can make the test data pretty complicated to understand.
 If that happens, it is recommended to move the code into a library.</p>
 <p>The most common usages of extended variable syntax are illustrated
-in the example below. First assume that we have the following <a href="../variable-files/#variable-files">variable file</a> and test case:</p>
+in the example below. First assume that we have the following <a href="../variable_files/#variable-files">variable file</a> and test case:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-56-1"> 1</a></span>
 <span class="normal"><a href="#example-56-2"> 2</a></span>
 <span class="normal"><a href="#example-56-3"> 3</a></span>
@@ -12417,7 +12477,7 @@ enhance execution speed.</p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../libraries/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Using libraries">
+          <a href="../libraries/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Using test libraries">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -12427,20 +12487,20 @@ enhance execution speed.</p>
                 Previous
               </span>
               <div class="md-ellipsis">
-                Using libraries
+                Using test libraries
               </div>
             </div>
           </a>
         
         
           
-          <a href="../user-keywords/" class="md-footer__link md-footer__link--next" aria-label="Next: User keywords">
+          <a href="../user_keywords/" class="md-footer__link md-footer__link--next" aria-label="Next: Creating user keywords">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                User keywords
+                Creating user keywords
               </div>
             </div>
             <div class="md-footer__button md-icon">

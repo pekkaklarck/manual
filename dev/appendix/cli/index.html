@@ -638,7 +638,7 @@
   <span class="md-ellipsis">
     
   
-    Test Data
+    Test data syntax
   
 
     
@@ -666,7 +666,7 @@
   <span class="md-ellipsis">
     
   
-    Creating tests
+    Creating test cases
   
 
     
@@ -722,7 +722,7 @@
   <span class="md-ellipsis">
     
   
-    Creating suites
+    Creating test suites
   
 
     
@@ -750,7 +750,7 @@
   <span class="md-ellipsis">
     
   
-    Using libraries
+    Using test libraries
   
 
     
@@ -799,14 +799,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../syntax/user-keywords/" class="md-nav__link">
+      <a href="../../syntax/user_keywords/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    User keywords
+    Creating user keywords
   
 
     
@@ -827,7 +827,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../syntax/resource-files/" class="md-nav__link">
+      <a href="../../syntax/resource_files/" class="md-nav__link">
         
   
   
@@ -855,7 +855,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../syntax/variable-files/" class="md-nav__link">
+      <a href="../../syntax/variable_files/" class="md-nav__link">
         
   
   
@@ -947,6 +947,8 @@
   
     
     
+      
+        
       
         
       
@@ -1150,6 +1152,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../execution/post_processing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Post-processing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1277,7 +1307,7 @@
   <span class="md-ellipsis">
     
   
-    Library interface
+    Creating test libraries
   
 
     
@@ -1305,7 +1335,7 @@
   <span class="md-ellipsis">
     
   
-    Dynamic library interface
+    Dynamic library API
   
 
     
@@ -1501,7 +1531,7 @@
   <span class="md-ellipsis">
     
   
-    XML output
+    XML output format
   
 
     
@@ -9472,6 +9502,8 @@
       
         
       
+        
+      
     
     
     
@@ -9726,7 +9758,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../doc-format/" class="md-nav__link">
+      <a href="../doc_format/" class="md-nav__link">
         
   
   
@@ -9754,7 +9786,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../time-format/" class="md-nav__link">
+      <a href="../time_format/" class="md-nav__link">
         
   
   
@@ -9790,6 +9822,34 @@
     
   
     Registrations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../boolean_arguments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Boolean arguments
   
 
     
@@ -9864,7 +9924,7 @@
 
 <h1 id="command-line-options">Command line options<a class="headerlink" href="#command-line-options" title="Permanent link">&para;</a></h1>
 <p>This appendix lists all the command line options that are available
-when <a href="../../execution/basics/#executing-test-cases">executing test cases</a>  and when <a href="../../execution/post-processing/#post-processing-outputs">post-processing outputs</a>.
+when <a href="../../execution/basics/#executing-test-cases">executing test cases</a>  and when <a href="../../execution/post_processing/#post-processing-outputs">post-processing outputs</a>.
 Also environment variables affecting execution and post-processing
 are listed.</p>
 <h2 id="command-line-options-for-test-execution">Command line options for test execution<a class="headerlink" href="#command-line-options-for-test-execution" title="Permanent link">&para;</a></h2>
@@ -10106,7 +10166,7 @@ are listed.</p>
 <dt>
 	<code class="option"><a id="8aaac892e295c30776af801b0a215944">args&gt;</a> </code>
 </dt>
-<dd>Sets variables using <a href="../../syntax/variable-files/#variable-files">variable files</a>.
+<dd>Sets variables using <a href="../../syntax/variable_files/#variable-files">variable files</a>.
 <p>
 <div class="mkdocs-ezglossary-refs list">
     
@@ -10210,7 +10270,7 @@ are listed.</p>
 <dt>
 	<code class="option"><a id="6f1063cdc45c8b2cc8293f0db37e7a2d">-T, --timestampoutputs</a> </code>
 </dt>
-<dd><a href="../../execution/results/#timestamping-result-files">Adds a timestamp</a> to <a href="../../execution/results/#result-files">result files</a> listed above.
+<dd><a href="../../execution/results/#timestamping-execution-artifacts">Adds a timestamp</a> to <a href="../../execution/results/#file-types">result files</a> listed above.
 <p>
 <div class="mkdocs-ezglossary-refs list">
     
@@ -10621,7 +10681,7 @@ are listed.</p>
 <dt>
 	<code class="option"><a id="7ac953ed729f45cb41f67ed22020a596">-R, --merge</a> </code>
 </dt>
-<dd>Changes result combining behavior to <a href="../../execution/post-processing/#merging-results">merging</a>.
+<dd>Changes result combining behavior to <a href="../../execution/post_processing/#merging-results">merging</a>.
 <p>
 <div class="mkdocs-ezglossary-refs list">
     
@@ -10829,7 +10889,7 @@ are listed.</p>
 <dt>
 	<code class="option"><a id="6f1063cdc45c8b2cc8293f0db37e7a2d">-T, --timestampoutputs</a> </code>
 </dt>
-<dd><a href="../../execution/results/#timestamping-result-files">Adds a timestamp</a> to <a href="../../execution/results/#result-files">result files</a> listed above.
+<dd><a href="../../execution/results/#timestamping-execution-artifacts">Adds a timestamp</a> to <a href="../../execution/results/#file-types">result files</a> listed above.
 <p>
 <div class="mkdocs-ezglossary-refs list">
     
@@ -11043,7 +11103,7 @@ are listed.</p>
 </p></dd>
 
 <dt><code class="option">--console &lt;verbose|quiet|none|custom&gt;</code></dt>
-<dd><a href="../../execution/post-processing/#controlling-rebot-console-output">Controlling Rebot console output</a>. Also accepts <a href="../../execution/configuration/#custom-console-loggers">custom console loggers</a>.</dd>
+<dd><a href="../../execution/post_processing/#controlling-rebot-console-output">Controlling Rebot console output</a>. Also accepts <a href="../../execution/configuration/#custom-console-loggers">custom console loggers</a>.</dd>
 <dt>
 	<code class="option"><a id="80cdee8754ab93de129ee12791096f94">--quiet</a> </code>
 </dt>
@@ -11120,7 +11180,7 @@ are listed.</p>
 	<code>ROBOT_OPTIONS</code> and <code><a id="37f9cad78bbd9206fbb2a5141c76fb54">REBOT_OPTIONS</a> </code>
 </dt>
 <dd>Space separated list of default options to be placed
-<a href="../../execution/basics/#robot-options-and-rebot-options-environment-variables">in front of any explicit options</a> on the command line.
+<a href="../../execution/basics/#robot_options-and-rebot_options-environment-variables">in front of any explicit options</a> on the command line.
 <p>
 <div class="mkdocs-ezglossary-refs list">
     

@@ -27,7 +27,7 @@
     
     
       
-        <title>Creating tests - Robot Framework</title>
+        <title>Creating test cases - Robot Framework</title>
       
     
     
@@ -69,7 +69,7 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Creating tests - Robot Framework" />
+<meta property="og:title" content="Creating test cases - Robot Framework" />
 <meta property="og:description" content="Robot Framework is a generic open source automation framework. This reference manual covers all its features in detail." />
 <meta property="og:image" content="https://pekkaklarck.github.io/manual/latest/assets/images/social/syntax/tests.png" />
 <meta property="og:image:type" content="image/png" />
@@ -77,7 +77,7 @@
 <meta property="og:image:height" content="630" />
 <meta property="og:url" content="https://pekkaklarck.github.io/manual/latest/syntax/tests/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Creating tests - Robot Framework" />
+<meta property="twitter:title" content="Creating test cases - Robot Framework" />
 <meta property="twitter:description" content="Robot Framework is a generic open source automation framework. This reference manual covers all its features in detail." />
 <meta property="twitter:image" content="https://pekkaklarck.github.io/manual/latest/assets/images/social/syntax/tests.png" />
 </head>
@@ -148,7 +148,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Creating tests
+              Creating test cases
             
           </span>
         </div>
@@ -643,7 +643,7 @@
   <span class="md-ellipsis">
     
   
-    Test Data
+    Test data syntax
   
 
     
@@ -680,7 +680,7 @@
   <span class="md-ellipsis">
     
   
-    Creating tests
+    Creating test cases
   
 
     
@@ -698,7 +698,7 @@
   <span class="md-ellipsis">
     
   
-    Creating tests
+    Creating test cases
   
 
     
@@ -1151,7 +1151,7 @@
   <span class="md-ellipsis">
     
   
-    Creating suites
+    Creating test suites
   
 
     
@@ -1179,7 +1179,7 @@
   <span class="md-ellipsis">
     
   
-    Using libraries
+    Using test libraries
   
 
     
@@ -1228,14 +1228,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../user-keywords/" class="md-nav__link">
+      <a href="../user_keywords/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    User keywords
+    Creating user keywords
   
 
     
@@ -1256,7 +1256,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../resource-files/" class="md-nav__link">
+      <a href="../resource_files/" class="md-nav__link">
         
   
   
@@ -1284,7 +1284,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../variable-files/" class="md-nav__link">
+      <a href="../variable_files/" class="md-nav__link">
         
   
   
@@ -1376,6 +1376,8 @@
   
     
     
+      
+        
       
         
       
@@ -1579,6 +1581,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../execution/post_processing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Post-processing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1706,7 +1736,7 @@
   <span class="md-ellipsis">
     
   
-    Library interface
+    Creating test libraries
   
 
     
@@ -1734,7 +1764,7 @@
   <span class="md-ellipsis">
     
   
-    Dynamic library interface
+    Dynamic library API
   
 
     
@@ -1930,7 +1960,7 @@
   <span class="md-ellipsis">
     
   
-    XML output
+    XML output format
   
 
     
@@ -9899,6 +9929,8 @@
       
         
       
+        
+      
     
     
     
@@ -10070,7 +10102,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../appendix/doc-format/" class="md-nav__link">
+      <a href="../../appendix/doc_format/" class="md-nav__link">
         
   
   
@@ -10098,7 +10130,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../appendix/time-format/" class="md-nav__link">
+      <a href="../../appendix/time_format/" class="md-nav__link">
         
   
   
@@ -10134,6 +10166,34 @@
     
   
     Registrations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/boolean_arguments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Boolean arguments
   
 
     
@@ -10219,8 +10279,8 @@ and the differences are explained in the <a href="../tasks/#creating-tasks">Crea
 <h2 id="test-case-syntax">Test case syntax<a class="headerlink" href="#test-case-syntax" title="Permanent link">&para;</a></h2>
 <h3 id="basic-syntax">Basic syntax<a class="headerlink" href="#basic-syntax" title="Permanent link">&para;</a></h3>
 <p>Test cases are constructed in test case sections from the available
-keywords. Keywords can be imported from <a href="../libraries/#using-test-libraries">test libraries</a> or <a href="../resource-files/#resource-files">resource
-files</a>, or created in the <a href="../user-keywords/#creating-user-keywords">keyword section</a> of the test case file
+keywords. Keywords can be imported from <a href="../libraries/#using-test-libraries">test libraries</a> or <a href="../resource_files/#resource-files">resource
+files</a>, or created in the <a href="../user_keywords/#creating-user-keywords">keyword section</a> of the test case file
 itself.</p>
 <p>The first column in the test case section contains test case names. A
 test case starts from the row with something in this column and
@@ -10228,7 +10288,7 @@ continues to the next test case name or to the end of the section. It is
 an error to have something between the section headers and the first
 test.</p>
 <p>The second column normally has keyword names. An exception to this rule
-is <a href="../user-keywords/#user-keyword-return-values">setting variables from keyword return values</a>, when the second and
+is <a href="../user_keywords/#user-keyword-return-values">setting variables from keyword return values</a>, when the second and
 possibly also the subsequent columns contain variable names and a keyword
 name is located after them. In either case, columns after the keyword name
 contain possible arguments to the specified keyword.</p>
@@ -10435,7 +10495,7 @@ their own section.
 <h2 id="using-arguments">Using arguments<a class="headerlink" href="#using-arguments" title="Permanent link">&para;</a></h2>
 <p>The earlier examples have already demonstrated keywords taking
 different arguments, and this section discusses this important
-functionality more thoroughly. How to actually implement <a href="../user-keywords/#user-keyword-arguments">user
+functionality more thoroughly. How to actually implement <a href="../user_keywords/#user-keyword-arguments">user
 keywords</a> and <a href="../../extend/libraries/#keyword-arguments">library keywords</a> with different arguments is
 discussed in separate sections.</p>
 <p>Keywords can accept zero or more arguments, and some arguments may
@@ -10531,7 +10591,7 @@ means that if you have an argument <code>arg</code>, you must use it like
 <code>arg=value</code>, and neither <code>Arg=value</code> nor <code>ARG=value</code>
 works.  The latter means that spaces are not allowed before the <code>=</code>
 sign, and possible spaces after it are considered part of the given value.</p>
-<p>When the named argument syntax is used with <a href="../user-keywords/#creating-user-keywords">user keywords</a>, the argument
+<p>When the named argument syntax is used with <a href="../user_keywords/#creating-user-keywords">user keywords</a>, the argument
 names must be given without the <code>${}</code> decoration. For example, user
 keyword with arguments <code>${arg1}=first, ${arg2}=second</code> must be used
 like <code>arg2=override</code>.</p>
@@ -10590,7 +10650,7 @@ makes the situation more explicit, it may nevertheless be a good idea.</p>
 <h4 id="where-named-arguments-are-supported">Where named arguments are supported<a class="headerlink" href="#where-named-arguments-are-supported" title="Permanent link">&para;</a></h4>
 <p>As already explained, the named argument syntax works with keywords. In
 addition to that, it also works when <a href="../libraries/#importing-libraries">importing libraries</a>.</p>
-<p>Naming arguments is supported by <a href="../user-keywords/#creating-user-keywords">user keywords</a> and by most <a href="../libraries/#using-test-libraries">test libraries</a>.
+<p>Naming arguments is supported by <a href="../user_keywords/#creating-user-keywords">user keywords</a> and by most <a href="../libraries/#using-test-libraries">test libraries</a>.
 The only exceptions are Python keywords explicitly using <a href="../../extend/libraries/#positional-only-arguments">positional-only arguments</a>.</p>
 <h4 id="named-arguments-example">Named arguments example<a class="headerlink" href="#named-arguments-example" title="Permanent link">&para;</a></h4>
 <p>The following example demonstrates using the named arguments syntax with
@@ -10631,7 +10691,7 @@ specified in the signature of the keyword.</p>
 <p>Free named arguments are supported by same keyword types than <a href="#where-named-arguments-are-supported">normal named
 arguments</a>. How keywords specify that they accept free named arguments
 depends on the keyword type. For example, <a href="../../extend/libraries/#free-keyword-arguments-kwargs">Python based keywords</a> simply use
-<code>**kwargs</code> and <a href="../user-keywords/#free-named-arguments-with-user-keywords">user keywords</a> use <code>&amp;{kwargs}</code>.</p>
+<code>**kwargs</code> and <a href="../user_keywords/#free-named-arguments-with-user-keywords">user keywords</a> use <code>&amp;{kwargs}</code>.</p>
 <p>Free named arguments support variables similarly as <a href="#named-arguments-with-variables">named arguments</a>. In practice that means that variables
 can be used both in names and values, but the escape sign must always be
 visible literally. For example, both <code>foo=${bar}</code> and <code>${foo}=${bar}</code> are
@@ -10658,7 +10718,7 @@ syntax</a>.</p>
 <p>See <a href="../../extend/libraries/#free-keyword-arguments-kwargs">Free keyword arguments (**kwargs)</a> section under <a href="../../extend/libraries/#creating-test-libraries">Creating test
 libraries</a> for more information about using the free named arguments syntax
 in your custom test libraries.</p>
-<p>As the second example, let's create a wrapper <a href="../user-keywords/#creating-user-keywords">user keyword</a> for running the
+<p>As the second example, let's create a wrapper <a href="../user_keywords/#creating-user-keywords">user keyword</a> for running the
 <code>program.py</code> in the above example. The wrapper keyword <em class="name">Run Program</em>
 accepts all positional and named arguments and passes them forward to
 <em class="name">Run Process</em> along with the name of the command to execute.</p>
@@ -10689,7 +10749,7 @@ not work. This syntax is inspired by Python's <a href="https://www.python.org/de
 <p>For most parts named-only arguments work the same way as <a href="#named-arguments">named arguments</a>.
 The main difference is that libraries implemented with Python 2 using
 the <a href="../../extend/libraries/#creating-keywords">static library API</a> <a href="../../extend/libraries/#keyword-only-arguments">do not support this syntax</a>.</p>
-<p>As an example of using the <a href="../user-keywords/#named-only-arguments-with-user-keywords">named-only arguments with user keywords</a>, here
+<p>As an example of using the <a href="../user_keywords/#named-only-arguments-with-user-keywords">named-only arguments with user keywords</a>, here
 is a variation of the <em class="name">Run Program</em> in the above <a href="#free-named-argument-examples">free named argument
 examples</a> that only supports configuring <code>shell</code>:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-9-1">1</a></span>
@@ -10713,7 +10773,7 @@ examples</a> that only supports configuring <code>shell</code>:</p>
 <h3 id="arguments-embedded-to-keyword-names">Arguments embedded to keyword names<a class="headerlink" href="#arguments-embedded-to-keyword-names" title="Permanent link">&para;</a></h3>
 <p>A totally different approach to specify arguments is embedding them
 into keyword names. This syntax is supported by both <a href="../../extend/libraries/#embedding-arguments-into-keyword-names">test library keywords</a>
-and <a href="../user-keywords/#embedding-arguments-into-keyword-name">user keywords</a>.</p>
+and <a href="../user_keywords/#embedding-arguments-into-keyword-name">user keywords</a>.</p>
 <h2 id="failures">Failures<a class="headerlink" href="#failures" title="Permanent link">&para;</a></h2>
 <h3 id="when-test-case-fails">When test case fails<a class="headerlink" href="#when-test-case-fails" title="Permanent link">&para;</a></h3>
 <p>A test case fails if any of the keyword it uses fails. Normally this means that
@@ -10727,7 +10787,7 @@ some keywords allow configuring them.</p>
 <p>In some circumstances, for example when continuable failures are used,
 a test case can fail multiple times. In that case the final error message
 is got by combining the individual errors. Very long error messages are
-<a href="../../execution/results/#limiting-error-message-length-in-reports">automatically cut from the middle</a> to keep <a href="../../execution/post-processing/#creating-reports-logs-and-output-files">reports</a> easier to read, but
+<a href="../../execution/results/#limiting-error-message-length-in-reports">automatically cut from the middle</a> to keep <a href="../../execution/post_processing/#creating-reports-logs-and-output-files">reports</a> easier to read, but
 full error messages are always visible in <a href="../../execution/results/#log">log files</a> as messages of
 the failed keywords.</p>
 <p>By default error messages are normal text, but
@@ -10778,7 +10838,7 @@ the variable does not exist, its name is left unchanged.</p>
 documentation for a test case. That text is shown in the command line
 output and in the resulting logs and reports.
 If documentation gets long, it can be <a href="../data/#dividing-data-to-several-rows">split into multiple rows</a>.
-It is possible to use simple <a href="../../appendix/doc-format/#documentation-formatting">HTML formatting</a> and <a href="../variables/#variables">variables</a> can
+It is possible to use simple <a href="../../appendix/doc_format/#documentation-formatting">HTML formatting</a> and <a href="../variables/#variables">variables</a> can
 be used to make the documentation dynamic. Possible non-existing
 variables are left unchanged.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-12-1"> 1</a></span>
@@ -10843,7 +10903,7 @@ for test suites.</p>
 <p>Name of the metadata is the first argument given to the <em class="setting">[Metadata]</em>
 setting and the remaining arguments specify its value. The value is handled
 similarly as <a href="#test-case-name-and-documentation">test case documentation</a>, which means that it supports
-<a href="../../appendix/doc-format/#documentation-formatting">HTML formatting</a> and <a href="../variables/#variables">variables</a>, and that longer values can be <a href="../data/#dividing-data-to-several-rows">split into
+<a href="../../appendix/doc_format/#documentation-formatting">HTML formatting</a> and <a href="../variables/#variables">variables</a>, and that longer values can be <a href="../data/#dividing-data-to-several-rows">split into
 multiple rows</a>. A test case can have any number of <em class="setting">[Metadata]</em>
 settings, and each of them adds one name-value pair.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-13-1">1</a></span>
@@ -10873,12 +10933,12 @@ and other tools that process execution results.</p>
 <p><a id="tag"></a></p>
 <h2 id="tagging-test-cases">Tagging test cases<a class="headerlink" href="#tagging-test-cases" title="Permanent link">&para;</a></h2>
 <p>Using tags in Robot Framework is a simple, yet powerful mechanism for
-classifying test cases and also <a href="../user-keywords/#creating-user-keywords">user keywords</a>. Tags are free text and
+classifying test cases and also <a href="../user_keywords/#creating-user-keywords">user keywords</a>. Tags are free text and
 Robot Framework itself has no special meaning for them except for the
 <a href="#reserved-tags">reserved tags</a> discussed below. Tags can be used at least for the following
 purposes:</p>
 <ul>
-<li>They are shown in test <a href="../../execution/post-processing/#creating-reports-logs-and-output-files">reports</a>, <a href="../../execution/results/#splitting-logs">logs</a> and, of course, in the test
+<li>They are shown in test <a href="../../execution/post_processing/#creating-reports-logs-and-output-files">reports</a>, <a href="../../execution/results/#splitting-logs">logs</a> and, of course, in the test
   data, so they provide metadata to test cases.</li>
 <li><a href="../../execution/results/#configuring-statistics">Statistics</a> about test cases (total, passed, failed and skipped) are
   automatically collected based on them.</li>
@@ -11245,7 +11305,7 @@ to be added in the future.</p>
 <dt>
 	<code><a id="5b32d973be49d1b114226d1165785b96">private</a> </code>
 </dt>
-<dd>Mark keyword to be <a href="../user-keywords/#private-user-keywords">private</a>.
+<dd>Mark keyword to be <a href="../user_keywords/#private-user-keywords">private</a>.
 <p>
 <div class="mkdocs-ezglossary-refs list">
     
@@ -11307,7 +11367,7 @@ that is executed before a test case, and a test teardown is executed
 after a test case. In Robot Framework setups and teardowns are just
 normal keywords with possible arguments.</p>
 <p>A setup and a teardown are always a single keyword. If they need to take care
-of multiple separate tasks, it is possible to create higher-level <a href="../user-keywords/#user-keyword-arguments">user
+of multiple separate tasks, it is possible to create higher-level <a href="../user_keywords/#user-keyword-arguments">user
 keywords</a> for that purpose. An alternative solution is executing multiple
 keywords using the <a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> keyword <em class="name">Run Keywords</em>.</p>
 <p>The test teardown is special in two ways. First of all, it is executed also
@@ -11482,7 +11542,7 @@ of the status of the earlier iterations.</p>
 </div>
 <h3 id="templates-with-embedded-arguments">Templates with embedded arguments<a class="headerlink" href="#templates-with-embedded-arguments" title="Permanent link">&para;</a></h3>
 <p>Templates support a variation of
-the <a href="../user-keywords/#embedded-argument-syntax">embedded argument syntax</a>. With templates this syntax works so
+the <a href="../user_keywords/#embedded-argument-syntax">embedded argument syntax</a>. With templates this syntax works so
 that if the template keyword has variables in its name, they are considered
 placeholders for arguments and replaced with the actual arguments
 used with the template. The resulting keyword is then used without positional
@@ -11613,7 +11673,7 @@ finally it is verified that the system behaved as expected
 <h3 id="data-driven-style">Data-driven style<a class="headerlink" href="#data-driven-style" title="Permanent link">&para;</a></h3>
 <p>Another style to write test cases is the <em>data-driven</em> approach where
 test cases use only one higher-level keyword, often created as a
-<a href="../user-keywords/#creating-user-keywords">user keyword</a>, that hides the actual test workflow. These tests are
+<a href="../user_keywords/#creating-user-keywords">user keyword</a>, that hides the actual test workflow. These tests are
 very useful when there is a need to test the same scenario with
 different input and/or output data. It would be possible to repeat the
 same keyword with every test, but the <a href="#test-templates">test template</a> functionality
@@ -11709,7 +11769,7 @@ for supported translations.</p>
 </div>
 <h4 id="embedding-data-to-keywords">Embedding data to keywords<a class="headerlink" href="#embedding-data-to-keywords" title="Permanent link">&para;</a></h4>
 <p>When writing concrete examples it is useful to be able to pass actual data to
-keyword implementations. This can be done by <a href="../user-keywords/#embedding-arguments-into-keyword-name">embedding arguments into keyword name</a>.</p>
+keyword implementations. This can be done by <a href="../user_keywords/#embedding-arguments-into-keyword-name">embedding arguments into keyword name</a>.</p>
 
 
 
@@ -11747,7 +11807,7 @@ keyword implementations. This can be done by <a href="../user-keywords/#embeddin
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../data/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Test Data">
+          <a href="../data/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Test data syntax">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -11757,7 +11817,7 @@ keyword implementations. This can be done by <a href="../user-keywords/#embeddin
                 Previous
               </span>
               <div class="md-ellipsis">
-                Test Data
+                Test data syntax
               </div>
             </div>
           </a>

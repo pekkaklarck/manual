@@ -27,7 +27,7 @@
     
     
       
-        <title>Library interface - Robot Framework</title>
+        <title>Creating test libraries - Robot Framework</title>
       
     
     
@@ -69,7 +69,7 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Library interface - Robot Framework" />
+<meta property="og:title" content="Creating test libraries - Robot Framework" />
 <meta property="og:description" content="Robot Framework is a generic open source automation framework. This reference manual covers all its features in detail." />
 <meta property="og:image" content="https://pekkaklarck.github.io/manual/latest/assets/images/social/extend/libraries.png" />
 <meta property="og:image:type" content="image/png" />
@@ -77,7 +77,7 @@
 <meta property="og:image:height" content="630" />
 <meta property="og:url" content="https://pekkaklarck.github.io/manual/latest/extend/libraries/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Library interface - Robot Framework" />
+<meta property="twitter:title" content="Creating test libraries - Robot Framework" />
 <meta property="twitter:description" content="Robot Framework is a generic open source automation framework. This reference manual covers all its features in detail." />
 <meta property="twitter:image" content="https://pekkaklarck.github.io/manual/latest/assets/images/social/extend/libraries.png" />
 </head>
@@ -148,7 +148,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Library interface
+              Creating test libraries
             
           </span>
         </div>
@@ -638,7 +638,7 @@
   <span class="md-ellipsis">
     
   
-    Test Data
+    Test data syntax
   
 
     
@@ -666,7 +666,7 @@
   <span class="md-ellipsis">
     
   
-    Creating tests
+    Creating test cases
   
 
     
@@ -722,7 +722,7 @@
   <span class="md-ellipsis">
     
   
-    Creating suites
+    Creating test suites
   
 
     
@@ -750,7 +750,7 @@
   <span class="md-ellipsis">
     
   
-    Using libraries
+    Using test libraries
   
 
     
@@ -799,14 +799,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../syntax/user-keywords/" class="md-nav__link">
+      <a href="../../syntax/user_keywords/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    User keywords
+    Creating user keywords
   
 
     
@@ -827,7 +827,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../syntax/resource-files/" class="md-nav__link">
+      <a href="../../syntax/resource_files/" class="md-nav__link">
         
   
   
@@ -855,7 +855,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../syntax/variable-files/" class="md-nav__link">
+      <a href="../../syntax/variable_files/" class="md-nav__link">
         
   
   
@@ -947,6 +947,8 @@
   
     
     
+      
+        
       
         
       
@@ -1150,6 +1152,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../execution/post_processing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Post-processing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1291,7 +1321,7 @@
   <span class="md-ellipsis">
     
   
-    Library interface
+    Creating test libraries
   
 
     
@@ -1309,7 +1339,7 @@
   <span class="md-ellipsis">
     
   
-    Library interface
+    Creating test libraries
   
 
     
@@ -2021,7 +2051,7 @@
   <span class="md-ellipsis">
     
   
-    Dynamic library interface
+    Dynamic library API
   
 
     
@@ -2217,7 +2247,7 @@
   <span class="md-ellipsis">
     
   
-    XML output
+    XML output format
   
 
     
@@ -10186,6 +10216,8 @@
       
         
       
+        
+      
     
     
     
@@ -10357,7 +10389,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../appendix/doc-format/" class="md-nav__link">
+      <a href="../../appendix/doc_format/" class="md-nav__link">
         
   
   
@@ -10385,7 +10417,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../appendix/time-format/" class="md-nav__link">
+      <a href="../../appendix/time_format/" class="md-nav__link">
         
   
   
@@ -10421,6 +10453,34 @@
     
   
     Registrations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/boolean_arguments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Boolean arguments
   
 
     
@@ -10791,7 +10851,7 @@ implemented as a class or a module.</p>
 <h3 id="documentation-format">Documentation format<a class="headerlink" href="#documentation-format" title="Permanent link">&para;</a></h3>
 <p>Library documentation tool <a href="../libdoc/#libdoc">Libdoc</a>
 supports documentation in multiple formats. If you want to use something
-else than Robot Framework's own <a href="../../appendix/doc-format/#documentation-formatting">documentation formatting</a>, you can specify
+else than Robot Framework's own <a href="../../appendix/doc_format/#documentation-formatting">documentation formatting</a>, you can specify
 the format in the source code using  <code>ROBOT_LIBRARY_DOC_FORMAT</code> attribute
 similarly as <a href="#library-scope">scope</a> and <a href="#library-version">version</a> are set with their own
 <code>ROBOT_LIBRARY_*</code> attributes.</p>
@@ -11260,7 +11320,7 @@ names. Methods that have the <code>robot_name</code>
 attribute also create keywords even if the method name itself would start with
 an underscore.</p>
 <p>Setting a custom keyword name can also enable library keywords to accept
-arguments using the <a href="../../syntax/user-keywords/#user-keyword-tags">embedded arguments</a> syntax.</p>
+arguments using the <a href="../../syntax/user_keywords/#user-keyword-tags">embedded arguments</a> syntax.</p>
 <h3 id="keyword-tags">Keyword tags<a class="headerlink" href="#keyword-tags" title="Permanent link">&para;</a></h3>
 <p>Library keywords and <a href="#documenting-libraries">user keywords</a> can have tags. Library keywords can
 define them by setting the <code>robot_tags</code> attribute on the method to a list
@@ -11928,7 +11988,7 @@ Other types cause conversion failures.</p>
 <td></td>
 <td></td>
 <td><a href="https://docs.python.org/library/functions.html#func-str">str</a>, <a href="https://docs.python.org/library/functions.html#int">int</a>, <a href="https://docs.python.org/library/functions.html#float">float</a></td>
-<td>Strings are expected to represent a time interval in one of the time formats Robot Framework supports: <a href="../../appendix/time-format/#time-as-number">time as number</a>, <a href="../../appendix/time-format/#time-as-time-string">time as time string</a> or <a href="../../appendix/time-format/#time-as-timer-string">time as "timer" string</a>. Integers and floats are considered to be seconds.</td>
+<td>Strings are expected to represent a time interval in one of the time formats Robot Framework supports: <a href="../../appendix/time_format/#time-as-number">time as number</a>, <a href="../../appendix/time_format/#time-as-time-string">time as time string</a> or <a href="../../appendix/time_format/#time-as-timer-string">time as "timer" string</a>. Integers and floats are considered to be seconds.</td>
 <td><code>42</code> (42 seconds)<br><code>1 minute 2 seconds</code><br><code>01:02</code> (same as above)</td>
 </tr>
 <tr>
@@ -12877,13 +12937,15 @@ explained thoroughly elsewhere and only listened here as a reference:</p>
 <a href="https://realpython.com/primer-on-python-decorators/">disabling functions or methods becoming keywords</a>.</p>
 <h3 id="using-custom-decorators">Using custom decorators<a class="headerlink" href="#using-custom-decorators" title="Permanent link">&para;</a></h3>
 <p>When implementing keywords, it is sometimes useful to modify them with
-<a href="https://docs.python.org/library/functools.html#functools.wraps">Python decorators</a>. However, decorators often modify function signatures
+<a href="https://docs.python.org/3/library/functools.html#functools.wraps">Python decorators</a>. However, decorators often modify function signatures
 and can thus confuse Robot Framework's introspection when determining which
 arguments keywords accept. This is especially problematic when creating
 library documentation with <a href="../libdoc/#libdoc">Libdoc</a> and when using external tools like <a href="https://github.com/robotframework/RIDE">RIDE</a>.
-The easiest way to avoid this problem is decorating the
-decorator itself using <a href="https://pypi.org/project/decorator/">functools.wraps</a>. Other solutions include using
-external modules like <a href="https://wrapt.readthedocs.io">decorator</a> and <a href="../../syntax/user-keywords/#embedding-arguments-into-keyword-name">wrapt</a> that allow creating fully
+The easiest way to avoid this problem is to apply
+<a href="https://docs.python.org/3/library/functools.html#functools.wraps">functools.wraps</a>
+to the wrapper function inside the decorator. Other solutions include using
+external modules like <a href="https://pypi.org/project/decorator/">decorator</a> and
+<a href="https://wrapt.readthedocs.io/en/latest/">wrapt</a> that allow creating
 signature-preserving decorators.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -12892,10 +12954,10 @@ is a new feature in Robot Framework 3.2.</p>
 </div>
 <h3 id="embedding-arguments-into-keyword-names">Embedding arguments into keyword names<a class="headerlink" href="#embedding-arguments-into-keyword-names" title="Permanent link">&para;</a></h3>
 <p>Library keywords can also accept <em>embedded arguments</em> the same way as
-<a href="../../syntax/user-keywords/#creating-user-keywords">user keywords</a>. This section mainly covers the Python syntax to use to
+<a href="../../syntax/user_keywords/#creating-user-keywords">user keywords</a>. This section mainly covers the Python syntax to use to
 create such keywords, the embedded arguments syntax itself is covered in
 detail as part of <a href="#setting-custom-name">user keyword documentation</a>.</p>
-<p>Library keywords with embedded arguments need to have a <a href="../../syntax/user-keywords/#argument-conversion-with-embedded-arguments">custom name</a> that
+<p>Library keywords with embedded arguments need to have a <a href="../../syntax/user_keywords/#argument-conversion-with-embedded-arguments">custom name</a> that
 is typically set using the <a href="#keyword-decorator">@keyword decorator</a>. Values matching embedded
 arguments are passed to the function or method implementing the keyword as
 positional arguments. If the function or method accepts more arguments, they
@@ -13686,16 +13748,16 @@ technical for some users. Another alternative is using Robot
 Framework's own documentation tool <a href="../libdoc/#libdoc">Libdoc</a>. This tool can
 create a library documentation from libraries
 using the static library API, such as the ones above, but it also handles
-libraries using the <a href="../dynamic/#dynamic-library-api">dynamic library API</a> as well as <a href="../../syntax/resource-files/#resource-files">resource files</a>.</p>
+libraries using the <a href="../dynamic/#dynamic-library-api">dynamic library API</a> as well as <a href="../../syntax/resource_files/#resource-files">resource files</a>.</p>
 <p>The first logical line of a keyword documentation, until the first empty line,
 is used for a special purpose and should contain a short overall description
 of the keyword. It is used as a <em>short documentation</em> by <a href="../libdoc/#libdoc">Libdoc</a> (for example,
-as a tool tip) and also shown in the <a href="#test-logs">test logs</a>.</p>
+as a tool tip) and also shown in the <a href="../../execution/results/#log-file">test logs</a>.</p>
 <p>Libdoc supports <a href="../../execution/basics/#errors-and-warnings-during-execution">argument, return value and exception documentation</a>
 using <a href="../../syntax/data/#style">Google Style</a> documentation conventions. The same syntax is
 supported also by many other documentation tools and IDEs.</p>
 <p>By default documentation is considered to follow Robot Framework's
-<a href="../../appendix/doc-format/#documentation-formatting">documentation formatting</a> rules. This simple format allows often used
+<a href="../../appendix/doc_format/#documentation-formatting">documentation formatting</a> rules. This simple format allows often used
 styles like <code>*bold*</code> and <code>_italic_</code>, tables, lists, links, etc.
 It is possible to use also <a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a>, <a href="https://en.wikipedia.org/wiki/ReStructuredText">reStructuredText</a>, HTML and plain
 text formats. See the <a href="#documentation-format">Documentation format</a> section for information how to
@@ -13732,7 +13794,7 @@ easier.</p>
 <p>Since libraries are normal programming code, they can be packaged
 using normal packaging tools. For information about packaging and
 distributing Python code see <a href="https://packaging.python.org/">https://packaging.python.org/</a>. When such
-a package is installed using <a href="#pip">pip</a> or other tools, it is automatically
+a package is installed using <a href="https://pip.pypa.io">pip</a> or other tools, it is automatically
 in the <a href="../../execution/configuration/#module-search-path">module search path</a>.</p>
 <h3 id="deprecating-keywords">Deprecating keywords<a class="headerlink" href="#deprecating-keywords" title="Permanent link">&para;</a></h3>
 <p>Sometimes there is a need to replace existing keywords with new ones
@@ -13748,7 +13810,7 @@ line of the documentation. For example, <code>*DEPRECATED*</code>, <code>*DEPREC
 <p>When a deprecated keyword is executed, a deprecation warning is logged and
 the warning is shown also in <a href="#documenting-libraries">the console and the Test Execution Errors
 section in log files</a>. The deprecation warning starts with text <code>Keyword
-'&lt;name&gt;' is deprecated.</code> and has rest of the <a href="../../syntax/user-keywords/#user-keyword-name-and-documentation">short documentation</a> after
+'&lt;name&gt;' is deprecated.</code> and has rest of the <a href="../../syntax/user_keywords/#user-keyword-name-and-documentation">short documentation</a> after
 the deprecation marker, if any, afterwards. For example, if the following
 keyword is executed, there will be a warning like shown below in the log file.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-106-1">1</a></span>
@@ -14106,13 +14168,13 @@ expected to be available in a new library <em class="name">SeLibExtensions</em>.
         
         
           
-          <a href="../dynamic/" class="md-footer__link md-footer__link--next" aria-label="Next: Dynamic library interface">
+          <a href="../dynamic/" class="md-footer__link md-footer__link--next" aria-label="Next: Dynamic library API">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Dynamic library interface
+                Dynamic library API
               </div>
             </div>
             <div class="md-footer__button md-icon">

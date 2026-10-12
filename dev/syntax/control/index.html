@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://pekkaklarck.github.io/manual/latest/syntax/control/">
       
       
-        <link rel="prev" href="../variable-files/">
+        <link rel="prev" href="../variable_files/">
       
       
         <link rel="next" href="../advanced/">
@@ -643,7 +643,7 @@
   <span class="md-ellipsis">
     
   
-    Test Data
+    Test data syntax
   
 
     
@@ -671,7 +671,7 @@
   <span class="md-ellipsis">
     
   
-    Creating tests
+    Creating test cases
   
 
     
@@ -727,7 +727,7 @@
   <span class="md-ellipsis">
     
   
-    Creating suites
+    Creating test suites
   
 
     
@@ -755,7 +755,7 @@
   <span class="md-ellipsis">
     
   
-    Using libraries
+    Using test libraries
   
 
     
@@ -804,14 +804,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../user-keywords/" class="md-nav__link">
+      <a href="../user_keywords/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    User keywords
+    Creating user keywords
   
 
     
@@ -832,7 +832,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../resource-files/" class="md-nav__link">
+      <a href="../resource_files/" class="md-nav__link">
         
   
   
@@ -860,7 +860,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../variable-files/" class="md-nav__link">
+      <a href="../variable_files/" class="md-nav__link">
         
   
   
@@ -1425,6 +1425,8 @@
       
         
       
+        
+      
     
     
     
@@ -1617,6 +1619,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../execution/post_processing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Post-processing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1744,7 +1774,7 @@
   <span class="md-ellipsis">
     
   
-    Library interface
+    Creating test libraries
   
 
     
@@ -1772,7 +1802,7 @@
   <span class="md-ellipsis">
     
   
-    Dynamic library interface
+    Dynamic library API
   
 
     
@@ -1968,7 +1998,7 @@
   <span class="md-ellipsis">
     
   
-    XML output
+    XML output format
   
 
     
@@ -9937,6 +9967,8 @@
       
         
       
+        
+      
     
     
     
@@ -10108,7 +10140,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../appendix/doc-format/" class="md-nav__link">
+      <a href="../../appendix/doc_format/" class="md-nav__link">
         
   
   
@@ -10136,7 +10168,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../appendix/time-format/" class="md-nav__link">
+      <a href="../../appendix/time_format/" class="md-nav__link">
         
   
   
@@ -10172,6 +10204,34 @@
     
   
     Registrations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/boolean_arguments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Boolean arguments
   
 
     
@@ -11007,7 +11067,7 @@ limit of 10 000 iterations. If the limit is exceeded, the loop fails.</p>
 iteration count or as a maximum time for the whole loop. When the limit is an
 iteration count, it is possible to use just integers like <code>100</code> and to add <code>times</code>
 or <code>x</code> suffix after the value like <code>100 times</code>. When the limit is a timeout,
-it is possible to use <a href="../../appendix/time-format/#time-format">time strings</a> like <code>10 s</code> or <code>1 hour 10 minutes</code>.
+it is possible to use <a href="../../appendix/time_format/#time-format">time strings</a> like <code>10 s</code> or <code>1 hour 10 minutes</code>.
 The limit can also be disabled altogether by using <code>NONE</code> (case-insensitive).
 All these options are illustrated by the examples below.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-21-1"> 1</a></span>
@@ -11061,10 +11121,10 @@ is new in Robot Framework 7.0.</p>
 the loop is exited similarly as if the loop condition would have become false.
 A major difference is that the loop status will be <code>FAIL</code> in this case.</p>
 <p>Starting from Robot Framework 6.1, it is possible to use <code>on_limit</code> parameter to
-configure the behaviour when the limit is exceeded. It supports two values <code>pass</code>
+configure the behavior when the limit is exceeded. It supports two values <code>pass</code>
 and <code>fail</code>, case insensitively. If the value is <code>pass</code>, the execution will continue
 normally when the limit is reached and the status of the <code>WHILE</code> loop will be <code>PASS</code>.
-The value <code>fail</code> works similarly as the default behaviour, e.g. the loop and the
+The value <code>fail</code> works similarly as the default behavior, e.g. the loop and the
 test will fail if the limit is exceeded.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-22-1"> 1</a></span>
 <span class="normal"><a href="#example-22-2"> 2</a></span>
@@ -11248,8 +11308,8 @@ in the future.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Also the <a href="../user-keywords/#return">RETURN</a> statement can be used to a exit loop. It only works
-when loops are used inside a <a href="../user-keywords/#creating-user-keywords">user keyword</a>.</p>
+<p>Also the <a href="../user_keywords/#return">RETURN</a> statement can be used to a exit loop. It only works
+when loops are used inside a <a href="../user_keywords/#creating-user-keywords">user keyword</a>.</p>
 </div>
 <p><a id="if"></a>
 <a id="ifelse"></a>
@@ -11417,7 +11477,7 @@ assignment is used and no branch is run, the variable gets value <code>None</cod
 <h3 id="nested-if-structures">Nested <code>IF</code> structures<a class="headerlink" href="#nested-if-structures" title="Permanent link">&para;</a></h3>
 <p><code>IF</code> structures can be nested with each others and with <a href="#for-loops">FOR loops</a>.
 This is illustrated by the following example using advanced features such
-as <a href="#for-in-enumerate-loop">FOR-IN-ENUMERATE loop</a>, <a href="../user-keywords/#named-only-arguments-with-user-keywords">named-only arguments with user keywords</a> and
+as <a href="#for-in-enumerate-loop">FOR-IN-ENUMERATE loop</a>, <a href="../user_keywords/#named-only-arguments-with-user-keywords">named-only arguments with user keywords</a> and
 <a href="../variables/#inline-python-evaluation">inline Python evaluation</a> syntax (<code>${{len(${items})}}</code>):</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-32-1"> 1</a></span>
 <span class="normal"><a href="#example-32-2"> 2</a></span>
@@ -11482,7 +11542,7 @@ as <a href="#for-in-enumerate-loop">FOR-IN-ENUMERATE loop</a>, <a href="../user-
 <ul>
 <li>
 <p>The name of the keyword used as a setup or a teardown with <a href="../suites/#suite-setup-and-teardown">suites</a>, <a href="../tests/#test-setup-and-teardown">tests</a> and
-  <a href="../user-keywords/#user-keyword-setup-and-teardown">keywords</a> can be specified using a variable. This facilitates changing them,
+  <a href="../user_keywords/#user-keyword-setup-and-teardown">keywords</a> can be specified using a variable. This facilitates changing them,
   for example, from the command line.</p>
 </li>
 <li>
@@ -11940,7 +12000,7 @@ after a keyword execution somewhat similarly as <a href="../../execution/tests/#
 <p>As the above examples demonstrates, groups can have a name, but the name is
 optional. Groups can also be nested freely with each others and with other
 control structures.</p>
-<p><a href="../user-keywords/#creating-user-keywords">User keywords</a> are in general recommended over the <code>GROUP</code> syntax, because
+<p><a href="../user_keywords/#creating-user-keywords">User keywords</a> are in general recommended over the <code>GROUP</code> syntax, because
 they are reusable and because they simplify tests or keywords where they are
 used by hiding and encapsulating lower level details. In the log file user
 keywords and groups look the same, though, except that instead of a <code>KEYWORD</code>
@@ -12063,7 +12123,7 @@ test. Groups can be added also by <a href="../../extend/listeners/#listener-inte
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../variable-files/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Variable files">
+          <a href="../variable_files/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Variable files">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>

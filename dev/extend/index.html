@@ -638,7 +638,7 @@
   <span class="md-ellipsis">
     
   
-    Test Data
+    Test data syntax
   
 
     
@@ -666,7 +666,7 @@
   <span class="md-ellipsis">
     
   
-    Creating tests
+    Creating test cases
   
 
     
@@ -722,7 +722,7 @@
   <span class="md-ellipsis">
     
   
-    Creating suites
+    Creating test suites
   
 
     
@@ -750,7 +750,7 @@
   <span class="md-ellipsis">
     
   
-    Using libraries
+    Using test libraries
   
 
     
@@ -799,14 +799,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../syntax/user-keywords/" class="md-nav__link">
+      <a href="../syntax/user_keywords/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    User keywords
+    Creating user keywords
   
 
     
@@ -827,7 +827,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../syntax/resource-files/" class="md-nav__link">
+      <a href="../syntax/resource_files/" class="md-nav__link">
         
   
   
@@ -855,7 +855,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../syntax/variable-files/" class="md-nav__link">
+      <a href="../syntax/variable_files/" class="md-nav__link">
         
   
   
@@ -947,6 +947,8 @@
   
     
     
+      
+        
       
         
       
@@ -1150,6 +1152,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../execution/post_processing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Post-processing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1282,7 +1312,7 @@
   <span class="md-ellipsis">
     
   
-    Library interface
+    Creating test libraries
   
 
     
@@ -1310,7 +1340,7 @@
   <span class="md-ellipsis">
     
   
-    Dynamic library interface
+    Dynamic library API
   
 
     
@@ -1506,7 +1536,7 @@
   <span class="md-ellipsis">
     
   
-    XML output
+    XML output format
   
 
     
@@ -9475,6 +9505,8 @@
       
         
       
+        
+      
     
     
     
@@ -9646,7 +9678,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../appendix/doc-format/" class="md-nav__link">
+      <a href="../appendix/doc_format/" class="md-nav__link">
         
   
   
@@ -9674,7 +9706,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../appendix/time-format/" class="md-nav__link">
+      <a href="../appendix/time_format/" class="md-nav__link">
         
   
   
@@ -9710,6 +9742,34 @@
     
   
     Registrations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appendix/boolean_arguments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Boolean arguments
   
 
     
@@ -9784,13 +9844,18 @@
 
 <p><a id="extending-robot-framework"></a></p>
 <h1 id="extend">Extend<a class="headerlink" href="#extend" title="Permanent link">&para;</a></h1>
-<p>Robot Framework’s real power comes from its library interface. <a href="libraries/">Creating test libraries</a> explains how to write Python libraries using the static, hybrid, or dynamic API — if your keyword belongs in Python code rather than a <code>.robot</code> file, this is the place to start. For reacting to execution events in real time or running libraries as separate processes, the <a href="listeners/">listener interface</a> and <a href="remote/">remote library interface</a> have you covered.</p>
+<p>Robot Framework can be extended with Python libraries and other interfaces. <a href="libraries/">Creating test libraries</a> explains the static, hybrid, and dynamic library APIs. The <a href="listeners/">listener interface</a> provides access to execution events, and the <a href="remote/">remote library interface</a> supports libraries running in separate processes. This section also covers library documentation, custom parsers, execution and result models, and output formats.</p>
 <h2 id="in-this-section">In this section<a class="headerlink" href="#in-this-section" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="libraries/">Creating Test Libraries</a></li>
-<li><a href="remote/">Remote Library</a></li>
-<li><a href="listeners/">Listener Interface</a></li>
-<li><a href="parsing/">Parser Interface</a></li>
+<li><a href="libraries/">Creating test libraries</a></li>
+<li><a href="dynamic/">Dynamic library API</a></li>
+<li><a href="remote/">Remote library interface</a></li>
+<li><a href="libdoc/">Libdoc</a></li>
+<li><a href="listeners/">Listener interface</a></li>
+<li><a href="parsing/">Parser interface</a></li>
+<li><a href="models/">Execution and result models</a></li>
+<li><a href="json/">JSON models</a></li>
+<li><a href="xml/">XML output format</a></li>
 </ul>
 
 
@@ -9846,13 +9911,13 @@
         
         
           
-          <a href="libraries/" class="md-footer__link md-footer__link--next" aria-label="Next: Library interface">
+          <a href="libraries/" class="md-footer__link md-footer__link--next" aria-label="Next: Creating test libraries">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Library interface
+                Creating test libraries
               </div>
             </div>
             <div class="md-footer__button md-icon">

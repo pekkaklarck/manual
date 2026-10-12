@@ -27,7 +27,7 @@
     
     
       
-        <title>Creating suites - Robot Framework</title>
+        <title>Creating test suites - Robot Framework</title>
       
     
     
@@ -69,7 +69,7 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Creating suites - Robot Framework" />
+<meta property="og:title" content="Creating test suites - Robot Framework" />
 <meta property="og:description" content="Robot Framework is a generic open source automation framework. This reference manual covers all its features in detail." />
 <meta property="og:image" content="https://pekkaklarck.github.io/manual/latest/assets/images/social/syntax/suites.png" />
 <meta property="og:image:type" content="image/png" />
@@ -77,7 +77,7 @@
 <meta property="og:image:height" content="630" />
 <meta property="og:url" content="https://pekkaklarck.github.io/manual/latest/syntax/suites/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Creating suites - Robot Framework" />
+<meta property="twitter:title" content="Creating test suites - Robot Framework" />
 <meta property="twitter:description" content="Robot Framework is a generic open source automation framework. This reference manual covers all its features in detail." />
 <meta property="twitter:image" content="https://pekkaklarck.github.io/manual/latest/assets/images/social/syntax/suites.png" />
 </head>
@@ -148,7 +148,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Creating suites
+              Creating test suites
             
           </span>
         </div>
@@ -643,7 +643,7 @@
   <span class="md-ellipsis">
     
   
-    Test Data
+    Test data syntax
   
 
     
@@ -671,7 +671,7 @@
   <span class="md-ellipsis">
     
   
-    Creating tests
+    Creating test cases
   
 
     
@@ -736,7 +736,7 @@
   <span class="md-ellipsis">
     
   
-    Creating suites
+    Creating test suites
   
 
     
@@ -754,7 +754,7 @@
   <span class="md-ellipsis">
     
   
-    Creating suites
+    Creating test suites
   
 
     
@@ -885,7 +885,7 @@
   <span class="md-ellipsis">
     
   
-    Using libraries
+    Using test libraries
   
 
     
@@ -934,14 +934,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../user-keywords/" class="md-nav__link">
+      <a href="../user_keywords/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    User keywords
+    Creating user keywords
   
 
     
@@ -962,7 +962,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../resource-files/" class="md-nav__link">
+      <a href="../resource_files/" class="md-nav__link">
         
   
   
@@ -990,7 +990,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../variable-files/" class="md-nav__link">
+      <a href="../variable_files/" class="md-nav__link">
         
   
   
@@ -1082,6 +1082,8 @@
   
     
     
+      
+        
       
         
       
@@ -1285,6 +1287,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../execution/post_processing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Post-processing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1412,7 +1442,7 @@
   <span class="md-ellipsis">
     
   
-    Library interface
+    Creating test libraries
   
 
     
@@ -1440,7 +1470,7 @@
   <span class="md-ellipsis">
     
   
-    Dynamic library interface
+    Dynamic library API
   
 
     
@@ -1636,7 +1666,7 @@
   <span class="md-ellipsis">
     
   
-    XML output
+    XML output format
   
 
     
@@ -9605,6 +9635,8 @@
       
         
       
+        
+      
     
     
     
@@ -9776,7 +9808,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../appendix/doc-format/" class="md-nav__link">
+      <a href="../../appendix/doc_format/" class="md-nav__link">
         
   
   
@@ -9804,7 +9836,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../appendix/time-format/" class="md-nav__link">
+      <a href="../../appendix/time_format/" class="md-nav__link">
         
   
   
@@ -9840,6 +9872,34 @@
     
   
     Registrations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/boolean_arguments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Boolean arguments
   
 
     
@@ -10011,7 +10071,7 @@ execution by giving multiple <a href="../../execution/basics/#specifying-test-da
 except that they cannot have test case sections and not all settings are
 supported. Variables and keywords created or imported in initialization files
 <em>are not</em> available in the lower level suites. If you need to share
-variables or keywords, you can put them into <a href="../resource-files/#resource-files">resource files</a> that can be
+variables or keywords, you can put them into <a href="../resource_files/#resource-files">resource files</a> that can be
 imported both by initialization and test case files.</p>
 <p>The main usage for initialization files is specifying suite related
 settings similarly as in <a href="#suite-files">suite files</a>, but setting some <a href="../tests/#test-case-related-settings-in-the-setting-section">test case
@@ -10155,7 +10215,7 @@ setting in the Settings section. It can be used both in <a href="#suite-files">s
 and in <a href="#suite-initialization-files">suite initialization files</a>. Suite documentation has exactly
 the same characteristics regarding to where it is shown and how it can
 be created as <a href="../tests/#test-case-name-and-documentation">test case documentation</a>. For details about the syntax
-see the <a href="../../appendix/doc-format/#documentation-formatting">Documentation formatting</a> appendix.</p>
+see the <a href="../../appendix/doc_format/#documentation-formatting">Documentation formatting</a> appendix.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-2-1">1</a></span>
 <span class="normal"><a href="#example-2-2">2</a></span>
 <span class="normal"><a href="#example-2-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-2-1"><a id="example-2-1" name="example-2-1"></a><span class="gh">*** Settings ***</span>
@@ -10170,7 +10230,7 @@ is defined as name-value pairs in the Settings section using the <em class="sett
 setting. It is shown in reports and logs similarly as documentation.</p>
 <p>Name of the metadata is the first argument given to the <em class="setting">Metadata</em> setting
 and the remaining arguments specify its value. The value is handled similarly as
-documentation, which means that it supports <a href="../../appendix/doc-format/#documentation-formatting">HTML formatting</a> and <a href="../variables/#variables">variables</a>, and
+documentation, which means that it supports <a href="../../appendix/doc_format/#documentation-formatting">HTML formatting</a> and <a href="../variables/#variables">variables</a>, and
 that longer values can be <a href="../data/#dividing-data-to-several-rows">split into multiple rows</a>.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-3-1">1</a></span>
 <span class="normal"><a href="#example-3-2">2</a></span>
@@ -10271,13 +10331,13 @@ from the command line.</p>
         
         
           
-          <a href="../libraries/" class="md-footer__link md-footer__link--next" aria-label="Next: Using libraries">
+          <a href="../libraries/" class="md-footer__link md-footer__link--next" aria-label="Next: Using test libraries">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Using libraries
+                Using test libraries
               </div>
             </div>
             <div class="md-footer__button md-icon">
