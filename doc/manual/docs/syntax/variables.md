@@ -1235,7 +1235,7 @@ Invalid type
 
 An important usage for [variable type conversion](#variable-type-conversion) is creating so called
 *secret variables*. These variables encapsulate their values so that the real
-values are [not logged even on the trace level](../execution/results.md#log-levels) when variables are passed
+values are [not logged even on the trace level](../execution/results/index.md#log-levels) when variables are passed
 between keywords as arguments and return values.
 
 The actual value is available via the `value` attribute of a secret variable.
@@ -1310,7 +1310,7 @@ the command line.
 
 Secrets can be created programmatically by using the [robot.api.types.Secret](https://robot-framework.readthedocs.io/en/master/autodoc/robot.utils.html#robot.utils.secret.Secret)
 class. This is most commonly done by [libraries](libraries.md#using-test-libraries) and [variable files](variable_files.md#variable-files), but also
-[pre-run modifiers](../execution/configuration.md#programmatic-modification-of-test-data) and [listeners](../extend/listeners.md#listener-interface) can utilize secrets if needed.
+[pre-run modifiers](../execution/configuration/index.md#programmatic-modification-of-test-data) and [listeners](../extend/listeners.md#listener-interface) can utilize secrets if needed.
 
 The simplest possible example of the programmatic usage is a variable file:
 
@@ -1503,12 +1503,12 @@ can be changed dynamically using keywords from the [BuiltIn](https://robotframew
 | ${SUITE MESSAGE} | The full message of the current test suite, including statistics. | [Suite teardown](suites.md#suite-setup-and-teardown) |
 | ${KEYWORD STATUS} | The status of the current keyword, either PASS or FAIL. | [User keyword teardown](../execution/tests.md#user-keyword-teardown) |
 | ${KEYWORD MESSAGE} | The possible error message of the current keyword. | [User keyword teardown](../execution/tests.md#user-keyword-teardown) |
-| ${LOG LEVEL} | Current [log level](../execution/results.md#log-levels). | Everywhere |
-| ${OUTPUT DIR} | An absolute path to the [output directory](../execution/results.md#output-directory) as a string. | Everywhere |
-| ${OUTPUT FILE} | An absolute path to the [output file](../execution/results.md#output-file) as a string or a string `NONE` if the output file is not created. | Everywhere |
-| ${LOG FILE} | An absolute path to the [log file](../execution/results.md#log-file) as a string or a string `NONE` if the log file is not created. | Everywhere |
-| ${REPORT FILE} | An absolute path to the [report file](../execution/results.md#report-file) as a string or a string `NONE` if the report file is not created. | Everywhere |
-| ${DEBUG FILE} | An absolute path to the [debug file](../execution/results.md#debug-file) as a string or a string `NONE` if the debug file is not created. | Everywhere |
+| ${LOG LEVEL} | Current [log level](../execution/results/index.md#log-levels). | Everywhere |
+| ${OUTPUT DIR} | An absolute path to the [output directory](../execution/results/index.md#output-directory) as a string. | Everywhere |
+| ${OUTPUT FILE} | An absolute path to the [output file](../execution/results/index.md#output-file) as a string or a string `NONE` if the output file is not created. | Everywhere |
+| ${LOG FILE} | An absolute path to the [log file](../execution/results/index.md#log-file) as a string or a string `NONE` if the log file is not created. | Everywhere |
+| ${REPORT FILE} | An absolute path to the [report file](../execution/results/index.md#report-file) as a string or a string `NONE` if the report file is not created. | Everywhere |
+| ${DEBUG FILE} | An absolute path to the [debug file](../execution/results/index.md#debug-file) as a string or a string `NONE` if the debug file is not created. | Everywhere |
 | &{OPTIONS} | A dictionary exposing command line options. The dictionary keys match the command line options and can be accessed both like `${OPTIONS}[key]` and `${OPTIONS.key}`. Available options:<br>- `${OPTIONS.exclude}` (`--exclude`{.option}) - `${OPTIONS.include}` (`--include`{.option}) - `${OPTIONS.skip}` (`--skip`{.option}) - `${OPTIONS.skip_on_failure}` (`--skip-on-failure`{.option}) - `${OPTIONS.console_width}` (integer, `--console-width`{.option}) - `${OPTIONS.rpa}` (boolean, `--rpa`{.option})<br>`${OPTIONS}` itself was added in RF 5.0, `${OPTIONS.console_width}` in RF 7.1 and `${OPTIONS.rpa}` in RF 7.3. More options can be exposed later. | Everywhere |
 
 Suite related variables `${SUITE SOURCE}`, `${SUITE NAME}`, `${SUITE DOCUMENTATION}`

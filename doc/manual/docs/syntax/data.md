@@ -84,7 +84,7 @@ An alternative is using the [pipe separated data format](#pipe-separated-data-fo
 is the pipe character surrounded with spaces (`  |  `{.codesc}).
 
 Suite files typically use the `.robot`{.file} extension, but what files are
-parsed [can be configured](../execution/configuration.md#selecting-files-to-parse). [Resource files](resource_files.md#resource-files) can use the `.robot`{.file}
+parsed [can be configured](../execution/configuration/index.md#selecting-files-to-parse). [Resource files](resource_files.md#resource-files) can use the `.robot`{.file}
 extension as well, but using the dedicated `.resource`{.file} extension is
 recommended and may be mandated in the future. Files containing non-ASCII
 characters must be saved using the UTF-8 encoding.
@@ -282,7 +282,7 @@ Robot Framework supports reStructuredText files using `.robot.rst`{.file},
 `.rst`{.file} and `.rest`{.file} extensions. To avoid parsing unrelated
 reStructuredText files, only files with the `.robot.rst`{.file} extension
 are parsed by default when executing a directory. Parsing files with
-other extensions [can be enabled](../execution/configuration.md#selecting-files-to-parse) by using either `--parseinclude`{.option}
+other extensions [can be enabled](../execution/configuration/index.md#selecting-files-to-parse) by using either `--parseinclude`{.option}
 or `--extension`{.option} option.
 
 When Robot Framework parses reStructuredText files, errors below level
@@ -350,7 +350,7 @@ Robot Framework supports Markdown files using `.robot.md`{.file},
 `.md`{.file} and `.markdown`{.file} extensions. To avoid parsing unrelated
 Markdown files, only files with the `.robot.md`{.file} extension
 are parsed by default when executing a directory. Parsing files with
-the `.md`{.file} or `.markdown`{.file} extension [can be enabled](../execution/configuration.md#selecting-files-to-parse) by using
+the `.md`{.file} or `.markdown`{.file} extension [can be enabled](../execution/configuration/index.md#selecting-files-to-parse) by using
 either `--parseinclude`{.option} or `--extension`{.option} option.
 
 #### Living documentation
@@ -495,7 +495,7 @@ When executing tests or tasks using the `robot` command, JSON files with
 the custom `.rbt`{.file} extension are parsed automatically. This includes
 running individual JSON files like `robot tests.rbt` and running directories
 containing `.rbt`{.file} files. If you would rather use the standard
-`.json`{.file} extension, you need to [configure which files are parsed](../execution/configuration.md#selecting-files-to-parse).
+`.json`{.file} extension, you need to [configure which files are parsed](../execution/configuration/index.md#selecting-files-to-parse).
 
 #### Adjusting suite source
 
@@ -770,7 +770,7 @@ robot --language pt --language ptbr testes.robot
 
 The same `--language`{.option} option is also used when activating
 [custom language files](#custom-language-files). With them the value can be either a path to the file or,
-if the file is in the [module search path](../execution/configuration.md#module-search-path), the module name:
+if the file is in the [module search path](../execution/configuration/index.md#module-search-path), the module name:
 
 ```text
 robot --language Custom.py tests.robot

@@ -534,8 +534,8 @@ Variable conversion
 ### Removing unnecessary keywords from outputs
 
 `FOR` loops with multiple iterations often create lots of output and
-considerably increase the size of the generated [output](../execution/results.md#output-file) and [log](../execution/results.md#log-file) files.
-It is possible to [remove or flatten unnecessary keywords](../execution/results.md#removing-and-flattening-keywords) using
+considerably increase the size of the generated [output](../execution/results/index.md#output-file) and [log](../execution/results/index.md#log-file) files.
+It is possible to [remove or flatten unnecessary keywords](../execution/results/index.md#removing-and-flattening-keywords) using
 `--removekeywords`{.option} and `--flattenkeywords`{.option} command line options.
 
 ### Repeating single keyword
@@ -707,8 +707,8 @@ Nesting WHILE
 ### Removing unnecessary keywords from outputs
 
 `WHILE` loops with multiple iterations often create lots of output and
-considerably increase the size of the generated [output](../execution/results.md#output-file) and [log](../execution/results.md#log-file) files.
-It is possible to [remove or flatten unnecessary keywords](../execution/results.md#removing-and-flattening-keywords) using
+considerably increase the size of the generated [output](../execution/results/index.md#output-file) and [log](../execution/results/index.md#log-file) files.
+It is possible to [remove or flatten unnecessary keywords](../execution/results/index.md#removing-and-flattening-keywords) using
 `--removekeywords`{.option} and `--flattenkeywords`{.option} command line options.
 
 <a id="break"></a>
@@ -1358,7 +1358,7 @@ Upper case should be
 
 One of the primary usages for groups is making it possible to create structured
 tests and user keywords programmatically. For example, the following
-[pre-run modifier](../execution/configuration.md#pre-run-modifier) adds a group with two keywords at the end of each modified
+[pre-run modifier](../execution/configuration/index.md#pre-run-modifier) adds a group with two keywords at the end of each modified
 test. Groups can be added also by [listeners](../extend/listeners.md#listener-interface) that use the
 [listener API version 3](../extend/listeners.md#listener-version-3).
 

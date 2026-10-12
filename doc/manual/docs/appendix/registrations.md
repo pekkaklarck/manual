@@ -19,7 +19,7 @@ associated with Robot Framework.
 `.rbt`{.file}
 : Suite file using the [JSON data format](../syntax/data.md#json-data-format).
 
-Using other extensions is possible, but it requires [separate configuration](../execution/configuration.md#selecting-files-to-parse).
+Using other extensions is possible, but it requires [separate configuration](../execution/configuration/index.md#selecting-files-to-parse).
 
 ## Resource file extensions
 
@@ -47,5 +47,5 @@ The media type to use with Robot Framework data is `text/robotframework`.
 
 ## Remote server port
 
-The default [remote server](../extend/remote.md#remote-library-interface) port is 8270. The port has been [registered by IANA](https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml?search=8270).
+The default [remote server](../extend/remote/index.md#remote-library-interface) port is 8270. The port has been [registered by IANA](https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml?search=8270).
 

@@ -25,14 +25,14 @@ mode even if executed files contain tasks. If neither of these options are
 used, it is an error to execute multiple files so that some have tests and
 others have tasks.
 
-The execution mode is stored in the generated [output file](results.md#output-file) and read by
+The execution mode is stored in the generated [output file](results/index.md#output-file) and read by
 [Rebot](post_processing.md#rebot) if outputs are post-processed. The mode can also [be set when
 using Rebot](post_processing.md#controlling-execution-mode) if necessary.
 
 ## Task related command line options
 
 All normal command line options can be used when executing tasks. If there
-is a need to [select only certain tasks for execution](configuration.md#selecting-test-cases), `--task`{.option}
+is a need to [select only certain tasks for execution](configuration/index.md#selecting-test-cases), `--task`{.option}
 can be used instead of `--test`{.option}. Additionally the aforementioned
 `--rpa`{.option} can be used to control the execution mode.
 

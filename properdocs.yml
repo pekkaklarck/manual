@@ -33,8 +33,8 @@ nav:
       - Basic usage: execution/basics.md
       - Test execution: execution/tests.md
       - Task execution: execution/tasks.md
-      - Configuring execution: execution/configuration.md
-      - Execution artifacts: execution/results.md
+      - Configuring execution: execution/configuration/index.md
+      - Execution artifacts: execution/results/index.md
       - Post-processing: execution/post_processing.md
   - Libraries:
       - libraries/index.md
@@ -42,8 +42,8 @@ nav:
       - extend/index.md
       - Library interface: extend/libraries.md
       - Dynamic library interface: extend/dynamic.md
-      - Remote library interface: extend/remote.md
-      - Libdoc: extend/libdoc.md
+      - Remote library interface: extend/remote/index.md
+      - Libdoc: extend/libdoc/index.md
       - Listener interface: extend/listeners.md
       - Parser interface: extend/parsing.md
       - Execution and result models: extend/models.md

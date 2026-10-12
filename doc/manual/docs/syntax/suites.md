@@ -54,7 +54,7 @@ contains are processed recursively as follows:
 - Other files are ignored.
 
 If a file or directory that is processed does not contain any test
-cases, it is silently ignored (a message is written to the [syslog](../execution/results.md#system-log))
+cases, it is silently ignored (a message is written to the [syslog](../execution/results/index.md#system-log))
 and the processing continues.
 
 <a id="initialization-file"></a>
@@ -128,7 +128,7 @@ Do Something
     When you run a suite file or directory, possible suite initialization
     files in higher level directories are not taken into account. If that
     is not desired, run the appropriate higher level suite directory and use
-    the [--suite](../execution/configuration.md#by-suite-names) option to select which child suite inside it is executed.
+    the [--suite](../execution/configuration/index.md#by-suite-names) option to select which child suite inside it is executed.
 
 ## Suite name
 
@@ -154,7 +154,7 @@ to a suite by using the *Name*{.setting} setting in the Setting section:
 Name            Custom suite name
 ```
 
-The name of the top-level suite [can be overridden](../execution/configuration.md#setting-suite-name) from the command line with
+The name of the top-level suite [can be overridden](../execution/configuration/index.md#setting-suite-name) from the command line with
 the `--name`{.option} option.
 
 ## Suite documentation
@@ -172,7 +172,7 @@ Documentation    An example suite documentation with *some* _formatting_.
 ...              Long documentation can be split into multiple lines.
 ```
 
-The documentation of the top-level suite [can be overridden](../execution/configuration.md#setting-suite-documentation) from
+The documentation of the top-level suite [can be overridden](../execution/configuration/index.md#setting-suite-documentation) from
 the command line with the `--doc`{.option} option.
 
 ## Free suite metadata
@@ -196,7 +196,7 @@ Metadata        Longer Value
 ...             rows. Also *simple* _formatting_ is supported.
 ```
 
-The free metadata of the top-level suite [can be set](../execution/configuration.md#setting-free-suite-metadata) from
+The free metadata of the top-level suite [can be set](../execution/configuration/index.md#setting-free-suite-metadata) from
 the command line with the `--metadata`{.option} option.
 
 Individual test cases can have similar free metadata of their own, see

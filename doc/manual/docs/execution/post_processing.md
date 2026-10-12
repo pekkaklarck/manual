@@ -3,7 +3,7 @@
 <a id="post-process-outputs"></a>
 # Post-processing outputs
 
-[XML output files](results.md#output-file) that are generated during the test execution can be
+[XML output files](results/index.md#output-file) that are generated during the test execution can be
 post-processed afterwards by the Rebot tool, which is an integral
 part of Robot Framework. It is used automatically when test
 reports and logs are generated during the test execution, and using it
@@ -34,7 +34,7 @@ interpreter.
 The basic syntax for using Rebot is exactly the same as when
 [starting test execution](basics.md#starting-test-execution) and also most of the command line options are
 identical. The main difference is that arguments to Rebot are
-[XML output files](results.md#output-file) instead of test data files or directories.
+[XML output files](results/index.md#output-file) instead of test data files or directories.
 
 ### Return codes with Rebot
 
@@ -137,7 +137,7 @@ the two main merge use cases.
 
 There is often a need to re-execute a subset of tests, for example, after
 fixing a bug in the system under test or in the tests themselves. This can be
-accomplished by [selecting test cases](configuration.md#selecting-test-cases) by names (`--test`{.option} and
+accomplished by [selecting test cases](configuration/index.md#selecting-test-cases) by names (`--test`{.option} and
 `--suite`{.option} options), tags (`--include`{.option} and `--exclude`{.option}),
 or by previous status (`--rerunfailed`{.option} or `--rerunfailedsuites`{.option}).
 
@@ -219,7 +219,7 @@ The JSON output file structure is documented in the `result.json`{.file} [schema
     Support for JSON output files is new in Robot Framework 7.0.
     Prior to Robot Framework 7.2 JSON output files contained only
     information about the executed suite, but nowadays they contain
-    the same result data as [XML output files](results.md#output-file).
+    the same result data as [XML output files](results/index.md#output-file).
 
 ## Controlling Rebot console output
 
@@ -239,7 +239,7 @@ that supports the following case-insensitive values:
 The `--quiet`{.option} option is a shortcut for `--console quiet`.
 
 In addition to the built-in values, `--console`{.option} also accepts
-[custom console loggers](configuration.md#custom-console-loggers), using the same mechanism as with `robot`.
+[custom console loggers](configuration/index.md#custom-console-loggers), using the same mechanism as with `robot`.
 
 !!! note
     Support for `--console`{.option} and `--quiet`{.option} with Rebot

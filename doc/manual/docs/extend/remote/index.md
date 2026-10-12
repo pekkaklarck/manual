@@ -6,7 +6,7 @@ and also for implementing libraries using other languages than the
 natively supported Python. For a test library, user remote
 libraries look pretty much the same as any other test library, and
 developing test libraries using the remote library interface is also
-very close to creating [normal test libraries](libraries.md#creating-test-libraries).
+very close to creating [normal test libraries](../libraries.md#creating-test-libraries).
 
 ## Introduction
 
@@ -21,7 +21,7 @@ There are two main reasons for using the remote library API:
   for various languages like Python, Java, Ruby, .NET, and so on.
 
 The remote library interface is provided by the Remote library that is
-one of the [standard libraries](../syntax/libraries.md#using-standard-libraries).
+one of the [standard libraries](../../syntax/libraries.md#using-standard-libraries).
 This library does not have any keywords of its own, but it works
 as a proxy between the core framework and keywords implemented
 elsewhere. The Remote library interacts with actual library
@@ -30,7 +30,7 @@ servers communicate using a simple [remote protocol](#remote-protocol) on top of
 XML-RPC channel.  The high level architecture of all this is
 illustrated in the picture below:
 
-![Robot Framework architecture with Remote library](assets/remote.png)
+![Robot Framework architecture with Remote library](remote.png)
 
 *Robot Framework architecture with Remote library*
 
@@ -47,7 +47,7 @@ The Remote library needs to know the address of the remote server but
 otherwise importing it and using keywords that it provides is no
 different to how other libraries are used. If you need to use the Remote
 library multiple times in a suite, or just want to give it a more
-descriptive name, you can give it an [alias when importing it](../syntax/libraries.md#setting-custom-name-to-library).
+descriptive name, you can give it an [alias when importing it](../../syntax/libraries.md#setting-custom-name-to-library).
 
 ```robotframework
 *** Settings ***
@@ -62,7 +62,7 @@ that the Remote library uses if no address is given.
 The last example above shows how to give a custom timeout to the Remote library
 as an optional second argument. The timeout is used when initially connecting
 to the server and if a connection accidentally closes. Timeout can be
-given in Robot Framework [time format](../appendix/time_format.md#time-format) like `60s` or `2 minutes 10 seconds`.
+given in Robot Framework [time format](../../appendix/time_format.md#time-format) like `60s` or `2 minutes 10 seconds`.
 The default timeout is typically several minutes, but it depends on the
 operating system and its configuration. Notice that setting a timeout that
 is shorter than keyword execution time will interrupt the keyword.
@@ -95,7 +95,7 @@ the actual keywords must be started.  If the server is started before
 launching the test execution, it is possible to use the normal
 *Library*{.setting} setting like in the above example. Alternatively other
 keywords, for example from [Process](https://robotframework.org/robotframework/latest/libraries/Process.html) or [SSH](https://github.com/robotframework/SSHLibrary) libraries, can start
-the server up, but then you may need to use [Import Library keyword](../syntax/libraries.md#using-import-library-keyword)
+the server up, but then you may need to use [Import Library keyword](../../syntax/libraries.md#using-import-library-keyword)
 because the library is not available when the test execution starts.
 
 How a remote server can be stopped depends on how it is
@@ -137,7 +137,7 @@ according to the following rules. Other remote servers should behave similarly.
   converted to strings and values converted to supported types recursively.
 
 * Returned dictionaries are converted to so called *dot-accessible dicts*
-  that allow accessing keys as attributes using the [extended variable syntax](../syntax/variables.md#extended-variable-syntax)
+  that allow accessing keys as attributes using the [extended variable syntax](../../syntax/variables.md#extended-variable-syntax)
   like `${result.key}`. This works also with nested dictionaries like
   `${root.child.leaf}`.
 
@@ -167,7 +167,7 @@ There are two possibilities how remote servers can provide information about
 the keywords they contain. They are briefly explained below and documented
 more thoroughly in the subsequent sections.
 
-1. Remote servers can implement the same methods as the [dynamic library API](dynamic.md#dynamic-library-api)
+1. Remote servers can implement the same methods as the [dynamic library API](../dynamic.md#dynamic-library-api)
     has. This means `get_keyword_names` method and optional `get_keyword_arguments`,
     `get_keyword_types`, `get_keyword_tags` and `get_keyword_documentation` methods.
     Notice that using "camel-case names" like `getKeywordNames` is not
@@ -213,15 +213,15 @@ and what they must return is explained in the table below.
 
    | Method | Return value |
    | --- | --- |
-   | `get_keyword_arguments` | Arguments as a list of strings in the [same format as with dynamic libraries](dynamic.md#getting-keyword-arguments). |
+   | `get_keyword_arguments` | Arguments as a list of strings in the [same format as with dynamic libraries](../dynamic.md#getting-keyword-arguments). |
    | `get_keyword_types` | Type information as a list or dictionary of strings. See below for details. |
    | `get_keyword_documentation` | Documentation as a string. |
    | `get_keyword_tags` | Tags as a list of strings. |
 
-Type information used for [argument conversion](libraries.md#argument-conversion) can be returned either as
+Type information used for [argument conversion](../libraries.md#argument-conversion) can be returned either as
 a list mapping type names to arguments based on position or as a dictionary
 mapping argument names to type names directly. In practice this works the same
-way as when [specifying types using the @keyword decorator](libraries.md#specifying-argument-types-using-keyword-decorator) with normal
+way as when [specifying types using the @keyword decorator](../libraries.md#specifying-argument-types-using-keyword-decorator) with normal
 libraries. The difference is that because the XML-RPC protocol does not support
 arbitrary values, type information needs to be specified using type names
 or aliases like `'int'` or `'integer'`, not using actual types like `int`.
@@ -230,14 +230,14 @@ but an empty string can be used to indicate that certain argument does not
 have type information instead.
 
 Argument conversion is supported also based on default values using the
-[same logic as with normal libraries](libraries.md#implicit-argument-types-based-on-default-values). For this to work, arguments with
+[same logic as with normal libraries](../libraries.md#implicit-argument-types-based-on-default-values). For this to work, arguments with
 default values must be returned as tuples, not as strings, the [same way
-as with dynamic libraries](dynamic.md#getting-keyword-arguments). For example, argument conversion works if
+as with dynamic libraries](../dynamic.md#getting-keyword-arguments). For example, argument conversion works if
 argument information is returned like `[('count', 1), ('caseless', True)]`
 but not if it is `['count=1', 'caseless=True']`.
 
-Remote servers can also provide [general library documentation](dynamic.md#getting-general-library-documentation) to
-be used when generating documentation with the [Libdoc](libdoc.md#libdoc) tool. This information
+Remote servers can also provide [general library documentation](../dynamic.md#getting-general-library-documentation) to
+be used when generating documentation with the [Libdoc](../libdoc/index.md#libdoc) tool. This information
 is got by calling `get_keyword_documentation` with special values `__intro__`
 and `__init__`.
 
@@ -260,7 +260,7 @@ in the previous section. If some information is not available, it can be omitted
 from the info dictionary altogether.
 
 `get_library_information` supports also returning general library documentation
-to be used with [Libdoc](libdoc.md#libdoc). It is done by including special `__intro__` and `__init__`
+to be used with [Libdoc](../libdoc/index.md#libdoc). It is done by including special `__intro__` and `__init__`
 entries into the returned library information dictionary.
 
 For example, a Python library like
@@ -312,23 +312,23 @@ others can be omitted if they are not applicable.
 | Name | Explanation |
 | --- | --- |
 | status | Mandatory execution status. Either PASS or FAIL. |
-| output | Possible output to write into the log file. Must be given as a single string but can contain multiple messages and different [log levels](libraries.md#logging-information) in format `*INFO* First message\n*HTML* <b>2nd</b>\n*WARN* Another message`. It is also possible to embed [timestamps](libraries.md#timestamps) to the log messages like `*INFO:1308435758660* Message with timestamp`. |
+| output | Possible output to write into the log file. Must be given as a single string but can contain multiple messages and different [log levels](../libraries.md#logging-information) in format `*INFO* First message\n*HTML* <b>2nd</b>\n*WARN* Another message`. It is also possible to embed [timestamps](../libraries.md#timestamps) to the log messages like `*INFO:1308435758660* Message with timestamp`. |
 | return | Possible return value. Must be one of the [supported types](#supported-argument-and-return-value-types). |
 | error | Possible error message. Used only when the execution fails. |
-| traceback | Possible stack trace to [write into the log file](libraries.md#reporting-keyword-status) using DEBUG level when the execution fails. |
-| continuable | When set to `True`, or any value considered `True` in Python, the occurred failure is considered [continuable](../execution/tests.md#continue-on-failure). |
-| fatal | Like `continuable`, but denotes that the occurred failure is [fatal](../execution/tests.md#stopping-test-execution-gracefully). |
+| traceback | Possible stack trace to [write into the log file](../libraries.md#reporting-keyword-status) using DEBUG level when the execution fails. |
+| continuable | When set to `True`, or any value considered `True` in Python, the occurred failure is considered [continuable](../../execution/tests.md#continue-on-failure). |
+| fatal | Like `continuable`, but denotes that the occurred failure is [fatal](../../execution/tests.md#stopping-test-execution-gracefully). |
 
 ### Different argument syntaxes
 
-The Remote library is a [dynamic library](dynamic.md#dynamic-library), and in general it handles
-different argument syntaxes [according to the same rules](dynamic.md#getting-keyword-arguments) as any other
+The Remote library is a [dynamic library](../dynamic.md#dynamic-library), and in general it handles
+different argument syntaxes [according to the same rules](../dynamic.md#getting-keyword-arguments) as any other
 dynamic library.
 This includes mandatory arguments, default values, varargs, as well
-as [named argument syntax](dynamic.md#named-argument-syntax-with-dynamic-libraries).
+as [named argument syntax](../dynamic.md#named-argument-syntax-with-dynamic-libraries).
 
 Also free named arguments (`**kwargs`) works mostly the [same way
-as with other dynamic libraries](dynamic.md#free-named-arguments-with-dynamic-libraries). First of all, the
+as with other dynamic libraries](../dynamic.md#free-named-arguments-with-dynamic-libraries). First of all, the
 `get_keyword_arguments` must return an argument specification that
 contains `**kwargs` exactly like with any other dynamic library.
 The main difference is that

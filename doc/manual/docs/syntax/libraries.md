@@ -74,7 +74,7 @@ if the library is imported using the *Library*{.setting} setting or the
 
 The most common way to specify a test library to import is using its name.
 In these cases Robot Framework tries to find the class or module
-implementing the library from the [module search path](../execution/configuration.md#module-search-path). Libraries that
+implementing the library from the [module search path](../execution/configuration/index.md#module-search-path). Libraries that
 are installed somehow ought to be in the module search path automatically,
 but with other libraries the search path may need to be configured separately.
 
@@ -203,7 +203,7 @@ These libraries can be running on other machines than the core
 framework and can even be implemented using languages not supported by
 Robot Framework natively.
 
-See separate [Remote library interface](../extend/remote.md#remote-library-interface) section for more information
+See separate [Remote library interface](../extend/remote/index.md#remote-library-interface) section for more information
 about this concept.
 
 ## Using external libraries
