@@ -25,8 +25,8 @@ The hierarchical structure for arranging test cases is built as follows:
 In addition to this, there are:
 
 - [Test libraries](libraries.md#using-test-libraries) containing the lowest-level keywords.
-- [Resource files](resource-files.md#resource-files) with [variables](variables.md#variables) and higher-level [user keywords](user-keywords.md#creating-user-keywords).
-- [Variable files](variable-files.md#variable-files) to provide more flexible ways to create variables
+- [Resource files](resource_files.md#resource-files) with [variables](variables.md#variables) and higher-level [user keywords](user_keywords.md#creating-user-keywords).
+- [Variable files](variable_files.md#variable-files) to provide more flexible ways to create variables
   than resource files.
 
 Test case files, test suite initialization files and resource files are
@@ -44,11 +44,11 @@ called tables, listed below:
 
 | Section | Used for |
 | --- | --- |
-| Settings | 1) Importing [test libraries](libraries.md#using-test-libraries), [resource files](resource-files.md#resource-files) and [variable files](variable-files.md#variable-files).<br>2) Defining metadata for [test suites](suites.md#creating-test-suites) and [test cases](tests.md#creating-test-cases). |
+| Settings | 1) Importing [test libraries](libraries.md#using-test-libraries), [resource files](resource_files.md#resource-files) and [variable files](variable_files.md#variable-files).<br>2) Defining metadata for [test suites](suites.md#creating-test-suites) and [test cases](tests.md#creating-test-cases). |
 | Variables | Defining [variables](variables.md#variables) that can be used elsewhere in the test data. |
 | Test Cases | [Creating test cases](tests.md#creating-test-cases) from available keywords. |
 | Tasks | [Creating tasks](tasks.md#creating-tasks) using available keywords. Single file can only contain either tests or tasks. |
-| Keywords | [Creating user keywords](user-keywords.md#creating-user-keywords) from existing lower-level keywords |
+| Keywords | [Creating user keywords](user_keywords.md#creating-user-keywords) from existing lower-level keywords |
 | Comments | Additional comments or data. Ignored by Robot Framework. |
 
 Different sections are recognized by their header row. The recommended
@@ -84,7 +84,7 @@ An alternative is using the [pipe separated data format](#pipe-separated-data-fo
 is the pipe character surrounded with spaces (`  |  `{.codesc}).
 
 Suite files typically use the `.robot`{.file} extension, but what files are
-parsed [can be configured](../execution/configuration.md#selecting-files-to-parse). [Resource files](resource-files.md#resource-files) can use the `.robot`{.file}
+parsed [can be configured](../execution/configuration/index.md#selecting-files-to-parse). [Resource files](resource_files.md#resource-files) can use the `.robot`{.file}
 extension as well, but using the dedicated `.resource`{.file} extension is
 recommended and may be mandated in the future. Files containing non-ASCII
 characters must be saved using the UTF-8 encoding.
@@ -104,14 +104,15 @@ Robot Framework supports also [JSON data format](#json-data-format) that is targ
 more for tool developers than normal Robot Framework users. Only JSON files
 with the custom `.rbt`{.file} extension are parsed by default.
 
-Earlier Robot Framework versions supported data also in HTML and TSV formats.
-The TSV format still works if the data is compatible with the [space separated
-format](#space-separated-format), but the support for the HTML format has been removed altogether.
-If you encounter such data files, you need to convert them to the plain text
-format to be able to use them with Robot Framework 3.2 or newer. The easiest
-way to do that is using the [Tidy](../extend/tidy.md#tidy) tool, but you must use the version included
-with Robot Framework 3.1 because newer versions do not understand the HTML
-format at all.
+Earlier Robot Framework versions also supported HTML and TSV data formats.
+TSV data remains usable if it is compatible with the
+[space separated format](#space-separated-format).
+
+HTML data must be converted to plain text before it can be used with
+Robot Framework 3.2 or newer. For this legacy conversion, use the Tidy tool
+included with Robot Framework 3.1.2. See
+[Converting legacy HTML files](https://robotframework.org/robotframework/3.1.2/RobotFrameworkUserGuide.html#changing-test-data-format)
+for instructions.
 
 <a id="space-separated-format"></a>
 <a id="space-separated-plain-text-format"></a>
@@ -281,7 +282,7 @@ Robot Framework supports reStructuredText files using `.robot.rst`{.file},
 `.rst`{.file} and `.rest`{.file} extensions. To avoid parsing unrelated
 reStructuredText files, only files with the `.robot.rst`{.file} extension
 are parsed by default when executing a directory. Parsing files with
-other extensions [can be enabled](../execution/configuration.md#selecting-files-to-parse) by using either `--parseinclude`{.option}
+other extensions [can be enabled](../execution/configuration/index.md#selecting-files-to-parse) by using either `--parseinclude`{.option}
 or `--extension`{.option} option.
 
 When Robot Framework parses reStructuredText files, errors below level
@@ -349,7 +350,7 @@ Robot Framework supports Markdown files using `.robot.md`{.file},
 `.md`{.file} and `.markdown`{.file} extensions. To avoid parsing unrelated
 Markdown files, only files with the `.robot.md`{.file} extension
 are parsed by default when executing a directory. Parsing files with
-the `.md`{.file} or `.markdown`{.file} extension [can be enabled](../execution/configuration.md#selecting-files-to-parse) by using
+the `.md`{.file} or `.markdown`{.file} extension [can be enabled](../execution/configuration/index.md#selecting-files-to-parse) by using
 either `--parseinclude`{.option} or `--extension`{.option} option.
 
 #### Living documentation
@@ -494,7 +495,7 @@ When executing tests or tasks using the `robot` command, JSON files with
 the custom `.rbt`{.file} extension are parsed automatically. This includes
 running individual JSON files like `robot tests.rbt` and running directories
 containing `.rbt`{.file} files. If you would rather use the standard
-`.json`{.file} extension, you need to [configure which files are parsed](../execution/configuration.md#selecting-files-to-parse).
+`.json`{.file} extension, you need to [configure which files are parsed](../execution/configuration/index.md#selecting-files-to-parse).
 
 #### Adjusting suite source
 
@@ -672,9 +673,9 @@ to match the indentation of the starting row and they must always be followed
 by the normal test data separator.
 
 In most places split lines have exact same semantics as lines that are not
-split. Exceptions to this rule are [suite](suites.md#suite-documentation), [test](tests.md#test-case-documentation) and [keyword](user-keywords.md#user-keyword-documentation) documentation
+split. Exceptions to this rule are [suite](suites.md#suite-documentation), [test](tests.md#test-case-documentation) and [keyword](user_keywords.md#user-keyword-documentation) documentation
 as well [suite metadata](suites.md#free-suite-metadata). With them split values are automatically
-[joined together with the newline character](../appendix/doc-format.md#newlines) to ease creating multiline
+[joined together with the newline character](../appendix/doc_format.md#newlines) to ease creating multiline
 values.
 
 The `...` syntax allows also splitting variables in the [Variable section](variables.md#variable-section).
@@ -769,7 +770,7 @@ robot --language pt --language ptbr testes.robot
 
 The same `--language`{.option} option is also used when activating
 [custom language files](#custom-language-files). With them the value can be either a path to the file or,
-if the file is in the [module search path](../execution/configuration.md#module-search-path), the module name:
+if the file is in the [module search path](../execution/configuration/index.md#module-search-path), the module name:
 
 ```text
 robot --language Custom.py tests.robot

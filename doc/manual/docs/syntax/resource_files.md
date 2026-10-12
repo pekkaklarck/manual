@@ -17,7 +17,7 @@ For backwards compatibility reasons also `.robot`{.file}, `.txt`{.file} and
 If the resource file path is absolute, it is used directly. Otherwise,
 the resource file is first searched relatively to the directory
 where the importing file is located. If the file is not found there,
-it is then searched from the directories in Python's [module search path](../execution/configuration.md#module-search-path).
+it is then searched from the directories in Python's [module search path](../execution/configuration/index.md#module-search-path).
 Searching resource files from the module search path makes it possible to
 bundle them into Python packages as [package data](https://packaging.python.org/en/latest/guides/distributing-packages-using-setuptools/#package-data) and importing
 them like `package/example.resource`{.file}.
@@ -63,11 +63,11 @@ taken into use.
 
 ### Documenting resource files
 
-Keywords created in a resource file can be [documented](user-keywords.md#user-keyword-name-and-documentation) using
+Keywords created in a resource file can be [documented](user_keywords.md#user-keyword-name-and-documentation) using
 *[Documentation]*{.setting} setting. The resource file itself can have
 *Documentation*{.setting} in the Setting section similarly as [suites](suites.md#suite-name).
 
-[Libdoc](../extend/libdoc.md#libdoc) and various editors use these documentations, and they
+[Libdoc](../extend/libdoc/index.md#libdoc) and various editors use these documentations, and they
 are naturally available for anyone opening resource files.  The
 first logical line of the documentation of a keyword, until the first
 empty line, is logged when the keyword is run, but otherwise resource

@@ -3,10 +3,10 @@
 ## Handling keywords with same names
 
 Keywords that are used with Robot Framework are either [library
-keywords](#library-keywords) or [user keywords](user-keywords.md#creating-user-keywords). The former come from [standard
-libraries](libraries.md#standard-libraries) or [external libraries](libraries.md#external-libraries), and the latter are either
+keywords](libraries.md) or [user keywords](user_keywords.md#creating-user-keywords). The former come from [standard
+libraries](libraries.md#using-standard-libraries) or [external libraries](libraries.md#using-external-libraries), and the latter are either
 created in the same file where they are used or then imported from
-[resource files](resource-files.md#resource-files). When many keywords are in use, it is quite common
+[resource files](resource_files.md#resource-files). When many keywords are in use, it is quite common
 that some of them have the same name, and this section describes how to
 handle possible conflicts in these situations.
 
@@ -93,7 +93,7 @@ For more information and examples, see the documentation of the keyword.
 
 Sometimes keywords may take exceptionally long time to execute or just hang
 endlessly. Robot Framework allows you to set timeouts both for [test cases](tests.md#creating-test-cases)
-and [user keywords](user-keywords.md#creating-user-keywords), and if a test or keyword is not finished within the
+and [user keywords](user_keywords.md#creating-user-keywords), and if a test or keyword is not finished within the
 specified time, the keyword that is currently being executed is forcefully
 stopped.
 
@@ -121,7 +121,7 @@ its value is zero or negative.
 
 Regardless of where the test timeout is defined, the value given to it
 contains the duration of the timeout. The duration must be given in Robot
-Framework's [time format](../appendix/time-format.md#time-format), that is, either directly in seconds like `10`
+Framework's [time format](../appendix/time_format.md#time-format), that is, either directly in seconds like `10`
 or in a format like `1 minute 30 seconds`. Timeouts can also be specified
 as [variables](variables.md#variables) making it possible to give them, for example, from the command
 line.

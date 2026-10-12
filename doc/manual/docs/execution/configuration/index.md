@@ -1,8 +1,8 @@
 # Configuring execution
 
 This section explains different command line options that can be used
-for configuring the [test execution](basics.md#starting-test-execution) or [post-processing outputs](post-processing.md#post-processing-outputs).
-Options related to the generated [execution artifacts](results.md#execution-artifacts) are discussed in
+for configuring the [test execution](../basics.md#starting-test-execution) or [post-processing outputs](../post_processing.md#post-processing-outputs).
+Options related to the generated [execution artifacts](../results/index.md#execution-artifacts) are discussed in
 the next section.
 
 <a id="parse-only-these-files"></a>
@@ -17,10 +17,10 @@ regardless the name or the file extension. What parser to use depends
 on the extension:
 
 - `.robot`{.file} files and files that are not recognized are parsed using
-  the normal [Robot Framework parser](../syntax/data.md#supported-file-formats).
-- `.rst`{.file} and `.rest`{.file} files are parsed using the [reStructuredText parser](../syntax/data.md#restructuredtext-data-format).
-- `.md`{.file} and `.markdown`{.file} files are parsed using the [Markdown parser](../syntax/data.md#markdown-data-format).
-- `.rbt`{.file} and `.json`{.file} files are parsed using the [JSON parser](../syntax/data.md#json-data-format).
+  the normal [Robot Framework parser](../../syntax/data.md#supported-file-formats).
+- `.rst`{.file} and `.rest`{.file} files are parsed using the [reStructuredText parser](../../syntax/data.md#restructuredtext-data-format).
+- `.md`{.file} and `.markdown`{.file} files are parsed using the [Markdown parser](../../syntax/data.md#markdown-data-format).
+- `.rbt`{.file} and `.json`{.file} files are parsed using the [JSON parser](../../syntax/data.md#json-data-format).
 - Files supported by [custom parsers](#using-custom-parsers) are parsed by a matching parser.
 
 Examples:
@@ -35,15 +35,15 @@ robot x.robot y.rst    # Parse both files using an appropriate parser.
 
 ### Included and excluded files
 
-When executing a [directory](../syntax/suites.md#suite-directories), files and directories are parsed using
+When executing a [directory](../../syntax/suites.md#suite-directories), files and directories are parsed using
 the following rules:
 
 - All files and directories starting with a dot (`.`{.file}) or an underscore
   (`_`{.file}) are ignored.
-- `.robot`{.file} files are parsed using the normal [Robot Framework parser](../syntax/data.md#supported-file-formats).
-- `.robot.rst`{.file} files are parsed using the [reStructuredText parser](../syntax/data.md#restructuredtext-data-format).
-- `.robot.md`{.file} files are parsed using the [Markdown parser](../syntax/data.md#markdown-data-format).
-- `.rbt`{.file} files are parsed using the [JSON parser](../syntax/data.md#json-data-format).
+- `.robot`{.file} files are parsed using the normal [Robot Framework parser](../../syntax/data.md#supported-file-formats).
+- `.robot.rst`{.file} files are parsed using the [reStructuredText parser](../../syntax/data.md#restructuredtext-data-format).
+- `.robot.md`{.file} files are parsed using the [Markdown parser](../../syntax/data.md#markdown-data-format).
+- `.rbt`{.file} files are parsed using the [JSON parser](../../syntax/data.md#json-data-format).
 - Files supported by [custom parsers](#using-custom-parsers) are parsed by a matching parser.
 - Other files are ignored unless parsing them has been enabled by using
   the `--parseinclude`{.option} or `--extension`{.option} options discussed
@@ -74,7 +74,7 @@ robot --parseinclude tests/example tests       # Parse files under `tests/exampl
 ```
 
 Values used with `--parseinclude`{.option} are case-insensitive and support
-[glob patterns](basics.md#simple-patterns) like `example_*.robot`. There are, however,
+[glob patterns](../basics.md#simple-patterns) like `example_*.robot`. There are, however,
 two small differences compared to how patterns typically work with Robot Framework:
 
 - `*` matches only a single path segment. For example, `path/*/tests.robot`
@@ -87,10 +87,10 @@ If the pattern contains an extension, files with that extension are parsed
 even if they by [default would not be](#included-and-excluded-files). What parser to use depends on
 the used extension:
 
-- `.rst`{.file} and `.rest`{.file} files are parsed using the [reStructuredText parser](../syntax/data.md#restructuredtext-data-format).
-- `.md`{.file} and `.markdown`{.file} files are parsed using the [Markdown parser](../syntax/data.md#markdown-data-format).
-- `.json`{.file} files are parsed using the [JSON parser](../syntax/data.md#json-data-format).
-- Other files are parsed using the normal [Robot Framework parser](../syntax/data.md#supported-file-formats).
+- `.rst`{.file} and `.rest`{.file} files are parsed using the [reStructuredText parser](../../syntax/data.md#restructuredtext-data-format).
+- `.md`{.file} and `.markdown`{.file} files are parsed using the [Markdown parser](../../syntax/data.md#markdown-data-format).
+- `.json`{.file} files are parsed using the [JSON parser](../../syntax/data.md#json-data-format).
+- Other files are parsed using the normal [Robot Framework parser](../../syntax/data.md#supported-file-formats).
 
 Notice that when you use a pattern like `*.robot` and there exists a file that
 matches the pattern in the execution directory, the shell may resolve
@@ -131,13 +131,13 @@ already now.
 
 External parsers can parse files that Robot Framework does not recognize
 otherwise. For more information about creating and using such parsers see
-the [Parser interface](../extend/parsing.md#parser-interface) section.
+the [Parser interface](../../extend/parsing.md#parser-interface) section.
 
 ## Selecting test cases
 
 Robot Framework offers several command line options for selecting
 which test cases to execute. The same options work also when [executing
-tasks](tasks.md#executing-tasks) and when post-processing outputs with [Rebot](post-processing.md#rebot).
+tasks](../tasks.md#executing-tasks) and when post-processing outputs with [Rebot](../post_processing.md#rebot).
 
 <a id="selects-the-test-cases-by-name"></a>
 ### By test names
@@ -145,7 +145,7 @@ tasks](tasks.md#executing-tasks) and when post-processing outputs with [Rebot](p
 The easiest way to select only some tests to be run is using the
 `--test (-t)`{.option} option. As the name implies, it can be used for
 selecting tests by their names. Given names are case, space and underscore
-insensitive and they also support [simple patterns](basics.md#simple-patterns). The option can be
+insensitive and they also support [simple patterns](../basics.md#simple-patterns). The option can be
 used multiple times to match multiple tests:
 
 ```text
@@ -172,7 +172,7 @@ to be selected. A common use case is running just the test that is currently
 being worked on. If a bigger number of tests needs to be selected,
 it is typically easier to select them [by suite names](#by-suite-names) or [by tag names](#by-tag-names).
 
-When [executing tasks](tasks.md#executing-tasks), it is possible to use the `--task`{.option} option
+When [executing tasks](../tasks.md#executing-tasks), it is possible to use the `--task`{.option} option
 as an alias for `--test`{.option}.
 
 <a id="selects-the-test-suites"></a>
@@ -181,7 +181,7 @@ as an alias for `--test`{.option}.
 Tests can be selected also by suite names with the `--suite (-s)`{.option}
 option that selects all tests in matching suites. Similarly
 as with `--test`{.option}, given names are case, space and underscore
-insensitive and support [simple patterns](basics.md#simple-patterns). To pinpoint a suite
+insensitive and support [simple patterns](../basics.md#simple-patterns). To pinpoint a suite
 more precisely, it is possible to prefix the name with the parent suite
 name:
 
@@ -213,7 +213,7 @@ specified tests in specified suites are selected:
 Using the `--suite`{.option} option is more or less the same as executing
 the appropriate suite file or directory directly. The main difference is
 that if a file or directory is run directly, possible higher level
-[suite initialization files](../syntax/suites.md#suite-initialization-files) are ignored:
+[suite initialization files](../../syntax/suites.md#suite-initialization-files) are ignored:
 
 ```text
 # Root suite is 'Tests' and its possible initialization file is used.
@@ -233,7 +233,7 @@ files are parsed](#selecting-files-by-name-or-path) if this kind of parsing opti
 <a id="selects-the-test-cases"></a>
 ### By tag names
 
-It is possible to include and exclude test cases by [tag](../syntax/tests.md#tagging-test-cases) names with the
+It is possible to include and exclude test cases by [tag](../../syntax/tests.md#tagging-test-cases) names with the
 `--include (-i)`{.option} and `--exclude (-e)`{.option} options, respectively.
 If the `--include`{.option} option is used, only test cases having a matching
 tag are selected, and with the `--exclude`{.option} option test cases having a
@@ -253,7 +253,7 @@ if it has a tag that matches any included tags, and also has no tag
 that matches any excluded tags.
 
 In addition to specifying a tag to match fully, it is possible to use
-[tag patterns](basics.md#tag-patterns) where `*` and `?` are wildcards and
+[tag patterns](../basics.md#tag-patterns) where `*` and `?` are wildcards and
 `AND`, `OR`, and `NOT` operators can be used for
 combining individual tags or patterns together:
 
@@ -265,7 +265,7 @@ combining individual tags or patterns together:
 --include fooNOTbar
 ```
 
-Another way to exclude tests by tags is using the `robot:exclude` [reserved tag](../syntax/tests.md#reserved-tags).
+Another way to exclude tests by tags is using the `robot:exclude` [reserved tag](../../syntax/tests.md#reserved-tags).
 This tag can also be set using a variable, which allows excluding test
 dynamically during execution.
 
@@ -329,7 +329,7 @@ In that case tests that are selected must match all selection criteria:
 ### Re-executing failed test cases
 
 Command line option `--rerunfailed (-R)`{.option} can be used to select all failed
-tests from an earlier [output file](results.md#output-file) for re-execution. This option is useful,
+tests from an earlier [output file](../results/index.md#output-file) for re-execution. This option is useful,
 for example, if running all tests takes a lot of time and one wants to
 iteratively fix failing test cases.
 
@@ -350,13 +350,13 @@ now causes undefined results. Using a special value `NONE` as the output is
 same as not specifying this option at all.
 
 !!! tip
-    Re-execution results and original results can be [merged together](post-processing.md#merging-results)
+    Re-execution results and original results can be [merged together](../post_processing.md#merging-results)
     using the `--merge`{.option} command line option.
 
 ### Re-executing failed test suites
 
 Command line option `--rerunfailedsuites (-S)`{.option} can be used to select all
-failed suites from an earlier [output file](results.md#output-file) for re-execution. Like
+failed suites from an earlier [output file](../results/index.md#output-file) for re-execution. Like
 `--rerunfailed (-R)`{.option}, this option is useful when full test execution
 takes a lot of time. Note that all tests from a failed test suite will be
 re-executed, even passing ones. This option is useful when the tests in
@@ -385,7 +385,7 @@ created but show zero executed tests. The same option can be used also to
 alter the behavior when an empty directory or a test case file containing
 no tests is executed.
 
-Similar situation can occur also when processing output files with [Rebot](post-processing.md#rebot).
+Similar situation can occur also when processing output files with [Rebot](../post_processing.md#rebot).
 It is possible that no test match the used filtering criteria or that
 the output file contained no tests to begin with. By default executing
 Rebot fails in these cases, but it has a separate
@@ -403,7 +403,7 @@ running tests.
 <a id="sets-the-name"></a>
 ### Setting suite name
 
-When Robot Framework parses test data, [suite names](../syntax/suites.md#suite-name) are created
+When Robot Framework parses test data, [suite names](../../syntax/suites.md#suite-name) are created
 from file and directory names. The name of the top-level test suite
 can, however, be overridden with the command line option
 `--name (-N)`{.option}:
@@ -415,9 +415,9 @@ robot --name "Custom name" tests.robot
 <a id="sets-the-documentation"></a>
 ### Setting suite documentation
 
-In addition to [defining documentation in the test data](../syntax/suites.md#suite-documentation), documentation
+In addition to [defining documentation in the test data](../../syntax/suites.md#suite-documentation), documentation
 of the top-level suite can be given from the command line with the
-option `--doc (-D)`{.option}. The value can contain simple [HTML formatting](../appendix/doc-format.md#documentation-formatting)
+option `--doc (-D)`{.option}. The value can contain simple [HTML formatting](../../appendix/doc_format.md#documentation-formatting)
 and must be quoted if it contains spaces.
 
 If the given documentation is a relative or absolute path pointing to an existing
@@ -441,10 +441,10 @@ robot --doc doc.txt tests.robot    # Documentation read from doc.txt if it exits
 <a id="sets-free-metadata"></a>
 ### Setting free suite metadata
 
-[Free suite metadata](../syntax/suites.md#free-suite-metadata) may also be given from the command line with the
+[Free suite metadata](../../syntax/suites.md#free-suite-metadata) may also be given from the command line with the
 option `--metadata (-M)`{.option}. The argument must be in the format
 `name:value`, where `name` the name of the metadata to set and
-`value` is its value. The value can contain simple [HTML formatting](../appendix/doc-format.md#documentation-formatting) and
+`value` is its value. The value can contain simple [HTML formatting](../../appendix/doc_format.md#documentation-formatting) and
 the whole argument must be quoted if it contains spaces.
 This option may be used several times to set multiple metadata values.
 
@@ -479,26 +479,26 @@ several times to set multiple tags.
 <a id="module-search-path"></a>
 ## Configuring where to search libraries and other extensions
 
-When Robot Framework imports a [test library](../syntax/libraries.md#specifying-library-to-import), [listener](#setting-listeners), or some other
+When Robot Framework imports a [test library](../../syntax/libraries.md#specifying-library-to-import), [listener](#setting-listeners), or some other
 Python based extension, it uses the Python interpreter to import the module
 containing the extension from the system. The list of locations where modules
 are looked for is called *the module search path*, and its contents can be
 configured using different approaches explained in this section.
 
 Robot Framework uses Python's module search path also when importing [resource
-and variable files](../syntax/variables.md#variable) if the specified path does not match any file directly.
+and variable files](../../syntax/variables.md#variable) if the specified path does not match any file directly.
 
 The module search path being set correctly so that libraries and other
 extensions are found is a requirement for successful test execution. If
 you need to customize it using approaches explained below, it is often
-a good idea to create a custom [start-up script](basics.md#start-up-script).
+a good idea to create a custom [start-up script](../basics.md#start-up-script).
 
 ### Locations automatically in module search path
 
 Python interpreters have their own standard library as well as a directory
 where third party modules are installed automatically in the module search
 path. This means that test libraries [packaged using Python's own packaging
-system](../extend/libraries.md#packaging-libraries) are automatically installed so that they can be imported without
+system](../../extend/libraries.md#packaging-libraries) are automatically installed so that they can be imported without
 any additional configuration.
 
 ### `PYTHONPATH`
@@ -513,7 +513,7 @@ need to separate the locations with a colon on UNIX-like machines (e.g.
 Environment variables can be configured permanently system wide or so that
 they affect only a certain user. Alternatively they can be set temporarily
 before running a command, something that works extremely well in custom
-[start-up scripts](basics.md#start-up-scripts).
+[start-up scripts](../basics.md#start-up-scripts).
 
 ### Using `--pythonpath` option
 
@@ -549,8 +549,8 @@ are taken into account next time when something is imported.
 
 ## Setting variables
 
-[Variables](../syntax/variables.md#variables) can be set from the command line either [individually](../syntax/variables.md#command-line-variables)
-using the `--variable (-v)`{.option} option or through [variable files](../syntax/variable-files.md#variable-files)
+[Variables](../../syntax/variables.md#variables) can be set from the command line either [individually](../../syntax/variables.md#command-line-variables)
+using the `--variable (-v)`{.option} option or through [variable files](../../syntax/variable_files.md#variable-files)
 with the `--variablefile (-V)`{.option} option. Variables and variable
 files are explained in separate chapters, but the following examples
 illustrate how to use these options:
@@ -578,12 +578,12 @@ The dry run execution may fail for following reasons:
   * Using keywords with wrong number of arguments.
   * Using user keywords that have invalid syntax.
 
-In addition to these failures, normal [execution errors](basics.md#errors-and-warnings-during-execution) are shown,
+In addition to these failures, normal [execution errors](../basics.md#errors-and-warnings-during-execution) are shown,
 for example, when test library or resource file imports cannot be
 resolved.
 
-It is possible to disable dry run validation of specific [user keywords](../syntax/user-keywords.md#creating-user-keywords)
-by adding a special `robot:no-dry-run` [keyword tag](../syntax/user-keywords.md#user-keyword-tags) to them. This is useful
+It is possible to disable dry run validation of specific [user keywords](../../syntax/user_keywords.md#creating-user-keywords)
+by adding a special `robot:no-dry-run` [keyword tag](../../syntax/user_keywords.md#user-keyword-tags) to them. This is useful
 if a keyword fails in the dry run mode for some reason, but work fine when
 executed normally.
 
@@ -615,7 +615,7 @@ to initialize the random generator. This is useful if you want to re-run tests
 using the same order as earlier. The seed is given as part of the value for
 `--randomize`{.option} in format `<what>:<seed>` and it must be an integer.
 If no seed is given, it is generated randomly. The executed top level test
-suite automatically gets [metadata](../syntax/suites.md#free-suite-metadata) named *Randomized*{.name} that tells both
+suite automatically gets [metadata](../../syntax/suites.md#free-suite-metadata) named *Randomized*{.name} that tells both
 what was randomized and what seed was used.
 
 Examples:
@@ -647,20 +647,20 @@ as a class name, the module containing the class must be in the [module search
 path](#module-search-path), and if the module name is different than the class name, the given
 name must include both like `module.ModifierClass`. If the modifier is given
 as a path, the class name must be same as the file name. For most parts this
-works exactly like when [importing a test library](../syntax/libraries.md#specifying-library-to-import).
+works exactly like when [importing a test library](../../syntax/libraries.md#specifying-library-to-import).
 
 If a modifier requires arguments, like the examples below do, they can be
 specified after the modifier name or path using either a colon (`:`) or a
 semicolon (`;`) as a separator. If both are used in the value, the one used
 first is considered to be the actual separator. Starting from Robot Framework
-4.0, arguments also support the [named argument syntax](../syntax/tests.md#named-argument-syntax) as well as [argument
-conversion](../extend/libraries.md#supported-conversions) based on [type hints](../extend/libraries.md#specifying-argument-types-using-function-annotations) and [default values](../extend/libraries.md#implicit-argument-types-based-on-default-values) the same way
+4.0, arguments also support the [named argument syntax](../../syntax/tests.md#named-argument-syntax) as well as [argument
+conversion](../../extend/libraries.md#supported-conversions) based on [type hints](../../extend/libraries.md#specifying-argument-types-using-function-annotations) and [default values](../../extend/libraries.md#implicit-argument-types-based-on-default-values) the same way
 as keywords do.
 
 If more than one pre-run modifier is needed, they can be specified by using
 the `--prerunmodifier`{.option} option multiple times. If similar modifying
 is needed before creating logs and reports, [programmatic modification of
-results](results.md#programmatic-modification-of-results) can be enabled using the `--prerebotmodifier`{.option} option.
+results](../results/index.md#programmatic-modification-of-results) can be enabled using the `--prerebotmodifier`{.option} option.
 
 Pre-run modifiers are executed before other configuration affecting the
 executed test suite and test cases. Most importantly, options related to
@@ -668,7 +668,7 @@ executed test suite and test cases. Most importantly, options related to
 use options like `--include`{.option} also with possible dynamically added
 tests.
 
-Another way to modify tests is using the [listener version 3](../extend/listeners.md#listener-version-3) interface.
+Another way to modify tests is using the [listener version 3](../../extend/listeners.md#listener-version-3) interface.
 Modifying the `data` argument passed to the `start_suite` listener method
 when it is called for the first time has in practice the same effect as using
 a pre-run modifier. The main difference is that `--include/--exclude` and other
@@ -678,7 +678,7 @@ happens during the execution.
 
 !!! tip
     Modifiers are taken into use from the command line exactly the same
-    way as [listeners](../extend/listeners.md#listener-interface). See the [Registering listeners from command line](../extend/listeners.md#registering-listeners-from-command-line)
+    way as [listeners](../../extend/listeners.md#listener-interface). See the [Registering listeners from command line](../../extend/listeners.md#registering-listeners-from-command-line)
     section for more information and examples.
 
 ### Example: Select every Xth test
@@ -689,7 +689,7 @@ preserved, and the X is given from the command line along with an optional
 start index.
 
 ```python
-../api/code_examples/SelectEveryXthTest.py
+--8<-- "execution/configuration/SelectEveryXthTest.py"
 ```
 
 If the above pre-run modifier is in a file `SelectEveryXthTest.py`{.file} and
@@ -710,7 +710,7 @@ In practice it works like a negative version of the built-in `--test`{.option}
 option.
 
 ```python
-../api/code_examples/ExcludeTests.py
+--8<-- "execution/configuration/ExcludeTests.py"
 ```
 
 Assuming the above modifier is in a file named `ExcludeTests.py`{.file}, it
@@ -731,7 +731,7 @@ This can be accomplished by editing the test data, but pre-run modifiers make
 it easy to do that temporarily for a single run:
 
 ```python
-../api/code_examples/disable.py
+--8<-- "execution/configuration/disable.py"
 ```
 
 Assuming that the above modifiers are all in a file named `disable.py`{.file}
@@ -769,12 +769,12 @@ different verbosity levels. The logger to use can selected with the
 `dotted`
 : Only show `.` for passed test, `F` for failed tests, `s` for skipped
     tests and `x` for tests which are skipped because
-    [test execution exit](tests.md#stopping-test-execution-gracefully). Failed tests are listed separately
+    [test execution exit](../tests.md#stopping-test-execution-gracefully). Failed tests are listed separately
     after execution. This output type makes it easy to see are there any
     failures during execution even if there would be a lot of tests.
 
 `quiet`
-: No output except for [errors and warnings](../extend/libraries.md#errors-and-warnings).
+: No output except for [errors and warnings](../../extend/libraries.md#errors-and-warnings).
 
 `none`
 : No output whatsoever.
@@ -804,7 +804,7 @@ robot --console MyConsole --pythonpath /path/to/consoles tests.robot
 robot --console CustomConsole.py:arg1:arg2 tests.robot
 ```
 
-Custom console loggers receive the same [listener method calls](../extend/listeners.md#listener-interface) as
+Custom console loggers receive the same [listener method calls](../../extend/listeners.md#listener-interface) as
 normal listeners. Only methods that are implemented are called — missing methods
 are silently ignored. This means a minimal console only needs to implement the
 hooks it is interested in.
@@ -812,8 +812,8 @@ hooks it is interested in.
 !!! note
     Console loggers should treat the `data` and `result` objects passed
     to their methods as read-only. Currently live objects are passed so modifications
-    would take effect, but this behaviour may change without notice. Use the
-    [Listener interface](../extend/listeners.md#listener-interface) if you need to legitimately modify them.
+    would take effect, but this behavior may change without notice. Use the
+    [Listener interface](../../extend/listeners.md#listener-interface) if you need to legitimately modify them.
 
     Support for custom console loggers is new in Robot Framework 7.5.
 
@@ -983,8 +983,8 @@ case-insensitive values:
 <a id="sets-a-listener"></a>
 ## Setting listeners
 
-[Listeners](../extend/listeners.md#listener-interface) can be used to monitor the test execution. When they are taken into
+[Listeners](../../extend/listeners.md#listener-interface) can be used to monitor the test execution. When they are taken into
 use from the command line, they are specified using the `--listener`{.option}
 command line option. The value can either be a path to a listener or
-a listener name. See the [Listener interface](../extend/listeners.md#listener-interface) section for more details
+a listener name. See the [Listener interface](../../extend/listeners.md#listener-interface) section for more details
 about importing listeners and using them in general.

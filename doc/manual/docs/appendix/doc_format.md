@@ -6,7 +6,7 @@ Robot Framework supports various documentation formats in different contexts:
 
 - [Suite](../syntax/suites.md#suite-documentation) and [test](../syntax/tests.md#test-case-documentation)
   documentations use Robot Frameworks own custom format.
-- Library and keyword documentation processed by [Libdoc](../extend/libdoc.md#libdoc) can be written using
+- Library and keyword documentation processed by [Libdoc](../extend/libdoc/index.md#libdoc) can be written using
   Robot Framework format, Markdown, reStructuredText, HTML and plain text.
 - [Error messages](../extend/libraries.md#error-messages) support plain text  and HTML.
 
@@ -369,7 +369,7 @@ The above documentation is formatted like this:
 for documentation, README files, and technical content across the software
 development industry.
 
-Starting from Robot Framework 7.5, Markdown is supported by [Libdoc](../extend/libdoc.md#libdoc) and can
+Starting from Robot Framework 7.5, Markdown is supported by [Libdoc](../extend/libdoc/index.md#libdoc) and can
 be used for documenting libraries and user keywords. The plan is to add support
 for using Markdown in suite and test documentation in the future as well.
 
@@ -494,7 +494,7 @@ Example:
 ```
 
 Depending on the context, there may also be automatic reference
-targets available. For example, [Libdoc](../extend/libdoc.md#libdoc) makes keywords, section headers
+targets available. For example, [Libdoc](../extend/libdoc/index.md#libdoc) makes keywords, section headers
 and argument types available as link targets automatically.
 
 #### Autolinks
@@ -709,8 +709,8 @@ This section is included in TOC.
     what Python-Markdown's [toc](https://python-markdown.github.io/extensions/toc/) plugin uses by default.
 
 !!! note
-    [Libdoc](../extend/libdoc.md#libdoc) supports the same `%TOC%` marker also when
-    [creating table of contents](../extend/libdoc.md#creating-table-of-contents) with the Robot Framework custom format.
+    [Libdoc](../extend/libdoc/index.md#libdoc) supports the same `%TOC%` marker also when
+    [creating table of contents](../extend/libdoc/index.md#creating-table-of-contents) with the Robot Framework custom format.
 
 ### Code blocks
 

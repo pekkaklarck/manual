@@ -1,10 +1,10 @@
 # Libraries
 
 Robot Framework cannot do anything without libraries. Some generally useful libraries
-are distributed with it as [standard libraries][standard-libraries], but the real
-strength of the framework is the huge amount of [external libraries][external-libraries]
+are distributed with it as [standard libraries](#standard-libraries), but the real
+strength of the framework is the huge amount of [external libraries](#external-libraries)
 provided by the community. If they are not enough, you can also easily create your
-own [custom libraries][custom-libraries].
+own [custom libraries](#custom-libraries).
 
 ## Standard libraries
 
@@ -56,4 +56,5 @@ is [https://robotframework.org](https://robotframework.org/#resources).
 ## Custom libraries
 
 You can also easily create your own libraries for your specific needs.
-See the [creating libraries][library-interface] section for more information.
+See [Creating test libraries](../extend/libraries.md#creating-test-libraries)
+for more information.

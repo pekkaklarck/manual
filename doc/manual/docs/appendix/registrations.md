@@ -19,11 +19,11 @@ associated with Robot Framework.
 `.rbt`{.file}
 : Suite file using the [JSON data format](../syntax/data.md#json-data-format).
 
-Using other extensions is possible, but it requires [separate configuration](../execution/configuration.md#selecting-files-to-parse).
+Using other extensions is possible, but it requires [separate configuration](../execution/configuration/index.md#selecting-files-to-parse).
 
 ## Resource file extensions
 
-[Resource files](../syntax/resource-files.md#resource-files) can use the following extensions:
+[Resource files](../syntax/resource_files.md#resource-files) can use the following extensions:
 
 `.resource`{.file}
 : Recommended when using the plain text format.
@@ -33,13 +33,13 @@ Using other extensions is possible, but it requires [separate configuration](../
     `.resource`{.file} is recommended and may be mandated in the future.
 
 `.rst`{.file} and `.rest`{.file}
-: Resource file using the [reStructuredText format](../syntax/resource-files.md#resource-files-using-restructuredtext-format).
+: Resource file using the [reStructuredText format](../syntax/resource_files.md#resource-files-using-restructuredtext-format).
 
 `.md`{.file} and `.markdown`{.file}
-: Resource file using the [Markdown format](../syntax/resource-files.md#resource-files-using-markdown-format).
+: Resource file using the [Markdown format](../syntax/resource_files.md#resource-files-using-markdown-format).
 
 `.rsrc`{.file} and `.json`{.file}
-: Resource file using the [JSON format](../syntax/resource-files.md#resource-files-using-json-format).
+: Resource file using the [JSON format](../syntax/resource_files.md#resource-files-using-json-format).
 
 ## Media type
 
@@ -47,5 +47,5 @@ The media type to use with Robot Framework data is `text/robotframework`.
 
 ## Remote server port
 
-The default [remote server](../extend/remote.md#remote-library-interface) port is 8270. The port has been [registered by IANA](https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml?search=8270).
+The default [remote server](../extend/remote/index.md#remote-library-interface) port is 8270. The port has been [registered by IANA](https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml?search=8270).
 

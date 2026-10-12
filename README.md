@@ -17,6 +17,18 @@ See the generated pages at https://pekkaklarck.github.io/manual/.
 
 Contributions are welcome, from typo fixes to corrections and additions.
 
+Use American English for documentation prose, headings, and navigation labels.
+
+Pages with related attachments use a page bundle: a folder containing `index.md`
+and the page's images, downloadable examples, or sample HTML files. For example,
+`doc/manual/docs/extend/libdoc/` contains the Libdoc page and its examples.
+Pages without attachments remain standalone Markdown files. Keep shared styling
+and branding in `doc/manual/docs/assets/`.
+
+When moving a page, update its entry in `properdocs.yml` and all links to it.
+Use relative paths for links and images; snippet includes use paths relative to
+`doc/manual/docs/`, as configured in `properdocs.yml`.
+
 To contribute, fork the repository, make your changes, and open a
 [pull request](https://github.com/robotframework/robotframework/blob/master/CONTRIBUTING.rst#pull-requests).
 

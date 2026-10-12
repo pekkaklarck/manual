@@ -1,14 +1,14 @@
 # Appendix
 
-Pure reference. [Command-line options](cli.md) and [available settings](settings.md) are the two pages you’ll bookmark and return to most — every option the `robot` and `rebot` commands accept, and every setting available in data files. The remaining entries cover expression evaluation, time formats, translations, and documentation formatting for when you need the exact details.
+This section provides reference information for [available settings](settings.md) and [command-line options](cli.md), along with translations, expression evaluation, documentation formatting, time formats, registrations, and Boolean arguments.
 
 ## In this section
 
-- [Available Settings](settings.md)
-- [Command Line Options](cli.md)
+- [Available settings](settings.md)
+- [Command line options](cli.md)
 - [Translations](translations.md)
-- [Documentation Formatting](doc-format.md)
-- [Time Format](time-format.md)
-- [Boolean Arguments](boolean-arguments.md)
-- [Evaluating Expressions](expressions.md)
+- [Evaluating expressions](expressions.md)
+- [Documentation formatting](doc_format.md)
+- [Time format](time_format.md)
 - [Registrations](registrations.md)
+- [Boolean arguments](boolean_arguments.md)

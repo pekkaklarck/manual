@@ -32,11 +32,11 @@ method. Variable files can also be created as [YAML](#variable-file-as-yaml) and
 
 All test data files can import variable files using the *Variables*{.setting}
 setting in the Setting section. Variable files are typically imported using
-a path to the file same way as [resource files are imported](resource-files.md#taking-resource-files-into-use) using
+a path to the file same way as [resource files are imported](resource_files.md#taking-resource-files-into-use) using
 the *Resource*{.setting} setting. Similarly to resource files, the path to
 the imported variable file is considered relative to the directory where the
 importing file is, and if not found, it is searched from directories
-in the [module search path](../execution/configuration.md#module-search-path). The path can also contain variables,
+in the [module search path](../execution/configuration/index.md#module-search-path). The path can also contain variables,
 and slashes are converted to backslashes on Windows.
 
 Examples:
@@ -50,7 +50,7 @@ Variables    ${RESOURCES}/common.yaml
 
 Starting from Robot Framework 5.0, variable files implemented using Python
 can also be imported using the module name [similarly as libraries](libraries.md#specifying-library-to-import).
-When using this approach, the module needs to be in the [module search path](../execution/configuration.md#module-search-path).
+When using this approach, the module needs to be in the [module search path](../execution/configuration/index.md#module-search-path).
 
 Examples:
 
@@ -92,7 +92,7 @@ setting. Possible arguments are joined to the path with a colon (`:`):
 ```
 
 Variable files taken into use from the
-command line are also searched from the [module search path](../execution/configuration.md#module-search-path) similarly as
+command line are also searched from the [module search path](../execution/configuration/index.md#module-search-path) similarly as
 variable files imported in the Setting section. Relative paths are considered
 relative to the directory where execution is started from.
 
@@ -456,7 +456,7 @@ always possible to access dictionary values using syntax like
 
 !!! note
     Using YAML files with Robot Framework requires [PyYAML](https://pyyaml.org) module to be installed. You can typically
-    install it with [pip](#pip) like `pip install pyyaml`.
+    install it with [pip](https://pip.pypa.io) like `pip install pyyaml`.
 
 ### Variable file as JSON
 

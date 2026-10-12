@@ -5,7 +5,7 @@
 Test libraries contain those lowest-level keywords, often called
 *library keywords*, which actually interact with the system under
 test. All test cases always use keywords from some library, often
-through higher-level [user keywords](user-keywords.md#creating-user-keywords). This section explains how to
+through higher-level [user keywords](user_keywords.md#creating-user-keywords). This section explains how to
 take test libraries into use and how to use the keywords they
 provide. [Creating test libraries](../extend/libraries.md#creating-test-libraries) is described in a separate
 section.
@@ -39,7 +39,7 @@ Library    ${LIBRARY}
 ```
 
 It is possible to import test libraries in [suite files](suites.md#suite-files),
-[resource files](resource-files.md#resource-files) and [suite initialization files](suites.md#suite-initialization-files). In all these
+[resource files](resource_files.md#resource-files) and [suite initialization files](suites.md#suite-initialization-files). In all these
 cases, all the keywords in the imported library are available in that
 file. With resource files, those keywords are also available in other
 files using them.
@@ -74,7 +74,7 @@ if the library is imported using the *Library*{.setting} setting or the
 
 The most common way to specify a test library to import is using its name.
 In these cases Robot Framework tries to find the class or module
-implementing the library from the [module search path](../execution/configuration.md#module-search-path). Libraries that
+implementing the library from the [module search path](../execution/configuration/index.md#module-search-path). Libraries that
 are installed somehow ought to be in the module search path automatically,
 but with other libraries the search path may need to be configured separately.
 
@@ -169,7 +169,7 @@ library in the Setting section and when using the *Import Library*{.name} keywor
     to a library was `WITH NAME` instead of `AS`. The old syntax continues
     to work, but it is considered deprecated and will eventually be removed.
 
-## Standard libraries
+## Using standard libraries
 
 Some test libraries are distributed with Robot Framework and these
 libraries are called *standard libraries*. The [BuiltIn](https://robotframework.org/robotframework/latest/libraries/BuiltIn.html) library is special,
@@ -203,10 +203,10 @@ These libraries can be running on other machines than the core
 framework and can even be implemented using languages not supported by
 Robot Framework natively.
 
-See separate [Remote library interface](../extend/remote.md#remote-library-interface) section for more information
+See separate [Remote library interface](../extend/remote/index.md#remote-library-interface) section for more information
 about this concept.
 
-## External libraries
+## Using external libraries
 
 Any test library that is not one of the standard libraries is, by
 definition, *an external library*. The Robot Framework open source community

@@ -19,16 +19,16 @@ importing libraries, resources, and variables.
 | Name | Description |
 | --- | --- |
 | Library | Used for [importing libraries](../syntax/libraries.md#importing-libraries). |
-| Resource | Used for [taking resource files into use](../syntax/resource-files.md#taking-resource-files-into-use). |
-| Variables | Used for [taking variable files into use](../syntax/variable-files.md#taking-variable-files-into-use). |
+| Resource | Used for [taking resource files into use](../syntax/resource_files.md#taking-resource-files-into-use). |
+| Variables | Used for [taking variable files into use](../syntax/variable_files.md#taking-variable-files-into-use). |
 | Name | Used for setting a custom [suite name](../syntax/suites.md#suite-name). |
-| Documentation | Used for specifying a [suite](../syntax/suites.md#suite-documentation) or [resource file](../syntax/resource-files.md#documenting-resource-files) documentation. |
+| Documentation | Used for specifying a [suite](../syntax/suites.md#suite-documentation) or [resource file](../syntax/resource_files.md#documenting-resource-files) documentation. |
 | Metadata | Used for setting [free suite metadata](../syntax/suites.md#free-suite-metadata). |
 | Suite Setup | Used for specifying the [suite setup](../syntax/suites.md#suite-setup-and-teardown). |
 | Suite Teardown | Used for specifying the [suite teardown](../syntax/suites.md#suite-setup-and-teardown). |
 | Test  Tags | Used for specifying [test case tags](../syntax/tests.md#test-case-tags) for all tests in a suite. |
 | Force Tags, Default Tags | [Deprecated settings](../syntax/tests.md#deprecation-of-force-tags-and-default-tags) for specifying test case tags. |
-| Keyword Tags | Used for specifying [user keyword tags](../syntax/user-keywords.md#user-keyword-tags) for all keywords in a certain file. |
+| Keyword Tags | Used for specifying [user keyword tags](../syntax/user_keywords.md#user-keyword-tags) for all keywords in a certain file. |
 | Test Setup | Used for specifying a default [test setup](../syntax/tests.md#test-setup-and-teardown). |
 | Test Teardown | Used for specifying a default [test teardown](../syntax/tests.md#test-setup-and-teardown). |
 | Test Template | Used for specifying a default [template keyword](../syntax/tests.md#test-templates) for test cases. |
@@ -60,10 +60,10 @@ which they are defined.
 
 | Name | Description |
 | --- | --- |
-| [Documentation] | Used for specifying a [user keyword documentation](../syntax/user-keywords.md#user-keyword-documentation). |
-| [Tags] | Used for specifying [user keyword tags](../syntax/user-keywords.md#user-keyword-tags). |
-| [Arguments] | Used for specifying [user keyword arguments](../syntax/user-keywords.md#user-keyword-arguments). |
+| [Documentation] | Used for specifying a [user keyword documentation](../syntax/user_keywords.md#user-keyword-documentation). |
+| [Tags] | Used for specifying [user keyword tags](../syntax/user_keywords.md#user-keyword-tags). |
+| [Arguments] | Used for specifying [user keyword arguments](../syntax/user_keywords.md#user-keyword-arguments). |
 | [Setup] | Used for specifying a [user keyword setup](../execution/tests.md#user-keyword-setup). New in Robot Framework 7.0. |
 | [Teardown] | Used for specifying [user keyword teardown](../execution/tests.md#user-keyword-teardown). |
 | [Timeout] | Used for specifying a [user keyword timeout](../syntax/advanced.md#user-keyword-timeout). |
-| [Return] | Used for specifying [user keyword return values](../syntax/user-keywords.md#user-keyword-return-values). Deprecated in Robot Framework 7.0. Use the [RETURN](../syntax/user-keywords.md#return) statement instead. |
+| [Return] | Used for specifying [user keyword return values](../syntax/user_keywords.md#user-keyword-return-values). Deprecated in Robot Framework 7.0. Use the [RETURN](../syntax/user_keywords.md#return) statement instead. |

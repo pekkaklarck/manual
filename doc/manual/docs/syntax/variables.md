@@ -474,14 +474,14 @@ Environment variable with default
 Variables can be created using different approaches discussed in this section:
 
 - In the [Variable section](#variable-section)
-- Using [variable files](variable-files.md#variable-files)
+- Using [variable files](variable_files.md#variable-files)
 - On the [command line](#command-line-variables)
 - Based on [return values from keywords](#return-values-from-keywords)
 - Using the [VAR syntax](#var-syntax)
 - Using [Set Test/Suite/Global Variable keywords](#set-testsuiteglobal-variable-keywords)
 
 In addition to this, there are various automatically available [built-in variables](#built-in-variables)
-and also [user keyword arguments](user-keywords.md#user-keyword-arguments) and [FOR loops](control.md#for-loops) create variables. In most
+and also [user keyword arguments](user_keywords.md#user-keyword-arguments) and [FOR loops](control.md#for-loops) create variables. In most
 places where variables are created, it is possible to use [variable type conversion](#variable-type-conversion)
 to easily create variables with non-string values. An important application for
 conversions is creating [secret variables](#secret-variables).
@@ -494,10 +494,10 @@ conversions is creating [secret variables](#secret-variables).
 ### Variable section
 
 The most common source for variables are Variable sections in [suite files](suites.md#suite-files)
-and [resource files](resource-files.md#resource-files). Variable sections are convenient, because they
+and [resource files](resource_files.md#resource-files). Variable sections are convenient, because they
 allow creating variables in the same place as the rest of the test
 data, and the needed syntax is very simple. Their main disadvantage is that
-variables cannot be created dynamically. If that is a problem, [variable files](variable-files.md#variable-files)
+variables cannot be created dynamically. If that is a problem, [variable files](variable_files.md#variable-files)
 can be used instead.
 
 #### Creating scalar values
@@ -638,7 +638,7 @@ Variable files are the most powerful mechanism for creating different
 kind of variables. It is possible to assign variables to any object
 using them, and they also enable creating variables dynamically. The
 variable file syntax and taking variable files into use is explained
-in section [Resource and variable files](variable-files.md#variable-files).
+in section [Resource and variable files](variable_files.md#variable-files).
 
 <a id="individual-variables"></a>
 ### Command line variables
@@ -664,9 +664,9 @@ In the examples above, variables are set so that:
 - `${EXAMPLE}` gets value `value`, and
 - `${HOST}` and `${USER}` get values `localhost:7272` and `robot`, respectively.
 
-The basic syntax for taking [variable files](variable-files.md#variable-files) into use from the command line is
+The basic syntax for taking [variable files](variable_files.md#variable-files) into use from the command line is
 `--variablefile path/to/variables.py`{.option} and the [Taking variable files into
-use](variable-files.md#taking-variable-files-into-use) section explains this more thoroughly. What variables actually are created
+use](variable_files.md#taking-variable-files-into-use) section explains this more thoroughly. What variables actually are created
 depends on what variables there are in the referenced variable file.
 
 If both variable files and individual variables are given from the command line,
@@ -1055,7 +1055,7 @@ Variables set with *Set Suite Variable*{.name} keyword are available
 everywhere within the scope of the currently executed test
 suite. Setting variables with this keyword thus has the same effect as
 creating them using the [Variable section](#variable-section) in the test data file or
-importing them from [variable files](variable-files.md#variable-files). Other test suites, including
+importing them from [variable files](variable_files.md#variable-files). Other test suites, including
 possible child test suites, will not see variables set with this
 keyword.
 
@@ -1078,7 +1078,7 @@ Variable values are typically strings, but non-string values are often needed
 as well. Various ways how to create variables with non-string values has
 already been discussed:
 
-- [Variable files](variable-files.md#variable-files) allow creating any kind of objects.
+- [Variable files](variable_files.md#variable-files) allow creating any kind of objects.
 - [Return values from keywords](#return-values-from-keywords) can contain any objects.
 - Variables can be created based on existing variables that contain non-string values.
 - `@{list}` and `&{dict}` syntax allows creating lists and dictionaries natively.
@@ -1152,7 +1152,7 @@ Assignment
 
 !!! note
     In addition to the above, variable type conversion works also with
-    [user keyword arguments](user-keywords.md#user-keyword-arguments) and with [FOR loops](control.md#for-loops). See their documentation
+    [user keyword arguments](user_keywords.md#user-keyword-arguments) and with [FOR loops](control.md#for-loops). See their documentation
     for more details.
 
 !!! note
@@ -1235,7 +1235,7 @@ Invalid type
 
 An important usage for [variable type conversion](#variable-type-conversion) is creating so called
 *secret variables*. These variables encapsulate their values so that the real
-values are [not logged even on the trace level](../execution/results.md#log-levels) when variables are passed
+values are [not logged even on the trace level](../execution/results/index.md#log-levels) when variables are passed
 between keywords as arguments and return values.
 
 The actual value is available via the `value` attribute of a secret variable.
@@ -1309,8 +1309,8 @@ the command line.
 #### Creating secrets programmatically
 
 Secrets can be created programmatically by using the [robot.api.types.Secret](https://robot-framework.readthedocs.io/en/master/autodoc/robot.utils.html#robot.utils.secret.Secret)
-class. This is most commonly done by [libraries](libraries.md#using-test-libraries) and [variable files](variable-files.md#variable-files), but also
-[pre-run modifiers](../execution/configuration.md#programmatic-modification-of-test-data) and [listeners](../extend/listeners.md#listener-interface) can utilize secrets if needed.
+class. This is most commonly done by [libraries](libraries.md#using-test-libraries) and [variable files](variable_files.md#variable-files), but also
+[pre-run modifiers](../execution/configuration/index.md#programmatic-modification-of-test-data) and [listeners](../extend/listeners.md#listener-interface) can utilize secrets if needed.
 
 The simplest possible example of the programmatic usage is a variable file:
 
@@ -1503,12 +1503,12 @@ can be changed dynamically using keywords from the [BuiltIn](https://robotframew
 | ${SUITE MESSAGE} | The full message of the current test suite, including statistics. | [Suite teardown](suites.md#suite-setup-and-teardown) |
 | ${KEYWORD STATUS} | The status of the current keyword, either PASS or FAIL. | [User keyword teardown](../execution/tests.md#user-keyword-teardown) |
 | ${KEYWORD MESSAGE} | The possible error message of the current keyword. | [User keyword teardown](../execution/tests.md#user-keyword-teardown) |
-| ${LOG LEVEL} | Current [log level](../execution/results.md#log-levels). | Everywhere |
-| ${OUTPUT DIR} | An absolute path to the [output directory](../execution/results.md#output-directory) as a string. | Everywhere |
-| ${OUTPUT FILE} | An absolute path to the [output file](../execution/results.md#output-file) as a string or a string `NONE` if the output file is not created. | Everywhere |
-| ${LOG FILE} | An absolute path to the [log file](../execution/results.md#log-file) as a string or a string `NONE` if the log file is not created. | Everywhere |
-| ${REPORT FILE} | An absolute path to the [report file](../execution/results.md#report-file) as a string or a string `NONE` if the report file is not created. | Everywhere |
-| ${DEBUG FILE} | An absolute path to the [debug file](../execution/results.md#debug-file) as a string or a string `NONE` if the debug file is not created. | Everywhere |
+| ${LOG LEVEL} | Current [log level](../execution/results/index.md#log-levels). | Everywhere |
+| ${OUTPUT DIR} | An absolute path to the [output directory](../execution/results/index.md#output-directory) as a string. | Everywhere |
+| ${OUTPUT FILE} | An absolute path to the [output file](../execution/results/index.md#output-file) as a string or a string `NONE` if the output file is not created. | Everywhere |
+| ${LOG FILE} | An absolute path to the [log file](../execution/results/index.md#log-file) as a string or a string `NONE` if the log file is not created. | Everywhere |
+| ${REPORT FILE} | An absolute path to the [report file](../execution/results/index.md#report-file) as a string or a string `NONE` if the report file is not created. | Everywhere |
+| ${DEBUG FILE} | An absolute path to the [debug file](../execution/results/index.md#debug-file) as a string or a string `NONE` if the debug file is not created. | Everywhere |
 | &{OPTIONS} | A dictionary exposing command line options. The dictionary keys match the command line options and can be accessed both like `${OPTIONS}[key]` and `${OPTIONS.key}`. Available options:<br>- `${OPTIONS.exclude}` (`--exclude`{.option}) - `${OPTIONS.include}` (`--include`{.option}) - `${OPTIONS.skip}` (`--skip`{.option}) - `${OPTIONS.skip_on_failure}` (`--skip-on-failure`{.option}) - `${OPTIONS.console_width}` (integer, `--console-width`{.option}) - `${OPTIONS.rpa}` (boolean, `--rpa`{.option})<br>`${OPTIONS}` itself was added in RF 5.0, `${OPTIONS.console_width}` in RF 7.1 and `${OPTIONS.rpa}` in RF 7.3. More options can be exposed later. | Everywhere |
 
 Suite related variables `${SUITE SOURCE}`, `${SUITE NAME}`, `${SUITE DOCUMENTATION}`
@@ -1533,7 +1533,7 @@ are available in different scopes.
    test data.
 
    Individually set variables (`--variable`{.option} option) override the
-   variables set using [variable files](variable-files.md#variable-files) (`--variablefile`{.option} option).
+   variables set using [variable files](variable_files.md#variable-files) (`--variablefile`{.option} option).
    If you specify same individual variable multiple times, the one specified
    last will override earlier ones. This allows setting default values for
    variables in a [start-up script](../execution/basics.md#start-up-script) and overriding them from the command line.
@@ -1554,7 +1554,7 @@ are available in different scopes.
 
 *Imported resource and variable files*
 
-   Variables imported from the [resource and variable files](variable-files.md#variable-files) have the
+   Variables imported from the [resource and variable files](variable_files.md#variable-files) have the
    lowest priority of all variables created in the test data.
    Variables from resource files and variable files have the same
    priority. If several resource and/or variable file have same
@@ -1609,13 +1609,13 @@ It is recommended to use capital letters with all global variables.
 
 Variables with the test suite scope are available anywhere in the
 test suite where they are defined or imported. They can be created
-in Variable sections, imported from [resource and variable files](variable-files.md#variable-files),
+in Variable sections, imported from [resource and variable files](variable_files.md#variable-files),
 or set during the test execution using the [VAR syntax](#var-syntax) or the
 *Set Suite Variable*{.name} keyword.
 
 The test suite scope *is not recursive*, which means that variables
 available in a higher-level test suite *are not available* in
-lower-level suites. If necessary, [resource and variable files](variable-files.md#variable-files) can
+lower-level suites. If necessary, [resource and variable files](variable_files.md#variable-files) can
 be used for sharing variables.
 
 Since these variables can be considered global in the test suite where
@@ -1646,7 +1646,7 @@ thus generally recommended to use capital letters with them too.
 Test cases and user keywords have a local variable scope that is not
 seen by other tests or keywords. Local variables can be created using
 [return values](#return-values-from-keywords) from executed keywords and with the [VAR syntax](#var-syntax),
-and user keywords also get them as [arguments](user-keywords.md#user-keyword-arguments).
+and user keywords also get them as [arguments](user_keywords.md#user-keyword-arguments).
 
 It is recommended to use lower-case letters with local variables.
 
@@ -1669,7 +1669,7 @@ arguments, can make the test data pretty complicated to understand.
 If that happens, it is recommended to move the code into a library.
 
 The most common usages of extended variable syntax are illustrated
-in the example below. First assume that we have the following [variable file](variable-files.md#variable-files) and test case:
+in the example below. First assume that we have the following [variable file](variable_files.md#variable-files) and test case:
 
 ```python
 class MyObject:

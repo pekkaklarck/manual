@@ -534,8 +534,8 @@ Variable conversion
 ### Removing unnecessary keywords from outputs
 
 `FOR` loops with multiple iterations often create lots of output and
-considerably increase the size of the generated [output](../execution/results.md#output-file) and [log](../execution/results.md#log-file) files.
-It is possible to [remove or flatten unnecessary keywords](../execution/results.md#removing-and-flattening-keywords) using
+considerably increase the size of the generated [output](../execution/results/index.md#output-file) and [log](../execution/results/index.md#log-file) files.
+It is possible to [remove or flatten unnecessary keywords](../execution/results/index.md#removing-and-flattening-keywords) using
 `--removekeywords`{.option} and `--flattenkeywords`{.option} command line options.
 
 ### Repeating single keyword
@@ -607,7 +607,7 @@ The limit can be set with the `limit` configuration parameter either as a maximu
 iteration count or as a maximum time for the whole loop. When the limit is an
 iteration count, it is possible to use just integers like `100` and to add `times`
 or `x` suffix after the value like `100 times`. When the limit is a timeout,
-it is possible to use [time strings](../appendix/time-format.md#time-format) like `10 s` or `1 hour 10 minutes`.
+it is possible to use [time strings](../appendix/time_format.md#time-format) like `10 s` or `1 hour 10 minutes`.
 The limit can also be disabled altogether by using `NONE` (case-insensitive).
 All these options are illustrated by the examples below.
 
@@ -644,10 +644,10 @@ the loop is exited similarly as if the loop condition would have become false.
 A major difference is that the loop status will be `FAIL` in this case.
 
 Starting from Robot Framework 6.1, it is possible to use `on_limit` parameter to
-configure the behaviour when the limit is exceeded. It supports two values `pass`
+configure the behavior when the limit is exceeded. It supports two values `pass`
 and `fail`, case insensitively. If the value is `pass`, the execution will continue
 normally when the limit is reached and the status of the `WHILE` loop will be `PASS`.
-The value `fail` works similarly as the default behaviour, e.g. the loop and the
+The value `fail` works similarly as the default behavior, e.g. the loop and the
 test will fail if the limit is exceeded.
 
 ```robotframework
@@ -707,8 +707,8 @@ Nesting WHILE
 ### Removing unnecessary keywords from outputs
 
 `WHILE` loops with multiple iterations often create lots of output and
-considerably increase the size of the generated [output](../execution/results.md#output-file) and [log](../execution/results.md#log-file) files.
-It is possible to [remove or flatten unnecessary keywords](../execution/results.md#removing-and-flattening-keywords) using
+considerably increase the size of the generated [output](../execution/results/index.md#output-file) and [log](../execution/results/index.md#log-file) files.
+It is possible to [remove or flatten unnecessary keywords](../execution/results/index.md#removing-and-flattening-keywords) using
 `--removekeywords`{.option} and `--flattenkeywords`{.option} command line options.
 
 <a id="break"></a>
@@ -778,8 +778,8 @@ Invalid BREAK
     in the future.
 
 !!! note
-    Also the [RETURN](user-keywords.md#return) statement can be used to a exit loop. It only works
-    when loops are used inside a [user keyword](user-keywords.md#creating-user-keywords).
+    Also the [RETURN](user_keywords.md#return) statement can be used to a exit loop. It only works
+    when loops are used inside a [user keyword](user_keywords.md#creating-user-keywords).
 
 <a id="if"></a>
 <a id="ifelse"></a>
@@ -935,7 +935,7 @@ Inline IF/ELSE with assignment having multiple variables
 
 `IF` structures can be nested with each others and with [FOR loops](#for-loops).
 This is illustrated by the following example using advanced features such
-as [FOR-IN-ENUMERATE loop](#for-in-enumerate-loop), [named-only arguments with user keywords](user-keywords.md#named-only-arguments-with-user-keywords) and
+as [FOR-IN-ENUMERATE loop](#for-in-enumerate-loop), [named-only arguments with user keywords](user_keywords.md#named-only-arguments-with-user-keywords) and
 [inline Python evaluation](variables.md#inline-python-evaluation) syntax (`${{len(${items})}}`):
 
 ```robotframework
@@ -975,7 +975,7 @@ Multiple items
 There are also other methods to execute keywords conditionally:
 
 - The name of the keyword used as a setup or a teardown with [suites](suites.md#suite-setup-and-teardown), [tests](tests.md#test-setup-and-teardown) and
-  [keywords](user-keywords.md#user-keyword-setup-and-teardown) can be specified using a variable. This facilitates changing them,
+  [keywords](user_keywords.md#user-keyword-setup-and-teardown) can be specified using a variable. This facilitates changing them,
   for example, from the command line.
 
 - The [BuiltIn](https://robotframework.org/robotframework/latest/libraries/BuiltIn.html) keyword *Run Keyword*{.name} takes a keyword to actually
@@ -1308,7 +1308,7 @@ As the above examples demonstrates, groups can have a name, but the name is
 optional. Groups can also be nested freely with each others and with other
 control structures.
 
-[User keywords](user-keywords.md#creating-user-keywords) are in general recommended over the `GROUP` syntax, because
+[User keywords](user_keywords.md#creating-user-keywords) are in general recommended over the `GROUP` syntax, because
 they are reusable and because they simplify tests or keywords where they are
 used by hiding and encapsulating lower level details. In the log file user
 keywords and groups look the same, though, except that instead of a `KEYWORD`
@@ -1358,7 +1358,7 @@ Upper case should be
 
 One of the primary usages for groups is making it possible to create structured
 tests and user keywords programmatically. For example, the following
-[pre-run modifier](../execution/configuration.md#pre-run-modifier) adds a group with two keywords at the end of each modified
+[pre-run modifier](../execution/configuration/index.md#pre-run-modifier) adds a group with two keywords at the end of each modified
 test. Groups can be added also by [listeners](../extend/listeners.md#listener-interface) that use the
 [listener API version 3](../extend/listeners.md#listener-version-3).
 

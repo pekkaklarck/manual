@@ -1,6 +1,6 @@
 # Boolean arguments
 
-Many keywords in Robot Framework [standard libraries](../syntax/libraries.md#standard-libraries) accept arguments that
+Many keywords in Robot Framework [standard libraries](../syntax/libraries.md#using-standard-libraries) accept arguments that
 are handled as Boolean values true or false. If such an argument is given as
 a string, it is considered false if it is an empty string or equal to
 `FALSE`, `NONE`, `NO`, `OFF` or `0`, case-insensitively. Other

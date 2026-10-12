@@ -13,7 +13,7 @@ Test cases are always executed within a test suite. A test suite
 created from a [suite file](../syntax/suites.md#suite-files) has tests directly, whereas suites
 created from [directories](../syntax/suites.md#suite-directories) have child test suites which either have
 tests or their own child suites. By default all the tests in an
-executed suite are run, but it is possible to [select tests](configuration.md#selecting-test-cases) using
+executed suite are run, but it is possible to [select tests](configuration/index.md#selecting-test-cases) using
 options `--test`{.option}, `--suite`{.option}, `--include`{.option} and
 `--exclude`{.option}. Suites containing no tests are ignored.
 
@@ -30,7 +30,7 @@ in the following sections.
 ### Setups and teardowns
 
 Setups and teardowns can be used on [test suite](../syntax/suites.md#suite-setup-and-teardown), [test case](../syntax/tests.md#test-setup-and-teardown) and
-[user keyword](../syntax/user-keywords.md#user-keyword-setup-and-teardown) levels.
+[user keyword](../syntax/user_keywords.md#user-keyword-setup-and-teardown) levels.
 
 #### Suite setup
 
@@ -116,7 +116,7 @@ problematic, a good workaround is giving them separately in the
 required order. This easily leads to overly long start-up commands,
 but [argument files](basics.md#argument-files) allow listing files nicely one file per line.
 
-It is also possible to [randomize the execution order](configuration.md#randomizing-execution-order) using
+It is also possible to [randomize the execution order](configuration/index.md#randomizing-execution-order) using
 the `--randomize`{.option} option.
 
 ## Test and suite statuses
@@ -216,7 +216,7 @@ As variable
 ```
 
 The difference between `--skip`{.option} and `--exclude`{.option} is that with
-the latter tests are [omitted from the execution altogether](configuration.md#by-tag-names) and they will not
+the latter tests are [omitted from the execution altogether](configuration/index.md#by-tag-names) and they will not
 be shown in logs and reports. With the former they are included, but not actually
 executed, and they will be visible in logs and reports.
 
@@ -460,7 +460,7 @@ User Keyword 2
 ```
 
 Setting `robot:continue-on-failure` or `robot:recursive-continue-on-failure` in a
-test case does NOT alter the behaviour of a failure in the keyword(s) executed
+test case does NOT alter the behavior of a failure in the keyword(s) executed
 as part of the *[Setup]*{.setting}: The test case is marked as failed and no
 test case keywords are executed.
 
@@ -582,7 +582,7 @@ to accomplish this are explained below. In all these cases the remaining
 test cases are marked failed.
 
 The tests that are automatically failed get `robot:exit` tag and
-the generated report will include `NOT robot:exit` [combined tag pattern](results.md#generating-combined-tag-statistics)
+the generated report will include `NOT robot:exit` [combined tag pattern](results/index.md#generating-combined-tag-statistics)
 to easily see those tests that were not skipped. Note that the test in which
 the exit happened does not get the `robot:exit` tag.
 
@@ -636,7 +636,7 @@ parsing errors encountered before execution even starts, this means that no
 tests are actually run.
 
 !!! note
-    Also logging something with the `ERROR` [log level](results.md#log-levels) is considered
+    Also logging something with the `ERROR` [log level](results/index.md#log-levels) is considered
     an error and stops the execution if the `--exitonerror`{.option} option
     is used.
 

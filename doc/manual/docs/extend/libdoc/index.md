@@ -11,9 +11,9 @@ Documentation can be created for:
 
 - libraries implemented using the normal static library [API](#python-libraries),
 - libraries using the [dynamic API](#dynamic-libraries), including remote libraries,
-- [resource files](../syntax/resource-files.md#resource-files),
-- [suite files](../syntax/suites.md#suite-files), and
-- [suite initialization files](../syntax/suites.md#suite-initialization-files).
+- [resource files](../../syntax/resource_files.md#resource-files),
+- [suite files](../../syntax/suites.md#suite-files), and
+- [suite initialization files](../../syntax/suites.md#suite-initialization-files).
 
 Additionally it is possible to use XML and JSON spec files created by Libdoc
 earlier as an input.
@@ -52,10 +52,10 @@ libdoc [options] library_or_resource list|show|version [names]
 :   Sets the name of the documented library or resource.
 
 `-V, --version <newversion>`{.option}
-:   Sets the version of the documented library or resource. The default value for test libraries is [defined in the source code](libraries.md#library-version).
+:   Sets the version of the documented library or resource. The default value for test libraries is [defined in the source code](../libraries.md#library-version).
 
 `-P, --pythonpath <path>`{.option}
-:   Additional locations where to search for libraries and resources similarly as when [running tests](../execution/configuration.md#using-pythonpath-option).
+:   Additional locations where to search for libraries and resources similarly as when [running tests](../../execution/configuration/index.md#using-pythonpath-option).
 
 `--quiet`{.option}
 :   Do not print the path of the generated output file to the console.
@@ -95,7 +95,7 @@ python path/to/robot/libdoc.py ExampleLibrary ExampleLibrary.html
 #### Python libraries and dynamic libraries with name or path
 
 When documenting libraries implemented with Python or that use the
-[dynamic library API](dynamic.md#dynamic-library-api), it is possible to specify the library either by
+[dynamic library API](../dynamic.md#dynamic-library-api), it is possible to specify the library either by
 using just the library name or path to the library source code:
 
 ```text
@@ -103,8 +103,8 @@ libdoc ExampleLibrary ExampleLibrary.html
 libdoc src/ExampleLibrary.py docs/ExampleLibrary.html
 ```
 
-In the former case the library is searched using the [module search path](../execution/configuration.md#module-search-path)
-and its name must be in the same format as when [importing libraries](../syntax/libraries.md#importing-libraries) in
+In the former case the library is searched using the [module search path](../../execution/configuration/index.md#module-search-path)
+and its name must be in the same format as when [importing libraries](../../syntax/libraries.md#importing-libraries) in
 Robot Framework test data.
 
 If these libraries require arguments when they are imported, the arguments
@@ -122,7 +122,7 @@ libdoc example.resource example.html
 ```
 
 If the path does not exist, resource files are also searched from all directories
-in the [module search path](../execution/configuration.md#module-search-path) similarly as when executing test cases.
+in the [module search path](../../execution/configuration/index.md#module-search-path) similarly as when executing test cases.
 
 #### Libdoc spec files
 
@@ -158,7 +158,7 @@ in HTML format. This format is thus familiar for most people who have used
 Robot Framework. A simple example can be seen below, and it has been generated
 based on the example found a [bit later in this section](#python-libraries).
 
-![Figure](ExampleLibrary.png)
+![Figure](example_library.png)
 
 The HTML documentation starts with general library introduction, continues
 with a section about configuring the library when it is imported (when
@@ -175,7 +175,7 @@ texts in the HTML documentation by using the `--language`{.option} option.
 
 See the `README.rst` file in `src/web/libodc` directory in the project
 repository for up to date information about how to add new languages
-for the localisation.
+for the localization.
 
 ```text
 libdoc OperatingSystem OperatingSystem.html
@@ -362,12 +362,12 @@ fails and an additional dialog is opened for defining the error message.
 
 This section discusses writing documentation for [Python](#python-libraries) based test
 libraries that use the static library API as well as for [dynamic libraries](#dynamic-libraries)
-and [resource files](#resource-file-documentation). [Creating test libraries](libraries.md#creating-test-libraries) and [resource files](../syntax/resource-files.md#resource-files) is
+and [resource files](#resource-file-documentation). [Creating test libraries](../libraries.md#creating-test-libraries) and [resource files](../../syntax/resource_files.md#resource-files) is
 described in more details elsewhere in the User Guide.
 
 ### Python libraries
 
-The documentation for Python libraries that use the [static library API](libraries.md#creating-keywords)
+The documentation for Python libraries that use the [static library API](../libraries.md#creating-keywords)
 is written simply as doc strings for the library class or module and for
 methods implementing keywords. The first line of the method documentation is
 considered as a short documentation for the keyword (used, for example, as
@@ -380,12 +380,12 @@ like can be seen [above](#libdoc-html-documentation), and there are also [bit lo
 the end of this chapter.
 
 ```python
-src/SupportingTools/ExampleLibrary.py
+--8<-- "extend/libdoc/ExampleLibrary.py"
 ```
 
 !!! tip
     If you library does some initialization work that should not be done
-    when using Libdoc, you can [easily detect is Robot Framework running](libraries.md#detecting-is-robot-framework-running)
+    when using Libdoc, you can [easily detect is Robot Framework running](../libraries.md#detecting-is-robot-framework-running)
 
 !!! tip
     For more information on Python documentation strings, see [PEP-257](https://www.python.org/dev/peps/pep-0257).
@@ -400,7 +400,7 @@ and `getKeywordDocumentation`). Libraries can also support
 general library documentation via special `__intro__` and
 `__init__` values to the `get_keyword_documentation` method.
 
-See the [Dynamic library API](dynamic.md#dynamic-library-api) section for more information about how to
+See the [Dynamic library API](../dynamic.md#dynamic-library-api) section for more information about how to
 create these methods.
 
 ### Importing section
@@ -431,7 +431,7 @@ class TestLibrary:
 Keywords in resource files can have documentation using
 *[Documentation]*{.setting} setting, and this documentation is also used by
 Libdoc. First line of the documentation (until the first
-[implicit newline](../appendix/doc-format.md#newlines) or explicit `\n`) is considered to be the short
+[implicit newline](../../appendix/doc_format.md#newlines) or explicit `\n`) is considered to be the short
 documentation similarly as with test libraries.
 
 Also the resource file itself can have *Documentation*{.setting} in the
@@ -462,8 +462,8 @@ Your Keyword
 ## Documentation syntax
 
 Libdoc supports documentation in [Robot Framework's own documentation syntax](#robot-framework-documentation-syntax),
-[Markdown](../syntax/index.md#syntax),  [reStructuredText](#markdown-documentation-syntax), [HTML](#html-documentation-syntax) and [plain text](#plain-text-documentation-syntax). The format to use can
-be specified in [library source code](libraries.md#documentation-format) using the `ROBOT_LIBRARY_DOC_FORMAT`
+[Markdown](../../syntax/index.md#syntax),  [reStructuredText](#markdown-documentation-syntax), [HTML](#html-documentation-syntax) and [plain text](#plain-text-documentation-syntax). The format to use can
+be specified in [library source code](../libraries.md#documentation-format) using the `ROBOT_LIBRARY_DOC_FORMAT`
 attribute or the `@library` decorator, or given from the command line using
 the `--docformat (-F)`{.option} option. In all cases the possible case-insensitive
 values are `ROBOT` (default), `MARKDOWN`, `reST`, `HTML` and `TEXT`.
@@ -471,7 +471,7 @@ values are `ROBOT` (default), `MARKDOWN`, `reST`, `HTML` and `TEXT`.
 ### Robot Framework documentation syntax
 
 Robot Framework's own documentation syntax is thoroughly documented in the
-[Robot Framework format](../appendix/doc-format.md#robot-framework-format) appendix. Its most important features are
+[Robot Framework format](../../appendix/doc_format.md#robot-framework-format) appendix. Its most important features are
 formatting using `*bold*` and `_italics_`, custom links and
 automatic conversion of URLs to links, and the possibility to create tables and
 pre-formatted text blocks (useful for examples). If documentation gets longer,
@@ -504,7 +504,7 @@ With bigger libraries it is often useful to add a table of contents to
 the library introduction. When using the Robot Framework documentation format,
 this can be done automatically by adding a special `%TOC%` marker into its own
 line so that it forms its own paragraph. The table of contents is created based
-on the first and second level [section headers](../syntax/data.md#test-data-sections) (e.g. `= Section =`,
+on the first and second level [section headers](../../syntax/data.md#test-data-sections) (e.g. `= Section =`,
 `== Level 2 ==`) used in the introduction.
 
 ```python
@@ -559,7 +559,7 @@ documentation, README files, and technical content across the software
 development industry. There are various slightly different Markdown flavors,
 but the basic syntax works the same way across all tools. The following
 example illustrates the most important features, and details about the
-supported syntax can be from the [Markdown format](../appendix/doc-format.md#markdown-format) appendix.
+supported syntax can be from the [Markdown format](../../appendix/doc_format.md#markdown-format) appendix.
 
 ````python
 """Example library using Markdown format.
@@ -591,7 +591,7 @@ needed, the [Pygments](https://pygments.org/) module must be installed as well.
 All other documentation formats supported by Libdoc support [internal linking](#internal-linking)
 using backticks like ``Linking to `My Keyword` works``{.codesc}. This kind
 of linking is very convenient and it works also with Markdown, but standard
-Markdown [reference links](../appendix/doc-format.md#reference-links) like `Linking to [My Keyword] works` are used
+Markdown [reference links](../../appendix/doc_format.md#reference-links) like `Linking to [My Keyword] works` are used
 instead.
 
 When using Markdown, it is possible to generate table of contents using
@@ -693,7 +693,7 @@ Libdoc supports internal linking to keywords, to used types and to different
 sections in the documentation.
 
 The link syntax varies depending on the documentation format that is used.
-With Markdown linking is done using normal Markdown [reference links](../appendix/doc-format.md#reference-links) like
+With Markdown linking is done using normal Markdown [reference links](../../appendix/doc_format.md#reference-links) like
 `Linking to [target]` and with all others the target needs to be surrounded
 with backtick characters like `` Linking to `target` ``{.codesc}. The actual
 targets are the same regardless the documentation format, though.
@@ -736,7 +736,7 @@ def another_keyword(argument, log_level="INFO"):
 ```
 
 !!! note
-    When using [reStructuredText documentation syntax](../syntax/index.md#syntax), backticks must
+    When using [reStructuredText documentation syntax](../../syntax/index.md#syntax), backticks must
     be escaped like `` \`Keyword Name\` ``{.codesc}.
 
 ### Linking to automatic sections
@@ -758,7 +758,7 @@ shown in the example of the next section.
 
 ### Linking to custom sections
 
-Robot Framework's [own documentation format](../appendix/doc-format.md#robot-framework-format) and [Markdown format](../appendix/doc-format.md#markdown-format) both support
+Robot Framework's [own documentation format](../../appendix/doc_format.md#robot-framework-format) and [Markdown format](../../appendix/doc_format.md#markdown-format) both support
 section headers, and headers used in the library or resource file introduction
 automatically create link targets. The example below illustrates linking both to
 automatic and custom sections:
@@ -826,12 +826,12 @@ def keyword():
 
 Libdoc shows some information about arguments and return values automatically
 based on the source code. They, as well as possible exceptions, can also be
-documented using [Google Style](../syntax/data.md#style) documentation conventions. Also tags can be
+documented using [Google Style](../../syntax/data.md#style) documentation conventions. Also tags can be
 listed in documentation similarly.
 
 !!! note
     Support to explicitly document arguments, return values and exceptions
-    using the [Google Style](../syntax/data.md#style) is new in Robot Framework 7.5.
+    using the [Google Style](../../syntax/data.md#style) is new in Robot Framework 7.5.
 
 ### Automatically included information
 
@@ -844,13 +844,13 @@ using Robot Framework syntax or Python:
 - Argument types.
 - Return value types.
 
-If a shown type is [automatically converted](libraries.md#supported-conversions), has a [custom converter](libraries.md#custom-argument-converters) or is
+If a shown type is [automatically converted](../libraries.md#supported-conversions), has a [custom converter](../libraries.md#custom-argument-converters) or is
 based on [Enum](https://docs.python.org/library/enum.html#enum.Enum) or [TypedDict](https://docs.python.org/library/typing.html#typing.TypedDict), the type name becomes a link to further type
 documentation.
 
 ### Documenting arguments
 
-Robot Framework supports [Google style](../syntax/data.md#style) argument documentation:
+Robot Framework supports [Google style](../../syntax/data.md#style) argument documentation:
 
 ```python
 def example(first: int, second: float, third: float) -> float:
@@ -875,7 +875,7 @@ def example(first: int, second: float, third: float) -> float:
 ```
 
 As the example above demonstrates, arguments are documented under the `Args:` header
-that must be followed with an indented block. The [specification](../syntax/data.md#style)
+that must be followed with an indented block. The [specification](../../syntax/data.md#style)
 mandates that the indentation should be two or four spaces, but Robot Framework only
 requires that the indentation is at least two spaces and that it is consistent
 within a block.
@@ -889,13 +889,13 @@ and extra indentation is preserved.
 
 The specification says that with `*varargs` and `**kwargs` the leading `*` and `**`
 should be included, but with Robot Framework both including and excluding them is
-fine. When documenting [user keyword arguments](../syntax/user-keywords.md#user-keyword-arguments), it is possible to omit `${}`,
+fine. When documenting [user keyword arguments](../../syntax/user_keywords.md#user-keyword-arguments), it is possible to omit `${}`,
 `@{}` and `&{}` decoration.
 
 Possible argument types in the documentation like `name (int): Example` are
 totally ignored. If type information is important, it must be provided
 via type hints or by using the `@keyword` decorator so that it is available
-also during execution and can be used for [argument conversion](libraries.md#argument-conversion).
+also during execution and can be used for [argument conversion](../libraries.md#argument-conversion).
 
 Robot Framework considers headers `Arguments:` and `Parameters:` to be aliases
 for `Args:`. They, similarly as aliases supported with other headers, may not be
@@ -971,7 +971,7 @@ Possible unrecognized sections are left to the documentation without modificatio
 
 There are some times needs to process keyword documentation also using other
 tools than Libdoc. Such tools can support Markdown or reStructuredText, but
-all tools do not understand [Google style](../syntax/data.md#style) documentation conventions.
+all tools do not understand [Google style](../../syntax/data.md#style) documentation conventions.
 
 If the whole documentation is to be rendered as Markdown or reStructuredText,
 an empty line can be added after a block header to avoid the header and the
@@ -1021,35 +1021,35 @@ Actual argument, return value and exception documentation can also contain forma
 and that is handled the same way as [formatting elsewhere in the documentation](#documentation-syntax).
 
 !!! note
-    External tools that understand [Google style](../syntax/data.md#style) documentation conventions
+    External tools that understand [Google style](../../syntax/data.md#style) documentation conventions
     may not accept extra formatting that Robot Framework supports. Test the
     used formatting with all the used tools if interoperability is important.
 
 ## Libdoc examples
 
 The following examples illustrates how to use the most important
-[documentation formatting](../appendix/doc-format.md#documentation-formatting) possibilities, [internal linking](#internal-linking), and so on.
+[documentation formatting](../../appendix/doc_format.md#documentation-formatting) possibilities, [internal linking](#internal-linking), and so on.
 
 ### Using Robot Framework format
 
 ```python
-src/SupportingTools/LoggingLibrary.py
+--8<-- "extend/libdoc/LoggingLibrary.py"
 ```
 
-[Click here](#srcsupportingtoolslogginglibraryhtml) to see how the generated documentation looks like.
+[View the generated Robot Framework documentation](logging_library.html).
 
 
 ### Using Markdown
 
 ```python
-src/SupportingTools/LoggingLibraryMarkdown.py
+--8<-- "extend/libdoc/LoggingLibraryMarkdown.py"
 ```
 
-[Click here](#srcsupportingtoolslogginglibrarymarkdownhtml) to see how the generated documentation looks like.
+[View the generated Markdown documentation](logging_library_markdown.html).
 
 
 ### Standard library documentation
 
-All [standard libraries](../syntax/libraries.md#standard-libraries) have documentation generated by
+All [standard libraries](../../syntax/libraries.md#using-standard-libraries) have documentation generated by
 Libdoc and their documentation (and source code) act as a more
 realistic examples.
