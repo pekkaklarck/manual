@@ -10699,13 +10699,13 @@ their value, and other argument types are tested using the same
 | <code>Remove Directory</code> | ${path} | recursive=${EMPTY} | # Empty string is false.       |
 | <code>Remove Directory</code> | ${path} | recursive=${FALSE} | # Python <code>False</code> is false.   |</p>
 <p>= Example =</p>
-<p>| <strong><em>*</em> Settings </strong><strong><em>
+<p>| ***** Settings *****
 | Library         OperatingSystem
 |
-| </em></strong><strong> Variables </strong><strong><em>
+| ***** Variables *****
 | ${PATH}         ${CURDIR}/example.txt
 |
-| </em></strong><strong> Test Cases </strong>***
+| ***** Test Cases *****
 | Example
 |     <code>Create File</code>          ${PATH}    Some text
 |     <code>File Should Exist</code>    ${PATH}
@@ -11255,8 +11255,8 @@ the <code>Pattern matching</code> section. With this keyword matching is always
 case-sensitive.</p>
 <p>Examples:
 | ${errors} = | Grep File | /var/log/myapp.log | ERROR |
-| ${ret} = | Grep File | ${CURDIR}/file.txt | [Ww]ildc??d ex<em>ple |
-| ${ret} = | Grep File | ${CURDIR}/file.txt | [Ww]ildc\w+d ex.</em>ple | regexp=True |</p>
+| ${ret} = | Grep File | ${CURDIR}/file.txt | [Ww]ildc??d ex*ple |
+| ${ret} = | Grep File | ${CURDIR}/file.txt | [Ww]ildc\w+d ex.*ple | regexp=True |</p>
 <p>Special encoding values <code>SYSTEM</code> and <code>CONSOLE</code> that <code>Get File</code> supports
 are supported by this keyword only with Robot Framework 4.0 and newer.</p>
 <p>Support for regular expressions is new in Robot Framework 5.0.</p>

@@ -10365,11 +10365,11 @@ their value, and other argument types are tested using the same
 | <code>Terminate Process</code> | kill=${EMPTY} | # Empty string is false.       |
 | <code>Terminate Process</code> | kill=${FALSE} | # Python <code>False</code> is false.   |</p>
 <p>= Example =</p>
-<p>| <strong><em>*</em> Settings </strong><strong><em>
+<p>| ***** Settings *****
 | Library           Process
 | Suite Teardown    <code>Terminate All Processes</code>    kill=True
 |
-| </em></strong><strong> Test Cases </strong>***
+| ***** Test Cases *****
 | Example
 |     <code>Start Process</code>    program    arg1    arg2    alias=First
 |     ${handle} =    <code>Start Process</code>    command.sh arg | command2.sh    shell=True    cwd=/path

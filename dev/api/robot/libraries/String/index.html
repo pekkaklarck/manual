@@ -11424,8 +11424,8 @@ number of matching lines is automatically logged.</p>
 <p>Examples:
 | ${lines} = | Get Lines Matching Regexp | ${result} | Reg\w{3} example |
 | ${lines} = | Get Lines Matching Regexp | ${result} | Reg\w{3} example | partial_match=true |
-| ${ret} =   | Get Lines Matching Regexp | ${ret}    | (?i)FAIL: .<em> |
-| ${ret} =   | Get Lines Matching Regexp | ${ret}    | FAIL: .</em> | flags=IGNORECASE |</p>
+| ${ret} =   | Get Lines Matching Regexp | ${ret}    | (?i)FAIL: .* |
+| ${ret} =   | Get Lines Matching Regexp | ${ret}    | FAIL: .* | flags=IGNORECASE |</p>
 <p>See <code>Get Lines Matching Pattern</code> and <code>Get Lines Containing String</code> if you
 do not need the full regular expression powers (and complexity).</p>
 <p>The <code>flags</code> argument is new in Robot Framework 6.0.</p>

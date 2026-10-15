@@ -10589,11 +10589,11 @@ are considered deprecated. They will eventually be removed.</p>
 <p>Non-string values in lists are ignored when matching patterns.</p>
 <p>Use the <code>msg</code> argument to override the default error message.</p>
 <p>Examples:
-| Should Contain Match | ${list} | a<em>              | | | # Match strings beginning with 'a'. |
-| Should Contain Match | ${list} | regexp=a.</em>      | | | # Same as the above but with regexp. |
+| Should Contain Match | ${list} | a*              | | | # Match strings beginning with 'a'. |
+| Should Contain Match | ${list} | regexp=a.*      | | | # Same as the above but with regexp. |
 | Should Contain Match | ${list} | regexp=\d{6} | | | # Match strings containing six digits. |
-| Should Contain Match | ${list} | a<em>  | ignore_case=True       | | # Match strings beginning with 'a' or 'A'. |
-| Should Contain Match | ${list} | ab</em> | ignore_whitespace=yes  | | # Match strings beginning with 'ab' with possible whitespace ignored. |
+| Should Contain Match | ${list} | a*  | ignore_case=True       | | # Match strings beginning with 'a' or 'A'. |
+| Should Contain Match | ${list} | ab* | ignore_whitespace=yes  | | # Match strings beginning with 'ab' with possible whitespace ignored. |
 | Should Contain Match | ${list} | ab* | ignore_whitespace=true | ignore_case=true | # Same as the above but also ignore case. |</p>
 
 
@@ -10805,8 +10805,8 @@ for information about arguments and usage in general.</p>
 <p>For more information on <code>pattern</code>, <code>case_insensitive/ignore_case</code>, and
 <code>whitespace_insensitive/ignore_whitespace</code>, see <code>Should Contain Match</code>.</p>
 <p>Examples:
-| ${matches}= | Get Matches | ${list} | a<em> | # ${matches} will contain any string beginning with 'a' |
-| ${matches}= | Get Matches | ${list} | regexp=a.</em> | # ${matches} will contain any string beginning with 'a' (regexp version) |
+| ${matches}= | Get Matches | ${list} | a* | # ${matches} will contain any string beginning with 'a' |
+| ${matches}= | Get Matches | ${list} | regexp=a.* | # ${matches} will contain any string beginning with 'a' (regexp version) |
 | ${matches}= | Get Matches | ${list} | a* | ignore_case=True | # ${matches} will contain any string beginning with 'a' or 'A' |</p>
 
 
@@ -10884,8 +10884,8 @@ for information about arguments and usage in general.</p>
 <p>For more information on <code>pattern</code>, <code>case_insensitive/ignore_case</code>, and
 <code>whitespace_insensitive/ignore_whitespace</code>, see <code>Should Contain Match</code>.</p>
 <p>Examples:
-| ${count}= | Get Match Count | ${list} | a<em> | # ${count} will be the count of strings beginning with 'a' |
-| ${count}= | Get Match Count | ${list} | regexp=a.</em> | # ${matches} will be the count of strings beginning with 'a' (regexp version) |
+| ${count}= | Get Match Count | ${list} | a* | # ${count} will be the count of strings beginning with 'a' |
+| ${count}= | Get Match Count | ${list} | regexp=a.* | # ${matches} will be the count of strings beginning with 'a' (regexp version) |
 | ${count}= | Get Match Count | ${list} | a* | case_insensitive=${True} | # ${matches} will be the count of strings beginning with 'a' or 'A' |</p>
 
 

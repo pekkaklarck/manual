@@ -14732,17 +14732,17 @@ a for loop. That, as well as returning values, is demonstrated by the
 <code>Find Index</code> keyword in the following somewhat advanced example.
 Notice that it is often a good idea to move this kind of complicated
 logic into a library.</p>
-<p>| <strong><em>*</em> Variables </strong><strong><em>
+<p>| ***** Variables *****
 | @{LIST} =    foo    baz
 |
-| </em></strong><strong> Test Cases </strong><strong><em>
+| ***** Test Cases *****
 | Example
 |     ${index} =    Find Index    baz    @{LIST}
 |     Should Be Equal    ${index}    ${1}
 |     ${index} =    Find Index    non existing    @{LIST}
 |     Should Be Equal    ${index}    ${-1}
 |
-| </em></strong><strong> Keywords </strong>***
+| ***** Keywords *****
 | Find Index
 |    [Arguments]    ${element}    @{items}
 |    ${index} =    Set Variable    ${0}
@@ -14915,7 +14915,7 @@ condition. The condition is evaluated using the same semantics as
 with <code>Should Be True</code> keyword.</p>
 <p>Given the same example as in <code>Return From Keyword</code>, we can rewrite the
 <code>Find Index</code> keyword as follows:</p>
-<p>| <strong><em>*</em> Keywords </strong>***
+<p>| ***** Keywords *****
 | Find Index
 |    [Arguments]    ${element}    @{items}
 |    ${index} =    Set Variable    ${0}
