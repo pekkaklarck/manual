@@ -285,11 +285,13 @@ also take additional arguments.
 : List names of the keywords the library/resource contains. Can be
     limited to show only certain keywords by passing optional patterns
     as arguments. Keyword is listed if its name contains given pattern.
+
 `show`
 : Show library/resource documentation. Can be limited to show only
     certain keywords by passing names as arguments. Keyword is shown if
     its name matches any given name. Special argument `intro` will show
     only the library introduction and importing sections.
+
 `version`
 : Show library version
 
