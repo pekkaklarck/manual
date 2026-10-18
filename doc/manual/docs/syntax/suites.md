@@ -23,10 +23,13 @@ The following settings in the Setting section can be used to customize the suite
 *Name*{.setting}
 : Used for setting a custom [suite name](#suite-name). The default name is created based
     on the file or directory name.
+
 *Documentation*{.setting}
 : Used for specifying a [suite documentation](#suite-documentation).
+
 *Metadata*{.setting}
 : Used for setting [free suite metadata](#free-suite-metadata) as name-value pairs.
+
 *Suite Setup*{.setting}, *Suite Teardown*{.setting}
 : Specify [suite setup and teardown](#suite-setup-and-teardown).
 
@@ -90,20 +93,24 @@ initialization files is explained below.
 *Name*{.setting}, *Documentation*{.setting}, *Metadata*{.setting}, *Suite Setup*{.setting}, *Suite Teardown*{.setting}
 : These suite specific settings work the same way in suite initialization files
     as in suite files.
+
 *Test Tags*{.setting}
 : Specified tags are unconditionally set to all tests in all suite files
     this directory contains, recursively. New in Robot Framework 6.1. The
     deprecated *Force Tags*{.setting} needs to be used with older versions.
+
 *Test Setup*{.setting}, *Test Teardown*{.setting}, *Test Timeout*{.setting}
 : Set the default value for test setup/teardown or test timeout to all test
     cases this directory contains. Can be overridden on lower level.
     Notice that keywords used as setups and teardowns must be available in
     test case files where tests using them are. Defining keywords in the
     initialization file itself is not enough.
+
 *Task Setup*{.setting}, *Task Teardown*{.setting}, *Task Tags*{.setting}, *Task Timeout*{.setting}
 : Aliases for *Test Setup*{.setting}, *Test Teardown*{.setting}, *Test Tags*{.setting}
     and *Test Timeout*{.setting}, respectively, that can be used when
     [creating tasks](tasks.md#creating-tasks), not tests.
+
 *Test Template*{.setting}, *Default Tags*{.setting}
 : Not supported in initialization files.
 
