@@ -163,3 +163,8 @@ cython_debug/
 
 # vscode
 .vscode/
+# Local Claude Code instructions
+/CLAUDE.md
+
+# Local superpowers plans and specs
+/docs/superpowers/
