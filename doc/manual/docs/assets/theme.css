@@ -1,0 +1,142 @@
+/* Robot Framework colour system, ported from
+   foundation-web/web-components/assets/css/themes/base.css via the Guides'
+   custom.css. Nothing but custom properties lives here.
+
+   THE RAMP encodes distance from the page ground, not absolute lightness:
+   0 is the ground itself, 500 is the brand teal and never moves, 1000 is the
+   far end. The `slate` block declares the ramp in reverse, so a rule written
+   ONCE against a step is right under both schemes. Adding a dark override to
+   a --rf-* colour in a component rule makes it flip twice — that is a bug.
+
+   Values are RGB channels so a rule can write `rgb(var(--rf-500) / 0.2)`. */
+
+/* Material's generated palette.css stamps its own stock variables on
+   body[data-md-color-scheme="default"], which outranks a value inherited
+   from :root alone — so every light-scheme block below targets both. */
+:root, [data-md-color-scheme="default"] {
+  --rf-0: 255 255 255;
+  --rf-50: 230 248 246;
+  --rf-100: 204 230 227;
+  --rf-200: 184 227 224;
+  --rf-300: 92 214 207;
+  --rf-400: 46 203 194;
+  --rf-500: 0 192 181;
+  --rf-600: 1 150 143;
+  --rf-700: 31 102 98;
+  --rf-800: 29 48 47;
+  --rf-900: 18 26 28;
+  --rf-950: 9 12 13;
+  --rf-1000: 0 0 0;
+
+  /* The page ground is a neutral, deliberately not a ramp step. */
+  --rf-ground: 240 240 240;
+
+  /* Semantic tokens. Step 700 rather than 500 carries text: the brand teal
+     on the light ground measures 1.8:1, far under AA. */
+  --rf-text: var(--rf-950);
+  --rf-accent-text: var(--rf-700);
+  --rf-accent-indicator: var(--rf-500);
+  --rf-surface-panel: rgb(var(--rf-100));
+  --rf-surface-line: rgb(var(--rf-200));
+  --rf-surface-card: rgb(var(--rf-0));
+
+  --rf-r-sm: 4px;
+  --rf-r-md: 6px;
+  --rf-r-lg: 8px;
+}
+
+[data-md-color-scheme="slate"] {
+  --rf-0: 0 0 0;
+  --rf-50: 9 12 13;
+  --rf-100: 18 26 28;
+  --rf-200: 29 48 47;
+  --rf-300: 31 102 98;
+  --rf-400: 1 150 143;
+  --rf-500: 0 192 181;
+  --rf-600: 46 203 194;
+  --rf-700: 92 214 207;
+  --rf-800: 184 227 224;
+  --rf-900: 204 230 227;
+  --rf-950: 230 248 246;
+  --rf-1000: 255 255 255;
+
+  --rf-ground: 34 34 34;
+
+  /* Re-declared on purpose: a var() inside a custom property resolves on the
+     element that DECLARES it, so the :root copies would keep light-ramp
+     values after the ramp above is reversed. */
+  --rf-text: var(--rf-950);
+  --rf-accent-text: var(--rf-700);
+  --rf-accent-indicator: var(--rf-500);
+  --rf-surface-panel: rgb(var(--rf-100));
+  --rf-surface-line: rgb(var(--rf-200));
+  --rf-surface-card: rgb(var(--rf-100));
+}
+
+/* Material reads these. Declared on the same two selectors so each one
+   resolves against its own ramp. */
+:root,
+[data-md-color-scheme="default"],
+[data-md-color-scheme="slate"] {
+  --md-default-bg-color: rgb(var(--rf-ground));
+  --md-default-fg-color: rgb(var(--rf-text));
+  --md-default-fg-color--light: rgb(var(--rf-text) / 0.7);
+  --md-default-fg-color--lighter: rgb(var(--rf-text) / 0.45);
+  --md-default-fg-color--lightest: rgb(var(--rf-text) / 0.12);
+
+  /* Header and tabs paint with these; extra.css adds the rule line and type. */
+  --md-primary-fg-color: rgb(var(--rf-0));
+  --md-primary-fg-color--light: rgb(var(--rf-50));
+  --md-primary-fg-color--dark: rgb(var(--rf-100));
+  --md-primary-bg-color: rgb(var(--rf-text));
+  --md-primary-bg-color--light: rgb(var(--rf-text) / 0.7);
+
+  /* Accent: hover states, focus rings, active toggles. */
+  --md-accent-fg-color: rgb(var(--rf-600));
+  --md-accent-fg-color--transparent: rgb(var(--rf-500) / 0.1);
+  --md-accent-bg-color: rgb(var(--rf-0));
+
+  --md-typeset-a-color: rgb(var(--rf-accent-text));
+
+  /* Code surface: robot-100 on light, robot-50 on dark — the pair the source
+     site uses. */
+  --md-code-fg-color: rgb(var(--rf-text));
+  --md-code-hl-color: rgb(var(--rf-500));
+  --md-code-hl-color--light: rgb(var(--rf-500) / 0.12);
+
+  --md-typeset-table-color: rgb(var(--rf-700) / 0.25);
+  --md-typeset-table-color--light: rgb(var(--rf-500) / 0.08);
+  --md-typeset-mark-color: rgb(var(--rf-500) / 0.3);
+  --md-typeset-kbd-color: rgb(var(--rf-100));
+  --md-typeset-kbd-accent-color: rgb(var(--rf-50));
+  --md-typeset-kbd-border-color: rgb(var(--rf-700) / 0.25);
+
+  --md-admonition-fg-color: rgb(var(--rf-text));
+  --md-admonition-bg-color: rgb(var(--rf-100) / 0.5);
+
+  /* Footer is a dark island. Written here so the variables exist. */
+  --md-footer-fg-color: rgb(230 248 246);
+  --md-footer-fg-color--light: rgb(204 230 227);
+  --md-footer-fg-color--lighter: rgb(184 227 224);
+  --md-footer-bg-color: rgb(18 26 28);
+  --md-footer-bg-color--dark: rgb(9 12 13);
+
+  --md-shadow-z1: none;
+  --md-shadow-z2: none;
+  --md-shadow-z3: none;
+}
+
+/* Written per scheme below because it is the one place a single ramp step
+   cannot do the job. */
+:root, [data-md-color-scheme="default"] {
+  --md-code-bg-color: rgb(var(--rf-100));
+  --md-code-bg-color--light: rgb(var(--rf-100) / 0.9);
+  --md-code-bg-color--lighter: rgb(var(--rf-100) / 0.54);
+}
+
+[data-md-color-scheme="slate"] {
+  --md-code-bg-color: rgb(var(--rf-50));
+  --md-code-bg-color--light: rgb(var(--rf-50) / 0.9);
+  --md-code-bg-color--lighter: rgb(var(--rf-50) / 0.54);
+  color-scheme: dark;
+}
