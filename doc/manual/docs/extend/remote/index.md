@@ -93,7 +93,7 @@ is shorter than keyword execution time will interrupt the keyword.
 Before the Remote library can be imported, the remote server providing
 the actual keywords must be started.  If the server is started before
 launching the test execution, it is possible to use the normal
-*Library*{.setting} setting like in the above example. Alternatively other
+`Library`{.setting} setting like in the above example. Alternatively other
 keywords, for example from [Process](https://robotframework.org/robotframework/latest/libraries/Process.html) or [SSH](https://github.com/robotframework/SSHLibrary) libraries, can start
 the server up, but then you may need to use [Import Library keyword](../../syntax/libraries.md#using-import-library-keyword)
 because the library is not available when the test execution starts.
@@ -101,7 +101,7 @@ because the library is not available when the test execution starts.
 How a remote server can be stopped depends on how it is
 implemented. Typically servers support the following methods:
 
-* Regardless of the library used, remote servers should provide *Stop Remote Server*{.name} keyword that can be easily used by executed tests.
+* Regardless of the library used, remote servers should provide `Stop Remote Server`{.name} keyword that can be easily used by executed tests.
 * Remote servers should have `stop_remote_server` method in their
   XML-RPC interface.
 * Hitting `Ctrl-C` on the console where the server is running should
@@ -111,7 +111,7 @@ implemented. Typically servers support the following methods:
 
 !!! note
     Servers may be configured so that users cannot stop it with
-    *Stop Remote Server*{.name} keyword or `stop_remote_server`
+    `Stop Remote Server`{.name} keyword or `stop_remote_server`
     method.
 
 ## Supported argument and return value types
@@ -190,7 +190,7 @@ implement keywords themselves.
 
 Remote servers should additionally have `stop_remote_server`
 method in their public interface to ease stopping them. They should
-also automatically expose this method as *Stop Remote Server*{.name}
+also automatically expose this method as `Stop Remote Server`{.name}
 keyword to allow using it in the test data regardless of the test
 library. Allowing users to stop the server is not always desirable,
 and servers may support disabling this functionality somehow.

@@ -10,7 +10,7 @@ header .md-ellipsis {
 }
 
 /* Advertise search shortcut */
-[data-md-toggle="search"]:not(:checked)~.md-header .md-search__form::after {
+[data-md-toggle="search"]:not(:checked) ~ .md-header .md-search__form::after {
   position: absolute;
   top: .3rem;
   right: .3rem;
@@ -47,7 +47,7 @@ header .md-ellipsis {
   display: none;
 }
 
-.md-typeset dl dd>p:empty {
+.md-typeset dl dd > p:empty {
   display: none;
 }
 
@@ -66,18 +66,4 @@ header .md-ellipsis {
 .md-typeset h2 {
   /* Distinguish major page sections more clearly from body text and h3 headings. */
   font-weight: 500;
-}
-
-/* Definition labels: green, italic, and close to their descriptions. */
-.md-typeset dl dt {
-  margin-top: 0;
-  margin-bottom: 0;
-  color: var(--md-typeset-a-color);
-  font-style: italic;
-}
-
-/* Keep nested formatting consistent with the definition label. */
-.md-typeset dl dt :is(em, code, a:not([href])) {
-  color: inherit;
-  font-style: inherit;
 }

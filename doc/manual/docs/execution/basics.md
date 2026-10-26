@@ -67,7 +67,7 @@ the specified files and directories become its child test suites. The name
 of the created test suite is got from child suite names by
 concatenating them together with an ampersand (&) and spaces. For example,
 the name of the top-level suite in the first example below is
-*My Tests & Your Tests*{.name}. These automatically created names are
+`My Tests & Your Tests`{.name}. These automatically created names are
 often quite long and complicated. In most cases, it is thus better to
 use the `--name`{.option} option for overriding it, as in the second
 example below:
@@ -671,7 +671,7 @@ you can enable showing internal traces by setting environment variable
 If the log file still does not have enough information, it is a good
 idea to enable the [syslog](results/index.md#system-log) and see what information it provides. It is
 also possible to add some keywords to the test cases to see what is
-going on. Especially [BuiltIn](https://robotframework.org/robotframework/latest/libraries/BuiltIn.html) keywords *Log*{.name} and *Log Variables*{.name} are useful. If you need more help, ask on the [Robot Framework forum](https://forum.robotframework.org/).
+going on. Especially [BuiltIn](https://robotframework.org/robotframework/latest/libraries/BuiltIn.html) keywords `Log`{.name} and `Log Variables`{.name} are useful. If you need more help, ask on the [Robot Framework forum](https://forum.robotframework.org/).
 
 ### Using the Python debugger (pdb)
 

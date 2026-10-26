@@ -30,10 +30,10 @@ method. Variable files can also be created as [YAML](#variable-file-as-yaml) and
 
 #### Setting section
 
-All test data files can import variable files using the *Variables*{.setting}
+All test data files can import variable files using the `Variables`{.setting}
 setting in the Setting section. Variable files are typically imported using
 a path to the file same way as [resource files are imported](resource_files.md#taking-resource-files-into-use) using
-the *Resource*{.setting} setting. Similarly to resource files, the path to
+the `Resource`{.setting} setting. Similarly to resource files, the path to
 the imported variable file is considered relative to the directory where the
 importing file is, and if not found, it is searched from directories
 in the [module search path](../execution/configuration/index.md#module-search-path). The path can also contain variables,
@@ -79,7 +79,7 @@ set from the command line override variables from variable files.
 
 Another way to take variable files into use is using the command line option
 `--variablefile`{.option}. Variable files are referenced using a path or
-module name similarly as when importing them using the *Variables*{.setting}
+module name similarly as when importing them using the `Variables`{.setting}
 setting. Possible arguments are joined to the path with a colon (`:`):
 
 ```text
@@ -426,8 +426,8 @@ dict:
 
 YAML variable files can be used exactly like normal variable files
 from the command line using `--variablefile`{.option} option, in the Settings
-section using *Variables*{.setting} setting, and dynamically using the
-*Import Variables*{.name} keyword. They are automatically recognized by their
+section using `Variables`{.setting} setting, and dynamically using the
+`Import Variables`{.name} keyword. They are automatically recognized by their
 extension that must be either `.yaml`{.file} or `.yml`{.file}.
 If the above YAML file is imported, it will create exactly the same variables
 as this Variable section:

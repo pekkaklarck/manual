@@ -9,7 +9,7 @@ used in most places in test data. Most commonly, they are used in
 arguments for keywords in Test Case and Keyword sections, but
 also all settings allow variables in their values. A normal keyword
 name *cannot* be specified with a variable, but the [BuiltIn](https://robotframework.org/robotframework/latest/libraries/BuiltIn.html) keyword
-*Run Keyword*{.name} can be used to get the same effect.
+`Run Keyword`{.name} can be used to get the same effect.
 
 Robot Framework has its own variables that can be used as [scalars](#scalar-variables), [lists](#list-variables)
 or [dictionaries](#dictionary-variables) using syntax `${SCALAR}`, `@{LIST}` and `&{DICT}`,
@@ -137,10 +137,10 @@ Objects
 Finally, when this test data is executed, different keywords receive
 the arguments as explained below:
 
-- *KW 1*{.name} gets a string `Hello, world!`
-- *KW 2*{.name} gets an object stored to variable `${OBJ}`
-- *KW 3*{.name} gets a string `I said "Hello, world!"`
-- *KW 4*{.name} gets a string `You said "Hi, terra!"`
+- `KW 1`{.name} gets a string `Hello, world!`
+- `KW 2`{.name} gets an object stored to variable `${OBJ}`
+- `KW 3`{.name} gets a string `I said "Hello, world!"`
+- `KW 4`{.name} gets a string `You said "Hi, terra!"`
 
 #### Scalar variables containing bytes
 
@@ -162,7 +162,7 @@ than other variables containing non-string values:
   with the same ordinal. In practice this is same as converting bytes to strings
   using the Latin-1 encoding. This format has a big benefit that the resulting
   string can be converted back to bytes, for example, by using the [BuiltIn](https://robotframework.org/robotframework/latest/libraries/BuiltIn.html)
-  keyword *Convert To Bytes*{.name} or by automatic [argument conversion](../extend/libraries.md#argument-conversion).
+  keyword `Convert To Bytes`{.name} or by automatic [argument conversion](../extend/libraries.md#argument-conversion).
 
 The following examples demonstrates using bytes and bytearrays would work
 exactly the same way. Variable `${a}` is expected to contain bytes `\x00\x01`
@@ -449,8 +449,8 @@ value with an equal sign like `%{ENV_VAR_NAME=default value}`.
 
 Environment variables set in the operating system before the test execution are
 available during it, and it is possible to create new ones with the keyword
-*Set Environment Variable*{.name} or delete existing ones with the
-keyword *Delete Environment Variable*{.name}, both available in the
+`Set Environment Variable`{.name} or delete existing ones with the
+keyword `Delete Environment Variable`{.name}, both available in the
 [OperatingSystem](https://robotframework.org/robotframework/latest/libraries/OperatingSystem.html) library. Because environment variables are global,
 environment variables set in one test case can be used in other test
 cases executed after it. However, changes to environment variables are
@@ -701,8 +701,8 @@ Returning
     Log    We got ${x}!
 ```
 
-In the above example the value returned by the *Get X*{.name} keyword
-is first set into the variable `${x}` and then used by the *Log*{.name}
+In the above example the value returned by the `Get X`{.name} keyword
+is first set into the variable `${x}` and then used by the `Log`{.name}
 keyword. Having the equals sign `=` after the name of the assigned variable is
 not obligatory, but it makes the assignment more explicit. Creating
 local variables like this works both in test case and user keyword level.
@@ -820,7 +820,7 @@ Assign multiple
     ${begin}    @{middle}    ${end} =    Get Three
 ```
 
-Assuming that the keyword *Get Three*{.name} returns a list `[1, 2, 3]`,
+Assuming that the keyword `Get Three`{.name} returns a list `[1, 2, 3]`,
 the following variables are created:
 
 - `${a}`, `${b}` and `${c}` with values `1`, `2`, and `3`, respectively.
@@ -849,7 +849,7 @@ value is hidden.
 
 The reason the value is not logged fully is that it could be really
 big. If you always want to see a certain value fully, it is possible
-to use the [BuiltIn](https://robotframework.org/robotframework/latest/libraries/BuiltIn.html) *Log*{.name} keyword to log it after the assignment.
+to use the [BuiltIn](https://robotframework.org/robotframework/latest/libraries/BuiltIn.html) `Log`{.name} keyword to log it after the assignment.
 
 !!! note
     The `--maxassignlength`{.option} option is new in Robot Framework 5.0.
@@ -863,10 +863,10 @@ and it must be followed by a variable name and value. Other than the mandatory
 in the [Variable section](#variable-section).
 
 The new syntax aims to make creating variables simpler and more uniform. It is
-especially indented to replace the [BuiltIn](https://robotframework.org/robotframework/latest/libraries/BuiltIn.html) keywords *Set Variable*{.name},
-*Set Local Variable*{.name}, *Set Test Variable*{.name}, *Set Suite Variable*{.name}
-and *Set Global Variable*{.name}, but it can be used instead of *Catenate*{.name},
-*Create List*{.name} and *Create Dictionary*{.name} as well.
+especially indented to replace the [BuiltIn](https://robotframework.org/robotframework/latest/libraries/BuiltIn.html) keywords `Set Variable`{.name},
+`Set Local Variable`{.name}, `Set Test Variable`{.name}, `Set Suite Variable`{.name}
+and `Set Global Variable`{.name}, but it can be used instead of `Catenate`{.name},
+`Create List`{.name} and `Create Dictionary`{.name} as well.
 
 #### Creating scalar variables
 
@@ -1031,27 +1031,27 @@ Dynamic name
     Should Be Equal    ${y}    z
 ```
 
-### *Set Test/Suite/Global Variable*{.name} keywords
+### `Set Test`{.name}/`Suite`{.name}/`Global Variable`{.name} keywords
 
 !!! note
     The `VAR` syntax is recommended over these keywords when using
     Robot Framework 7.0 or newer.
 
-The [BuiltIn](https://robotframework.org/robotframework/latest/libraries/BuiltIn.html) library has keywords *Set Test Variable*{.name},
-*Set Suite Variable*{.name} and *Set Global Variable*{.name} which can
+The [BuiltIn](https://robotframework.org/robotframework/latest/libraries/BuiltIn.html) library has keywords `Set Test Variable`{.name},
+`Set Suite Variable`{.name} and `Set Global Variable`{.name} which can
 be used for setting variables dynamically during the test
 execution. If a variable already exists within the new scope, its
 value will be overwritten, and otherwise a new variable is created.
 
-Variables set with *Set Test Variable*{.name} keyword are available
+Variables set with `Set Test Variable`{.name} keyword are available
 everywhere within the scope of the currently executed test case. For
 example, if you set a variable in a user keyword, it is available both
 in the test case level and also in all other user keywords used in the
 current test. Other test cases will not see variables set with this
-keyword. It is an error to call *Set Test Variable*{.name}
+keyword. It is an error to call `Set Test Variable`{.name}
 outside the scope of a test (e.g. in a Suite Setup or Teardown).
 
-Variables set with *Set Suite Variable*{.name} keyword are available
+Variables set with `Set Suite Variable`{.name} keyword are available
 everywhere within the scope of the currently executed test
 suite. Setting variables with this keyword thus has the same effect as
 creating them using the [Variable section](#variable-section) in the test data file or
@@ -1059,7 +1059,7 @@ importing them from [variable files](variable_files.md#variable-files). Other te
 possible child test suites, will not see variables set with this
 keyword.
 
-Variables set with *Set Global Variable*{.name} keyword are globally
+Variables set with `Set Global Variable`{.name} keyword are globally
 available in all test cases and suites executed after setting
 them. Setting variables with this keyword thus has the same effect as
 [creating variables on the command line](#command-line-variables) using the `--variable`{.option} and
@@ -1067,10 +1067,10 @@ them. Setting variables with this keyword thus has the same effect as
 everywhere, it should be used with care.
 
 !!! note
-    *Set Test/Suite/Global Variable*{.name} keywords set named
+    `Set Test`{.name}/`Suite`{.name}/`Global Variable`{.name} keywords set named
     variables directly into [test, suite or global variable scope](#variable-scopes)
     and return nothing. On the other hand, another [BuiltIn](https://robotframework.org/robotframework/latest/libraries/BuiltIn.html) keyword
-    *Set Variable*{.name} sets local variables using [return values](#return-values-from-keywords).
+    `Set Variable`{.name} sets local variables using [return values](#return-values-from-keywords).
 
 ### Variable type conversion
 
@@ -1425,7 +1425,7 @@ It is possible to create spaces and empty strings using variables
 useful, for example, when there would otherwise be a need to [escape
 spaces or empty cells](data.md#escaping) with a backslash. If more than one space is
 needed, it is possible to use the [extended variable syntax](#extended-variable-syntax) like
-`${SPACE * 5}`.  In the following example, *Should Be Equal*{.name} keyword gets identical arguments, but those using variables are
+`${SPACE * 5}`.  In the following example, `Should Be Equal`{.name} keyword gets identical arguments, but those using variables are
 easier to understand than those using backslashes.
 
 ```robotframework
@@ -1487,9 +1487,9 @@ can be changed dynamically using keywords from the [BuiltIn](https://robotframew
 | Variable | Explanation | Available |
 | --- | --- | --- |
 | ${TEST NAME} | The name of the current test case. | Test case |
-| ${TEST DOCUMENTATION} | The documentation of the current test case. Can be set dynamically using using *Set Test Documentation*{.name} keyword. | Test case |
-| @{TEST TAGS} | Contains the tags of the current test case in alphabetical order. Can be modified dynamically using *Set Tags*{.name} and *Remove Tags*{.name} keywords. | Test case |
-| &{TEST METADATA} | The free metadata of the current test case. Can be set dynamically using *Set Test Metadata*{.name} keyword. New in Robot Framework 7.5. | Test case |
+| ${TEST DOCUMENTATION} | The documentation of the current test case. Can be set dynamically using using `Set Test Documentation`{.name} keyword. | Test case |
+| @{TEST TAGS} | Contains the tags of the current test case in alphabetical order. Can be modified dynamically using `Set Tags`{.name} and `Remove Tags`{.name} keywords. | Test case |
+| &{TEST METADATA} | The free metadata of the current test case. Can be set dynamically using `Set Test Metadata`{.name} keyword. New in Robot Framework 7.5. | Test case |
 | ${TEST STATUS} | The status of the current test case, either PASS or FAIL. | [Test teardown](tests.md#test-setup-and-teardown) |
 | ${TEST MESSAGE} | The message of the current test case. | [Test teardown](tests.md#test-setup-and-teardown) |
 | ${PREV TEST NAME} | The name of the previous test case, or an empty string if no tests have been executed yet. | Everywhere |
@@ -1498,7 +1498,7 @@ can be changed dynamically using keywords from the [BuiltIn](https://robotframew
 | ${SUITE NAME} | The full name of the current test suite. | Everywhere |
 | ${SUITE SOURCE} | An absolute path to the suite file or directory. | Everywhere |
 | ${SUITE DOCUMENTATION} | The documentation of the current test suite. Can be set dynamically using using Set Suite Documentation | Everywhere keyword. |
-| &{SUITE METADATA} | The free metadata of the current test suite. Can be set using *Set Suite Metadata*{.name} keyword. | Everywhere |
+| &{SUITE METADATA} | The free metadata of the current test suite. Can be set using `Set Suite Metadata`{.name} keyword. | Everywhere |
 | ${SUITE STATUS} | The status of the current test suite, either PASS or FAIL. | [Suite teardown](suites.md#suite-setup-and-teardown) |
 | ${SUITE MESSAGE} | The full message of the current test suite, including statistics. | [Suite teardown](suites.md#suite-setup-and-teardown) |
 | ${KEYWORD STATUS} | The status of the current keyword, either PASS or FAIL. | [User keyword teardown](../execution/tests.md#user-keyword-teardown) |
@@ -1600,7 +1600,7 @@ Global variables are available everywhere in the test data. These
 variables are normally [set from the command line](#command-line-variables) with the
 `--variable`{.option} and `--variablefile`{.option} options, but it is also
 possible to create new global variables or change the existing ones
-by using the [VAR syntax](#var-syntax) or the *Set Global Variable*{.name} keyword anywhere in
+by using the [VAR syntax](#var-syntax) or the `Set Global Variable`{.name} keyword anywhere in
 the test data. Additionally also [built-in variables](#built-in-variables) are global.
 
 It is recommended to use capital letters with all global variables.
@@ -1611,7 +1611,7 @@ Variables with the test suite scope are available anywhere in the
 test suite where they are defined or imported. They can be created
 in Variable sections, imported from [resource and variable files](variable_files.md#variable-files),
 or set during the test execution using the [VAR syntax](#var-syntax) or the
-*Set Suite Variable*{.name} keyword.
+`Set Suite Variable`{.name} keyword.
 
 The test suite scope *is not recursive*, which means that variables
 available in a higher-level test suite *are not available* in
@@ -1626,7 +1626,7 @@ they are used, it is recommended to use capital letters also with them.
 Variables with the test case scope are visible in a test case and in
 all user keywords the test uses. Initially there are no variables in
 this scope, but it is possible to create them by using the [VAR syntax](#var-syntax) or
-the *Set Test Variable*{.name} keyword anywhere in a test case.
+the `Set Test Variable`{.name} keyword anywhere in a test case.
 
 If a variable with the test scope is created in suite setup, the variable is
 available everywhere within that suite setup as well as in the corresponding suite
@@ -1698,9 +1698,9 @@ Example
 When this test data is executed, the keywords get the arguments as
 explained below:
 
-- *KW 1*{.name} gets string `Robot`
-- *KW 2*{.name} gets string `Robot eats Cucumber`
-- *KW 3*{.name} gets string `two`
+- `KW 1`{.name} gets string `Robot`
+- `KW 2`{.name} gets string `Robot eats Cucumber`
+- `KW 3`{.name} gets string `two`
 
 The extended variable syntax is evaluated in the following order:
 
@@ -1829,8 +1829,8 @@ value of the variable `${varname}`. There can be several nested
 variables, but resolving the outermost fails, if any of them does not
 exist.
 
-In the example below, *Do X*{.name} gets the value `${JOHN HOME}`
-or `${JANE HOME}`, depending on if *Get Name*{.name} returns
+In the example below, `Do X`{.name} gets the value `${JOHN HOME}`
+or `${JANE HOME}`, depending on if `Get Name`{.name} returns
 `john` or `jane`. If it returns something else, resolving
 `${${name} HOME}` fails.
 

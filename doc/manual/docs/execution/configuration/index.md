@@ -225,7 +225,7 @@ robot path/to/tests/example.robot
 
 Prior to Robot Framework 6.1, files not matching the `--suite`{.option} option
 were not parsed at all for performance reasons. This optimization was not
-possible anymore after suites got a new *Name*{.setting} setting that can override
+possible anymore after suites got a new `Name`{.setting} setting that can override
 the default suite name that is got from the file or directory name. New
 `--parseinclude`{.option} option has been added to [explicitly select which
 files are parsed](#selecting-files-by-name-or-path) if this kind of parsing optimization is needed.
@@ -615,7 +615,7 @@ to initialize the random generator. This is useful if you want to re-run tests
 using the same order as earlier. The seed is given as part of the value for
 `--randomize`{.option} in format `<what>:<seed>` and it must be an integer.
 If no seed is given, it is generated randomly. The executed top level test
-suite automatically gets [metadata](../../syntax/suites.md#free-suite-metadata) named *Randomized*{.name} that tells both
+suite automatically gets [metadata](../../syntax/suites.md#free-suite-metadata) named `Randomized`{.name} that tells both
 what was randomized and what seed was used.
 
 Examples:

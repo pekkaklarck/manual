@@ -20,17 +20,17 @@ only one high-level keyword.
 
 The following settings in the Setting section can be used to customize the suite:
 
-*Name*{.setting}
+`Name`{.setting}
 : Used for setting a custom [suite name](#suite-name). The default name is created based
     on the file or directory name.
 
-*Documentation*{.setting}
+`Documentation`{.setting}
 : Used for specifying a [suite documentation](#suite-documentation).
 
-*Metadata*{.setting}
+`Metadata`{.setting}
 : Used for setting [free suite metadata](#free-suite-metadata) as name-value pairs.
 
-*Suite Setup*{.setting}, *Suite Teardown*{.setting}
+`Suite Setup`{.setting}, `Suite Teardown`{.setting}
 : Specify [suite setup and teardown](#suite-setup-and-teardown).
 
 !!! note
@@ -90,28 +90,28 @@ settings similarly as in [suite files](#suite-files), but setting some [test cas
 related settings](tests.md#test-case-related-settings-in-the-setting-section) is also possible. How to use different settings in the
 initialization files is explained below.
 
-*Name*{.setting}, *Documentation*{.setting}, *Metadata*{.setting}, *Suite Setup*{.setting}, *Suite Teardown*{.setting}
+`Name`{.setting}, `Documentation`{.setting}, `Metadata`{.setting}, `Suite Setup`{.setting}, `Suite Teardown`{.setting}
 : These suite specific settings work the same way in suite initialization files
     as in suite files.
 
-*Test Tags*{.setting}
+`Test Tags`{.setting}
 : Specified tags are unconditionally set to all tests in all suite files
     this directory contains, recursively. New in Robot Framework 6.1. The
-    deprecated *Force Tags*{.setting} needs to be used with older versions.
+    deprecated `Force Tags`{.setting} needs to be used with older versions.
 
-*Test Setup*{.setting}, *Test Teardown*{.setting}, *Test Timeout*{.setting}
+`Test Setup`{.setting}, `Test Teardown`{.setting}, `Test Timeout`{.setting}
 : Set the default value for test setup/teardown or test timeout to all test
     cases this directory contains. Can be overridden on lower level.
     Notice that keywords used as setups and teardowns must be available in
     test case files where tests using them are. Defining keywords in the
     initialization file itself is not enough.
 
-*Task Setup*{.setting}, *Task Teardown*{.setting}, *Task Tags*{.setting}, *Task Timeout*{.setting}
-: Aliases for *Test Setup*{.setting}, *Test Teardown*{.setting}, *Test Tags*{.setting}
-    and *Test Timeout*{.setting}, respectively, that can be used when
+`Task Setup`{.setting}, `Task Teardown`{.setting}, `Task Tags`{.setting}, `Task Timeout`{.setting}
+: Aliases for `Test Setup`{.setting}, `Test Teardown`{.setting}, `Test Tags`{.setting}
+    and `Test Timeout`{.setting}, respectively, that can be used when
     [creating tasks](tasks.md#creating-tasks), not tests.
 
-*Test Template*{.setting}, *Default Tags*{.setting}
+`Test Template`{.setting}, `Default Tags`{.setting}
 : Not supported in initialization files.
 
 ```robotframework
@@ -142,19 +142,19 @@ Do Something
 The test suite name is constructed from the file or directory name by default.
 The name is created so that the extension is ignored, possible underscores are
 replaced with spaces, and names fully in lower case are title cased. For
-example, `some_tests.robot`{.file} becomes *Some Tests*{.name} and
-`My_test_directory`{.file} becomes *My test directory*{.name}.
+example, `some_tests.robot`{.file} becomes `Some Tests`{.name} and
+`My_test_directory`{.file} becomes `My test directory`{.name}.
 
 The file or directory name can contain a prefix to control the [execution
 order](../execution/tests.md#execution-order) of the suites. The prefix is separated from the base name by two
 underscores and, when constructing the actual test suite name, both
 the prefix and underscores are removed. For example files
 `01__some_tests.robot`{.file} and `02__more_tests.robot`{.file} create test
-suites *Some Tests*{.name} and *More Tests*{.name}, respectively, and
+suites `Some Tests`{.name} and `More Tests`{.name}, respectively, and
 the former is executed before the latter.
 
 Starting from Robot Framework 6.1, it is also possible to give a custom name
-to a suite by using the *Name*{.setting} setting in the Setting section:
+to a suite by using the `Name`{.setting} setting in the Setting section:
 
 ```robotframework
 *** Settings ***
@@ -166,7 +166,7 @@ the `--name`{.option} option.
 
 ## Suite documentation
 
-The documentation for a test suite is set using the *Documentation*{.setting}
+The documentation for a test suite is set using the `Documentation`{.setting}
 setting in the Settings section. It can be used both in [suite files](#suite-files)
 and in [suite initialization files](#suite-initialization-files). Suite documentation has exactly
 the same characteristics regarding to where it is shown and how it can
@@ -185,10 +185,10 @@ the command line with the `--doc`{.option} option.
 ## Free suite metadata
 
 In addition to documentation, suites can also have free metadata. This metadata
-is defined as name-value pairs in the Settings section using the *Metadata*{.setting}
+is defined as name-value pairs in the Settings section using the `Metadata`{.setting}
 setting. It is shown in reports and logs similarly as documentation.
 
-Name of the metadata is the first argument given to the *Metadata*{.setting} setting
+Name of the metadata is the first argument given to the `Metadata`{.setting} setting
 and the remaining arguments specify its value. The value is handled similarly as
 documentation, which means that it supports [HTML formatting](../appendix/doc_format.md#documentation-formatting) and [variables](variables.md#variables), and
 that longer values can be [split into multiple rows](data.md#dividing-data-to-several-rows).
@@ -222,7 +222,7 @@ from a directory they must be specified in a [suite initialization file](#suite-
 
 Similarly as with test cases, a suite setup and teardown are keywords
 that may take arguments. They are defined in the Setting section with
-*Suite Setup*{.setting} and *Suite Teardown*{.setting} settings,
+`Suite Setup`{.setting} and `Suite Teardown`{.setting} settings,
 respectively. Keyword names and possible arguments are located in
 the columns after the setting name.
 

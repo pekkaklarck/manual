@@ -48,7 +48,7 @@ separated with spaces or underscores, or in the camelCase format. For
 example, `['first keyword', 'second keyword']`,
 `['first_keyword', 'second_keyword']`, and
 `['firstKeyword', 'secondKeyword']` would all be mapped to keywords
-*First Keyword*{.name} and *Second Keyword*{.name}.
+`First Keyword`{.name} and `Second Keyword`{.name}.
 
 Dynamic libraries must always have this method. If it is missing, or
 if calling it fails for some reason, the library is considered a
@@ -135,7 +135,7 @@ class DynamicExample:
 If a dynamic library only implements the `get_keyword_names` and
 `run_keyword` methods, Robot Framework does not have any information
 about the arguments that the implemented keywords accept. For example,
-both *First Keyword*{.name} and *Second Keyword*{.name} in the example above
+both `First Keyword`{.name} and `Second Keyword`{.name} in the example above
 could be used with any arguments. This is problematic,
 because most real keywords expect a certain number of keywords, and
 under these circumstances they would need to check the argument counts
@@ -318,7 +318,7 @@ arguments based on the default values returned by the `get_keyword_arguments`
 method.
 
 Using the named argument syntax with dynamic libraries is illustrated
-by the following examples. All the examples use a keyword *Dynamic*{.name}
+by the following examples. All the examples use a keyword `Dynamic`{.name}
 that has an argument specification `[a, b=d1, c=d2]`. The comment on each row
 shows how `run_keyword` would be called in these cases if it has two arguments
 (i.e. signature is `name, args`) and if it has three arguments (i.e.
@@ -364,7 +364,7 @@ What arguments a keyword accepts depends on what `get_keyword_arguments`
 recognized to accept free named arguments.
 
 Using the free named argument syntax with dynamic libraries is illustrated
-by the following examples. All the examples use a keyword *Dynamic*{.name}
+by the following examples. All the examples use a keyword `Dynamic`{.name}
 that has an argument specification `[a=d1, b=d2, **named]`. The comment shows
 the arguments that the `run_keyword` method is actually called with.
 
@@ -409,7 +409,7 @@ accept varargs. Named-only arguments can have default values, and the order
 of arguments with and without default values does not matter.
 
 Using the named-only argument syntax with dynamic libraries is illustrated
-by the following examples. All the examples use a keyword *Dynamic*{.name}
+by the following examples. All the examples use a keyword `Dynamic`{.name}
 that has been specified to have argument specification
 `[positional=default, *varargs, named, named2=default, **free]`. The comment
 shows the arguments that the `run_keyword` method is actually called with.

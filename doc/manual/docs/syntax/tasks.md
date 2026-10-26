@@ -31,6 +31,6 @@ It is an error to have both tests and tasks in same file.
 
 Settings that can be used in the task section are exactly the same as in
 the [test case section](tests.md#settings-in-the-test-case-section). In the [setting section](tests.md#test-case-related-settings-in-the-setting-section) it is possible to use
-*Task Setup*{.setting}, *Task Teardown*{.setting}, *Task Template*{.setting}
-and *Task Timeout*{.setting} instead of their *Test*{.setting} variants.
+`Task Setup`{.setting}, `Task Teardown`{.setting}, `Task Template`{.setting}
+and `Task Timeout`{.setting} instead of their corresponding test settings.
 

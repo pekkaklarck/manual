@@ -218,9 +218,9 @@ it is recommended that libraries have some
 special keyword for cleaning up the state. This keyword can then be
 used, for example, in a suite setup or teardown to ensure that test
 cases in the next test suites can start from a known state. For example,
-*SeleniumLibrary*{.name} uses the `GLOBAL` scope to enable
+`SeleniumLibrary`{.name} uses the `GLOBAL` scope to enable
 using the same browser in different test cases without having to
-reopen it, and it also has the *Close All Browsers*{.name} keyword for
+reopen it, and it also has the `Close All Browsers`{.name} keyword for
 easily closing all opened browsers.
 
 Example library using the `SUITE` scope:
@@ -387,7 +387,7 @@ regardless does the class name match the module name or not.
 Robot Framework, by default, uses introspection to find out what attributes
 a library contains, and considers all functions and methods that do not start
 with an underscore to be keywords. For example, this library implements a single
-keyword *My Keyword*{.name}:
+keyword `My Keyword`{.name}:
 
 ```python
 def my_keyword(arg):
@@ -407,7 +407,7 @@ desired. For example, when implementing a library as class, it can be a surprise
 also methods in possible base classes are considered keywords. When implementing
 a library as a module, functions imported into the module namespace becoming keywords
 is probably even a bigger surprise. For example, this library implements a keyword
-*Example Keyword*{.name}, as expected, but also a keyword *Current Thread*{.name}:
+`Example Keyword`{.name}, as expected, but also a keyword `Current Thread`{.name}:
 
 ```python
 from threading import current_thread
@@ -462,7 +462,7 @@ With class based libraries the easiest way to disable public methods becoming
 keywords is using the [@library decorator](#library-decorator). This decorator, by default, disables
 the automatic keyword discovery and requires keywords to be explicitly marked
 with the [@keyword decorator](https://robot-framework.readthedocs.io/en/stable/autodoc/robot.running.arguments.html#robot.running.arguments.typeinfo.TypeInfo). For example, this library creates single keyword
-*My Keyword*{.name}:
+`My Keyword`{.name}:
 
 ```python
 from robot.api.deco import keyword, library
@@ -571,7 +571,7 @@ class MyLibrary:
 
 Everything else than getting the list of method names works exactly the same way
 as with other static libraries. It is, however, possible to create the actual
-keywords dynamically by utilizing Python's [__getattr__](https://docs.python.org/3/reference/datamodel.html#object.__getattr__) method that is called
+keywords dynamically by utilizing Python's [`__getattr__`](https://docs.python.org/3/reference/datamodel.html#object.__getattr__) method that is called
 by Python if a returned method name does not exist:
 
 ```python
@@ -622,9 +622,9 @@ Keyword names used in the test data are compared with method names to
 find the method implementing these keywords. Name comparison is
 case-insensitive, and also spaces and underscores are ignored. For
 example, the method `hello` maps to the keyword name
-*Hello*{.name}, *hello*{.name} or even *h e l l o*{.name}. Similarly both the
+`Hello`{.name}, `hello`{.name} or even `h e l l o`{.name}. Similarly both the
 `do_nothing` and `doNothing` methods can be used as the
-*Do Nothing*{.name} keyword in the test data.
+`Do Nothing`{.name} keyword in the test data.
 
 Example library implemented as a module in the `MyLibrary.py`{.file} file:
 
@@ -908,7 +908,7 @@ Named and kwargs
 ```
 
 For a real world example of using a signature exactly like in the above
-example, see *Run Process*{.name} and *Start Keyword*{.name} keywords in the
+example, see `Run Process`{.name} and `Start Process`{.name} keywords in the
 [Process](https://robotframework.org/robotframework/latest/libraries/Process.html) library.
 
 ### Keyword-only arguments
@@ -1813,7 +1813,7 @@ class Library:
 
 Converters are not used at all if the argument is of the specified type to
 begin with. It is thus easy to enable strict type validation with a custom
-converter that does not accept any value. For example, the *Example*{.name}
+converter that does not accept any value. For example, the `Example`{.name}
 keyword accepts only `StrictType` instances:
 
 ```python
@@ -2724,7 +2724,7 @@ them anyway.
 It is also easy to use Robot Framework itself for testing libraries
 and that way have actual end-to-end acceptance tests for them. There are
 plenty of useful keywords in the [BuiltIn](https://robotframework.org/robotframework/latest/libraries/BuiltIn.html) library for this
-purpose. One worth mentioning specifically is *Run Keyword And Expect Error*{.name}, which is useful for testing that keywords report errors
+purpose. One worth mentioning specifically is `Run Keyword And Expect Error`{.name}, which is useful for testing that keywords report errors
 correctly.
 
 Whether to use a unit- or acceptance-level testing approach depends on
@@ -2972,7 +2972,7 @@ probably work better.
 
 Another straightforward way to extend an existing library is using
 inheritance. This is illustrated by the example below that adds new
-*Title Should Start With*{.name} keyword to the [SeleniumLibrary](https://github.com/robotframework/SeleniumLibrary).
+`Title Should Start With`{.name} keyword to the [SeleniumLibrary](https://github.com/robotframework/SeleniumLibrary).
 
 ```python
 from robot.api.deco import keyword
@@ -3016,14 +3016,14 @@ an access to the same library instance that the framework uses.
 
 ### Getting active library instance from Robot Framework
 
-[BuiltIn](https://robotframework.org/robotframework/latest/libraries/BuiltIn.html) keyword *Get Library Instance*{.name} can be used to get the
+[BuiltIn](https://robotframework.org/robotframework/latest/libraries/BuiltIn.html) keyword `Get Library Instance`{.name} can be used to get the
 currently active library instance from the framework itself. The
 library instance returned by this keyword is the same as the framework
 itself uses, and thus there is no problem seeing the correct library
 state. Although this functionality is available as a keyword, it is
-typically used in test libraries directly by importing the *BuiltIn*{.name}
+typically used in test libraries directly by importing the `BuiltIn`{.name}
 library class [as discussed earlier](#documenting-libraries). The following example illustrates
-how to implement the same *Title Should Start With*{.name} keyword as in
+how to implement the same `Title Should Start With`{.name} keyword as in
 the earlier example about [using inheritance](#using-inheritance).
 
 ```python
@@ -3041,7 +3041,7 @@ and using it when the library has a state. The biggest benefit over
 inheritance is that you can use the original library normally and use
 the new library in addition to it when needed. That is demonstrated in
 the example below where the code from the previous examples is
-expected to be available in a new library *SeLibExtensions*{.name}.
+expected to be available in a new library `SeLibExtensions`{.name}.
 
 ```robotframework
 *** Settings ***

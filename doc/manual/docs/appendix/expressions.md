@@ -75,7 +75,7 @@ implemented, at least at the time of this writing, so that just importing
 `selenium` does not import the `selenium.webdriver` submodule.
 Another limitation is that modules cannot be used in the expression part of
 a list comprehension. A workaround to both of these problems
-is using the [BuiltIn](https://robotframework.org/robotframework/latest/libraries/BuiltIn.html) keyword *Evaluate*{.name} that accepts modules to be imported
+is using the [BuiltIn](https://robotframework.org/robotframework/latest/libraries/BuiltIn.html) keyword `Evaluate`{.name} that accepts modules to be imported
 and added to the evaluation namespace as an argument:
 
 ```robotframework
@@ -95,7 +95,7 @@ Evaluate keyword with list comprehension
     Log    ${items}
 ```
 
-The *Evaluate*{.name} keyword also supports custom evaluation namespaces if further
+The `Evaluate`{.name} keyword also supports custom evaluation namespaces if further
 customization is needed. See its documentation in the [BuiltIn](https://robotframework.org/robotframework/latest/libraries/BuiltIn.html) library for more details.
 
 ## Using variables

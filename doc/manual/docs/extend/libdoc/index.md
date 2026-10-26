@@ -431,12 +431,12 @@ class TestLibrary:
 ### Resource file documentation
 
 Keywords in resource files can have documentation using
-*[Documentation]*{.setting} setting, and this documentation is also used by
+`[Documentation]`{.setting} setting, and this documentation is also used by
 Libdoc. First line of the documentation (until the first
 [implicit newline](../../appendix/doc_format.md#newlines) or explicit `\n`) is considered to be the short
 documentation similarly as with test libraries.
 
-Also the resource file itself can have *Documentation*{.setting} in the
+Also the resource file itself can have `Documentation`{.setting} in the
 Setting section for documenting the whole resource file.
 
 Possible variables in resource files can not be documented.

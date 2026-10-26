@@ -8,7 +8,7 @@ Resource files are typically created using the plain text format, but also
 
 ### Taking resource files into use
 
-Resource files are imported using the *Resource*{.setting} setting in the
+Resource files are imported using the `Resource`{.setting} setting in the
 Settings section so that the path to the resource file is given as an argument
 to the setting. The recommended extension for resource files is `.resource`{.file}.
 For backwards compatibility reasons also `.robot`{.file}, `.txt`{.file} and
@@ -50,22 +50,22 @@ resource file.
 The higher-level structure of resource files is the same as that of
 suite files otherwise, but they cannot contain tests or tasks.
 Additionally, the Setting section in resource files can contain only imports
-(*Library*{.setting}, *Resource*{.setting}, *Variables*{.setting}),
-*Documentation*{.setting} and *Keyword Tags*{.setting}.
+(`Library`{.setting}, `Resource`{.setting}, `Variables`{.setting}),
+`Documentation`{.setting} and `Keyword Tags`{.setting}.
 The Variable section and Keyword section are used exactly the same way
 as in suite files.
 
 If several resource files have a user keyword with the same name, they
 must be used so that the [keyword name is prefixed with the resource
-file name](advanced.md#handling-keywords-with-same-names) without the extension (for example, *myresources.Some Keyword*{.name} and *common.Some Keyword*{.name}). Moreover, if several resource
+file name](advanced.md#handling-keywords-with-same-names) without the extension (for example, `myresources.Some Keyword`{.name} and `common.Some Keyword`{.name}). Moreover, if several resource
 files contain the same variable, the one that is imported first is
 taken into use.
 
 ### Documenting resource files
 
 Keywords created in a resource file can be [documented](user_keywords.md#user-keyword-name-and-documentation) using
-*[Documentation]*{.setting} setting. The resource file itself can have
-*Documentation*{.setting} in the Setting section similarly as [suites](suites.md#suite-name).
+`[Documentation]`{.setting} setting. The resource file itself can have
+`Documentation`{.setting} in the Setting section similarly as [suites](suites.md#suite-name).
 
 [Libdoc](../extend/libdoc/index.md#libdoc) and various editors use these documentations, and they
 are naturally available for anyone opening resource files.  The
@@ -117,8 +117,8 @@ Resource         example.rst
 When parsing resource files using the reStructuredText format, Robot Framework
 ignores all data outside code blocks containing Robot Framework data exactly
 the same way as when parsing [reStructuredText suite files](data.md#restructuredtext-data-format).
-For example, the following resource file imports *OperatingSystem*{.name} library,
-defines `${MESSAGE}` variable and creates *My Keyword*{.name} keyword:
+For example, the following resource file imports `OperatingSystem`{.name} library,
+defines `${MESSAGE}` variable and creates `My Keyword`{.name} keyword:
 
 ```rst
 Resource file using reStructuredText
@@ -161,8 +161,8 @@ Resource         example.md
 When parsing resource files using the Markdown format, Robot Framework
 ignores all data outside fenced code blocks with the `robotframework` or `robot`
 language tag exactly the same way as when parsing [Markdown suite files](data.md#markdown-data-format).
-For example, the following resource file imports *OperatingSystem*{.name} library,
-defines `${MESSAGE}` variable and creates *My Keyword*{.name} keyword:
+For example, the following resource file imports `OperatingSystem`{.name} library,
+defines `${MESSAGE}` variable and creates `My Keyword`{.name} keyword:
 
 ````markdown
 # Resource file using Markdown
