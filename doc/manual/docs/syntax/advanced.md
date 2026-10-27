@@ -43,19 +43,19 @@ where the keyword name is prefixed with the name of a library or a resource
 and a dot is used as a separator.
 
 With library keywords, the full name means using format
-*LibraryName.Keyword Name*{.name}. For example, the keyword *Get File*{.name}
+`LibraryName.Keyword Name`{.name}. For example, the keyword `Get File`{.name}
 from the [OperatingSystem](https://robotframework.org/robotframework/latest/libraries/OperatingSystem.html) library can be used as
-*OperatingSystem.Get File*{.name}, even if there was another *Get File*{.name}
+`OperatingSystem.Get File`{.name}, even if there was another `Get File`{.name}
 keyword somewhere else. If the library is implemented in a nested module, the
-full name must contain the full module name like *root.sub.Library.Keyword*{.name}.
+full name must contain the full module name like `root.sub.Library.Keyword`{.name}.
 If a [custom name](libraries.md#setting-custom-name-to-library) is given to a library when importing it, the specified
 name must be used also in the full keyword name.
 
 With user keywords in resource files the full name is constructed the same
 way as with library keywords. The name of the resource is derived from
 the basename of the resource file without the file extension. For example,
-a keyword *Some Keyword*{.name} in a resource file `example.resource`{.file} can
-be used like *example.Some Keyword*{.name}. Note that this syntax does not
+a keyword `Some Keyword`{.name} in a resource file `example.resource`{.file} can
+be used like `example.Some Keyword`{.name}. Note that this syntax does not
 work if several resource files have the same basename. In such cases, either
 resource files or keywords must be renamed.
 
@@ -73,14 +73,14 @@ in the long format can be quite a lot work. Using the long format also makes it
 impossible to create dynamic test cases or user keywords that work differently
 depending on which libraries or resources are available. A solution to both of
 these problems is specifying the keyword priorities explicitly using the keyword
-*Set Library Search Order*{.name} from the [BuiltIn](https://robotframework.org/robotframework/latest/libraries/BuiltIn.html) library.
+`Set Library Search Order`{.name} from the [BuiltIn](https://robotframework.org/robotframework/latest/libraries/BuiltIn.html) library.
 
 !!! note
     Although the keyword has the word *library* in its name, it works
     also with resource files. As discussed above, keywords in resources
     always have higher priority than keywords in libraries, though.
 
-The *Set Library Search Order*{.name} accepts an ordered list or libraries and
+The `Set Library Search Order`{.name} accepts an ordered list or libraries and
 resources as arguments. When a keyword name in the test data matches multiple
 keywords, the first library or resource containing the keyword is selected and
 that keyword implementation used. If the keyword is not found from any of the
@@ -108,14 +108,14 @@ mechanism.
 <a id="test-timeout"></a>
 ### Test case timeout
 
-The test case timeout can be set either by using the *Test Timeout*{.setting}
-setting in the Setting section or the *[Timeout]*{.setting} setting with
-individual test cases. *Test Timeout*{.setting} defines a default timeout
-for all the test cases in that suite, whereas *[Timeout]*{.setting} applies
+The test case timeout can be set either by using the `Test Timeout`{.setting}
+setting in the Setting section or the `[Timeout]`{.setting} setting with
+individual test cases. `Test Timeout`{.setting} defines a default timeout
+for all the test cases in that suite, whereas `[Timeout]`{.setting} applies
 a timeout to a particular test case and overrides the possible default value.
 
-Using an empty *[Timeout]*{.setting} means that the test has no timeout even
-when *Test Timeout*{.setting} is used. It is also possible to use explicit
+Using an empty `[Timeout]`{.setting} means that the test has no timeout even
+when `Test Timeout`{.setting} is used. It is also possible to use explicit
 `NONE` value for this purpose. The timeout is effectively ignored also if
 its value is zero or negative.
 
@@ -167,7 +167,7 @@ No timeout 2
 <a id="keyword-timeout"></a>
 ### User keyword timeout
 
-Timeouts can be set for user keywords using the *[Timeout]*{.setting} setting.
+Timeouts can be set for user keywords using the `[Timeout]`{.setting} setting.
 The syntax is exactly the same as with [test case timeout](#test-case-timeout), but user keyword
 timeouts do not have any default value. If a user keyword timeout is specified
 using a variable, the value can be given also as a keyword argument.
@@ -211,8 +211,8 @@ time left.
 
 When parallel execution is needed, it must be implemented in test library
 level so that the library executes the code on background. Typically this
-means that the library needs a keyword like *Start Something*{.name} that
+means that the library needs a keyword like `Start Something`{.name} that
 starts the execution and returns immediately, and another keyword like
-*Get Results From Something*{.name} that waits until the result is available
-and returns it. See [Process](https://robotframework.org/robotframework/latest/libraries/Process.html) library keywords *Start Process*{.name}
-and *Wait For Process*{.name} for an example.
+`Get Results From Something`{.name} that waits until the result is available
+and returns it. See [Process](https://robotframework.org/robotframework/latest/libraries/Process.html) library keywords `Start Process`{.name}
+and `Wait For Process`{.name} for an example.

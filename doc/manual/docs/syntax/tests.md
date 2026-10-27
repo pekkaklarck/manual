@@ -53,9 +53,9 @@ Setting Variables
     Although test case names can contain any character, using `?` and
     especially `*` is not generally recommended because they are
     considered to be [wildcards](../execution/basics.md#wildcards) when [selecting test cases](../execution/configuration/index.md#selecting-test-cases).
-    For example, trying to run only a test with name *Example **{.name}
+    For example, trying to run only a test with name `Example *`{.name}
     like `--test 'Example *'` will actually run any test starting with
-    *Example*{.name}.
+    `Example`{.name}.
 
 ### Settings in the Test Case section
 
@@ -65,23 +65,23 @@ are in the subsequent columns. Setting names have square brackets around
 them to distinguish them from keywords. The available settings are listed
 below and explained later in this section.
 
-*[Documentation]*{.setting}
+`[Documentation]`{.setting}
 : Used for specifying a [test case documentation](#test-case-name-and-documentation).
 
-*[Tags]*{.setting}
+`[Tags]`{.setting}
 : Used for [tagging test cases](#tagging-test-cases).
 
-*[Metadata]*{.setting}
+`[Metadata]`{.setting}
 : Used for setting [free test metadata](#free-test-metadata) as name-value pairs.
 
-*[Setup]*{.setting}, *[Teardown]*{.setting}
+`[Setup]`{.setting}, `[Teardown]`{.setting}
 : Specify [test setup and teardown](#test-setup-and-teardown).
 
-*[Template]*{.setting}
+`[Template]`{.setting}
 : Specifies the [template keyword](#test-templates) to use. The test itself will contain only
     data to use as arguments to that keyword.
 
-*[Timeout]*{.setting}
+`[Timeout]`{.setting}
 : Used for setting a [test case timeout](advanced.md#test-case-timeout). [Timeouts](advanced.md#timeouts) are discussed in
     their own section.
 
@@ -108,16 +108,16 @@ The Setting section can have the following test case related
 settings. These settings are mainly default values for the
 test case specific settings listed earlier.
 
-*Test Setup*{.setting}, *Test Teardown*{.setting}
+`Test Setup`{.setting}, `Test Teardown`{.setting}
 : The default values for [test setup and teardown](#test-setup-and-teardown).
 
-*Test Tags*{.setting}
+`Test Tags`{.setting}
 : [Tags](../extend/libraries.md#keyword-tags) all tests in the suite will get in addition to their possible own tags.
 
-*Test Template*{.setting}
+`Test Template`{.setting}
 : The default [template keyword](#test-templates) to use.
 
-*Test Timeout*{.setting}
+`Test Timeout`{.setting}
 : The default value for [test case timeout](advanced.md#test-case-timeout). [Timeouts](advanced.md#timeouts) are discussed in
     their own section.
 
@@ -150,10 +150,10 @@ to have exactly the same number of arguments as specified in the
 documentation. Using too few or too many arguments will result in an
 error.
 
-The test below uses keywords *Create Directory*{.name} and *Copy File*{.name} from the [OperatingSystem](https://robotframework.org/robotframework/latest/libraries/OperatingSystem.html) library. Their arguments are
+The test below uses keywords `Create Directory`{.name} and `Copy File`{.name} from the [OperatingSystem](https://robotframework.org/robotframework/latest/libraries/OperatingSystem.html) library. Their arguments are
 specified as `path` and `source, destination`, which means
 that they take one and two arguments, respectively. The last keyword,
-*No Operation*{.name} from [BuiltIn](https://robotframework.org/robotframework/latest/libraries/BuiltIn.html), takes no arguments.
+`No Operation`{.name} from [BuiltIn](https://robotframework.org/robotframework/latest/libraries/BuiltIn.html), takes no arguments.
 
 ```robotframework
 *** Test Cases ***
@@ -173,7 +173,7 @@ values, but there cannot be any positional arguments after arguments
 with default values.
 
 Using default values is illustrated by the example below that uses
-*Create File*{.name} keyword which has arguments `path, content=,
+`Create File`{.name} keyword which has arguments `path, content=,
 encoding=UTF-8`. Trying to use it without any arguments or more than
 three arguments would not work.
 
@@ -194,7 +194,7 @@ and arguments with default values, but they are always given after
 them. In the documentation they have an asterisk before the argument
 name like `*varargs`.
 
-For example, *Remove Files*{.name} and *Join Paths*{.name} keywords from
+For example, `Remove Files`{.name} and `Join Paths`{.name} keywords from
 the [OperatingSystem](https://robotframework.org/robotframework/latest/libraries/OperatingSystem.html) library have arguments `*paths` and `base, *parts`,
 respectively. The former can be used with any number of arguments, but
 the latter requires at least one argument.
@@ -346,7 +346,7 @@ that free argument names must always be strings.
 #### Examples
 
 As the first example of using free named arguments, let's take a look at
-*Run Process*{.name} keyword in the [Process](https://robotframework.org/robotframework/latest/libraries/Process.html) library. It has a signature
+`Run Process`{.name} keyword in the [Process](https://robotframework.org/robotframework/latest/libraries/Process.html) library. It has a signature
 `command, *arguments, **configuration`, which means that it takes the command
 to execute (`command`), its arguments as [variable number of arguments](#variable-number-of-arguments)
 (`*arguments`) and finally optional configuration parameters as free named
@@ -366,9 +366,9 @@ libraries](../extend/libraries.md#creating-test-libraries) for more information 
 in your custom test libraries.
 
 As the second example, let's create a wrapper [user keyword](user_keywords.md#creating-user-keywords) for running the
-`program.py` in the above example. The wrapper keyword *Run Program*{.name}
+`program.py` in the above example. The wrapper keyword `Run Program`{.name}
 accepts all positional and named arguments and passes them forward to
-*Run Process*{.name} along with the name of the command to execute.
+`Run Process`{.name} along with the name of the command to execute.
 
 ```robotframework
 *** Test Cases ***
@@ -395,7 +395,7 @@ The main difference is that libraries implemented with Python 2 using
 the [static library API](../extend/libraries.md#creating-keywords) [do not support this syntax](../extend/libraries.md#keyword-only-arguments).
 
 As an example of using the [named-only arguments with user keywords](user_keywords.md#named-only-arguments-with-user-keywords), here
-is a variation of the *Run Program*{.name} in the above [free named argument
+is a variation of the `Run Program`{.name} in the above [free named argument
 examples](#free-named-argument-examples) that only supports configuring `shell`:
 
 ```robotframework
@@ -480,7 +480,7 @@ Amount cannot be larger than ${MAX AMOUNT}
     # ...
 ```
 
-The *[Documentation]*{.setting} setting allows setting free form
+The `[Documentation]`{.setting} setting allows setting free form
 documentation for a test case. That text is shown in the command line
 output and in the resulting logs and reports.
 If documentation gets long, it can be [split into multiple rows](data.md#dividing-data-to-several-rows).
@@ -526,15 +526,15 @@ use case.
 ## Free test metadata
 
 In addition to documentation, test cases can also have free metadata. This
-metadata is defined as name-value pairs using the *[Metadata]*{.setting}
+metadata is defined as name-value pairs using the `[Metadata]`{.setting}
 setting in the test case, similarly as [free suite metadata](suites.md#free-suite-metadata) is defined
 for test suites.
 
-Name of the metadata is the first argument given to the *[Metadata]*{.setting}
+Name of the metadata is the first argument given to the `[Metadata]`{.setting}
 setting and the remaining arguments specify its value. The value is handled
 similarly as [test case documentation](#test-case-name-and-documentation), which means that it supports
 [HTML formatting](../appendix/doc_format.md#documentation-formatting) and [variables](variables.md#variables), and that longer values can be [split into
-multiple rows](data.md#dividing-data-to-several-rows). A test case can have any number of *[Metadata]*{.setting}
+multiple rows](data.md#dividing-data-to-several-rows). A test case can have any number of `[Metadata]`{.setting}
 settings, and each of them adds one name-value pair.
 
 ```robotframework
@@ -574,20 +574,20 @@ purposes:
 
 There are multiple ways how to specify tags for test cases explained below:
 
-*Test Tags*{.setting} setting in the Settings section
+`Test Tags`{.setting} setting in the Settings section
 : All tests in a test case file with this setting always get specified tags.
     If this setting is used in a [suite initialization file](suites.md#suite-initialization-files), all tests
     in child suites get these tags.
 
-*[Tags]*{.setting} setting with each test case
-: Tests get these tags in addition to tags specified using the *Test Tags*{.setting}
-    setting. The *[Tags]*{.setting} setting also allows removing tags set with
-    *Test Tags*{.setting} by using the `-tag` syntax.
+`[Tags]`{.setting} setting with each test case
+: Tests get these tags in addition to tags specified using the `Test Tags`{.setting}
+    setting. The `[Tags]`{.setting} setting also allows removing tags set with
+    `Test Tags`{.setting} by using the `-tag` syntax.
 
 `--settag`{.option} command line option
 : All tests get tags set with this option in addition to tags they got elsewhere.
 
-*Set Tags*{.name}, *Remove Tags*{.name}, *Fail*{.name} and *Pass Execution*{.name} keywords
+`Set Tags`{.name}, `Remove Tags`{.name}, `Fail`{.name} and `Pass Execution`{.name} keywords
 : These [BuiltIn](https://robotframework.org/robotframework/latest/libraries/BuiltIn.html) keywords can be used to manipulate tags dynamically
     during the test execution.
 
@@ -638,37 +638,37 @@ comparisons are case, space and underscore insensitive.
 
 As demonstrated by the above examples, removing tags using `-tag` syntax supports
 [simple patterns](../execution/basics.md#simple-patterns) like `-requirement: *`. Tags starting with a hyphen have no
-special meaning otherwise than with the *[Tags]*{.setting} setting. If there is
-a need to set a tag starting with a hyphen with *[Tags]*{.setting}, it is possible
+special meaning otherwise than with the `[Tags]`{.setting} setting. If there is
+a need to set a tag starting with a hyphen with `[Tags]`{.setting}, it is possible
 to use the [escaped](data.md#escaping) format like `\-tag`.
 
 At the moment the `-tag` syntax can be used for removing tags only with the
-*[Tags]*{.setting} setting, but the plan is to support this functionality also
-with the *Test Tags*{.setting} setting in Robot Framework 8.0 ([#5250](https://github.com/robotframework/robotframework/issues/5250)).
-Setting tags having a literal value that starts with a hyphen in *Test Tags*{.setting}
+`[Tags]`{.setting} setting, but the plan is to support this functionality also
+with the `Test Tags`{.setting} setting in Robot Framework 8.0 ([#5250](https://github.com/robotframework/robotframework/issues/5250)).
+Setting tags having a literal value that starts with a hyphen in `Test Tags`{.setting}
 was deprecated in Robot Framework 7.2 ([#5252](https://github.com/robotframework/robotframework/issues/5252)). The escaped format like `\-tag`
 can be used if tags with such values are needed.
 
 !!! note
-    The *Test Tags*{.setting} setting is new in Robot Framework 6.0.
-    Earlier versions support *Force Tags*{.setting} and *Default Tags*{.setting}
+    The `Test Tags`{.setting} setting is new in Robot Framework 6.0.
+    Earlier versions support `Force Tags`{.setting} and `Default Tags`{.setting}
     settings discussed in the next section.
 
 !!! note
-    The `-tag` syntax for removing tags using the *[Tags]*{.setting} setting
+    The `-tag` syntax for removing tags using the `[Tags]`{.setting} setting
     is new in Robot Framework 7.0.
 
-### Deprecation of *Force Tags*{.setting} and *Default Tags*{.setting}
+### Deprecation of `Force Tags`{.setting} and `Default Tags`{.setting}
 
 Prior to Robot Framework 6.0, tags could be specified to tests in the Setting section
 using two different settings:
 
-*Force Tags*{.setting}
+`Force Tags`{.setting}
 : All tests unconditionally get these tags. This is exactly the same as
-    *Test Tags*{.setting} nowadays.
+    `Test Tags`{.setting} nowadays.
 
-*Default Tags*{.setting}
-: All tests get these tags by default. If a test has *[Tags]*{.setting},
+`Default Tags`{.setting}
+: All tests get these tags by default. If a test has `[Tags]`{.setting},
     it will not get these tags.
 
 Both of these settings still work, but they are considered deprecated.
@@ -676,8 +676,8 @@ A visible deprecation warning will be added in the future, most likely
 in Robot Framework 8.0, and eventually these settings will be removed.
 Tools like [Tidy](https://robotidy.readthedocs.io) can be used to ease transition.
 
-Updating *Force Tags*{.setting} requires only renaming it to *Test Tags*{.setting}.
-The *Default Tags*{.setting} setting will be removed altogether, but the `-tag`
+Updating `Force Tags`{.setting} requires only renaming it to `Test Tags`{.setting}.
+The `Default Tags`{.setting} setting will be removed altogether, but the `-tag`
 functionality introduced in Robot Framework 7.0 provides same underlying
 functionality. The following examples demonstrate the needed changes.
 
@@ -785,7 +785,7 @@ normal keywords with possible arguments.
 A setup and a teardown are always a single keyword. If they need to take care
 of multiple separate tasks, it is possible to create higher-level [user
 keywords](user_keywords.md#user-keyword-arguments) for that purpose. An alternative solution is executing multiple
-keywords using the [BuiltIn](https://robotframework.org/robotframework/latest/libraries/BuiltIn.html) keyword *Run Keywords*{.name}.
+keywords using the [BuiltIn](https://robotframework.org/robotframework/latest/libraries/BuiltIn.html) keyword `Run Keywords`{.name}.
 
 The test teardown is special in two ways. First of all, it is executed also
 when a test case fails, so it can be used for clean-up activities that must be
@@ -795,12 +795,12 @@ functionality can be used also with normal keywords, but inside teardowns it is
 on by default.
 
 The easiest way to specify a setup or a teardown for test cases in a
-test case file is using the *Test Setup*{.setting} and *Test Teardown*{.setting} settings in the Setting section. Individual test cases can
+test case file is using the `Test Setup`{.setting} and `Test Teardown`{.setting} settings in the Setting section. Individual test cases can
 also have their own setup or teardown. They are defined with the
-*[Setup]*{.setting} or *[Teardown]*{.setting} settings in the test case
-section and they override possible *Test Setup*{.setting} and
-*Test Teardown*{.setting} settings. Having no keyword after a
-*[Setup]*{.setting} or *[Teardown]*{.setting} setting means having no
+`[Setup]`{.setting} or `[Teardown]`{.setting} settings in the test case
+section and they override possible `Test Setup`{.setting} and
+`Test Teardown`{.setting} settings. Having no keyword after a
+`[Setup]`{.setting} or `[Teardown]`{.setting} setting means having no
 setup or teardown. It is also possible to use value `NONE` to indicate that
 a test has no setup/teardown.
 
@@ -880,13 +880,13 @@ Templated test case
 ```
 
 As the example illustrates, it is possible to specify the
-template for an individual test case using the *[Template]*{.setting}
-setting. An alternative approach is using the *Test Template*{.setting}
+template for an individual test case using the `[Template]`{.setting}
+setting. An alternative approach is using the `Test Template`{.setting}
 setting in the Setting section, in which case the template is applied
-for all test cases in that test case file. The *[Template]*{.setting}
+for all test cases in that test case file. The `[Template]`{.setting}
 setting overrides the possible template set in the Setting section, and
-an empty value for *[Template]*{.setting} means that the test has no
-template even when *Test Template*{.setting} is used. It is also possible
+an empty value for `[Template]`{.setting} means that the test has no
+template even when `Test Template`{.setting} is used. It is also possible
 to use value `NONE` to indicate that a test has no template.
 
 Using keywords with [default values](#default-values) or accepting [variable number of arguments](#variable-number-of-arguments),
@@ -1032,12 +1032,12 @@ the same workflow with varying input data.
 <a id="keyword-driven"></a>
 ### Keyword-driven style
 
-Workflow tests, such as the *Valid Login*{.name} test described
+Workflow tests, such as the `Valid Login`{.name} test described
 [earlier](../execution/configuration/index.md#earlier), are constructed from several keywords and their possible
 arguments. Their normal structure is that first the system is taken
-into the initial state (*Open Login Page*{.name} in the *Valid Login*{.name} example), then something is done to the system (*Input Name*{.name}, *Input Password*{.name}, *Submit Credentials*{.name}), and
+into the initial state (`Open Login Page`{.name} in the `Valid Login`{.name} example), then something is done to the system (`Input Name`{.name}, `Input Password`{.name}, `Submit Credentials`{.name}), and
 finally it is verified that the system behaved as expected
-(*Welcome Page Should Be Open*{.name}).
+(`Welcome Page Should Be Open`{.name}).
 
 
 <a id="data-driven"></a>
@@ -1103,9 +1103,9 @@ corner stone of a process commonly called [Acceptance Test Driven Development](h
 One way to write these requirements/tests is *Given-When-Then* style
 popularized by [Behavior Driven Development](https://en.wikipedia.org/wiki/Behavior_Driven_Development) (BDD). When writing test cases in
 this style, the initial state is usually expressed with a keyword starting with
-word *Given*{.name}, the actions are described with keyword starting with
-*When*{.name} and the expectations with a keyword starting with *Then*{.name}.
-Keyword starting with *And*{.name} or *But*{.name} may be used if a step has more
+word `Given`{.name}, the actions are described with keyword starting with
+`When`{.name} and the expectations with a keyword starting with `Then`{.name}.
+Keyword starting with `And`{.name} or `But`{.name} may be used if a step has more
 than one action.
 
 ```robotframework
@@ -1117,14 +1117,14 @@ Valid Login
     Then welcome page should be open
 ```
 
-#### Ignoring *Given/When/Then/And/But*{.name} prefixes
+#### Ignoring `Given/When/Then/And/But`{.name} prefixes
 
-Prefixes *Given*{.name}, *When*{.name}, *Then*{.name}, *And*{.name} and *But*{.name}
-can be omitted when creating keywords. For example, *Given login page is open*{.name}
-in the above example is typically implemented without the word *Given*{.name}
-so that the name is just *Login page is open*{.name}. Omitting prefixes allows using
-the same keyword with different prefixes. For example, *Welcome page should be open*{.name} could be used as *Then welcome page should be open*{.name} or
-*and welcome page should be open*{.name}.
+Prefixes `Given`{.name}, `When`{.name}, `Then`{.name}, `And`{.name} and `But`{.name}
+can be omitted when creating keywords. For example, `Given login page is open`{.name}
+in the above example is typically implemented without the word `Given`{.name}
+so that the name is just `Login page is open`{.name}. Omitting prefixes allows using
+the same keyword with different prefixes. For example, `Welcome page should be open`{.name} could be used as `Then welcome page should be open`{.name} or
+`and welcome page should be open`{.name}.
 
 !!! note
     These prefixes can be [localized](data.md#localized). See the [Translations](../appendix/translations.md#translations) appendix

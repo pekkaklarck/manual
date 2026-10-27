@@ -134,10 +134,10 @@ A test gets the PASS status if it is executed and none of the keywords it contai
 #### Prematurely passing tests
 
 Normally all keywords are executed, but it is also possible to use
-[BuiltIn](https://robotframework.org/robotframework/latest/libraries/BuiltIn.html) keywords *Pass Execution*{.name} and *Pass Execution If*{.name} to stop
+[BuiltIn](https://robotframework.org/robotframework/latest/libraries/BuiltIn.html) keywords `Pass Execution`{.name} and `Pass Execution If`{.name} to stop
 execution with the PASS status and not run the remaining keywords.
 
-How *Pass Execution*{.name} and *Pass Execution If*{.name} behave
+How `Pass Execution`{.name} and `Pass Execution If`{.name} behave
 in different situations is explained below:
 
 - When used in any [setup or teardown](#setups-and-teardowns) (suite, test or keyword), these
@@ -231,12 +231,12 @@ executed, and they will be visible in logs and reports.
 
 Tests can get the skip status during execution in various ways:
 
-- Using the [BuiltIn](https://robotframework.org/robotframework/latest/libraries/BuiltIn.html) keyword *Skip*{.name} anywhere in the test case, including setup or
-  teardown. Using *Skip*{.name} keyword has two effects: the test gets the SKIP status
+- Using the [BuiltIn](https://robotframework.org/robotframework/latest/libraries/BuiltIn.html) keyword `Skip`{.name} anywhere in the test case, including setup or
+  teardown. Using `Skip`{.name} keyword has two effects: the test gets the SKIP status
   and rest of the test is not executed. However, if the test has a teardown, it will be
   run.
 
-- Using the [BuiltIn](https://robotframework.org/robotframework/latest/libraries/BuiltIn.html) keyword *Skip If*{.name} which takes a condition and skips the test
+- Using the [BuiltIn](https://robotframework.org/robotframework/latest/libraries/BuiltIn.html) keyword `Skip If`{.name} which takes a condition and skips the test
   if the condition is true.
 
 - [Library keywords](../syntax/libraries.md#using-test-libraries) may also trigger skip behavior by using a special exceptions.
@@ -379,9 +379,9 @@ final error message.
 The return value from failed keywords, possibly assigned to a
 variable, is always the Python `None`.
 
-### *Run Keyword And Continue On Failure*{.name} keyword
+### `Run Keyword And Continue On Failure`{.name} keyword
 
-[BuiltIn](https://robotframework.org/robotframework/latest/libraries/BuiltIn.html) keyword *Run Keyword And Continue On Failure*{.name} allows
+[BuiltIn](https://robotframework.org/robotframework/latest/libraries/BuiltIn.html) keyword `Run Keyword And Continue On Failure`{.name} allows
 converting any failure into a continuable failure. These failures are
 handled by the framework exactly the same way as continuable failures
 originating from library keywords discussed above.
@@ -423,7 +423,7 @@ User Keyword 2
 
 These tags also affect the continue-on-failure mode with different [control
 structures](../syntax/control.md#control-structures). For example, the below test case will execute the
-*Do Something*{.name} keyword ten times regardless does it succeed or not:
+`Do Something`{.name} keyword ten times regardless does it succeed or not:
 
 ```robotframework
 *** Test Cases ***
@@ -461,7 +461,7 @@ User Keyword 2
 
 Setting `robot:continue-on-failure` or `robot:recursive-continue-on-failure` in a
 test case does NOT alter the behavior of a failure in the keyword(s) executed
-as part of the *[Setup]*{.setting}: The test case is marked as failed and no
+as part of the `[Setup]`{.setting}: The test case is marked as failed and no
 test case keywords are executed.
 
 !!! note
@@ -558,20 +558,20 @@ For more details see the separate [TRY/EXCEPT syntax](../syntax/control.md#tryex
 There are several [BuiltIn](https://robotframework.org/robotframework/latest/libraries/BuiltIn.html) keywords that can be used to execute other keywords
 so that execution can continue after possible failures:
 
-- *Run Keyword And Expect Error*{.name} executes a keyword and expects it to fail
+- `Run Keyword And Expect Error`{.name} executes a keyword and expects it to fail
   with the specified error message. The aforementioned `TRY/EXCEPT` syntax is
   nowadays generally recommended instead.
 
-- *Run Keyword And Ignore Error*{.name} executes a keyword and silences possible
+- `Run Keyword And Ignore Error`{.name} executes a keyword and silences possible
   error. It returns the status along with possible keyword return value or
   error message. The `TRY/EXCEPT` syntax generally works better in this case
   as well.
 
-- *Run Keyword And Warn On Failure*{.name} is a wrapper for
-  *Run Keyword And Ignore Error*{.name} that automatically logs a warning
+- `Run Keyword And Warn On Failure`{.name} is a wrapper for
+  `Run Keyword And Ignore Error`{.name} that automatically logs a warning
   if the executed keyword fails.
 
-- *Run Keyword And Return Status*{.name} executes a keyword and returns Boolean
+- `Run Keyword And Return Status`{.name} executes a keyword and returns Boolean
   `True` or `False` depending on did it pass or fail.
 
 ## Stopping test execution gracefully
@@ -608,7 +608,7 @@ also be easily automated.
 ### Using keywords
 
 The execution can be stopped also by the executed keywords. There is a
-separate *Fatal Error*{.name} [BuiltIn](https://robotframework.org/robotframework/latest/libraries/BuiltIn.html) keyword for this purpose, and
+separate `Fatal Error`{.name} [BuiltIn](https://robotframework.org/robotframework/latest/libraries/BuiltIn.html) keyword for this purpose, and
 custom keywords can use [fatal exceptions](../extend/libraries.md#stopping-test-execution) when they fail.
 
 ### Stopping when first test case fails

@@ -53,24 +53,24 @@ have the same square bracket syntax separating them from keyword
 names. All available settings are listed below and explained later in
 this section.
 
-*[Documentation]*{.setting}
+`[Documentation]`{.setting}
 : Used for setting a [user keyword documentation](#user-keyword-documentation).
 
-*[Tags]*{.setting}
+`[Tags]`{.setting}
 : Sets [tags](#user-keyword-tags) for the keyword.
 
-*[Arguments]*{.setting}
+`[Arguments]`{.setting}
 : Specifies [user keyword arguments](#user-keyword-arguments).
 
-*[Setup]*{.setting}, *[Teardown]*{.setting}
-: Specify [user keyword setup and teardown](#user-keyword-setup-and-teardown). *[Setup]*{.setting} is new in
+`[Setup]`{.setting}, `[Teardown]`{.setting}
+: Specify [user keyword setup and teardown](#user-keyword-setup-and-teardown). `[Setup]`{.setting} is new in
     Robot Framework 7.0.
 
-*[Timeout]*{.setting}
+`[Timeout]`{.setting}
 : Sets the possible [user keyword timeout](advanced.md#user-keyword-timeout). [Timeouts](advanced.md#timeouts) are discussed
     in a section of their own.
 
-*[Return]*{.setting}
+`[Return]`{.setting}
 : Specifies [user keyword return values](#user-keyword-return-values). Deprecated in Robot Framework 7.0,
     the [RETURN](#return) statement should be used instead.
 
@@ -89,7 +89,7 @@ use-case-like test cases, the highest-level keywords are often
 formulated as sentences or even paragraphs.
 
 User keywords can have a documentation that is set with the
-*[Documentation]*{.setting} setting. It supports same formatting,
+`[Documentation]`{.setting} setting. It supports same formatting,
 splitting to multiple lines, and other features as [test case documentation](tests.md#test-case-name-and-documentation).
 This setting documents the user keyword in the test data. It is also shown
 in a more formal keyword documentation, which the [Libdoc](../extend/libdoc/index.md#libdoc) tool can create
@@ -139,13 +139,13 @@ support [tags](../extend/libraries.md#keyword-tags) as well.
 Similarly as when [tagging test cases](tests.md#tagging-test-cases), there are two settings affecting
 user keyword tags:
 
-*Keyword Tags*{.setting} setting in the Settings section
+`Keyword Tags`{.setting} setting in the Settings section
 : All keywords in a file with this setting always get specified tags.
 
-*[Tags]*{.setting} setting with each keyword
+`[Tags]`{.setting} setting with each keyword
 : Keywords get these tags in addition to possible tags specified using the
-    *Keyword Tags*{.setting} setting. The *[Tags]*{.setting} setting also allows
-    removing tags set with *Keyword Tags*{.setting} by using the `-tag` syntax.
+    `Keyword Tags`{.setting} setting. The `[Tags]`{.setting} setting also allows
+    removing tags set with `Keyword Tags`{.setting} by using the `-tag` syntax.
 
 ```robotframework
 *** Settings ***
@@ -171,9 +171,9 @@ Keyword tags can be specified using variables, the `-tag` syntax supports
 patterns, and so on, exactly as [test case tags](tests.md#test-case-tags).
 
 !!! note
-    The *Keyword Tags*{.setting} setting is new in Robot Framework 6.0.
+    The `Keyword Tags`{.setting} setting is new in Robot Framework 6.0.
     With earlier versions all keyword tags need to be specified using
-    the *[Tags]*{.setting} setting.
+    the `[Tags]`{.setting} setting.
 
 !!! note
     The `-tag` syntax for removing common tags is new in Robot Framework 7.0.
@@ -233,7 +233,7 @@ Most user keywords need to take some arguments. The syntax for
 specifying them is probably the most complicated feature normally
 needed with Robot Framework, but even that is relatively easy,
 particularly in most common cases. Arguments are normally specified with
-the *[Arguments]*{.setting} setting, and argument names use the same
+the `[Arguments]`{.setting} setting, and argument names use the same
 syntax as [variables](variables.md#variables), for example `${arg}`.
 
 ### Positional arguments with user keywords
@@ -242,7 +242,7 @@ The simplest way to specify arguments (apart from not having them at all)
 is using only positional arguments. In most cases, this is all
 that is needed.
 
-The syntax is such that first the *[Arguments]*{.setting} setting is
+The syntax is such that first the `[Arguments]`{.setting} setting is
 given and then argument names are defined in the subsequent
 cells. Each argument is in its own cell, using the same syntax as with
 variables. The keyword must be used with as many arguments as there
@@ -578,13 +578,13 @@ any Robot Framework experience.
 
 ### Basic syntax
 
-The previous example showed how using a keyword *Select cat from list*{.name} is
-more fluent than using *Select from list*{.name} so that `cat` is passed to
-it as an argument. We obviously could implement *Select cat from list*{.name}
+The previous example showed how using a keyword `Select cat from list`{.name} is
+more fluent than using `Select from list`{.name} so that `cat` is passed to
+it as an argument. We obviously could implement `Select cat from list`{.name}
 as a normal keyword accepting no arguments, but then we needed to implement
-various other keywords like *Select dog from list*{.name} for other animals.
+various other keywords like `Select dog from list`{.name} for other animals.
 Embedded arguments simplify this and we can instead implement just one
-keyword with name *Select ${animal} from list*{.name} and use it with any
+keyword with name `Select ${animal} from list`{.name} and use it with any
 animal:
 
 ```robotframework
@@ -627,8 +627,8 @@ Other than the special name, keywords with embedded
 arguments are created just like other user keywords. They are also used the same
 way as other keywords except that spaces and underscores are not ignored in their
 names when keywords are matched. They are, however, case-insensitive like
-other keywords. For example, the *Select ${animal} from list*{.name} keyword could
-be used like *select cow from list*{.name}, but not like *Select cow fromlist*{.name}.
+other keywords. For example, the `Select ${animal} from list`{.name} keyword could
+be used like `select cow from list`{.name}, but not like `Select cow fromlist`{.name}.
 
 Embedded arguments do not support default values or variable number of
 arguments like normal arguments do. If such functionality is needed, normal
@@ -655,8 +655,8 @@ One tricky part in using embedded arguments is making sure that the
 values used when calling the keyword match the correct arguments. This
 is a problem especially if there are multiple arguments and characters
 separating them may also appear in the given values. For example,
-*Select Los Angeles Lakers*{.name} in the following example matches
-*Select ${city} ${team}*{.name} so that `${city}` contains `Los` and
+`Select Los Angeles Lakers`{.name} in the following example matches
+`Select ${city} ${team}`{.name} so that `${city}` contains `Los` and
 `${team}` contains `Angeles Lakers`:
 
 ```robotframework
@@ -691,11 +691,11 @@ stand out from rest of the keyword.
 
 Prior to Robot Framework 7.1, embedded arguments starting the keyword name also
 matched possible [given/when/then/and/but prefixes](tests.md#ignoring-givenwhenthenandbut-prefixes) typically used in Behavior
-Driven Development (BDD). For example, *${name} goes home*{.name} matched
-*Given Janne goes home*{.name} so that `${name}` got value `Given Janne`.
+Driven Development (BDD). For example, `${name} goes home`{.name} matched
+`Given Janne goes home`{.name} so that `${name}` got value `Given Janne`.
 Nowadays the prefix is ignored and `${name}` will be `Janne` as expected.
 If older Robot Framework versions need to be supported, it is easiest to quote
-the argument like in *"${name}" goes home*{.name} to get consistent behavior.
+the argument like in `"${name}" goes home`{.name} to get consistent behavior.
 
 An alternative solution for limiting what values arguments match is
 [using custom regular expressions](#using-custom-regular-expressions).
@@ -704,9 +704,9 @@ An alternative solution for limiting what values arguments match is
 
 When using embedded arguments, it is pretty common that there are multiple
 keyword implementations that match the keyword that is used. For example,
-*Execute "ls" with "lf"*{.name} in the example below matches both of the keywords.
-It matching *Execute "${cmd}" with "${opts}"*{.name} is pretty obvious and what
-we want, but it also matches *Execute "${cmd}"*{.name} so that `${cmd}` matches
+`Execute "ls" with "-lh"`{.name} in the example below matches both of the keywords.
+It matching `Execute "${cmd}" with "${opts}"`{.name} is pretty obvious and what
+we want, but it also matches `Execute "${cmd}"`{.name} so that `${cmd}` matches
 `ls" with "-lh`.
 
 ```robotframework
@@ -727,12 +727,12 @@ Execute "${cmd}" with "${opts}"
 ```
 
 When this kind of conflicts occur, Robot Framework tries to automatically select
-the best match and use that. In the above example, *Execute "${cmd}" with "${opts}"*{.name}
-is considered a better match than the more generic *Execute "${cmd}"*{.name} and
+the best match and use that. In the above example, `Execute "${cmd}" with "${opts}"`{.name}
+is considered a better match than the more generic `Execute "${cmd}"`{.name} and
 running the example thus succeeds without conflicts.
 
 It is not always possible to find a single match that is better than others.
-For example, the second test below fails because *Robot Framework*{.name} matches
+For example, the second test below fails because `Robot Framework`{.name} matches
 both of the keywords equally well. This kind of conflicts need to be resolved
 manually either by renaming keywords or by [using custom regular expressions](#using-custom-regular-expressions).
 
@@ -756,7 +756,7 @@ Robot ${action}
 Keywords that accept only "normal" arguments or no arguments at all are
 considered to match better than keywords accepting embedded arguments.
 For example, if the following keyword is added to the above example,
-*Robot Framework*{.name} used by the latter test matches it and the test
+`Robot Framework`{.name} used by the latter test matches it and the test
 succeeds:
 
 ```robotframework
@@ -798,8 +798,8 @@ If needed, custom patterns can be prefixed with [inline flags](https://docs.pyth
 `(?i)` for case-insensitivity.
 
 Using custom regular expressions is illustrated by the following examples.
-The first one shows how the earlier problem with *Select ${city} ${team}*{.name}
-not matching *Select Los Angeles Lakers*{.name} properly can be resolved without
+The first one shows how the earlier problem with `Select ${city} ${team}`{.name}
+not matching `Select Los Angeles Lakers`{.name} properly can be resolved without
 quoting by implementing the keyword so that `${team}` can only contain non-whitespace
 characters.
 
@@ -989,9 +989,9 @@ Result should be ${expected}
 
 Similarly as library keywords, also user keywords can return values.
 When using Robot Framework 5.0 or newer, the recommended approach is
-using the native [RETURN](#return) statement. The old *[Return]*{.setting}
+using the native [RETURN](#return) statement. The old `[Return]`{.setting}
 setting was deprecated in Robot Framework 7.0 and also [BuiltIn](https://robotframework.org/robotframework/latest/libraries/BuiltIn.html) keywords
-*Return From Keyword*{.name} and *Return From Keyword If*{.name} are considered
+`Return From Keyword`{.name} and `Return From Keyword If`{.name} are considered
 deprecated.
 
 Regardless how values are returned, they can be [assigned to variables](variables.md#return-values-from-keywords)
@@ -1071,13 +1071,13 @@ Advanced
     `RETURN` is new in Robot Framework 5.0. Use approaches explained
     below if you need to support older versions.
 
-### Using *[Return]*{.setting} setting
+### Using `[Return]`{.setting} setting
 
-The *[Return]*{.setting} setting defines what the keyword should return after
+The `[Return]`{.setting} setting defines what the keyword should return after
 it has been executed. Although it is recommended to have it at the end of keyword
 where it logically belongs, its position does not affect how it is used.
 
-An inherent limitation of the *[Return]*{.setting} setting is that cannot be used
+An inherent limitation of the `[Return]`{.setting} setting is that cannot be used
 conditionally. Thus only the first two earlier `RETURN` statement examples
 can be created using it.
 
@@ -1093,17 +1093,17 @@ Return Three Values
 ```
 
 !!! note
-    The *[Return]*{.setting} setting was deprecated in Robot Framework 7.0
+    The `[Return]`{.setting} setting was deprecated in Robot Framework 7.0
     and the `RETURN` statement should be used instead. If there is a need
     to support older Robot Framework versions that do not support `RETURN`,
     it is possible to use the special keywords discussed in the next section.
 
 ### Using special keywords to return
 
-[BuiltIn](https://robotframework.org/robotframework/latest/libraries/BuiltIn.html) keywords *Return From Keyword*{.name} and *Return From Keyword If*{.name}
+[BuiltIn](https://robotframework.org/robotframework/latest/libraries/BuiltIn.html) keywords `Return From Keyword`{.name} and `Return From Keyword If`{.name}
 allow returning from a user keyword conditionally in the middle of the keyword.
 Both of them also accept optional return values that are handled exactly like
-with the `RETURN` statement and the *[Return]*{.setting} setting discussed above.
+with the `RETURN` statement and the `[Return]`{.setting} setting discussed above.
 
 The introduction of the `RETURN` statement makes these keywords redundant.
 Examples below contain same keywords as earlier `RETURN` examples but these
@@ -1146,7 +1146,7 @@ Find Index
 ## User keyword setup and teardown
 
 A user keyword can have a setup and a teardown similarly as [tests](tests.md#test-setup-and-teardown).
-They are specified using *[Setup]*{.setting} and *[Teardown]*{.setting}
+They are specified using `[Setup]`{.setting} and `[Teardown]`{.setting}
 settings, respectively, directly to the keyword having them. Unlike with
 tests, it is not possible to specify a common setup or teardown to all
 keywords in a certain file.

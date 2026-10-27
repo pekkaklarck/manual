@@ -53,15 +53,15 @@ Second Example
     END
 ```
 
-The `FOR` loop in *Example*{.name} above is executed twice, so that first
+The `FOR` loop in `Example`{.name} above is executed twice, so that first
 the loop variable `${animal}` has the value `cat` and then
-`dog`. The loop consists of two *Log*{.name} keywords. In the
+`dog`. The loop consists of two `Log`{.name} keywords. In the
 second example, loop values are [split into two rows](data.md#dividing-data-to-several-rows) and the
 loop is run altogether ten times.
 
 It is often convenient to use `FOR` loops with [list variables](variables.md#list-variables). This is
 illustrated by the example below, where `@{ELEMENTS}` contains
-an arbitrarily long list of elements and keyword *Start Element*{.name} is
+an arbitrarily long list of elements and keyword `Start Element`{.name} is
 used with all of them one by one.
 
 ```robotframework
@@ -542,7 +542,7 @@ It is possible to [remove or flatten unnecessary keywords](../execution/results/
 
 `FOR` loops can be excessive in situations where there is only a need to
 repeat a single keyword. In these cases it is often easier to use
-[BuiltIn](https://robotframework.org/robotframework/latest/libraries/BuiltIn.html) keyword *Repeat Keyword*{.name}. This keyword takes a
+[BuiltIn](https://robotframework.org/robotframework/latest/libraries/BuiltIn.html) keyword `Repeat Keyword`{.name}. This keyword takes a
 keyword and how many times to repeat it as arguments. The times to
 repeat the keyword can have an optional postfix `times` or `x`
 to make the syntax easier to read.
@@ -772,8 +772,8 @@ Invalid BREAK
 !!! note
     `BREAK` and `CONTINUE` statements are new in Robot Framework 5.0 similarly
     as `WHILE`. Earlier versions supported controlling `FOR` loops using
-    [BuiltIn](https://robotframework.org/robotframework/latest/libraries/BuiltIn.html) keywords *Exit For Loop*{.name}, *Exit For Loop If*{.name},
-    *Continue For Loop*{.name} and *Continue For Loop If*{.name}. These
+    [BuiltIn](https://robotframework.org/robotframework/latest/libraries/BuiltIn.html) keywords `Exit For Loop`{.name}, `Exit For Loop If`{.name},
+    `Continue For Loop`{.name} and `Continue For Loop If`{.name}. These
     keywords still continue to work, but they will be deprecated and removed
     in the future.
 
@@ -799,7 +799,7 @@ the condition to evaluate. Keywords to execute if the condition is true are on t
 own rows between the `IF` and `END` markers. Indenting keywords in the `IF` block is
 highly recommended but not mandatory.
 
-In the following example keywords *Some keyword*{.name} and *Another keyword*{.name}
+In the following example keywords `Some keyword`{.name} and `Another keyword`{.name}
 are executed if `${rc}` is greater than zero:
 
 ```robotframework
@@ -828,8 +828,8 @@ Like most other languages supporting conditional execution, Robot Framework `IF`
 syntax also supports `ELSE` branches that are executed if the `IF` condition is
 not true.
 
-In this example *Some keyword*{.name} is executed if `${rc}` is greater than
-zero and *Another keyword*{.name} is executed otherwise:
+In this example `Some keyword`{.name} is executed if `${rc}` is greater than
+zero and `Another keyword`{.name} is executed otherwise:
 
 ```robotframework
 *** Test Cases ***
@@ -978,16 +978,16 @@ There are also other methods to execute keywords conditionally:
   [keywords](user_keywords.md#user-keyword-setup-and-teardown) can be specified using a variable. This facilitates changing them,
   for example, from the command line.
 
-- The [BuiltIn](https://robotframework.org/robotframework/latest/libraries/BuiltIn.html) keyword *Run Keyword*{.name} takes a keyword to actually
+- The [BuiltIn](https://robotframework.org/robotframework/latest/libraries/BuiltIn.html) keyword `Run Keyword`{.name} takes a keyword to actually
   execute as an argument and it can thus be a variable. The value of
   the variable can, for example, be got dynamically from an earlier
   keyword or given from the command line.
 
-- The [BuiltIn](https://robotframework.org/robotframework/latest/libraries/BuiltIn.html) keywords *Run Keyword If*{.name} and *Run Keyword Unless*{.name}
+- The [BuiltIn](https://robotframework.org/robotframework/latest/libraries/BuiltIn.html) keywords `Run Keyword If`{.name} and `Run Keyword Unless`{.name}
   execute a named keyword only if a certain expression is true or false, respectively.
   The new `IF/ELSE` syntax explained above is generally recommended, though.
 
-- Another [BuiltIn](https://robotframework.org/robotframework/latest/libraries/BuiltIn.html) keyword, *Set Variable If*{.name}, can be used to set
+- Another [BuiltIn](https://robotframework.org/robotframework/latest/libraries/BuiltIn.html) keyword, `Set Variable If`{.name}, can be used to set
   variables dynamically based on a given expression.
 
 - There are several [BuiltIn](https://robotframework.org/robotframework/latest/libraries/BuiltIn.html) keywords that allow executing a named
@@ -1240,7 +1240,7 @@ TRY/FINALLY
 
 There are also other methods to execute keywords conditionally:
 
-- The [BuiltIn](https://robotframework.org/robotframework/latest/libraries/BuiltIn.html) keyword *Run Keyword And Expect Error*{.name} executes a named
+- The [BuiltIn](https://robotframework.org/robotframework/latest/libraries/BuiltIn.html) keyword `Run Keyword And Expect Error`{.name} executes a named
   keyword and expects that it fails with a specified error message. It is basically
   the same as using `TRY/EXCEPT` with a specified message. The syntax to specify
   the error message is also identical except that this keyword uses glob pattern
@@ -1248,15 +1248,15 @@ There are also other methods to execute keywords conditionally:
   is generally recommended unless there is a need to support older Robot Framework
   versions that do not support it.
 
-- The [BuiltIn](https://robotframework.org/robotframework/latest/libraries/BuiltIn.html) keyword *Run Keyword And Ignore Error*{.name} executes a named keyword
+- The [BuiltIn](https://robotframework.org/robotframework/latest/libraries/BuiltIn.html) keyword `Run Keyword And Ignore Error`{.name} executes a named keyword
   and returns its status as string `PASS` or `FAIL` along with possible return value
   or error message. It is basically the same as using `TRY/EXCEPT/ELSE` so that
   `EXCEPT` catches all errors. Using the native syntax is recommended unless
   old Robot Framework versions need to be supported.
 
-- The [BuiltIn](https://robotframework.org/robotframework/latest/libraries/BuiltIn.html) keyword *Run Keyword And Return Status*{.name} executes a named keyword
+- The [BuiltIn](https://robotframework.org/robotframework/latest/libraries/BuiltIn.html) keyword `Run Keyword And Return Status`{.name} executes a named keyword
   and returns its status as a Boolean true or false. It is a wrapper for the
-  aforementioned *Run Keyword And Ignore Error*{.name}. The native syntax is
+  aforementioned `Run Keyword And Ignore Error`{.name}. The native syntax is
   nowadays recommended instead.
 
 - [Test teardowns](../execution/tests.md#test-teardown) and [keyword teardowns](../execution/tests.md#user-keyword-teardown) can be used for cleaning up activities

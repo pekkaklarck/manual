@@ -48,8 +48,8 @@ The method must return a [TestSuite](https://robot-framework.readthedocs.org/en/
 
 In simple cases `parse` can be implemented so that it accepts just a single
 argument that is a [pathlib.Path](https://docs.python.org/library/pathlib.html) object pointing to the file to
-parse. If the parser is interested in defaults for *Test Setup*{.setting},
-*Test Teardown*{.setting}, *Test Tags*{.setting} and *Test Timeout*{.setting}
+parse. If the parser is interested in defaults for `Test Setup`{.setting},
+`Test Teardown`{.setting}, `Test Tags`{.setting} and `Test Timeout`{.setting}
 set in higher level [suite initialization files](../syntax/suites.md#suite-initialization-files), the `parse` method must
 accept two arguments. In that case the second argument is a [TestDefaults](https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.builder.html#robot.running.builder.settings.TestDefaults) object.
 

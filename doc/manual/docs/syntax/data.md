@@ -545,8 +545,8 @@ When Robot Framework ignores some data, this data is not available in
 any resulting reports and, additionally, most tools used with Robot
 Framework also ignore them. To add information that is visible in
 Robot Framework outputs, place it to the documentation or other metadata of
-test cases or suites, or log it with the [BuiltIn](https://robotframework.org/robotframework/latest/libraries/BuiltIn.html) keywords *Log*{.name} or
-*Comment*{.name}.
+test cases or suites, or log it with the [BuiltIn](https://robotframework.org/robotframework/latest/libraries/BuiltIn.html) keywords `Log`{.name} or
+`Comment`{.name}.
 
 ### Escaping
 
@@ -592,7 +592,7 @@ in the test data.
     All strings created in the test data, including characters like
     `\x02`, are Unicode and must be explicitly converted to
     byte strings if needed. This can be done, for example, using
-    *Convert To Bytes*{.name} or *Encode String To Bytes*{.name} keywords
+    `Convert To Bytes`{.name} or `Encode String To Bytes`{.name} keywords
     in [BuiltIn](https://robotframework.org/robotframework/latest/libraries/BuiltIn.html) and [String](https://robotframework.org/robotframework/latest/libraries/String.html) libraries, respectively, or with
     something like `value.encode('UTF-8')` in Python code.
 
@@ -898,10 +898,10 @@ conventions:
 - Consistency within a single file and preferably within the whole project.
 
 One case where there currently is no strong convention is keyword capitalization.
-Robot Framework itself typically uses title case like *Example Keyword*{.name} in
+Robot Framework itself typically uses title case like `Example Keyword`{.name} in
 documentation and elsewhere, and this style is often used in Robot Framework data
 as well. It does not work too well with longer, sentence-like keywords such as
-*Log into system as an admin*{.name}, though.
+`Log into system as an admin`{.name}, though.
 
 Teams and organizations using Robot Framework should have their own coding standards.
 The community developed [Robot Framework Style Guide](https://docs.robotframework.org/docs/style_guide) is an excellent
