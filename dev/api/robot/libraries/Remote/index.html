@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../../../assets/logo.png">
-      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.8.0">
     
     
       
@@ -31,10 +31,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -9979,47 +9979,47 @@ the keyword.</p>
 
                   <details class="mkdocstrings-source">
                     <summary>Source code in <code>src/robot/libraries/Remote.py</code></summary>
-                    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-34">34</a></span>
-<span class="normal"><a href="#example-0-35">35</a></span>
-<span class="normal"><a href="#example-0-36">36</a></span>
-<span class="normal"><a href="#example-0-37">37</a></span>
-<span class="normal"><a href="#example-0-38">38</a></span>
-<span class="normal"><a href="#example-0-39">39</a></span>
-<span class="normal"><a href="#example-0-40">40</a></span>
-<span class="normal"><a href="#example-0-41">41</a></span>
-<span class="normal"><a href="#example-0-42">42</a></span>
-<span class="normal"><a href="#example-0-43">43</a></span>
-<span class="normal"><a href="#example-0-44">44</a></span>
-<span class="normal"><a href="#example-0-45">45</a></span>
-<span class="normal"><a href="#example-0-46">46</a></span>
-<span class="normal"><a href="#example-0-47">47</a></span>
-<span class="normal"><a href="#example-0-48">48</a></span>
-<span class="normal"><a href="#example-0-49">49</a></span>
-<span class="normal"><a href="#example-0-50">50</a></span>
-<span class="normal"><a href="#example-0-51">51</a></span>
-<span class="normal"><a href="#example-0-52">52</a></span>
-<span class="normal"><a href="#example-0-53">53</a></span>
-<span class="normal"><a href="#example-0-54">54</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-34"><a id="example-0-34" name="example-0-34"></a><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">uri</span><span class="o">=</span><span class="s1">'http://127.0.0.1:8270'</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-</span><span id="line-0-35"><a id="example-0-35" name="example-0-35"></a><span class="w">    </span><span class="sd">"""Connects to a remote server at ``uri``.</span>
-</span><span id="line-0-36"><a id="example-0-36" name="example-0-36"></a>
-</span><span id="line-0-37"><a id="example-0-37" name="example-0-37"></a><span class="sd">    Optional ``timeout`` can be used to specify a timeout to wait when</span>
-</span><span id="line-0-38"><a id="example-0-38" name="example-0-38"></a><span class="sd">    initially connecting to the server and if a connection accidentally</span>
-</span><span id="line-0-39"><a id="example-0-39" name="example-0-39"></a><span class="sd">    closes. Timeout can be given as seconds (e.g. ``60``) or using</span>
-</span><span id="line-0-40"><a id="example-0-40" name="example-0-40"></a><span class="sd">    Robot Framework time format (e.g. ``60s``, ``2 minutes 10 seconds``).</span>
-</span><span id="line-0-41"><a id="example-0-41" name="example-0-41"></a>
-</span><span id="line-0-42"><a id="example-0-42" name="example-0-42"></a><span class="sd">    The default timeout is typically several minutes, but it depends on</span>
-</span><span id="line-0-43"><a id="example-0-43" name="example-0-43"></a><span class="sd">    the operating system and its configuration. Notice that setting</span>
-</span><span id="line-0-44"><a id="example-0-44" name="example-0-44"></a><span class="sd">    a timeout that is shorter than keyword execution time will interrupt</span>
-</span><span id="line-0-45"><a id="example-0-45" name="example-0-45"></a><span class="sd">    the keyword.</span>
-</span><span id="line-0-46"><a id="example-0-46" name="example-0-46"></a><span class="sd">    """</span>
-</span><span id="line-0-47"><a id="example-0-47" name="example-0-47"></a>    <span class="k">if</span> <span class="s1">'://'</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">uri</span><span class="p">:</span>
-</span><span id="line-0-48"><a id="example-0-48" name="example-0-48"></a>        <span class="n">uri</span> <span class="o">=</span> <span class="s1">'http://'</span> <span class="o">+</span> <span class="n">uri</span>
-</span><span id="line-0-49"><a id="example-0-49" name="example-0-49"></a>    <span class="k">if</span> <span class="n">timeout</span><span class="p">:</span>
-</span><span id="line-0-50"><a id="example-0-50" name="example-0-50"></a>        <span class="n">timeout</span> <span class="o">=</span> <span class="n">timestr_to_secs</span><span class="p">(</span><span class="n">timeout</span><span class="p">)</span>
-</span><span id="line-0-51"><a id="example-0-51" name="example-0-51"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_uri</span> <span class="o">=</span> <span class="n">uri</span>
-</span><span id="line-0-52"><a id="example-0-52" name="example-0-52"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_client</span> <span class="o">=</span> <span class="n">XmlRpcRemoteClient</span><span class="p">(</span><span class="n">uri</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
-</span><span id="line-0-53"><a id="example-0-53" name="example-0-53"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_lib_info</span> <span class="o">=</span> <span class="kc">None</span>
-</span><span id="line-0-54"><a id="example-0-54" name="example-0-54"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_lib_info_initialized</span> <span class="o">=</span> <span class="kc">False</span>
+                    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#robot.libraries.Remote.Remote--source--example-0-34">34</a></span>
+<span class="normal"><a href="#robot.libraries.Remote.Remote--source--example-0-35">35</a></span>
+<span class="normal"><a href="#robot.libraries.Remote.Remote--source--example-0-36">36</a></span>
+<span class="normal"><a href="#robot.libraries.Remote.Remote--source--example-0-37">37</a></span>
+<span class="normal"><a href="#robot.libraries.Remote.Remote--source--example-0-38">38</a></span>
+<span class="normal"><a href="#robot.libraries.Remote.Remote--source--example-0-39">39</a></span>
+<span class="normal"><a href="#robot.libraries.Remote.Remote--source--example-0-40">40</a></span>
+<span class="normal"><a href="#robot.libraries.Remote.Remote--source--example-0-41">41</a></span>
+<span class="normal"><a href="#robot.libraries.Remote.Remote--source--example-0-42">42</a></span>
+<span class="normal"><a href="#robot.libraries.Remote.Remote--source--example-0-43">43</a></span>
+<span class="normal"><a href="#robot.libraries.Remote.Remote--source--example-0-44">44</a></span>
+<span class="normal"><a href="#robot.libraries.Remote.Remote--source--example-0-45">45</a></span>
+<span class="normal"><a href="#robot.libraries.Remote.Remote--source--example-0-46">46</a></span>
+<span class="normal"><a href="#robot.libraries.Remote.Remote--source--example-0-47">47</a></span>
+<span class="normal"><a href="#robot.libraries.Remote.Remote--source--example-0-48">48</a></span>
+<span class="normal"><a href="#robot.libraries.Remote.Remote--source--example-0-49">49</a></span>
+<span class="normal"><a href="#robot.libraries.Remote.Remote--source--example-0-50">50</a></span>
+<span class="normal"><a href="#robot.libraries.Remote.Remote--source--example-0-51">51</a></span>
+<span class="normal"><a href="#robot.libraries.Remote.Remote--source--example-0-52">52</a></span>
+<span class="normal"><a href="#robot.libraries.Remote.Remote--source--example-0-53">53</a></span>
+<span class="normal"><a href="#robot.libraries.Remote.Remote--source--example-0-54">54</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="robot.libraries.Remote.Remote--source--line-0-34"><a id="robot.libraries.Remote.Remote--source--example-0-34" name="robot.libraries.Remote.Remote--source--example-0-34"></a><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">uri</span><span class="o">=</span><span class="s1">'http://127.0.0.1:8270'</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+</span><span id="robot.libraries.Remote.Remote--source--line-0-35"><a id="robot.libraries.Remote.Remote--source--example-0-35" name="robot.libraries.Remote.Remote--source--example-0-35"></a><span class="w">    </span><span class="sd">"""Connects to a remote server at ``uri``.</span>
+</span><span id="robot.libraries.Remote.Remote--source--line-0-36"><a id="robot.libraries.Remote.Remote--source--example-0-36" name="robot.libraries.Remote.Remote--source--example-0-36"></a>
+</span><span id="robot.libraries.Remote.Remote--source--line-0-37"><a id="robot.libraries.Remote.Remote--source--example-0-37" name="robot.libraries.Remote.Remote--source--example-0-37"></a><span class="sd">    Optional ``timeout`` can be used to specify a timeout to wait when</span>
+</span><span id="robot.libraries.Remote.Remote--source--line-0-38"><a id="robot.libraries.Remote.Remote--source--example-0-38" name="robot.libraries.Remote.Remote--source--example-0-38"></a><span class="sd">    initially connecting to the server and if a connection accidentally</span>
+</span><span id="robot.libraries.Remote.Remote--source--line-0-39"><a id="robot.libraries.Remote.Remote--source--example-0-39" name="robot.libraries.Remote.Remote--source--example-0-39"></a><span class="sd">    closes. Timeout can be given as seconds (e.g. ``60``) or using</span>
+</span><span id="robot.libraries.Remote.Remote--source--line-0-40"><a id="robot.libraries.Remote.Remote--source--example-0-40" name="robot.libraries.Remote.Remote--source--example-0-40"></a><span class="sd">    Robot Framework time format (e.g. ``60s``, ``2 minutes 10 seconds``).</span>
+</span><span id="robot.libraries.Remote.Remote--source--line-0-41"><a id="robot.libraries.Remote.Remote--source--example-0-41" name="robot.libraries.Remote.Remote--source--example-0-41"></a>
+</span><span id="robot.libraries.Remote.Remote--source--line-0-42"><a id="robot.libraries.Remote.Remote--source--example-0-42" name="robot.libraries.Remote.Remote--source--example-0-42"></a><span class="sd">    The default timeout is typically several minutes, but it depends on</span>
+</span><span id="robot.libraries.Remote.Remote--source--line-0-43"><a id="robot.libraries.Remote.Remote--source--example-0-43" name="robot.libraries.Remote.Remote--source--example-0-43"></a><span class="sd">    the operating system and its configuration. Notice that setting</span>
+</span><span id="robot.libraries.Remote.Remote--source--line-0-44"><a id="robot.libraries.Remote.Remote--source--example-0-44" name="robot.libraries.Remote.Remote--source--example-0-44"></a><span class="sd">    a timeout that is shorter than keyword execution time will interrupt</span>
+</span><span id="robot.libraries.Remote.Remote--source--line-0-45"><a id="robot.libraries.Remote.Remote--source--example-0-45" name="robot.libraries.Remote.Remote--source--example-0-45"></a><span class="sd">    the keyword.</span>
+</span><span id="robot.libraries.Remote.Remote--source--line-0-46"><a id="robot.libraries.Remote.Remote--source--example-0-46" name="robot.libraries.Remote.Remote--source--example-0-46"></a><span class="sd">    """</span>
+</span><span id="robot.libraries.Remote.Remote--source--line-0-47"><a id="robot.libraries.Remote.Remote--source--example-0-47" name="robot.libraries.Remote.Remote--source--example-0-47"></a>    <span class="k">if</span> <span class="s1">'://'</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">uri</span><span class="p">:</span>
+</span><span id="robot.libraries.Remote.Remote--source--line-0-48"><a id="robot.libraries.Remote.Remote--source--example-0-48" name="robot.libraries.Remote.Remote--source--example-0-48"></a>        <span class="n">uri</span> <span class="o">=</span> <span class="s1">'http://'</span> <span class="o">+</span> <span class="n">uri</span>
+</span><span id="robot.libraries.Remote.Remote--source--line-0-49"><a id="robot.libraries.Remote.Remote--source--example-0-49" name="robot.libraries.Remote.Remote--source--example-0-49"></a>    <span class="k">if</span> <span class="n">timeout</span><span class="p">:</span>
+</span><span id="robot.libraries.Remote.Remote--source--line-0-50"><a id="robot.libraries.Remote.Remote--source--example-0-50" name="robot.libraries.Remote.Remote--source--example-0-50"></a>        <span class="n">timeout</span> <span class="o">=</span> <span class="n">timestr_to_secs</span><span class="p">(</span><span class="n">timeout</span><span class="p">)</span>
+</span><span id="robot.libraries.Remote.Remote--source--line-0-51"><a id="robot.libraries.Remote.Remote--source--example-0-51" name="robot.libraries.Remote.Remote--source--example-0-51"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_uri</span> <span class="o">=</span> <span class="n">uri</span>
+</span><span id="robot.libraries.Remote.Remote--source--line-0-52"><a id="robot.libraries.Remote.Remote--source--example-0-52" name="robot.libraries.Remote.Remote--source--example-0-52"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_client</span> <span class="o">=</span> <span class="n">XmlRpcRemoteClient</span><span class="p">(</span><span class="n">uri</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
+</span><span id="robot.libraries.Remote.Remote--source--line-0-53"><a id="robot.libraries.Remote.Remote--source--example-0-53" name="robot.libraries.Remote.Remote--source--example-0-53"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_lib_info</span> <span class="o">=</span> <span class="kc">None</span>
+</span><span id="robot.libraries.Remote.Remote--source--line-0-54"><a id="robot.libraries.Remote.Remote--source--example-0-54" name="robot.libraries.Remote.Remote--source--example-0-54"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_lib_info_initialized</span> <span class="o">=</span> <span class="kc">False</span>
 </span></code></pre></div></td></tr></table></div>
                   </details>
 
@@ -10203,10 +10203,10 @@ the keyword.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.top", "search.highlight", "search.suggest", "toc.integrate"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.top", "search.highlight", "search.suggest", "toc.integrate"], "search": "../../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.c21346df.min.js"></script>
       
     
   </body>

@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../assets/logo.png">
-      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.8.0">
     
     
       
@@ -31,10 +31,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -10290,7 +10290,7 @@ names. All available settings are listed below and explained later in
 this section.</p>
 <dl>
 <dt>
-	<em class="setting"><a id="1d4d0a48818ef00b36340968517b0387">[Documentation]</a> </em>
+	<code class="setting"><a id="1d4d0a48818ef00b36340968517b0387">[Documentation]</a> </code>
 </dt>
 <dd>Used for setting a <a href="#user-keyword-documentation">user keyword documentation</a>.
 <p>
@@ -10303,7 +10303,7 @@ this section.</p>
 </p></dd>
 
 <dt>
-	<em class="setting"><a id="907a2edf6c2085233fd8eece6e62c508">[Tags]</a> </em>
+	<code class="setting"><a id="907a2edf6c2085233fd8eece6e62c508">[Tags]</a> </code>
 </dt>
 <dd>Sets <a href="#user-keyword-tags">tags</a> for the keyword.
 <p>
@@ -10316,7 +10316,7 @@ this section.</p>
 </p></dd>
 
 <dt>
-	<em class="setting"><a id="7ab6f846e68e88efe6e687b454fc3824">[Arguments]</a> </em>
+	<code class="setting"><a id="7ab6f846e68e88efe6e687b454fc3824">[Arguments]</a> </code>
 </dt>
 <dd>Specifies <a href="#user-keyword-arguments">user keyword arguments</a>.
 <p>
@@ -10329,9 +10329,9 @@ this section.</p>
 </p></dd>
 
 <dt>
-	<em class="setting">[Setup]</em>, <em class="setting"><a id="74f57773ad581bb0aa2c6d9cb05fd185">[Teardown]</a> </em>
+	<code class="setting">[Setup]</code>, <code class="setting"><a id="74f57773ad581bb0aa2c6d9cb05fd185">[Teardown]</a> </code>
 </dt>
-<dd>Specify <a href="#user-keyword-setup-and-teardown">user keyword setup and teardown</a>. <em class="setting">[Setup]</em> is new in
+<dd>Specify <a href="#user-keyword-setup-and-teardown">user keyword setup and teardown</a>. <code class="setting">[Setup]</code> is new in
 Robot Framework 7.0.
 <p>
 <div class="mkdocs-ezglossary-refs list">
@@ -10343,7 +10343,7 @@ Robot Framework 7.0.
 </p></dd>
 
 <dt>
-	<em class="setting"><a id="fd730a4a89f0d973b8fd594b660fa474">[Timeout]</a> </em>
+	<code class="setting"><a id="fd730a4a89f0d973b8fd594b660fa474">[Timeout]</a> </code>
 </dt>
 <dd>Sets the possible <a href="../advanced/#user-keyword-timeout">user keyword timeout</a>. <a href="../advanced/#timeouts">Timeouts</a> are discussed
 in a section of their own.
@@ -10357,7 +10357,7 @@ in a section of their own.
 </p></dd>
 
 <dt>
-	<em class="setting"><a id="e29f7eab9f963007f062f65039cc2ee6">[Return]</a> </em>
+	<code class="setting"><a id="e29f7eab9f963007f062f65039cc2ee6">[Return]</a> </code>
 </dt>
 <dd>Specifies <a href="#user-keyword-return-values">user keyword return values</a>. Deprecated in Robot Framework 7.0,
 the <a href="#return">RETURN</a> statement should be used instead.
@@ -10385,7 +10385,7 @@ acceptable to have quite long keyword names. Actually, when creating
 use-case-like test cases, the highest-level keywords are often
 formulated as sentences or even paragraphs.</p>
 <p>User keywords can have a documentation that is set with the
-<em class="setting">[Documentation]</em> setting. It supports same formatting,
+<code class="setting">[Documentation]</code> setting. It supports same formatting,
 splitting to multiple lines, and other features as <a href="../tests/#test-case-name-and-documentation">test case documentation</a>.
 This setting documents the user keyword in the test data. It is also shown
 in a more formal keyword documentation, which the <a href="../../extend/libdoc/#libdoc">Libdoc</a> tool can create
@@ -10449,7 +10449,7 @@ support <a href="../../extend/libraries/#keyword-tags">tags</a> as well.</p>
 user keyword tags:</p>
 <dl>
 <dt>
-	<em class="setting">Keyword Tags</em><a id="6a5ed58854fc1fed3d6ef334aa6abc54"> setting in the Settings section</a> 
+	<code class="setting">Keyword Tags</code><a id="6a5ed58854fc1fed3d6ef334aa6abc54"> setting in the Settings section</a> 
 </dt>
 <dd>All keywords in a file with this setting always get specified tags.
 <p>
@@ -10462,11 +10462,11 @@ user keyword tags:</p>
 </p></dd>
 
 <dt>
-	<em class="setting">[Tags]</em><a id="daa3818752a9717749da6c3425ff5f4c"> setting with each keyword</a> 
+	<code class="setting">[Tags]</code><a id="daa3818752a9717749da6c3425ff5f4c"> setting with each keyword</a> 
 </dt>
 <dd>Keywords get these tags in addition to possible tags specified using the
-<em class="setting">Keyword Tags</em> setting. The <em class="setting">[Tags]</em> setting also allows
-removing tags set with <em class="setting">Keyword Tags</em> by using the <code>-tag</code> syntax.
+<code class="setting">Keyword Tags</code> setting. The <code class="setting">[Tags]</code> setting also allows
+removing tags set with <code class="setting">Keyword Tags</code> by using the <code>-tag</code> syntax.
 <p>
 <div class="mkdocs-ezglossary-refs list">
     
@@ -10515,9 +10515,9 @@ removing tags set with <em class="setting">Keyword Tags</em> by using the <code>
 patterns, and so on, exactly as <a href="../tests/#test-case-tags">test case tags</a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The <em class="setting">Keyword Tags</em> setting is new in Robot Framework 6.0.
+<p>The <code class="setting">Keyword Tags</code> setting is new in Robot Framework 6.0.
 With earlier versions all keyword tags need to be specified using
-the <em class="setting">[Tags]</em> setting.</p>
+the <code class="setting">[Tags]</code> setting.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -10587,13 +10587,13 @@ reserved tag <code>robot:flatten</code>.</p>
 specifying them is probably the most complicated feature normally
 needed with Robot Framework, but even that is relatively easy,
 particularly in most common cases. Arguments are normally specified with
-the <em class="setting">[Arguments]</em> setting, and argument names use the same
+the <code class="setting">[Arguments]</code> setting, and argument names use the same
 syntax as <a href="../variables/#variables">variables</a>, for example <code>${arg}</code>.</p>
 <h3 id="positional-arguments-with-user-keywords">Positional arguments with user keywords<a class="headerlink" href="#positional-arguments-with-user-keywords" title="Permanent link">&para;</a></h3>
 <p>The simplest way to specify arguments (apart from not having them at all)
 is using only positional arguments. In most cases, this is all
 that is needed.</p>
-<p>The syntax is such that first the <em class="setting">[Arguments]</em> setting is
+<p>The syntax is such that first the <code class="setting">[Arguments]</code> setting is
 given and then argument names are defined in the subsequent
 cells. Each argument is in its own cell, using the same syntax as with
 variables. The keyword must be used with as many arguments as there
@@ -11021,13 +11021,13 @@ directly to the keyword name, used by the second test below:</p>
 can make the data easier to read and understand even for people without
 any Robot Framework experience.</p>
 <h3 id="basic-syntax_1">Basic syntax<a class="headerlink" href="#basic-syntax_1" title="Permanent link">&para;</a></h3>
-<p>The previous example showed how using a keyword <em class="name">Select cat from list</em> is
-more fluent than using <em class="name">Select from list</em> so that <code>cat</code> is passed to
-it as an argument. We obviously could implement <em class="name">Select cat from list</em>
+<p>The previous example showed how using a keyword <code class="name">Select cat from list</code> is
+more fluent than using <code class="name">Select from list</code> so that <code>cat</code> is passed to
+it as an argument. We obviously could implement <code class="name">Select cat from list</code>
 as a normal keyword accepting no arguments, but then we needed to implement
-various other keywords like <em class="name">Select dog from list</em> for other animals.
+various other keywords like <code class="name">Select dog from list</code> for other animals.
 Embedded arguments simplify this and we can instead implement just one
-keyword with name <em class="name">Select ${animal} from list</em> and use it with any
+keyword with name <code class="name">Select ${animal} from list</code> and use it with any
 animal:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-17-1">1</a></span>
 <span class="normal"><a href="#example-17-2">2</a></span>
@@ -11081,8 +11081,8 @@ that accept both embedded and "normal" arguments:</p>
 arguments are created just like other user keywords. They are also used the same
 way as other keywords except that spaces and underscores are not ignored in their
 names when keywords are matched. They are, however, case-insensitive like
-other keywords. For example, the <em class="name">Select ${animal} from list</em> keyword could
-be used like <em class="name">select cow from list</em>, but not like <em class="name">Select cow fromlist</em>.</p>
+other keywords. For example, the <code class="name">Select ${animal} from list</code> keyword could
+be used like <code class="name">select cow from list</code>, but not like <code class="name">Select cow fromlist</code>.</p>
 <p>Embedded arguments do not support default values or variable number of
 arguments like normal arguments do. If such functionality is needed, normal
 arguments should be used instead. Passing embedded arguments as variables
@@ -11114,8 +11114,8 @@ is possible, but that can reduce readability:</p>
 values used when calling the keyword match the correct arguments. This
 is a problem especially if there are multiple arguments and characters
 separating them may also appear in the given values. For example,
-<em class="name">Select Los Angeles Lakers</em> in the following example matches
-<em class="name">Select ${city} ${team}</em> so that <code>${city}</code> contains <code>Los</code> and
+<code class="name">Select Los Angeles Lakers</code> in the following example matches
+<code class="name">Select ${city} ${team}</code> so that <code>${city}</code> contains <code>Los</code> and
 <code>${team}</code> contains <code>Angeles Lakers</code>:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-20-1">1</a></span>
 <span class="normal"><a href="#example-20-2">2</a></span>
@@ -11157,19 +11157,19 @@ cases and is generally recommended. Another benefit is that it makes arguments
 stand out from rest of the keyword.</p>
 <p>Prior to Robot Framework 7.1, embedded arguments starting the keyword name also
 matched possible <a href="../tests/#ignoring-givenwhenthenandbut-prefixes">given/when/then/and/but prefixes</a> typically used in Behavior
-Driven Development (BDD). For example, <em class="name">${name} goes home</em> matched
-<em class="name">Given Janne goes home</em> so that <code>${name}</code> got value <code>Given Janne</code>.
+Driven Development (BDD). For example, <code class="name">${name} goes home</code> matched
+<code class="name">Given Janne goes home</code> so that <code>${name}</code> got value <code>Given Janne</code>.
 Nowadays the prefix is ignored and <code>${name}</code> will be <code>Janne</code> as expected.
 If older Robot Framework versions need to be supported, it is easiest to quote
-the argument like in <em class="name">"${name}" goes home</em> to get consistent behavior.</p>
+the argument like in <code class="name">"${name}" goes home</code> to get consistent behavior.</p>
 <p>An alternative solution for limiting what values arguments match is
 <a href="#using-custom-regular-expressions">using custom regular expressions</a>.</p>
 <h3 id="resolving-conflicts">Resolving conflicts<a class="headerlink" href="#resolving-conflicts" title="Permanent link">&para;</a></h3>
 <p>When using embedded arguments, it is pretty common that there are multiple
 keyword implementations that match the keyword that is used. For example,
-<em class="name">Execute "ls" with "lf"</em> in the example below matches both of the keywords.
-It matching <em class="name">Execute "${cmd}" with "${opts}"</em> is pretty obvious and what
-we want, but it also matches <em class="name">Execute "${cmd}"</em> so that <code>${cmd}</code> matches
+<code class="name">Execute "ls" with "-lh"</code> in the example below matches both of the keywords.
+It matching <code class="name">Execute "${cmd}" with "${opts}"</code> is pretty obvious and what
+we want, but it also matches <code class="name">Execute "${cmd}"</code> so that <code>${cmd}</code> matches
 <code>ls" with "-lh</code>.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-22-1"> 1</a></span>
 <span class="normal"><a href="#example-22-2"> 2</a></span>
@@ -11200,11 +11200,11 @@ we want, but it also matches <em class="name">Execute "${cmd}"</em> so that <cod
 </span><span id="line-22-14"><a id="example-22-14" name="example-22-14"></a><span class="p">    </span><span class="nf">Run Process</span><span class="p">    ${</span><span class="nv">cmd</span><span class="p">}</span><span class="s"> </span><span class="p">${</span><span class="nv">opts</span><span class="p">}    </span><span class="s">shell=True</span>
 </span></code></pre></div></td></tr></table></div>
 <p>When this kind of conflicts occur, Robot Framework tries to automatically select
-the best match and use that. In the above example, <em class="name">Execute "${cmd}" with "${opts}"</em>
-is considered a better match than the more generic <em class="name">Execute "${cmd}"</em> and
+the best match and use that. In the above example, <code class="name">Execute "${cmd}" with "${opts}"</code>
+is considered a better match than the more generic <code class="name">Execute "${cmd}"</code> and
 running the example thus succeeds without conflicts.</p>
 <p>It is not always possible to find a single match that is better than others.
-For example, the second test below fails because <em class="name">Robot Framework</em> matches
+For example, the second test below fails because <code class="name">Robot Framework</code> matches
 both of the keywords equally well. This kind of conflicts need to be resolved
 manually either by renaming keywords or by <a href="#using-custom-regular-expressions">using custom regular expressions</a>.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-23-1"> 1</a></span>
@@ -11238,7 +11238,7 @@ manually either by renaming keywords or by <a href="#using-custom-regular-expres
 <p>Keywords that accept only "normal" arguments or no arguments at all are
 considered to match better than keywords accepting embedded arguments.
 For example, if the following keyword is added to the above example,
-<em class="name">Robot Framework</em> used by the latter test matches it and the test
+<code class="name">Robot Framework</code> used by the latter test matches it and the test
 succeeds:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-24-1">1</a></span>
 <span class="normal"><a href="#example-24-2">2</a></span>
@@ -11276,8 +11276,8 @@ only numbers can be defined like <code>${arg:\d+}</code>.
 If needed, custom patterns can be prefixed with <a href="https://docs.python.org/3/library/re.html#regular-expression-syntax">inline flags</a> such as
 <code>(?i)</code> for case-insensitivity.</p>
 <p>Using custom regular expressions is illustrated by the following examples.
-The first one shows how the earlier problem with <em class="name">Select ${city} ${team}</em>
-not matching <em class="name">Select Los Angeles Lakers</em> properly can be resolved without
+The first one shows how the earlier problem with <code class="name">Select ${city} ${team}</code>
+not matching <code class="name">Select Los Angeles Lakers</code> properly can be resolved without
 quoting by implementing the keyword so that <code>${team}</code> can only contain non-whitespace
 characters.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-25-1"> 1</a></span>
@@ -11534,9 +11534,9 @@ how <em>step definitions</em> are created in the popular BDD tool <a href="https
 <h2 id="user-keyword-return-values">User keyword return values<a class="headerlink" href="#user-keyword-return-values" title="Permanent link">&para;</a></h2>
 <p>Similarly as library keywords, also user keywords can return values.
 When using Robot Framework 5.0 or newer, the recommended approach is
-using the native <a href="#return">RETURN</a> statement. The old <em class="setting">[Return]</em>
+using the native <a href="#return">RETURN</a> statement. The old <code class="setting">[Return]</code>
 setting was deprecated in Robot Framework 7.0 and also <a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> keywords
-<em class="name">Return From Keyword</em> and <em class="name">Return From Keyword If</em> are considered
+<code class="name">Return From Keyword</code> and <code class="name">Return From Keyword If</code> are considered
 deprecated.</p>
 <p>Regardless how values are returned, they can be <a href="../variables/#return-values-from-keywords">assigned to variables</a>
 in test cases and in other user keywords.</p>
@@ -11659,11 +11659,11 @@ structures. Its usage is easiest explained with examples:</p>
 <p><code>RETURN</code> is new in Robot Framework 5.0. Use approaches explained
 below if you need to support older versions.</p>
 </div>
-<h3 id="using-return-setting">Using <em class="setting">[Return]</em> setting<a class="headerlink" href="#using-return-setting" title="Permanent link">&para;</a></h3>
-<p>The <em class="setting">[Return]</em> setting defines what the keyword should return after
+<h3 id="using-return-setting">Using <code class="setting">[Return]</code> setting<a class="headerlink" href="#using-return-setting" title="Permanent link">&para;</a></h3>
+<p>The <code class="setting">[Return]</code> setting defines what the keyword should return after
 it has been executed. Although it is recommended to have it at the end of keyword
 where it logically belongs, its position does not affect how it is used.</p>
-<p>An inherent limitation of the <em class="setting">[Return]</em> setting is that cannot be used
+<p>An inherent limitation of the <code class="setting">[Return]</code> setting is that cannot be used
 conditionally. Thus only the first two earlier <code>RETURN</code> statement examples
 can be created using it.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-31-1">1</a></span>
@@ -11684,16 +11684,16 @@ can be created using it.</p>
 </span></code></pre></div></td></tr></table></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The <em class="setting">[Return]</em> setting was deprecated in Robot Framework 7.0
+<p>The <code class="setting">[Return]</code> setting was deprecated in Robot Framework 7.0
 and the <code>RETURN</code> statement should be used instead. If there is a need
 to support older Robot Framework versions that do not support <code>RETURN</code>,
 it is possible to use the special keywords discussed in the next section.</p>
 </div>
 <h3 id="using-special-keywords-to-return">Using special keywords to return<a class="headerlink" href="#using-special-keywords-to-return" title="Permanent link">&para;</a></h3>
-<p><a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> keywords <em class="name">Return From Keyword</em> and <em class="name">Return From Keyword If</em>
+<p><a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> keywords <code class="name">Return From Keyword</code> and <code class="name">Return From Keyword If</code>
 allow returning from a user keyword conditionally in the middle of the keyword.
 Both of them also accept optional return values that are handled exactly like
-with the <code>RETURN</code> statement and the <em class="setting">[Return]</em> setting discussed above.</p>
+with the <code>RETURN</code> statement and the <code class="setting">[Return]</code> setting discussed above.</p>
 <p>The introduction of the <code>RETURN</code> statement makes these keywords redundant.
 Examples below contain same keywords as earlier <code>RETURN</code> examples but these
 ones are more verbose:</p>
@@ -11756,7 +11756,7 @@ they will be loudly deprecated and eventually removed in the future.</p>
 </div>
 <h2 id="user-keyword-setup-and-teardown">User keyword setup and teardown<a class="headerlink" href="#user-keyword-setup-and-teardown" title="Permanent link">&para;</a></h2>
 <p>A user keyword can have a setup and a teardown similarly as <a href="../tests/#test-setup-and-teardown">tests</a>.
-They are specified using <em class="setting">[Setup]</em> and <em class="setting">[Teardown]</em>
+They are specified using <code class="setting">[Setup]</code> and <code class="setting">[Teardown]</code>
 settings, respectively, directly to the keyword having them. Unlike with
 tests, it is not possible to specify a common setup or teardown to all
 keywords in a certain file.</p>
@@ -11996,10 +11996,10 @@ this should be done with care, because a too-high level can lead to a crash.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.top", "search.highlight", "search.suggest", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.top", "search.highlight", "search.suggest", "toc.integrate"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
       
     
   </body>

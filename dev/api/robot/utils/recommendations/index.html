@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../../../assets/logo.png">
-      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.8.0">
     
     
       
@@ -31,10 +31,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -9993,9 +9993,9 @@
 
                   <details class="mkdocstrings-source">
                     <summary>Source code in <code>src/robot/utils/recommendations.py</code></summary>
-                    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-23">23</a></span>
-<span class="normal"><a href="#example-0-24">24</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-23"><a id="example-0-23" name="example-0-23"></a><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">normalizer</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-</span><span id="line-0-24"><a id="example-0-24" name="example-0-24"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">normalizer</span> <span class="o">=</span> <span class="n">normalizer</span> <span class="ow">or</span> <span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">)</span>
+                    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#robot.utils.recommendations.RecommendationFinder--source--example-0-23">23</a></span>
+<span class="normal"><a href="#robot.utils.recommendations.RecommendationFinder--source--example-0-24">24</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="robot.utils.recommendations.RecommendationFinder--source--line-0-23"><a id="robot.utils.recommendations.RecommendationFinder--source--example-0-23" name="robot.utils.recommendations.RecommendationFinder--source--example-0-23"></a><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">normalizer</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+</span><span id="robot.utils.recommendations.RecommendationFinder--source--line-0-24"><a id="robot.utils.recommendations.RecommendationFinder--source--example-0-24" name="robot.utils.recommendations.RecommendationFinder--source--example-0-24"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">normalizer</span> <span class="o">=</span> <span class="n">normalizer</span> <span class="ow">or</span> <span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
                   </details>
 
@@ -10027,27 +10027,27 @@
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>src/robot/utils/recommendations.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-37">37</a></span>
-<span class="normal"><a href="#example-0-38">38</a></span>
-<span class="normal"><a href="#example-0-39">39</a></span>
-<span class="normal"><a href="#example-0-40">40</a></span>
-<span class="normal"><a href="#example-0-41">41</a></span>
-<span class="normal"><a href="#example-0-42">42</a></span>
-<span class="normal"><a href="#example-0-43">43</a></span>
-<span class="normal"><a href="#example-0-44">44</a></span>
-<span class="normal"><a href="#example-0-45">45</a></span>
-<span class="normal"><a href="#example-0-46">46</a></span>
-<span class="normal"><a href="#example-0-47">47</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-37"><a id="example-0-37" name="example-0-37"></a><span class="k">def</span><span class="w"> </span><span class="nf">find</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">candidates</span><span class="p">,</span> <span class="n">max_matches</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
-</span><span id="line-0-38"><a id="example-0-38" name="example-0-38"></a><span class="w">    </span><span class="sd">"""Return a list of close matches to `name` from `candidates`."""</span>
-</span><span id="line-0-39"><a id="example-0-39" name="example-0-39"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">name</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">candidates</span><span class="p">:</span>
-</span><span id="line-0-40"><a id="example-0-40" name="example-0-40"></a>        <span class="k">return</span> <span class="p">[]</span>
-</span><span id="line-0-41"><a id="example-0-41" name="example-0-41"></a>    <span class="n">norm_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">normalizer</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
-</span><span id="line-0-42"><a id="example-0-42" name="example-0-42"></a>    <span class="n">norm_candidates</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_normalized_candidates</span><span class="p">(</span><span class="n">candidates</span><span class="p">)</span>
-</span><span id="line-0-43"><a id="example-0-43" name="example-0-43"></a>    <span class="n">cutoff</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_calculate_cutoff</span><span class="p">(</span><span class="n">norm_name</span><span class="p">)</span>
-</span><span id="line-0-44"><a id="example-0-44" name="example-0-44"></a>    <span class="n">norm_matches</span> <span class="o">=</span> <span class="n">difflib</span><span class="o">.</span><span class="n">get_close_matches</span><span class="p">(</span>
-</span><span id="line-0-45"><a id="example-0-45" name="example-0-45"></a>        <span class="n">norm_name</span><span class="p">,</span> <span class="n">norm_candidates</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="n">max_matches</span><span class="p">,</span> <span class="n">cutoff</span><span class="o">=</span><span class="n">cutoff</span>
-</span><span id="line-0-46"><a id="example-0-46" name="example-0-46"></a>    <span class="p">)</span>
-</span><span id="line-0-47"><a id="example-0-47" name="example-0-47"></a>    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_original_candidates</span><span class="p">(</span><span class="n">norm_matches</span><span class="p">,</span> <span class="n">norm_candidates</span><span class="p">)</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#robot.utils.recommendations.RecommendationFinder.find--source--example-0-37">37</a></span>
+<span class="normal"><a href="#robot.utils.recommendations.RecommendationFinder.find--source--example-0-38">38</a></span>
+<span class="normal"><a href="#robot.utils.recommendations.RecommendationFinder.find--source--example-0-39">39</a></span>
+<span class="normal"><a href="#robot.utils.recommendations.RecommendationFinder.find--source--example-0-40">40</a></span>
+<span class="normal"><a href="#robot.utils.recommendations.RecommendationFinder.find--source--example-0-41">41</a></span>
+<span class="normal"><a href="#robot.utils.recommendations.RecommendationFinder.find--source--example-0-42">42</a></span>
+<span class="normal"><a href="#robot.utils.recommendations.RecommendationFinder.find--source--example-0-43">43</a></span>
+<span class="normal"><a href="#robot.utils.recommendations.RecommendationFinder.find--source--example-0-44">44</a></span>
+<span class="normal"><a href="#robot.utils.recommendations.RecommendationFinder.find--source--example-0-45">45</a></span>
+<span class="normal"><a href="#robot.utils.recommendations.RecommendationFinder.find--source--example-0-46">46</a></span>
+<span class="normal"><a href="#robot.utils.recommendations.RecommendationFinder.find--source--example-0-47">47</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="robot.utils.recommendations.RecommendationFinder.find--source--line-0-37"><a id="robot.utils.recommendations.RecommendationFinder.find--source--example-0-37" name="robot.utils.recommendations.RecommendationFinder.find--source--example-0-37"></a><span class="k">def</span><span class="w"> </span><span class="nf">find</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">candidates</span><span class="p">,</span> <span class="n">max_matches</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+</span><span id="robot.utils.recommendations.RecommendationFinder.find--source--line-0-38"><a id="robot.utils.recommendations.RecommendationFinder.find--source--example-0-38" name="robot.utils.recommendations.RecommendationFinder.find--source--example-0-38"></a><span class="w">    </span><span class="sd">"""Return a list of close matches to `name` from `candidates`."""</span>
+</span><span id="robot.utils.recommendations.RecommendationFinder.find--source--line-0-39"><a id="robot.utils.recommendations.RecommendationFinder.find--source--example-0-39" name="robot.utils.recommendations.RecommendationFinder.find--source--example-0-39"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">name</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">candidates</span><span class="p">:</span>
+</span><span id="robot.utils.recommendations.RecommendationFinder.find--source--line-0-40"><a id="robot.utils.recommendations.RecommendationFinder.find--source--example-0-40" name="robot.utils.recommendations.RecommendationFinder.find--source--example-0-40"></a>        <span class="k">return</span> <span class="p">[]</span>
+</span><span id="robot.utils.recommendations.RecommendationFinder.find--source--line-0-41"><a id="robot.utils.recommendations.RecommendationFinder.find--source--example-0-41" name="robot.utils.recommendations.RecommendationFinder.find--source--example-0-41"></a>    <span class="n">norm_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">normalizer</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+</span><span id="robot.utils.recommendations.RecommendationFinder.find--source--line-0-42"><a id="robot.utils.recommendations.RecommendationFinder.find--source--example-0-42" name="robot.utils.recommendations.RecommendationFinder.find--source--example-0-42"></a>    <span class="n">norm_candidates</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_normalized_candidates</span><span class="p">(</span><span class="n">candidates</span><span class="p">)</span>
+</span><span id="robot.utils.recommendations.RecommendationFinder.find--source--line-0-43"><a id="robot.utils.recommendations.RecommendationFinder.find--source--example-0-43" name="robot.utils.recommendations.RecommendationFinder.find--source--example-0-43"></a>    <span class="n">cutoff</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_calculate_cutoff</span><span class="p">(</span><span class="n">norm_name</span><span class="p">)</span>
+</span><span id="robot.utils.recommendations.RecommendationFinder.find--source--line-0-44"><a id="robot.utils.recommendations.RecommendationFinder.find--source--example-0-44" name="robot.utils.recommendations.RecommendationFinder.find--source--example-0-44"></a>    <span class="n">norm_matches</span> <span class="o">=</span> <span class="n">difflib</span><span class="o">.</span><span class="n">get_close_matches</span><span class="p">(</span>
+</span><span id="robot.utils.recommendations.RecommendationFinder.find--source--line-0-45"><a id="robot.utils.recommendations.RecommendationFinder.find--source--example-0-45" name="robot.utils.recommendations.RecommendationFinder.find--source--example-0-45"></a>        <span class="n">norm_name</span><span class="p">,</span> <span class="n">norm_candidates</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="n">max_matches</span><span class="p">,</span> <span class="n">cutoff</span><span class="o">=</span><span class="n">cutoff</span>
+</span><span id="robot.utils.recommendations.RecommendationFinder.find--source--line-0-46"><a id="robot.utils.recommendations.RecommendationFinder.find--source--example-0-46" name="robot.utils.recommendations.RecommendationFinder.find--source--example-0-46"></a>    <span class="p">)</span>
+</span><span id="robot.utils.recommendations.RecommendationFinder.find--source--line-0-47"><a id="robot.utils.recommendations.RecommendationFinder.find--source--example-0-47" name="robot.utils.recommendations.RecommendationFinder.find--source--example-0-47"></a>    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_original_candidates</span><span class="p">(</span><span class="n">norm_matches</span><span class="p">,</span> <span class="n">norm_candidates</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -10086,35 +10086,35 @@
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>src/robot/utils/recommendations.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-49">49</a></span>
-<span class="normal"><a href="#example-0-50">50</a></span>
-<span class="normal"><a href="#example-0-51">51</a></span>
-<span class="normal"><a href="#example-0-52">52</a></span>
-<span class="normal"><a href="#example-0-53">53</a></span>
-<span class="normal"><a href="#example-0-54">54</a></span>
-<span class="normal"><a href="#example-0-55">55</a></span>
-<span class="normal"><a href="#example-0-56">56</a></span>
-<span class="normal"><a href="#example-0-57">57</a></span>
-<span class="normal"><a href="#example-0-58">58</a></span>
-<span class="normal"><a href="#example-0-59">59</a></span>
-<span class="normal"><a href="#example-0-60">60</a></span>
-<span class="normal"><a href="#example-0-61">61</a></span>
-<span class="normal"><a href="#example-0-62">62</a></span>
-<span class="normal"><a href="#example-0-63">63</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-49"><a id="example-0-49" name="example-0-49"></a><span class="k">def</span><span class="w"> </span><span class="nf">format</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="n">recommendations</span><span class="p">):</span>
-</span><span id="line-0-50"><a id="example-0-50" name="example-0-50"></a><span class="w">    </span><span class="sd">"""Add recommendations to the given message.</span>
-</span><span id="line-0-51"><a id="example-0-51" name="example-0-51"></a>
-</span><span id="line-0-52"><a id="example-0-52" name="example-0-52"></a><span class="sd">    The recommendation string looks like::</span>
-</span><span id="line-0-53"><a id="example-0-53" name="example-0-53"></a>
-</span><span id="line-0-54"><a id="example-0-54" name="example-0-54"></a><span class="sd">        &lt;message&gt; Did you mean:</span>
-</span><span id="line-0-55"><a id="example-0-55" name="example-0-55"></a><span class="sd">            &lt;recommendations[0]&gt;</span>
-</span><span id="line-0-56"><a id="example-0-56" name="example-0-56"></a><span class="sd">            &lt;recommendations[1]&gt;</span>
-</span><span id="line-0-57"><a id="example-0-57" name="example-0-57"></a><span class="sd">            &lt;recommendations[2]&gt;</span>
-</span><span id="line-0-58"><a id="example-0-58" name="example-0-58"></a><span class="sd">    """</span>
-</span><span id="line-0-59"><a id="example-0-59" name="example-0-59"></a>    <span class="k">if</span> <span class="n">recommendations</span><span class="p">:</span>
-</span><span id="line-0-60"><a id="example-0-60" name="example-0-60"></a>        <span class="n">message</span> <span class="o">+=</span> <span class="s2">" Did you mean:"</span>
-</span><span id="line-0-61"><a id="example-0-61" name="example-0-61"></a>        <span class="k">for</span> <span class="n">rec</span> <span class="ow">in</span> <span class="n">recommendations</span><span class="p">:</span>
-</span><span id="line-0-62"><a id="example-0-62" name="example-0-62"></a>            <span class="n">message</span> <span class="o">+=</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">    </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="n">rec</span>
-</span><span id="line-0-63"><a id="example-0-63" name="example-0-63"></a>    <span class="k">return</span> <span class="n">message</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#robot.utils.recommendations.RecommendationFinder.format--source--example-0-49">49</a></span>
+<span class="normal"><a href="#robot.utils.recommendations.RecommendationFinder.format--source--example-0-50">50</a></span>
+<span class="normal"><a href="#robot.utils.recommendations.RecommendationFinder.format--source--example-0-51">51</a></span>
+<span class="normal"><a href="#robot.utils.recommendations.RecommendationFinder.format--source--example-0-52">52</a></span>
+<span class="normal"><a href="#robot.utils.recommendations.RecommendationFinder.format--source--example-0-53">53</a></span>
+<span class="normal"><a href="#robot.utils.recommendations.RecommendationFinder.format--source--example-0-54">54</a></span>
+<span class="normal"><a href="#robot.utils.recommendations.RecommendationFinder.format--source--example-0-55">55</a></span>
+<span class="normal"><a href="#robot.utils.recommendations.RecommendationFinder.format--source--example-0-56">56</a></span>
+<span class="normal"><a href="#robot.utils.recommendations.RecommendationFinder.format--source--example-0-57">57</a></span>
+<span class="normal"><a href="#robot.utils.recommendations.RecommendationFinder.format--source--example-0-58">58</a></span>
+<span class="normal"><a href="#robot.utils.recommendations.RecommendationFinder.format--source--example-0-59">59</a></span>
+<span class="normal"><a href="#robot.utils.recommendations.RecommendationFinder.format--source--example-0-60">60</a></span>
+<span class="normal"><a href="#robot.utils.recommendations.RecommendationFinder.format--source--example-0-61">61</a></span>
+<span class="normal"><a href="#robot.utils.recommendations.RecommendationFinder.format--source--example-0-62">62</a></span>
+<span class="normal"><a href="#robot.utils.recommendations.RecommendationFinder.format--source--example-0-63">63</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="robot.utils.recommendations.RecommendationFinder.format--source--line-0-49"><a id="robot.utils.recommendations.RecommendationFinder.format--source--example-0-49" name="robot.utils.recommendations.RecommendationFinder.format--source--example-0-49"></a><span class="k">def</span><span class="w"> </span><span class="nf">format</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="n">recommendations</span><span class="p">):</span>
+</span><span id="robot.utils.recommendations.RecommendationFinder.format--source--line-0-50"><a id="robot.utils.recommendations.RecommendationFinder.format--source--example-0-50" name="robot.utils.recommendations.RecommendationFinder.format--source--example-0-50"></a><span class="w">    </span><span class="sd">"""Add recommendations to the given message.</span>
+</span><span id="robot.utils.recommendations.RecommendationFinder.format--source--line-0-51"><a id="robot.utils.recommendations.RecommendationFinder.format--source--example-0-51" name="robot.utils.recommendations.RecommendationFinder.format--source--example-0-51"></a>
+</span><span id="robot.utils.recommendations.RecommendationFinder.format--source--line-0-52"><a id="robot.utils.recommendations.RecommendationFinder.format--source--example-0-52" name="robot.utils.recommendations.RecommendationFinder.format--source--example-0-52"></a><span class="sd">    The recommendation string looks like::</span>
+</span><span id="robot.utils.recommendations.RecommendationFinder.format--source--line-0-53"><a id="robot.utils.recommendations.RecommendationFinder.format--source--example-0-53" name="robot.utils.recommendations.RecommendationFinder.format--source--example-0-53"></a>
+</span><span id="robot.utils.recommendations.RecommendationFinder.format--source--line-0-54"><a id="robot.utils.recommendations.RecommendationFinder.format--source--example-0-54" name="robot.utils.recommendations.RecommendationFinder.format--source--example-0-54"></a><span class="sd">        &lt;message&gt; Did you mean:</span>
+</span><span id="robot.utils.recommendations.RecommendationFinder.format--source--line-0-55"><a id="robot.utils.recommendations.RecommendationFinder.format--source--example-0-55" name="robot.utils.recommendations.RecommendationFinder.format--source--example-0-55"></a><span class="sd">            &lt;recommendations[0]&gt;</span>
+</span><span id="robot.utils.recommendations.RecommendationFinder.format--source--line-0-56"><a id="robot.utils.recommendations.RecommendationFinder.format--source--example-0-56" name="robot.utils.recommendations.RecommendationFinder.format--source--example-0-56"></a><span class="sd">            &lt;recommendations[1]&gt;</span>
+</span><span id="robot.utils.recommendations.RecommendationFinder.format--source--line-0-57"><a id="robot.utils.recommendations.RecommendationFinder.format--source--example-0-57" name="robot.utils.recommendations.RecommendationFinder.format--source--example-0-57"></a><span class="sd">            &lt;recommendations[2]&gt;</span>
+</span><span id="robot.utils.recommendations.RecommendationFinder.format--source--line-0-58"><a id="robot.utils.recommendations.RecommendationFinder.format--source--example-0-58" name="robot.utils.recommendations.RecommendationFinder.format--source--example-0-58"></a><span class="sd">    """</span>
+</span><span id="robot.utils.recommendations.RecommendationFinder.format--source--line-0-59"><a id="robot.utils.recommendations.RecommendationFinder.format--source--example-0-59" name="robot.utils.recommendations.RecommendationFinder.format--source--example-0-59"></a>    <span class="k">if</span> <span class="n">recommendations</span><span class="p">:</span>
+</span><span id="robot.utils.recommendations.RecommendationFinder.format--source--line-0-60"><a id="robot.utils.recommendations.RecommendationFinder.format--source--example-0-60" name="robot.utils.recommendations.RecommendationFinder.format--source--example-0-60"></a>        <span class="n">message</span> <span class="o">+=</span> <span class="s2">" Did you mean:"</span>
+</span><span id="robot.utils.recommendations.RecommendationFinder.format--source--line-0-61"><a id="robot.utils.recommendations.RecommendationFinder.format--source--example-0-61" name="robot.utils.recommendations.RecommendationFinder.format--source--example-0-61"></a>        <span class="k">for</span> <span class="n">rec</span> <span class="ow">in</span> <span class="n">recommendations</span><span class="p">:</span>
+</span><span id="robot.utils.recommendations.RecommendationFinder.format--source--line-0-62"><a id="robot.utils.recommendations.RecommendationFinder.format--source--example-0-62" name="robot.utils.recommendations.RecommendationFinder.format--source--example-0-62"></a>            <span class="n">message</span> <span class="o">+=</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">    </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="n">rec</span>
+</span><span id="robot.utils.recommendations.RecommendationFinder.format--source--line-0-63"><a id="robot.utils.recommendations.RecommendationFinder.format--source--example-0-63" name="robot.utils.recommendations.RecommendationFinder.format--source--example-0-63"></a>    <span class="k">return</span> <span class="n">message</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -10294,10 +10294,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.top", "search.highlight", "search.suggest", "toc.integrate"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.top", "search.highlight", "search.suggest", "toc.integrate"], "search": "../../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.c21346df.min.js"></script>
       
     
   </body>

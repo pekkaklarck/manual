@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../assets/logo.png">
-      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.8.0">
     
     
       
@@ -31,10 +31,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -10038,11 +10038,11 @@ take test libraries into use and how to use the keywords they
 provide. <a href="../../extend/libraries/#creating-test-libraries">Creating test libraries</a> is described in a separate
 section.</p>
 <h2 id="importing-libraries">Importing libraries<a class="headerlink" href="#importing-libraries" title="Permanent link">&para;</a></h2>
-<p>Test libraries are typically imported using the <em class="setting">Library</em> setting,
-but it is also possible to use the <em class="name">Import Library</em> keyword.</p>
+<p>Test libraries are typically imported using the <code class="setting">Library</code> setting,
+but it is also possible to use the <code class="name">Import Library</code> keyword.</p>
 <h3 id="using-library-setting">Using <code>Library</code> setting<a class="headerlink" href="#using-library-setting" title="Permanent link">&para;</a></h3>
 <p>Libraries are normally imported in the Settings section using the
-<em class="setting">Library</em> setting with the library name or path as its value.
+<code class="setting">Library</code> setting with the library name or path as its value.
 Unlike most of the other data, the library name or path
 is both case- and space-sensitive. If a library is in a package,
 the full name including the package name must be used.</p>
@@ -10070,10 +10070,10 @@ file. With resource files, those keywords are also available in other
 files using them.</p>
 <h3 id="using-import-library-keyword">Using <code>Import Library</code> keyword<a class="headerlink" href="#using-import-library-keyword" title="Permanent link">&para;</a></h3>
 <p>Another possibility to take a test library into use is using the
-keyword <em class="name">Import Library</em> from the <a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> library. This keyword
+keyword <code class="name">Import Library</code> from the <a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> library. This keyword
 takes the library name or path and possible arguments similarly as the
-<em class="setting">Library</em> setting. Keywords from the imported library are
-available in the test suite where the <em class="name">Import Library</em> keyword was
+<code class="setting">Library</code> setting. Keywords from the imported library are
+available in the test suite where the <code class="name">Import Library</code> keyword was
 used. This approach is useful in cases where the library is not
 available when the test execution starts and only some other keywords
 make it available.</p>
@@ -10090,8 +10090,8 @@ make it available.</p>
 <h2 id="specifying-library-to-import">Specifying library to import<a class="headerlink" href="#specifying-library-to-import" title="Permanent link">&para;</a></h2>
 <p>Libraries to import can be specified either by using the library name
 or the path to the library. These approaches work the same way regardless
-if the library is imported using the <em class="setting">Library</em> setting or the
-<em class="name">Import Library</em> keyword.</p>
+if the library is imported using the <code class="setting">Library</code> setting or the
+<code class="name">Import Library</code> keyword.</p>
 <h3 id="using-library-name">Using library name<a class="headerlink" href="#using-library-name" title="Permanent link">&para;</a></h3>
 <p>The most common way to specify a test library to import is using its name.
 In these cases Robot Framework tries to find the class or module
@@ -10158,7 +10158,7 @@ there are some situations where changing it is desirable:</p>
 <code>AS</code> (case-sensitive) after the library name and then
 having the new name after that. The specified name is shown in
 logs and must be used in the test data when using keywords' full name
-(<em class="name">LibraryName.Keyword Name</em>).</p>
+(<code class="name">LibraryName.Keyword Name</code>).</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-4-1">1</a></span>
 <span class="normal"><a href="#example-4-2">2</a></span>
 <span class="normal"><a href="#example-4-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-4-1"><a id="example-4-1" name="example-4-1"></a><span class="gh">*** Settings ***</span>
@@ -10188,7 +10188,7 @@ different arguments:</p>
 </span><span id="line-5-9"><a id="example-5-9" name="example-5-9"></a><span class="p">    </span><span class="nf">LocalLib.Another Keyword</span>
 </span></code></pre></div></td></tr></table></div>
 <p>Setting a custom name to a test library works both when importing a
-library in the Setting section and when using the <em class="name">Import Library</em> keyword.</p>
+library in the Setting section and when using the <code class="name">Import Library</code> keyword.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Prior to Robot Framework 6.0 the marker to use when giving a custom name
@@ -10218,7 +10218,7 @@ documentations:</p>
 </ul>
 <h3 id="remote-library">Remote library<a class="headerlink" href="#remote-library" title="Permanent link">&para;</a></h3>
 <p>In addition to the normal standard libraries listed above, there is
-also <em class="name">Remote</em> library that is totally different than the other standard
+also <code class="name">Remote</code> library that is totally different than the other standard
 libraries. It does not have any keywords of its own but it works as a
 proxy between Robot Framework and actual test library implementations.
 These libraries can be running on other machines than the core
@@ -10393,10 +10393,10 @@ preferably automate the installation process.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.top", "search.highlight", "search.suggest", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.top", "search.highlight", "search.suggest", "toc.integrate"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
       
     
   </body>

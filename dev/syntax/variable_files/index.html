@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../assets/logo.png">
-      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.8.0">
     
     
       
@@ -31,10 +31,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -10002,10 +10002,10 @@ variables as attributes or get them dynamically from the <code>get_variables</co
 method. Variable files can also be created as <a href="#variable-file-as-yaml">YAML</a> and <a href="#variable-file-as-json">JSON</a>.</p>
 <h3 id="taking-variable-files-into-use">Taking variable files into use<a class="headerlink" href="#taking-variable-files-into-use" title="Permanent link">&para;</a></h3>
 <h4 id="setting-section">Setting section<a class="headerlink" href="#setting-section" title="Permanent link">&para;</a></h4>
-<p>All test data files can import variable files using the <em class="setting">Variables</em>
+<p>All test data files can import variable files using the <code class="setting">Variables</code>
 setting in the Setting section. Variable files are typically imported using
 a path to the file same way as <a href="../resource_files/#taking-resource-files-into-use">resource files are imported</a> using
-the <em class="setting">Resource</em> setting. Similarly to resource files, the path to
+the <code class="setting">Resource</code> setting. Similarly to resource files, the path to
 the imported variable file is considered relative to the directory where the
 importing file is, and if not found, it is searched from directories
 in the <a href="../../execution/configuration/#module-search-path">module search path</a>. The path can also contain variables,
@@ -10045,7 +10045,7 @@ set from the command line override variables from variable files.</p>
 <h4 id="command-line">Command line<a class="headerlink" href="#command-line" title="Permanent link">&para;</a></h4>
 <p>Another way to take variable files into use is using the command line option
 <code class="option">--variablefile</code>. Variable files are referenced using a path or
-module name similarly as when importing them using the <em class="setting">Variables</em>
+module name similarly as when importing them using the <code class="setting">Variables</code>
 setting. Possible arguments are joined to the path with a colon (<code>:</code>):</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-3-1">1</a></span>
 <span class="normal"><a href="#example-3-2">2</a></span>
@@ -10423,8 +10423,8 @@ The following example demonstrates a simple YAML file:</p>
 </span></code></pre></div></td></tr></table></div>
 <p>YAML variable files can be used exactly like normal variable files
 from the command line using <code class="option">--variablefile</code> option, in the Settings
-section using <em class="setting">Variables</em> setting, and dynamically using the
-<em class="name">Import Variables</em> keyword. They are automatically recognized by their
+section using <code class="setting">Variables</code> setting, and dynamically using the
+<code class="name">Import Variables</code> keyword. They are automatically recognized by their
 extension that must be either <code class="file">.yaml</code> or <code class="file">.yml</code>.
 If the above YAML file is imported, it will create exactly the same variables
 as this Variable section:</p>
@@ -10650,10 +10650,10 @@ to be installed.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.top", "search.highlight", "search.suggest", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.top", "search.highlight", "search.suggest", "toc.integrate"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
       
     
   </body>

@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../assets/logo.png">
-      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.8.0">
     
     
       
@@ -31,10 +31,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -10113,14 +10113,14 @@ modified.</p>
 <p>Before the Remote library can be imported, the remote server providing
 the actual keywords must be started.  If the server is started before
 launching the test execution, it is possible to use the normal
-<em class="setting">Library</em> setting like in the above example. Alternatively other
+<code class="setting">Library</code> setting like in the above example. Alternatively other
 keywords, for example from <a href="https://robotframework.org/robotframework/latest/libraries/Process.html">Process</a> or <a href="https://github.com/robotframework/SSHLibrary">SSH</a> libraries, can start
 the server up, but then you may need to use <a href="../../syntax/libraries/#using-import-library-keyword">Import Library keyword</a>
 because the library is not available when the test execution starts.</p>
 <p>How a remote server can be stopped depends on how it is
 implemented. Typically servers support the following methods:</p>
 <ul>
-<li>Regardless of the library used, remote servers should provide <em class="name">Stop Remote Server</em> keyword that can be easily used by executed tests.</li>
+<li>Regardless of the library used, remote servers should provide <code class="name">Stop Remote Server</code> keyword that can be easily used by executed tests.</li>
 <li>Remote servers should have <code>stop_remote_server</code> method in their
   XML-RPC interface.</li>
 <li>Hitting <code>Ctrl-C</code> on the console where the server is running should
@@ -10131,7 +10131,7 @@ implemented. Typically servers support the following methods:</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Servers may be configured so that users cannot stop it with
-<em class="name">Stop Remote Server</em> keyword or <code>stop_remote_server</code>
+<code class="name">Stop Remote Server</code> keyword or <code>stop_remote_server</code>
 method.</p>
 </div>
 <h2 id="supported-argument-and-return-value-types">Supported argument and return value types<a class="headerlink" href="#supported-argument-and-return-value-types" title="Permanent link">&para;</a></h2>
@@ -10213,7 +10213,7 @@ libraries, like the available <a href="https://github.com/robotframework/RemoteI
 implement keywords themselves.</p>
 <p>Remote servers should additionally have <code>stop_remote_server</code>
 method in their public interface to ease stopping them. They should
-also automatically expose this method as <em class="name">Stop Remote Server</em>
+also automatically expose this method as <code class="name">Stop Remote Server</code>
 keyword to allow using it in the test data regardless of the test
 library. Allowing users to stop the server is not always desirable,
 and servers may support disabling this functionality somehow.
@@ -10577,10 +10577,10 @@ arguments.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.top", "search.highlight", "search.suggest", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.top", "search.highlight", "search.suggest", "toc.integrate"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
       
     
   </body>

@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../assets/logo.png">
-      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.8.0">
     
     
       
@@ -31,10 +31,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -10361,14 +10361,14 @@ easier to read.</p>
 </span><span id="line-0-12"><a id="example-0-12" name="example-0-12"></a><span class="p">        </span><span class="nf">Log</span><span class="p">    ${</span><span class="nv">var</span><span class="p">}</span>
 </span><span id="line-0-13"><a id="example-0-13" name="example-0-13"></a><span class="p">    </span><span class="nf">END</span>
 </span></code></pre></div></td></tr></table></div>
-<p>The <code>FOR</code> loop in <em class="name">Example</em> above is executed twice, so that first
+<p>The <code>FOR</code> loop in <code class="name">Example</code> above is executed twice, so that first
 the loop variable <code>${animal}</code> has the value <code>cat</code> and then
-<code>dog</code>. The loop consists of two <em class="name">Log</em> keywords. In the
+<code>dog</code>. The loop consists of two <code class="name">Log</code> keywords. In the
 second example, loop values are <a href="../data/#dividing-data-to-several-rows">split into two rows</a> and the
 loop is run altogether ten times.</p>
 <p>It is often convenient to use <code>FOR</code> loops with <a href="../variables/#list-variables">list variables</a>. This is
 illustrated by the example below, where <code>@{ELEMENTS}</code> contains
-an arbitrarily long list of elements and keyword <em class="name">Start Element</em> is
+an arbitrarily long list of elements and keyword <code class="name">Start Element</code> is
 used with all of them one by one.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-1-1">1</a></span>
 <span class="normal"><a href="#example-1-2">2</a></span>
@@ -11004,7 +11004,7 @@ It is possible to <a href="../../execution/results/#removing-and-flattening-keyw
 <h3 id="repeating-single-keyword">Repeating single keyword<a class="headerlink" href="#repeating-single-keyword" title="Permanent link">&para;</a></h3>
 <p><code>FOR</code> loops can be excessive in situations where there is only a need to
 repeat a single keyword. In these cases it is often easier to use
-<a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> keyword <em class="name">Repeat Keyword</em>. This keyword takes a
+<a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> keyword <code class="name">Repeat Keyword</code>. This keyword takes a
 keyword and how many times to repeat it as arguments. The times to
 repeat the keyword can have an optional postfix <code>times</code> or <code>x</code>
 to make the syntax easier to read.</p>
@@ -11301,8 +11301,8 @@ keyword called in the loop body is invalid.</p>
 <p class="admonition-title">Note</p>
 <p><code>BREAK</code> and <code>CONTINUE</code> statements are new in Robot Framework 5.0 similarly
 as <code>WHILE</code>. Earlier versions supported controlling <code>FOR</code> loops using
-<a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> keywords <em class="name">Exit For Loop</em>, <em class="name">Exit For Loop If</em>,
-<em class="name">Continue For Loop</em> and <em class="name">Continue For Loop If</em>. These
+<a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> keywords <code class="name">Exit For Loop</code>, <code class="name">Exit For Loop If</code>,
+<code class="name">Continue For Loop</code> and <code class="name">Continue For Loop If</code>. These
 keywords still continue to work, but they will be deprecated and removed
 in the future.</p>
 </div>
@@ -11325,7 +11325,7 @@ ends with <code>END</code> (case-sensitive). The <code>IF</code> marker requires
 the condition to evaluate. Keywords to execute if the condition is true are on their
 own rows between the <code>IF</code> and <code>END</code> markers. Indenting keywords in the <code>IF</code> block is
 highly recommended but not mandatory.</p>
-<p>In the following example keywords <em class="name">Some keyword</em> and <em class="name">Another keyword</em>
+<p>In the following example keywords <code class="name">Some keyword</code> and <code class="name">Another keyword</code>
 are executed if <code>${rc}</code> is greater than zero:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-26-1">1</a></span>
 <span class="normal"><a href="#example-26-2">2</a></span>
@@ -11353,8 +11353,8 @@ appendix.</p>
 <p>Like most other languages supporting conditional execution, Robot Framework <code>IF</code>
 syntax also supports <code>ELSE</code> branches that are executed if the <code>IF</code> condition is
 not true.</p>
-<p>In this example <em class="name">Some keyword</em> is executed if <code>${rc}</code> is greater than
-zero and <em class="name">Another keyword</em> is executed otherwise:</p>
+<p>In this example <code class="name">Some keyword</code> is executed if <code>${rc}</code> is greater than
+zero and <code class="name">Another keyword</code> is executed otherwise:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-27-1">1</a></span>
 <span class="normal"><a href="#example-27-2">2</a></span>
 <span class="normal"><a href="#example-27-3">3</a></span>
@@ -11546,18 +11546,18 @@ as <a href="#for-in-enumerate-loop">FOR-IN-ENUMERATE loop</a>, <a href="../user_
   for example, from the command line.</p>
 </li>
 <li>
-<p>The <a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> keyword <em class="name">Run Keyword</em> takes a keyword to actually
+<p>The <a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> keyword <code class="name">Run Keyword</code> takes a keyword to actually
   execute as an argument and it can thus be a variable. The value of
   the variable can, for example, be got dynamically from an earlier
   keyword or given from the command line.</p>
 </li>
 <li>
-<p>The <a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> keywords <em class="name">Run Keyword If</em> and <em class="name">Run Keyword Unless</em>
+<p>The <a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> keywords <code class="name">Run Keyword If</code> and <code class="name">Run Keyword Unless</code>
   execute a named keyword only if a certain expression is true or false, respectively.
   The new <code>IF/ELSE</code> syntax explained above is generally recommended, though.</p>
 </li>
 <li>
-<p>Another <a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> keyword, <em class="name">Set Variable If</em>, can be used to set
+<p>Another <a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> keyword, <code class="name">Set Variable If</code>, can be used to set
   variables dynamically based on a given expression.</p>
 </li>
 <li>
@@ -11902,7 +11902,7 @@ after a keyword execution somewhat similarly as <a href="../../execution/tests/#
 <p>There are also other methods to execute keywords conditionally:</p>
 <ul>
 <li>
-<p>The <a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> keyword <em class="name">Run Keyword And Expect Error</em> executes a named
+<p>The <a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> keyword <code class="name">Run Keyword And Expect Error</code> executes a named
   keyword and expects that it fails with a specified error message. It is basically
   the same as using <code>TRY/EXCEPT</code> with a specified message. The syntax to specify
   the error message is also identical except that this keyword uses glob pattern
@@ -11911,16 +11911,16 @@ after a keyword execution somewhat similarly as <a href="../../execution/tests/#
   versions that do not support it.</p>
 </li>
 <li>
-<p>The <a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> keyword <em class="name">Run Keyword And Ignore Error</em> executes a named keyword
+<p>The <a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> keyword <code class="name">Run Keyword And Ignore Error</code> executes a named keyword
   and returns its status as string <code>PASS</code> or <code>FAIL</code> along with possible return value
   or error message. It is basically the same as using <code>TRY/EXCEPT/ELSE</code> so that
   <code>EXCEPT</code> catches all errors. Using the native syntax is recommended unless
   old Robot Framework versions need to be supported.</p>
 </li>
 <li>
-<p>The <a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> keyword <em class="name">Run Keyword And Return Status</em> executes a named keyword
+<p>The <a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> keyword <code class="name">Run Keyword And Return Status</code> executes a named keyword
   and returns its status as a Boolean true or false. It is a wrapper for the
-  aforementioned <em class="name">Run Keyword And Ignore Error</em>. The native syntax is
+  aforementioned <code class="name">Run Keyword And Ignore Error</code>. The native syntax is
   nowadays recommended instead.</p>
 </li>
 <li>
@@ -12239,10 +12239,10 @@ test. Groups can be added also by <a href="../../extend/listeners/#listener-inte
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.top", "search.highlight", "search.suggest", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.top", "search.highlight", "search.suggest", "toc.integrate"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
       
     
   </body>

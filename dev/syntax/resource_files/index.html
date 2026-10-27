@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../assets/logo.png">
-      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.8.0">
     
     
       
@@ -31,10 +31,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -9971,7 +9971,7 @@
 <p>Resource files are typically created using the plain text format, but also
 <a href="#resource-files-using-restructuredtext-format">reStructuredText</a>, <a href="#resource-files-using-markdown-format">Markdown</a> and <a href="#resource-files-using-json-format">JSON</a> resource files are supported.</p>
 <h3 id="taking-resource-files-into-use">Taking resource files into use<a class="headerlink" href="#taking-resource-files-into-use" title="Permanent link">&para;</a></h3>
-<p>Resource files are imported using the <em class="setting">Resource</em> setting in the
+<p>Resource files are imported using the <code class="setting">Resource</code> setting in the
 Settings section so that the path to the resource file is given as an argument
 to the setting. The recommended extension for resource files is <code class="file">.resource</code>.
 For backwards compatibility reasons also <code class="file">.robot</code>, <code class="file">.txt</code> and
@@ -10011,19 +10011,19 @@ resource file.</p>
 <p>The higher-level structure of resource files is the same as that of
 suite files otherwise, but they cannot contain tests or tasks.
 Additionally, the Setting section in resource files can contain only imports
-(<em class="setting">Library</em>, <em class="setting">Resource</em>, <em class="setting">Variables</em>),
-<em class="setting">Documentation</em> and <em class="setting">Keyword Tags</em>.
+(<code class="setting">Library</code>, <code class="setting">Resource</code>, <code class="setting">Variables</code>),
+<code class="setting">Documentation</code> and <code class="setting">Keyword Tags</code>.
 The Variable section and Keyword section are used exactly the same way
 as in suite files.</p>
 <p>If several resource files have a user keyword with the same name, they
 must be used so that the <a href="../advanced/#handling-keywords-with-same-names">keyword name is prefixed with the resource
-file name</a> without the extension (for example, <em class="name">myresources.Some Keyword</em> and <em class="name">common.Some Keyword</em>). Moreover, if several resource
+file name</a> without the extension (for example, <code class="name">myresources.Some Keyword</code> and <code class="name">common.Some Keyword</code>). Moreover, if several resource
 files contain the same variable, the one that is imported first is
 taken into use.</p>
 <h3 id="documenting-resource-files">Documenting resource files<a class="headerlink" href="#documenting-resource-files" title="Permanent link">&para;</a></h3>
 <p>Keywords created in a resource file can be <a href="../user_keywords/#user-keyword-name-and-documentation">documented</a> using
-<em class="setting">[Documentation]</em> setting. The resource file itself can have
-<em class="setting">Documentation</em> in the Setting section similarly as <a href="../suites/#suite-name">suites</a>.</p>
+<code class="setting">[Documentation]</code> setting. The resource file itself can have
+<code class="setting">Documentation</code> in the Setting section similarly as <a href="../suites/#suite-name">suites</a>.</p>
 <p><a href="../../extend/libdoc/#libdoc">Libdoc</a> and various editors use these documentations, and they
 are naturally available for anyone opening resource files.  The
 first logical line of the documentation of a keyword, until the first
@@ -10090,8 +10090,8 @@ normal resource files:</p>
 <p>When parsing resource files using the reStructuredText format, Robot Framework
 ignores all data outside code blocks containing Robot Framework data exactly
 the same way as when parsing <a href="../data/#restructuredtext-data-format">reStructuredText suite files</a>.
-For example, the following resource file imports <em class="name">OperatingSystem</em> library,
-defines <code>${MESSAGE}</code> variable and creates <em class="name">My Keyword</em> keyword:</p>
+For example, the following resource file imports <code class="name">OperatingSystem</code> library,
+defines <code>${MESSAGE}</code> variable and creates <code class="name">My Keyword</code> keyword:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-3-1"> 1</a></span>
 <span class="normal"><a href="#example-3-2"> 2</a></span>
 <span class="normal"><a href="#example-3-3"> 3</a></span>
@@ -10150,8 +10150,8 @@ resource files:</p>
 <p>When parsing resource files using the Markdown format, Robot Framework
 ignores all data outside fenced code blocks with the <code>robotframework</code> or <code>robot</code>
 language tag exactly the same way as when parsing <a href="../data/#markdown-data-format">Markdown suite files</a>.
-For example, the following resource file imports <em class="name">OperatingSystem</em> library,
-defines <code>${MESSAGE}</code> variable and creates <em class="name">My Keyword</em> keyword:</p>
+For example, the following resource file imports <code class="name">OperatingSystem</code> library,
+defines <code>${MESSAGE}</code> variable and creates <code class="name">My Keyword</code> keyword:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-5-1"> 1</a></span>
 <span class="normal"><a href="#example-5-2"> 2</a></span>
 <span class="normal"><a href="#example-5-3"> 3</a></span>
@@ -10380,10 +10380,10 @@ recreated using <a href="https://robot-framework.readthedocs.io/en/master/autodo
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.top", "search.highlight", "search.suggest", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.top", "search.highlight", "search.suggest", "toc.integrate"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
       
     
   </body>

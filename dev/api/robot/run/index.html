@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../../assets/logo.png">
-      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.8.0">
     
     
       
@@ -31,10 +31,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -10066,69 +10066,69 @@ programmatic test execution.</p>
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>src/robot/run.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-486">486</a></span>
-<span class="normal"><a href="#example-0-487">487</a></span>
-<span class="normal"><a href="#example-0-488">488</a></span>
-<span class="normal"><a href="#example-0-489">489</a></span>
-<span class="normal"><a href="#example-0-490">490</a></span>
-<span class="normal"><a href="#example-0-491">491</a></span>
-<span class="normal"><a href="#example-0-492">492</a></span>
-<span class="normal"><a href="#example-0-493">493</a></span>
-<span class="normal"><a href="#example-0-494">494</a></span>
-<span class="normal"><a href="#example-0-495">495</a></span>
-<span class="normal"><a href="#example-0-496">496</a></span>
-<span class="normal"><a href="#example-0-497">497</a></span>
-<span class="normal"><a href="#example-0-498">498</a></span>
-<span class="normal"><a href="#example-0-499">499</a></span>
-<span class="normal"><a href="#example-0-500">500</a></span>
-<span class="normal"><a href="#example-0-501">501</a></span>
-<span class="normal"><a href="#example-0-502">502</a></span>
-<span class="normal"><a href="#example-0-503">503</a></span>
-<span class="normal"><a href="#example-0-504">504</a></span>
-<span class="normal"><a href="#example-0-505">505</a></span>
-<span class="normal"><a href="#example-0-506">506</a></span>
-<span class="normal"><a href="#example-0-507">507</a></span>
-<span class="normal"><a href="#example-0-508">508</a></span>
-<span class="normal"><a href="#example-0-509">509</a></span>
-<span class="normal"><a href="#example-0-510">510</a></span>
-<span class="normal"><a href="#example-0-511">511</a></span>
-<span class="normal"><a href="#example-0-512">512</a></span>
-<span class="normal"><a href="#example-0-513">513</a></span>
-<span class="normal"><a href="#example-0-514">514</a></span>
-<span class="normal"><a href="#example-0-515">515</a></span>
-<span class="normal"><a href="#example-0-516">516</a></span>
-<span class="normal"><a href="#example-0-517">517</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-486"><a id="example-0-486" name="example-0-486"></a><span class="k">def</span><span class="w"> </span><span class="nf">run_cli</span><span class="p">(</span><span class="n">arguments</span><span class="p">:</span> <span class="s1">'list[str]|None'</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">exit</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
-</span><span id="line-0-487"><a id="example-0-487" name="example-0-487"></a><span class="w">    </span><span class="sd">"""Command line execution entry point for running tests.</span>
-</span><span id="line-0-488"><a id="example-0-488" name="example-0-488"></a>
-</span><span id="line-0-489"><a id="example-0-489" name="example-0-489"></a><span class="sd">    Parameters:</span>
-</span><span id="line-0-490"><a id="example-0-490" name="example-0-490"></a><span class="sd">        arguments: Command line options and arguments as a list of strings.</span>
-</span><span id="line-0-491"><a id="example-0-491" name="example-0-491"></a><span class="sd">            Defaults to `sys.argv[1:]` if not given.</span>
-</span><span id="line-0-492"><a id="example-0-492" name="example-0-492"></a><span class="sd">        exit: If `True`, call `sys.exit` with the return code denoting</span>
-</span><span id="line-0-493"><a id="example-0-493" name="example-0-493"></a><span class="sd">            execution status, otherwise just return the rc.</span>
-</span><span id="line-0-494"><a id="example-0-494" name="example-0-494"></a>
-</span><span id="line-0-495"><a id="example-0-495" name="example-0-495"></a><span class="sd">    Entry point used when running tests from the command line, but can also</span>
-</span><span id="line-0-496"><a id="example-0-496" name="example-0-496"></a><span class="sd">    be used by custom scripts that execute tests. Especially useful if the</span>
-</span><span id="line-0-497"><a id="example-0-497" name="example-0-497"></a><span class="sd">    script itself needs to accept same arguments as accepted by Robot Framework,</span>
-</span><span id="line-0-498"><a id="example-0-498" name="example-0-498"></a><span class="sd">    because the script can just pass them forward directly along with the</span>
-</span><span id="line-0-499"><a id="example-0-499" name="example-0-499"></a><span class="sd">    possible default values it sets itself.</span>
-</span><span id="line-0-500"><a id="example-0-500" name="example-0-500"></a>
-</span><span id="line-0-501"><a id="example-0-501" name="example-0-501"></a><span class="sd">    Example:</span>
-</span><span id="line-0-502"><a id="example-0-502" name="example-0-502"></a>
-</span><span id="line-0-503"><a id="example-0-503" name="example-0-503"></a><span class="sd">        from robot import run_cli</span>
-</span><span id="line-0-504"><a id="example-0-504" name="example-0-504"></a>
-</span><span id="line-0-505"><a id="example-0-505" name="example-0-505"></a><span class="sd">        # Run tests and return the return code.</span>
-</span><span id="line-0-506"><a id="example-0-506" name="example-0-506"></a><span class="sd">        rc = run_cli(['--name', 'Example', 'tests.robot'], exit=False)</span>
-</span><span id="line-0-507"><a id="example-0-507" name="example-0-507"></a>
-</span><span id="line-0-508"><a id="example-0-508" name="example-0-508"></a><span class="sd">        # Run tests and exit to the system automatically.</span>
-</span><span id="line-0-509"><a id="example-0-509" name="example-0-509"></a><span class="sd">        run_cli(['--name', 'Example', 'tests.robot'])</span>
-</span><span id="line-0-510"><a id="example-0-510" name="example-0-510"></a>
-</span><span id="line-0-511"><a id="example-0-511" name="example-0-511"></a><span class="sd">    See also the [robot.run][robot.run.run] function that allows setting options as keyword</span>
-</span><span id="line-0-512"><a id="example-0-512" name="example-0-512"></a><span class="sd">    arguments like `name="Example"` and generally has a richer API for</span>
-</span><span id="line-0-513"><a id="example-0-513" name="example-0-513"></a><span class="sd">    programmatic test execution.</span>
-</span><span id="line-0-514"><a id="example-0-514" name="example-0-514"></a><span class="sd">    """</span>
-</span><span id="line-0-515"><a id="example-0-515" name="example-0-515"></a>    <span class="k">if</span> <span class="n">arguments</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-0-516"><a id="example-0-516" name="example-0-516"></a>        <span class="n">arguments</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
-</span><span id="line-0-517"><a id="example-0-517" name="example-0-517"></a>    <span class="k">return</span> <span class="n">RobotFramework</span><span class="p">()</span><span class="o">.</span><span class="n">execute_cli</span><span class="p">(</span><span class="n">arguments</span><span class="p">,</span> <span class="n">exit</span><span class="o">=</span><span class="n">exit</span><span class="p">)</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#robot.run.run_cli--source--example-0-486">486</a></span>
+<span class="normal"><a href="#robot.run.run_cli--source--example-0-487">487</a></span>
+<span class="normal"><a href="#robot.run.run_cli--source--example-0-488">488</a></span>
+<span class="normal"><a href="#robot.run.run_cli--source--example-0-489">489</a></span>
+<span class="normal"><a href="#robot.run.run_cli--source--example-0-490">490</a></span>
+<span class="normal"><a href="#robot.run.run_cli--source--example-0-491">491</a></span>
+<span class="normal"><a href="#robot.run.run_cli--source--example-0-492">492</a></span>
+<span class="normal"><a href="#robot.run.run_cli--source--example-0-493">493</a></span>
+<span class="normal"><a href="#robot.run.run_cli--source--example-0-494">494</a></span>
+<span class="normal"><a href="#robot.run.run_cli--source--example-0-495">495</a></span>
+<span class="normal"><a href="#robot.run.run_cli--source--example-0-496">496</a></span>
+<span class="normal"><a href="#robot.run.run_cli--source--example-0-497">497</a></span>
+<span class="normal"><a href="#robot.run.run_cli--source--example-0-498">498</a></span>
+<span class="normal"><a href="#robot.run.run_cli--source--example-0-499">499</a></span>
+<span class="normal"><a href="#robot.run.run_cli--source--example-0-500">500</a></span>
+<span class="normal"><a href="#robot.run.run_cli--source--example-0-501">501</a></span>
+<span class="normal"><a href="#robot.run.run_cli--source--example-0-502">502</a></span>
+<span class="normal"><a href="#robot.run.run_cli--source--example-0-503">503</a></span>
+<span class="normal"><a href="#robot.run.run_cli--source--example-0-504">504</a></span>
+<span class="normal"><a href="#robot.run.run_cli--source--example-0-505">505</a></span>
+<span class="normal"><a href="#robot.run.run_cli--source--example-0-506">506</a></span>
+<span class="normal"><a href="#robot.run.run_cli--source--example-0-507">507</a></span>
+<span class="normal"><a href="#robot.run.run_cli--source--example-0-508">508</a></span>
+<span class="normal"><a href="#robot.run.run_cli--source--example-0-509">509</a></span>
+<span class="normal"><a href="#robot.run.run_cli--source--example-0-510">510</a></span>
+<span class="normal"><a href="#robot.run.run_cli--source--example-0-511">511</a></span>
+<span class="normal"><a href="#robot.run.run_cli--source--example-0-512">512</a></span>
+<span class="normal"><a href="#robot.run.run_cli--source--example-0-513">513</a></span>
+<span class="normal"><a href="#robot.run.run_cli--source--example-0-514">514</a></span>
+<span class="normal"><a href="#robot.run.run_cli--source--example-0-515">515</a></span>
+<span class="normal"><a href="#robot.run.run_cli--source--example-0-516">516</a></span>
+<span class="normal"><a href="#robot.run.run_cli--source--example-0-517">517</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="robot.run.run_cli--source--line-0-486"><a id="robot.run.run_cli--source--example-0-486" name="robot.run.run_cli--source--example-0-486"></a><span class="k">def</span><span class="w"> </span><span class="nf">run_cli</span><span class="p">(</span><span class="n">arguments</span><span class="p">:</span> <span class="s1">'list[str]|None'</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">exit</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
+</span><span id="robot.run.run_cli--source--line-0-487"><a id="robot.run.run_cli--source--example-0-487" name="robot.run.run_cli--source--example-0-487"></a><span class="w">    </span><span class="sd">"""Command line execution entry point for running tests.</span>
+</span><span id="robot.run.run_cli--source--line-0-488"><a id="robot.run.run_cli--source--example-0-488" name="robot.run.run_cli--source--example-0-488"></a>
+</span><span id="robot.run.run_cli--source--line-0-489"><a id="robot.run.run_cli--source--example-0-489" name="robot.run.run_cli--source--example-0-489"></a><span class="sd">    Parameters:</span>
+</span><span id="robot.run.run_cli--source--line-0-490"><a id="robot.run.run_cli--source--example-0-490" name="robot.run.run_cli--source--example-0-490"></a><span class="sd">        arguments: Command line options and arguments as a list of strings.</span>
+</span><span id="robot.run.run_cli--source--line-0-491"><a id="robot.run.run_cli--source--example-0-491" name="robot.run.run_cli--source--example-0-491"></a><span class="sd">            Defaults to `sys.argv[1:]` if not given.</span>
+</span><span id="robot.run.run_cli--source--line-0-492"><a id="robot.run.run_cli--source--example-0-492" name="robot.run.run_cli--source--example-0-492"></a><span class="sd">        exit: If `True`, call `sys.exit` with the return code denoting</span>
+</span><span id="robot.run.run_cli--source--line-0-493"><a id="robot.run.run_cli--source--example-0-493" name="robot.run.run_cli--source--example-0-493"></a><span class="sd">            execution status, otherwise just return the rc.</span>
+</span><span id="robot.run.run_cli--source--line-0-494"><a id="robot.run.run_cli--source--example-0-494" name="robot.run.run_cli--source--example-0-494"></a>
+</span><span id="robot.run.run_cli--source--line-0-495"><a id="robot.run.run_cli--source--example-0-495" name="robot.run.run_cli--source--example-0-495"></a><span class="sd">    Entry point used when running tests from the command line, but can also</span>
+</span><span id="robot.run.run_cli--source--line-0-496"><a id="robot.run.run_cli--source--example-0-496" name="robot.run.run_cli--source--example-0-496"></a><span class="sd">    be used by custom scripts that execute tests. Especially useful if the</span>
+</span><span id="robot.run.run_cli--source--line-0-497"><a id="robot.run.run_cli--source--example-0-497" name="robot.run.run_cli--source--example-0-497"></a><span class="sd">    script itself needs to accept same arguments as accepted by Robot Framework,</span>
+</span><span id="robot.run.run_cli--source--line-0-498"><a id="robot.run.run_cli--source--example-0-498" name="robot.run.run_cli--source--example-0-498"></a><span class="sd">    because the script can just pass them forward directly along with the</span>
+</span><span id="robot.run.run_cli--source--line-0-499"><a id="robot.run.run_cli--source--example-0-499" name="robot.run.run_cli--source--example-0-499"></a><span class="sd">    possible default values it sets itself.</span>
+</span><span id="robot.run.run_cli--source--line-0-500"><a id="robot.run.run_cli--source--example-0-500" name="robot.run.run_cli--source--example-0-500"></a>
+</span><span id="robot.run.run_cli--source--line-0-501"><a id="robot.run.run_cli--source--example-0-501" name="robot.run.run_cli--source--example-0-501"></a><span class="sd">    Example:</span>
+</span><span id="robot.run.run_cli--source--line-0-502"><a id="robot.run.run_cli--source--example-0-502" name="robot.run.run_cli--source--example-0-502"></a>
+</span><span id="robot.run.run_cli--source--line-0-503"><a id="robot.run.run_cli--source--example-0-503" name="robot.run.run_cli--source--example-0-503"></a><span class="sd">        from robot import run_cli</span>
+</span><span id="robot.run.run_cli--source--line-0-504"><a id="robot.run.run_cli--source--example-0-504" name="robot.run.run_cli--source--example-0-504"></a>
+</span><span id="robot.run.run_cli--source--line-0-505"><a id="robot.run.run_cli--source--example-0-505" name="robot.run.run_cli--source--example-0-505"></a><span class="sd">        # Run tests and return the return code.</span>
+</span><span id="robot.run.run_cli--source--line-0-506"><a id="robot.run.run_cli--source--example-0-506" name="robot.run.run_cli--source--example-0-506"></a><span class="sd">        rc = run_cli(['--name', 'Example', 'tests.robot'], exit=False)</span>
+</span><span id="robot.run.run_cli--source--line-0-507"><a id="robot.run.run_cli--source--example-0-507" name="robot.run.run_cli--source--example-0-507"></a>
+</span><span id="robot.run.run_cli--source--line-0-508"><a id="robot.run.run_cli--source--example-0-508" name="robot.run.run_cli--source--example-0-508"></a><span class="sd">        # Run tests and exit to the system automatically.</span>
+</span><span id="robot.run.run_cli--source--line-0-509"><a id="robot.run.run_cli--source--example-0-509" name="robot.run.run_cli--source--example-0-509"></a><span class="sd">        run_cli(['--name', 'Example', 'tests.robot'])</span>
+</span><span id="robot.run.run_cli--source--line-0-510"><a id="robot.run.run_cli--source--example-0-510" name="robot.run.run_cli--source--example-0-510"></a>
+</span><span id="robot.run.run_cli--source--line-0-511"><a id="robot.run.run_cli--source--example-0-511" name="robot.run.run_cli--source--example-0-511"></a><span class="sd">    See also the [robot.run][robot.run.run] function that allows setting options as keyword</span>
+</span><span id="robot.run.run_cli--source--line-0-512"><a id="robot.run.run_cli--source--example-0-512" name="robot.run.run_cli--source--example-0-512"></a><span class="sd">    arguments like `name="Example"` and generally has a richer API for</span>
+</span><span id="robot.run.run_cli--source--line-0-513"><a id="robot.run.run_cli--source--example-0-513" name="robot.run.run_cli--source--example-0-513"></a><span class="sd">    programmatic test execution.</span>
+</span><span id="robot.run.run_cli--source--line-0-514"><a id="robot.run.run_cli--source--example-0-514" name="robot.run.run_cli--source--example-0-514"></a><span class="sd">    """</span>
+</span><span id="robot.run.run_cli--source--line-0-515"><a id="robot.run.run_cli--source--example-0-515" name="robot.run.run_cli--source--example-0-515"></a>    <span class="k">if</span> <span class="n">arguments</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="robot.run.run_cli--source--line-0-516"><a id="robot.run.run_cli--source--example-0-516" name="robot.run.run_cli--source--example-0-516"></a>        <span class="n">arguments</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+</span><span id="robot.run.run_cli--source--line-0-517"><a id="robot.run.run_cli--source--example-0-517" name="robot.run.run_cli--source--example-0-517"></a>    <span class="k">return</span> <span class="n">RobotFramework</span><span class="p">()</span><span class="o">.</span><span class="n">execute_cli</span><span class="p">(</span><span class="n">arguments</span><span class="p">,</span> <span class="n">exit</span><span class="o">=</span><span class="n">exit</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -10251,117 +10251,117 @@ statuses documented in the Robot Framework User Guide.</p>
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>src/robot/run.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-520">520</a></span>
-<span class="normal"><a href="#example-0-521">521</a></span>
-<span class="normal"><a href="#example-0-522">522</a></span>
-<span class="normal"><a href="#example-0-523">523</a></span>
-<span class="normal"><a href="#example-0-524">524</a></span>
-<span class="normal"><a href="#example-0-525">525</a></span>
-<span class="normal"><a href="#example-0-526">526</a></span>
-<span class="normal"><a href="#example-0-527">527</a></span>
-<span class="normal"><a href="#example-0-528">528</a></span>
-<span class="normal"><a href="#example-0-529">529</a></span>
-<span class="normal"><a href="#example-0-530">530</a></span>
-<span class="normal"><a href="#example-0-531">531</a></span>
-<span class="normal"><a href="#example-0-532">532</a></span>
-<span class="normal"><a href="#example-0-533">533</a></span>
-<span class="normal"><a href="#example-0-534">534</a></span>
-<span class="normal"><a href="#example-0-535">535</a></span>
-<span class="normal"><a href="#example-0-536">536</a></span>
-<span class="normal"><a href="#example-0-537">537</a></span>
-<span class="normal"><a href="#example-0-538">538</a></span>
-<span class="normal"><a href="#example-0-539">539</a></span>
-<span class="normal"><a href="#example-0-540">540</a></span>
-<span class="normal"><a href="#example-0-541">541</a></span>
-<span class="normal"><a href="#example-0-542">542</a></span>
-<span class="normal"><a href="#example-0-543">543</a></span>
-<span class="normal"><a href="#example-0-544">544</a></span>
-<span class="normal"><a href="#example-0-545">545</a></span>
-<span class="normal"><a href="#example-0-546">546</a></span>
-<span class="normal"><a href="#example-0-547">547</a></span>
-<span class="normal"><a href="#example-0-548">548</a></span>
-<span class="normal"><a href="#example-0-549">549</a></span>
-<span class="normal"><a href="#example-0-550">550</a></span>
-<span class="normal"><a href="#example-0-551">551</a></span>
-<span class="normal"><a href="#example-0-552">552</a></span>
-<span class="normal"><a href="#example-0-553">553</a></span>
-<span class="normal"><a href="#example-0-554">554</a></span>
-<span class="normal"><a href="#example-0-555">555</a></span>
-<span class="normal"><a href="#example-0-556">556</a></span>
-<span class="normal"><a href="#example-0-557">557</a></span>
-<span class="normal"><a href="#example-0-558">558</a></span>
-<span class="normal"><a href="#example-0-559">559</a></span>
-<span class="normal"><a href="#example-0-560">560</a></span>
-<span class="normal"><a href="#example-0-561">561</a></span>
-<span class="normal"><a href="#example-0-562">562</a></span>
-<span class="normal"><a href="#example-0-563">563</a></span>
-<span class="normal"><a href="#example-0-564">564</a></span>
-<span class="normal"><a href="#example-0-565">565</a></span>
-<span class="normal"><a href="#example-0-566">566</a></span>
-<span class="normal"><a href="#example-0-567">567</a></span>
-<span class="normal"><a href="#example-0-568">568</a></span>
-<span class="normal"><a href="#example-0-569">569</a></span>
-<span class="normal"><a href="#example-0-570">570</a></span>
-<span class="normal"><a href="#example-0-571">571</a></span>
-<span class="normal"><a href="#example-0-572">572</a></span>
-<span class="normal"><a href="#example-0-573">573</a></span>
-<span class="normal"><a href="#example-0-574">574</a></span>
-<span class="normal"><a href="#example-0-575">575</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-520"><a id="example-0-520" name="example-0-520"></a><span class="k">def</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span><span class="o">*</span><span class="n">sources</span><span class="p">:</span> <span class="s1">'list[str|Path]'</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">:</span> <span class="s1">'dict[str, Any]'</span><span class="p">):</span>
-</span><span id="line-0-521"><a id="example-0-521" name="example-0-521"></a><span class="w">    </span><span class="sd">"""Programmatic entry point for running tests.</span>
-</span><span id="line-0-522"><a id="example-0-522" name="example-0-522"></a>
-</span><span id="line-0-523"><a id="example-0-523" name="example-0-523"></a><span class="sd">    Parameters:</span>
-</span><span id="line-0-524"><a id="example-0-524" name="example-0-524"></a><span class="sd">        sources: Paths to test case files/directories to be executed similarly</span>
-</span><span id="line-0-525"><a id="example-0-525" name="example-0-525"></a><span class="sd">            as when running the `robot` command on the command line.</span>
-</span><span id="line-0-526"><a id="example-0-526" name="example-0-526"></a><span class="sd">        options: Options to configure and control execution. Accepted</span>
-</span><span id="line-0-527"><a id="example-0-527" name="example-0-527"></a><span class="sd">            options are mostly same as normal command line options to the `robot`</span>
-</span><span id="line-0-528"><a id="example-0-528" name="example-0-528"></a><span class="sd">            command. Option names match command line option long names without</span>
-</span><span id="line-0-529"><a id="example-0-529" name="example-0-529"></a><span class="sd">            hyphens so that, for example, `--name` becomes `name`.</span>
-</span><span id="line-0-530"><a id="example-0-530" name="example-0-530"></a>
-</span><span id="line-0-531"><a id="example-0-531" name="example-0-531"></a><span class="sd">    Most options that can be given from the command line work. An exception</span>
-</span><span id="line-0-532"><a id="example-0-532" name="example-0-532"></a><span class="sd">    is that options `--pythonpath`, `--argumentfile`, `--help` and</span>
-</span><span id="line-0-533"><a id="example-0-533" name="example-0-533"></a><span class="sd">    `--version` are not supported.</span>
-</span><span id="line-0-534"><a id="example-0-534" name="example-0-534"></a>
-</span><span id="line-0-535"><a id="example-0-535" name="example-0-535"></a><span class="sd">    Options that can be given on the command line multiple times can be</span>
-</span><span id="line-0-536"><a id="example-0-536" name="example-0-536"></a><span class="sd">    passed as lists. For example, `include=['tag1', 'tag2']` is equivalent</span>
-</span><span id="line-0-537"><a id="example-0-537" name="example-0-537"></a><span class="sd">    to `--include tag1 --include tag2`. If such options are used only once,</span>
-</span><span id="line-0-538"><a id="example-0-538" name="example-0-538"></a><span class="sd">    they can be given also as a single string like `include='tag'`.</span>
-</span><span id="line-0-539"><a id="example-0-539" name="example-0-539"></a>
-</span><span id="line-0-540"><a id="example-0-540" name="example-0-540"></a><span class="sd">    Options that accept no value can be given as Booleans. For example,</span>
-</span><span id="line-0-541"><a id="example-0-541" name="example-0-541"></a><span class="sd">    `dryrun=True` is same as using the `--dryrun` option.</span>
-</span><span id="line-0-542"><a id="example-0-542" name="example-0-542"></a>
-</span><span id="line-0-543"><a id="example-0-543" name="example-0-543"></a><span class="sd">    Options that accept string `NONE` as a special value can also be used</span>
-</span><span id="line-0-544"><a id="example-0-544" name="example-0-544"></a><span class="sd">    with Python `None`. For example, using `log=None` is equivalent to</span>
-</span><span id="line-0-545"><a id="example-0-545" name="example-0-545"></a><span class="sd">    `--log NONE`.</span>
-</span><span id="line-0-546"><a id="example-0-546" name="example-0-546"></a>
-</span><span id="line-0-547"><a id="example-0-547" name="example-0-547"></a><span class="sd">    `listener`, `prerunmodifier` and `prerebotmodifier` options allow</span>
-</span><span id="line-0-548"><a id="example-0-548" name="example-0-548"></a><span class="sd">    passing values as Python objects in addition to module names these command</span>
-</span><span id="line-0-549"><a id="example-0-549" name="example-0-549"></a><span class="sd">    line options support. For example, `#!py run('tests', listener=MyListener())`.</span>
-</span><span id="line-0-550"><a id="example-0-550" name="example-0-550"></a>
-</span><span id="line-0-551"><a id="example-0-551" name="example-0-551"></a><span class="sd">    To capture the standard output and error streams, pass an open file or</span>
-</span><span id="line-0-552"><a id="example-0-552" name="example-0-552"></a><span class="sd">    file-like object as special keyword arguments `stdout` and `stderr`,</span>
-</span><span id="line-0-553"><a id="example-0-553" name="example-0-553"></a><span class="sd">    respectively.</span>
-</span><span id="line-0-554"><a id="example-0-554" name="example-0-554"></a>
-</span><span id="line-0-555"><a id="example-0-555" name="example-0-555"></a><span class="sd">    A return code is returned similarly as when running on the command line.</span>
-</span><span id="line-0-556"><a id="example-0-556" name="example-0-556"></a><span class="sd">    Zero means that tests were executed and no test failed, values up to 250</span>
-</span><span id="line-0-557"><a id="example-0-557" name="example-0-557"></a><span class="sd">    denote the number of failed tests, and values between 251-255 are for other</span>
-</span><span id="line-0-558"><a id="example-0-558" name="example-0-558"></a><span class="sd">    statuses documented in the Robot Framework User Guide.</span>
-</span><span id="line-0-559"><a id="example-0-559" name="example-0-559"></a>
-</span><span id="line-0-560"><a id="example-0-560" name="example-0-560"></a><span class="sd">    Example:</span>
-</span><span id="line-0-561"><a id="example-0-561" name="example-0-561"></a>
-</span><span id="line-0-562"><a id="example-0-562" name="example-0-562"></a><span class="sd">        from robot import run</span>
-</span><span id="line-0-563"><a id="example-0-563" name="example-0-563"></a>
-</span><span id="line-0-564"><a id="example-0-564" name="example-0-564"></a><span class="sd">        run('path/to/tests.robot')</span>
-</span><span id="line-0-565"><a id="example-0-565" name="example-0-565"></a><span class="sd">        run('tests.robot', include=['tag1', 'tag2'], splitlog=True)</span>
-</span><span id="line-0-566"><a id="example-0-566" name="example-0-566"></a><span class="sd">        with open('stdout.txt', 'w') as stdout:</span>
-</span><span id="line-0-567"><a id="example-0-567" name="example-0-567"></a><span class="sd">            run('t1.robot', 't2.robot', name='Example', log=None, stdout=stdout)</span>
-</span><span id="line-0-568"><a id="example-0-568" name="example-0-568"></a>
-</span><span id="line-0-569"><a id="example-0-569" name="example-0-569"></a><span class="sd">    Equivalent command line usage:</span>
-</span><span id="line-0-570"><a id="example-0-570" name="example-0-570"></a>
-</span><span id="line-0-571"><a id="example-0-571" name="example-0-571"></a><span class="sd">        robot path/to/tests.robot</span>
-</span><span id="line-0-572"><a id="example-0-572" name="example-0-572"></a><span class="sd">        robot --include tag1 --include tag2 --splitlog tests.robot</span>
-</span><span id="line-0-573"><a id="example-0-573" name="example-0-573"></a><span class="sd">        robot --name Example --log NONE t1.robot t2.robot &gt; stdout.txt</span>
-</span><span id="line-0-574"><a id="example-0-574" name="example-0-574"></a><span class="sd">    """</span>
-</span><span id="line-0-575"><a id="example-0-575" name="example-0-575"></a>    <span class="k">return</span> <span class="n">RobotFramework</span><span class="p">()</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="o">*</span><span class="n">sources</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">)</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#robot.run.run--source--example-0-520">520</a></span>
+<span class="normal"><a href="#robot.run.run--source--example-0-521">521</a></span>
+<span class="normal"><a href="#robot.run.run--source--example-0-522">522</a></span>
+<span class="normal"><a href="#robot.run.run--source--example-0-523">523</a></span>
+<span class="normal"><a href="#robot.run.run--source--example-0-524">524</a></span>
+<span class="normal"><a href="#robot.run.run--source--example-0-525">525</a></span>
+<span class="normal"><a href="#robot.run.run--source--example-0-526">526</a></span>
+<span class="normal"><a href="#robot.run.run--source--example-0-527">527</a></span>
+<span class="normal"><a href="#robot.run.run--source--example-0-528">528</a></span>
+<span class="normal"><a href="#robot.run.run--source--example-0-529">529</a></span>
+<span class="normal"><a href="#robot.run.run--source--example-0-530">530</a></span>
+<span class="normal"><a href="#robot.run.run--source--example-0-531">531</a></span>
+<span class="normal"><a href="#robot.run.run--source--example-0-532">532</a></span>
+<span class="normal"><a href="#robot.run.run--source--example-0-533">533</a></span>
+<span class="normal"><a href="#robot.run.run--source--example-0-534">534</a></span>
+<span class="normal"><a href="#robot.run.run--source--example-0-535">535</a></span>
+<span class="normal"><a href="#robot.run.run--source--example-0-536">536</a></span>
+<span class="normal"><a href="#robot.run.run--source--example-0-537">537</a></span>
+<span class="normal"><a href="#robot.run.run--source--example-0-538">538</a></span>
+<span class="normal"><a href="#robot.run.run--source--example-0-539">539</a></span>
+<span class="normal"><a href="#robot.run.run--source--example-0-540">540</a></span>
+<span class="normal"><a href="#robot.run.run--source--example-0-541">541</a></span>
+<span class="normal"><a href="#robot.run.run--source--example-0-542">542</a></span>
+<span class="normal"><a href="#robot.run.run--source--example-0-543">543</a></span>
+<span class="normal"><a href="#robot.run.run--source--example-0-544">544</a></span>
+<span class="normal"><a href="#robot.run.run--source--example-0-545">545</a></span>
+<span class="normal"><a href="#robot.run.run--source--example-0-546">546</a></span>
+<span class="normal"><a href="#robot.run.run--source--example-0-547">547</a></span>
+<span class="normal"><a href="#robot.run.run--source--example-0-548">548</a></span>
+<span class="normal"><a href="#robot.run.run--source--example-0-549">549</a></span>
+<span class="normal"><a href="#robot.run.run--source--example-0-550">550</a></span>
+<span class="normal"><a href="#robot.run.run--source--example-0-551">551</a></span>
+<span class="normal"><a href="#robot.run.run--source--example-0-552">552</a></span>
+<span class="normal"><a href="#robot.run.run--source--example-0-553">553</a></span>
+<span class="normal"><a href="#robot.run.run--source--example-0-554">554</a></span>
+<span class="normal"><a href="#robot.run.run--source--example-0-555">555</a></span>
+<span class="normal"><a href="#robot.run.run--source--example-0-556">556</a></span>
+<span class="normal"><a href="#robot.run.run--source--example-0-557">557</a></span>
+<span class="normal"><a href="#robot.run.run--source--example-0-558">558</a></span>
+<span class="normal"><a href="#robot.run.run--source--example-0-559">559</a></span>
+<span class="normal"><a href="#robot.run.run--source--example-0-560">560</a></span>
+<span class="normal"><a href="#robot.run.run--source--example-0-561">561</a></span>
+<span class="normal"><a href="#robot.run.run--source--example-0-562">562</a></span>
+<span class="normal"><a href="#robot.run.run--source--example-0-563">563</a></span>
+<span class="normal"><a href="#robot.run.run--source--example-0-564">564</a></span>
+<span class="normal"><a href="#robot.run.run--source--example-0-565">565</a></span>
+<span class="normal"><a href="#robot.run.run--source--example-0-566">566</a></span>
+<span class="normal"><a href="#robot.run.run--source--example-0-567">567</a></span>
+<span class="normal"><a href="#robot.run.run--source--example-0-568">568</a></span>
+<span class="normal"><a href="#robot.run.run--source--example-0-569">569</a></span>
+<span class="normal"><a href="#robot.run.run--source--example-0-570">570</a></span>
+<span class="normal"><a href="#robot.run.run--source--example-0-571">571</a></span>
+<span class="normal"><a href="#robot.run.run--source--example-0-572">572</a></span>
+<span class="normal"><a href="#robot.run.run--source--example-0-573">573</a></span>
+<span class="normal"><a href="#robot.run.run--source--example-0-574">574</a></span>
+<span class="normal"><a href="#robot.run.run--source--example-0-575">575</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="robot.run.run--source--line-0-520"><a id="robot.run.run--source--example-0-520" name="robot.run.run--source--example-0-520"></a><span class="k">def</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span><span class="o">*</span><span class="n">sources</span><span class="p">:</span> <span class="s1">'list[str|Path]'</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">:</span> <span class="s1">'dict[str, Any]'</span><span class="p">):</span>
+</span><span id="robot.run.run--source--line-0-521"><a id="robot.run.run--source--example-0-521" name="robot.run.run--source--example-0-521"></a><span class="w">    </span><span class="sd">"""Programmatic entry point for running tests.</span>
+</span><span id="robot.run.run--source--line-0-522"><a id="robot.run.run--source--example-0-522" name="robot.run.run--source--example-0-522"></a>
+</span><span id="robot.run.run--source--line-0-523"><a id="robot.run.run--source--example-0-523" name="robot.run.run--source--example-0-523"></a><span class="sd">    Parameters:</span>
+</span><span id="robot.run.run--source--line-0-524"><a id="robot.run.run--source--example-0-524" name="robot.run.run--source--example-0-524"></a><span class="sd">        sources: Paths to test case files/directories to be executed similarly</span>
+</span><span id="robot.run.run--source--line-0-525"><a id="robot.run.run--source--example-0-525" name="robot.run.run--source--example-0-525"></a><span class="sd">            as when running the `robot` command on the command line.</span>
+</span><span id="robot.run.run--source--line-0-526"><a id="robot.run.run--source--example-0-526" name="robot.run.run--source--example-0-526"></a><span class="sd">        options: Options to configure and control execution. Accepted</span>
+</span><span id="robot.run.run--source--line-0-527"><a id="robot.run.run--source--example-0-527" name="robot.run.run--source--example-0-527"></a><span class="sd">            options are mostly same as normal command line options to the `robot`</span>
+</span><span id="robot.run.run--source--line-0-528"><a id="robot.run.run--source--example-0-528" name="robot.run.run--source--example-0-528"></a><span class="sd">            command. Option names match command line option long names without</span>
+</span><span id="robot.run.run--source--line-0-529"><a id="robot.run.run--source--example-0-529" name="robot.run.run--source--example-0-529"></a><span class="sd">            hyphens so that, for example, `--name` becomes `name`.</span>
+</span><span id="robot.run.run--source--line-0-530"><a id="robot.run.run--source--example-0-530" name="robot.run.run--source--example-0-530"></a>
+</span><span id="robot.run.run--source--line-0-531"><a id="robot.run.run--source--example-0-531" name="robot.run.run--source--example-0-531"></a><span class="sd">    Most options that can be given from the command line work. An exception</span>
+</span><span id="robot.run.run--source--line-0-532"><a id="robot.run.run--source--example-0-532" name="robot.run.run--source--example-0-532"></a><span class="sd">    is that options `--pythonpath`, `--argumentfile`, `--help` and</span>
+</span><span id="robot.run.run--source--line-0-533"><a id="robot.run.run--source--example-0-533" name="robot.run.run--source--example-0-533"></a><span class="sd">    `--version` are not supported.</span>
+</span><span id="robot.run.run--source--line-0-534"><a id="robot.run.run--source--example-0-534" name="robot.run.run--source--example-0-534"></a>
+</span><span id="robot.run.run--source--line-0-535"><a id="robot.run.run--source--example-0-535" name="robot.run.run--source--example-0-535"></a><span class="sd">    Options that can be given on the command line multiple times can be</span>
+</span><span id="robot.run.run--source--line-0-536"><a id="robot.run.run--source--example-0-536" name="robot.run.run--source--example-0-536"></a><span class="sd">    passed as lists. For example, `include=['tag1', 'tag2']` is equivalent</span>
+</span><span id="robot.run.run--source--line-0-537"><a id="robot.run.run--source--example-0-537" name="robot.run.run--source--example-0-537"></a><span class="sd">    to `--include tag1 --include tag2`. If such options are used only once,</span>
+</span><span id="robot.run.run--source--line-0-538"><a id="robot.run.run--source--example-0-538" name="robot.run.run--source--example-0-538"></a><span class="sd">    they can be given also as a single string like `include='tag'`.</span>
+</span><span id="robot.run.run--source--line-0-539"><a id="robot.run.run--source--example-0-539" name="robot.run.run--source--example-0-539"></a>
+</span><span id="robot.run.run--source--line-0-540"><a id="robot.run.run--source--example-0-540" name="robot.run.run--source--example-0-540"></a><span class="sd">    Options that accept no value can be given as Booleans. For example,</span>
+</span><span id="robot.run.run--source--line-0-541"><a id="robot.run.run--source--example-0-541" name="robot.run.run--source--example-0-541"></a><span class="sd">    `dryrun=True` is same as using the `--dryrun` option.</span>
+</span><span id="robot.run.run--source--line-0-542"><a id="robot.run.run--source--example-0-542" name="robot.run.run--source--example-0-542"></a>
+</span><span id="robot.run.run--source--line-0-543"><a id="robot.run.run--source--example-0-543" name="robot.run.run--source--example-0-543"></a><span class="sd">    Options that accept string `NONE` as a special value can also be used</span>
+</span><span id="robot.run.run--source--line-0-544"><a id="robot.run.run--source--example-0-544" name="robot.run.run--source--example-0-544"></a><span class="sd">    with Python `None`. For example, using `log=None` is equivalent to</span>
+</span><span id="robot.run.run--source--line-0-545"><a id="robot.run.run--source--example-0-545" name="robot.run.run--source--example-0-545"></a><span class="sd">    `--log NONE`.</span>
+</span><span id="robot.run.run--source--line-0-546"><a id="robot.run.run--source--example-0-546" name="robot.run.run--source--example-0-546"></a>
+</span><span id="robot.run.run--source--line-0-547"><a id="robot.run.run--source--example-0-547" name="robot.run.run--source--example-0-547"></a><span class="sd">    `listener`, `prerunmodifier` and `prerebotmodifier` options allow</span>
+</span><span id="robot.run.run--source--line-0-548"><a id="robot.run.run--source--example-0-548" name="robot.run.run--source--example-0-548"></a><span class="sd">    passing values as Python objects in addition to module names these command</span>
+</span><span id="robot.run.run--source--line-0-549"><a id="robot.run.run--source--example-0-549" name="robot.run.run--source--example-0-549"></a><span class="sd">    line options support. For example, `#!py run('tests', listener=MyListener())`.</span>
+</span><span id="robot.run.run--source--line-0-550"><a id="robot.run.run--source--example-0-550" name="robot.run.run--source--example-0-550"></a>
+</span><span id="robot.run.run--source--line-0-551"><a id="robot.run.run--source--example-0-551" name="robot.run.run--source--example-0-551"></a><span class="sd">    To capture the standard output and error streams, pass an open file or</span>
+</span><span id="robot.run.run--source--line-0-552"><a id="robot.run.run--source--example-0-552" name="robot.run.run--source--example-0-552"></a><span class="sd">    file-like object as special keyword arguments `stdout` and `stderr`,</span>
+</span><span id="robot.run.run--source--line-0-553"><a id="robot.run.run--source--example-0-553" name="robot.run.run--source--example-0-553"></a><span class="sd">    respectively.</span>
+</span><span id="robot.run.run--source--line-0-554"><a id="robot.run.run--source--example-0-554" name="robot.run.run--source--example-0-554"></a>
+</span><span id="robot.run.run--source--line-0-555"><a id="robot.run.run--source--example-0-555" name="robot.run.run--source--example-0-555"></a><span class="sd">    A return code is returned similarly as when running on the command line.</span>
+</span><span id="robot.run.run--source--line-0-556"><a id="robot.run.run--source--example-0-556" name="robot.run.run--source--example-0-556"></a><span class="sd">    Zero means that tests were executed and no test failed, values up to 250</span>
+</span><span id="robot.run.run--source--line-0-557"><a id="robot.run.run--source--example-0-557" name="robot.run.run--source--example-0-557"></a><span class="sd">    denote the number of failed tests, and values between 251-255 are for other</span>
+</span><span id="robot.run.run--source--line-0-558"><a id="robot.run.run--source--example-0-558" name="robot.run.run--source--example-0-558"></a><span class="sd">    statuses documented in the Robot Framework User Guide.</span>
+</span><span id="robot.run.run--source--line-0-559"><a id="robot.run.run--source--example-0-559" name="robot.run.run--source--example-0-559"></a>
+</span><span id="robot.run.run--source--line-0-560"><a id="robot.run.run--source--example-0-560" name="robot.run.run--source--example-0-560"></a><span class="sd">    Example:</span>
+</span><span id="robot.run.run--source--line-0-561"><a id="robot.run.run--source--example-0-561" name="robot.run.run--source--example-0-561"></a>
+</span><span id="robot.run.run--source--line-0-562"><a id="robot.run.run--source--example-0-562" name="robot.run.run--source--example-0-562"></a><span class="sd">        from robot import run</span>
+</span><span id="robot.run.run--source--line-0-563"><a id="robot.run.run--source--example-0-563" name="robot.run.run--source--example-0-563"></a>
+</span><span id="robot.run.run--source--line-0-564"><a id="robot.run.run--source--example-0-564" name="robot.run.run--source--example-0-564"></a><span class="sd">        run('path/to/tests.robot')</span>
+</span><span id="robot.run.run--source--line-0-565"><a id="robot.run.run--source--example-0-565" name="robot.run.run--source--example-0-565"></a><span class="sd">        run('tests.robot', include=['tag1', 'tag2'], splitlog=True)</span>
+</span><span id="robot.run.run--source--line-0-566"><a id="robot.run.run--source--example-0-566" name="robot.run.run--source--example-0-566"></a><span class="sd">        with open('stdout.txt', 'w') as stdout:</span>
+</span><span id="robot.run.run--source--line-0-567"><a id="robot.run.run--source--example-0-567" name="robot.run.run--source--example-0-567"></a><span class="sd">            run('t1.robot', 't2.robot', name='Example', log=None, stdout=stdout)</span>
+</span><span id="robot.run.run--source--line-0-568"><a id="robot.run.run--source--example-0-568" name="robot.run.run--source--example-0-568"></a>
+</span><span id="robot.run.run--source--line-0-569"><a id="robot.run.run--source--example-0-569" name="robot.run.run--source--example-0-569"></a><span class="sd">    Equivalent command line usage:</span>
+</span><span id="robot.run.run--source--line-0-570"><a id="robot.run.run--source--example-0-570" name="robot.run.run--source--example-0-570"></a>
+</span><span id="robot.run.run--source--line-0-571"><a id="robot.run.run--source--example-0-571" name="robot.run.run--source--example-0-571"></a><span class="sd">        robot path/to/tests.robot</span>
+</span><span id="robot.run.run--source--line-0-572"><a id="robot.run.run--source--example-0-572" name="robot.run.run--source--example-0-572"></a><span class="sd">        robot --include tag1 --include tag2 --splitlog tests.robot</span>
+</span><span id="robot.run.run--source--line-0-573"><a id="robot.run.run--source--example-0-573" name="robot.run.run--source--example-0-573"></a><span class="sd">        robot --name Example --log NONE t1.robot t2.robot &gt; stdout.txt</span>
+</span><span id="robot.run.run--source--line-0-574"><a id="robot.run.run--source--example-0-574" name="robot.run.run--source--example-0-574"></a><span class="sd">    """</span>
+</span><span id="robot.run.run--source--line-0-575"><a id="robot.run.run--source--example-0-575" name="robot.run.run--source--example-0-575"></a>    <span class="k">return</span> <span class="n">RobotFramework</span><span class="p">()</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="o">*</span><span class="n">sources</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -10532,10 +10532,10 @@ statuses documented in the Robot Framework User Guide.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.top", "search.highlight", "search.suggest", "toc.integrate"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.top", "search.highlight", "search.suggest", "toc.integrate"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c21346df.min.js"></script>
       
     
   </body>

@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../assets/logo.png">
-      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.8.0">
     
     
       
@@ -31,10 +31,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -10033,18 +10033,18 @@ a resource file. In such cases, it is possible to use <em>the full keyword name<
 where the keyword name is prefixed with the name of a library or a resource
 and a dot is used as a separator.</p>
 <p>With library keywords, the full name means using format
-<em class="name">LibraryName.Keyword Name</em>. For example, the keyword <em class="name">Get File</em>
+<code class="name">LibraryName.Keyword Name</code>. For example, the keyword <code class="name">Get File</code>
 from the <a href="https://robotframework.org/robotframework/latest/libraries/OperatingSystem.html">OperatingSystem</a> library can be used as
-<em class="name">OperatingSystem.Get File</em>, even if there was another <em class="name">Get File</em>
+<code class="name">OperatingSystem.Get File</code>, even if there was another <code class="name">Get File</code>
 keyword somewhere else. If the library is implemented in a nested module, the
-full name must contain the full module name like <em class="name">root.sub.Library.Keyword</em>.
+full name must contain the full module name like <code class="name">root.sub.Library.Keyword</code>.
 If a <a href="../libraries/#setting-custom-name-to-library">custom name</a> is given to a library when importing it, the specified
 name must be used also in the full keyword name.</p>
 <p>With user keywords in resource files the full name is constructed the same
 way as with library keywords. The name of the resource is derived from
 the basename of the resource file without the file extension. For example,
-a keyword <em class="name">Some Keyword</em> in a resource file <code class="file">example.resource</code> can
-be used like <em class="name">example.Some Keyword</em>. Note that this syntax does not
+a keyword <code class="name">Some Keyword</code> in a resource file <code class="file">example.resource</code> can
+be used like <code class="name">example.Some Keyword</code>. Note that this syntax does not
 work if several resource files have the same basename. In such cases, either
 resource files or keywords must be renamed.</p>
 <p>With user keywords in a <a href="../suites/#suite-files">suite file</a>, the full name contains only the keyword
@@ -10058,14 +10058,14 @@ in the long format can be quite a lot work. Using the long format also makes it
 impossible to create dynamic test cases or user keywords that work differently
 depending on which libraries or resources are available. A solution to both of
 these problems is specifying the keyword priorities explicitly using the keyword
-<em class="name">Set Library Search Order</em> from the <a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> library.</p>
+<code class="name">Set Library Search Order</code> from the <a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> library.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Although the keyword has the word <em>library</em> in its name, it works
 also with resource files. As discussed above, keywords in resources
 always have higher priority than keywords in libraries, though.</p>
 </div>
-<p>The <em class="name">Set Library Search Order</em> accepts an ordered list or libraries and
+<p>The <code class="name">Set Library Search Order</code> accepts an ordered list or libraries and
 resources as arguments. When a keyword name in the test data matches multiple
 keywords, the first library or resource containing the keyword is selected and
 that keyword implementation used. If the keyword is not found from any of the
@@ -10086,13 +10086,13 @@ mechanism.</p>
 <p><a id="test-case-timeouts"></a></p>
 <p><a id="test-timeout"></a></p>
 <h3 id="test-case-timeout">Test case timeout<a class="headerlink" href="#test-case-timeout" title="Permanent link">&para;</a></h3>
-<p>The test case timeout can be set either by using the <em class="setting">Test Timeout</em>
-setting in the Setting section or the <em class="setting">[Timeout]</em> setting with
-individual test cases. <em class="setting">Test Timeout</em> defines a default timeout
-for all the test cases in that suite, whereas <em class="setting">[Timeout]</em> applies
+<p>The test case timeout can be set either by using the <code class="setting">Test Timeout</code>
+setting in the Setting section or the <code class="setting">[Timeout]</code> setting with
+individual test cases. <code class="setting">Test Timeout</code> defines a default timeout
+for all the test cases in that suite, whereas <code class="setting">[Timeout]</code> applies
 a timeout to a particular test case and overrides the possible default value.</p>
-<p>Using an empty <em class="setting">[Timeout]</em> means that the test has no timeout even
-when <em class="setting">Test Timeout</em> is used. It is also possible to use explicit
+<p>Using an empty <code class="setting">[Timeout]</code> means that the test has no timeout even
+when <code class="setting">Test Timeout</code> is used. It is also possible to use explicit
 <code>NONE</code> value for this purpose. The timeout is effectively ignored also if
 its value is zero or negative.</p>
 <p>Regardless of where the test timeout is defined, the value given to it
@@ -10163,7 +10163,7 @@ stopped by using <a href="#user-keyword-timeout">user keyword timeouts</a>.</p>
 <p><a id="user-keyword-timeouts"></a></p>
 <p><a id="keyword-timeout"></a></p>
 <h3 id="user-keyword-timeout">User keyword timeout<a class="headerlink" href="#user-keyword-timeout" title="Permanent link">&para;</a></h3>
-<p>Timeouts can be set for user keywords using the <em class="setting">[Timeout]</em> setting.
+<p>Timeouts can be set for user keywords using the <code class="setting">[Timeout]</code> setting.
 The syntax is exactly the same as with <a href="#test-case-timeout">test case timeout</a>, but user keyword
 timeouts do not have any default value. If a user keyword timeout is specified
 using a variable, the value can be given also as a keyword argument.</p>
@@ -10217,11 +10217,11 @@ in Robot Framework 3.2.</p>
 <h2 id="parallel-execution-of-keywords">Parallel execution of keywords<a class="headerlink" href="#parallel-execution-of-keywords" title="Permanent link">&para;</a></h2>
 <p>When parallel execution is needed, it must be implemented in test library
 level so that the library executes the code on background. Typically this
-means that the library needs a keyword like <em class="name">Start Something</em> that
+means that the library needs a keyword like <code class="name">Start Something</code> that
 starts the execution and returns immediately, and another keyword like
-<em class="name">Get Results From Something</em> that waits until the result is available
-and returns it. See <a href="https://robotframework.org/robotframework/latest/libraries/Process.html">Process</a> library keywords <em class="name">Start Process</em>
-and <em class="name">Wait For Process</em> for an example.</p>
+<code class="name">Get Results From Something</code> that waits until the result is available
+and returns it. See <a href="https://robotframework.org/robotframework/latest/libraries/Process.html">Process</a> library keywords <code class="name">Start Process</code>
+and <code class="name">Wait For Process</code> for an example.</p>
 
 
 
@@ -10375,10 +10375,10 @@ and <em class="name">Wait For Process</em> for an example.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.top", "search.highlight", "search.suggest", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.top", "search.highlight", "search.suggest", "toc.integrate"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
       
     
   </body>

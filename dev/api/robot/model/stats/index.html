@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../../../assets/logo.png">
-      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.8.0">
     
     
       
@@ -31,10 +31,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -10027,33 +10027,33 @@
 
                   <details class="mkdocstrings-source">
                     <summary>Source code in <code>src/robot/model/stats.py</code></summary>
-                    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-27">27</a></span>
-<span class="normal"><a href="#example-0-28">28</a></span>
-<span class="normal"><a href="#example-0-29">29</a></span>
-<span class="normal"><a href="#example-0-30">30</a></span>
-<span class="normal"><a href="#example-0-31">31</a></span>
-<span class="normal"><a href="#example-0-32">32</a></span>
-<span class="normal"><a href="#example-0-33">33</a></span>
-<span class="normal"><a href="#example-0-34">34</a></span>
-<span class="normal"><a href="#example-0-35">35</a></span>
-<span class="normal"><a href="#example-0-36">36</a></span>
-<span class="normal"><a href="#example-0-37">37</a></span>
-<span class="normal"><a href="#example-0-38">38</a></span>
-<span class="normal"><a href="#example-0-39">39</a></span>
-<span class="normal"><a href="#example-0-40">40</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-27"><a id="example-0-27" name="example-0-27"></a><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-</span><span id="line-0-28"><a id="example-0-28" name="example-0-28"></a>    <span class="c1">#: Human readable identifier of the object these statistics</span>
-</span><span id="line-0-29"><a id="example-0-29" name="example-0-29"></a>    <span class="c1">#: belong to. `All Tests` for</span>
-</span><span id="line-0-30"><a id="example-0-30" name="example-0-30"></a>    <span class="c1">#: :class:`~robot.model.totalstatistics.TotalStatistics`,</span>
-</span><span id="line-0-31"><a id="example-0-31" name="example-0-31"></a>    <span class="c1">#: long name of the suite for</span>
-</span><span id="line-0-32"><a id="example-0-32" name="example-0-32"></a>    <span class="c1">#: :class:`~robot.model.suitestatistics.SuiteStatistics`</span>
-</span><span id="line-0-33"><a id="example-0-33" name="example-0-33"></a>    <span class="c1">#: or name of the tag for</span>
-</span><span id="line-0-34"><a id="example-0-34" name="example-0-34"></a>    <span class="c1">#: :class:`~robot.model.tagstatistics.TagStatistics`</span>
-</span><span id="line-0-35"><a id="example-0-35" name="example-0-35"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-</span><span id="line-0-36"><a id="example-0-36" name="example-0-36"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">passed</span> <span class="o">=</span> <span class="mi">0</span>
-</span><span id="line-0-37"><a id="example-0-37" name="example-0-37"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">failed</span> <span class="o">=</span> <span class="mi">0</span>
-</span><span id="line-0-38"><a id="example-0-38" name="example-0-38"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">skipped</span> <span class="o">=</span> <span class="mi">0</span>
-</span><span id="line-0-39"><a id="example-0-39" name="example-0-39"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">elapsed</span> <span class="o">=</span> <span class="n">timedelta</span><span class="p">()</span>
-</span><span id="line-0-40"><a id="example-0-40" name="example-0-40"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_norm_name</span> <span class="o">=</span> <span class="n">normalize</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">ignore</span><span class="o">=</span><span class="s1">'_'</span><span class="p">)</span>
+                    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#robot.model.stats.Stat--source--example-0-27">27</a></span>
+<span class="normal"><a href="#robot.model.stats.Stat--source--example-0-28">28</a></span>
+<span class="normal"><a href="#robot.model.stats.Stat--source--example-0-29">29</a></span>
+<span class="normal"><a href="#robot.model.stats.Stat--source--example-0-30">30</a></span>
+<span class="normal"><a href="#robot.model.stats.Stat--source--example-0-31">31</a></span>
+<span class="normal"><a href="#robot.model.stats.Stat--source--example-0-32">32</a></span>
+<span class="normal"><a href="#robot.model.stats.Stat--source--example-0-33">33</a></span>
+<span class="normal"><a href="#robot.model.stats.Stat--source--example-0-34">34</a></span>
+<span class="normal"><a href="#robot.model.stats.Stat--source--example-0-35">35</a></span>
+<span class="normal"><a href="#robot.model.stats.Stat--source--example-0-36">36</a></span>
+<span class="normal"><a href="#robot.model.stats.Stat--source--example-0-37">37</a></span>
+<span class="normal"><a href="#robot.model.stats.Stat--source--example-0-38">38</a></span>
+<span class="normal"><a href="#robot.model.stats.Stat--source--example-0-39">39</a></span>
+<span class="normal"><a href="#robot.model.stats.Stat--source--example-0-40">40</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="robot.model.stats.Stat--source--line-0-27"><a id="robot.model.stats.Stat--source--example-0-27" name="robot.model.stats.Stat--source--example-0-27"></a><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+</span><span id="robot.model.stats.Stat--source--line-0-28"><a id="robot.model.stats.Stat--source--example-0-28" name="robot.model.stats.Stat--source--example-0-28"></a>    <span class="c1">#: Human readable identifier of the object these statistics</span>
+</span><span id="robot.model.stats.Stat--source--line-0-29"><a id="robot.model.stats.Stat--source--example-0-29" name="robot.model.stats.Stat--source--example-0-29"></a>    <span class="c1">#: belong to. `All Tests` for</span>
+</span><span id="robot.model.stats.Stat--source--line-0-30"><a id="robot.model.stats.Stat--source--example-0-30" name="robot.model.stats.Stat--source--example-0-30"></a>    <span class="c1">#: :class:`~robot.model.totalstatistics.TotalStatistics`,</span>
+</span><span id="robot.model.stats.Stat--source--line-0-31"><a id="robot.model.stats.Stat--source--example-0-31" name="robot.model.stats.Stat--source--example-0-31"></a>    <span class="c1">#: long name of the suite for</span>
+</span><span id="robot.model.stats.Stat--source--line-0-32"><a id="robot.model.stats.Stat--source--example-0-32" name="robot.model.stats.Stat--source--example-0-32"></a>    <span class="c1">#: :class:`~robot.model.suitestatistics.SuiteStatistics`</span>
+</span><span id="robot.model.stats.Stat--source--line-0-33"><a id="robot.model.stats.Stat--source--example-0-33" name="robot.model.stats.Stat--source--example-0-33"></a>    <span class="c1">#: or name of the tag for</span>
+</span><span id="robot.model.stats.Stat--source--line-0-34"><a id="robot.model.stats.Stat--source--example-0-34" name="robot.model.stats.Stat--source--example-0-34"></a>    <span class="c1">#: :class:`~robot.model.tagstatistics.TagStatistics`</span>
+</span><span id="robot.model.stats.Stat--source--line-0-35"><a id="robot.model.stats.Stat--source--example-0-35" name="robot.model.stats.Stat--source--example-0-35"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+</span><span id="robot.model.stats.Stat--source--line-0-36"><a id="robot.model.stats.Stat--source--example-0-36" name="robot.model.stats.Stat--source--example-0-36"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">passed</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="robot.model.stats.Stat--source--line-0-37"><a id="robot.model.stats.Stat--source--example-0-37" name="robot.model.stats.Stat--source--example-0-37"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">failed</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="robot.model.stats.Stat--source--line-0-38"><a id="robot.model.stats.Stat--source--example-0-38" name="robot.model.stats.Stat--source--example-0-38"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">skipped</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="robot.model.stats.Stat--source--line-0-39"><a id="robot.model.stats.Stat--source--example-0-39" name="robot.model.stats.Stat--source--example-0-39"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">elapsed</span> <span class="o">=</span> <span class="n">timedelta</span><span class="p">()</span>
+</span><span id="robot.model.stats.Stat--source--line-0-40"><a id="robot.model.stats.Stat--source--example-0-40" name="robot.model.stats.Stat--source--example-0-40"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_norm_name</span> <span class="o">=</span> <span class="n">normalize</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">ignore</span><span class="o">=</span><span class="s1">'_'</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
                   </details>
 
@@ -10105,33 +10105,33 @@
 
                   <details class="mkdocstrings-source">
                     <summary>Source code in <code>src/robot/model/stats.py</code></summary>
-                    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-27">27</a></span>
-<span class="normal"><a href="#example-0-28">28</a></span>
-<span class="normal"><a href="#example-0-29">29</a></span>
-<span class="normal"><a href="#example-0-30">30</a></span>
-<span class="normal"><a href="#example-0-31">31</a></span>
-<span class="normal"><a href="#example-0-32">32</a></span>
-<span class="normal"><a href="#example-0-33">33</a></span>
-<span class="normal"><a href="#example-0-34">34</a></span>
-<span class="normal"><a href="#example-0-35">35</a></span>
-<span class="normal"><a href="#example-0-36">36</a></span>
-<span class="normal"><a href="#example-0-37">37</a></span>
-<span class="normal"><a href="#example-0-38">38</a></span>
-<span class="normal"><a href="#example-0-39">39</a></span>
-<span class="normal"><a href="#example-0-40">40</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-27"><a id="example-0-27" name="example-0-27"></a><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-</span><span id="line-0-28"><a id="example-0-28" name="example-0-28"></a>    <span class="c1">#: Human readable identifier of the object these statistics</span>
-</span><span id="line-0-29"><a id="example-0-29" name="example-0-29"></a>    <span class="c1">#: belong to. `All Tests` for</span>
-</span><span id="line-0-30"><a id="example-0-30" name="example-0-30"></a>    <span class="c1">#: :class:`~robot.model.totalstatistics.TotalStatistics`,</span>
-</span><span id="line-0-31"><a id="example-0-31" name="example-0-31"></a>    <span class="c1">#: long name of the suite for</span>
-</span><span id="line-0-32"><a id="example-0-32" name="example-0-32"></a>    <span class="c1">#: :class:`~robot.model.suitestatistics.SuiteStatistics`</span>
-</span><span id="line-0-33"><a id="example-0-33" name="example-0-33"></a>    <span class="c1">#: or name of the tag for</span>
-</span><span id="line-0-34"><a id="example-0-34" name="example-0-34"></a>    <span class="c1">#: :class:`~robot.model.tagstatistics.TagStatistics`</span>
-</span><span id="line-0-35"><a id="example-0-35" name="example-0-35"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-</span><span id="line-0-36"><a id="example-0-36" name="example-0-36"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">passed</span> <span class="o">=</span> <span class="mi">0</span>
-</span><span id="line-0-37"><a id="example-0-37" name="example-0-37"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">failed</span> <span class="o">=</span> <span class="mi">0</span>
-</span><span id="line-0-38"><a id="example-0-38" name="example-0-38"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">skipped</span> <span class="o">=</span> <span class="mi">0</span>
-</span><span id="line-0-39"><a id="example-0-39" name="example-0-39"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">elapsed</span> <span class="o">=</span> <span class="n">timedelta</span><span class="p">()</span>
-</span><span id="line-0-40"><a id="example-0-40" name="example-0-40"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_norm_name</span> <span class="o">=</span> <span class="n">normalize</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">ignore</span><span class="o">=</span><span class="s1">'_'</span><span class="p">)</span>
+                    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#robot.model.stats.TotalStat--source--example-0-27">27</a></span>
+<span class="normal"><a href="#robot.model.stats.TotalStat--source--example-0-28">28</a></span>
+<span class="normal"><a href="#robot.model.stats.TotalStat--source--example-0-29">29</a></span>
+<span class="normal"><a href="#robot.model.stats.TotalStat--source--example-0-30">30</a></span>
+<span class="normal"><a href="#robot.model.stats.TotalStat--source--example-0-31">31</a></span>
+<span class="normal"><a href="#robot.model.stats.TotalStat--source--example-0-32">32</a></span>
+<span class="normal"><a href="#robot.model.stats.TotalStat--source--example-0-33">33</a></span>
+<span class="normal"><a href="#robot.model.stats.TotalStat--source--example-0-34">34</a></span>
+<span class="normal"><a href="#robot.model.stats.TotalStat--source--example-0-35">35</a></span>
+<span class="normal"><a href="#robot.model.stats.TotalStat--source--example-0-36">36</a></span>
+<span class="normal"><a href="#robot.model.stats.TotalStat--source--example-0-37">37</a></span>
+<span class="normal"><a href="#robot.model.stats.TotalStat--source--example-0-38">38</a></span>
+<span class="normal"><a href="#robot.model.stats.TotalStat--source--example-0-39">39</a></span>
+<span class="normal"><a href="#robot.model.stats.TotalStat--source--example-0-40">40</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="robot.model.stats.TotalStat--source--line-0-27"><a id="robot.model.stats.TotalStat--source--example-0-27" name="robot.model.stats.TotalStat--source--example-0-27"></a><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+</span><span id="robot.model.stats.TotalStat--source--line-0-28"><a id="robot.model.stats.TotalStat--source--example-0-28" name="robot.model.stats.TotalStat--source--example-0-28"></a>    <span class="c1">#: Human readable identifier of the object these statistics</span>
+</span><span id="robot.model.stats.TotalStat--source--line-0-29"><a id="robot.model.stats.TotalStat--source--example-0-29" name="robot.model.stats.TotalStat--source--example-0-29"></a>    <span class="c1">#: belong to. `All Tests` for</span>
+</span><span id="robot.model.stats.TotalStat--source--line-0-30"><a id="robot.model.stats.TotalStat--source--example-0-30" name="robot.model.stats.TotalStat--source--example-0-30"></a>    <span class="c1">#: :class:`~robot.model.totalstatistics.TotalStatistics`,</span>
+</span><span id="robot.model.stats.TotalStat--source--line-0-31"><a id="robot.model.stats.TotalStat--source--example-0-31" name="robot.model.stats.TotalStat--source--example-0-31"></a>    <span class="c1">#: long name of the suite for</span>
+</span><span id="robot.model.stats.TotalStat--source--line-0-32"><a id="robot.model.stats.TotalStat--source--example-0-32" name="robot.model.stats.TotalStat--source--example-0-32"></a>    <span class="c1">#: :class:`~robot.model.suitestatistics.SuiteStatistics`</span>
+</span><span id="robot.model.stats.TotalStat--source--line-0-33"><a id="robot.model.stats.TotalStat--source--example-0-33" name="robot.model.stats.TotalStat--source--example-0-33"></a>    <span class="c1">#: or name of the tag for</span>
+</span><span id="robot.model.stats.TotalStat--source--line-0-34"><a id="robot.model.stats.TotalStat--source--example-0-34" name="robot.model.stats.TotalStat--source--example-0-34"></a>    <span class="c1">#: :class:`~robot.model.tagstatistics.TagStatistics`</span>
+</span><span id="robot.model.stats.TotalStat--source--line-0-35"><a id="robot.model.stats.TotalStat--source--example-0-35" name="robot.model.stats.TotalStat--source--example-0-35"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+</span><span id="robot.model.stats.TotalStat--source--line-0-36"><a id="robot.model.stats.TotalStat--source--example-0-36" name="robot.model.stats.TotalStat--source--example-0-36"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">passed</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="robot.model.stats.TotalStat--source--line-0-37"><a id="robot.model.stats.TotalStat--source--example-0-37" name="robot.model.stats.TotalStat--source--example-0-37"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">failed</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="robot.model.stats.TotalStat--source--line-0-38"><a id="robot.model.stats.TotalStat--source--example-0-38" name="robot.model.stats.TotalStat--source--example-0-38"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">skipped</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="robot.model.stats.TotalStat--source--line-0-39"><a id="robot.model.stats.TotalStat--source--example-0-39" name="robot.model.stats.TotalStat--source--example-0-39"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">elapsed</span> <span class="o">=</span> <span class="n">timedelta</span><span class="p">()</span>
+</span><span id="robot.model.stats.TotalStat--source--line-0-40"><a id="robot.model.stats.TotalStat--source--example-0-40" name="robot.model.stats.TotalStat--source--example-0-40"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_norm_name</span> <span class="o">=</span> <span class="n">normalize</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">ignore</span><span class="o">=</span><span class="s1">'_'</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
                   </details>
 
@@ -10183,15 +10183,15 @@
 
                   <details class="mkdocstrings-source">
                     <summary>Source code in <code>src/robot/model/stats.py</code></summary>
-                    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-105">105</a></span>
-<span class="normal"><a href="#example-0-106">106</a></span>
-<span class="normal"><a href="#example-0-107">107</a></span>
-<span class="normal"><a href="#example-0-108">108</a></span>
-<span class="normal"><a href="#example-0-109">109</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-105"><a id="example-0-105" name="example-0-105"></a><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">suite</span><span class="p">):</span>
-</span><span id="line-0-106"><a id="example-0-106" name="example-0-106"></a>    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">suite</span><span class="o">.</span><span class="n">full_name</span><span class="p">)</span>
-</span><span id="line-0-107"><a id="example-0-107" name="example-0-107"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">suite</span><span class="o">.</span><span class="n">id</span>
-</span><span id="line-0-108"><a id="example-0-108" name="example-0-108"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">elapsed</span> <span class="o">=</span> <span class="n">suite</span><span class="o">.</span><span class="n">elapsed_time</span>
-</span><span id="line-0-109"><a id="example-0-109" name="example-0-109"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="n">suite</span><span class="o">.</span><span class="n">name</span>
+                    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#robot.model.stats.SuiteStat--source--example-0-105">105</a></span>
+<span class="normal"><a href="#robot.model.stats.SuiteStat--source--example-0-106">106</a></span>
+<span class="normal"><a href="#robot.model.stats.SuiteStat--source--example-0-107">107</a></span>
+<span class="normal"><a href="#robot.model.stats.SuiteStat--source--example-0-108">108</a></span>
+<span class="normal"><a href="#robot.model.stats.SuiteStat--source--example-0-109">109</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="robot.model.stats.SuiteStat--source--line-0-105"><a id="robot.model.stats.SuiteStat--source--example-0-105" name="robot.model.stats.SuiteStat--source--example-0-105"></a><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">suite</span><span class="p">):</span>
+</span><span id="robot.model.stats.SuiteStat--source--line-0-106"><a id="robot.model.stats.SuiteStat--source--example-0-106" name="robot.model.stats.SuiteStat--source--example-0-106"></a>    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">suite</span><span class="o">.</span><span class="n">full_name</span><span class="p">)</span>
+</span><span id="robot.model.stats.SuiteStat--source--line-0-107"><a id="robot.model.stats.SuiteStat--source--example-0-107" name="robot.model.stats.SuiteStat--source--example-0-107"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">suite</span><span class="o">.</span><span class="n">id</span>
+</span><span id="robot.model.stats.SuiteStat--source--line-0-108"><a id="robot.model.stats.SuiteStat--source--example-0-108" name="robot.model.stats.SuiteStat--source--example-0-108"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">elapsed</span> <span class="o">=</span> <span class="n">suite</span><span class="o">.</span><span class="n">elapsed_time</span>
+</span><span id="robot.model.stats.SuiteStat--source--line-0-109"><a id="robot.model.stats.SuiteStat--source--example-0-109" name="robot.model.stats.SuiteStat--source--example-0-109"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="n">suite</span><span class="o">.</span><span class="n">name</span>
 </span></code></pre></div></td></tr></table></div>
                   </details>
 
@@ -10243,23 +10243,23 @@
 
                   <details class="mkdocstrings-source">
                     <summary>Source code in <code>src/robot/model/stats.py</code></summary>
-                    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-127">127</a></span>
-<span class="normal"><a href="#example-0-128">128</a></span>
-<span class="normal"><a href="#example-0-129">129</a></span>
-<span class="normal"><a href="#example-0-130">130</a></span>
-<span class="normal"><a href="#example-0-131">131</a></span>
-<span class="normal"><a href="#example-0-132">132</a></span>
-<span class="normal"><a href="#example-0-133">133</a></span>
-<span class="normal"><a href="#example-0-134">134</a></span>
-<span class="normal"><a href="#example-0-135">135</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-127"><a id="example-0-127" name="example-0-127"></a><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s1">''</span><span class="p">,</span> <span class="n">links</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">combined</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-</span><span id="line-0-128"><a id="example-0-128" name="example-0-128"></a>    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
-</span><span id="line-0-129"><a id="example-0-129" name="example-0-129"></a>    <span class="c1">#: Documentation of tag as a string.</span>
-</span><span id="line-0-130"><a id="example-0-130" name="example-0-130"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">doc</span> <span class="o">=</span> <span class="n">doc</span>
-</span><span id="line-0-131"><a id="example-0-131" name="example-0-131"></a>    <span class="c1">#: List of tuples in which the first value is the link URL and</span>
-</span><span id="line-0-132"><a id="example-0-132" name="example-0-132"></a>    <span class="c1">#: the second is the link title. An empty list by default.</span>
-</span><span id="line-0-133"><a id="example-0-133" name="example-0-133"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">links</span> <span class="o">=</span> <span class="n">links</span> <span class="ow">or</span> <span class="p">[]</span>
-</span><span id="line-0-134"><a id="example-0-134" name="example-0-134"></a>    <span class="c1">#: Pattern as a string if the tag is combined, ``None`` otherwise.</span>
-</span><span id="line-0-135"><a id="example-0-135" name="example-0-135"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">combined</span> <span class="o">=</span> <span class="n">combined</span>
+                    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#robot.model.stats.TagStat--source--example-0-127">127</a></span>
+<span class="normal"><a href="#robot.model.stats.TagStat--source--example-0-128">128</a></span>
+<span class="normal"><a href="#robot.model.stats.TagStat--source--example-0-129">129</a></span>
+<span class="normal"><a href="#robot.model.stats.TagStat--source--example-0-130">130</a></span>
+<span class="normal"><a href="#robot.model.stats.TagStat--source--example-0-131">131</a></span>
+<span class="normal"><a href="#robot.model.stats.TagStat--source--example-0-132">132</a></span>
+<span class="normal"><a href="#robot.model.stats.TagStat--source--example-0-133">133</a></span>
+<span class="normal"><a href="#robot.model.stats.TagStat--source--example-0-134">134</a></span>
+<span class="normal"><a href="#robot.model.stats.TagStat--source--example-0-135">135</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="robot.model.stats.TagStat--source--line-0-127"><a id="robot.model.stats.TagStat--source--example-0-127" name="robot.model.stats.TagStat--source--example-0-127"></a><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s1">''</span><span class="p">,</span> <span class="n">links</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">combined</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+</span><span id="robot.model.stats.TagStat--source--line-0-128"><a id="robot.model.stats.TagStat--source--example-0-128" name="robot.model.stats.TagStat--source--example-0-128"></a>    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+</span><span id="robot.model.stats.TagStat--source--line-0-129"><a id="robot.model.stats.TagStat--source--example-0-129" name="robot.model.stats.TagStat--source--example-0-129"></a>    <span class="c1">#: Documentation of tag as a string.</span>
+</span><span id="robot.model.stats.TagStat--source--line-0-130"><a id="robot.model.stats.TagStat--source--example-0-130" name="robot.model.stats.TagStat--source--example-0-130"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">doc</span> <span class="o">=</span> <span class="n">doc</span>
+</span><span id="robot.model.stats.TagStat--source--line-0-131"><a id="robot.model.stats.TagStat--source--example-0-131" name="robot.model.stats.TagStat--source--example-0-131"></a>    <span class="c1">#: List of tuples in which the first value is the link URL and</span>
+</span><span id="robot.model.stats.TagStat--source--line-0-132"><a id="robot.model.stats.TagStat--source--example-0-132" name="robot.model.stats.TagStat--source--example-0-132"></a>    <span class="c1">#: the second is the link title. An empty list by default.</span>
+</span><span id="robot.model.stats.TagStat--source--line-0-133"><a id="robot.model.stats.TagStat--source--example-0-133" name="robot.model.stats.TagStat--source--example-0-133"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">links</span> <span class="o">=</span> <span class="n">links</span> <span class="ow">or</span> <span class="p">[]</span>
+</span><span id="robot.model.stats.TagStat--source--line-0-134"><a id="robot.model.stats.TagStat--source--example-0-134" name="robot.model.stats.TagStat--source--example-0-134"></a>    <span class="c1">#: Pattern as a string if the tag is combined, ``None`` otherwise.</span>
+</span><span id="robot.model.stats.TagStat--source--line-0-135"><a id="robot.model.stats.TagStat--source--example-0-135" name="robot.model.stats.TagStat--source--example-0-135"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">combined</span> <span class="o">=</span> <span class="n">combined</span>
 </span></code></pre></div></td></tr></table></div>
                   </details>
 
@@ -10471,10 +10471,10 @@ are about. Either <code>combined</code> or an empty string.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.top", "search.highlight", "search.suggest", "toc.integrate"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.top", "search.highlight", "search.suggest", "toc.integrate"], "search": "../../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.c21346df.min.js"></script>
       
     
   </body>

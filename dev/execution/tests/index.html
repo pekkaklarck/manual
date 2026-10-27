@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../assets/logo.png">
-      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.8.0">
     
     
       
@@ -31,10 +31,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -10314,9 +10314,9 @@ the <code class="option">--randomize</code> option.</p>
 <p>A test gets the PASS status if it is executed and none of the keywords it contains fails.</p>
 <h4 id="prematurely-passing-tests">Prematurely passing tests<a class="headerlink" href="#prematurely-passing-tests" title="Permanent link">&para;</a></h4>
 <p>Normally all keywords are executed, but it is also possible to use
-<a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> keywords <em class="name">Pass Execution</em> and <em class="name">Pass Execution If</em> to stop
+<a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> keywords <code class="name">Pass Execution</code> and <code class="name">Pass Execution If</code> to stop
 execution with the PASS status and not run the remaining keywords.</p>
-<p>How <em class="name">Pass Execution</em> and <em class="name">Pass Execution If</em> behave
+<p>How <code class="name">Pass Execution</code> and <code class="name">Pass Execution If</code> behave
 in different situations is explained below:</p>
 <ul>
 <li>
@@ -10415,13 +10415,13 @@ Robot Framework 7.2.</p>
 <p>Tests can get the skip status during execution in various ways:</p>
 <ul>
 <li>
-<p>Using the <a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> keyword <em class="name">Skip</em> anywhere in the test case, including setup or
-  teardown. Using <em class="name">Skip</em> keyword has two effects: the test gets the SKIP status
+<p>Using the <a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> keyword <code class="name">Skip</code> anywhere in the test case, including setup or
+  teardown. Using <code class="name">Skip</code> keyword has two effects: the test gets the SKIP status
   and rest of the test is not executed. However, if the test has a teardown, it will be
   run.</p>
 </li>
 <li>
-<p>Using the <a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> keyword <em class="name">Skip If</em> which takes a condition and skips the test
+<p>Using the <a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> keyword <code class="name">Skip If</code> which takes a condition and skips the test
   if the condition is true.</p>
 </li>
 <li>
@@ -10550,8 +10550,8 @@ failure. Also in that case all the failures will be listed in the
 final error message.</p>
 <p>The return value from failed keywords, possibly assigned to a
 variable, is always the Python <code>None</code>.</p>
-<h3 id="run-keyword-and-continue-on-failure-keyword"><em class="name">Run Keyword And Continue On Failure</em> keyword<a class="headerlink" href="#run-keyword-and-continue-on-failure-keyword" title="Permanent link">&para;</a></h3>
-<p><a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> keyword <em class="name">Run Keyword And Continue On Failure</em> allows
+<h3 id="run-keyword-and-continue-on-failure-keyword"><code class="name">Run Keyword And Continue On Failure</code> keyword<a class="headerlink" href="#run-keyword-and-continue-on-failure-keyword" title="Permanent link">&para;</a></h3>
+<p><a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> keyword <code class="name">Run Keyword And Continue On Failure</code> allows
 converting any failure into a continuable failure. These failures are
 handled by the framework exactly the same way as continuable failures
 originating from library keywords discussed above.</p>
@@ -10607,7 +10607,7 @@ by default. For example, the following two tests behave identically:</p>
 </span></code></pre></div></td></tr></table></div>
 <p>These tags also affect the continue-on-failure mode with different <a href="../../syntax/control/#control-structures">control
 structures</a>. For example, the below test case will execute the
-<em class="name">Do Something</em> keyword ten times regardless does it succeed or not:</p>
+<code class="name">Do Something</code> keyword ten times regardless does it succeed or not:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-9-1">1</a></span>
 <span class="normal"><a href="#example-9-2">2</a></span>
 <span class="normal"><a href="#example-9-3">3</a></span>
@@ -10659,7 +10659,7 @@ keywords in the following example are executed:</p>
 </span></code></pre></div></td></tr></table></div>
 <p>Setting <code>robot:continue-on-failure</code> or <code>robot:recursive-continue-on-failure</code> in a
 test case does NOT alter the behavior of a failure in the keyword(s) executed
-as part of the <em class="setting">[Setup]</em>: The test case is marked as failed and no
+as part of the <code class="setting">[Setup]</code>: The test case is marked as failed and no
 test case keywords are executed.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -10774,23 +10774,23 @@ handling failures:</p>
 so that execution can continue after possible failures:</p>
 <ul>
 <li>
-<p><em class="name">Run Keyword And Expect Error</em> executes a keyword and expects it to fail
+<p><code class="name">Run Keyword And Expect Error</code> executes a keyword and expects it to fail
   with the specified error message. The aforementioned <code>TRY/EXCEPT</code> syntax is
   nowadays generally recommended instead.</p>
 </li>
 <li>
-<p><em class="name">Run Keyword And Ignore Error</em> executes a keyword and silences possible
+<p><code class="name">Run Keyword And Ignore Error</code> executes a keyword and silences possible
   error. It returns the status along with possible keyword return value or
   error message. The <code>TRY/EXCEPT</code> syntax generally works better in this case
   as well.</p>
 </li>
 <li>
-<p><em class="name">Run Keyword And Warn On Failure</em> is a wrapper for
-  <em class="name">Run Keyword And Ignore Error</em> that automatically logs a warning
+<p><code class="name">Run Keyword And Warn On Failure</code> is a wrapper for
+  <code class="name">Run Keyword And Ignore Error</code> that automatically logs a warning
   if the executed keyword fails.</p>
 </li>
 <li>
-<p><em class="name">Run Keyword And Return Status</em> executes a keyword and returns Boolean
+<p><code class="name">Run Keyword And Return Status</code> executes a keyword and returns Boolean
   <code>True</code> or <code>False</code> depending on did it pass or fail.</p>
 </li>
 </ul>
@@ -10820,7 +10820,7 @@ from the command line using <code>kill</code> command, and sending signals can
 also be easily automated.</p>
 <h3 id="using-keywords">Using keywords<a class="headerlink" href="#using-keywords" title="Permanent link">&para;</a></h3>
 <p>The execution can be stopped also by the executed keywords. There is a
-separate <em class="name">Fatal Error</em> <a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> keyword for this purpose, and
+separate <code class="name">Fatal Error</code> <a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> keyword for this purpose, and
 custom keywords can use <a href="../../extend/libraries/#stopping-test-execution">fatal exceptions</a> when they fail.</p>
 <h3 id="stopping-when-first-test-case-fails">Stopping when first test case fails<a class="headerlink" href="#stopping-when-first-test-case-fails" title="Permanent link">&para;</a></h3>
 <p>If option <code class="option">--exitonfailure (-X)</code> is used, the whole execution stops
@@ -11010,10 +11010,10 @@ clean-up tasks take a lot of time.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.top", "search.highlight", "search.suggest", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.top", "search.highlight", "search.suggest", "toc.integrate"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
       
     
   </body>

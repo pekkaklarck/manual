@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../assets/logo.png">
-      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.8.0">
     
     
       
@@ -31,10 +31,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -9990,7 +9990,7 @@ only one high-level keyword.</p>
 <p>The following settings in the Setting section can be used to customize the suite:</p>
 <dl>
 <dt>
-	<em class="setting"><a id="ed746bd9f2697b95031255a45a08e2ce">Name</a> </em>
+	<code class="setting"><a id="ed746bd9f2697b95031255a45a08e2ce">Name</a> </code>
 </dt>
 <dd>Used for setting a custom <a href="#suite-name">suite name</a>. The default name is created based
 on the file or directory name.
@@ -10004,15 +10004,34 @@ on the file or directory name.
 </p></dd>
 
 <dt>
-	<em class="setting"><a id="bf074319013ab8304e6115ae62fb415c">Documentation</a> </em>
+	<code class="setting"><a id="bf074319013ab8304e6115ae62fb415c">Documentation</a> </code>
 </dt>
-<dd><dl>
-<dt>Used for specifying a <a href="#suite-documentation">suite documentation</a>.</dt>
-<dt><em class="setting">Metadata</em></dt>
-<dd>
-<dl>
-<dt>Used for setting <a href="#free-suite-metadata">free suite metadata</a> as name-value pairs.</dt>
-<dt><em class="setting">Suite Setup</em>, <em class="setting">Suite Teardown</em></dt>
+<dd>Used for specifying a <a href="#suite-documentation">suite documentation</a>.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code class="setting"><a id="5b4d2d257b88ac43547a89cd6f75d41b">Metadata</a> </code>
+</dt>
+<dd>Used for setting <a href="#free-suite-metadata">free suite metadata</a> as name-value pairs.
+<p>
+<div class="mkdocs-ezglossary-refs list">
+    
+    <ul>
+    
+    </ul>
+</div>
+</p></dd>
+
+<dt>
+	<code class="setting">Suite Setup</code>, <code class="setting"><a id="b86f00dd78e391b2cb0ac2a105d19e9d">Suite Teardown</a> </code>
+</dt>
 <dd>Specify <a href="#suite-setup-and-teardown">suite setup and teardown</a>.
 <p>
 <div class="mkdocs-ezglossary-refs list">
@@ -10023,10 +10042,6 @@ on the file or directory name.
 </div>
 </p></dd>
 
-</dl>
-</dd>
-</dl>
-</dd>
 </dl>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -10079,7 +10094,7 @@ related settings</a> is also possible. How to use different settings in the
 initialization files is explained below.</p>
 <dl>
 <dt>
-	<em class="setting">Name</em>, <em class="setting">Documentation</em>, <em class="setting">Metadata</em>, <em class="setting">Suite Setup</em>, <em class="setting"><a id="b86f00dd78e391b2cb0ac2a105d19e9d">Suite Teardown</a> </em>
+	<code class="setting">Name</code>, <code class="setting">Documentation</code>, <code class="setting">Metadata</code>, <code class="setting">Suite Setup</code>, <code class="setting"><a id="b86f00dd78e391b2cb0ac2a105d19e9d">Suite Teardown</a> </code>
 </dt>
 <dd>These suite specific settings work the same way in suite initialization files
 as in suite files.
@@ -10093,11 +10108,11 @@ as in suite files.
 </p></dd>
 
 <dt>
-	<em class="setting"><a id="d10dd3f86665a562e9bbf862cc85906d">Test Tags</a> </em>
+	<code class="setting"><a id="d10dd3f86665a562e9bbf862cc85906d">Test Tags</a> </code>
 </dt>
 <dd>Specified tags are unconditionally set to all tests in all suite files
 this directory contains, recursively. New in Robot Framework 6.1. The
-deprecated <em class="setting">Force Tags</em> needs to be used with older versions.
+deprecated <code class="setting">Force Tags</code> needs to be used with older versions.
 <p>
 <div class="mkdocs-ezglossary-refs list">
     
@@ -10108,7 +10123,7 @@ deprecated <em class="setting">Force Tags</em> needs to be used with older versi
 </p></dd>
 
 <dt>
-	<em class="setting">Test Setup</em>, <em class="setting">Test Teardown</em>, <em class="setting"><a id="7fbfbc961710ef23bb228d3285b9b386">Test Timeout</a> </em>
+	<code class="setting">Test Setup</code>, <code class="setting">Test Teardown</code>, <code class="setting"><a id="7fbfbc961710ef23bb228d3285b9b386">Test Timeout</a> </code>
 </dt>
 <dd>Set the default value for test setup/teardown or test timeout to all test
 cases this directory contains. Can be overridden on lower level.
@@ -10125,10 +10140,10 @@ initialization file itself is not enough.
 </p></dd>
 
 <dt>
-	<em class="setting">Task Setup</em>, <em class="setting">Task Teardown</em>, <em class="setting">Task Tags</em>, <em class="setting"><a id="c31035f8bc6adb25b710c45b056def8a">Task Timeout</a> </em>
+	<code class="setting">Task Setup</code>, <code class="setting">Task Teardown</code>, <code class="setting">Task Tags</code>, <code class="setting"><a id="c31035f8bc6adb25b710c45b056def8a">Task Timeout</a> </code>
 </dt>
-<dd>Aliases for <em class="setting">Test Setup</em>, <em class="setting">Test Teardown</em>, <em class="setting">Test Tags</em>
-and <em class="setting">Test Timeout</em>, respectively, that can be used when
+<dd>Aliases for <code class="setting">Test Setup</code>, <code class="setting">Test Teardown</code>, <code class="setting">Test Tags</code>
+and <code class="setting">Test Timeout</code>, respectively, that can be used when
 <a href="../tasks/#creating-tasks">creating tasks</a>, not tests.
 <p>
 <div class="mkdocs-ezglossary-refs list">
@@ -10140,7 +10155,7 @@ and <em class="setting">Test Timeout</em>, respectively, that can be used when
 </p></dd>
 
 <dt>
-	<em class="setting">Test Template</em>, <em class="setting"><a id="3af4c32a9642aa80acfa413497b99c43">Default Tags</a> </em>
+	<code class="setting">Test Template</code>, <code class="setting"><a id="3af4c32a9642aa80acfa413497b99c43">Default Tags</a> </code>
 </dt>
 <dd>Not supported in initialization files.
 <p>
@@ -10192,17 +10207,17 @@ the <a href="../../execution/configuration/#by-suite-names">--suite</a> option t
 <p>The test suite name is constructed from the file or directory name by default.
 The name is created so that the extension is ignored, possible underscores are
 replaced with spaces, and names fully in lower case are title cased. For
-example, <code class="file">some_tests.robot</code> becomes <em class="name">Some Tests</em> and
-<code class="file">My_test_directory</code> becomes <em class="name">My test directory</em>.</p>
+example, <code class="file">some_tests.robot</code> becomes <code class="name">Some Tests</code> and
+<code class="file">My_test_directory</code> becomes <code class="name">My test directory</code>.</p>
 <p>The file or directory name can contain a prefix to control the <a href="../../execution/tests/#execution-order">execution
 order</a> of the suites. The prefix is separated from the base name by two
 underscores and, when constructing the actual test suite name, both
 the prefix and underscores are removed. For example files
 <code class="file">01__some_tests.robot</code> and <code class="file">02__more_tests.robot</code> create test
-suites <em class="name">Some Tests</em> and <em class="name">More Tests</em>, respectively, and
+suites <code class="name">Some Tests</code> and <code class="name">More Tests</code>, respectively, and
 the former is executed before the latter.</p>
 <p>Starting from Robot Framework 6.1, it is also possible to give a custom name
-to a suite by using the <em class="setting">Name</em> setting in the Setting section:</p>
+to a suite by using the <code class="setting">Name</code> setting in the Setting section:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-1-1">1</a></span>
 <span class="normal"><a href="#example-1-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-1-1"><a id="example-1-1" name="example-1-1"></a><span class="gh">*** Settings ***</span>
 </span><span id="line-1-2"><a id="example-1-2" name="example-1-2"></a><span class="err">Name</span><span class="p">            </span><span class="s">Custom suite name</span>
@@ -10210,7 +10225,7 @@ to a suite by using the <em class="setting">Name</em> setting in the Setting sec
 <p>The name of the top-level suite <a href="../../execution/configuration/#setting-suite-name">can be overridden</a> from the command line with
 the <code class="option">--name</code> option.</p>
 <h2 id="suite-documentation">Suite documentation<a class="headerlink" href="#suite-documentation" title="Permanent link">&para;</a></h2>
-<p>The documentation for a test suite is set using the <em class="setting">Documentation</em>
+<p>The documentation for a test suite is set using the <code class="setting">Documentation</code>
 setting in the Settings section. It can be used both in <a href="#suite-files">suite files</a>
 and in <a href="#suite-initialization-files">suite initialization files</a>. Suite documentation has exactly
 the same characteristics regarding to where it is shown and how it can
@@ -10226,9 +10241,9 @@ see the <a href="../../appendix/doc_format/#documentation-formatting">Documentat
 the command line with the <code class="option">--doc</code> option.</p>
 <h2 id="free-suite-metadata">Free suite metadata<a class="headerlink" href="#free-suite-metadata" title="Permanent link">&para;</a></h2>
 <p>In addition to documentation, suites can also have free metadata. This metadata
-is defined as name-value pairs in the Settings section using the <em class="setting">Metadata</em>
+is defined as name-value pairs in the Settings section using the <code class="setting">Metadata</code>
 setting. It is shown in reports and logs similarly as documentation.</p>
-<p>Name of the metadata is the first argument given to the <em class="setting">Metadata</em> setting
+<p>Name of the metadata is the first argument given to the <code class="setting">Metadata</code> setting
 and the remaining arguments specify its value. The value is handled similarly as
 documentation, which means that it supports <a href="../../appendix/doc_format/#documentation-formatting">HTML formatting</a> and <a href="../variables/#variables">variables</a>, and
 that longer values can be <a href="../data/#dividing-data-to-several-rows">split into multiple rows</a>.</p>
@@ -10260,7 +10275,7 @@ them. All test suites can have a setup and a teardown; with suites created
 from a directory they must be specified in a <a href="#suite-initialization-files">suite initialization file</a>.</p>
 <p>Similarly as with test cases, a suite setup and teardown are keywords
 that may take arguments. They are defined in the Setting section with
-<em class="setting">Suite Setup</em> and <em class="setting">Suite Teardown</em> settings,
+<code class="setting">Suite Setup</code> and <code class="setting">Suite Teardown</code> settings,
 respectively. Keyword names and possible arguments are located in
 the columns after the setting name.</p>
 <p>If a suite setup fails, all test cases in it and its child test suites
@@ -10430,10 +10445,10 @@ from the command line.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.top", "search.highlight", "search.suggest", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.top", "search.highlight", "search.suggest", "toc.integrate"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
       
     
   </body>

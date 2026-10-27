@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../../../assets/logo.png">
-      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.8.0">
     
     
       
@@ -31,10 +31,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -10003,67 +10003,67 @@ package. See the :mod:<code>robot.result</code> package for a usage example.</p>
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>src/robot/result/resultbuilder.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-27">27</a></span>
-<span class="normal"><a href="#example-0-28">28</a></span>
-<span class="normal"><a href="#example-0-29">29</a></span>
-<span class="normal"><a href="#example-0-30">30</a></span>
-<span class="normal"><a href="#example-0-31">31</a></span>
-<span class="normal"><a href="#example-0-32">32</a></span>
-<span class="normal"><a href="#example-0-33">33</a></span>
-<span class="normal"><a href="#example-0-34">34</a></span>
-<span class="normal"><a href="#example-0-35">35</a></span>
-<span class="normal"><a href="#example-0-36">36</a></span>
-<span class="normal"><a href="#example-0-37">37</a></span>
-<span class="normal"><a href="#example-0-38">38</a></span>
-<span class="normal"><a href="#example-0-39">39</a></span>
-<span class="normal"><a href="#example-0-40">40</a></span>
-<span class="normal"><a href="#example-0-41">41</a></span>
-<span class="normal"><a href="#example-0-42">42</a></span>
-<span class="normal"><a href="#example-0-43">43</a></span>
-<span class="normal"><a href="#example-0-44">44</a></span>
-<span class="normal"><a href="#example-0-45">45</a></span>
-<span class="normal"><a href="#example-0-46">46</a></span>
-<span class="normal"><a href="#example-0-47">47</a></span>
-<span class="normal"><a href="#example-0-48">48</a></span>
-<span class="normal"><a href="#example-0-49">49</a></span>
-<span class="normal"><a href="#example-0-50">50</a></span>
-<span class="normal"><a href="#example-0-51">51</a></span>
-<span class="normal"><a href="#example-0-52">52</a></span>
-<span class="normal"><a href="#example-0-53">53</a></span>
-<span class="normal"><a href="#example-0-54">54</a></span>
-<span class="normal"><a href="#example-0-55">55</a></span>
-<span class="normal"><a href="#example-0-56">56</a></span>
-<span class="normal"><a href="#example-0-57">57</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-27"><a id="example-0-27" name="example-0-27"></a><span class="k">def</span><span class="w"> </span><span class="nf">ExecutionResult</span><span class="p">(</span><span class="o">*</span><span class="n">sources</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">):</span>
-</span><span id="line-0-28"><a id="example-0-28" name="example-0-28"></a><span class="w">    </span><span class="sd">"""Factory method to constructs :class:`~.executionresult.Result` objects.</span>
-</span><span id="line-0-29"><a id="example-0-29" name="example-0-29"></a>
-</span><span id="line-0-30"><a id="example-0-30" name="example-0-30"></a><span class="sd">    :param sources: XML or JSON source(s) containing execution results.</span>
-</span><span id="line-0-31"><a id="example-0-31" name="example-0-31"></a><span class="sd">        Can be specified as paths (``pathlib.Path`` or ``str``), opened file</span>
-</span><span id="line-0-32"><a id="example-0-32" name="example-0-32"></a><span class="sd">        objects, or strings/bytes containing XML/JSON directly.</span>
-</span><span id="line-0-33"><a id="example-0-33" name="example-0-33"></a><span class="sd">    :param options: Configuration options.</span>
-</span><span id="line-0-34"><a id="example-0-34" name="example-0-34"></a><span class="sd">        Using ``merge=True`` causes multiple results to be combined so that</span>
-</span><span id="line-0-35"><a id="example-0-35" name="example-0-35"></a><span class="sd">        tests in the latter results replace the ones in the original.</span>
-</span><span id="line-0-36"><a id="example-0-36" name="example-0-36"></a><span class="sd">        Setting ``rpa`` either to ``True`` (RPA mode) or ``False`` (test</span>
-</span><span id="line-0-37"><a id="example-0-37" name="example-0-37"></a><span class="sd">        automation) sets execution mode explicitly. By default, it is got</span>
-</span><span id="line-0-38"><a id="example-0-38" name="example-0-38"></a><span class="sd">        from processed output files and conflicting modes cause an error.</span>
-</span><span id="line-0-39"><a id="example-0-39" name="example-0-39"></a><span class="sd">        Other options are passed directly to the</span>
-</span><span id="line-0-40"><a id="example-0-40" name="example-0-40"></a><span class="sd">        :class:`ExecutionResultBuilder` object used internally.</span>
-</span><span id="line-0-41"><a id="example-0-41" name="example-0-41"></a><span class="sd">    :returns: :class:`~.executionresult.Result` instance.</span>
-</span><span id="line-0-42"><a id="example-0-42" name="example-0-42"></a>
-</span><span id="line-0-43"><a id="example-0-43" name="example-0-43"></a><span class="sd">    A source is considered to be JSON in these cases:</span>
-</span><span id="line-0-44"><a id="example-0-44" name="example-0-44"></a><span class="sd">    - It is a path with a ``.json`` suffix.</span>
-</span><span id="line-0-45"><a id="example-0-45" name="example-0-45"></a><span class="sd">    - It is an open file that has a ``name`` attribute with a ``.json`` suffix.</span>
-</span><span id="line-0-46"><a id="example-0-46" name="example-0-46"></a><span class="sd">    - It is string or bytes starting with ``{`` and ending with ``}``.</span>
-</span><span id="line-0-47"><a id="example-0-47" name="example-0-47"></a>
-</span><span id="line-0-48"><a id="example-0-48" name="example-0-48"></a><span class="sd">    This method should be imported by external code via the :mod:`robot.api`</span>
-</span><span id="line-0-49"><a id="example-0-49" name="example-0-49"></a><span class="sd">    package. See the :mod:`robot.result` package for a usage example.</span>
-</span><span id="line-0-50"><a id="example-0-50" name="example-0-50"></a><span class="sd">    """</span>
-</span><span id="line-0-51"><a id="example-0-51" name="example-0-51"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">sources</span><span class="p">:</span>
-</span><span id="line-0-52"><a id="example-0-52" name="example-0-52"></a>        <span class="k">raise</span> <span class="n">DataError</span><span class="p">(</span><span class="s1">'One or more data source needed.'</span><span class="p">)</span>
-</span><span id="line-0-53"><a id="example-0-53" name="example-0-53"></a>    <span class="k">if</span> <span class="n">options</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">'merge'</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
-</span><span id="line-0-54"><a id="example-0-54" name="example-0-54"></a>        <span class="k">return</span> <span class="n">_merge_results</span><span class="p">(</span><span class="n">sources</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">sources</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">options</span><span class="p">)</span>
-</span><span id="line-0-55"><a id="example-0-55" name="example-0-55"></a>    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sources</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
-</span><span id="line-0-56"><a id="example-0-56" name="example-0-56"></a>        <span class="k">return</span> <span class="n">_combine_results</span><span class="p">(</span><span class="n">sources</span><span class="p">,</span> <span class="n">options</span><span class="p">)</span>
-</span><span id="line-0-57"><a id="example-0-57" name="example-0-57"></a>    <span class="k">return</span> <span class="n">_single_result</span><span class="p">(</span><span class="n">sources</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">options</span><span class="p">)</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#robot.result.resultbuilder.ExecutionResult--source--example-0-27">27</a></span>
+<span class="normal"><a href="#robot.result.resultbuilder.ExecutionResult--source--example-0-28">28</a></span>
+<span class="normal"><a href="#robot.result.resultbuilder.ExecutionResult--source--example-0-29">29</a></span>
+<span class="normal"><a href="#robot.result.resultbuilder.ExecutionResult--source--example-0-30">30</a></span>
+<span class="normal"><a href="#robot.result.resultbuilder.ExecutionResult--source--example-0-31">31</a></span>
+<span class="normal"><a href="#robot.result.resultbuilder.ExecutionResult--source--example-0-32">32</a></span>
+<span class="normal"><a href="#robot.result.resultbuilder.ExecutionResult--source--example-0-33">33</a></span>
+<span class="normal"><a href="#robot.result.resultbuilder.ExecutionResult--source--example-0-34">34</a></span>
+<span class="normal"><a href="#robot.result.resultbuilder.ExecutionResult--source--example-0-35">35</a></span>
+<span class="normal"><a href="#robot.result.resultbuilder.ExecutionResult--source--example-0-36">36</a></span>
+<span class="normal"><a href="#robot.result.resultbuilder.ExecutionResult--source--example-0-37">37</a></span>
+<span class="normal"><a href="#robot.result.resultbuilder.ExecutionResult--source--example-0-38">38</a></span>
+<span class="normal"><a href="#robot.result.resultbuilder.ExecutionResult--source--example-0-39">39</a></span>
+<span class="normal"><a href="#robot.result.resultbuilder.ExecutionResult--source--example-0-40">40</a></span>
+<span class="normal"><a href="#robot.result.resultbuilder.ExecutionResult--source--example-0-41">41</a></span>
+<span class="normal"><a href="#robot.result.resultbuilder.ExecutionResult--source--example-0-42">42</a></span>
+<span class="normal"><a href="#robot.result.resultbuilder.ExecutionResult--source--example-0-43">43</a></span>
+<span class="normal"><a href="#robot.result.resultbuilder.ExecutionResult--source--example-0-44">44</a></span>
+<span class="normal"><a href="#robot.result.resultbuilder.ExecutionResult--source--example-0-45">45</a></span>
+<span class="normal"><a href="#robot.result.resultbuilder.ExecutionResult--source--example-0-46">46</a></span>
+<span class="normal"><a href="#robot.result.resultbuilder.ExecutionResult--source--example-0-47">47</a></span>
+<span class="normal"><a href="#robot.result.resultbuilder.ExecutionResult--source--example-0-48">48</a></span>
+<span class="normal"><a href="#robot.result.resultbuilder.ExecutionResult--source--example-0-49">49</a></span>
+<span class="normal"><a href="#robot.result.resultbuilder.ExecutionResult--source--example-0-50">50</a></span>
+<span class="normal"><a href="#robot.result.resultbuilder.ExecutionResult--source--example-0-51">51</a></span>
+<span class="normal"><a href="#robot.result.resultbuilder.ExecutionResult--source--example-0-52">52</a></span>
+<span class="normal"><a href="#robot.result.resultbuilder.ExecutionResult--source--example-0-53">53</a></span>
+<span class="normal"><a href="#robot.result.resultbuilder.ExecutionResult--source--example-0-54">54</a></span>
+<span class="normal"><a href="#robot.result.resultbuilder.ExecutionResult--source--example-0-55">55</a></span>
+<span class="normal"><a href="#robot.result.resultbuilder.ExecutionResult--source--example-0-56">56</a></span>
+<span class="normal"><a href="#robot.result.resultbuilder.ExecutionResult--source--example-0-57">57</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="robot.result.resultbuilder.ExecutionResult--source--line-0-27"><a id="robot.result.resultbuilder.ExecutionResult--source--example-0-27" name="robot.result.resultbuilder.ExecutionResult--source--example-0-27"></a><span class="k">def</span><span class="w"> </span><span class="nf">ExecutionResult</span><span class="p">(</span><span class="o">*</span><span class="n">sources</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">):</span>
+</span><span id="robot.result.resultbuilder.ExecutionResult--source--line-0-28"><a id="robot.result.resultbuilder.ExecutionResult--source--example-0-28" name="robot.result.resultbuilder.ExecutionResult--source--example-0-28"></a><span class="w">    </span><span class="sd">"""Factory method to constructs :class:`~.executionresult.Result` objects.</span>
+</span><span id="robot.result.resultbuilder.ExecutionResult--source--line-0-29"><a id="robot.result.resultbuilder.ExecutionResult--source--example-0-29" name="robot.result.resultbuilder.ExecutionResult--source--example-0-29"></a>
+</span><span id="robot.result.resultbuilder.ExecutionResult--source--line-0-30"><a id="robot.result.resultbuilder.ExecutionResult--source--example-0-30" name="robot.result.resultbuilder.ExecutionResult--source--example-0-30"></a><span class="sd">    :param sources: XML or JSON source(s) containing execution results.</span>
+</span><span id="robot.result.resultbuilder.ExecutionResult--source--line-0-31"><a id="robot.result.resultbuilder.ExecutionResult--source--example-0-31" name="robot.result.resultbuilder.ExecutionResult--source--example-0-31"></a><span class="sd">        Can be specified as paths (``pathlib.Path`` or ``str``), opened file</span>
+</span><span id="robot.result.resultbuilder.ExecutionResult--source--line-0-32"><a id="robot.result.resultbuilder.ExecutionResult--source--example-0-32" name="robot.result.resultbuilder.ExecutionResult--source--example-0-32"></a><span class="sd">        objects, or strings/bytes containing XML/JSON directly.</span>
+</span><span id="robot.result.resultbuilder.ExecutionResult--source--line-0-33"><a id="robot.result.resultbuilder.ExecutionResult--source--example-0-33" name="robot.result.resultbuilder.ExecutionResult--source--example-0-33"></a><span class="sd">    :param options: Configuration options.</span>
+</span><span id="robot.result.resultbuilder.ExecutionResult--source--line-0-34"><a id="robot.result.resultbuilder.ExecutionResult--source--example-0-34" name="robot.result.resultbuilder.ExecutionResult--source--example-0-34"></a><span class="sd">        Using ``merge=True`` causes multiple results to be combined so that</span>
+</span><span id="robot.result.resultbuilder.ExecutionResult--source--line-0-35"><a id="robot.result.resultbuilder.ExecutionResult--source--example-0-35" name="robot.result.resultbuilder.ExecutionResult--source--example-0-35"></a><span class="sd">        tests in the latter results replace the ones in the original.</span>
+</span><span id="robot.result.resultbuilder.ExecutionResult--source--line-0-36"><a id="robot.result.resultbuilder.ExecutionResult--source--example-0-36" name="robot.result.resultbuilder.ExecutionResult--source--example-0-36"></a><span class="sd">        Setting ``rpa`` either to ``True`` (RPA mode) or ``False`` (test</span>
+</span><span id="robot.result.resultbuilder.ExecutionResult--source--line-0-37"><a id="robot.result.resultbuilder.ExecutionResult--source--example-0-37" name="robot.result.resultbuilder.ExecutionResult--source--example-0-37"></a><span class="sd">        automation) sets execution mode explicitly. By default, it is got</span>
+</span><span id="robot.result.resultbuilder.ExecutionResult--source--line-0-38"><a id="robot.result.resultbuilder.ExecutionResult--source--example-0-38" name="robot.result.resultbuilder.ExecutionResult--source--example-0-38"></a><span class="sd">        from processed output files and conflicting modes cause an error.</span>
+</span><span id="robot.result.resultbuilder.ExecutionResult--source--line-0-39"><a id="robot.result.resultbuilder.ExecutionResult--source--example-0-39" name="robot.result.resultbuilder.ExecutionResult--source--example-0-39"></a><span class="sd">        Other options are passed directly to the</span>
+</span><span id="robot.result.resultbuilder.ExecutionResult--source--line-0-40"><a id="robot.result.resultbuilder.ExecutionResult--source--example-0-40" name="robot.result.resultbuilder.ExecutionResult--source--example-0-40"></a><span class="sd">        :class:`ExecutionResultBuilder` object used internally.</span>
+</span><span id="robot.result.resultbuilder.ExecutionResult--source--line-0-41"><a id="robot.result.resultbuilder.ExecutionResult--source--example-0-41" name="robot.result.resultbuilder.ExecutionResult--source--example-0-41"></a><span class="sd">    :returns: :class:`~.executionresult.Result` instance.</span>
+</span><span id="robot.result.resultbuilder.ExecutionResult--source--line-0-42"><a id="robot.result.resultbuilder.ExecutionResult--source--example-0-42" name="robot.result.resultbuilder.ExecutionResult--source--example-0-42"></a>
+</span><span id="robot.result.resultbuilder.ExecutionResult--source--line-0-43"><a id="robot.result.resultbuilder.ExecutionResult--source--example-0-43" name="robot.result.resultbuilder.ExecutionResult--source--example-0-43"></a><span class="sd">    A source is considered to be JSON in these cases:</span>
+</span><span id="robot.result.resultbuilder.ExecutionResult--source--line-0-44"><a id="robot.result.resultbuilder.ExecutionResult--source--example-0-44" name="robot.result.resultbuilder.ExecutionResult--source--example-0-44"></a><span class="sd">    - It is a path with a ``.json`` suffix.</span>
+</span><span id="robot.result.resultbuilder.ExecutionResult--source--line-0-45"><a id="robot.result.resultbuilder.ExecutionResult--source--example-0-45" name="robot.result.resultbuilder.ExecutionResult--source--example-0-45"></a><span class="sd">    - It is an open file that has a ``name`` attribute with a ``.json`` suffix.</span>
+</span><span id="robot.result.resultbuilder.ExecutionResult--source--line-0-46"><a id="robot.result.resultbuilder.ExecutionResult--source--example-0-46" name="robot.result.resultbuilder.ExecutionResult--source--example-0-46"></a><span class="sd">    - It is string or bytes starting with ``{`` and ending with ``}``.</span>
+</span><span id="robot.result.resultbuilder.ExecutionResult--source--line-0-47"><a id="robot.result.resultbuilder.ExecutionResult--source--example-0-47" name="robot.result.resultbuilder.ExecutionResult--source--example-0-47"></a>
+</span><span id="robot.result.resultbuilder.ExecutionResult--source--line-0-48"><a id="robot.result.resultbuilder.ExecutionResult--source--example-0-48" name="robot.result.resultbuilder.ExecutionResult--source--example-0-48"></a><span class="sd">    This method should be imported by external code via the :mod:`robot.api`</span>
+</span><span id="robot.result.resultbuilder.ExecutionResult--source--line-0-49"><a id="robot.result.resultbuilder.ExecutionResult--source--example-0-49" name="robot.result.resultbuilder.ExecutionResult--source--example-0-49"></a><span class="sd">    package. See the :mod:`robot.result` package for a usage example.</span>
+</span><span id="robot.result.resultbuilder.ExecutionResult--source--line-0-50"><a id="robot.result.resultbuilder.ExecutionResult--source--example-0-50" name="robot.result.resultbuilder.ExecutionResult--source--example-0-50"></a><span class="sd">    """</span>
+</span><span id="robot.result.resultbuilder.ExecutionResult--source--line-0-51"><a id="robot.result.resultbuilder.ExecutionResult--source--example-0-51" name="robot.result.resultbuilder.ExecutionResult--source--example-0-51"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">sources</span><span class="p">:</span>
+</span><span id="robot.result.resultbuilder.ExecutionResult--source--line-0-52"><a id="robot.result.resultbuilder.ExecutionResult--source--example-0-52" name="robot.result.resultbuilder.ExecutionResult--source--example-0-52"></a>        <span class="k">raise</span> <span class="n">DataError</span><span class="p">(</span><span class="s1">'One or more data source needed.'</span><span class="p">)</span>
+</span><span id="robot.result.resultbuilder.ExecutionResult--source--line-0-53"><a id="robot.result.resultbuilder.ExecutionResult--source--example-0-53" name="robot.result.resultbuilder.ExecutionResult--source--example-0-53"></a>    <span class="k">if</span> <span class="n">options</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">'merge'</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
+</span><span id="robot.result.resultbuilder.ExecutionResult--source--line-0-54"><a id="robot.result.resultbuilder.ExecutionResult--source--example-0-54" name="robot.result.resultbuilder.ExecutionResult--source--example-0-54"></a>        <span class="k">return</span> <span class="n">_merge_results</span><span class="p">(</span><span class="n">sources</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">sources</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">options</span><span class="p">)</span>
+</span><span id="robot.result.resultbuilder.ExecutionResult--source--line-0-55"><a id="robot.result.resultbuilder.ExecutionResult--source--example-0-55" name="robot.result.resultbuilder.ExecutionResult--source--example-0-55"></a>    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sources</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+</span><span id="robot.result.resultbuilder.ExecutionResult--source--line-0-56"><a id="robot.result.resultbuilder.ExecutionResult--source--example-0-56" name="robot.result.resultbuilder.ExecutionResult--source--example-0-56"></a>        <span class="k">return</span> <span class="n">_combine_results</span><span class="p">(</span><span class="n">sources</span><span class="p">,</span> <span class="n">options</span><span class="p">)</span>
+</span><span id="robot.result.resultbuilder.ExecutionResult--source--line-0-57"><a id="robot.result.resultbuilder.ExecutionResult--source--example-0-57" name="robot.result.resultbuilder.ExecutionResult--source--example-0-57"></a>    <span class="k">return</span> <span class="n">_single_result</span><span class="p">(</span><span class="n">sources</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">options</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -10115,35 +10115,35 @@ package. See the :mod:<code>robot.result</code> package for a usage example.</p>
 
                   <details class="mkdocstrings-source">
                     <summary>Source code in <code>src/robot/result/resultbuilder.py</code></summary>
-                    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-112">112</a></span>
-<span class="normal"><a href="#example-0-113">113</a></span>
-<span class="normal"><a href="#example-0-114">114</a></span>
-<span class="normal"><a href="#example-0-115">115</a></span>
-<span class="normal"><a href="#example-0-116">116</a></span>
-<span class="normal"><a href="#example-0-117">117</a></span>
-<span class="normal"><a href="#example-0-118">118</a></span>
-<span class="normal"><a href="#example-0-119">119</a></span>
-<span class="normal"><a href="#example-0-120">120</a></span>
-<span class="normal"><a href="#example-0-121">121</a></span>
-<span class="normal"><a href="#example-0-122">122</a></span>
-<span class="normal"><a href="#example-0-123">123</a></span>
-<span class="normal"><a href="#example-0-124">124</a></span>
-<span class="normal"><a href="#example-0-125">125</a></span>
-<span class="normal"><a href="#example-0-126">126</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-112"><a id="example-0-112" name="example-0-112"></a><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">include_keywords</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">flattened_keywords</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-</span><span id="line-0-113"><a id="example-0-113" name="example-0-113"></a><span class="w">    </span><span class="sd">"""</span>
-</span><span id="line-0-114"><a id="example-0-114" name="example-0-114"></a><span class="sd">    :param source: Path to the XML output file to build</span>
-</span><span id="line-0-115"><a id="example-0-115" name="example-0-115"></a><span class="sd">        :class:`~.executionresult.Result` objects from.</span>
-</span><span id="line-0-116"><a id="example-0-116" name="example-0-116"></a><span class="sd">    :param include_keywords: Controls whether to include keywords and control</span>
-</span><span id="line-0-117"><a id="example-0-117" name="example-0-117"></a><span class="sd">        structures like FOR and IF in the result or not. They are not needed</span>
-</span><span id="line-0-118"><a id="example-0-118" name="example-0-118"></a><span class="sd">        when generating only a report.</span>
-</span><span id="line-0-119"><a id="example-0-119" name="example-0-119"></a><span class="sd">    :param flattened_keywords: List of patterns controlling what keywords</span>
-</span><span id="line-0-120"><a id="example-0-120" name="example-0-120"></a><span class="sd">        and control structures to flatten. See the documentation of</span>
-</span><span id="line-0-121"><a id="example-0-121" name="example-0-121"></a><span class="sd">        the ``--flattenkeywords`` option for more details.</span>
-</span><span id="line-0-122"><a id="example-0-122" name="example-0-122"></a><span class="sd">    """</span>
-</span><span id="line-0-123"><a id="example-0-123" name="example-0-123"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_source</span> <span class="o">=</span> <span class="n">source</span> \
-</span><span id="line-0-124"><a id="example-0-124" name="example-0-124"></a>        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">ETSource</span><span class="p">)</span> <span class="k">else</span> <span class="n">ETSource</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>
-</span><span id="line-0-125"><a id="example-0-125" name="example-0-125"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_include_keywords</span> <span class="o">=</span> <span class="n">include_keywords</span>
-</span><span id="line-0-126"><a id="example-0-126" name="example-0-126"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_flattened_keywords</span> <span class="o">=</span> <span class="n">flattened_keywords</span>
+                    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#robot.result.resultbuilder.ExecutionResultBuilder--source--example-0-112">112</a></span>
+<span class="normal"><a href="#robot.result.resultbuilder.ExecutionResultBuilder--source--example-0-113">113</a></span>
+<span class="normal"><a href="#robot.result.resultbuilder.ExecutionResultBuilder--source--example-0-114">114</a></span>
+<span class="normal"><a href="#robot.result.resultbuilder.ExecutionResultBuilder--source--example-0-115">115</a></span>
+<span class="normal"><a href="#robot.result.resultbuilder.ExecutionResultBuilder--source--example-0-116">116</a></span>
+<span class="normal"><a href="#robot.result.resultbuilder.ExecutionResultBuilder--source--example-0-117">117</a></span>
+<span class="normal"><a href="#robot.result.resultbuilder.ExecutionResultBuilder--source--example-0-118">118</a></span>
+<span class="normal"><a href="#robot.result.resultbuilder.ExecutionResultBuilder--source--example-0-119">119</a></span>
+<span class="normal"><a href="#robot.result.resultbuilder.ExecutionResultBuilder--source--example-0-120">120</a></span>
+<span class="normal"><a href="#robot.result.resultbuilder.ExecutionResultBuilder--source--example-0-121">121</a></span>
+<span class="normal"><a href="#robot.result.resultbuilder.ExecutionResultBuilder--source--example-0-122">122</a></span>
+<span class="normal"><a href="#robot.result.resultbuilder.ExecutionResultBuilder--source--example-0-123">123</a></span>
+<span class="normal"><a href="#robot.result.resultbuilder.ExecutionResultBuilder--source--example-0-124">124</a></span>
+<span class="normal"><a href="#robot.result.resultbuilder.ExecutionResultBuilder--source--example-0-125">125</a></span>
+<span class="normal"><a href="#robot.result.resultbuilder.ExecutionResultBuilder--source--example-0-126">126</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="robot.result.resultbuilder.ExecutionResultBuilder--source--line-0-112"><a id="robot.result.resultbuilder.ExecutionResultBuilder--source--example-0-112" name="robot.result.resultbuilder.ExecutionResultBuilder--source--example-0-112"></a><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">include_keywords</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">flattened_keywords</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+</span><span id="robot.result.resultbuilder.ExecutionResultBuilder--source--line-0-113"><a id="robot.result.resultbuilder.ExecutionResultBuilder--source--example-0-113" name="robot.result.resultbuilder.ExecutionResultBuilder--source--example-0-113"></a><span class="w">    </span><span class="sd">"""</span>
+</span><span id="robot.result.resultbuilder.ExecutionResultBuilder--source--line-0-114"><a id="robot.result.resultbuilder.ExecutionResultBuilder--source--example-0-114" name="robot.result.resultbuilder.ExecutionResultBuilder--source--example-0-114"></a><span class="sd">    :param source: Path to the XML output file to build</span>
+</span><span id="robot.result.resultbuilder.ExecutionResultBuilder--source--line-0-115"><a id="robot.result.resultbuilder.ExecutionResultBuilder--source--example-0-115" name="robot.result.resultbuilder.ExecutionResultBuilder--source--example-0-115"></a><span class="sd">        :class:`~.executionresult.Result` objects from.</span>
+</span><span id="robot.result.resultbuilder.ExecutionResultBuilder--source--line-0-116"><a id="robot.result.resultbuilder.ExecutionResultBuilder--source--example-0-116" name="robot.result.resultbuilder.ExecutionResultBuilder--source--example-0-116"></a><span class="sd">    :param include_keywords: Controls whether to include keywords and control</span>
+</span><span id="robot.result.resultbuilder.ExecutionResultBuilder--source--line-0-117"><a id="robot.result.resultbuilder.ExecutionResultBuilder--source--example-0-117" name="robot.result.resultbuilder.ExecutionResultBuilder--source--example-0-117"></a><span class="sd">        structures like FOR and IF in the result or not. They are not needed</span>
+</span><span id="robot.result.resultbuilder.ExecutionResultBuilder--source--line-0-118"><a id="robot.result.resultbuilder.ExecutionResultBuilder--source--example-0-118" name="robot.result.resultbuilder.ExecutionResultBuilder--source--example-0-118"></a><span class="sd">        when generating only a report.</span>
+</span><span id="robot.result.resultbuilder.ExecutionResultBuilder--source--line-0-119"><a id="robot.result.resultbuilder.ExecutionResultBuilder--source--example-0-119" name="robot.result.resultbuilder.ExecutionResultBuilder--source--example-0-119"></a><span class="sd">    :param flattened_keywords: List of patterns controlling what keywords</span>
+</span><span id="robot.result.resultbuilder.ExecutionResultBuilder--source--line-0-120"><a id="robot.result.resultbuilder.ExecutionResultBuilder--source--example-0-120" name="robot.result.resultbuilder.ExecutionResultBuilder--source--example-0-120"></a><span class="sd">        and control structures to flatten. See the documentation of</span>
+</span><span id="robot.result.resultbuilder.ExecutionResultBuilder--source--line-0-121"><a id="robot.result.resultbuilder.ExecutionResultBuilder--source--example-0-121" name="robot.result.resultbuilder.ExecutionResultBuilder--source--example-0-121"></a><span class="sd">        the ``--flattenkeywords`` option for more details.</span>
+</span><span id="robot.result.resultbuilder.ExecutionResultBuilder--source--line-0-122"><a id="robot.result.resultbuilder.ExecutionResultBuilder--source--example-0-122" name="robot.result.resultbuilder.ExecutionResultBuilder--source--example-0-122"></a><span class="sd">    """</span>
+</span><span id="robot.result.resultbuilder.ExecutionResultBuilder--source--line-0-123"><a id="robot.result.resultbuilder.ExecutionResultBuilder--source--example-0-123" name="robot.result.resultbuilder.ExecutionResultBuilder--source--example-0-123"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_source</span> <span class="o">=</span> <span class="n">source</span> \
+</span><span id="robot.result.resultbuilder.ExecutionResultBuilder--source--line-0-124"><a id="robot.result.resultbuilder.ExecutionResultBuilder--source--example-0-124" name="robot.result.resultbuilder.ExecutionResultBuilder--source--example-0-124"></a>        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">ETSource</span><span class="p">)</span> <span class="k">else</span> <span class="n">ETSource</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>
+</span><span id="robot.result.resultbuilder.ExecutionResultBuilder--source--line-0-125"><a id="robot.result.resultbuilder.ExecutionResultBuilder--source--example-0-125" name="robot.result.resultbuilder.ExecutionResultBuilder--source--example-0-125"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_include_keywords</span> <span class="o">=</span> <span class="n">include_keywords</span>
+</span><span id="robot.result.resultbuilder.ExecutionResultBuilder--source--line-0-126"><a id="robot.result.resultbuilder.ExecutionResultBuilder--source--example-0-126" name="robot.result.resultbuilder.ExecutionResultBuilder--source--example-0-126"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_flattened_keywords</span> <span class="o">=</span> <span class="n">flattened_keywords</span>
 </span></code></pre></div></td></tr></table></div>
                   </details>
 
@@ -10327,10 +10327,10 @@ package. See the :mod:<code>robot.result</code> package for a usage example.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.top", "search.highlight", "search.suggest", "toc.integrate"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.top", "search.highlight", "search.suggest", "toc.integrate"], "search": "../../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.c21346df.min.js"></script>
       
     
   </body>

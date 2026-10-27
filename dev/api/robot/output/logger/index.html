@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../../../assets/logo.png">
-      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.8.0">
     
     
       
@@ -31,10 +31,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -9994,39 +9994,39 @@ loggers when they are registered.</p>
 
                   <details class="mkdocstrings-source">
                     <summary>Source code in <code>src/robot/output/logger.py</code></summary>
-                    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-55">55</a></span>
-<span class="normal"><a href="#example-0-56">56</a></span>
-<span class="normal"><a href="#example-0-57">57</a></span>
-<span class="normal"><a href="#example-0-58">58</a></span>
-<span class="normal"><a href="#example-0-59">59</a></span>
-<span class="normal"><a href="#example-0-60">60</a></span>
-<span class="normal"><a href="#example-0-61">61</a></span>
-<span class="normal"><a href="#example-0-62">62</a></span>
-<span class="normal"><a href="#example-0-63">63</a></span>
-<span class="normal"><a href="#example-0-64">64</a></span>
-<span class="normal"><a href="#example-0-65">65</a></span>
-<span class="normal"><a href="#example-0-66">66</a></span>
-<span class="normal"><a href="#example-0-67">67</a></span>
-<span class="normal"><a href="#example-0-68">68</a></span>
-<span class="normal"><a href="#example-0-69">69</a></span>
-<span class="normal"><a href="#example-0-70">70</a></span>
-<span class="normal"><a href="#example-0-71">71</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-55"><a id="example-0-55" name="example-0-55"></a><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">register_console_logger</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-</span><span id="line-0-56"><a id="example-0-56" name="example-0-56"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_console_logger</span> <span class="o">=</span> <span class="kc">None</span>
-</span><span id="line-0-57"><a id="example-0-57" name="example-0-57"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_syslog</span> <span class="o">=</span> <span class="kc">None</span>
-</span><span id="line-0-58"><a id="example-0-58" name="example-0-58"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_xml_logger</span> <span class="o">=</span> <span class="kc">None</span>
-</span><span id="line-0-59"><a id="example-0-59" name="example-0-59"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_cli_listeners</span> <span class="o">=</span> <span class="kc">None</span>
-</span><span id="line-0-60"><a id="example-0-60" name="example-0-60"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_lib_listeners</span> <span class="o">=</span> <span class="kc">None</span>
-</span><span id="line-0-61"><a id="example-0-61" name="example-0-61"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_other_loggers</span> <span class="o">=</span> <span class="p">[]</span>
-</span><span id="line-0-62"><a id="example-0-62" name="example-0-62"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_message_cache</span> <span class="o">=</span> <span class="p">[]</span>
-</span><span id="line-0-63"><a id="example-0-63" name="example-0-63"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_log_message_cache</span> <span class="o">=</span> <span class="kc">None</span>
-</span><span id="line-0-64"><a id="example-0-64" name="example-0-64"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_started_keywords</span> <span class="o">=</span> <span class="mi">0</span>
-</span><span id="line-0-65"><a id="example-0-65" name="example-0-65"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_error_occurred</span> <span class="o">=</span> <span class="kc">False</span>
-</span><span id="line-0-66"><a id="example-0-66" name="example-0-66"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_error_listener</span> <span class="o">=</span> <span class="kc">None</span>
-</span><span id="line-0-67"><a id="example-0-67" name="example-0-67"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_prev_log_message_handlers</span> <span class="o">=</span> <span class="p">[]</span>
-</span><span id="line-0-68"><a id="example-0-68" name="example-0-68"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_enabled</span> <span class="o">=</span> <span class="mi">0</span>
-</span><span id="line-0-69"><a id="example-0-69" name="example-0-69"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_cache_only</span> <span class="o">=</span> <span class="kc">False</span>
-</span><span id="line-0-70"><a id="example-0-70" name="example-0-70"></a>    <span class="k">if</span> <span class="n">register_console_logger</span><span class="p">:</span>
-</span><span id="line-0-71"><a id="example-0-71" name="example-0-71"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">register_console_logger</span><span class="p">()</span>
+                    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#robot.output.logger.Logger--source--example-0-55">55</a></span>
+<span class="normal"><a href="#robot.output.logger.Logger--source--example-0-56">56</a></span>
+<span class="normal"><a href="#robot.output.logger.Logger--source--example-0-57">57</a></span>
+<span class="normal"><a href="#robot.output.logger.Logger--source--example-0-58">58</a></span>
+<span class="normal"><a href="#robot.output.logger.Logger--source--example-0-59">59</a></span>
+<span class="normal"><a href="#robot.output.logger.Logger--source--example-0-60">60</a></span>
+<span class="normal"><a href="#robot.output.logger.Logger--source--example-0-61">61</a></span>
+<span class="normal"><a href="#robot.output.logger.Logger--source--example-0-62">62</a></span>
+<span class="normal"><a href="#robot.output.logger.Logger--source--example-0-63">63</a></span>
+<span class="normal"><a href="#robot.output.logger.Logger--source--example-0-64">64</a></span>
+<span class="normal"><a href="#robot.output.logger.Logger--source--example-0-65">65</a></span>
+<span class="normal"><a href="#robot.output.logger.Logger--source--example-0-66">66</a></span>
+<span class="normal"><a href="#robot.output.logger.Logger--source--example-0-67">67</a></span>
+<span class="normal"><a href="#robot.output.logger.Logger--source--example-0-68">68</a></span>
+<span class="normal"><a href="#robot.output.logger.Logger--source--example-0-69">69</a></span>
+<span class="normal"><a href="#robot.output.logger.Logger--source--example-0-70">70</a></span>
+<span class="normal"><a href="#robot.output.logger.Logger--source--example-0-71">71</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="robot.output.logger.Logger--source--line-0-55"><a id="robot.output.logger.Logger--source--example-0-55" name="robot.output.logger.Logger--source--example-0-55"></a><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">register_console_logger</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+</span><span id="robot.output.logger.Logger--source--line-0-56"><a id="robot.output.logger.Logger--source--example-0-56" name="robot.output.logger.Logger--source--example-0-56"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_console_logger</span> <span class="o">=</span> <span class="kc">None</span>
+</span><span id="robot.output.logger.Logger--source--line-0-57"><a id="robot.output.logger.Logger--source--example-0-57" name="robot.output.logger.Logger--source--example-0-57"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_syslog</span> <span class="o">=</span> <span class="kc">None</span>
+</span><span id="robot.output.logger.Logger--source--line-0-58"><a id="robot.output.logger.Logger--source--example-0-58" name="robot.output.logger.Logger--source--example-0-58"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_xml_logger</span> <span class="o">=</span> <span class="kc">None</span>
+</span><span id="robot.output.logger.Logger--source--line-0-59"><a id="robot.output.logger.Logger--source--example-0-59" name="robot.output.logger.Logger--source--example-0-59"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_cli_listeners</span> <span class="o">=</span> <span class="kc">None</span>
+</span><span id="robot.output.logger.Logger--source--line-0-60"><a id="robot.output.logger.Logger--source--example-0-60" name="robot.output.logger.Logger--source--example-0-60"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_lib_listeners</span> <span class="o">=</span> <span class="kc">None</span>
+</span><span id="robot.output.logger.Logger--source--line-0-61"><a id="robot.output.logger.Logger--source--example-0-61" name="robot.output.logger.Logger--source--example-0-61"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_other_loggers</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="robot.output.logger.Logger--source--line-0-62"><a id="robot.output.logger.Logger--source--example-0-62" name="robot.output.logger.Logger--source--example-0-62"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_message_cache</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="robot.output.logger.Logger--source--line-0-63"><a id="robot.output.logger.Logger--source--example-0-63" name="robot.output.logger.Logger--source--example-0-63"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_log_message_cache</span> <span class="o">=</span> <span class="kc">None</span>
+</span><span id="robot.output.logger.Logger--source--line-0-64"><a id="robot.output.logger.Logger--source--example-0-64" name="robot.output.logger.Logger--source--example-0-64"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_started_keywords</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="robot.output.logger.Logger--source--line-0-65"><a id="robot.output.logger.Logger--source--example-0-65" name="robot.output.logger.Logger--source--example-0-65"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_error_occurred</span> <span class="o">=</span> <span class="kc">False</span>
+</span><span id="robot.output.logger.Logger--source--line-0-66"><a id="robot.output.logger.Logger--source--example-0-66" name="robot.output.logger.Logger--source--example-0-66"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_error_listener</span> <span class="o">=</span> <span class="kc">None</span>
+</span><span id="robot.output.logger.Logger--source--line-0-67"><a id="robot.output.logger.Logger--source--example-0-67" name="robot.output.logger.Logger--source--example-0-67"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_prev_log_message_handlers</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="robot.output.logger.Logger--source--line-0-68"><a id="robot.output.logger.Logger--source--example-0-68" name="robot.output.logger.Logger--source--example-0-68"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_enabled</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="robot.output.logger.Logger--source--line-0-69"><a id="robot.output.logger.Logger--source--example-0-69" name="robot.output.logger.Logger--source--example-0-69"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_cache_only</span> <span class="o">=</span> <span class="kc">False</span>
+</span><span id="robot.output.logger.Logger--source--line-0-70"><a id="robot.output.logger.Logger--source--example-0-70" name="robot.output.logger.Logger--source--example-0-70"></a>    <span class="k">if</span> <span class="n">register_console_logger</span><span class="p">:</span>
+</span><span id="robot.output.logger.Logger--source--line-0-71"><a id="robot.output.logger.Logger--source--example-0-71" name="robot.output.logger.Logger--source--example-0-71"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">register_console_logger</span><span class="p">()</span>
 </span></code></pre></div></td></tr></table></div>
                   </details>
 
@@ -10058,27 +10058,27 @@ loggers when they are registered.</p>
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>src/robot/output/logger.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-165">165</a></span>
-<span class="normal"><a href="#example-0-166">166</a></span>
-<span class="normal"><a href="#example-0-167">167</a></span>
-<span class="normal"><a href="#example-0-168">168</a></span>
-<span class="normal"><a href="#example-0-169">169</a></span>
-<span class="normal"><a href="#example-0-170">170</a></span>
-<span class="normal"><a href="#example-0-171">171</a></span>
-<span class="normal"><a href="#example-0-172">172</a></span>
-<span class="normal"><a href="#example-0-173">173</a></span>
-<span class="normal"><a href="#example-0-174">174</a></span>
-<span class="normal"><a href="#example-0-175">175</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-165"><a id="example-0-165" name="example-0-165"></a><span class="k">def</span><span class="w"> </span><span class="nf">message</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
-</span><span id="line-0-166"><a id="example-0-166" name="example-0-166"></a><span class="w">    </span><span class="sd">"""Messages about what the framework is doing, warnings, errors, ..."""</span>
-</span><span id="line-0-167"><a id="example-0-167" name="example-0-167"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cache_only</span><span class="p">:</span>
-</span><span id="line-0-168"><a id="example-0-168" name="example-0-168"></a>        <span class="k">for</span> <span class="n">logger</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
-</span><span id="line-0-169"><a id="example-0-169" name="example-0-169"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">message</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
-</span><span id="line-0-170"><a id="example-0-170" name="example-0-170"></a>    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_message_cache</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-0-171"><a id="example-0-171" name="example-0-171"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_message_cache</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
-</span><span id="line-0-172"><a id="example-0-172" name="example-0-172"></a>    <span class="k">if</span> <span class="n">msg</span><span class="o">.</span><span class="n">level</span> <span class="o">==</span> <span class="s1">'ERROR'</span><span class="p">:</span>
-</span><span id="line-0-173"><a id="example-0-173" name="example-0-173"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_error_occurred</span> <span class="o">=</span> <span class="kc">True</span>
-</span><span id="line-0-174"><a id="example-0-174" name="example-0-174"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_error_listener</span><span class="p">:</span>
-</span><span id="line-0-175"><a id="example-0-175" name="example-0-175"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">_error_listener</span><span class="p">()</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#robot.output.logger.Logger.message--source--example-0-165">165</a></span>
+<span class="normal"><a href="#robot.output.logger.Logger.message--source--example-0-166">166</a></span>
+<span class="normal"><a href="#robot.output.logger.Logger.message--source--example-0-167">167</a></span>
+<span class="normal"><a href="#robot.output.logger.Logger.message--source--example-0-168">168</a></span>
+<span class="normal"><a href="#robot.output.logger.Logger.message--source--example-0-169">169</a></span>
+<span class="normal"><a href="#robot.output.logger.Logger.message--source--example-0-170">170</a></span>
+<span class="normal"><a href="#robot.output.logger.Logger.message--source--example-0-171">171</a></span>
+<span class="normal"><a href="#robot.output.logger.Logger.message--source--example-0-172">172</a></span>
+<span class="normal"><a href="#robot.output.logger.Logger.message--source--example-0-173">173</a></span>
+<span class="normal"><a href="#robot.output.logger.Logger.message--source--example-0-174">174</a></span>
+<span class="normal"><a href="#robot.output.logger.Logger.message--source--example-0-175">175</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="robot.output.logger.Logger.message--source--line-0-165"><a id="robot.output.logger.Logger.message--source--example-0-165" name="robot.output.logger.Logger.message--source--example-0-165"></a><span class="k">def</span><span class="w"> </span><span class="nf">message</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
+</span><span id="robot.output.logger.Logger.message--source--line-0-166"><a id="robot.output.logger.Logger.message--source--example-0-166" name="robot.output.logger.Logger.message--source--example-0-166"></a><span class="w">    </span><span class="sd">"""Messages about what the framework is doing, warnings, errors, ..."""</span>
+</span><span id="robot.output.logger.Logger.message--source--line-0-167"><a id="robot.output.logger.Logger.message--source--example-0-167" name="robot.output.logger.Logger.message--source--example-0-167"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cache_only</span><span class="p">:</span>
+</span><span id="robot.output.logger.Logger.message--source--line-0-168"><a id="robot.output.logger.Logger.message--source--example-0-168" name="robot.output.logger.Logger.message--source--example-0-168"></a>        <span class="k">for</span> <span class="n">logger</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
+</span><span id="robot.output.logger.Logger.message--source--line-0-169"><a id="robot.output.logger.Logger.message--source--example-0-169" name="robot.output.logger.Logger.message--source--example-0-169"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">message</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+</span><span id="robot.output.logger.Logger.message--source--line-0-170"><a id="robot.output.logger.Logger.message--source--example-0-170" name="robot.output.logger.Logger.message--source--example-0-170"></a>    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_message_cache</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="robot.output.logger.Logger.message--source--line-0-171"><a id="robot.output.logger.Logger.message--source--example-0-171" name="robot.output.logger.Logger.message--source--example-0-171"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_message_cache</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+</span><span id="robot.output.logger.Logger.message--source--line-0-172"><a id="robot.output.logger.Logger.message--source--example-0-172" name="robot.output.logger.Logger.message--source--example-0-172"></a>    <span class="k">if</span> <span class="n">msg</span><span class="o">.</span><span class="n">level</span> <span class="o">==</span> <span class="s1">'ERROR'</span><span class="p">:</span>
+</span><span id="robot.output.logger.Logger.message--source--line-0-173"><a id="robot.output.logger.Logger.message--source--example-0-173" name="robot.output.logger.Logger.message--source--example-0-173"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_error_occurred</span> <span class="o">=</span> <span class="kc">True</span>
+</span><span id="robot.output.logger.Logger.message--source--line-0-174"><a id="robot.output.logger.Logger.message--source--example-0-174" name="robot.output.logger.Logger.message--source--example-0-174"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_error_listener</span><span class="p">:</span>
+</span><span id="robot.output.logger.Logger.message--source--line-0-175"><a id="robot.output.logger.Logger.message--source--example-0-175" name="robot.output.logger.Logger.message--source--example-0-175"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">_error_listener</span><span class="p">()</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -10258,10 +10258,10 @@ loggers when they are registered.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.top", "search.highlight", "search.suggest", "toc.integrate"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.top", "search.highlight", "search.suggest", "toc.integrate"], "search": "../../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.c21346df.min.js"></script>
       
     
   </body>

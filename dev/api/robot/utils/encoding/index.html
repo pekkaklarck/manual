@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../../../assets/logo.png">
-      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.8.0">
     
     
       
@@ -31,10 +31,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -9970,41 +9970,41 @@ use the system console and system encoding, respectively.</p>
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>src/robot/utils/encoding.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-30">30</a></span>
-<span class="normal"><a href="#example-0-31">31</a></span>
-<span class="normal"><a href="#example-0-32">32</a></span>
-<span class="normal"><a href="#example-0-33">33</a></span>
-<span class="normal"><a href="#example-0-34">34</a></span>
-<span class="normal"><a href="#example-0-35">35</a></span>
-<span class="normal"><a href="#example-0-36">36</a></span>
-<span class="normal"><a href="#example-0-37">37</a></span>
-<span class="normal"><a href="#example-0-38">38</a></span>
-<span class="normal"><a href="#example-0-39">39</a></span>
-<span class="normal"><a href="#example-0-40">40</a></span>
-<span class="normal"><a href="#example-0-41">41</a></span>
-<span class="normal"><a href="#example-0-42">42</a></span>
-<span class="normal"><a href="#example-0-43">43</a></span>
-<span class="normal"><a href="#example-0-44">44</a></span>
-<span class="normal"><a href="#example-0-45">45</a></span>
-<span class="normal"><a href="#example-0-46">46</a></span>
-<span class="normal"><a href="#example-0-47">47</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-30"><a id="example-0-30" name="example-0-30"></a><span class="k">def</span><span class="w"> </span><span class="nf">console_decode</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="n">CONSOLE_ENCODING</span><span class="p">):</span>
-</span><span id="line-0-31"><a id="example-0-31" name="example-0-31"></a><span class="w">    </span><span class="sd">"""Decodes bytes from console encoding to Unicode.</span>
-</span><span id="line-0-32"><a id="example-0-32" name="example-0-32"></a>
-</span><span id="line-0-33"><a id="example-0-33" name="example-0-33"></a><span class="sd">    Uses the system console encoding by default, but that can be configured</span>
-</span><span id="line-0-34"><a id="example-0-34" name="example-0-34"></a><span class="sd">    using the `encoding` argument. In addition to the normal encodings,</span>
-</span><span id="line-0-35"><a id="example-0-35" name="example-0-35"></a><span class="sd">    it is possible to use case-insensitive values `CONSOLE` and `SYSTEM` to</span>
-</span><span id="line-0-36"><a id="example-0-36" name="example-0-36"></a><span class="sd">    use the system console and system encoding, respectively.</span>
-</span><span id="line-0-37"><a id="example-0-37" name="example-0-37"></a>
-</span><span id="line-0-38"><a id="example-0-38" name="example-0-38"></a><span class="sd">    If `string` is already Unicode, it is returned as-is.</span>
-</span><span id="line-0-39"><a id="example-0-39" name="example-0-39"></a><span class="sd">    """</span>
-</span><span id="line-0-40"><a id="example-0-40" name="example-0-40"></a>    <span class="k">if</span> <span class="n">is_string</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
-</span><span id="line-0-41"><a id="example-0-41" name="example-0-41"></a>        <span class="k">return</span> <span class="n">string</span>
-</span><span id="line-0-42"><a id="example-0-42" name="example-0-42"></a>    <span class="n">encoding</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'CONSOLE'</span><span class="p">:</span> <span class="n">CONSOLE_ENCODING</span><span class="p">,</span>
-</span><span id="line-0-43"><a id="example-0-43" name="example-0-43"></a>                <span class="s1">'SYSTEM'</span><span class="p">:</span> <span class="n">SYSTEM_ENCODING</span><span class="p">}</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">encoding</span><span class="o">.</span><span class="n">upper</span><span class="p">(),</span> <span class="n">encoding</span><span class="p">)</span>
-</span><span id="line-0-44"><a id="example-0-44" name="example-0-44"></a>    <span class="k">try</span><span class="p">:</span>
-</span><span id="line-0-45"><a id="example-0-45" name="example-0-45"></a>        <span class="k">return</span> <span class="n">string</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">encoding</span><span class="p">)</span>
-</span><span id="line-0-46"><a id="example-0-46" name="example-0-46"></a>    <span class="k">except</span> <span class="ne">UnicodeError</span><span class="p">:</span>
-</span><span id="line-0-47"><a id="example-0-47" name="example-0-47"></a>        <span class="k">return</span> <span class="n">safe_str</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#robot.utils.encoding.console_decode--source--example-0-30">30</a></span>
+<span class="normal"><a href="#robot.utils.encoding.console_decode--source--example-0-31">31</a></span>
+<span class="normal"><a href="#robot.utils.encoding.console_decode--source--example-0-32">32</a></span>
+<span class="normal"><a href="#robot.utils.encoding.console_decode--source--example-0-33">33</a></span>
+<span class="normal"><a href="#robot.utils.encoding.console_decode--source--example-0-34">34</a></span>
+<span class="normal"><a href="#robot.utils.encoding.console_decode--source--example-0-35">35</a></span>
+<span class="normal"><a href="#robot.utils.encoding.console_decode--source--example-0-36">36</a></span>
+<span class="normal"><a href="#robot.utils.encoding.console_decode--source--example-0-37">37</a></span>
+<span class="normal"><a href="#robot.utils.encoding.console_decode--source--example-0-38">38</a></span>
+<span class="normal"><a href="#robot.utils.encoding.console_decode--source--example-0-39">39</a></span>
+<span class="normal"><a href="#robot.utils.encoding.console_decode--source--example-0-40">40</a></span>
+<span class="normal"><a href="#robot.utils.encoding.console_decode--source--example-0-41">41</a></span>
+<span class="normal"><a href="#robot.utils.encoding.console_decode--source--example-0-42">42</a></span>
+<span class="normal"><a href="#robot.utils.encoding.console_decode--source--example-0-43">43</a></span>
+<span class="normal"><a href="#robot.utils.encoding.console_decode--source--example-0-44">44</a></span>
+<span class="normal"><a href="#robot.utils.encoding.console_decode--source--example-0-45">45</a></span>
+<span class="normal"><a href="#robot.utils.encoding.console_decode--source--example-0-46">46</a></span>
+<span class="normal"><a href="#robot.utils.encoding.console_decode--source--example-0-47">47</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="robot.utils.encoding.console_decode--source--line-0-30"><a id="robot.utils.encoding.console_decode--source--example-0-30" name="robot.utils.encoding.console_decode--source--example-0-30"></a><span class="k">def</span><span class="w"> </span><span class="nf">console_decode</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="n">CONSOLE_ENCODING</span><span class="p">):</span>
+</span><span id="robot.utils.encoding.console_decode--source--line-0-31"><a id="robot.utils.encoding.console_decode--source--example-0-31" name="robot.utils.encoding.console_decode--source--example-0-31"></a><span class="w">    </span><span class="sd">"""Decodes bytes from console encoding to Unicode.</span>
+</span><span id="robot.utils.encoding.console_decode--source--line-0-32"><a id="robot.utils.encoding.console_decode--source--example-0-32" name="robot.utils.encoding.console_decode--source--example-0-32"></a>
+</span><span id="robot.utils.encoding.console_decode--source--line-0-33"><a id="robot.utils.encoding.console_decode--source--example-0-33" name="robot.utils.encoding.console_decode--source--example-0-33"></a><span class="sd">    Uses the system console encoding by default, but that can be configured</span>
+</span><span id="robot.utils.encoding.console_decode--source--line-0-34"><a id="robot.utils.encoding.console_decode--source--example-0-34" name="robot.utils.encoding.console_decode--source--example-0-34"></a><span class="sd">    using the `encoding` argument. In addition to the normal encodings,</span>
+</span><span id="robot.utils.encoding.console_decode--source--line-0-35"><a id="robot.utils.encoding.console_decode--source--example-0-35" name="robot.utils.encoding.console_decode--source--example-0-35"></a><span class="sd">    it is possible to use case-insensitive values `CONSOLE` and `SYSTEM` to</span>
+</span><span id="robot.utils.encoding.console_decode--source--line-0-36"><a id="robot.utils.encoding.console_decode--source--example-0-36" name="robot.utils.encoding.console_decode--source--example-0-36"></a><span class="sd">    use the system console and system encoding, respectively.</span>
+</span><span id="robot.utils.encoding.console_decode--source--line-0-37"><a id="robot.utils.encoding.console_decode--source--example-0-37" name="robot.utils.encoding.console_decode--source--example-0-37"></a>
+</span><span id="robot.utils.encoding.console_decode--source--line-0-38"><a id="robot.utils.encoding.console_decode--source--example-0-38" name="robot.utils.encoding.console_decode--source--example-0-38"></a><span class="sd">    If `string` is already Unicode, it is returned as-is.</span>
+</span><span id="robot.utils.encoding.console_decode--source--line-0-39"><a id="robot.utils.encoding.console_decode--source--example-0-39" name="robot.utils.encoding.console_decode--source--example-0-39"></a><span class="sd">    """</span>
+</span><span id="robot.utils.encoding.console_decode--source--line-0-40"><a id="robot.utils.encoding.console_decode--source--example-0-40" name="robot.utils.encoding.console_decode--source--example-0-40"></a>    <span class="k">if</span> <span class="n">is_string</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
+</span><span id="robot.utils.encoding.console_decode--source--line-0-41"><a id="robot.utils.encoding.console_decode--source--example-0-41" name="robot.utils.encoding.console_decode--source--example-0-41"></a>        <span class="k">return</span> <span class="n">string</span>
+</span><span id="robot.utils.encoding.console_decode--source--line-0-42"><a id="robot.utils.encoding.console_decode--source--example-0-42" name="robot.utils.encoding.console_decode--source--example-0-42"></a>    <span class="n">encoding</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'CONSOLE'</span><span class="p">:</span> <span class="n">CONSOLE_ENCODING</span><span class="p">,</span>
+</span><span id="robot.utils.encoding.console_decode--source--line-0-43"><a id="robot.utils.encoding.console_decode--source--example-0-43" name="robot.utils.encoding.console_decode--source--example-0-43"></a>                <span class="s1">'SYSTEM'</span><span class="p">:</span> <span class="n">SYSTEM_ENCODING</span><span class="p">}</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">encoding</span><span class="o">.</span><span class="n">upper</span><span class="p">(),</span> <span class="n">encoding</span><span class="p">)</span>
+</span><span id="robot.utils.encoding.console_decode--source--line-0-44"><a id="robot.utils.encoding.console_decode--source--example-0-44" name="robot.utils.encoding.console_decode--source--example-0-44"></a>    <span class="k">try</span><span class="p">:</span>
+</span><span id="robot.utils.encoding.console_decode--source--line-0-45"><a id="robot.utils.encoding.console_decode--source--example-0-45" name="robot.utils.encoding.console_decode--source--example-0-45"></a>        <span class="k">return</span> <span class="n">string</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">encoding</span><span class="p">)</span>
+</span><span id="robot.utils.encoding.console_decode--source--line-0-46"><a id="robot.utils.encoding.console_decode--source--example-0-46" name="robot.utils.encoding.console_decode--source--example-0-46"></a>    <span class="k">except</span> <span class="ne">UnicodeError</span><span class="p">:</span>
+</span><span id="robot.utils.encoding.console_decode--source--line-0-47"><a id="robot.utils.encoding.console_decode--source--example-0-47" name="robot.utils.encoding.console_decode--source--example-0-47"></a>        <span class="k">return</span> <span class="n">safe_str</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -10046,51 +10046,51 @@ work with strings. Use <code>force=True</code> if that is not desired.</p>
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>src/robot/utils/encoding.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-50">50</a></span>
-<span class="normal"><a href="#example-0-51">51</a></span>
-<span class="normal"><a href="#example-0-52">52</a></span>
-<span class="normal"><a href="#example-0-53">53</a></span>
-<span class="normal"><a href="#example-0-54">54</a></span>
-<span class="normal"><a href="#example-0-55">55</a></span>
-<span class="normal"><a href="#example-0-56">56</a></span>
-<span class="normal"><a href="#example-0-57">57</a></span>
-<span class="normal"><a href="#example-0-58">58</a></span>
-<span class="normal"><a href="#example-0-59">59</a></span>
-<span class="normal"><a href="#example-0-60">60</a></span>
-<span class="normal"><a href="#example-0-61">61</a></span>
-<span class="normal"><a href="#example-0-62">62</a></span>
-<span class="normal"><a href="#example-0-63">63</a></span>
-<span class="normal"><a href="#example-0-64">64</a></span>
-<span class="normal"><a href="#example-0-65">65</a></span>
-<span class="normal"><a href="#example-0-66">66</a></span>
-<span class="normal"><a href="#example-0-67">67</a></span>
-<span class="normal"><a href="#example-0-68">68</a></span>
-<span class="normal"><a href="#example-0-69">69</a></span>
-<span class="normal"><a href="#example-0-70">70</a></span>
-<span class="normal"><a href="#example-0-71">71</a></span>
-<span class="normal"><a href="#example-0-72">72</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-50"><a id="example-0-50" name="example-0-50"></a><span class="k">def</span><span class="w"> </span><span class="nf">console_encode</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s1">'replace'</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">__stdout__</span><span class="p">,</span>
-</span><span id="line-0-51"><a id="example-0-51" name="example-0-51"></a>                   <span class="n">force</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-</span><span id="line-0-52"><a id="example-0-52" name="example-0-52"></a><span class="w">    </span><span class="sd">"""Encodes the given string so that it can be used in the console.</span>
-</span><span id="line-0-53"><a id="example-0-53" name="example-0-53"></a>
-</span><span id="line-0-54"><a id="example-0-54" name="example-0-54"></a><span class="sd">    If encoding is not given, determines it based on the given stream and system</span>
-</span><span id="line-0-55"><a id="example-0-55" name="example-0-55"></a><span class="sd">    configuration. In addition to the normal encodings, it is possible to use</span>
-</span><span id="line-0-56"><a id="example-0-56" name="example-0-56"></a><span class="sd">    case-insensitive values `CONSOLE` and `SYSTEM` to use the system console</span>
-</span><span id="line-0-57"><a id="example-0-57" name="example-0-57"></a><span class="sd">    and system encoding, respectively.</span>
-</span><span id="line-0-58"><a id="example-0-58" name="example-0-58"></a>
-</span><span id="line-0-59"><a id="example-0-59" name="example-0-59"></a><span class="sd">    Decodes bytes back to Unicode by default, because Python 3 APIs in general</span>
-</span><span id="line-0-60"><a id="example-0-60" name="example-0-60"></a><span class="sd">    work with strings. Use `force=True` if that is not desired.</span>
-</span><span id="line-0-61"><a id="example-0-61" name="example-0-61"></a><span class="sd">    """</span>
-</span><span id="line-0-62"><a id="example-0-62" name="example-0-62"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">is_string</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
-</span><span id="line-0-63"><a id="example-0-63" name="example-0-63"></a>        <span class="n">string</span> <span class="o">=</span> <span class="n">safe_str</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
-</span><span id="line-0-64"><a id="example-0-64" name="example-0-64"></a>    <span class="k">if</span> <span class="n">encoding</span><span class="p">:</span>
-</span><span id="line-0-65"><a id="example-0-65" name="example-0-65"></a>        <span class="n">encoding</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'CONSOLE'</span><span class="p">:</span> <span class="n">CONSOLE_ENCODING</span><span class="p">,</span>
-</span><span id="line-0-66"><a id="example-0-66" name="example-0-66"></a>                    <span class="s1">'SYSTEM'</span><span class="p">:</span> <span class="n">SYSTEM_ENCODING</span><span class="p">}</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">encoding</span><span class="o">.</span><span class="n">upper</span><span class="p">(),</span> <span class="n">encoding</span><span class="p">)</span>
-</span><span id="line-0-67"><a id="example-0-67" name="example-0-67"></a>    <span class="k">else</span><span class="p">:</span>
-</span><span id="line-0-68"><a id="example-0-68" name="example-0-68"></a>        <span class="n">encoding</span> <span class="o">=</span> <span class="n">_get_console_encoding</span><span class="p">(</span><span class="n">stream</span><span class="p">)</span>
-</span><span id="line-0-69"><a id="example-0-69" name="example-0-69"></a>    <span class="k">if</span> <span class="n">encoding</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">!=</span> <span class="s1">'UTF-8'</span><span class="p">:</span>
-</span><span id="line-0-70"><a id="example-0-70" name="example-0-70"></a>        <span class="n">encoded</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">encoding</span><span class="p">,</span> <span class="n">errors</span><span class="p">)</span>
-</span><span id="line-0-71"><a id="example-0-71" name="example-0-71"></a>        <span class="k">return</span> <span class="n">encoded</span> <span class="k">if</span> <span class="n">force</span> <span class="k">else</span> <span class="n">encoded</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">encoding</span><span class="p">)</span>
-</span><span id="line-0-72"><a id="example-0-72" name="example-0-72"></a>    <span class="k">return</span> <span class="n">string</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">encoding</span><span class="p">,</span> <span class="n">errors</span><span class="p">)</span> <span class="k">if</span> <span class="n">force</span> <span class="k">else</span> <span class="n">string</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#robot.utils.encoding.console_encode--source--example-0-50">50</a></span>
+<span class="normal"><a href="#robot.utils.encoding.console_encode--source--example-0-51">51</a></span>
+<span class="normal"><a href="#robot.utils.encoding.console_encode--source--example-0-52">52</a></span>
+<span class="normal"><a href="#robot.utils.encoding.console_encode--source--example-0-53">53</a></span>
+<span class="normal"><a href="#robot.utils.encoding.console_encode--source--example-0-54">54</a></span>
+<span class="normal"><a href="#robot.utils.encoding.console_encode--source--example-0-55">55</a></span>
+<span class="normal"><a href="#robot.utils.encoding.console_encode--source--example-0-56">56</a></span>
+<span class="normal"><a href="#robot.utils.encoding.console_encode--source--example-0-57">57</a></span>
+<span class="normal"><a href="#robot.utils.encoding.console_encode--source--example-0-58">58</a></span>
+<span class="normal"><a href="#robot.utils.encoding.console_encode--source--example-0-59">59</a></span>
+<span class="normal"><a href="#robot.utils.encoding.console_encode--source--example-0-60">60</a></span>
+<span class="normal"><a href="#robot.utils.encoding.console_encode--source--example-0-61">61</a></span>
+<span class="normal"><a href="#robot.utils.encoding.console_encode--source--example-0-62">62</a></span>
+<span class="normal"><a href="#robot.utils.encoding.console_encode--source--example-0-63">63</a></span>
+<span class="normal"><a href="#robot.utils.encoding.console_encode--source--example-0-64">64</a></span>
+<span class="normal"><a href="#robot.utils.encoding.console_encode--source--example-0-65">65</a></span>
+<span class="normal"><a href="#robot.utils.encoding.console_encode--source--example-0-66">66</a></span>
+<span class="normal"><a href="#robot.utils.encoding.console_encode--source--example-0-67">67</a></span>
+<span class="normal"><a href="#robot.utils.encoding.console_encode--source--example-0-68">68</a></span>
+<span class="normal"><a href="#robot.utils.encoding.console_encode--source--example-0-69">69</a></span>
+<span class="normal"><a href="#robot.utils.encoding.console_encode--source--example-0-70">70</a></span>
+<span class="normal"><a href="#robot.utils.encoding.console_encode--source--example-0-71">71</a></span>
+<span class="normal"><a href="#robot.utils.encoding.console_encode--source--example-0-72">72</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="robot.utils.encoding.console_encode--source--line-0-50"><a id="robot.utils.encoding.console_encode--source--example-0-50" name="robot.utils.encoding.console_encode--source--example-0-50"></a><span class="k">def</span><span class="w"> </span><span class="nf">console_encode</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s1">'replace'</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">__stdout__</span><span class="p">,</span>
+</span><span id="robot.utils.encoding.console_encode--source--line-0-51"><a id="robot.utils.encoding.console_encode--source--example-0-51" name="robot.utils.encoding.console_encode--source--example-0-51"></a>                   <span class="n">force</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+</span><span id="robot.utils.encoding.console_encode--source--line-0-52"><a id="robot.utils.encoding.console_encode--source--example-0-52" name="robot.utils.encoding.console_encode--source--example-0-52"></a><span class="w">    </span><span class="sd">"""Encodes the given string so that it can be used in the console.</span>
+</span><span id="robot.utils.encoding.console_encode--source--line-0-53"><a id="robot.utils.encoding.console_encode--source--example-0-53" name="robot.utils.encoding.console_encode--source--example-0-53"></a>
+</span><span id="robot.utils.encoding.console_encode--source--line-0-54"><a id="robot.utils.encoding.console_encode--source--example-0-54" name="robot.utils.encoding.console_encode--source--example-0-54"></a><span class="sd">    If encoding is not given, determines it based on the given stream and system</span>
+</span><span id="robot.utils.encoding.console_encode--source--line-0-55"><a id="robot.utils.encoding.console_encode--source--example-0-55" name="robot.utils.encoding.console_encode--source--example-0-55"></a><span class="sd">    configuration. In addition to the normal encodings, it is possible to use</span>
+</span><span id="robot.utils.encoding.console_encode--source--line-0-56"><a id="robot.utils.encoding.console_encode--source--example-0-56" name="robot.utils.encoding.console_encode--source--example-0-56"></a><span class="sd">    case-insensitive values `CONSOLE` and `SYSTEM` to use the system console</span>
+</span><span id="robot.utils.encoding.console_encode--source--line-0-57"><a id="robot.utils.encoding.console_encode--source--example-0-57" name="robot.utils.encoding.console_encode--source--example-0-57"></a><span class="sd">    and system encoding, respectively.</span>
+</span><span id="robot.utils.encoding.console_encode--source--line-0-58"><a id="robot.utils.encoding.console_encode--source--example-0-58" name="robot.utils.encoding.console_encode--source--example-0-58"></a>
+</span><span id="robot.utils.encoding.console_encode--source--line-0-59"><a id="robot.utils.encoding.console_encode--source--example-0-59" name="robot.utils.encoding.console_encode--source--example-0-59"></a><span class="sd">    Decodes bytes back to Unicode by default, because Python 3 APIs in general</span>
+</span><span id="robot.utils.encoding.console_encode--source--line-0-60"><a id="robot.utils.encoding.console_encode--source--example-0-60" name="robot.utils.encoding.console_encode--source--example-0-60"></a><span class="sd">    work with strings. Use `force=True` if that is not desired.</span>
+</span><span id="robot.utils.encoding.console_encode--source--line-0-61"><a id="robot.utils.encoding.console_encode--source--example-0-61" name="robot.utils.encoding.console_encode--source--example-0-61"></a><span class="sd">    """</span>
+</span><span id="robot.utils.encoding.console_encode--source--line-0-62"><a id="robot.utils.encoding.console_encode--source--example-0-62" name="robot.utils.encoding.console_encode--source--example-0-62"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">is_string</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
+</span><span id="robot.utils.encoding.console_encode--source--line-0-63"><a id="robot.utils.encoding.console_encode--source--example-0-63" name="robot.utils.encoding.console_encode--source--example-0-63"></a>        <span class="n">string</span> <span class="o">=</span> <span class="n">safe_str</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+</span><span id="robot.utils.encoding.console_encode--source--line-0-64"><a id="robot.utils.encoding.console_encode--source--example-0-64" name="robot.utils.encoding.console_encode--source--example-0-64"></a>    <span class="k">if</span> <span class="n">encoding</span><span class="p">:</span>
+</span><span id="robot.utils.encoding.console_encode--source--line-0-65"><a id="robot.utils.encoding.console_encode--source--example-0-65" name="robot.utils.encoding.console_encode--source--example-0-65"></a>        <span class="n">encoding</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'CONSOLE'</span><span class="p">:</span> <span class="n">CONSOLE_ENCODING</span><span class="p">,</span>
+</span><span id="robot.utils.encoding.console_encode--source--line-0-66"><a id="robot.utils.encoding.console_encode--source--example-0-66" name="robot.utils.encoding.console_encode--source--example-0-66"></a>                    <span class="s1">'SYSTEM'</span><span class="p">:</span> <span class="n">SYSTEM_ENCODING</span><span class="p">}</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">encoding</span><span class="o">.</span><span class="n">upper</span><span class="p">(),</span> <span class="n">encoding</span><span class="p">)</span>
+</span><span id="robot.utils.encoding.console_encode--source--line-0-67"><a id="robot.utils.encoding.console_encode--source--example-0-67" name="robot.utils.encoding.console_encode--source--example-0-67"></a>    <span class="k">else</span><span class="p">:</span>
+</span><span id="robot.utils.encoding.console_encode--source--line-0-68"><a id="robot.utils.encoding.console_encode--source--example-0-68" name="robot.utils.encoding.console_encode--source--example-0-68"></a>        <span class="n">encoding</span> <span class="o">=</span> <span class="n">_get_console_encoding</span><span class="p">(</span><span class="n">stream</span><span class="p">)</span>
+</span><span id="robot.utils.encoding.console_encode--source--line-0-69"><a id="robot.utils.encoding.console_encode--source--example-0-69" name="robot.utils.encoding.console_encode--source--example-0-69"></a>    <span class="k">if</span> <span class="n">encoding</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">!=</span> <span class="s1">'UTF-8'</span><span class="p">:</span>
+</span><span id="robot.utils.encoding.console_encode--source--line-0-70"><a id="robot.utils.encoding.console_encode--source--example-0-70" name="robot.utils.encoding.console_encode--source--example-0-70"></a>        <span class="n">encoded</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">encoding</span><span class="p">,</span> <span class="n">errors</span><span class="p">)</span>
+</span><span id="robot.utils.encoding.console_encode--source--line-0-71"><a id="robot.utils.encoding.console_encode--source--example-0-71" name="robot.utils.encoding.console_encode--source--example-0-71"></a>        <span class="k">return</span> <span class="n">encoded</span> <span class="k">if</span> <span class="n">force</span> <span class="k">else</span> <span class="n">encoded</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">encoding</span><span class="p">)</span>
+</span><span id="robot.utils.encoding.console_encode--source--line-0-72"><a id="robot.utils.encoding.console_encode--source--example-0-72" name="robot.utils.encoding.console_encode--source--example-0-72"></a>    <span class="k">return</span> <span class="n">string</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">encoding</span><span class="p">,</span> <span class="n">errors</span><span class="p">)</span> <span class="k">if</span> <span class="n">force</span> <span class="k">else</span> <span class="n">string</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -10261,10 +10261,10 @@ work with strings. Use <code>force=True</code> if that is not desired.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.top", "search.highlight", "search.suggest", "toc.integrate"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.top", "search.highlight", "search.suggest", "toc.integrate"], "search": "../../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.c21346df.min.js"></script>
       
     
   </body>

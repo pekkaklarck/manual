@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../../../assets/logo.png">
-      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.8.0">
     
     
       
@@ -31,10 +31,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -10020,17 +10020,17 @@ the name of this exception is consistent with other exceptions in this module.</
 
                   <details class="mkdocstrings-source">
                     <summary>Source code in <code>src/robot/api/exceptions.py</code></summary>
-                    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-34">34</a></span>
-<span class="normal"><a href="#example-0-35">35</a></span>
-<span class="normal"><a href="#example-0-36">36</a></span>
-<span class="normal"><a href="#example-0-37">37</a></span>
-<span class="normal"><a href="#example-0-38">38</a></span>
-<span class="normal"><a href="#example-0-39">39</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-34"><a id="example-0-34" name="example-0-34"></a><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">html</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
-</span><span id="line-0-35"><a id="example-0-35" name="example-0-35"></a><span class="w">    </span><span class="sd">"""</span>
-</span><span id="line-0-36"><a id="example-0-36" name="example-0-36"></a><span class="sd">    :param message: Exception message.</span>
-</span><span id="line-0-37"><a id="example-0-37" name="example-0-37"></a><span class="sd">    :param html: When ``True``, message is considered to be HTML and not escaped.</span>
-</span><span id="line-0-38"><a id="example-0-38" name="example-0-38"></a><span class="sd">    """</span>
-</span><span id="line-0-39"><a id="example-0-39" name="example-0-39"></a>    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">message</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">html</span> <span class="k">else</span> <span class="s1">'*HTML* '</span> <span class="o">+</span> <span class="n">message</span><span class="p">)</span>
+                    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#robot.api.exceptions.Failure--source--example-0-34">34</a></span>
+<span class="normal"><a href="#robot.api.exceptions.Failure--source--example-0-35">35</a></span>
+<span class="normal"><a href="#robot.api.exceptions.Failure--source--example-0-36">36</a></span>
+<span class="normal"><a href="#robot.api.exceptions.Failure--source--example-0-37">37</a></span>
+<span class="normal"><a href="#robot.api.exceptions.Failure--source--example-0-38">38</a></span>
+<span class="normal"><a href="#robot.api.exceptions.Failure--source--example-0-39">39</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="robot.api.exceptions.Failure--source--line-0-34"><a id="robot.api.exceptions.Failure--source--example-0-34" name="robot.api.exceptions.Failure--source--example-0-34"></a><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">html</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+</span><span id="robot.api.exceptions.Failure--source--line-0-35"><a id="robot.api.exceptions.Failure--source--example-0-35" name="robot.api.exceptions.Failure--source--example-0-35"></a><span class="w">    </span><span class="sd">"""</span>
+</span><span id="robot.api.exceptions.Failure--source--line-0-36"><a id="robot.api.exceptions.Failure--source--example-0-36" name="robot.api.exceptions.Failure--source--example-0-36"></a><span class="sd">    :param message: Exception message.</span>
+</span><span id="robot.api.exceptions.Failure--source--line-0-37"><a id="robot.api.exceptions.Failure--source--example-0-37" name="robot.api.exceptions.Failure--source--example-0-37"></a><span class="sd">    :param html: When ``True``, message is considered to be HTML and not escaped.</span>
+</span><span id="robot.api.exceptions.Failure--source--line-0-38"><a id="robot.api.exceptions.Failure--source--example-0-38" name="robot.api.exceptions.Failure--source--example-0-38"></a><span class="sd">    """</span>
+</span><span id="robot.api.exceptions.Failure--source--line-0-39"><a id="robot.api.exceptions.Failure--source--example-0-39" name="robot.api.exceptions.Failure--source--example-0-39"></a>    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">message</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">html</span> <span class="k">else</span> <span class="s1">'*HTML* '</span> <span class="o">+</span> <span class="n">message</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
                   </details>
 
@@ -10087,17 +10087,17 @@ the name of this exception is consistent with other exceptions in this module.</
 
                   <details class="mkdocstrings-source">
                     <summary>Source code in <code>src/robot/api/exceptions.py</code></summary>
-                    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-34">34</a></span>
-<span class="normal"><a href="#example-0-35">35</a></span>
-<span class="normal"><a href="#example-0-36">36</a></span>
-<span class="normal"><a href="#example-0-37">37</a></span>
-<span class="normal"><a href="#example-0-38">38</a></span>
-<span class="normal"><a href="#example-0-39">39</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-34"><a id="example-0-34" name="example-0-34"></a><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">html</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
-</span><span id="line-0-35"><a id="example-0-35" name="example-0-35"></a><span class="w">    </span><span class="sd">"""</span>
-</span><span id="line-0-36"><a id="example-0-36" name="example-0-36"></a><span class="sd">    :param message: Exception message.</span>
-</span><span id="line-0-37"><a id="example-0-37" name="example-0-37"></a><span class="sd">    :param html: When ``True``, message is considered to be HTML and not escaped.</span>
-</span><span id="line-0-38"><a id="example-0-38" name="example-0-38"></a><span class="sd">    """</span>
-</span><span id="line-0-39"><a id="example-0-39" name="example-0-39"></a>    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">message</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">html</span> <span class="k">else</span> <span class="s1">'*HTML* '</span> <span class="o">+</span> <span class="n">message</span><span class="p">)</span>
+                    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#robot.api.exceptions.ContinuableFailure--source--example-0-34">34</a></span>
+<span class="normal"><a href="#robot.api.exceptions.ContinuableFailure--source--example-0-35">35</a></span>
+<span class="normal"><a href="#robot.api.exceptions.ContinuableFailure--source--example-0-36">36</a></span>
+<span class="normal"><a href="#robot.api.exceptions.ContinuableFailure--source--example-0-37">37</a></span>
+<span class="normal"><a href="#robot.api.exceptions.ContinuableFailure--source--example-0-38">38</a></span>
+<span class="normal"><a href="#robot.api.exceptions.ContinuableFailure--source--example-0-39">39</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="robot.api.exceptions.ContinuableFailure--source--line-0-34"><a id="robot.api.exceptions.ContinuableFailure--source--example-0-34" name="robot.api.exceptions.ContinuableFailure--source--example-0-34"></a><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">html</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+</span><span id="robot.api.exceptions.ContinuableFailure--source--line-0-35"><a id="robot.api.exceptions.ContinuableFailure--source--example-0-35" name="robot.api.exceptions.ContinuableFailure--source--example-0-35"></a><span class="w">    </span><span class="sd">"""</span>
+</span><span id="robot.api.exceptions.ContinuableFailure--source--line-0-36"><a id="robot.api.exceptions.ContinuableFailure--source--example-0-36" name="robot.api.exceptions.ContinuableFailure--source--example-0-36"></a><span class="sd">    :param message: Exception message.</span>
+</span><span id="robot.api.exceptions.ContinuableFailure--source--line-0-37"><a id="robot.api.exceptions.ContinuableFailure--source--example-0-37" name="robot.api.exceptions.ContinuableFailure--source--example-0-37"></a><span class="sd">    :param html: When ``True``, message is considered to be HTML and not escaped.</span>
+</span><span id="robot.api.exceptions.ContinuableFailure--source--line-0-38"><a id="robot.api.exceptions.ContinuableFailure--source--example-0-38" name="robot.api.exceptions.ContinuableFailure--source--example-0-38"></a><span class="sd">    """</span>
+</span><span id="robot.api.exceptions.ContinuableFailure--source--line-0-39"><a id="robot.api.exceptions.ContinuableFailure--source--example-0-39" name="robot.api.exceptions.ContinuableFailure--source--example-0-39"></a>    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">message</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">html</span> <span class="k">else</span> <span class="s1">'*HTML* '</span> <span class="o">+</span> <span class="n">message</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
                   </details>
 
@@ -10160,17 +10160,17 @@ the name of this exception is consistent with other exceptions in this module.</
 
                   <details class="mkdocstrings-source">
                     <summary>Source code in <code>src/robot/api/exceptions.py</code></summary>
-                    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-60">60</a></span>
-<span class="normal"><a href="#example-0-61">61</a></span>
-<span class="normal"><a href="#example-0-62">62</a></span>
-<span class="normal"><a href="#example-0-63">63</a></span>
-<span class="normal"><a href="#example-0-64">64</a></span>
-<span class="normal"><a href="#example-0-65">65</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-60"><a id="example-0-60" name="example-0-60"></a><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">html</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
-</span><span id="line-0-61"><a id="example-0-61" name="example-0-61"></a><span class="w">    </span><span class="sd">"""</span>
-</span><span id="line-0-62"><a id="example-0-62" name="example-0-62"></a><span class="sd">    :param message: Exception message.</span>
-</span><span id="line-0-63"><a id="example-0-63" name="example-0-63"></a><span class="sd">    :param html: When ``True``, message is considered to be HTML and not escaped.</span>
-</span><span id="line-0-64"><a id="example-0-64" name="example-0-64"></a><span class="sd">    """</span>
-</span><span id="line-0-65"><a id="example-0-65" name="example-0-65"></a>    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">message</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">html</span> <span class="k">else</span> <span class="s1">'*HTML* '</span> <span class="o">+</span> <span class="n">message</span><span class="p">)</span>
+                    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#robot.api.exceptions.Error--source--example-0-60">60</a></span>
+<span class="normal"><a href="#robot.api.exceptions.Error--source--example-0-61">61</a></span>
+<span class="normal"><a href="#robot.api.exceptions.Error--source--example-0-62">62</a></span>
+<span class="normal"><a href="#robot.api.exceptions.Error--source--example-0-63">63</a></span>
+<span class="normal"><a href="#robot.api.exceptions.Error--source--example-0-64">64</a></span>
+<span class="normal"><a href="#robot.api.exceptions.Error--source--example-0-65">65</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="robot.api.exceptions.Error--source--line-0-60"><a id="robot.api.exceptions.Error--source--example-0-60" name="robot.api.exceptions.Error--source--example-0-60"></a><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">html</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+</span><span id="robot.api.exceptions.Error--source--line-0-61"><a id="robot.api.exceptions.Error--source--example-0-61" name="robot.api.exceptions.Error--source--example-0-61"></a><span class="w">    </span><span class="sd">"""</span>
+</span><span id="robot.api.exceptions.Error--source--line-0-62"><a id="robot.api.exceptions.Error--source--example-0-62" name="robot.api.exceptions.Error--source--example-0-62"></a><span class="sd">    :param message: Exception message.</span>
+</span><span id="robot.api.exceptions.Error--source--line-0-63"><a id="robot.api.exceptions.Error--source--example-0-63" name="robot.api.exceptions.Error--source--example-0-63"></a><span class="sd">    :param html: When ``True``, message is considered to be HTML and not escaped.</span>
+</span><span id="robot.api.exceptions.Error--source--line-0-64"><a id="robot.api.exceptions.Error--source--example-0-64" name="robot.api.exceptions.Error--source--example-0-64"></a><span class="sd">    """</span>
+</span><span id="robot.api.exceptions.Error--source--line-0-65"><a id="robot.api.exceptions.Error--source--example-0-65" name="robot.api.exceptions.Error--source--example-0-65"></a>    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">message</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">html</span> <span class="k">else</span> <span class="s1">'*HTML* '</span> <span class="o">+</span> <span class="n">message</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
                   </details>
 
@@ -10227,17 +10227,17 @@ the name of this exception is consistent with other exceptions in this module.</
 
                   <details class="mkdocstrings-source">
                     <summary>Source code in <code>src/robot/api/exceptions.py</code></summary>
-                    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-60">60</a></span>
-<span class="normal"><a href="#example-0-61">61</a></span>
-<span class="normal"><a href="#example-0-62">62</a></span>
-<span class="normal"><a href="#example-0-63">63</a></span>
-<span class="normal"><a href="#example-0-64">64</a></span>
-<span class="normal"><a href="#example-0-65">65</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-60"><a id="example-0-60" name="example-0-60"></a><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">html</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
-</span><span id="line-0-61"><a id="example-0-61" name="example-0-61"></a><span class="w">    </span><span class="sd">"""</span>
-</span><span id="line-0-62"><a id="example-0-62" name="example-0-62"></a><span class="sd">    :param message: Exception message.</span>
-</span><span id="line-0-63"><a id="example-0-63" name="example-0-63"></a><span class="sd">    :param html: When ``True``, message is considered to be HTML and not escaped.</span>
-</span><span id="line-0-64"><a id="example-0-64" name="example-0-64"></a><span class="sd">    """</span>
-</span><span id="line-0-65"><a id="example-0-65" name="example-0-65"></a>    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">message</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">html</span> <span class="k">else</span> <span class="s1">'*HTML* '</span> <span class="o">+</span> <span class="n">message</span><span class="p">)</span>
+                    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#robot.api.exceptions.FatalError--source--example-0-60">60</a></span>
+<span class="normal"><a href="#robot.api.exceptions.FatalError--source--example-0-61">61</a></span>
+<span class="normal"><a href="#robot.api.exceptions.FatalError--source--example-0-62">62</a></span>
+<span class="normal"><a href="#robot.api.exceptions.FatalError--source--example-0-63">63</a></span>
+<span class="normal"><a href="#robot.api.exceptions.FatalError--source--example-0-64">64</a></span>
+<span class="normal"><a href="#robot.api.exceptions.FatalError--source--example-0-65">65</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="robot.api.exceptions.FatalError--source--line-0-60"><a id="robot.api.exceptions.FatalError--source--example-0-60" name="robot.api.exceptions.FatalError--source--example-0-60"></a><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">html</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+</span><span id="robot.api.exceptions.FatalError--source--line-0-61"><a id="robot.api.exceptions.FatalError--source--example-0-61" name="robot.api.exceptions.FatalError--source--example-0-61"></a><span class="w">    </span><span class="sd">"""</span>
+</span><span id="robot.api.exceptions.FatalError--source--line-0-62"><a id="robot.api.exceptions.FatalError--source--example-0-62" name="robot.api.exceptions.FatalError--source--example-0-62"></a><span class="sd">    :param message: Exception message.</span>
+</span><span id="robot.api.exceptions.FatalError--source--line-0-63"><a id="robot.api.exceptions.FatalError--source--example-0-63" name="robot.api.exceptions.FatalError--source--example-0-63"></a><span class="sd">    :param html: When ``True``, message is considered to be HTML and not escaped.</span>
+</span><span id="robot.api.exceptions.FatalError--source--line-0-64"><a id="robot.api.exceptions.FatalError--source--example-0-64" name="robot.api.exceptions.FatalError--source--example-0-64"></a><span class="sd">    """</span>
+</span><span id="robot.api.exceptions.FatalError--source--line-0-65"><a id="robot.api.exceptions.FatalError--source--example-0-65" name="robot.api.exceptions.FatalError--source--example-0-65"></a>    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">message</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">html</span> <span class="k">else</span> <span class="s1">'*HTML* '</span> <span class="o">+</span> <span class="n">message</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
                   </details>
 
@@ -10294,17 +10294,17 @@ the name of this exception is consistent with other exceptions in this module.</
 
                   <details class="mkdocstrings-source">
                     <summary>Source code in <code>src/robot/api/exceptions.py</code></summary>
-                    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-79">79</a></span>
-<span class="normal"><a href="#example-0-80">80</a></span>
-<span class="normal"><a href="#example-0-81">81</a></span>
-<span class="normal"><a href="#example-0-82">82</a></span>
-<span class="normal"><a href="#example-0-83">83</a></span>
-<span class="normal"><a href="#example-0-84">84</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-79"><a id="example-0-79" name="example-0-79"></a><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">html</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
-</span><span id="line-0-80"><a id="example-0-80" name="example-0-80"></a><span class="w">    </span><span class="sd">"""</span>
-</span><span id="line-0-81"><a id="example-0-81" name="example-0-81"></a><span class="sd">    :param message: Exception message.</span>
-</span><span id="line-0-82"><a id="example-0-82" name="example-0-82"></a><span class="sd">    :param html: When ``True``, message is considered to be HTML and not escaped.</span>
-</span><span id="line-0-83"><a id="example-0-83" name="example-0-83"></a><span class="sd">    """</span>
-</span><span id="line-0-84"><a id="example-0-84" name="example-0-84"></a>    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">message</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">html</span> <span class="k">else</span> <span class="s1">'*HTML* '</span> <span class="o">+</span> <span class="n">message</span><span class="p">)</span>
+                    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#robot.api.exceptions.SkipExecution--source--example-0-79">79</a></span>
+<span class="normal"><a href="#robot.api.exceptions.SkipExecution--source--example-0-80">80</a></span>
+<span class="normal"><a href="#robot.api.exceptions.SkipExecution--source--example-0-81">81</a></span>
+<span class="normal"><a href="#robot.api.exceptions.SkipExecution--source--example-0-82">82</a></span>
+<span class="normal"><a href="#robot.api.exceptions.SkipExecution--source--example-0-83">83</a></span>
+<span class="normal"><a href="#robot.api.exceptions.SkipExecution--source--example-0-84">84</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="robot.api.exceptions.SkipExecution--source--line-0-79"><a id="robot.api.exceptions.SkipExecution--source--example-0-79" name="robot.api.exceptions.SkipExecution--source--example-0-79"></a><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">html</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+</span><span id="robot.api.exceptions.SkipExecution--source--line-0-80"><a id="robot.api.exceptions.SkipExecution--source--example-0-80" name="robot.api.exceptions.SkipExecution--source--example-0-80"></a><span class="w">    </span><span class="sd">"""</span>
+</span><span id="robot.api.exceptions.SkipExecution--source--line-0-81"><a id="robot.api.exceptions.SkipExecution--source--example-0-81" name="robot.api.exceptions.SkipExecution--source--example-0-81"></a><span class="sd">    :param message: Exception message.</span>
+</span><span id="robot.api.exceptions.SkipExecution--source--line-0-82"><a id="robot.api.exceptions.SkipExecution--source--example-0-82" name="robot.api.exceptions.SkipExecution--source--example-0-82"></a><span class="sd">    :param html: When ``True``, message is considered to be HTML and not escaped.</span>
+</span><span id="robot.api.exceptions.SkipExecution--source--line-0-83"><a id="robot.api.exceptions.SkipExecution--source--example-0-83" name="robot.api.exceptions.SkipExecution--source--example-0-83"></a><span class="sd">    """</span>
+</span><span id="robot.api.exceptions.SkipExecution--source--line-0-84"><a id="robot.api.exceptions.SkipExecution--source--example-0-84" name="robot.api.exceptions.SkipExecution--source--example-0-84"></a>    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">message</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">html</span> <span class="k">else</span> <span class="s1">'*HTML* '</span> <span class="o">+</span> <span class="n">message</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
                   </details>
 
@@ -10488,10 +10488,10 @@ the name of this exception is consistent with other exceptions in this module.</
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.top", "search.highlight", "search.suggest", "toc.integrate"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.top", "search.highlight", "search.suggest", "toc.integrate"], "search": "../../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.c21346df.min.js"></script>
       
     
   </body>

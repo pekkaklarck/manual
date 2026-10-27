@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../../../assets/logo.png">
-      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.8.0">
     
     
       
@@ -31,10 +31,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -10010,9 +10010,9 @@
 
                   <details class="mkdocstrings-source">
                     <summary>Source code in <code>src/robot/running/namespace.py</code></summary>
-                    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-481">481</a></span>
-<span class="normal"><a href="#example-0-482">482</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-481"><a id="example-0-481" name="example-0-481"></a><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">owners</span><span class="p">):</span>
-</span><span id="line-0-482"><a id="example-0-482" name="example-0-482"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">owners</span> <span class="o">=</span> <span class="n">owners</span>
+                    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#robot.running.namespace.KeywordRecommendationFinder--source--example-0-481">481</a></span>
+<span class="normal"><a href="#robot.running.namespace.KeywordRecommendationFinder--source--example-0-482">482</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="robot.running.namespace.KeywordRecommendationFinder--source--line-0-481"><a id="robot.running.namespace.KeywordRecommendationFinder--source--example-0-481" name="robot.running.namespace.KeywordRecommendationFinder--source--example-0-481"></a><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">owners</span><span class="p">):</span>
+</span><span id="robot.running.namespace.KeywordRecommendationFinder--source--line-0-482"><a id="robot.running.namespace.KeywordRecommendationFinder--source--example-0-482" name="robot.running.namespace.KeywordRecommendationFinder--source--example-0-482"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">owners</span> <span class="o">=</span> <span class="n">owners</span>
 </span></code></pre></div></td></tr></table></div>
                   </details>
 
@@ -10044,21 +10044,21 @@
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>src/robot/running/namespace.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-484">484</a></span>
-<span class="normal"><a href="#example-0-485">485</a></span>
-<span class="normal"><a href="#example-0-486">486</a></span>
-<span class="normal"><a href="#example-0-487">487</a></span>
-<span class="normal"><a href="#example-0-488">488</a></span>
-<span class="normal"><a href="#example-0-489">489</a></span>
-<span class="normal"><a href="#example-0-490">490</a></span>
-<span class="normal"><a href="#example-0-491">491</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-484"><a id="example-0-484" name="example-0-484"></a><span class="k">def</span><span class="w"> </span><span class="nf">recommend_similar_keywords</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span>
-</span><span id="line-0-485"><a id="example-0-485" name="example-0-485"></a><span class="w">    </span><span class="sd">"""Return keyword names similar to `name`."""</span>
-</span><span id="line-0-486"><a id="example-0-486" name="example-0-486"></a>    <span class="n">candidates</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_candidates</span><span class="p">(</span><span class="n">use_full_name</span><span class="o">=</span><span class="s1">'.'</span> <span class="ow">in</span> <span class="n">name</span><span class="p">)</span>
-</span><span id="line-0-487"><a id="example-0-487" name="example-0-487"></a>    <span class="n">finder</span> <span class="o">=</span> <span class="n">RecommendationFinder</span><span class="p">(</span>
-</span><span id="line-0-488"><a id="example-0-488" name="example-0-488"></a>        <span class="k">lambda</span> <span class="n">name</span><span class="p">:</span> <span class="n">normalize</span><span class="p">(</span><span class="n">candidates</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">name</span><span class="p">),</span> <span class="n">ignore</span><span class="o">=</span><span class="s1">'_'</span><span class="p">)</span>
-</span><span id="line-0-489"><a id="example-0-489" name="example-0-489"></a>    <span class="p">)</span>
-</span><span id="line-0-490"><a id="example-0-490" name="example-0-490"></a>    <span class="k">return</span> <span class="n">finder</span><span class="o">.</span><span class="n">find_and_format</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">candidates</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span>
-</span><span id="line-0-491"><a id="example-0-491" name="example-0-491"></a>                                  <span class="n">check_missing_argument_separator</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#robot.running.namespace.KeywordRecommendationFinder.recommend_similar_keywords--source--example-0-484">484</a></span>
+<span class="normal"><a href="#robot.running.namespace.KeywordRecommendationFinder.recommend_similar_keywords--source--example-0-485">485</a></span>
+<span class="normal"><a href="#robot.running.namespace.KeywordRecommendationFinder.recommend_similar_keywords--source--example-0-486">486</a></span>
+<span class="normal"><a href="#robot.running.namespace.KeywordRecommendationFinder.recommend_similar_keywords--source--example-0-487">487</a></span>
+<span class="normal"><a href="#robot.running.namespace.KeywordRecommendationFinder.recommend_similar_keywords--source--example-0-488">488</a></span>
+<span class="normal"><a href="#robot.running.namespace.KeywordRecommendationFinder.recommend_similar_keywords--source--example-0-489">489</a></span>
+<span class="normal"><a href="#robot.running.namespace.KeywordRecommendationFinder.recommend_similar_keywords--source--example-0-490">490</a></span>
+<span class="normal"><a href="#robot.running.namespace.KeywordRecommendationFinder.recommend_similar_keywords--source--example-0-491">491</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="robot.running.namespace.KeywordRecommendationFinder.recommend_similar_keywords--source--line-0-484"><a id="robot.running.namespace.KeywordRecommendationFinder.recommend_similar_keywords--source--example-0-484" name="robot.running.namespace.KeywordRecommendationFinder.recommend_similar_keywords--source--example-0-484"></a><span class="k">def</span><span class="w"> </span><span class="nf">recommend_similar_keywords</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span>
+</span><span id="robot.running.namespace.KeywordRecommendationFinder.recommend_similar_keywords--source--line-0-485"><a id="robot.running.namespace.KeywordRecommendationFinder.recommend_similar_keywords--source--example-0-485" name="robot.running.namespace.KeywordRecommendationFinder.recommend_similar_keywords--source--example-0-485"></a><span class="w">    </span><span class="sd">"""Return keyword names similar to `name`."""</span>
+</span><span id="robot.running.namespace.KeywordRecommendationFinder.recommend_similar_keywords--source--line-0-486"><a id="robot.running.namespace.KeywordRecommendationFinder.recommend_similar_keywords--source--example-0-486" name="robot.running.namespace.KeywordRecommendationFinder.recommend_similar_keywords--source--example-0-486"></a>    <span class="n">candidates</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_candidates</span><span class="p">(</span><span class="n">use_full_name</span><span class="o">=</span><span class="s1">'.'</span> <span class="ow">in</span> <span class="n">name</span><span class="p">)</span>
+</span><span id="robot.running.namespace.KeywordRecommendationFinder.recommend_similar_keywords--source--line-0-487"><a id="robot.running.namespace.KeywordRecommendationFinder.recommend_similar_keywords--source--example-0-487" name="robot.running.namespace.KeywordRecommendationFinder.recommend_similar_keywords--source--example-0-487"></a>    <span class="n">finder</span> <span class="o">=</span> <span class="n">RecommendationFinder</span><span class="p">(</span>
+</span><span id="robot.running.namespace.KeywordRecommendationFinder.recommend_similar_keywords--source--line-0-488"><a id="robot.running.namespace.KeywordRecommendationFinder.recommend_similar_keywords--source--example-0-488" name="robot.running.namespace.KeywordRecommendationFinder.recommend_similar_keywords--source--example-0-488"></a>        <span class="k">lambda</span> <span class="n">name</span><span class="p">:</span> <span class="n">normalize</span><span class="p">(</span><span class="n">candidates</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">name</span><span class="p">),</span> <span class="n">ignore</span><span class="o">=</span><span class="s1">'_'</span><span class="p">)</span>
+</span><span id="robot.running.namespace.KeywordRecommendationFinder.recommend_similar_keywords--source--line-0-489"><a id="robot.running.namespace.KeywordRecommendationFinder.recommend_similar_keywords--source--example-0-489" name="robot.running.namespace.KeywordRecommendationFinder.recommend_similar_keywords--source--example-0-489"></a>    <span class="p">)</span>
+</span><span id="robot.running.namespace.KeywordRecommendationFinder.recommend_similar_keywords--source--line-0-490"><a id="robot.running.namespace.KeywordRecommendationFinder.recommend_similar_keywords--source--example-0-490" name="robot.running.namespace.KeywordRecommendationFinder.recommend_similar_keywords--source--example-0-490"></a>    <span class="k">return</span> <span class="n">finder</span><span class="o">.</span><span class="n">find_and_format</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">candidates</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span>
+</span><span id="robot.running.namespace.KeywordRecommendationFinder.recommend_similar_keywords--source--line-0-491"><a id="robot.running.namespace.KeywordRecommendationFinder.recommend_similar_keywords--source--example-0-491" name="robot.running.namespace.KeywordRecommendationFinder.recommend_similar_keywords--source--example-0-491"></a>                                  <span class="n">check_missing_argument_separator</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -10238,10 +10238,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.top", "search.highlight", "search.suggest", "toc.integrate"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.top", "search.highlight", "search.suggest", "toc.integrate"], "search": "../../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.c21346df.min.js"></script>
       
     
   </body>

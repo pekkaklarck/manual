@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../assets/logo.png">
-      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.8.0">
     
     
       
@@ -31,10 +31,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -10257,7 +10257,7 @@ used in most places in test data. Most commonly, they are used in
 arguments for keywords in Test Case and Keyword sections, but
 also all settings allow variables in their values. A normal keyword
 name <em>cannot</em> be specified with a variable, but the <a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> keyword
-<em class="name">Run Keyword</em> can be used to get the same effect.</p>
+<code class="name">Run Keyword</code> can be used to get the same effect.</p>
 <p>Robot Framework has its own variables that can be used as <a href="#scalar-variables">scalars</a>, <a href="#list-variables">lists</a>
 or <a href="#dictionary-variables">dictionaries</a> using syntax <code>${SCALAR}</code>, <code>@{LIST}</code> and <code>&amp;{DICT}</code>,
 respectively. In addition to this, <a href="#environment-variables">environment variables</a> can be used
@@ -10387,10 +10387,10 @@ object:</p>
 <p>Finally, when this test data is executed, different keywords receive
 the arguments as explained below:</p>
 <ul>
-<li><em class="name">KW 1</em> gets a string <code>Hello, world!</code></li>
-<li><em class="name">KW 2</em> gets an object stored to variable <code>${OBJ}</code></li>
-<li><em class="name">KW 3</em> gets a string <code>I said "Hello, world!"</code></li>
-<li><em class="name">KW 4</em> gets a string <code>You said "Hi, terra!"</code></li>
+<li><code class="name">KW 1</code> gets a string <code>Hello, world!</code></li>
+<li><code class="name">KW 2</code> gets an object stored to variable <code>${OBJ}</code></li>
+<li><code class="name">KW 3</code> gets a string <code>I said "Hello, world!"</code></li>
+<li><code class="name">KW 4</code> gets a string <code>You said "Hi, terra!"</code></li>
 </ul>
 <h4 id="scalar-variables-containing-bytes">Scalar variables containing bytes<a class="headerlink" href="#scalar-variables-containing-bytes" title="Permanent link">&para;</a></h4>
 <p>Variables containing <a href="https://docs.python.org/3/library/stdtypes.html#bytes-objects">bytes</a> or <a href="https://docs.python.org/3/library/stdtypes.html#bytearray-objects">bytearrays</a> are handled slightly differently
@@ -10414,7 +10414,7 @@ than other variables containing non-string values:</p>
   with the same ordinal. In practice this is same as converting bytes to strings
   using the Latin-1 encoding. This format has a big benefit that the resulting
   string can be converted back to bytes, for example, by using the <a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a>
-  keyword <em class="name">Convert To Bytes</em> or by automatic <a href="../../extend/libraries/#argument-conversion">argument conversion</a>.</p>
+  keyword <code class="name">Convert To Bytes</code> or by automatic <a href="../../extend/libraries/#argument-conversion">argument conversion</a>.</p>
 </li>
 </ul>
 <p>The following examples demonstrates using bytes and bytearrays would work
@@ -10737,8 +10737,8 @@ variable does not exists, by separating the variable name and the default
 value with an equal sign like <code>%{ENV_VAR_NAME=default value}</code>.</p>
 <p>Environment variables set in the operating system before the test execution are
 available during it, and it is possible to create new ones with the keyword
-<em class="name">Set Environment Variable</em> or delete existing ones with the
-keyword <em class="name">Delete Environment Variable</em>, both available in the
+<code class="name">Set Environment Variable</code> or delete existing ones with the
+keyword <code class="name">Delete Environment Variable</code>, both available in the
 <a href="https://robotframework.org/robotframework/latest/libraries/OperatingSystem.html">OperatingSystem</a> library. Because environment variables are global,
 environment variables set in one test case can be used in other test
 cases executed after it. However, changes to environment variables are
@@ -10982,8 +10982,8 @@ As illustrated by the example below, the required syntax is very simple:</p>
 </span><span id="line-24-3"><a id="example-24-3" name="example-24-3"></a><span class="p">    ${</span><span class="nv">x</span><span class="p">} =    </span><span class="nf">Get X</span><span class="p">    </span><span class="s">an argument</span>
 </span><span id="line-24-4"><a id="example-24-4" name="example-24-4"></a><span class="p">    </span><span class="nf">Log</span><span class="p">    </span><span class="s">We got </span><span class="p">${</span><span class="nv">x</span><span class="p">}</span><span class="s">!</span>
 </span></code></pre></div></td></tr></table></div>
-<p>In the above example the value returned by the <em class="name">Get X</em> keyword
-is first set into the variable <code>${x}</code> and then used by the <em class="name">Log</em>
+<p>In the above example the value returned by the <code class="name">Get X</code> keyword
+is first set into the variable <code>${x}</code> and then used by the <code class="name">Log</code>
 keyword. Having the equals sign <code>=</code> after the name of the assigned variable is
 not obligatory, but it makes the assignment more explicit. Creating
 local variables like this works both in test case and user keyword level.</p>
@@ -11109,7 +11109,7 @@ a list variable.</p>
 </span><span id="line-30-5"><a id="example-30-5" name="example-30-5"></a><span class="p">    @{</span><span class="nv">before</span><span class="p">}    ${</span><span class="nv">last</span><span class="p">} =    </span><span class="nf">Get Three</span>
 </span><span id="line-30-6"><a id="example-30-6" name="example-30-6"></a><span class="p">    ${</span><span class="nv">begin</span><span class="p">}    @{</span><span class="nv">middle</span><span class="p">}    ${</span><span class="nv">end</span><span class="p">} =    </span><span class="nf">Get Three</span>
 </span></code></pre></div></td></tr></table></div>
-<p>Assuming that the keyword <em class="name">Get Three</em> returns a list <code>[1, 2, 3]</code>,
+<p>Assuming that the keyword <code class="name">Get Three</code> returns a list <code>[1, 2, 3]</code>,
 the following variables are created:</p>
 <ul>
 <li><code>${a}</code>, <code>${b}</code> and <code>${c}</code> with values <code>1</code>, <code>2</code>, and <code>3</code>, respectively.</li>
@@ -11134,7 +11134,7 @@ value is hidden.</p>
 </span></code></pre></div></td></tr></table></div>
 <p>The reason the value is not logged fully is that it could be really
 big. If you always want to see a certain value fully, it is possible
-to use the <a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> <em class="name">Log</em> keyword to log it after the assignment.</p>
+to use the <a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> <code class="name">Log</code> keyword to log it after the assignment.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The <code class="option">--maxassignlength</code> option is new in Robot Framework 5.0.</p>
@@ -11146,10 +11146,10 @@ and it must be followed by a variable name and value. Other than the mandatory
 <code>VAR</code>, the overall syntax is mostly the same as when creating variables
 in the <a href="#variable-section">Variable section</a>.</p>
 <p>The new syntax aims to make creating variables simpler and more uniform. It is
-especially indented to replace the <a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> keywords <em class="name">Set Variable</em>,
-<em class="name">Set Local Variable</em>, <em class="name">Set Test Variable</em>, <em class="name">Set Suite Variable</em>
-and <em class="name">Set Global Variable</em>, but it can be used instead of <em class="name">Catenate</em>,
-<em class="name">Create List</em> and <em class="name">Create Dictionary</em> as well.</p>
+especially indented to replace the <a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> keywords <code class="name">Set Variable</code>,
+<code class="name">Set Local Variable</code>, <code class="name">Set Test Variable</code>, <code class="name">Set Suite Variable</code>
+and <code class="name">Set Global Variable</code>, but it can be used instead of <code class="name">Catenate</code>,
+<code class="name">Create List</code> and <code class="name">Create Dictionary</code> as well.</p>
 <h4 id="creating-scalar-variables">Creating scalar variables<a class="headerlink" href="#creating-scalar-variables" title="Permanent link">&para;</a></h4>
 <p>In simple cases scalar variables are created by just giving a variable name
 and its value. The value can be a hard-coded string or it can itself contain
@@ -11438,32 +11438,32 @@ another variable.</p>
 </span><span id="line-36-4"><a id="example-36-4" name="example-36-4"></a><span class="p">    </span><span class="nf">VAR</span><span class="p">    ${${</span><span class="nv">x</span><span class="p">}}    </span><span class="s">z</span><span class="p">    </span><span class="c"># Name created dynamically.</span>
 </span><span id="line-36-5"><a id="example-36-5" name="example-36-5"></a><span class="p">    </span><span class="nf">Should Be Equal</span><span class="p">    ${</span><span class="nv">y</span><span class="p">}    </span><span class="s">z</span>
 </span></code></pre></div></td></tr></table></div>
-<h3 id="set-testsuiteglobal-variable-keywords"><em class="name">Set Test/Suite/Global Variable</em> keywords<a class="headerlink" href="#set-testsuiteglobal-variable-keywords" title="Permanent link">&para;</a></h3>
+<h3 id="set-testsuiteglobal-variable-keywords"><code class="name">Set Test</code>/<code class="name">Suite</code>/<code class="name">Global Variable</code> keywords<a class="headerlink" href="#set-testsuiteglobal-variable-keywords" title="Permanent link">&para;</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The <code>VAR</code> syntax is recommended over these keywords when using
 Robot Framework 7.0 or newer.</p>
 </div>
-<p>The <a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> library has keywords <em class="name">Set Test Variable</em>,
-<em class="name">Set Suite Variable</em> and <em class="name">Set Global Variable</em> which can
+<p>The <a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> library has keywords <code class="name">Set Test Variable</code>,
+<code class="name">Set Suite Variable</code> and <code class="name">Set Global Variable</code> which can
 be used for setting variables dynamically during the test
 execution. If a variable already exists within the new scope, its
 value will be overwritten, and otherwise a new variable is created.</p>
-<p>Variables set with <em class="name">Set Test Variable</em> keyword are available
+<p>Variables set with <code class="name">Set Test Variable</code> keyword are available
 everywhere within the scope of the currently executed test case. For
 example, if you set a variable in a user keyword, it is available both
 in the test case level and also in all other user keywords used in the
 current test. Other test cases will not see variables set with this
-keyword. It is an error to call <em class="name">Set Test Variable</em>
+keyword. It is an error to call <code class="name">Set Test Variable</code>
 outside the scope of a test (e.g. in a Suite Setup or Teardown).</p>
-<p>Variables set with <em class="name">Set Suite Variable</em> keyword are available
+<p>Variables set with <code class="name">Set Suite Variable</code> keyword are available
 everywhere within the scope of the currently executed test
 suite. Setting variables with this keyword thus has the same effect as
 creating them using the <a href="#variable-section">Variable section</a> in the test data file or
 importing them from <a href="../variable_files/#variable-files">variable files</a>. Other test suites, including
 possible child test suites, will not see variables set with this
 keyword.</p>
-<p>Variables set with <em class="name">Set Global Variable</em> keyword are globally
+<p>Variables set with <code class="name">Set Global Variable</code> keyword are globally
 available in all test cases and suites executed after setting
 them. Setting variables with this keyword thus has the same effect as
 <a href="#command-line-variables">creating variables on the command line</a> using the <code class="option">--variable</code> and
@@ -11471,10 +11471,10 @@ them. Setting variables with this keyword thus has the same effect as
 everywhere, it should be used with care.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p><em class="name">Set Test/Suite/Global Variable</em> keywords set named
+<p><code class="name">Set Test</code>/<code class="name">Suite</code>/<code class="name">Global Variable</code> keywords set named
 variables directly into <a href="#variable-scopes">test, suite or global variable scope</a>
 and return nothing. On the other hand, another <a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> keyword
-<em class="name">Set Variable</em> sets local variables using <a href="#return-values-from-keywords">return values</a>.</p>
+<code class="name">Set Variable</code> sets local variables using <a href="#return-values-from-keywords">return values</a>.</p>
 </div>
 <h3 id="variable-type-conversion">Variable type conversion<a class="headerlink" href="#variable-type-conversion" title="Permanent link">&para;</a></h3>
 <p>Variable values are typically strings, but non-string values are often needed
@@ -11854,7 +11854,7 @@ expected. In such cases using the variable syntax is not required.</p>
 useful, for example, when there would otherwise be a need to <a href="../data/#escaping">escape
 spaces or empty cells</a> with a backslash. If more than one space is
 needed, it is possible to use the <a href="#extended-variable-syntax">extended variable syntax</a> like
-<code>${SPACE * 5}</code>.  In the following example, <em class="name">Should Be Equal</em> keyword gets identical arguments, but those using variables are
+<code>${SPACE * 5}</code>.  In the following example, <code class="name">Should Be Equal</code> keyword gets identical arguments, but those using variables are
 easier to understand than those using backslashes.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-54-1"> 1</a></span>
 <span class="normal"><a href="#example-54-2"> 2</a></span>
@@ -11945,17 +11945,17 @@ can be changed dynamically using keywords from the <a href="https://robotframewo
 </tr>
 <tr>
 <td>${TEST DOCUMENTATION}</td>
-<td>The documentation of the current test case. Can be set dynamically using using <em class="name">Set Test Documentation</em> keyword.</td>
+<td>The documentation of the current test case. Can be set dynamically using using <code class="name">Set Test Documentation</code> keyword.</td>
 <td>Test case</td>
 </tr>
 <tr>
 <td>@{TEST TAGS}</td>
-<td>Contains the tags of the current test case in alphabetical order. Can be modified dynamically using <em class="name">Set Tags</em> and <em class="name">Remove Tags</em> keywords.</td>
+<td>Contains the tags of the current test case in alphabetical order. Can be modified dynamically using <code class="name">Set Tags</code> and <code class="name">Remove Tags</code> keywords.</td>
 <td>Test case</td>
 </tr>
 <tr>
 <td>&amp;{TEST METADATA}</td>
-<td>The free metadata of the current test case. Can be set dynamically using <em class="name">Set Test Metadata</em> keyword. New in Robot Framework 7.5.</td>
+<td>The free metadata of the current test case. Can be set dynamically using <code class="name">Set Test Metadata</code> keyword. New in Robot Framework 7.5.</td>
 <td>Test case</td>
 </tr>
 <tr>
@@ -12000,7 +12000,7 @@ can be changed dynamically using keywords from the <a href="https://robotframewo
 </tr>
 <tr>
 <td>&amp;{SUITE METADATA}</td>
-<td>The free metadata of the current test suite. Can be set using <em class="name">Set Suite Metadata</em> keyword.</td>
+<td>The free metadata of the current test suite. Can be set using <code class="name">Set Suite Metadata</code> keyword.</td>
 <td>Everywhere</td>
 </tr>
 <tr>
@@ -12128,7 +12128,7 @@ global, test suite, test case or local scope.</p>
 variables are normally <a href="#command-line-variables">set from the command line</a> with the
 <code class="option">--variable</code> and <code class="option">--variablefile</code> options, but it is also
 possible to create new global variables or change the existing ones
-by using the <a href="#var-syntax">VAR syntax</a> or the <em class="name">Set Global Variable</em> keyword anywhere in
+by using the <a href="#var-syntax">VAR syntax</a> or the <code class="name">Set Global Variable</code> keyword anywhere in
 the test data. Additionally also <a href="#built-in-variables">built-in variables</a> are global.</p>
 <p>It is recommended to use capital letters with all global variables.</p>
 <h4 id="test-suite-scope">Test suite scope<a class="headerlink" href="#test-suite-scope" title="Permanent link">&para;</a></h4>
@@ -12136,7 +12136,7 @@ the test data. Additionally also <a href="#built-in-variables">built-in variable
 test suite where they are defined or imported. They can be created
 in Variable sections, imported from <a href="../variable_files/#variable-files">resource and variable files</a>,
 or set during the test execution using the <a href="#var-syntax">VAR syntax</a> or the
-<em class="name">Set Suite Variable</em> keyword.</p>
+<code class="name">Set Suite Variable</code> keyword.</p>
 <p>The test suite scope <em>is not recursive</em>, which means that variables
 available in a higher-level test suite <em>are not available</em> in
 lower-level suites. If necessary, <a href="../variable_files/#variable-files">resource and variable files</a> can
@@ -12147,7 +12147,7 @@ they are used, it is recommended to use capital letters also with them.</p>
 <p>Variables with the test case scope are visible in a test case and in
 all user keywords the test uses. Initially there are no variables in
 this scope, but it is possible to create them by using the <a href="#var-syntax">VAR syntax</a> or
-the <em class="name">Set Test Variable</em> keyword anywhere in a test case.</p>
+the <code class="name">Set Test Variable</code> keyword anywhere in a test case.</p>
 <p>If a variable with the test scope is created in suite setup, the variable is
 available everywhere within that suite setup as well as in the corresponding suite
 teardown, but it is not seen by tests or possible child suites. If such
@@ -12220,9 +12220,9 @@ in the example below. First assume that we have the following <a href="../variab
 <p>When this test data is executed, the keywords get the arguments as
 explained below:</p>
 <ul>
-<li><em class="name">KW 1</em> gets string <code>Robot</code></li>
-<li><em class="name">KW 2</em> gets string <code>Robot eats Cucumber</code></li>
-<li><em class="name">KW 3</em> gets string <code>two</code></li>
+<li><code class="name">KW 1</code> gets string <code>Robot</code></li>
+<li><code class="name">KW 2</code> gets string <code>Robot eats Cucumber</code></li>
+<li><code class="name">KW 3</code> gets string <code>two</code></li>
 </ul>
 <p>The extended variable syntax is evaluated in the following order:</p>
 <ol>
@@ -12367,8 +12367,8 @@ first. If it has the value <code>name</code>, the final value is then the
 value of the variable <code>${varname}</code>. There can be several nested
 variables, but resolving the outermost fails, if any of them does not
 exist.</p>
-<p>In the example below, <em class="name">Do X</em> gets the value <code>${JOHN HOME}</code>
-or <code>${JANE HOME}</code>, depending on if <em class="name">Get Name</em> returns
+<p>In the example below, <code class="name">Do X</code> gets the value <code>${JOHN HOME}</code>
+or <code>${JANE HOME}</code>, depending on if <code class="name">Get Name</code> returns
 <code>john</code> or <code>jane</code>. If it returns something else, resolving
 <code>${${name} HOME}</code> fails.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-60-1">1</a></span>
@@ -12593,10 +12593,10 @@ enhance execution speed.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.top", "search.highlight", "search.suggest", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.top", "search.highlight", "search.suggest", "toc.integrate"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
       
     
   </body>

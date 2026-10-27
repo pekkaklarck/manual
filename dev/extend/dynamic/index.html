@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../assets/logo.png">
-      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.8.0">
     
     
       
@@ -31,10 +31,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -10097,7 +10097,7 @@ separated with spaces or underscores, or in the camelCase format. For
 example, <code>['first keyword', 'second keyword']</code>,
 <code>['first_keyword', 'second_keyword']</code>, and
 <code>['firstKeyword', 'secondKeyword']</code> would all be mapped to keywords
-<em class="name">First Keyword</em> and <em class="name">Second Keyword</em>.</p>
+<code class="name">First Keyword</code> and <code class="name">Second Keyword</code>.</p>
 <p>Dynamic libraries must always have this method. If it is missing, or
 if calling it fails for some reason, the library is considered a
 static library.</p>
@@ -10197,7 +10197,7 @@ trivial, dynamic library.</p>
 <p>If a dynamic library only implements the <code>get_keyword_names</code> and
 <code>run_keyword</code> methods, Robot Framework does not have any information
 about the arguments that the implemented keywords accept. For example,
-both <em class="name">First Keyword</em> and <em class="name">Second Keyword</em> in the example above
+both <code class="name">First Keyword</code> and <code class="name">Second Keyword</code> in the example above
 could be used with any arguments. This is problematic,
 because most real keywords expect a certain number of keywords, and
 under these circumstances they would need to check the argument counts
@@ -10388,7 +10388,7 @@ the latter ones are given, the framework fills the skipped optional
 arguments based on the default values returned by the <code>get_keyword_arguments</code>
 method.</p>
 <p>Using the named argument syntax with dynamic libraries is illustrated
-by the following examples. All the examples use a keyword <em class="name">Dynamic</em>
+by the following examples. All the examples use a keyword <code class="name">Dynamic</code>
 that has an argument specification <code>[a, b=d1, c=d2]</code>. The comment on each row
 shows how <code>run_keyword</code> would be called in these cases if it has two arguments
 (i.e. signature is <code>name, args</code>) and if it has three arguments (i.e.
@@ -10445,7 +10445,7 @@ named arguments. These arguments are passed to the keyword as a mapping.</p>
 <a href="#getting-keyword-arguments">returns for it</a>. If the last argument starts with <code>**</code>, that keyword is
 recognized to accept free named arguments.</p>
 <p>Using the free named argument syntax with dynamic libraries is illustrated
-by the following examples. All the examples use a keyword <em class="name">Dynamic</em>
+by the following examples. All the examples use a keyword <code class="name">Dynamic</code>
 that has an argument specification <code>[a=d1, b=d2, **named]</code>. The comment shows
 the arguments that the <code>run_keyword</code> method is actually called with.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-3-1"> 1</a></span>
@@ -10503,7 +10503,7 @@ of arguments (<code>*varargs</code>) or a lone asterisk (<code>*</code>) if the 
 accept varargs. Named-only arguments can have default values, and the order
 of arguments with and without default values does not matter.</p>
 <p>Using the named-only argument syntax with dynamic libraries is illustrated
-by the following examples. All the examples use a keyword <em class="name">Dynamic</em>
+by the following examples. All the examples use a keyword <code class="name">Dynamic</code>
 that has been specified to have argument specification
 <code>[positional=default, *varargs, named, named2=default, **free]</code>. The comment
 shows the arguments that the <code>run_keyword</code> method is actually called with.</p>
@@ -10747,10 +10747,10 @@ implementations of their special methods.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.top", "search.highlight", "search.suggest", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.top", "search.highlight", "search.suggest", "toc.integrate"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
       
     
   </body>

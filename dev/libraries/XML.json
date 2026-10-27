@@ -1,1161 +1,50 @@
 {
   "specversion": 3,
-  "name": "XML",
-  "doc": "Robot Framework library for verifying and modifying XML documents.\n\nAs the name implies, _XML_ is a library for verifying contents of XML files.\nIn practice, it is a pretty thin wrapper on top of Python's\n[http://docs.python.org/library/xml.etree.elementtree.html|ElementTree XML API].\n\nThe library has the following main usages:\n\n- Parsing an XML file, or a string containing XML, into an XML element\n  structure and finding certain elements from it for further analysis\n  (e.g. `Parse XML` and `Get Element` keywords).\n- Getting text or attributes of elements\n  (e.g. `Get Element Text` and `Get Element Attribute`).\n- Directly verifying text, attributes, or whole elements\n  (e.g `Element Text Should Be` and `Elements Should Be Equal`).\n- Modifying XML and saving it (e.g. `Set Element Text`, `Add Element`\n  and `Save XML`).\n\n== Table of contents ==\n\n- `Parsing XML`\n- `Using lxml`\n- `Example`\n- `Finding elements with xpath`\n- `Element attributes`\n- `Handling XML namespaces`\n- `Boolean arguments`\n- `Importing`\n- `Keywords`\n\n= Parsing XML =\n\nXML can be parsed into an element structure using `Parse XML` keyword.\nThe XML to be parsed can be specified using a path to an XML file or as\na string or bytes that contain XML directly. The keyword returns the root\nelement of the structure, which then contains other elements as its\nchildren and their children. Possible comments and processing instructions\nin the source XML are removed.\n\nXML is not validated during parsing even if it has a schema defined. How\npossible doctype elements are handled otherwise depends on the used XML\nmodule and on the platform. The standard ElementTree strips doctypes\naltogether, but when `using lxml` they are preserved when XML is saved.\n\nThe element structure returned by `Parse XML`, as well as elements\nreturned by keywords such as `Get Element`, can be used as the ``source``\nargument with other keywords. In addition to an already parsed XML\nstructure, other keywords also accept paths to XML files and strings\ncontaining XML similarly as `Parse XML`. Notice that keywords that modify\nXML do not write those changes back to disk even if the source would be\ngiven as a path to a file. Changes must always be saved explicitly using\n`Save XML` keyword.\n\nWhen the source is given as a path to a file, the forward slash character\n(``/``) can be used as the path separator regardless the operating system.\nOn Windows also the backslash works, but in the data it needs to be\nescaped by doubling it (``\\\\``). Using the built-in variable ``${/}``\nnaturally works too.\n\n= Using lxml =\n\nBy default, this library uses Python's standard\n[http://docs.python.org/library/xml.etree.elementtree.html|ElementTree]\nmodule for parsing XML, but it can be configured to use\n[http://lxml.de|lxml] module instead when `importing` the library.\nThe resulting element structure has same API regardless which module\nis used for parsing.\n\nThe main benefits of using lxml is that it supports richer xpath syntax\nthan the standard ElementTree and enables using `Evaluate Xpath` keyword.\nIt also preserves the doctype and possible namespace prefixes saving XML.\n\n= Example =\n\nThe following simple example demonstrates parsing XML and verifying its\ncontents both using keywords in this library and in _BuiltIn_ and\n_Collections_ libraries. How to use xpath expressions to find elements\nand what attributes the returned elements contain are discussed, with\nmore examples, in `Finding elements with xpath` and `Element attributes`\nsections.\n\nIn this example, as well as in many other examples in this documentation,\n``${XML}`` refers to the following example XML document. In practice\n``${XML}`` could either be a path to an XML file or it could contain the XML\nitself.\n\n| <example>\n|   <first id=\"1\">text</first>\n|   <second id=\"2\">\n|     <child/>\n|   </second>\n|   <third>\n|     <child>more text</child>\n|     <second id=\"child\"/>\n|     <child><grandchild/></child>\n|   </third>\n|   <html>\n|     <p>\n|       Text with <b>bold</b> and <i>italics</i>.\n|     </p>\n|   </html>\n| </example>\n\n| ${root} =                | `Parse XML`   | ${XML}  |       |             |\n| `Should Be Equal`        | ${root.tag}   | example |       |             |\n| ${first} =               | `Get Element` | ${root} | first |             |\n| `Should Be Equal`        | ${first.text} | text    |       |             |\n| `Dictionary Should Contain Key` | ${first.attrib}  | id    |             |\n| `Element Text Should Be` | ${first}      | text    |       |             |\n| `Element Attribute Should Be` | ${first} | id      | 1     |             |\n| `Element Attribute Should Be` | ${root}  | id      | 1     | xpath=first |\n| `Element Attribute Should Be` | ${XML}   | id      | 1     | xpath=first |\n\nNotice that in the example three last lines are equivalent. Which one to\nuse in practice depends on which other elements you need to get or verify.\nIf you only need to do one verification, using the last line alone would\nsuffice. If more verifications are needed, parsing the XML with `Parse XML`\nonly once would be more efficient.\n\n= Finding elements with xpath =\n\nElementTree, and thus also this library, supports finding elements using\nxpath expressions. ElementTree does not, however, support the full xpath\nstandard. The supported xpath syntax is explained below and\n[https://docs.python.org/library/xml.etree.elementtree.html#xpath-support|\nElementTree documentation] provides more details. In the examples\n``${XML}`` refers to the same XML structure as in the earlier example.\n\nIf lxml support is enabled when `importing` the library, the whole\n[http://www.w3.org/TR/xpath/|xpath 1.0 standard] is supported.\nThat includes everything listed below but also a lot of other useful\nconstructs.\n\n== Tag names ==\n\nWhen just a single tag name is used, xpath matches all direct child\nelements that have that tag name.\n\n| ${elem} =          | `Get Element`  | ${XML}      | third |\n| `Should Be Equal`  | ${elem.tag}    | third       |       |\n| @{children} =      | `Get Elements` | ${elem}     | child |\n| `Length Should Be` | ${children}    | 2           |       |\n\n== Paths ==\n\nPaths are created by combining tag names with a forward slash (``/``). For\nexample, ``parent/child`` matches all ``child`` elements under ``parent``\nelement. Notice that if there are multiple ``parent`` elements that all\nhave ``child`` elements, ``parent/child`` xpath will match all these\n``child`` elements.\n\n| ${elem} =         | `Get Element` | ${XML}     | second/child            |\n| `Should Be Equal` | ${elem.tag}   | child      |                         |\n| ${elem} =         | `Get Element` | ${XML}     | third/child/grandchild  |\n| `Should Be Equal` | ${elem.tag}   | grandchild |                         |\n\n== Wildcards ==\n\nAn asterisk (``*``) can be used in paths instead of a tag name to denote\nany element.\n\n| @{children} =      | `Get Elements` | ${XML} | */child |\n| `Length Should Be` | ${children}    | 3      |         |\n\n== Current element ==\n\nThe current element is denoted with a dot (``.``). Normally the current\nelement is implicit and does not need to be included in the xpath.\n\n== Parent element ==\n\nThe parent element of another element is denoted with two dots (``..``).\nNotice that it is not possible to refer to the parent of the current\nelement.\n\n| ${elem} =         | `Get Element` | ${XML} | */second/.. |\n| `Should Be Equal` | ${elem.tag}   | third  |             |\n\n== Search all sub elements ==\n\nTwo forward slashes (``//``) mean that all sub elements, not only the\ndirect children, are searched. If the search is started from the current\nelement, an explicit dot is required.\n\n| @{elements} =      | `Get Elements` | ${XML} | .//second |\n| `Length Should Be` | ${elements}    | 2      |           |\n| ${b} =             | `Get Element`  | ${XML} | html//b   |\n| `Should Be Equal`  | ${b.text}      | bold   |           |\n\n== Predicates ==\n\nPredicates allow selecting elements using also other criteria than tag\nnames, for example, attributes or position. They are specified after the\nnormal tag name or path using syntax ``path[predicate]``. The path can have\nwildcards and other special syntax explained earlier. What predicates\nthe standard ElementTree supports is explained in the table below.\n\n|  = Predicate =  |             = Matches =           |    = Example =     |\n| @attrib         | Elements with attribute ``attrib``. | second[@id]        |\n| @attrib=\"value\" | Elements with attribute ``attrib`` having value ``value``. | *[@id=\"2\"] |\n| position        | Elements at the specified position. Position can be an integer (starting from 1), expression ``last()``, or relative expression like ``last() - 1``. | third/child[1] |\n| tag             | Elements with a child element named ``tag``. | third/child[grandchild] |\n\nPredicates can also be stacked like ``path[predicate1][predicate2]``.\nA limitation is that possible position predicate must always be first.\n\n= Element attributes =\n\nAll keywords returning elements, such as `Parse XML`, and `Get Element`,\nreturn ElementTree's\n[http://docs.python.org/library/xml.etree.elementtree.html#element-objects|Element objects].\nThese elements can be used as inputs for other keywords, but they also\ncontain several useful attributes that can be accessed directly using\nthe extended variable syntax.\n\nThe attributes that are both useful and convenient to use in the data\nare explained below. Also other attributes, including methods, can\nbe accessed, but that is typically better to do in custom libraries than\ndirectly in the data.\n\nThe examples use the same ``${XML}`` structure as the earlier examples.\n\n== tag ==\n\nThe tag of the element.\n\n| ${root} =         | `Parse XML` | ${XML}  |\n| `Should Be Equal` | ${root.tag} | example |\n\n== text ==\n\nThe text that the element contains or Python ``None`` if the element has no\ntext. Notice that the text _does not_ contain texts of possible child\nelements nor text after or between children. Notice also that in XML\nwhitespace is significant, so the text contains also possible indentation\nand newlines. To get also text of the possible children, optionally\nwhitespace normalized, use `Get Element Text` keyword.\n\n| ${1st} =          | `Get Element` | ${XML}  | first        |\n| `Should Be Equal` | ${1st.text}   | text    |              |\n| ${2nd} =          | `Get Element` | ${XML}  | second/child |\n| `Should Be Equal` | ${2nd.text}   | ${NONE} |              |\n| ${p} =            | `Get Element` | ${XML}  | html/p       |\n| `Should Be Equal` | ${p.text}     | \\n${SPACE*6}Text with${SPACE} |\n\n== tail ==\n\nThe text after the element before the next opening or closing tag. Python\n``None`` if the element has no tail. Similarly as with ``text``, also\n``tail`` contains possible indentation and newlines.\n\n| ${b} =            | `Get Element` | ${XML}  | html/p/b  |\n| `Should Be Equal` | ${b.tail}     | ${SPACE}and${SPACE} |\n\n== attrib ==\n\nA Python dictionary containing attributes of the element.\n\n| ${2nd} =          | `Get Element`       | ${XML} | second |\n| `Should Be Equal` | ${2nd.attrib['id']} | 2      |        |\n| ${3rd} =          | `Get Element`       | ${XML} | third  |\n| `Should Be Empty` | ${3rd.attrib}       |        |        |\n\n= Handling XML namespaces =\n\nElementTree and lxml handle possible namespaces in XML documents by adding\nthe namespace URI to tag names in so-called Clark Notation. That is\ninconvenient especially with xpaths, and by default this library strips\nthose namespaces away and moves them to ``xmlns`` attribute instead. That\ncan be avoided by passing ``keep_clark_notation`` argument to `Parse XML`\nkeyword. Alternatively `Parse XML` supports stripping namespace information\naltogether by using ``strip_namespaces`` argument. The pros and cons of\ndifferent approaches are discussed in more detail below.\n\n== How ElementTree handles namespaces ==\n\nIf an XML document has namespaces, ElementTree adds namespace information\nto tag names in [http://www.jclark.com/xml/xmlns.htm|Clark Notation]\n(e.g. ``{http://ns.uri}tag``) and removes original ``xmlns`` attributes.\nThis is done both with default namespaces and with namespaces with a prefix.\nHow it works in practice is illustrated by the following example, where\n``${NS}`` variable contains this XML document:\n\n| <xsl:stylesheet xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\"\n|                 xmlns=\"http://www.w3.org/1999/xhtml\">\n|   <xsl:template match=\"/\">\n|     <html></html>\n|   </xsl:template>\n| </xsl:stylesheet>\n\n| ${root} = | `Parse XML` | ${NS} | keep_clark_notation=yes |\n| `Should Be Equal` | ${root.tag} | {http://www.w3.org/1999/XSL/Transform}stylesheet |\n| `Element Should Exist` | ${root} | {http://www.w3.org/1999/XSL/Transform}template/{http://www.w3.org/1999/xhtml}html |\n| `Should Be Empty` | ${root.attrib} |\n\nAs you can see, including the namespace URI in tag names makes xpaths\nreally long and complex.\n\nIf you save the XML, ElementTree moves namespace information back to\n``xmlns`` attributes. Unfortunately it does not restore the original\nprefixes:\n\n| <ns0:stylesheet xmlns:ns0=\"http://www.w3.org/1999/XSL/Transform\">\n|   <ns0:template match=\"/\">\n|     <ns1:html xmlns:ns1=\"http://www.w3.org/1999/xhtml\"></ns1:html>\n|   </ns0:template>\n| </ns0:stylesheet>\n\nThe resulting output is semantically same as the original, but mangling\nprefixes like this may still not be desirable. Notice also that the actual\noutput depends slightly on ElementTree version.\n\n== Default namespace handling ==\n\nBecause the way ElementTree handles namespaces makes xpaths so complicated,\nthis library, by default, strips namespaces from tag names and moves that\ninformation back to ``xmlns`` attributes. How this works in practice is\nshown by the example below, where ``${NS}`` variable contains the same XML\ndocument as in the previous example.\n\n| ${root} = | `Parse XML` | ${NS} |\n| `Should Be Equal` | ${root.tag} | stylesheet |\n| `Element Should Exist` | ${root} | template/html |\n| `Element Attribute Should Be` | ${root} | xmlns | http://www.w3.org/1999/XSL/Transform |\n| `Element Attribute Should Be` | ${root} | xmlns | http://www.w3.org/1999/xhtml | xpath=template/html |\n\nNow that tags do not contain namespace information, xpaths are simple again.\n\nA minor limitation of this approach is that namespace prefixes are lost.\nAs a result the saved output is not exactly same as the original one in\nthis case either:\n\n| <stylesheet xmlns=\"http://www.w3.org/1999/XSL/Transform\">\n|   <template match=\"/\">\n|     <html xmlns=\"http://www.w3.org/1999/xhtml\"></html>\n|   </template>\n| </stylesheet>\n\nAlso this output is semantically same as the original. If the original XML\nhad only default namespaces, the output would also look identical.\n\n== Namespaces when using lxml ==\n\nThis library handles namespaces same way both when `using lxml` and when\nnot using it. There are, however, differences how lxml internally handles\nnamespaces compared to the standard ElementTree. The main difference is\nthat lxml stores information about namespace prefixes and they are thus\npreserved if XML is saved. Another visible difference is that lxml includes\nnamespace information in child elements got with `Get Element` if the\nparent element has namespaces.\n\n== Stripping namespaces altogether ==\n\nBecause namespaces often add unnecessary complexity, `Parse XML` supports\nstripping them altogether by using ``strip_namespaces=True``. When this\noption is enabled, namespaces are not shown anywhere nor are they included\nif XML is saved.\n\n== Attribute namespaces ==\n\nAttributes in XML documents are, by default, in the same namespaces as\nthe element they belong to. It is possible to use different namespaces\nby using prefixes, but this is pretty rare.\n\nIf an attribute has a namespace prefix, ElementTree will replace it with\nClark Notation the same way it handles elements. Because stripping\nnamespaces from attributes could cause attribute conflicts, this library\ndoes not handle attribute namespaces at all. Thus the following example\nworks the same way regardless how namespaces are handled.\n\n| ${root} = | `Parse XML` | <root id=\"1\" ns:id=\"2\" xmlns:ns=\"http://my.ns\"/> |\n| `Element Attribute Should Be` | ${root} | id | 1 |\n| `Element Attribute Should Be` | ${root} | {http://my.ns}id | 2 |\n\n= Boolean arguments =\n\nSome keywords accept arguments that are handled as Boolean values true or\nfalse. If such an argument is given as a string, it is considered false if\nit is an empty string or equal to ``FALSE``, ``NONE``, ``NO``, ``OFF`` or\n``0``, case-insensitively. Other strings are considered true regardless\ntheir value, and other argument types are tested using the same\n[http://docs.python.org/library/stdtypes.html#truth|rules as in Python].\n\nTrue examples:\n| `Parse XML` | ${XML} | keep_clark_notation=True    | # Strings are generally true.    |\n| `Parse XML` | ${XML} | keep_clark_notation=yes     | # Same as the above.             |\n| `Parse XML` | ${XML} | keep_clark_notation=${TRUE} | # Python ``True`` is true.       |\n| `Parse XML` | ${XML} | keep_clark_notation=${42}   | # Numbers other than 0 are true. |\n\nFalse examples:\n| `Parse XML` | ${XML} | keep_clark_notation=False    | # String ``false`` is false.   |\n| `Parse XML` | ${XML} | keep_clark_notation=no       | # Also string ``no`` is false. |\n| `Parse XML` | ${XML} | keep_clark_notation=${EMPTY} | # Empty string is false.       |\n| `Parse XML` | ${XML} | keep_clark_notation=${FALSE} | # Python ``False`` is false.   |\n\n== Pattern matching ==\n\nSome keywords, for example `Elements Should Match`, support so called\n[http://en.wikipedia.org/wiki/Glob_(programming)|glob patterns] where:\n\n| ``*``        | matches any string, even an empty string                |\n| ``?``        | matches any single character                            |\n| ``[chars]``  | matches one character in the bracket                    |\n| ``[!chars]`` | matches one character not in the bracket                |\n| ``[a-z]``    | matches one character from the range in the bracket     |\n| ``[!a-z]``   | matches one character not from the range in the bracket |\n\nUnlike with glob patterns normally, path separator characters ``/`` and\n``\\`` and the newline character ``\\n`` are matches by the above\nwildcards.",
+  "name": "Telnet",
+  "doc": "A library providing communication over Telnet connections.\n\n``Telnet`` is Robot Framework's standard library that makes it possible to\nconnect to Telnet servers and execute commands on the opened connections.\n\n== Table of contents ==\n\n- `Connections`\n- `Writing and reading`\n- `Configuration`\n- `Terminal emulation`\n- `Logging`\n- `Time string format`\n- `Boolean arguments`\n- `Importing`\n- `Keywords`\n\n= Connections =\n\nThe first step of using ``Telnet`` is opening a connection with `Open\nConnection` keyword. Typically the next step is logging in with `Login`\nkeyword, and in the end the opened connection can be closed with `Close\nConnection`.\n\nIt is possible to open multiple connections and switch the active one\nusing `Switch Connection`. `Close All Connections` can be used to close\nall the connections, which is especially useful in suite teardowns to\nguarantee that all connections are always closed.\n\n= Writing and reading =\n\nAfter opening a connection and possibly logging in, commands can be\nexecuted or text written to the connection for other reasons using `Write`\nand `Write Bare` keywords. The main difference between these two is that\nthe former adds a [#Configuration|configurable newline] after the text\nautomatically.\n\nAfter writing something to the connection, the resulting output can be\nread using `Read`, `Read Until`, `Read Until Regexp`, and `Read Until\nPrompt` keywords. Which one to use depends on the context, but the latest\none is often the most convenient.\n\nAs a convenience when running a command, it is possible to use `Execute\nCommand` that simply uses `Write` and `Read Until Prompt` internally.\n`Write Until Expected Output` is useful if you need to wait until writing\nsomething produces a desired output.\n\nWritten and read text is automatically encoded/decoded using a\n[#Configuration|configured encoding].\n\nThe ANSI escape codes, like cursor movement and color codes, are\nnormally returned as part of the read operation. If an escape code occurs\nin middle of a search pattern it may also prevent finding the searched\nstring. `Terminal emulation` can be used to process these\nescape codes as they would be if a real terminal would be in use.\n\n= Configuration =\n\nMany aspects related the connections can be easily configured either\nglobally or per connection basis. Global configuration is done when\n[#Importing|library is imported], and these values can be overridden per\nconnection by `Open Connection` or with setting specific keywords\n`Set Timeout`, `Set Newline`, `Set Prompt`, `Set Encoding`,\n`Set Default Log Level` and `Set Telnetlib Log Level`.\n\nValues of ``environ_user``, ``window_size``, ``terminal_emulation``, and\n``terminal_type`` can not be changed after opening the connection.\n\n== Timeout ==\n\nTimeout defines how long is the maximum time to wait when reading\noutput. It is used internally by `Read Until`, `Read Until Regexp`,\n`Read Until Prompt`, and `Login` keywords. The default value is 3 seconds.\n\n== Connection Timeout ==\n\nConnection Timeout defines how long is the maximum time to wait when\nopening the telnet connection. It is used internally by `Open Connection`.\nThe default value is the system global default timeout.\n\n== Newline ==\n\nNewline defines which line separator `Write` keyword should use. The\ndefault value is ``CRLF`` that is typically used by Telnet connections.\n\nNewline can be given either in escaped format using ``\\n`` and ``\\r`` or\nwith special ``LF`` and ``CR`` syntax.\n\nExamples:\n| `Set Newline` | \\n  |\n| `Set Newline` | CRLF |\n\n== Prompt ==\n\nOften the easiest way to read the output of a command is reading all\nthe output until the next prompt with `Read Until Prompt`. It also makes\nit easier, and faster, to verify did `Login` succeed.\n\nPrompt can be specified either as a normal string or a regular expression.\nThe latter is especially useful if the prompt changes as a result of\nthe executed commands. Prompt can be set to be a regular expression\nby giving ``prompt_is_regexp`` argument a true value (see `Boolean\narguments`).\n\nExamples:\n| `Open Connection` | lolcathost | prompt=$              |\n| `Set Prompt`      | (> |# )    | prompt_is_regexp=true |\n\n== Encoding ==\n\nTo ease handling text containing non-ASCII characters, all written text is\nencoded and read text decoded by default. The default encoding is UTF-8\nthat works also with ASCII. Encoding can be disabled by using a special\nencoding value ``NONE``. This is mainly useful if you need to get the bytes\nreceived from the connection as-is.\n\nNotice that when writing to the connection, only Unicode strings are\nencoded using the defined encoding. Byte strings are expected to be already\nencoded correctly. Notice also that normal text in data is passed to\nthe library as Unicode and you need to use variables to use bytes.\n\nIt is also possible to configure the error handler to use if encoding or\ndecoding characters fails. Accepted values are the same that encode/decode\nfunctions in Python strings accept. In practice the following values are\nthe most useful:\n\n- ``ignore``: ignore characters that cannot be encoded (default)\n- ``strict``: fail if characters cannot be encoded\n- ``replace``: replace characters that cannot be encoded with a replacement\n  character\n\nExamples:\n| `Open Connection` | lolcathost | encoding=Latin1 | encoding_errors=strict |\n| `Set Encoding` | ISO-8859-15 |\n| `Set Encoding` | errors=ignore |\n\n== Default log level ==\n\nDefault log level specifies the log level keywords use for `logging` unless\nthey are given an explicit log level. The default value is ``INFO``, and\nchanging it, for example, to ``DEBUG`` can be a good idea if there is lot\nof unnecessary output that makes log files big.\n\n== Terminal type ==\n\nBy default the Telnet library does not negotiate any specific terminal type\nwith the server. If a specific terminal type, for example ``vt100``, is\ndesired, the terminal type can be configured in `importing` and with\n`Open Connection`.\n\n== Window size ==\n\nWindow size for negotiation with the server can be configured when\n`importing` the library and with `Open Connection`.\n\n== USER environment variable ==\n\nTelnet protocol allows the ``USER`` environment variable to be sent when\nconnecting to the server. On some servers it may happen that there is no\nlogin prompt, and on those cases this configuration option will allow still\nto define the desired username. The option ``environ_user`` can be used in\n`importing` and with `Open Connection`.\n\n= Terminal emulation =\n\nTelnet library supports terminal\nemulation with [http://pyte.readthedocs.io|Pyte]. Terminal emulation\nwill process the output in a virtual screen. This means that ANSI escape\ncodes, like cursor movements, and also control characters, like\ncarriage returns and backspaces, have the same effect on the result as they\nwould have on a normal terminal screen. For example the sequence\n``acdc\\x1b[3Dbba`` will result in output ``abba``.\n\nTerminal emulation is taken into use by giving ``terminal_emulation``\nargument a true value (see `Boolean arguments`) either in the library\ninitialization or with `Open Connection`.\n\nAs Pyte approximates vt-style terminal, you may also want to set the\nterminal type as ``vt100``. We also recommend that you increase the window\nsize, as the terminal emulation will break all lines that are longer than\nthe window row length.\n\nWhen terminal emulation is used, the `newline` and `encoding` can not be\nchanged anymore after opening the connection.\n\nExamples:\n| `Open Connection` | lolcathost | terminal_emulation=True | terminal_type=vt100 | window_size=400x100 |\n\nAs a prerequisite for using terminal emulation, you need to have Pyte\ninstalled. Due to backwards incompatible changes in Pyte, different\nRobot Framework versions support different Pyte versions:\n\n- Pyte 0.6 and newer are supported by Robot Framework 3.0.3.\n  Latest Pyte version can be installed (or upgraded) with\n  ``pip install --upgrade pyte``.\n- Pyte 0.5.2 and older are supported by Robot Framework 3.0.2 and earlier.\n  Pyte 0.5.2 can be installed with ``pip install pyte==0.5.2``.\n\n= Logging =\n\nAll keywords that read something log the output. These keywords take the\nlog level to use as an optional argument, and if no log level is specified\nthey use the [#Configuration|configured] default value.\n\nThe valid log levels to use are ``TRACE``, ``DEBUG``, ``INFO`` (default),\nand ``WARN``. Levels below ``INFO`` are not shown in log files by default\nwhereas warnings are shown more prominently.\n\nThe [http://docs.python.org/library/telnetlib.html|telnetlib module]\nused by this library has a custom logging system for logging content it\nsends and receives. By default these messages are written using ``TRACE``\nlevel, but the level is configurable with the ``telnetlib_log_level``\noption either in the library initialization, to the `Open Connection`\nor by using the `Set Telnetlib Log Level` keyword to the active\nconnection. Special level ``NONE`` con be used to disable the logging\naltogether.\n\n= Time string format =\n\nTimeouts and other times used must be given as a time string using format\nlike ``15 seconds`` or ``1min 10s``. If the timeout is given as just\na number, for example, ``10`` or ``1.5``, it is considered to be seconds.\nThe time string format is described in more detail in an appendix of\n[http://robotframework.org/robotframework/#user-guide|Robot Framework User Guide].\n\n= Boolean arguments =\n\nSome keywords accept arguments that are handled as Boolean values true or\nfalse. If such an argument is given as a string, it is considered false if\nit is an empty string or equal to ``FALSE``, ``NONE``, ``NO``, ``OFF`` or\n``0``, case-insensitively. Other strings are considered true regardless\ntheir value, and other argument types are tested using the same\n[http://docs.python.org/library/stdtypes.html#truth|rules as in Python].\n\nTrue examples:\n| `Open Connection` | lolcathost | terminal_emulation=True    | # Strings are generally true.    |\n| `Open Connection` | lolcathost | terminal_emulation=yes     | # Same as the above.             |\n| `Open Connection` | lolcathost | terminal_emulation=${TRUE} | # Python ``True`` is true.       |\n| `Open Connection` | lolcathost | terminal_emulation=${42}   | # Numbers other than 0 are true. |\n\nFalse examples:\n| `Open Connection` | lolcathost | terminal_emulation=False    | # String ``false`` is false.   |\n| `Open Connection` | lolcathost | terminal_emulation=no       | # Also string ``no`` is false. |\n| `Open Connection` | lolcathost | terminal_emulation=${EMPTY} | # Empty string is false.       |\n| `Open Connection` | lolcathost | terminal_emulation=${FALSE} | # Python ``False`` is false.   |\n\nConsidering string ``NONE`` false is new in Robot Framework 3.0.3 and\nconsidering also ``OFF`` and ``0`` false is new in Robot Framework 3.1.",
   "version": "7.2.dev1",
-  "generated": "2026-10-15T21:40:33+00:00",
+  "generated": "2026-10-27T11:34:44+00:00",
   "type": "LIBRARY",
-  "scope": "GLOBAL",
+  "scope": "SUITE",
   "docFormat": "ROBOT",
-  "source": "/home/runner/work/manual/manual/src/robot/libraries/XML.py",
-  "lineno": 45,
+  "source": "/home/runner/work/manual/manual/src/robot/libraries/Telnet.py",
+  "lineno": 36,
   "tags": [],
   "inits": [
     {
       "name": "__init__",
       "args": [
         {
-          "name": "use_lxml",
+          "name": "timeout",
           "type": null,
-          "defaultValue": "False",
+          "defaultValue": "3 seconds",
           "kind": "POSITIONAL_OR_NAMED",
           "required": false,
-          "repr": "use_lxml=False"
-        }
-      ],
-      "returnType": null,
-      "doc": "Import library with optionally lxml mode enabled.\n\nThis library uses Python's standard\n[http://docs.python.org/library/xml.etree.elementtree.html|ElementTree]\nmodule for parsing XML by default. If ``use_lxml`` argument is given\na true value (see `Boolean arguments`), the [http://lxml.de|lxml] module\nis used instead. See the `Using lxml` section for benefits provided by lxml.\n\nUsing lxml requires that the lxml module is installed on the system.\nIf lxml mode is enabled but the module is not installed, this library\nemits a warning and reverts back to using the standard ElementTree.",
-      "shortdoc": "Import library with optionally lxml mode enabled.",
-      "tags": [],
-      "source": "/home/runner/work/manual/manual/src/robot/libraries/XML.py",
-      "lineno": 452
-    }
-  ],
-  "keywords": [
-    {
-      "name": "Add Element",
-      "args": [
-        {
-          "name": "source",
-          "type": null,
-          "defaultValue": null,
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": true,
-          "repr": "source"
+          "repr": "timeout=3 seconds"
         },
         {
-          "name": "element",
+          "name": "newline",
           "type": null,
-          "defaultValue": null,
+          "defaultValue": "CRLF",
           "kind": "POSITIONAL_OR_NAMED",
-          "required": true,
-          "repr": "element"
+          "required": false,
+          "repr": "newline=CRLF"
         },
         {
-          "name": "index",
+          "name": "prompt",
           "type": null,
           "defaultValue": "None",
           "kind": "POSITIONAL_OR_NAMED",
           "required": false,
-          "repr": "index=None"
+          "repr": "prompt=None"
         },
         {
-          "name": "xpath",
-          "type": null,
-          "defaultValue": ".",
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": false,
-          "repr": "xpath=."
-        }
-      ],
-      "returnType": null,
-      "doc": "Adds a child element to the specified element.\n\nThe element to whom to add the new element is specified using ``source``\nand ``xpath``. They have exactly the same semantics as with `Get Element`\nkeyword. The resulting XML structure is returned, and if the ``source``\nis an already parsed XML structure, it is also modified in place.\n\nThe ``element`` to add can be specified as a path to an XML file or\nas a string containing XML, or it can be an already parsed XML element.\nThe element is copied before adding so modifying either the original\nor the added element has no effect on the other\n.\nThe element is added as the last child by default, but a custom index\ncan be used to alter the position. Indices start from zero (0 = first\nposition, 1 = second position, etc.), and negative numbers refer to\npositions at the end (-1 = second last position, -2 = third last, etc.).\n\nExamples using ``${XML}`` structure from `Example`:\n| Add Element | ${XML} | <new id=\"x\"><c1/></new> |\n| Add Element | ${XML} | <c2/> | xpath=new |\n| Add Element | ${XML} | <c3/> | index=1 | xpath=new |\n| ${new} = | Get Element | ${XML} | new |\n| Elements Should Be Equal | ${new} | <new id=\"x\"><c1/><c3/><c2/></new> |\n\nUse `Remove Element` or `Remove Elements` to remove elements.",
-      "shortdoc": "Adds a child element to the specified element.",
-      "tags": [],
-      "source": "/home/runner/work/manual/manual/src/robot/libraries/XML.py",
-      "lineno": 1135
-    },
-    {
-      "name": "Clear Element",
-      "args": [
-        {
-          "name": "source",
-          "type": null,
-          "defaultValue": null,
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": true,
-          "repr": "source"
-        },
-        {
-          "name": "xpath",
-          "type": null,
-          "defaultValue": ".",
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": false,
-          "repr": "xpath=."
-        },
-        {
-          "name": "clear_tail",
+          "name": "prompt_is_regexp",
           "type": null,
           "defaultValue": "False",
           "kind": "POSITIONAL_OR_NAMED",
           "required": false,
-          "repr": "clear_tail=False"
-        }
-      ],
-      "returnType": null,
-      "doc": "Clears the contents of the specified element.\n\nThe element to clear is specified using ``source`` and ``xpath``. They\nhave exactly the same semantics as with `Get Element` keyword.\nThe resulting XML structure is returned, and if the ``source`` is\nan already parsed XML structure, it is also modified in place.\n\nClearing the element means removing its text, attributes, and children.\nElement's tail text is not removed by default, but that can be changed\nby giving ``clear_tail`` a true value (see `Boolean arguments`). See\n`Element attributes` section for more information about tail in\ngeneral.\n\nExamples using ``${XML}`` structure from `Example`:\n| Clear Element            | ${XML}   | xpath=first |\n| ${first} = | Get Element | ${XML}   | xpath=first |\n| Elements Should Be Equal | ${first} | <first/>    |\n| Clear Element            | ${XML}   | xpath=html/p/b | clear_tail=yes |\n| Element Text Should Be   | ${XML}   | Text with italics. | xpath=html/p | normalize_whitespace=yes |\n| Clear Element            | ${XML}   |\n| Elements Should Be Equal | ${XML}   | <example/> |\n\nUse `Remove Element` to remove the whole element.",
-      "shortdoc": "Clears the contents of the specified element.",
-      "tags": [],
-      "source": "/home/runner/work/manual/manual/src/robot/libraries/XML.py",
-      "lineno": 1244
-    },
-    {
-      "name": "Copy Element",
-      "args": [
-        {
-          "name": "source",
-          "type": null,
-          "defaultValue": null,
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": true,
-          "repr": "source"
-        },
-        {
-          "name": "xpath",
-          "type": null,
-          "defaultValue": ".",
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": false,
-          "repr": "xpath=."
-        }
-      ],
-      "returnType": null,
-      "doc": "Returns a copy of the specified element.\n\nThe element to copy is specified using ``source`` and ``xpath``. They\nhave exactly the same semantics as with `Get Element` keyword.\n\nIf the copy or the original element is modified afterward, the changes\nhave no effect on the other.\n\nExamples using ``${XML}`` structure from `Example`:\n| ${elem} =  | Get Element  | ${XML}  | xpath=first |\n| ${copy1} = | Copy Element | ${elem} |\n| ${copy2} = | Copy Element | ${XML}  | xpath=first |\n| Set Element Text         | ${XML}   | new text    | xpath=first      |\n| Set Element Attribute    | ${copy1} | id          | new              |\n| Elements Should Be Equal | ${elem}  | <first id=\"1\">new text</first> |\n| Elements Should Be Equal | ${copy1} | <first id=\"new\">text</first>   |\n| Elements Should Be Equal | ${copy2} | <first id=\"1\">text</first>     |",
-      "shortdoc": "Returns a copy of the specified element.",
-      "tags": [],
-      "source": "/home/runner/work/manual/manual/src/robot/libraries/XML.py",
-      "lineno": 1277
-    },
-    {
-      "name": "Element Attribute Should Be",
-      "args": [
-        {
-          "name": "source",
-          "type": null,
-          "defaultValue": null,
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": true,
-          "repr": "source"
-        },
-        {
-          "name": "name",
-          "type": null,
-          "defaultValue": null,
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": true,
-          "repr": "name"
-        },
-        {
-          "name": "expected",
-          "type": null,
-          "defaultValue": null,
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": true,
-          "repr": "expected"
-        },
-        {
-          "name": "xpath",
-          "type": null,
-          "defaultValue": ".",
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": false,
-          "repr": "xpath=."
-        },
-        {
-          "name": "message",
-          "type": null,
-          "defaultValue": "None",
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": false,
-          "repr": "message=None"
-        }
-      ],
-      "returnType": null,
-      "doc": "Verifies that the specified attribute is ``expected``.\n\nThe element whose attribute is verified is specified using ``source``\nand ``xpath``. They have exactly the same semantics as with\n`Get Element` keyword.\n\nThe keyword passes if the attribute ``name`` of the element is equal to\nthe ``expected`` value, and otherwise it fails. The default error\nmessage can be overridden with the ``message`` argument.\n\nTo test that the element does not have a certain attribute, Python\n``None`` (i.e. variable ``${NONE}``) can be used as the expected value.\nA cleaner alternative is using `Element Should Not Have Attribute`.\n\nExamples using ``${XML}`` structure from `Example`:\n| Element Attribute Should Be | ${XML} | id | 1       | xpath=first |\n| Element Attribute Should Be | ${XML} | id | ${NONE} |             |\n\nSee also `Element Attribute Should Match` and `Get Element Attribute`.",
-      "shortdoc": "Verifies that the specified attribute is ``expected``.",
-      "tags": [],
-      "source": "/home/runner/work/manual/manual/src/robot/libraries/XML.py",
-      "lineno": 805
-    },
-    {
-      "name": "Element Attribute Should Match",
-      "args": [
-        {
-          "name": "source",
-          "type": null,
-          "defaultValue": null,
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": true,
-          "repr": "source"
-        },
-        {
-          "name": "name",
-          "type": null,
-          "defaultValue": null,
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": true,
-          "repr": "name"
-        },
-        {
-          "name": "pattern",
-          "type": null,
-          "defaultValue": null,
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": true,
-          "repr": "pattern"
-        },
-        {
-          "name": "xpath",
-          "type": null,
-          "defaultValue": ".",
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": false,
-          "repr": "xpath=."
-        },
-        {
-          "name": "message",
-          "type": null,
-          "defaultValue": "None",
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": false,
-          "repr": "message=None"
-        }
-      ],
-      "returnType": null,
-      "doc": "Verifies that the specified attribute matches ``expected``.\n\nThis keyword works exactly like `Element Attribute Should Be` except\nthat the expected value can be given as a pattern that the attribute of\nthe element must match.\n\nPattern matching is similar as matching files in a shell with\n``*``, ``?`` and ``[chars]`` acting as wildcards. See the\n`Pattern matching` section for more information.\n\nExamples using ``${XML}`` structure from `Example`:\n| Element Attribute Should Match | ${XML} | id | ?   | xpath=first |\n| Element Attribute Should Match | ${XML} | id | c*d | xpath=third/second |",
-      "shortdoc": "Verifies that the specified attribute matches ``expected``.",
-      "tags": [],
-      "source": "/home/runner/work/manual/manual/src/robot/libraries/XML.py",
-      "lineno": 830
-    },
-    {
-      "name": "Element Should Exist",
-      "args": [
-        {
-          "name": "source",
-          "type": null,
-          "defaultValue": null,
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": true,
-          "repr": "source"
-        },
-        {
-          "name": "xpath",
-          "type": null,
-          "defaultValue": ".",
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": false,
-          "repr": "xpath=."
-        },
-        {
-          "name": "message",
-          "type": null,
-          "defaultValue": "None",
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": false,
-          "repr": "message=None"
-        }
-      ],
-      "returnType": null,
-      "doc": "Verifies that one or more element match the given ``xpath``.\n\nArguments ``source`` and ``xpath`` have exactly the same semantics as\nwith `Get Elements` keyword. Keyword passes if the ``xpath`` matches\none or more elements in the ``source``. The default error message can\nbe overridden with the ``message`` argument.\n\nSee also `Element Should Not Exist` as well as `Get Element Count`\nthat this keyword uses internally.",
-      "shortdoc": "Verifies that one or more element match the given ``xpath``.",
-      "tags": [],
-      "source": "/home/runner/work/manual/manual/src/robot/libraries/XML.py",
-      "lineno": 616
-    },
-    {
-      "name": "Element Should Not Exist",
-      "args": [
-        {
-          "name": "source",
-          "type": null,
-          "defaultValue": null,
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": true,
-          "repr": "source"
-        },
-        {
-          "name": "xpath",
-          "type": null,
-          "defaultValue": ".",
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": false,
-          "repr": "xpath=."
-        },
-        {
-          "name": "message",
-          "type": null,
-          "defaultValue": "None",
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": false,
-          "repr": "message=None"
-        }
-      ],
-      "returnType": null,
-      "doc": "Verifies that no element match the given ``xpath``.\n\nArguments ``source`` and ``xpath`` have exactly the same semantics as\nwith `Get Elements` keyword. Keyword fails if the ``xpath`` matches any\nelement in the ``source``. The default error message can be overridden\nwith the ``message`` argument.\n\nSee also `Element Should Exist` as well as `Get Element Count`\nthat this keyword uses internally.",
-      "shortdoc": "Verifies that no element match the given ``xpath``.",
-      "tags": [],
-      "source": "/home/runner/work/manual/manual/src/robot/libraries/XML.py",
-      "lineno": 631
-    },
-    {
-      "name": "Element Should Not Have Attribute",
-      "args": [
-        {
-          "name": "source",
-          "type": null,
-          "defaultValue": null,
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": true,
-          "repr": "source"
-        },
-        {
-          "name": "name",
-          "type": null,
-          "defaultValue": null,
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": true,
-          "repr": "name"
-        },
-        {
-          "name": "xpath",
-          "type": null,
-          "defaultValue": ".",
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": false,
-          "repr": "xpath=."
-        },
-        {
-          "name": "message",
-          "type": null,
-          "defaultValue": "None",
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": false,
-          "repr": "message=None"
-        }
-      ],
-      "returnType": null,
-      "doc": "Verifies that the specified element does not have attribute ``name``.\n\nThe element whose attribute is verified is specified using ``source``\nand ``xpath``. They have exactly the same semantics as with\n`Get Element` keyword.\n\nThe keyword fails if the specified element has attribute ``name``. The\ndefault error message can be overridden with the ``message`` argument.\n\nExamples using ``${XML}`` structure from `Example`:\n| Element Should Not Have Attribute | ${XML} | id  |\n| Element Should Not Have Attribute | ${XML} | xxx | xpath=first |\n\nSee also `Get Element Attribute`, `Get Element Attributes`,\n`Element Text Should Be` and `Element Text Should Match`.",
-      "shortdoc": "Verifies that the specified element does not have attribute ``name``.",
-      "tags": [],
-      "source": "/home/runner/work/manual/manual/src/robot/libraries/XML.py",
-      "lineno": 851
-    },
-    {
-      "name": "Element Text Should Be",
-      "args": [
-        {
-          "name": "source",
-          "type": null,
-          "defaultValue": null,
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": true,
-          "repr": "source"
-        },
-        {
-          "name": "expected",
-          "type": null,
-          "defaultValue": null,
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": true,
-          "repr": "expected"
-        },
-        {
-          "name": "xpath",
-          "type": null,
-          "defaultValue": ".",
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": false,
-          "repr": "xpath=."
-        },
-        {
-          "name": "normalize_whitespace",
-          "type": null,
-          "defaultValue": "False",
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": false,
-          "repr": "normalize_whitespace=False"
-        },
-        {
-          "name": "message",
-          "type": null,
-          "defaultValue": "None",
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": false,
-          "repr": "message=None"
-        }
-      ],
-      "returnType": null,
-      "doc": "Verifies that the text of the specified element is ``expected``.\n\nThe element whose text is verified is specified using ``source`` and\n``xpath``. They have exactly the same semantics as with `Get Element`\nkeyword.\n\nThe text to verify is got from the specified element using the same\nlogic as with `Get Element Text`. This includes optional whitespace\nnormalization using the ``normalize_whitespace`` option.\n\nThe keyword passes if the text of the element is equal to the\n``expected`` value, and otherwise it fails. The default error message\ncan be overridden with the ``message`` argument.  Use `Element Text\nShould Match` to verify the text against a pattern instead of an exact\nvalue.\n\nExamples using ``${XML}`` structure from `Example`:\n| Element Text Should Be | ${XML}       | text     | xpath=first      |\n| Element Text Should Be | ${XML}       | ${EMPTY} | xpath=second/child |\n| ${paragraph} =         | Get Element  | ${XML}   | xpath=html/p     |\n| Element Text Should Be | ${paragraph} | Text with bold and italics. | normalize_whitespace=yes |",
-      "shortdoc": "Verifies that the text of the specified element is ``expected``.",
-      "tags": [],
-      "source": "/home/runner/work/manual/manual/src/robot/libraries/XML.py",
-      "lineno": 715
-    },
-    {
-      "name": "Element Text Should Match",
-      "args": [
-        {
-          "name": "source",
-          "type": null,
-          "defaultValue": null,
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": true,
-          "repr": "source"
-        },
-        {
-          "name": "pattern",
-          "type": null,
-          "defaultValue": null,
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": true,
-          "repr": "pattern"
-        },
-        {
-          "name": "xpath",
-          "type": null,
-          "defaultValue": ".",
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": false,
-          "repr": "xpath=."
-        },
-        {
-          "name": "normalize_whitespace",
-          "type": null,
-          "defaultValue": "False",
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": false,
-          "repr": "normalize_whitespace=False"
-        },
-        {
-          "name": "message",
-          "type": null,
-          "defaultValue": "None",
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": false,
-          "repr": "message=None"
-        }
-      ],
-      "returnType": null,
-      "doc": "Verifies that the text of the specified element matches ``expected``.\n\nThis keyword works exactly like `Element Text Should Be` except that\nthe expected value can be given as a pattern that the text of the\nelement must match.\n\nPattern matching is similar as matching files in a shell with\n``*``, ``?`` and ``[chars]`` acting as wildcards. See the\n`Pattern matching` section for more information.\n\nExamples using ``${XML}`` structure from `Example`:\n| Element Text Should Match | ${XML}       | t???   | xpath=first  |\n| ${paragraph} =            | Get Element  | ${XML} | xpath=html/p |\n| Element Text Should Match | ${paragraph} | Text with * and *. | normalize_whitespace=yes |",
-      "shortdoc": "Verifies that the text of the specified element matches ``expected``.",
-      "tags": [],
-      "source": "/home/runner/work/manual/manual/src/robot/libraries/XML.py",
-      "lineno": 742
-    },
-    {
-      "name": "Element To String",
-      "args": [
-        {
-          "name": "source",
-          "type": null,
-          "defaultValue": null,
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": true,
-          "repr": "source"
-        },
-        {
-          "name": "xpath",
-          "type": null,
-          "defaultValue": ".",
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": false,
-          "repr": "xpath=."
-        },
-        {
-          "name": "encoding",
-          "type": null,
-          "defaultValue": "None",
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": false,
-          "repr": "encoding=None"
-        }
-      ],
-      "returnType": null,
-      "doc": "Returns the string representation of the specified element.\n\nThe element to convert to a string is specified using ``source`` and\n``xpath``. They have exactly the same semantics as with `Get Element`\nkeyword.\n\nThe string is returned as Unicode by default. If ``encoding`` argument\nis given any value, the string is returned as bytes in the specified\nencoding. The resulting string never contains the XML declaration.\n\nSee also `Log Element` and `Save XML`.",
-      "shortdoc": "Returns the string representation of the specified element.",
-      "tags": [],
-      "source": "/home/runner/work/manual/manual/src/robot/libraries/XML.py",
-      "lineno": 1298
-    },
-    {
-      "name": "Elements Should Be Equal",
-      "args": [
-        {
-          "name": "source",
-          "type": null,
-          "defaultValue": null,
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": true,
-          "repr": "source"
-        },
-        {
-          "name": "expected",
-          "type": null,
-          "defaultValue": null,
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": true,
-          "repr": "expected"
-        },
-        {
-          "name": "exclude_children",
-          "type": null,
-          "defaultValue": "False",
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": false,
-          "repr": "exclude_children=False"
-        },
-        {
-          "name": "normalize_whitespace",
-          "type": null,
-          "defaultValue": "False",
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": false,
-          "repr": "normalize_whitespace=False"
-        },
-        {
-          "name": "sort_children",
-          "type": null,
-          "defaultValue": "False",
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": false,
-          "repr": "sort_children=False"
-        }
-      ],
-      "returnType": null,
-      "doc": "Verifies that the given ``source`` element is equal to ``expected``.\n\nBoth ``source`` and ``expected`` can be given as a path to an XML file,\nas a string containing XML, or as an already parsed XML element\nstructure. See `introduction` for more information about parsing XML in\ngeneral.\n\nThe keyword passes if the ``source`` element and ``expected`` element\nare equal. This includes testing the tag names, texts, and attributes\nof the elements. By default, also child elements are verified the same\nway, but this can be disabled by setting ``exclude_children`` to a\ntrue value (see `Boolean arguments`). Child elements are expected to\nbe in the same order, but that can be changed by giving ``sort_children``\na true value. Notice that elements are sorted solely based on tag names.\n\nAll texts inside the given elements are verified, but possible text\noutside them is not. By default, texts must match exactly, but setting\n``normalize_whitespace`` to a true value makes text verification\nindependent on newlines, tabs, and the amount of spaces. For more\ndetails about handling text see `Get Element Text` keyword and\ndiscussion about elements' `text` and `tail` attributes in the\n`introduction`.\n\nExamples using ``${XML}`` structure from `Example`:\n| ${first} =               | Get Element | ${XML} | first             |\n| Elements Should Be Equal | ${first}    | <first id=\"1\">text</first> |\n| ${p} =                   | Get Element | ${XML} | html/p            |\n| Elements Should Be Equal | ${p} | <p>Text with <b>bold</b> and <i>italics</i>.</p> | normalize_whitespace=yes |\n| Elements Should Be Equal | ${p} | <p>Text with</p> | exclude | normalize |\n\nThe last example may look a bit strange because the ``<p>`` element\nonly has text ``Text with``. The reason is that rest of the text\ninside ``<p>`` actually belongs to the child elements. This includes\nthe ``.`` at the end that is the `tail` text of the ``<i>`` element.\n\nSee also `Elements Should Match`.\n\n``sort_children`` is new in Robot Framework 7.0.",
-      "shortdoc": "Verifies that the given ``source`` element is equal to ``expected``.",
-      "tags": [],
-      "source": "/home/runner/work/manual/manual/src/robot/libraries/XML.py",
-      "lineno": 873
-    },
-    {
-      "name": "Elements Should Match",
-      "args": [
-        {
-          "name": "source",
-          "type": null,
-          "defaultValue": null,
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": true,
-          "repr": "source"
-        },
-        {
-          "name": "expected",
-          "type": null,
-          "defaultValue": null,
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": true,
-          "repr": "expected"
-        },
-        {
-          "name": "exclude_children",
-          "type": null,
-          "defaultValue": "False",
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": false,
-          "repr": "exclude_children=False"
-        },
-        {
-          "name": "normalize_whitespace",
-          "type": null,
-          "defaultValue": "False",
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": false,
-          "repr": "normalize_whitespace=False"
-        },
-        {
-          "name": "sort_children",
-          "type": null,
-          "defaultValue": "False",
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": false,
-          "repr": "sort_children=False"
-        }
-      ],
-      "returnType": null,
-      "doc": "Verifies that the given ``source`` element matches ``expected``.\n\nThis keyword works exactly like `Elements Should Be Equal` except that\ntexts and attribute values in the expected value can be given as\npatterns.\n\nPattern matching is similar as matching files in a shell with\n``*``, ``?`` and ``[chars]`` acting as wildcards. See the\n`Pattern matching` section for more information.\n\nExamples using ``${XML}`` structure from `Example`:\n| ${first} =            | Get Element | ${XML} | first          |\n| Elements Should Match | ${first}    | <first id=\"?\">*</first> |\n\nSee `Elements Should Be Equal` for more examples.",
-      "shortdoc": "Verifies that the given ``source`` element matches ``expected``.",
-      "tags": [],
-      "source": "/home/runner/work/manual/manual/src/robot/libraries/XML.py",
-      "lineno": 917
-    },
-    {
-      "name": "Evaluate Xpath",
-      "args": [
-        {
-          "name": "source",
-          "type": null,
-          "defaultValue": null,
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": true,
-          "repr": "source"
-        },
-        {
-          "name": "expression",
-          "type": null,
-          "defaultValue": null,
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": true,
-          "repr": "expression"
-        },
-        {
-          "name": "context",
-          "type": null,
-          "defaultValue": ".",
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": false,
-          "repr": "context=."
-        }
-      ],
-      "returnType": null,
-      "doc": "Evaluates the given xpath expression and returns results.\n\nThe element in which context the expression is executed is specified\nusing ``source`` and ``context`` arguments. They have exactly the same\nsemantics as ``source`` and ``xpath`` arguments have with `Get Element`\nkeyword.\n\nThe xpath expression to evaluate is given as ``expression`` argument.\nThe result of the evaluation is returned as-is.\n\nExamples using ``${XML}`` structure from `Example`:\n| ${count} =      | Evaluate Xpath | ${XML}  | count(third/*) |\n| Should Be Equal | ${count}       | ${3}    |\n| ${text} =       | Evaluate Xpath | ${XML}  | string(descendant::second[last()]/@id) |\n| Should Be Equal | ${text}        | child   |\n| ${bold} =       | Evaluate Xpath | ${XML}  | boolean(preceding-sibling::*[1] = 'bold') | context=html/p/i |\n| Should Be Equal | ${bold}        | ${True} |\n\nThis keyword works only if lxml mode is taken into use when `importing`\nthe library.",
-      "shortdoc": "Evaluates the given xpath expression and returns results.",
-      "tags": [],
-      "source": "/home/runner/work/manual/manual/src/robot/libraries/XML.py",
-      "lineno": 1373
-    },
-    {
-      "name": "Get Child Elements",
-      "args": [
-        {
-          "name": "source",
-          "type": null,
-          "defaultValue": null,
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": true,
-          "repr": "source"
-        },
-        {
-          "name": "xpath",
-          "type": null,
-          "defaultValue": ".",
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": false,
-          "repr": "xpath=."
-        }
-      ],
-      "returnType": null,
-      "doc": "Returns the child elements of the specified element as a list.\n\nThe element whose children to return is specified using ``source`` and\n``xpath``. They have exactly the same semantics as with `Get Element`\nkeyword.\n\nAll the direct child elements of the specified element are returned.\nIf the element has no children, an empty list is returned.\n\nExamples using ``${XML}`` structure from `Example`:\n| ${children} =    | Get Child Elements | ${XML} |             |\n| Length Should Be | ${children}        | 4      |             |\n| ${children} =    | Get Child Elements | ${XML} | xpath=first |\n| Should Be Empty  | ${children}        |        |             |",
-      "shortdoc": "Returns the child elements of the specified element as a list.",
-      "tags": [],
-      "source": "/home/runner/work/manual/manual/src/robot/libraries/XML.py",
-      "lineno": 586
-    },
-    {
-      "name": "Get Element",
-      "args": [
-        {
-          "name": "source",
-          "type": null,
-          "defaultValue": null,
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": true,
-          "repr": "source"
-        },
-        {
-          "name": "xpath",
-          "type": null,
-          "defaultValue": ".",
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": false,
-          "repr": "xpath=."
-        }
-      ],
-      "returnType": null,
-      "doc": "Returns an element in the ``source`` matching the ``xpath``.\n\nThe ``source`` can be a path to an XML file, a string containing XML, or\nan already parsed XML element. The ``xpath`` specifies which element to\nfind. See the `introduction` for more details about both the possible\nsources and the supported xpath syntax.\n\nThe keyword fails if more, or less, than one element matches the\n``xpath``. Use `Get Elements` if you want all matching elements to be\nreturned.\n\nExamples using ``${XML}`` structure from `Example`:\n| ${element} = | Get Element | ${XML}     | second |\n| ${child} =   | Get Element | ${element} | child  |\n\n`Parse XML` is recommended for parsing XML when the whole structure\nis needed. It must be used if there is a need to configure how XML\nnamespaces are handled.\n\nMany other keywords use this keyword internally, and keywords modifying\nXML are typically documented to both to modify the given source and\nto return it. Modifying the source does not apply if the source is\ngiven as a string. The XML structure parsed based on the string and\nthen modified is nevertheless returned.",
-      "shortdoc": "Returns an element in the ``source`` matching the ``xpath``.",
-      "tags": [],
-      "source": "/home/runner/work/manual/manual/src/robot/libraries/XML.py",
-      "lineno": 521
-    },
-    {
-      "name": "Get Element Attribute",
-      "args": [
-        {
-          "name": "source",
-          "type": null,
-          "defaultValue": null,
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": true,
-          "repr": "source"
-        },
-        {
-          "name": "name",
-          "type": null,
-          "defaultValue": null,
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": true,
-          "repr": "name"
-        },
-        {
-          "name": "xpath",
-          "type": null,
-          "defaultValue": ".",
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": false,
-          "repr": "xpath=."
-        },
-        {
-          "name": "default",
-          "type": null,
-          "defaultValue": "None",
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": false,
-          "repr": "default=None"
-        }
-      ],
-      "returnType": null,
-      "doc": "Returns the named attribute of the specified element.\n\nThe element whose attribute to return is specified using ``source`` and\n``xpath``. They have exactly the same semantics as with `Get Element`\nkeyword.\n\nThe value of the attribute ``name`` of the specified element is returned.\nIf the element does not have such element, the ``default`` value is\nreturned instead.\n\nExamples using ``${XML}`` structure from `Example`:\n| ${attribute} =  | Get Element Attribute | ${XML} | id | xpath=first |\n| Should Be Equal | ${attribute}          | 1      |    |             |\n| ${attribute} =  | Get Element Attribute | ${XML} | xx | xpath=first | default=value |\n| Should Be Equal | ${attribute}          | value  |    |             |\n\nSee also `Get Element Attributes`, `Element Attribute Should Be`,\n`Element Attribute Should Match` and `Element Should Not Have Attribute`.",
-      "shortdoc": "Returns the named attribute of the specified element.",
-      "tags": [],
-      "source": "/home/runner/work/manual/manual/src/robot/libraries/XML.py",
-      "lineno": 763
-    },
-    {
-      "name": "Get Element Attributes",
-      "args": [
-        {
-          "name": "source",
-          "type": null,
-          "defaultValue": null,
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": true,
-          "repr": "source"
-        },
-        {
-          "name": "xpath",
-          "type": null,
-          "defaultValue": ".",
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": false,
-          "repr": "xpath=."
-        }
-      ],
-      "returnType": null,
-      "doc": "Returns all attributes of the specified element.\n\nThe element whose attributes to return is specified using ``source`` and\n``xpath``. They have exactly the same semantics as with `Get Element`\nkeyword.\n\nAttributes are returned as a Python dictionary. It is a copy of the\noriginal attributes so modifying it has no effect on the XML structure.\n\nExamples using ``${XML}`` structure from `Example`:\n| ${attributes} = | Get Element Attributes      | ${XML} | first |\n| Dictionary Should Contain Key | ${attributes} | id     |       |\n| ${attributes} = | Get Element Attributes      | ${XML} | third |\n| Should Be Empty | ${attributes}               |        |       |\n\nUse `Get Element Attribute` to get the value of a single attribute.",
-      "shortdoc": "Returns all attributes of the specified element.",
-      "tags": [],
-      "source": "/home/runner/work/manual/manual/src/robot/libraries/XML.py",
-      "lineno": 785
-    },
-    {
-      "name": "Get Element Count",
-      "args": [
-        {
-          "name": "source",
-          "type": null,
-          "defaultValue": null,
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": true,
-          "repr": "source"
-        },
-        {
-          "name": "xpath",
-          "type": null,
-          "defaultValue": ".",
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": false,
-          "repr": "xpath=."
-        }
-      ],
-      "returnType": null,
-      "doc": "Returns and logs how many elements the given ``xpath`` matches.\n\nArguments ``source`` and ``xpath`` have exactly the same semantics as\nwith `Get Elements` keyword that this keyword uses internally.\n\nSee also `Element Should Exist` and `Element Should Not Exist`.",
-      "shortdoc": "Returns and logs how many elements the given ``xpath`` matches.",
-      "tags": [],
-      "source": "/home/runner/work/manual/manual/src/robot/libraries/XML.py",
-      "lineno": 604
-    },
-    {
-      "name": "Get Element Text",
-      "args": [
-        {
-          "name": "source",
-          "type": null,
-          "defaultValue": null,
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": true,
-          "repr": "source"
-        },
-        {
-          "name": "xpath",
-          "type": null,
-          "defaultValue": ".",
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": false,
-          "repr": "xpath=."
-        },
-        {
-          "name": "normalize_whitespace",
-          "type": null,
-          "defaultValue": "False",
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": false,
-          "repr": "normalize_whitespace=False"
-        }
-      ],
-      "returnType": null,
-      "doc": "Returns all text of the element, possibly whitespace normalized.\n\nThe element whose text to return is specified using ``source`` and\n``xpath``. They have exactly the same semantics as with `Get Element`\nkeyword.\n\nThis keyword returns all the text of the specified element, including\nall the text its children and grandchildren contain. If the element\nhas no text, an empty string is returned. The returned text is thus not\nalways the same as the `text` attribute of the element.\n\nBy default all whitespace, including newlines and indentation, inside\nthe element is returned as-is. If ``normalize_whitespace`` is given\na true value (see `Boolean arguments`), then leading and trailing\nwhitespace is stripped, newlines and tabs converted to spaces, and\nmultiple spaces collapsed into one. This is especially useful when\ndealing with HTML data.\n\nExamples using ``${XML}`` structure from `Example`:\n| ${text} =       | Get Element Text | ${XML}       | first        |\n| Should Be Equal | ${text}          | text         |              |\n| ${text} =       | Get Element Text | ${XML}       | second/child |\n| Should Be Empty | ${text}          |              |              |\n| ${paragraph} =  | Get Element      | ${XML}       | html/p       |\n| ${text} =       | Get Element Text | ${paragraph} | normalize_whitespace=yes |\n| Should Be Equal | ${text}          | Text with bold and italics. |\n\nSee also `Get Elements Texts`, `Element Text Should Be` and\n`Element Text Should Match`.",
-      "shortdoc": "Returns all text of the element, possibly whitespace normalized.",
-      "tags": [],
-      "source": "/home/runner/work/manual/manual/src/robot/libraries/XML.py",
-      "lineno": 646
-    },
-    {
-      "name": "Get Elements",
-      "args": [
-        {
-          "name": "source",
-          "type": null,
-          "defaultValue": null,
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": true,
-          "repr": "source"
-        },
-        {
-          "name": "xpath",
-          "type": null,
-          "defaultValue": null,
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": true,
-          "repr": "xpath"
-        }
-      ],
-      "returnType": null,
-      "doc": "Returns a list of elements in the ``source`` matching the ``xpath``.\n\nThe ``source`` can be a path to an XML file, a string containing XML, or\nan already parsed XML element. The ``xpath`` specifies which element to\nfind. See the `introduction` for more details.\n\nElements matching the ``xpath`` are returned as a list. If no elements\nmatch, an empty list is returned. Use `Get Element` if you want to get\nexactly one match.\n\nExamples using ``${XML}`` structure from `Example`:\n| ${children} =    | Get Elements | ${XML} | third/child |\n| Length Should Be | ${children}  | 2      |             |\n| ${children} =    | Get Elements | ${XML} | first/child |\n| Should Be Empty  |  ${children} |        |             |",
-      "shortdoc": "Returns a list of elements in the ``source`` matching the ``xpath``.",
-      "tags": [],
-      "source": "/home/runner/work/manual/manual/src/robot/libraries/XML.py",
-      "lineno": 564
-    },
-    {
-      "name": "Get Elements Texts",
-      "args": [
-        {
-          "name": "source",
-          "type": null,
-          "defaultValue": null,
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": true,
-          "repr": "source"
-        },
-        {
-          "name": "xpath",
-          "type": null,
-          "defaultValue": null,
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": true,
-          "repr": "xpath"
-        },
-        {
-          "name": "normalize_whitespace",
-          "type": null,
-          "defaultValue": "False",
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": false,
-          "repr": "normalize_whitespace=False"
-        }
-      ],
-      "returnType": null,
-      "doc": "Returns text of all elements matching ``xpath`` as a list.\n\nThe elements whose text to return is specified using ``source`` and\n``xpath``. They have exactly the same semantics as with `Get Elements`\nkeyword.\n\nThe text of the matched elements is returned using the same logic\nas with `Get Element Text`. This includes optional whitespace\nnormalization using the ``normalize_whitespace`` option.\n\nExamples using ``${XML}`` structure from `Example`:\n| @{texts} =       | Get Elements Texts | ${XML}    | third/child |\n| Length Should Be | ${texts}           | 2         |             |\n| Should Be Equal  | @{texts}[0]        | more text |             |\n| Should Be Equal  | @{texts}[1]        | ${EMPTY}  |             |",
-      "shortdoc": "Returns text of all elements matching ``xpath`` as a list.",
-      "tags": [],
-      "source": "/home/runner/work/manual/manual/src/robot/libraries/XML.py",
-      "lineno": 695
-    },
-    {
-      "name": "Log Element",
-      "args": [
-        {
-          "name": "source",
-          "type": null,
-          "defaultValue": null,
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": true,
-          "repr": "source"
-        },
-        {
-          "name": "level",
-          "type": null,
-          "defaultValue": "INFO",
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": false,
-          "repr": "level=INFO"
-        },
-        {
-          "name": "xpath",
-          "type": null,
-          "defaultValue": ".",
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": false,
-          "repr": "xpath=."
-        }
-      ],
-      "returnType": null,
-      "doc": "Logs the string representation of the specified element.\n\nThe element specified with ``source`` and ``xpath`` is first converted\ninto a string using `Element To String` keyword internally. The\nresulting string is then logged using the given ``level``.\n\nThe logged string is also returned.",
-      "shortdoc": "Logs the string representation of the specified element.",
-      "tags": [],
-      "source": "/home/runner/work/manual/manual/src/robot/libraries/XML.py",
-      "lineno": 1320
-    },
-    {
-      "name": "Parse Xml",
-      "args": [
-        {
-          "name": "source",
-          "type": null,
-          "defaultValue": null,
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": true,
-          "repr": "source"
-        },
-        {
-          "name": "keep_clark_notation",
-          "type": null,
-          "defaultValue": "False",
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": false,
-          "repr": "keep_clark_notation=False"
-        },
-        {
-          "name": "strip_namespaces",
-          "type": null,
-          "defaultValue": "False",
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": false,
-          "repr": "strip_namespaces=False"
-        }
-      ],
-      "returnType": null,
-      "doc": "Parses the given XML file or string into an element structure.\n\nThe ``source`` can either be a path to an XML file or a string\ncontaining XML. In both cases the XML is parsed into ElementTree\n[http://docs.python.org/library/xml.etree.elementtree.html#element-objects|element structure]\nand the root element is returned. Possible comments and processing\ninstructions in the source XML are removed.\n\nAs discussed in `Handling XML namespaces` section, this keyword, by\ndefault, removes namespace information ElementTree has added to tag\nnames and moves it into ``xmlns`` attributes. This typically eases\nhandling XML documents with namespaces considerably. If you do not\nwant that to happen, or want to avoid the small overhead of going\nthrough the element structure when your XML does not have namespaces,\nyou can disable this feature by giving ``keep_clark_notation`` argument\na true value (see `Boolean arguments`).\n\nIf you want to strip namespace information altogether so that it is\nnot included even if XML is saved, you can give a true value to\n``strip_namespaces`` argument.\n\nExamples:\n| ${root} = | Parse XML | <root><child/></root> |\n| ${xml} = | Parse XML | ${CURDIR}/test.xml | keep_clark_notation=True |\n| ${xml} = | Parse XML | ${CURDIR}/test.xml | strip_namespaces=True |\n\nUse `Get Element` keyword if you want to get a certain element and not\nthe whole structure. See `Parsing XML` section for more details and\nexamples.",
-      "shortdoc": "Parses the given XML file or string into an element structure.",
-      "tags": [],
-      "source": "/home/runner/work/manual/manual/src/robot/libraries/XML.py",
-      "lineno": 478
-    },
-    {
-      "name": "Remove Element",
-      "args": [
-        {
-          "name": "source",
-          "type": null,
-          "defaultValue": null,
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": true,
-          "repr": "source"
-        },
-        {
-          "name": "xpath",
-          "type": null,
-          "defaultValue": "",
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": false,
-          "repr": "xpath="
-        },
-        {
-          "name": "remove_tail",
-          "type": null,
-          "defaultValue": "False",
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": false,
-          "repr": "remove_tail=False"
-        }
-      ],
-      "returnType": null,
-      "doc": "Removes the element matching ``xpath`` from the ``source`` structure.\n\nThe element to remove from the ``source`` is specified with ``xpath``\nusing the same semantics as with `Get Element` keyword. The resulting\nXML structure is returned, and if the ``source`` is an already parsed\nXML structure, it is also modified in place.\n\nThe keyword fails if ``xpath`` does not match exactly one element.\nUse `Remove Elements` to remove all matched elements.\n\nElement's tail text is not removed by default, but that can be changed\nby giving ``remove_tail`` a true value (see `Boolean arguments`). See\n`Element attributes` section for more information about `tail` in\ngeneral.\n\nExamples using ``${XML}`` structure from `Example`:\n| Remove Element           | ${XML} | xpath=second |\n| Element Should Not Exist | ${XML} | xpath=second |\n| Remove Element           | ${XML} | xpath=html/p/b | remove_tail=yes |\n| Element Text Should Be   | ${XML} | Text with italics. | xpath=html/p | normalize_whitespace=yes |",
-      "shortdoc": "Removes the element matching ``xpath`` from the ``source`` structure.",
-      "tags": [],
-      "source": "/home/runner/work/manual/manual/src/robot/libraries/XML.py",
-      "lineno": 1171
-    },
-    {
-      "name": "Remove Element Attribute",
-      "args": [
-        {
-          "name": "source",
-          "type": null,
-          "defaultValue": null,
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": true,
-          "repr": "source"
-        },
-        {
-          "name": "name",
-          "type": null,
-          "defaultValue": null,
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": true,
-          "repr": "name"
-        },
-        {
-          "name": "xpath",
-          "type": null,
-          "defaultValue": ".",
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": false,
-          "repr": "xpath=."
-        }
-      ],
-      "returnType": null,
-      "doc": "Removes attribute ``name`` from the specified element.\n\nThe element whose attribute to remove is specified using ``source`` and\n``xpath``. They have exactly the same semantics as with `Get Element`\nkeyword. The resulting XML structure is returned, and if the ``source``\nis an already parsed XML structure, it is also modified in place.\n\nIt is not a failure to remove a non-existing attribute. Use `Remove\nElement Attributes` to remove all attributes and `Set Element Attribute`\nto set them.\n\nExamples using ``${XML}`` structure from `Example`:\n| Remove Element Attribute          | ${XML} | id | xpath=first |\n| Element Should Not Have Attribute | ${XML} | id | xpath=first |\n\nCan only remove an attribute from a single element. Use `Remove Elements\nAttribute` to remove an attribute of multiple elements in one call.",
-      "shortdoc": "Removes attribute ``name`` from the specified element.",
-      "tags": [],
-      "source": "/home/runner/work/manual/manual/src/robot/libraries/XML.py",
-      "lineno": 1066
-    },
-    {
-      "name": "Remove Element Attributes",
-      "args": [
-        {
-          "name": "source",
-          "type": null,
-          "defaultValue": null,
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": true,
-          "repr": "source"
-        },
-        {
-          "name": "xpath",
-          "type": null,
-          "defaultValue": ".",
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": false,
-          "repr": "xpath=."
-        }
-      ],
-      "returnType": null,
-      "doc": "Removes all attributes from the specified element.\n\nThe element whose attributes to remove is specified using ``source`` and\n``xpath``. They have exactly the same semantics as with `Get Element`\nkeyword. The resulting XML structure is returned, and if the ``source``\nis an already parsed XML structure, it is also modified in place.\n\nUse `Remove Element Attribute` to remove a single attribute and\n`Set Element Attribute` to set them.\n\nExamples using ``${XML}`` structure from `Example`:\n| Remove Element Attributes         | ${XML} | xpath=first |\n| Element Should Not Have Attribute | ${XML} | id | xpath=first |\n\nCan only remove attributes from a single element. Use `Remove Elements\nAttributes` to remove all attributes of multiple elements in one call.",
-      "shortdoc": "Removes all attributes from the specified element.",
-      "tags": [],
-      "source": "/home/runner/work/manual/manual/src/robot/libraries/XML.py",
-      "lineno": 1102
-    },
-    {
-      "name": "Remove Elements",
-      "args": [
-        {
-          "name": "source",
-          "type": null,
-          "defaultValue": null,
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": true,
-          "repr": "source"
-        },
-        {
-          "name": "xpath",
-          "type": null,
-          "defaultValue": "",
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": false,
-          "repr": "xpath="
-        },
-        {
-          "name": "remove_tail",
-          "type": null,
-          "defaultValue": "False",
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": false,
-          "repr": "remove_tail=False"
-        }
-      ],
-      "returnType": null,
-      "doc": "Removes all elements matching ``xpath`` from the ``source`` structure.\n\nThe elements to remove from the ``source`` are specified with ``xpath``\nusing the same semantics as with `Get Elements` keyword. The resulting\nXML structure is returned, and if the ``source`` is an already parsed\nXML structure, it is also modified in place.\n\nIt is not a failure if ``xpath`` matches no elements. Use `Remove\nElement` to remove exactly one element.\n\nElement's tail text is not removed by default, but that can be changed\nby using ``remove_tail`` argument similarly as with `Remove Element`.\n\nExamples using ``${XML}`` structure from `Example`:\n| Remove Elements          | ${XML} | xpath=*/child      |\n| Element Should Not Exist | ${XML} | xpath=second/child |\n| Element Should Not Exist | ${XML} | xpath=third/child  |",
-      "shortdoc": "Removes all elements matching ``xpath`` from the ``source`` structure.",
-      "tags": [],
-      "source": "/home/runner/work/manual/manual/src/robot/libraries/XML.py",
-      "lineno": 1197
-    },
-    {
-      "name": "Remove Elements Attribute",
-      "args": [
-        {
-          "name": "source",
-          "type": null,
-          "defaultValue": null,
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": true,
-          "repr": "source"
-        },
-        {
-          "name": "name",
-          "type": null,
-          "defaultValue": null,
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": true,
-          "repr": "name"
-        },
-        {
-          "name": "xpath",
-          "type": null,
-          "defaultValue": ".",
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": false,
-          "repr": "xpath=."
-        }
-      ],
-      "returnType": null,
-      "doc": "Removes attribute ``name`` from the specified elements.\n\nLike `Remove Element Attribute` but removes the attribute of all\nelements matching the given ``xpath``.",
-      "shortdoc": "Removes attribute ``name`` from the specified elements.",
-      "tags": [],
-      "source": "/home/runner/work/manual/manual/src/robot/libraries/XML.py",
-      "lineno": 1091
-    },
-    {
-      "name": "Remove Elements Attributes",
-      "args": [
-        {
-          "name": "source",
-          "type": null,
-          "defaultValue": null,
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": true,
-          "repr": "source"
-        },
-        {
-          "name": "xpath",
-          "type": null,
-          "defaultValue": ".",
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": false,
-          "repr": "xpath=."
-        }
-      ],
-      "returnType": null,
-      "doc": "Removes all attributes from the specified elements.\n\nLike `Remove Element Attributes` but removes all attributes of all\nelements matching the given ``xpath``.",
-      "shortdoc": "Removes all attributes from the specified elements.",
-      "tags": [],
-      "source": "/home/runner/work/manual/manual/src/robot/libraries/XML.py",
-      "lineno": 1124
-    },
-    {
-      "name": "Save Xml",
-      "args": [
-        {
-          "name": "source",
-          "type": null,
-          "defaultValue": null,
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": true,
-          "repr": "source"
-        },
-        {
-          "name": "path",
-          "type": null,
-          "defaultValue": null,
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": true,
-          "repr": "path"
+          "repr": "prompt_is_regexp=False"
         },
         {
           "name": "encoding",
@@ -1164,256 +53,699 @@
           "kind": "POSITIONAL_OR_NAMED",
           "required": false,
           "repr": "encoding=UTF-8"
-        }
-      ],
-      "returnType": null,
-      "doc": "Saves the given element to the specified file.\n\nThe element to save is specified with ``source`` using the same\nsemantics as with `Get Element` keyword.\n\nThe file where the element is saved is denoted with ``path`` and the\nencoding to use with ``encoding``. The resulting file always contains\nthe XML declaration.\n\nThe resulting XML file may not be exactly the same as the original:\n- Comments and processing instructions are always stripped.\n- Possible doctype and namespace prefixes are only preserved when\n  `using lxml`.\n- Other small differences are possible depending on the ElementTree\n  or lxml version.\n\nUse `Element To String` if you just need a string representation of\nthe element.",
-      "shortdoc": "Saves the given element to the specified file.",
-      "tags": [],
-      "source": "/home/runner/work/manual/manual/src/robot/libraries/XML.py",
-      "lineno": 1333
-    },
-    {
-      "name": "Set Element Attribute",
-      "args": [
-        {
-          "name": "source",
-          "type": null,
-          "defaultValue": null,
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": true,
-          "repr": "source"
         },
         {
-          "name": "name",
+          "name": "encoding_errors",
           "type": null,
-          "defaultValue": null,
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": true,
-          "repr": "name"
-        },
-        {
-          "name": "value",
-          "type": null,
-          "defaultValue": null,
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": true,
-          "repr": "value"
-        },
-        {
-          "name": "xpath",
-          "type": null,
-          "defaultValue": ".",
+          "defaultValue": "ignore",
           "kind": "POSITIONAL_OR_NAMED",
           "required": false,
-          "repr": "xpath=."
-        }
-      ],
-      "returnType": null,
-      "doc": "Sets attribute ``name`` of the specified element to ``value``.\n\nThe element whose attribute to set is specified using ``source`` and\n``xpath``. They have exactly the same semantics as with `Get Element`\nkeyword. The resulting XML structure is returned, and if the ``source``\nis an already parsed XML structure, it is also modified in place.\n\nIt is possible to both set new attributes and to overwrite existing.\nUse `Remove Element Attribute` or `Remove Element Attributes` for\nremoving them.\n\nExamples using ``${XML}`` structure from `Example`:\n| Set Element Attribute       | ${XML} | attr | value |\n| Element Attribute Should Be | ${XML} | attr | value |\n| Set Element Attribute       | ${XML} | id   | new   | xpath=first |\n| Element Attribute Should Be | ${XML} | id   | new   | xpath=first |\n\nCan only set an attribute of a single element. Use `Set Elements\nAttribute` to set an attribute of multiple elements in one call.",
-      "shortdoc": "Sets attribute ``name`` of the specified element to ``value``.",
-      "tags": [],
-      "source": "/home/runner/work/manual/manual/src/robot/libraries/XML.py",
-      "lineno": 1028
-    },
-    {
-      "name": "Set Element Tag",
-      "args": [
-        {
-          "name": "source",
-          "type": null,
-          "defaultValue": null,
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": true,
-          "repr": "source"
+          "repr": "encoding_errors=ignore"
         },
         {
-          "name": "tag",
+          "name": "default_log_level",
           "type": null,
-          "defaultValue": null,
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": true,
-          "repr": "tag"
-        },
-        {
-          "name": "xpath",
-          "type": null,
-          "defaultValue": ".",
+          "defaultValue": "INFO",
           "kind": "POSITIONAL_OR_NAMED",
           "required": false,
-          "repr": "xpath=."
+          "repr": "default_log_level=INFO"
+        },
+        {
+          "name": "window_size",
+          "type": null,
+          "defaultValue": "None",
+          "kind": "POSITIONAL_OR_NAMED",
+          "required": false,
+          "repr": "window_size=None"
+        },
+        {
+          "name": "environ_user",
+          "type": null,
+          "defaultValue": "None",
+          "kind": "POSITIONAL_OR_NAMED",
+          "required": false,
+          "repr": "environ_user=None"
+        },
+        {
+          "name": "terminal_emulation",
+          "type": null,
+          "defaultValue": "False",
+          "kind": "POSITIONAL_OR_NAMED",
+          "required": false,
+          "repr": "terminal_emulation=False"
+        },
+        {
+          "name": "terminal_type",
+          "type": null,
+          "defaultValue": "None",
+          "kind": "POSITIONAL_OR_NAMED",
+          "required": false,
+          "repr": "terminal_type=None"
+        },
+        {
+          "name": "telnetlib_log_level",
+          "type": null,
+          "defaultValue": "TRACE",
+          "kind": "POSITIONAL_OR_NAMED",
+          "required": false,
+          "repr": "telnetlib_log_level=TRACE"
+        },
+        {
+          "name": "connection_timeout",
+          "type": null,
+          "defaultValue": "None",
+          "kind": "POSITIONAL_OR_NAMED",
+          "required": false,
+          "repr": "connection_timeout=None"
         }
       ],
       "returnType": null,
-      "doc": "Sets the tag of the specified element.\n\nThe element whose tag to set is specified using ``source`` and\n``xpath``. They have exactly the same semantics as with `Get Element`\nkeyword. The resulting XML structure is returned, and if the ``source``\nis an already parsed XML structure, it is also modified in place.\n\nExamples using ``${XML}`` structure from `Example`:\n| Set Element Tag      | ${XML}     | newTag     |\n| Should Be Equal      | ${XML.tag} | newTag     |\n| Set Element Tag      | ${XML}     | xxx        | xpath=second/child |\n| Element Should Exist | ${XML}     | second/xxx |\n| Element Should Not Exist | ${XML} | second/child |\n\nCan only set the tag of a single element. Use `Set Elements Tag` to set\nthe tag of multiple elements in one call.",
-      "shortdoc": "Sets the tag of the specified element.",
+      "doc": "Telnet library can be imported with optional configuration parameters.\n\nConfiguration parameters are used as default values when new\nconnections are opened with `Open Connection` keyword. They can also be\noverridden after opening the connection using the `Set ...` `keywords`.\nSee these keywords as well as `Configuration`, `Terminal emulation` and\n`Logging` sections above for more information about these parameters\nand their possible values.\n\nSee `Time string format` and `Boolean arguments` sections for\ninformation about using arguments accepting times and Boolean values,\nrespectively.\n\nExamples (use only one of these):\n| = Setting = | = Value = | = Value =                | = Value =            | = Value =           | = Comment = |\n| Library     | Telnet    |                          |                      |                     | # default values |\n| Library     | Telnet    | 5 seconds                |                      |                     | # set only timeout |\n| Library     | Telnet    | newline=LF               | encoding=ISO-8859-1  |                     | # set newline and encoding using named arguments |\n| Library     | Telnet    | prompt=$                 |                      |                     | # set prompt |\n| Library     | Telnet    | prompt=(> |# )           | prompt_is_regexp=yes |                     | # set prompt as a regular expression |\n| Library     | Telnet    | terminal_emulation=True  | terminal_type=vt100  | window_size=400x100 | # use terminal emulation with defined window size and terminal type |\n| Library     | Telnet    | telnetlib_log_level=NONE |                      |                     | # disable logging messages from the underlying telnetlib |",
+      "shortdoc": "Telnet library can be imported with optional configuration parameters.",
       "tags": [],
-      "source": "/home/runner/work/manual/manual/src/robot/libraries/XML.py",
-      "lineno": 951
+      "source": "/home/runner/work/manual/manual/src/robot/libraries/Telnet.py",
+      "lineno": 281
+    }
+  ],
+  "keywords": [
+    {
+      "name": "Close All Connections",
+      "args": [],
+      "returnType": null,
+      "doc": "Closes all open connections and empties the connection cache.\n\nIf multiple connections are opened, this keyword should be used in\na test or suite teardown to make sure that all connections are closed.\nIt is not an error if some of the connections have already been closed\nby `Close Connection`.\n\nAfter this keyword, new indexes returned by `Open Connection`\nkeyword are reset to 1.",
+      "shortdoc": "Closes all open connections and empties the connection cache.",
+      "tags": [],
+      "source": "/home/runner/work/manual/manual/src/robot/libraries/Telnet.py",
+      "lineno": 470
     },
     {
-      "name": "Set Element Text",
+      "name": "Close Connection",
       "args": [
         {
-          "name": "source",
+          "name": "loglevel",
+          "type": null,
+          "defaultValue": "None",
+          "kind": "POSITIONAL_OR_NAMED",
+          "required": false,
+          "repr": "loglevel=None"
+        }
+      ],
+      "returnType": null,
+      "doc": "Closes the current Telnet connection.\n\nRemaining output in the connection is read, logged, and returned.\nIt is not an error to close an already closed connection.\n\nUse `Close All Connections` if you want to make sure all opened\nconnections are closed.\n\nSee `Logging` section for more information about log levels.",
+      "shortdoc": "Closes the current Telnet connection.",
+      "tags": [],
+      "source": "/home/runner/work/manual/manual/src/robot/libraries/Telnet.py",
+      "lineno": 686
+    },
+    {
+      "name": "Execute Command",
+      "args": [
+        {
+          "name": "command",
           "type": null,
           "defaultValue": null,
           "kind": "POSITIONAL_OR_NAMED",
           "required": true,
-          "repr": "source"
+          "repr": "command"
         },
+        {
+          "name": "loglevel",
+          "type": null,
+          "defaultValue": "None",
+          "kind": "POSITIONAL_OR_NAMED",
+          "required": false,
+          "repr": "loglevel=None"
+        },
+        {
+          "name": "strip_prompt",
+          "type": null,
+          "defaultValue": "False",
+          "kind": "POSITIONAL_OR_NAMED",
+          "required": false,
+          "repr": "strip_prompt=False"
+        }
+      ],
+      "returnType": null,
+      "doc": "Executes the given ``command`` and reads, logs, and returns everything until the prompt.\n\nThis keyword requires the prompt to be [#Configuration|configured]\neither in `importing` or with `Open Connection` or `Set Prompt` keyword.\n\nThis is a convenience keyword that uses `Write` and `Read Until Prompt`\ninternally. Following two examples are thus functionally identical:\n\n| ${out} = | `Execute Command`   | pwd |\n\n| `Write`  | pwd                 |\n| ${out} = | `Read Until Prompt` |\n\nSee `Logging` section for more information about log levels and `Read\nUntil Prompt` for more information about the ``strip_prompt`` parameter.",
+      "shortdoc": "Executes the given ``command`` and reads, logs, and returns everything until the prompt.",
+      "tags": [],
+      "source": "/home/runner/work/manual/manual/src/robot/libraries/Telnet.py",
+      "lineno": 1054
+    },
+    {
+      "name": "Login",
+      "args": [
+        {
+          "name": "username",
+          "type": null,
+          "defaultValue": null,
+          "kind": "POSITIONAL_OR_NAMED",
+          "required": true,
+          "repr": "username"
+        },
+        {
+          "name": "password",
+          "type": null,
+          "defaultValue": null,
+          "kind": "POSITIONAL_OR_NAMED",
+          "required": true,
+          "repr": "password"
+        },
+        {
+          "name": "login_prompt",
+          "type": null,
+          "defaultValue": "login: \\",
+          "kind": "POSITIONAL_OR_NAMED",
+          "required": false,
+          "repr": "login_prompt=login: \\"
+        },
+        {
+          "name": "password_prompt",
+          "type": null,
+          "defaultValue": "Password: \\",
+          "kind": "POSITIONAL_OR_NAMED",
+          "required": false,
+          "repr": "password_prompt=Password: \\"
+        },
+        {
+          "name": "login_timeout",
+          "type": null,
+          "defaultValue": "1 second",
+          "kind": "POSITIONAL_OR_NAMED",
+          "required": false,
+          "repr": "login_timeout=1 second"
+        },
+        {
+          "name": "login_incorrect",
+          "type": null,
+          "defaultValue": "Login incorrect",
+          "kind": "POSITIONAL_OR_NAMED",
+          "required": false,
+          "repr": "login_incorrect=Login incorrect"
+        }
+      ],
+      "returnType": null,
+      "doc": "Logs in to the Telnet server with the given user information.\n\nThis keyword reads from the connection until the ``login_prompt`` is\nencountered and then types the given ``username``. Then it reads until\nthe ``password_prompt`` and types the given ``password``. In both cases\na newline is appended automatically and the connection specific\ntimeout used when waiting for outputs.\n\nHow logging status is verified depends on whether a prompt is set for\nthis connection or not:\n\n1) If the prompt is set, this keyword reads the output until the prompt\nis found using the normal timeout. If no prompt is found, login is\nconsidered failed and also this keyword fails. Note that in this case\nboth ``login_timeout`` and ``login_incorrect`` arguments are ignored.\n\n2) If the prompt is not set, this keywords sleeps until ``login_timeout``\nand then reads all the output available on the connection. If the\noutput contains ``login_incorrect`` text, login is considered failed\nand also this keyword fails.\n\nSee `Configuration` section for more information about setting\nnewline, timeout, and prompt.",
+      "shortdoc": "Logs in to the Telnet server with the given user information.",
+      "tags": [],
+      "source": "/home/runner/work/manual/manual/src/robot/libraries/Telnet.py",
+      "lineno": 704
+    },
+    {
+      "name": "Open Connection",
+      "args": [
+        {
+          "name": "host",
+          "type": null,
+          "defaultValue": null,
+          "kind": "POSITIONAL_OR_NAMED",
+          "required": true,
+          "repr": "host"
+        },
+        {
+          "name": "alias",
+          "type": null,
+          "defaultValue": "None",
+          "kind": "POSITIONAL_OR_NAMED",
+          "required": false,
+          "repr": "alias=None"
+        },
+        {
+          "name": "port",
+          "type": null,
+          "defaultValue": "23",
+          "kind": "POSITIONAL_OR_NAMED",
+          "required": false,
+          "repr": "port=23"
+        },
+        {
+          "name": "timeout",
+          "type": null,
+          "defaultValue": "None",
+          "kind": "POSITIONAL_OR_NAMED",
+          "required": false,
+          "repr": "timeout=None"
+        },
+        {
+          "name": "newline",
+          "type": null,
+          "defaultValue": "None",
+          "kind": "POSITIONAL_OR_NAMED",
+          "required": false,
+          "repr": "newline=None"
+        },
+        {
+          "name": "prompt",
+          "type": null,
+          "defaultValue": "None",
+          "kind": "POSITIONAL_OR_NAMED",
+          "required": false,
+          "repr": "prompt=None"
+        },
+        {
+          "name": "prompt_is_regexp",
+          "type": null,
+          "defaultValue": "False",
+          "kind": "POSITIONAL_OR_NAMED",
+          "required": false,
+          "repr": "prompt_is_regexp=False"
+        },
+        {
+          "name": "encoding",
+          "type": null,
+          "defaultValue": "None",
+          "kind": "POSITIONAL_OR_NAMED",
+          "required": false,
+          "repr": "encoding=None"
+        },
+        {
+          "name": "encoding_errors",
+          "type": null,
+          "defaultValue": "None",
+          "kind": "POSITIONAL_OR_NAMED",
+          "required": false,
+          "repr": "encoding_errors=None"
+        },
+        {
+          "name": "default_log_level",
+          "type": null,
+          "defaultValue": "None",
+          "kind": "POSITIONAL_OR_NAMED",
+          "required": false,
+          "repr": "default_log_level=None"
+        },
+        {
+          "name": "window_size",
+          "type": null,
+          "defaultValue": "None",
+          "kind": "POSITIONAL_OR_NAMED",
+          "required": false,
+          "repr": "window_size=None"
+        },
+        {
+          "name": "environ_user",
+          "type": null,
+          "defaultValue": "None",
+          "kind": "POSITIONAL_OR_NAMED",
+          "required": false,
+          "repr": "environ_user=None"
+        },
+        {
+          "name": "terminal_emulation",
+          "type": null,
+          "defaultValue": "None",
+          "kind": "POSITIONAL_OR_NAMED",
+          "required": false,
+          "repr": "terminal_emulation=None"
+        },
+        {
+          "name": "terminal_type",
+          "type": null,
+          "defaultValue": "None",
+          "kind": "POSITIONAL_OR_NAMED",
+          "required": false,
+          "repr": "terminal_type=None"
+        },
+        {
+          "name": "telnetlib_log_level",
+          "type": null,
+          "defaultValue": "None",
+          "kind": "POSITIONAL_OR_NAMED",
+          "required": false,
+          "repr": "telnetlib_log_level=None"
+        },
+        {
+          "name": "connection_timeout",
+          "type": null,
+          "defaultValue": "None",
+          "kind": "POSITIONAL_OR_NAMED",
+          "required": false,
+          "repr": "connection_timeout=None"
+        }
+      ],
+      "returnType": null,
+      "doc": "Opens a new Telnet connection to the given host and port.\n\nThe ``timeout``, ``newline``, ``prompt``, ``prompt_is_regexp``,\n``encoding``, ``default_log_level``, ``window_size``, ``environ_user``,\n``terminal_emulation``, ``terminal_type`` and ``telnetlib_log_level``\narguments get default values when the library is [#Importing|imported].\nSetting them here overrides those values for the opened connection.\nSee `Configuration`, `Terminal emulation` and `Logging` sections for\nmore information about these parameters and their possible values.\n\nPossible already opened connections are cached and it is possible to\nswitch back to them using `Switch Connection` keyword. It is possible to\nswitch either using explicitly given ``alias`` or using index returned\nby this keyword. Indexing starts from 1 and is reset back to it by\n`Close All Connections` keyword.",
+      "shortdoc": "Opens a new Telnet connection to the given host and port.",
+      "tags": [],
+      "source": "/home/runner/work/manual/manual/src/robot/libraries/Telnet.py",
+      "lineno": 362
+    },
+    {
+      "name": "Read",
+      "args": [
+        {
+          "name": "loglevel",
+          "type": null,
+          "defaultValue": "None",
+          "kind": "POSITIONAL_OR_NAMED",
+          "required": false,
+          "repr": "loglevel=None"
+        }
+      ],
+      "returnType": null,
+      "doc": "Reads everything that is currently available in the output.\n\nRead output is both returned and logged. See `Logging` section for more\ninformation about log levels.",
+      "shortdoc": "Reads everything that is currently available in the output.",
+      "tags": [],
+      "source": "/home/runner/work/manual/manual/src/robot/libraries/Telnet.py",
+      "lineno": 874
+    },
+    {
+      "name": "Read Until",
+      "args": [
+        {
+          "name": "expected",
+          "type": null,
+          "defaultValue": null,
+          "kind": "POSITIONAL_OR_NAMED",
+          "required": true,
+          "repr": "expected"
+        },
+        {
+          "name": "loglevel",
+          "type": null,
+          "defaultValue": "None",
+          "kind": "POSITIONAL_OR_NAMED",
+          "required": false,
+          "repr": "loglevel=None"
+        }
+      ],
+      "returnType": null,
+      "doc": "Reads output until ``expected`` text is encountered.\n\nText up to and including the match is returned and logged. If no match\nis found, this keyword fails. How much to wait for the output depends\non the [#Configuration|configured timeout].\n\nSee `Logging` section for more information about log levels. Use\n`Read Until Regexp` if more complex matching is needed.",
+      "shortdoc": "Reads output until ``expected`` text is encountered.",
+      "tags": [],
+      "source": "/home/runner/work/manual/manual/src/robot/libraries/Telnet.py",
+      "lineno": 888
+    },
+    {
+      "name": "Read Until Prompt",
+      "args": [
+        {
+          "name": "loglevel",
+          "type": null,
+          "defaultValue": "None",
+          "kind": "POSITIONAL_OR_NAMED",
+          "required": false,
+          "repr": "loglevel=None"
+        },
+        {
+          "name": "strip_prompt",
+          "type": null,
+          "defaultValue": "False",
+          "kind": "POSITIONAL_OR_NAMED",
+          "required": false,
+          "repr": "strip_prompt=False"
+        }
+      ],
+      "returnType": null,
+      "doc": "Reads output until the prompt is encountered.\n\nThis keyword requires the prompt to be [#Configuration|configured]\neither in `importing` or with `Open Connection` or `Set Prompt` keyword.\n\nBy default, text up to and including the prompt is returned and logged.\nIf no prompt is found, this keyword fails. How much to wait for the\noutput depends on the [#Configuration|configured timeout].\n\nIf you want to exclude the prompt from the returned output, set\n``strip_prompt`` to a true value (see `Boolean arguments`). If your\nprompt is a regular expression, make sure that the expression spans the\nwhole prompt, because only the part of the output that matches the\nregular expression is stripped away.\n\nSee `Logging` section for more information about log levels.",
+      "shortdoc": "Reads output until the prompt is encountered.",
+      "tags": [],
+      "source": "/home/runner/work/manual/manual/src/robot/libraries/Telnet.py",
+      "lineno": 1009
+    },
+    {
+      "name": "Read Until Regexp",
+      "args": [
+        {
+          "name": "expected",
+          "type": null,
+          "defaultValue": null,
+          "kind": "VAR_POSITIONAL",
+          "required": false,
+          "repr": "*expected"
+        }
+      ],
+      "returnType": null,
+      "doc": "Reads output until any of the ``expected`` regular expressions match.\n\nThis keyword accepts any number of regular expressions patterns or\ncompiled Python regular expression objects as arguments. Text up to\nand including the first match to any of the regular expressions is\nreturned and logged. If no match is found, this keyword fails. How much\nto wait for the output depends on the [#Configuration|configured timeout].\n\nIf the last given argument is a [#Logging|valid log level], it is used\nas ``loglevel`` similarly as with `Read Until` keyword.\n\nSee the documentation of\n[http://docs.python.org/library/re.html|Python re module]\nfor more information about the supported regular expression syntax.\nNotice that possible backslashes need to be escaped in Robot Framework data.\n\nExamples:\n| `Read Until Regexp` | (#|$) |\n| `Read Until Regexp` | first_regexp | second_regexp |\n| `Read Until Regexp` | \\\\d{4}-\\\\d{2}-\\\\d{2} | DEBUG |",
+      "shortdoc": "Reads output until any of the ``expected`` regular expressions match.",
+      "tags": [],
+      "source": "/home/runner/work/manual/manual/src/robot/libraries/Telnet.py",
+      "lineno": 972
+    },
+    {
+      "name": "Set Default Log Level",
+      "args": [
+        {
+          "name": "level",
+          "type": null,
+          "defaultValue": null,
+          "kind": "POSITIONAL_OR_NAMED",
+          "required": true,
+          "repr": "level"
+        }
+      ],
+      "returnType": null,
+      "doc": "Sets the default log level used for `logging` in the current connection.\n\nThe old default log level is returned and can be used to restore the\nlog level later.\n\nSee `Configuration` section for more information about global and\nconnection specific configuration.",
+      "shortdoc": "Sets the default log level used for `logging` in the current connection.",
+      "tags": [],
+      "source": "/home/runner/work/manual/manual/src/robot/libraries/Telnet.py",
+      "lineno": 660
+    },
+    {
+      "name": "Set Encoding",
+      "args": [
+        {
+          "name": "encoding",
+          "type": null,
+          "defaultValue": "None",
+          "kind": "POSITIONAL_OR_NAMED",
+          "required": false,
+          "repr": "encoding=None"
+        },
+        {
+          "name": "errors",
+          "type": null,
+          "defaultValue": "None",
+          "kind": "POSITIONAL_OR_NAMED",
+          "required": false,
+          "repr": "errors=None"
+        }
+      ],
+      "returnType": null,
+      "doc": "Sets the encoding to use for `writing and reading` in the current connection.\n\nThe given ``encoding`` specifies the encoding to use when written/read\ntext is encoded/decoded, and ``errors`` specifies the error handler to\nuse if encoding/decoding fails. Either of these can be omitted and in\nthat case the old value is not affected. Use string ``NONE`` to disable\nencoding altogether.\n\nSee `Configuration` section for more information about encoding and\nerror handlers, as well as global and connection specific configuration\nin general.\n\nThe old values are returned and can be used to restore the encoding\nand the error handler later. See `Set Prompt` for a similar example.\n\nIf terminal emulation is used, the encoding can not be changed on an open\nconnection.",
+      "shortdoc": "Sets the encoding to use for `writing and reading` in the current connection.",
+      "tags": [],
+      "source": "/home/runner/work/manual/manual/src/robot/libraries/Telnet.py",
+      "lineno": 601
+    },
+    {
+      "name": "Set Newline",
+      "args": [
+        {
+          "name": "newline",
+          "type": null,
+          "defaultValue": null,
+          "kind": "POSITIONAL_OR_NAMED",
+          "required": true,
+          "repr": "newline"
+        }
+      ],
+      "returnType": null,
+      "doc": "Sets the newline used by `Write` keyword in the current connection.\n\nThe old newline is returned and can be used to restore the newline later.\nSee `Set Timeout` for a similar example.\n\nIf terminal emulation is used, the newline can not be changed on an open\nconnection.\n\nSee `Configuration` section for more information about global and\nconnection specific configuration.",
+      "shortdoc": "Sets the newline used by `Write` keyword in the current connection.",
+      "tags": [],
+      "source": "/home/runner/work/manual/manual/src/robot/libraries/Telnet.py",
+      "lineno": 540
+    },
+    {
+      "name": "Set Prompt",
+      "args": [
+        {
+          "name": "prompt",
+          "type": null,
+          "defaultValue": null,
+          "kind": "POSITIONAL_OR_NAMED",
+          "required": true,
+          "repr": "prompt"
+        },
+        {
+          "name": "prompt_is_regexp",
+          "type": null,
+          "defaultValue": "False",
+          "kind": "POSITIONAL_OR_NAMED",
+          "required": false,
+          "repr": "prompt_is_regexp=False"
+        }
+      ],
+      "returnType": null,
+      "doc": "Sets the prompt used by `Read Until Prompt` and `Login` in the current connection.\n\nIf ``prompt_is_regexp`` is given a true value (see `Boolean arguments`),\nthe given ``prompt`` is considered to be a regular expression.\n\nThe old prompt is returned and can be used to restore the prompt later.\n\nExample:\n| ${prompt} | ${regexp} = | `Set Prompt` | $ |\n| `Do Something` |\n| `Set Prompt` | ${prompt} | ${regexp} |\n\nSee the documentation of\n[http://docs.python.org/library/re.html|Python re module]\nfor more information about the supported regular expression syntax.\nNotice that possible backslashes need to be escaped in Robot Framework data.\n\nSee `Configuration` section for more information about global and\nconnection specific configuration.",
+      "shortdoc": "Sets the prompt used by `Read Until Prompt` and `Login` in the current connection.",
+      "tags": [],
+      "source": "/home/runner/work/manual/manual/src/robot/libraries/Telnet.py",
+      "lineno": 563
+    },
+    {
+      "name": "Set Telnetlib Log Level",
+      "args": [
+        {
+          "name": "level",
+          "type": null,
+          "defaultValue": null,
+          "kind": "POSITIONAL_OR_NAMED",
+          "required": true,
+          "repr": "level"
+        }
+      ],
+      "returnType": null,
+      "doc": "Sets the log level used for `logging` in the underlying ``telnetlib``.\n\nNote that ``telnetlib`` can be very noisy thus using the level ``NONE``\ncan shutdown the messages generated by this library.",
+      "shortdoc": "Sets the log level used for `logging` in the underlying ``telnetlib``.",
+      "tags": [],
+      "source": "/home/runner/work/manual/manual/src/robot/libraries/Telnet.py",
+      "lineno": 642
+    },
+    {
+      "name": "Set Timeout",
+      "args": [
+        {
+          "name": "timeout",
+          "type": null,
+          "defaultValue": null,
+          "kind": "POSITIONAL_OR_NAMED",
+          "required": true,
+          "repr": "timeout"
+        }
+      ],
+      "returnType": null,
+      "doc": "Sets the timeout used for waiting output in the current connection.\n\nRead operations that expect some output to appear (`Read Until`, `Read\nUntil Regexp`, `Read Until Prompt`, `Login`) use this timeout and fail\nif the expected output does not appear before this timeout expires.\n\nThe ``timeout`` must be given in `time string format`. The old timeout\nis returned and can be used to restore the timeout later.\n\nExample:\n| ${old} =       | `Set Timeout` | 2 minute 30 seconds |\n| `Do Something` |\n| `Set Timeout`  | ${old}  |\n\nSee `Configuration` section for more information about global and\nconnection specific configuration.",
+      "shortdoc": "Sets the timeout used for waiting output in the current connection.",
+      "tags": [],
+      "source": "/home/runner/work/manual/manual/src/robot/libraries/Telnet.py",
+      "lineno": 514
+    },
+    {
+      "name": "Switch Connection",
+      "args": [
+        {
+          "name": "index_or_alias",
+          "type": null,
+          "defaultValue": null,
+          "kind": "POSITIONAL_OR_NAMED",
+          "required": true,
+          "repr": "index_or_alias"
+        }
+      ],
+      "returnType": null,
+      "doc": "Switches between active connections using an index or an alias.\n\nAliases can be given to `Open Connection` keyword which also always\nreturns the connection index.\n\nThis keyword returns the index of previous active connection.\n\nExample:\n| `Open Connection`   | myhost.net              |          |           |\n| `Login`             | john                    | secret   |           |\n| `Write`             | some command            |          |           |\n| `Open Connection`   | yourhost.com            | 2nd conn |           |\n| `Login`             | root                    | password |           |\n| `Write`             | another cmd             |          |           |\n| ${old index}=       | `Switch Connection`     | 1        | # index   |\n| `Write`             | something               |          |           |\n| `Switch Connection` | 2nd conn                |          | # alias   |\n| `Write`             | whatever                |          |           |\n| `Switch Connection` | ${old index}            | | # back to original |\n| [Teardown]          | `Close All Connections` |          |           |\n\nThe example above expects that there were no other open\nconnections when opening the first one, because it used index\n``1`` when switching to the connection later. If you are not\nsure about that, you can store the index into a variable as\nshown below.\n\n| ${index} =          | `Open Connection` | myhost.net |\n| `Do Something`      |                   |            |\n| `Switch Connection` | ${index}          |            |",
+      "shortdoc": "Switches between active connections using an index or an alias.",
+      "tags": [],
+      "source": "/home/runner/work/manual/manual/src/robot/libraries/Telnet.py",
+      "lineno": 434
+    },
+    {
+      "name": "Write",
+      "args": [
         {
           "name": "text",
           "type": null,
+          "defaultValue": null,
+          "kind": "POSITIONAL_OR_NAMED",
+          "required": true,
+          "repr": "text"
+        },
+        {
+          "name": "loglevel",
+          "type": null,
           "defaultValue": "None",
           "kind": "POSITIONAL_OR_NAMED",
           "required": false,
-          "repr": "text=None"
-        },
-        {
-          "name": "tail",
-          "type": null,
-          "defaultValue": "None",
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": false,
-          "repr": "tail=None"
-        },
-        {
-          "name": "xpath",
-          "type": null,
-          "defaultValue": ".",
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": false,
-          "repr": "xpath=."
+          "repr": "loglevel=None"
         }
       ],
       "returnType": null,
-      "doc": "Sets text and/or tail text of the specified element.\n\nThe element whose text to set is specified using ``source`` and\n``xpath``. They have exactly the same semantics as with `Get Element`\nkeyword. The resulting XML structure is returned, and if the ``source``\nis an already parsed XML structure, it is also modified in place.\n\nElement's text and tail text are changed only if new ``text`` and/or\n``tail`` values are given. See `Element attributes` section for more\ninformation about `text` and `tail` in general.\n\nExamples using ``${XML}`` structure from `Example`:\n| Set Element Text       | ${XML} | new text | xpath=first    |\n| Element Text Should Be | ${XML} | new text | xpath=first    |\n| Set Element Text       | ${XML} | tail=&   | xpath=html/p/b |\n| Element Text Should Be | ${XML} | Text with bold&italics. | xpath=html/p  | normalize_whitespace=yes |\n| Set Element Text       | ${XML} | slanted  | !! | xpath=html/p/i |\n| Element Text Should Be | ${XML} | Text with bold&slanted!! | xpath=html/p  | normalize_whitespace=yes |\n\nCan only set the text/tail of a single element. Use `Set Elements Text`\nto set the text/tail of multiple elements in one call.",
-      "shortdoc": "Sets text and/or tail text of the specified element.",
+      "doc": "Writes the given text plus a newline into the connection.\n\nThe newline character sequence to use can be [#Configuration|configured]\nboth globally and per connection basis. The default value is ``CRLF``.\n\nThis keyword consumes the written text, until the added newline, from\nthe output and logs and returns it. The given text itself must not\ncontain newlines. Use `Write Bare` instead if either of these features\ncauses a problem.\n\n*Note:* This keyword does not return the possible output of the executed\ncommand. To get the output, one of the `Read ...` `keywords` must be\nused. See `Writing and reading` section for more details.\n\nSee `Logging` section for more information about log levels.",
+      "shortdoc": "Writes the given text plus a newline into the connection.",
       "tags": [],
-      "source": "/home/runner/work/manual/manual/src/robot/libraries/XML.py",
-      "lineno": 985
+      "source": "/home/runner/work/manual/manual/src/robot/libraries/Telnet.py",
+      "lineno": 759
     },
     {
-      "name": "Set Elements Attribute",
+      "name": "Write Bare",
       "args": [
-        {
-          "name": "source",
-          "type": null,
-          "defaultValue": null,
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": true,
-          "repr": "source"
-        },
-        {
-          "name": "name",
-          "type": null,
-          "defaultValue": null,
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": true,
-          "repr": "name"
-        },
-        {
-          "name": "value",
-          "type": null,
-          "defaultValue": null,
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": true,
-          "repr": "value"
-        },
-        {
-          "name": "xpath",
-          "type": null,
-          "defaultValue": ".",
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": false,
-          "repr": "xpath=."
-        }
-      ],
-      "returnType": null,
-      "doc": "Sets attribute ``name`` of the specified elements to ``value``.\n\nLike `Set Element Attribute` but sets the attribute of all elements\nmatching the given ``xpath``.",
-      "shortdoc": "Sets attribute ``name`` of the specified elements to ``value``.",
-      "tags": [],
-      "source": "/home/runner/work/manual/manual/src/robot/libraries/XML.py",
-      "lineno": 1055
-    },
-    {
-      "name": "Set Elements Tag",
-      "args": [
-        {
-          "name": "source",
-          "type": null,
-          "defaultValue": null,
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": true,
-          "repr": "source"
-        },
-        {
-          "name": "tag",
-          "type": null,
-          "defaultValue": null,
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": true,
-          "repr": "tag"
-        },
-        {
-          "name": "xpath",
-          "type": null,
-          "defaultValue": ".",
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": false,
-          "repr": "xpath=."
-        }
-      ],
-      "returnType": null,
-      "doc": "Sets the tag of the specified elements.\n\nLike `Set Element Tag` but sets the tag of all elements matching\nthe given ``xpath``.",
-      "shortdoc": "Sets the tag of the specified elements.",
-      "tags": [],
-      "source": "/home/runner/work/manual/manual/src/robot/libraries/XML.py",
-      "lineno": 973
-    },
-    {
-      "name": "Set Elements Text",
-      "args": [
-        {
-          "name": "source",
-          "type": null,
-          "defaultValue": null,
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": true,
-          "repr": "source"
-        },
         {
           "name": "text",
           "type": null,
-          "defaultValue": "None",
+          "defaultValue": null,
           "kind": "POSITIONAL_OR_NAMED",
-          "required": false,
-          "repr": "text=None"
-        },
-        {
-          "name": "tail",
-          "type": null,
-          "defaultValue": "None",
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": false,
-          "repr": "tail=None"
-        },
-        {
-          "name": "xpath",
-          "type": null,
-          "defaultValue": ".",
-          "kind": "POSITIONAL_OR_NAMED",
-          "required": false,
-          "repr": "xpath=."
+          "required": true,
+          "repr": "text"
         }
       ],
       "returnType": null,
-      "doc": "Sets text and/or tail text of the specified elements.\n\nLike `Set Element Text` but sets the text or tail of all elements\nmatching the given ``xpath``.",
-      "shortdoc": "Sets text and/or tail text of the specified elements.",
+      "doc": "Writes the given text, and nothing else, into the connection.\n\nThis keyword does not append a newline nor consume the written text.\nUse `Write` if these features are needed.",
+      "shortdoc": "Writes the given text, and nothing else, into the connection.",
       "tags": [],
-      "source": "/home/runner/work/manual/manual/src/robot/libraries/XML.py",
-      "lineno": 1017
+      "source": "/home/runner/work/manual/manual/src/robot/libraries/Telnet.py",
+      "lineno": 789
+    },
+    {
+      "name": "Write Control Character",
+      "args": [
+        {
+          "name": "character",
+          "type": null,
+          "defaultValue": null,
+          "kind": "POSITIONAL_OR_NAMED",
+          "required": true,
+          "repr": "character"
+        }
+      ],
+      "returnType": null,
+      "doc": "Writes the given control character into the connection.\n\nThe control character is prepended with an IAC (interpret as command)\ncharacter.\n\nThe following control character names are supported: BRK, IP, AO, AYT,\nEC, EL, NOP. Additionally, you can use arbitrary numbers to send any\ncontrol character.\n\nExample:\n| Write Control Character | BRK | # Send Break command |\n| Write Control Character | 241 | # Send No operation command |",
+      "shortdoc": "Writes the given control character into the connection.",
+      "tags": [],
+      "source": "/home/runner/work/manual/manual/src/robot/libraries/Telnet.py",
+      "lineno": 835
+    },
+    {
+      "name": "Write Until Expected Output",
+      "args": [
+        {
+          "name": "text",
+          "type": null,
+          "defaultValue": null,
+          "kind": "POSITIONAL_OR_NAMED",
+          "required": true,
+          "repr": "text"
+        },
+        {
+          "name": "expected",
+          "type": null,
+          "defaultValue": null,
+          "kind": "POSITIONAL_OR_NAMED",
+          "required": true,
+          "repr": "expected"
+        },
+        {
+          "name": "timeout",
+          "type": null,
+          "defaultValue": null,
+          "kind": "POSITIONAL_OR_NAMED",
+          "required": true,
+          "repr": "timeout"
+        },
+        {
+          "name": "retry_interval",
+          "type": null,
+          "defaultValue": null,
+          "kind": "POSITIONAL_OR_NAMED",
+          "required": true,
+          "repr": "retry_interval"
+        },
+        {
+          "name": "loglevel",
+          "type": null,
+          "defaultValue": "None",
+          "kind": "POSITIONAL_OR_NAMED",
+          "required": false,
+          "repr": "loglevel=None"
+        }
+      ],
+      "returnType": null,
+      "doc": "Writes the given ``text`` repeatedly, until ``expected`` appears in the output.\n\n``text`` is written without appending a newline and it is consumed from\nthe output before trying to find ``expected``. If ``expected`` does not\nappear in the output within ``timeout``, this keyword fails.\n\n``retry_interval`` defines the time to wait ``expected`` to appear before\nwriting the ``text`` again. Consuming the written ``text`` is subject to\nthe normal [#Configuration|configured timeout].\n\nBoth ``timeout`` and ``retry_interval`` must be given in `time string\nformat`. See `Logging` section for more information about log levels.\n\nExample:\n| Write Until Expected Output | ps -ef| grep myprocess\\r\\n | myprocess |\n| ...                         | 5 s                          | 0.5 s     |\n\nThe above example writes command ``ps -ef | grep myprocess\\r\\n`` until\n``myprocess`` appears in the output. The command is written every 0.5\nseconds and the keyword fails if ``myprocess`` does not appear in\nthe output in 5 seconds.",
+      "shortdoc": "Writes the given ``text`` repeatedly, until ``expected`` appears in the output.",
+      "tags": [],
+      "source": "/home/runner/work/manual/manual/src/robot/libraries/Telnet.py",
+      "lineno": 798
     }
   ],
   "typedocs": []

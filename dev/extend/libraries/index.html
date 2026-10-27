@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../assets/logo.png">
-      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.8.0">
     
     
       
@@ -31,10 +31,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -10797,9 +10797,9 @@ it is recommended that libraries have some
 special keyword for cleaning up the state. This keyword can then be
 used, for example, in a suite setup or teardown to ensure that test
 cases in the next test suites can start from a known state. For example,
-<em class="name">SeleniumLibrary</em> uses the <code>GLOBAL</code> scope to enable
+<code class="name">SeleniumLibrary</code> uses the <code>GLOBAL</code> scope to enable
 using the same browser in different test cases without having to
-reopen it, and it also has the <em class="name">Close All Browsers</em> keyword for
+reopen it, and it also has the <code class="name">Close All Browsers</code> keyword for
 easily closing all opened browsers.</p>
 <p>Example library using the <code>SUITE</code> scope:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-5-1"> 1</a></span>
@@ -10977,7 +10977,7 @@ a library is new in Robot Framework 7.2.</p>
 <p>Robot Framework, by default, uses introspection to find out what attributes
 a library contains, and considers all functions and methods that do not start
 with an underscore to be keywords. For example, this library implements a single
-keyword <em class="name">My Keyword</em>:</p>
+keyword <code class="name">My Keyword</code>:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-11-1">1</a></span>
 <span class="normal"><a href="#example-11-2">2</a></span>
 <span class="normal"><a href="#example-11-3">3</a></span>
@@ -10999,7 +10999,7 @@ desired. For example, when implementing a library as class, it can be a surprise
 also methods in possible base classes are considered keywords. When implementing
 a library as a module, functions imported into the module namespace becoming keywords
 is probably even a bigger surprise. For example, this library implements a keyword
-<em class="name">Example Keyword</em>, as expected, but also a keyword <em class="name">Current Thread</em>:</p>
+<code class="name">Example Keyword</code>, as expected, but also a keyword <code class="name">Current Thread</code>:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-12-1">1</a></span>
 <span class="normal"><a href="#example-12-2">2</a></span>
 <span class="normal"><a href="#example-12-3">3</a></span>
@@ -11054,7 +11054,7 @@ grows bigger.</p>
 keywords is using the <a href="#library-decorator">@library decorator</a>. This decorator, by default, disables
 the automatic keyword discovery and requires keywords to be explicitly marked
 with the <a href="https://robot-framework.readthedocs.io/en/stable/autodoc/robot.running.arguments.html#robot.running.arguments.typeinfo.TypeInfo">@keyword decorator</a>. For example, this library creates single keyword
-<em class="name">My Keyword</em>:</p>
+<code class="name">My Keyword</code>:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-14-1"> 1</a></span>
 <span class="normal"><a href="#example-14-2"> 2</a></span>
 <span class="normal"><a href="#example-14-3"> 3</a></span>
@@ -11191,7 +11191,7 @@ of exposed method names:</p>
 </span></code></pre></div></td></tr></table></div>
 <p>Everything else than getting the list of method names works exactly the same way
 as with other static libraries. It is, however, possible to create the actual
-keywords dynamically by utilizing Python's <a href="https://docs.python.org/3/reference/datamodel.html#object.__getattr__"><strong>getattr</strong></a> method that is called
+keywords dynamically by utilizing Python's <a href="https://docs.python.org/3/reference/datamodel.html#object.__getattr__"><code>__getattr__</code></a> method that is called
 by Python if a returned method name does not exist:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-20-1"> 1</a></span>
 <span class="normal"><a href="#example-20-2"> 2</a></span>
@@ -11252,9 +11252,9 @@ methods or functions could accidentally be exposed as keywords.</p>
 find the method implementing these keywords. Name comparison is
 case-insensitive, and also spaces and underscores are ignored. For
 example, the method <code>hello</code> maps to the keyword name
-<em class="name">Hello</em>, <em class="name">hello</em> or even <em class="name">h e l l o</em>. Similarly both the
+<code class="name">Hello</code>, <code class="name">hello</code> or even <code class="name">h e l l o</code>. Similarly both the
 <code>do_nothing</code> and <code>doNothing</code> methods can be used as the
-<em class="name">Do Nothing</em> keyword in the test data.</p>
+<code class="name">Do Nothing</code> keyword in the test data.</p>
 <p>Example library implemented as a module in the <code class="file">MyLibrary.py</code> file:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-21-1">1</a></span>
 <span class="normal"><a href="#example-21-2">2</a></span>
@@ -11589,7 +11589,7 @@ work together:</p>
 </span><span id="line-36-17"><a id="example-36-17" name="example-36-17"></a><span class="p">    </span><span class="nf">Various Args</span><span class="p">    </span><span class="s">hello=world</span><span class="p">    </span><span class="s">arg=value</span><span class="p">      </span><span class="c"># Same as above. Order does not matter.</span>
 </span></code></pre></div></td></tr></table></div>
 <p>For a real world example of using a signature exactly like in the above
-example, see <em class="name">Run Process</em> and <em class="name">Start Keyword</em> keywords in the
+example, see <code class="name">Run Process</code> and <code class="name">Start Process</code> keywords in the
 <a href="https://robotframework.org/robotframework/latest/libraries/Process.html">Process</a> library.</p>
 <h3 id="keyword-only-arguments">Keyword-only arguments<a class="headerlink" href="#keyword-only-arguments" title="Permanent link">&para;</a></h3>
 <p>Starting from Robot Framework 3.1, it is possible to use <a href="../../syntax/tests/#named-only-arguments">named-only arguments</a>
@@ -12773,7 +12773,7 @@ the default <a href="https://docs.python.org/library/datetime.html#datetime.date
 <h5 id="strict-type-validation">Strict type validation<a class="headerlink" href="#strict-type-validation" title="Permanent link">&para;</a></h5>
 <p>Converters are not used at all if the argument is of the specified type to
 begin with. It is thus easy to enable strict type validation with a custom
-converter that does not accept any value. For example, the <em class="name">Example</em>
+converter that does not accept any value. For example, the <code class="name">Example</code>
 keyword accepts only <code>StrictType</code> instances:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-74-1"> 1</a></span>
 <span class="normal"><a href="#example-74-2"> 2</a></span>
@@ -13776,7 +13776,7 @@ them anyway.</p>
 <p>It is also easy to use Robot Framework itself for testing libraries
 and that way have actual end-to-end acceptance tests for them. There are
 plenty of useful keywords in the <a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> library for this
-purpose. One worth mentioning specifically is <em class="name">Run Keyword And Expect Error</em>, which is useful for testing that keywords report errors
+purpose. One worth mentioning specifically is <code class="name">Run Keyword And Expect Error</code>, which is useful for testing that keywords report errors
 correctly.</p>
 <p>Whether to use a unit- or acceptance-level testing approach depends on
 the context. If there is a need to simulate the actual system under
@@ -14025,7 +14025,7 @@ probably work better.</p>
 <h3 id="using-inheritance">Using inheritance<a class="headerlink" href="#using-inheritance" title="Permanent link">&para;</a></h3>
 <p>Another straightforward way to extend an existing library is using
 inheritance. This is illustrated by the example below that adds new
-<em class="name">Title Should Start With</em> keyword to the <a href="https://github.com/robotframework/SeleniumLibrary">SeleniumLibrary</a>.</p>
+<code class="name">Title Should Start With</code> keyword to the <a href="https://github.com/robotframework/SeleniumLibrary">SeleniumLibrary</a>.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-113-1"> 1</a></span>
 <span class="normal"><a href="#example-113-2"> 2</a></span>
 <span class="normal"><a href="#example-113-3"> 3</a></span>
@@ -14069,14 +14069,14 @@ same as the framework uses, and thus changes done by executed keywords
 are not visible to your library. The next section explains how to get
 an access to the same library instance that the framework uses.</p>
 <h3 id="getting-active-library-instance-from-robot-framework">Getting active library instance from Robot Framework<a class="headerlink" href="#getting-active-library-instance-from-robot-framework" title="Permanent link">&para;</a></h3>
-<p><a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> keyword <em class="name">Get Library Instance</em> can be used to get the
+<p><a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> keyword <code class="name">Get Library Instance</code> can be used to get the
 currently active library instance from the framework itself. The
 library instance returned by this keyword is the same as the framework
 itself uses, and thus there is no problem seeing the correct library
 state. Although this functionality is available as a keyword, it is
-typically used in test libraries directly by importing the <em class="name">BuiltIn</em>
+typically used in test libraries directly by importing the <code class="name">BuiltIn</code>
 library class <a href="#documenting-libraries">as discussed earlier</a>. The following example illustrates
-how to implement the same <em class="name">Title Should Start With</em> keyword as in
+how to implement the same <code class="name">Title Should Start With</code> keyword as in
 the earlier example about <a href="#using-inheritance">using inheritance</a>.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-114-1">1</a></span>
 <span class="normal"><a href="#example-114-2">2</a></span>
@@ -14097,7 +14097,7 @@ and using it when the library has a state. The biggest benefit over
 inheritance is that you can use the original library normally and use
 the new library in addition to it when needed. That is demonstrated in
 the example below where the code from the previous examples is
-expected to be available in a new library <em class="name">SeLibExtensions</em>.</p>
+expected to be available in a new library <code class="name">SeLibExtensions</code>.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-115-1">1</a></span>
 <span class="normal"><a href="#example-115-2">2</a></span>
 <span class="normal"><a href="#example-115-3">3</a></span>
@@ -14267,10 +14267,10 @@ expected to be available in a new library <em class="name">SeLibExtensions</em>.
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.top", "search.highlight", "search.suggest", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.top", "search.highlight", "search.suggest", "toc.integrate"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
       
     
   </body>

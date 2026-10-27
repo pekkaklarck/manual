@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../../../assets/logo.png">
-      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.8.0">
     
     
       
@@ -31,10 +31,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -10112,39 +10112,39 @@ or the keyword call itself could have been invalid.</p>
 
                   <details class="mkdocstrings-source">
                     <summary>Source code in <code>src/robot/running/keywordimplementation.py</code></summary>
-                    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-43">43</a></span>
-<span class="normal"><a href="#example-0-44">44</a></span>
-<span class="normal"><a href="#example-0-45">45</a></span>
-<span class="normal"><a href="#example-0-46">46</a></span>
-<span class="normal"><a href="#example-0-47">47</a></span>
-<span class="normal"><a href="#example-0-48">48</a></span>
-<span class="normal"><a href="#example-0-49">49</a></span>
-<span class="normal"><a href="#example-0-50">50</a></span>
-<span class="normal"><a href="#example-0-51">51</a></span>
-<span class="normal"><a href="#example-0-52">52</a></span>
-<span class="normal"><a href="#example-0-53">53</a></span>
-<span class="normal"><a href="#example-0-54">54</a></span>
-<span class="normal"><a href="#example-0-55">55</a></span>
-<span class="normal"><a href="#example-0-56">56</a></span>
-<span class="normal"><a href="#example-0-57">57</a></span>
-<span class="normal"><a href="#example-0-58">58</a></span>
-<span class="normal"><a href="#example-0-59">59</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-43"><a id="example-0-43" name="example-0-43"></a><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">''</span><span class="p">,</span>
-</span><span id="line-0-44"><a id="example-0-44" name="example-0-44"></a>             <span class="n">args</span><span class="p">:</span> <span class="s1">'ArgumentSpec|None'</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-</span><span id="line-0-45"><a id="example-0-45" name="example-0-45"></a>             <span class="n">doc</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">''</span><span class="p">,</span>
-</span><span id="line-0-46"><a id="example-0-46" name="example-0-46"></a>             <span class="n">tags</span><span class="p">:</span> <span class="s1">'Tags|Sequence[str]'</span> <span class="o">=</span> <span class="p">(),</span>
-</span><span id="line-0-47"><a id="example-0-47" name="example-0-47"></a>             <span class="n">lineno</span><span class="p">:</span> <span class="s1">'int|None'</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-</span><span id="line-0-48"><a id="example-0-48" name="example-0-48"></a>             <span class="n">owner</span><span class="p">:</span> <span class="s1">'ResourceFile|TestLibrary|None'</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-</span><span id="line-0-49"><a id="example-0-49" name="example-0-49"></a>             <span class="n">parent</span><span class="p">:</span> <span class="s1">'BodyItemParent|None'</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-</span><span id="line-0-50"><a id="example-0-50" name="example-0-50"></a>             <span class="n">error</span><span class="p">:</span> <span class="s1">'str|None'</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
-</span><span id="line-0-51"><a id="example-0-51" name="example-0-51"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="n">name</span>
-</span><span id="line-0-52"><a id="example-0-52" name="example-0-52"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">embedded</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_embedded</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
-</span><span id="line-0-53"><a id="example-0-53" name="example-0-53"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">args</span> <span class="o">=</span> <span class="n">args</span>
-</span><span id="line-0-54"><a id="example-0-54" name="example-0-54"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_doc</span> <span class="o">=</span> <span class="n">doc</span>
-</span><span id="line-0-55"><a id="example-0-55" name="example-0-55"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">tags</span> <span class="o">=</span> <span class="n">tags</span>
-</span><span id="line-0-56"><a id="example-0-56" name="example-0-56"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_lineno</span> <span class="o">=</span> <span class="n">lineno</span>
-</span><span id="line-0-57"><a id="example-0-57" name="example-0-57"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">owner</span> <span class="o">=</span> <span class="n">owner</span>
-</span><span id="line-0-58"><a id="example-0-58" name="example-0-58"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">parent</span> <span class="o">=</span> <span class="n">parent</span>
-</span><span id="line-0-59"><a id="example-0-59" name="example-0-59"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">error</span> <span class="o">=</span> <span class="n">error</span>
+                    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword--source--example-0-43">43</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword--source--example-0-44">44</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword--source--example-0-45">45</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword--source--example-0-46">46</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword--source--example-0-47">47</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword--source--example-0-48">48</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword--source--example-0-49">49</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword--source--example-0-50">50</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword--source--example-0-51">51</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword--source--example-0-52">52</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword--source--example-0-53">53</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword--source--example-0-54">54</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword--source--example-0-55">55</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword--source--example-0-56">56</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword--source--example-0-57">57</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword--source--example-0-58">58</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword--source--example-0-59">59</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="robot.running.invalidkeyword.InvalidKeyword--source--line-0-43"><a id="robot.running.invalidkeyword.InvalidKeyword--source--example-0-43" name="robot.running.invalidkeyword.InvalidKeyword--source--example-0-43"></a><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">''</span><span class="p">,</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword--source--line-0-44"><a id="robot.running.invalidkeyword.InvalidKeyword--source--example-0-44" name="robot.running.invalidkeyword.InvalidKeyword--source--example-0-44"></a>             <span class="n">args</span><span class="p">:</span> <span class="s1">'ArgumentSpec|None'</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword--source--line-0-45"><a id="robot.running.invalidkeyword.InvalidKeyword--source--example-0-45" name="robot.running.invalidkeyword.InvalidKeyword--source--example-0-45"></a>             <span class="n">doc</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">''</span><span class="p">,</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword--source--line-0-46"><a id="robot.running.invalidkeyword.InvalidKeyword--source--example-0-46" name="robot.running.invalidkeyword.InvalidKeyword--source--example-0-46"></a>             <span class="n">tags</span><span class="p">:</span> <span class="s1">'Tags|Sequence[str]'</span> <span class="o">=</span> <span class="p">(),</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword--source--line-0-47"><a id="robot.running.invalidkeyword.InvalidKeyword--source--example-0-47" name="robot.running.invalidkeyword.InvalidKeyword--source--example-0-47"></a>             <span class="n">lineno</span><span class="p">:</span> <span class="s1">'int|None'</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword--source--line-0-48"><a id="robot.running.invalidkeyword.InvalidKeyword--source--example-0-48" name="robot.running.invalidkeyword.InvalidKeyword--source--example-0-48"></a>             <span class="n">owner</span><span class="p">:</span> <span class="s1">'ResourceFile|TestLibrary|None'</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword--source--line-0-49"><a id="robot.running.invalidkeyword.InvalidKeyword--source--example-0-49" name="robot.running.invalidkeyword.InvalidKeyword--source--example-0-49"></a>             <span class="n">parent</span><span class="p">:</span> <span class="s1">'BodyItemParent|None'</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword--source--line-0-50"><a id="robot.running.invalidkeyword.InvalidKeyword--source--example-0-50" name="robot.running.invalidkeyword.InvalidKeyword--source--example-0-50"></a>             <span class="n">error</span><span class="p">:</span> <span class="s1">'str|None'</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword--source--line-0-51"><a id="robot.running.invalidkeyword.InvalidKeyword--source--example-0-51" name="robot.running.invalidkeyword.InvalidKeyword--source--example-0-51"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="n">name</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword--source--line-0-52"><a id="robot.running.invalidkeyword.InvalidKeyword--source--example-0-52" name="robot.running.invalidkeyword.InvalidKeyword--source--example-0-52"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">embedded</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_embedded</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword--source--line-0-53"><a id="robot.running.invalidkeyword.InvalidKeyword--source--example-0-53" name="robot.running.invalidkeyword.InvalidKeyword--source--example-0-53"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">args</span> <span class="o">=</span> <span class="n">args</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword--source--line-0-54"><a id="robot.running.invalidkeyword.InvalidKeyword--source--example-0-54" name="robot.running.invalidkeyword.InvalidKeyword--source--example-0-54"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_doc</span> <span class="o">=</span> <span class="n">doc</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword--source--line-0-55"><a id="robot.running.invalidkeyword.InvalidKeyword--source--example-0-55" name="robot.running.invalidkeyword.InvalidKeyword--source--example-0-55"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">tags</span> <span class="o">=</span> <span class="n">tags</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword--source--line-0-56"><a id="robot.running.invalidkeyword.InvalidKeyword--source--example-0-56" name="robot.running.invalidkeyword.InvalidKeyword--source--example-0-56"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_lineno</span> <span class="o">=</span> <span class="n">lineno</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword--source--line-0-57"><a id="robot.running.invalidkeyword.InvalidKeyword--source--example-0-57" name="robot.running.invalidkeyword.InvalidKeyword--source--example-0-57"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">owner</span> <span class="o">=</span> <span class="n">owner</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword--source--line-0-58"><a id="robot.running.invalidkeyword.InvalidKeyword--source--example-0-58" name="robot.running.invalidkeyword.InvalidKeyword--source--example-0-58"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">parent</span> <span class="o">=</span> <span class="n">parent</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword--source--line-0-59"><a id="robot.running.invalidkeyword.InvalidKeyword--source--example-0-59" name="robot.running.invalidkeyword.InvalidKeyword--source--example-0-59"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">error</span> <span class="o">=</span> <span class="n">error</span>
 </span></code></pre></div></td></tr></table></div>
                   </details>
 
@@ -10183,33 +10183,33 @@ with <code>robot.result</code> new in Robot Framework 7.0.</p>
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>src/robot/model/modelobject.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-33">33</a></span>
-<span class="normal"><a href="#example-0-34">34</a></span>
-<span class="normal"><a href="#example-0-35">35</a></span>
-<span class="normal"><a href="#example-0-36">36</a></span>
-<span class="normal"><a href="#example-0-37">37</a></span>
-<span class="normal"><a href="#example-0-38">38</a></span>
-<span class="normal"><a href="#example-0-39">39</a></span>
-<span class="normal"><a href="#example-0-40">40</a></span>
-<span class="normal"><a href="#example-0-41">41</a></span>
-<span class="normal"><a href="#example-0-42">42</a></span>
-<span class="normal"><a href="#example-0-43">43</a></span>
-<span class="normal"><a href="#example-0-44">44</a></span>
-<span class="normal"><a href="#example-0-45">45</a></span>
-<span class="normal"><a href="#example-0-46">46</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-33"><a id="example-0-33" name="example-0-33"></a><span class="nd">@classmethod</span>
-</span><span id="line-0-34"><a id="example-0-34" name="example-0-34"></a><span class="k">def</span><span class="w"> </span><span class="nf">from_dict</span><span class="p">(</span><span class="bp">cls</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">T</span><span class="p">],</span> <span class="n">data</span><span class="p">:</span> <span class="n">DataDict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T</span><span class="p">:</span>
-</span><span id="line-0-35"><a id="example-0-35" name="example-0-35"></a><span class="w">    </span><span class="sd">"""Create this object based on data in a dictionary.</span>
-</span><span id="line-0-36"><a id="example-0-36" name="example-0-36"></a>
-</span><span id="line-0-37"><a id="example-0-37" name="example-0-37"></a><span class="sd">    Data can be got from the :meth:`to_dict` method or created externally.</span>
-</span><span id="line-0-38"><a id="example-0-38" name="example-0-38"></a>
-</span><span id="line-0-39"><a id="example-0-39" name="example-0-39"></a><span class="sd">    With ``robot.running`` model objects new in Robot Framework 6.1,</span>
-</span><span id="line-0-40"><a id="example-0-40" name="example-0-40"></a><span class="sd">    with ``robot.result`` new in Robot Framework 7.0.</span>
-</span><span id="line-0-41"><a id="example-0-41" name="example-0-41"></a><span class="sd">    """</span>
-</span><span id="line-0-42"><a id="example-0-42" name="example-0-42"></a>    <span class="k">try</span><span class="p">:</span>
-</span><span id="line-0-43"><a id="example-0-43" name="example-0-43"></a>        <span class="k">return</span> <span class="bp">cls</span><span class="p">()</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="o">**</span><span class="n">data</span><span class="p">)</span>
-</span><span id="line-0-44"><a id="example-0-44" name="example-0-44"></a>    <span class="k">except</span> <span class="p">(</span><span class="ne">AttributeError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">)</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
-</span><span id="line-0-45"><a id="example-0-45" name="example-0-45"></a>        <span class="k">raise</span> <span class="n">DataError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Creating '</span><span class="si">{</span><span class="n">full_name</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span><span class="si">}</span><span class="s2">' object from dictionary "</span>
-</span><span id="line-0-46"><a id="example-0-46" name="example-0-46"></a>                        <span class="sa">f</span><span class="s2">"failed: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.from_dict--source--example-0-33">33</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.from_dict--source--example-0-34">34</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.from_dict--source--example-0-35">35</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.from_dict--source--example-0-36">36</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.from_dict--source--example-0-37">37</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.from_dict--source--example-0-38">38</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.from_dict--source--example-0-39">39</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.from_dict--source--example-0-40">40</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.from_dict--source--example-0-41">41</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.from_dict--source--example-0-42">42</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.from_dict--source--example-0-43">43</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.from_dict--source--example-0-44">44</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.from_dict--source--example-0-45">45</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.from_dict--source--example-0-46">46</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="robot.running.invalidkeyword.InvalidKeyword.from_dict--source--line-0-33"><a id="robot.running.invalidkeyword.InvalidKeyword.from_dict--source--example-0-33" name="robot.running.invalidkeyword.InvalidKeyword.from_dict--source--example-0-33"></a><span class="nd">@classmethod</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.from_dict--source--line-0-34"><a id="robot.running.invalidkeyword.InvalidKeyword.from_dict--source--example-0-34" name="robot.running.invalidkeyword.InvalidKeyword.from_dict--source--example-0-34"></a><span class="k">def</span><span class="w"> </span><span class="nf">from_dict</span><span class="p">(</span><span class="bp">cls</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">T</span><span class="p">],</span> <span class="n">data</span><span class="p">:</span> <span class="n">DataDict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T</span><span class="p">:</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.from_dict--source--line-0-35"><a id="robot.running.invalidkeyword.InvalidKeyword.from_dict--source--example-0-35" name="robot.running.invalidkeyword.InvalidKeyword.from_dict--source--example-0-35"></a><span class="w">    </span><span class="sd">"""Create this object based on data in a dictionary.</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.from_dict--source--line-0-36"><a id="robot.running.invalidkeyword.InvalidKeyword.from_dict--source--example-0-36" name="robot.running.invalidkeyword.InvalidKeyword.from_dict--source--example-0-36"></a>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.from_dict--source--line-0-37"><a id="robot.running.invalidkeyword.InvalidKeyword.from_dict--source--example-0-37" name="robot.running.invalidkeyword.InvalidKeyword.from_dict--source--example-0-37"></a><span class="sd">    Data can be got from the :meth:`to_dict` method or created externally.</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.from_dict--source--line-0-38"><a id="robot.running.invalidkeyword.InvalidKeyword.from_dict--source--example-0-38" name="robot.running.invalidkeyword.InvalidKeyword.from_dict--source--example-0-38"></a>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.from_dict--source--line-0-39"><a id="robot.running.invalidkeyword.InvalidKeyword.from_dict--source--example-0-39" name="robot.running.invalidkeyword.InvalidKeyword.from_dict--source--example-0-39"></a><span class="sd">    With ``robot.running`` model objects new in Robot Framework 6.1,</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.from_dict--source--line-0-40"><a id="robot.running.invalidkeyword.InvalidKeyword.from_dict--source--example-0-40" name="robot.running.invalidkeyword.InvalidKeyword.from_dict--source--example-0-40"></a><span class="sd">    with ``robot.result`` new in Robot Framework 7.0.</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.from_dict--source--line-0-41"><a id="robot.running.invalidkeyword.InvalidKeyword.from_dict--source--example-0-41" name="robot.running.invalidkeyword.InvalidKeyword.from_dict--source--example-0-41"></a><span class="sd">    """</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.from_dict--source--line-0-42"><a id="robot.running.invalidkeyword.InvalidKeyword.from_dict--source--example-0-42" name="robot.running.invalidkeyword.InvalidKeyword.from_dict--source--example-0-42"></a>    <span class="k">try</span><span class="p">:</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.from_dict--source--line-0-43"><a id="robot.running.invalidkeyword.InvalidKeyword.from_dict--source--example-0-43" name="robot.running.invalidkeyword.InvalidKeyword.from_dict--source--example-0-43"></a>        <span class="k">return</span> <span class="bp">cls</span><span class="p">()</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="o">**</span><span class="n">data</span><span class="p">)</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.from_dict--source--line-0-44"><a id="robot.running.invalidkeyword.InvalidKeyword.from_dict--source--example-0-44" name="robot.running.invalidkeyword.InvalidKeyword.from_dict--source--example-0-44"></a>    <span class="k">except</span> <span class="p">(</span><span class="ne">AttributeError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">)</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.from_dict--source--line-0-45"><a id="robot.running.invalidkeyword.InvalidKeyword.from_dict--source--example-0-45" name="robot.running.invalidkeyword.InvalidKeyword.from_dict--source--example-0-45"></a>        <span class="k">raise</span> <span class="n">DataError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Creating '</span><span class="si">{</span><span class="n">full_name</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span><span class="si">}</span><span class="s2">' object from dictionary "</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.from_dict--source--line-0-46"><a id="robot.running.invalidkeyword.InvalidKeyword.from_dict--source--example-0-46" name="robot.running.invalidkeyword.InvalidKeyword.from_dict--source--example-0-46"></a>                        <span class="sa">f</span><span class="s2">"failed: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -10256,55 +10256,55 @@ with <code>robot.result</code> new in Robot Framework 7.0.</p>
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>src/robot/model/modelobject.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-48">48</a></span>
-<span class="normal"><a href="#example-0-49">49</a></span>
-<span class="normal"><a href="#example-0-50">50</a></span>
-<span class="normal"><a href="#example-0-51">51</a></span>
-<span class="normal"><a href="#example-0-52">52</a></span>
-<span class="normal"><a href="#example-0-53">53</a></span>
-<span class="normal"><a href="#example-0-54">54</a></span>
-<span class="normal"><a href="#example-0-55">55</a></span>
-<span class="normal"><a href="#example-0-56">56</a></span>
-<span class="normal"><a href="#example-0-57">57</a></span>
-<span class="normal"><a href="#example-0-58">58</a></span>
-<span class="normal"><a href="#example-0-59">59</a></span>
-<span class="normal"><a href="#example-0-60">60</a></span>
-<span class="normal"><a href="#example-0-61">61</a></span>
-<span class="normal"><a href="#example-0-62">62</a></span>
-<span class="normal"><a href="#example-0-63">63</a></span>
-<span class="normal"><a href="#example-0-64">64</a></span>
-<span class="normal"><a href="#example-0-65">65</a></span>
-<span class="normal"><a href="#example-0-66">66</a></span>
-<span class="normal"><a href="#example-0-67">67</a></span>
-<span class="normal"><a href="#example-0-68">68</a></span>
-<span class="normal"><a href="#example-0-69">69</a></span>
-<span class="normal"><a href="#example-0-70">70</a></span>
-<span class="normal"><a href="#example-0-71">71</a></span>
-<span class="normal"><a href="#example-0-72">72</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-48"><a id="example-0-48" name="example-0-48"></a><span class="nd">@classmethod</span>
-</span><span id="line-0-49"><a id="example-0-49" name="example-0-49"></a><span class="k">def</span><span class="w"> </span><span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">T</span><span class="p">],</span> <span class="n">source</span><span class="p">:</span> <span class="s1">'str|bytes|TextIO|Path'</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T</span><span class="p">:</span>
-</span><span id="line-0-50"><a id="example-0-50" name="example-0-50"></a><span class="w">    </span><span class="sd">"""Create this object based on JSON data.</span>
-</span><span id="line-0-51"><a id="example-0-51" name="example-0-51"></a>
-</span><span id="line-0-52"><a id="example-0-52" name="example-0-52"></a><span class="sd">    The data is given as the ``source`` parameter. It can be:</span>
-</span><span id="line-0-53"><a id="example-0-53" name="example-0-53"></a>
-</span><span id="line-0-54"><a id="example-0-54" name="example-0-54"></a><span class="sd">    - a string (or bytes) containing the data directly,</span>
-</span><span id="line-0-55"><a id="example-0-55" name="example-0-55"></a><span class="sd">    - an open file object where to read the data from, or</span>
-</span><span id="line-0-56"><a id="example-0-56" name="example-0-56"></a><span class="sd">    - a path (``pathlib.Path`` or string) to a UTF-8 encoded file to read.</span>
-</span><span id="line-0-57"><a id="example-0-57" name="example-0-57"></a>
-</span><span id="line-0-58"><a id="example-0-58" name="example-0-58"></a><span class="sd">    The JSON data is first converted to a Python dictionary and the object</span>
-</span><span id="line-0-59"><a id="example-0-59" name="example-0-59"></a><span class="sd">    created using the :meth:`from_dict` method.</span>
-</span><span id="line-0-60"><a id="example-0-60" name="example-0-60"></a>
-</span><span id="line-0-61"><a id="example-0-61" name="example-0-61"></a><span class="sd">    Notice that the ``source`` is considered to be JSON data if it is</span>
-</span><span id="line-0-62"><a id="example-0-62" name="example-0-62"></a><span class="sd">    a string and contains ``{``. If you need to use ``{`` in a file system</span>
-</span><span id="line-0-63"><a id="example-0-63" name="example-0-63"></a><span class="sd">    path, pass it in as a ``pathlib.Path`` instance.</span>
-</span><span id="line-0-64"><a id="example-0-64" name="example-0-64"></a>
-</span><span id="line-0-65"><a id="example-0-65" name="example-0-65"></a><span class="sd">    With ``robot.running`` model objects new in Robot Framework 6.1,</span>
-</span><span id="line-0-66"><a id="example-0-66" name="example-0-66"></a><span class="sd">    with ``robot.result`` new in Robot Framework 7.0.</span>
-</span><span id="line-0-67"><a id="example-0-67" name="example-0-67"></a><span class="sd">    """</span>
-</span><span id="line-0-68"><a id="example-0-68" name="example-0-68"></a>    <span class="k">try</span><span class="p">:</span>
-</span><span id="line-0-69"><a id="example-0-69" name="example-0-69"></a>        <span class="n">data</span> <span class="o">=</span> <span class="n">JsonLoader</span><span class="p">()</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>
-</span><span id="line-0-70"><a id="example-0-70" name="example-0-70"></a>    <span class="k">except</span> <span class="p">(</span><span class="ne">TypeError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">)</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
-</span><span id="line-0-71"><a id="example-0-71" name="example-0-71"></a>        <span class="k">raise</span> <span class="n">DataError</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Loading JSON data failed: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
-</span><span id="line-0-72"><a id="example-0-72" name="example-0-72"></a>    <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-48">48</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-49">49</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-50">50</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-51">51</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-52">52</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-53">53</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-54">54</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-55">55</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-56">56</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-57">57</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-58">58</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-59">59</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-60">60</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-61">61</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-62">62</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-63">63</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-64">64</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-65">65</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-66">66</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-67">67</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-68">68</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-69">69</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-70">70</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-71">71</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-72">72</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="robot.running.invalidkeyword.InvalidKeyword.from_json--source--line-0-48"><a id="robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-48" name="robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-48"></a><span class="nd">@classmethod</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.from_json--source--line-0-49"><a id="robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-49" name="robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-49"></a><span class="k">def</span><span class="w"> </span><span class="nf">from_json</span><span class="p">(</span><span class="bp">cls</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">T</span><span class="p">],</span> <span class="n">source</span><span class="p">:</span> <span class="s1">'str|bytes|TextIO|Path'</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T</span><span class="p">:</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.from_json--source--line-0-50"><a id="robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-50" name="robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-50"></a><span class="w">    </span><span class="sd">"""Create this object based on JSON data.</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.from_json--source--line-0-51"><a id="robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-51" name="robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-51"></a>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.from_json--source--line-0-52"><a id="robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-52" name="robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-52"></a><span class="sd">    The data is given as the ``source`` parameter. It can be:</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.from_json--source--line-0-53"><a id="robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-53" name="robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-53"></a>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.from_json--source--line-0-54"><a id="robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-54" name="robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-54"></a><span class="sd">    - a string (or bytes) containing the data directly,</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.from_json--source--line-0-55"><a id="robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-55" name="robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-55"></a><span class="sd">    - an open file object where to read the data from, or</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.from_json--source--line-0-56"><a id="robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-56" name="robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-56"></a><span class="sd">    - a path (``pathlib.Path`` or string) to a UTF-8 encoded file to read.</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.from_json--source--line-0-57"><a id="robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-57" name="robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-57"></a>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.from_json--source--line-0-58"><a id="robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-58" name="robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-58"></a><span class="sd">    The JSON data is first converted to a Python dictionary and the object</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.from_json--source--line-0-59"><a id="robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-59" name="robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-59"></a><span class="sd">    created using the :meth:`from_dict` method.</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.from_json--source--line-0-60"><a id="robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-60" name="robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-60"></a>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.from_json--source--line-0-61"><a id="robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-61" name="robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-61"></a><span class="sd">    Notice that the ``source`` is considered to be JSON data if it is</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.from_json--source--line-0-62"><a id="robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-62" name="robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-62"></a><span class="sd">    a string and contains ``{``. If you need to use ``{`` in a file system</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.from_json--source--line-0-63"><a id="robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-63" name="robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-63"></a><span class="sd">    path, pass it in as a ``pathlib.Path`` instance.</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.from_json--source--line-0-64"><a id="robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-64" name="robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-64"></a>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.from_json--source--line-0-65"><a id="robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-65" name="robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-65"></a><span class="sd">    With ``robot.running`` model objects new in Robot Framework 6.1,</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.from_json--source--line-0-66"><a id="robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-66" name="robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-66"></a><span class="sd">    with ``robot.result`` new in Robot Framework 7.0.</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.from_json--source--line-0-67"><a id="robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-67" name="robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-67"></a><span class="sd">    """</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.from_json--source--line-0-68"><a id="robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-68" name="robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-68"></a>    <span class="k">try</span><span class="p">:</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.from_json--source--line-0-69"><a id="robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-69" name="robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-69"></a>        <span class="n">data</span> <span class="o">=</span> <span class="n">JsonLoader</span><span class="p">()</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.from_json--source--line-0-70"><a id="robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-70" name="robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-70"></a>    <span class="k">except</span> <span class="p">(</span><span class="ne">TypeError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">)</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.from_json--source--line-0-71"><a id="robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-71" name="robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-71"></a>        <span class="k">raise</span> <span class="n">DataError</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Loading JSON data failed: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.from_json--source--line-0-72"><a id="robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-72" name="robot.running.invalidkeyword.InvalidKeyword.from_json--source--example-0-72"></a>    <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -10337,23 +10337,23 @@ with <code>robot.result</code> new in Robot Framework 7.0.</p>
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>src/robot/model/modelobject.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-74">74</a></span>
-<span class="normal"><a href="#example-0-75">75</a></span>
-<span class="normal"><a href="#example-0-76">76</a></span>
-<span class="normal"><a href="#example-0-77">77</a></span>
-<span class="normal"><a href="#example-0-78">78</a></span>
-<span class="normal"><a href="#example-0-79">79</a></span>
-<span class="normal"><a href="#example-0-80">80</a></span>
-<span class="normal"><a href="#example-0-81">81</a></span>
-<span class="normal"><a href="#example-0-82">82</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-74"><a id="example-0-74" name="example-0-74"></a><span class="k">def</span><span class="w"> </span><span class="nf">to_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataDict</span><span class="p">:</span>
-</span><span id="line-0-75"><a id="example-0-75" name="example-0-75"></a><span class="w">    </span><span class="sd">"""Serialize this object into a dictionary.</span>
-</span><span id="line-0-76"><a id="example-0-76" name="example-0-76"></a>
-</span><span id="line-0-77"><a id="example-0-77" name="example-0-77"></a><span class="sd">    The object can be later restored by using the :meth:`from_dict` method.</span>
-</span><span id="line-0-78"><a id="example-0-78" name="example-0-78"></a>
-</span><span id="line-0-79"><a id="example-0-79" name="example-0-79"></a><span class="sd">    With ``robot.running`` model objects new in Robot Framework 6.1,</span>
-</span><span id="line-0-80"><a id="example-0-80" name="example-0-80"></a><span class="sd">    with ``robot.result`` new in Robot Framework 7.0.</span>
-</span><span id="line-0-81"><a id="example-0-81" name="example-0-81"></a><span class="sd">    """</span>
-</span><span id="line-0-82"><a id="example-0-82" name="example-0-82"></a>    <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.to_dict--source--example-0-74">74</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.to_dict--source--example-0-75">75</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.to_dict--source--example-0-76">76</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.to_dict--source--example-0-77">77</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.to_dict--source--example-0-78">78</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.to_dict--source--example-0-79">79</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.to_dict--source--example-0-80">80</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.to_dict--source--example-0-81">81</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.to_dict--source--example-0-82">82</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="robot.running.invalidkeyword.InvalidKeyword.to_dict--source--line-0-74"><a id="robot.running.invalidkeyword.InvalidKeyword.to_dict--source--example-0-74" name="robot.running.invalidkeyword.InvalidKeyword.to_dict--source--example-0-74"></a><span class="k">def</span><span class="w"> </span><span class="nf">to_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataDict</span><span class="p">:</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.to_dict--source--line-0-75"><a id="robot.running.invalidkeyword.InvalidKeyword.to_dict--source--example-0-75" name="robot.running.invalidkeyword.InvalidKeyword.to_dict--source--example-0-75"></a><span class="w">    </span><span class="sd">"""Serialize this object into a dictionary.</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.to_dict--source--line-0-76"><a id="robot.running.invalidkeyword.InvalidKeyword.to_dict--source--example-0-76" name="robot.running.invalidkeyword.InvalidKeyword.to_dict--source--example-0-76"></a>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.to_dict--source--line-0-77"><a id="robot.running.invalidkeyword.InvalidKeyword.to_dict--source--example-0-77" name="robot.running.invalidkeyword.InvalidKeyword.to_dict--source--example-0-77"></a><span class="sd">    The object can be later restored by using the :meth:`from_dict` method.</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.to_dict--source--line-0-78"><a id="robot.running.invalidkeyword.InvalidKeyword.to_dict--source--example-0-78" name="robot.running.invalidkeyword.InvalidKeyword.to_dict--source--example-0-78"></a>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.to_dict--source--line-0-79"><a id="robot.running.invalidkeyword.InvalidKeyword.to_dict--source--example-0-79" name="robot.running.invalidkeyword.InvalidKeyword.to_dict--source--example-0-79"></a><span class="sd">    With ``robot.running`` model objects new in Robot Framework 6.1,</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.to_dict--source--line-0-80"><a id="robot.running.invalidkeyword.InvalidKeyword.to_dict--source--example-0-80" name="robot.running.invalidkeyword.InvalidKeyword.to_dict--source--example-0-80"></a><span class="sd">    with ``robot.result`` new in Robot Framework 7.0.</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.to_dict--source--line-0-81"><a id="robot.running.invalidkeyword.InvalidKeyword.to_dict--source--example-0-81" name="robot.running.invalidkeyword.InvalidKeyword.to_dict--source--example-0-81"></a><span class="sd">    """</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.to_dict--source--line-0-82"><a id="robot.running.invalidkeyword.InvalidKeyword.to_dict--source--example-0-82" name="robot.running.invalidkeyword.InvalidKeyword.to_dict--source--example-0-82"></a>    <span class="k">raise</span> <span class="ne">NotImplementedError</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -10421,59 +10421,59 @@ with <code>robot.result</code> new in Robot Framework 7.0.</p>
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>src/robot/model/modelobject.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-94"> 94</a></span>
-<span class="normal"><a href="#example-0-95"> 95</a></span>
-<span class="normal"><a href="#example-0-96"> 96</a></span>
-<span class="normal"><a href="#example-0-97"> 97</a></span>
-<span class="normal"><a href="#example-0-98"> 98</a></span>
-<span class="normal"><a href="#example-0-99"> 99</a></span>
-<span class="normal"><a href="#example-0-100">100</a></span>
-<span class="normal"><a href="#example-0-101">101</a></span>
-<span class="normal"><a href="#example-0-102">102</a></span>
-<span class="normal"><a href="#example-0-103">103</a></span>
-<span class="normal"><a href="#example-0-104">104</a></span>
-<span class="normal"><a href="#example-0-105">105</a></span>
-<span class="normal"><a href="#example-0-106">106</a></span>
-<span class="normal"><a href="#example-0-107">107</a></span>
-<span class="normal"><a href="#example-0-108">108</a></span>
-<span class="normal"><a href="#example-0-109">109</a></span>
-<span class="normal"><a href="#example-0-110">110</a></span>
-<span class="normal"><a href="#example-0-111">111</a></span>
-<span class="normal"><a href="#example-0-112">112</a></span>
-<span class="normal"><a href="#example-0-113">113</a></span>
-<span class="normal"><a href="#example-0-114">114</a></span>
-<span class="normal"><a href="#example-0-115">115</a></span>
-<span class="normal"><a href="#example-0-116">116</a></span>
-<span class="normal"><a href="#example-0-117">117</a></span>
-<span class="normal"><a href="#example-0-118">118</a></span>
-<span class="normal"><a href="#example-0-119">119</a></span>
-<span class="normal"><a href="#example-0-120">120</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-94"><a id="example-0-94" name="example-0-94"></a><span class="k">def</span><span class="w"> </span><span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">:</span> <span class="s1">'None|TextIO|Path|str'</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span>
-</span><span id="line-0-95"><a id="example-0-95" name="example-0-95"></a>            <span class="n">ensure_ascii</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">indent</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
-</span><span id="line-0-96"><a id="example-0-96" name="example-0-96"></a>            <span class="n">separators</span><span class="p">:</span> <span class="s1">'tuple[str, str]'</span> <span class="o">=</span> <span class="p">(</span><span class="s1">','</span><span class="p">,</span> <span class="s1">':'</span><span class="p">))</span> <span class="o">-&gt;</span> <span class="s1">'str|None'</span><span class="p">:</span>
-</span><span id="line-0-97"><a id="example-0-97" name="example-0-97"></a><span class="w">    </span><span class="sd">"""Serialize this object into JSON.</span>
-</span><span id="line-0-98"><a id="example-0-98" name="example-0-98"></a>
-</span><span id="line-0-99"><a id="example-0-99" name="example-0-99"></a><span class="sd">    The object is first converted to a Python dictionary using the</span>
-</span><span id="line-0-100"><a id="example-0-100" name="example-0-100"></a><span class="sd">    :meth:`to_dict` method and then the dictionary is converted to JSON.</span>
-</span><span id="line-0-101"><a id="example-0-101" name="example-0-101"></a>
-</span><span id="line-0-102"><a id="example-0-102" name="example-0-102"></a><span class="sd">    The ``file`` parameter controls what to do with the resulting JSON data.</span>
-</span><span id="line-0-103"><a id="example-0-103" name="example-0-103"></a><span class="sd">    It can be:</span>
-</span><span id="line-0-104"><a id="example-0-104" name="example-0-104"></a>
-</span><span id="line-0-105"><a id="example-0-105" name="example-0-105"></a><span class="sd">    - ``None`` (default) to return the data as a string,</span>
-</span><span id="line-0-106"><a id="example-0-106" name="example-0-106"></a><span class="sd">    - an open file object where to write the data to, or</span>
-</span><span id="line-0-107"><a id="example-0-107" name="example-0-107"></a><span class="sd">    - a path (``pathlib.Path`` or string) to a file where to write</span>
-</span><span id="line-0-108"><a id="example-0-108" name="example-0-108"></a><span class="sd">      the data using UTF-8 encoding.</span>
-</span><span id="line-0-109"><a id="example-0-109" name="example-0-109"></a>
-</span><span id="line-0-110"><a id="example-0-110" name="example-0-110"></a><span class="sd">    JSON formatting can be configured using optional parameters that</span>
-</span><span id="line-0-111"><a id="example-0-111" name="example-0-111"></a><span class="sd">    are passed directly to the underlying json__ module. Notice that</span>
-</span><span id="line-0-112"><a id="example-0-112" name="example-0-112"></a><span class="sd">    the defaults differ from what ``json`` uses.</span>
-</span><span id="line-0-113"><a id="example-0-113" name="example-0-113"></a>
-</span><span id="line-0-114"><a id="example-0-114" name="example-0-114"></a><span class="sd">    With ``robot.running`` model objects new in Robot Framework 6.1,</span>
-</span><span id="line-0-115"><a id="example-0-115" name="example-0-115"></a><span class="sd">    with ``robot.result`` new in Robot Framework 7.0.</span>
-</span><span id="line-0-116"><a id="example-0-116" name="example-0-116"></a>
-</span><span id="line-0-117"><a id="example-0-117" name="example-0-117"></a><span class="sd">    __ https://docs.python.org/3/library/json.html</span>
-</span><span id="line-0-118"><a id="example-0-118" name="example-0-118"></a><span class="sd">    """</span>
-</span><span id="line-0-119"><a id="example-0-119" name="example-0-119"></a>    <span class="k">return</span> <span class="n">JsonDumper</span><span class="p">(</span><span class="n">ensure_ascii</span><span class="o">=</span><span class="n">ensure_ascii</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="n">indent</span><span class="p">,</span>
-</span><span id="line-0-120"><a id="example-0-120" name="example-0-120"></a>                      <span class="n">separators</span><span class="o">=</span><span class="n">separators</span><span class="p">)</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(),</span> <span class="n">file</span><span class="p">)</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-94"> 94</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-95"> 95</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-96"> 96</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-97"> 97</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-98"> 98</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-99"> 99</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-100">100</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-101">101</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-102">102</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-103">103</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-104">104</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-105">105</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-106">106</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-107">107</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-108">108</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-109">109</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-110">110</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-111">111</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-112">112</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-113">113</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-114">114</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-115">115</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-116">116</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-117">117</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-118">118</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-119">119</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-120">120</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="robot.running.invalidkeyword.InvalidKeyword.to_json--source--line-0-94"><a id="robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-94" name="robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-94"></a><span class="k">def</span><span class="w"> </span><span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">:</span> <span class="s1">'None|TextIO|Path|str'</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.to_json--source--line-0-95"><a id="robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-95" name="robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-95"></a>            <span class="n">ensure_ascii</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">indent</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.to_json--source--line-0-96"><a id="robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-96" name="robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-96"></a>            <span class="n">separators</span><span class="p">:</span> <span class="s1">'tuple[str, str]'</span> <span class="o">=</span> <span class="p">(</span><span class="s1">','</span><span class="p">,</span> <span class="s1">':'</span><span class="p">))</span> <span class="o">-&gt;</span> <span class="s1">'str|None'</span><span class="p">:</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.to_json--source--line-0-97"><a id="robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-97" name="robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-97"></a><span class="w">    </span><span class="sd">"""Serialize this object into JSON.</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.to_json--source--line-0-98"><a id="robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-98" name="robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-98"></a>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.to_json--source--line-0-99"><a id="robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-99" name="robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-99"></a><span class="sd">    The object is first converted to a Python dictionary using the</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.to_json--source--line-0-100"><a id="robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-100" name="robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-100"></a><span class="sd">    :meth:`to_dict` method and then the dictionary is converted to JSON.</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.to_json--source--line-0-101"><a id="robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-101" name="robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-101"></a>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.to_json--source--line-0-102"><a id="robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-102" name="robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-102"></a><span class="sd">    The ``file`` parameter controls what to do with the resulting JSON data.</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.to_json--source--line-0-103"><a id="robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-103" name="robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-103"></a><span class="sd">    It can be:</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.to_json--source--line-0-104"><a id="robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-104" name="robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-104"></a>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.to_json--source--line-0-105"><a id="robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-105" name="robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-105"></a><span class="sd">    - ``None`` (default) to return the data as a string,</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.to_json--source--line-0-106"><a id="robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-106" name="robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-106"></a><span class="sd">    - an open file object where to write the data to, or</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.to_json--source--line-0-107"><a id="robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-107" name="robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-107"></a><span class="sd">    - a path (``pathlib.Path`` or string) to a file where to write</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.to_json--source--line-0-108"><a id="robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-108" name="robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-108"></a><span class="sd">      the data using UTF-8 encoding.</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.to_json--source--line-0-109"><a id="robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-109" name="robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-109"></a>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.to_json--source--line-0-110"><a id="robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-110" name="robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-110"></a><span class="sd">    JSON formatting can be configured using optional parameters that</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.to_json--source--line-0-111"><a id="robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-111" name="robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-111"></a><span class="sd">    are passed directly to the underlying json__ module. Notice that</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.to_json--source--line-0-112"><a id="robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-112" name="robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-112"></a><span class="sd">    the defaults differ from what ``json`` uses.</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.to_json--source--line-0-113"><a id="robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-113" name="robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-113"></a>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.to_json--source--line-0-114"><a id="robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-114" name="robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-114"></a><span class="sd">    With ``robot.running`` model objects new in Robot Framework 6.1,</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.to_json--source--line-0-115"><a id="robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-115" name="robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-115"></a><span class="sd">    with ``robot.result`` new in Robot Framework 7.0.</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.to_json--source--line-0-116"><a id="robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-116" name="robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-116"></a>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.to_json--source--line-0-117"><a id="robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-117" name="robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-117"></a><span class="sd">    __ https://docs.python.org/3/library/json.html</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.to_json--source--line-0-118"><a id="robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-118" name="robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-118"></a><span class="sd">    """</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.to_json--source--line-0-119"><a id="robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-119" name="robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-119"></a>    <span class="k">return</span> <span class="n">JsonDumper</span><span class="p">(</span><span class="n">ensure_ascii</span><span class="o">=</span><span class="n">ensure_ascii</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="n">indent</span><span class="p">,</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.to_json--source--line-0-120"><a id="robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-120" name="robot.running.invalidkeyword.InvalidKeyword.to_json--source--example-0-120"></a>                      <span class="n">separators</span><span class="o">=</span><span class="n">separators</span><span class="p">)</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(),</span> <span class="n">file</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -10506,65 +10506,65 @@ with <code>robot.result</code> new in Robot Framework 7.0.</p>
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>src/robot/model/modelobject.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-122">122</a></span>
-<span class="normal"><a href="#example-0-123">123</a></span>
-<span class="normal"><a href="#example-0-124">124</a></span>
-<span class="normal"><a href="#example-0-125">125</a></span>
-<span class="normal"><a href="#example-0-126">126</a></span>
-<span class="normal"><a href="#example-0-127">127</a></span>
-<span class="normal"><a href="#example-0-128">128</a></span>
-<span class="normal"><a href="#example-0-129">129</a></span>
-<span class="normal"><a href="#example-0-130">130</a></span>
-<span class="normal"><a href="#example-0-131">131</a></span>
-<span class="normal"><a href="#example-0-132">132</a></span>
-<span class="normal"><a href="#example-0-133">133</a></span>
-<span class="normal"><a href="#example-0-134">134</a></span>
-<span class="normal"><a href="#example-0-135">135</a></span>
-<span class="normal"><a href="#example-0-136">136</a></span>
-<span class="normal"><a href="#example-0-137">137</a></span>
-<span class="normal"><a href="#example-0-138">138</a></span>
-<span class="normal"><a href="#example-0-139">139</a></span>
-<span class="normal"><a href="#example-0-140">140</a></span>
-<span class="normal"><a href="#example-0-141">141</a></span>
-<span class="normal"><a href="#example-0-142">142</a></span>
-<span class="normal"><a href="#example-0-143">143</a></span>
-<span class="normal"><a href="#example-0-144">144</a></span>
-<span class="normal"><a href="#example-0-145">145</a></span>
-<span class="normal"><a href="#example-0-146">146</a></span>
-<span class="normal"><a href="#example-0-147">147</a></span>
-<span class="normal"><a href="#example-0-148">148</a></span>
-<span class="normal"><a href="#example-0-149">149</a></span>
-<span class="normal"><a href="#example-0-150">150</a></span>
-<span class="normal"><a href="#example-0-151">151</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-122"><a id="example-0-122" name="example-0-122"></a><span class="k">def</span><span class="w"> </span><span class="nf">config</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">T</span><span class="p">,</span> <span class="o">**</span><span class="n">attributes</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T</span><span class="p">:</span>
-</span><span id="line-0-123"><a id="example-0-123" name="example-0-123"></a><span class="w">    </span><span class="sd">"""Configure model object with given attributes.</span>
-</span><span id="line-0-124"><a id="example-0-124" name="example-0-124"></a>
-</span><span id="line-0-125"><a id="example-0-125" name="example-0-125"></a><span class="sd">    ``obj.config(name='Example', doc='Something')`` is equivalent to setting</span>
-</span><span id="line-0-126"><a id="example-0-126" name="example-0-126"></a><span class="sd">    ``obj.name = 'Example'`` and ``obj.doc = 'Something'``.</span>
-</span><span id="line-0-127"><a id="example-0-127" name="example-0-127"></a>
-</span><span id="line-0-128"><a id="example-0-128" name="example-0-128"></a><span class="sd">    New in Robot Framework 4.0.</span>
-</span><span id="line-0-129"><a id="example-0-129" name="example-0-129"></a><span class="sd">    """</span>
-</span><span id="line-0-130"><a id="example-0-130" name="example-0-130"></a>    <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">attributes</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-</span><span id="line-0-131"><a id="example-0-131" name="example-0-131"></a>        <span class="k">try</span><span class="p">:</span>
-</span><span id="line-0-132"><a id="example-0-132" name="example-0-132"></a>            <span class="n">orig</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
-</span><span id="line-0-133"><a id="example-0-133" name="example-0-133"></a>        <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
-</span><span id="line-0-134"><a id="example-0-134" name="example-0-134"></a>            <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"'</span><span class="si">{</span><span class="n">full_name</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="si">}</span><span class="s2">' object does not have "</span>
-</span><span id="line-0-135"><a id="example-0-135" name="example-0-135"></a>                                 <span class="sa">f</span><span class="s2">"attribute '</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">'"</span><span class="p">)</span>
-</span><span id="line-0-136"><a id="example-0-136" name="example-0-136"></a>        <span class="c1"># Preserve tuples. Main motivation is converting lists with `from_json`.</span>
-</span><span id="line-0-137"><a id="example-0-137" name="example-0-137"></a>        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">orig</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
-</span><span id="line-0-138"><a id="example-0-138" name="example-0-138"></a>            <span class="k">try</span><span class="p">:</span>
-</span><span id="line-0-139"><a id="example-0-139" name="example-0-139"></a>                <span class="n">value</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
-</span><span id="line-0-140"><a id="example-0-140" name="example-0-140"></a>            <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
-</span><span id="line-0-141"><a id="example-0-141" name="example-0-141"></a>                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"'</span><span class="si">{</span><span class="n">full_name</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="si">}</span><span class="s2">' object attribute '</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">' "</span>
-</span><span id="line-0-142"><a id="example-0-142" name="example-0-142"></a>                                <span class="sa">f</span><span class="s2">"is 'tuple', got '</span><span class="si">{</span><span class="n">type_name</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="si">}</span><span class="s2">'."</span><span class="p">)</span>
-</span><span id="line-0-143"><a id="example-0-143" name="example-0-143"></a>        <span class="k">try</span><span class="p">:</span>
-</span><span id="line-0-144"><a id="example-0-144" name="example-0-144"></a>            <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
-</span><span id="line-0-145"><a id="example-0-145" name="example-0-145"></a>        <span class="k">except</span> <span class="ne">AttributeError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
-</span><span id="line-0-146"><a id="example-0-146" name="example-0-146"></a>            <span class="c1"># Ignore error setting attribute if the object already has it.</span>
-</span><span id="line-0-147"><a id="example-0-147" name="example-0-147"></a>            <span class="c1"># Avoids problems with `from_dict` with body items having</span>
-</span><span id="line-0-148"><a id="example-0-148" name="example-0-148"></a>            <span class="c1"># un-settable `type` attribute that is needed in dict data.</span>
-</span><span id="line-0-149"><a id="example-0-149" name="example-0-149"></a>            <span class="k">if</span> <span class="n">value</span> <span class="o">!=</span> <span class="n">orig</span><span class="p">:</span>
-</span><span id="line-0-150"><a id="example-0-150" name="example-0-150"></a>                <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Setting attribute '</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">' failed: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-</span><span id="line-0-151"><a id="example-0-151" name="example-0-151"></a>    <span class="k">return</span> <span class="bp">self</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-122">122</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-123">123</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-124">124</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-125">125</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-126">126</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-127">127</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-128">128</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-129">129</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-130">130</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-131">131</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-132">132</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-133">133</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-134">134</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-135">135</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-136">136</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-137">137</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-138">138</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-139">139</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-140">140</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-141">141</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-142">142</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-143">143</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-144">144</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-145">145</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-146">146</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-147">147</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-148">148</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-149">149</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-150">150</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-151">151</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="robot.running.invalidkeyword.InvalidKeyword.config--source--line-0-122"><a id="robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-122" name="robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-122"></a><span class="k">def</span><span class="w"> </span><span class="nf">config</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">T</span><span class="p">,</span> <span class="o">**</span><span class="n">attributes</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T</span><span class="p">:</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.config--source--line-0-123"><a id="robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-123" name="robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-123"></a><span class="w">    </span><span class="sd">"""Configure model object with given attributes.</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.config--source--line-0-124"><a id="robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-124" name="robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-124"></a>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.config--source--line-0-125"><a id="robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-125" name="robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-125"></a><span class="sd">    ``obj.config(name='Example', doc='Something')`` is equivalent to setting</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.config--source--line-0-126"><a id="robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-126" name="robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-126"></a><span class="sd">    ``obj.name = 'Example'`` and ``obj.doc = 'Something'``.</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.config--source--line-0-127"><a id="robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-127" name="robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-127"></a>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.config--source--line-0-128"><a id="robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-128" name="robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-128"></a><span class="sd">    New in Robot Framework 4.0.</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.config--source--line-0-129"><a id="robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-129" name="robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-129"></a><span class="sd">    """</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.config--source--line-0-130"><a id="robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-130" name="robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-130"></a>    <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">attributes</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.config--source--line-0-131"><a id="robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-131" name="robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-131"></a>        <span class="k">try</span><span class="p">:</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.config--source--line-0-132"><a id="robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-132" name="robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-132"></a>            <span class="n">orig</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.config--source--line-0-133"><a id="robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-133" name="robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-133"></a>        <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.config--source--line-0-134"><a id="robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-134" name="robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-134"></a>            <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"'</span><span class="si">{</span><span class="n">full_name</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="si">}</span><span class="s2">' object does not have "</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.config--source--line-0-135"><a id="robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-135" name="robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-135"></a>                                 <span class="sa">f</span><span class="s2">"attribute '</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">'"</span><span class="p">)</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.config--source--line-0-136"><a id="robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-136" name="robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-136"></a>        <span class="c1"># Preserve tuples. Main motivation is converting lists with `from_json`.</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.config--source--line-0-137"><a id="robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-137" name="robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-137"></a>        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">orig</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.config--source--line-0-138"><a id="robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-138" name="robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-138"></a>            <span class="k">try</span><span class="p">:</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.config--source--line-0-139"><a id="robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-139" name="robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-139"></a>                <span class="n">value</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.config--source--line-0-140"><a id="robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-140" name="robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-140"></a>            <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.config--source--line-0-141"><a id="robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-141" name="robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-141"></a>                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"'</span><span class="si">{</span><span class="n">full_name</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="si">}</span><span class="s2">' object attribute '</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">' "</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.config--source--line-0-142"><a id="robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-142" name="robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-142"></a>                                <span class="sa">f</span><span class="s2">"is 'tuple', got '</span><span class="si">{</span><span class="n">type_name</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="si">}</span><span class="s2">'."</span><span class="p">)</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.config--source--line-0-143"><a id="robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-143" name="robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-143"></a>        <span class="k">try</span><span class="p">:</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.config--source--line-0-144"><a id="robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-144" name="robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-144"></a>            <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.config--source--line-0-145"><a id="robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-145" name="robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-145"></a>        <span class="k">except</span> <span class="ne">AttributeError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.config--source--line-0-146"><a id="robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-146" name="robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-146"></a>            <span class="c1"># Ignore error setting attribute if the object already has it.</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.config--source--line-0-147"><a id="robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-147" name="robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-147"></a>            <span class="c1"># Avoids problems with `from_dict` with body items having</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.config--source--line-0-148"><a id="robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-148" name="robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-148"></a>            <span class="c1"># un-settable `type` attribute that is needed in dict data.</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.config--source--line-0-149"><a id="robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-149" name="robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-149"></a>            <span class="k">if</span> <span class="n">value</span> <span class="o">!=</span> <span class="n">orig</span><span class="p">:</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.config--source--line-0-150"><a id="robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-150" name="robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-150"></a>                <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Setting attribute '</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">' failed: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.config--source--line-0-151"><a id="robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-151" name="robot.running.invalidkeyword.InvalidKeyword.config--source--example-0-151"></a>    <span class="k">return</span> <span class="bp">self</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -10600,31 +10600,31 @@ the copy__ module.</p>
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>src/robot/model/modelobject.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-153">153</a></span>
-<span class="normal"><a href="#example-0-154">154</a></span>
-<span class="normal"><a href="#example-0-155">155</a></span>
-<span class="normal"><a href="#example-0-156">156</a></span>
-<span class="normal"><a href="#example-0-157">157</a></span>
-<span class="normal"><a href="#example-0-158">158</a></span>
-<span class="normal"><a href="#example-0-159">159</a></span>
-<span class="normal"><a href="#example-0-160">160</a></span>
-<span class="normal"><a href="#example-0-161">161</a></span>
-<span class="normal"><a href="#example-0-162">162</a></span>
-<span class="normal"><a href="#example-0-163">163</a></span>
-<span class="normal"><a href="#example-0-164">164</a></span>
-<span class="normal"><a href="#example-0-165">165</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-153"><a id="example-0-153" name="example-0-153"></a><span class="k">def</span><span class="w"> </span><span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">T</span><span class="p">,</span> <span class="o">**</span><span class="n">attributes</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T</span><span class="p">:</span>
-</span><span id="line-0-154"><a id="example-0-154" name="example-0-154"></a><span class="w">    </span><span class="sd">"""Return a shallow copy of this object.</span>
-</span><span id="line-0-155"><a id="example-0-155" name="example-0-155"></a>
-</span><span id="line-0-156"><a id="example-0-156" name="example-0-156"></a><span class="sd">    :param attributes: Attributes to be set to the returned copy.</span>
-</span><span id="line-0-157"><a id="example-0-157" name="example-0-157"></a><span class="sd">        For example, ``obj.copy(name='New name')``.</span>
-</span><span id="line-0-158"><a id="example-0-158" name="example-0-158"></a>
-</span><span id="line-0-159"><a id="example-0-159" name="example-0-159"></a><span class="sd">    See also :meth:`deepcopy`. The difference between ``copy`` and</span>
-</span><span id="line-0-160"><a id="example-0-160" name="example-0-160"></a><span class="sd">    ``deepcopy`` is the same as with the methods having same names in</span>
-</span><span id="line-0-161"><a id="example-0-161" name="example-0-161"></a><span class="sd">    the copy__ module.</span>
-</span><span id="line-0-162"><a id="example-0-162" name="example-0-162"></a>
-</span><span id="line-0-163"><a id="example-0-163" name="example-0-163"></a><span class="sd">    __ https://docs.python.org/3/library/copy.html</span>
-</span><span id="line-0-164"><a id="example-0-164" name="example-0-164"></a><span class="sd">    """</span>
-</span><span id="line-0-165"><a id="example-0-165" name="example-0-165"></a>    <span class="k">return</span> <span class="n">copy</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="o">**</span><span class="n">attributes</span><span class="p">)</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.copy--source--example-0-153">153</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.copy--source--example-0-154">154</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.copy--source--example-0-155">155</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.copy--source--example-0-156">156</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.copy--source--example-0-157">157</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.copy--source--example-0-158">158</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.copy--source--example-0-159">159</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.copy--source--example-0-160">160</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.copy--source--example-0-161">161</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.copy--source--example-0-162">162</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.copy--source--example-0-163">163</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.copy--source--example-0-164">164</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.copy--source--example-0-165">165</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="robot.running.invalidkeyword.InvalidKeyword.copy--source--line-0-153"><a id="robot.running.invalidkeyword.InvalidKeyword.copy--source--example-0-153" name="robot.running.invalidkeyword.InvalidKeyword.copy--source--example-0-153"></a><span class="k">def</span><span class="w"> </span><span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">T</span><span class="p">,</span> <span class="o">**</span><span class="n">attributes</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T</span><span class="p">:</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.copy--source--line-0-154"><a id="robot.running.invalidkeyword.InvalidKeyword.copy--source--example-0-154" name="robot.running.invalidkeyword.InvalidKeyword.copy--source--example-0-154"></a><span class="w">    </span><span class="sd">"""Return a shallow copy of this object.</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.copy--source--line-0-155"><a id="robot.running.invalidkeyword.InvalidKeyword.copy--source--example-0-155" name="robot.running.invalidkeyword.InvalidKeyword.copy--source--example-0-155"></a>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.copy--source--line-0-156"><a id="robot.running.invalidkeyword.InvalidKeyword.copy--source--example-0-156" name="robot.running.invalidkeyword.InvalidKeyword.copy--source--example-0-156"></a><span class="sd">    :param attributes: Attributes to be set to the returned copy.</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.copy--source--line-0-157"><a id="robot.running.invalidkeyword.InvalidKeyword.copy--source--example-0-157" name="robot.running.invalidkeyword.InvalidKeyword.copy--source--example-0-157"></a><span class="sd">        For example, ``obj.copy(name='New name')``.</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.copy--source--line-0-158"><a id="robot.running.invalidkeyword.InvalidKeyword.copy--source--example-0-158" name="robot.running.invalidkeyword.InvalidKeyword.copy--source--example-0-158"></a>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.copy--source--line-0-159"><a id="robot.running.invalidkeyword.InvalidKeyword.copy--source--example-0-159" name="robot.running.invalidkeyword.InvalidKeyword.copy--source--example-0-159"></a><span class="sd">    See also :meth:`deepcopy`. The difference between ``copy`` and</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.copy--source--line-0-160"><a id="robot.running.invalidkeyword.InvalidKeyword.copy--source--example-0-160" name="robot.running.invalidkeyword.InvalidKeyword.copy--source--example-0-160"></a><span class="sd">    ``deepcopy`` is the same as with the methods having same names in</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.copy--source--line-0-161"><a id="robot.running.invalidkeyword.InvalidKeyword.copy--source--example-0-161" name="robot.running.invalidkeyword.InvalidKeyword.copy--source--example-0-161"></a><span class="sd">    the copy__ module.</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.copy--source--line-0-162"><a id="robot.running.invalidkeyword.InvalidKeyword.copy--source--example-0-162" name="robot.running.invalidkeyword.InvalidKeyword.copy--source--example-0-162"></a>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.copy--source--line-0-163"><a id="robot.running.invalidkeyword.InvalidKeyword.copy--source--example-0-163" name="robot.running.invalidkeyword.InvalidKeyword.copy--source--example-0-163"></a><span class="sd">    __ https://docs.python.org/3/library/copy.html</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.copy--source--line-0-164"><a id="robot.running.invalidkeyword.InvalidKeyword.copy--source--example-0-164" name="robot.running.invalidkeyword.InvalidKeyword.copy--source--example-0-164"></a><span class="sd">    """</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.copy--source--line-0-165"><a id="robot.running.invalidkeyword.InvalidKeyword.copy--source--example-0-165" name="robot.running.invalidkeyword.InvalidKeyword.copy--source--example-0-165"></a>    <span class="k">return</span> <span class="n">copy</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="o">**</span><span class="n">attributes</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -10660,31 +10660,31 @@ the copy__ module.</p>
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>src/robot/model/modelobject.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-167">167</a></span>
-<span class="normal"><a href="#example-0-168">168</a></span>
-<span class="normal"><a href="#example-0-169">169</a></span>
-<span class="normal"><a href="#example-0-170">170</a></span>
-<span class="normal"><a href="#example-0-171">171</a></span>
-<span class="normal"><a href="#example-0-172">172</a></span>
-<span class="normal"><a href="#example-0-173">173</a></span>
-<span class="normal"><a href="#example-0-174">174</a></span>
-<span class="normal"><a href="#example-0-175">175</a></span>
-<span class="normal"><a href="#example-0-176">176</a></span>
-<span class="normal"><a href="#example-0-177">177</a></span>
-<span class="normal"><a href="#example-0-178">178</a></span>
-<span class="normal"><a href="#example-0-179">179</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-167"><a id="example-0-167" name="example-0-167"></a><span class="k">def</span><span class="w"> </span><span class="nf">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">T</span><span class="p">,</span> <span class="o">**</span><span class="n">attributes</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T</span><span class="p">:</span>
-</span><span id="line-0-168"><a id="example-0-168" name="example-0-168"></a><span class="w">    </span><span class="sd">"""Return a deep copy of this object.</span>
-</span><span id="line-0-169"><a id="example-0-169" name="example-0-169"></a>
-</span><span id="line-0-170"><a id="example-0-170" name="example-0-170"></a><span class="sd">    :param attributes: Attributes to be set to the returned copy.</span>
-</span><span id="line-0-171"><a id="example-0-171" name="example-0-171"></a><span class="sd">        For example, ``obj.deepcopy(name='New name')``.</span>
-</span><span id="line-0-172"><a id="example-0-172" name="example-0-172"></a>
-</span><span id="line-0-173"><a id="example-0-173" name="example-0-173"></a><span class="sd">    See also :meth:`copy`. The difference between ``deepcopy`` and</span>
-</span><span id="line-0-174"><a id="example-0-174" name="example-0-174"></a><span class="sd">    ``copy`` is the same as with the methods having same names in</span>
-</span><span id="line-0-175"><a id="example-0-175" name="example-0-175"></a><span class="sd">    the copy__ module.</span>
-</span><span id="line-0-176"><a id="example-0-176" name="example-0-176"></a>
-</span><span id="line-0-177"><a id="example-0-177" name="example-0-177"></a><span class="sd">    __ https://docs.python.org/3/library/copy.html</span>
-</span><span id="line-0-178"><a id="example-0-178" name="example-0-178"></a><span class="sd">    """</span>
-</span><span id="line-0-179"><a id="example-0-179" name="example-0-179"></a>    <span class="k">return</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="o">**</span><span class="n">attributes</span><span class="p">)</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.deepcopy--source--example-0-167">167</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.deepcopy--source--example-0-168">168</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.deepcopy--source--example-0-169">169</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.deepcopy--source--example-0-170">170</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.deepcopy--source--example-0-171">171</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.deepcopy--source--example-0-172">172</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.deepcopy--source--example-0-173">173</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.deepcopy--source--example-0-174">174</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.deepcopy--source--example-0-175">175</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.deepcopy--source--example-0-176">176</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.deepcopy--source--example-0-177">177</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.deepcopy--source--example-0-178">178</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.deepcopy--source--example-0-179">179</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="robot.running.invalidkeyword.InvalidKeyword.deepcopy--source--line-0-167"><a id="robot.running.invalidkeyword.InvalidKeyword.deepcopy--source--example-0-167" name="robot.running.invalidkeyword.InvalidKeyword.deepcopy--source--example-0-167"></a><span class="k">def</span><span class="w"> </span><span class="nf">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">T</span><span class="p">,</span> <span class="o">**</span><span class="n">attributes</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T</span><span class="p">:</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.deepcopy--source--line-0-168"><a id="robot.running.invalidkeyword.InvalidKeyword.deepcopy--source--example-0-168" name="robot.running.invalidkeyword.InvalidKeyword.deepcopy--source--example-0-168"></a><span class="w">    </span><span class="sd">"""Return a deep copy of this object.</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.deepcopy--source--line-0-169"><a id="robot.running.invalidkeyword.InvalidKeyword.deepcopy--source--example-0-169" name="robot.running.invalidkeyword.InvalidKeyword.deepcopy--source--example-0-169"></a>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.deepcopy--source--line-0-170"><a id="robot.running.invalidkeyword.InvalidKeyword.deepcopy--source--example-0-170" name="robot.running.invalidkeyword.InvalidKeyword.deepcopy--source--example-0-170"></a><span class="sd">    :param attributes: Attributes to be set to the returned copy.</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.deepcopy--source--line-0-171"><a id="robot.running.invalidkeyword.InvalidKeyword.deepcopy--source--example-0-171" name="robot.running.invalidkeyword.InvalidKeyword.deepcopy--source--example-0-171"></a><span class="sd">        For example, ``obj.deepcopy(name='New name')``.</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.deepcopy--source--line-0-172"><a id="robot.running.invalidkeyword.InvalidKeyword.deepcopy--source--example-0-172" name="robot.running.invalidkeyword.InvalidKeyword.deepcopy--source--example-0-172"></a>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.deepcopy--source--line-0-173"><a id="robot.running.invalidkeyword.InvalidKeyword.deepcopy--source--example-0-173" name="robot.running.invalidkeyword.InvalidKeyword.deepcopy--source--example-0-173"></a><span class="sd">    See also :meth:`copy`. The difference between ``deepcopy`` and</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.deepcopy--source--line-0-174"><a id="robot.running.invalidkeyword.InvalidKeyword.deepcopy--source--example-0-174" name="robot.running.invalidkeyword.InvalidKeyword.deepcopy--source--example-0-174"></a><span class="sd">    ``copy`` is the same as with the methods having same names in</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.deepcopy--source--line-0-175"><a id="robot.running.invalidkeyword.InvalidKeyword.deepcopy--source--example-0-175" name="robot.running.invalidkeyword.InvalidKeyword.deepcopy--source--example-0-175"></a><span class="sd">    the copy__ module.</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.deepcopy--source--line-0-176"><a id="robot.running.invalidkeyword.InvalidKeyword.deepcopy--source--example-0-176" name="robot.running.invalidkeyword.InvalidKeyword.deepcopy--source--example-0-176"></a>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.deepcopy--source--line-0-177"><a id="robot.running.invalidkeyword.InvalidKeyword.deepcopy--source--example-0-177" name="robot.running.invalidkeyword.InvalidKeyword.deepcopy--source--example-0-177"></a><span class="sd">    __ https://docs.python.org/3/library/copy.html</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.deepcopy--source--line-0-178"><a id="robot.running.invalidkeyword.InvalidKeyword.deepcopy--source--example-0-178" name="robot.running.invalidkeyword.InvalidKeyword.deepcopy--source--example-0-178"></a><span class="sd">    """</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.deepcopy--source--line-0-179"><a id="robot.running.invalidkeyword.InvalidKeyword.deepcopy--source--example-0-179" name="robot.running.invalidkeyword.InvalidKeyword.deepcopy--source--example-0-179"></a>    <span class="k">return</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="o">**</span><span class="n">attributes</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -10718,31 +10718,31 @@ attribute exists already now.</p>
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>src/robot/running/keywordimplementation.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-81">81</a></span>
-<span class="normal"><a href="#example-0-82">82</a></span>
-<span class="normal"><a href="#example-0-83">83</a></span>
-<span class="normal"><a href="#example-0-84">84</a></span>
-<span class="normal"><a href="#example-0-85">85</a></span>
-<span class="normal"><a href="#example-0-86">86</a></span>
-<span class="normal"><a href="#example-0-87">87</a></span>
-<span class="normal"><a href="#example-0-88">88</a></span>
-<span class="normal"><a href="#example-0-89">89</a></span>
-<span class="normal"><a href="#example-0-90">90</a></span>
-<span class="normal"><a href="#example-0-91">91</a></span>
-<span class="normal"><a href="#example-0-92">92</a></span>
-<span class="normal"><a href="#example-0-93">93</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-81"><a id="example-0-81" name="example-0-81"></a><span class="nd">@setter</span>
-</span><span id="line-0-82"><a id="example-0-82" name="example-0-82"></a><span class="k">def</span><span class="w"> </span><span class="nf">args</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">spec</span><span class="p">:</span> <span class="s1">'ArgumentSpec|None'</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ArgumentSpec</span><span class="p">:</span>
-</span><span id="line-0-83"><a id="example-0-83" name="example-0-83"></a><span class="w">    </span><span class="sd">"""Information about accepted arguments.</span>
-</span><span id="line-0-84"><a id="example-0-84" name="example-0-84"></a>
-</span><span id="line-0-85"><a id="example-0-85" name="example-0-85"></a><span class="sd">    It would be more correct to use term *parameter* instead of</span>
-</span><span id="line-0-86"><a id="example-0-86" name="example-0-86"></a><span class="sd">    *argument* in this context, and this attribute may be renamed</span>
-</span><span id="line-0-87"><a id="example-0-87" name="example-0-87"></a><span class="sd">    accordingly in the future. A forward compatible :attr:`params`</span>
-</span><span id="line-0-88"><a id="example-0-88" name="example-0-88"></a><span class="sd">    attribute exists already now.</span>
-</span><span id="line-0-89"><a id="example-0-89" name="example-0-89"></a><span class="sd">    """</span>
-</span><span id="line-0-90"><a id="example-0-90" name="example-0-90"></a>    <span class="k">if</span> <span class="n">spec</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-0-91"><a id="example-0-91" name="example-0-91"></a>        <span class="n">spec</span> <span class="o">=</span> <span class="n">ArgumentSpec</span><span class="p">()</span>
-</span><span id="line-0-92"><a id="example-0-92" name="example-0-92"></a>    <span class="n">spec</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="k">lambda</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">full_name</span>
-</span><span id="line-0-93"><a id="example-0-93" name="example-0-93"></a>    <span class="k">return</span> <span class="n">spec</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.args--source--example-0-81">81</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.args--source--example-0-82">82</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.args--source--example-0-83">83</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.args--source--example-0-84">84</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.args--source--example-0-85">85</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.args--source--example-0-86">86</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.args--source--example-0-87">87</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.args--source--example-0-88">88</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.args--source--example-0-89">89</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.args--source--example-0-90">90</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.args--source--example-0-91">91</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.args--source--example-0-92">92</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.args--source--example-0-93">93</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="robot.running.invalidkeyword.InvalidKeyword.args--source--line-0-81"><a id="robot.running.invalidkeyword.InvalidKeyword.args--source--example-0-81" name="robot.running.invalidkeyword.InvalidKeyword.args--source--example-0-81"></a><span class="nd">@setter</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.args--source--line-0-82"><a id="robot.running.invalidkeyword.InvalidKeyword.args--source--example-0-82" name="robot.running.invalidkeyword.InvalidKeyword.args--source--example-0-82"></a><span class="k">def</span><span class="w"> </span><span class="nf">args</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">spec</span><span class="p">:</span> <span class="s1">'ArgumentSpec|None'</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ArgumentSpec</span><span class="p">:</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.args--source--line-0-83"><a id="robot.running.invalidkeyword.InvalidKeyword.args--source--example-0-83" name="robot.running.invalidkeyword.InvalidKeyword.args--source--example-0-83"></a><span class="w">    </span><span class="sd">"""Information about accepted arguments.</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.args--source--line-0-84"><a id="robot.running.invalidkeyword.InvalidKeyword.args--source--example-0-84" name="robot.running.invalidkeyword.InvalidKeyword.args--source--example-0-84"></a>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.args--source--line-0-85"><a id="robot.running.invalidkeyword.InvalidKeyword.args--source--example-0-85" name="robot.running.invalidkeyword.InvalidKeyword.args--source--example-0-85"></a><span class="sd">    It would be more correct to use term *parameter* instead of</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.args--source--line-0-86"><a id="robot.running.invalidkeyword.InvalidKeyword.args--source--example-0-86" name="robot.running.invalidkeyword.InvalidKeyword.args--source--example-0-86"></a><span class="sd">    *argument* in this context, and this attribute may be renamed</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.args--source--line-0-87"><a id="robot.running.invalidkeyword.InvalidKeyword.args--source--example-0-87" name="robot.running.invalidkeyword.InvalidKeyword.args--source--example-0-87"></a><span class="sd">    accordingly in the future. A forward compatible :attr:`params`</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.args--source--line-0-88"><a id="robot.running.invalidkeyword.InvalidKeyword.args--source--example-0-88" name="robot.running.invalidkeyword.InvalidKeyword.args--source--example-0-88"></a><span class="sd">    attribute exists already now.</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.args--source--line-0-89"><a id="robot.running.invalidkeyword.InvalidKeyword.args--source--example-0-89" name="robot.running.invalidkeyword.InvalidKeyword.args--source--example-0-89"></a><span class="sd">    """</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.args--source--line-0-90"><a id="robot.running.invalidkeyword.InvalidKeyword.args--source--example-0-90" name="robot.running.invalidkeyword.InvalidKeyword.args--source--example-0-90"></a>    <span class="k">if</span> <span class="n">spec</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.args--source--line-0-91"><a id="robot.running.invalidkeyword.InvalidKeyword.args--source--example-0-91" name="robot.running.invalidkeyword.InvalidKeyword.args--source--example-0-91"></a>        <span class="n">spec</span> <span class="o">=</span> <span class="n">ArgumentSpec</span><span class="p">()</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.args--source--line-0-92"><a id="robot.running.invalidkeyword.InvalidKeyword.args--source--example-0-92" name="robot.running.invalidkeyword.InvalidKeyword.args--source--example-0-92"></a>    <span class="n">spec</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="k">lambda</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">full_name</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.args--source--line-0-93"><a id="robot.running.invalidkeyword.InvalidKeyword.args--source--example-0-93" name="robot.running.invalidkeyword.InvalidKeyword.args--source--example-0-93"></a>    <span class="k">return</span> <span class="n">spec</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -10805,25 +10805,25 @@ is done against the name.</p>
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>src/robot/running/keywordimplementation.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-135">135</a></span>
-<span class="normal"><a href="#example-0-136">136</a></span>
-<span class="normal"><a href="#example-0-137">137</a></span>
-<span class="normal"><a href="#example-0-138">138</a></span>
-<span class="normal"><a href="#example-0-139">139</a></span>
-<span class="normal"><a href="#example-0-140">140</a></span>
-<span class="normal"><a href="#example-0-141">141</a></span>
-<span class="normal"><a href="#example-0-142">142</a></span>
-<span class="normal"><a href="#example-0-143">143</a></span>
-<span class="normal"><a href="#example-0-144">144</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-135"><a id="example-0-135" name="example-0-135"></a><span class="k">def</span><span class="w"> </span><span class="nf">matches</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-</span><span id="line-0-136"><a id="example-0-136" name="example-0-136"></a><span class="w">    </span><span class="sd">"""Returns true if ``name`` matches the keyword name.</span>
-</span><span id="line-0-137"><a id="example-0-137" name="example-0-137"></a>
-</span><span id="line-0-138"><a id="example-0-138" name="example-0-138"></a><span class="sd">    With normal keywords matching is a case, space and underscore insensitive</span>
-</span><span id="line-0-139"><a id="example-0-139" name="example-0-139"></a><span class="sd">    string comparison. With keywords accepting embedded arguments, matching</span>
-</span><span id="line-0-140"><a id="example-0-140" name="example-0-140"></a><span class="sd">    is done against the name.</span>
-</span><span id="line-0-141"><a id="example-0-141" name="example-0-141"></a><span class="sd">    """</span>
-</span><span id="line-0-142"><a id="example-0-142" name="example-0-142"></a>    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">embedded</span><span class="p">:</span>
-</span><span id="line-0-143"><a id="example-0-143" name="example-0-143"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">embedded</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
-</span><span id="line-0-144"><a id="example-0-144" name="example-0-144"></a>    <span class="k">return</span> <span class="n">eq</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">ignore</span><span class="o">=</span><span class="s1">'_'</span><span class="p">)</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.matches--source--example-0-135">135</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.matches--source--example-0-136">136</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.matches--source--example-0-137">137</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.matches--source--example-0-138">138</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.matches--source--example-0-139">139</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.matches--source--example-0-140">140</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.matches--source--example-0-141">141</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.matches--source--example-0-142">142</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.matches--source--example-0-143">143</a></span>
+<span class="normal"><a href="#robot.running.invalidkeyword.InvalidKeyword.matches--source--example-0-144">144</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="robot.running.invalidkeyword.InvalidKeyword.matches--source--line-0-135"><a id="robot.running.invalidkeyword.InvalidKeyword.matches--source--example-0-135" name="robot.running.invalidkeyword.InvalidKeyword.matches--source--example-0-135"></a><span class="k">def</span><span class="w"> </span><span class="nf">matches</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.matches--source--line-0-136"><a id="robot.running.invalidkeyword.InvalidKeyword.matches--source--example-0-136" name="robot.running.invalidkeyword.InvalidKeyword.matches--source--example-0-136"></a><span class="w">    </span><span class="sd">"""Returns true if ``name`` matches the keyword name.</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.matches--source--line-0-137"><a id="robot.running.invalidkeyword.InvalidKeyword.matches--source--example-0-137" name="robot.running.invalidkeyword.InvalidKeyword.matches--source--example-0-137"></a>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.matches--source--line-0-138"><a id="robot.running.invalidkeyword.InvalidKeyword.matches--source--example-0-138" name="robot.running.invalidkeyword.InvalidKeyword.matches--source--example-0-138"></a><span class="sd">    With normal keywords matching is a case, space and underscore insensitive</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.matches--source--line-0-139"><a id="robot.running.invalidkeyword.InvalidKeyword.matches--source--example-0-139" name="robot.running.invalidkeyword.InvalidKeyword.matches--source--example-0-139"></a><span class="sd">    string comparison. With keywords accepting embedded arguments, matching</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.matches--source--line-0-140"><a id="robot.running.invalidkeyword.InvalidKeyword.matches--source--example-0-140" name="robot.running.invalidkeyword.InvalidKeyword.matches--source--example-0-140"></a><span class="sd">    is done against the name.</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.matches--source--line-0-141"><a id="robot.running.invalidkeyword.InvalidKeyword.matches--source--example-0-141" name="robot.running.invalidkeyword.InvalidKeyword.matches--source--example-0-141"></a><span class="sd">    """</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.matches--source--line-0-142"><a id="robot.running.invalidkeyword.InvalidKeyword.matches--source--example-0-142" name="robot.running.invalidkeyword.InvalidKeyword.matches--source--example-0-142"></a>    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">embedded</span><span class="p">:</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.matches--source--line-0-143"><a id="robot.running.invalidkeyword.InvalidKeyword.matches--source--example-0-143" name="robot.running.invalidkeyword.InvalidKeyword.matches--source--example-0-143"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">embedded</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+</span><span id="robot.running.invalidkeyword.InvalidKeyword.matches--source--line-0-144"><a id="robot.running.invalidkeyword.InvalidKeyword.matches--source--example-0-144" name="robot.running.invalidkeyword.InvalidKeyword.matches--source--example-0-144"></a>    <span class="k">return</span> <span class="n">eq</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">ignore</span><span class="o">=</span><span class="s1">'_'</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -11003,10 +11003,10 @@ is done against the name.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.top", "search.highlight", "search.suggest", "toc.integrate"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.top", "search.highlight", "search.suggest", "toc.integrate"], "search": "../../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.c21346df.min.js"></script>
       
     
   </body>

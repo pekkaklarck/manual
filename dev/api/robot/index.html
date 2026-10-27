@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../assets/logo.png">
-      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.8.0">
     
     
       
@@ -31,10 +31,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -9936,59 +9936,59 @@ programmatic Rebot execution.</p>
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>src/robot/rebot.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-349">349</a></span>
-<span class="normal"><a href="#example-0-350">350</a></span>
-<span class="normal"><a href="#example-0-351">351</a></span>
-<span class="normal"><a href="#example-0-352">352</a></span>
-<span class="normal"><a href="#example-0-353">353</a></span>
-<span class="normal"><a href="#example-0-354">354</a></span>
-<span class="normal"><a href="#example-0-355">355</a></span>
-<span class="normal"><a href="#example-0-356">356</a></span>
-<span class="normal"><a href="#example-0-357">357</a></span>
-<span class="normal"><a href="#example-0-358">358</a></span>
-<span class="normal"><a href="#example-0-359">359</a></span>
-<span class="normal"><a href="#example-0-360">360</a></span>
-<span class="normal"><a href="#example-0-361">361</a></span>
-<span class="normal"><a href="#example-0-362">362</a></span>
-<span class="normal"><a href="#example-0-363">363</a></span>
-<span class="normal"><a href="#example-0-364">364</a></span>
-<span class="normal"><a href="#example-0-365">365</a></span>
-<span class="normal"><a href="#example-0-366">366</a></span>
-<span class="normal"><a href="#example-0-367">367</a></span>
-<span class="normal"><a href="#example-0-368">368</a></span>
-<span class="normal"><a href="#example-0-369">369</a></span>
-<span class="normal"><a href="#example-0-370">370</a></span>
-<span class="normal"><a href="#example-0-371">371</a></span>
-<span class="normal"><a href="#example-0-372">372</a></span>
-<span class="normal"><a href="#example-0-373">373</a></span>
-<span class="normal"><a href="#example-0-374">374</a></span>
-<span class="normal"><a href="#example-0-375">375</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-349"><a id="example-0-349" name="example-0-349"></a><span class="k">def</span><span class="w"> </span><span class="nf">rebot_cli</span><span class="p">(</span><span class="n">arguments</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">exit</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-</span><span id="line-0-350"><a id="example-0-350" name="example-0-350"></a><span class="w">    </span><span class="sd">"""Command line execution entry point for post-processing outputs.</span>
-</span><span id="line-0-351"><a id="example-0-351" name="example-0-351"></a>
-</span><span id="line-0-352"><a id="example-0-352" name="example-0-352"></a><span class="sd">    :param arguments: Command line options and arguments as a list of strings.</span>
-</span><span id="line-0-353"><a id="example-0-353" name="example-0-353"></a><span class="sd">        Defaults to ``sys.argv[1:]`` if not given.</span>
-</span><span id="line-0-354"><a id="example-0-354" name="example-0-354"></a><span class="sd">    :param exit: If ``True``, call ``sys.exit`` with the return code denoting</span>
-</span><span id="line-0-355"><a id="example-0-355" name="example-0-355"></a><span class="sd">        execution status, otherwise just return the rc.</span>
-</span><span id="line-0-356"><a id="example-0-356" name="example-0-356"></a>
-</span><span id="line-0-357"><a id="example-0-357" name="example-0-357"></a><span class="sd">    Entry point used when post-processing outputs from the command line, but</span>
-</span><span id="line-0-358"><a id="example-0-358" name="example-0-358"></a><span class="sd">    can also be used by custom scripts. Especially useful if the script itself</span>
-</span><span id="line-0-359"><a id="example-0-359" name="example-0-359"></a><span class="sd">    needs to accept same arguments as accepted by Rebot, because the script can</span>
-</span><span id="line-0-360"><a id="example-0-360" name="example-0-360"></a><span class="sd">    just pass them forward directly along with the possible default values it</span>
-</span><span id="line-0-361"><a id="example-0-361" name="example-0-361"></a><span class="sd">    sets itself.</span>
-</span><span id="line-0-362"><a id="example-0-362" name="example-0-362"></a>
-</span><span id="line-0-363"><a id="example-0-363" name="example-0-363"></a><span class="sd">    Example::</span>
-</span><span id="line-0-364"><a id="example-0-364" name="example-0-364"></a>
-</span><span id="line-0-365"><a id="example-0-365" name="example-0-365"></a><span class="sd">        from robot import rebot_cli</span>
-</span><span id="line-0-366"><a id="example-0-366" name="example-0-366"></a>
-</span><span id="line-0-367"><a id="example-0-367" name="example-0-367"></a><span class="sd">        rebot_cli(['--name', 'Example', '--log', 'NONE', 'o1.xml', 'o2.xml'])</span>
-</span><span id="line-0-368"><a id="example-0-368" name="example-0-368"></a>
-</span><span id="line-0-369"><a id="example-0-369" name="example-0-369"></a><span class="sd">    See also the :func:`rebot` function that allows setting options as keyword</span>
-</span><span id="line-0-370"><a id="example-0-370" name="example-0-370"></a><span class="sd">    arguments like ``name="Example"`` and generally has a richer API for</span>
-</span><span id="line-0-371"><a id="example-0-371" name="example-0-371"></a><span class="sd">    programmatic Rebot execution.</span>
-</span><span id="line-0-372"><a id="example-0-372" name="example-0-372"></a><span class="sd">    """</span>
-</span><span id="line-0-373"><a id="example-0-373" name="example-0-373"></a>    <span class="k">if</span> <span class="n">arguments</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-0-374"><a id="example-0-374" name="example-0-374"></a>        <span class="n">arguments</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
-</span><span id="line-0-375"><a id="example-0-375" name="example-0-375"></a>    <span class="k">return</span> <span class="n">Rebot</span><span class="p">()</span><span class="o">.</span><span class="n">execute_cli</span><span class="p">(</span><span class="n">arguments</span><span class="p">,</span> <span class="n">exit</span><span class="o">=</span><span class="n">exit</span><span class="p">)</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#robot.rebot_cli--source--example-0-349">349</a></span>
+<span class="normal"><a href="#robot.rebot_cli--source--example-0-350">350</a></span>
+<span class="normal"><a href="#robot.rebot_cli--source--example-0-351">351</a></span>
+<span class="normal"><a href="#robot.rebot_cli--source--example-0-352">352</a></span>
+<span class="normal"><a href="#robot.rebot_cli--source--example-0-353">353</a></span>
+<span class="normal"><a href="#robot.rebot_cli--source--example-0-354">354</a></span>
+<span class="normal"><a href="#robot.rebot_cli--source--example-0-355">355</a></span>
+<span class="normal"><a href="#robot.rebot_cli--source--example-0-356">356</a></span>
+<span class="normal"><a href="#robot.rebot_cli--source--example-0-357">357</a></span>
+<span class="normal"><a href="#robot.rebot_cli--source--example-0-358">358</a></span>
+<span class="normal"><a href="#robot.rebot_cli--source--example-0-359">359</a></span>
+<span class="normal"><a href="#robot.rebot_cli--source--example-0-360">360</a></span>
+<span class="normal"><a href="#robot.rebot_cli--source--example-0-361">361</a></span>
+<span class="normal"><a href="#robot.rebot_cli--source--example-0-362">362</a></span>
+<span class="normal"><a href="#robot.rebot_cli--source--example-0-363">363</a></span>
+<span class="normal"><a href="#robot.rebot_cli--source--example-0-364">364</a></span>
+<span class="normal"><a href="#robot.rebot_cli--source--example-0-365">365</a></span>
+<span class="normal"><a href="#robot.rebot_cli--source--example-0-366">366</a></span>
+<span class="normal"><a href="#robot.rebot_cli--source--example-0-367">367</a></span>
+<span class="normal"><a href="#robot.rebot_cli--source--example-0-368">368</a></span>
+<span class="normal"><a href="#robot.rebot_cli--source--example-0-369">369</a></span>
+<span class="normal"><a href="#robot.rebot_cli--source--example-0-370">370</a></span>
+<span class="normal"><a href="#robot.rebot_cli--source--example-0-371">371</a></span>
+<span class="normal"><a href="#robot.rebot_cli--source--example-0-372">372</a></span>
+<span class="normal"><a href="#robot.rebot_cli--source--example-0-373">373</a></span>
+<span class="normal"><a href="#robot.rebot_cli--source--example-0-374">374</a></span>
+<span class="normal"><a href="#robot.rebot_cli--source--example-0-375">375</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="robot.rebot_cli--source--line-0-349"><a id="robot.rebot_cli--source--example-0-349" name="robot.rebot_cli--source--example-0-349"></a><span class="k">def</span><span class="w"> </span><span class="nf">rebot_cli</span><span class="p">(</span><span class="n">arguments</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">exit</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+</span><span id="robot.rebot_cli--source--line-0-350"><a id="robot.rebot_cli--source--example-0-350" name="robot.rebot_cli--source--example-0-350"></a><span class="w">    </span><span class="sd">"""Command line execution entry point for post-processing outputs.</span>
+</span><span id="robot.rebot_cli--source--line-0-351"><a id="robot.rebot_cli--source--example-0-351" name="robot.rebot_cli--source--example-0-351"></a>
+</span><span id="robot.rebot_cli--source--line-0-352"><a id="robot.rebot_cli--source--example-0-352" name="robot.rebot_cli--source--example-0-352"></a><span class="sd">    :param arguments: Command line options and arguments as a list of strings.</span>
+</span><span id="robot.rebot_cli--source--line-0-353"><a id="robot.rebot_cli--source--example-0-353" name="robot.rebot_cli--source--example-0-353"></a><span class="sd">        Defaults to ``sys.argv[1:]`` if not given.</span>
+</span><span id="robot.rebot_cli--source--line-0-354"><a id="robot.rebot_cli--source--example-0-354" name="robot.rebot_cli--source--example-0-354"></a><span class="sd">    :param exit: If ``True``, call ``sys.exit`` with the return code denoting</span>
+</span><span id="robot.rebot_cli--source--line-0-355"><a id="robot.rebot_cli--source--example-0-355" name="robot.rebot_cli--source--example-0-355"></a><span class="sd">        execution status, otherwise just return the rc.</span>
+</span><span id="robot.rebot_cli--source--line-0-356"><a id="robot.rebot_cli--source--example-0-356" name="robot.rebot_cli--source--example-0-356"></a>
+</span><span id="robot.rebot_cli--source--line-0-357"><a id="robot.rebot_cli--source--example-0-357" name="robot.rebot_cli--source--example-0-357"></a><span class="sd">    Entry point used when post-processing outputs from the command line, but</span>
+</span><span id="robot.rebot_cli--source--line-0-358"><a id="robot.rebot_cli--source--example-0-358" name="robot.rebot_cli--source--example-0-358"></a><span class="sd">    can also be used by custom scripts. Especially useful if the script itself</span>
+</span><span id="robot.rebot_cli--source--line-0-359"><a id="robot.rebot_cli--source--example-0-359" name="robot.rebot_cli--source--example-0-359"></a><span class="sd">    needs to accept same arguments as accepted by Rebot, because the script can</span>
+</span><span id="robot.rebot_cli--source--line-0-360"><a id="robot.rebot_cli--source--example-0-360" name="robot.rebot_cli--source--example-0-360"></a><span class="sd">    just pass them forward directly along with the possible default values it</span>
+</span><span id="robot.rebot_cli--source--line-0-361"><a id="robot.rebot_cli--source--example-0-361" name="robot.rebot_cli--source--example-0-361"></a><span class="sd">    sets itself.</span>
+</span><span id="robot.rebot_cli--source--line-0-362"><a id="robot.rebot_cli--source--example-0-362" name="robot.rebot_cli--source--example-0-362"></a>
+</span><span id="robot.rebot_cli--source--line-0-363"><a id="robot.rebot_cli--source--example-0-363" name="robot.rebot_cli--source--example-0-363"></a><span class="sd">    Example::</span>
+</span><span id="robot.rebot_cli--source--line-0-364"><a id="robot.rebot_cli--source--example-0-364" name="robot.rebot_cli--source--example-0-364"></a>
+</span><span id="robot.rebot_cli--source--line-0-365"><a id="robot.rebot_cli--source--example-0-365" name="robot.rebot_cli--source--example-0-365"></a><span class="sd">        from robot import rebot_cli</span>
+</span><span id="robot.rebot_cli--source--line-0-366"><a id="robot.rebot_cli--source--example-0-366" name="robot.rebot_cli--source--example-0-366"></a>
+</span><span id="robot.rebot_cli--source--line-0-367"><a id="robot.rebot_cli--source--example-0-367" name="robot.rebot_cli--source--example-0-367"></a><span class="sd">        rebot_cli(['--name', 'Example', '--log', 'NONE', 'o1.xml', 'o2.xml'])</span>
+</span><span id="robot.rebot_cli--source--line-0-368"><a id="robot.rebot_cli--source--example-0-368" name="robot.rebot_cli--source--example-0-368"></a>
+</span><span id="robot.rebot_cli--source--line-0-369"><a id="robot.rebot_cli--source--example-0-369" name="robot.rebot_cli--source--example-0-369"></a><span class="sd">    See also the :func:`rebot` function that allows setting options as keyword</span>
+</span><span id="robot.rebot_cli--source--line-0-370"><a id="robot.rebot_cli--source--example-0-370" name="robot.rebot_cli--source--example-0-370"></a><span class="sd">    arguments like ``name="Example"`` and generally has a richer API for</span>
+</span><span id="robot.rebot_cli--source--line-0-371"><a id="robot.rebot_cli--source--example-0-371" name="robot.rebot_cli--source--example-0-371"></a><span class="sd">    programmatic Rebot execution.</span>
+</span><span id="robot.rebot_cli--source--line-0-372"><a id="robot.rebot_cli--source--example-0-372" name="robot.rebot_cli--source--example-0-372"></a><span class="sd">    """</span>
+</span><span id="robot.rebot_cli--source--line-0-373"><a id="robot.rebot_cli--source--example-0-373" name="robot.rebot_cli--source--example-0-373"></a>    <span class="k">if</span> <span class="n">arguments</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="robot.rebot_cli--source--line-0-374"><a id="robot.rebot_cli--source--example-0-374" name="robot.rebot_cli--source--example-0-374"></a>        <span class="n">arguments</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+</span><span id="robot.rebot_cli--source--line-0-375"><a id="robot.rebot_cli--source--example-0-375" name="robot.rebot_cli--source--example-0-375"></a>    <span class="k">return</span> <span class="n">Rebot</span><span class="p">()</span><span class="o">.</span><span class="n">execute_cli</span><span class="p">(</span><span class="n">arguments</span><span class="p">,</span> <span class="n">exit</span><span class="o">=</span><span class="n">exit</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -10092,69 +10092,69 @@ programmatic test execution.</p>
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>src/robot/run.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-486">486</a></span>
-<span class="normal"><a href="#example-0-487">487</a></span>
-<span class="normal"><a href="#example-0-488">488</a></span>
-<span class="normal"><a href="#example-0-489">489</a></span>
-<span class="normal"><a href="#example-0-490">490</a></span>
-<span class="normal"><a href="#example-0-491">491</a></span>
-<span class="normal"><a href="#example-0-492">492</a></span>
-<span class="normal"><a href="#example-0-493">493</a></span>
-<span class="normal"><a href="#example-0-494">494</a></span>
-<span class="normal"><a href="#example-0-495">495</a></span>
-<span class="normal"><a href="#example-0-496">496</a></span>
-<span class="normal"><a href="#example-0-497">497</a></span>
-<span class="normal"><a href="#example-0-498">498</a></span>
-<span class="normal"><a href="#example-0-499">499</a></span>
-<span class="normal"><a href="#example-0-500">500</a></span>
-<span class="normal"><a href="#example-0-501">501</a></span>
-<span class="normal"><a href="#example-0-502">502</a></span>
-<span class="normal"><a href="#example-0-503">503</a></span>
-<span class="normal"><a href="#example-0-504">504</a></span>
-<span class="normal"><a href="#example-0-505">505</a></span>
-<span class="normal"><a href="#example-0-506">506</a></span>
-<span class="normal"><a href="#example-0-507">507</a></span>
-<span class="normal"><a href="#example-0-508">508</a></span>
-<span class="normal"><a href="#example-0-509">509</a></span>
-<span class="normal"><a href="#example-0-510">510</a></span>
-<span class="normal"><a href="#example-0-511">511</a></span>
-<span class="normal"><a href="#example-0-512">512</a></span>
-<span class="normal"><a href="#example-0-513">513</a></span>
-<span class="normal"><a href="#example-0-514">514</a></span>
-<span class="normal"><a href="#example-0-515">515</a></span>
-<span class="normal"><a href="#example-0-516">516</a></span>
-<span class="normal"><a href="#example-0-517">517</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-486"><a id="example-0-486" name="example-0-486"></a><span class="k">def</span><span class="w"> </span><span class="nf">run_cli</span><span class="p">(</span><span class="n">arguments</span><span class="p">:</span> <span class="s1">'list[str]|None'</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">exit</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
-</span><span id="line-0-487"><a id="example-0-487" name="example-0-487"></a><span class="w">    </span><span class="sd">"""Command line execution entry point for running tests.</span>
-</span><span id="line-0-488"><a id="example-0-488" name="example-0-488"></a>
-</span><span id="line-0-489"><a id="example-0-489" name="example-0-489"></a><span class="sd">    Parameters:</span>
-</span><span id="line-0-490"><a id="example-0-490" name="example-0-490"></a><span class="sd">        arguments: Command line options and arguments as a list of strings.</span>
-</span><span id="line-0-491"><a id="example-0-491" name="example-0-491"></a><span class="sd">            Defaults to `sys.argv[1:]` if not given.</span>
-</span><span id="line-0-492"><a id="example-0-492" name="example-0-492"></a><span class="sd">        exit: If `True`, call `sys.exit` with the return code denoting</span>
-</span><span id="line-0-493"><a id="example-0-493" name="example-0-493"></a><span class="sd">            execution status, otherwise just return the rc.</span>
-</span><span id="line-0-494"><a id="example-0-494" name="example-0-494"></a>
-</span><span id="line-0-495"><a id="example-0-495" name="example-0-495"></a><span class="sd">    Entry point used when running tests from the command line, but can also</span>
-</span><span id="line-0-496"><a id="example-0-496" name="example-0-496"></a><span class="sd">    be used by custom scripts that execute tests. Especially useful if the</span>
-</span><span id="line-0-497"><a id="example-0-497" name="example-0-497"></a><span class="sd">    script itself needs to accept same arguments as accepted by Robot Framework,</span>
-</span><span id="line-0-498"><a id="example-0-498" name="example-0-498"></a><span class="sd">    because the script can just pass them forward directly along with the</span>
-</span><span id="line-0-499"><a id="example-0-499" name="example-0-499"></a><span class="sd">    possible default values it sets itself.</span>
-</span><span id="line-0-500"><a id="example-0-500" name="example-0-500"></a>
-</span><span id="line-0-501"><a id="example-0-501" name="example-0-501"></a><span class="sd">    Example:</span>
-</span><span id="line-0-502"><a id="example-0-502" name="example-0-502"></a>
-</span><span id="line-0-503"><a id="example-0-503" name="example-0-503"></a><span class="sd">        from robot import run_cli</span>
-</span><span id="line-0-504"><a id="example-0-504" name="example-0-504"></a>
-</span><span id="line-0-505"><a id="example-0-505" name="example-0-505"></a><span class="sd">        # Run tests and return the return code.</span>
-</span><span id="line-0-506"><a id="example-0-506" name="example-0-506"></a><span class="sd">        rc = run_cli(['--name', 'Example', 'tests.robot'], exit=False)</span>
-</span><span id="line-0-507"><a id="example-0-507" name="example-0-507"></a>
-</span><span id="line-0-508"><a id="example-0-508" name="example-0-508"></a><span class="sd">        # Run tests and exit to the system automatically.</span>
-</span><span id="line-0-509"><a id="example-0-509" name="example-0-509"></a><span class="sd">        run_cli(['--name', 'Example', 'tests.robot'])</span>
-</span><span id="line-0-510"><a id="example-0-510" name="example-0-510"></a>
-</span><span id="line-0-511"><a id="example-0-511" name="example-0-511"></a><span class="sd">    See also the [robot.run][robot.run.run] function that allows setting options as keyword</span>
-</span><span id="line-0-512"><a id="example-0-512" name="example-0-512"></a><span class="sd">    arguments like `name="Example"` and generally has a richer API for</span>
-</span><span id="line-0-513"><a id="example-0-513" name="example-0-513"></a><span class="sd">    programmatic test execution.</span>
-</span><span id="line-0-514"><a id="example-0-514" name="example-0-514"></a><span class="sd">    """</span>
-</span><span id="line-0-515"><a id="example-0-515" name="example-0-515"></a>    <span class="k">if</span> <span class="n">arguments</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-0-516"><a id="example-0-516" name="example-0-516"></a>        <span class="n">arguments</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
-</span><span id="line-0-517"><a id="example-0-517" name="example-0-517"></a>    <span class="k">return</span> <span class="n">RobotFramework</span><span class="p">()</span><span class="o">.</span><span class="n">execute_cli</span><span class="p">(</span><span class="n">arguments</span><span class="p">,</span> <span class="n">exit</span><span class="o">=</span><span class="n">exit</span><span class="p">)</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#robot.run_cli--source--example-0-486">486</a></span>
+<span class="normal"><a href="#robot.run_cli--source--example-0-487">487</a></span>
+<span class="normal"><a href="#robot.run_cli--source--example-0-488">488</a></span>
+<span class="normal"><a href="#robot.run_cli--source--example-0-489">489</a></span>
+<span class="normal"><a href="#robot.run_cli--source--example-0-490">490</a></span>
+<span class="normal"><a href="#robot.run_cli--source--example-0-491">491</a></span>
+<span class="normal"><a href="#robot.run_cli--source--example-0-492">492</a></span>
+<span class="normal"><a href="#robot.run_cli--source--example-0-493">493</a></span>
+<span class="normal"><a href="#robot.run_cli--source--example-0-494">494</a></span>
+<span class="normal"><a href="#robot.run_cli--source--example-0-495">495</a></span>
+<span class="normal"><a href="#robot.run_cli--source--example-0-496">496</a></span>
+<span class="normal"><a href="#robot.run_cli--source--example-0-497">497</a></span>
+<span class="normal"><a href="#robot.run_cli--source--example-0-498">498</a></span>
+<span class="normal"><a href="#robot.run_cli--source--example-0-499">499</a></span>
+<span class="normal"><a href="#robot.run_cli--source--example-0-500">500</a></span>
+<span class="normal"><a href="#robot.run_cli--source--example-0-501">501</a></span>
+<span class="normal"><a href="#robot.run_cli--source--example-0-502">502</a></span>
+<span class="normal"><a href="#robot.run_cli--source--example-0-503">503</a></span>
+<span class="normal"><a href="#robot.run_cli--source--example-0-504">504</a></span>
+<span class="normal"><a href="#robot.run_cli--source--example-0-505">505</a></span>
+<span class="normal"><a href="#robot.run_cli--source--example-0-506">506</a></span>
+<span class="normal"><a href="#robot.run_cli--source--example-0-507">507</a></span>
+<span class="normal"><a href="#robot.run_cli--source--example-0-508">508</a></span>
+<span class="normal"><a href="#robot.run_cli--source--example-0-509">509</a></span>
+<span class="normal"><a href="#robot.run_cli--source--example-0-510">510</a></span>
+<span class="normal"><a href="#robot.run_cli--source--example-0-511">511</a></span>
+<span class="normal"><a href="#robot.run_cli--source--example-0-512">512</a></span>
+<span class="normal"><a href="#robot.run_cli--source--example-0-513">513</a></span>
+<span class="normal"><a href="#robot.run_cli--source--example-0-514">514</a></span>
+<span class="normal"><a href="#robot.run_cli--source--example-0-515">515</a></span>
+<span class="normal"><a href="#robot.run_cli--source--example-0-516">516</a></span>
+<span class="normal"><a href="#robot.run_cli--source--example-0-517">517</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="robot.run_cli--source--line-0-486"><a id="robot.run_cli--source--example-0-486" name="robot.run_cli--source--example-0-486"></a><span class="k">def</span><span class="w"> </span><span class="nf">run_cli</span><span class="p">(</span><span class="n">arguments</span><span class="p">:</span> <span class="s1">'list[str]|None'</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">exit</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
+</span><span id="robot.run_cli--source--line-0-487"><a id="robot.run_cli--source--example-0-487" name="robot.run_cli--source--example-0-487"></a><span class="w">    </span><span class="sd">"""Command line execution entry point for running tests.</span>
+</span><span id="robot.run_cli--source--line-0-488"><a id="robot.run_cli--source--example-0-488" name="robot.run_cli--source--example-0-488"></a>
+</span><span id="robot.run_cli--source--line-0-489"><a id="robot.run_cli--source--example-0-489" name="robot.run_cli--source--example-0-489"></a><span class="sd">    Parameters:</span>
+</span><span id="robot.run_cli--source--line-0-490"><a id="robot.run_cli--source--example-0-490" name="robot.run_cli--source--example-0-490"></a><span class="sd">        arguments: Command line options and arguments as a list of strings.</span>
+</span><span id="robot.run_cli--source--line-0-491"><a id="robot.run_cli--source--example-0-491" name="robot.run_cli--source--example-0-491"></a><span class="sd">            Defaults to `sys.argv[1:]` if not given.</span>
+</span><span id="robot.run_cli--source--line-0-492"><a id="robot.run_cli--source--example-0-492" name="robot.run_cli--source--example-0-492"></a><span class="sd">        exit: If `True`, call `sys.exit` with the return code denoting</span>
+</span><span id="robot.run_cli--source--line-0-493"><a id="robot.run_cli--source--example-0-493" name="robot.run_cli--source--example-0-493"></a><span class="sd">            execution status, otherwise just return the rc.</span>
+</span><span id="robot.run_cli--source--line-0-494"><a id="robot.run_cli--source--example-0-494" name="robot.run_cli--source--example-0-494"></a>
+</span><span id="robot.run_cli--source--line-0-495"><a id="robot.run_cli--source--example-0-495" name="robot.run_cli--source--example-0-495"></a><span class="sd">    Entry point used when running tests from the command line, but can also</span>
+</span><span id="robot.run_cli--source--line-0-496"><a id="robot.run_cli--source--example-0-496" name="robot.run_cli--source--example-0-496"></a><span class="sd">    be used by custom scripts that execute tests. Especially useful if the</span>
+</span><span id="robot.run_cli--source--line-0-497"><a id="robot.run_cli--source--example-0-497" name="robot.run_cli--source--example-0-497"></a><span class="sd">    script itself needs to accept same arguments as accepted by Robot Framework,</span>
+</span><span id="robot.run_cli--source--line-0-498"><a id="robot.run_cli--source--example-0-498" name="robot.run_cli--source--example-0-498"></a><span class="sd">    because the script can just pass them forward directly along with the</span>
+</span><span id="robot.run_cli--source--line-0-499"><a id="robot.run_cli--source--example-0-499" name="robot.run_cli--source--example-0-499"></a><span class="sd">    possible default values it sets itself.</span>
+</span><span id="robot.run_cli--source--line-0-500"><a id="robot.run_cli--source--example-0-500" name="robot.run_cli--source--example-0-500"></a>
+</span><span id="robot.run_cli--source--line-0-501"><a id="robot.run_cli--source--example-0-501" name="robot.run_cli--source--example-0-501"></a><span class="sd">    Example:</span>
+</span><span id="robot.run_cli--source--line-0-502"><a id="robot.run_cli--source--example-0-502" name="robot.run_cli--source--example-0-502"></a>
+</span><span id="robot.run_cli--source--line-0-503"><a id="robot.run_cli--source--example-0-503" name="robot.run_cli--source--example-0-503"></a><span class="sd">        from robot import run_cli</span>
+</span><span id="robot.run_cli--source--line-0-504"><a id="robot.run_cli--source--example-0-504" name="robot.run_cli--source--example-0-504"></a>
+</span><span id="robot.run_cli--source--line-0-505"><a id="robot.run_cli--source--example-0-505" name="robot.run_cli--source--example-0-505"></a><span class="sd">        # Run tests and return the return code.</span>
+</span><span id="robot.run_cli--source--line-0-506"><a id="robot.run_cli--source--example-0-506" name="robot.run_cli--source--example-0-506"></a><span class="sd">        rc = run_cli(['--name', 'Example', 'tests.robot'], exit=False)</span>
+</span><span id="robot.run_cli--source--line-0-507"><a id="robot.run_cli--source--example-0-507" name="robot.run_cli--source--example-0-507"></a>
+</span><span id="robot.run_cli--source--line-0-508"><a id="robot.run_cli--source--example-0-508" name="robot.run_cli--source--example-0-508"></a><span class="sd">        # Run tests and exit to the system automatically.</span>
+</span><span id="robot.run_cli--source--line-0-509"><a id="robot.run_cli--source--example-0-509" name="robot.run_cli--source--example-0-509"></a><span class="sd">        run_cli(['--name', 'Example', 'tests.robot'])</span>
+</span><span id="robot.run_cli--source--line-0-510"><a id="robot.run_cli--source--example-0-510" name="robot.run_cli--source--example-0-510"></a>
+</span><span id="robot.run_cli--source--line-0-511"><a id="robot.run_cli--source--example-0-511" name="robot.run_cli--source--example-0-511"></a><span class="sd">    See also the [robot.run][robot.run.run] function that allows setting options as keyword</span>
+</span><span id="robot.run_cli--source--line-0-512"><a id="robot.run_cli--source--example-0-512" name="robot.run_cli--source--example-0-512"></a><span class="sd">    arguments like `name="Example"` and generally has a richer API for</span>
+</span><span id="robot.run_cli--source--line-0-513"><a id="robot.run_cli--source--example-0-513" name="robot.run_cli--source--example-0-513"></a><span class="sd">    programmatic test execution.</span>
+</span><span id="robot.run_cli--source--line-0-514"><a id="robot.run_cli--source--example-0-514" name="robot.run_cli--source--example-0-514"></a><span class="sd">    """</span>
+</span><span id="robot.run_cli--source--line-0-515"><a id="robot.run_cli--source--example-0-515" name="robot.run_cli--source--example-0-515"></a>    <span class="k">if</span> <span class="n">arguments</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="robot.run_cli--source--line-0-516"><a id="robot.run_cli--source--example-0-516" name="robot.run_cli--source--example-0-516"></a>        <span class="n">arguments</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+</span><span id="robot.run_cli--source--line-0-517"><a id="robot.run_cli--source--example-0-517" name="robot.run_cli--source--example-0-517"></a>    <span class="k">return</span> <span class="n">RobotFramework</span><span class="p">()</span><span class="o">.</span><span class="n">execute_cli</span><span class="p">(</span><span class="n">arguments</span><span class="p">,</span> <span class="n">exit</span><span class="o">=</span><span class="n">exit</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -10401,10 +10401,10 @@ programmatic test execution.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.top", "search.highlight", "search.suggest", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.top", "search.highlight", "search.suggest", "toc.integrate"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
       
     
   </body>

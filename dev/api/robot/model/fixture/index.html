@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../../../assets/logo.png">
-      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.8.0">
     
     
       
@@ -31,10 +31,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -9975,35 +9975,35 @@
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>src/robot/model/fixture.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-27">27</a></span>
-<span class="normal"><a href="#example-0-28">28</a></span>
-<span class="normal"><a href="#example-0-29">29</a></span>
-<span class="normal"><a href="#example-0-30">30</a></span>
-<span class="normal"><a href="#example-0-31">31</a></span>
-<span class="normal"><a href="#example-0-32">32</a></span>
-<span class="normal"><a href="#example-0-33">33</a></span>
-<span class="normal"><a href="#example-0-34">34</a></span>
-<span class="normal"><a href="#example-0-35">35</a></span>
-<span class="normal"><a href="#example-0-36">36</a></span>
-<span class="normal"><a href="#example-0-37">37</a></span>
-<span class="normal"><a href="#example-0-38">38</a></span>
-<span class="normal"><a href="#example-0-39">39</a></span>
-<span class="normal"><a href="#example-0-40">40</a></span>
-<span class="normal"><a href="#example-0-41">41</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-27"><a id="example-0-27" name="example-0-27"></a><span class="k">def</span><span class="w"> </span><span class="nf">create_fixture</span><span class="p">(</span><span class="n">fixture_class</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">T</span><span class="p">],</span>
-</span><span id="line-0-28"><a id="example-0-28" name="example-0-28"></a>                   <span class="n">fixture</span><span class="p">:</span> <span class="s1">'T|DataDict|None'</span><span class="p">,</span>
-</span><span id="line-0-29"><a id="example-0-29" name="example-0-29"></a>                   <span class="n">parent</span><span class="p">:</span> <span class="s1">'TestCase|TestSuite|Keyword|UserKeyword'</span><span class="p">,</span>
-</span><span id="line-0-30"><a id="example-0-30" name="example-0-30"></a>                   <span class="n">fixture_type</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T</span><span class="p">:</span>
-</span><span id="line-0-31"><a id="example-0-31" name="example-0-31"></a><span class="w">    </span><span class="sd">"""Create or configure a `fixture_class` instance."""</span>
-</span><span id="line-0-32"><a id="example-0-32" name="example-0-32"></a>    <span class="c1"># If a fixture instance has been passed in update the config</span>
-</span><span id="line-0-33"><a id="example-0-33" name="example-0-33"></a>    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">fixture</span><span class="p">,</span> <span class="n">fixture_class</span><span class="p">):</span>
-</span><span id="line-0-34"><a id="example-0-34" name="example-0-34"></a>        <span class="k">return</span> <span class="n">fixture</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">parent</span><span class="o">=</span><span class="n">parent</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="n">fixture_type</span><span class="p">)</span>
-</span><span id="line-0-35"><a id="example-0-35" name="example-0-35"></a>    <span class="c1"># If a Mapping has been passed in, create a fixture instance from it</span>
-</span><span id="line-0-36"><a id="example-0-36" name="example-0-36"></a>    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">fixture</span><span class="p">,</span> <span class="n">Mapping</span><span class="p">):</span>
-</span><span id="line-0-37"><a id="example-0-37" name="example-0-37"></a>        <span class="k">return</span> <span class="n">fixture_class</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">fixture</span><span class="p">)</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">parent</span><span class="o">=</span><span class="n">parent</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="n">fixture_type</span><span class="p">)</span>
-</span><span id="line-0-38"><a id="example-0-38" name="example-0-38"></a>    <span class="c1"># If nothing has been passed in then return a new fixture instance from it</span>
-</span><span id="line-0-39"><a id="example-0-39" name="example-0-39"></a>    <span class="k">if</span> <span class="n">fixture</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="line-0-40"><a id="example-0-40" name="example-0-40"></a>        <span class="k">return</span> <span class="n">fixture_class</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="n">parent</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="n">fixture_type</span><span class="p">)</span>
-</span><span id="line-0-41"><a id="example-0-41" name="example-0-41"></a>    <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Invalid fixture type '</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">fixture</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">'."</span><span class="p">)</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#robot.model.fixture.create_fixture--source--example-0-27">27</a></span>
+<span class="normal"><a href="#robot.model.fixture.create_fixture--source--example-0-28">28</a></span>
+<span class="normal"><a href="#robot.model.fixture.create_fixture--source--example-0-29">29</a></span>
+<span class="normal"><a href="#robot.model.fixture.create_fixture--source--example-0-30">30</a></span>
+<span class="normal"><a href="#robot.model.fixture.create_fixture--source--example-0-31">31</a></span>
+<span class="normal"><a href="#robot.model.fixture.create_fixture--source--example-0-32">32</a></span>
+<span class="normal"><a href="#robot.model.fixture.create_fixture--source--example-0-33">33</a></span>
+<span class="normal"><a href="#robot.model.fixture.create_fixture--source--example-0-34">34</a></span>
+<span class="normal"><a href="#robot.model.fixture.create_fixture--source--example-0-35">35</a></span>
+<span class="normal"><a href="#robot.model.fixture.create_fixture--source--example-0-36">36</a></span>
+<span class="normal"><a href="#robot.model.fixture.create_fixture--source--example-0-37">37</a></span>
+<span class="normal"><a href="#robot.model.fixture.create_fixture--source--example-0-38">38</a></span>
+<span class="normal"><a href="#robot.model.fixture.create_fixture--source--example-0-39">39</a></span>
+<span class="normal"><a href="#robot.model.fixture.create_fixture--source--example-0-40">40</a></span>
+<span class="normal"><a href="#robot.model.fixture.create_fixture--source--example-0-41">41</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="robot.model.fixture.create_fixture--source--line-0-27"><a id="robot.model.fixture.create_fixture--source--example-0-27" name="robot.model.fixture.create_fixture--source--example-0-27"></a><span class="k">def</span><span class="w"> </span><span class="nf">create_fixture</span><span class="p">(</span><span class="n">fixture_class</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">T</span><span class="p">],</span>
+</span><span id="robot.model.fixture.create_fixture--source--line-0-28"><a id="robot.model.fixture.create_fixture--source--example-0-28" name="robot.model.fixture.create_fixture--source--example-0-28"></a>                   <span class="n">fixture</span><span class="p">:</span> <span class="s1">'T|DataDict|None'</span><span class="p">,</span>
+</span><span id="robot.model.fixture.create_fixture--source--line-0-29"><a id="robot.model.fixture.create_fixture--source--example-0-29" name="robot.model.fixture.create_fixture--source--example-0-29"></a>                   <span class="n">parent</span><span class="p">:</span> <span class="s1">'TestCase|TestSuite|Keyword|UserKeyword'</span><span class="p">,</span>
+</span><span id="robot.model.fixture.create_fixture--source--line-0-30"><a id="robot.model.fixture.create_fixture--source--example-0-30" name="robot.model.fixture.create_fixture--source--example-0-30"></a>                   <span class="n">fixture_type</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T</span><span class="p">:</span>
+</span><span id="robot.model.fixture.create_fixture--source--line-0-31"><a id="robot.model.fixture.create_fixture--source--example-0-31" name="robot.model.fixture.create_fixture--source--example-0-31"></a><span class="w">    </span><span class="sd">"""Create or configure a `fixture_class` instance."""</span>
+</span><span id="robot.model.fixture.create_fixture--source--line-0-32"><a id="robot.model.fixture.create_fixture--source--example-0-32" name="robot.model.fixture.create_fixture--source--example-0-32"></a>    <span class="c1"># If a fixture instance has been passed in update the config</span>
+</span><span id="robot.model.fixture.create_fixture--source--line-0-33"><a id="robot.model.fixture.create_fixture--source--example-0-33" name="robot.model.fixture.create_fixture--source--example-0-33"></a>    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">fixture</span><span class="p">,</span> <span class="n">fixture_class</span><span class="p">):</span>
+</span><span id="robot.model.fixture.create_fixture--source--line-0-34"><a id="robot.model.fixture.create_fixture--source--example-0-34" name="robot.model.fixture.create_fixture--source--example-0-34"></a>        <span class="k">return</span> <span class="n">fixture</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">parent</span><span class="o">=</span><span class="n">parent</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="n">fixture_type</span><span class="p">)</span>
+</span><span id="robot.model.fixture.create_fixture--source--line-0-35"><a id="robot.model.fixture.create_fixture--source--example-0-35" name="robot.model.fixture.create_fixture--source--example-0-35"></a>    <span class="c1"># If a Mapping has been passed in, create a fixture instance from it</span>
+</span><span id="robot.model.fixture.create_fixture--source--line-0-36"><a id="robot.model.fixture.create_fixture--source--example-0-36" name="robot.model.fixture.create_fixture--source--example-0-36"></a>    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">fixture</span><span class="p">,</span> <span class="n">Mapping</span><span class="p">):</span>
+</span><span id="robot.model.fixture.create_fixture--source--line-0-37"><a id="robot.model.fixture.create_fixture--source--example-0-37" name="robot.model.fixture.create_fixture--source--example-0-37"></a>        <span class="k">return</span> <span class="n">fixture_class</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">fixture</span><span class="p">)</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">parent</span><span class="o">=</span><span class="n">parent</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="n">fixture_type</span><span class="p">)</span>
+</span><span id="robot.model.fixture.create_fixture--source--line-0-38"><a id="robot.model.fixture.create_fixture--source--example-0-38" name="robot.model.fixture.create_fixture--source--example-0-38"></a>    <span class="c1"># If nothing has been passed in then return a new fixture instance from it</span>
+</span><span id="robot.model.fixture.create_fixture--source--line-0-39"><a id="robot.model.fixture.create_fixture--source--example-0-39" name="robot.model.fixture.create_fixture--source--example-0-39"></a>    <span class="k">if</span> <span class="n">fixture</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="robot.model.fixture.create_fixture--source--line-0-40"><a id="robot.model.fixture.create_fixture--source--example-0-40" name="robot.model.fixture.create_fixture--source--example-0-40"></a>        <span class="k">return</span> <span class="n">fixture_class</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="n">parent</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="n">fixture_type</span><span class="p">)</span>
+</span><span id="robot.model.fixture.create_fixture--source--line-0-41"><a id="robot.model.fixture.create_fixture--source--example-0-41" name="robot.model.fixture.create_fixture--source--example-0-41"></a>    <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Invalid fixture type '</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">fixture</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">'."</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -10174,10 +10174,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.top", "search.highlight", "search.suggest", "toc.integrate"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.top", "search.highlight", "search.suggest", "toc.integrate"], "search": "../../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.c21346df.min.js"></script>
       
     
   </body>

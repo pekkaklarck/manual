@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../../../../assets/logo.png">
-      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.8.0">
     
     
       
@@ -31,10 +31,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -10102,23 +10102,23 @@ be imported via :mod:<code>robot.running</code> or :mod:<code>robot.api.interfac
 
                   <details class="mkdocstrings-source">
                     <summary>Source code in <code>src/robot/running/builder/settings.py</code></summary>
-                    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-50">50</a></span>
-<span class="normal"><a href="#example-0-51">51</a></span>
-<span class="normal"><a href="#example-0-52">52</a></span>
-<span class="normal"><a href="#example-0-53">53</a></span>
-<span class="normal"><a href="#example-0-54">54</a></span>
-<span class="normal"><a href="#example-0-55">55</a></span>
-<span class="normal"><a href="#example-0-56">56</a></span>
-<span class="normal"><a href="#example-0-57">57</a></span>
-<span class="normal"><a href="#example-0-58">58</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-50"><a id="example-0-50" name="example-0-50"></a><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parent</span><span class="p">:</span> <span class="s1">'TestDefaults|None'</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-</span><span id="line-0-51"><a id="example-0-51" name="example-0-51"></a>             <span class="n">setup</span><span class="p">:</span> <span class="s1">'FixtureDict|None'</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-</span><span id="line-0-52"><a id="example-0-52" name="example-0-52"></a>             <span class="n">teardown</span><span class="p">:</span> <span class="s1">'FixtureDict|None'</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-</span><span id="line-0-53"><a id="example-0-53" name="example-0-53"></a>             <span class="n">tags</span><span class="p">:</span> <span class="s1">'Sequence[str]'</span> <span class="o">=</span> <span class="p">(),</span> <span class="n">timeout</span><span class="p">:</span> <span class="s1">'str|None'</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
-</span><span id="line-0-54"><a id="example-0-54" name="example-0-54"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">parent</span> <span class="o">=</span> <span class="n">parent</span>
-</span><span id="line-0-55"><a id="example-0-55" name="example-0-55"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">setup</span> <span class="o">=</span> <span class="n">setup</span>
-</span><span id="line-0-56"><a id="example-0-56" name="example-0-56"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">teardown</span> <span class="o">=</span> <span class="n">teardown</span>
-</span><span id="line-0-57"><a id="example-0-57" name="example-0-57"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">tags</span> <span class="o">=</span> <span class="n">tags</span>
-</span><span id="line-0-58"><a id="example-0-58" name="example-0-58"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">timeout</span> <span class="o">=</span> <span class="n">timeout</span>
+                    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#robot.running.builder.settings.TestDefaults--source--example-0-50">50</a></span>
+<span class="normal"><a href="#robot.running.builder.settings.TestDefaults--source--example-0-51">51</a></span>
+<span class="normal"><a href="#robot.running.builder.settings.TestDefaults--source--example-0-52">52</a></span>
+<span class="normal"><a href="#robot.running.builder.settings.TestDefaults--source--example-0-53">53</a></span>
+<span class="normal"><a href="#robot.running.builder.settings.TestDefaults--source--example-0-54">54</a></span>
+<span class="normal"><a href="#robot.running.builder.settings.TestDefaults--source--example-0-55">55</a></span>
+<span class="normal"><a href="#robot.running.builder.settings.TestDefaults--source--example-0-56">56</a></span>
+<span class="normal"><a href="#robot.running.builder.settings.TestDefaults--source--example-0-57">57</a></span>
+<span class="normal"><a href="#robot.running.builder.settings.TestDefaults--source--example-0-58">58</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="robot.running.builder.settings.TestDefaults--source--line-0-50"><a id="robot.running.builder.settings.TestDefaults--source--example-0-50" name="robot.running.builder.settings.TestDefaults--source--example-0-50"></a><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parent</span><span class="p">:</span> <span class="s1">'TestDefaults|None'</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="robot.running.builder.settings.TestDefaults--source--line-0-51"><a id="robot.running.builder.settings.TestDefaults--source--example-0-51" name="robot.running.builder.settings.TestDefaults--source--example-0-51"></a>             <span class="n">setup</span><span class="p">:</span> <span class="s1">'FixtureDict|None'</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="robot.running.builder.settings.TestDefaults--source--line-0-52"><a id="robot.running.builder.settings.TestDefaults--source--example-0-52" name="robot.running.builder.settings.TestDefaults--source--example-0-52"></a>             <span class="n">teardown</span><span class="p">:</span> <span class="s1">'FixtureDict|None'</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="robot.running.builder.settings.TestDefaults--source--line-0-53"><a id="robot.running.builder.settings.TestDefaults--source--example-0-53" name="robot.running.builder.settings.TestDefaults--source--example-0-53"></a>             <span class="n">tags</span><span class="p">:</span> <span class="s1">'Sequence[str]'</span> <span class="o">=</span> <span class="p">(),</span> <span class="n">timeout</span><span class="p">:</span> <span class="s1">'str|None'</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+</span><span id="robot.running.builder.settings.TestDefaults--source--line-0-54"><a id="robot.running.builder.settings.TestDefaults--source--example-0-54" name="robot.running.builder.settings.TestDefaults--source--example-0-54"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">parent</span> <span class="o">=</span> <span class="n">parent</span>
+</span><span id="robot.running.builder.settings.TestDefaults--source--line-0-55"><a id="robot.running.builder.settings.TestDefaults--source--example-0-55" name="robot.running.builder.settings.TestDefaults--source--example-0-55"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">setup</span> <span class="o">=</span> <span class="n">setup</span>
+</span><span id="robot.running.builder.settings.TestDefaults--source--line-0-56"><a id="robot.running.builder.settings.TestDefaults--source--example-0-56" name="robot.running.builder.settings.TestDefaults--source--example-0-56"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">teardown</span> <span class="o">=</span> <span class="n">teardown</span>
+</span><span id="robot.running.builder.settings.TestDefaults--source--line-0-57"><a id="robot.running.builder.settings.TestDefaults--source--example-0-57" name="robot.running.builder.settings.TestDefaults--source--example-0-57"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">tags</span> <span class="o">=</span> <span class="n">tags</span>
+</span><span id="robot.running.builder.settings.TestDefaults--source--line-0-58"><a id="robot.running.builder.settings.TestDefaults--source--example-0-58" name="robot.running.builder.settings.TestDefaults--source--example-0-58"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">timeout</span> <span class="o">=</span> <span class="n">timeout</span>
 </span></code></pre></div></td></tr></table></div>
                   </details>
 
@@ -10274,33 +10274,33 @@ set only if the test does not have them set initially.</p>
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>src/robot/running/builder/settings.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-114">114</a></span>
-<span class="normal"><a href="#example-0-115">115</a></span>
-<span class="normal"><a href="#example-0-116">116</a></span>
-<span class="normal"><a href="#example-0-117">117</a></span>
-<span class="normal"><a href="#example-0-118">118</a></span>
-<span class="normal"><a href="#example-0-119">119</a></span>
-<span class="normal"><a href="#example-0-120">120</a></span>
-<span class="normal"><a href="#example-0-121">121</a></span>
-<span class="normal"><a href="#example-0-122">122</a></span>
-<span class="normal"><a href="#example-0-123">123</a></span>
-<span class="normal"><a href="#example-0-124">124</a></span>
-<span class="normal"><a href="#example-0-125">125</a></span>
-<span class="normal"><a href="#example-0-126">126</a></span>
-<span class="normal"><a href="#example-0-127">127</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-114"><a id="example-0-114" name="example-0-114"></a><span class="k">def</span><span class="w"> </span><span class="nf">set_to</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">test</span><span class="p">:</span> <span class="n">TestCase</span><span class="p">):</span>
-</span><span id="line-0-115"><a id="example-0-115" name="example-0-115"></a><span class="w">    </span><span class="sd">"""Sets defaults to the given test.</span>
-</span><span id="line-0-116"><a id="example-0-116" name="example-0-116"></a>
-</span><span id="line-0-117"><a id="example-0-117" name="example-0-117"></a><span class="sd">    Tags are always added to the test. Setup, teardown and timeout are</span>
-</span><span id="line-0-118"><a id="example-0-118" name="example-0-118"></a><span class="sd">    set only if the test does not have them set initially.</span>
-</span><span id="line-0-119"><a id="example-0-119" name="example-0-119"></a><span class="sd">    """</span>
-</span><span id="line-0-120"><a id="example-0-120" name="example-0-120"></a>    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">tags</span><span class="p">:</span>
-</span><span id="line-0-121"><a id="example-0-121" name="example-0-121"></a>        <span class="n">test</span><span class="o">.</span><span class="n">tags</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tags</span>
-</span><span id="line-0-122"><a id="example-0-122" name="example-0-122"></a>    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">setup</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">test</span><span class="o">.</span><span class="n">has_setup</span><span class="p">:</span>
-</span><span id="line-0-123"><a id="example-0-123" name="example-0-123"></a>        <span class="n">test</span><span class="o">.</span><span class="n">setup</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">setup</span><span class="p">)</span>
-</span><span id="line-0-124"><a id="example-0-124" name="example-0-124"></a>    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">teardown</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">test</span><span class="o">.</span><span class="n">has_teardown</span><span class="p">:</span>
-</span><span id="line-0-125"><a id="example-0-125" name="example-0-125"></a>        <span class="n">test</span><span class="o">.</span><span class="n">teardown</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">teardown</span><span class="p">)</span>
-</span><span id="line-0-126"><a id="example-0-126" name="example-0-126"></a>    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">timeout</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">test</span><span class="o">.</span><span class="n">timeout</span><span class="p">:</span>
-</span><span id="line-0-127"><a id="example-0-127" name="example-0-127"></a>        <span class="n">test</span><span class="o">.</span><span class="n">timeout</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">timeout</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#robot.running.builder.settings.TestDefaults.set_to--source--example-0-114">114</a></span>
+<span class="normal"><a href="#robot.running.builder.settings.TestDefaults.set_to--source--example-0-115">115</a></span>
+<span class="normal"><a href="#robot.running.builder.settings.TestDefaults.set_to--source--example-0-116">116</a></span>
+<span class="normal"><a href="#robot.running.builder.settings.TestDefaults.set_to--source--example-0-117">117</a></span>
+<span class="normal"><a href="#robot.running.builder.settings.TestDefaults.set_to--source--example-0-118">118</a></span>
+<span class="normal"><a href="#robot.running.builder.settings.TestDefaults.set_to--source--example-0-119">119</a></span>
+<span class="normal"><a href="#robot.running.builder.settings.TestDefaults.set_to--source--example-0-120">120</a></span>
+<span class="normal"><a href="#robot.running.builder.settings.TestDefaults.set_to--source--example-0-121">121</a></span>
+<span class="normal"><a href="#robot.running.builder.settings.TestDefaults.set_to--source--example-0-122">122</a></span>
+<span class="normal"><a href="#robot.running.builder.settings.TestDefaults.set_to--source--example-0-123">123</a></span>
+<span class="normal"><a href="#robot.running.builder.settings.TestDefaults.set_to--source--example-0-124">124</a></span>
+<span class="normal"><a href="#robot.running.builder.settings.TestDefaults.set_to--source--example-0-125">125</a></span>
+<span class="normal"><a href="#robot.running.builder.settings.TestDefaults.set_to--source--example-0-126">126</a></span>
+<span class="normal"><a href="#robot.running.builder.settings.TestDefaults.set_to--source--example-0-127">127</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="robot.running.builder.settings.TestDefaults.set_to--source--line-0-114"><a id="robot.running.builder.settings.TestDefaults.set_to--source--example-0-114" name="robot.running.builder.settings.TestDefaults.set_to--source--example-0-114"></a><span class="k">def</span><span class="w"> </span><span class="nf">set_to</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">test</span><span class="p">:</span> <span class="n">TestCase</span><span class="p">):</span>
+</span><span id="robot.running.builder.settings.TestDefaults.set_to--source--line-0-115"><a id="robot.running.builder.settings.TestDefaults.set_to--source--example-0-115" name="robot.running.builder.settings.TestDefaults.set_to--source--example-0-115"></a><span class="w">    </span><span class="sd">"""Sets defaults to the given test.</span>
+</span><span id="robot.running.builder.settings.TestDefaults.set_to--source--line-0-116"><a id="robot.running.builder.settings.TestDefaults.set_to--source--example-0-116" name="robot.running.builder.settings.TestDefaults.set_to--source--example-0-116"></a>
+</span><span id="robot.running.builder.settings.TestDefaults.set_to--source--line-0-117"><a id="robot.running.builder.settings.TestDefaults.set_to--source--example-0-117" name="robot.running.builder.settings.TestDefaults.set_to--source--example-0-117"></a><span class="sd">    Tags are always added to the test. Setup, teardown and timeout are</span>
+</span><span id="robot.running.builder.settings.TestDefaults.set_to--source--line-0-118"><a id="robot.running.builder.settings.TestDefaults.set_to--source--example-0-118" name="robot.running.builder.settings.TestDefaults.set_to--source--example-0-118"></a><span class="sd">    set only if the test does not have them set initially.</span>
+</span><span id="robot.running.builder.settings.TestDefaults.set_to--source--line-0-119"><a id="robot.running.builder.settings.TestDefaults.set_to--source--example-0-119" name="robot.running.builder.settings.TestDefaults.set_to--source--example-0-119"></a><span class="sd">    """</span>
+</span><span id="robot.running.builder.settings.TestDefaults.set_to--source--line-0-120"><a id="robot.running.builder.settings.TestDefaults.set_to--source--example-0-120" name="robot.running.builder.settings.TestDefaults.set_to--source--example-0-120"></a>    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">tags</span><span class="p">:</span>
+</span><span id="robot.running.builder.settings.TestDefaults.set_to--source--line-0-121"><a id="robot.running.builder.settings.TestDefaults.set_to--source--example-0-121" name="robot.running.builder.settings.TestDefaults.set_to--source--example-0-121"></a>        <span class="n">test</span><span class="o">.</span><span class="n">tags</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tags</span>
+</span><span id="robot.running.builder.settings.TestDefaults.set_to--source--line-0-122"><a id="robot.running.builder.settings.TestDefaults.set_to--source--example-0-122" name="robot.running.builder.settings.TestDefaults.set_to--source--example-0-122"></a>    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">setup</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">test</span><span class="o">.</span><span class="n">has_setup</span><span class="p">:</span>
+</span><span id="robot.running.builder.settings.TestDefaults.set_to--source--line-0-123"><a id="robot.running.builder.settings.TestDefaults.set_to--source--example-0-123" name="robot.running.builder.settings.TestDefaults.set_to--source--example-0-123"></a>        <span class="n">test</span><span class="o">.</span><span class="n">setup</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">setup</span><span class="p">)</span>
+</span><span id="robot.running.builder.settings.TestDefaults.set_to--source--line-0-124"><a id="robot.running.builder.settings.TestDefaults.set_to--source--example-0-124" name="robot.running.builder.settings.TestDefaults.set_to--source--example-0-124"></a>    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">teardown</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">test</span><span class="o">.</span><span class="n">has_teardown</span><span class="p">:</span>
+</span><span id="robot.running.builder.settings.TestDefaults.set_to--source--line-0-125"><a id="robot.running.builder.settings.TestDefaults.set_to--source--example-0-125" name="robot.running.builder.settings.TestDefaults.set_to--source--example-0-125"></a>        <span class="n">test</span><span class="o">.</span><span class="n">teardown</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">teardown</span><span class="p">)</span>
+</span><span id="robot.running.builder.settings.TestDefaults.set_to--source--line-0-126"><a id="robot.running.builder.settings.TestDefaults.set_to--source--example-0-126" name="robot.running.builder.settings.TestDefaults.set_to--source--example-0-126"></a>    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">timeout</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">test</span><span class="o">.</span><span class="n">timeout</span><span class="p">:</span>
+</span><span id="robot.running.builder.settings.TestDefaults.set_to--source--line-0-127"><a id="robot.running.builder.settings.TestDefaults.set_to--source--example-0-127" name="robot.running.builder.settings.TestDefaults.set_to--source--example-0-127"></a>        <span class="n">test</span><span class="o">.</span><span class="n">timeout</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">timeout</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -10480,10 +10480,10 @@ set only if the test does not have them set initially.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.top", "search.highlight", "search.suggest", "toc.integrate"], "search": "../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.top", "search.highlight", "search.suggest", "toc.integrate"], "search": "../../../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../../../../assets/javascripts/bundle.c21346df.min.js"></script>
       
     
   </body>

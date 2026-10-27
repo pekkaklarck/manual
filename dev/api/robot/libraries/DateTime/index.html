@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../../../assets/logo.png">
-      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.8.0">
     
     
       
@@ -31,10 +31,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -10336,85 +10336,85 @@ are available as functions that can be easily imported:</p>
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>src/robot/libraries/DateTime.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-321">321</a></span>
-<span class="normal"><a href="#example-0-322">322</a></span>
-<span class="normal"><a href="#example-0-323">323</a></span>
-<span class="normal"><a href="#example-0-324">324</a></span>
-<span class="normal"><a href="#example-0-325">325</a></span>
-<span class="normal"><a href="#example-0-326">326</a></span>
-<span class="normal"><a href="#example-0-327">327</a></span>
-<span class="normal"><a href="#example-0-328">328</a></span>
-<span class="normal"><a href="#example-0-329">329</a></span>
-<span class="normal"><a href="#example-0-330">330</a></span>
-<span class="normal"><a href="#example-0-331">331</a></span>
-<span class="normal"><a href="#example-0-332">332</a></span>
-<span class="normal"><a href="#example-0-333">333</a></span>
-<span class="normal"><a href="#example-0-334">334</a></span>
-<span class="normal"><a href="#example-0-335">335</a></span>
-<span class="normal"><a href="#example-0-336">336</a></span>
-<span class="normal"><a href="#example-0-337">337</a></span>
-<span class="normal"><a href="#example-0-338">338</a></span>
-<span class="normal"><a href="#example-0-339">339</a></span>
-<span class="normal"><a href="#example-0-340">340</a></span>
-<span class="normal"><a href="#example-0-341">341</a></span>
-<span class="normal"><a href="#example-0-342">342</a></span>
-<span class="normal"><a href="#example-0-343">343</a></span>
-<span class="normal"><a href="#example-0-344">344</a></span>
-<span class="normal"><a href="#example-0-345">345</a></span>
-<span class="normal"><a href="#example-0-346">346</a></span>
-<span class="normal"><a href="#example-0-347">347</a></span>
-<span class="normal"><a href="#example-0-348">348</a></span>
-<span class="normal"><a href="#example-0-349">349</a></span>
-<span class="normal"><a href="#example-0-350">350</a></span>
-<span class="normal"><a href="#example-0-351">351</a></span>
-<span class="normal"><a href="#example-0-352">352</a></span>
-<span class="normal"><a href="#example-0-353">353</a></span>
-<span class="normal"><a href="#example-0-354">354</a></span>
-<span class="normal"><a href="#example-0-355">355</a></span>
-<span class="normal"><a href="#example-0-356">356</a></span>
-<span class="normal"><a href="#example-0-357">357</a></span>
-<span class="normal"><a href="#example-0-358">358</a></span>
-<span class="normal"><a href="#example-0-359">359</a></span>
-<span class="normal"><a href="#example-0-360">360</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-321"><a id="example-0-321" name="example-0-321"></a><span class="k">def</span><span class="w"> </span><span class="nf">get_current_date</span><span class="p">(</span><span class="n">time_zone</span><span class="o">=</span><span class="s1">'local'</span><span class="p">,</span> <span class="n">increment</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">result_format</span><span class="o">=</span><span class="s1">'timestamp'</span><span class="p">,</span>
-</span><span id="line-0-322"><a id="example-0-322" name="example-0-322"></a>                     <span class="n">exclude_millis</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-</span><span id="line-0-323"><a id="example-0-323" name="example-0-323"></a><span class="w">    </span><span class="sd">"""Returns current local or UTC time with an optional increment.</span>
-</span><span id="line-0-324"><a id="example-0-324" name="example-0-324"></a>
-</span><span id="line-0-325"><a id="example-0-325" name="example-0-325"></a><span class="sd">    Arguments:</span>
-</span><span id="line-0-326"><a id="example-0-326" name="example-0-326"></a><span class="sd">    - ``time_zone:``      Get the current time on this time zone. Currently only</span>
-</span><span id="line-0-327"><a id="example-0-327" name="example-0-327"></a><span class="sd">                          ``local`` (default) and ``UTC`` are supported.</span>
-</span><span id="line-0-328"><a id="example-0-328" name="example-0-328"></a><span class="sd">                          Has no effect if date is returned as an `epoch time`.</span>
-</span><span id="line-0-329"><a id="example-0-329" name="example-0-329"></a><span class="sd">    - ``increment:``      Optional time increment to add to the returned date in</span>
-</span><span id="line-0-330"><a id="example-0-330" name="example-0-330"></a><span class="sd">                          one of the supported `time formats`. Can be negative.</span>
-</span><span id="line-0-331"><a id="example-0-331" name="example-0-331"></a><span class="sd">    - ``result_format:``  Format of the returned date (see `date formats`).</span>
-</span><span id="line-0-332"><a id="example-0-332" name="example-0-332"></a><span class="sd">    - ``exclude_millis:`` When set to any true value, rounds and drops</span>
-</span><span id="line-0-333"><a id="example-0-333" name="example-0-333"></a><span class="sd">                          milliseconds as explained in `millisecond handling`.</span>
-</span><span id="line-0-334"><a id="example-0-334" name="example-0-334"></a>
-</span><span id="line-0-335"><a id="example-0-335" name="example-0-335"></a><span class="sd">    Examples:</span>
-</span><span id="line-0-336"><a id="example-0-336" name="example-0-336"></a><span class="sd">    | ${date} =       | Get Current Date |</span>
-</span><span id="line-0-337"><a id="example-0-337" name="example-0-337"></a><span class="sd">    | Should Be Equal | ${date}          | 2014-06-12 20:00:58.946 |</span>
-</span><span id="line-0-338"><a id="example-0-338" name="example-0-338"></a><span class="sd">    | ${date} =       | Get Current Date | UTC                     |</span>
-</span><span id="line-0-339"><a id="example-0-339" name="example-0-339"></a><span class="sd">    | Should Be Equal | ${date}          | 2014-06-12 17:00:58.946 |</span>
-</span><span id="line-0-340"><a id="example-0-340" name="example-0-340"></a><span class="sd">    | ${date} =       | Get Current Date | increment=02:30:00      |</span>
-</span><span id="line-0-341"><a id="example-0-341" name="example-0-341"></a><span class="sd">    | Should Be Equal | ${date}          | 2014-06-12 22:30:58.946 |</span>
-</span><span id="line-0-342"><a id="example-0-342" name="example-0-342"></a><span class="sd">    | ${date} =       | Get Current Date | UTC                     | - 5 hours |</span>
-</span><span id="line-0-343"><a id="example-0-343" name="example-0-343"></a><span class="sd">    | Should Be Equal | ${date}          | 2014-06-12 12:00:58.946 |</span>
-</span><span id="line-0-344"><a id="example-0-344" name="example-0-344"></a><span class="sd">    | ${date} =       | Get Current Date | result_format=datetime  |</span>
-</span><span id="line-0-345"><a id="example-0-345" name="example-0-345"></a><span class="sd">    | Should Be Equal | ${date.year}     | ${2014}                 |</span>
-</span><span id="line-0-346"><a id="example-0-346" name="example-0-346"></a><span class="sd">    | Should Be Equal | ${date.month}    | ${6}                    |</span>
-</span><span id="line-0-347"><a id="example-0-347" name="example-0-347"></a><span class="sd">    """</span>
-</span><span id="line-0-348"><a id="example-0-348" name="example-0-348"></a>    <span class="k">if</span> <span class="n">time_zone</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">==</span> <span class="s1">'LOCAL'</span> <span class="ow">or</span> <span class="n">result_format</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">==</span> <span class="s1">'EPOCH'</span><span class="p">:</span>
-</span><span id="line-0-349"><a id="example-0-349" name="example-0-349"></a>        <span class="n">dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
-</span><span id="line-0-350"><a id="example-0-350" name="example-0-350"></a>    <span class="k">elif</span> <span class="n">time_zone</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">==</span> <span class="s1">'UTC'</span><span class="p">:</span>
-</span><span id="line-0-351"><a id="example-0-351" name="example-0-351"></a>        <span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">version_info</span> <span class="o">&gt;=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">12</span><span class="p">):</span>
-</span><span id="line-0-352"><a id="example-0-352" name="example-0-352"></a>            <span class="c1"># `utcnow()` was deprecated in Python 3.12. We only support "naive"</span>
-</span><span id="line-0-353"><a id="example-0-353" name="example-0-353"></a>            <span class="c1"># datetime objects and thus need to remove timezone information here.</span>
-</span><span id="line-0-354"><a id="example-0-354" name="example-0-354"></a>            <span class="n">dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">UTC</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">tzinfo</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-</span><span id="line-0-355"><a id="example-0-355" name="example-0-355"></a>        <span class="k">else</span><span class="p">:</span>
-</span><span id="line-0-356"><a id="example-0-356" name="example-0-356"></a>            <span class="n">dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">utcnow</span><span class="p">()</span>
-</span><span id="line-0-357"><a id="example-0-357" name="example-0-357"></a>    <span class="k">else</span><span class="p">:</span>
-</span><span id="line-0-358"><a id="example-0-358" name="example-0-358"></a>        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Unsupported timezone '</span><span class="si">{</span><span class="n">time_zone</span><span class="si">}</span><span class="s2">'."</span><span class="p">)</span>
-</span><span id="line-0-359"><a id="example-0-359" name="example-0-359"></a>    <span class="n">date</span> <span class="o">=</span> <span class="n">Date</span><span class="p">(</span><span class="n">dt</span><span class="p">)</span> <span class="o">+</span> <span class="n">Time</span><span class="p">(</span><span class="n">increment</span><span class="p">)</span>
-</span><span id="line-0-360"><a id="example-0-360" name="example-0-360"></a>    <span class="k">return</span> <span class="n">date</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">result_format</span><span class="p">,</span> <span class="n">millis</span><span class="o">=</span><span class="ow">not</span> <span class="n">exclude_millis</span><span class="p">)</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#robot.libraries.DateTime.get_current_date--source--example-0-321">321</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.get_current_date--source--example-0-322">322</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.get_current_date--source--example-0-323">323</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.get_current_date--source--example-0-324">324</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.get_current_date--source--example-0-325">325</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.get_current_date--source--example-0-326">326</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.get_current_date--source--example-0-327">327</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.get_current_date--source--example-0-328">328</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.get_current_date--source--example-0-329">329</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.get_current_date--source--example-0-330">330</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.get_current_date--source--example-0-331">331</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.get_current_date--source--example-0-332">332</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.get_current_date--source--example-0-333">333</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.get_current_date--source--example-0-334">334</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.get_current_date--source--example-0-335">335</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.get_current_date--source--example-0-336">336</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.get_current_date--source--example-0-337">337</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.get_current_date--source--example-0-338">338</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.get_current_date--source--example-0-339">339</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.get_current_date--source--example-0-340">340</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.get_current_date--source--example-0-341">341</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.get_current_date--source--example-0-342">342</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.get_current_date--source--example-0-343">343</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.get_current_date--source--example-0-344">344</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.get_current_date--source--example-0-345">345</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.get_current_date--source--example-0-346">346</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.get_current_date--source--example-0-347">347</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.get_current_date--source--example-0-348">348</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.get_current_date--source--example-0-349">349</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.get_current_date--source--example-0-350">350</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.get_current_date--source--example-0-351">351</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.get_current_date--source--example-0-352">352</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.get_current_date--source--example-0-353">353</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.get_current_date--source--example-0-354">354</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.get_current_date--source--example-0-355">355</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.get_current_date--source--example-0-356">356</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.get_current_date--source--example-0-357">357</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.get_current_date--source--example-0-358">358</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.get_current_date--source--example-0-359">359</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.get_current_date--source--example-0-360">360</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="robot.libraries.DateTime.get_current_date--source--line-0-321"><a id="robot.libraries.DateTime.get_current_date--source--example-0-321" name="robot.libraries.DateTime.get_current_date--source--example-0-321"></a><span class="k">def</span><span class="w"> </span><span class="nf">get_current_date</span><span class="p">(</span><span class="n">time_zone</span><span class="o">=</span><span class="s1">'local'</span><span class="p">,</span> <span class="n">increment</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">result_format</span><span class="o">=</span><span class="s1">'timestamp'</span><span class="p">,</span>
+</span><span id="robot.libraries.DateTime.get_current_date--source--line-0-322"><a id="robot.libraries.DateTime.get_current_date--source--example-0-322" name="robot.libraries.DateTime.get_current_date--source--example-0-322"></a>                     <span class="n">exclude_millis</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+</span><span id="robot.libraries.DateTime.get_current_date--source--line-0-323"><a id="robot.libraries.DateTime.get_current_date--source--example-0-323" name="robot.libraries.DateTime.get_current_date--source--example-0-323"></a><span class="w">    </span><span class="sd">"""Returns current local or UTC time with an optional increment.</span>
+</span><span id="robot.libraries.DateTime.get_current_date--source--line-0-324"><a id="robot.libraries.DateTime.get_current_date--source--example-0-324" name="robot.libraries.DateTime.get_current_date--source--example-0-324"></a>
+</span><span id="robot.libraries.DateTime.get_current_date--source--line-0-325"><a id="robot.libraries.DateTime.get_current_date--source--example-0-325" name="robot.libraries.DateTime.get_current_date--source--example-0-325"></a><span class="sd">    Arguments:</span>
+</span><span id="robot.libraries.DateTime.get_current_date--source--line-0-326"><a id="robot.libraries.DateTime.get_current_date--source--example-0-326" name="robot.libraries.DateTime.get_current_date--source--example-0-326"></a><span class="sd">    - ``time_zone:``      Get the current time on this time zone. Currently only</span>
+</span><span id="robot.libraries.DateTime.get_current_date--source--line-0-327"><a id="robot.libraries.DateTime.get_current_date--source--example-0-327" name="robot.libraries.DateTime.get_current_date--source--example-0-327"></a><span class="sd">                          ``local`` (default) and ``UTC`` are supported.</span>
+</span><span id="robot.libraries.DateTime.get_current_date--source--line-0-328"><a id="robot.libraries.DateTime.get_current_date--source--example-0-328" name="robot.libraries.DateTime.get_current_date--source--example-0-328"></a><span class="sd">                          Has no effect if date is returned as an `epoch time`.</span>
+</span><span id="robot.libraries.DateTime.get_current_date--source--line-0-329"><a id="robot.libraries.DateTime.get_current_date--source--example-0-329" name="robot.libraries.DateTime.get_current_date--source--example-0-329"></a><span class="sd">    - ``increment:``      Optional time increment to add to the returned date in</span>
+</span><span id="robot.libraries.DateTime.get_current_date--source--line-0-330"><a id="robot.libraries.DateTime.get_current_date--source--example-0-330" name="robot.libraries.DateTime.get_current_date--source--example-0-330"></a><span class="sd">                          one of the supported `time formats`. Can be negative.</span>
+</span><span id="robot.libraries.DateTime.get_current_date--source--line-0-331"><a id="robot.libraries.DateTime.get_current_date--source--example-0-331" name="robot.libraries.DateTime.get_current_date--source--example-0-331"></a><span class="sd">    - ``result_format:``  Format of the returned date (see `date formats`).</span>
+</span><span id="robot.libraries.DateTime.get_current_date--source--line-0-332"><a id="robot.libraries.DateTime.get_current_date--source--example-0-332" name="robot.libraries.DateTime.get_current_date--source--example-0-332"></a><span class="sd">    - ``exclude_millis:`` When set to any true value, rounds and drops</span>
+</span><span id="robot.libraries.DateTime.get_current_date--source--line-0-333"><a id="robot.libraries.DateTime.get_current_date--source--example-0-333" name="robot.libraries.DateTime.get_current_date--source--example-0-333"></a><span class="sd">                          milliseconds as explained in `millisecond handling`.</span>
+</span><span id="robot.libraries.DateTime.get_current_date--source--line-0-334"><a id="robot.libraries.DateTime.get_current_date--source--example-0-334" name="robot.libraries.DateTime.get_current_date--source--example-0-334"></a>
+</span><span id="robot.libraries.DateTime.get_current_date--source--line-0-335"><a id="robot.libraries.DateTime.get_current_date--source--example-0-335" name="robot.libraries.DateTime.get_current_date--source--example-0-335"></a><span class="sd">    Examples:</span>
+</span><span id="robot.libraries.DateTime.get_current_date--source--line-0-336"><a id="robot.libraries.DateTime.get_current_date--source--example-0-336" name="robot.libraries.DateTime.get_current_date--source--example-0-336"></a><span class="sd">    | ${date} =       | Get Current Date |</span>
+</span><span id="robot.libraries.DateTime.get_current_date--source--line-0-337"><a id="robot.libraries.DateTime.get_current_date--source--example-0-337" name="robot.libraries.DateTime.get_current_date--source--example-0-337"></a><span class="sd">    | Should Be Equal | ${date}          | 2014-06-12 20:00:58.946 |</span>
+</span><span id="robot.libraries.DateTime.get_current_date--source--line-0-338"><a id="robot.libraries.DateTime.get_current_date--source--example-0-338" name="robot.libraries.DateTime.get_current_date--source--example-0-338"></a><span class="sd">    | ${date} =       | Get Current Date | UTC                     |</span>
+</span><span id="robot.libraries.DateTime.get_current_date--source--line-0-339"><a id="robot.libraries.DateTime.get_current_date--source--example-0-339" name="robot.libraries.DateTime.get_current_date--source--example-0-339"></a><span class="sd">    | Should Be Equal | ${date}          | 2014-06-12 17:00:58.946 |</span>
+</span><span id="robot.libraries.DateTime.get_current_date--source--line-0-340"><a id="robot.libraries.DateTime.get_current_date--source--example-0-340" name="robot.libraries.DateTime.get_current_date--source--example-0-340"></a><span class="sd">    | ${date} =       | Get Current Date | increment=02:30:00      |</span>
+</span><span id="robot.libraries.DateTime.get_current_date--source--line-0-341"><a id="robot.libraries.DateTime.get_current_date--source--example-0-341" name="robot.libraries.DateTime.get_current_date--source--example-0-341"></a><span class="sd">    | Should Be Equal | ${date}          | 2014-06-12 22:30:58.946 |</span>
+</span><span id="robot.libraries.DateTime.get_current_date--source--line-0-342"><a id="robot.libraries.DateTime.get_current_date--source--example-0-342" name="robot.libraries.DateTime.get_current_date--source--example-0-342"></a><span class="sd">    | ${date} =       | Get Current Date | UTC                     | - 5 hours |</span>
+</span><span id="robot.libraries.DateTime.get_current_date--source--line-0-343"><a id="robot.libraries.DateTime.get_current_date--source--example-0-343" name="robot.libraries.DateTime.get_current_date--source--example-0-343"></a><span class="sd">    | Should Be Equal | ${date}          | 2014-06-12 12:00:58.946 |</span>
+</span><span id="robot.libraries.DateTime.get_current_date--source--line-0-344"><a id="robot.libraries.DateTime.get_current_date--source--example-0-344" name="robot.libraries.DateTime.get_current_date--source--example-0-344"></a><span class="sd">    | ${date} =       | Get Current Date | result_format=datetime  |</span>
+</span><span id="robot.libraries.DateTime.get_current_date--source--line-0-345"><a id="robot.libraries.DateTime.get_current_date--source--example-0-345" name="robot.libraries.DateTime.get_current_date--source--example-0-345"></a><span class="sd">    | Should Be Equal | ${date.year}     | ${2014}                 |</span>
+</span><span id="robot.libraries.DateTime.get_current_date--source--line-0-346"><a id="robot.libraries.DateTime.get_current_date--source--example-0-346" name="robot.libraries.DateTime.get_current_date--source--example-0-346"></a><span class="sd">    | Should Be Equal | ${date.month}    | ${6}                    |</span>
+</span><span id="robot.libraries.DateTime.get_current_date--source--line-0-347"><a id="robot.libraries.DateTime.get_current_date--source--example-0-347" name="robot.libraries.DateTime.get_current_date--source--example-0-347"></a><span class="sd">    """</span>
+</span><span id="robot.libraries.DateTime.get_current_date--source--line-0-348"><a id="robot.libraries.DateTime.get_current_date--source--example-0-348" name="robot.libraries.DateTime.get_current_date--source--example-0-348"></a>    <span class="k">if</span> <span class="n">time_zone</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">==</span> <span class="s1">'LOCAL'</span> <span class="ow">or</span> <span class="n">result_format</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">==</span> <span class="s1">'EPOCH'</span><span class="p">:</span>
+</span><span id="robot.libraries.DateTime.get_current_date--source--line-0-349"><a id="robot.libraries.DateTime.get_current_date--source--example-0-349" name="robot.libraries.DateTime.get_current_date--source--example-0-349"></a>        <span class="n">dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+</span><span id="robot.libraries.DateTime.get_current_date--source--line-0-350"><a id="robot.libraries.DateTime.get_current_date--source--example-0-350" name="robot.libraries.DateTime.get_current_date--source--example-0-350"></a>    <span class="k">elif</span> <span class="n">time_zone</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">==</span> <span class="s1">'UTC'</span><span class="p">:</span>
+</span><span id="robot.libraries.DateTime.get_current_date--source--line-0-351"><a id="robot.libraries.DateTime.get_current_date--source--example-0-351" name="robot.libraries.DateTime.get_current_date--source--example-0-351"></a>        <span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">version_info</span> <span class="o">&gt;=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">12</span><span class="p">):</span>
+</span><span id="robot.libraries.DateTime.get_current_date--source--line-0-352"><a id="robot.libraries.DateTime.get_current_date--source--example-0-352" name="robot.libraries.DateTime.get_current_date--source--example-0-352"></a>            <span class="c1"># `utcnow()` was deprecated in Python 3.12. We only support "naive"</span>
+</span><span id="robot.libraries.DateTime.get_current_date--source--line-0-353"><a id="robot.libraries.DateTime.get_current_date--source--example-0-353" name="robot.libraries.DateTime.get_current_date--source--example-0-353"></a>            <span class="c1"># datetime objects and thus need to remove timezone information here.</span>
+</span><span id="robot.libraries.DateTime.get_current_date--source--line-0-354"><a id="robot.libraries.DateTime.get_current_date--source--example-0-354" name="robot.libraries.DateTime.get_current_date--source--example-0-354"></a>            <span class="n">dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">UTC</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">tzinfo</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</span><span id="robot.libraries.DateTime.get_current_date--source--line-0-355"><a id="robot.libraries.DateTime.get_current_date--source--example-0-355" name="robot.libraries.DateTime.get_current_date--source--example-0-355"></a>        <span class="k">else</span><span class="p">:</span>
+</span><span id="robot.libraries.DateTime.get_current_date--source--line-0-356"><a id="robot.libraries.DateTime.get_current_date--source--example-0-356" name="robot.libraries.DateTime.get_current_date--source--example-0-356"></a>            <span class="n">dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">utcnow</span><span class="p">()</span>
+</span><span id="robot.libraries.DateTime.get_current_date--source--line-0-357"><a id="robot.libraries.DateTime.get_current_date--source--example-0-357" name="robot.libraries.DateTime.get_current_date--source--example-0-357"></a>    <span class="k">else</span><span class="p">:</span>
+</span><span id="robot.libraries.DateTime.get_current_date--source--line-0-358"><a id="robot.libraries.DateTime.get_current_date--source--example-0-358" name="robot.libraries.DateTime.get_current_date--source--example-0-358"></a>        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Unsupported timezone '</span><span class="si">{</span><span class="n">time_zone</span><span class="si">}</span><span class="s2">'."</span><span class="p">)</span>
+</span><span id="robot.libraries.DateTime.get_current_date--source--line-0-359"><a id="robot.libraries.DateTime.get_current_date--source--example-0-359" name="robot.libraries.DateTime.get_current_date--source--example-0-359"></a>    <span class="n">date</span> <span class="o">=</span> <span class="n">Date</span><span class="p">(</span><span class="n">dt</span><span class="p">)</span> <span class="o">+</span> <span class="n">Time</span><span class="p">(</span><span class="n">increment</span><span class="p">)</span>
+</span><span id="robot.libraries.DateTime.get_current_date--source--line-0-360"><a id="robot.libraries.DateTime.get_current_date--source--example-0-360" name="robot.libraries.DateTime.get_current_date--source--example-0-360"></a>    <span class="k">return</span> <span class="n">date</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">result_format</span><span class="p">,</span> <span class="n">millis</span><span class="o">=</span><span class="ow">not</span> <span class="n">exclude_millis</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -10462,45 +10462,45 @@ are available as functions that can be easily imported:</p>
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>src/robot/libraries/DateTime.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-363">363</a></span>
-<span class="normal"><a href="#example-0-364">364</a></span>
-<span class="normal"><a href="#example-0-365">365</a></span>
-<span class="normal"><a href="#example-0-366">366</a></span>
-<span class="normal"><a href="#example-0-367">367</a></span>
-<span class="normal"><a href="#example-0-368">368</a></span>
-<span class="normal"><a href="#example-0-369">369</a></span>
-<span class="normal"><a href="#example-0-370">370</a></span>
-<span class="normal"><a href="#example-0-371">371</a></span>
-<span class="normal"><a href="#example-0-372">372</a></span>
-<span class="normal"><a href="#example-0-373">373</a></span>
-<span class="normal"><a href="#example-0-374">374</a></span>
-<span class="normal"><a href="#example-0-375">375</a></span>
-<span class="normal"><a href="#example-0-376">376</a></span>
-<span class="normal"><a href="#example-0-377">377</a></span>
-<span class="normal"><a href="#example-0-378">378</a></span>
-<span class="normal"><a href="#example-0-379">379</a></span>
-<span class="normal"><a href="#example-0-380">380</a></span>
-<span class="normal"><a href="#example-0-381">381</a></span>
-<span class="normal"><a href="#example-0-382">382</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-363"><a id="example-0-363" name="example-0-363"></a><span class="k">def</span><span class="w"> </span><span class="nf">convert_date</span><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="n">result_format</span><span class="o">=</span><span class="s1">'timestamp'</span><span class="p">,</span> <span class="n">exclude_millis</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-</span><span id="line-0-364"><a id="example-0-364" name="example-0-364"></a>                 <span class="n">date_format</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-</span><span id="line-0-365"><a id="example-0-365" name="example-0-365"></a><span class="w">    </span><span class="sd">"""Converts between supported `date formats`.</span>
-</span><span id="line-0-366"><a id="example-0-366" name="example-0-366"></a>
-</span><span id="line-0-367"><a id="example-0-367" name="example-0-367"></a><span class="sd">    Arguments:</span>
-</span><span id="line-0-368"><a id="example-0-368" name="example-0-368"></a><span class="sd">    - ``date:``           Date in one of the supported `date formats`.</span>
-</span><span id="line-0-369"><a id="example-0-369" name="example-0-369"></a><span class="sd">    - ``result_format:``  Format of the returned date.</span>
-</span><span id="line-0-370"><a id="example-0-370" name="example-0-370"></a><span class="sd">    - ``exclude_millis:`` When set to any true value, rounds and drops</span>
-</span><span id="line-0-371"><a id="example-0-371" name="example-0-371"></a><span class="sd">                          milliseconds as explained in `millisecond handling`.</span>
-</span><span id="line-0-372"><a id="example-0-372" name="example-0-372"></a><span class="sd">    - ``date_format:``    Specifies possible `custom timestamp` format.</span>
-</span><span id="line-0-373"><a id="example-0-373" name="example-0-373"></a>
-</span><span id="line-0-374"><a id="example-0-374" name="example-0-374"></a><span class="sd">    Examples:</span>
-</span><span id="line-0-375"><a id="example-0-375" name="example-0-375"></a><span class="sd">    | ${date} =       | Convert Date | 20140528 12:05:03.111   |</span>
-</span><span id="line-0-376"><a id="example-0-376" name="example-0-376"></a><span class="sd">    | Should Be Equal | ${date}      | 2014-05-28 12:05:03.111 |</span>
-</span><span id="line-0-377"><a id="example-0-377" name="example-0-377"></a><span class="sd">    | ${date} =       | Convert Date | ${date}                 | epoch |</span>
-</span><span id="line-0-378"><a id="example-0-378" name="example-0-378"></a><span class="sd">    | Should Be Equal | ${date}      | ${1401267903.111}       |</span>
-</span><span id="line-0-379"><a id="example-0-379" name="example-0-379"></a><span class="sd">    | ${date} =       | Convert Date | 5.28.2014 12:05         | exclude_millis=yes | date_format=%m.%d.%Y %H:%M |</span>
-</span><span id="line-0-380"><a id="example-0-380" name="example-0-380"></a><span class="sd">    | Should Be Equal | ${date}      | 2014-05-28 12:05:00     |</span>
-</span><span id="line-0-381"><a id="example-0-381" name="example-0-381"></a><span class="sd">    """</span>
-</span><span id="line-0-382"><a id="example-0-382" name="example-0-382"></a>    <span class="k">return</span> <span class="n">Date</span><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="n">date_format</span><span class="p">)</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">result_format</span><span class="p">,</span> <span class="n">millis</span><span class="o">=</span><span class="ow">not</span> <span class="n">exclude_millis</span><span class="p">)</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#robot.libraries.DateTime.convert_date--source--example-0-363">363</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.convert_date--source--example-0-364">364</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.convert_date--source--example-0-365">365</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.convert_date--source--example-0-366">366</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.convert_date--source--example-0-367">367</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.convert_date--source--example-0-368">368</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.convert_date--source--example-0-369">369</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.convert_date--source--example-0-370">370</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.convert_date--source--example-0-371">371</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.convert_date--source--example-0-372">372</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.convert_date--source--example-0-373">373</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.convert_date--source--example-0-374">374</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.convert_date--source--example-0-375">375</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.convert_date--source--example-0-376">376</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.convert_date--source--example-0-377">377</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.convert_date--source--example-0-378">378</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.convert_date--source--example-0-379">379</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.convert_date--source--example-0-380">380</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.convert_date--source--example-0-381">381</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.convert_date--source--example-0-382">382</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="robot.libraries.DateTime.convert_date--source--line-0-363"><a id="robot.libraries.DateTime.convert_date--source--example-0-363" name="robot.libraries.DateTime.convert_date--source--example-0-363"></a><span class="k">def</span><span class="w"> </span><span class="nf">convert_date</span><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="n">result_format</span><span class="o">=</span><span class="s1">'timestamp'</span><span class="p">,</span> <span class="n">exclude_millis</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="robot.libraries.DateTime.convert_date--source--line-0-364"><a id="robot.libraries.DateTime.convert_date--source--example-0-364" name="robot.libraries.DateTime.convert_date--source--example-0-364"></a>                 <span class="n">date_format</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+</span><span id="robot.libraries.DateTime.convert_date--source--line-0-365"><a id="robot.libraries.DateTime.convert_date--source--example-0-365" name="robot.libraries.DateTime.convert_date--source--example-0-365"></a><span class="w">    </span><span class="sd">"""Converts between supported `date formats`.</span>
+</span><span id="robot.libraries.DateTime.convert_date--source--line-0-366"><a id="robot.libraries.DateTime.convert_date--source--example-0-366" name="robot.libraries.DateTime.convert_date--source--example-0-366"></a>
+</span><span id="robot.libraries.DateTime.convert_date--source--line-0-367"><a id="robot.libraries.DateTime.convert_date--source--example-0-367" name="robot.libraries.DateTime.convert_date--source--example-0-367"></a><span class="sd">    Arguments:</span>
+</span><span id="robot.libraries.DateTime.convert_date--source--line-0-368"><a id="robot.libraries.DateTime.convert_date--source--example-0-368" name="robot.libraries.DateTime.convert_date--source--example-0-368"></a><span class="sd">    - ``date:``           Date in one of the supported `date formats`.</span>
+</span><span id="robot.libraries.DateTime.convert_date--source--line-0-369"><a id="robot.libraries.DateTime.convert_date--source--example-0-369" name="robot.libraries.DateTime.convert_date--source--example-0-369"></a><span class="sd">    - ``result_format:``  Format of the returned date.</span>
+</span><span id="robot.libraries.DateTime.convert_date--source--line-0-370"><a id="robot.libraries.DateTime.convert_date--source--example-0-370" name="robot.libraries.DateTime.convert_date--source--example-0-370"></a><span class="sd">    - ``exclude_millis:`` When set to any true value, rounds and drops</span>
+</span><span id="robot.libraries.DateTime.convert_date--source--line-0-371"><a id="robot.libraries.DateTime.convert_date--source--example-0-371" name="robot.libraries.DateTime.convert_date--source--example-0-371"></a><span class="sd">                          milliseconds as explained in `millisecond handling`.</span>
+</span><span id="robot.libraries.DateTime.convert_date--source--line-0-372"><a id="robot.libraries.DateTime.convert_date--source--example-0-372" name="robot.libraries.DateTime.convert_date--source--example-0-372"></a><span class="sd">    - ``date_format:``    Specifies possible `custom timestamp` format.</span>
+</span><span id="robot.libraries.DateTime.convert_date--source--line-0-373"><a id="robot.libraries.DateTime.convert_date--source--example-0-373" name="robot.libraries.DateTime.convert_date--source--example-0-373"></a>
+</span><span id="robot.libraries.DateTime.convert_date--source--line-0-374"><a id="robot.libraries.DateTime.convert_date--source--example-0-374" name="robot.libraries.DateTime.convert_date--source--example-0-374"></a><span class="sd">    Examples:</span>
+</span><span id="robot.libraries.DateTime.convert_date--source--line-0-375"><a id="robot.libraries.DateTime.convert_date--source--example-0-375" name="robot.libraries.DateTime.convert_date--source--example-0-375"></a><span class="sd">    | ${date} =       | Convert Date | 20140528 12:05:03.111   |</span>
+</span><span id="robot.libraries.DateTime.convert_date--source--line-0-376"><a id="robot.libraries.DateTime.convert_date--source--example-0-376" name="robot.libraries.DateTime.convert_date--source--example-0-376"></a><span class="sd">    | Should Be Equal | ${date}      | 2014-05-28 12:05:03.111 |</span>
+</span><span id="robot.libraries.DateTime.convert_date--source--line-0-377"><a id="robot.libraries.DateTime.convert_date--source--example-0-377" name="robot.libraries.DateTime.convert_date--source--example-0-377"></a><span class="sd">    | ${date} =       | Convert Date | ${date}                 | epoch |</span>
+</span><span id="robot.libraries.DateTime.convert_date--source--line-0-378"><a id="robot.libraries.DateTime.convert_date--source--example-0-378" name="robot.libraries.DateTime.convert_date--source--example-0-378"></a><span class="sd">    | Should Be Equal | ${date}      | ${1401267903.111}       |</span>
+</span><span id="robot.libraries.DateTime.convert_date--source--line-0-379"><a id="robot.libraries.DateTime.convert_date--source--example-0-379" name="robot.libraries.DateTime.convert_date--source--example-0-379"></a><span class="sd">    | ${date} =       | Convert Date | 5.28.2014 12:05         | exclude_millis=yes | date_format=%m.%d.%Y %H:%M |</span>
+</span><span id="robot.libraries.DateTime.convert_date--source--line-0-380"><a id="robot.libraries.DateTime.convert_date--source--example-0-380" name="robot.libraries.DateTime.convert_date--source--example-0-380"></a><span class="sd">    | Should Be Equal | ${date}      | 2014-05-28 12:05:00     |</span>
+</span><span id="robot.libraries.DateTime.convert_date--source--line-0-381"><a id="robot.libraries.DateTime.convert_date--source--example-0-381" name="robot.libraries.DateTime.convert_date--source--example-0-381"></a><span class="sd">    """</span>
+</span><span id="robot.libraries.DateTime.convert_date--source--line-0-382"><a id="robot.libraries.DateTime.convert_date--source--example-0-382" name="robot.libraries.DateTime.convert_date--source--example-0-382"></a>    <span class="k">return</span> <span class="n">Date</span><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="n">date_format</span><span class="p">)</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">result_format</span><span class="p">,</span> <span class="n">millis</span><span class="o">=</span><span class="ow">not</span> <span class="n">exclude_millis</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -10544,41 +10544,41 @@ are available as functions that can be easily imported:</p>
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>src/robot/libraries/DateTime.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-385">385</a></span>
-<span class="normal"><a href="#example-0-386">386</a></span>
-<span class="normal"><a href="#example-0-387">387</a></span>
-<span class="normal"><a href="#example-0-388">388</a></span>
-<span class="normal"><a href="#example-0-389">389</a></span>
-<span class="normal"><a href="#example-0-390">390</a></span>
-<span class="normal"><a href="#example-0-391">391</a></span>
-<span class="normal"><a href="#example-0-392">392</a></span>
-<span class="normal"><a href="#example-0-393">393</a></span>
-<span class="normal"><a href="#example-0-394">394</a></span>
-<span class="normal"><a href="#example-0-395">395</a></span>
-<span class="normal"><a href="#example-0-396">396</a></span>
-<span class="normal"><a href="#example-0-397">397</a></span>
-<span class="normal"><a href="#example-0-398">398</a></span>
-<span class="normal"><a href="#example-0-399">399</a></span>
-<span class="normal"><a href="#example-0-400">400</a></span>
-<span class="normal"><a href="#example-0-401">401</a></span>
-<span class="normal"><a href="#example-0-402">402</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-385"><a id="example-0-385" name="example-0-385"></a><span class="k">def</span><span class="w"> </span><span class="nf">convert_time</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">result_format</span><span class="o">=</span><span class="s1">'number'</span><span class="p">,</span> <span class="n">exclude_millis</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-</span><span id="line-0-386"><a id="example-0-386" name="example-0-386"></a><span class="w">    </span><span class="sd">"""Converts between supported `time formats`.</span>
-</span><span id="line-0-387"><a id="example-0-387" name="example-0-387"></a>
-</span><span id="line-0-388"><a id="example-0-388" name="example-0-388"></a><span class="sd">    Arguments:</span>
-</span><span id="line-0-389"><a id="example-0-389" name="example-0-389"></a><span class="sd">    - ``time:``           Time in one of the supported `time formats`.</span>
-</span><span id="line-0-390"><a id="example-0-390" name="example-0-390"></a><span class="sd">    - ``result_format:``  Format of the returned time.</span>
-</span><span id="line-0-391"><a id="example-0-391" name="example-0-391"></a><span class="sd">    - ``exclude_millis:`` When set to any true value, rounds and drops</span>
-</span><span id="line-0-392"><a id="example-0-392" name="example-0-392"></a><span class="sd">                          milliseconds as explained in `millisecond handling`.</span>
-</span><span id="line-0-393"><a id="example-0-393" name="example-0-393"></a>
-</span><span id="line-0-394"><a id="example-0-394" name="example-0-394"></a><span class="sd">    Examples:</span>
-</span><span id="line-0-395"><a id="example-0-395" name="example-0-395"></a><span class="sd">    | ${time} =       | Convert Time  | 10 seconds        |</span>
-</span><span id="line-0-396"><a id="example-0-396" name="example-0-396"></a><span class="sd">    | Should Be Equal | ${time}       | ${10}             |</span>
-</span><span id="line-0-397"><a id="example-0-397" name="example-0-397"></a><span class="sd">    | ${time} =       | Convert Time  | 1:00:01           | verbose |</span>
-</span><span id="line-0-398"><a id="example-0-398" name="example-0-398"></a><span class="sd">    | Should Be Equal | ${time}       | 1 hour 1 second   |</span>
-</span><span id="line-0-399"><a id="example-0-399" name="example-0-399"></a><span class="sd">    | ${time} =       | Convert Time  | ${3661.5} | timer | exclude_milles=yes |</span>
-</span><span id="line-0-400"><a id="example-0-400" name="example-0-400"></a><span class="sd">    | Should Be Equal | ${time}       | 01:01:02          |</span>
-</span><span id="line-0-401"><a id="example-0-401" name="example-0-401"></a><span class="sd">    """</span>
-</span><span id="line-0-402"><a id="example-0-402" name="example-0-402"></a>    <span class="k">return</span> <span class="n">Time</span><span class="p">(</span><span class="n">time</span><span class="p">)</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">result_format</span><span class="p">,</span> <span class="n">millis</span><span class="o">=</span><span class="ow">not</span> <span class="n">exclude_millis</span><span class="p">)</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#robot.libraries.DateTime.convert_time--source--example-0-385">385</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.convert_time--source--example-0-386">386</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.convert_time--source--example-0-387">387</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.convert_time--source--example-0-388">388</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.convert_time--source--example-0-389">389</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.convert_time--source--example-0-390">390</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.convert_time--source--example-0-391">391</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.convert_time--source--example-0-392">392</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.convert_time--source--example-0-393">393</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.convert_time--source--example-0-394">394</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.convert_time--source--example-0-395">395</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.convert_time--source--example-0-396">396</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.convert_time--source--example-0-397">397</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.convert_time--source--example-0-398">398</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.convert_time--source--example-0-399">399</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.convert_time--source--example-0-400">400</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.convert_time--source--example-0-401">401</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.convert_time--source--example-0-402">402</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="robot.libraries.DateTime.convert_time--source--line-0-385"><a id="robot.libraries.DateTime.convert_time--source--example-0-385" name="robot.libraries.DateTime.convert_time--source--example-0-385"></a><span class="k">def</span><span class="w"> </span><span class="nf">convert_time</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">result_format</span><span class="o">=</span><span class="s1">'number'</span><span class="p">,</span> <span class="n">exclude_millis</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+</span><span id="robot.libraries.DateTime.convert_time--source--line-0-386"><a id="robot.libraries.DateTime.convert_time--source--example-0-386" name="robot.libraries.DateTime.convert_time--source--example-0-386"></a><span class="w">    </span><span class="sd">"""Converts between supported `time formats`.</span>
+</span><span id="robot.libraries.DateTime.convert_time--source--line-0-387"><a id="robot.libraries.DateTime.convert_time--source--example-0-387" name="robot.libraries.DateTime.convert_time--source--example-0-387"></a>
+</span><span id="robot.libraries.DateTime.convert_time--source--line-0-388"><a id="robot.libraries.DateTime.convert_time--source--example-0-388" name="robot.libraries.DateTime.convert_time--source--example-0-388"></a><span class="sd">    Arguments:</span>
+</span><span id="robot.libraries.DateTime.convert_time--source--line-0-389"><a id="robot.libraries.DateTime.convert_time--source--example-0-389" name="robot.libraries.DateTime.convert_time--source--example-0-389"></a><span class="sd">    - ``time:``           Time in one of the supported `time formats`.</span>
+</span><span id="robot.libraries.DateTime.convert_time--source--line-0-390"><a id="robot.libraries.DateTime.convert_time--source--example-0-390" name="robot.libraries.DateTime.convert_time--source--example-0-390"></a><span class="sd">    - ``result_format:``  Format of the returned time.</span>
+</span><span id="robot.libraries.DateTime.convert_time--source--line-0-391"><a id="robot.libraries.DateTime.convert_time--source--example-0-391" name="robot.libraries.DateTime.convert_time--source--example-0-391"></a><span class="sd">    - ``exclude_millis:`` When set to any true value, rounds and drops</span>
+</span><span id="robot.libraries.DateTime.convert_time--source--line-0-392"><a id="robot.libraries.DateTime.convert_time--source--example-0-392" name="robot.libraries.DateTime.convert_time--source--example-0-392"></a><span class="sd">                          milliseconds as explained in `millisecond handling`.</span>
+</span><span id="robot.libraries.DateTime.convert_time--source--line-0-393"><a id="robot.libraries.DateTime.convert_time--source--example-0-393" name="robot.libraries.DateTime.convert_time--source--example-0-393"></a>
+</span><span id="robot.libraries.DateTime.convert_time--source--line-0-394"><a id="robot.libraries.DateTime.convert_time--source--example-0-394" name="robot.libraries.DateTime.convert_time--source--example-0-394"></a><span class="sd">    Examples:</span>
+</span><span id="robot.libraries.DateTime.convert_time--source--line-0-395"><a id="robot.libraries.DateTime.convert_time--source--example-0-395" name="robot.libraries.DateTime.convert_time--source--example-0-395"></a><span class="sd">    | ${time} =       | Convert Time  | 10 seconds        |</span>
+</span><span id="robot.libraries.DateTime.convert_time--source--line-0-396"><a id="robot.libraries.DateTime.convert_time--source--example-0-396" name="robot.libraries.DateTime.convert_time--source--example-0-396"></a><span class="sd">    | Should Be Equal | ${time}       | ${10}             |</span>
+</span><span id="robot.libraries.DateTime.convert_time--source--line-0-397"><a id="robot.libraries.DateTime.convert_time--source--example-0-397" name="robot.libraries.DateTime.convert_time--source--example-0-397"></a><span class="sd">    | ${time} =       | Convert Time  | 1:00:01           | verbose |</span>
+</span><span id="robot.libraries.DateTime.convert_time--source--line-0-398"><a id="robot.libraries.DateTime.convert_time--source--example-0-398" name="robot.libraries.DateTime.convert_time--source--example-0-398"></a><span class="sd">    | Should Be Equal | ${time}       | 1 hour 1 second   |</span>
+</span><span id="robot.libraries.DateTime.convert_time--source--line-0-399"><a id="robot.libraries.DateTime.convert_time--source--example-0-399" name="robot.libraries.DateTime.convert_time--source--example-0-399"></a><span class="sd">    | ${time} =       | Convert Time  | ${3661.5} | timer | exclude_milles=yes |</span>
+</span><span id="robot.libraries.DateTime.convert_time--source--line-0-400"><a id="robot.libraries.DateTime.convert_time--source--example-0-400" name="robot.libraries.DateTime.convert_time--source--example-0-400"></a><span class="sd">    | Should Be Equal | ${time}       | 01:01:02          |</span>
+</span><span id="robot.libraries.DateTime.convert_time--source--line-0-401"><a id="robot.libraries.DateTime.convert_time--source--example-0-401" name="robot.libraries.DateTime.convert_time--source--example-0-401"></a><span class="sd">    """</span>
+</span><span id="robot.libraries.DateTime.convert_time--source--line-0-402"><a id="robot.libraries.DateTime.convert_time--source--example-0-402" name="robot.libraries.DateTime.convert_time--source--example-0-402"></a>    <span class="k">return</span> <span class="n">Time</span><span class="p">(</span><span class="n">time</span><span class="p">)</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">result_format</span><span class="p">,</span> <span class="n">millis</span><span class="o">=</span><span class="ow">not</span> <span class="n">exclude_millis</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -10631,53 +10631,53 @@ are available as functions that can be easily imported:</p>
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>src/robot/libraries/DateTime.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-405">405</a></span>
-<span class="normal"><a href="#example-0-406">406</a></span>
-<span class="normal"><a href="#example-0-407">407</a></span>
-<span class="normal"><a href="#example-0-408">408</a></span>
-<span class="normal"><a href="#example-0-409">409</a></span>
-<span class="normal"><a href="#example-0-410">410</a></span>
-<span class="normal"><a href="#example-0-411">411</a></span>
-<span class="normal"><a href="#example-0-412">412</a></span>
-<span class="normal"><a href="#example-0-413">413</a></span>
-<span class="normal"><a href="#example-0-414">414</a></span>
-<span class="normal"><a href="#example-0-415">415</a></span>
-<span class="normal"><a href="#example-0-416">416</a></span>
-<span class="normal"><a href="#example-0-417">417</a></span>
-<span class="normal"><a href="#example-0-418">418</a></span>
-<span class="normal"><a href="#example-0-419">419</a></span>
-<span class="normal"><a href="#example-0-420">420</a></span>
-<span class="normal"><a href="#example-0-421">421</a></span>
-<span class="normal"><a href="#example-0-422">422</a></span>
-<span class="normal"><a href="#example-0-423">423</a></span>
-<span class="normal"><a href="#example-0-424">424</a></span>
-<span class="normal"><a href="#example-0-425">425</a></span>
-<span class="normal"><a href="#example-0-426">426</a></span>
-<span class="normal"><a href="#example-0-427">427</a></span>
-<span class="normal"><a href="#example-0-428">428</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-405"><a id="example-0-405" name="example-0-405"></a><span class="k">def</span><span class="w"> </span><span class="nf">subtract_date_from_date</span><span class="p">(</span><span class="n">date1</span><span class="p">,</span> <span class="n">date2</span><span class="p">,</span> <span class="n">result_format</span><span class="o">=</span><span class="s1">'number'</span><span class="p">,</span>
-</span><span id="line-0-406"><a id="example-0-406" name="example-0-406"></a>                            <span class="n">exclude_millis</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">date1_format</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-</span><span id="line-0-407"><a id="example-0-407" name="example-0-407"></a>                            <span class="n">date2_format</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-</span><span id="line-0-408"><a id="example-0-408" name="example-0-408"></a><span class="w">    </span><span class="sd">"""Subtracts date from another date and returns time between.</span>
-</span><span id="line-0-409"><a id="example-0-409" name="example-0-409"></a>
-</span><span id="line-0-410"><a id="example-0-410" name="example-0-410"></a><span class="sd">    Arguments:</span>
-</span><span id="line-0-411"><a id="example-0-411" name="example-0-411"></a><span class="sd">    - ``date1:``          Date to subtract another date from in one of the</span>
-</span><span id="line-0-412"><a id="example-0-412" name="example-0-412"></a><span class="sd">                          supported `date formats`.</span>
-</span><span id="line-0-413"><a id="example-0-413" name="example-0-413"></a><span class="sd">    - ``date2:``          Date that is subtracted in one of the supported</span>
-</span><span id="line-0-414"><a id="example-0-414" name="example-0-414"></a><span class="sd">                          `date formats`.</span>
-</span><span id="line-0-415"><a id="example-0-415" name="example-0-415"></a><span class="sd">    - ``result_format:``  Format of the returned time (see `time formats`).</span>
-</span><span id="line-0-416"><a id="example-0-416" name="example-0-416"></a><span class="sd">    - ``exclude_millis:`` When set to any true value, rounds and drops</span>
-</span><span id="line-0-417"><a id="example-0-417" name="example-0-417"></a><span class="sd">                          milliseconds as explained in `millisecond handling`.</span>
-</span><span id="line-0-418"><a id="example-0-418" name="example-0-418"></a><span class="sd">    - ``date1_format:``   Possible `custom timestamp` format of ``date1``.</span>
-</span><span id="line-0-419"><a id="example-0-419" name="example-0-419"></a><span class="sd">    - ``date2_format:``   Possible `custom timestamp` format of ``date2``.</span>
-</span><span id="line-0-420"><a id="example-0-420" name="example-0-420"></a>
-</span><span id="line-0-421"><a id="example-0-421" name="example-0-421"></a><span class="sd">     Examples:</span>
-</span><span id="line-0-422"><a id="example-0-422" name="example-0-422"></a><span class="sd">    | ${time} =       | Subtract Date From Date | 2014-05-28 12:05:52     | 2014-05-28 12:05:10 |</span>
-</span><span id="line-0-423"><a id="example-0-423" name="example-0-423"></a><span class="sd">    | Should Be Equal | ${time}                 | ${42}                   |</span>
-</span><span id="line-0-424"><a id="example-0-424" name="example-0-424"></a><span class="sd">    | ${time} =       | Subtract Date From Date | 2014-05-28 12:05:52     | 2014-05-27 12:05:10 | verbose |</span>
-</span><span id="line-0-425"><a id="example-0-425" name="example-0-425"></a><span class="sd">    | Should Be Equal | ${time}                 | 1 day 42 seconds        |</span>
-</span><span id="line-0-426"><a id="example-0-426" name="example-0-426"></a><span class="sd">    """</span>
-</span><span id="line-0-427"><a id="example-0-427" name="example-0-427"></a>    <span class="n">time</span> <span class="o">=</span> <span class="n">Date</span><span class="p">(</span><span class="n">date1</span><span class="p">,</span> <span class="n">date1_format</span><span class="p">)</span> <span class="o">-</span> <span class="n">Date</span><span class="p">(</span><span class="n">date2</span><span class="p">,</span> <span class="n">date2_format</span><span class="p">)</span>
-</span><span id="line-0-428"><a id="example-0-428" name="example-0-428"></a>    <span class="k">return</span> <span class="n">time</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">result_format</span><span class="p">,</span> <span class="n">millis</span><span class="o">=</span><span class="ow">not</span> <span class="n">exclude_millis</span><span class="p">)</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#robot.libraries.DateTime.subtract_date_from_date--source--example-0-405">405</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.subtract_date_from_date--source--example-0-406">406</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.subtract_date_from_date--source--example-0-407">407</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.subtract_date_from_date--source--example-0-408">408</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.subtract_date_from_date--source--example-0-409">409</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.subtract_date_from_date--source--example-0-410">410</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.subtract_date_from_date--source--example-0-411">411</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.subtract_date_from_date--source--example-0-412">412</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.subtract_date_from_date--source--example-0-413">413</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.subtract_date_from_date--source--example-0-414">414</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.subtract_date_from_date--source--example-0-415">415</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.subtract_date_from_date--source--example-0-416">416</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.subtract_date_from_date--source--example-0-417">417</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.subtract_date_from_date--source--example-0-418">418</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.subtract_date_from_date--source--example-0-419">419</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.subtract_date_from_date--source--example-0-420">420</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.subtract_date_from_date--source--example-0-421">421</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.subtract_date_from_date--source--example-0-422">422</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.subtract_date_from_date--source--example-0-423">423</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.subtract_date_from_date--source--example-0-424">424</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.subtract_date_from_date--source--example-0-425">425</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.subtract_date_from_date--source--example-0-426">426</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.subtract_date_from_date--source--example-0-427">427</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.subtract_date_from_date--source--example-0-428">428</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="robot.libraries.DateTime.subtract_date_from_date--source--line-0-405"><a id="robot.libraries.DateTime.subtract_date_from_date--source--example-0-405" name="robot.libraries.DateTime.subtract_date_from_date--source--example-0-405"></a><span class="k">def</span><span class="w"> </span><span class="nf">subtract_date_from_date</span><span class="p">(</span><span class="n">date1</span><span class="p">,</span> <span class="n">date2</span><span class="p">,</span> <span class="n">result_format</span><span class="o">=</span><span class="s1">'number'</span><span class="p">,</span>
+</span><span id="robot.libraries.DateTime.subtract_date_from_date--source--line-0-406"><a id="robot.libraries.DateTime.subtract_date_from_date--source--example-0-406" name="robot.libraries.DateTime.subtract_date_from_date--source--example-0-406"></a>                            <span class="n">exclude_millis</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">date1_format</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+</span><span id="robot.libraries.DateTime.subtract_date_from_date--source--line-0-407"><a id="robot.libraries.DateTime.subtract_date_from_date--source--example-0-407" name="robot.libraries.DateTime.subtract_date_from_date--source--example-0-407"></a>                            <span class="n">date2_format</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+</span><span id="robot.libraries.DateTime.subtract_date_from_date--source--line-0-408"><a id="robot.libraries.DateTime.subtract_date_from_date--source--example-0-408" name="robot.libraries.DateTime.subtract_date_from_date--source--example-0-408"></a><span class="w">    </span><span class="sd">"""Subtracts date from another date and returns time between.</span>
+</span><span id="robot.libraries.DateTime.subtract_date_from_date--source--line-0-409"><a id="robot.libraries.DateTime.subtract_date_from_date--source--example-0-409" name="robot.libraries.DateTime.subtract_date_from_date--source--example-0-409"></a>
+</span><span id="robot.libraries.DateTime.subtract_date_from_date--source--line-0-410"><a id="robot.libraries.DateTime.subtract_date_from_date--source--example-0-410" name="robot.libraries.DateTime.subtract_date_from_date--source--example-0-410"></a><span class="sd">    Arguments:</span>
+</span><span id="robot.libraries.DateTime.subtract_date_from_date--source--line-0-411"><a id="robot.libraries.DateTime.subtract_date_from_date--source--example-0-411" name="robot.libraries.DateTime.subtract_date_from_date--source--example-0-411"></a><span class="sd">    - ``date1:``          Date to subtract another date from in one of the</span>
+</span><span id="robot.libraries.DateTime.subtract_date_from_date--source--line-0-412"><a id="robot.libraries.DateTime.subtract_date_from_date--source--example-0-412" name="robot.libraries.DateTime.subtract_date_from_date--source--example-0-412"></a><span class="sd">                          supported `date formats`.</span>
+</span><span id="robot.libraries.DateTime.subtract_date_from_date--source--line-0-413"><a id="robot.libraries.DateTime.subtract_date_from_date--source--example-0-413" name="robot.libraries.DateTime.subtract_date_from_date--source--example-0-413"></a><span class="sd">    - ``date2:``          Date that is subtracted in one of the supported</span>
+</span><span id="robot.libraries.DateTime.subtract_date_from_date--source--line-0-414"><a id="robot.libraries.DateTime.subtract_date_from_date--source--example-0-414" name="robot.libraries.DateTime.subtract_date_from_date--source--example-0-414"></a><span class="sd">                          `date formats`.</span>
+</span><span id="robot.libraries.DateTime.subtract_date_from_date--source--line-0-415"><a id="robot.libraries.DateTime.subtract_date_from_date--source--example-0-415" name="robot.libraries.DateTime.subtract_date_from_date--source--example-0-415"></a><span class="sd">    - ``result_format:``  Format of the returned time (see `time formats`).</span>
+</span><span id="robot.libraries.DateTime.subtract_date_from_date--source--line-0-416"><a id="robot.libraries.DateTime.subtract_date_from_date--source--example-0-416" name="robot.libraries.DateTime.subtract_date_from_date--source--example-0-416"></a><span class="sd">    - ``exclude_millis:`` When set to any true value, rounds and drops</span>
+</span><span id="robot.libraries.DateTime.subtract_date_from_date--source--line-0-417"><a id="robot.libraries.DateTime.subtract_date_from_date--source--example-0-417" name="robot.libraries.DateTime.subtract_date_from_date--source--example-0-417"></a><span class="sd">                          milliseconds as explained in `millisecond handling`.</span>
+</span><span id="robot.libraries.DateTime.subtract_date_from_date--source--line-0-418"><a id="robot.libraries.DateTime.subtract_date_from_date--source--example-0-418" name="robot.libraries.DateTime.subtract_date_from_date--source--example-0-418"></a><span class="sd">    - ``date1_format:``   Possible `custom timestamp` format of ``date1``.</span>
+</span><span id="robot.libraries.DateTime.subtract_date_from_date--source--line-0-419"><a id="robot.libraries.DateTime.subtract_date_from_date--source--example-0-419" name="robot.libraries.DateTime.subtract_date_from_date--source--example-0-419"></a><span class="sd">    - ``date2_format:``   Possible `custom timestamp` format of ``date2``.</span>
+</span><span id="robot.libraries.DateTime.subtract_date_from_date--source--line-0-420"><a id="robot.libraries.DateTime.subtract_date_from_date--source--example-0-420" name="robot.libraries.DateTime.subtract_date_from_date--source--example-0-420"></a>
+</span><span id="robot.libraries.DateTime.subtract_date_from_date--source--line-0-421"><a id="robot.libraries.DateTime.subtract_date_from_date--source--example-0-421" name="robot.libraries.DateTime.subtract_date_from_date--source--example-0-421"></a><span class="sd">     Examples:</span>
+</span><span id="robot.libraries.DateTime.subtract_date_from_date--source--line-0-422"><a id="robot.libraries.DateTime.subtract_date_from_date--source--example-0-422" name="robot.libraries.DateTime.subtract_date_from_date--source--example-0-422"></a><span class="sd">    | ${time} =       | Subtract Date From Date | 2014-05-28 12:05:52     | 2014-05-28 12:05:10 |</span>
+</span><span id="robot.libraries.DateTime.subtract_date_from_date--source--line-0-423"><a id="robot.libraries.DateTime.subtract_date_from_date--source--example-0-423" name="robot.libraries.DateTime.subtract_date_from_date--source--example-0-423"></a><span class="sd">    | Should Be Equal | ${time}                 | ${42}                   |</span>
+</span><span id="robot.libraries.DateTime.subtract_date_from_date--source--line-0-424"><a id="robot.libraries.DateTime.subtract_date_from_date--source--example-0-424" name="robot.libraries.DateTime.subtract_date_from_date--source--example-0-424"></a><span class="sd">    | ${time} =       | Subtract Date From Date | 2014-05-28 12:05:52     | 2014-05-27 12:05:10 | verbose |</span>
+</span><span id="robot.libraries.DateTime.subtract_date_from_date--source--line-0-425"><a id="robot.libraries.DateTime.subtract_date_from_date--source--example-0-425" name="robot.libraries.DateTime.subtract_date_from_date--source--example-0-425"></a><span class="sd">    | Should Be Equal | ${time}                 | 1 day 42 seconds        |</span>
+</span><span id="robot.libraries.DateTime.subtract_date_from_date--source--line-0-426"><a id="robot.libraries.DateTime.subtract_date_from_date--source--example-0-426" name="robot.libraries.DateTime.subtract_date_from_date--source--example-0-426"></a><span class="sd">    """</span>
+</span><span id="robot.libraries.DateTime.subtract_date_from_date--source--line-0-427"><a id="robot.libraries.DateTime.subtract_date_from_date--source--example-0-427" name="robot.libraries.DateTime.subtract_date_from_date--source--example-0-427"></a>    <span class="n">time</span> <span class="o">=</span> <span class="n">Date</span><span class="p">(</span><span class="n">date1</span><span class="p">,</span> <span class="n">date1_format</span><span class="p">)</span> <span class="o">-</span> <span class="n">Date</span><span class="p">(</span><span class="n">date2</span><span class="p">,</span> <span class="n">date2_format</span><span class="p">)</span>
+</span><span id="robot.libraries.DateTime.subtract_date_from_date--source--line-0-428"><a id="robot.libraries.DateTime.subtract_date_from_date--source--example-0-428" name="robot.libraries.DateTime.subtract_date_from_date--source--example-0-428"></a>    <span class="k">return</span> <span class="n">time</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">result_format</span><span class="p">,</span> <span class="n">millis</span><span class="o">=</span><span class="ow">not</span> <span class="n">exclude_millis</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -10728,49 +10728,49 @@ are available as functions that can be easily imported:</p>
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>src/robot/libraries/DateTime.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-431">431</a></span>
-<span class="normal"><a href="#example-0-432">432</a></span>
-<span class="normal"><a href="#example-0-433">433</a></span>
-<span class="normal"><a href="#example-0-434">434</a></span>
-<span class="normal"><a href="#example-0-435">435</a></span>
-<span class="normal"><a href="#example-0-436">436</a></span>
-<span class="normal"><a href="#example-0-437">437</a></span>
-<span class="normal"><a href="#example-0-438">438</a></span>
-<span class="normal"><a href="#example-0-439">439</a></span>
-<span class="normal"><a href="#example-0-440">440</a></span>
-<span class="normal"><a href="#example-0-441">441</a></span>
-<span class="normal"><a href="#example-0-442">442</a></span>
-<span class="normal"><a href="#example-0-443">443</a></span>
-<span class="normal"><a href="#example-0-444">444</a></span>
-<span class="normal"><a href="#example-0-445">445</a></span>
-<span class="normal"><a href="#example-0-446">446</a></span>
-<span class="normal"><a href="#example-0-447">447</a></span>
-<span class="normal"><a href="#example-0-448">448</a></span>
-<span class="normal"><a href="#example-0-449">449</a></span>
-<span class="normal"><a href="#example-0-450">450</a></span>
-<span class="normal"><a href="#example-0-451">451</a></span>
-<span class="normal"><a href="#example-0-452">452</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-431"><a id="example-0-431" name="example-0-431"></a><span class="k">def</span><span class="w"> </span><span class="nf">add_time_to_date</span><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">result_format</span><span class="o">=</span><span class="s1">'timestamp'</span><span class="p">,</span>
-</span><span id="line-0-432"><a id="example-0-432" name="example-0-432"></a>                     <span class="n">exclude_millis</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">date_format</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-</span><span id="line-0-433"><a id="example-0-433" name="example-0-433"></a><span class="w">    </span><span class="sd">"""Adds time to date and returns the resulting date.</span>
-</span><span id="line-0-434"><a id="example-0-434" name="example-0-434"></a>
-</span><span id="line-0-435"><a id="example-0-435" name="example-0-435"></a><span class="sd">    Arguments:</span>
-</span><span id="line-0-436"><a id="example-0-436" name="example-0-436"></a><span class="sd">    - ``date:``           Date to add time to in one of the supported</span>
-</span><span id="line-0-437"><a id="example-0-437" name="example-0-437"></a><span class="sd">                          `date formats`.</span>
-</span><span id="line-0-438"><a id="example-0-438" name="example-0-438"></a><span class="sd">    - ``time:``           Time that is added in one of the supported</span>
-</span><span id="line-0-439"><a id="example-0-439" name="example-0-439"></a><span class="sd">                          `time formats`.</span>
-</span><span id="line-0-440"><a id="example-0-440" name="example-0-440"></a><span class="sd">    - ``result_format:``  Format of the returned date.</span>
-</span><span id="line-0-441"><a id="example-0-441" name="example-0-441"></a><span class="sd">    - ``exclude_millis:`` When set to any true value, rounds and drops</span>
-</span><span id="line-0-442"><a id="example-0-442" name="example-0-442"></a><span class="sd">                          milliseconds as explained in `millisecond handling`.</span>
-</span><span id="line-0-443"><a id="example-0-443" name="example-0-443"></a><span class="sd">    - ``date_format:``    Possible `custom timestamp` format of ``date``.</span>
-</span><span id="line-0-444"><a id="example-0-444" name="example-0-444"></a>
-</span><span id="line-0-445"><a id="example-0-445" name="example-0-445"></a><span class="sd">    Examples:</span>
-</span><span id="line-0-446"><a id="example-0-446" name="example-0-446"></a><span class="sd">    | ${date} =       | Add Time To Date | 2014-05-28 12:05:03.111 | 7 days       |</span>
-</span><span id="line-0-447"><a id="example-0-447" name="example-0-447"></a><span class="sd">    | Should Be Equal | ${date}          | 2014-06-04 12:05:03.111 |              |</span>
-</span><span id="line-0-448"><a id="example-0-448" name="example-0-448"></a><span class="sd">    | ${date} =       | Add Time To Date | 2014-05-28 12:05:03.111 | 01:02:03:004 |</span>
-</span><span id="line-0-449"><a id="example-0-449" name="example-0-449"></a><span class="sd">    | Should Be Equal | ${date}          | 2014-05-28 13:07:06.115 |</span>
-</span><span id="line-0-450"><a id="example-0-450" name="example-0-450"></a><span class="sd">    """</span>
-</span><span id="line-0-451"><a id="example-0-451" name="example-0-451"></a>    <span class="n">date</span> <span class="o">=</span> <span class="n">Date</span><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="n">date_format</span><span class="p">)</span> <span class="o">+</span> <span class="n">Time</span><span class="p">(</span><span class="n">time</span><span class="p">)</span>
-</span><span id="line-0-452"><a id="example-0-452" name="example-0-452"></a>    <span class="k">return</span> <span class="n">date</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">result_format</span><span class="p">,</span> <span class="n">millis</span><span class="o">=</span><span class="ow">not</span> <span class="n">exclude_millis</span><span class="p">)</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#robot.libraries.DateTime.add_time_to_date--source--example-0-431">431</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.add_time_to_date--source--example-0-432">432</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.add_time_to_date--source--example-0-433">433</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.add_time_to_date--source--example-0-434">434</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.add_time_to_date--source--example-0-435">435</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.add_time_to_date--source--example-0-436">436</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.add_time_to_date--source--example-0-437">437</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.add_time_to_date--source--example-0-438">438</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.add_time_to_date--source--example-0-439">439</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.add_time_to_date--source--example-0-440">440</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.add_time_to_date--source--example-0-441">441</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.add_time_to_date--source--example-0-442">442</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.add_time_to_date--source--example-0-443">443</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.add_time_to_date--source--example-0-444">444</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.add_time_to_date--source--example-0-445">445</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.add_time_to_date--source--example-0-446">446</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.add_time_to_date--source--example-0-447">447</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.add_time_to_date--source--example-0-448">448</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.add_time_to_date--source--example-0-449">449</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.add_time_to_date--source--example-0-450">450</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.add_time_to_date--source--example-0-451">451</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.add_time_to_date--source--example-0-452">452</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="robot.libraries.DateTime.add_time_to_date--source--line-0-431"><a id="robot.libraries.DateTime.add_time_to_date--source--example-0-431" name="robot.libraries.DateTime.add_time_to_date--source--example-0-431"></a><span class="k">def</span><span class="w"> </span><span class="nf">add_time_to_date</span><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">result_format</span><span class="o">=</span><span class="s1">'timestamp'</span><span class="p">,</span>
+</span><span id="robot.libraries.DateTime.add_time_to_date--source--line-0-432"><a id="robot.libraries.DateTime.add_time_to_date--source--example-0-432" name="robot.libraries.DateTime.add_time_to_date--source--example-0-432"></a>                     <span class="n">exclude_millis</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">date_format</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+</span><span id="robot.libraries.DateTime.add_time_to_date--source--line-0-433"><a id="robot.libraries.DateTime.add_time_to_date--source--example-0-433" name="robot.libraries.DateTime.add_time_to_date--source--example-0-433"></a><span class="w">    </span><span class="sd">"""Adds time to date and returns the resulting date.</span>
+</span><span id="robot.libraries.DateTime.add_time_to_date--source--line-0-434"><a id="robot.libraries.DateTime.add_time_to_date--source--example-0-434" name="robot.libraries.DateTime.add_time_to_date--source--example-0-434"></a>
+</span><span id="robot.libraries.DateTime.add_time_to_date--source--line-0-435"><a id="robot.libraries.DateTime.add_time_to_date--source--example-0-435" name="robot.libraries.DateTime.add_time_to_date--source--example-0-435"></a><span class="sd">    Arguments:</span>
+</span><span id="robot.libraries.DateTime.add_time_to_date--source--line-0-436"><a id="robot.libraries.DateTime.add_time_to_date--source--example-0-436" name="robot.libraries.DateTime.add_time_to_date--source--example-0-436"></a><span class="sd">    - ``date:``           Date to add time to in one of the supported</span>
+</span><span id="robot.libraries.DateTime.add_time_to_date--source--line-0-437"><a id="robot.libraries.DateTime.add_time_to_date--source--example-0-437" name="robot.libraries.DateTime.add_time_to_date--source--example-0-437"></a><span class="sd">                          `date formats`.</span>
+</span><span id="robot.libraries.DateTime.add_time_to_date--source--line-0-438"><a id="robot.libraries.DateTime.add_time_to_date--source--example-0-438" name="robot.libraries.DateTime.add_time_to_date--source--example-0-438"></a><span class="sd">    - ``time:``           Time that is added in one of the supported</span>
+</span><span id="robot.libraries.DateTime.add_time_to_date--source--line-0-439"><a id="robot.libraries.DateTime.add_time_to_date--source--example-0-439" name="robot.libraries.DateTime.add_time_to_date--source--example-0-439"></a><span class="sd">                          `time formats`.</span>
+</span><span id="robot.libraries.DateTime.add_time_to_date--source--line-0-440"><a id="robot.libraries.DateTime.add_time_to_date--source--example-0-440" name="robot.libraries.DateTime.add_time_to_date--source--example-0-440"></a><span class="sd">    - ``result_format:``  Format of the returned date.</span>
+</span><span id="robot.libraries.DateTime.add_time_to_date--source--line-0-441"><a id="robot.libraries.DateTime.add_time_to_date--source--example-0-441" name="robot.libraries.DateTime.add_time_to_date--source--example-0-441"></a><span class="sd">    - ``exclude_millis:`` When set to any true value, rounds and drops</span>
+</span><span id="robot.libraries.DateTime.add_time_to_date--source--line-0-442"><a id="robot.libraries.DateTime.add_time_to_date--source--example-0-442" name="robot.libraries.DateTime.add_time_to_date--source--example-0-442"></a><span class="sd">                          milliseconds as explained in `millisecond handling`.</span>
+</span><span id="robot.libraries.DateTime.add_time_to_date--source--line-0-443"><a id="robot.libraries.DateTime.add_time_to_date--source--example-0-443" name="robot.libraries.DateTime.add_time_to_date--source--example-0-443"></a><span class="sd">    - ``date_format:``    Possible `custom timestamp` format of ``date``.</span>
+</span><span id="robot.libraries.DateTime.add_time_to_date--source--line-0-444"><a id="robot.libraries.DateTime.add_time_to_date--source--example-0-444" name="robot.libraries.DateTime.add_time_to_date--source--example-0-444"></a>
+</span><span id="robot.libraries.DateTime.add_time_to_date--source--line-0-445"><a id="robot.libraries.DateTime.add_time_to_date--source--example-0-445" name="robot.libraries.DateTime.add_time_to_date--source--example-0-445"></a><span class="sd">    Examples:</span>
+</span><span id="robot.libraries.DateTime.add_time_to_date--source--line-0-446"><a id="robot.libraries.DateTime.add_time_to_date--source--example-0-446" name="robot.libraries.DateTime.add_time_to_date--source--example-0-446"></a><span class="sd">    | ${date} =       | Add Time To Date | 2014-05-28 12:05:03.111 | 7 days       |</span>
+</span><span id="robot.libraries.DateTime.add_time_to_date--source--line-0-447"><a id="robot.libraries.DateTime.add_time_to_date--source--example-0-447" name="robot.libraries.DateTime.add_time_to_date--source--example-0-447"></a><span class="sd">    | Should Be Equal | ${date}          | 2014-06-04 12:05:03.111 |              |</span>
+</span><span id="robot.libraries.DateTime.add_time_to_date--source--line-0-448"><a id="robot.libraries.DateTime.add_time_to_date--source--example-0-448" name="robot.libraries.DateTime.add_time_to_date--source--example-0-448"></a><span class="sd">    | ${date} =       | Add Time To Date | 2014-05-28 12:05:03.111 | 01:02:03:004 |</span>
+</span><span id="robot.libraries.DateTime.add_time_to_date--source--line-0-449"><a id="robot.libraries.DateTime.add_time_to_date--source--example-0-449" name="robot.libraries.DateTime.add_time_to_date--source--example-0-449"></a><span class="sd">    | Should Be Equal | ${date}          | 2014-05-28 13:07:06.115 |</span>
+</span><span id="robot.libraries.DateTime.add_time_to_date--source--line-0-450"><a id="robot.libraries.DateTime.add_time_to_date--source--example-0-450" name="robot.libraries.DateTime.add_time_to_date--source--example-0-450"></a><span class="sd">    """</span>
+</span><span id="robot.libraries.DateTime.add_time_to_date--source--line-0-451"><a id="robot.libraries.DateTime.add_time_to_date--source--example-0-451" name="robot.libraries.DateTime.add_time_to_date--source--example-0-451"></a>    <span class="n">date</span> <span class="o">=</span> <span class="n">Date</span><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="n">date_format</span><span class="p">)</span> <span class="o">+</span> <span class="n">Time</span><span class="p">(</span><span class="n">time</span><span class="p">)</span>
+</span><span id="robot.libraries.DateTime.add_time_to_date--source--line-0-452"><a id="robot.libraries.DateTime.add_time_to_date--source--example-0-452" name="robot.libraries.DateTime.add_time_to_date--source--example-0-452"></a>    <span class="k">return</span> <span class="n">date</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">result_format</span><span class="p">,</span> <span class="n">millis</span><span class="o">=</span><span class="ow">not</span> <span class="n">exclude_millis</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -10821,49 +10821,49 @@ are available as functions that can be easily imported:</p>
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>src/robot/libraries/DateTime.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-455">455</a></span>
-<span class="normal"><a href="#example-0-456">456</a></span>
-<span class="normal"><a href="#example-0-457">457</a></span>
-<span class="normal"><a href="#example-0-458">458</a></span>
-<span class="normal"><a href="#example-0-459">459</a></span>
-<span class="normal"><a href="#example-0-460">460</a></span>
-<span class="normal"><a href="#example-0-461">461</a></span>
-<span class="normal"><a href="#example-0-462">462</a></span>
-<span class="normal"><a href="#example-0-463">463</a></span>
-<span class="normal"><a href="#example-0-464">464</a></span>
-<span class="normal"><a href="#example-0-465">465</a></span>
-<span class="normal"><a href="#example-0-466">466</a></span>
-<span class="normal"><a href="#example-0-467">467</a></span>
-<span class="normal"><a href="#example-0-468">468</a></span>
-<span class="normal"><a href="#example-0-469">469</a></span>
-<span class="normal"><a href="#example-0-470">470</a></span>
-<span class="normal"><a href="#example-0-471">471</a></span>
-<span class="normal"><a href="#example-0-472">472</a></span>
-<span class="normal"><a href="#example-0-473">473</a></span>
-<span class="normal"><a href="#example-0-474">474</a></span>
-<span class="normal"><a href="#example-0-475">475</a></span>
-<span class="normal"><a href="#example-0-476">476</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-455"><a id="example-0-455" name="example-0-455"></a><span class="k">def</span><span class="w"> </span><span class="nf">subtract_time_from_date</span><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">result_format</span><span class="o">=</span><span class="s1">'timestamp'</span><span class="p">,</span>
-</span><span id="line-0-456"><a id="example-0-456" name="example-0-456"></a>                            <span class="n">exclude_millis</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">date_format</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-</span><span id="line-0-457"><a id="example-0-457" name="example-0-457"></a><span class="w">    </span><span class="sd">"""Subtracts time from date and returns the resulting date.</span>
-</span><span id="line-0-458"><a id="example-0-458" name="example-0-458"></a>
-</span><span id="line-0-459"><a id="example-0-459" name="example-0-459"></a><span class="sd">    Arguments:</span>
-</span><span id="line-0-460"><a id="example-0-460" name="example-0-460"></a><span class="sd">    - ``date:``           Date to subtract time from in one of the supported</span>
-</span><span id="line-0-461"><a id="example-0-461" name="example-0-461"></a><span class="sd">                          `date formats`.</span>
-</span><span id="line-0-462"><a id="example-0-462" name="example-0-462"></a><span class="sd">    - ``time:``           Time that is subtracted in one of the supported</span>
-</span><span id="line-0-463"><a id="example-0-463" name="example-0-463"></a><span class="sd">                         `time formats`.</span>
-</span><span id="line-0-464"><a id="example-0-464" name="example-0-464"></a><span class="sd">    - ``result_format:``  Format of the returned date.</span>
-</span><span id="line-0-465"><a id="example-0-465" name="example-0-465"></a><span class="sd">    - ``exclude_millis:`` When set to any true value, rounds and drops</span>
-</span><span id="line-0-466"><a id="example-0-466" name="example-0-466"></a><span class="sd">                          milliseconds as explained in `millisecond handling`.</span>
-</span><span id="line-0-467"><a id="example-0-467" name="example-0-467"></a><span class="sd">    - ``date_format:``    Possible `custom timestamp` format of ``date``.</span>
-</span><span id="line-0-468"><a id="example-0-468" name="example-0-468"></a>
-</span><span id="line-0-469"><a id="example-0-469" name="example-0-469"></a><span class="sd">    Examples:</span>
-</span><span id="line-0-470"><a id="example-0-470" name="example-0-470"></a><span class="sd">    | ${date} =       | Subtract Time From Date | 2014-06-04 12:05:03.111 | 7 days |</span>
-</span><span id="line-0-471"><a id="example-0-471" name="example-0-471"></a><span class="sd">    | Should Be Equal | ${date}                 | 2014-05-28 12:05:03.111 |</span>
-</span><span id="line-0-472"><a id="example-0-472" name="example-0-472"></a><span class="sd">    | ${date} =       | Subtract Time From Date | 2014-05-28 13:07:06.115 | 01:02:03:004 |</span>
-</span><span id="line-0-473"><a id="example-0-473" name="example-0-473"></a><span class="sd">    | Should Be Equal | ${date}                 | 2014-05-28 12:05:03.111 |</span>
-</span><span id="line-0-474"><a id="example-0-474" name="example-0-474"></a><span class="sd">    """</span>
-</span><span id="line-0-475"><a id="example-0-475" name="example-0-475"></a>    <span class="n">date</span> <span class="o">=</span> <span class="n">Date</span><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="n">date_format</span><span class="p">)</span> <span class="o">-</span> <span class="n">Time</span><span class="p">(</span><span class="n">time</span><span class="p">)</span>
-</span><span id="line-0-476"><a id="example-0-476" name="example-0-476"></a>    <span class="k">return</span> <span class="n">date</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">result_format</span><span class="p">,</span> <span class="n">millis</span><span class="o">=</span><span class="ow">not</span> <span class="n">exclude_millis</span><span class="p">)</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#robot.libraries.DateTime.subtract_time_from_date--source--example-0-455">455</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.subtract_time_from_date--source--example-0-456">456</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.subtract_time_from_date--source--example-0-457">457</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.subtract_time_from_date--source--example-0-458">458</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.subtract_time_from_date--source--example-0-459">459</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.subtract_time_from_date--source--example-0-460">460</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.subtract_time_from_date--source--example-0-461">461</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.subtract_time_from_date--source--example-0-462">462</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.subtract_time_from_date--source--example-0-463">463</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.subtract_time_from_date--source--example-0-464">464</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.subtract_time_from_date--source--example-0-465">465</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.subtract_time_from_date--source--example-0-466">466</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.subtract_time_from_date--source--example-0-467">467</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.subtract_time_from_date--source--example-0-468">468</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.subtract_time_from_date--source--example-0-469">469</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.subtract_time_from_date--source--example-0-470">470</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.subtract_time_from_date--source--example-0-471">471</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.subtract_time_from_date--source--example-0-472">472</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.subtract_time_from_date--source--example-0-473">473</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.subtract_time_from_date--source--example-0-474">474</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.subtract_time_from_date--source--example-0-475">475</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.subtract_time_from_date--source--example-0-476">476</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="robot.libraries.DateTime.subtract_time_from_date--source--line-0-455"><a id="robot.libraries.DateTime.subtract_time_from_date--source--example-0-455" name="robot.libraries.DateTime.subtract_time_from_date--source--example-0-455"></a><span class="k">def</span><span class="w"> </span><span class="nf">subtract_time_from_date</span><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">result_format</span><span class="o">=</span><span class="s1">'timestamp'</span><span class="p">,</span>
+</span><span id="robot.libraries.DateTime.subtract_time_from_date--source--line-0-456"><a id="robot.libraries.DateTime.subtract_time_from_date--source--example-0-456" name="robot.libraries.DateTime.subtract_time_from_date--source--example-0-456"></a>                            <span class="n">exclude_millis</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">date_format</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+</span><span id="robot.libraries.DateTime.subtract_time_from_date--source--line-0-457"><a id="robot.libraries.DateTime.subtract_time_from_date--source--example-0-457" name="robot.libraries.DateTime.subtract_time_from_date--source--example-0-457"></a><span class="w">    </span><span class="sd">"""Subtracts time from date and returns the resulting date.</span>
+</span><span id="robot.libraries.DateTime.subtract_time_from_date--source--line-0-458"><a id="robot.libraries.DateTime.subtract_time_from_date--source--example-0-458" name="robot.libraries.DateTime.subtract_time_from_date--source--example-0-458"></a>
+</span><span id="robot.libraries.DateTime.subtract_time_from_date--source--line-0-459"><a id="robot.libraries.DateTime.subtract_time_from_date--source--example-0-459" name="robot.libraries.DateTime.subtract_time_from_date--source--example-0-459"></a><span class="sd">    Arguments:</span>
+</span><span id="robot.libraries.DateTime.subtract_time_from_date--source--line-0-460"><a id="robot.libraries.DateTime.subtract_time_from_date--source--example-0-460" name="robot.libraries.DateTime.subtract_time_from_date--source--example-0-460"></a><span class="sd">    - ``date:``           Date to subtract time from in one of the supported</span>
+</span><span id="robot.libraries.DateTime.subtract_time_from_date--source--line-0-461"><a id="robot.libraries.DateTime.subtract_time_from_date--source--example-0-461" name="robot.libraries.DateTime.subtract_time_from_date--source--example-0-461"></a><span class="sd">                          `date formats`.</span>
+</span><span id="robot.libraries.DateTime.subtract_time_from_date--source--line-0-462"><a id="robot.libraries.DateTime.subtract_time_from_date--source--example-0-462" name="robot.libraries.DateTime.subtract_time_from_date--source--example-0-462"></a><span class="sd">    - ``time:``           Time that is subtracted in one of the supported</span>
+</span><span id="robot.libraries.DateTime.subtract_time_from_date--source--line-0-463"><a id="robot.libraries.DateTime.subtract_time_from_date--source--example-0-463" name="robot.libraries.DateTime.subtract_time_from_date--source--example-0-463"></a><span class="sd">                         `time formats`.</span>
+</span><span id="robot.libraries.DateTime.subtract_time_from_date--source--line-0-464"><a id="robot.libraries.DateTime.subtract_time_from_date--source--example-0-464" name="robot.libraries.DateTime.subtract_time_from_date--source--example-0-464"></a><span class="sd">    - ``result_format:``  Format of the returned date.</span>
+</span><span id="robot.libraries.DateTime.subtract_time_from_date--source--line-0-465"><a id="robot.libraries.DateTime.subtract_time_from_date--source--example-0-465" name="robot.libraries.DateTime.subtract_time_from_date--source--example-0-465"></a><span class="sd">    - ``exclude_millis:`` When set to any true value, rounds and drops</span>
+</span><span id="robot.libraries.DateTime.subtract_time_from_date--source--line-0-466"><a id="robot.libraries.DateTime.subtract_time_from_date--source--example-0-466" name="robot.libraries.DateTime.subtract_time_from_date--source--example-0-466"></a><span class="sd">                          milliseconds as explained in `millisecond handling`.</span>
+</span><span id="robot.libraries.DateTime.subtract_time_from_date--source--line-0-467"><a id="robot.libraries.DateTime.subtract_time_from_date--source--example-0-467" name="robot.libraries.DateTime.subtract_time_from_date--source--example-0-467"></a><span class="sd">    - ``date_format:``    Possible `custom timestamp` format of ``date``.</span>
+</span><span id="robot.libraries.DateTime.subtract_time_from_date--source--line-0-468"><a id="robot.libraries.DateTime.subtract_time_from_date--source--example-0-468" name="robot.libraries.DateTime.subtract_time_from_date--source--example-0-468"></a>
+</span><span id="robot.libraries.DateTime.subtract_time_from_date--source--line-0-469"><a id="robot.libraries.DateTime.subtract_time_from_date--source--example-0-469" name="robot.libraries.DateTime.subtract_time_from_date--source--example-0-469"></a><span class="sd">    Examples:</span>
+</span><span id="robot.libraries.DateTime.subtract_time_from_date--source--line-0-470"><a id="robot.libraries.DateTime.subtract_time_from_date--source--example-0-470" name="robot.libraries.DateTime.subtract_time_from_date--source--example-0-470"></a><span class="sd">    | ${date} =       | Subtract Time From Date | 2014-06-04 12:05:03.111 | 7 days |</span>
+</span><span id="robot.libraries.DateTime.subtract_time_from_date--source--line-0-471"><a id="robot.libraries.DateTime.subtract_time_from_date--source--example-0-471" name="robot.libraries.DateTime.subtract_time_from_date--source--example-0-471"></a><span class="sd">    | Should Be Equal | ${date}                 | 2014-05-28 12:05:03.111 |</span>
+</span><span id="robot.libraries.DateTime.subtract_time_from_date--source--line-0-472"><a id="robot.libraries.DateTime.subtract_time_from_date--source--example-0-472" name="robot.libraries.DateTime.subtract_time_from_date--source--example-0-472"></a><span class="sd">    | ${date} =       | Subtract Time From Date | 2014-05-28 13:07:06.115 | 01:02:03:004 |</span>
+</span><span id="robot.libraries.DateTime.subtract_time_from_date--source--line-0-473"><a id="robot.libraries.DateTime.subtract_time_from_date--source--example-0-473" name="robot.libraries.DateTime.subtract_time_from_date--source--example-0-473"></a><span class="sd">    | Should Be Equal | ${date}                 | 2014-05-28 12:05:03.111 |</span>
+</span><span id="robot.libraries.DateTime.subtract_time_from_date--source--line-0-474"><a id="robot.libraries.DateTime.subtract_time_from_date--source--example-0-474" name="robot.libraries.DateTime.subtract_time_from_date--source--example-0-474"></a><span class="sd">    """</span>
+</span><span id="robot.libraries.DateTime.subtract_time_from_date--source--line-0-475"><a id="robot.libraries.DateTime.subtract_time_from_date--source--example-0-475" name="robot.libraries.DateTime.subtract_time_from_date--source--example-0-475"></a>    <span class="n">date</span> <span class="o">=</span> <span class="n">Date</span><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="n">date_format</span><span class="p">)</span> <span class="o">-</span> <span class="n">Time</span><span class="p">(</span><span class="n">time</span><span class="p">)</span>
+</span><span id="robot.libraries.DateTime.subtract_time_from_date--source--line-0-476"><a id="robot.libraries.DateTime.subtract_time_from_date--source--example-0-476" name="robot.libraries.DateTime.subtract_time_from_date--source--example-0-476"></a>    <span class="k">return</span> <span class="n">date</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">result_format</span><span class="p">,</span> <span class="n">millis</span><span class="o">=</span><span class="ow">not</span> <span class="n">exclude_millis</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -10909,43 +10909,43 @@ are available as functions that can be easily imported:</p>
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>src/robot/libraries/DateTime.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-479">479</a></span>
-<span class="normal"><a href="#example-0-480">480</a></span>
-<span class="normal"><a href="#example-0-481">481</a></span>
-<span class="normal"><a href="#example-0-482">482</a></span>
-<span class="normal"><a href="#example-0-483">483</a></span>
-<span class="normal"><a href="#example-0-484">484</a></span>
-<span class="normal"><a href="#example-0-485">485</a></span>
-<span class="normal"><a href="#example-0-486">486</a></span>
-<span class="normal"><a href="#example-0-487">487</a></span>
-<span class="normal"><a href="#example-0-488">488</a></span>
-<span class="normal"><a href="#example-0-489">489</a></span>
-<span class="normal"><a href="#example-0-490">490</a></span>
-<span class="normal"><a href="#example-0-491">491</a></span>
-<span class="normal"><a href="#example-0-492">492</a></span>
-<span class="normal"><a href="#example-0-493">493</a></span>
-<span class="normal"><a href="#example-0-494">494</a></span>
-<span class="normal"><a href="#example-0-495">495</a></span>
-<span class="normal"><a href="#example-0-496">496</a></span>
-<span class="normal"><a href="#example-0-497">497</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-479"><a id="example-0-479" name="example-0-479"></a><span class="k">def</span><span class="w"> </span><span class="nf">add_time_to_time</span><span class="p">(</span><span class="n">time1</span><span class="p">,</span> <span class="n">time2</span><span class="p">,</span> <span class="n">result_format</span><span class="o">=</span><span class="s1">'number'</span><span class="p">,</span>
-</span><span id="line-0-480"><a id="example-0-480" name="example-0-480"></a>                     <span class="n">exclude_millis</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-</span><span id="line-0-481"><a id="example-0-481" name="example-0-481"></a><span class="w">    </span><span class="sd">"""Adds time to another time and returns the resulting time.</span>
-</span><span id="line-0-482"><a id="example-0-482" name="example-0-482"></a>
-</span><span id="line-0-483"><a id="example-0-483" name="example-0-483"></a><span class="sd">    Arguments:</span>
-</span><span id="line-0-484"><a id="example-0-484" name="example-0-484"></a><span class="sd">    - ``time1:``          First time in one of the supported `time formats`.</span>
-</span><span id="line-0-485"><a id="example-0-485" name="example-0-485"></a><span class="sd">    - ``time2:``          Second time in one of the supported `time formats`.</span>
-</span><span id="line-0-486"><a id="example-0-486" name="example-0-486"></a><span class="sd">    - ``result_format:``  Format of the returned time.</span>
-</span><span id="line-0-487"><a id="example-0-487" name="example-0-487"></a><span class="sd">    - ``exclude_millis:`` When set to any true value, rounds and drops</span>
-</span><span id="line-0-488"><a id="example-0-488" name="example-0-488"></a><span class="sd">                          milliseconds as explained in `millisecond handling`.</span>
-</span><span id="line-0-489"><a id="example-0-489" name="example-0-489"></a>
-</span><span id="line-0-490"><a id="example-0-490" name="example-0-490"></a><span class="sd">    Examples:</span>
-</span><span id="line-0-491"><a id="example-0-491" name="example-0-491"></a><span class="sd">    | ${time} =       | Add Time To Time | 1 minute          | 42       |</span>
-</span><span id="line-0-492"><a id="example-0-492" name="example-0-492"></a><span class="sd">    | Should Be Equal | ${time}          | ${102}            |</span>
-</span><span id="line-0-493"><a id="example-0-493" name="example-0-493"></a><span class="sd">    | ${time} =       | Add Time To Time | 3 hours 5 minutes | 01:02:03 | timer | exclude_millis=yes |</span>
-</span><span id="line-0-494"><a id="example-0-494" name="example-0-494"></a><span class="sd">    | Should Be Equal | ${time}          | 04:07:03          |</span>
-</span><span id="line-0-495"><a id="example-0-495" name="example-0-495"></a><span class="sd">    """</span>
-</span><span id="line-0-496"><a id="example-0-496" name="example-0-496"></a>    <span class="n">time</span> <span class="o">=</span> <span class="n">Time</span><span class="p">(</span><span class="n">time1</span><span class="p">)</span> <span class="o">+</span> <span class="n">Time</span><span class="p">(</span><span class="n">time2</span><span class="p">)</span>
-</span><span id="line-0-497"><a id="example-0-497" name="example-0-497"></a>    <span class="k">return</span> <span class="n">time</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">result_format</span><span class="p">,</span> <span class="n">millis</span><span class="o">=</span><span class="ow">not</span> <span class="n">exclude_millis</span><span class="p">)</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#robot.libraries.DateTime.add_time_to_time--source--example-0-479">479</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.add_time_to_time--source--example-0-480">480</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.add_time_to_time--source--example-0-481">481</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.add_time_to_time--source--example-0-482">482</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.add_time_to_time--source--example-0-483">483</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.add_time_to_time--source--example-0-484">484</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.add_time_to_time--source--example-0-485">485</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.add_time_to_time--source--example-0-486">486</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.add_time_to_time--source--example-0-487">487</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.add_time_to_time--source--example-0-488">488</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.add_time_to_time--source--example-0-489">489</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.add_time_to_time--source--example-0-490">490</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.add_time_to_time--source--example-0-491">491</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.add_time_to_time--source--example-0-492">492</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.add_time_to_time--source--example-0-493">493</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.add_time_to_time--source--example-0-494">494</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.add_time_to_time--source--example-0-495">495</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.add_time_to_time--source--example-0-496">496</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.add_time_to_time--source--example-0-497">497</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="robot.libraries.DateTime.add_time_to_time--source--line-0-479"><a id="robot.libraries.DateTime.add_time_to_time--source--example-0-479" name="robot.libraries.DateTime.add_time_to_time--source--example-0-479"></a><span class="k">def</span><span class="w"> </span><span class="nf">add_time_to_time</span><span class="p">(</span><span class="n">time1</span><span class="p">,</span> <span class="n">time2</span><span class="p">,</span> <span class="n">result_format</span><span class="o">=</span><span class="s1">'number'</span><span class="p">,</span>
+</span><span id="robot.libraries.DateTime.add_time_to_time--source--line-0-480"><a id="robot.libraries.DateTime.add_time_to_time--source--example-0-480" name="robot.libraries.DateTime.add_time_to_time--source--example-0-480"></a>                     <span class="n">exclude_millis</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+</span><span id="robot.libraries.DateTime.add_time_to_time--source--line-0-481"><a id="robot.libraries.DateTime.add_time_to_time--source--example-0-481" name="robot.libraries.DateTime.add_time_to_time--source--example-0-481"></a><span class="w">    </span><span class="sd">"""Adds time to another time and returns the resulting time.</span>
+</span><span id="robot.libraries.DateTime.add_time_to_time--source--line-0-482"><a id="robot.libraries.DateTime.add_time_to_time--source--example-0-482" name="robot.libraries.DateTime.add_time_to_time--source--example-0-482"></a>
+</span><span id="robot.libraries.DateTime.add_time_to_time--source--line-0-483"><a id="robot.libraries.DateTime.add_time_to_time--source--example-0-483" name="robot.libraries.DateTime.add_time_to_time--source--example-0-483"></a><span class="sd">    Arguments:</span>
+</span><span id="robot.libraries.DateTime.add_time_to_time--source--line-0-484"><a id="robot.libraries.DateTime.add_time_to_time--source--example-0-484" name="robot.libraries.DateTime.add_time_to_time--source--example-0-484"></a><span class="sd">    - ``time1:``          First time in one of the supported `time formats`.</span>
+</span><span id="robot.libraries.DateTime.add_time_to_time--source--line-0-485"><a id="robot.libraries.DateTime.add_time_to_time--source--example-0-485" name="robot.libraries.DateTime.add_time_to_time--source--example-0-485"></a><span class="sd">    - ``time2:``          Second time in one of the supported `time formats`.</span>
+</span><span id="robot.libraries.DateTime.add_time_to_time--source--line-0-486"><a id="robot.libraries.DateTime.add_time_to_time--source--example-0-486" name="robot.libraries.DateTime.add_time_to_time--source--example-0-486"></a><span class="sd">    - ``result_format:``  Format of the returned time.</span>
+</span><span id="robot.libraries.DateTime.add_time_to_time--source--line-0-487"><a id="robot.libraries.DateTime.add_time_to_time--source--example-0-487" name="robot.libraries.DateTime.add_time_to_time--source--example-0-487"></a><span class="sd">    - ``exclude_millis:`` When set to any true value, rounds and drops</span>
+</span><span id="robot.libraries.DateTime.add_time_to_time--source--line-0-488"><a id="robot.libraries.DateTime.add_time_to_time--source--example-0-488" name="robot.libraries.DateTime.add_time_to_time--source--example-0-488"></a><span class="sd">                          milliseconds as explained in `millisecond handling`.</span>
+</span><span id="robot.libraries.DateTime.add_time_to_time--source--line-0-489"><a id="robot.libraries.DateTime.add_time_to_time--source--example-0-489" name="robot.libraries.DateTime.add_time_to_time--source--example-0-489"></a>
+</span><span id="robot.libraries.DateTime.add_time_to_time--source--line-0-490"><a id="robot.libraries.DateTime.add_time_to_time--source--example-0-490" name="robot.libraries.DateTime.add_time_to_time--source--example-0-490"></a><span class="sd">    Examples:</span>
+</span><span id="robot.libraries.DateTime.add_time_to_time--source--line-0-491"><a id="robot.libraries.DateTime.add_time_to_time--source--example-0-491" name="robot.libraries.DateTime.add_time_to_time--source--example-0-491"></a><span class="sd">    | ${time} =       | Add Time To Time | 1 minute          | 42       |</span>
+</span><span id="robot.libraries.DateTime.add_time_to_time--source--line-0-492"><a id="robot.libraries.DateTime.add_time_to_time--source--example-0-492" name="robot.libraries.DateTime.add_time_to_time--source--example-0-492"></a><span class="sd">    | Should Be Equal | ${time}          | ${102}            |</span>
+</span><span id="robot.libraries.DateTime.add_time_to_time--source--line-0-493"><a id="robot.libraries.DateTime.add_time_to_time--source--example-0-493" name="robot.libraries.DateTime.add_time_to_time--source--example-0-493"></a><span class="sd">    | ${time} =       | Add Time To Time | 3 hours 5 minutes | 01:02:03 | timer | exclude_millis=yes |</span>
+</span><span id="robot.libraries.DateTime.add_time_to_time--source--line-0-494"><a id="robot.libraries.DateTime.add_time_to_time--source--example-0-494" name="robot.libraries.DateTime.add_time_to_time--source--example-0-494"></a><span class="sd">    | Should Be Equal | ${time}          | 04:07:03          |</span>
+</span><span id="robot.libraries.DateTime.add_time_to_time--source--line-0-495"><a id="robot.libraries.DateTime.add_time_to_time--source--example-0-495" name="robot.libraries.DateTime.add_time_to_time--source--example-0-495"></a><span class="sd">    """</span>
+</span><span id="robot.libraries.DateTime.add_time_to_time--source--line-0-496"><a id="robot.libraries.DateTime.add_time_to_time--source--example-0-496" name="robot.libraries.DateTime.add_time_to_time--source--example-0-496"></a>    <span class="n">time</span> <span class="o">=</span> <span class="n">Time</span><span class="p">(</span><span class="n">time1</span><span class="p">)</span> <span class="o">+</span> <span class="n">Time</span><span class="p">(</span><span class="n">time2</span><span class="p">)</span>
+</span><span id="robot.libraries.DateTime.add_time_to_time--source--line-0-497"><a id="robot.libraries.DateTime.add_time_to_time--source--example-0-497" name="robot.libraries.DateTime.add_time_to_time--source--example-0-497"></a>    <span class="k">return</span> <span class="n">time</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">result_format</span><span class="p">,</span> <span class="n">millis</span><span class="o">=</span><span class="ow">not</span> <span class="n">exclude_millis</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -10993,45 +10993,45 @@ are available as functions that can be easily imported:</p>
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>src/robot/libraries/DateTime.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-500">500</a></span>
-<span class="normal"><a href="#example-0-501">501</a></span>
-<span class="normal"><a href="#example-0-502">502</a></span>
-<span class="normal"><a href="#example-0-503">503</a></span>
-<span class="normal"><a href="#example-0-504">504</a></span>
-<span class="normal"><a href="#example-0-505">505</a></span>
-<span class="normal"><a href="#example-0-506">506</a></span>
-<span class="normal"><a href="#example-0-507">507</a></span>
-<span class="normal"><a href="#example-0-508">508</a></span>
-<span class="normal"><a href="#example-0-509">509</a></span>
-<span class="normal"><a href="#example-0-510">510</a></span>
-<span class="normal"><a href="#example-0-511">511</a></span>
-<span class="normal"><a href="#example-0-512">512</a></span>
-<span class="normal"><a href="#example-0-513">513</a></span>
-<span class="normal"><a href="#example-0-514">514</a></span>
-<span class="normal"><a href="#example-0-515">515</a></span>
-<span class="normal"><a href="#example-0-516">516</a></span>
-<span class="normal"><a href="#example-0-517">517</a></span>
-<span class="normal"><a href="#example-0-518">518</a></span>
-<span class="normal"><a href="#example-0-519">519</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-500"><a id="example-0-500" name="example-0-500"></a><span class="k">def</span><span class="w"> </span><span class="nf">subtract_time_from_time</span><span class="p">(</span><span class="n">time1</span><span class="p">,</span> <span class="n">time2</span><span class="p">,</span> <span class="n">result_format</span><span class="o">=</span><span class="s1">'number'</span><span class="p">,</span>
-</span><span id="line-0-501"><a id="example-0-501" name="example-0-501"></a>                            <span class="n">exclude_millis</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-</span><span id="line-0-502"><a id="example-0-502" name="example-0-502"></a><span class="w">    </span><span class="sd">"""Subtracts time from another time and returns the resulting time.</span>
-</span><span id="line-0-503"><a id="example-0-503" name="example-0-503"></a>
-</span><span id="line-0-504"><a id="example-0-504" name="example-0-504"></a><span class="sd">    Arguments:</span>
-</span><span id="line-0-505"><a id="example-0-505" name="example-0-505"></a><span class="sd">    - ``time1:``          Time to subtract another time from in one of</span>
-</span><span id="line-0-506"><a id="example-0-506" name="example-0-506"></a><span class="sd">                          the supported `time formats`.</span>
-</span><span id="line-0-507"><a id="example-0-507" name="example-0-507"></a><span class="sd">    - ``time2:``          Time to subtract in one of the supported `time formats`.</span>
-</span><span id="line-0-508"><a id="example-0-508" name="example-0-508"></a><span class="sd">    - ``result_format:``  Format of the returned time.</span>
-</span><span id="line-0-509"><a id="example-0-509" name="example-0-509"></a><span class="sd">    - ``exclude_millis:`` When set to any true value, rounds and drops</span>
-</span><span id="line-0-510"><a id="example-0-510" name="example-0-510"></a><span class="sd">                          milliseconds as explained in `millisecond handling`.</span>
-</span><span id="line-0-511"><a id="example-0-511" name="example-0-511"></a>
-</span><span id="line-0-512"><a id="example-0-512" name="example-0-512"></a><span class="sd">    Examples:</span>
-</span><span id="line-0-513"><a id="example-0-513" name="example-0-513"></a><span class="sd">    | ${time} =       | Subtract Time From Time | 00:02:30 | 100      |</span>
-</span><span id="line-0-514"><a id="example-0-514" name="example-0-514"></a><span class="sd">    | Should Be Equal | ${time}                 | ${50}    |</span>
-</span><span id="line-0-515"><a id="example-0-515" name="example-0-515"></a><span class="sd">    | ${time} =       | Subtract Time From Time | ${time}  | 1 minute | compact |</span>
-</span><span id="line-0-516"><a id="example-0-516" name="example-0-516"></a><span class="sd">    | Should Be Equal | ${time}                 | - 10s    |</span>
-</span><span id="line-0-517"><a id="example-0-517" name="example-0-517"></a><span class="sd">    """</span>
-</span><span id="line-0-518"><a id="example-0-518" name="example-0-518"></a>    <span class="n">time</span> <span class="o">=</span> <span class="n">Time</span><span class="p">(</span><span class="n">time1</span><span class="p">)</span> <span class="o">-</span> <span class="n">Time</span><span class="p">(</span><span class="n">time2</span><span class="p">)</span>
-</span><span id="line-0-519"><a id="example-0-519" name="example-0-519"></a>    <span class="k">return</span> <span class="n">time</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">result_format</span><span class="p">,</span> <span class="n">millis</span><span class="o">=</span><span class="ow">not</span> <span class="n">exclude_millis</span><span class="p">)</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#robot.libraries.DateTime.subtract_time_from_time--source--example-0-500">500</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.subtract_time_from_time--source--example-0-501">501</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.subtract_time_from_time--source--example-0-502">502</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.subtract_time_from_time--source--example-0-503">503</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.subtract_time_from_time--source--example-0-504">504</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.subtract_time_from_time--source--example-0-505">505</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.subtract_time_from_time--source--example-0-506">506</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.subtract_time_from_time--source--example-0-507">507</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.subtract_time_from_time--source--example-0-508">508</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.subtract_time_from_time--source--example-0-509">509</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.subtract_time_from_time--source--example-0-510">510</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.subtract_time_from_time--source--example-0-511">511</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.subtract_time_from_time--source--example-0-512">512</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.subtract_time_from_time--source--example-0-513">513</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.subtract_time_from_time--source--example-0-514">514</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.subtract_time_from_time--source--example-0-515">515</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.subtract_time_from_time--source--example-0-516">516</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.subtract_time_from_time--source--example-0-517">517</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.subtract_time_from_time--source--example-0-518">518</a></span>
+<span class="normal"><a href="#robot.libraries.DateTime.subtract_time_from_time--source--example-0-519">519</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="robot.libraries.DateTime.subtract_time_from_time--source--line-0-500"><a id="robot.libraries.DateTime.subtract_time_from_time--source--example-0-500" name="robot.libraries.DateTime.subtract_time_from_time--source--example-0-500"></a><span class="k">def</span><span class="w"> </span><span class="nf">subtract_time_from_time</span><span class="p">(</span><span class="n">time1</span><span class="p">,</span> <span class="n">time2</span><span class="p">,</span> <span class="n">result_format</span><span class="o">=</span><span class="s1">'number'</span><span class="p">,</span>
+</span><span id="robot.libraries.DateTime.subtract_time_from_time--source--line-0-501"><a id="robot.libraries.DateTime.subtract_time_from_time--source--example-0-501" name="robot.libraries.DateTime.subtract_time_from_time--source--example-0-501"></a>                            <span class="n">exclude_millis</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+</span><span id="robot.libraries.DateTime.subtract_time_from_time--source--line-0-502"><a id="robot.libraries.DateTime.subtract_time_from_time--source--example-0-502" name="robot.libraries.DateTime.subtract_time_from_time--source--example-0-502"></a><span class="w">    </span><span class="sd">"""Subtracts time from another time and returns the resulting time.</span>
+</span><span id="robot.libraries.DateTime.subtract_time_from_time--source--line-0-503"><a id="robot.libraries.DateTime.subtract_time_from_time--source--example-0-503" name="robot.libraries.DateTime.subtract_time_from_time--source--example-0-503"></a>
+</span><span id="robot.libraries.DateTime.subtract_time_from_time--source--line-0-504"><a id="robot.libraries.DateTime.subtract_time_from_time--source--example-0-504" name="robot.libraries.DateTime.subtract_time_from_time--source--example-0-504"></a><span class="sd">    Arguments:</span>
+</span><span id="robot.libraries.DateTime.subtract_time_from_time--source--line-0-505"><a id="robot.libraries.DateTime.subtract_time_from_time--source--example-0-505" name="robot.libraries.DateTime.subtract_time_from_time--source--example-0-505"></a><span class="sd">    - ``time1:``          Time to subtract another time from in one of</span>
+</span><span id="robot.libraries.DateTime.subtract_time_from_time--source--line-0-506"><a id="robot.libraries.DateTime.subtract_time_from_time--source--example-0-506" name="robot.libraries.DateTime.subtract_time_from_time--source--example-0-506"></a><span class="sd">                          the supported `time formats`.</span>
+</span><span id="robot.libraries.DateTime.subtract_time_from_time--source--line-0-507"><a id="robot.libraries.DateTime.subtract_time_from_time--source--example-0-507" name="robot.libraries.DateTime.subtract_time_from_time--source--example-0-507"></a><span class="sd">    - ``time2:``          Time to subtract in one of the supported `time formats`.</span>
+</span><span id="robot.libraries.DateTime.subtract_time_from_time--source--line-0-508"><a id="robot.libraries.DateTime.subtract_time_from_time--source--example-0-508" name="robot.libraries.DateTime.subtract_time_from_time--source--example-0-508"></a><span class="sd">    - ``result_format:``  Format of the returned time.</span>
+</span><span id="robot.libraries.DateTime.subtract_time_from_time--source--line-0-509"><a id="robot.libraries.DateTime.subtract_time_from_time--source--example-0-509" name="robot.libraries.DateTime.subtract_time_from_time--source--example-0-509"></a><span class="sd">    - ``exclude_millis:`` When set to any true value, rounds and drops</span>
+</span><span id="robot.libraries.DateTime.subtract_time_from_time--source--line-0-510"><a id="robot.libraries.DateTime.subtract_time_from_time--source--example-0-510" name="robot.libraries.DateTime.subtract_time_from_time--source--example-0-510"></a><span class="sd">                          milliseconds as explained in `millisecond handling`.</span>
+</span><span id="robot.libraries.DateTime.subtract_time_from_time--source--line-0-511"><a id="robot.libraries.DateTime.subtract_time_from_time--source--example-0-511" name="robot.libraries.DateTime.subtract_time_from_time--source--example-0-511"></a>
+</span><span id="robot.libraries.DateTime.subtract_time_from_time--source--line-0-512"><a id="robot.libraries.DateTime.subtract_time_from_time--source--example-0-512" name="robot.libraries.DateTime.subtract_time_from_time--source--example-0-512"></a><span class="sd">    Examples:</span>
+</span><span id="robot.libraries.DateTime.subtract_time_from_time--source--line-0-513"><a id="robot.libraries.DateTime.subtract_time_from_time--source--example-0-513" name="robot.libraries.DateTime.subtract_time_from_time--source--example-0-513"></a><span class="sd">    | ${time} =       | Subtract Time From Time | 00:02:30 | 100      |</span>
+</span><span id="robot.libraries.DateTime.subtract_time_from_time--source--line-0-514"><a id="robot.libraries.DateTime.subtract_time_from_time--source--example-0-514" name="robot.libraries.DateTime.subtract_time_from_time--source--example-0-514"></a><span class="sd">    | Should Be Equal | ${time}                 | ${50}    |</span>
+</span><span id="robot.libraries.DateTime.subtract_time_from_time--source--line-0-515"><a id="robot.libraries.DateTime.subtract_time_from_time--source--example-0-515" name="robot.libraries.DateTime.subtract_time_from_time--source--example-0-515"></a><span class="sd">    | ${time} =       | Subtract Time From Time | ${time}  | 1 minute | compact |</span>
+</span><span id="robot.libraries.DateTime.subtract_time_from_time--source--line-0-516"><a id="robot.libraries.DateTime.subtract_time_from_time--source--example-0-516" name="robot.libraries.DateTime.subtract_time_from_time--source--example-0-516"></a><span class="sd">    | Should Be Equal | ${time}                 | - 10s    |</span>
+</span><span id="robot.libraries.DateTime.subtract_time_from_time--source--line-0-517"><a id="robot.libraries.DateTime.subtract_time_from_time--source--example-0-517" name="robot.libraries.DateTime.subtract_time_from_time--source--example-0-517"></a><span class="sd">    """</span>
+</span><span id="robot.libraries.DateTime.subtract_time_from_time--source--line-0-518"><a id="robot.libraries.DateTime.subtract_time_from_time--source--example-0-518" name="robot.libraries.DateTime.subtract_time_from_time--source--example-0-518"></a>    <span class="n">time</span> <span class="o">=</span> <span class="n">Time</span><span class="p">(</span><span class="n">time1</span><span class="p">)</span> <span class="o">-</span> <span class="n">Time</span><span class="p">(</span><span class="n">time2</span><span class="p">)</span>
+</span><span id="robot.libraries.DateTime.subtract_time_from_time--source--line-0-519"><a id="robot.libraries.DateTime.subtract_time_from_time--source--example-0-519" name="robot.libraries.DateTime.subtract_time_from_time--source--example-0-519"></a>    <span class="k">return</span> <span class="n">time</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">result_format</span><span class="p">,</span> <span class="n">millis</span><span class="o">=</span><span class="ow">not</span> <span class="n">exclude_millis</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -11202,10 +11202,10 @@ are available as functions that can be easily imported:</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.top", "search.highlight", "search.suggest", "toc.integrate"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.top", "search.highlight", "search.suggest", "toc.integrate"], "search": "../../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.c21346df.min.js"></script>
       
     
   </body>

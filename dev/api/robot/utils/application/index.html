@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../../../assets/logo.png">
-      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.8.0">
     
     
       
@@ -31,10 +31,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -10006,15 +10006,15 @@
 
                   <details class="mkdocstrings-source">
                     <summary>Source code in <code>src/robot/utils/application.py</code></summary>
-                    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-28">28</a></span>
-<span class="normal"><a href="#example-0-29">29</a></span>
-<span class="normal"><a href="#example-0-30">30</a></span>
-<span class="normal"><a href="#example-0-31">31</a></span>
-<span class="normal"><a href="#example-0-32">32</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-28"><a id="example-0-28" name="example-0-28"></a><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">usage</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">arg_limits</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-</span><span id="line-0-29"><a id="example-0-29" name="example-0-29"></a>             <span class="n">env_options</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">logger</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">auto_options</span><span class="p">):</span>
-</span><span id="line-0-30"><a id="example-0-30" name="example-0-30"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_ap</span> <span class="o">=</span> <span class="n">ArgumentParser</span><span class="p">(</span><span class="n">usage</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">version</span><span class="p">,</span> <span class="n">arg_limits</span><span class="p">,</span>
-</span><span id="line-0-31"><a id="example-0-31" name="example-0-31"></a>                              <span class="bp">self</span><span class="o">.</span><span class="n">validate</span><span class="p">,</span> <span class="n">env_options</span><span class="p">,</span> <span class="o">**</span><span class="n">auto_options</span><span class="p">)</span>
-</span><span id="line-0-32"><a id="example-0-32" name="example-0-32"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_logger</span> <span class="o">=</span> <span class="n">logger</span> <span class="ow">or</span> <span class="n">DefaultLogger</span><span class="p">()</span>
+                    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#robot.utils.application.Application--source--example-0-28">28</a></span>
+<span class="normal"><a href="#robot.utils.application.Application--source--example-0-29">29</a></span>
+<span class="normal"><a href="#robot.utils.application.Application--source--example-0-30">30</a></span>
+<span class="normal"><a href="#robot.utils.application.Application--source--example-0-31">31</a></span>
+<span class="normal"><a href="#robot.utils.application.Application--source--example-0-32">32</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="robot.utils.application.Application--source--line-0-28"><a id="robot.utils.application.Application--source--example-0-28" name="robot.utils.application.Application--source--example-0-28"></a><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">usage</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">arg_limits</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+</span><span id="robot.utils.application.Application--source--line-0-29"><a id="robot.utils.application.Application--source--example-0-29" name="robot.utils.application.Application--source--example-0-29"></a>             <span class="n">env_options</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">logger</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">auto_options</span><span class="p">):</span>
+</span><span id="robot.utils.application.Application--source--line-0-30"><a id="robot.utils.application.Application--source--example-0-30" name="robot.utils.application.Application--source--example-0-30"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_ap</span> <span class="o">=</span> <span class="n">ArgumentParser</span><span class="p">(</span><span class="n">usage</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">version</span><span class="p">,</span> <span class="n">arg_limits</span><span class="p">,</span>
+</span><span id="robot.utils.application.Application--source--line-0-31"><a id="robot.utils.application.Application--source--example-0-31" name="robot.utils.application.Application--source--example-0-31"></a>                              <span class="bp">self</span><span class="o">.</span><span class="n">validate</span><span class="p">,</span> <span class="n">env_options</span><span class="p">,</span> <span class="o">**</span><span class="n">auto_options</span><span class="p">)</span>
+</span><span id="robot.utils.application.Application--source--line-0-32"><a id="robot.utils.application.Application--source--example-0-32" name="robot.utils.application.Application--source--example-0-32"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">_logger</span> <span class="o">=</span> <span class="n">logger</span> <span class="ow">or</span> <span class="n">DefaultLogger</span><span class="p">()</span>
 </span></code></pre></div></td></tr></table></div>
                   </details>
 
@@ -10050,23 +10050,23 @@
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>src/robot/utils/application.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-0-64">64</a></span>
-<span class="normal"><a href="#example-0-65">65</a></span>
-<span class="normal"><a href="#example-0-66">66</a></span>
-<span class="normal"><a href="#example-0-67">67</a></span>
-<span class="normal"><a href="#example-0-68">68</a></span>
-<span class="normal"><a href="#example-0-69">69</a></span>
-<span class="normal"><a href="#example-0-70">70</a></span>
-<span class="normal"><a href="#example-0-71">71</a></span>
-<span class="normal"><a href="#example-0-72">72</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="line-0-64"><a id="example-0-64" name="example-0-64"></a><span class="k">def</span><span class="w"> </span><span class="nf">parse_arguments</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cli_args</span><span class="p">):</span>
-</span><span id="line-0-65"><a id="example-0-65" name="example-0-65"></a><span class="w">    </span><span class="sd">"""Public interface for parsing command line arguments.</span>
-</span><span id="line-0-66"><a id="example-0-66" name="example-0-66"></a>
-</span><span id="line-0-67"><a id="example-0-67" name="example-0-67"></a><span class="sd">    :param    cli_args: Command line arguments as a list</span>
-</span><span id="line-0-68"><a id="example-0-68" name="example-0-68"></a><span class="sd">    :returns: options (dict), arguments (list)</span>
-</span><span id="line-0-69"><a id="example-0-69" name="example-0-69"></a><span class="sd">    :raises:  :class:`~robot.errors.Information` when --help or --version used</span>
-</span><span id="line-0-70"><a id="example-0-70" name="example-0-70"></a><span class="sd">    :raises:  :class:`~robot.errors.DataError` when parsing fails</span>
-</span><span id="line-0-71"><a id="example-0-71" name="example-0-71"></a><span class="sd">    """</span>
-</span><span id="line-0-72"><a id="example-0-72" name="example-0-72"></a>    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ap</span><span class="o">.</span><span class="n">parse_args</span><span class="p">(</span><span class="n">cli_args</span><span class="p">)</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#robot.utils.application.Application.parse_arguments--source--example-0-64">64</a></span>
+<span class="normal"><a href="#robot.utils.application.Application.parse_arguments--source--example-0-65">65</a></span>
+<span class="normal"><a href="#robot.utils.application.Application.parse_arguments--source--example-0-66">66</a></span>
+<span class="normal"><a href="#robot.utils.application.Application.parse_arguments--source--example-0-67">67</a></span>
+<span class="normal"><a href="#robot.utils.application.Application.parse_arguments--source--example-0-68">68</a></span>
+<span class="normal"><a href="#robot.utils.application.Application.parse_arguments--source--example-0-69">69</a></span>
+<span class="normal"><a href="#robot.utils.application.Application.parse_arguments--source--example-0-70">70</a></span>
+<span class="normal"><a href="#robot.utils.application.Application.parse_arguments--source--example-0-71">71</a></span>
+<span class="normal"><a href="#robot.utils.application.Application.parse_arguments--source--example-0-72">72</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="robot.utils.application.Application.parse_arguments--source--line-0-64"><a id="robot.utils.application.Application.parse_arguments--source--example-0-64" name="robot.utils.application.Application.parse_arguments--source--example-0-64"></a><span class="k">def</span><span class="w"> </span><span class="nf">parse_arguments</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cli_args</span><span class="p">):</span>
+</span><span id="robot.utils.application.Application.parse_arguments--source--line-0-65"><a id="robot.utils.application.Application.parse_arguments--source--example-0-65" name="robot.utils.application.Application.parse_arguments--source--example-0-65"></a><span class="w">    </span><span class="sd">"""Public interface for parsing command line arguments.</span>
+</span><span id="robot.utils.application.Application.parse_arguments--source--line-0-66"><a id="robot.utils.application.Application.parse_arguments--source--example-0-66" name="robot.utils.application.Application.parse_arguments--source--example-0-66"></a>
+</span><span id="robot.utils.application.Application.parse_arguments--source--line-0-67"><a id="robot.utils.application.Application.parse_arguments--source--example-0-67" name="robot.utils.application.Application.parse_arguments--source--example-0-67"></a><span class="sd">    :param    cli_args: Command line arguments as a list</span>
+</span><span id="robot.utils.application.Application.parse_arguments--source--line-0-68"><a id="robot.utils.application.Application.parse_arguments--source--example-0-68" name="robot.utils.application.Application.parse_arguments--source--example-0-68"></a><span class="sd">    :returns: options (dict), arguments (list)</span>
+</span><span id="robot.utils.application.Application.parse_arguments--source--line-0-69"><a id="robot.utils.application.Application.parse_arguments--source--example-0-69" name="robot.utils.application.Application.parse_arguments--source--example-0-69"></a><span class="sd">    :raises:  :class:`~robot.errors.Information` when --help or --version used</span>
+</span><span id="robot.utils.application.Application.parse_arguments--source--line-0-70"><a id="robot.utils.application.Application.parse_arguments--source--example-0-70" name="robot.utils.application.Application.parse_arguments--source--example-0-70"></a><span class="sd">    :raises:  :class:`~robot.errors.DataError` when parsing fails</span>
+</span><span id="robot.utils.application.Application.parse_arguments--source--line-0-71"><a id="robot.utils.application.Application.parse_arguments--source--example-0-71" name="robot.utils.application.Application.parse_arguments--source--example-0-71"></a><span class="sd">    """</span>
+</span><span id="robot.utils.application.Application.parse_arguments--source--line-0-72"><a id="robot.utils.application.Application.parse_arguments--source--example-0-72" name="robot.utils.application.Application.parse_arguments--source--example-0-72"></a>    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ap</span><span class="o">.</span><span class="n">parse_args</span><span class="p">(</span><span class="n">cli_args</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -10246,10 +10246,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.top", "search.highlight", "search.suggest", "toc.integrate"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.top", "search.highlight", "search.suggest", "toc.integrate"], "search": "../../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.c21346df.min.js"></script>
       
     
   </body>

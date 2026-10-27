@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../assets/logo.png">
-      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.8.0">
     
     
       
@@ -31,10 +31,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -10322,9 +10322,9 @@ contain possible arguments to the specified keyword.</p>
 <p>Although test case names can contain any character, using <code>?</code> and
 especially <code>*</code> is not generally recommended because they are
 considered to be <a href="../../execution/basics/#wildcards">wildcards</a> when <a href="../../execution/configuration/#selecting-test-cases">selecting test cases</a>.
-For example, trying to run only a test with name *Example **{.name}
+For example, trying to run only a test with name <code class="name">Example *</code>
 like <code>--test 'Example *'</code> will actually run any test starting with
-<em class="name">Example</em>.</p>
+<code class="name">Example</code>.</p>
 </div>
 <h3 id="settings-in-the-test-case-section">Settings in the Test Case section<a class="headerlink" href="#settings-in-the-test-case-section" title="Permanent link">&para;</a></h3>
 <p>Test cases can also have their own settings. Setting names are always
@@ -10334,7 +10334,7 @@ them to distinguish them from keywords. The available settings are listed
 below and explained later in this section.</p>
 <dl>
 <dt>
-	<em class="setting"><a id="1d4d0a48818ef00b36340968517b0387">[Documentation]</a> </em>
+	<code class="setting"><a id="1d4d0a48818ef00b36340968517b0387">[Documentation]</a> </code>
 </dt>
 <dd>Used for specifying a <a href="#test-case-name-and-documentation">test case documentation</a>.
 <p>
@@ -10347,7 +10347,7 @@ below and explained later in this section.</p>
 </p></dd>
 
 <dt>
-	<em class="setting"><a id="907a2edf6c2085233fd8eece6e62c508">[Tags]</a> </em>
+	<code class="setting"><a id="907a2edf6c2085233fd8eece6e62c508">[Tags]</a> </code>
 </dt>
 <dd>Used for <a href="#tagging-test-cases">tagging test cases</a>.
 <p>
@@ -10360,7 +10360,7 @@ below and explained later in this section.</p>
 </p></dd>
 
 <dt>
-	<em class="setting"><a id="a686466d467273e633c95587afcb6856">[Metadata]</a> </em>
+	<code class="setting"><a id="a686466d467273e633c95587afcb6856">[Metadata]</a> </code>
 </dt>
 <dd>Used for setting <a href="#free-test-metadata">free test metadata</a> as name-value pairs.
 <p>
@@ -10373,7 +10373,7 @@ below and explained later in this section.</p>
 </p></dd>
 
 <dt>
-	<em class="setting">[Setup]</em>, <em class="setting"><a id="74f57773ad581bb0aa2c6d9cb05fd185">[Teardown]</a> </em>
+	<code class="setting">[Setup]</code>, <code class="setting"><a id="74f57773ad581bb0aa2c6d9cb05fd185">[Teardown]</a> </code>
 </dt>
 <dd>Specify <a href="#test-setup-and-teardown">test setup and teardown</a>.
 <p>
@@ -10386,7 +10386,7 @@ below and explained later in this section.</p>
 </p></dd>
 
 <dt>
-	<em class="setting"><a id="3ec998bf9fbfff97d005d3d459252175">[Template]</a> </em>
+	<code class="setting"><a id="3ec998bf9fbfff97d005d3d459252175">[Template]</a> </code>
 </dt>
 <dd>Specifies the <a href="#test-templates">template keyword</a> to use. The test itself will contain only
 data to use as arguments to that keyword.
@@ -10400,7 +10400,7 @@ data to use as arguments to that keyword.
 </p></dd>
 
 <dt>
-	<em class="setting"><a id="fd730a4a89f0d973b8fd594b660fa474">[Timeout]</a> </em>
+	<code class="setting"><a id="fd730a4a89f0d973b8fd594b660fa474">[Timeout]</a> </code>
 </dt>
 <dd>Used for setting a <a href="../advanced/#test-case-timeout">test case timeout</a>. <a href="../advanced/#timeouts">Timeouts</a> are discussed in
 their own section.
@@ -10439,7 +10439,7 @@ settings. These settings are mainly default values for the
 test case specific settings listed earlier.</p>
 <dl>
 <dt>
-	<em class="setting">Test Setup</em>, <em class="setting"><a id="a0e973451c5612340f8e4bf6477ba6e3">Test Teardown</a> </em>
+	<code class="setting">Test Setup</code>, <code class="setting"><a id="a0e973451c5612340f8e4bf6477ba6e3">Test Teardown</a> </code>
 </dt>
 <dd>The default values for <a href="#test-setup-and-teardown">test setup and teardown</a>.
 <p>
@@ -10452,7 +10452,7 @@ test case specific settings listed earlier.</p>
 </p></dd>
 
 <dt>
-	<em class="setting"><a id="d10dd3f86665a562e9bbf862cc85906d">Test Tags</a> </em>
+	<code class="setting"><a id="d10dd3f86665a562e9bbf862cc85906d">Test Tags</a> </code>
 </dt>
 <dd><a href="../../extend/libraries/#keyword-tags">Tags</a> all tests in the suite will get in addition to their possible own tags.
 <p>
@@ -10465,7 +10465,7 @@ test case specific settings listed earlier.</p>
 </p></dd>
 
 <dt>
-	<em class="setting"><a id="49b0b61116c3d35bb68544e1a87dc732">Test Template</a> </em>
+	<code class="setting"><a id="49b0b61116c3d35bb68544e1a87dc732">Test Template</a> </code>
 </dt>
 <dd>The default <a href="#test-templates">template keyword</a> to use.
 <p>
@@ -10478,7 +10478,7 @@ test case specific settings listed earlier.</p>
 </p></dd>
 
 <dt>
-	<em class="setting"><a id="7fbfbc961710ef23bb228d3285b9b386">Test Timeout</a> </em>
+	<code class="setting"><a id="7fbfbc961710ef23bb228d3285b9b386">Test Timeout</a> </code>
 </dt>
 <dd>The default value for <a href="../advanced/#test-case-timeout">test case timeout</a>. <a href="../advanced/#timeouts">Timeouts</a> are discussed in
 their own section.
@@ -10516,10 +10516,10 @@ that they should explain what the argument does, but it is important
 to have exactly the same number of arguments as specified in the
 documentation. Using too few or too many arguments will result in an
 error.</p>
-<p>The test below uses keywords <em class="name">Create Directory</em> and <em class="name">Copy File</em> from the <a href="https://robotframework.org/robotframework/latest/libraries/OperatingSystem.html">OperatingSystem</a> library. Their arguments are
+<p>The test below uses keywords <code class="name">Create Directory</code> and <code class="name">Copy File</code> from the <a href="https://robotframework.org/robotframework/latest/libraries/OperatingSystem.html">OperatingSystem</a> library. Their arguments are
 specified as <code>path</code> and <code>source, destination</code>, which means
 that they take one and two arguments, respectively. The last keyword,
-<em class="name">No Operation</em> from <a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a>, takes no arguments.</p>
+<code class="name">No Operation</code> from <a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a>, takes no arguments.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-2-1">1</a></span>
 <span class="normal"><a href="#example-2-2">2</a></span>
 <span class="normal"><a href="#example-2-3">3</a></span>
@@ -10538,7 +10538,7 @@ value</code>. It is possible that all the arguments have default
 values, but there cannot be any positional arguments after arguments
 with default values.</p>
 <p>Using default values is illustrated by the example below that uses
-<em class="name">Create File</em> keyword which has arguments <code>path, content=,
+<code class="name">Create File</code> keyword which has arguments <code>path, content=,
 encoding=UTF-8</code>. Trying to use it without any arguments or more than
 three arguments would not work.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-3-1">1</a></span>
@@ -10558,7 +10558,7 @@ These so called <em>varargs</em> can be combined with mandatory arguments
 and arguments with default values, but they are always given after
 them. In the documentation they have an asterisk before the argument
 name like <code>*varargs</code>.</p>
-<p>For example, <em class="name">Remove Files</em> and <em class="name">Join Paths</em> keywords from
+<p>For example, <code class="name">Remove Files</code> and <code class="name">Join Paths</code> keywords from
 the <a href="https://robotframework.org/robotframework/latest/libraries/OperatingSystem.html">OperatingSystem</a> library have arguments <code>*paths</code> and <code>base, *parts</code>,
 respectively. The former can be used with any number of arguments, but
 the latter requires at least one argument.</p>
@@ -10700,7 +10700,7 @@ that free argument names must always be strings.</p>
 <p><a id="free-named-argument-examples"></a></p>
 <h4 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h4>
 <p>As the first example of using free named arguments, let's take a look at
-<em class="name">Run Process</em> keyword in the <a href="https://robotframework.org/robotframework/latest/libraries/Process.html">Process</a> library. It has a signature
+<code class="name">Run Process</code> keyword in the <a href="https://robotframework.org/robotframework/latest/libraries/Process.html">Process</a> library. It has a signature
 <code>command, *arguments, **configuration</code>, which means that it takes the command
 to execute (<code>command</code>), its arguments as <a href="#variable-number-of-arguments">variable number of arguments</a>
 (<code>*arguments</code>) and finally optional configuration parameters as free named
@@ -10719,9 +10719,9 @@ syntax</a>.</p>
 libraries</a> for more information about using the free named arguments syntax
 in your custom test libraries.</p>
 <p>As the second example, let's create a wrapper <a href="../user_keywords/#creating-user-keywords">user keyword</a> for running the
-<code>program.py</code> in the above example. The wrapper keyword <em class="name">Run Program</em>
+<code>program.py</code> in the above example. The wrapper keyword <code class="name">Run Program</code>
 accepts all positional and named arguments and passes them forward to
-<em class="name">Run Process</em> along with the name of the command to execute.</p>
+<code class="name">Run Process</code> along with the name of the command to execute.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-8-1">1</a></span>
 <span class="normal"><a href="#example-8-2">2</a></span>
 <span class="normal"><a href="#example-8-3">3</a></span>
@@ -10750,7 +10750,7 @@ not work. This syntax is inspired by Python's <a href="https://www.python.org/de
 The main difference is that libraries implemented with Python 2 using
 the <a href="../../extend/libraries/#creating-keywords">static library API</a> <a href="../../extend/libraries/#keyword-only-arguments">do not support this syntax</a>.</p>
 <p>As an example of using the <a href="../user_keywords/#named-only-arguments-with-user-keywords">named-only arguments with user keywords</a>, here
-is a variation of the <em class="name">Run Program</em> in the above <a href="#free-named-argument-examples">free named argument
+is a variation of the <code class="name">Run Program</code> in the above <a href="#free-named-argument-examples">free named argument
 examples</a> that only supports configuring <code>shell</code>:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-9-1">1</a></span>
 <span class="normal"><a href="#example-9-2">2</a></span>
@@ -10834,7 +10834,7 @@ the variable does not exist, its name is left unchanged.</p>
 </span><span id="line-11-5"><a id="example-11-5" name="example-11-5"></a><span class="gu">Amount cannot be larger than </span><span class="p">${</span><span class="nv">MAX AMOUNT</span><span class="p">}</span>
 </span><span id="line-11-6"><a id="example-11-6" name="example-11-6"></a><span class="p">    </span><span class="c"># ...</span>
 </span></code></pre></div></td></tr></table></div>
-<p>The <em class="setting">[Documentation]</em> setting allows setting free form
+<p>The <code class="setting">[Documentation]</code> setting allows setting free form
 documentation for a test case. That text is shown in the command line
 output and in the resulting logs and reports.
 If documentation gets long, it can be <a href="../data/#dividing-data-to-several-rows">split into multiple rows</a>.
@@ -10897,14 +10897,14 @@ be specified as <a href="#free-test-metadata">free test metadata</a> or using <a
 use case.</p>
 <h2 id="free-test-metadata">Free test metadata<a class="headerlink" href="#free-test-metadata" title="Permanent link">&para;</a></h2>
 <p>In addition to documentation, test cases can also have free metadata. This
-metadata is defined as name-value pairs using the <em class="setting">[Metadata]</em>
+metadata is defined as name-value pairs using the <code class="setting">[Metadata]</code>
 setting in the test case, similarly as <a href="../suites/#free-suite-metadata">free suite metadata</a> is defined
 for test suites.</p>
-<p>Name of the metadata is the first argument given to the <em class="setting">[Metadata]</em>
+<p>Name of the metadata is the first argument given to the <code class="setting">[Metadata]</code>
 setting and the remaining arguments specify its value. The value is handled
 similarly as <a href="#test-case-name-and-documentation">test case documentation</a>, which means that it supports
 <a href="../../appendix/doc_format/#documentation-formatting">HTML formatting</a> and <a href="../variables/#variables">variables</a>, and that longer values can be <a href="../data/#dividing-data-to-several-rows">split into
-multiple rows</a>. A test case can have any number of <em class="setting">[Metadata]</em>
+multiple rows</a>. A test case can have any number of <code class="setting">[Metadata]</code>
 settings, and each of them adds one name-value pair.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-13-1">1</a></span>
 <span class="normal"><a href="#example-13-2">2</a></span>
@@ -10947,7 +10947,7 @@ purposes:</p>
 <p>There are multiple ways how to specify tags for test cases explained below:</p>
 <dl>
 <dt>
-	<em class="setting">Test Tags</em><a id="6a5ed58854fc1fed3d6ef334aa6abc54"> setting in the Settings section</a> 
+	<code class="setting">Test Tags</code><a id="6a5ed58854fc1fed3d6ef334aa6abc54"> setting in the Settings section</a> 
 </dt>
 <dd>All tests in a test case file with this setting always get specified tags.
 If this setting is used in a <a href="../suites/#suite-initialization-files">suite initialization file</a>, all tests
@@ -10962,11 +10962,11 @@ in child suites get these tags.
 </p></dd>
 
 <dt>
-	<em class="setting">[Tags]</em><a id="8d9e823e109cf5dbd0cba6e69f240361"> setting with each test case</a> 
+	<code class="setting">[Tags]</code><a id="8d9e823e109cf5dbd0cba6e69f240361"> setting with each test case</a> 
 </dt>
-<dd>Tests get these tags in addition to tags specified using the <em class="setting">Test Tags</em>
-setting. The <em class="setting">[Tags]</em> setting also allows removing tags set with
-<em class="setting">Test Tags</em> by using the <code>-tag</code> syntax.
+<dd>Tests get these tags in addition to tags specified using the <code class="setting">Test Tags</code>
+setting. The <code class="setting">[Tags]</code> setting also allows removing tags set with
+<code class="setting">Test Tags</code> by using the <code>-tag</code> syntax.
 <p>
 <div class="mkdocs-ezglossary-refs list">
     
@@ -10990,7 +10990,7 @@ setting. The <em class="setting">[Tags]</em> setting also allows removing tags s
 </p></dd>
 
 <dt>
-	<em class="name">Set Tags</em>, <em class="name">Remove Tags</em>, <em class="name">Fail</em> and <em class="name">Pass Execution</em><a id="a178b73eaad309c50a031f5999434b40"> keywords</a> 
+	<code class="name">Set Tags</code>, <code class="name">Remove Tags</code>, <code class="name">Fail</code> and <code class="name">Pass Execution</code><a id="a178b73eaad309c50a031f5999434b40"> keywords</a> 
 </dt>
 <dd>These <a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> keywords can be used to manipulate tags dynamically
 during the test execution.
@@ -11081,35 +11081,35 @@ to collect statistics, to select test to be executed, or to remove duplicates,
 comparisons are case, space and underscore insensitive.</p>
 <p>As demonstrated by the above examples, removing tags using <code>-tag</code> syntax supports
 <a href="../../execution/basics/#simple-patterns">simple patterns</a> like <code>-requirement: *</code>. Tags starting with a hyphen have no
-special meaning otherwise than with the <em class="setting">[Tags]</em> setting. If there is
-a need to set a tag starting with a hyphen with <em class="setting">[Tags]</em>, it is possible
+special meaning otherwise than with the <code class="setting">[Tags]</code> setting. If there is
+a need to set a tag starting with a hyphen with <code class="setting">[Tags]</code>, it is possible
 to use the <a href="../data/#escaping">escaped</a> format like <code>\-tag</code>.</p>
 <p>At the moment the <code>-tag</code> syntax can be used for removing tags only with the
-<em class="setting">[Tags]</em> setting, but the plan is to support this functionality also
-with the <em class="setting">Test Tags</em> setting in Robot Framework 8.0 (<a href="https://github.com/robotframework/robotframework/issues/5250">#5250</a>).
-Setting tags having a literal value that starts with a hyphen in <em class="setting">Test Tags</em>
+<code class="setting">[Tags]</code> setting, but the plan is to support this functionality also
+with the <code class="setting">Test Tags</code> setting in Robot Framework 8.0 (<a href="https://github.com/robotframework/robotframework/issues/5250">#5250</a>).
+Setting tags having a literal value that starts with a hyphen in <code class="setting">Test Tags</code>
 was deprecated in Robot Framework 7.2 (<a href="https://github.com/robotframework/robotframework/issues/5252">#5252</a>). The escaped format like <code>\-tag</code>
 can be used if tags with such values are needed.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The <em class="setting">Test Tags</em> setting is new in Robot Framework 6.0.
-Earlier versions support <em class="setting">Force Tags</em> and <em class="setting">Default Tags</em>
+<p>The <code class="setting">Test Tags</code> setting is new in Robot Framework 6.0.
+Earlier versions support <code class="setting">Force Tags</code> and <code class="setting">Default Tags</code>
 settings discussed in the next section.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The <code>-tag</code> syntax for removing tags using the <em class="setting">[Tags]</em> setting
+<p>The <code>-tag</code> syntax for removing tags using the <code class="setting">[Tags]</code> setting
 is new in Robot Framework 7.0.</p>
 </div>
-<h3 id="deprecation-of-force-tags-and-default-tags">Deprecation of <em class="setting">Force Tags</em> and <em class="setting">Default Tags</em><a class="headerlink" href="#deprecation-of-force-tags-and-default-tags" title="Permanent link">&para;</a></h3>
+<h3 id="deprecation-of-force-tags-and-default-tags">Deprecation of <code class="setting">Force Tags</code> and <code class="setting">Default Tags</code><a class="headerlink" href="#deprecation-of-force-tags-and-default-tags" title="Permanent link">&para;</a></h3>
 <p>Prior to Robot Framework 6.0, tags could be specified to tests in the Setting section
 using two different settings:</p>
 <dl>
 <dt>
-	<em class="setting"><a id="703767eb439ffa2867dda00cfa863026">Force Tags</a> </em>
+	<code class="setting"><a id="703767eb439ffa2867dda00cfa863026">Force Tags</a> </code>
 </dt>
 <dd>All tests unconditionally get these tags. This is exactly the same as
-<em class="setting">Test Tags</em> nowadays.
+<code class="setting">Test Tags</code> nowadays.
 <p>
 <div class="mkdocs-ezglossary-refs list">
     
@@ -11120,9 +11120,9 @@ using two different settings:</p>
 </p></dd>
 
 <dt>
-	<em class="setting"><a id="3af4c32a9642aa80acfa413497b99c43">Default Tags</a> </em>
+	<code class="setting"><a id="3af4c32a9642aa80acfa413497b99c43">Default Tags</a> </code>
 </dt>
-<dd>All tests get these tags by default. If a test has <em class="setting">[Tags]</em>,
+<dd>All tests get these tags by default. If a test has <code class="setting">[Tags]</code>,
 it will not get these tags.
 <p>
 <div class="mkdocs-ezglossary-refs list">
@@ -11138,8 +11138,8 @@ it will not get these tags.
 A visible deprecation warning will be added in the future, most likely
 in Robot Framework 8.0, and eventually these settings will be removed.
 Tools like <a href="https://robotidy.readthedocs.io">Tidy</a> can be used to ease transition.</p>
-<p>Updating <em class="setting">Force Tags</em> requires only renaming it to <em class="setting">Test Tags</em>.
-The <em class="setting">Default Tags</em> setting will be removed altogether, but the <code>-tag</code>
+<p>Updating <code class="setting">Force Tags</code> requires only renaming it to <code class="setting">Test Tags</code>.
+The <code class="setting">Default Tags</code> setting will be removed altogether, but the <code>-tag</code>
 functionality introduced in Robot Framework 7.0 provides same underlying
 functionality. The following examples demonstrate the needed changes.</p>
 <p>Old syntax:</p>
@@ -11369,7 +11369,7 @@ normal keywords with possible arguments.</p>
 <p>A setup and a teardown are always a single keyword. If they need to take care
 of multiple separate tasks, it is possible to create higher-level <a href="../user_keywords/#user-keyword-arguments">user
 keywords</a> for that purpose. An alternative solution is executing multiple
-keywords using the <a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> keyword <em class="name">Run Keywords</em>.</p>
+keywords using the <a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> keyword <code class="name">Run Keywords</code>.</p>
 <p>The test teardown is special in two ways. First of all, it is executed also
 when a test case fails, so it can be used for clean-up activities that must be
 done regardless of the test case status. In addition, all the keywords in the
@@ -11377,12 +11377,12 @@ teardown are also executed even if one of them fails. This <a href="../../execut
 functionality can be used also with normal keywords, but inside teardowns it is
 on by default.</p>
 <p>The easiest way to specify a setup or a teardown for test cases in a
-test case file is using the <em class="setting">Test Setup</em> and <em class="setting">Test Teardown</em> settings in the Setting section. Individual test cases can
+test case file is using the <code class="setting">Test Setup</code> and <code class="setting">Test Teardown</code> settings in the Setting section. Individual test cases can
 also have their own setup or teardown. They are defined with the
-<em class="setting">[Setup]</em> or <em class="setting">[Teardown]</em> settings in the test case
-section and they override possible <em class="setting">Test Setup</em> and
-<em class="setting">Test Teardown</em> settings. Having no keyword after a
-<em class="setting">[Setup]</em> or <em class="setting">[Teardown]</em> setting means having no
+<code class="setting">[Setup]</code> or <code class="setting">[Teardown]</code> settings in the test case
+section and they override possible <code class="setting">Test Setup</code> and
+<code class="setting">Test Teardown</code> settings. Having no keyword after a
+<code class="setting">[Setup]</code> or <code class="setting">[Teardown]</code> setting means having no
 setup or teardown. It is also possible to use value <code>NONE</code> to indicate that
 a test has no setup/teardown.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-17-1"> 1</a></span>
@@ -11485,13 +11485,13 @@ functionally fully identical.</p>
 </span><span id="line-18-7"><a id="example-18-7" name="example-18-7"></a><span class="p">    </span><span class="s">first argument</span><span class="p">    </span><span class="s">second argument</span>
 </span></code></pre></div></td></tr></table></div>
 <p>As the example illustrates, it is possible to specify the
-template for an individual test case using the <em class="setting">[Template]</em>
-setting. An alternative approach is using the <em class="setting">Test Template</em>
+template for an individual test case using the <code class="setting">[Template]</code>
+setting. An alternative approach is using the <code class="setting">Test Template</code>
 setting in the Setting section, in which case the template is applied
-for all test cases in that test case file. The <em class="setting">[Template]</em>
+for all test cases in that test case file. The <code class="setting">[Template]</code>
 setting overrides the possible template set in the Setting section, and
-an empty value for <em class="setting">[Template]</em> means that the test has no
-template even when <em class="setting">Test Template</em> is used. It is also possible
+an empty value for <code class="setting">[Template]</code> means that the test has no
+template even when <code class="setting">Test Template</code> is used. It is also possible
 to use value <code>NONE</code> to indicate that a test has no template.</p>
 <p>Using keywords with <a href="#default-values">default values</a> or accepting <a href="#variable-number-of-arguments">variable number of arguments</a>,
 as well as using <a href="#named-arguments">named arguments</a> and <a href="#free-named-arguments">free named arguments</a>, work with templates
@@ -11662,12 +11662,12 @@ keyword-driven or behavior-driven style. Data-driven style can be used to test
 the same workflow with varying input data.</p>
 <p><a id="keyword-driven"></a></p>
 <h3 id="keyword-driven-style">Keyword-driven style<a class="headerlink" href="#keyword-driven-style" title="Permanent link">&para;</a></h3>
-<p>Workflow tests, such as the <em class="name">Valid Login</em> test described
+<p>Workflow tests, such as the <code class="name">Valid Login</code> test described
 <a href="../../execution/configuration/#earlier">earlier</a>, are constructed from several keywords and their possible
 arguments. Their normal structure is that first the system is taken
-into the initial state (<em class="name">Open Login Page</em> in the <em class="name">Valid Login</em> example), then something is done to the system (<em class="name">Input Name</em>, <em class="name">Input Password</em>, <em class="name">Submit Credentials</em>), and
+into the initial state (<code class="name">Open Login Page</code> in the <code class="name">Valid Login</code> example), then something is done to the system (<code class="name">Input Name</code>, <code class="name">Input Password</code>, <code class="name">Submit Credentials</code>), and
 finally it is verified that the system behaved as expected
-(<em class="name">Welcome Page Should Be Open</em>).</p>
+(<code class="name">Welcome Page Should Be Open</code>).</p>
 <p><a id="data-driven"></a></p>
 <p><a id="data-driven-approach"></a></p>
 <h3 id="data-driven-style">Data-driven style<a class="headerlink" href="#data-driven-style" title="Permanent link">&para;</a></h3>
@@ -11739,9 +11739,9 @@ corner stone of a process commonly called <a href="https://en.wikipedia.org/wiki
 <p>One way to write these requirements/tests is <em>Given-When-Then</em> style
 popularized by <a href="https://en.wikipedia.org/wiki/Behavior_Driven_Development">Behavior Driven Development</a> (BDD). When writing test cases in
 this style, the initial state is usually expressed with a keyword starting with
-word <em class="name">Given</em>, the actions are described with keyword starting with
-<em class="name">When</em> and the expectations with a keyword starting with <em class="name">Then</em>.
-Keyword starting with <em class="name">And</em> or <em class="name">But</em> may be used if a step has more
+word <code class="name">Given</code>, the actions are described with keyword starting with
+<code class="name">When</code> and the expectations with a keyword starting with <code class="name">Then</code>.
+Keyword starting with <code class="name">And</code> or <code class="name">But</code> may be used if a step has more
 than one action.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-26-1">1</a></span>
 <span class="normal"><a href="#example-26-2">2</a></span>
@@ -11755,13 +11755,13 @@ than one action.</p>
 </span><span id="line-26-5"><a id="example-26-5" name="example-26-5"></a><span class="p">    </span><span class="ge">and </span><span class="nf">credentials are submitted</span>
 </span><span id="line-26-6"><a id="example-26-6" name="example-26-6"></a><span class="p">    </span><span class="ge">Then </span><span class="nf">welcome page should be open</span>
 </span></code></pre></div></td></tr></table></div>
-<h4 id="ignoring-givenwhenthenandbut-prefixes">Ignoring <em class="name">Given/When/Then/And/But</em> prefixes<a class="headerlink" href="#ignoring-givenwhenthenandbut-prefixes" title="Permanent link">&para;</a></h4>
-<p>Prefixes <em class="name">Given</em>, <em class="name">When</em>, <em class="name">Then</em>, <em class="name">And</em> and <em class="name">But</em>
-can be omitted when creating keywords. For example, <em class="name">Given login page is open</em>
-in the above example is typically implemented without the word <em class="name">Given</em>
-so that the name is just <em class="name">Login page is open</em>. Omitting prefixes allows using
-the same keyword with different prefixes. For example, <em class="name">Welcome page should be open</em> could be used as <em class="name">Then welcome page should be open</em> or
-<em class="name">and welcome page should be open</em>.</p>
+<h4 id="ignoring-givenwhenthenandbut-prefixes">Ignoring <code class="name">Given/When/Then/And/But</code> prefixes<a class="headerlink" href="#ignoring-givenwhenthenandbut-prefixes" title="Permanent link">&para;</a></h4>
+<p>Prefixes <code class="name">Given</code>, <code class="name">When</code>, <code class="name">Then</code>, <code class="name">And</code> and <code class="name">But</code>
+can be omitted when creating keywords. For example, <code class="name">Given login page is open</code>
+in the above example is typically implemented without the word <code class="name">Given</code>
+so that the name is just <code class="name">Login page is open</code>. Omitting prefixes allows using
+the same keyword with different prefixes. For example, <code class="name">Welcome page should be open</code> could be used as <code class="name">Then welcome page should be open</code> or
+<code class="name">and welcome page should be open</code>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>These prefixes can be <a href="../data/#localized">localized</a>. See the <a href="../../appendix/translations/#translations">Translations</a> appendix
@@ -11923,10 +11923,10 @@ keyword implementations. This can be done by <a href="../user_keywords/#embeddin
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.top", "search.highlight", "search.suggest", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.top", "search.highlight", "search.suggest", "toc.integrate"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
       
     
   </body>
