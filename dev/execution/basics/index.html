@@ -45,15 +45,13 @@
     
     
       
-        
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-      
     
     
       <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../assets/fonts.css">
+    
+      <link rel="stylesheet" href="../../assets/theme.css">
     
       <link rel="stylesheet" href="../../assets/highlight-light.css">
     
@@ -127,11 +125,13 @@
     
       
 
-<header class="md-header" data-md-component="header">
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../.." title="Robot Framework" class="md-header__button md-logo" aria-label="Robot Framework" data-md-component="logo">
       
-  <img src="../../assets/logo-white.png" alt="logo">
+  <img src="../../assets/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -253,14 +253,8 @@
     
   </nav>
   
-</header>
     
-    <div class="md-container" data-md-component="container">
       
-      
-        
-          
-            
 <nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
   <div class="md-grid">
     <ul class="md-tabs__list">
@@ -444,7 +438,13 @@
     </ul>
   </div>
 </nav>
-          
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
         
       
       <main class="md-main" data-md-component="main">
@@ -461,13 +461,11 @@
   
 
 
-  
-
-<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="Robot Framework" class="md-nav__button md-logo" aria-label="Robot Framework" data-md-component="logo">
       
-  <img src="../../assets/logo-white.png" alt="logo">
+  <img src="../../assets/logo.png" alt="logo">
 
     </a>
     Robot Framework
@@ -10226,6 +10224,387 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#starting-test-execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Starting test execution
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Starting test execution">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#synopsis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Synopsis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#specifying-test-data-to-be-executed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Specifying test data to be executed
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-command-line-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using command line options
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using command line options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using options
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#short-and-long-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Short and long options
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-option-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setting option values
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disabling-options-accepting-no-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Disabling options accepting no values
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#simple-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Simple patterns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tag-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tag patterns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#robot_options-and-rebot_options-environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ROBOT_OPTIONS and REBOT_OPTIONS environment variables
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test results
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Test results">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#command-line-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Command line output
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generated-execution-artifacts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Generated execution artifacts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Return codes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#errors-and-warnings-during-execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Errors and warnings during execution
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#argument-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Argument files
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Argument files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#argument-file-syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Argument file syntax
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expanding-environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expanding environment variables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-argument-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using argument files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reading-argument-files-from-standard-input" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reading argument files from standard input
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-help-and-version-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting help and version information
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-start-up-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating start-up scripts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Creating start-up scripts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#shell-script-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shell script example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batch-file-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Batch file example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#making-robot-files-executable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Making *.robot files executable
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debugging-problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debugging problems
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Debugging problems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-the-python-debugger-pdb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using the Python debugger (pdb)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           
             <div class="md-content" data-md-component="content">
@@ -11095,7 +11474,7 @@ redirected during keyword execution. Instead, you can use the following:</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.top", "search.highlight", "search.suggest", "toc.integrate"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>

@@ -45,15 +45,13 @@
     
     
       
-        
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-      
     
     
       <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../assets/fonts.css">
+    
+      <link rel="stylesheet" href="../../assets/theme.css">
     
       <link rel="stylesheet" href="../../assets/highlight-light.css">
     
@@ -127,11 +125,13 @@
     
       
 
-<header class="md-header" data-md-component="header">
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../.." title="Robot Framework" class="md-header__button md-logo" aria-label="Robot Framework" data-md-component="logo">
       
-  <img src="../../assets/logo-white.png" alt="logo">
+  <img src="../../assets/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -253,14 +253,8 @@
     
   </nav>
   
-</header>
     
-    <div class="md-container" data-md-component="container">
       
-      
-        
-          
-            
 <nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
   <div class="md-grid">
     <ul class="md-tabs__list">
@@ -444,7 +438,13 @@
     </ul>
   </div>
 </nav>
-          
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
         
       
       <main class="md-main" data-md-component="main">
@@ -461,13 +461,11 @@
   
 
 
-  
-
-<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="Robot Framework" class="md-nav__button md-logo" aria-label="Robot Framework" data-md-component="logo">
       
-  <img src="../../assets/logo-white.png" alt="logo">
+  <img src="../../assets/logo.png" alt="logo">
 
     </a>
     Robot Framework
@@ -10325,6 +10323,486 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#selecting-files-to-parse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Selecting files to parse
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Selecting files to parse">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#executing-individual-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Executing individual files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#included-and-excluded-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Included and excluded files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selecting-files-by-name-or-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Selecting files by name or path
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selecting-files-by-extension" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Selecting files by extension
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-custom-parsers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using custom parsers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#selecting-test-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Selecting test cases
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Selecting test cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#by-test-names" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        By test names
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#by-suite-names" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        By suite names
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#by-tag-names" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        By tag names
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#re-executing-failed-test-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Re-executing failed test cases
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#re-executing-failed-test-suites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Re-executing failed test suites
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-no-tests-match-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When no tests match selection
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setting metadata
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting metadata">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setting-suite-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setting suite name
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-suite-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setting suite documentation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-free-suite-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setting free suite metadata
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-test-tags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setting test tags
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuring-where-to-search-libraries-and-other-extensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuring where to search libraries and other extensions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuring where to search libraries and other extensions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#locations-automatically-in-module-search-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Locations automatically in module search path
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pythonpath" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PYTHONPATH
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-pythonpath-option" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using --pythonpath option
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuring-syspath-programmatically" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuring sys.path programmatically
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setting variables
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dry-run" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dry run
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#randomizing-execution-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Randomizing execution order
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#programmatic-modification-of-test-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Programmatic modification of test data
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Programmatic modification of test data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-select-every-xth-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Select every Xth test
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-exclude-tests-by-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Exclude tests by name
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-disable-setups-and-teardowns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Disable setups and teardowns
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controlling-console-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Controlling console output
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Controlling console output">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#built-in-console-loggers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Built-in console loggers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-console-loggers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custom console loggers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#console-width" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Console width
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#console-colors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Console colors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#console-links" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Console links
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#console-markers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Console markers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-listeners" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setting listeners
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           
             <div class="md-content" data-md-component="content">
@@ -11769,7 +12247,7 @@ about importing listeners and using them in general.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.top", "search.highlight", "search.suggest", "toc.integrate"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>

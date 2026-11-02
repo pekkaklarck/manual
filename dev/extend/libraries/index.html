@@ -45,15 +45,13 @@
     
     
       
-        
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-      
     
     
       <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../assets/fonts.css">
+    
+      <link rel="stylesheet" href="../../assets/theme.css">
     
       <link rel="stylesheet" href="../../assets/highlight-light.css">
     
@@ -127,11 +125,13 @@
     
       
 
-<header class="md-header" data-md-component="header">
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../.." title="Robot Framework" class="md-header__button md-logo" aria-label="Robot Framework" data-md-component="logo">
       
-  <img src="../../assets/logo-white.png" alt="logo">
+  <img src="../../assets/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -253,14 +253,8 @@
     
   </nav>
   
-</header>
     
-    <div class="md-container" data-md-component="container">
       
-      
-        
-          
-            
 <nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
   <div class="md-grid">
     <ul class="md-tabs__list">
@@ -444,7 +438,13 @@
     </ul>
   </div>
 </nav>
-          
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
         
       
       <main class="md-main" data-md-component="main">
@@ -461,13 +461,11 @@
   
 
 
-  
-
-<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="Robot Framework" class="md-nav__button md-logo" aria-label="Robot Framework" data-md-component="logo">
       
-  <img src="../../assets/logo-white.png" alt="logo">
+  <img src="../../assets/logo.png" alt="logo">
 
     </a>
     Robot Framework
@@ -10535,6 +10533,696 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#supported-programming-languages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supported programming languages
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#different-library-apis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Different library APIs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-test-library-class-or-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating test library class or module
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Creating test library class or module">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#library-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Library name
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#providing-arguments-to-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Providing arguments to libraries
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#library-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Library scope
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#library-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Library version
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentation-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentation format
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#library-acting-as-listener" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Library acting as listener
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#library-decorator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        @library decorator
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-keywords" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating keywords
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Creating keywords">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-methods-are-considered-keywords" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What methods are considered keywords
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#controlling-keyword-discovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Controlling keyword discovery
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keyword-names" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Keyword names
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keyword-tags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Keyword tags
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keyword-arguments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Keyword arguments
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#default-values-to-keywords" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Default values to keywords
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variable-number-of-arguments-varargs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variable number of arguments (*varargs)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#free-keyword-arguments-kwargs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Free keyword arguments (**kwargs)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keyword-only-arguments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Keyword-only arguments
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#positional-only-arguments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Positional-only arguments
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#argument-conversion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Argument conversion
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keyword-decorator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        @keyword decorator
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#not_keyword-decorator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        @not_keyword decorator
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-custom-decorators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using custom decorators
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#embedding-arguments-into-keyword-names" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Embedding arguments into keyword names
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asynchronous-keywords" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Asynchronous keywords
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#communicating-with-robot-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Communicating with Robot Framework
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Communicating with Robot Framework">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reporting-keyword-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reporting keyword status
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exceptions-provided-by-robot-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exceptions provided by Robot Framework
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#continuable-failures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Continuable failures
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skipping-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Skipping tests
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stopping-test-execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stopping test execution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logging-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logging information
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#programmatic-logging-apis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Programmatic logging APIs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logging-during-library-initialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logging during library initialization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returning-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Returning values
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detecting-is-robot-framework-running" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detecting is Robot Framework running
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#communication-when-using-threads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Communication when using threads
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#distributing-test-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Distributing test libraries
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Distributing test libraries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#documenting-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documenting libraries
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing libraries
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#packaging-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Packaging libraries
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deprecating-keywords" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deprecating keywords
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#handling-robot-frameworks-timeouts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Handling Robot Framework's timeouts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Handling Robot Framework&#39;s timeouts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#doing-cleanup-if-timeout-occurs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Doing cleanup if timeout occurs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#allowing-timeouts-to-stop-execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Allowing timeouts to stop execution
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-robot-frameworks-internal-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using Robot Framework's internal modules
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using Robot Framework&#39;s internal modules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#available-apis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Available APIs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-builtin-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using BuiltIn library
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extending-existing-test-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extending existing test libraries
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Extending existing test libraries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modifying-original-source-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modifying original source code
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-inheritance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using inheritance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-other-libraries-directly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using other libraries directly
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getting-active-library-instance-from-robot-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting active library instance from Robot Framework
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           
             <div class="md-content" data-md-component="content">
@@ -14267,7 +14955,7 @@ expected to be available in a new library <code class="name">SeLibExtensions</co
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.top", "search.highlight", "search.suggest", "toc.integrate"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>

@@ -45,15 +45,13 @@
     
     
       
-        
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-      
     
     
       <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../assets/fonts.css">
+    
+      <link rel="stylesheet" href="../../assets/theme.css">
     
       <link rel="stylesheet" href="../../assets/highlight-light.css">
     
@@ -127,11 +125,13 @@
     
       
 
-<header class="md-header" data-md-component="header">
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../.." title="Robot Framework" class="md-header__button md-logo" aria-label="Robot Framework" data-md-component="logo">
       
-  <img src="../../assets/logo-white.png" alt="logo">
+  <img src="../../assets/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -253,14 +253,8 @@
     
   </nav>
   
-</header>
     
-    <div class="md-container" data-md-component="container">
       
-      
-        
-          
-            
 <nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
   <div class="md-grid">
     <ul class="md-tabs__list">
@@ -444,7 +438,13 @@
     </ul>
   </div>
 </nav>
-          
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
         
       
       <main class="md-main" data-md-component="main">
@@ -461,13 +461,11 @@
   
 
 
-  
-
-<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="Robot Framework" class="md-nav__button md-logo" aria-label="Robot Framework" data-md-component="logo">
       
-  <img src="../../assets/logo-white.png" alt="logo">
+  <img src="../../assets/logo.png" alt="logo">
 
     </a>
     Robot Framework
@@ -10286,6 +10284,447 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#for-loops" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FOR loops
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="FOR loops">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simple-for-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Simple FOR loop
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#old-for-loop-syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Old FOR loop syntax
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nesting-for-loops" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nesting FOR loops
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-several-loop-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using several loop variables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-in-range-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FOR-IN-RANGE loop
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-in-enumerate-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FOR-IN-ENUMERATE loop
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-in-zip-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FOR-IN-ZIP loop
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dictionary-iteration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dictionary iteration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loop-variable-conversion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Loop variable conversion
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removing-unnecessary-keywords-from-outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Removing unnecessary keywords from outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#repeating-single-keyword" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Repeating single keyword
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#while-loops" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WHILE loops
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="WHILE loops">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-while-syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic WHILE syntax
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limiting-while-loop-iterations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Limiting WHILE loop iterations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nesting-while-loops" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nesting WHILE loops
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removing-unnecessary-keywords-from-outputs_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Removing unnecessary keywords from outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loop-control-using-break-and-continue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Loop control using BREAK and CONTINUE
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ifelse-syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IF/ELSE syntax
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IF/ELSE syntax">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-if-syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic IF syntax
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#else-branches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ELSE branches
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#else-if-branches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ELSE IF branches
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inline-if" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inline IF
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nested-if-structures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nested IF structures
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-ways-to-execute-keywords-conditionally" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other ways to execute keywords conditionally
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tryexcept-syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TRY/EXCEPT syntax
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TRY/EXCEPT syntax">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#catching-exceptions-with-except" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Catching exceptions with EXCEPT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#matching-errors-using-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Matching errors using patterns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#capturing-error-message" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Capturing error message
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-else-to-execute-keywords-when-there-are-no-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using ELSE to execute keywords when there are no errors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-finally-to-execute-keywords-regardless-are-there-errors-or-not" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using FINALLY to execute keywords regardless are there errors or not
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-ways-to-handle-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other ways to handle errors
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#group-syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GROUP syntax
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GROUP syntax">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#group-with-templates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GROUP with templates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#programmatic-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Programmatic usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           
             <div class="md-content" data-md-component="content">
@@ -12239,7 +12678,7 @@ test. Groups can be added also by <a href="../../extend/listeners/#listener-inte
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.top", "search.highlight", "search.suggest", "toc.integrate"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
