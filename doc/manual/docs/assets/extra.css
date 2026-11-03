@@ -1,12 +1,11 @@
 /* ============================================================================
-   LAYOUT — Docusaurus-style: no centred page grid. The primary sidebar hugs
-   the left edge, the article grows to 1000px when there is room, and the page
-   TOC sits directly to its right instead of at the far edge of the viewport.
-   Material's `.md-grid` (61rem, centred) is what caused the narrow, centred
-   column; the header and tabs share it and stretch too.
+   LAYOUT — centre the navigation, article and TOC as one group on wide screens.
+   Material supplies the grid's automatic margins and responsive sidebar layout.
+   Footer contents share the page grid.
    ========================================================================== */
 .md-grid {
-  max-width: none;
+  /* A 1000px article, two 12.1rem sidebars and 2.4rem of article margins. */
+  max-width: calc(1000px + 26.6rem);
 }
 
 .md-content__inner {
@@ -14,18 +13,8 @@
   max-width: 1000px;
 }
 
-@media screen and (min-width: 76.25em) {
-  /* Sidebars are shown: cap the article column (1000px plus Material's
-     1.2rem inner margins) so the secondary sidebar, which follows it in the
-     flex row, stays attached to the content. `flex-shrink: 1` lets it give
-     way on narrower windows instead of overflowing. */
-  .md-content {
-    flex: 0 1 calc(1000px + 2.4rem);
-  }
-}
-
 @media screen and (max-width: 76.1875em) {
-  /* No sidebars: centre the article and keep a side gutter. */
+  /* The navigation is a drawer: centre the article and keep a side gutter. */
   .md-content__inner {
     margin-inline: auto;
     padding-inline: 0.8rem;
@@ -33,14 +22,17 @@
 }
 
 /* ============================================================================
-   HEADER — ground-coloured with a thin rule, as on the Guides. Material paints
-   the header with --md-primary-fg-color (now ramp step 0: white / black) and
-   its text with --md-primary-bg-color (now ink); the rules here add the rule
-   line and the type treatment Material has no variable for.
+   HEADER — always dark, matching robotframework.org. The component palette
+   in theme.css supplies the background, foreground and navigation accent.
    ========================================================================== */
 .md-header {
   border-bottom: 1px solid rgb(var(--rf-700) / 0.18);
   box-shadow: none;
+}
+
+/* Give the header and its tabs the full viewport width. */
+.md-header .md-grid {
+  max-width: none;
 }
 
 /* Material re-adds a shadow once the page scrolls. */
@@ -49,90 +41,171 @@
   transition: none;
 }
 
+/* Both logo links turn a quarter on hover/focus when motion is allowed. */
+@media (prefers-reduced-motion: no-preference) {
+  [data-md-component="logo"] svg {
+    transition: transform 0.3s ease;
+  }
+
+  [data-md-component="logo"]:hover svg,
+  [data-md-component="logo"]:focus-visible svg {
+    transform: rotate(90deg);
+  }
+}
+
+.md-header .md-header__title {
+  margin-inline-start: 0;
+}
+
 .md-header__title .md-ellipsis {
   font-family: var(--rf-ff-display);
-  text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 400;
   letter-spacing: -0.05em;
+}
+
+/* Keep Material's native version menu outside the animated page title.
+   Its dropdown must paint above the section tabs. */
+.rf-header-version {
+  position: relative;
+  flex-shrink: 0;
+  line-height: 2.4rem;
+  z-index: 4;
+}
+
+.rf-header-version .md-version__current {
+  margin-inline: 0 0.4rem;
+  font-family: var(--rf-ff-nav);
+}
+
+.rf-header-version .md-version__current:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+.rf-header-version:not(:empty) + .md-header__title {
+  display: none;
+}
+
+/* Desktop tabs identify the site; keep Material's title on smaller screens. */
+@media screen and (min-width: 76.25em) {
+  .md-header__title {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 76.1875em) {
+  .md-header__button.md-logo {
+    display: block;
+  }
+
+  .rf-header-version:not(:empty) {
+    flex-grow: 1;
+  }
+
+  /* Keep the version number compact; aliases remain visible in the menu. */
+  .rf-header-version .md-version__current .md-version__alias {
+    display: none;
+  }
 }
 
 .md-tabs {
   background: transparent;
-  border-bottom: 1px solid rgb(var(--rf-700) / 0.18);
 }
 
-/* With sticky tabs, `.md-tabs` renders inside `.md-header`; the header's own
-   bottom border is the single rule, so the tabs draw none of their own. */
-.md-header .md-tabs {
-  border-bottom: 0;
+/* The header partial places sticky tabs between the logo and controls.
+   Material supplies their height, scrolling and mobile visibility. */
+.md-header__inner > .md-tabs {
+  flex: 1 1 auto;
+  min-width: 0;
+  width: auto;
 }
 
 .md-tabs__link {
+  align-items: center;
   font-family: var(--rf-ff-nav);
-  font-weight: 600;
+  font-size: 0.75rem;
+  height: 100%;
   opacity: 1;
-  color: rgb(var(--rf-text) / 0.75);
   margin-top: 0;
 }
 
-.md-tabs__item {
-  height: 1.4rem;
-}
-
 .md-tabs__link:hover,
+.md-tabs__link:focus-visible,
 .md-tabs__item--active .md-tabs__link {
-  color: rgb(var(--rf-accent-text));
+  color: var(--md-accent-fg-color);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
 }
 
-/* Search box sits on the ground, so it needs an edge of its own. */
+/* Search shares the dark header; Material supplies the expanded panel colors. */
 .md-search__form {
-  background: rgb(var(--rf-0));
-  border: 1px solid rgb(var(--rf-700) / 0.25);
+  background: var(--md-primary-fg-color);
+  border: 1px solid rgb(255 255 255 / 0.25);
   border-radius: var(--rf-r-sm);
   box-shadow: none;
 }
 
-.md-search__input,
-.md-search__input::placeholder,
-.md-search__form .md-search__icon {
-  color: rgb(var(--rf-text) / 0.7);
-}
-
-/* The logo is black ink; invert it on the dark ground. */
-[data-md-color-scheme="slate"] .md-header__button.md-logo img {
-  filter: invert(1);
-}
-
 /* ============================================================================
-   SIDEBARS — left nav and right TOC. 14px like the Guides, hairline between
+   SIDEBARS — left nav and right TOC. 14px, hairline between
    top-level groups, active item in the accent.
    ========================================================================== */
 .md-sidebar .md-nav {
   font-size: 0.7rem;                /* 14px at Material's 20px root */
+  line-height: 1.45;
 }
 
 .md-nav--primary .md-nav__link {
-  padding: .3rem .6rem;
+  padding: 0.4rem 0.6rem;
+  border-radius: var(--rf-r-sm);
+}
+
+/* Index links share one padded row with their section's expand control. */
+.md-nav--primary .md-nav__container > .md-nav__link {
+  padding: 0;
 }
 
 .md-nav__title {
   font-family: var(--rf-ff-display);
-  font-weight: 600;
+  font-weight: 400;
   letter-spacing: -0.05em;
   color: rgb(var(--rf-text));
+}
+
+/* Match Material's header logo size, retaining the link's surrounding padding. */
+.md-nav--primary .md-nav__title .md-logo svg {
+  height: 1.2rem;
 }
 
 .md-nav__link {
   color: rgb(var(--rf-text) / 0.8);
 }
 
-.md-nav__link:hover {
+/* OCR-A supplies section hierarchy at its available regular weight. */
+.md-nav--primary .md-nav__item--section > .md-nav__container > .md-nav__link,
+.md-nav--primary .md-nav__item--section > .md-nav__link,
+.md-nav--primary > .md-nav__list > .md-nav__item > .md-nav__link {
+  font-family: var(--rf-ff-display);
+  font-size: 1.05em;
+  font-weight: 400;
+  letter-spacing: -0.04em;
+}
+
+/* Material uses its accent for hovered/focused navigation links and controls. */
+.md-nav {
+  --md-accent-fg-color: rgb(var(--rf-accent-text));
+}
+
+/* Follow Material's current-page state, including its sticky top-level link. */
+.md-nav__link--active {
   color: rgb(var(--rf-accent-text));
 }
 
-.md-nav__link--active,
-.md-nav__item--active > .md-nav__link {
-  color: rgb(var(--rf-accent-text));
+/* Mark the current page and interactions, including the mobile TOC label. */
+.md-nav--primary .md-nav__link:hover,
+.md-nav--primary .md-nav__link:focus-visible,
+.md-nav--primary .md-nav__link--active {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
 }
 
 /* Hairline between top-level groups in the mobile drawer's root screen, where
@@ -140,6 +213,56 @@
    and shows only the active one, so the same rule would draw a lone line
    under the last page of the active tab — hence the drawer-only scope. */
 @media screen and (max-width: 76.1875em) {
+  /* Keep overview links and submenu controls separate. Put padding on the
+     controls so the drawer arrows have a 44px target, not just an icon.
+     Material continues to handle opening and closing each drawer pane. */
+  .md-nav--primary .md-nav__container {
+    align-items: stretch;
+    padding: 0;
+  }
+
+  .md-nav--primary .md-nav__container > .md-nav__link {
+    align-items: center;
+    min-height: 2.2rem;
+    padding: 0.4rem 0.6rem;
+  }
+
+  .md-nav--primary .md-nav__container > label.md-nav__link {
+    justify-content: center;
+    min-width: 2.2rem;
+  }
+
+  /* The whole current-page row opens its TOC; keep its icon visible on touch. */
+  .md-nav--primary label.md-nav__link[for="__toc"] {
+    align-items: center;
+    min-height: 2.2rem;
+  }
+
+  .md-nav--primary label.md-nav__link:hover,
+  .md-nav--primary label.md-nav__link:focus-visible {
+    background: var(--md-accent-fg-color--transparent);
+  }
+
+  .md-nav--primary label.md-nav__link:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: -2px;
+  }
+
+  /* A compact brand row; keep the logo link separate from the close label. */
+  .md-nav--primary > .md-nav__title[for="__drawer"] {
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+    height: auto;
+    min-height: 2.4rem;
+    padding: 0 0.2rem;
+  }
+
+  .md-nav--primary > .md-nav__title[for="__drawer"] .md-logo {
+    position: static;
+    flex-shrink: 0;
+  }
+
   .md-sidebar--primary .md-nav--primary > .md-nav__list > .md-nav__item {
     padding-bottom: 0.4rem;
     margin-bottom: 0.4rem;
@@ -192,46 +315,27 @@
    ========================================================================== */
 .md-typeset a {
   font-weight: 600;
-  text-decoration: underline;
-  text-decoration-color: rgb(var(--rf-500));
+  text-decoration: none;
   text-underline-offset: 0.15em;
 }
 
 .md-typeset a:hover,
 .md-typeset a:focus {
   color: rgb(var(--rf-800));
+  text-decoration: underline;
   text-decoration-color: currentColor;
 }
 
-/* Sidebar and TOC links are navigation, not prose: plain weight, no underline. */
-.md-nav a,
-.md-nav a:hover {
-  font-weight: 400;
+/* Navigation links inherit their section's weight; current pages are marked above. */
+.md-nav a {
+  font-weight: inherit;
   text-decoration: none;
 }
 
 /* ============================================================================
-   THE PLATE — shared editor chrome from the source site, dressing Material's
-   own code-block markup. The generated highlight-*.css files set their own
-   `.highlight { background }`; the surface rule below wins by load order.
-
-   This site's build always renders fenced code through Pygments' `linenos:
-   table` formatter (`.highlight > table.highlighttable > tr > td.linenos
-   / td.code > div > pre > code`) rather than Material's own
-   `.highlight > pre > code` shape, even for blocks without explicit line
-   numbers — confirmed against the built /syntax/tests/ and /extend/dynamic/
-   pages. The `.highlight > pre > code` selector from the brief is dropped
-   below since it cannot match anything this build produces; `.highlight pre`
-   (a descendant selector) covers the real `<pre>` instead.
-
-   Fix round 1: the brief's `font-size`/`line-height` on `.md-typeset pre >
-   code` only reached the code column (`td.code pre > code`) — the line-number
-   column is `td.linenos pre` with no `<code>` child, so it kept Material's
-   own sizing while the code column got the Guides' 0.83rem/1.55, breaking
-   gutter/code alignment. Sizing is dropped (Material's own sizes already
-   agree across both columns); the font-family rule now targets both
-   `td.linenos pre` and `td.code pre > code` so the monospace face still
-   applies everywhere.
+   CODE BLOCKS — style Material/Pygments markup after highlight-*.css.
+   Line numbers use a separate table column. Apply the code font to both
+   columns and retain Material's font sizes and line heights for alignment.
    ========================================================================== */
 .md-typeset .highlight {
   border: 1px solid rgb(var(--rf-700) / 0.25);
@@ -377,7 +481,7 @@
   font-size: 0.7rem;
 }
 
-/* The `note` type — 207 of the Manual's 228 admonitions — takes the brand. */
+/* Notes use the brand accent. */
 .md-typeset .admonition.note,
 .md-typeset details.note {
   border-color: rgb(var(--rf-accent-text));
