@@ -389,18 +389,18 @@
   box-shadow: inset 2px 0 0 0 rgb(var(--rf-accent-indicator));
 }
 
-/* Inline code. */
+/* Monospace and a quiet tint distinguish inline code without link-like color. */
 .md-typeset code:not(pre code) {
   font-family: var(--rf-ff-code);
-  background: rgb(var(--rf-500) / 0.13);
+  background: rgb(var(--rf-500) / 0.08);
   border-radius: var(--rf-r-sm);
   padding: 0.1em 0.35em;
   font-size: 0.87em;
-  color: inherit;
+  color: var(--md-code-fg-color);
 }
 
 /* Code inside a link keeps the link colour. */
-.md-typeset a code {
+.md-typeset a[href] code {
   color: inherit;
 }
 
@@ -411,6 +411,7 @@
 /* Definition list spacing — reduce Material theme's 1em margins so that each
    term sits tight against its definition, with a small gap between entries. */
 .md-typeset dl dt {
+  font-weight: 600;
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -418,21 +419,6 @@
 .md-typeset dl dd {
   margin-top: 0.1rem;
   margin-bottom: 0.6rem;
-}
-
-/* ezglossary injects a back-reference list into every definition; collapse it
-   (and any wrapping paragraph) when it has no entries, so it does not add
-   blank space between a term and the next one. */
-.md-typeset dl dd .mkdocs-ezglossary-refs:not(:has(li)) {
-  display: none;
-}
-
-.md-typeset dl dd > p:empty {
-  display: none;
-}
-
-.md-typeset dl dd p:has(> .mkdocs-ezglossary-refs:not(:has(li))) {
-  display: none;
 }
 
 .md-typeset table:not([class]) {
