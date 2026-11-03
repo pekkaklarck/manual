@@ -744,11 +744,11 @@ Example
 Robot Framework localization efforts were started in Robot Framework 6.0
 that allowed translation of [section headers](#test-data-sections), [settings](../appendix/settings.md#available-settings),
 [Given/When/Then prefixes](tests.md#behavior-driven-style) used in Behavior Driven Development (BDD), and
-[true and false strings](libraries.md#supported-conversions) used in automatic Boolean argument conversion.
+[true and false strings](../extend/libraries.md#supported-conversions) used in automatic Boolean argument conversion.
 The plan is to extend localization support in the future, for example,
 to log and report and possibly also to control structures.
 
-This section explains how to [activate languages](../extend/libraries.md#supported-conversions), what [built-in languages](#built-in-languages)
+This section explains how to [activate languages](#enabling-languages), what [built-in languages](#built-in-languages)
 are supported, how to create [custom language files](#custom-language-files) and how new translations
 can be [contributed](#contributing-translations).
 
