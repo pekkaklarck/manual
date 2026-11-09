@@ -33,6 +33,7 @@ instant navigation replaces the article and sidebar while keeping the header.
 Focus moves between drawer panes use `preventScroll` so the opening animation
 does not scroll their shared wrapper horizontally and leave the menu blank.
 Its delegated phone TOC click handler closes the disclosure after selection.
+The adapter also names the search dialog and navigation progress bar.
 
 Material adds the version selector asynchronously. A one-time observer in
 `navigation.js` lets its visible version text supply the accessible name and
@@ -71,10 +72,6 @@ The `partials/javascripts/outdated.html` override resolves the relative site roo
 against the current page URL before reading the outdated-version session state.
 Compare it with Material's template when upgrading; without that URL base, the
 banner script throws on both the homepage and nested pages.
-
-The `partials/search.html` and `partials/progress.html` overrides add accessible
-names to the search dialog and navigation progress bar. Compare these with
-Material's templates when upgrading as well.
 
 Run `properdocs build` with API generation enabled, then preview the site and
 check both palettes at phone, tablet and desktop widths:

@@ -150,6 +150,7 @@
       } else if (input.id === '__search') {
         target = document.querySelector('.md-search');
         label.setAttribute('aria-label', 'Search');
+        target?.setAttribute('aria-label', 'Search');
       } else {
         target = input.parentElement.querySelector(':scope > nav');
         const back = label.classList.contains('md-nav__title');
@@ -173,6 +174,7 @@
     markCurrentLocation();
     addCloseButton();
     setupControls();
+    document.querySelector('.md-progress')?.setAttribute('aria-label', 'Loading page');
     sync();
   }
 
