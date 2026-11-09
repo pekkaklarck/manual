@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../assets/logo.png">
-      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.8.0">
+      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.8.1">
     
     
       
@@ -57,7 +57,11 @@
     
       <link rel="stylesheet" href="../../assets/highlight-dark.css">
     
+      <link rel="stylesheet" href="../../assets/navigation.css">
+    
       <link rel="stylesheet" href="../../assets/extra.css">
+    
+      <link rel="stylesheet" href="../../assets/page-toc.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -125,19 +129,24 @@
     
       
 
+
   
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Robot Framework" class="md-header__button md-logo" aria-label="Robot Framework" data-md-component="logo">
-      
-  <img src="../../assets/logo.png" alt="logo">
-
-    </a>
     <label class="md-header__button md-icon" for="__drawer">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
     </label>
+    <a href="https://robotframework.org/" title="Robot Framework" class="md-header__button md-logo" aria-label="Robot Framework" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4.957 10.225a3.405 3.405 0 0 1 3.4-3.403 3.406 3.406 0 0 1 3.402 3.403 1.235 1.235 0 1 1-2.469 0 .932.932 0 0 0-1.865 0 1.234 1.234 0 1 1-2.468 0m14.086 5.717c0 .684-.552 1.236-1.234 1.236H6.357a1.234 1.234 0 0 1-1.234-1.236c0-.684.553-1.237 1.234-1.237H17.81c.682 0 1.234.553 1.234 1.237m-5.35-5.025a1.235 1.235 0 0 1 .333-1.714l2.862-1.933a1.23 1.23 0 0 1 1.715.328 1.235 1.235 0 0 1-.334 1.715l-2.862 1.933c-.545.383-1.335.238-1.715-.329m7.839 7.602a.88.88 0 0 1-.258.623l-2.128 2.127a.88.88 0 0 1-.623.258H5.477a.88.88 0 0 1-.623-.258l-2.128-2.127a.88.88 0 0 1-.258-.623V5.482a.88.88 0 0 1 .258-.623l2.128-2.128a.88.88 0 0 1 .623-.258h13.046a.88.88 0 0 1 .623.258l2.128 2.128a.88.88 0 0 1 .258.623zm1.81-15.083L20.565.658A2.25 2.25 0 0 0 18.977 0H5.022a2.25 2.25 0 0 0-1.588.658L.657 3.436A2.25 2.25 0 0 0 0 5.023v13.955c0 .595.237 1.166.658 1.587l2.778 2.778c.42.42.991.657 1.587.657h13.954a2.25 2.25 0 0 0 1.588-.657l2.778-2.778A2.24 2.24 0 0 0 24 18.977V5.023a2.25 2.25 0 0 0-.657-1.587"/></svg>
+
+    </a>
+    
+      <div class="md-header__topic rf-header-version"></div>
+    
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
@@ -156,105 +165,7 @@
     </div>
     
       
-        <form class="md-header__option" data-md-component="palette">
-  
-    
-    
-    
-    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
-    
-      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
-      </label>
-    
-  
-    
-    
-    
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
-    
-      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
-      </label>
-    
-  
-    
-    
-    
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
-    
-      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
-      </label>
-    
-  
-</form>
-      
-    
-    
-      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
-    
-    
-    
-      
-      
-        <label class="md-header__button md-icon" for="__search">
-          
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-        </label>
-        <div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
-      <label class="md-search__icon md-icon" for="__search">
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-      </label>
-      <nav class="md-search__options" aria-label="Search">
-        
-        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
-          
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
-        </button>
-      </nav>
-      
-        <div class="md-search__suggest" data-md-component="search-suggest"></div>
-      
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="search-result">
-          <div class="md-search-result__meta">
-            Initializing search
-          </div>
-          <ol class="md-search-result__list" role="presentation"></ol>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-      
-    
-    
-      <div class="md-header__source">
-        <a href="https://github.com/robotframework/robotframework" title="Go to repository" class="md-source" data-md-component="source">
-  <div class="md-source__icon md-icon">
-    
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
-  </div>
-  <div class="md-source__repository">
-    GitHub
-  </div>
-</a>
-      </div>
-    
-  </nav>
-  
-    
-      
 <nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
   <div class="md-grid">
     <ul class="md-tabs__list">
@@ -438,8 +349,96 @@
     </ul>
   </div>
 </nav>
+      
+    
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
     
   
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/robotframework/robotframework" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
 </header>
     
     <div class="md-container" data-md-component="container">
@@ -463,9 +462,10 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Robot Framework" class="md-nav__button md-logo" aria-label="Robot Framework" data-md-component="logo">
+    <a href="https://robotframework.org/" title="Robot Framework" class="md-nav__button md-logo" aria-label="Robot Framework" data-md-component="logo">
       
-  <img src="../../assets/logo.png" alt="logo">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4.957 10.225a3.405 3.405 0 0 1 3.4-3.403 3.406 3.406 0 0 1 3.402 3.403 1.235 1.235 0 1 1-2.469 0 .932.932 0 0 0-1.865 0 1.234 1.234 0 1 1-2.468 0m14.086 5.717c0 .684-.552 1.236-1.234 1.236H6.357a1.234 1.234 0 0 1-1.234-1.236c0-.684.553-1.237 1.234-1.237H17.81c.682 0 1.234.553 1.234 1.237m-5.35-5.025a1.235 1.235 0 0 1 .333-1.714l2.862-1.933a1.23 1.23 0 0 1 1.715.328 1.235 1.235 0 0 1-.334 1.715l-2.862 1.933c-.545.383-1.335.238-1.715-.329m7.839 7.602a.88.88 0 0 1-.258.623l-2.128 2.127a.88.88 0 0 1-.623.258H5.477a.88.88 0 0 1-.623-.258l-2.128-2.127a.88.88 0 0 1-.258-.623V5.482a.88.88 0 0 1 .258-.623l2.128-2.128a.88.88 0 0 1 .623-.258h13.046a.88.88 0 0 1 .623.258l2.128 2.128a.88.88 0 0 1 .258.623zm1.81-15.083L20.565.658A2.25 2.25 0 0 0 18.977 0H5.022a2.25 2.25 0 0 0-1.588.658L.657 3.436A2.25 2.25 0 0 0 0 5.023v13.955c0 .595.237 1.166.658 1.587l2.778 2.778c.42.42.991.657 1.587.657h13.954a2.25 2.25 0 0 0 1.588-.657l2.778-2.778A2.24 2.24 0 0 0 24 18.977V5.023a2.25 2.25 0 0 0-.657-1.587"/></svg>
 
     </a>
     Robot Framework
@@ -1233,12 +1233,6 @@
       
         
       
-        
-      
-        
-      
-        
-      
     
     
     
@@ -1446,90 +1440,6 @@
     
   
     Parser interface
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../extend/models/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Execution and result models
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../extend/json/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    JSON models
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../extend/xml/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    XML output format
   
 
     
@@ -9638,7 +9548,9 @@
       
         
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
   
   
   
@@ -9647,7 +9559,7 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Table of contents
+      On this page
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
@@ -9908,7 +9820,9 @@
                   <div class="md-sidebar__inner">
                     
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
   
   
   
@@ -9917,7 +9831,7 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Table of contents
+      On this page
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
@@ -9967,6 +9881,42 @@
               
               <article class="md-content__inner md-typeset">
                 
+  
+
+
+
+
+  
+
+
+  
+  <details class="rf-page-toc">
+    <summary>On this page</summary>
+    <nav aria-label="On this page">
+      
+  <ul>
+    
+      <li>
+        <a href="#command-line-options-for-test-execution">Command line options for test execution</a>
+        
+      </li>
+    
+      <li>
+        <a href="#command-line-options-for-post-processing-outputs">Command line options for post-processing outputs</a>
+        
+      </li>
+    
+      <li>
+        <a href="#environment-variables-for-execution-and-post-processing">Environment variables for execution and post-processing</a>
+        
+      </li>
+    
+  </ul>
+
+    </nav>
+  </details>
+
+  
                   
 
 
@@ -9986,513 +9936,84 @@ Also environment variables affecting execution and post-processing
 are listed.</p>
 <h2 id="command-line-options-for-test-execution">Command line options for test execution<a class="headerlink" href="#command-line-options-for-test-execution" title="Permanent link">&para;</a></h2>
 <dl>
-<dt>
-	<code class="option"><a id="5e794518e720c3bbe2d9b025cb00a508">--rpa</a> </code>
-</dt>
-<dd>Turn on <a href="../../execution/tasks/#task-execution">generic automation</a> mode.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="a42745bdd0c9526f52efe305a30068bc">--language &lt;lang&gt;</a> </code>
-</dt>
-<dd>Activate <a href="../../syntax/data/#localization">localization</a>. <code>lang</code> can be a name or a code of a <a href="../translations/#translations">built-in language</a>, or a path or a module name of a custom language file.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="28055951354497a809296f6d673749c5">-F, --extension &lt;value&gt;</a> </code>
-</dt>
-<dd><a href="../../execution/configuration/#selecting-files-to-parse">Parse only these files</a> when executing a directory.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="98db0955d6d93bbea35729c6470055e0">-I, --parseinclude &lt;pattern&gt;</a> </code>
-</dt>
-<dd><a href="../../execution/configuration/#selecting-files-to-parse">Parse only matching files</a> when executing a directory.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="15e68df46db1d728de7d2cf08452e3ca">-N, --name &lt;name&gt;</a> </code>
-</dt>
-<dd><a href="../../execution/configuration/#setting-suite-name">Sets the name</a> of the top-level test suite.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="f8817f8f68460e3ce63a2d7ae3aeb0f5">-D, --doc &lt;document&gt;</a> </code>
-</dt>
-<dd><a href="../../execution/configuration/#setting-suite-documentation">Sets the documentation</a> of the top-level test suite.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="cbec4b0353a7bda9117f80ed19b8640d">value&gt;</a> </code>
-</dt>
-<dd><a href="../../execution/configuration/#setting-free-suite-metadata">Sets free metadata</a> for the top level test suite.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="91ffb5bf152b933897586e70a17ef3ee">-G, --settag &lt;tag&gt;</a> </code>
-</dt>
-<dd><a href="../../execution/configuration/#setting-test-tags">Sets the tag(s)</a> to all executed test cases.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="35607f9726fff712a732329666dfac65">-t, --test &lt;name&gt;</a> </code>
-</dt>
-<dd><a href="../../execution/configuration/#by-test-names">Selects the test cases by name</a>.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="d098173e88dce63d8b467ef48612c65a">--task &lt;name&gt;</a> </code>
-</dt>
-<dd>Alias for <code class="option">--test</code> that can be used when <a href="../../execution/tasks/#executing-tasks">executing tasks</a>.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="ff0cc67f7282a33241372d79a211fc84">-s, --suite &lt;name&gt;</a> </code>
-</dt>
-<dd><a href="../../execution/configuration/#by-suite-names">Selects the test suites</a> by name.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="a7867407e121bb215a38d5a052cb399b">-R, --rerunfailed &lt;file&gt;</a> </code>
-</dt>
-<dd><a href="../../execution/configuration/#re-executing-failed-test-cases">Selects failed tests</a> from an earlier <a href="../../execution/results/#output-file">output file</a> to be re-executed.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="bbac0f7bea14a115ed8877d590cddca6">-S, --rerunfailedsuites &lt;file&gt;</a> </code>
-</dt>
-<dd><a href="../../execution/configuration/#re-executing-failed-test-suites">Selects failed test suites</a> from an earlier <a href="../../execution/results/#output-file">output file</a> to be re-executed.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="6a77516587bde2af543ac9c4191dbb39">-i, --include &lt;tag&gt;</a> </code>
-</dt>
-<dd><a href="../../execution/configuration/#by-tag-names">Selects the test cases</a> by tag.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="490ff86a0328875b1bad91b826c8e5b5">-e, --exclude &lt;tag&gt;</a> </code>
-</dt>
-<dd><a href="../../execution/configuration/#by-tag-names">Selects the test cases</a> by tag.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="fb72cb206fd5c3c426f4961fc1d11fa0">--skip &lt;tag&gt;</a> </code>
-</dt>
-<dd>Tests having given tag will be <a href="../../execution/tests/#skipped">skipped</a>. Tag can be a pattern.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="50f8a48481208c006639fb3a3754d78a">--skiponfailure &lt;tag&gt;</a> </code>
-</dt>
-<dd>Tests having given tag will be <a href="../../execution/tests/#skipped">skipped</a> if they fail.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="725b3ff2fbed78123aedeb9e05727aaa">value&gt;</a> </code>
-</dt>
-<dd>Sets <a href="../../syntax/variables/#command-line-variables">individual variables</a>.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="8aaac892e295c30776af801b0a215944">args&gt;</a> </code>
-</dt>
-<dd>Sets variables using <a href="../../syntax/variable_files/#variable-files">variable files</a>.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="0161e9cfdeaf855605cb232defcb31c5">-d, --outputdir &lt;dir&gt;</a> </code>
-</dt>
-<dd>Defines where to <a href="../../execution/results/#output-directory">create result files</a>.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="1094a22409bd1c9e34f46cb26c0a0e01">-o, --output &lt;file&gt;</a> </code>
-</dt>
-<dd>Sets the path to the generated <a href="../../execution/results/#output-file">output file</a>.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="38d22ff305ca5dc5bfa68b97d7138cbd">--legacyoutput</a> </code>
-</dt>
-<dd>Creates output file in <a href="../../execution/results/#legacy-xml-format">Robot Framework 6.x compatible format</a>.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="5ee67c5d9b008536f575a0e4775fbf2b">-l, --log &lt;file&gt;</a> </code>
-</dt>
-<dd>Sets the path to the generated <a href="../../execution/results/#log-file">log file</a>.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="72aa0e4f99216a0b9a752889d13bddd8">-r, --report &lt;file&gt;</a> </code>
-</dt>
-<dd>Sets the path to the generated <a href="../../execution/results/#report-file">report file</a>.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="c3df78902d0f518bf6a6f4b0d2dedda3">-x, --xunit &lt;file&gt;</a> </code>
-</dt>
-<dd>Sets the path to the generated <a href="../../execution/results/#xunit-compatible-result-file">xUnit compatible result file</a>.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="fe320f871d8fe6f69759b1c2c3a8f36b">-b, --debugfile &lt;file&gt;</a> </code>
-</dt>
-<dd>A <a href="../../execution/results/#debug-file">debug file</a> that is written during execution.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="6f1063cdc45c8b2cc8293f0db37e7a2d">-T, --timestampoutputs</a> </code>
-</dt>
-<dd><a href="../../execution/results/#timestamping-execution-artifacts">Adds a timestamp</a> to <a href="../../execution/results/#file-types">result files</a> listed above.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="602f62eb970f36ddf8bc7a5e80d30c79">--splitlog</a> </code>
-</dt>
-<dd><a href="../../execution/results/#splitting-logs">Split log file</a> into smaller pieces that open in browser transparently.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="b627fea7423918e3d37416cfd5b3cd4b">--logtitle &lt;title&gt;</a> </code>
-</dt>
-<dd><a href="../../execution/results/#setting-titles">Sets a title</a> for the generated test log.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="6e17b10b04ed0b19bc9635fec16d23d1">--reporttitle &lt;title&gt;</a> </code>
-</dt>
-<dd><a href="../../execution/results/#setting-titles">Sets a title</a> for the generated test report.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="c4b2aa091cd22c4d01b56f296728be35">--reportbackground &lt;colors&gt;</a> </code>
-</dt>
-<dd><a href="../../execution/results/#setting-background-colors">Sets background colors</a> of the generated report.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="c1611a3922b9703b788425cfd0359b55">--maxerrorlines &lt;lines&gt;</a> </code>
-</dt>
-<dd>Sets the number of <a href="../../execution/results/#limiting-error-message-length-in-reports">error lines</a> shown in report when tests fail.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="50eb2695d3de3874b4068c8dc9e30c64">--maxassignlength &lt;characters&gt;</a> </code>
-</dt>
-<dd>Sets the number of characters shown in log when <a href="../../syntax/variables/#automatically-logging-assigned-variable-value">variables are assigned</a>.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="49dfb247da1ce8e7c9b1a30633d8d755">-L, --loglevel &lt;level&gt;</a> </code>
-</dt>
-<dd><a href="../../execution/results/#setting-log-level">Sets the threshold level</a> for logging. Optionally the default <a href="../../execution/results/#visible-log-level">visible log level</a> can be given separated with a colon (:).
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="d3c250a19acab6b824d33506b499c50e">--suitestatlevel &lt;level&gt;</a> </code>
-</dt>
-<dd>Defines how many <a href="../../execution/results/#configuring-displayed-suite-statistics">levels to show</a> in the <em>Statistics by Suite</em> table in outputs.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="d3ab39a77771ab3e5144a17976876f51">--tagstatinclude &lt;tag&gt;</a> </code>
-</dt>
-<dd><a href="../../execution/results/#including-and-excluding-tag-statistics">Includes only these tags</a> in the <em>Statistics by Tag</em> table.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="6c5a619d828bef7e656297859e989e34">--tagstatexclude &lt;tag&gt;</a> </code>
-</dt>
-<dd><a href="../../execution/results/#including-and-excluding-tag-statistics">Excludes these tags</a> from the <em>Statistics by Tag</em> table.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="67773769d157546a8a769cb6d8e6e791">title&gt;</a> </code>
-</dt>
-<dd>Creates <a href="../../execution/results/#generating-combined-tag-statistics">combined statistics based on tags</a>.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="e397abb0feaa9732ea039246f54b0b6a">doc&gt;</a> </code>
-</dt>
-<dd>Adds <a href="../../execution/results/#adding-documentation-to-tags">documentation to the specified tags</a>.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
+<dt><code class="option">--rpa</code></dt>
+<dd>Turn on <a href="../../execution/tasks/#task-execution">generic automation</a> mode.</dd>
+<dt><code class="option">--language &lt;lang&gt;</code></dt>
+<dd>Activate <a href="../../syntax/data/#localization">localization</a>. <code>lang</code> can be a name or a code of a <a href="../translations/#translations">built-in language</a>, or a path or a module name of a custom language file.</dd>
+<dt><code class="option">-F, --extension &lt;value&gt;</code></dt>
+<dd><a href="../../execution/configuration/#selecting-files-to-parse">Parse only these files</a> when executing a directory.</dd>
+<dt><code class="option">-I, --parseinclude &lt;pattern&gt;</code></dt>
+<dd><a href="../../execution/configuration/#selecting-files-to-parse">Parse only matching files</a> when executing a directory.</dd>
+<dt><code class="option">-N, --name &lt;name&gt;</code></dt>
+<dd><a href="../../execution/configuration/#setting-suite-name">Sets the name</a> of the top-level test suite.</dd>
+<dt><code class="option">-D, --doc &lt;document&gt;</code></dt>
+<dd><a href="../../execution/configuration/#setting-suite-documentation">Sets the documentation</a> of the top-level test suite.</dd>
+<dt><code class="option">-M, --metadata &lt;name:value&gt;</code></dt>
+<dd><a href="../../execution/configuration/#setting-free-suite-metadata">Sets free metadata</a> for the top level test suite.</dd>
+<dt><code class="option">-G, --settag &lt;tag&gt;</code></dt>
+<dd><a href="../../execution/configuration/#setting-test-tags">Sets the tag(s)</a> to all executed test cases.</dd>
+<dt><code class="option">-t, --test &lt;name&gt;</code></dt>
+<dd><a href="../../execution/configuration/#by-test-names">Selects the test cases by name</a>.</dd>
+<dt><code class="option">--task &lt;name&gt;</code></dt>
+<dd>Alias for <code class="option">--test</code> that can be used when <a href="../../execution/tasks/#executing-tasks">executing tasks</a>.</dd>
+<dt><code class="option">-s, --suite &lt;name&gt;</code></dt>
+<dd><a href="../../execution/configuration/#by-suite-names">Selects the test suites</a> by name.</dd>
+<dt><code class="option">-R, --rerunfailed &lt;file&gt;</code></dt>
+<dd><a href="../../execution/configuration/#re-executing-failed-test-cases">Selects failed tests</a> from an earlier <a href="../../execution/results/#output-file">output file</a> to be re-executed.</dd>
+<dt><code class="option">-S, --rerunfailedsuites &lt;file&gt;</code></dt>
+<dd><a href="../../execution/configuration/#re-executing-failed-test-suites">Selects failed test suites</a> from an earlier <a href="../../execution/results/#output-file">output file</a> to be re-executed.</dd>
+<dt><code class="option">-i, --include &lt;tag&gt;</code></dt>
+<dd><a href="../../execution/configuration/#by-tag-names">Selects the test cases</a> by tag.</dd>
+<dt><code class="option">-e, --exclude &lt;tag&gt;</code></dt>
+<dd><a href="../../execution/configuration/#by-tag-names">Selects the test cases</a> by tag.</dd>
+<dt><code class="option">--skip &lt;tag&gt;</code></dt>
+<dd>Tests having given tag will be <a href="../../execution/tests/#skipped">skipped</a>. Tag can be a pattern.</dd>
+<dt><code class="option">--skiponfailure &lt;tag&gt;</code></dt>
+<dd>Tests having given tag will be <a href="../../execution/tests/#skipped">skipped</a> if they fail.</dd>
+<dt><code class="option">-v, --variable &lt;name:value&gt;</code></dt>
+<dd>Sets <a href="../../syntax/variables/#command-line-variables">individual variables</a>.</dd>
+<dt><code class="option">-V, --variablefile &lt;path:args&gt;</code></dt>
+<dd>Sets variables using <a href="../../syntax/variable_files/#variable-files">variable files</a>.</dd>
+<dt><code class="option">-d, --outputdir &lt;dir&gt;</code></dt>
+<dd>Defines where to <a href="../../execution/results/#output-directory">create result files</a>.</dd>
+<dt><code class="option">-o, --output &lt;file&gt;</code></dt>
+<dd>Sets the path to the generated <a href="../../execution/results/#output-file">output file</a>.</dd>
+<dt><code class="option">--legacyoutput</code></dt>
+<dd>Creates output file in <a href="../../execution/results/#legacy-xml-format">Robot Framework 6.x compatible format</a>.</dd>
+<dt><code class="option">-l, --log &lt;file&gt;</code></dt>
+<dd>Sets the path to the generated <a href="../../execution/results/#log-file">log file</a>.</dd>
+<dt><code class="option">-r, --report &lt;file&gt;</code></dt>
+<dd>Sets the path to the generated <a href="../../execution/results/#report-file">report file</a>.</dd>
+<dt><code class="option">-x, --xunit &lt;file&gt;</code></dt>
+<dd>Sets the path to the generated <a href="../../execution/results/#xunit-compatible-result-file">xUnit compatible result file</a>.</dd>
+<dt><code class="option">-b, --debugfile &lt;file&gt;</code></dt>
+<dd>A <a href="../../execution/results/#debug-file">debug file</a> that is written during execution.</dd>
+<dt><code class="option">-T, --timestampoutputs</code></dt>
+<dd><a href="../../execution/results/#timestamping-execution-artifacts">Adds a timestamp</a> to <a href="../../execution/results/#file-types">result files</a> listed above.</dd>
+<dt><code class="option">--splitlog</code></dt>
+<dd><a href="../../execution/results/#splitting-logs">Split log file</a> into smaller pieces that open in browser transparently.</dd>
+<dt><code class="option">--logtitle &lt;title&gt;</code></dt>
+<dd><a href="../../execution/results/#setting-titles">Sets a title</a> for the generated test log.</dd>
+<dt><code class="option">--reporttitle &lt;title&gt;</code></dt>
+<dd><a href="../../execution/results/#setting-titles">Sets a title</a> for the generated test report.</dd>
+<dt><code class="option">--reportbackground &lt;colors&gt;</code></dt>
+<dd><a href="../../execution/results/#setting-background-colors">Sets background colors</a> of the generated report.</dd>
+<dt><code class="option">--maxerrorlines &lt;lines&gt;</code></dt>
+<dd>Sets the number of <a href="../../execution/results/#limiting-error-message-length-in-reports">error lines</a> shown in report when tests fail.</dd>
+<dt><code class="option">--maxassignlength &lt;characters&gt;</code></dt>
+<dd>Sets the number of characters shown in log when <a href="../../syntax/variables/#automatically-logging-assigned-variable-value">variables are assigned</a>.</dd>
+<dt><code class="option">-L, --loglevel &lt;level&gt;</code></dt>
+<dd><a href="../../execution/results/#setting-log-level">Sets the threshold level</a> for logging. Optionally the default <a href="../../execution/results/#visible-log-level">visible log level</a> can be given separated with a colon (:).</dd>
+<dt><code class="option">--suitestatlevel &lt;level&gt;</code></dt>
+<dd>Defines how many <a href="../../execution/results/#configuring-displayed-suite-statistics">levels to show</a> in the <em>Statistics by Suite</em> table in outputs.</dd>
+<dt><code class="option">--tagstatinclude &lt;tag&gt;</code></dt>
+<dd><a href="../../execution/results/#including-and-excluding-tag-statistics">Includes only these tags</a> in the <em>Statistics by Tag</em> table.</dd>
+<dt><code class="option">--tagstatexclude &lt;tag&gt;</code></dt>
+<dd><a href="../../execution/results/#including-and-excluding-tag-statistics">Excludes these tags</a> from the <em>Statistics by Tag</em> table.</dd>
+<dt><code class="option">--tagstatcombine &lt;tags:title&gt;</code></dt>
+<dd>Creates <a href="../../execution/results/#generating-combined-tag-statistics">combined statistics based on tags</a>.</dd>
+<dt><code class="option">--tagdoc &lt;pattern:doc&gt;</code></dt>
+<dd>Adds <a href="../../execution/results/#adding-documentation-to-tags">documentation to the specified tags</a>.</dd>
 <dt><code class="option">--tagstatlink &lt;pattern:link:title&gt;</code></dt>
 <dd>Adds <a href="../../execution/results/#creating-links-from-tag-names">external links</a> to the <em>Statistics by Tag</em> table.</dd>
 <dt><code class="option">--expandkeywords &lt;name:pattern|tag:pattern&gt;</code></dt>
@@ -10501,591 +10022,107 @@ are listed.</p>
 <dd><a href="../../execution/results/#removing-and-flattening-keywords">Removes keyword data</a> from the generated log file.</dd>
 <dt><code class="option">--flattenkeywords &lt;for|while|iteration|name:pattern|tag:pattern&gt;</code></dt>
 <dd><a href="../../execution/results/#removing-and-flattening-keywords">Flattens keywords</a> in the generated log file.</dd>
-<dt>
-	<code class="option"><a id="78380d4e4d6a693cd8669757b6ccaa97">args&gt;</a> </code>
-</dt>
-<dd><a href="../../execution/configuration/#setting-listeners">Sets a listener</a> for monitoring test execution.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="a868b9d218818eae30c1fce210c4bcec">--nostatusrc</a> </code>
-</dt>
-<dd>Sets the <a href="../../execution/basics/#return-codes">return code</a> to zero regardless of failures in test cases. Error codes are returned normally.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="1a4f85bc72716ba3ff1b9daf65921961">--runemptysuite</a> </code>
-</dt>
-<dd>Executes tests also if the selected <a href="../../execution/configuration/#when-no-tests-match-selection">test suites are empty</a>.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="664e1d9e966940242cfb2e2d1dcc0992">--dryrun</a> </code>
-</dt>
-<dd>In the <a href="../../execution/configuration/#dry-run">dry run</a> mode tests are run without executing keywords originating from test libraries. Useful for validating test data syntax.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="c927aaac510dac0b101915b309b1c9ee">-X, --exitonfailure</a> </code>
-</dt>
-<dd><a href="../../execution/tests/#stopping-when-first-test-case-fails">Stops test execution</a> if any test fails.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="c07ab333f00e6fd0fb08ea3b82dc8384">--exitonerror</a> </code>
-</dt>
-<dd><a href="../../execution/tests/#stopping-on-parsing-or-execution-error">Stops test execution</a> if any error occurs when parsing test data, importing libraries, and so on.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="e956b4e4981b9887ba5499f173985ce5">--skipteardownonexit</a> </code>
-</dt>
-<dd><a href="../../execution/tests/#handling-teardowns">Skips teardowns</a> if test execution is prematurely stopped.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="14476cb2af2956a1f8c9187c75fb6c3c">args&gt;</a> </code>
-</dt>
-<dd>Activate <a href="../../execution/configuration/#programmatic-modification-of-test-data">programmatic modification of test data</a>.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="0cd2c77991502f59f33b4c1e71a2bfc1">args&gt;</a> </code>
-</dt>
-<dd>Activate <a href="../../execution/results/#programmatic-modification-of-results">programmatic modification of results</a>.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
+<dt><code class="option">--listener &lt;name:args&gt;</code></dt>
+<dd><a href="../../execution/configuration/#setting-listeners">Sets a listener</a> for monitoring test execution.</dd>
+<dt><code class="option">--nostatusrc</code></dt>
+<dd>Sets the <a href="../../execution/basics/#return-codes">return code</a> to zero regardless of failures in test cases. Error codes are returned normally.</dd>
+<dt><code class="option">--runemptysuite</code></dt>
+<dd>Executes tests also if the selected <a href="../../execution/configuration/#when-no-tests-match-selection">test suites are empty</a>.</dd>
+<dt><code class="option">--dryrun</code></dt>
+<dd>In the <a href="../../execution/configuration/#dry-run">dry run</a> mode tests are run without executing keywords originating from test libraries. Useful for validating test data syntax.</dd>
+<dt><code class="option">-X, --exitonfailure</code></dt>
+<dd><a href="../../execution/tests/#stopping-when-first-test-case-fails">Stops test execution</a> if any test fails.</dd>
+<dt><code class="option">--exitonerror</code></dt>
+<dd><a href="../../execution/tests/#stopping-on-parsing-or-execution-error">Stops test execution</a> if any error occurs when parsing test data, importing libraries, and so on.</dd>
+<dt><code class="option">--skipteardownonexit</code></dt>
+<dd><a href="../../execution/tests/#handling-teardowns">Skips teardowns</a> if test execution is prematurely stopped.</dd>
+<dt><code class="option">--prerunmodifier &lt;name:args&gt;</code></dt>
+<dd>Activate <a href="../../execution/configuration/#programmatic-modification-of-test-data">programmatic modification of test data</a>.</dd>
+<dt><code class="option">--prerebotmodifier &lt;name:args&gt;</code></dt>
+<dd>Activate <a href="../../execution/results/#programmatic-modification-of-results">programmatic modification of results</a>.</dd>
 <dt><code class="option">--randomize &lt;all|suites|tests|none&gt;</code></dt>
 <dd><a href="../../execution/configuration/#randomizing-execution-order">Randomizes</a> test execution order.</dd>
 <dt><code class="option">--console &lt;verbose|dotted|quiet|none|custom&gt;</code></dt>
 <dd><a href="../../execution/configuration/#built-in-console-loggers">Console output type</a>. Also accepts <a href="../../execution/configuration/#custom-console-loggers">custom console loggers</a>.</dd>
-<dt>
-	<code class="option"><a id="58636faa6213dcba8dd446b8044275ed">--dotted</a> </code>
-</dt>
-<dd>Shortcut for <code>--console dotted</code>.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="80cdee8754ab93de129ee12791096f94">--quiet</a> </code>
-</dt>
-<dd>Shortcut for <code>--console quiet</code>.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="e91d73755730d1e46bb954efebf46c95">-W, --consolewidth &lt;width&gt;</a> </code>
-</dt>
-<dd><a href="../../execution/configuration/#console-width">Sets the width</a> of the console output.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
+<dt><code class="option">--dotted</code></dt>
+<dd>Shortcut for <code>--console dotted</code>.</dd>
+<dt><code class="option">--quiet</code></dt>
+<dd>Shortcut for <code>--console quiet</code>.</dd>
+<dt><code class="option">-W, --consolewidth &lt;width&gt;</code></dt>
+<dd><a href="../../execution/configuration/#console-width">Sets the width</a> of the console output.</dd>
 <dt><code class="option">-C, --consolecolors &lt;auto|on|ansi|off&gt;</code></dt>
 <dd><a href="../../execution/configuration/#console-colors">Specifies are colors</a> used on the console.</dd>
 <dt><code class="option">--consolelinks &lt;auto|off&gt;</code></dt>
 <dd>Controls <a href="../../execution/configuration/#console-links">making paths to results files hyperlinks</a>.</dd>
 <dt><code class="option">-K, --consolemarkers &lt;auto|on|off&gt;</code></dt>
 <dd>Show <a href="../../execution/configuration/#console-markers">markers on the console</a> when top level keywords in a test case end.</dd>
-<dt>
-	<code class="option"><a id="baa22ecdd255975e0c2cb349bdeeefe6">-P, --pythonpath &lt;path&gt;</a> </code>
-</dt>
-<dd>Additional locations to add to the <a href="../../execution/configuration/#module-search-path">module search path</a>.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="fbee0de7d581f6ac6e5b09139ece1a25">-A, --argumentfile &lt;path&gt;</a> </code>
-</dt>
-<dd>A text file to <a href="../../execution/basics/#argument-files">read more arguments</a> from.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="ae3f6c86a07fb6e83be2bb00d01f754e">-h, --help</a> </code>
-</dt>
-<dd>Prints <a href="../../execution/basics/#getting-help-and-version-information">usage instructions</a>.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="d144e853c18fc874c282c2e12bc0e27d">--version</a> </code>
-</dt>
-<dd>Prints the <a href="../../execution/basics/#getting-help-and-version-information">version information</a>.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
+<dt><code class="option">-P, --pythonpath &lt;path&gt;</code></dt>
+<dd>Additional locations to add to the <a href="../../execution/configuration/#module-search-path">module search path</a>.</dd>
+<dt><code class="option">-A, --argumentfile &lt;path&gt;</code></dt>
+<dd>A text file to <a href="../../execution/basics/#argument-files">read more arguments</a> from.</dd>
+<dt><code class="option">-h, --help</code></dt>
+<dd>Prints <a href="../../execution/basics/#getting-help-and-version-information">usage instructions</a>.</dd>
+<dt><code class="option">--version</code></dt>
+<dd>Prints the <a href="../../execution/basics/#getting-help-and-version-information">version information</a>.</dd>
 </dl>
 <h2 id="command-line-options-for-post-processing-outputs">Command line options for post-processing outputs<a class="headerlink" href="#command-line-options-for-post-processing-outputs" title="Permanent link">&para;</a></h2>
 <dl>
-<dt>
-	<code class="option"><a id="5e794518e720c3bbe2d9b025cb00a508">--rpa</a> </code>
-</dt>
-<dd>Turn on <a href="../../execution/tasks/#task-execution">generic automation</a> mode.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="7ac953ed729f45cb41f67ed22020a596">-R, --merge</a> </code>
-</dt>
-<dd>Changes result combining behavior to <a href="../../execution/post_processing/#merging-results">merging</a>.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="15e68df46db1d728de7d2cf08452e3ca">-N, --name &lt;name&gt;</a> </code>
-</dt>
-<dd><a href="../../execution/configuration/#setting-suite-name">Sets the name</a> of the top level test suite.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="f8817f8f68460e3ce63a2d7ae3aeb0f5">-D, --doc &lt;document&gt;</a> </code>
-</dt>
-<dd><a href="../../execution/configuration/#setting-suite-documentation">Sets the documentation</a> of the top-level test suite.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="cbec4b0353a7bda9117f80ed19b8640d">value&gt;</a> </code>
-</dt>
-<dd><a href="../../execution/configuration/#setting-free-suite-metadata">Sets free metadata</a> for the top-level test suite.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="91ffb5bf152b933897586e70a17ef3ee">-G, --settag &lt;tag&gt;</a> </code>
-</dt>
-<dd><a href="../../execution/configuration/#setting-test-tags">Sets the tag(s)</a> to all processed test cases.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="35607f9726fff712a732329666dfac65">-t, --test &lt;name&gt;</a> </code>
-</dt>
-<dd><a href="../../execution/configuration/#by-test-names">Selects the test cases by name</a>.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="d098173e88dce63d8b467ef48612c65a">--task &lt;name&gt;</a> </code>
-</dt>
-<dd>Alias for <code class="option">--test</code>.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="ff0cc67f7282a33241372d79a211fc84">-s, --suite &lt;name&gt;</a> </code>
-</dt>
-<dd><a href="../../execution/configuration/#by-suite-names">Selects the test suites</a> by name.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="6a77516587bde2af543ac9c4191dbb39">-i, --include &lt;tag&gt;</a> </code>
-</dt>
-<dd><a href="../../execution/configuration/#by-tag-names">Selects the test cases</a> by tag.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="490ff86a0328875b1bad91b826c8e5b5">-e, --exclude &lt;tag&gt;</a> </code>
-</dt>
-<dd><a href="../../execution/configuration/#by-tag-names">Selects the test cases</a> by tag.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="0161e9cfdeaf855605cb232defcb31c5">-d, --outputdir &lt;dir&gt;</a> </code>
-</dt>
-<dd>Defines where to <a href="../../execution/results/#output-directory">create result files</a>.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="1094a22409bd1c9e34f46cb26c0a0e01">-o, --output &lt;file&gt;</a> </code>
-</dt>
-<dd>Sets the path to the generated <a href="../../execution/results/#output-file">output file</a>.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="38d22ff305ca5dc5bfa68b97d7138cbd">--legacyoutput</a> </code>
-</dt>
-<dd>Creates output file in <a href="../../execution/results/#legacy-xml-format">Robot Framework 6.x compatible format</a>.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="5ee67c5d9b008536f575a0e4775fbf2b">-l, --log &lt;file&gt;</a> </code>
-</dt>
-<dd>Sets the path to the generated <a href="../../execution/results/#log-file">log file</a>.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="72aa0e4f99216a0b9a752889d13bddd8">-r, --report &lt;file&gt;</a> </code>
-</dt>
-<dd>Sets the path to the generated <a href="../../execution/results/#report-file">report file</a>.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="c3df78902d0f518bf6a6f4b0d2dedda3">-x, --xunit &lt;file&gt;</a> </code>
-</dt>
-<dd>Sets the path to the generated <a href="../../execution/results/#xunit-compatible-result-file">xUnit compatible result file</a>.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="6f1063cdc45c8b2cc8293f0db37e7a2d">-T, --timestampoutputs</a> </code>
-</dt>
-<dd><a href="../../execution/results/#timestamping-execution-artifacts">Adds a timestamp</a> to <a href="../../execution/results/#file-types">result files</a> listed above.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="602f62eb970f36ddf8bc7a5e80d30c79">--splitlog</a> </code>
-</dt>
-<dd><a href="../../execution/results/#splitting-logs">Split log file</a> into smaller pieces that open in browser transparently.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="b627fea7423918e3d37416cfd5b3cd4b">--logtitle &lt;title&gt;</a> </code>
-</dt>
-<dd><a href="../../execution/results/#setting-titles">Sets a title</a> for the generated test log.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="6e17b10b04ed0b19bc9635fec16d23d1">--reporttitle &lt;title&gt;</a> </code>
-</dt>
-<dd><a href="../../execution/results/#setting-titles">Sets a title</a> for the generated test report.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="c4b2aa091cd22c4d01b56f296728be35">--reportbackground &lt;colors&gt;</a> </code>
-</dt>
-<dd><a href="../../execution/results/#setting-background-colors">Sets background colors</a> of the generated report.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="49dfb247da1ce8e7c9b1a30633d8d755">-L, --loglevel &lt;level&gt;</a> </code>
-</dt>
-<dd><a href="../../execution/results/#setting-log-level">Sets the threshold level</a> to select log messages. Optionally the default <a href="../../execution/results/#visible-log-level">visible log level</a> can be given separated with a colon (:).
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="d3c250a19acab6b824d33506b499c50e">--suitestatlevel &lt;level&gt;</a> </code>
-</dt>
-<dd>Defines how many <a href="../../execution/results/#configuring-displayed-suite-statistics">levels to show</a> in the <em>Statistics by Suite</em> table in outputs.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="d3ab39a77771ab3e5144a17976876f51">--tagstatinclude &lt;tag&gt;</a> </code>
-</dt>
-<dd><a href="../../execution/results/#including-and-excluding-tag-statistics">Includes only these tags</a> in the <em>Statistics by Tag</em> table.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="6c5a619d828bef7e656297859e989e34">--tagstatexclude &lt;tag&gt;</a> </code>
-</dt>
-<dd><a href="../../execution/results/#including-and-excluding-tag-statistics">Excludes these tags</a> from the <em>Statistics by Tag</em> table.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="67773769d157546a8a769cb6d8e6e791">title&gt;</a> </code>
-</dt>
-<dd>Creates <a href="../../execution/results/#generating-combined-tag-statistics">combined statistics based on tags</a>.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="e397abb0feaa9732ea039246f54b0b6a">doc&gt;</a> </code>
-</dt>
-<dd>Adds <a href="../../execution/results/#adding-documentation-to-tags">documentation to the specified tags</a>.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
+<dt><code class="option">--rpa</code></dt>
+<dd>Turn on <a href="../../execution/tasks/#task-execution">generic automation</a> mode.</dd>
+<dt><code class="option">-R, --merge</code></dt>
+<dd>Changes result combining behavior to <a href="../../execution/post_processing/#merging-results">merging</a>.</dd>
+<dt><code class="option">-N, --name &lt;name&gt;</code></dt>
+<dd><a href="../../execution/configuration/#setting-suite-name">Sets the name</a> of the top level test suite.</dd>
+<dt><code class="option">-D, --doc &lt;document&gt;</code></dt>
+<dd><a href="../../execution/configuration/#setting-suite-documentation">Sets the documentation</a> of the top-level test suite.</dd>
+<dt><code class="option">-M, --metadata &lt;name:value&gt;</code></dt>
+<dd><a href="../../execution/configuration/#setting-free-suite-metadata">Sets free metadata</a> for the top-level test suite.</dd>
+<dt><code class="option">-G, --settag &lt;tag&gt;</code></dt>
+<dd><a href="../../execution/configuration/#setting-test-tags">Sets the tag(s)</a> to all processed test cases.</dd>
+<dt><code class="option">-t, --test &lt;name&gt;</code></dt>
+<dd><a href="../../execution/configuration/#by-test-names">Selects the test cases by name</a>.</dd>
+<dt><code class="option">--task &lt;name&gt;</code></dt>
+<dd>Alias for <code class="option">--test</code>.</dd>
+<dt><code class="option">-s, --suite &lt;name&gt;</code></dt>
+<dd><a href="../../execution/configuration/#by-suite-names">Selects the test suites</a> by name.</dd>
+<dt><code class="option">-i, --include &lt;tag&gt;</code></dt>
+<dd><a href="../../execution/configuration/#by-tag-names">Selects the test cases</a> by tag.</dd>
+<dt><code class="option">-e, --exclude &lt;tag&gt;</code></dt>
+<dd><a href="../../execution/configuration/#by-tag-names">Selects the test cases</a> by tag.</dd>
+<dt><code class="option">-d, --outputdir &lt;dir&gt;</code></dt>
+<dd>Defines where to <a href="../../execution/results/#output-directory">create result files</a>.</dd>
+<dt><code class="option">-o, --output &lt;file&gt;</code></dt>
+<dd>Sets the path to the generated <a href="../../execution/results/#output-file">output file</a>.</dd>
+<dt><code class="option">--legacyoutput</code></dt>
+<dd>Creates output file in <a href="../../execution/results/#legacy-xml-format">Robot Framework 6.x compatible format</a>.</dd>
+<dt><code class="option">-l, --log &lt;file&gt;</code></dt>
+<dd>Sets the path to the generated <a href="../../execution/results/#log-file">log file</a>.</dd>
+<dt><code class="option">-r, --report &lt;file&gt;</code></dt>
+<dd>Sets the path to the generated <a href="../../execution/results/#report-file">report file</a>.</dd>
+<dt><code class="option">-x, --xunit &lt;file&gt;</code></dt>
+<dd>Sets the path to the generated <a href="../../execution/results/#xunit-compatible-result-file">xUnit compatible result file</a>.</dd>
+<dt><code class="option">-T, --timestampoutputs</code></dt>
+<dd><a href="../../execution/results/#timestamping-execution-artifacts">Adds a timestamp</a> to <a href="../../execution/results/#file-types">result files</a> listed above.</dd>
+<dt><code class="option">--splitlog</code></dt>
+<dd><a href="../../execution/results/#splitting-logs">Split log file</a> into smaller pieces that open in browser transparently.</dd>
+<dt><code class="option">--logtitle &lt;title&gt;</code></dt>
+<dd><a href="../../execution/results/#setting-titles">Sets a title</a> for the generated test log.</dd>
+<dt><code class="option">--reporttitle &lt;title&gt;</code></dt>
+<dd><a href="../../execution/results/#setting-titles">Sets a title</a> for the generated test report.</dd>
+<dt><code class="option">--reportbackground &lt;colors&gt;</code></dt>
+<dd><a href="../../execution/results/#setting-background-colors">Sets background colors</a> of the generated report.</dd>
+<dt><code class="option">-L, --loglevel &lt;level&gt;</code></dt>
+<dd><a href="../../execution/results/#setting-log-level">Sets the threshold level</a> to select log messages. Optionally the default <a href="../../execution/results/#visible-log-level">visible log level</a> can be given separated with a colon (:).</dd>
+<dt><code class="option">--suitestatlevel &lt;level&gt;</code></dt>
+<dd>Defines how many <a href="../../execution/results/#configuring-displayed-suite-statistics">levels to show</a> in the <em>Statistics by Suite</em> table in outputs.</dd>
+<dt><code class="option">--tagstatinclude &lt;tag&gt;</code></dt>
+<dd><a href="../../execution/results/#including-and-excluding-tag-statistics">Includes only these tags</a> in the <em>Statistics by Tag</em> table.</dd>
+<dt><code class="option">--tagstatexclude &lt;tag&gt;</code></dt>
+<dd><a href="../../execution/results/#including-and-excluding-tag-statistics">Excludes these tags</a> from the <em>Statistics by Tag</em> table.</dd>
+<dt><code class="option">--tagstatcombine &lt;tags:title&gt;</code></dt>
+<dd>Creates <a href="../../execution/results/#generating-combined-tag-statistics">combined statistics based on tags</a>.</dd>
+<dt><code class="option">--tagdoc &lt;pattern:doc&gt;</code></dt>
+<dd>Adds <a href="../../execution/results/#adding-documentation-to-tags">documentation to the specified tags</a>.</dd>
 <dt><code class="option">--tagstatlink &lt;pattern:link:title&gt;</code></dt>
 <dd>Adds <a href="../../execution/results/#creating-links-from-tag-names">external links</a> to the <em>Statistics by Tag</em> table.</dd>
 <dt><code class="option">--expandkeywords &lt;name:pattern|tag:pattern&gt;</code></dt>
@@ -11094,201 +10131,47 @@ are listed.</p>
 <dd><a href="../../execution/results/#removing-and-flattening-keywords">Removes keyword data</a> from the generated outputs.</dd>
 <dt><code class="option">--flattenkeywords &lt;for|foritem|name:pattern|tag:pattern&gt;</code></dt>
 <dd><a href="../../execution/results/#removing-and-flattening-keywords">Flattens keywords</a> in the generated outputs.</dd>
-<dt>
-	<code class="option"><a id="5ba7ac569cb2b2dc78d20794a03ba57f">--starttime &lt;timestamp&gt;</a> </code>
-</dt>
-<dd>Sets the <a href="../../execution/results/#setting-start-and-end-time-of-execution">starting time</a> of test execution when creating reports.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="cd3a171b01db0849f2818cf04fd1c98c">--endtime &lt;timestamp&gt;</a> </code>
-</dt>
-<dd>Sets the <a href="../../execution/results/#setting-start-and-end-time-of-execution">ending time</a> of test execution when creating reports.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="a868b9d218818eae30c1fce210c4bcec">--nostatusrc</a> </code>
-</dt>
-<dd>Sets the <a href="../../execution/basics/#return-codes">return code</a> to zero regardless of failures in test cases. Error codes are returned normally.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="ac1631ba0614cdef27100ecd5efd61f1">--processemptysuite</a> </code>
-</dt>
-<dd>Processes output files even if files contain <a href="../../execution/configuration/#when-no-tests-match-selection">empty test suites</a>.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="0cd2c77991502f59f33b4c1e71a2bfc1">args&gt;</a> </code>
-</dt>
-<dd>Activate <a href="../../execution/results/#programmatic-modification-of-results">programmatic modification of results</a>.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
+<dt><code class="option">--starttime &lt;timestamp&gt;</code></dt>
+<dd>Sets the <a href="../../execution/results/#setting-start-and-end-time-of-execution">starting time</a> of test execution when creating reports.</dd>
+<dt><code class="option">--endtime &lt;timestamp&gt;</code></dt>
+<dd>Sets the <a href="../../execution/results/#setting-start-and-end-time-of-execution">ending time</a> of test execution when creating reports.</dd>
+<dt><code class="option">--nostatusrc</code></dt>
+<dd>Sets the <a href="../../execution/basics/#return-codes">return code</a> to zero regardless of failures in test cases. Error codes are returned normally.</dd>
+<dt><code class="option">--processemptysuite</code></dt>
+<dd>Processes output files even if files contain <a href="../../execution/configuration/#when-no-tests-match-selection">empty test suites</a>.</dd>
+<dt><code class="option">--prerebotmodifier &lt;name:args&gt;</code></dt>
+<dd>Activate <a href="../../execution/results/#programmatic-modification-of-results">programmatic modification of results</a>.</dd>
 <dt><code class="option">--console &lt;verbose|quiet|none|custom&gt;</code></dt>
 <dd><a href="../../execution/post_processing/#controlling-rebot-console-output">Controlling Rebot console output</a>. Also accepts <a href="../../execution/configuration/#custom-console-loggers">custom console loggers</a>.</dd>
-<dt>
-	<code class="option"><a id="80cdee8754ab93de129ee12791096f94">--quiet</a> </code>
-</dt>
-<dd>Shortcut for <code>--console quiet</code>.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
+<dt><code class="option">--quiet</code></dt>
+<dd>Shortcut for <code>--console quiet</code>.</dd>
 <dt><code class="option">-C, --consolecolors &lt;auto|on|ansi|off&gt;</code></dt>
 <dd><a href="../../execution/configuration/#console-colors">Specifies are colors</a> used on the console.</dd>
 <dt><code class="option">--consolelinks &lt;auto|off&gt;</code></dt>
 <dd>Controls <a href="../../execution/configuration/#console-links">making paths to results files hyperlinks</a>.</dd>
-<dt>
-	<code class="option"><a id="baa22ecdd255975e0c2cb349bdeeefe6">-P, --pythonpath &lt;path&gt;</a> </code>
-</dt>
-<dd>Additional locations to add to the <a href="../../execution/configuration/#module-search-path">module search path</a>.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="fbee0de7d581f6ac6e5b09139ece1a25">-A, --argumentfile &lt;path&gt;</a> </code>
-</dt>
-<dd>A text file to <a href="../../execution/basics/#argument-files">read more arguments</a> from.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="ae3f6c86a07fb6e83be2bb00d01f754e">-h, --help</a> </code>
-</dt>
-<dd>Prints <a href="../../execution/basics/#getting-help-and-version-information">usage instructions</a>.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option"><a id="d144e853c18fc874c282c2e12bc0e27d">--version</a> </code>
-</dt>
-<dd>Prints the <a href="../../execution/basics/#getting-help-and-version-information">version information</a>.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
+<dt><code class="option">-P, --pythonpath &lt;path&gt;</code></dt>
+<dd>Additional locations to add to the <a href="../../execution/configuration/#module-search-path">module search path</a>.</dd>
+<dt><code class="option">-A, --argumentfile &lt;path&gt;</code></dt>
+<dd>A text file to <a href="../../execution/basics/#argument-files">read more arguments</a> from.</dd>
+<dt><code class="option">-h, --help</code></dt>
+<dd>Prints <a href="../../execution/basics/#getting-help-and-version-information">usage instructions</a>.</dd>
+<dt><code class="option">--version</code></dt>
+<dd>Prints the <a href="../../execution/basics/#getting-help-and-version-information">version information</a>.</dd>
 </dl>
 <h2 id="environment-variables-for-execution-and-post-processing">Environment variables for execution and post-processing<a class="headerlink" href="#environment-variables-for-execution-and-post-processing" title="Permanent link">&para;</a></h2>
 <dl>
-<dt>
-	<code>ROBOT_OPTIONS</code> and <code><a id="37f9cad78bbd9206fbb2a5141c76fb54">REBOT_OPTIONS</a> </code>
-</dt>
+<dt><code>ROBOT_OPTIONS</code> and <code>REBOT_OPTIONS</code></dt>
 <dd>Space separated list of default options to be placed
-<a href="../../execution/basics/#robot_options-and-rebot_options-environment-variables">in front of any explicit options</a> on the command line.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code><a id="6825380054a3a82765827810c2193505">ROBOT_SYSLOG_FILE</a> </code>
-</dt>
+<a href="../../execution/basics/#robot_options-and-rebot_options-environment-variables">in front of any explicit options</a> on the command line.</dd>
+<dt><code>ROBOT_SYSLOG_FILE</code></dt>
 <dd>Path to a <a href="../../execution/results/#system-log">syslog</a> file where Robot Framework writes internal
 information about parsing test case files and running
-tests.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code><a id="a834a7ef3e3396702fb77639b07726c9">ROBOT_SYSLOG_LEVEL</a> </code>
-</dt>
-<dd>Log level to use when writing to the <a href="../../execution/results/#system-log">syslog</a> file.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code><a id="dd87673f639b3cb0bfa4656a7693f2f4">ROBOT_INTERNAL_TRACES</a> </code>
-</dt>
+tests.</dd>
+<dt><code>ROBOT_SYSLOG_LEVEL</code></dt>
+<dd>Log level to use when writing to the <a href="../../execution/results/#system-log">syslog</a> file.</dd>
+<dt><code>ROBOT_INTERNAL_TRACES</code></dt>
 <dd>When set to any non-empty value, Robot Framework's
-internal methods are included in <a href="../../execution/basics/#debugging-problems">error tracebacks</a>.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
+internal methods are included in <a href="../../execution/basics/#debugging-problems">error tracebacks</a>.</dd>
 </dl>
 
 
@@ -11303,6 +10186,7 @@ internal methods are included in <a href="../../execution/basics/#debugging-prob
 
 
                 
+
               </article>
             </div>
           
@@ -11446,7 +10330,9 @@ internal methods are included in <a href="../../execution/basics/#debugging-prob
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+      
+        <script src="../../assets/navigation.js"></script>
       
     
   </body>

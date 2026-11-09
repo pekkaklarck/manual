@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../assets/logo.png">
-      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.8.0">
+      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.8.1">
     
     
       
@@ -57,7 +57,11 @@
     
       <link rel="stylesheet" href="../../assets/highlight-dark.css">
     
+      <link rel="stylesheet" href="../../assets/navigation.css">
+    
       <link rel="stylesheet" href="../../assets/extra.css">
+    
+      <link rel="stylesheet" href="../../assets/page-toc.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -125,19 +129,24 @@
     
       
 
+
   
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Robot Framework" class="md-header__button md-logo" aria-label="Robot Framework" data-md-component="logo">
-      
-  <img src="../../assets/logo.png" alt="logo">
-
-    </a>
     <label class="md-header__button md-icon" for="__drawer">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
     </label>
+    <a href="https://robotframework.org/" title="Robot Framework" class="md-header__button md-logo" aria-label="Robot Framework" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4.957 10.225a3.405 3.405 0 0 1 3.4-3.403 3.406 3.406 0 0 1 3.402 3.403 1.235 1.235 0 1 1-2.469 0 .932.932 0 0 0-1.865 0 1.234 1.234 0 1 1-2.468 0m14.086 5.717c0 .684-.552 1.236-1.234 1.236H6.357a1.234 1.234 0 0 1-1.234-1.236c0-.684.553-1.237 1.234-1.237H17.81c.682 0 1.234.553 1.234 1.237m-5.35-5.025a1.235 1.235 0 0 1 .333-1.714l2.862-1.933a1.23 1.23 0 0 1 1.715.328 1.235 1.235 0 0 1-.334 1.715l-2.862 1.933c-.545.383-1.335.238-1.715-.329m7.839 7.602a.88.88 0 0 1-.258.623l-2.128 2.127a.88.88 0 0 1-.623.258H5.477a.88.88 0 0 1-.623-.258l-2.128-2.127a.88.88 0 0 1-.258-.623V5.482a.88.88 0 0 1 .258-.623l2.128-2.128a.88.88 0 0 1 .623-.258h13.046a.88.88 0 0 1 .623.258l2.128 2.128a.88.88 0 0 1 .258.623zm1.81-15.083L20.565.658A2.25 2.25 0 0 0 18.977 0H5.022a2.25 2.25 0 0 0-1.588.658L.657 3.436A2.25 2.25 0 0 0 0 5.023v13.955c0 .595.237 1.166.658 1.587l2.778 2.778c.42.42.991.657 1.587.657h13.954a2.25 2.25 0 0 0 1.588-.657l2.778-2.778A2.24 2.24 0 0 0 24 18.977V5.023a2.25 2.25 0 0 0-.657-1.587"/></svg>
+
+    </a>
+    
+      <div class="md-header__topic rf-header-version"></div>
+    
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
@@ -156,105 +165,7 @@
     </div>
     
       
-        <form class="md-header__option" data-md-component="palette">
-  
-    
-    
-    
-    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
-    
-      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
-      </label>
-    
-  
-    
-    
-    
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
-    
-      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
-      </label>
-    
-  
-    
-    
-    
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
-    
-      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
-      </label>
-    
-  
-</form>
-      
-    
-    
-      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
-    
-    
-    
-      
-      
-        <label class="md-header__button md-icon" for="__search">
-          
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-        </label>
-        <div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
-      <label class="md-search__icon md-icon" for="__search">
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-      </label>
-      <nav class="md-search__options" aria-label="Search">
-        
-        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
-          
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
-        </button>
-      </nav>
-      
-        <div class="md-search__suggest" data-md-component="search-suggest"></div>
-      
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="search-result">
-          <div class="md-search-result__meta">
-            Initializing search
-          </div>
-          <ol class="md-search-result__list" role="presentation"></ol>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-      
-    
-    
-      <div class="md-header__source">
-        <a href="https://github.com/robotframework/robotframework" title="Go to repository" class="md-source" data-md-component="source">
-  <div class="md-source__icon md-icon">
-    
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
-  </div>
-  <div class="md-source__repository">
-    GitHub
-  </div>
-</a>
-      </div>
-    
-  </nav>
-  
-    
-      
 <nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
   <div class="md-grid">
     <ul class="md-tabs__list">
@@ -438,8 +349,96 @@
     </ul>
   </div>
 </nav>
+      
+    
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
     
   
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/robotframework/robotframework" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
 </header>
     
     <div class="md-container" data-md-component="container">
@@ -463,9 +462,10 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Robot Framework" class="md-nav__button md-logo" aria-label="Robot Framework" data-md-component="logo">
+    <a href="https://robotframework.org/" title="Robot Framework" class="md-nav__button md-logo" aria-label="Robot Framework" data-md-component="logo">
       
-  <img src="../../assets/logo.png" alt="logo">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4.957 10.225a3.405 3.405 0 0 1 3.4-3.403 3.406 3.406 0 0 1 3.402 3.403 1.235 1.235 0 1 1-2.469 0 .932.932 0 0 0-1.865 0 1.234 1.234 0 1 1-2.468 0m14.086 5.717c0 .684-.552 1.236-1.234 1.236H6.357a1.234 1.234 0 0 1-1.234-1.236c0-.684.553-1.237 1.234-1.237H17.81c.682 0 1.234.553 1.234 1.237m-5.35-5.025a1.235 1.235 0 0 1 .333-1.714l2.862-1.933a1.23 1.23 0 0 1 1.715.328 1.235 1.235 0 0 1-.334 1.715l-2.862 1.933c-.545.383-1.335.238-1.715-.329m7.839 7.602a.88.88 0 0 1-.258.623l-2.128 2.127a.88.88 0 0 1-.623.258H5.477a.88.88 0 0 1-.623-.258l-2.128-2.127a.88.88 0 0 1-.258-.623V5.482a.88.88 0 0 1 .258-.623l2.128-2.128a.88.88 0 0 1 .623-.258h13.046a.88.88 0 0 1 .623.258l2.128 2.128a.88.88 0 0 1 .258.623zm1.81-15.083L20.565.658A2.25 2.25 0 0 0 18.977 0H5.022a2.25 2.25 0 0 0-1.588.658L.657 3.436A2.25 2.25 0 0 0 0 5.023v13.955c0 .595.237 1.166.658 1.587l2.778 2.778c.42.42.991.657 1.587.657h13.954a2.25 2.25 0 0 0 1.588-.657l2.778-2.778A2.24 2.24 0 0 0 24 18.977V5.023a2.25 2.25 0 0 0-.657-1.587"/></svg>
 
     </a>
     Robot Framework
@@ -708,7 +708,9 @@
       
         
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
   
   
   
@@ -717,7 +719,7 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Table of contents
+      On this page
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
@@ -1662,12 +1664,6 @@
       
         
       
-        
-      
-        
-      
-        
-      
     
     
     
@@ -1875,90 +1871,6 @@
     
   
     Parser interface
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../extend/models/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Execution and result models
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../extend/json/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    JSON models
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../extend/xml/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    XML output format
   
 
     
@@ -10252,7 +10164,9 @@
                   <div class="md-sidebar__inner">
                     
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
   
   
   
@@ -10261,7 +10175,7 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Table of contents
+      On this page
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
@@ -10655,6 +10569,206 @@
               
               <article class="md-content__inner md-typeset">
                 
+  
+
+
+
+
+  
+
+
+  
+  <details class="rf-page-toc">
+    <summary>On this page</summary>
+    <nav aria-label="On this page">
+      
+  <ul>
+    
+      <li>
+        <a href="#test-case-syntax">Test case syntax</a>
+        
+  <ul>
+    
+      <li>
+        <a href="#basic-syntax">Basic syntax</a>
+        
+      </li>
+    
+      <li>
+        <a href="#settings-in-the-test-case-section">Settings in the Test Case section</a>
+        
+      </li>
+    
+      <li>
+        <a href="#test-case-related-settings-in-the-setting-section">Test case related settings in the Setting section</a>
+        
+      </li>
+    
+  </ul>
+
+      </li>
+    
+      <li>
+        <a href="#using-arguments">Using arguments</a>
+        
+  <ul>
+    
+      <li>
+        <a href="#positional-arguments">Positional arguments</a>
+        
+      </li>
+    
+      <li>
+        <a href="#default-values">Default values</a>
+        
+      </li>
+    
+      <li>
+        <a href="#variable-number-of-arguments">Variable number of arguments</a>
+        
+      </li>
+    
+      <li>
+        <a href="#named-arguments">Named arguments</a>
+        
+      </li>
+    
+      <li>
+        <a href="#free-named-arguments">Free named arguments</a>
+        
+      </li>
+    
+      <li>
+        <a href="#named-only-arguments">Named-only arguments</a>
+        
+      </li>
+    
+      <li>
+        <a href="#arguments-embedded-to-keyword-names">Arguments embedded to keyword names</a>
+        
+      </li>
+    
+  </ul>
+
+      </li>
+    
+      <li>
+        <a href="#failures">Failures</a>
+        
+  <ul>
+    
+      <li>
+        <a href="#when-test-case-fails">When test case fails</a>
+        
+      </li>
+    
+      <li>
+        <a href="#error-message">Error message</a>
+        
+      </li>
+    
+  </ul>
+
+      </li>
+    
+      <li>
+        <a href="#test-case-name-and-documentation">Test case name and documentation</a>
+        
+      </li>
+    
+      <li>
+        <a href="#free-test-metadata">Free test metadata</a>
+        
+      </li>
+    
+      <li>
+        <a href="#tagging-test-cases">Tagging test cases</a>
+        
+  <ul>
+    
+      <li>
+        <a href="#deprecation-of-force-tags-and-default-tags">Deprecation of Force Tags and Default Tags</a>
+        
+      </li>
+    
+      <li>
+        <a href="#reserved-tags">Reserved tags</a>
+        
+      </li>
+    
+  </ul>
+
+      </li>
+    
+      <li>
+        <a href="#test-setup-and-teardown">Test setup and teardown</a>
+        
+      </li>
+    
+      <li>
+        <a href="#test-templates">Test templates</a>
+        
+  <ul>
+    
+      <li>
+        <a href="#basic-usage">Basic usage</a>
+        
+      </li>
+    
+      <li>
+        <a href="#templates-with-multiple-iterations">Templates with multiple iterations</a>
+        
+      </li>
+    
+      <li>
+        <a href="#templates-with-embedded-arguments">Templates with embedded arguments</a>
+        
+      </li>
+    
+      <li>
+        <a href="#templates-with-for-loops">Templates with FOR loops</a>
+        
+      </li>
+    
+      <li>
+        <a href="#templates-with-ifelse-structures">Templates with IF/ELSE structures</a>
+        
+      </li>
+    
+  </ul>
+
+      </li>
+    
+      <li>
+        <a href="#different-test-case-styles">Different test case styles</a>
+        
+  <ul>
+    
+      <li>
+        <a href="#keyword-driven-style">Keyword-driven style</a>
+        
+      </li>
+    
+      <li>
+        <a href="#data-driven-style">Data-driven style</a>
+        
+      </li>
+    
+      <li>
+        <a href="#behavior-driven-style">Behavior-driven style</a>
+        
+      </li>
+    
+  </ul>
+
+      </li>
+    
+  </ul>
+
+    </nav>
+  </details>
+
+  
                   
 
 
@@ -10734,86 +10848,20 @@ are in the subsequent columns. Setting names have square brackets around
 them to distinguish them from keywords. The available settings are listed
 below and explained later in this section.</p>
 <dl>
-<dt>
-	<code class="setting"><a id="1d4d0a48818ef00b36340968517b0387">[Documentation]</a> </code>
-</dt>
-<dd>Used for specifying a <a href="#test-case-name-and-documentation">test case documentation</a>.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="setting"><a id="907a2edf6c2085233fd8eece6e62c508">[Tags]</a> </code>
-</dt>
-<dd>Used for <a href="#tagging-test-cases">tagging test cases</a>.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="setting"><a id="a686466d467273e633c95587afcb6856">[Metadata]</a> </code>
-</dt>
-<dd>Used for setting <a href="#free-test-metadata">free test metadata</a> as name-value pairs.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="setting">[Setup]</code>, <code class="setting"><a id="74f57773ad581bb0aa2c6d9cb05fd185">[Teardown]</a> </code>
-</dt>
-<dd>Specify <a href="#test-setup-and-teardown">test setup and teardown</a>.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="setting"><a id="3ec998bf9fbfff97d005d3d459252175">[Template]</a> </code>
-</dt>
+<dt><code class="setting">[Documentation]</code></dt>
+<dd>Used for specifying a <a href="#test-case-name-and-documentation">test case documentation</a>.</dd>
+<dt><code class="setting">[Tags]</code></dt>
+<dd>Used for <a href="#tagging-test-cases">tagging test cases</a>.</dd>
+<dt><code class="setting">[Metadata]</code></dt>
+<dd>Used for setting <a href="#free-test-metadata">free test metadata</a> as name-value pairs.</dd>
+<dt><code class="setting">[Setup]</code>, <code class="setting">[Teardown]</code></dt>
+<dd>Specify <a href="#test-setup-and-teardown">test setup and teardown</a>.</dd>
+<dt><code class="setting">[Template]</code></dt>
 <dd>Specifies the <a href="#test-templates">template keyword</a> to use. The test itself will contain only
-data to use as arguments to that keyword.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="setting"><a id="fd730a4a89f0d973b8fd594b660fa474">[Timeout]</a> </code>
-</dt>
+data to use as arguments to that keyword.</dd>
+<dt><code class="setting">[Timeout]</code></dt>
 <dd>Used for setting a <a href="../advanced/#test-case-timeout">test case timeout</a>. <a href="../advanced/#timeouts">Timeouts</a> are discussed in
-their own section.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
+their own section.</dd>
 </dl>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -10839,59 +10887,15 @@ between brackets and the name (e.g. <code>[ Tags ]</code>) are still allowed.</p
 settings. These settings are mainly default values for the
 test case specific settings listed earlier.</p>
 <dl>
-<dt>
-	<code class="setting">Test Setup</code>, <code class="setting"><a id="a0e973451c5612340f8e4bf6477ba6e3">Test Teardown</a> </code>
-</dt>
-<dd>The default values for <a href="#test-setup-and-teardown">test setup and teardown</a>.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="setting"><a id="d10dd3f86665a562e9bbf862cc85906d">Test Tags</a> </code>
-</dt>
-<dd><a href="../../extend/libraries/#keyword-tags">Tags</a> all tests in the suite will get in addition to their possible own tags.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="setting"><a id="49b0b61116c3d35bb68544e1a87dc732">Test Template</a> </code>
-</dt>
-<dd>The default <a href="#test-templates">template keyword</a> to use.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="setting"><a id="7fbfbc961710ef23bb228d3285b9b386">Test Timeout</a> </code>
-</dt>
+<dt><code class="setting">Test Setup</code>, <code class="setting">Test Teardown</code></dt>
+<dd>The default values for <a href="#test-setup-and-teardown">test setup and teardown</a>.</dd>
+<dt><code class="setting">Test Tags</code></dt>
+<dd><a href="../../extend/libraries/#keyword-tags">Tags</a> all tests in the suite will get in addition to their possible own tags.</dd>
+<dt><code class="setting">Test Template</code></dt>
+<dd>The default <a href="#test-templates">template keyword</a> to use.</dd>
+<dt><code class="setting">Test Timeout</code></dt>
 <dd>The default value for <a href="../advanced/#test-case-timeout">test case timeout</a>. <a href="../advanced/#timeouts">Timeouts</a> are discussed in
-their own section.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
+their own section.</dd>
 </dl>
 <h2 id="using-arguments">Using arguments<a class="headerlink" href="#using-arguments" title="Permanent link">&para;</a></h2>
 <p>The earlier examples have already demonstrated keywords taking
@@ -11347,63 +11351,19 @@ purposes:</p>
 </ul>
 <p>There are multiple ways how to specify tags for test cases explained below:</p>
 <dl>
-<dt>
-	<code class="setting">Test Tags</code><a id="6a5ed58854fc1fed3d6ef334aa6abc54"> setting in the Settings section</a> 
-</dt>
+<dt><code class="setting">Test Tags</code> setting in the Settings section</dt>
 <dd>All tests in a test case file with this setting always get specified tags.
 If this setting is used in a <a href="../suites/#suite-initialization-files">suite initialization file</a>, all tests
-in child suites get these tags.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="setting">[Tags]</code><a id="8d9e823e109cf5dbd0cba6e69f240361"> setting with each test case</a> 
-</dt>
+in child suites get these tags.</dd>
+<dt><code class="setting">[Tags]</code> setting with each test case</dt>
 <dd>Tests get these tags in addition to tags specified using the <code class="setting">Test Tags</code>
 setting. The <code class="setting">[Tags]</code> setting also allows removing tags set with
-<code class="setting">Test Tags</code> by using the <code>-tag</code> syntax.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="option">--settag</code><a id="4e07a317ed65e1e8ec736cbd6c4e801f"> command line option</a> 
-</dt>
-<dd>All tests get tags set with this option in addition to tags they got elsewhere.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="name">Set Tags</code>, <code class="name">Remove Tags</code>, <code class="name">Fail</code> and <code class="name">Pass Execution</code><a id="a178b73eaad309c50a031f5999434b40"> keywords</a> 
-</dt>
+<code class="setting">Test Tags</code> by using the <code>-tag</code> syntax.</dd>
+<dt><code class="option">--settag</code> command line option</dt>
+<dd>All tests get tags set with this option in addition to tags they got elsewhere.</dd>
+<dt><code class="name">Set Tags</code>, <code class="name">Remove Tags</code>, <code class="name">Fail</code> and <code class="name">Pass Execution</code> keywords</dt>
 <dd>These <a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html">BuiltIn</a> keywords can be used to manipulate tags dynamically
-during the test execution.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
+during the test execution.</dd>
 </dl>
 <p>Example:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#example-14-1"> 1</a></span>
@@ -11506,34 +11466,12 @@ is new in Robot Framework 7.0.</p>
 <p>Prior to Robot Framework 6.0, tags could be specified to tests in the Setting section
 using two different settings:</p>
 <dl>
-<dt>
-	<code class="setting"><a id="703767eb439ffa2867dda00cfa863026">Force Tags</a> </code>
-</dt>
+<dt><code class="setting">Force Tags</code></dt>
 <dd>All tests unconditionally get these tags. This is exactly the same as
-<code class="setting">Test Tags</code> nowadays.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code class="setting"><a id="3af4c32a9642aa80acfa413497b99c43">Default Tags</a> </code>
-</dt>
+<code class="setting">Test Tags</code> nowadays.</dd>
+<dt><code class="setting">Default Tags</code></dt>
 <dd>All tests get these tags by default. If a test has <code class="setting">[Tags]</code>,
-it will not get these tags.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
+it will not get these tags.</dd>
 </dl>
 <p>Both of these settings still work, but they are considered deprecated.
 A visible deprecation warning will be added in the future, most likely
@@ -11625,136 +11563,26 @@ tag with this prefixes unless actually activating the special functionality.
 The current reserved tags are listed below, but more such tags are likely
 to be added in the future.</p>
 <dl>
-<dt>
-	<code>robot:continue-on-failure</code><a id="f816b7b6953ba203b3c1aa8d55f23255"> and </a> <code>robot:recursive-continue-on-failure</code>
-</dt>
-<dd>Used for <a href="../../execution/tests/#enabling-continue-on-failure-using-tags">enabling the continue-on-failure mode</a>.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code>robot:stop-on-failure</code><a id="f816b7b6953ba203b3c1aa8d55f23255"> and </a> <code>robot:recursive-stop-on-failure</code>
-</dt>
-<dd>Used for <a href="../../execution/tests/#disabling-continue-on-failure-using-tags">disabling the continue-on-failure mode</a>.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code><a id="c79b29f8cf546411b789944a07a6e542">exit-on-failure</a> </code>
-</dt>
-<dd>Stop the whole execution if a <a href="../../execution/tests/#stopping-using-robotexit-on-failure-tag">test with this tag fails</a>.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code><a id="fa2a4fe998cac8fac922dc96f1e45625">skip-on-failure</a> </code>
-</dt>
-<dd>Mark test to be <a href="../../execution/tests/#automatically-skipping-failed-tests">skipped if it fails</a>.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code><a id="bb2c4e4452a0cbb982d9d668ec7546c3">skip</a> </code>
-</dt>
-<dd>Mark test to be <a href="../../execution/tests/#skipping-before-execution">unconditionally skipped</a>.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code><a id="8360ec3460d8cb753a1943dd15d253eb">exclude</a> </code>
-</dt>
-<dd>Mark test to be <a href="../../execution/configuration/#by-tag-names">unconditionally excluded</a>.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code><a id="5b32d973be49d1b114226d1165785b96">private</a> </code>
-</dt>
-<dd>Mark keyword to be <a href="../user_keywords/#private-user-keywords">private</a>.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code><a id="25574f5b59ff5cef80101a1d893e318f">no-dry-run</a> </code>
-</dt>
-<dd>Mark keyword not to be executed in the <a href="../../execution/configuration/#dry-run">dry run</a> mode.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code><a id="b8e9863eeac868ec6dcb97d340136c43">exit</a> </code>
-</dt>
-<dd>Added to tests automatically when <a href="../../execution/tests/#stopping-test-execution-gracefully">execution is stopped gracefully</a>.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
-<dt>
-	<code><a id="97e785990412db0dcf1935080220504d">flatten</a> </code>
-</dt>
-<dd>Enable <a href="../../execution/results/#flattening-keyword-during-execution-time">flattening keyword during execution time</a>.
-<p>
-<div class="mkdocs-ezglossary-refs list">
-    
-    <ul>
-    
-    </ul>
-</div>
-</p></dd>
-
+<dt><code>robot:continue-on-failure</code> and <code>robot:recursive-continue-on-failure</code></dt>
+<dd>Used for <a href="../../execution/tests/#enabling-continue-on-failure-using-tags">enabling the continue-on-failure mode</a>.</dd>
+<dt><code>robot:stop-on-failure</code> and <code>robot:recursive-stop-on-failure</code></dt>
+<dd>Used for <a href="../../execution/tests/#disabling-continue-on-failure-using-tags">disabling the continue-on-failure mode</a>.</dd>
+<dt><code>robot:exit-on-failure</code></dt>
+<dd>Stop the whole execution if a <a href="../../execution/tests/#stopping-using-robotexit-on-failure-tag">test with this tag fails</a>.</dd>
+<dt><code>robot:skip-on-failure</code></dt>
+<dd>Mark test to be <a href="../../execution/tests/#automatically-skipping-failed-tests">skipped if it fails</a>.</dd>
+<dt><code>robot:skip</code></dt>
+<dd>Mark test to be <a href="../../execution/tests/#skipping-before-execution">unconditionally skipped</a>.</dd>
+<dt><code>robot:exclude</code></dt>
+<dd>Mark test to be <a href="../../execution/configuration/#by-tag-names">unconditionally excluded</a>.</dd>
+<dt><code>robot:private</code></dt>
+<dd>Mark keyword to be <a href="../user_keywords/#private-user-keywords">private</a>.</dd>
+<dt><code>robot:no-dry-run</code></dt>
+<dd>Mark keyword not to be executed in the <a href="../../execution/configuration/#dry-run">dry run</a> mode.</dd>
+<dt><code>robot:exit</code></dt>
+<dd>Added to tests automatically when <a href="../../execution/tests/#stopping-test-execution-gracefully">execution is stopped gracefully</a>.</dd>
+<dt><code>robot:flatten</code></dt>
+<dd>Enable <a href="../../execution/results/#flattening-keyword-during-execution-time">flattening keyword during execution time</a>.</dd>
 </dl>
 <p>As of RobotFramework 4.1, reserved tags are suppressed by default in
 <a href="../../execution/results/#configuring-statistics">tag statistics</a>. They will be shown when they are explicitly
@@ -12184,6 +12012,7 @@ keyword implementations. This can be done by <a href="../user_keywords/#embeddin
 
 
                 
+
               </article>
             </div>
           
@@ -12327,7 +12156,9 @@ keyword implementations. This can be done by <a href="../user_keywords/#embeddin
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+      
+        <script src="../../assets/navigation.js"></script>
       
     
   </body>

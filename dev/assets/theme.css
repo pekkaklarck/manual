@@ -84,7 +84,7 @@
   --md-default-fg-color--lighter: rgb(var(--rf-text) / 0.45);
   --md-default-fg-color--lightest: rgb(var(--rf-text) / 0.12);
 
-  /* Header and tabs paint with these; extra.css adds the rule line and type. */
+  /* Header and tabs paint with these; navigation.css adds the rule line and type. */
   --md-primary-fg-color: rgb(var(--rf-0));
   --md-primary-fg-color--light: rgb(var(--rf-50));
   --md-primary-fg-color--dark: rgb(var(--rf-100));
@@ -124,6 +124,26 @@
   --md-shadow-z1: none;
   --md-shadow-z2: none;
   --md-shadow-z3: none;
+}
+
+/* One dark palette for the header, its section tabs and the drawer brand row.
+   Soft white keeps all header text consistent in either page scheme. */
+.md-header,
+.md-tabs,
+.md-nav--primary > .md-nav__title[for="__drawer"] {
+  --md-primary-fg-color: #000;
+  --md-primary-bg-color: #e6e6e6;
+  --md-primary-bg-color--light: rgb(230 230 230 / 0.7);
+}
+
+/* Use the source site's dark-surface accent for selected/hovered tabs. */
+.md-tabs {
+  --md-accent-fg-color: rgb(92 214 207);
+}
+
+/* The native version dropdown follows the page scheme, including link contrast. */
+.rf-header-version {
+  --md-accent-fg-color: var(--md-typeset-a-color);
 }
 
 /* Written per scheme below because it is the one place a single ramp step

@@ -1,0 +1,355 @@
+/* Material header, sidebars and drawer. See doc/manual/README.md for
+   stylesheet order, layout breakpoints and theme upgrade checks. */
+/* ============================================================================
+   HEADER — always dark, matching robotframework.org. The component palette
+   in theme.css supplies the background, foreground and navigation accent.
+   ========================================================================== */
+.md-header {
+  border-bottom: 1px solid rgb(var(--rf-700) / 0.18);
+  box-shadow: none;
+}
+
+/* Give the header and its tabs the full viewport width. */
+.md-header .md-grid {
+  max-width: none;
+}
+
+/* Material re-adds a shadow once the page scrolls. */
+.md-header--shadow {
+  box-shadow: none;
+  transition: none;
+}
+
+/* Sticky tabs share our header row. Material's lifted-header default reserves
+   two rows for anchor jumps, leaving the TOC indicator on the previous heading.
+   Use its single-row offset so the jumped-to heading crosses the TOC threshold. */
+.md-header--lifted ~ .md-container .md-typeset :target {
+  --md-scroll-margin: 3.6rem;
+}
+
+@media screen and (max-width: 59.9375em) {
+  /* Match the smaller article gutter to Material's heading activation point. */
+  .md-header--lifted ~ .md-container .md-typeset :target {
+    --md-scroll-margin: 3rem;
+  }
+}
+
+/* Both logo links turn a quarter on hover/focus when motion is allowed. */
+@media (prefers-reduced-motion: no-preference) {
+  [data-md-component="logo"] svg {
+    transition: transform 0.3s ease;
+  }
+
+  [data-md-component="logo"]:hover svg,
+  [data-md-component="logo"]:focus-visible svg {
+    transform: rotate(90deg);
+  }
+}
+
+.md-header .md-header__title {
+  margin-inline-start: 0;
+}
+
+.md-header__title .md-ellipsis {
+  font-family: var(--rf-ff-display);
+  font-weight: 400;
+  letter-spacing: -0.05em;
+}
+
+/* Keep Material's native version menu outside the animated page title.
+   Its dropdown must paint above the section tabs. */
+.rf-header-version {
+  position: relative;
+  flex-shrink: 0;
+  line-height: 2.4rem;
+  z-index: 4;
+}
+
+.rf-header-version .md-version__current {
+  margin-inline: 0 0.4rem;
+  font-family: var(--rf-ff-nav);
+}
+
+.rf-header-version .md-version__current:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+/* Desktop tabs identify the section; smaller screens retain the page title. */
+@media screen and (min-width: 76.25em) {
+  .md-header__title {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 76.1875em) {
+  .md-header__button.md-logo {
+    display: block;
+  }
+
+  .md-header__title {
+    /* Retain Material's 0.9rem title size; truncate long page names. */
+    min-width: 0;
+  }
+
+  /* Show the page immediately and after scrolling, including versioned builds.
+     Material updates this topic when instant navigation replaces the page. */
+  .md-header__title .md-header__topic:first-child {
+    display: none;
+  }
+
+  .md-header__title .md-header__topic[data-md-component="header-topic"] {
+    position: static;
+    opacity: 1;
+    pointer-events: auto;
+    transform: none;
+    transition: none;
+    z-index: 0;
+  }
+
+  /* Keep the version number compact; aliases remain visible in the menu. */
+  .rf-header-version .md-version__current .md-version__alias {
+    display: none;
+  }
+}
+
+.md-tabs {
+  background: transparent;
+}
+
+/* The header partial places sticky tabs between the logo and controls.
+   Material supplies their height, scrolling and mobile visibility. */
+.md-header__inner > .md-tabs {
+  flex: 1 1 auto;
+  min-width: 0;
+  width: auto;
+}
+
+.md-tabs__link {
+  position: relative;
+  align-items: center;
+  font-family: var(--rf-ff-nav);
+  font-size: 0.75rem;
+  height: 100%;
+  opacity: 1;
+  margin-top: 0;
+}
+
+.md-tabs__item--active .md-tabs__link {
+  color: var(--md-accent-fg-color);
+}
+
+/* Keep the section marker near its label, with room to distinguish it from
+   the thin underlines used by prose links. */
+.md-tabs__item--active .md-tabs__link::after {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0.45rem;
+  height: 3px;
+  background: currentColor;
+  content: "";
+}
+
+.md-tabs__link:focus-visible,
+.md-nav a:focus-visible,
+.md-nav label:focus-visible,
+.md-header__button[role="button"]:focus-visible,
+.rf-nav-close:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: -2px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .md-tabs__link:hover {
+    color: var(--md-accent-fg-color);
+  }
+
+  .md-nav--primary .md-nav__link:hover {
+    background-color: rgb(var(--rf-500) / 0.06);
+  }
+}
+
+/* Search shares the dark header; Material supplies the expanded panel colors. */
+.md-search__form {
+  background: var(--md-primary-fg-color);
+  border: 1px solid rgb(255 255 255 / 0.25);
+  border-radius: var(--rf-r-sm);
+  box-shadow: none;
+}
+
+/* ============================================================================
+   SIDEBARS — left nav and right TOC, active item in the accent.
+   ========================================================================== */
+.md-sidebar .md-nav {
+  font-size: 0.7rem;                /* 14px at Material's 20px root */
+  line-height: 1.45;
+}
+
+.md-nav--primary .md-nav__link {
+  /* Use Material's mobile menu size consistently across viewports. */
+  font-size: 0.8rem;
+  padding: 0.4rem 0.6rem;
+  border-radius: var(--rf-r-sm);
+}
+
+/* Index links share one padded row with their section's expand control. */
+.md-nav--primary .md-nav__container > .md-nav__link {
+  padding: 0;
+}
+
+.md-nav__title {
+  font-family: var(--rf-ff-display);
+  letter-spacing: -0.05em;
+  color: rgb(var(--rf-text));
+}
+
+/* Match Material's header logo size, retaining the link's surrounding padding. */
+.md-nav--primary .md-nav__title .md-logo svg {
+  height: 1.2rem;
+}
+
+.md-nav__link {
+  color: rgb(var(--rf-text) / 0.8);
+}
+
+/* Section labels retain Material's bold weight in the display font. */
+.md-nav--primary .md-nav__item--section > .md-nav__container > .md-nav__link,
+.md-nav--primary .md-nav__item--section > .md-nav__link,
+.md-nav--primary > .md-nav__list > .md-nav__item > .md-nav__link {
+  font-family: var(--rf-ff-display);
+  letter-spacing: -0.04em;
+}
+
+/* Material uses its accent for hovered/focused navigation links and controls. */
+.md-nav {
+  --md-accent-fg-color: rgb(var(--rf-accent-text));
+}
+
+/* Follow Material's current-page state, including its sticky top-level link. */
+.md-nav__link--active {
+  color: rgb(var(--rf-accent-text));
+}
+
+/* Select the page row, including section overview pages and the mobile TOC
+   opener. Embedded TOC headings have their own, quieter marker below. */
+.md-nav--primary .md-nav__item > .md-nav__link--active:not(.md-nav--secondary *),
+.md-nav--primary .md-nav__item > .md-nav__container:has(> a.md-nav__link--active) {
+  background-color: rgb(var(--rf-500) / 0.1);
+  box-shadow: inset 2px 0 0 rgb(var(--rf-accent-text));
+}
+
+/* A section index is one row, with a separate expansion control. */
+.md-nav--primary .md-nav__container:has(> a.md-nav__link--active) > .md-nav__link {
+  background: transparent;
+}
+
+/* Disclosure icons remain discoverable on touch screens. */
+.md-nav--primary .md-nav__link .md-nav__icon {
+  opacity: 1;
+}
+
+.rf-nav-close {
+  display: none;
+}
+
+/* Mobile drawer controls and separators. */
+@media screen and (max-width: 76.1875em) {
+  /* Material uses this color for row borders and the line above each list. */
+  .md-nav--primary {
+    --md-default-fg-color--lightest: rgb(var(--rf-700) / 0.18);
+  }
+
+  /* Let drawer titles wrap beneath the back control instead of truncating. */
+  .md-nav--primary .md-nav__title {
+    white-space: normal;
+    overflow-wrap: anywhere;
+    line-height: 1.45;
+  }
+
+  /* Bottom-align submenu titles within Material's header height; grow for
+     titles that need more space. The back arrow remains positioned above. */
+  .md-nav--primary .md-nav .md-nav__title {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: auto;
+    min-height: 5.6rem;
+  }
+
+  .rf-nav-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0.1rem;
+    right: 0.1rem;
+    width: 2.2rem;
+    height: 2.2rem;
+    font-size: 1.4rem;
+    color: #e6e6e6; /* The close control sits over the always-dark brand row. */
+    z-index: 1;
+  }
+
+  /* Keep overview links and submenu controls separate. Put padding on the
+     controls so the drawer arrows have a 44px target, not just an icon.
+     Material continues to handle opening and closing each drawer pane. */
+  .md-nav--primary .md-nav__container {
+    align-items: stretch;
+    padding: 0;
+  }
+
+  .md-nav--primary .md-nav__container > label.md-nav__link {
+    justify-content: center;
+    min-width: 2.2rem;
+  }
+
+  /* Links, overview controls and the current-page TOC opener share 44px rows. */
+  .md-nav--primary .md-nav__container > .md-nav__link,
+  .md-nav--primary label.md-nav__link[for="__toc"],
+  .md-nav--primary a.md-nav__link {
+    align-items: center;
+    min-height: 2.2rem;
+  }
+
+  .md-nav--primary .md-nav__container > .md-nav__link {
+    padding: 0.4rem 0.6rem;
+  }
+
+  .md-nav--primary label.md-nav__link:hover,
+  .md-nav--primary label.md-nav__link:focus-visible {
+    background: var(--md-accent-fg-color--transparent);
+  }
+
+  /* A compact brand row; keep the logo link separate from the close label. */
+  .md-nav--primary > .md-nav__title[for="__drawer"] {
+    display: flex;
+    align-items: center;
+    font-size: 0.7rem;
+    font-weight: 400;
+    height: auto;
+    min-height: 2.4rem;
+    padding: 0 2.4rem 0 0.2rem;
+  }
+
+  .md-nav--primary > .md-nav__title[for="__drawer"] .md-logo {
+    position: static;
+    flex-shrink: 0;
+  }
+}
+
+/* Material draws the sidebar scrollbar track and a vertical rule via
+   box-shadow on `.md-nav__list`; the rule is on the ramp now. */
+.md-nav--secondary .md-nav__list {
+  border-inline-start: 1px solid rgb(var(--rf-700) / 0.18);
+}
+
+.md-nav--secondary .md-nav__link {
+  margin-inline-start: -1px;
+  padding-inline-start: 0.6rem;
+  border-inline-start: 2px solid transparent;
+}
+
+.md-nav--secondary .md-nav__link--active {
+  border-inline-start-color: rgb(var(--rf-accent-text));
+  font-weight: 600;
+}
