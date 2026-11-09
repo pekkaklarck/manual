@@ -365,6 +365,8 @@ section in log files, and also written into Robot Framework's own
 Framework itself, but libraries can also log [errors and warnings](../extend/libraries.md#errors-and-warnings).
 Example below illustrates how errors and warnings look like in the log file.
 
+<div class="md-typeset__scrollwrap" role="region" aria-label="Example execution errors and warnings" tabindex="0">
+<div class="md-typeset__table">
 <table class="messages">
   <tr>
     <td class="time">20090322&nbsp;19:58:42.528</td>
@@ -377,6 +379,8 @@ Example below illustrates how errors and warnings look like in the log file.
     <td class="msg">Keyword 'SomeLibrary.Example Keyword' is deprecated. Use keyword `Other Keyword` instead.</td>
   </tr>
 </table>
+</div>
+</div>
 
 <a id="read-more-arguments"></a>
 ## Argument files
