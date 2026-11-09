@@ -89,8 +89,8 @@
 
 /* ============================================================================
    CODE BLOCKS — style Material/Pygments markup after highlight-*.css.
-   Line numbers use a separate table column. Apply the code font to both
-   columns and retain Material's font sizes and line heights for alignment.
+   Line numbers use a separate table column. Keep both columns aligned while
+   leaving room for clickable line-number targets.
    ========================================================================== */
 .md-typeset .highlight {
   border: 1px solid rgb(var(--rf-700) / 0.25);
@@ -101,7 +101,6 @@
 
 .md-typeset .highlight pre,
 .md-typeset .highlighttable,
-.md-typeset .highlighttable .linenos,
 .md-typeset .highlighttable .code {
   background: var(--md-code-bg-color);
 }
@@ -111,18 +110,42 @@
   font-family: var(--rf-ff-code);
 }
 
+.md-typeset .highlighttable pre {
+  /* Both columns must resolve the same height despite their different fonts. */
+  line-height: max(1.2rem, 24px);
+}
+
+.md-typeset .highlighttable pre > code {
+  line-height: inherit;
+}
+
 /* Line-number gutter: a hair lighter than the code, separated by the same
    line the plate uses. */
 .md-typeset .highlighttable .linenos {
+  padding-inline: 0.2rem;
   background: rgb(var(--rf-500) / 0.06);
   border-right: 1px solid rgb(var(--rf-700) / 0.18);
   color: rgb(var(--rf-text) / 0.45);
 }
 
+.md-typeset .highlighttable .linenos pre {
+  background: transparent;
+}
+
+.md-typeset .highlighttable .linenodiv {
+  box-shadow: none;
+}
+
 /* Pygments wraps each line number in an anchor; keep it out of the prose link style. */
-.md-typeset .linenos a {
+.md-typeset .highlighttable .linenos a {
   font-weight: inherit;
   text-decoration: none;
+  display: inline-block;
+  min-width: 24px;
+  min-height: 24px;
+  line-height: inherit;
+  text-align: right;
+  vertical-align: top;
 }
 
 /* Copy button: outlined, quiet until hovered. Icon-only, so no display font. */
@@ -132,8 +155,7 @@
   color: rgb(var(--rf-text) / 0.65);
 }
 
-.md-typeset .md-clipboard:hover,
-.md-typeset .md-clipboard:focus-visible {
+.md-typeset .md-clipboard:is(:hover, :focus-visible) {
   color: rgb(var(--rf-accent-text));
   border-color: rgb(var(--rf-accent-text));
 }
@@ -272,7 +294,7 @@
    schemes), so only the type treatment lives here.
    ========================================================================== */
 .md-footer {
-  border-top: 1px solid rgb(0 192 181 / 0.25);
+  border-top: 1px solid rgb(var(--rf-500) / 0.25);
 }
 
 .md-footer__title,
@@ -280,10 +302,7 @@
   font-family: var(--rf-ff-nav);
 }
 
-.md-footer__link:hover .md-footer__title {
-  color: rgb(92 214 207);
-}
-
+.md-footer__link:hover .md-footer__title,
 .md-copyright a {
   color: rgb(92 214 207);
 }
