@@ -81,12 +81,6 @@
   outline-offset: 2px;
 }
 
-/* Navigation links inherit their section's weight; current pages are marked above. */
-.md-nav a {
-  font-weight: inherit;
-  text-decoration: none;
-}
-
 /* ============================================================================
    CODE BLOCKS — style Material/Pygments markup after highlight-*.css.
    Line numbers use a separate table column. Keep both columns aligned while

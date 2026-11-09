@@ -154,6 +154,9 @@
 .md-nav a:focus-visible,
 .md-nav label:focus-visible,
 .md-header__button[role="button"]:focus-visible,
+.md-search__options > button[type="reset"]:focus-visible,
+.md-search-result__link:focus-visible,
+.md-search-result__more > summary:focus-visible,
 .rf-nav-close:focus-visible {
   outline: 2px solid currentColor;
   outline-offset: -2px;
@@ -175,6 +178,29 @@
   border: 1px solid rgb(255 255 255 / 0.25);
   border-radius: var(--rf-r-sm);
   box-shadow: none;
+}
+
+.md-search__form .md-search__options {
+  inset-block: 0;
+  inset-inline-end: 0;
+  display: flex;
+  align-items: center;
+}
+
+.md-search__options > button[type="reset"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.2rem;
+  height: 100%;
+  color: inherit;
+}
+
+/* Keep clear available at the right edge of the collapsed desktop search bar. */
+.md-search__input:valid ~ .md-search__options > button[type="reset"] {
+  opacity: 1;
+  pointer-events: auto;
+  transform: none;
 }
 
 /* ============================================================================
@@ -210,6 +236,12 @@
 
 .md-nav__link {
   color: rgb(var(--rf-text) / 0.8);
+}
+
+/* Navigation links inherit their section's weight. */
+.md-nav a {
+  font-weight: inherit;
+  text-decoration: none;
 }
 
 /* Section labels retain Material's bold weight in the display font. */

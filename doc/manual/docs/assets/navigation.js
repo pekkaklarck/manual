@@ -81,6 +81,7 @@
     const open = drawerLayout.matches && drawer.checked;
     const previousPane = pane;
     syncControlSemantics();
+    updateSearchClearButton();
     if (drawerLayout.matches) {
       pane = syncPane(navigation);
       setInert(navigation, !open);
@@ -132,6 +133,30 @@
     close.textContent = '\u00d7';
     close.addEventListener('click', () => drawer.click());
     navigation.prepend(close);
+  }
+
+  function updateSearchClearButton() {
+    const clear = document.querySelector('.md-search__form button[type="reset"]');
+    if (!clear) return;
+    const visible = matchMedia('(min-width: 60em)').matches ||
+      document.getElementById('__search').checked;
+    clear.tabIndex = visible && document.querySelector('.md-search__input')?.value ? 0 : -1;
+    if (!visible && document.activeElement === clear) {
+      // Let native Tab finish before restoring focus if it is still hidden.
+      setTimeout(() => {
+        if (clear.tabIndex < 0 && document.activeElement === clear) {
+          document.querySelector('.md-header__button[for="__search"]')?.focus({ preventScroll: true });
+        }
+      }, 0);
+    }
+  }
+
+  function clearSearch() {
+    const query = document.querySelector('.md-search__input');
+    query.value = '';
+    // Material reads query changes on keyup.
+    query.dispatchEvent(new KeyboardEvent('keyup', { bubbles: true }));
+    updateSearchClearButton();
   }
 
   function setupControls() {
@@ -206,7 +231,28 @@
       drawer.click();
       return;
     }
-    const control = event.target.closest('[data-rf-nav-control]');
+    // Material reserves results for arrow keys; include them in Tab navigation.
+    if (event.key === 'Tab' && document.getElementById('__search').checked) {
+      const query = document.querySelector('.md-search__input');
+      const clear = document.querySelector('.md-search__form button[type="reset"]');
+      const targets = [query, ...(clear?.tabIndex === 0 ? [clear] : []),
+        ...document.querySelectorAll(
+          '.md-search-result__link, .md-search-result__more > summary'
+        )].filter(element => element?.getClientRects().length &&
+          (!element.closest('details:not([open])') || element.matches('summary')));
+      const index = targets.indexOf(event.target);
+      const target = index >= 0 ? targets[index + (event.shiftKey ? -1 : 1)] : undefined;
+      if (target) {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        target.focus();
+        return;
+      }
+    }
+    const control = event.target.closest(
+      '[data-rf-nav-control], .md-search__form button[type="reset"], ' +
+      '.md-search-result__more > summary'
+    );
     if (control && (event.key === 'Enter' || event.key === ' ')) {
       event.preventDefault();
       event.stopImmediatePropagation();
@@ -225,6 +271,20 @@
   document.addEventListener('change', event => {
     if (event.target.matches('#__drawer, #__search, .md-nav__toggle')) sync();
   });
+  document.addEventListener('input', event => {
+    if (event.target.matches('.md-search__input')) updateSearchClearButton();
+  });
+  // Clearing a collapsed search bar must not open the results via theme focus.
+  document.addEventListener('reset', event => {
+    if (!event.target.matches('.md-search__form')) return;
+    if (!document.getElementById('__search').checked) {
+      event.stopPropagation();
+      if (document.activeElement.matches('button[type="reset"]')) {
+        document.querySelector('.md-header__button.md-logo')?.focus({ preventScroll: true });
+      }
+    }
+    clearSearch();
+  }, true);
   // Delegate once: Material replaces the page TOC during instant navigation.
   document.addEventListener('click', event => {
     const pageToc = event.target.closest('.rf-page-toc a[href]')?.closest('.rf-page-toc');
