@@ -12,6 +12,8 @@ in `docs/assets/` and template changes in `overrides/`.
 3. `highlight-light.css` and `highlight-dark.css`: syntax highlighting.
 4. `navigation.css`: header, version selector, section tabs, sidebars and drawer.
 5. `extra.css`: article layout, typography, links, examples and footer.
+6. `page-toc.css`: the phone page TOC, including overrides of the shared
+   `details` and `summary` styles.
 
 Keep component rules together. Some selectors must override Material's
 structural rules, especially its nested-list spacing inside `details`. Check
@@ -28,10 +30,14 @@ checkbox labels at every width. Focus containment and background isolation
 apply only to an open drawer. The adapter preserves the theme's click behavior,
 restores the `inert` states it changes, and subscribes to `document$` because
 instant navigation replaces the article and sidebar while keeping the header.
+Its delegated phone TOC click handler closes the disclosure after selection.
 
 Drawer submenu headers retain Material's `5.6rem` minimum height. Titles wrap
 and align to the bottom; longer titles expand the header below the back arrow.
 Anchor offsets account for the section tabs sharing the header's single row.
+
+The phone TOC uses a native `details` disclosure rendered by `page-toc.html`,
+included from `main.html`. Its opening and heading links work without JavaScript.
 
 ## Rendered log examples
 
@@ -61,7 +67,7 @@ check both palettes at phone, tablet and desktop widths:
 - Current-page and current-heading markers, plus anchor visibility after jumps.
 - Keyboard focus visibility and order, Enter/Space, Back, Escape and drawer
   focus containment. Desktop navigation must allow focus to leave the sidebar.
-- Long drawer titles, scrolling examples and page heading links.
+- Long drawer titles, scrolling examples and phone TOC links.
 - Instant navigation and resizing between drawer and sidebar layouts.
 - Accessible names, reading order and focus behavior with a screen reader.
 

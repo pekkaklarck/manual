@@ -1,5 +1,10 @@
 {% extends "base.html" %}
 
+{% block content %}
+  {% include "partials/page-toc.html" %}
+  {{ super() }}
+{% endblock %}
+
 {% block outdated %}
   You are not viewing documentation of the latest release.
   <a href="{{ '../' ~ base_url }}">
