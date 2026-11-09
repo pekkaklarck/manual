@@ -58,7 +58,7 @@
    anchors retain their own treatment, including links inside highlighted code. */
 .md-typeset a[href]:not(:where(
   .headerlink, .md-button, .md-content__button, .md-annotation__index,
-  .highlight a, .tabbed-labels a, .md-nav a
+  .highlight a, .tabbed-labels a, .md-nav a, .rf-page-toc a
 )) {
   font-weight: inherit;
   text-decoration-line: underline;
@@ -70,7 +70,7 @@
 
 .md-typeset a[href]:not(:where(
   .headerlink, .md-button, .md-content__button, .md-annotation__index,
-  .highlight a, .tabbed-labels a, .md-nav a
+  .highlight a, .tabbed-labels a, .md-nav a, .rf-page-toc a
 )):is(:hover, :focus-visible) {
   color: rgb(var(--rf-800));
   text-decoration-thickness: 2px;

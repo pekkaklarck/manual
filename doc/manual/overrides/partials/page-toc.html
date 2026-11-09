@@ -1,0 +1,26 @@
+{# Keep phone page navigation separate from Material's drawer/desktop TOC.
+   Native details/summary supports touch and keyboards without a JS adapter. #}
+{% macro headings(items) %}
+  <ul>
+    {% for item in items %}
+      <li>
+        <a href="{{ item.url }}">{{ item.title }}</a>
+        {% if item.children %}{{ headings(item.children) }}{% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+{% endmacro %}
+{% set toc = page.toc %}
+{% set first = toc | first %}
+{% if first and first.level == 1 %}
+  {% set toc = first.children %}
+{% endif %}
+{% if toc and not (page.meta and page.meta.hide and "toc" in page.meta.hide) %}
+  {% set title = config.mdx_configs.toc.title | d(lang.t("toc"), true) %}
+  <details class="rf-page-toc">
+    <summary>{{ title }}</summary>
+    <nav aria-label="{{ title | e }}">
+      {{ headings(toc) }}
+    </nav>
+  </details>
+{% endif %}

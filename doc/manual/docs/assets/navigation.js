@@ -202,6 +202,11 @@
   document.addEventListener('change', event => {
     if (event.target.matches('#__drawer, #__search, .md-nav__toggle')) sync();
   });
+  // Delegate once: Material replaces the page TOC during instant navigation.
+  document.addEventListener('click', event => {
+    const pageToc = event.target.closest('.rf-page-toc a[href]')?.closest('.rf-page-toc');
+    if (pageToc) pageToc.open = false;
+  });
   drawerLayout.addEventListener('change', sync);
   // Material moves the TOC out of the drawer before the desktop breakpoint.
   matchMedia('(min-width: 60em)').addEventListener('change', sync);
