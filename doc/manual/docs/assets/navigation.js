@@ -176,6 +176,25 @@
     sync();
   }
 
+  // Material adds the version selector asynchronously and keeps it on page swaps.
+  // Use its visible text as the name, with the action as a separate description.
+  const versionHost = document.querySelector('.rf-header-version');
+  if (versionHost) {
+    const observer = new MutationObserver(nameVersionSelector);
+    function nameVersionSelector() {
+      const button = versionHost.querySelector('.md-version__current');
+      if (!button) return;
+      const label = button.getAttribute('aria-label');
+      if (label) {
+        button.setAttribute('aria-description', label);
+        button.removeAttribute('aria-label');
+      }
+      observer.disconnect();
+    }
+    observer.observe(versionHost, { childList: true, subtree: true });
+    nameVersionSelector();
+  }
+
   document.addEventListener('keydown', event => {
     if (!navigation) return;
     const drawerOpen = drawerLayout.matches && drawer.checked;
