@@ -2401,6 +2401,8 @@ print('*HTML* This is <b>bold</b>.')
 print('*HTML* <a href="http://robotframework.org">Robot Framework</a>')
 ```
 
+<div class="md-typeset__scrollwrap" role="region" aria-label="Example log messages" tabindex="0">
+<div class="md-typeset__table">
 <table class="messages">
   <tr>
     <td class="time">16:18:42.123</td>
@@ -2448,6 +2450,9 @@ print('*HTML* <a href="http://robotframework.org">Robot Framework</a>')
     <td class="msg"><a href="http://robotframework.org">Robot Framework</a></td>
   </tr>
 </table>
+</div>
+</div>
+
 ### Programmatic logging APIs
 
 Programmatic APIs provide somewhat cleaner way to log information than
@@ -2779,6 +2784,8 @@ def example_keyword(argument):
     return do_something(argument)
 ```
 
+<div class="md-typeset__scrollwrap" role="region" aria-label="Example deprecation warning" tabindex="0">
+<div class="md-typeset__table">
 <table class="messages">
   <tr>
     <td class="time">20080911&nbsp;16:00:22.650</td>
@@ -2786,6 +2793,9 @@ def example_keyword(argument):
     <td class="msg">Keyword 'SomeLibrary.Example Keyword' is deprecated. Use keyword `Other Keyword` instead.</td>
   </tr>
 </table>
+</div>
+</div>
+
 This deprecation system works with most test libraries and also with
 [user keywords](https://docs.python.org/3/library/exceptions.html#BaseException).
 
