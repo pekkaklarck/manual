@@ -93,7 +93,9 @@
       const input = previousPane?.parentElement.querySelector(':scope > input');
       const back = previousPane && pane.contains(previousPane) && input;
       const opener = back && pane.querySelector(`label[for="${input.id}"]`);
-      (opener || focusableControls(pane)[0])?.focus();
+      // The pane is still sliding into view. Scrolling to its focus target can
+      // shift Material's overflow-hidden wrapper and leave the drawer blank.
+      (opener || focusableControls(pane)[0])?.focus({ preventScroll: true });
     } else if (wasOpen && !open && drawerLayout.matches) {
       menu.focus();
     }

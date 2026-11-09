@@ -30,6 +30,8 @@ checkbox labels at every width. Focus containment and background isolation
 apply only to an open drawer. The adapter preserves the theme's click behavior,
 restores the `inert` states it changes, and subscribes to `document$` because
 instant navigation replaces the article and sidebar while keeping the header.
+Focus moves between drawer panes use `preventScroll` so the opening animation
+does not scroll their shared wrapper horizontally and leave the menu blank.
 Its delegated phone TOC click handler closes the disclosure after selection.
 
 Drawer submenu headers retain Material's `5.6rem` minimum height. Titles wrap
