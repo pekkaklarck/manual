@@ -313,17 +313,31 @@
 /* ============================================================================
    LINKS
    ========================================================================== */
-.md-typeset a {
-  font-weight: 600;
-  text-decoration: none;
+/* Keep prose links recognizable without color or hover. Controls and generated
+   anchors retain their own treatment, including links inside highlighted code. */
+.md-typeset a[href]:not(:where(
+  .headerlink, .md-button, .md-content__button, .md-annotation__index,
+  .highlight a, .tabbed-labels a, .md-nav a
+)) {
+  font-weight: inherit;
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
   text-underline-offset: 0.15em;
+  text-decoration-skip-ink: auto;
+  overflow-wrap: anywhere;
 }
 
-.md-typeset a:hover,
-.md-typeset a:focus {
+.md-typeset a[href]:not(:where(
+  .headerlink, .md-button, .md-content__button, .md-annotation__index,
+  .highlight a, .tabbed-labels a, .md-nav a
+)):is(:hover, :focus-visible) {
   color: rgb(var(--rf-800));
-  text-decoration: underline;
-  text-decoration-color: currentColor;
+  text-decoration-thickness: 2px;
+}
+
+.md-typeset a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
 }
 
 /* Navigation links inherit their section's weight; current pages are marked above. */
