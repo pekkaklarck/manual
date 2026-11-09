@@ -62,6 +62,11 @@ When upgrading, compare `overrides/partials/header.html` with the installed
 update the baseline comments. Check the DOM assumptions in `navigation.js` and
 the theme-specific selectors and offsets in `navigation.css`.
 
+The `partials/javascripts/outdated.html` override resolves the relative site root
+against the current page URL before reading the outdated-version session state.
+Compare it with Material's template when upgrading; without that URL base, the
+banner script throws on both the homepage and nested pages.
+
 Run `properdocs build` with API generation enabled, then preview the site and
 check both palettes at phone, tablet and desktop widths:
 
