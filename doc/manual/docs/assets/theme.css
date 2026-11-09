@@ -84,7 +84,7 @@
   --md-default-fg-color--lighter: rgb(var(--rf-text) / 0.45);
   --md-default-fg-color--lightest: rgb(var(--rf-text) / 0.12);
 
-  /* Header and tabs paint with these; extra.css adds the rule line and type. */
+  /* Header and tabs paint with these; navigation.css adds the rule line and type. */
   --md-primary-fg-color: rgb(var(--rf-0));
   --md-primary-fg-color--light: rgb(var(--rf-50));
   --md-primary-fg-color--dark: rgb(var(--rf-100));

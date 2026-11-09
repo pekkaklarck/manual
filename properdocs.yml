@@ -64,7 +64,11 @@ extra_css:
   - assets/theme.css    # Colour ramp and Material variable mapping, see the file for details.
   - assets/highlight-light.css
   - assets/highlight-dark.css
+  - assets/navigation.css    # Header, sidebars and drawer; paired with navigation.js.
   - assets/extra.css
+
+extra_javascript:
+  - assets/navigation.js
 
 theme:
   name: material

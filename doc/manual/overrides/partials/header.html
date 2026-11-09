@@ -2,20 +2,12 @@
    Layout changes: move sticky tabs before the palette/search controls,
    place the drawer toggle before the logo, and give the version selector
    its own host before the animated title.
-   Keep other upstream markup unchanged; presentation belongs in extra.css.
+   Keep other upstream markup unchanged; presentation belongs in navigation.css.
    There is no upstream block for inserting tabs inside the header row.
 
    Material inserts its version selector into the first .md-header__topic.
-   The mobile title remains as a fallback when no version data is available.
-   Related decision: https://github.com/pekkaklarck/manual/issues/30
-
-   When upgrading Material, compare with the installed package's
-   material/templates/partials/header.html, incorporate upstream changes,
-   reapply the layout changes, and update the baseline version above.
-   Run properdocs build and check desktop/mobile logo, drawer, version menu,
-   search and palette controls, keyboard focus visibility/order, and screen
-   reader navigation labels/reading order. Version checks need a mike preview
-   with versions.json; an ordinary local build has no version metadata. #}
+   The mobile page title remains visible alongside the version selector.
+   See doc/manual/README.md for the layout decision and theme upgrade checks. #}
 {% set class = "md-header" %}
 {% if "navigation.tabs.sticky" in features %}
   {% set class = class ~ " md-header--shadow md-header--lifted" %}
