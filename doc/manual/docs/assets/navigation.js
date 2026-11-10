@@ -190,7 +190,7 @@
       target = document.getElementById(decodeURIComponent(hash.slice(1)));
     } catch { /* Malformed fragments fall back to the page heading. */ }
     target ||= content.querySelector('h1') || content;
-    target.tabIndex = -1;
+    if (!target.hasAttribute('tabindex') && target.tabIndex < 0) target.tabIndex = -1;
     target.focus({ preventScroll: true });
   }
 
