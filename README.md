@@ -7,11 +7,12 @@ Robot Framework Manual is planned to replace the current
 and also current [API docs](https://robot-framework.readthedocs.org/)
 will be migrated into it.
 
-Robot Framework Manual pages in this repository are written in Markdown, and the website is built with
+Robot Framework Manual pages in this repository are written in Markdown, and the
+website is built with
 [ProperDocs](https://properdocs.org/), using [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/)
 for visual design.
 
-See the generated pages at https://pekkaklarck.github.io/manual/.
+See the [generated manual](https://pekkaklarck.github.io/manual/).
 
 ## Contribution guidelines
 
@@ -40,9 +41,9 @@ To contribute, fork the repository, make your changes, and open a
 
 ### Installing dependencies
 
-It’s recommended to create a Python virtual environment (with `venv`, `uv`, or another tool of your choice) and run the
-commands below within it. Make sure your working directory is the repository root (the top-level directory containing
-`requirements.txt`) before installation.
+Create a Python virtual environment (with `venv`, `uv`, or another tool of your
+choice) and run the commands below within it. Before installation, make sure your
+working directory is the repository root containing `requirements.txt`.
 
 #### Install dependencies
 
@@ -69,7 +70,8 @@ Example output:
             'doc/manual/overrides'
     INFO    -  [22:03:18] Serving on http://127.0.0.1:8000/manual/
 
-Open http://127.0.0.1:8000/manual/ in your browser. The changes will be reflected as you modify the contents of the pages.
+Open the [local preview](http://127.0.0.1:8000/manual/) in your browser.
+The preview updates as you modify the pages.
 
 #### Optional: speed up builds
 

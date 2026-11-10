@@ -31,7 +31,7 @@ primary sidebar; use `59.9375em` and `76.1875em` for maximum-width queries.
 - Contain focus only in the open drawer, restore changed `inert` states, and use
   `preventScroll` when focusing drawer panes.
 - Focus the destination heading or fragment after instant navigation, preserving
-  scroll position. Do not force focus on initial load. After a phone TOC jump,
+  scroll position. Do not force focus on initial load. After a mobile TOC jump,
   focus the heading before collapsing the TOC.
 - Keep `search.highlight` disabled; highlight result previews only. Support Tab
   and arrows through results. Escape returns focus to the search opener or input;
@@ -48,20 +48,21 @@ and `tabindex="0"` on the scroll wrapper. Leave a blank line after HTML blocks.
 
 ## Upgrading Material
 
-Baseline: Material **9.7.6**. See the
+Last compatibility review: Material **9.8.1**. See the
 [header layout decision](https://github.com/pekkaklarck/manual/issues/30).
 
-Compare `partials/header.html` and `partials/javascripts/outdated.html` with the
-installed templates; update their baseline comments. Preserve the outdated
-banner's URL base. Check DOM assumptions in `navigation.js` and selectors and
-offsets in `navigation.css`.
+Compare `partials/header.html` and `partials/javascripts/outdated.html`
+with the installed templates. Preserve the
+outdated banner's URL base. Check DOM assumptions in `navigation.js` and selectors
+and offsets in `navigation.css`.
 
 Run `properdocs build` with API generation enabled. Use a mike preview with
 `versions.json` to check version controls and the outdated banner.
+Update the reviewed version above after completing these checks.
 
 ## Verification
 
-Check both palettes at phone, tablet and desktop widths, including long articles
+Check both palettes at mobile, tablet and desktop widths, including long articles
 and nested API pages:
 
 - Header controls, version menu, long titles and resizing across breakpoints.
