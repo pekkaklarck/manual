@@ -102,14 +102,14 @@ theme:
       primary: custom
       scheme: default
       toggle:
-        icon: material/weather-sunny
+        icon: octicons/sun-24
         name: Switch to dark mode
     # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
       primary: custom
       scheme: slate
       toggle:
-        icon: material/weather-night
+        icon: octicons/moon-24
         name: Switch to light mode
 
 plugins:

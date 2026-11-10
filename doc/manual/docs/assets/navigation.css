@@ -56,6 +56,14 @@
   letter-spacing: -0.05em;
 }
 
+/* Keep the page title visible on compact layouts without Material's title
+   animation; .md-header__topic is reserved for version-menu insertion. */
+.rf-header-page-title {
+  display: flex;
+  max-width: 100%;
+  white-space: nowrap;
+}
+
 /* Keep Material's native version menu outside the animated page title.
    Its dropdown must paint above the section tabs. */
 .rf-header-version {
@@ -66,8 +74,13 @@
 }
 
 .rf-header-version .md-version__current {
-  margin-inline: 0 0.4rem;
+  margin-inline: 0.4rem;
   font-family: var(--rf-ff-nav);
+}
+
+/* Match the syllabus's right-aligned menu and keep it within narrow screens. */
+.rf-header-version .md-version__list {
+  inset-inline: auto 0;
 }
 
 .rf-header-version .md-version__current:focus-visible {
@@ -120,21 +133,6 @@
   .md-header__title {
     /* Retain Material's 0.9rem title size; truncate long page names. */
     min-width: 0;
-  }
-
-  /* Show the page immediately and after scrolling, including versioned builds.
-     Material updates this topic when instant navigation replaces the page. */
-  .md-header__title .md-header__topic:first-child {
-    display: none;
-  }
-
-  .md-header__title .md-header__topic[data-md-component="header-topic"] {
-    position: static;
-    opacity: 1;
-    pointer-events: auto;
-    transform: none;
-    transition: none;
-    z-index: 0;
   }
 
   /* Keep the version number compact; aliases remain visible in the menu. */
