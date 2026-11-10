@@ -75,9 +75,39 @@
   outline-offset: 2px;
 }
 
+.rf-header-version .md-version__link:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: -2px;
+}
+
 /* Desktop tabs identify the section; smaller screens retain the page title. */
 @media screen and (min-width: 76.25em) {
-  .md-header__title {
+  .md-header__title,
+  .md-header__button[data-rf-nav-control="__drawer"] {
+    display: none;
+  }
+}
+
+/* Enhanced buttons use data attributes in place of Material's label `for`. */
+.md-nav--primary .md-nav__link[data-rf-nav-control="__toc"] .md-nav__icon::after {
+  mask-image: var(--md-toc-icon);
+}
+
+@media screen and (min-width: 60em) {
+  .md-header__button[data-rf-nav-control="__search"],
+  .md-nav--primary .md-nav__link[data-rf-nav-control="__toc"],
+  .md-nav--primary .md-nav__link[data-rf-nav-control="__toc"] ~ .md-nav {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 59.9375em) {
+  .md-nav--primary .md-nav__link[data-rf-nav-control="__toc"],
+  .md-nav--primary .md-nav__link[data-rf-nav-control="__toc"] ~ .md-nav {
+    display: flex;
+  }
+
+  .md-nav--primary .md-nav__link[data-rf-nav-control="__toc"] + .md-nav__link {
     display: none;
   }
 }
@@ -150,10 +180,14 @@
   content: "";
 }
 
+/* Native controls retain the alignment of the labels they replace. */
+[data-rf-nav-control] {
+  text-align: inherit;
+}
+
 .md-tabs__link:focus-visible,
-.md-nav a:focus-visible,
-.md-nav label:focus-visible,
-.md-header__button[role="button"]:focus-visible,
+.md-nav :is(a, label):focus-visible,
+[data-rf-nav-control]:focus-visible,
 .md-search__options > button[type="reset"]:focus-visible,
 .md-search-result__link:focus-visible,
 .md-search-result__more > summary:focus-visible,
@@ -178,6 +212,31 @@
   border: 1px solid rgb(255 255 255 / 0.25);
   border-radius: var(--rf-r-sm);
   box-shadow: none;
+}
+
+.md-search__input:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: -2px;
+}
+
+/* Material collapses search with dimensions and opacity. Also hide closed
+   controls/results from keyboard navigation and the accessibility tree. */
+.md-search__output {
+  visibility: hidden;
+}
+
+#__search:checked ~ .md-header .md-search__output {
+  visibility: visible;
+}
+
+@media screen and (max-width: 59.9375em) {
+  .md-search {
+    visibility: hidden;
+  }
+
+  #__search:checked ~ .md-header .md-search {
+    visibility: visible;
+  }
 }
 
 .md-search__form .md-search__options {
@@ -242,6 +301,11 @@
 .md-nav a {
   font-weight: inherit;
   text-decoration: none;
+}
+
+.md-nav__title[data-rf-nav-control],
+.md-nav__list > .md-nav__item > [data-rf-nav-control] {
+  width: 100%;
 }
 
 /* Section labels retain Material's bold weight in the display font. */
@@ -330,14 +394,14 @@
     padding: 0;
   }
 
-  .md-nav--primary .md-nav__container > label.md-nav__link {
+  .md-nav--primary .md-nav__container > :is(label, button).md-nav__link {
     justify-content: center;
     min-width: 2.2rem;
   }
 
   /* Links, overview controls and the current-page TOC opener share 44px rows. */
   .md-nav--primary .md-nav__container > .md-nav__link,
-  .md-nav--primary label.md-nav__link[for="__toc"],
+  .md-nav--primary .md-nav__link:is([for="__toc"], [data-rf-nav-control="__toc"]),
   .md-nav--primary a.md-nav__link {
     align-items: center;
     min-height: 2.2rem;
@@ -347,8 +411,7 @@
     padding: 0.4rem 0.6rem;
   }
 
-  .md-nav--primary label.md-nav__link:hover,
-  .md-nav--primary label.md-nav__link:focus-visible {
+  .md-nav--primary :is(label, button).md-nav__link:is(:hover, :focus-visible) {
     background: var(--md-accent-fg-color--transparent);
   }
 

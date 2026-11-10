@@ -25,13 +25,23 @@ queries.
 
 `navigation.js` provides keyboard access and accessible control names. Instant
 navigation replaces the article and sidebar, so reinitialize page controls
-through `document$`. Contain focus only in an open drawer and restore the `inert`
-states the adapter changes. Keep `preventScroll` when focusing sliding drawer
-panes to avoid scrolling them out of view.
+through `document$`. It enhances navigation labels into native buttons; the
+original labels remain the fallback without JavaScript. Contain focus only in
+an open drawer and restore the `inert` states the adapter changes. Keep
+`preventScroll` when focusing sliding drawer panes to avoid scrolling them out
+of view.
 
 Search emphasizes matches in result previews only; keep `search.highlight`
 disabled. Support both Tab and arrow keys through results, and keep clear
 available inside the collapsed desktop search bar without opening results.
+Hide closed search controls and results with `visibility`, since Material's
+opacity and size changes alone leave them exposed to assistive technology.
+Escape returns focus to the search opener on phones or the collapsed desktop
+input; Tab at either end closes search and continues through the page.
+
+After instant navigation, focus the destination heading (or fragment target)
+without changing scroll position. Keep initial page loads free of forced focus.
+Move focus to the heading before collapsing the phone TOC after a link is used.
 
 The mobile TOC in `overrides/partials/page-toc.html` uses native `details` and
 must work without JavaScript.
@@ -67,3 +77,25 @@ mobile, tablet and desktop widths, checking:
 
 Use a mike preview with `versions.json` to check version controls, page titles
 and the outdated banner; an ordinary local build has no version metadata.
+
+## Lighthouse manual accessibility checks
+
+Lighthouse lists these unscored checks even when its automated audits pass.
+Use a versioned preview at phone, tablet and desktop widths in both palettes.
+Include a long article, a deeply nested API page, search results and the footer.
+
+| Check | What to verify in the manual |
+| --- | --- |
+| Keyboard focus | Tab to header controls, version links, navigation, page TOC, code copy buttons and footer links. Each focused control must have a visible indicator. |
+| Purpose and state | Identify controls without hovering. Check disclosure arrows, current-page markers and expanded/collapsed announcements. |
+| Tab order | Use Tab and Shift+Tab from the skip link through the page. Closed drawers, search panels and result groups must not receive focus. |
+| DOM and visual order | Compare the screen reader's reading sequence with the visible groups. Material places the desktop right TOC before the article in the DOM; assess that navigation-first sequence and verify that Skip to content reaches the article. |
+| Focus traps | Leave desktop navigation and search in both directions. The open drawer intentionally contains Tab; Back, Close and Escape must provide exits. |
+| Focus after changes | Check drawer panes, search open/close, instant page changes and phone TOC jumps. Focus must reach the relevant control or heading without an unexpected scroll. Search result updates should leave focus in the query. |
+| Landmarks | With a screen reader, navigate to the header, main content, navigation, search and footer. Confirm their names and that content can be reached efficiently. |
+| Hidden content | With a screen reader, verify that closed drawers, inactive drawer panes, closed phone search and collapsed results are unavailable. Content below the viewport must remain available when it is part of the page. |
+| Control labels | Listen to icon controls and submenu buttons. Their names must explain their action and identify their target where needed. |
+| Control roles | Confirm that enhanced controls are announced as buttons, native disclosures as expandable controls, and links as links. Check that expanded states follow activation. |
+
+Browser keyboard tests and accessibility-tree inspection help catch regressions,
+but do not replace listening with a screen reader such as NVDA or VoiceOver.
