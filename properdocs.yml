@@ -1,10 +1,13 @@
 site_name: Robot Framework
-site_description: Robot Framework is a generic open source automation framework. This reference manual covers all its features in detail.
+site_description: >-
+  Robot Framework is a generic open source automation framework.
+  This reference manual covers all its features in detail.
 site_url: https://pekkaklarck.github.io/manual/    # The mike plugin requires the trailing slash.
 repo_url: https://github.com/robotframework/robotframework
 edit_uri: https://github.com/pekkaklarck/manual/blob/main/doc/manual/docs
 copyright: |
-  &copy; 2026- <a href="https://robotframework.org/foundation" target="_blank" rel="noopener">Robot Framework Foundation</a>
+  &copy; 2026- <a href="https://robotframework.org/foundation" target="_blank"
+  rel="noopener">Robot Framework Foundation</a>
 docs_dir: doc/manual/docs
 watch:
   - INSTALL.md
@@ -66,7 +69,7 @@ extra_css:
   - assets/highlight-dark.css
   - assets/navigation.css    # Header, sidebars and drawer; paired with navigation.js.
   - assets/extra.css
-  - assets/page-toc.css    # Phone TOC; overrides Material's details/summary styling.
+  - assets/page-toc.css    # Mobile TOC; overrides Material's details/summary styling.
 
 extra_javascript:
   - assets/navigation.js
@@ -92,7 +95,6 @@ theme:
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.top
-    - search.highlight
     - search.suggest
     - toc.follow
   language: en
@@ -103,14 +105,14 @@ theme:
       primary: custom
       scheme: default
       toggle:
-        icon: material/weather-sunny
+        icon: octicons/sun-24
         name: Switch to dark mode
     # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
       primary: custom
       scheme: slate
       toggle:
-        icon: material/weather-night
+        icon: octicons/moon-24
         name: Switch to light mode
 
 plugins:

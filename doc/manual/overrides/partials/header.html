@@ -1,12 +1,12 @@
-{# Based on Material for MkDocs 9.7.6: partials/header.html.
+{# Based on Material for MkDocs: partials/header.html.
    Layout changes: move sticky tabs before the palette/search controls,
    place the drawer toggle before the logo, and give the version selector
-   its own host before the animated title.
+   its own host between the tabs and palette, matching the RFCP syllabus.
    Keep other upstream markup unchanged; presentation belongs in navigation.css.
    There is no upstream block for inserting tabs inside the header row.
 
-   Material inserts its version selector into the first .md-header__topic.
-   The mobile page title remains visible alongside the version selector.
+   Reserve .md-header__topic for Material's version-selector insertion point.
+   The mobile page title uses its own class and remains visible alongside it.
    See doc/manual/README.md for the layout decision and theme upgrade checks. #}
 {% set class = "md-header" %}
 {% if "navigation.tabs.sticky" in features %}
@@ -23,17 +23,9 @@
     <a href="{{ config.extra.homepage | d(nav.homepage.url, true) | url }}" title="{{ config.site_name | e }}" class="md-header__button md-logo" aria-label="{{ config.site_name }}" data-md-component="logo">
       {% include "partials/logo.html" %}
     </a>
-    {% if config.extra.version and config.extra.version.provider == "mike" %}
-      <div class="md-header__topic rf-header-version"></div>
-    {% endif %}
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
-        <div class="md-header__topic">
-          <span class="md-ellipsis">
-            {{ config.site_name }}
-          </span>
-        </div>
-        <div class="md-header__topic" data-md-component="header-topic">
+        <div class="rf-header-page-title" data-md-component="header-topic">
           <span class="md-ellipsis">
             {% if page.meta and page.meta.title %}
               {{ page.meta.title }}
@@ -48,6 +40,9 @@
       {% if "navigation.tabs" in features %}
         {% include "partials/tabs.html" %}
       {% endif %}
+    {% endif %}
+    {% if config.extra.version and config.extra.version.provider == "mike" %}
+      <div class="md-header__topic rf-header-version"></div>
     {% endif %}
     {% if config.theme.palette %}
       {% if not config.theme.palette is mapping %}

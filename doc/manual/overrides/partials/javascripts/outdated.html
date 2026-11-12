@@ -1,0 +1,4 @@
+{# Based on Material for MkDocs: partials/javascripts/outdated.html.
+   Resolve the relative site root against the current page before reading the
+   version-scoped session state. Recheck this override when upgrading Material. #}
+<script>var el=document.querySelector("[data-md-component=outdated]"),base=new URL({{ base_url | tojson }},location.href),outdated=__md_get("__outdated",sessionStorage,base);!0===outdated&&el&&(el.hidden=!1)</script>

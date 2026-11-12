@@ -1,20 +1,21 @@
 /* Keyboard access for Material's checkbox-driven navigation at every width.
  * Focus containment applies only while the drawer layout is active.
- * Keep the theme's labels and click behavior, including instant navigation.
+ * Enhance labels into native buttons while keeping Material's checkbox state.
  * Recheck this adapter when upgrading Material (baseline: 9.7.6).
  */
 (() => {
   const drawerLayout = matchMedia('(max-width: 76.1875em)');
-  const initializedControls = new WeakSet();
+  const searchLayout = matchMedia('(min-width: 60em)');
   const inertStates = new Map();
   const focusable = 'a[href], button, input, select, textarea, summary, [tabindex]';
-  let drawer, navigation, menu, pane;
+  let drawer, navigation, menu, pane, content;
   let wasOpen = false;
 
   function focusableControls(container) {
     return [...container.querySelectorAll(focusable)].filter(element =>
       element.tabIndex >= 0 && !element.matches(':disabled') &&
-      !element.closest('[inert]') && element.getClientRects().length
+      !element.closest('[inert]') && element.getClientRects().length &&
+      getComputedStyle(element).visibility === 'visible'
     );
   }
 
@@ -67,11 +68,13 @@
   }
 
   function syncControlSemantics() {
-    for (const label of document.querySelectorAll('[data-rf-nav-control]')) {
-      const input = document.getElementById(label.htmlFor);
-      label.tabIndex = 0;
-      label.setAttribute('role', 'button');
-      label.setAttribute('aria-expanded', String(input.checked));
+    for (const button of document.querySelectorAll('[data-rf-nav-control]')) {
+      const input = document.getElementById(button.dataset.rfNavControl);
+      button.setAttribute('aria-expanded', String(input.checked));
+      const target = document.getElementById(button.getAttribute('aria-controls'));
+      if (target?.hasAttribute('aria-expanded')) {
+        target.setAttribute('aria-expanded', String(input.checked));
+      }
     }
   }
 
@@ -81,6 +84,7 @@
     const open = drawerLayout.matches && drawer.checked;
     const previousPane = pane;
     syncControlSemantics();
+    updateSearchClearButton();
     if (drawerLayout.matches) {
       pane = syncPane(navigation);
       setInert(navigation, !open);
@@ -92,8 +96,10 @@
     if (open && (!wasOpen || pane !== previousPane)) {
       const input = previousPane?.parentElement.querySelector(':scope > input');
       const back = previousPane && pane.contains(previousPane) && input;
-      const opener = back && pane.querySelector(`label[for="${input.id}"]`);
-      (opener || focusableControls(pane)[0])?.focus();
+      const opener = back && pane.querySelector(`[data-rf-nav-control="${input.id}"]`);
+      // The pane is still sliding into view. Scrolling to its focus target can
+      // shift Material's overflow-hidden wrapper and leave the drawer blank.
+      (opener || focusableControls(pane)[0])?.focus({ preventScroll: true });
     } else if (wasOpen && !open && drawerLayout.matches) {
       menu.focus();
     }
@@ -132,31 +138,105 @@
     navigation.prepend(close);
   }
 
+  function updateSearchClearButton() {
+    const clear = document.querySelector('.md-search__form button[type="reset"]');
+    if (!clear) return;
+    const visible = searchLayout.matches || document.getElementById('__search').checked;
+    clear.tabIndex = visible && document.querySelector('.md-search__input')?.value ? 0 : -1;
+    if (!visible && document.activeElement === clear) {
+      // Let native Tab finish before restoring focus if it is still hidden.
+      setTimeout(() => {
+        if (clear.tabIndex < 0 && document.activeElement === clear) {
+          document.querySelector('.md-header__button[data-rf-nav-control="__search"]')?.focus({ preventScroll: true });
+        }
+      }, 0);
+    }
+  }
+
+  function clearSearch() {
+    const query = document.querySelector('.md-search__input');
+    query.value = '';
+    // Material reads query changes on keyup.
+    query.dispatchEvent(new KeyboardEvent('keyup', { bubbles: true }));
+    updateSearchClearButton();
+  }
+
+  function leaveSearch(direction = 0) {
+    const query = document.querySelector('.md-search__input');
+    const origin = searchLayout.matches ? query :
+      document.querySelector('.md-header__button[data-rf-nav-control="__search"]');
+    // Material debounces focus updates. Let it observe restored input focus
+    // before closing, so Escape from a result does not reopen the panel.
+    if (searchLayout.matches && !direction && document.activeElement !== query) {
+      query.focus({ preventScroll: true });
+      setTimeout(() => {
+        const search = document.getElementById('__search');
+        if (document.activeElement === query && search.checked) search.click();
+      }, 10);
+      return;
+    }
+    if (searchLayout.matches) query.focus({ preventScroll: true });
+    document.getElementById('__search').click();
+    const controls = focusableControls(document.body).filter(element =>
+      element === origin || !element.closest('.md-search')
+    );
+    const target = direction && controls[controls.indexOf(origin) + direction];
+    (target || origin).focus({ preventScroll: !direction });
+  }
+
+  function focusContent(hash = location.hash) {
+    let target;
+    try {
+      target = document.getElementById(decodeURIComponent(hash.slice(1)));
+    } catch { /* Malformed fragments fall back to the page heading. */ }
+    target ||= content.querySelector('h1') || content;
+    if (!target.hasAttribute('tabindex') && target.tabIndex < 0) target.tabIndex = -1;
+    target.focus({ preventScroll: true });
+  }
+
+  function replaceLabelWithButton(label) {
+    const button = document.createElement('button');
+    for (const { name, value } of label.attributes) {
+      if (!['for', 'tabindex', 'role'].includes(name)) button.setAttribute(name, value);
+    }
+    button.type = 'button';
+    button.dataset.rfNavControl = label.htmlFor;
+    button.append(...label.childNodes);
+    label.replaceWith(button);
+    return button;
+  }
+
   function setupControls() {
-    const labels = [menu,
-      ...document.querySelectorAll('.md-header__button[for="__search"]'),
-      ...navigation.querySelectorAll('label[for]:not([for="__drawer"])')];
+    // Only unenhanced labels match, including after instant navigation.
+    const labels = document.querySelectorAll(
+      '.md-header__button:is([for="__drawer"], [for="__search"]), ' +
+      '.md-nav--primary label[for]:not([for="__drawer"])'
+    );
     for (const label of labels) {
-      const input = document.getElementById(label.htmlFor);
-      if (!input || initializedControls.has(label)) continue;
-      initializedControls.add(label);
-      label.dataset.rfNavControl = '';
+      const input = label.control;
+      if (!input) continue;
+      const button = replaceLabelWithButton(label);
+      button.addEventListener('click', () => {
+        input.click();
+        if (input.id === '__search') document.querySelector('.md-search__input').focus();
+      });
       let target;
       if (input === drawer) {
         target = navigation;
-        label.setAttribute('aria-label', 'Open navigation');
+        button.setAttribute('aria-label', 'Open navigation');
       } else if (input.id === '__search') {
         target = document.querySelector('.md-search');
-        label.setAttribute('aria-label', 'Search');
+        button.setAttribute('aria-label', 'Search');
+        target?.setAttribute('aria-label', 'Search');
       } else {
         target = input.parentElement.querySelector(':scope > nav');
-        const back = label.classList.contains('md-nav__title');
+        const back = button.classList.contains('md-nav__title');
         const title = target?.querySelector(':scope > .md-nav__title')?.textContent.trim();
-        label.setAttribute('aria-label', back ? 'Back to previous menu' : `Show ${title}`);
+        button.setAttribute('aria-label', back ? 'Back to previous menu' : `Show ${title}`);
       }
       if (target) {
         target.id ||= `rf-${input.id}`;
-        label.setAttribute('aria-controls', target.id);
+        button.setAttribute('aria-controls', target.id);
       }
     }
   }
@@ -165,13 +245,37 @@
     restoreInertStates();
     drawer = document.getElementById('__drawer');
     navigation = document.querySelector('.md-nav--primary');
-    menu = document.querySelector('.md-header__button[for="__drawer"]');
-    if (!drawer || !navigation || !menu) return;
+    if (!drawer || !navigation) return;
+    const article = document.querySelector('.md-content__inner');
+    const pageChanged = content && content !== article;
+    content = article;
     navigation.id = 'rf-navigation';
     markCurrentLocation();
     addCloseButton();
     setupControls();
+    menu = document.querySelector('.md-header__button[data-rf-nav-control="__drawer"]');
+    document.querySelector('.md-progress')?.setAttribute('aria-label', 'Loading page');
     sync();
+    if (pageChanged) focusContent();
+  }
+
+  // Material adds the version selector asynchronously and keeps it on page swaps.
+  // Use its visible text as the name, with the action as a separate description.
+  const versionHost = document.querySelector('.rf-header-version');
+  if (versionHost) {
+    const observer = new MutationObserver(nameVersionSelector);
+    function nameVersionSelector() {
+      const button = versionHost.querySelector('.md-version__current');
+      if (!button) return;
+      const label = button.getAttribute('aria-label');
+      if (label) {
+        button.setAttribute('aria-description', label);
+        button.removeAttribute('aria-label');
+      }
+      observer.disconnect();
+    }
+    observer.observe(versionHost, { childList: true, subtree: true });
+    nameVersionSelector();
   }
 
   document.addEventListener('keydown', event => {
@@ -183,7 +287,40 @@
       drawer.click();
       return;
     }
-    const control = event.target.closest('[data-rf-nav-control]');
+    if (event.key === 'Escape' && document.getElementById('__search').checked) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      leaveSearch();
+      return;
+    }
+    // Material reserves results for arrow keys; include them in Tab navigation.
+    if (event.key === 'Tab' && document.getElementById('__search').checked) {
+      const query = document.querySelector('.md-search__input');
+      const clear = document.querySelector('.md-search__form button[type="reset"]');
+      const targets = [query, ...(clear?.tabIndex === 0 ? [clear] : []),
+        ...document.querySelectorAll(
+          '.md-search-result__link, .md-search-result__more > summary'
+        )].filter(element => element?.getClientRects().length &&
+          (!element.closest('details:not([open])') || element.matches('summary')));
+      const index = targets.indexOf(event.target);
+      const target = index >= 0 ? targets[index + (event.shiftKey ? -1 : 1)] : undefined;
+      if (target) {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        target.focus();
+        return;
+      }
+      if (index >= 0) {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        leaveSearch(event.shiftKey ? -1 : 1);
+        return;
+      }
+    }
+    const control = event.target.closest(
+      '.md-search__form button[type="reset"], ' +
+      '.md-search-result__more > summary'
+    );
     if (control && (event.key === 'Enter' || event.key === ' ')) {
       event.preventDefault();
       event.stopImmediatePropagation();
@@ -202,14 +339,37 @@
   document.addEventListener('change', event => {
     if (event.target.matches('#__drawer, #__search, .md-nav__toggle')) sync();
   });
+  document.addEventListener('input', event => {
+    if (!event.target.matches('.md-search__input')) return;
+    const search = document.getElementById('__search');
+    if (document.activeElement === event.target && !search.checked) search.click();
+    updateSearchClearButton();
+  });
+  // Clearing a collapsed search bar must not open the results via theme focus.
+  document.addEventListener('reset', event => {
+    if (!event.target.matches('.md-search__form')) return;
+    if (!document.getElementById('__search').checked) {
+      event.stopPropagation();
+      if (document.activeElement.matches('button[type="reset"]')) {
+        document.querySelector('.md-header__button.md-logo')?.focus({ preventScroll: true });
+      }
+    }
+    clearSearch();
+  }, true);
   // Delegate once: Material replaces the page TOC during instant navigation.
   document.addEventListener('click', event => {
-    const pageToc = event.target.closest('.rf-page-toc a[href]')?.closest('.rf-page-toc');
-    if (pageToc) pageToc.open = false;
+    if (event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+    const search = document.getElementById('__search');
+    if (event.target.matches('.md-search__input') && !search.checked) search.click();
+    const link = event.target.closest('.rf-page-toc a[href]');
+    if (link) {
+      focusContent(new URL(link.href).hash);
+      link.closest('.rf-page-toc').open = false;
+    }
   });
   drawerLayout.addEventListener('change', sync);
   // Material moves the TOC out of the drawer before the desktop breakpoint.
-  matchMedia('(min-width: 60em)').addEventListener('change', sync);
+  searchLayout.addEventListener('change', sync);
   // Material replaces the sidebar on instant page loads, but keeps the header.
   if (typeof document$ !== 'undefined') document$.subscribe(setup);
   else setup();

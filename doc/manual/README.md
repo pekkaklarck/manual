@@ -1,7 +1,7 @@
 # Manual theme maintenance
 
-The manual uses Material for MkDocs through ProperDocs. Keep custom presentation
-in `docs/assets/` and template changes in `overrides/`.
+The manual uses Material for MkDocs through ProperDocs. Styles and scripts live
+in `docs/assets/`; template overrides live in `overrides/`.
 
 ## Stylesheets
 
@@ -9,67 +9,68 @@ in `docs/assets/` and template changes in `overrides/`.
 
 1. `fonts.css`: self-hosted fonts.
 2. `theme.css`: color ramp and Material palette variables.
-3. `highlight-light.css` and `highlight-dark.css`: syntax highlighting.
-4. `navigation.css`: header, version selector, section tabs, sidebars and drawer.
-5. `extra.css`: article layout, typography, links, examples and footer.
-6. `page-toc.css`: the phone page TOC, including overrides of the shared
-   `details` and `summary` styles.
+3. `highlight-light.css` and `highlight-dark.css`: syntax colors.
+4. `navigation.css`: header, tabs, sidebars, drawer and search.
+5. `extra.css`: article layout, typography, examples and footer.
+6. `page-toc.css`: mobile page TOC.
 
-Keep component rules together. Some selectors must override Material's
-structural rules, especially its nested-list spacing inside `details`. Check
-the rendered result before reducing specificity or changing stylesheet order.
+Keep `page-toc.css` after `extra.css` to override shared disclosure styles.
 
 ## Navigation
 
-The layout breakpoints match Material: the right TOC appears at `60em`, and the
-primary navigation becomes a sidebar at `76.25em`. The corresponding maximum
-width queries follow Material's `59.9375em` and `76.1875em` values.
+Match Material's breakpoints: `60em` for the right TOC and `76.25em` for the
+primary sidebar; use `59.9375em` and `76.1875em` for maximum-width queries.
 
-`navigation.js` adds button semantics and Enter/Space support to the theme's
-checkbox labels at every width. Focus containment and background isolation
-apply only to an open drawer. The adapter preserves the theme's click behavior,
-restores the `inert` states it changes, and subscribes to `document$` because
-instant navigation replaces the article and sidebar while keeping the header.
-Its delegated phone TOC click handler closes the disclosure after selection.
-
-Drawer submenu headers retain Material's `5.6rem` minimum height. Titles wrap
-and align to the bottom; longer titles expand the header below the back arrow.
-Anchor offsets account for the section tabs sharing the header's single row.
-
-The phone TOC uses a native `details` disclosure rendered by `page-toc.html`,
-included from `main.html`. Its opening and heading links work without JavaScript.
+- Place the version selector between the tabs and theme toggle, following the
+  [RFCP syllabus](https://robotframework.org/robotframework-RFCP-syllabus/docs/overview).
+  Its host must be the first `.md-header__topic` for Material's mike integration.
+- Select the bundled Octicons theme icons in `properdocs.yml`. Material handles
+  system preference and saved choices.
+- Reinitialize page controls through `document$` after instant navigation.
+  Keep labels and the native mobile TOC usable without JavaScript.
+- Contain focus only in the open drawer, restore changed `inert` states, and use
+  `preventScroll` when focusing drawer panes.
+- Focus the destination heading or fragment after instant navigation, preserving
+  scroll position. Do not force focus on initial load. After a mobile TOC jump,
+  focus the heading before collapsing the TOC.
+- Keep `search.highlight` disabled; highlight result previews only. Support Tab
+  and arrows through results. Escape returns focus to the search opener or input;
+  Tab at either end closes search. Clearing collapsed desktop search must not
+  open results.
+- Hide closed search controls and results with `visibility`; opacity and size
+  alone leave them accessible.
 
 ## Rendered log examples
 
-The log examples in `execution/basics.md` and `extend/libraries.md` use HTML
-tables to retain per-cell log classes and HTML message content. The outer
-`md-typeset__scrollwrap` provides local scrolling and keyboard focus, with an
-accessible region name. The inner `md-typeset__table` supplies Material's table
-layout. Keep the blank line after each HTML block so Markdown headings and prose
-continue to parse correctly.
+HTML log tables in `execution/basics.md` and `extend/libraries.md` need both
+Material wrappers (`md-typeset__scrollwrap` and `md-typeset__table`), a region name,
+and `tabindex="0"` on the scroll wrapper. Leave a blank line after HTML blocks.
 
 ## Upgrading Material
 
-The header override and navigation adapter were reviewed against Material
-9.7.6. The custom header moves the drawer toggle before the logo, gives the
-version selector its own host, and places the section tabs in the header row.
-See the [layout decision](https://github.com/pekkaklarck/manual/issues/30).
+Last compatibility review: Material **9.8.1**. See the
+[header layout decision](https://github.com/pekkaklarck/manual/issues/30).
 
-When upgrading, compare `overrides/partials/header.html` with the installed
-`material/templates/partials/header.html`, incorporate upstream changes, and
-update the baseline comments. Check the DOM assumptions in `navigation.js` and
-the theme-specific selectors and offsets in `navigation.css`.
+Compare `partials/header.html` and `partials/javascripts/outdated.html`
+with the installed templates. Preserve the
+outdated banner's URL base. Check DOM assumptions in `navigation.js` and selectors
+and offsets in `navigation.css`.
 
-Run `properdocs build` with API generation enabled, then preview the site and
-check both palettes at phone, tablet and desktop widths:
+Run `properdocs build` with API generation enabled. Use a mike preview with
+`versions.json` to check version controls and the outdated banner.
+Update the reviewed version above after completing these checks.
 
-- Header logo, title, section tabs, palette and search controls.
-- Current-page and current-heading markers, plus anchor visibility after jumps.
-- Keyboard focus visibility and order, Enter/Space, Back, Escape and drawer
-  focus containment. Desktop navigation must allow focus to leave the sidebar.
-- Long drawer titles, scrolling examples and phone TOC links.
-- Instant navigation and resizing between drawer and sidebar layouts.
-- Accessible names, reading order and focus behavior with a screen reader.
+## Verification
 
-Use a mike preview with `versions.json` to check the version menu and page title
-together; an ordinary local build has no version metadata.
+Check both palettes at mobile, tablet and desktop widths, including long articles
+and nested API pages:
+
+- Header controls, version menu, long titles and resizing across breakpoints.
+- Keyboard order, visible focus, drawer exits and search navigation.
+- Current-page markers, TOC jumps and focus after instant navigation.
+- Example scrolling and code/line-number alignment at larger text sizes.
+- With NVDA or VoiceOver: landmarks, control names, roles, expanded states and
+  reading order. Hidden controls must be unavailable; Skip to content must reach
+  the article. Material places the desktop right TOC before the article in the DOM.
+
+Lighthouse and browser checks do not replace screen reader testing.
