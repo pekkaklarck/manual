@@ -123,7 +123,7 @@ it. If that is needed, [listener version 3](#listener-version-3) can be used ins
 | report_file | path | Called when the [report file](../execution/results/index.md#report-file) is ready.<br>`path` is an absolute path to the file as a string.<br>Not called if creating the report file is disabled. |
 | xunit_file | path | Called when the [xunit file](../execution/results/index.md#xunit-file) is ready.<br>`path` is an absolute path to the file as a string.<br>Only called if creating the xunit file is enabled. |
 | debug_file | path | Called when the [debug file](../execution/results/index.md#debug-file) is ready.<br>`path` is an absolute path to the file as a string.<br>Only called if creating the debug file is enabled. |
-| close |  | Called when the whole test execution ends.<br>With [library listeners](listeners.md) called when the library goes out of scope. |
+| close |  | Called when the whole test execution ends.<br>With [library listeners](#library-listeners) called when the library goes out of scope. |
 
 ### Listener version 3
 
@@ -187,7 +187,7 @@ and in the API docs of the optional [ListenerV3](https://robot-framework.readthe
 | report_file | path | Called when [report file](../execution/results/index.md#report-file) is ready.<br>`path` is an absolute path to the file as a `pathlib.Path` object.<br>Not called if creating the report file is disabled.<br>Starting from Robot Framework 7.5, the generic `result_file` method is called if this method is not implemented. |
 | xunit_file | path | Called when [xunit file](../execution/results/index.md#xunit-file) is ready.<br>`path` is an absolute path to the file as a `pathlib.Path` object.<br>Only called if creating the xunit file is enabled.<br>Starting from Robot Framework 7.5, the generic `result_file` method is called if this method is not implemented. |
 | debug_file | path | Called when [debug file](../execution/results/index.md#debug-file) is ready.<br>`path` is an absolute path to the file as a `pathlib.Path` object.<br>Only called if creating the debug file is enabled.<br>Starting from Robot Framework 7.5, the generic `result_file` method is called if this method is not implemented. |
-| close |  | Called when the whole test execution ends.<br>With [library listeners](listeners.md) called when the library goes out of scope. |
+| close |  | Called when the whole test execution ends.<br>With [library listeners](#library-listeners) called when the library goes out of scope. |
 
 !!! note
     Methods related to keywords and control structures are new in

@@ -722,7 +722,7 @@ they have the same semantics as `break` and `continue` statements in Python, Jav
 and many other programming languages.
 
 Both `BREAK` and `CONTINUE` are typically used conditionally with [IF/ELSE](#ifelse)
-or [TRY/EXCEPT](../execution/tests.md#tryexcept) structures, and especially the [inline IF](#inline-if) syntax is often
+or [TRY/EXCEPT](#tryexcept-syntax) structures, and especially the [inline IF](#inline-if) syntax is often
 convenient with them. These statements must be used in the loop body,
 possibly inside the aforementioned control structures, and using them in
 keyword called in the loop body is invalid.
@@ -1210,7 +1210,7 @@ Handle everything
 
 Optional `FINALLY` branches make it possible to execute keywords both when there
 is an error and when there is not. They are thus suitable for cleaning up
-after a keyword execution somewhat similarly as [teardowns](../execution/tests.md#skips-teardowns). There can be only one
+after a keyword execution somewhat similarly as [teardowns](tests.md#test-setup-and-teardown). There can be only one
 `FINALLY` branch and it must always be last. They can be used in combination with
 `EXCEPT` and `ELSE` branches and having also `TRY/FINALLY` structure is possible:
 

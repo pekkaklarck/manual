@@ -646,7 +646,7 @@ rebot --starttime 20110302-1317 --endtime 20110302-11418 myoutput.xml
 ## Limiting error message length in reports
 
 If a test case fails and has a long error message, the message shown in
-[reports](../post_processing.md#creating-reports-logs-and-output-files) is automatically cut from the middle to keep reports easier to
+[reports](#report-file) is automatically cut from the middle to keep reports easier to
 read. By default messages longer than 40 lines are cut, but that can be
 configured by using the `--maxerrorlines`{.option} command line option.
 The minimum value for this option is 10, and it is also possible to use
