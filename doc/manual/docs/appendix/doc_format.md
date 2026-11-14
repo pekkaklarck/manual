@@ -386,7 +386,7 @@ The [CommonMark](https://spec.commonmark.org) specification tries to unify Markd
 older tools still follow the original specification. The good news is that
 basic features work the same way across implementations.
 
-Robot Framework uses the Python-[Markdown](https://en.wikipedia.org/wiki/Markdown) module as its underlying Markdown
+Robot Framework uses the [Python-Markdown](https://python-markdown.github.io/) module as its underlying Markdown
 engine. It follows the original implementation closely and is explicitly *not*
 CommonMark compliant. It supports basic Markdown features out-of-the-box, but
 the following extensions are enabled and provide some more functionality:
@@ -412,7 +412,7 @@ that are not documented here.
 
 ### Installation
 
-Python-[Markdown](https://en.wikipedia.org/wiki/Markdown) is an optional dependency and users need to [install](https://python-markdown.github.io/install/) it
+[Python-Markdown](https://python-markdown.github.io/) is an optional dependency and users need to [install](https://python-markdown.github.io/install/) it
 themselves. That is typically done by running:
 
 ```text
