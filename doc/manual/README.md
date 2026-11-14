@@ -3,6 +3,46 @@
 The manual uses Material for MkDocs through ProperDocs. Styles and scripts live
 in `docs/assets/`; template overrides live in `overrides/`.
 
+## Translation documentation
+
+`docs/appendix/update_translations.py` fills the marked sections in virtual copies
+of the translations appendix and `docs/syntax/data.md` during `properdocs build`
+and `properdocs serve`. The checked-in Markdown files keep these regions empty.
+ProperDocs runs the script through `gen-files` before rendering pages. It reads the
+bundled language definitions directly, including missing values, list order,
+duplicates, version notes, and deprecations. Markdown escaping keeps translation
+punctuation literal. Existing language heading anchors are retained.
+Language subsections use H4 so that the global H3 TOC limit lists only languages
+in the appendix.
+
+Language coverage follows the bundled source version. Older source versions can
+have fewer languages and no deprecation metadata; the updater documents only what
+that source supplies. Deprecation tables are included when the API is available
+and the language defines deprecated terms.
+
+Review generated tables and language links in the built site or a standalone
+export against `src/robot/conf/languages.py`. The checked-in Markdown files contain
+the templates, not the generated translation values.
+
+To export populated Markdown without building the site, run this from the project
+root. Output is written to the selected directory, preserving the source templates:
+
+```console
+python doc/manual/docs/appendix/update_translations.py --output-dir .cache/translations
+```
+
+The script also works from another directory when invoked by its absolute path.
+Both pages must have exactly one ordered pair of `START GENERATED CONTENT` and
+`END GENERATED CONTENT` Markdown comments. The updater validates both pages
+before rendering and preserves content outside the markers. Standalone exports
+skip unchanged files and refuse to write into the source docs folder.
+
+Run the focused tests with the build dependencies installed:
+
+```console
+python -m unittest discover -s doc/manual/tests -v
+```
+
 ## Stylesheets
 
 `properdocs.yml` loads the stylesheets in this order:

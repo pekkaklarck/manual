@@ -812,33 +812,6 @@ to see the actual translations:
 
 <!-- START GENERATED CONTENT -->
 
-
-- [Arabic (ar)](../appendix/translations.md#arabic-ar)
-- [Bulgarian (bg)](../appendix/translations.md#bulgarian-bg)
-- [Bosnian (bs)](../appendix/translations.md#bosnian-bs)
-- [Czech (cs)](../appendix/translations.md#czech-cs)
-- [German (de)](../appendix/translations.md#german-de)
-- [Spanish (es)](../appendix/translations.md#spanish-es)
-- [Finnish (fi)](../appendix/translations.md#finnish-fi)
-- [French (fr)](../appendix/translations.md#french-fr)
-- [Hindi (hi)](../appendix/translations.md#hindi-hi)
-- [Italian (it)](../appendix/translations.md#italian-it)
-- [Japanese (ja)](../appendix/translations.md#japanese-ja)
-- [Korean (ko)](../appendix/translations.md#korean-ko)
-- [Dutch (nl)](../appendix/translations.md#dutch-nl)
-- [Polish (pl)](../appendix/translations.md#polish-pl)
-- [Portuguese (pt)](../appendix/translations.md#portuguese-pt)
-- [Brazilian Portuguese (pt-BR)](../appendix/translations.md#brazilian-portuguese-pt-br)
-- [Romanian (ro)](../appendix/translations.md#romanian-ro)
-- [Russian (ru)](../appendix/translations.md#russian-ru)
-- [Swedish (sv)](../appendix/translations.md#swedish-sv)
-- [Thai (th)](../appendix/translations.md#thai-th)
-- [Turkish (tr)](../appendix/translations.md#turkish-tr)
-- [Ukrainian (uk)](../appendix/translations.md#ukrainian-uk)
-- [Vietnamese (vi)](../appendix/translations.md#vietnamese-vi)
-- [Chinese Simplified (zh-CN)](../appendix/translations.md#chinese-simplified-zh-cn)
-- [Chinese Traditional (zh-TW)](../appendix/translations.md#chinese-traditional-zh-tw)
-
 <!-- END GENERATED CONTENT -->
 All these translations have been provided by the awesome Robot Framework
 community. If a language you are interested in is not included, you can
