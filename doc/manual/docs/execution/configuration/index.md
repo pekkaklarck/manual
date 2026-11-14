@@ -485,8 +485,10 @@ containing the extension from the system. The list of locations where modules
 are looked for is called *the module search path*, and its contents can be
 configured using different approaches explained in this section.
 
-Robot Framework uses Python's module search path also when importing [resource
-and variable files](../../syntax/variables.md#variable) if the specified path does not match any file directly.
+Robot Framework uses Python's module search path also when importing
+[resource files](../../syntax/resource_files.md#taking-resource-files-into-use) and
+[variable files](../../syntax/variable_files.md#taking-variable-files-into-use)
+if the specified path does not match any file directly.
 
 The module search path being set correctly so that libraries and other
 extensions are found is a requirement for successful test execution. If

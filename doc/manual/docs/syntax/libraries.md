@@ -97,7 +97,8 @@ additional configuration.
 Another mechanism for specifying the library to import is using a
 path to it in the file system. This path is considered relative to the
 directory where current test data file is situated similarly as paths
-to [resource and variable files](variables.md#variable). The main benefit of this approach
+to [resource files](resource_files.md#taking-resource-files-into-use) and
+[variable files](variable_files.md#taking-variable-files-into-use). The main benefit of this approach
 is that there is no need to configure the module search path.
 
 If the library is a file, the path to it must contain extension,
