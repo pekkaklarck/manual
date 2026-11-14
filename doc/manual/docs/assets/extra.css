@@ -210,6 +210,12 @@
   box-shadow: none;
 }
 
+/* Keep table groups distinct without making each reference row too tall.
+   Direct children leave nested code and rendered log tables unchanged. */
+.md-typeset table:not([class]) > :is(thead, tbody, tfoot) > tr > :is(th, td) {
+  padding-block: 0.35rem;
+}
+
 .md-typeset table:not([class]) th {
   font-family: var(--rf-ff-display);
   font-weight: 400;
