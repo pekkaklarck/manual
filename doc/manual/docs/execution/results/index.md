@@ -96,15 +96,15 @@ files are created. Unless the special value `NONE` is used,
 log files are always created. The default value is `log.html`{.file}
 and paths are relative to the [output directory](#output-directory).
 
-![An example of beginning of a log file](log_passed.png)
+[![An example of beginning of a log file](log_passed.png){ width="500" }](log_passed.html)
 
 *An example of beginning of a log file*
 
-![An example of a log file with keyword details visible](log_failed.png)
+[![An example of a log file with keyword details visible](log_failed.png){ width="500" }](log_failed.html)
 
 *An example of a log file with keyword details visible*
 
-![An example of a log file with skipped and passed tests](log_skipped.png)
+[![An example of a log file with skipped and passed tests](log_skipped.png){ width="500" }](log_skipped.html)
 
 *An example of a log file with skipped and passed tests*
 
@@ -125,11 +125,11 @@ report files are created. Similarly as with log files, reports files are
 automatically created unless `NONE` is used as a value, the default value is
 `report.html`{.file} and values are relative to the [output directory](#output-directory).
 
-![An example report file of successful test execution](report_passed.png)
+[![An example report file of successful test execution](report_passed.png){ width="500" }](report_passed.html)
 
 *An example report file of successful test execution*
 
-![An example report file of failed test execution](report_failed.png)
+[![An example report file of failed test execution](report_failed.png){ width="500" }](report_failed.html)
 
 *An example report file of failed test execution*
 
@@ -296,7 +296,7 @@ in the upper right corner. This allows users to remove messages below chosen
 level from the view. This can be useful especially when running test at
 `TRACE` level.
 
-![An example log showing the visible log level drop down](visible_log_level.png)
+[![An example log showing the visible log level drop down](visible_log_level.png){ width="500" }](visible_log_level.html)
 
 *An example log showing the visible log level drop down*
 
@@ -391,7 +391,7 @@ different patterns, and the figure below shows a snippet of the resulting
 --tagstatcombine smokeNOTowner-janne*
 ```
 
-![Examples of combined tag statistics](tagstatcombine.png)
+![Examples of combined tag statistics](tagstatcombine.png){ width="550" }
 
 *Examples of combined tag statistics*
 
@@ -432,7 +432,7 @@ figure below shows a snippet of the resulting `Statistics by Tag`{.name} table w
 --tagstatlink owner-*:mailto:%1@domain.com?subject=Acceptance_Tests:Send_Mail
 ```
 
-![Examples of links from tag names](tagstatlink.png)
+![Examples of links from tag names](tagstatlink.png){ width="550" }
 
 *Examples of links from tag names*
 

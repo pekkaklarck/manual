@@ -158,7 +158,7 @@ in HTML format. This format is thus familiar for most people who have used
 Robot Framework. A simple example can be seen below, and it has been generated
 based on the example found a [bit later in this section](#python-libraries).
 
-![Figure](example_library.png)
+[![Example library documentation](example_library.png){ width="581" }](example_library.html)
 
 The HTML documentation starts with general library introduction, continues
 with a section about configuring the library when it is imported (when
