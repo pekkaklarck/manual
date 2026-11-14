@@ -116,7 +116,7 @@ Note that using Robot Framework with PyPy is officially supported only on Linux.
 
 The [PATH environment variable](https://en.wikipedia.org/wiki/PATH_(variable))
 lists directories where commands executed in a system are searched from.
-To make using Python, pip_ and Robot Framework easier  from the command line,
+To make using Python, [pip][] and Robot Framework easier from the command line,
 it is recommended to add the Python installation directory as well as
 the directory where commands like `pip` and `robot` are installed into `PATH`.
 
