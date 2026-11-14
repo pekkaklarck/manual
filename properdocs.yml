@@ -123,11 +123,13 @@ plugins:
   - autorefs
   - exclude:
       glob:
+        - appendix/update_translations.py
         - api/generate.py
         - install/generate.py
         - libraries/generate.py
   - gen-files:
       scripts:
+        - doc/manual/docs/appendix/update_translations.py
         - doc/manual/docs/api/generate.py
         - doc/manual/docs/install/generate.py
         - doc/manual/docs/libraries/generate.py
