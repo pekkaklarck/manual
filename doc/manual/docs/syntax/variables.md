@@ -913,7 +913,7 @@ List examples
      ...    last item
 
 Dictionary examples
-     VAR    &{two items}     name=Robot Framework    url=http://robotframework.org
+     VAR    &{two items}     name=Robot Framework    url=https://robotframework.org
      VAR    &{empty dict}
      VAR    &{lot of stuff}
      ...    first=1

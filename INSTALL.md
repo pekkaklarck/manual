@@ -15,8 +15,8 @@ Another recommended precondition is having the [pip][] package manager available
 Robot Framework requires Python 3.8 or newer. The latest version that supports
 Python 3.6 and 3.7 is
 [Robot Framework 6.1.1](https://github.com/robotframework/robotframework/blob/v6.1.1/INSTALL.rst).
-If you need to use Python 2, [Jython](http://jython.org) or
-[IronPython](http://ironpython.net), you can use
+If you need to use Python 2, [Jython](https://www.jython.org) or
+[IronPython](https://ironpython.net), you can use
 [Robot Framework 4.1.3](https://github.com/robotframework/robotframework/blob/v4.1.3/INSTALL.rst).
 
 ### Installing Python on Linux
@@ -58,7 +58,7 @@ by default to avoid such problems, but users can also themselves decide to use
 
 On Windows Python is not available by default, but it is easy to install.
 The recommended way to install it is using the official Windows installers
-available at http://python.org. For other alternatives, such as installing
+available at https://python.org. For other alternatives, such as installing
 from the Microsoft Store, see the
 [official Python documentation](https://docs.python.org/3/using/windows.html).
 
@@ -92,7 +92,7 @@ Python 3.12.3
 
 MacOS does not provide Python 3 compatible Python version by default, so it
 needs to be installed separately. The recommended  approach is using the official
-macOS installers available at http://python.org. If you are using a package
+macOS installers available at https://python.org. If you are using a package
 manager like [Homebrew](https://brew.sh/), installing Python via it is
 possible as well.
 
@@ -107,7 +107,7 @@ but this depends on the context where and how it is used. If execution speed
 is important, at least testing PyPy is probably a good idea.
 
 Installing PyPy is a straightforward procedure, and you can find both installers
-and installation instructions at http://pypy.org. To validate that PyPy installation
+and installation instructions at https://pypy.org. To validate that PyPy installation
 was successful, run `pypy --version` or `pypy3 --version`.
 
 Note that using Robot Framework with PyPy is officially supported only on Linux.

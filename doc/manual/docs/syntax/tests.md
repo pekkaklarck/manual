@@ -506,7 +506,7 @@ Formatting
     ...    This list has:
     ...    - *bold*
     ...    - _italics_
-    ...    - link: http://robotframework.org
+    ...    - link: https://robotframework.org
     No Operation
 
 Variables

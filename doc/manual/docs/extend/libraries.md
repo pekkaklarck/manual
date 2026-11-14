@@ -2398,7 +2398,7 @@ print('*INFO* This is a new message.')
 print('*INFO* This is <b>normal text</b>.')
 print('*CONSOLE* This logs into console and log file.')
 print('*HTML* This is <b>bold</b>.')
-print('*HTML* <a href="http://robotframework.org">Robot Framework</a>')
+print('*HTML* <a href="https://robotframework.org">Robot Framework</a>')
 ```
 
 <div class="md-typeset__scrollwrap" role="region" aria-label="Example log messages" tabindex="0">
@@ -2447,7 +2447,7 @@ print('*HTML* <a href="http://robotframework.org">Robot Framework</a>')
   <tr>
     <td class="time">16:18:42.123</td>
     <td class="info level">INFO</td>
-    <td class="msg"><a href="http://robotframework.org">Robot Framework</a></td>
+    <td class="msg"><a href="https://robotframework.org">Robot Framework</a></td>
   </tr>
 </table>
 </div>

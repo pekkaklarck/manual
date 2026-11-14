@@ -486,7 +486,7 @@ Some of the most important formatting features are illustrated in this example:
 
 - Formatting with *bold* and _italics_.
 - URLs like http://example.com are turned to links.
-- Custom links like [http://robotframework.org|Robot Framework] are supported.
+- Custom links like [https://robotframework.org|Robot Framework] are supported.
 - Linking to `My Keyword` works.
 """
 
@@ -656,7 +656,7 @@ on the command line like `--docformat HTML`.
 <ul>
   <li>Formatting with <b>bold</b> and <i>italics</i>.
   <li>URLs are not turned to links automatically.
-  <li>Custom links like <a href="http://www.w3.org/html">HTML</a> are supported.
+  <li>Custom links like <a href="https://www.w3.org/html">HTML</a> are supported.
   <li>Linking to `My Keyword` works.
 </ul>
 """

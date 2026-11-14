@@ -6,7 +6,7 @@ a string, it is considered false if it is an empty string or equal to
 `FALSE`, `NONE`, `NO`, `OFF` or `0`, case-insensitively. Other
 strings are considered true unless the keyword documentation explicitly
 states otherwise, and other argument types are tested using the same
-[rules as in Python](http://docs.python.org/library/stdtypes.html#truth-value-testing).
+[rules as in Python](https://docs.python.org/3/library/stdtypes.html#truth-value-testing).
 
 ```robotframework
 *** Keywords ***

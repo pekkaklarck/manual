@@ -427,7 +427,7 @@ The following examples illustrate the usage of this option, and the
 figure below shows a snippet of the resulting `Statistics by Tag`{.name} table when example test data is executed with these options:
 
 ```text
---tagstatlink mytag:http://www.google.com:Google
+--tagstatlink mytag:https://www.google.com:Google
 --tagstatlink example-bug-*:http://example.com
 --tagstatlink owner-*:mailto:%1@domain.com?subject=Acceptance_Tests:Send_Mail
 ```

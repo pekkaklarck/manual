@@ -196,7 +196,7 @@ that longer values can be [split into multiple rows](data.md#dividing-data-to-se
 ```robotframework
 *** Settings ***
 Metadata        Version            2.0
-Metadata        Robot Framework    http://robotframework.org
+Metadata        Robot Framework    https://robotframework.org
 Metadata        Platform           ${PLATFORM}
 Metadata        Longer Value
 ...             Longer metadata values can be split into multiple
