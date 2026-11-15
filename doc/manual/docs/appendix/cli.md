@@ -1,9 +1,10 @@
 # Command line options
 
-This appendix lists all the command line options that are available
-when [executing test cases](../execution/basics.md#executing-test-cases)  and when [post-processing outputs](../execution/post_processing.md#post-processing-outputs).
-Also environment variables affecting execution and post-processing
-are listed.
+This appendix lists the command line options for
+[executing test cases](../execution/basics.md#executing-test-cases),
+[executing tasks](../execution/tasks.md#executing-tasks), and
+[post-processing outputs](../execution/post_processing.md#post-processing-outputs).
+It also lists the environment variables that affect execution and post-processing.
 
 ## Command line options for test execution
 

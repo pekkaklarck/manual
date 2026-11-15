@@ -5,7 +5,7 @@ are handled as Boolean values true or false. If such an argument is given as
 a string, it is considered false if it is an empty string or equal to
 `FALSE`, `NONE`, `NO`, `OFF` or `0`, case-insensitively. Other
 strings are considered true unless the keyword documentation explicitly
-states otherwise, and other argument types are tested using the same
+states otherwise. Other argument types are evaluated according to the same
 [rules as in Python](https://docs.python.org/3/library/stdtypes.html#truth-value-testing).
 
 ```robotframework
