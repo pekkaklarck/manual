@@ -3,8 +3,12 @@
 <a id="Resourcefiles"></a>
 # Resource files
 
-Resource files are typically created using the plain text format, but also
+Resource files let you share [user keywords](user_keywords.md#creating-user-keywords) and [variables](variables.md#variables) between [suite files](suites.md#suite-files), [suite initialization files](suites.md#suite-initialization-files), and other resource files. Import a resource file wherever its keywords and variables are needed.
+
+Resource files use the same [syntax](data.md#test-data-syntax) as suite files, but cannot contain tests or tasks. They are typically created using the plain text format, but also
 [reStructuredText](#resource-files-using-restructuredtext-format), [Markdown](#resource-files-using-markdown-format) and [JSON](#resource-files-using-json-format) resource files are supported.
+
+[Variable files](variable_files.md#variable-files) provide another way to share variables and support creating their values dynamically.
 
 ### Taking resource files into use
 

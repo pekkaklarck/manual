@@ -153,7 +153,7 @@ in different situations is explained below:
 - It is mandatory to give an explanation message
   why execution was interrupted, and it is also possible to
   modify test case tags. For more details, and usage examples, see the
-  [documentation of these keywords](../extend/libraries.md#using-builtin-library).
+  [documentation of these keywords](https://robotframework.org/robotframework/latest/libraries/BuiltIn.html).
 
 Passing execution in the middle of a test, setup or teardown should be
 used with care. In the worst case it leads to tests that skip all the
@@ -185,7 +185,7 @@ PASS and FAIL. There are many different ways to get this status.
 #### Skipping before execution
 
 The command line option `--skip`{.option} can be used to skip specified tests without
-running them at all. It works based on [tags](../extend/libraries.md#keyword-tags) and supports [tag patterns](basics.md#tag-patterns) like
+running them at all. It works based on [tags](../syntax/tests.md#tagging-test-cases) and supports [tag patterns](basics.md#tag-patterns) like
 `examp??` and `tagANDanother`. If it is used multiple times, all tests matching any of
 specified tags or tag patterns are skipped:
 
@@ -251,7 +251,7 @@ Tests can get the skip status during execution in various ways:
 #### Automatically skipping failed tests
 
 The command line option `--skiponfailure`{.option} can be used to automatically mark
-failed tests skipped. It works based on [tags](../extend/libraries.md#keyword-tags) and supports [tag patterns](basics.md#tag-patterns) like
+failed tests skipped. It works based on [tags](../syntax/tests.md#tagging-test-cases) and supports [tag patterns](basics.md#tag-patterns) like
 the `--skip`{.option} option discussed above:
 
 ```text

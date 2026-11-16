@@ -158,7 +158,7 @@ in HTML format. This format is thus familiar for most people who have used
 Robot Framework. A simple example can be seen below, and it has been generated
 based on the example found a [bit later in this section](#python-libraries).
 
-![Figure](example_library.png)
+[![Example library documentation](example_library.png){ width="581" }](example_library.html)
 
 The HTML documentation starts with general library introduction, continues
 with a section about configuring the library when it is imported (when
@@ -464,7 +464,7 @@ Your Keyword
 ## Documentation syntax
 
 Libdoc supports documentation in [Robot Framework's own documentation syntax](#robot-framework-documentation-syntax),
-[Markdown](../../syntax/index.md#syntax),  [reStructuredText](#markdown-documentation-syntax), [HTML](#html-documentation-syntax) and [plain text](#plain-text-documentation-syntax). The format to use can
+[Markdown](#markdown-documentation-syntax),  [reStructuredText](#restructuredtext-documentation-syntax), [HTML](#html-documentation-syntax) and [plain text](#plain-text-documentation-syntax). The format to use can
 be specified in [library source code](../libraries.md#documentation-format) using the `ROBOT_LIBRARY_DOC_FORMAT`
 attribute or the `@library` decorator, or given from the command line using
 the `--docformat (-F)`{.option} option. In all cases the possible case-insensitive
@@ -486,7 +486,7 @@ Some of the most important formatting features are illustrated in this example:
 
 - Formatting with *bold* and _italics_.
 - URLs like http://example.com are turned to links.
-- Custom links like [http://robotframework.org|Robot Framework] are supported.
+- Custom links like [https://robotframework.org|Robot Framework] are supported.
 - Linking to `My Keyword` works.
 """
 
@@ -586,7 +586,7 @@ def my_keyword():
     """Nothing more to see here."""
 ````
 
-Robot Framework uses the Python-[Markdown](https://en.wikipedia.org/wiki/Markdown) module as its underling Markdown
+Robot Framework uses the [Python-Markdown](https://python-markdown.github.io/) module as its underling Markdown
 engine and it needs to be installed separately. If syntax highlighting is
 needed, the [Pygments](https://pygments.org/) module must be installed as well.
 
@@ -656,7 +656,7 @@ on the command line like `--docformat HTML`.
 <ul>
   <li>Formatting with <b>bold</b> and <i>italics</i>.
   <li>URLs are not turned to links automatically.
-  <li>Custom links like <a href="http://www.w3.org/html">HTML</a> are supported.
+  <li>Custom links like <a href="https://www.w3.org/html">HTML</a> are supported.
   <li>Linking to `My Keyword` works.
 </ul>
 """
@@ -738,7 +738,7 @@ def another_keyword(argument, log_level="INFO"):
 ```
 
 !!! note
-    When using [reStructuredText documentation syntax](../../syntax/index.md#syntax), backticks must
+    When using [reStructuredText documentation syntax](#restructuredtext-documentation-syntax), backticks must
     be escaped like `` \`Keyword Name\` ``{.codesc}.
 
 ### Linking to automatic sections
@@ -828,12 +828,12 @@ def keyword():
 
 Libdoc shows some information about arguments and return values automatically
 based on the source code. They, as well as possible exceptions, can also be
-documented using [Google Style](../../syntax/data.md#style) documentation conventions. Also tags can be
+documented using [Google Style](https://google.github.io/styleguide/pyguide.html#383-functions-and-methods) documentation conventions. Also tags can be
 listed in documentation similarly.
 
 !!! note
     Support to explicitly document arguments, return values and exceptions
-    using the [Google Style](../../syntax/data.md#style) is new in Robot Framework 7.5.
+    using the [Google Style](https://google.github.io/styleguide/pyguide.html#383-functions-and-methods) is new in Robot Framework 7.5.
 
 ### Automatically included information
 
@@ -852,7 +852,7 @@ documentation.
 
 ### Documenting arguments
 
-Robot Framework supports [Google style](../../syntax/data.md#style) argument documentation:
+Robot Framework supports [Google style](https://google.github.io/styleguide/pyguide.html#383-functions-and-methods) argument documentation:
 
 ```python
 def example(first: int, second: float, third: float) -> float:
@@ -877,7 +877,7 @@ def example(first: int, second: float, third: float) -> float:
 ```
 
 As the example above demonstrates, arguments are documented under the `Args:` header
-that must be followed with an indented block. The [specification](../../syntax/data.md#style)
+that must be followed with an indented block. The [specification](https://google.github.io/styleguide/pyguide.html#383-functions-and-methods)
 mandates that the indentation should be two or four spaces, but Robot Framework only
 requires that the indentation is at least two spaces and that it is consistent
 within a block.
@@ -973,7 +973,7 @@ Possible unrecognized sections are left to the documentation without modificatio
 
 There are some times needs to process keyword documentation also using other
 tools than Libdoc. Such tools can support Markdown or reStructuredText, but
-all tools do not understand [Google style](../../syntax/data.md#style) documentation conventions.
+all tools do not understand [Google style](https://google.github.io/styleguide/pyguide.html#383-functions-and-methods) documentation conventions.
 
 If the whole documentation is to be rendered as Markdown or reStructuredText,
 an empty line can be added after a block header to avoid the header and the
@@ -1023,7 +1023,7 @@ Actual argument, return value and exception documentation can also contain forma
 and that is handled the same way as [formatting elsewhere in the documentation](#documentation-syntax).
 
 !!! note
-    External tools that understand [Google style](../../syntax/data.md#style) documentation conventions
+    External tools that understand [Google style](https://google.github.io/styleguide/pyguide.html#383-functions-and-methods) documentation conventions
     may not accept extra formatting that Robot Framework supports. Test the
     used formatting with all the used tools if interoperability is important.
 

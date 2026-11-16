@@ -112,7 +112,7 @@ test case specific settings listed earlier.
 : The default values for [test setup and teardown](#test-setup-and-teardown).
 
 `Test Tags`{.setting}
-: [Tags](../extend/libraries.md#keyword-tags) all tests in the suite will get in addition to their possible own tags.
+: [Tags](#tagging-test-cases) all tests in the suite will get in addition to their possible own tags.
 
 `Test Template`{.setting}
 : The default [template keyword](#test-templates) to use.
@@ -434,7 +434,7 @@ some keywords allow configuring them.
 In some circumstances, for example when continuable failures are used,
 a test case can fail multiple times. In that case the final error message
 is got by combining the individual errors. Very long error messages are
-[automatically cut from the middle](../execution/results/index.md#limiting-error-message-length-in-reports) to keep [reports](../execution/post_processing.md#creating-reports-logs-and-output-files) easier to read, but
+[automatically cut from the middle](../execution/results/index.md#limiting-error-message-length-in-reports) to keep [reports](../execution/results/index.md#report-file) easier to read, but
 full error messages are always visible in [log files](../execution/results/index.md#log) as messages of
 the failed keywords.
 
@@ -506,7 +506,7 @@ Formatting
     ...    This list has:
     ...    - *bold*
     ...    - _italics_
-    ...    - link: http://robotframework.org
+    ...    - link: https://robotframework.org
     No Operation
 
 Variables
@@ -520,7 +520,7 @@ of the test case needs documenting, it is often a sign that keywords
 in the test case need better names and they are to be enhanced,
 instead of adding extra documentation. Finally, metadata, such as the
 environment and user information in the last example above, can also
-be specified as [free test metadata](#free-test-metadata) or using [tags](../extend/libraries.md#keyword-tags), depending on the
+be specified as [free test metadata](#free-test-metadata) or using [tags](#tagging-test-cases), depending on the
 use case.
 
 ## Free test metadata
@@ -566,7 +566,7 @@ Robot Framework itself has no special meaning for them except for the
 [reserved tags](#reserved-tags) discussed below. Tags can be used at least for the following
 purposes:
 
-- They are shown in test [reports](../execution/post_processing.md#creating-reports-logs-and-output-files), [logs](../execution/results/index.md#splitting-logs) and, of course, in the test
+- They are shown in test [reports](../execution/results/index.md#report-file), [logs](../execution/results/index.md#log-file) and, of course, in the test
   data, so they provide metadata to test cases.
 - [Statistics](../execution/results/index.md#configuring-statistics) about test cases (total, passed, failed and skipped) are
   automatically collected based on them.
@@ -784,7 +784,7 @@ normal keywords with possible arguments.
 
 A setup and a teardown are always a single keyword. If they need to take care
 of multiple separate tasks, it is possible to create higher-level [user
-keywords](user_keywords.md#user-keyword-arguments) for that purpose. An alternative solution is executing multiple
+keywords](user_keywords.md#creating-user-keywords) for that purpose. An alternative solution is executing multiple
 keywords using the [BuiltIn](https://robotframework.org/robotframework/latest/libraries/BuiltIn.html) keyword `Run Keywords`{.name}.
 
 The test teardown is special in two ways. First of all, it is executed also
@@ -1033,7 +1033,7 @@ the same workflow with varying input data.
 ### Keyword-driven style
 
 Workflow tests, such as the `Valid Login`{.name} test described
-[earlier](../execution/configuration/index.md#earlier), are constructed from several keywords and their possible
+[earlier](#example-tests), are constructed from several keywords and their possible
 arguments. Their normal structure is that first the system is taken
 into the initial state (`Open Login Page`{.name} in the `Valid Login`{.name} example), then something is done to the system (`Input Name`{.name}, `Input Password`{.name}, `Submit Credentials`{.name}), and
 finally it is verified that the system behaved as expected

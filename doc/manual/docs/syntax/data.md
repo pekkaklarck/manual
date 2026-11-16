@@ -442,7 +442,7 @@ meant to be edited manually. Its most important use cases are:
 
 #### Converting suite to JSON
 
-A suite structure can be serialized into JSON by using the [TestSuite.to_json](https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.TestSuite.to_json)
+A suite structure can be serialized into JSON by using the [TestSuite.to_json](https://robot-framework.readthedocs.io/en/master/autodoc/robot.model.html#robot.model.modelobject.ModelObject.to_json)
 method. When used without arguments, it returns JSON data as a string, but
 it also accepts a path or an open file where to write JSON data along with
 configuration options related to JSON formatting:
@@ -465,7 +465,7 @@ or some other format yourself, you can use [TestSuite.to_dict](https://robot-fra
 
 #### Creating suite from JSON
 
-A suite can be constructed from JSON data using the [TestSuite.from_json](https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.TestSuite.from_json)
+A suite can be constructed from JSON data using the [TestSuite.from_json](https://robot-framework.readthedocs.io/en/master/autodoc/robot.model.html#robot.model.modelobject.ModelObject.from_json)
 method. It works both with JSON strings and paths to JSON files:
 
 ```python
@@ -481,7 +481,7 @@ suite = TestSuite.from_json('{"name": "Suite", "tests": [{"name": "Test"}]}')
 suite.run(output='example.xml')
 ```
 
-If you have data as a Python dictionary, you can use [TestSuite.from_dict](https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.TestSuite.from_dict)
+If you have data as a Python dictionary, you can use [TestSuite.from_dict](https://robot-framework.readthedocs.io/en/master/autodoc/robot.model.html#robot.model.modelobject.ModelObject.from_dict)
 instead. Regardless of how a suite is recreated, it exists only in memory and
 original data files on the file system are not recreated.
 
