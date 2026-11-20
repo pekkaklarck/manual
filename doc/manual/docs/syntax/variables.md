@@ -1891,13 +1891,6 @@ syntax is explained in the [Evaluating expressions](../appendix/expressions.md#e
     maintenance, makes test data easier to understand and can also
     enhance execution speed.
 
-!!! warning
-    Values in the Variable section are evaluated as well. If a tool writes
-    suite or resource files from outside input, such as a URL taken from
-    another tool's config, a `${{...}}` in that input runs as Python when
-    the file is used. Escape such values before writing them. For example,
-    `robot.utils.escape` turns `${{` into `\${{`.
-
 !!! note
     The inline Python evaluation syntax is new in Robot Framework 3.2.
 
