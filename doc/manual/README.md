@@ -3,6 +3,18 @@
 The manual uses Material for MkDocs through ProperDocs. Styles and scripts live
 in `docs/assets/`; template overrides live in `overrides/`.
 
+## Generated content
+
+`properdocs build` and `properdocs serve` generate the translations appendix
+and built-in language list from `src/robot/conf/languages.py`. To export the
+populated Markdown separately, run
+`python doc/manual/docs/appendix/update_translations.py --output-dir OUTPUT`
+from the project root.
+
+The build also copies the installation page from `INSTALL.md`, generates
+standard library documentation with Libdoc, and generates the API reference
+and its navigation from `src/robot`.
+
 ## Stylesheets
 
 `properdocs.yml` loads the stylesheets in this order:

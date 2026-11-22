@@ -13,6 +13,8 @@ watch:
   - INSTALL.md
   - src/robot/
   - doc/manual/overrides
+hooks:
+  - doc/manual/docs/appendix/update_translations.py
 
 nav:
   - Manual: index.md
@@ -133,6 +135,8 @@ plugins:
   - autorefs
   - exclude:
       glob:
+        - appendix/update_translations.py
+        - appendix/__pycache__/update_translations.*.pyc
         - api/generate.py
         - install/generate.py
         - libraries/generate.py
