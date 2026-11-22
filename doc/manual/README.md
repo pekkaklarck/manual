@@ -38,7 +38,8 @@ primary sidebar; use `59.9375em` and `76.1875em` for maximum-width queries.
   [RFCP syllabus](https://robotframework.org/robotframework-RFCP-syllabus/docs/overview).
   Its host must be the first `.md-header__topic` for Material's mike integration.
 - Select the bundled Octicons theme icons in `properdocs.yml`. Material handles
-  system preference and saved choices.
+  system preference and saved choices. The toggle cycles through light, dark,
+  and system default. Keep palette indices stable to preserve saved choices.
 - Reinitialize page controls through `document$` after instant navigation.
   Keep labels and the native mobile TOC usable without JavaScript.
 - Contain focus only in the open drawer, restore changed `inert` states, and use

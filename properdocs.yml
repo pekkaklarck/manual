@@ -114,6 +114,12 @@ theme:
       scheme: slate
       toggle:
         icon: octicons/moon-24
+        name: Switch to system default
+    # Append system default to preserve saved light/dark palette indices.
+    - media: "(prefers-color-scheme)"
+      primary: custom
+      toggle:
+        icon: octicons/device-desktop-24
         name: Switch to light mode
 
 plugins:
