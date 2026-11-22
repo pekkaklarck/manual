@@ -16,6 +16,19 @@ in `docs/assets/`; template overrides live in `overrides/`.
 
 Keep `page-toc.css` after `extra.css` to override shared disclosure styles.
 
+## External links
+
+`external-links.js` adds Material's bundled Octicons external-link symbol to
+article text links outside this manual. It runs on `document$`, like the navigation
+adapter, and skips links already marked. The template and accessible description
+live in `overrides/main.html`; icon size and spacing live in `extra.css`.
+
+The boundary uses the current origin and the configured `site_url` path, with
+mike's canonical version suffix removed so all manual versions stay internal.
+Other projects on the same host are external. Email links, image links, code
+blocks and navigation controls are excluded. Link targets and existing styles
+stay unchanged. Without JavaScript, links keep their normal behavior.
+
 ## Navigation
 
 Match Material's breakpoints: `60em` for the right TOC and `76.25em` for the

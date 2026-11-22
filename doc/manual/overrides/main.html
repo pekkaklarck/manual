@@ -5,6 +5,16 @@
   {{ super() }}
 {% endblock %}
 
+{% block scripts %}
+  <template id="rf-external-link"
+    data-site-url="{{ config.site_url.rstrip('/') ~ '/' }}"
+    data-canonical-version="{{ config.plugins.mike.config.canonical_version or '' }}">
+    <span class="rf-external-link" aria-hidden="true">{% include ".icons/octicons/link-external-16.svg" %}</span>
+  </template>
+  <span id="rf-external-site" hidden>External site</span>
+  {{ super() }}
+{% endblock %}
+
 {% block outdated %}
   You are not viewing documentation of the latest release.
   <a href="{{ '../' ~ base_url }}">
