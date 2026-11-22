@@ -36,6 +36,10 @@
   --rf-text: var(--rf-950);
   --rf-accent-text: var(--rf-700);
   --rf-accent-indicator: var(--rf-500);
+  --rf-tip-accent: 104 131 49;
+  --rf-tip-bg: #e9f0de;
+  --rf-tip-title-bg: #d6e7b4;
+  --rf-warning-accent: #9a4a00;
   --rf-surface-panel: rgb(var(--rf-100));
   --rf-surface-line: rgb(var(--rf-200));
   --rf-surface-card: rgb(var(--rf-0));
@@ -68,6 +72,10 @@
   --rf-text: var(--rf-950);
   --rf-accent-text: var(--rf-700);
   --rf-accent-indicator: var(--rf-500);
+  --rf-tip-accent: 166 212 130;
+  --rf-tip-bg: var(--md-admonition-bg-color);
+  --rf-tip-title-bg: rgb(var(--rf-tip-accent) / 0.1);
+  --rf-warning-accent: #ff9100;
   --rf-surface-panel: rgb(var(--rf-100));
   --rf-surface-line: rgb(var(--rf-200));
   --rf-surface-card: rgb(var(--rf-100));

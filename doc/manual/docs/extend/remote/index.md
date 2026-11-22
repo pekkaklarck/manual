@@ -73,11 +73,9 @@ is shorter than keyword execution time will interrupt the keyword.
     This port number was selected because 82 and 70 are the ASCII codes
     of letters `R` and `F`, respectively.
 
-!!! note
-    When connecting to the local machine, it is recommended to use
-    IP address `127.0.0.1` instead of machine name `localhost`. This
-    avoids address resolution that can be extremely slow [at least on
-    Windows](https://stackoverflow.com/questions/14504450/pythons-xmlrpc-extremely-slow-one-second-per-call).
+!!! tip
+    If resolving `localhost` is slow (as [reported on Windows 7](https://stackoverflow.com/questions/14504450/pythons-xmlrpc-extremely-slow-one-second-per-call)),
+    try `127.0.0.1` for a local server that listens on the IPv4 loopback address.
 
 !!! note
     If the URI contains no path after the server address, the [XML-RPC module](https://docs.python.org/3/library/xmlrpc.client.html) used by the Remote library will use `/RPC2` path by

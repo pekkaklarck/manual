@@ -386,7 +386,7 @@ The [CommonMark](https://spec.commonmark.org) specification tries to unify Markd
 older tools still follow the original specification. The good news is that
 basic features work the same way across implementations.
 
-Robot Framework uses the Python-[Markdown](https://en.wikipedia.org/wiki/Markdown) module as its underlying Markdown
+Robot Framework uses the [Python-Markdown](https://python-markdown.github.io/) module as its underlying Markdown
 engine. It follows the original implementation closely and is explicitly *not*
 CommonMark compliant. It supports basic Markdown features out-of-the-box, but
 the following extensions are enabled and provide some more functionality:
@@ -412,7 +412,7 @@ that are not documented here.
 
 ### Installation
 
-Python-[Markdown](https://en.wikipedia.org/wiki/Markdown) is an optional dependency and users need to [install](https://python-markdown.github.io/install/) it
+[Python-Markdown](https://python-markdown.github.io/) is an optional dependency and users need to [install](https://python-markdown.github.io/install/) it
 themselves. That is typically done by running:
 
 ```text
@@ -456,8 +456,8 @@ title text like `[an example](http://example.com "Optional title")`.
 Example:
 
 ```markdown
-[Robot Framework](http://robotframework.org) development is supported by
-[Robot Framework Foundation](http://robotframework.org/foundation "Join us!").
+[Robot Framework](https://robotframework.org) development is supported by
+[Robot Framework Foundation](https://robotframework.org/foundation "Join us!").
 ```
 
 #### Reference links
@@ -474,8 +474,8 @@ Example:
 [Robot Framework][robot] development is supported by
 [Robot Framework Foundation][foundation].
 
-[robot]: http://robotframework.org
-[foundation]: http://robotframework.org/foundation "Join us!"
+[robot]: https://robotframework.org
+[foundation]: https://robotframework.org/foundation "Join us!"
 ```
 
 If the link text matches the reference name, it is possible to omit the refence
@@ -489,8 +489,8 @@ Example:
 ```markdown
 [Robot Framework] development is supported by [Robot Framework Foundation].
 
-[Robot Framework]: http://robotframework.org
-[Robot Framework Foundation]: http://robotframework.org/foundation "Join us!"
+[Robot Framework]: https://robotframework.org
+[Robot Framework Foundation]: https://robotframework.org/foundation "Join us!"
 ```
 
 Depending on the context, there may also be automatic reference
@@ -509,7 +509,7 @@ Our website is at <http://example.com>. You can reach us via <info@example.com>.
 URLs are recognized also without special formatting:
 
 ```markdown
-Robot Framework website is at http://robotframework.org.
+Robot Framework website is at https://robotframework.org.
 ```
 
 !!! note

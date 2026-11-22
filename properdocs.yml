@@ -73,6 +73,7 @@ extra_css:
 
 extra_javascript:
   - assets/navigation.js
+  - assets/external-links.js
 
 theme:
   name: material
@@ -81,6 +82,9 @@ theme:
   icon:
     logo: simple/robotframework
     repo: fontawesome/brands/github
+    admonition:
+      note: octicons/note-16
+      tip: octicons/light-bulb-16
   custom_dir: doc/manual/overrides
   features:
     - content.action.edit
@@ -113,6 +117,12 @@ theme:
       scheme: slate
       toggle:
         icon: octicons/moon-24
+        name: Switch to system default
+    # Append system default to preserve saved light/dark palette indices.
+    - media: "(prefers-color-scheme)"
+      primary: custom
+      toggle:
+        icon: octicons/device-desktop-24
         name: Switch to light mode
 
 plugins:

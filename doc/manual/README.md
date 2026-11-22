@@ -16,6 +16,19 @@ in `docs/assets/`; template overrides live in `overrides/`.
 
 Keep `page-toc.css` after `extra.css` to override shared disclosure styles.
 
+## External links
+
+`external-links.js` adds Material's bundled Octicons external-link symbol to
+article text links outside this manual. It runs on `document$`, like the navigation
+adapter, and skips links already marked. The template and accessible description
+live in `overrides/main.html`; icon size and spacing live in `extra.css`.
+
+The boundary uses the current origin and the configured `site_url` path, with
+mike's canonical version suffix removed so all manual versions stay internal.
+Other projects on the same host are external. Email links, image links, code
+blocks and navigation controls are excluded. Link targets and existing styles
+stay unchanged. Without JavaScript, links keep their normal behavior.
+
 ## Navigation
 
 Match Material's breakpoints: `60em` for the right TOC and `76.25em` for the
@@ -25,7 +38,8 @@ primary sidebar; use `59.9375em` and `76.1875em` for maximum-width queries.
   [RFCP syllabus](https://robotframework.org/robotframework-RFCP-syllabus/docs/overview).
   Its host must be the first `.md-header__topic` for Material's mike integration.
 - Select the bundled Octicons theme icons in `properdocs.yml`. Material handles
-  system preference and saved choices.
+  system preference and saved choices. The toggle cycles through light, dark,
+  and system default. Keep palette indices stable to preserve saved choices.
 - Reinitialize page controls through `document$` after instant navigation.
   Keep labels and the native mobile TOC usable without JavaScript.
 - Contain focus only in the open drawer, restore changed `inert` states, and use
@@ -45,6 +59,19 @@ primary sidebar; use `59.9375em` and `76.1875em` for maximum-width queries.
 HTML log tables in `execution/basics.md` and `extend/libraries.md` need both
 Material wrappers (`md-typeset__scrollwrap` and `md-typeset__table`), a region name,
 and `tabindex="0"` on the scroll wrapper. Leave a blank line after HTML blocks.
+
+## Example page bundles
+
+Keep example HTML, images, and source files beside their page's `index.md`.
+Screenshots with interactive HTML examples use Markdown image links to open
+the examples. Preserve the source's display widths with image attributes such as
+`{ width="500" }`; the theme scales images down on smaller screens. Keep log/report
+companion links relative to the same bundle.
+
+The Libdoc and execution artifact examples come from the
+[User Guide source at `7c1c9fb04`](https://github.com/robotframework/robotframework/tree/7c1c9fb04/doc/userguide/src).
+They are snapshots illustrating the accompanying screenshots; their generated
+HTML does not need to be regenerated during ordinary documentation builds.
 
 ## Upgrading Material
 

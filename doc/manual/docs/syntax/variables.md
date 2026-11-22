@@ -638,7 +638,7 @@ Variable files are the most powerful mechanism for creating different
 kind of variables. It is possible to assign variables to any object
 using them, and they also enable creating variables dynamically. The
 variable file syntax and taking variable files into use is explained
-in section [Resource and variable files](variable_files.md#variable-files).
+in section [Variable files](variable_files.md#variable-files).
 
 <a id="individual-variables"></a>
 ### Command line variables
@@ -913,7 +913,7 @@ List examples
      ...    last item
 
 Dictionary examples
-     VAR    &{two items}     name=Robot Framework    url=http://robotframework.org
+     VAR    &{two items}     name=Robot Framework    url=https://robotframework.org
      VAR    &{empty dict}
      VAR    &{lot of stuff}
      ...    first=1
@@ -1554,7 +1554,8 @@ are available in different scopes.
 
 *Imported resource and variable files*
 
-   Variables imported from the [resource and variable files](variable_files.md#variable-files) have the
+   Variables imported from the [resource files](resource_files.md#resource-files) and
+   [variable files](variable_files.md#variable-files) have the
    lowest priority of all variables created in the test data.
    Variables from resource files and variable files have the same
    priority. If several resource and/or variable file have same
@@ -1609,14 +1610,15 @@ It is recommended to use capital letters with all global variables.
 
 Variables with the test suite scope are available anywhere in the
 test suite where they are defined or imported. They can be created
-in Variable sections, imported from [resource and variable files](variable_files.md#variable-files),
+in Variable sections, imported from [resource files](resource_files.md#resource-files) and
+[variable files](variable_files.md#variable-files),
 or set during the test execution using the [VAR syntax](#var-syntax) or the
 `Set Suite Variable`{.name} keyword.
 
 The test suite scope *is not recursive*, which means that variables
 available in a higher-level test suite *are not available* in
-lower-level suites. If necessary, [resource and variable files](variable_files.md#variable-files) can
-be used for sharing variables.
+lower-level suites. If necessary, [resource files](resource_files.md#resource-files) and
+[variable files](variable_files.md#variable-files) can be used for sharing variables.
 
 Since these variables can be considered global in the test suite where
 they are used, it is recommended to use capital letters also with them.

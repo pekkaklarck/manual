@@ -1,12 +1,21 @@
 
 # Variable files
 
-Variable files contain [variables](variables.md#variables) that can be used in the test
-data. Variables can also be created using [Variable sections](variables.md#variable-sections) or [set from
-the command line](variables.md#command-line-variables), but variable files allow creating them dynamically
-and also make it easy to create other variable values than strings.
+Variable files provide a flexible mechanism for creating and sharing
+[variables](variables.md#variables) between [suite files](suites.md#suite-files),
+[suite initialization files](suites.md#suite-initialization-files), and
+[resource files](resource_files.md#resource-files). They support values other than
+strings and allow creating variables dynamically.
 
-Variable files are typically implemented as modules and there are
+Their flexibility comes from support for Python code and structured data formats
+such as [YAML](#variable-file-as-yaml) and [JSON](#variable-file-as-json). Python
+variable files can calculate values or load them from other sources, while YAML
+and JSON provide a way to define structured values without Python code. This
+flexibility can also make variable files more complicated than
+[Variable sections](variables.md#variable-sections). Variables can also be
+[set from the command line](variables.md#command-line-variables).
+
+Python variable files are typically implemented as modules and there are
 two different approaches for creating variables:
 
 [Getting variables directly from a module](#getting-variables-directly-from-a-module)
