@@ -240,9 +240,7 @@
   box-shadow: none;
 }
 
-/* Admonitions inherit the ramp so they sit on the page rather than on top.
-   Material colours the rail per type via --md-admonition-icon and the type
-   class; only the shape and surface change here. */
+/* Admonitions share a surface and shape. Material supplies type accents. */
 .md-typeset .admonition,
 .md-typeset details {
   border-radius: var(--rf-r-md);
@@ -260,25 +258,42 @@
   font-size: 0.7rem;
 }
 
-/* Notes use the brand accent. */
-.md-typeset .admonition.note,
-.md-typeset details.note {
-  border-color: rgb(var(--rf-accent-text));
-}
-
-.md-typeset .note > .admonition-title,
-.md-typeset .note > summary {
-  background: rgb(var(--rf-500) / 0.1);
-}
-
-.md-typeset .note > .admonition-title::before,
-.md-typeset .note > summary::before {
-  background-color: rgb(var(--rf-accent-text));
-}
-
-/* details / summary — a rail that brightens to the pivot when open. */
+/* Open disclosures use the brand accent unless they have a callout type. */
 .md-typeset details[open] {
   border-left-color: rgb(var(--rf-accent-indicator));
+}
+
+.md-typeset :is(.admonition, details).note {
+  --rf-callout-accent: rgb(var(--rf-accent-text));
+  --rf-callout-title-bg: rgb(var(--rf-500) / 0.1);
+}
+
+.md-typeset :is(.admonition, details).tip {
+  --rf-callout-accent: rgb(var(--rf-tip-accent));
+  --rf-callout-title-bg: var(--rf-tip-title-bg);
+  background-color: var(--rf-tip-bg);
+}
+
+.md-typeset :is(.admonition, details).warning {
+  --rf-callout-accent: var(--rf-warning-accent);
+  --rf-callout-title-bg: #ff91001a;
+}
+
+/* Keep each type's rail, icon and disclosure arrow on the same accent. */
+.md-typeset :is(.admonition, details):is(.note, .tip, .warning) {
+  border-color: var(--rf-callout-accent);
+}
+
+.md-typeset :is(.note, .tip, .warning) > :is(.admonition-title, summary) {
+  background-color: var(--rf-callout-title-bg);
+}
+
+.md-typeset :is(.note, .tip, .warning) > :is(.admonition-title, summary)::before {
+  background-color: var(--rf-callout-accent);
+}
+
+.md-typeset details:is(.note, .tip, .warning) > summary::after {
+  color: var(--rf-callout-accent);
 }
 
 .md-typeset blockquote {

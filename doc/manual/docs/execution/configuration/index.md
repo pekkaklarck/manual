@@ -568,11 +568,8 @@ illustrate how to use these options:
 <a id="dryrun"></a>
 ## Dry run
 
-Robot Framework supports so called *dry run* mode where the tests are
-run normally otherwise, but the keywords coming from the test libraries
-are not executed at all. The dry run mode can be used to validate the
-test data; if the dry run passes, the data should be syntactically
-correct. This mode is triggered using option `--dryrun`{.option}.
+Use the `--dryrun`{.option} option to check the syntax of the test data without
+executing keywords from libraries. Dry run does not validate variables.
 
 The dry run execution may fail for following reasons:
 
@@ -588,9 +585,6 @@ It is possible to disable dry run validation of specific [user keywords](../../s
 by adding a special `robot:no-dry-run` [keyword tag](../../syntax/user_keywords.md#user-keyword-tags) to them. This is useful
 if a keyword fails in the dry run mode for some reason, but work fine when
 executed normally.
-
-!!! note
-    The dry run mode does not validate variables.
 
 ## Randomizing execution order
 

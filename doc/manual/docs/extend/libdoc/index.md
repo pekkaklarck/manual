@@ -370,11 +370,12 @@ described in more details elsewhere in the User Guide.
 ### Python libraries
 
 The documentation for Python libraries that use the [static library API](../libraries.md#creating-keywords)
-is written simply as doc strings for the library class or module and for
+is written as docstrings for the library class or module and for
 methods implementing keywords. The first line of the method documentation is
 considered as a short documentation for the keyword (used, for example, as
 a tool tip in links in the generated HTML documentation), and it should
-thus be as describing as possible, but not too long.
+thus be descriptive and brief.
+See [PEP 257](https://peps.python.org/pep-0257/) for Python docstring conventions.
 
 The simple example below illustrates how to write the documentation in
 general. How the HTML documentation generated based on this example looks
@@ -386,11 +387,8 @@ the end of this chapter.
 ```
 
 !!! tip
-    If you library does some initialization work that should not be done
-    when using Libdoc, you can [easily detect is Robot Framework running](../libraries.md#detecting-is-robot-framework-running)
-
-!!! tip
-    For more information on Python documentation strings, see [PEP-257](https://www.python.org/dev/peps/pep-0257).
+    If your library does initialization work that should be skipped when
+    using Libdoc, you can [check whether Robot Framework is running](../libraries.md#detecting-is-robot-framework-running).
 
 ### Dynamic libraries
 

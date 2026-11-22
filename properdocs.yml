@@ -82,6 +82,9 @@ theme:
   icon:
     logo: simple/robotframework
     repo: fontawesome/brands/github
+    admonition:
+      note: octicons/note-16
+      tip: octicons/light-bulb-16
   custom_dir: doc/manual/overrides
   features:
     - content.action.edit
