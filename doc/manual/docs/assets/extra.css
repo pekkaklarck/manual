@@ -246,6 +246,26 @@
   box-shadow: none;
 }
 
+/* Align the term column across the translation tables at each viewport width. */
+.md-typeset:has(> h1#translations) .md-typeset__table {
+  display: block;
+}
+
+.md-typeset:has(> h1#translations) table:not([class]) {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  overflow-wrap: anywhere;
+}
+
+.md-typeset:has(> h1#translations) table:not([class]) :is(th, td) {
+  padding-inline: min(1.25em, 2.5vw);
+}
+
+.md-typeset:has(> h1#translations) table:not([class]) > thead > tr > th:first-child {
+  width: clamp(6rem, 30vw, 10rem);
+}
+
 /* Admonitions share a surface and shape. Material supplies type accents. */
 .md-typeset .admonition,
 .md-typeset details {

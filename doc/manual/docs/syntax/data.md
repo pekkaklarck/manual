@@ -810,9 +810,9 @@ globally with the `--language`{.option} option.
 The following languages are supported out-of-the-box. Click the language name
 to see the actual translations:
 
-<!-- START GENERATED CONTENT -->
+<!-- START GENERATED BUILT-IN LANGUAGES -->
 
-<!-- END GENERATED CONTENT -->
+<!-- END GENERATED BUILT-IN LANGUAGES -->
 All these translations have been provided by the awesome Robot Framework
 community. If a language you are interested in is not included, you can
 consider [contributing](#contributing-translations) it!

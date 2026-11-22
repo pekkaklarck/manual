@@ -11,6 +11,6 @@ How to actually activate translations is explained in the [Localization](../synt
 That section also explains how to create custom language definitions and
 how to contribute new translations.
 
-<!-- START GENERATED CONTENT -->
+<!-- START GENERATED TRANSLATIONS -->
 
-<!-- END GENERATED CONTENT -->
+<!-- END GENERATED TRANSLATIONS -->
