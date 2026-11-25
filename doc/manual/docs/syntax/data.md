@@ -665,6 +665,23 @@ As the above examples show, using the `${SPACE}` variable often makes the
 test data easier to understand. It is especially handy in combination with
 the [extended variable syntax](variables.md#extended-variable-syntax) when more than one space is needed.
 
+#### Generating test data
+
+Test data that a tool writes from outside input is parsed like any other
+test data. When a suite or resource file is built from values such as API
+specifications, configuration files or the output of other tools, those
+values can do anything handwritten data can do: variables in them are
+resolved, `${{...}}` runs Python, and a newline, a separator or a `#`
+changes the structure of the file. This applies to every section, tests and
+keywords included, not only to variable values.
+
+Generate test data only from sources you trust, and escape every value
+before writing it. `robot.utils.escape` adds a backslash before variable
+start characters such as `${` and `@{`, before `=` and before a backslash
+itself, as listed in [Escaping special characters](#escaping-special-characters).
+It does not handle newlines, separators or comments, so reject or replace
+those separately.
+
 ### Dividing data to several rows
 
 If there is more data than readily fits a row, it is possible to split it
